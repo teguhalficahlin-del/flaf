@@ -675,8 +675,8 @@ body {
 .export-reminder[hidden] { display: none; }
 .export-reminder-icon { font-size: 20px; flex-shrink: 0; }
 .export-reminder-body { flex: 1; }
-.export-reminder-title { font-size: 13px; font-weight: 700; color: #C87941; }
-.export-reminder-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.export-reminder-title { font-size: 22px; font-weight: 700; color: #C87941; }
+.export-reminder-desc  { font-size: 15px; color: #8A6030; margin-top: 2px; line-height: 1.4; }
 .export-reminder-btn {
   flex-shrink: 0;
   padding: 8px 14px;
@@ -1636,7 +1636,8 @@ body {
 
 .home-school {
   font-size: 14px;
-  color: rgba(255,255,255,.35);
+  color: #D4AE3A;
+  font-weight: 500;
 }
 
 .home-avatar {
@@ -1664,7 +1665,7 @@ body {
 }
 
 .home-progress-label {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   color: rgba(212,174,58,.85);
   letter-spacing: .08em;
@@ -1688,7 +1689,7 @@ body {
 }
 
 .home-progress-count {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
   color: #D4AE3A;
   white-space: nowrap;
@@ -1743,14 +1744,14 @@ body {
 .home-card-body { flex: 1; min-width: 0; }
 
 .home-card-title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: #fff;
   margin-bottom: 4px;
 }
 
 .home-card-desc {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255,255,255,.9);
   white-space: normal;
   line-height: 1.4;
@@ -1833,50 +1834,52 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  border-radius: 12px;
-  padding: 12px 16px;
+  border-radius: 14px;
+  padding: 18px 16px;
 }
 
 .home-backup-body { flex: 1; }
 
 .home-backup-title {
-  font-size: 12px;
+  font-size: 22px;
   font-weight: 700;
+  margin-bottom: 3px;
 }
 
 .home-backup-desc {
-  font-size: 10px;
+  font-size: 15px;
   margin-top: 1px;
+  line-height: 1.4;
 }
 
 .home-backup-btn {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   border: 1px solid;
-  border-radius: 6px;
-  padding: 4px 10px;
+  border-radius: 10px;
+  padding: 10px 16px;
   background: transparent;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .home-backup--safe {
-  background: rgba(92,138,110,.08);
-  border: 1px solid rgba(92,138,110,.2);
+  background: #FEF3E2;
+  border: 1px solid rgba(200,121,65,.3);
 }
-.home-backup--safe .home-backup-title { color: rgba(255,255,255,.7); }
-.home-backup--safe .home-backup-desc  { color: rgba(92,138,110,.8); }
-.home-backup--safe svg                { stroke: #5C8A6E; }
-.home-backup--safe .home-backup-btn   { color: #5C8A6E; border-color: rgba(92,138,110,.3); }
+.home-backup--safe .home-backup-title { color: #C87941; }
+.home-backup--safe .home-backup-desc  { color: #8A6030; }
+.home-backup--safe svg                { stroke: #C87941; }
+.home-backup--safe .home-backup-btn   { color: #C87941; border-color: rgba(200,121,65,.4); }
 
 .home-backup--warn {
-  background: rgba(176,90,70,.08);
-  border: 1px solid rgba(176,90,70,.2);
+  background: #FEF3E2;
+  border: 1px solid rgba(200,121,65,.3);
 }
-.home-backup--warn .home-backup-title { color: rgba(255,255,255,.7); }
-.home-backup--warn .home-backup-desc  { color: rgba(176,90,70,.8); }
-.home-backup--warn svg                { stroke: #B05A46; }
-.home-backup--warn .home-backup-btn   { color: #B05A46; border-color: rgba(176,90,70,.3); }
+.home-backup--warn .home-backup-title { color: #C87941; }
+.home-backup--warn .home-backup-desc  { color: #8A6030; }
+.home-backup--warn svg                { stroke: #C87941; }
+.home-backup--warn .home-backup-btn   { color: #fff; background: #C87941; border-color: #C87941; }
 
 /* ─── COMING SOON ─────────────────────────────────────────── */
 
