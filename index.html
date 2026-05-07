@@ -43,13 +43,30 @@
 
       <div class="splash-atom" aria-hidden="true">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="180" height="180">
-          <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#D4AE3A" stroke-width="1.5" opacity="0.6"/>
-          <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#5C8A6E" stroke-width="1.5" opacity="0.6" transform="rotate(60 100 100)"/>
-          <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#B05A46" stroke-width="1.5" opacity="0.6" transform="rotate(120 100 100)"/>
-          <circle cx="100" cy="100" r="12" fill="#D4AE3A"/>
-          <circle cx="180" cy="100" r="5" fill="#D4AE3A"/>
-          <circle cx="60" cy="44" r="5" fill="#5C8A6E"/>
-          <circle cx="140" cy="156" r="5" fill="#B05A46"/>
+          <defs>
+            <filter id="glow-splash">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Orbit 1 — gold -->
+          <g style="transform-origin:100px 100px;animation:splash-orbit1 4s linear infinite;">
+            <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#D4AE3A" stroke-width="2.5" opacity="1"/>
+            <circle cx="180" cy="100" r="7" fill="#D4AE3A" filter="url(#glow-splash)"/>
+          </g>
+          <!-- Orbit 2 — sage -->
+          <g transform="rotate(60 100 100)" style="transform-origin:100px 100px;animation:splash-orbit2 6s linear infinite;">
+            <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#5C8A6E" stroke-width="2.5" opacity="1"/>
+            <circle cx="180" cy="100" r="7" fill="#5C8A6E" filter="url(#glow-splash)"/>
+          </g>
+          <!-- Orbit 3 — clay -->
+          <g transform="rotate(120 100 100)" style="transform-origin:100px 100px;animation:splash-orbit3 8s linear infinite;">
+            <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#B05A46" stroke-width="2.5" opacity="1"/>
+            <circle cx="180" cy="100" r="7" fill="#B05A46" filter="url(#glow-splash)"/>
+          </g>
+          <!-- Nukleus -->
+          <circle cx="100" cy="100" r="14" fill="#D4AE3A" filter="url(#glow-splash)" style="animation:splash-pulse 2s ease-in-out infinite;transform-origin:100px 100px;"/>
+          <circle cx="100" cy="100" r="9" fill="#C49A20"/>
         </svg>
       </div>
 
