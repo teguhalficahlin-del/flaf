@@ -1595,6 +1595,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   position: relative;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 #s-start::after {
