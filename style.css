@@ -1,0 +1,1978 @@
+/* =============================================================
+   FLAF — style.css
+   Sprint 5 — Dashboard + Observability Aktif
+   Untuk menambah style baru: tambahkan di bagian paling bawah
+   Jangan edit bagian yang sudah ada kecuali memang perlu
+   ============================================================= */
+
+/* ── RESET & ROOT ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --ink:        #1A1A1A;
+  --gold:       #D4AE3A;
+  --gold-dim:   #B8960C;
+  --gold-pale:  #F7F1DC;
+  --sage:       #5C8A6E;
+  --sage-light: #E6EDE9;
+  --clay:       #B05A46;
+  --clay-light: #F2E8E5;
+  --slate:      #5D7A8C;
+  --cream:      #FAF8F3;
+  --parchment:  #F2EFE6;
+  --border:     #DDD9CE;
+  --muted:      #8A8578;
+
+  /* Alias untuk komponen Sprint 5 — mapping ke token lama */
+  --color-ink:     #1A1A1A;
+  --color-gold:    #D4AE3A;
+  --color-bg:      #FAF8F3;
+  --color-surface: #ffffff;
+  --color-border:  #DDD9CE;
+  --color-muted:   #8A8578;
+
+  /* ── TEMA VARIABLES — ganti nilai ini untuk ganti tema ── */
+  --tema-primary:        #D4AE3A;   /* warna utama / aksen */
+  --tema-primary-dim:    #B8960C;
+  --tema-primary-pale:   #F7F1DC;
+  --tema-primary-bg:     rgba(212,174,58,.08);
+  --tema-primary-border: rgba(212,174,58,.25);
+  --tema-primary-dot:    rgba(212,174,58,.05);
+  --tema-secondary:      #5C8A6E;   /* warna sukses / selesai */
+  --tema-secondary-light:#E6EDE9;
+  --tema-accent:         #B05A46;   /* warna aksen / nomor TP */
+  --tema-accent-light:   #F2E8E5;
+  --tema-slate:          #5D7A8C;   /* warna info / vocab */
+  --tema-bg-dark:        #1A1A1A;   /* background gelap layar */
+  --tema-bg-light:       rgba(255,255,255,.02); /* background body/konten terbuka */
+  --tema-bg-panel:       rgba(255,255,255,.12); /* background header panel tertutup */
+  --tema-border-light:   rgba(255,255,255,.1);  /* border terang */
+  --tema-border-dark:    rgba(212,174,58,.12); /* border gelap */
+  --tema-nav-bg:         rgba(26,26,26,.97);
+  --tema-muted:          #8A8578;
+}
+
+/* ── BODY ── */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: var(--ink);
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+/* ── PHONE SHELL — hanya untuk preview/demo ── */
+.phone {
+  display: contents;
+}
+
+/* Di mobile: phone shell melebar penuh, tanpa border/radius */
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  .phone {
+    width: 100%;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* =============================================================
+   SCREEN SYSTEM
+   Semua layar menggunakan class .screen
+   Navigasi diatur di app.js
+   ============================================================= */
+.screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  will-change: opacity, transform;
+}
+
+.screen[hidden] { display: none !important; }
+
+/* STATE 1: Baru muncul — state awal sebelum transisi, tidak ada transition di sini */
+.screen.screen-entering {
+  display: flex;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* STATE 2: Aktif — browser transisi dari screen-entering ke sini */
+.screen.screen-active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .28s cubic-bezier(.4,0,.2,1),
+              transform .28s cubic-bezier(.4,0,.2,1);
+}
+
+/* STATE 3: Keluar — fade out cepat ke atas */
+.screen.screen-exit {
+  display: flex;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .2s cubic-bezier(.4,0,.2,1),
+              transform .2s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+
+/* =============================================================
+   LAYAR SPLASH
+   ============================================================= */
+#s-splash {
+  background: var(--ink);
+  align-items: center;
+  justify-content: center;
+  padding: 48px 36px 52px;
+  position: relative;
+}
+#s-splash::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(212,174,58,.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+#s-splash::after {
+  content: none;
+}
+.splash-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(212,174,58,.12);
+  border: 1px solid rgba(212,174,58,.28);
+  border-radius: 4px; padding: 5px 16px;
+  font-size: 10px; font-weight: 600;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .1em; text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.splash-headline { text-align: center; margin-bottom: 12px; }
+.splash-headline h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  color: #fff; line-height: 1.25;
+}
+.splash-headline h1 em { font-style: italic; color: var(--gold); }
+.splash-sub {
+  font-size: 13px; color: rgba(255,255,255,.45);
+  text-align: center; line-height: 1.7;
+  font-style: italic; padding: 0 12px;
+  margin-bottom: 40px;
+}
+.atom-wrap {
+  width: 160px; height: 160px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 44px;
+}
+.btn-splash {
+  width: 100%; padding: 16px;
+  background: var(--gold); color: var(--ink);
+  border: none; border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 800;
+  cursor: pointer; letter-spacing: .08em; text-transform: uppercase;
+  box-shadow: 0 0 0 4px rgba(212,174,58,.2);
+}
+.btn-splash:active { transform: scale(.97); }
+.splash-note {
+  font-size: 10px; color: rgba(255,255,255,.25);
+  letter-spacing: .07em; text-transform: uppercase;
+  margin-top: 14px; text-align: center;
+}
+
+/* =============================================================
+   LAYAR MULAI
+   ============================================================= */
+#s-start { background: var(--ink); }
+.start-hero {
+  padding: 52px 28px 36px;
+  flex: 1;
+  display: flex; flex-direction: column; justify-content: space-between;
+  overflow-y: auto;
+}
+.sh-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.35);
+  border-radius: 4px; padding: 5px 12px;
+  font-size: 10px; font-weight: 600;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .08em; text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.sh-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  color: #fff; line-height: 1.25; margin-bottom: 16px;
+}
+.sh-title em { color: var(--gold); font-style: normal; }
+.sh-tagline {
+  font-size: 13px; color: rgba(255,255,255,.5);
+  line-height: 1.65; padding-left: 14px;
+  border-left: 2px solid var(--gold);
+  font-style: italic;
+}
+.hero-div { width: 32px; height: 1px; background: rgba(255,255,255,.15); margin: 28px 0; }
+.feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+.fc {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px; padding: 14px;
+  display: flex; flex-direction: column; gap: 6px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+.fc:hover  { background: rgba(255,255,255,.09); border-color: rgba(212,174,58,.35); transform: translateY(-1px); }
+.fc:active { transform: scale(.97); }
+.fc-dot    { width: 6px; height: 6px; border-radius: 50%; }
+.dot-gold  { background: var(--gold); }
+.dot-sage  { background: var(--sage); }
+.dot-clay  { background: var(--clay); }
+.dot-slate { background: var(--slate); }
+.fc-title  { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.9); }
+.fc-desc   { font-size: 10px; color: rgba(255,255,255,.4); line-height: 1.5; }
+.fc-arrow  { font-size: 11px; color: rgba(212,174,58,.6); margin-top: 4px; font-weight: 700; }
+
+/* =============================================================
+   LAYAR s-start — komponen baru Sprint 5
+   (menggantikan .feat-grid untuk navigasi ke s-dash & s-jadwal)
+   ============================================================= */
+.start-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px 12px;
+  background: var(--ink);
+  gap: 12px;
+  flex-shrink: 0;
+}
+.start-header-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.start-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.start-header-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.start-header-school {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.3;
+}
+.start-header-settings {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255,255,255,.08);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.start-header-settings:active { background: rgba(255,255,255,.15); }
+
+.start-menu {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  background: var(--cream);
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .2s, transform .15s;
+}
+.menu-card:active { transform: scale(.98); }
+.menu-card-primary { border-color: rgba(212,174,58,.4); background: var(--gold-pale); }
+.menu-card-primary:active { background: #f0e8c8; }
+
+.menu-card-icon { font-size: 24px; flex-shrink: 0; }
+.menu-card-body { flex: 1; }
+.menu-card-title { font-size: 14px; font-weight: 700; color: var(--ink); }
+.menu-card-desc  { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+.menu-card-arrow { font-size: 16px; color: var(--muted); flex-shrink: 0; }
+
+/* =============================================================
+   DASHBOARD — #s-dash (Sprint 5, menggantikan versi lama)
+   ============================================================= */
+
+/* Hapus style #s-dash lama yang tidak kompatibel dengan struktur Sprint 5.
+   Selector spesifik di bawah akan override semua yang lama. */
+
+#s-dash {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #1A1A1A;
+  background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  position: relative;
+}
+
+
+
+/* ─── DASH TOPBAR ── */
+.dash-topbar {
+  display: none;
+}
+.dash-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  color: var(--ink);
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s ease;
+}
+.dash-back-btn:active { background: var(--cream); }
+.dash-topbar-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); flex: 1;
+}
+.dash-topbar-right { flex-shrink: 0; }
+
+/* ─── CONNECTIVITY BADGE ── */
+.connectivity-badge-offline {
+  font-size: 11px; font-weight: 600;
+  color: var(--clay);
+  background: var(--clay-light);
+  border-radius: 4px;
+  padding: 3px 8px;
+  letter-spacing: .03em;
+}
+
+/* ─── DASH SCROLL AREA ── */
+.dash-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  padding: 16px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ─── SKELETON LOADING ── */
+.dash-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dash-skeleton[hidden] {
+  display: none;
+}
+.sk-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sk-block {
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    var(--cream)  50%,
+    var(--border) 75%
+  );
+  background-size: 200% 100%;
+  animation: sk-shimmer 1.4s infinite ease-in-out;
+}
+.sk-tall   { height: 120px; }
+.sk-medium { height: 72px; }
+.sk-short  { height: 48px; }
+
+@keyframes sk-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── PANEL ERROR STATE ── */
+.panel-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  gap: 12px;
+  text-align: center;
+}
+.panel-error-icon { font-size: 32px; }
+.panel-error-msg {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 280px;
+}
+.panel-error-retry {
+  margin-top: 8px;
+  padding: 10px 24px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.panel-error-retry:active { opacity: .85; }
+
+/* ─── PANEL LOADING ── */
+.panel-loading {
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* =============================================================
+   SCREEN WITH NAV — shared oleh s-dash & s-jadwal
+   ============================================================= */
+.screen-with-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* =============================================================
+   BOTTOM NAV — Sprint 5 (menggantikan versi lama .bot-nav)
+   Kompatibel dengan HTML baru: .bot-nav-item, .bot-nav-active
+   ============================================================= */
+.bot-nav {
+  display: flex;
+  flex-shrink: 0;
+  background: rgba(26,26,26,.97);
+  border-top: 1px solid rgba(212,174,58,.12);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.bot-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255,255,255,.35);
+  font-size: 11px; font-weight: 500;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .15s ease;
+}
+.bot-nav-item:active { opacity: .7; }
+.bot-nav-active {
+  color: var(--gold);
+  font-weight: 700;
+}
+.bot-nav-active .bot-nav-icon { stroke: var(--gold); }
+.bot-nav-icon {
+  width: 22px; height: 22px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Alias lama — supaya .ni yang sudah dipakai di screen lain tidak rusak */
+.ni { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; padding: 4px 0; }
+.ni-icon { font-size: 18px; }
+.ni-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin: 0 auto; opacity: 0; }
+.ni-lbl  { font-size: 9px; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+.ni.act .ni-lbl { color: var(--gold-dim); }
+.ni.act .ni-dot { opacity: 1; }
+
+/* =============================================================
+   TOAST NOTIFICATION (global)
+   ============================================================= */
+.toast {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--ink);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 13px; font-weight: 500;
+  white-space: nowrap;
+  max-width: calc(100vw - 48px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity .2s ease, transform .2s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+.toast.toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+/* =============================================================
+   MODAL SETTINGS (bottom sheet)
+   ============================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.modal[hidden] { display: none; }
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+}
+.modal-sheet {
+  position: relative;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  max-height: 85vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+.modal-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--ink); flex: 1;
+}
+.modal-close {
+  width: 32px; height: 32px;
+  border: none;
+  background: var(--cream);
+  border-radius: 50%;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── SETTINGS ROWS ── */
+.settings-section { margin-bottom: 24px; }
+.settings-label {
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.settings-row:last-of-type { border-bottom: none; }
+.settings-row-key { font-size: 13px; color: var(--muted); }
+.settings-row-val {
+  font-size: 13px; font-weight: 600;
+  color: var(--ink);
+  max-width: 60%;
+  text-align: right;
+  word-break: break-all;
+}
+.settings-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s ease;
+}
+.settings-btn:active { background: var(--border); }
+.settings-btn-primary { background: var(--ink); color: #fff; border-color: transparent; }
+.settings-btn-primary:active { background: #333; }
+.settings-btn-danger { color: var(--clay); border-color: rgba(176,90,70,.3); background: var(--clay-light); }
+.settings-btn-danger:active { background: #e8d4d0; }
+.settings-danger-note { font-size: 11px; color: var(--muted); line-height: 1.5; padding: 4px 0 0; }
+.settings-section-danger .settings-label { color: var(--clay); }
+
+/* =============================================================
+   EXPORT REMINDER BANNER
+   ============================================================= */
+.export-reminder {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 16px 16px;
+  padding: 12px 14px;
+  background: #FEF3E2;
+  border: 1px solid rgba(200,121,65,.3);
+  border-radius: 10px;
+}
+.export-reminder[hidden] { display: none; }
+.export-reminder-icon { font-size: 20px; flex-shrink: 0; }
+.export-reminder-body { flex: 1; }
+.export-reminder-title { font-size: 13px; font-weight: 700; color: #C87941; }
+.export-reminder-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.export-reminder-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: #C87941;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.export-reminder-btn:active { opacity: .85; }
+
+/* =============================================================
+   SUB LAYAR — header, body, komponen bersama
+   ============================================================= */
+.sub-header {
+  background: var(--ink);
+  padding: 18px 20px 20px;
+  display: flex; align-items: center; gap: 14px;
+  flex-shrink: 0;
+}
+.back-btn {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0;
+  font-size: 16px; color: #fff;
+}
+.sub-title { font-family: 'Playfair Display', serif; font-size: 17px; color: #fff; font-weight: 600; }
+.sub-body {
+  flex: 1; padding: 28px 20px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 12px; text-align: center; overflow-y: auto;
+}
+.sub-icon  { font-size: 48px; margin-bottom: 8px; }
+.sub-body h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--ink); }
+.sub-body p  { font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 260px; }
+.sub-badge {
+  background: var(--gold-pale); color: var(--gold-dim);
+  border: 1px solid rgba(212,174,58,.3);
+  border-radius: 6px; padding: 6px 16px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase; margin-top: 8px;
+}
+.screen-body { flex: 1; overflow-y: auto; }
+
+/* =============================================================
+   LAYAR s-jadwal — tab navigator
+   ============================================================= */
+.jadwal-topbar {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  padding-top: calc(12px + env(safe-area-inset-top, 0px));
+  background: var(--ink);
+  gap: 12px;
+  flex-shrink: 0;
+  min-height: 52px;
+}
+.jadwal-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: none;
+  background: rgba(255,255,255,.1);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.jadwal-back-btn:active { background: rgba(255,255,255,.2); }
+.jadwal-topbar-title {
+  font-size: 16px; font-weight: 700;
+  color: #fff; flex: 1;
+}
+.jadwal-topbar-right { flex-shrink: 0; }
+
+.jadwal-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Tab bar */
+.tab-bar {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  flex-shrink: 0;
+}
+.tab-btn {
+  flex: 1; padding: 13px 0;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: #fff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .15s, border-color .15s;
+}
+.tab-btn.tab-active { border-bottom-color: var(--gold); color: var(--gold-dim); }
+
+/* Alias lama — backward compat */
+.doc-tabs { display: flex; background: #fff; border-bottom: 2px solid var(--border); flex-shrink: 0; }
+.doc-tab  { flex: 1; padding: 13px 0; border: none; border-bottom: 3px solid transparent; background: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 700; color: var(--muted); cursor: pointer; }
+.doc-tab.active { border-bottom-color: var(--gold); color: var(--gold-dim); }
+.doc-panel { display: none; padding: 18px; }
+.doc-panel.active { display: block; }
+
+/* Tab panels */
+.tab-panel { padding: 0; }
+.tab-panel[hidden] { display: none; }
+.tab-panel-active { display: block; }
+
+/* PDF bulk cache bar */
+.pdf-bulk-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--gold-pale);
+  border-bottom: 1px solid rgba(212,174,58,.25);
+  gap: 12px;
+}
+.pdf-bulk-info { flex: 1; }
+.pdf-bulk-label { display: block; font-size: 12px; font-weight: 700; color: var(--gold-dim); }
+.pdf-bulk-status { display: block; font-size: 10px; color: var(--muted); margin-top: 2px; }
+.pdf-bulk-btn {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  background: var(--gold-dim);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px; font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pdf-bulk-btn:disabled { opacity: .55; cursor: not-allowed; }
+.pdf-bulk-btn:not(:disabled):active { opacity: .85; }
+.pdf-bulk-progress {
+  height: 4px;
+  background: var(--border);
+  position: relative;
+}
+.pdf-bulk-progress[hidden] { display: none; }
+.pdf-bulk-progress-bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width .3s ease;
+}
+.pdf-bulk-progress-label {
+  position: absolute;
+  right: 12px; top: 6px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+/* PDF unduh tombol individual */
+.pdf-btn-cached {
+  color: var(--sage) !important;
+  font-weight: 700;
+}
+
+/* =============================================================
+   TAMBAHKAN STYLE BARU DI BAWAH GARIS INI
+   Format: /* [NAMA LAYAR/FITUR] */
+/* ============================================================= */
+/* =============================================================
+   FLAF — CSS PATCH: s-activation screen
+   Sprint 5 Sesi 4
+   
+   CARA PAKAI:
+   Tambahkan konten ini ke bagian bawah style.css Anda.
+   Jangan buat file terpisah — merge ke style.css langsung.
+   =============================================================
+   
+   ASUMSI TOKEN (sudah ada di style.css):
+   --color-bg          → background utama app (dark)
+   --color-surface     → surface card
+   --color-primary     → warna aksen utama (gold)
+   --color-text        → teks utama
+   --color-text-muted  → teks sekunder
+   --color-border      → border
+   --color-error       → merah error
+   --color-success     → hijau sukses
+   
+   Jika token Anda berbeda namanya, sesuaikan di bawah.
+   ============================================================= */
+
+/* ── SCREEN: s-activation ─────────────────────────────────── */
+
+#s-activation {
+  display: block;
+  width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  background: var(--ink);
+  position: relative;
+}
+
+/* Sembunyikan saat hidden — konsisten dengan sistem screen FLAF */
+#s-activation[hidden] {
+  display: none !important;
+}
+
+/* ── LOGO / HEADER AREA ─────────────────────────────────── */
+
+.activation-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.activation-logo-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--color-primary, #D4AE3A) 0%, #B8960C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f0f0f;
+  letter-spacing: -1px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(212, 174, 58, 0.25);
+}
+
+.activation-logo-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted, rgba(255,255,255,0.4));
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── CARD UTAMA ──────────────────────────────────────────── */
+
+.activation-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-surface, #1a1a1a);
+  border: 1px solid var(--color-border, rgba(255,255,255,0.08));
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.activation-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-text, #f0f0f0);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.activation-card-subtitle {
+  font-size: 13px;
+  color: var(--color-text-muted, rgba(255,255,255,0.45));
+  line-height: 1.6;
+  margin-top: -12px;
+}
+
+/* ── FORM GROUP ──────────────────────────────────────────── */
+
+.activation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted, rgba(255,255,255,0.45));
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── INPUT FIELDS ────────────────────────────────────────── */
+
+.form-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-border, rgba(255,255,255,0.1));
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text, #f0f0f0);
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-input::placeholder {
+  color: var(--color-text-muted, rgba(255,255,255,0.25));
+  font-weight: 400;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary, #D4AE3A);
+  box-shadow: 0 0 0 3px rgba(212, 174, 58, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Kode aktivasi — monospace + uppercase */
+.form-input--code {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Error state pada input */
+.form-input.is-error {
+  border-color: var(--color-error, #C0392B);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+/* ── INLINE ERROR MESSAGE ─────────────────────────────────── */
+
+.form-error-msg {
+  font-size: 12px;
+  color: var(--color-error, #C0392B);
+  line-height: 1.5;
+  display: none;   /* hidden by default, tampil via JS: el.style.display = 'block' */
+}
+
+.form-error-msg.is-visible {
+  display: block;
+}
+
+/* ── TOMBOL AKTIVASI ─────────────────────────────────────── */
+
+.activation-btn {
+  width: 100%;
+  height: 52px;
+  border-radius: 12px;
+  border: none;
+  background: var(--color-primary, #D4AE3A);
+  color: #0f0f0f;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.18s ease, transform 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.activation-btn:active {
+  transform: scale(0.97);
+}
+
+.activation-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state — spinner menggantikan teks */
+.activation-btn.is-loading .btn-text {
+  opacity: 0;
+}
+
+.activation-btn.is-loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(0,0,0,0.2);
+  border-top-color: #0f0f0f;
+  border-radius: 50%;
+  animation: flaf-spin 0.7s linear infinite;
+}
+
+@keyframes flaf-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── STATUS BANNER ───────────────────────────────────────── */
+/* Muncul di bawah form: error global atau sukses */
+
+.activation-status {
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  display: none;
+}
+
+.activation-status.is-visible {
+  display: block;
+}
+
+.activation-status--error {
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+  color: #e07060;
+}
+
+.activation-status--success {
+  background: rgba(92, 138, 110, 0.12);
+  border: 1px solid rgba(92, 138, 110, 0.3);
+  color: #7DC99A;
+}
+
+.activation-status--warn {
+  background: rgba(200, 121, 65, 0.1);
+  border: 1px solid rgba(200, 121, 65, 0.25);
+  color: #E0936A;
+}
+
+.activation-status-icon {
+  font-size: 15px;
+  margin-right: 6px;
+  vertical-align: -2px;
+}
+
+/* ── FOOTER NOTE ─────────────────────────────────────────── */
+
+.activation-footer {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--color-text-muted, rgba(255,255,255,0.3));
+  line-height: 1.7;
+  padding-top: 4px;
+}
+
+.activation-footer a {
+  color: var(--color-primary, #D4AE3A);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ── EMERGENCY BYPASS LINK ───────────────────────────────── */
+/* Tersembunyi secara visual — hanya untuk situasi darurat */
+
+.activation-bypass-trigger {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 10px;
+  color: transparent;          /* Tidak terlihat normal */
+  user-select: none;
+  cursor: default;
+  padding: 8px 0;
+}
+
+/* Tampil setelah 3x gagal — JS toggle class .is-revealed */
+.activation-bypass-trigger.is-revealed {
+  color: var(--color-text-muted, rgba(255,255,255,0.25));
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── OFFLINE BADGE ───────────────────────────────────────── */
+/* Muncul saat device offline — aktivasi membutuhkan koneksi */
+
+.activation-offline-notice {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: rgba(200, 121, 65, 0.1);
+  border: 1px solid rgba(200, 121, 65, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #E0936A;
+  margin-top: -8px;
+}
+
+.activation-offline-notice.is-visible {
+  display: flex;
+}
+
+.activation-offline-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E0936A;
+  flex-shrink: 0;
+  animation: flaf-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes flaf-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ── RESPONSIVE: layar sangat kecil (< 360px) ───────────── */
+
+@media (max-width: 359px) {
+  #s-activation {
+    padding: 32px 16px 32px;
+  }
+
+  .activation-card {
+    padding: 22px 16px;
+    border-radius: 12px;
+  }
+
+  .activation-card-title {
+    font-size: 18px;
+  }
+
+  .form-input {
+    height: 44px;
+    font-size: 14px;
+  }
+
+  .activation-btn {
+    height: 48px;
+    font-size: 14px;
+  }
+}
+
+/* ── SAFE AREA: notch / gesture bar (iPhone & Android) ─── */
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #s-activation {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}
+#btn-hard-reset:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* ─── SPLASH WELCOME ──────────────────────────────────────── */
+
+.splash-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  padding: 36px 28px 28px;
+  background: var(--ink);
+  background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.splash-welcome-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.splash-badge {
+  display: inline-block;
+  border: 1px solid rgba(212,174,58,.4);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.splash-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.splash-title-plain {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff;
+  font-style: normal;
+}
+
+.splash-title-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.splash-tagline-new {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.splash-atom {
+  opacity: .9;
+  line-height: 0;
+}
+
+.splash-atom svg {
+  width: 130px;
+  height: 130px;
+}
+
+.splash-welcome-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.splash-btn-mulai {
+  width: 100%;
+  max-width: 340px;
+  padding: 16px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity .2s, transform .1s;
+}
+
+.splash-btn-mulai:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.splash-btn-mulai:not(:disabled):active {
+  transform: scale(.97);
+}
+
+.splash-footer {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.25);
+  text-transform: uppercase;
+}
+/* ─── ACTIVATION SCREEN ───────────────────────────────────── */
+
+#s-activation {
+  background: var(--ink);
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+.act-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  padding: 108px 28px 99px;
+  background: var(--ink);
+  background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.act-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.act-badge {
+  display: inline-block;
+  border: 1px solid rgba(212,174,58,.4);
+  border-radius: 20px;
+  padding: 5px 16px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.act-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.act-title-plain {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff;
+  font-style: normal;
+}
+
+.act-title-italic {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.act-tagline-new {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* DIUBAH: gap dikecilkan agar tinggi form = tinggi atom splash */
+.act-fields {
+  width: 309px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+  margin: 48px auto 0;
+}
+
+.act-input-line {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(212,174,58,.25);
+  padding: 4px 0;
+  font-size: 13px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color .2s;
+}
+
+.act-input-line::placeholder {
+  color: rgba(255,255,255,.25);
+  font-style: italic;
+}
+
+.act-input-line:focus {
+  border-bottom-color: var(--gold);
+}
+
+.act-input-line--code {
+  font-family: monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.act-bottom {
+  width: 100%;
+  max-width: 253px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.act-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.act-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,.5);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.act-input {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 9px 13px;
+  font-size: 13px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .2s;
+  -webkit-appearance: none;
+}
+
+.act-input::placeholder {
+  color: rgba(255,255,255,.25);
+}
+
+.act-input:focus {
+  border-color: var(--gold);
+}
+
+.act-input--code {
+  font-family: monospace;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.act-code-hint {
+  font-size: 10px;
+  color: rgba(255,255,255,.3);
+}
+
+.act-error {
+  background: rgba(192,57,43,.15);
+  border: 1px solid rgba(192,57,43,.3);
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 12px;
+  color: #e88;
+  line-height: 1.5;
+}
+
+.act-btn {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity .2s, transform .1s;
+  box-shadow: 0 0 0 4px rgba(212,174,58,.2);
+}
+
+.act-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.act-btn:not(:disabled):active {
+  transform: scale(.97);
+}
+
+.act-btn--secondary {
+  background: transparent;
+  border: 1px solid rgba(212,174,58,.3);
+  color: var(--gold);
+}
+
+/* DIUBAH: atom disembunyikan di layar aktivasi */
+.act-atom {
+  display: none;
+}
+
+.act-footer {
+  font-size: 10px;
+  color: rgba(255,255,255,.25);
+  text-align: center;
+  padding-top: 4px;
+}
+/* ─── HOME / MENU UTAMA ───────────────────────────────────── */
+
+#s-start {
+  background: #1A1A1A;
+  background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
+  background-size: 22px 22px;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+#s-start::after {
+  content: none;
+}
+
+.home-wrap {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 32px;
+  background: transparent;
+}
+
+.home-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 20px 16px;
+  border-bottom: 1px solid rgba(212,174,58,.12);
+}
+
+.home-header-left { display: flex; flex-direction: column; gap: 3px; }
+
+.home-welcome {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(212,174,58,.6);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.home-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.home-school {
+  font-size: 14px;
+  color: rgba(255,255,255,.35);
+}
+
+.home-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.home-progress-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 14px 20px 0;
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.15);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.home-progress-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.home-progress-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255,255,255,.3);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.home-progress-fill {
+  height: 10px;
+  background: #D4AE3A;
+  border-radius: 4px;
+  transition: width .4s ease;
+}
+
+.home-progress-count {
+  font-size: 12px;
+  font-weight: 800;
+  color: #D4AE3A;
+  white-space: nowrap;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 16px 0;
+}
+
+.home-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 18px 16px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s;
+}
+
+.home-card:active { background: rgba(255,255,255,.06); }
+
+.home-card-primary {
+  background: rgba(212,174,58,.1);
+  border-color: rgba(212,174,58,.2);
+}
+
+.home-card-primary:active { background: rgba(212,174,58,.15); }
+
+.home-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-card-icon-gold { background: rgba(212,174,58,.5); border: 1px solid rgba(212,174,58,.7); }
+.home-card-icon-sage  { background: rgba(92,138,110,.5);  border: 1px solid rgba(92,138,110,.7); }
+.home-card-icon-clay  { background: rgba(176,90,70,.5);   border: 1px solid rgba(176,90,70,.7); }
+.home-card-icon-slate { background: rgba(93,122,140,.5);  border: 1px solid rgba(93,122,140,.7); }
+
+.home-card-body { flex: 1; min-width: 0; }
+
+.home-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.home-card-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,.9);
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.home-streak-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #D4AE3A;
+  background: rgba(212,174,58,.15);
+  border-radius: 6px;
+  padding: 2px 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.home-rekap-nilai {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.home-rekap-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.home-rekap-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.home-rekap-btn {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(212,174,58,.7);
+  border: 1px solid rgba(212,174,58,.2);
+  border-radius: 6px;
+  padding: 3px 9px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.home-rekap-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.home-rekap-stat {
+  flex: 1;
+  background: rgba(255,255,255,.04);
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.home-rekap-num {
+  font-size: 18px;
+  font-weight: 800;
+  color: #D4AE3A;
+  line-height: 1;
+}
+
+.home-rekap-num-green { color: #5C8A6E; }
+.home-rekap-num-slate { color: #5D7A8C; }
+
+.home-rekap-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  margin-top: 3px;
+}
+
+.home-backup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+
+.home-backup-body { flex: 1; }
+
+.home-backup-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.home-backup-desc {
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+.home-backup-btn {
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 4px 10px;
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.home-backup--safe {
+  background: rgba(92,138,110,.08);
+  border: 1px solid rgba(92,138,110,.2);
+}
+.home-backup--safe .home-backup-title { color: rgba(255,255,255,.7); }
+.home-backup--safe .home-backup-desc  { color: rgba(92,138,110,.8); }
+.home-backup--safe svg                { stroke: #5C8A6E; }
+.home-backup--safe .home-backup-btn   { color: #5C8A6E; border-color: rgba(92,138,110,.3); }
+
+.home-backup--warn {
+  background: rgba(176,90,70,.08);
+  border: 1px solid rgba(176,90,70,.2);
+}
+.home-backup--warn .home-backup-title { color: rgba(255,255,255,.7); }
+.home-backup--warn .home-backup-desc  { color: rgba(176,90,70,.8); }
+.home-backup--warn svg                { stroke: #B05A46; }
+.home-backup--warn .home-backup-btn   { color: #B05A46; border-color: rgba(176,90,70,.3); }
+
+/* ─── COMING SOON ─────────────────────────────────────────── */
+
+.coming-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: #1A1A1A;
+  background-image: radial-gradient(circle, rgba(212,174,58,.04) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.coming-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.6);
+  cursor: pointer;
+  margin: 20px 20px 0;
+  flex-shrink: 0;
+}
+
+.coming-inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 32px 64px;
+  text-align: center;
+  gap: 16px;
+}
+
+.coming-atom { opacity: .7; }
+
+.coming-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(212,174,58,.8);
+  border: 1px solid rgba(212,174,58,.3);
+  border-radius: 20px;
+  padding: 4px 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.coming-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.coming-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  line-height: 1.7;
+  max-width: 280px;
+}
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.screen {
+  overflow-y: auto;
+}
+@media (max-height: 750px) {
+  .act-atom svg {
+    width: 50px;
+    height: 50px;
+  }
+  .act-code-hint {
+    display: none;
+  }
+}
+#s-activation {
+  overflow-y: auto;
+  height: 100dvh;
+}
+.act-gold-line {
+  display: none;
+}
+#s-activation {
+  overflow: hidden !important;
+}
+.home-header-atom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(212,174,58,0.5));
+} 
