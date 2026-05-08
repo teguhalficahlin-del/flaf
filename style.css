@@ -976,7 +976,7 @@ body {
   -webkit-appearance: none;
   width: 100%; box-sizing: border-box;
 }
-.act-input::placeholder { color: rgba(255,255,255,.45); }
+.act-input::placeholder { font-size: 16px; color: rgba(255,255,255,.55); }
 .act-input:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(212,174,58,.12);
