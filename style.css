@@ -78,8 +78,11 @@ body {
   width: 100%;
   height: 100%;
   height: 100dvh;
+  /* Default: scroll aktif. Layar dengan nav akan override via .screen-with-nav */
   overflow-y: auto;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   flex-direction: column;
   will-change: opacity, transform;
 }
@@ -174,9 +177,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow: hidden;
+  /* Splash fit to screen — tidak perlu scroll */
+  min-height: 100dvh;
   padding: 36px 28px 28px;
   background: var(--ink);
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
@@ -505,7 +507,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* overflow hidden di sini supaya bottom nav tidak ikut scroll */
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 /* =============================================================
@@ -555,7 +559,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* overflow hidden — scroll dihandle oleh .dash-scroll-area */
   overflow: hidden;
+  overscroll-behavior: none;
   background: #1A1A1A;
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -902,12 +908,15 @@ body {
 #s-activation {
   background: var(--ink);
   width: 100%;
-  height: 100dvh;
-  max-height: 100dvh;
-  /* overflow-y: auto agar form bisa scroll di layar sangat pendek */
+  /* min-height bukan height — konten boleh melebihi viewport */
+  min-height: 100dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   display: block;
+  /* override position:fixed dari .screen agar scroll aktif */
+  position: relative;
 }
 #s-activation[hidden] { display: none !important; }
 
