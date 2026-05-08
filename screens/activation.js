@@ -315,50 +315,50 @@ function _buildActivationHTML() {
           <span class="act-title-italic">Accumulation</span>
           <span class="act-title-plain">Framework</span>
         </h1>
-        <p class="act-tagline-new">Berani bicara dibangun<br>dari latihan kecil.</p>
+        <p class="act-tagline-new">Persiapan minimal, hasil maksimal.</p>
+      </div>
 
-        <div class="act-fields">
-          <div class="act-field">
-            <label class="act-label" for="act-name">Nama Guru</label>
-            <input
-              id="act-name"
-              class="act-input-line"
-              type="text"
-              placeholder="Nama lengkap dan gelar"
-              autocomplete="name"
-              maxlength="80"
-            >
-          </div>
-
-          <div class="act-field">
-            <label class="act-label" for="act-school">Nama Sekolah</label>
-            <input
-              id="act-school"
-              class="act-input-line"
-              type="text"
-              placeholder="Tempat mengajar"
-              autocomplete="organization"
-              maxlength="100"
-            >
-          </div>
-
-          <div class="act-field">
-            <label class="act-label" for="act-code">Kode Aktivasi</label>
-            <input
-              id="act-code"
-              class="act-input-line act-input-line--code"
-              type="text"
-              placeholder="XXXX-XXXX-XXXX"
-              autocomplete="off"
-              autocorrect="off"
-              autocapitalize="characters"
-              spellcheck="false"
-              maxlength="14"
-            >
-          </div>
-
-          <div class="act-error" id="act-error" hidden></div>
+      <div class="act-fields">
+        <div class="act-field">
+          <label class="act-label" for="act-name">Nama Guru</label>
+          <input
+            id="act-name"
+            class="act-input"
+            type="text"
+            placeholder="Nama lengkap dan gelar"
+            autocomplete="name"
+            maxlength="80"
+          >
         </div>
+
+        <div class="act-field">
+          <label class="act-label" for="act-school">Nama Sekolah</label>
+          <input
+            id="act-school"
+            class="act-input"
+            type="text"
+            placeholder="Tempat mengajar"
+            autocomplete="organization"
+            maxlength="100"
+          >
+        </div>
+
+        <div class="act-field">
+          <label class="act-label" for="act-code">Kode Aktivasi</label>
+          <input
+            id="act-code"
+            class="act-input act-input--code"
+            type="text"
+            placeholder="XXXX-XXXX-XXXX"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="characters"
+            spellcheck="false"
+            maxlength="14"
+          >
+        </div>
+
+        <div class="act-error" id="act-error" hidden></div>
       </div>
 
       <div class="act-bottom">
