@@ -950,8 +950,8 @@ body {
   font-weight: 700; font-style: italic; color: var(--gold);
 }
 .act-tagline-new {
-  font-size: 14px; font-style: italic;
-  color: rgba(255,255,255,.5); line-height: 1.6; margin: 0;
+  font-size: 15px; font-style: italic;
+  color: rgba(255,255,255,.75); line-height: 1.65; margin: 0;
 }
 .act-fields {
   width: 100%; max-width: 320px;
@@ -961,12 +961,12 @@ body {
 .act-field { display: flex; flex-direction: column; gap: 6px; }
 .act-label {
   font-size: 12px; font-weight: 700;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.8);
   letter-spacing: .06em; text-transform: uppercase;
 }
 .act-input {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.22);
   border-radius: 10px;
   padding: 12px 14px;
   min-height: 48px;
@@ -976,7 +976,7 @@ body {
   -webkit-appearance: none;
   width: 100%; box-sizing: border-box;
 }
-.act-input::placeholder { color: rgba(255,255,255,.28); }
+.act-input::placeholder { color: rgba(255,255,255,.45); }
 .act-input:focus {
   border-color: var(--gold);
   box-shadow: 0 0 0 3px rgba(212,174,58,.12);
