@@ -208,7 +208,7 @@ body {
 }
 
 .splash-btn-mulai {
-  width: 100%; max-width: 340px;
+  width: 100%;
   padding: 16px;
   background: var(--gold); color: var(--ink);
   border: none; border-radius: 12px;
@@ -253,10 +253,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* min-height melebihi 100dvh supaya konten push keluar dan parent bisa scroll */
   min-height: 100dvh;
-  min-height: 100vh; /* fallback */
-  padding: clamp(40px, 8vh, 72px) clamp(20px, 6vw, 36px) clamp(36px, 7vh, 60px);
+  min-height: 100vh;
+  /* Padding horizontal kontrol lebar efektif — tidak perlu max-width */
+  padding: clamp(40px, 8vh, 72px) clamp(24px, 8vw, 80px) clamp(36px, 7vh, 60px);
   background: var(--ink);
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -301,7 +301,7 @@ body {
 
 /* Form */
 .act-fields {
-  width: 100%; max-width: 360px;
+  width: 100%;
   display: flex; flex-direction: column;
   gap: 16px; text-align: left;
   margin: clamp(20px, 4vh, 32px) auto 0;
@@ -349,7 +349,7 @@ body {
 
 /* Tombol */
 .act-bottom {
-  width: 100%; max-width: 360px;
+  width: 100%;
   display: flex; flex-direction: column;
   align-items: center; gap: 12px;
   margin: clamp(16px, 3vh, 28px) auto 0;
@@ -510,7 +510,12 @@ body {
 .home-progress-fill  { height: 8px; background: #D4AE3A; border-radius: 4px; transition: width .4s ease; }
 .home-progress-count { font-size: 14px; font-weight: 800; color: #D4AE3A; white-space: nowrap; }
 
-.home-menu { display: flex; flex-direction: column; gap: 10px; padding: 14px var(--sp-lg) 0; }
+.home-menu {
+  display: grid;
+  grid-template-columns: 1fr;   /* HP: 1 kolom */
+  gap: 10px;
+  padding: 14px var(--sp-lg) 0;
+}
 
 .home-card {
   display: flex; align-items: center; gap: 14px;
@@ -519,6 +524,8 @@ body {
   cursor: pointer; width: 100%; text-align: left;
   -webkit-tap-highlight-color: transparent;
   transition: background .15s; min-height: 68px;
+  /* grid child: tidak perlu width:100% lagi, tapi tetap di sini untuk compat */
+  box-sizing: border-box;
 }
 .home-card:active { background: rgba(255,255,255,.07); }
 .home-card-primary { background: rgba(212,174,58,.1); border-color: rgba(212,174,58,.25); }
@@ -806,17 +813,17 @@ body {
 }
 
 /* =============================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS — sistem fluid, tanpa fixed max-width
    ============================================================= */
 
-/* HP sangat pendek: landscape atau HP lama < 600px tinggi */
+/* ── HP sangat pendek: < 600px tinggi (landscape, HP lama) ── */
 @media (max-height: 600px) {
-  .splash-welcome     { gap: 12px; padding: 20px; }
+  .splash-welcome     { gap: 12px; padding: 16px 20px; }
   .splash-atom svg    { width: 72px; height: 72px; }
   .splash-title       { font-size: 18px; }
   .splash-tagline-new { font-size: 13px; }
   .splash-btn-mulai   { min-height: 48px; font-size: 15px; }
-  .act-wrap           { padding: 20px 20px 20px; }
+  .act-wrap           { padding: 20px clamp(20px, 8vw, 60px); }
   .act-title          { font-size: 18px; }
   .act-tagline-new    { font-size: 13px; }
   .act-fields         { margin-top: 14px; gap: 10px; }
@@ -825,49 +832,74 @@ body {
   .act-btn            { min-height: 48px; padding: 12px; font-size: 15px; }
 }
 
-/* HP pendek: 600–720px tinggi — mayoritas Android mid-range */
+/* ── HP pendek: 600–720px tinggi ── */
 @media (max-height: 720px) and (min-height: 601px) {
   .splash-welcome     { gap: clamp(12px, 2.5vh, 20px); }
   .splash-atom svg    { width: 100px; height: 100px; }
-  .act-wrap           { padding: 32px 24px 28px; }
+  .act-wrap           { padding: 32px clamp(24px, 8vw, 60px) 28px; }
   .act-fields         { margin-top: 18px; gap: 12px; }
   .act-input          { min-height: 52px; }
   .act-bottom         { margin-top: 14px; }
 }
 
-/* HP sangat sempit: < 360px lebar */
+/* ── HP sangat sempit: < 360px lebar ── */
 @media (max-width: 359px) {
-  .act-wrap           { padding: 24px 14px 24px; }
+  .act-wrap           { padding: 24px 14px; }
   .act-title          { font-size: 18px; }
-  .act-fields         { max-width: 100%; }
-  .act-bottom         { max-width: 100%; }
   .splash-title       { font-size: 18px; }
   .home-card          { padding: 12px; gap: 10px; }
   .home-card-icon     { width: 38px; height: 38px; }
 }
 
-/* HP lebar / phablet: > 414px */
-@media (min-width: 415px) {
-  .act-fields         { max-width: 380px; }
-  .act-bottom         { max-width: 380px; }
-  .splash-btn-mulai   { max-width: 360px; }
-}
-
-/* Tablet / landscape: > 600px lebar */
-@media (min-width: 600px) {
-  .act-wrap           { max-width: 520px; margin-left: auto; margin-right: auto; }
-  .splash-welcome     { max-width: 520px; margin-left: auto; margin-right: auto; }
-  .home-wrap          { max-width: 520px; margin-left: auto; margin-right: auto; }
-  #s-start            { justify-content: center; }
+/* ── Tablet portrait / phablet: 600px–767px lebar ── */
+@media (min-width: 600px) and (max-width: 767px) {
+  /* Padding horizontal lebih besar agar teks tidak terlalu lebar */
+  .act-wrap           { padding: clamp(40px, 8vh, 72px) clamp(40px, 12vw, 100px) clamp(36px, 7vh, 60px); }
+  .splash-welcome     { padding: clamp(32px, 6vh, 56px) clamp(40px, 12vw, 100px); }
+  /* Grid 2 kolom untuk home menu di tablet portrait */
+  .home-menu          { grid-template-columns: 1fr 1fr; }
+  /* Card lebih ringkas di 2 kolom */
+  .home-card          { flex-direction: column; align-items: flex-start; gap: 10px; min-height: 100px; }
+  .home-card-body     { width: 100%; }
   .act-title          { font-size: 28px; }
   .splash-title       { font-size: 28px; }
 }
 
-/* Desktop: > 768px */
-@media (min-width: 768px) {
-  .act-wrap           { max-width: 560px; }
-  .splash-welcome     { max-width: 560px; }
-  .home-wrap          { max-width: 560px; }
+/* ── Tablet landscape / kecil: 768px–1023px ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .act-wrap           { padding: clamp(40px, 8vh, 72px) clamp(60px, 15vw, 160px) clamp(36px, 7vh, 60px); }
+  .splash-welcome     { padding: clamp(32px, 6vh, 56px) clamp(60px, 15vw, 160px); }
+  /* Grid 2 kolom home menu */
+  .home-menu          { grid-template-columns: 1fr 1fr; }
+  .home-card          { flex-direction: column; align-items: flex-start; gap: 10px; min-height: 110px; }
+  .home-card-body     { width: 100%; }
+  .home-wrap          { padding-left: clamp(16px, 5vw, 40px); padding-right: clamp(16px, 5vw, 40px); }
+  .home-header        { padding: 16px clamp(16px, 5vw, 40px) 18px; }
+  .home-progress-bar-wrap { margin: 14px clamp(16px, 5vw, 40px) 0; }
+  .home-menu          { padding: 14px clamp(16px, 5vw, 40px) 0; }
+  .act-title          { font-size: 30px; }
+  .splash-title       { font-size: 30px; }
+}
+
+/* ── Desktop: 1024px+ ── */
+@media (min-width: 1024px) {
+  /* Aktivasi & splash: teks besar, padding sangat lebar */
+  .act-wrap           { padding: clamp(48px, 8vh, 80px) clamp(80px, 20vw, 240px) clamp(40px, 7vh, 64px); }
+  .splash-welcome     { padding: clamp(40px, 6vh, 64px) clamp(80px, 20vw, 240px); }
+  /* Home: grid 2 kolom, max width konten dikontrol oleh home-wrap padding */
+  .home-menu          { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .home-card          { flex-direction: column; align-items: flex-start; gap: 10px; min-height: 120px; }
+  .home-card-body     { width: 100%; }
+  .home-wrap          { padding-left: clamp(24px, 8vw, 80px); padding-right: clamp(24px, 8vw, 80px); }
+  .home-header        { padding: 20px clamp(24px, 8vw, 80px) 20px; }
+  .home-progress-bar-wrap { margin: 16px clamp(24px, 8vw, 80px) 0; }
+  .home-menu          { padding: 16px clamp(24px, 8vw, 80px) 0; }
+  .act-title          { font-size: 34px; }
+  .splash-title       { font-size: 34px; }
+  .act-input          { font-size: 17px; min-height: 60px; }
+  .act-btn            { min-height: 60px; font-size: 17px; }
+  /* Nav lebih tinggi di desktop */
+  :root               { --nav-h: 64px; }
 }
 
 /* =============================================================
