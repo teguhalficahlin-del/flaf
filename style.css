@@ -175,11 +175,12 @@ body {
 .splash-welcome {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 28px;
   /* Splash fit to screen — tidak perlu scroll */
   min-height: 100dvh;
-  padding: 36px 28px 28px;
+  padding: 48px 28px 40px;
   background: var(--ink);
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -190,7 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 .splash-badge {
   display: inline-block;
@@ -227,7 +228,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px; width: 100%;
+  gap: 12px;
+  width: 100%;
+  margin-top: 4px;
 }
 .splash-btn-mulai {
   width: 100%;
@@ -922,10 +925,10 @@ body {
 
 .act-wrap {
   display: flex; flex-direction: column;
-  justify-content: flex-start; align-items: center;
+  justify-content: center; align-items: center;
+  /* min-height agar konten bisa push ke bawah tapi tidak overflow kosong */
   min-height: 100dvh;
-  /* clamp: aman di layar 580px–900px+ */
-  padding: clamp(48px, 10vh, 108px) 28px clamp(48px, 8vh, 80px);
+  padding: 48px 28px 40px;
   background: var(--ink);
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
   background-size: 22px 22px;
@@ -964,8 +967,8 @@ body {
 }
 .act-fields {
   width: 100%; max-width: 320px;
-  display: flex; flex-direction: column; gap: 20px;
-  text-align: left; margin: 40px auto 0;
+  display: flex; flex-direction: column; gap: 16px;
+  text-align: left; margin: 28px auto 0;
 }
 .act-field { display: flex; flex-direction: column; gap: 6px; }
 .act-label {
@@ -1004,7 +1007,7 @@ body {
 .act-bottom {
   width: 100%; max-width: 320px;
   display: flex; flex-direction: column;
-  align-items: center; gap: 12px; margin-top: 32px;
+  align-items: center; gap: 12px; margin-top: 24px;
 }
 .act-btn {
   width: 100%; padding: 14px 16px; min-height: 52px;
