@@ -266,6 +266,8 @@ body {
   background: var(--ink);
   align-items: stretch;
   justify-content: flex-start;
+  /* min-height agar act-wrap (child) bisa pakai space-between dengan benar */
+  min-height: 100%;
 }
 #s-activation[hidden] { display: none !important; }
 
@@ -325,7 +327,6 @@ body {
   width: 100%;
   display: flex; flex-direction: column;
   gap: 16px; text-align: left;
-  margin: clamp(20px, 4vh, 32px) auto 0;
 }
 .act-field { display: flex; flex-direction: column; gap: 6px; }
 
