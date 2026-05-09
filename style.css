@@ -1049,7 +1049,7 @@ body {
 .ds-list-item:last-child { border-bottom: none; }
 .ds-list-item:active { background: rgba(255,255,255,.04); }
 .ds-list-item-name { font-size: 13px; font-weight: 700; color: #fff; }
-.ds-list-item-sub  { font-size: 10px; color: rgba(255,255,255,.35); margin-top: 2px; }
+.ds-list-item-sub  { font-size: 15px; color: rgba(255,255,255,.35); margin-top: 2px; }
 .ds-list-arrow     { color: rgba(255,255,255,.5); font-size: 18px; flex-shrink: 0; }
 
 /* ── Breadcrumb / nav ── */
@@ -1077,11 +1077,11 @@ body {
   border: 1px solid rgba(92,138,110,.3);
   border-radius: 14px; padding: 16px;
 }
-.ds-sesi-tag     { font-size: 9px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
-.ds-sesi-tp-num  { font-size: 10px; font-weight: 700; color: #B05A46; }
+.ds-sesi-tag     { font-size: 14px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.ds-sesi-tp-num  { font-size: 16px; font-weight: 700; color: #B05A46; }
 .ds-sesi-tp-name { font-size: 15px; font-weight: 800; color: #fff; margin-top: 2px; }
-.ds-sesi-rombel  { font-size: 11px; color: rgba(255,255,255,.5); margin-top: 4px; }
-.ds-sesi-date    { font-size: 11px; color: rgba(212,174,58,.6); margin-top: 4px; }
+.ds-sesi-rombel  { font-size: 16px; color: rgba(255,255,255,.5); margin-top: 4px; }
+.ds-sesi-date    { font-size: 16px; color: rgba(212,174,58,.6); margin-top: 4px; }
 
 /* ── Presensi panel ── */
 .ds-presensi-row {
@@ -1136,29 +1136,29 @@ body {
   font-size: 24px; font-weight: 800; color: #D4AE3A;
 }
 .ds-streak-unit {
-  font-size: 13px; font-weight: 600;
+  font-size: 16px; font-weight: 600;
   color: rgba(255,255,255,.5); margin-left: 4px;
 }
 .ds-streak-label {
-  font-size: 14px; font-weight: 700; color: #fff; margin-top: 3px;
+  font-size: 16px; font-weight: 700; color: #fff; margin-top: 3px;
 }
 .ds-jejak-level-col {
   flex-shrink: 0; text-align: right;
 }
 .ds-level-emoji { font-size: 22px; line-height: 1; }
 .ds-level-nama {
-  font-size: 11px; font-weight: 700;
+  font-size: 16px; font-weight: 700;
   color: rgba(255,255,255,.7); margin-top: 2px; white-space: nowrap;
 }
 .ds-level-gaji {
-  font-size: 13px; font-weight: 800; color: #5C8A6E; white-space: nowrap;
+  font-size: 16px; font-weight: 800; color: #D4AE3A; white-space: nowrap;
 }
 .ds-jejak-progress-wrap {
   display: flex; align-items: flex-start; margin-bottom: 8px;
 }
 .ds-jejak-progress-inner { flex: 1; min-width: 0; }
 .ds-progress-next-text {
-  font-size: 13px; font-weight: 700;
+  font-size: 16px; font-weight: 700;
   color: rgba(255,255,255,.55); line-height: 1.4;
 }
 .ds-progress-track {
@@ -1171,7 +1171,7 @@ body {
   border-radius: 3px; transition: width .4s ease;
 }
 .ds-progress-bar-label {
-  font-size: 9px; color: rgba(255,255,255,.3); margin-top: 3px;
+  font-size: 14px; color: rgba(255,255,255,.3); margin-top: 3px;
 }
 
 /* ── Stat grid (3 kolom) ── */
@@ -1189,7 +1189,7 @@ body {
 .ds-stat-num--sage  { color: #D4AE3A; }
 .ds-stat-num--slate { color: #5D7A8C; }
 .ds-stat-label {
-  font-size: 11px; color: rgba(255,255,255,.35);
+  font-size: 14px; color: rgba(255,255,255,.35);
   margin-top: 2px; text-transform: uppercase; letter-spacing: .05em;
 }
 
