@@ -195,8 +195,8 @@ body {
 
 .splash-atom { opacity: .9; line-height: 0; }
 .splash-atom svg {
-  width: clamp(270px, 72vw, 330px);
-  height: clamp(270px, 72vw, 330px);
+  width: clamp(282px, 88vw, 360px);
+  height: clamp(282px, 88vw, 360px);
 }
 
 .splash-welcome-bottom {
@@ -838,8 +838,7 @@ body {
 /* ── HP pendek: 600–720px tinggi ── */
 @media (max-height: 720px) and (min-height: 601px) {
   .splash-welcome     { gap: clamp(12px, 2.5vh, 20px); }
-  .splash-atom svg    { width: 180px; height: 180px; }
-  .splash-atom svg    { width: 180px; height: 180px; }
+  .splash-atom svg    { width: 200px; height: 200px; }
   .act-wrap           { padding: 32px clamp(24px, 8vw, 60px) 28px; }
   .act-fields         { margin-top: 18px; gap: 12px; }
   .act-input          { min-height: 52px; }
