@@ -980,7 +980,7 @@ body {
 
 /* ── Section header dalam card ── */
 .ds-section-label {
-  font-size: 9px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   color: rgba(212,174,58,.7);
   letter-spacing: .08em; text-transform: uppercase;
 }
