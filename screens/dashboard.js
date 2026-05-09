@@ -375,20 +375,20 @@ function _buildFasePenilaian() {
           type="number" min="0" max="100" placeholder="—"
           class="ds-lsr-input"
           oninput="dashNilaiUpdate('${s.id}')"
-          onfocus="this.style.borderColor='rgba(92,138,110,.5)'"
+          onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
           onblur="this.style.borderColor='rgba(255,255,255,.12)'"
         >
       </div>`).join('')}
     </div>
     <div>
-      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:3px;">Catatan</div>
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:3px;">Catatan</div>
       <textarea
         id="catatan-${s.id}"
         placeholder="Observasi singkat..."
         maxlength="500"
         rows="2"
         class="ds-textarea"
-        onfocus="this.style.borderColor='rgba(92,138,110,.4)'"
+        onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
         onblur="dashCatatanSimpan('${s.id}')"
       ></textarea>
     </div>
@@ -416,10 +416,10 @@ function _buildSesiHTML() {
   const totalH = Object.values(statusMap).filter(v => v === 'H').length;
 
   const STATUS_CFG = {
-    H: { bg: 'rgba(92,138,110,.15)',  color: '#5C8A6E',  dot: 'rgba(92,138,110,.3)'   },
-    S: { bg: 'rgba(212,174,58,.1)',   color: '#D4AE3A',  dot: 'rgba(212,174,58,.25)'  },
-    I: { bg: 'rgba(100,140,200,.1)',  color: '#7B9FD4',  dot: 'rgba(100,140,200,.25)' },
-    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)', dot: 'rgba(255,255,255,.06)' },
+    H: { bg: 'rgba(212,174,58,.12)',  color: '#D4AE3A',             dot: 'rgba(212,174,58,.25)'  },
+    S: { bg: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.55)', dot: 'rgba(255,255,255,.12)' },
+    I: { bg: 'rgba(255,255,255,.03)', color: 'rgba(255,255,255,.35)', dot: 'rgba(255,255,255,.08)' },
+    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)',  dot: 'rgba(255,255,255,.06)' },
   };
 
   const siswaHTML = siswaList.length === 0 ? `
@@ -472,7 +472,7 @@ function _buildSesiHTML() {
       <div class="ds-section-label">Isi Presensi</div>
       <div style="display:flex;align-items:center;gap:8px;">
         <div id="presensi-count" style="font-size:16px;font-weight:700;color:#D4AE3A;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
-        <div id="presensi-toggle-icon" style="font-size:14px;color:rgba(255,255,255,.3);transition:transform .2s;">›</div>
+        <div id="presensi-toggle-icon" style="font-size:14px;color:rgba(255,255,255,.5);transition:transform .2s;">›</div>
       </div>
     </div>
     <div id="presensi-panel" style="display:none;">
@@ -503,7 +503,7 @@ function _buildSesiHTML() {
       onblur="this.style.borderColor='rgba(255,255,255,.1)'"
     ></textarea>
     <div style="margin-top:10px;">
-      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:6px;">Kendala sesi</div>
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Kendala sesi</div>
       <div class="ds-kendala-wrap">
         ${[
           { val: 'lancar',          label: '✅ Lancar' },
@@ -604,8 +604,8 @@ function _ttsSpeak(teks, btnEl) {
   if (btnEl) {
     _ttsActiveBtn = btnEl;
     btnEl.textContent = '⏸';
-    btnEl.style.background  = 'rgba(92,138,110,.5)';
-    btnEl.style.borderColor = '#5C8A6E';
+    btnEl.style.background  = 'rgba(212,174,58,.3)';
+    btnEl.style.borderColor = '#D4AE3A';
   }
   window.speechSynthesis.speak(u);
 }
@@ -613,8 +613,8 @@ function _ttsSpeak(teks, btnEl) {
 function _ttsResetBtn() {
   if (_ttsActiveBtn) {
     _ttsActiveBtn.textContent = '▶';
-    _ttsActiveBtn.style.background  = 'rgba(92,138,110,.2)';
-    _ttsActiveBtn.style.borderColor = 'rgba(92,138,110,.4)';
+    _ttsActiveBtn.style.background  = 'rgba(212,174,58,.15)';
+    _ttsActiveBtn.style.borderColor = 'rgba(212,174,58,.4)';
     _ttsActiveBtn = null;
   }
 }
@@ -677,7 +677,7 @@ window.dashNilaiUpdate = function(siswaId) {
   const el = document.getElementById(`nilai-rerata-${siswaId}`);
   if (el) {
     el.textContent = rerata !== null ? rerata : '—';
-    el.style.color = rerata !== null ? (rerata >= 80 ? '#5C8A6E' : rerata >= 70 ? '#D4AE3A' : '#B05A46') : '#D4AE3A';
+    el.style.color = rerata !== null ? (rerata >= 80 ? '#D4AE3A' : rerata >= 70 ? 'rgba(212,174,58,.6)' : 'rgba(255,255,255,.4)') : '#D4AE3A';
   }
 };
 
@@ -778,10 +778,10 @@ window.dashPilihTP = async function(nomor, nama) {
 window.dashSetStatus = function(siswaId, status) {
   _flow.statusMap[siswaId] = status;
   const STATUS_CFG = {
-    H: { bg: 'rgba(92,138,110,.15)',  color: '#5C8A6E',  dot: 'rgba(92,138,110,.3)'   },
-    S: { bg: 'rgba(212,174,58,.1)',   color: '#D4AE3A',  dot: 'rgba(212,174,58,.25)'  },
-    I: { bg: 'rgba(100,140,200,.1)',  color: '#7B9FD4',  dot: 'rgba(100,140,200,.25)' },
-    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)', dot: 'rgba(255,255,255,.06)' },
+    H: { bg: 'rgba(212,174,58,.12)',  color: '#D4AE3A',             dot: 'rgba(212,174,58,.25)'  },
+    S: { bg: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.55)', dot: 'rgba(255,255,255,.12)' },
+    I: { bg: 'rgba(255,255,255,.03)', color: 'rgba(255,255,255,.35)', dot: 'rgba(255,255,255,.08)' },
+    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)',  dot: 'rgba(255,255,255,.06)' },
   };
   const row = _container && _container.querySelector(`#presensi-row-${siswaId}`);
   if (row) {
