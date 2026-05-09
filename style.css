@@ -1136,29 +1136,29 @@ body {
   font-size: 24px; font-weight: 800; color: #D4AE3A;
 }
 .ds-streak-unit {
-  font-size: 11px; font-weight: 600;
+  font-size: 13px; font-weight: 600;
   color: rgba(255,255,255,.5); margin-left: 4px;
 }
 .ds-streak-label {
-  font-size: 12px; font-weight: 700; color: #fff; margin-top: 3px;
+  font-size: 14px; font-weight: 700; color: #fff; margin-top: 3px;
 }
 .ds-jejak-level-col {
   flex-shrink: 0; text-align: right;
 }
 .ds-level-emoji { font-size: 22px; line-height: 1; }
 .ds-level-nama {
-  font-size: 9px; font-weight: 700;
+  font-size: 11px; font-weight: 700;
   color: rgba(255,255,255,.7); margin-top: 2px; white-space: nowrap;
 }
 .ds-level-gaji {
-  font-size: 11px; font-weight: 800; color: #5C8A6E; white-space: nowrap;
+  font-size: 13px; font-weight: 800; color: #5C8A6E; white-space: nowrap;
 }
 .ds-jejak-progress-wrap {
   display: flex; align-items: flex-start; margin-bottom: 8px;
 }
 .ds-jejak-progress-inner { flex: 1; min-width: 0; }
 .ds-progress-next-text {
-  font-size: 11px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   color: rgba(255,255,255,.55); line-height: 1.4;
 }
 .ds-progress-track {
@@ -1189,7 +1189,7 @@ body {
 .ds-stat-num--sage  { color: #5C8A6E; }
 .ds-stat-num--slate { color: #5D7A8C; }
 .ds-stat-label {
-  font-size: 9px; color: rgba(255,255,255,.35);
+  font-size: 11px; color: rgba(255,255,255,.35);
   margin-top: 2px; text-transform: uppercase; letter-spacing: .05em;
 }
 
