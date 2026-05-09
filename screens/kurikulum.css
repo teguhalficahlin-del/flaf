@@ -65,7 +65,7 @@
 .kur-atp-row { cursor: pointer; border-bottom: 1px solid var(--tema-border-light); transition: background .15s; }
 .kur-atp-row:hover, .kur-atp-row:active { background: var(--tema-primary-pale); }
 .kur-atp-row td { padding: 9px 10px; vertical-align: middle; }
-.kur-atp-num { width: 24px; height: 24px; font-weight: 700; color: #D4AE3A; text-align: center; font-size: 15px; background: rgba(212,174,58,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.kur-atp-num { width: 28px; height: 28px; font-weight: 700; color: #D4AE3A; text-align: center; font-size: 15px; background: rgba(212,174,58,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; align-self: flex-start; margin-top: 2px; }
 .kur-atp-nama { font-weight: 600; color: rgba(255,255,255,.85); font-size: 15px; }
 .kur-atp-tema { color: rgba(255,255,255,.6); font-size: 15px; }
 .kur-atp-jp { width: 36px; text-align: right; color: rgba(255,255,255,.6); font-size: 15px; }
@@ -100,10 +100,11 @@
 .kur-ind-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
 .kur-ind-item { display: flex; gap: 8px; align-items: flex-start; }
 .kur-ind-num {
-  flex-shrink: 0; min-width: 20px; height: 20px;
+  flex-shrink: 0; min-width: 28px; height: 28px;
   background: rgba(212,174,58,.15); color: #D4AE3A; border-radius: 50%;
   font-size: 15px; font-weight: 700;
-  display: flex; align-items: center; justify-content: center; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+  align-self: flex-start; margin-top: 2px;
 }
 .kur-ind-text { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.5; }
 
