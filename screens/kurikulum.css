@@ -54,18 +54,18 @@
 .kur-panel-body { background: var(--tema-bg-panel); padding: 14px 16px; }
 .kur-panel-body--cp { display: flex; flex-direction: column; gap: 14px; }
 
-.kur-cp-section { border-left: 3px solid var(--tema-secondary); padding-left: 12px; }
+.kur-cp-section { border-left: 3px solid rgba(212,174,58,.5); padding-left: 12px; }
 .kur-cp-label { font-size: 15px; font-weight: 700; color: rgba(212,174,58,.7); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
 .kur-cp-text { font-size: 15px; color: rgba(255,255,255,.7); line-height: 1.65; }
 
 .kur-atp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 0 16px; }
-.kur-atp-table { width: 100%; min-width: 340px; border-collapse: collapse; font-size: 12px; }
+.kur-atp-table { width: 100%; min-width: 340px; border-collapse: collapse; font-size: 15px; }
 .kur-atp-table thead tr { background: var(--tema-bg-dark); color: #fff; }
 .kur-atp-table th { padding: 8px 10px; font-size: 15px; font-weight: 700; text-align: left; letter-spacing: .04em; }
 .kur-atp-row { cursor: pointer; border-bottom: 1px solid var(--tema-border-light); transition: background .15s; }
 .kur-atp-row:hover, .kur-atp-row:active { background: var(--tema-primary-pale); }
 .kur-atp-row td { padding: 9px 10px; vertical-align: middle; }
-.kur-atp-num { width: 28px; font-weight: 700; color: var(--tema-accent); text-align: center; }
+.kur-atp-num { width: 24px; height: 24px; font-weight: 700; color: #D4AE3A; text-align: center; font-size: 15px; background: rgba(212,174,58,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .kur-atp-nama { font-weight: 600; color: rgba(255,255,255,.85); font-size: 15px; }
 .kur-atp-tema { color: rgba(255,255,255,.6); font-size: 15px; }
 .kur-atp-jp { width: 36px; text-align: right; color: rgba(255,255,255,.6); font-size: 15px; }
