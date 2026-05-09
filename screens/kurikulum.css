@@ -35,7 +35,7 @@
 .kur-header-stats { display: flex; gap: 16px; }
 .kur-stat { display: flex; flex-direction: column; align-items: center; }
 .kur-stat-num { font-size: 20px; font-weight: 800; color: var(--tema-primary); line-height: 1; }
-.kur-stat-label { font-size: 10px; color: rgba(255,255,255,.4); letter-spacing: .06em; }
+.kur-stat-label { font-size: 15px; color: rgba(255,255,255,.65); letter-spacing: .06em; }
 
 .kur-panel { border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
 .kur-panel-head {
@@ -46,30 +46,30 @@
   -webkit-tap-highlight-color: transparent;
 }
 .kur-panel-head--static { cursor: default; border-bottom: 1px solid var(--tema-border-light); }
-.kur-panel-badge { flex-shrink: 0; font-size: 10px; font-weight: 800; letter-spacing: .06em; padding: 3px 9px; border-radius: 5px; }
+.kur-panel-badge { flex-shrink: 0; font-size: 15px; font-weight: 800; letter-spacing: .06em; padding: 3px 9px; border-radius: 5px; }
 .kur-panel-title { flex: 1; font-size: 15px; font-weight: 700; color: rgba(255,255,255,.85); }
-.kur-atp-total { font-size: 11px; color: var(--tema-muted); margin-right: 4px; }
+.kur-atp-total { font-size: 15px; color: rgba(255,255,255,.6); margin-right: 4px; }
 .kur-chevron { font-size: 11px; color: var(--tema-muted); transition: transform .2s ease; flex-shrink: 0; }
 
 .kur-panel-body { background: var(--tema-bg-panel); padding: 14px 16px; }
 .kur-panel-body--cp { display: flex; flex-direction: column; gap: 14px; }
 
 .kur-cp-section { border-left: 3px solid var(--tema-secondary); padding-left: 12px; }
-.kur-cp-label { font-size: 10.5px; font-weight: 700; color: var(--tema-secondary); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
+.kur-cp-label { font-size: 15px; font-weight: 700; color: rgba(212,174,58,.7); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
 .kur-cp-text { font-size: 15px; color: rgba(255,255,255,.7); line-height: 1.65; }
 
 .kur-atp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 0 16px; }
 .kur-atp-table { width: 100%; min-width: 340px; border-collapse: collapse; font-size: 12px; }
 .kur-atp-table thead tr { background: var(--tema-bg-dark); color: #fff; }
-.kur-atp-table th { padding: 8px 10px; font-size: 10.5px; font-weight: 700; text-align: left; letter-spacing: .04em; }
+.kur-atp-table th { padding: 8px 10px; font-size: 15px; font-weight: 700; text-align: left; letter-spacing: .04em; }
 .kur-atp-row { cursor: pointer; border-bottom: 1px solid var(--tema-border-light); transition: background .15s; }
 .kur-atp-row:hover, .kur-atp-row:active { background: var(--tema-primary-pale); }
 .kur-atp-row td { padding: 9px 10px; vertical-align: middle; }
 .kur-atp-num { width: 28px; font-weight: 700; color: var(--tema-accent); text-align: center; }
-.kur-atp-nama { font-weight: 600; color: rgba(255,255,255,.85); }
-.kur-atp-tema { color: var(--tema-slate); font-size: 11.5px; }
-.kur-atp-jp { width: 36px; text-align: right; color: var(--tema-muted); font-size: 11.5px; }
-.kur-atp-hint { font-size: 11px; color: var(--tema-muted); font-style: italic; margin-top: 10px; text-align: center; }
+.kur-atp-nama { font-weight: 600; color: rgba(255,255,255,.85); font-size: 15px; }
+.kur-atp-tema { color: rgba(255,255,255,.6); font-size: 15px; }
+.kur-atp-jp { width: 36px; text-align: right; color: rgba(255,255,255,.6); font-size: 15px; }
+.kur-atp-hint { font-size: 15px; color: rgba(255,255,255,.6); font-style: italic; margin-top: 10px; text-align: center; } 
 
 .kur-tp-list { background: var(--tema-bg-light); }
 .kur-tp-item { border-bottom: 1px solid var(--tema-border-light); }
