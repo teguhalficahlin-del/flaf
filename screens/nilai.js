@@ -108,7 +108,7 @@ async function _renderRombel(token) {
     <div style="padding:40px;text-align:center;">
       <div style="font-size:32px;margin-bottom:10px;">🏫</div>
       <div style="font-size:13px;color:rgba(255,255,255,.6);">Belum ada rombel.</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:4px;">Tap "+ Tambah Rombel" untuk mulai.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Tap "+ Tambah Rombel" untuk mulai.</div>
     </div>
   ` : list.map(k => {
     const r        = rekapMap[k.id] || {};
@@ -270,7 +270,7 @@ async function _renderTP(token) {
       <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
-    <div style="font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;">Sumatif Lingkup Materi — nilai per TP, masuk nilai rapor</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Sumatif Lingkup Materi — nilai per TP, masuk nilai rapor</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
@@ -296,7 +296,7 @@ async function _renderInput(token) {
   if (token !== _renderToken) return;
 
   const barisHTML = siswaList.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">
       Belum ada siswa. Tambah siswa dulu di menu Kelola Siswa.
     </div>
   ` : siswaList.filter(s => s && s.id).map(s => {
@@ -344,13 +344,13 @@ async function _renderInput(token) {
     </div>
     <div class="nv-tp-num" style="margin-top:2px;">TP ${String(_state.tpNomor).padStart(2,'0')}</div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">${_escape(_state.tpNama)}</div>
-    <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px;">Sumatif Lingkup Materi — nilai ini masuk rapor</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Sumatif Lingkup Materi — nilai ini masuk rapor</div>
   </div>
 
   <div class="nv-color-legend">
-    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);">L = Listening</div>
-    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);">S = Speaking</div>
-    <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);">R = Reading</div>
+    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">L = Listening</div>
+    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">S = Speaking</div>
+    <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">R = Reading</div>
     <div style="flex:1;"></div>
     <div class="nv-dot nv-dot--sage"></div><span class="nv-dot-label">≥80</span>
     <div class="nv-dot nv-dot--gold"></div><span class="nv-dot-label">≥70</span>
@@ -360,7 +360,7 @@ async function _renderInput(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
       <div class="ds-section-label">Input Nilai (${siswaList.length} siswa)</div>
-      <div style="font-size:9px;color:rgba(255,255,255,.35);">Nilai = Rerata L+S+R</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.55);">Nilai = Rerata L+S+R</div>
     </div>
     ${barisHTML}
   </div>
@@ -383,9 +383,8 @@ async function _renderSAS(token) {
   if (token !== _renderToken) return;
 
   const barisHTML = siswaList.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">Belum ada siswa.</div>
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
   ` : siswaList.map(s => {
-    const sas = sasMap[s.id];
     const val = sas !== null && sas !== undefined ? sas : '';
     return `
     <div class="nv-sas-row">
@@ -408,7 +407,7 @@ async function _renderSAS(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Sumatif Akhir Semester</div>
-    <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px;">Nilai ujian akhir semester — masuk rapor sebagai AS</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Nilai ujian akhir semester — masuk rapor sebagai AS</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(123,159,212,.3);">
     <div style="padding:12px 16px;border-bottom:1px solid rgba(123,159,212,.2);">
@@ -429,13 +428,13 @@ async function _renderRapor(token) {
   if (token !== _renderToken) return;
 
   const barisHTML = siswaList.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.3);">Belum ada siswa.</div>
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
   ` : siswaList.map(s => {
     const val = (v) => v !== null && v !== undefined ? v : '—';
     return `
     <div class="nv-rapor-row">
       <div class="ds-siswa-nomor">${s.nomor}</div>
-      <div class="nv-siswa-name" style="font-size:12px;">${_escape(s.nama)}</div>
+      <div class="nv-siswa-name">${_escape(s.nama)}</div>
       <div class="nv-rapor-col">
         <div class="nv-rapor-col-label">S</div>
         <div class="nv-rapor-col-val" style="color:${_nilaiColor(s.s)};">${val(s.s)}</div>
@@ -459,8 +458,8 @@ async function _renderRapor(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Nilai Rapor</div>
-    <div style="font-size:10px;color:rgba(250,199,117,.6);margin-top:4px;">Rumus Kurikulum Merdeka: (S + AS) ÷ 2</div>
-    <div style="font-size:9px;color:rgba(255,255,255,.25);margin-top:2px;">Nilai rapor bersifat referensi — guru memiliki kewenangan penuh</div>
+    <div style="font-size:13px;color:rgba(250,199,117,.8);margin-top:4px;">Rumus Kurikulum Merdeka: (S + AS) ÷ 2</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:2px;">Nilai rapor bersifat referensi — guru memiliki kewenangan penuh</div>
   </div>
 
   <div class="nv-legend-row">
@@ -506,7 +505,7 @@ async function _renderModalKelolaSiswa() {
       </div>
       ${existingHTML}
       <div class="ds-section-label" style="margin-bottom:8px;">Tambah Siswa Baru</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;">Ketik satu nama per baris.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.55);margin-bottom:8px;">Ketik satu nama per baris.</div>
       <textarea id="textarea-siswa-baru" placeholder="Ahmad Fauzi&#10;Budi Santoso&#10;Citra Dewi&#10;..."
         class="nv-textarea-siswa"></textarea>
       <button onclick="nilaiSimpanSiswaBaru()" class="nv-btn-simpan" style="margin-top:10px;">SIMPAN DAFTAR SISWA</button>
@@ -663,8 +662,8 @@ window.nilaiTambahKelas = function() {
         class="nv-input-rombel">
       <div class="ds-section-label" style="margin-bottom:8px;">Tingkat Kelas</div>
       <div class="nv-tingkat-grid">
-        <button onclick="nilaiPilihTingkat(1)" id="btn-tingkat-1" class="nv-tingkat-btn nv-tingkat-btn--active">Kelas 1<br><span style="font-size:10px;font-weight:400;opacity:.7;">TP 1 – 9</span></button>
-        <button onclick="nilaiPilihTingkat(2)" id="btn-tingkat-2" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 2<br><span style="font-size:10px;font-weight:400;opacity:.7;">TP 10 – 18</span></button>
+        <button onclick="nilaiPilihTingkat(1)" id="btn-tingkat-1" class="nv-tingkat-btn nv-tingkat-btn--active">Kelas 1<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 9</span></button>
+        <button onclick="nilaiPilihTingkat(2)" id="btn-tingkat-2" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 2<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 10 – 18</span></button>
       </div>
       <input type="hidden" id="input-tingkat-rombel" value="1">
       <button onclick="nilaiSimpanRombel()" class="nv-btn-simpan">SIMPAN ROMBEL</button>
