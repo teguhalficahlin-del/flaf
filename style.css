@@ -1014,7 +1014,7 @@ body {
   margin-bottom: 6px;
 }
 .ds-hero-name { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.2; }
-.ds-hero-school { font-size: 10px; color: rgba(255,255,255,.80); margin-top: 3px; }
+.ds-hero-school { font-size: 13px; color: rgba(255,255,255,.80); margin-top: 3px; }
 
 /* ── Empty state (belum ada rombel) ── */
 .ds-empty {
@@ -1048,8 +1048,8 @@ body {
 }
 .ds-list-item:last-child { border-bottom: none; }
 .ds-list-item:active { background: rgba(255,255,255,.04); }
-.ds-list-item-name { font-size: 13px; font-weight: 700; color: #fff; }
-.ds-list-item-sub  { font-size: 15px; color: rgba(255,255,255,.35); margin-top: 2px; }
+.ds-list-item-name { font-size: 15px; font-weight: 700; color: #fff; }
+.ds-list-item-sub  { font-size: 15px; color: rgba(255,255,255,.55); margin-top: 2px; }
 .ds-list-arrow     { color: rgba(255,255,255,.5); font-size: 18px; flex-shrink: 0; }
 
 /* ── Breadcrumb / nav ── */
@@ -1126,10 +1126,10 @@ body {
   border-radius: 14px; padding: 14px;
 }
 .ds-jejak-top {
-  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;
+  display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;
 }
 .ds-jejak-streak-row {
-  display: flex; align-items: center; gap: 14px; flex: 1;
+  display: flex; align-items: center; gap: 14px; width: 100%;
 }
 .ds-streak-emoji { font-size: 28px; line-height: 1; }
 .ds-streak-num {
@@ -1137,21 +1137,22 @@ body {
 }
 .ds-streak-unit {
   font-size: 16px; font-weight: 600;
-  color: rgba(255,255,255,.5); margin-left: 4px;
+  color: rgba(255,255,255,.6); margin-left: 4px;
 }
 .ds-streak-label {
   font-size: 16px; font-weight: 700; color: #fff; margin-top: 3px;
 }
 .ds-jejak-level-col {
-  flex-shrink: 0; text-align: right;
+  display: flex; align-items: center; gap: 10px; width: 100%;
 }
 .ds-level-emoji { font-size: 22px; line-height: 1; }
 .ds-level-nama {
   font-size: 16px; font-weight: 700;
-  color: rgba(255,255,255,.7); margin-top: 2px; white-space: nowrap;
+  color: rgba(255,255,255,.7); margin-top: 0; flex: 1; min-width: 0;
 }
+.ds-level-nama--current { color: #fff; }
 .ds-level-gaji {
-  font-size: 16px; font-weight: 800; color: #D4AE3A; white-space: nowrap;
+  font-size: 16px; font-weight: 800; color: #D4AE3A;
 }
 .ds-jejak-progress-wrap {
   display: flex; align-items: flex-start; margin-bottom: 8px;
@@ -1162,16 +1163,16 @@ body {
   color: rgba(255,255,255,.55); line-height: 1.4;
 }
 .ds-progress-track {
-  margin-top: 6px; height: 5px;
+  margin-top: 6px; height: 7px;
   background: rgba(255,255,255,.08);
   border-radius: 3px; overflow: hidden;
 }
 .ds-progress-fill {
-  height: 5px; background: #D4AE3A;
+  height: 7px; background: #D4AE3A;
   border-radius: 3px; transition: width .4s ease;
 }
 .ds-progress-bar-label {
-  font-size: 14px; color: rgba(255,255,255,.3); margin-top: 3px;
+  font-size: 13px; color: rgba(255,255,255,.5); margin-top: 3px;
 }
 
 /* ── Stat grid (3 kolom) ── */
@@ -1189,7 +1190,7 @@ body {
 .ds-stat-num--sage  { color: #D4AE3A; }
 .ds-stat-num--slate { color: #5D7A8C; }
 .ds-stat-label {
-  font-size: 14px; color: rgba(255,255,255,.35);
+  font-size: 12px; color: rgba(255,255,255,.55);
   margin-top: 2px; text-transform: uppercase; letter-spacing: .05em;
 }
 
