@@ -147,7 +147,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
     <div class="ds-jejak-top">
       <div class="ds-jejak-streak-row">
         <div id="jejak-card-emoji" class="ds-streak-emoji">${streakEmoji}</div>
-        <div style="flex:1;">
+        <div style="flex:1;min-width:0;">
           <div style="line-height:1.2;">
             <span id="jejak-card-streak" class="ds-streak-num">${streak}</span>
             <span class="ds-streak-unit">hari berturut-turut</span>
@@ -157,7 +157,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
       </div>
       <div class="ds-jejak-level-col">
         <div id="jejak-card-level-emoji" class="ds-level-emoji">${lv.current.emoji}</div>
-        <div id="jejak-card-level-nama" class="ds-level-nama">${lv.current.nama}</div>
+        <div id="jejak-card-level-nama" class="ds-level-nama ds-level-nama--current">${lv.current.nama}</div>
         <div id="jejak-card-level-gaji" class="ds-level-gaji">${lv.current.gaji}</div>
       </div>
     </div>
@@ -172,7 +172,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
     </div>
     <div class="ds-stat-grid" style="margin-top:4px;">
       <div class="ds-stat-box">
-        <div id="jejak-card-hari" class="ds-stat-num">${hariAktif}</div>
+        <div id="jejak-card-hari" class="ds-stat-num ds-stat-num--gold">${hariAktif}</div>
         <div class="ds-stat-label">Hari aktif</div>
       </div>
       <div class="ds-stat-box">
@@ -180,7 +180,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
         <div class="ds-stat-label">Pertemuan</div>
       </div>
       <div class="ds-stat-box">
-        <div id="jejak-card-tp" class="ds-stat-num ds-stat-num--sage">${tpSelesai}</div>
+        <div id="jejak-card-tp" class="ds-stat-num ds-stat-num--gold">${tpSelesai}</div>
         <div class="ds-stat-label">TP selesai</div>
       </div>
     </div>
@@ -259,7 +259,7 @@ function _buildPilihTPHTML() {
     <div class="ds-section-header">
       <div class="ds-section-label">Pilih Tujuan Pembelajaran</div>
     </div>
-    ${tpList.length > 0 ? tpHTML : `<div style="padding:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.35);">Data kurikulum belum tersedia.</div>`}
+    ${tpList.length > 0 ? tpHTML : `<div style="padding:24px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Data kurikulum belum tersedia.</div>`}
   </div>
 </div>`;
 }
@@ -290,7 +290,7 @@ function _buildTabMateri(tp) {
 
 function _buildTabSkenario(tp) {
   if (!tp.skenario || tp.skenario.length === 0) {
-    return '<div style="font-size:11px;color:rgba(255,255,255,.3);padding:8px 0;">Skenario belum tersedia.</div>';
+    return '<div style="font-size:13px;color:rgba(255,255,255,.5);padding:8px 0;">Skenario belum tersedia.</div>';
   }
 
   const fase      = tp.skenario[_skenario.faseIndex] || tp.skenario[0];
@@ -354,7 +354,7 @@ function _buildFasePenilaian() {
 
   if (!siswaList || siswaList.length === 0) {
     return `
-    <div style="text-align:center;padding:16px;font-size:12px;color:rgba(255,255,255,.35);">
+    <div style="text-align:center;padding:16px;font-size:13px;color:rgba(255,255,255,.5);">
       Belum ada siswa di rombel ini.<br>Tambah siswa di Layar Nilai terlebih dahulu.
     </div>`;
   }
@@ -381,7 +381,7 @@ function _buildFasePenilaian() {
       </div>`).join('')}
     </div>
     <div>
-      <div class="ds-sub-label" style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:3px;">Catatan</div>
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:3px;">Catatan</div>
       <textarea
         id="catatan-${s.id}"
         placeholder="Observasi singkat..."
@@ -423,7 +423,7 @@ function _buildSesiHTML() {
   };
 
   const siswaHTML = siswaList.length === 0 ? `
-  <div style="padding:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.35);">
+  <div style="padding:24px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">
     Belum ada siswa di rombel ini.<br>
     <button onclick="dashKeLayarNilai()" class="ds-btn-back" style="margin-top:12px;color:#D4AE3A;border-color:rgba(212,174,58,.4);">+ Tambah Siswa di Layar Nilai</button>
   </div>` : siswaList.map(s => {
@@ -448,7 +448,7 @@ function _buildSesiHTML() {
 
   const materiKonten = tpData
     ? (tabMateri ? _buildTabMateri(tpData) : _buildTabSkenario(tpData))
-    : '<div style="font-size:11px;color:rgba(255,255,255,.3);">Data tidak tersedia.</div>';
+    : '<div style="font-size:13px;color:rgba(255,255,255,.5);">Data tidak tersedia.</div>';
 
   return `
 <div class="ds-wrap">
@@ -503,7 +503,7 @@ function _buildSesiHTML() {
       onblur="this.style.borderColor='rgba(255,255,255,.1)'"
     ></textarea>
     <div style="margin-top:10px;">
-      <div class="ds-sub-label" style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:6px;">Kendala sesi</div>
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.35);margin-bottom:6px;">Kendala sesi</div>
       <div class="ds-kendala-wrap">
         ${[
           { val: 'lancar',          label: '✅ Lancar' },
@@ -873,9 +873,9 @@ function _buildErrorHTML(msg) {
   <div style="padding:24px;text-align:center">
     <div style="font-size:24px;margin-bottom:10px">⚠</div>
     <div style="font-size:13px;font-weight:700;color:var(--clay);margin-bottom:6px">Dashboard tidak bisa dimuat</div>
-    <div style="font-size:10px;color:var(--muted);margin-bottom:16px">${_escape(msg)}</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:16px">${_escape(msg)}</div>
     <button onclick="window.__FLAF_DASH__.reload()"
-            style="background:var(--ink);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:11px;font-weight:700;cursor:pointer">
+            style="background:var(--ink);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer">
       Coba Lagi
     </button>
   </div>`;
