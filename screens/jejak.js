@@ -21,7 +21,7 @@ let _session   = null;
 // hanya bertambah, tidak pernah berkurang.
 
 const LEVELS = [
-  { min: 0,  max: 3,        emoji: '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 36 36"><rect x="2" y="14" width="28" height="16" rx="3" fill="#C0392B"/><rect x="2" y="14" width="28" height="16" rx="3" fill="none" stroke="#922B21" stroke-width="1"/><rect x="4" y="9" width="28" height="16" rx="3" fill="#E74C3C"/><rect x="4" y="9" width="28" height="16" rx="3" fill="none" stroke="#C0392B" stroke-width="1"/><rect x="6" y="4" width="28" height="16" rx="3" fill="#EC7063"/><rect x="6" y="4" width="28" height="16" rx="3" fill="none" stroke="#E74C3C" stroke-width="1"/><circle cx="20" cy="12" r="4" fill="#C0392B"/><circle cx="20" cy="12" r="2.5" fill="#922B21"/></svg>', nama: 'Tunjangan Sertifikasi',   gaji: 'Rp 15.000.000' },
+  { min: 0,  max: 3,        emoji: '🎖️', nama: 'Tunjangan Sertifikasi',   gaji: 'Rp 15.000.000' },
   { min: 4,  max: 7,        emoji: '💰', nama: 'Tunjangan Kinerja',       gaji: 'Rp 25.000.000' },
   { min: 8,  max: 11,       emoji: '🏦', nama: 'Tunjangan Penuh',         gaji: 'Rp 40.000.000' },
   { min: 12, max: 15,       emoji: '🚗', nama: 'Mobil Dinas',             gaji: 'Rp 65.000.000' },
@@ -110,10 +110,10 @@ function _actionLabel(action) {
 }
 
 function _actionColor(action) {
-  if (action === 'selesai') return '#5C8A6E';
+  if (action === 'selesai') return '#D4AE3A';
   if (action === 'mulai')   return '#D4AE3A';
   if (action === 'reset')   return '#B05A46';
-  if (action === 'nilai')   return '#7B9FD4';
+  if (action === 'nilai')   return '#D4AE3A';
   return '#888';
 }
 
@@ -135,7 +135,7 @@ function _buildCalendar(activeDays) {
   const cells = days.map(d => `
     <div title="${d.dateStr}" style="
       width: 16px; height: 16px; border-radius: 3px;
-      background: ${d.active ? '#5C8A6E' : d.isToday ? 'rgba(212,174,58,.2)' : 'rgba(255,255,255,.06)'};
+      background: ${d.active ? '#D4AE3A' : d.isToday ? 'rgba(212,174,58,.2)' : 'rgba(255,255,255,.06)'};
       border: ${d.isToday ? '1px solid rgba(212,174,58,.4)' : 'none'};
       flex-shrink: 0;
     "></div>
@@ -147,12 +147,12 @@ function _buildCalendar(activeDays) {
     </div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
       <div style="display:flex;align-items:center;gap:4px;">
-        <div style="width:10px;height:10px;border-radius:2px;background:#5C8A6E;"></div>
-        <span style="font-size:9px;color:rgba(255,255,255,.35);">Aktif</span>
+        <div style="width:10px;height:10px;border-radius:2px;background:#D4AE3A;"></div>
+        <span style="font-size:12px;color:rgba(255,255,255,.6);">Aktif</span>
       </div>
       <div style="display:flex;align-items:center;gap:4px;">
         <div style="width:10px;height:10px;border-radius:2px;background:rgba(255,255,255,.06);"></div>
-        <span style="font-size:9px;color:rgba(255,255,255,.35);">Tidak aktif</span>
+        <span style="font-size:12px;color:rgba(255,255,255,.6);">Tidak aktif</span>
       </div>
     </div>
   `;
@@ -176,8 +176,8 @@ function _buildLevelTangga(hariAktif, totalSesi) {
 
     let bgColor, borderColor, labelColor, badgeText;
     if (isDone) {
-      bgColor = 'rgba(92,138,110,.15)'; borderColor = 'rgba(92,138,110,.4)';
-      labelColor = '#5C8A6E'; badgeText = '✓ Selesai';
+      bgColor = 'rgba(212,174,58,.07)'; borderColor = 'rgba(212,174,58,.3)';
+      labelColor = '#D4AE3A'; badgeText = '✓ Selesai';
     } else if (isCurrent) {
       bgColor = 'rgba(212,174,58,.1)'; borderColor = 'rgba(212,174,58,.5)';
       labelColor = '#D4AE3A'; badgeText = '← Sekarang';
@@ -194,28 +194,28 @@ function _buildLevelTangga(hariAktif, totalSesi) {
       return `
         <div style="margin-top:8px;">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-            <span style="font-size:9px;color:rgba(255,255,255,.35);">${lv.progressInLevel} / ${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'}</span>
-            <span style="font-size:9px;color:rgba(212,174,58,.7);">${barPct}%</span>
+            <span style="font-size:12px;color:rgba(255,255,255,.55);">${lv.progressInLevel} / ${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'}</span>
+            <span style="font-size:12px;color:rgba(212,174,58,.7);">${barPct}%</span>
           </div>
           <div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;">
             <div style="height:5px;width:${barPct}%;background:#D4AE3A;border-radius:3px;"></div>
           </div>
-          ${lv.next ? `<div style="font-size:9px;color:rgba(255,255,255,.25);margin-top:4px;">${lv.next.min - hariAktif} hari lagi ke level berikutnya</div>` : ''}
+          ${lv.next ? `<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;">${lv.next.min - hariAktif} hari lagi ke level berikutnya</div>` : ''}
         </div>`;
     })() : '';
 
     return `
     <div style="background:${bgColor};border:1px solid ${borderColor};border-radius:12px;padding:12px 14px;">
-      ${isCurrent ? `<div style="font-size:9px;color:rgba(212,174,58,.7);font-style:italic;margin-bottom:8px;">💡 Gaji virtual. Semoga suatu saat jadi nyata! 😄</div>` : ''}
+      ${isCurrent ? `<div style="font-size:15px;color:rgba(212,174,58,.85);font-style:italic;margin-bottom:8px;">💡 Gaji virtual. Semoga suatu saat jadi nyata! 😄</div>` : ''}
       <div style="display:flex;align-items:center;gap:10px;">
         <div style="font-size:24px;line-height:1;${isDone || isCurrent ? '' : 'opacity:.35'}">${level.emoji}</div>
         <div style="flex:1;min-width:0;">
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-            <div style="font-size:12px;font-weight:800;color:${isCurrent ? '#fff' : isDone ? 'rgba(255,255,255,.7)' : 'rgba(255,255,255,.25)'};">${level.nama}</div>
-            ${badgeText ? `<span style="font-size:8px;font-weight:700;color:${labelColor};border:1px solid ${borderColor};border-radius:4px;padding:1px 6px;">${badgeText}</span>` : ''}
+            <div style="font-size:15px;font-weight:800;color:${isCurrent ? '#fff' : isDone ? 'rgba(255,255,255,.7)' : 'rgba(255,255,255,.25)'};">${level.nama}</div>
+            ${badgeText ? `<span style="font-size:12px;font-weight:700;color:${labelColor};border:1px solid ${borderColor};border-radius:4px;padding:1px 6px;">${badgeText}</span>` : ''}
           </div>
-          <div style="font-size:11px;font-weight:700;color:${isDone ? '#5C8A6E' : isCurrent ? '#D4AE3A' : 'rgba(255,255,255,.2)'};margin-top:2px;">${level.gaji}</div>
-          <div style="font-size:9px;color:rgba(255,255,255,.2);margin-top:1px;">TP ${level.min}–${level.max}</div>
+          <div style="font-size:15px;font-weight:700;color:${isDone ? '#D4AE3A' : isCurrent ? '#D4AE3A' : 'rgba(255,255,255,.2)'};margin-top:2px;">${level.gaji}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:1px;">TP ${level.min}–${level.max}</div>
         </div>
         ${isDone ? `<div style="font-size:18px;">✅</div>` : ''}
       </div>
@@ -229,8 +229,8 @@ function _buildLevelTangga(hariAktif, totalSesi) {
   return `
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Tangga Level Guru</div>
-      <div style="font-size:10px;font-weight:700;color:rgba(255,255,255,.4);">${hariAktif} hari aktif · ${totalSesi} sesi</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Tangga Level Guru</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);">${hariAktif} hari aktif · ${totalSesi} sesi</div>
     </div>
 
     <div style="display:flex;flex-direction:column;gap:6px;">
@@ -254,15 +254,15 @@ function _buildJejakHTML(streak, summary, logs) {
     <div style="position:relative;">
       <div style="font-size:48px;line-height:1;margin-bottom:6px;">${_streakEmoji(streak)}</div>
       <div style="font-size:36px;font-weight:800;color:#D4AE3A;line-height:1;">${streak}</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;">hari berturut-turut</div>
-      <div style="font-size:13px;font-weight:700;color:#fff;margin-top:8px;">${_streakLabel(streak)}</div>
+      <div style="font-size:15px;color:rgba(255,255,255,.7);margin-top:2px;">hari berturut-turut</div>
+      <div style="font-size:15px;font-weight:700;color:#fff;margin-top:8px;">${_streakLabel(streak)}</div>
       ${streak > 0 ? `
       <button onclick="jejakShare()" style="
         margin-top:12px;
         background:#D4AE3A;color:#1A1A1A;
         border:none;border-radius:10px;
         padding:10px 20px;
-        font-size:11px;font-weight:800;
+        font-size:13px;font-weight:800;
         letter-spacing:.06em;cursor:pointer;
       ">📤 Bagikan Pencapaian</button>
       ` : ''}
@@ -271,26 +271,26 @@ function _buildJejakHTML(streak, summary, logs) {
 
   <!-- STATISTIK BULAN INI -->
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
-    <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">Bulan Ini</div>
+    <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">Bulan Ini</div>
     <div style="display:flex;gap:8px;">
       <div style="flex:1;background:rgba(255,255,255,.04);border-radius:10px;padding:10px 8px;text-align:center;">
         <div style="font-size:20px;font-weight:800;color:#D4AE3A;">${summary.hari_aktif}</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;">Hari aktif</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;">Hari aktif</div>
       </div>
       <div style="flex:1;background:rgba(255,255,255,.04);border-radius:10px;padding:10px 8px;text-align:center;">
         <div style="font-size:20px;font-weight:800;color:#D4AE3A;">${summary.pertemuan}</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;">Pertemuan</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;">Pertemuan</div>
       </div>
       <div style="flex:1;background:rgba(255,255,255,.04);border-radius:10px;padding:10px 8px;text-align:center;">
-        <div style="font-size:20px;font-weight:800;color:#5C8A6E;">${summary.tp_selesai}</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;">TP selesai</div>
+        <div style="font-size:20px;font-weight:800;color:#D4AE3A;">${summary.tp_selesai}</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;">TP selesai</div>
       </div>
     </div>
   </div>
 
   <!-- KALENDER AKTIVITAS -->
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
-    <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">35 Hari Terakhir</div>
+    <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">35 Hari Terakhir</div>
     ${_buildCalendar(summary.active_days)}
   </div>
 
@@ -300,28 +300,28 @@ function _buildJejakHTML(streak, summary, logs) {
   <!-- RIWAYAT TERBARU -->
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
     <div style="padding:12px 14px 10px;border-bottom:1px solid rgba(212,174,58,.15);display:flex;align-items:center;justify-content:space-between;">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Riwayat Terbaru</div>
-      <div style="font-size:9px;color:rgba(255,255,255,.2);">${logs.length} entri</div>
+      <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Riwayat Terbaru</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.5);">${logs.length} entri</div>
     </div>
     ${recentLogs.length === 0 ? `
       <div style="padding:24px;text-align:center;">
         <div style="font-size:24px;margin-bottom:8px;">📝</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.35);">Belum ada aktivitas tercatat.</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.2);margin-top:4px;">Mulai mengajar dari Dashboard.</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.6);">Belum ada aktivitas tercatat.</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;">Mulai mengajar dari Dashboard.</div>
       </div>
     ` : recentLogs.map(l => `
       <div style="display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.05);align-items:flex-start;">
         <div style="width:8px;height:8px;border-radius:50%;background:${_actionColor(l.action)};margin-top:4px;flex-shrink:0;"></div>
         <div style="flex:1;min-width:0;">
-          <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.8);">TP ${l.tp_nomor} — ${_escape(l.tp_nama)}</div>
-          <div style="font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;">${_actionLabel(l.action)} · ${_relativeTime(l.taught_at)}</div>
-          ${l.rombel_nama ? `<div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:3px;">📋 ${_escape(l.rombel_nama)}${l.jumlah_siswa !== null ? ` · ${l.jumlah_siswa} siswa` : ''}</div>` : ''}
-          ${l.kendala ? `<div style="font-size:10px;color:rgba(212,174,58,.5);margin-top:3px;">${{ lancar: '✅ Lancar', waktu_kurang: '⏱ Waktu kurang', kurang_kondusif: '📢 Kurang kondusif', media_tidak_ada: '🖼 Media tidak ada', lainnya: '📝 Lainnya' }[l.kendala] || ''}</div>` : ''}
-          ${l.note ? `<div style="font-size:10px;color:rgba(255,255,255,.5);margin-top:4px;font-style:italic;">"${_escape(l.note)}"</div>` : ''}
+          <div style="font-size:15px;font-weight:700;color:rgba(255,255,255,.8);">TP ${l.tp_nomor} — ${_escape(l.tp_nama)}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;">${_actionLabel(l.action)} · ${_relativeTime(l.taught_at)}</div>
+          ${l.rombel_nama ? `<div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:3px;">📋 ${_escape(l.rombel_nama)}${l.jumlah_siswa !== null ? ` · ${l.jumlah_siswa} siswa` : ''}</div>` : ''}
+          ${l.kendala ? `<div style="font-size:12px;color:rgba(212,174,58,.5);margin-top:3px;">${{ lancar: '✅ Lancar', waktu_kurang: '⏱ Waktu kurang', kurang_kondusif: '📢 Kurang kondusif', media_tidak_ada: '🖼 Media tidak ada', lainnya: '📝 Lainnya' }[l.kendala] || ''}</div>` : ''}
+          ${l.note ? `<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;font-style:italic;">"${_escape(l.note)}"</div>` : ''}
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
-          <div style="font-size:9px;color:rgba(255,255,255,.25);">${_formatTime(l.taught_at)}</div>
-          <button onclick="jejakHapusEntri('${l.id}')" style="background:transparent;border:1px solid rgba(176,90,70,.35);color:rgba(176,90,70,.7);border-radius:6px;padding:3px 8px;font-size:9px;cursor:pointer;">Hapus</button>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);">${_formatTime(l.taught_at)}</div>
+          <button onclick="jejakHapusEntri('${l.id}')" style="background:transparent;border:1px solid rgba(176,90,70,.35);color:rgba(176,90,70,.7);border-radius:6px;padding:3px 8px;font-size:12px;cursor:pointer;">Hapus</button>
         </div>
       </div>
     `).join('')}
