@@ -180,13 +180,23 @@ function _onScreenEnter(screenId) {
   }
 }
 
+function _buildProgressText(tpSelesai, total = 18) {
+  const pct  = Math.round((tpSelesai / total) * 100);
+  const sisa = total - tpSelesai;
+  if (tpSelesai === 0)   return `0% · Ayo mulai langkah pertama!`;
+  if (tpSelesai <= 4)    return `${pct}% · ${tpSelesai} TP selesai — terus semangat!`;
+  if (tpSelesai <= 13)   return `${pct}% · ${tpSelesai} TP selesai — ${sisa} TP lagi sampai tuntas`;
+  if (tpSelesai < total) return `${pct}% · Hampir tuntas — ${sisa} TP tersisa!`;
+  return `100% · Semua TP Fase A tuntas! 🎉`;
+}
+
 async function _populateStartScreen() {
   if (!session) return;
 
   const nameEl   = document.getElementById('start-teacher-name');
   const schoolEl = document.getElementById('start-teacher-school');
-  if (nameEl)   nameEl.textContent   = session.name   || '—';
-  if (schoolEl) schoolEl.textContent = session.school || '—';
+  if (nameEl)   nameEl.textContent   = (session.name   || '—') + ' 👋';
+  if (schoolEl) schoolEl.textContent = session.school || '';
 
   // Progress bar
   try {
@@ -195,11 +205,13 @@ async function _populateStartScreen() {
     for (const { key, value } of all) {
       if (/^progress_tp_\d+$/.test(key) && value?.status === 'selesai') selesai++;
     }
-    const pct = Math.round((selesai / 18) * 100);
+    const pct    = Math.round((selesai / 18) * 100);
     const fillEl = document.getElementById('home-progress-fill');
-    const countEl = document.getElementById('home-tp-done');
-    if (fillEl)  fillEl.style.width = pct + '%';
+    const countEl= document.getElementById('home-tp-done');
+    const subEl  = document.getElementById('home-progress-sub');
+    if (fillEl)  fillEl.style.width  = pct + '%';
     if (countEl) countEl.textContent = selesai;
+    if (subEl)   subEl.textContent   = _buildProgressText(selesai);
   } catch (err) {
     console.warn('[APP] progress bar gagal:', err.message);
   }

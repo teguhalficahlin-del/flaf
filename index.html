@@ -136,20 +136,9 @@
 
       <div class="home-header">
   <div class="home-header-left">
-    <div class="home-welcome">Selamat datang,</div>
+    <div class="home-welcome">Halo,</div>
     <div class="home-name" id="start-teacher-name">—</div>
     <div class="home-school" id="start-teacher-school">—</div>
-  </div>
-  <div class="home-header-atom" aria-hidden="true">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-      <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#D4AE3A" stroke-width="2" opacity="1"/>
-      <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#5C8A6E" stroke-width="2" opacity="1" transform="rotate(60 100 100)"/>
-      <ellipse cx="100" cy="100" rx="80" ry="30" fill="none" stroke="#B05A46" stroke-width="2" opacity="1" transform="rotate(120 100 100)"/>
-      <circle cx="100" cy="100" r="13" fill="#D4AE3A"/>
-      <circle cx="180" cy="100" r="6" fill="#D4AE3A"/>
-      <circle cx="60" cy="44" r="6" fill="#5C8A6E"/>
-      <circle cx="140" cy="156" r="6" fill="#B05A46"/>
-    </svg>
   </div>
   <button class="home-avatar" id="btn-settings" aria-label="Pengaturan">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,.8)" stroke-width="2">
@@ -160,14 +149,28 @@
 </div>
 
       <div class="home-progress-bar-wrap" id="home-progress-wrap">
-        <div class="home-progress-label">Progres Fase A</div>
+        <div class="home-progress-top">
+          <div class="home-progress-label">Progres Fase A</div>
+          <div class="home-progress-count"><span id="home-tp-done">0</span> / 18 TP</div>
+        </div>
         <div class="home-progress-track">
           <div class="home-progress-fill" id="home-progress-fill" style="width:0%"></div>
         </div>
-        <div class="home-progress-count"><span id="home-tp-done">0</span> / 18 TP</div>
+        <div class="home-progress-sub" id="home-progress-sub">0% · Ayo mulai langkah pertama!</div>
       </div>
 
       <div class="home-menu">
+
+        <button class="home-card home-card-primary" id="btn-go-dash">
+          <div class="home-card-icon home-card-icon-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title" style="color:#D4AE3A;">Sesi Mengajar</div>
+            <div class="home-card-desc" id="home-dash-last">Presensi, TP, materi &amp; skenario</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,.8)" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
 
         <button class="home-card" id="btn-go-nilai">
           <div class="home-card-icon home-card-icon-gold">
@@ -177,18 +180,7 @@
             <div class="home-card-title">Manajemen Kelas</div>
             <div class="home-card-desc">Input nilai, kelola siswa, rekap kehadiran</div>
           </div>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,.8)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-
-        <button class="home-card" id="btn-go-dash">
-          <div class="home-card-icon home-card-icon-gold">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-          </div>
-          <div class="home-card-body">
-            <div class="home-card-title">Sesi Mengajar</div>
-            <div class="home-card-desc" id="home-dash-last">Presensi, TP, materi &amp; skenario</div>
-          </div>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,1)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
 
         <button class="home-card" id="btn-go-jadwal">
@@ -199,7 +191,7 @@
             <div class="home-card-title">Dokumen Kurikulum</div>
             <div class="home-card-desc">CP, ATP, 18 TP + modul PDF siap unduh</div>
           </div>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </button>
 
         <button class="home-card" id="btn-go-jejak">
