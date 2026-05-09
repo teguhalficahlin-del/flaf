@@ -34,13 +34,12 @@ let _flow = {
   siswaList : [],
 };
 
-// State skenario — tab aktif dan fase aktif
 let _skenario = {
   tab        : 'materi',
   faseIndex  : 0,
   langkahIndex: 0,
   speaking   : false,
-  kendala    : null,   // 'lancar'|'waktu_kurang'|'kurang_kondusif'|'media_tidak_ada'|'lainnya'|null
+  kendala    : null,
 };
 
 // --- PUBLIC API --------------------------------------------------------------
@@ -143,48 +142,46 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
     : '🏆 Level Tertinggi!';
 
   return `
-  <div style="background:rgba(212,174,58,.07);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Jejak Mengajar</div>
-    </div>
-    <div style="display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;">
-      <div style="display:flex;align-items:center;gap:14px;flex:1;">
-        <div id="jejak-card-emoji" style="font-size:28px;line-height:1;">${streakEmoji}</div>
+  <div class="ds-jejak-card">
+    <div class="ds-section-label" style="margin-bottom:10px;">Jejak Mengajar</div>
+    <div class="ds-jejak-top">
+      <div class="ds-jejak-streak-row">
+        <div id="jejak-card-emoji" class="ds-streak-emoji">${streakEmoji}</div>
         <div style="flex:1;">
           <div style="line-height:1.2;">
-            <span id="jejak-card-streak" style="font-size:24px;font-weight:800;color:#D4AE3A;">${streak}</span>
-            <span style="font-size:11px;font-weight:600;color:rgba(255,255,255,.5);margin-left:4px;">hari berturut-turut</span>
+            <span id="jejak-card-streak" class="ds-streak-num">${streak}</span>
+            <span class="ds-streak-unit">hari berturut-turut</span>
           </div>
-          <div id="jejak-card-label" style="font-size:12px;font-weight:700;color:#fff;margin-top:3px;">${streakLabel}</div>
+          <div id="jejak-card-label" class="ds-streak-label">${streakLabel}</div>
         </div>
       </div>
-      <div style="flex-shrink:0;text-align:right;">
-        <div id="jejak-card-level-emoji" style="font-size:22px;line-height:1;">${lv.current.emoji}</div>
-        <div id="jejak-card-level-nama" style="font-size:9px;font-weight:700;color:rgba(255,255,255,.7);margin-top:2px;white-space:nowrap;">${lv.current.nama}</div>
-        <div id="jejak-card-level-gaji" style="font-size:11px;font-weight:800;color:#5C8A6E;white-space:nowrap;">${lv.current.gaji}</div>
+      <div class="ds-jejak-level-col">
+        <div id="jejak-card-level-emoji" class="ds-level-emoji">${lv.current.emoji}</div>
+        <div id="jejak-card-level-nama" class="ds-level-nama">${lv.current.nama}</div>
+        <div id="jejak-card-level-gaji" class="ds-level-gaji">${lv.current.gaji}</div>
       </div>
     </div>
-    <div style="display:flex;align-items:flex-start;margin-bottom:8px;">
-      <div style="flex:1;min-width:0;">
-        <div id="jejak-card-next-text" style="font-size:11px;font-weight:700;color:rgba(255,255,255,.55);line-height:1.4;">${nextText}</div>
-        <div style="margin-top:6px;height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;">
-          <div id="jejak-card-bar" style="height:5px;width:${barPct}%;background:#D4AE3A;border-radius:3px;transition:width .4s ease;"></div>
+    <div class="ds-jejak-progress-wrap">
+      <div class="ds-jejak-progress-inner">
+        <div id="jejak-card-next-text" class="ds-progress-next-text">${nextText}</div>
+        <div class="ds-progress-track">
+          <div id="jejak-card-bar" class="ds-progress-fill" style="width:${barPct}%;"></div>
         </div>
-        <div id="jejak-card-bar-label" style="font-size:9px;color:rgba(255,255,255,.3);margin-top:3px;">${lv.progressInLevel}/${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'} di level ini</div>
+        <div id="jejak-card-bar-label" class="ds-progress-bar-label">${lv.progressInLevel}/${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'} di level ini</div>
       </div>
     </div>
-    <div style="display:flex;gap:8px;margin-top:4px;">
-      <div style="flex:1;background:rgba(255,255,255,.04);border-radius:8px;padding:8px;text-align:center;">
-        <div id="jejak-card-hari" style="font-size:16px;font-weight:800;color:#fff;">${hariAktif}</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px;">Hari aktif</div>
+    <div class="ds-stat-grid" style="margin-top:4px;">
+      <div class="ds-stat-box">
+        <div id="jejak-card-hari" class="ds-stat-num">${hariAktif}</div>
+        <div class="ds-stat-label">Hari aktif</div>
       </div>
-      <div style="flex:1;background:rgba(255,255,255,.04);border-radius:8px;padding:8px;text-align:center;">
-        <div id="jejak-card-pertemuan" style="font-size:16px;font-weight:800;color:#D4AE3A;">${pertemuan}</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px;">Pertemuan</div>
+      <div class="ds-stat-box">
+        <div id="jejak-card-pertemuan" class="ds-stat-num ds-stat-num--gold">${pertemuan}</div>
+        <div class="ds-stat-label">Pertemuan</div>
       </div>
-      <div style="flex:1;background:rgba(255,255,255,.04);border-radius:8px;padding:8px;text-align:center;">
-        <div id="jejak-card-tp" style="font-size:16px;font-weight:800;color:#5C8A6E;">${tpSelesai}</div>
-        <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px;">TP selesai</div>
+      <div class="ds-stat-box">
+        <div id="jejak-card-tp" class="ds-stat-num ds-stat-num--sage">${tpSelesai}</div>
+        <div class="ds-stat-label">TP selesai</div>
       </div>
     </div>
   </div>`;
@@ -200,39 +197,36 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
   const streakLabel = streak === 0 ? 'Belum ada aktivitas' : streak < 3 ? 'Awal yang bagus!' : streak < 7 ? 'Terus semangat!' : streak < 14 ? 'Guru Konsisten!' : 'Luar Biasa!';
 
   const mulaiSection = kelasList.length === 0 ? `
-  <div style="background:rgba(212,174,58,.07);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:20px;text-align:center;">
-    <div style="font-size:32px;margin-bottom:10px;">🏫</div>
-    <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Belum ada rombel</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:16px;">
+  <div class="ds-empty">
+    <div class="ds-empty-icon">🏫</div>
+    <div class="ds-empty-title">Belum ada rombel</div>
+    <div class="ds-empty-desc">
       Buat rombel di Layar Nilai dulu.<br>Rombel dibutuhkan untuk mencatat presensi saat mengajar.
     </div>
-    <button onclick="dashKeLayarNilai()"
-      style="background:#D4AE3A;color:#1A1A1A;border:none;border-radius:10px;padding:11px 24px;font-size:12px;font-weight:800;cursor:pointer;letter-spacing:.04em;">
-      📋 Buat Rombel di Layar Nilai
-    </button>
+    <button onclick="dashKeLayarNilai()" class="ds-empty-btn">📋 Buat Rombel di Layar Nilai</button>
   </div>` : `
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
-    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Mulai Mengajar — Pilih Rombel</div>
+  <div class="ds-card ds-card--overflow">
+    <div class="ds-section-header">
+      <div class="ds-section-label">Mulai Mengajar — Pilih Rombel</div>
     </div>
-    ${kelasList.map(k => `<div onclick="dashPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})"
-         style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;-webkit-tap-highlight-color:transparent;">
+    ${kelasList.map(k => `
+    <div onclick="dashPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})"
+         class="ds-list-item">
       <div>
-        <div style="font-size:13px;font-weight:700;color:#fff;">${_escape(k.nama)}</div>
-        <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px;">Kelas ${k.tingkat || 1} · TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-name">${_escape(k.nama)}</div>
+        <div class="ds-list-item-sub">Kelas ${k.tingkat || 1} · TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
       </div>
-      <div style="color:rgba(255,255,255,.3);font-size:18px;">›</div>
+      <div class="ds-list-arrow">›</div>
     </div>`).join('')}
   </div>`;
 
   return `
-<div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:12px;">
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:12px;padding:16px;position:relative;overflow:hidden;">
-    <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(212,174,58,.06) 1px,transparent 1px);background-size:20px 20px;pointer-events:none;"></div>
-    <div style="position:relative;">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">Sesi Mengajar</div>
-      <div style="font-size:16px;font-weight:800;color:#fff;line-height:1.2;">${_escape(session.name)}</div>
-      ${session.school ? `<div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:3px;">${_escape(session.school)}</div>` : ''}
+<div class="ds-wrap">
+  <div class="ds-hero">
+    <div class="ds-hero-inner">
+      <div class="ds-hero-label">Sesi Mengajar</div>
+      <div class="ds-hero-name">${_escape(session.name)}</div>
+      ${session.school ? `<div class="ds-hero-school">${_escape(session.school)}</div>` : ''}
     </div>
   </div>
   ${mulaiSection}
@@ -245,26 +239,25 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
 function _buildPilihTPHTML() {
   const tpList = _tpList(_flow.rombel.tingkat);
   const tpHTML = tpList.map(tp => `
-  <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')"
-       style="display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;-webkit-tap-highlight-color:transparent;">
+  <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item">
     <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,174,58,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <span style="font-size:10px;font-weight:700;color:#D4AE3A;">${tp.nomor}</span>
     </div>
     <div style="flex:1;min-width:0;">
-      <div style="font-size:13px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(tp.nama)}</div>
+      <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(tp.nama)}</div>
     </div>
-    <div style="color:rgba(255,255,255,.3);font-size:18px;">›</div>
+    <div class="ds-list-arrow">›</div>
   </div>`).join('');
 
   return `
-<div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:12px;">
-  <div style="display:flex;align-items:center;gap:8px;">
-    <button onclick="dashKeLanding()" style="background:transparent;border:1px solid rgba(212,174,58,.4);color:rgba(212,174,58,.8);border-radius:8px;padding:6px 12px;font-size:11px;cursor:pointer;">← Rombel</button>
-    <div style="font-size:11px;color:rgba(212,174,58,.6);">${_escape(_flow.rombel.nama)}</div>
+<div class="ds-wrap">
+  <div class="ds-breadcrumb">
+    <button onclick="dashKeLanding()" class="ds-btn-back">← Rombel</button>
+    <div class="ds-breadcrumb-label">${_escape(_flow.rombel.nama)}</div>
   </div>
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
-    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Pilih Tujuan Pembelajaran</div>
+  <div class="ds-card ds-card--overflow">
+    <div class="ds-section-header">
+      <div class="ds-section-label">Pilih Tujuan Pembelajaran</div>
     </div>
     ${tpList.length > 0 ? tpHTML : `<div style="padding:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.35);">Data kurikulum belum tersedia.</div>`}
   </div>
@@ -275,22 +268,22 @@ function _buildPilihTPHTML() {
 
 function _buildTabMateri(tp) {
   const indikatorHTML = tp.indikator.map((ind, i) => `
-    <div style="display:flex;gap:8px;margin-bottom:6px;">
-      <div style="min-width:16px;height:16px;border-radius:50%;background:rgba(212,174,58,.15);color:#D4AE3A;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">${i+1}</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.65);line-height:1.5;">${_escape(ind)}</div>
+    <div class="ds-indikator-item">
+      <div class="ds-indikator-num">${i+1}</div>
+      <div class="ds-indikator-teks">${_escape(ind)}</div>
     </div>`).join('');
 
   const vocabHTML = tp.vocab.map(v =>
-    `<span style="background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.2);color:rgba(212,174,58,.8);border-radius:5px;padding:3px 8px;font-size:10px;font-weight:600;">${_escape(v)}</span>`
+    `<span class="ds-vocab-chip">${_escape(v)}</span>`
   ).join('');
 
   return `
-    <div style="font-size:10px;color:rgba(255,255,255,.4);margin-bottom:10px;padding-top:4px;border-top:1px solid rgba(255,255,255,.06);">${_escape(tp.tema)} · ${tp.jp} JP</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:12px;">${_escape(tp.deskripsi)}</div>
-    <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Indikator</div>
+    <div class="ds-materi-meta">${_escape(tp.tema)} · ${tp.jp} JP</div>
+    <div class="ds-materi-desc">${_escape(tp.deskripsi)}</div>
+    <div class="ds-sub-label">Indikator</div>
     ${indikatorHTML}
-    <div style="font-size:9px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin:10px 0 8px;">Kosakata Kunci</div>
-    <div style="display:flex;flex-wrap:wrap;gap:5px;">${vocabHTML}</div>`;
+    <div class="ds-sub-label" style="margin-top:10px;">Kosakata Kunci</div>
+    <div class="ds-vocab-wrap">${vocabHTML}</div>`;
 }
 
 // --- MATERI PANEL: TAB SKENARIO ----------------------------------------------
@@ -303,67 +296,53 @@ function _buildTabSkenario(tp) {
   const fase      = tp.skenario[_skenario.faseIndex] || tp.skenario[0];
   const faseNames = tp.skenario.map(f => f.fase);
 
-  // Tab fase
   const faseTabsHTML = faseNames.map((nama, i) => {
-    const isActive = i === _skenario.faseIndex;
+    const isActive    = i === _skenario.faseIndex;
     const isPenilaian = nama === 'Penilaian';
-    const color = isPenilaian ? '#5C8A6E' : '#D4AE3A';
+    const activeClass = isActive
+      ? (isPenilaian ? 'ds-fase-tab--sage-active' : 'ds-fase-tab--gold-active')
+      : '';
     const label = isPenilaian ? 'Asesmen Formatif' : nama;
-    return `<button onclick="dashSkenarioFase(${i})"
-      style="padding:5px 10px;border-radius:6px;border:1px solid ${isActive ? color : 'rgba(255,255,255,.1)'};
-      background:${isActive ? (isPenilaian ? 'rgba(92,138,110,.15)' : 'rgba(212,174,58,.1)') : 'transparent'};
-      color:${isActive ? color : 'rgba(255,255,255,.35)'};font-size:10px;font-weight:700;cursor:pointer;white-space:nowrap;">
-      ${label}
-    </button>`;
+    return `<button onclick="dashSkenarioFase(${i})" class="ds-fase-tab ${activeClass}">${label}</button>`;
   }).join('');
 
-  // Langkah-langkah skenario (bukan Penilaian)
   let kontenHTML = '';
   if (fase.fase !== 'Penilaian') {
     const langkahHTML = (fase.langkah || []).map((l, idx) => {
       if (l.tipe === 'audio') {
         return `
-        <div style="background:rgba(92,138,110,.08);border:1px solid rgba(92,138,110,.2);border-radius:10px;padding:10px 12px;display:flex;align-items:flex-start;gap:10px;">
+        <div class="ds-langkah-audio">
           <button onclick="dashTTS(${idx},'${_escapeTTS(l.teks)}')"
-            id="tts-btn-${idx}"
-            style="flex-shrink:0;width:32px;height:32px;border-radius:50%;background:rgba(92,138,110,.2);border:1px solid rgba(92,138,110,.4);color:#5C8A6E;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;">
-            ▶
-          </button>
+            id="tts-btn-${idx}" class="ds-tts-btn">▶</button>
           <div style="flex:1;">
-            <div style="font-size:9px;font-weight:700;color:#5C8A6E;letter-spacing:.05em;text-transform:uppercase;margin-bottom:3px;">Audio untuk siswa</div>
-            <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;font-style:italic;">"${_escape(l.teks)}"</div>
+            <div class="ds-langkah-audio-label">Audio untuk siswa</div>
+            <div class="ds-langkah-audio-teks">"${_escape(l.teks)}"</div>
           </div>
         </div>`;
       } else {
         return `
-        <div style="display:flex;gap:10px;align-items:flex-start;padding:6px 0;">
-          <div style="width:20px;height:20px;border-radius:50%;background:rgba(212,174,58,.15);color:#D4AE3A;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">${idx+1}</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;">${_escape(l.teks)}</div>
+        <div class="ds-langkah-instruksi">
+          <div class="ds-langkah-num">${idx+1}</div>
+          <div class="ds-langkah-teks">${_escape(l.teks)}</div>
         </div>`;
       }
     }).join('');
 
     kontenHTML = `
       <div style="margin-bottom:6px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div style="font-size:10px;font-weight:700;color:rgba(212,174,58,.7);">${_escape(fase.fase)} · ${fase.durasi} menit</div>
-          <button onclick="dashTTSStop()" style="font-size:9px;color:rgba(255,255,255,.3);background:transparent;border:none;cursor:pointer;">⏹ Stop</button>
+        <div class="ds-fase-header">
+          <div class="ds-fase-title">${_escape(fase.fase)} · ${fase.durasi} menit</div>
+          <button onclick="dashTTSStop()" class="ds-tts-stop">⏹ Stop</button>
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          ${langkahHTML}
-        </div>
+        <div class="ds-langkah-wrap">${langkahHTML}</div>
       </div>`;
-
   } else {
-    // Fase Penilaian — input L/S/R per siswa
     kontenHTML = _buildFasePenilaian();
   }
 
   return `
     <div style="padding-top:4px;border-top:1px solid rgba(255,255,255,.06);">
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-        ${faseTabsHTML}
-      </div>
+      <div class="ds-fase-tabs">${faseTabsHTML}</div>
       ${kontenHTML}
     </div>`;
 }
@@ -371,7 +350,7 @@ function _buildTabSkenario(tp) {
 // --- FASE PENILAIAN ----------------------------------------------------------
 
 function _buildFasePenilaian() {
-  const { siswaList, rombel, tp } = _flow;
+  const { siswaList } = _flow;
 
   if (!siswaList || siswaList.length === 0) {
     return `
@@ -381,20 +360,20 @@ function _buildFasePenilaian() {
   }
 
   const siswaHTML = siswaList.map(s => `
-  <div style="border-bottom:1px solid rgba(255,255,255,.05);padding:10px 0;">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
-      <div style="width:24px;height:24px;border-radius:50%;background:rgba(92,138,110,.15);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#5C8A6E;flex-shrink:0;">${s.nomor}</div>
-      <div style="font-size:12px;font-weight:700;color:#fff;flex:1;">${_escape(s.nama)}</div>
-      <div id="nilai-rerata-${s.id}" style="font-size:12px;font-weight:800;color:#D4AE3A;min-width:28px;text-align:right;">—</div>
+  <div class="ds-siswa-row">
+    <div class="ds-siswa-top">
+      <div class="ds-siswa-nomor ds-siswa-nomor--sage">${s.nomor}</div>
+      <div class="ds-siswa-nama">${_escape(s.nama)}</div>
+      <div id="nilai-rerata-${s.id}" class="ds-rerata-display">—</div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:6px;">
+    <div class="ds-lsr-grid">
       ${['L','S','R'].map(dim => `
       <div>
-        <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.4);letter-spacing:.05em;text-align:center;margin-bottom:3px;">${dim}</div>
+        <div class="ds-lsr-label">${dim}</div>
         <input
           id="nilai-${dim.toLowerCase()}-${s.id}"
           type="number" min="0" max="100" placeholder="—"
-          style="width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-size:14px;font-weight:700;text-align:center;padding:6px 4px;outline:none;box-sizing:border-box;"
+          class="ds-lsr-input"
           oninput="dashNilaiUpdate('${s.id}')"
           onfocus="this.style.borderColor='rgba(92,138,110,.5)'"
           onblur="this.style.borderColor='rgba(255,255,255,.12)'"
@@ -402,13 +381,13 @@ function _buildFasePenilaian() {
       </div>`).join('')}
     </div>
     <div>
-      <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.35);margin-bottom:3px;">Catatan</div>
+      <div class="ds-sub-label" style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:3px;">Catatan</div>
       <textarea
         id="catatan-${s.id}"
         placeholder="Observasi singkat..."
         maxlength="500"
         rows="2"
-        style="width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:rgba(255,255,255,.7);font-size:11px;padding:6px 8px;resize:none;outline:none;font-family:inherit;box-sizing:border-box;"
+        class="ds-textarea"
         onfocus="this.style.borderColor='rgba(92,138,110,.4)'"
         onblur="dashCatatanSimpan('${s.id}')"
       ></textarea>
@@ -417,15 +396,12 @@ function _buildFasePenilaian() {
 
   return `
   <div style="margin-bottom:6px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
-      <div style="font-size:10px;font-weight:700;color:#5C8A6E;">Asesmen Formatif · L / S / R</div>
-      <button onclick="dashNilaiSimpanSemua()"
-        style="background:rgba(92,138,110,.15);border:1px solid rgba(92,138,110,.4);color:#5C8A6E;border-radius:8px;padding:5px 12px;font-size:10px;font-weight:700;cursor:pointer;">
-        Simpan Semua
-      </button>
-      <div style="font-size:9px;color:rgba(255,255,255,.3);width:100%;">Observasi proses — tidak masuk nilai rapor</div>
+    <div class="ds-penilaian-header">
+      <div class="ds-penilaian-title">Asesmen Formatif · L / S / R</div>
+      <button onclick="dashNilaiSimpanSemua()" class="ds-penilaian-save-btn">Simpan Semua</button>
+      <div class="ds-penilaian-note">Observasi proses — tidak masuk nilai rapor</div>
     </div>
-    <div style="font-size:10px;color:rgba(255,255,255,.35);margin-bottom:10px;">
+    <div class="ds-penilaian-desc">
       Isi nilai L (Listening), S (Speaking), R (Reading). Nilai akhir dihitung otomatis.
     </div>
     ${siswaHTML}
@@ -449,26 +425,24 @@ function _buildSesiHTML() {
   const siswaHTML = siswaList.length === 0 ? `
   <div style="padding:24px;text-align:center;font-size:12px;color:rgba(255,255,255,.35);">
     Belum ada siswa di rombel ini.<br>
-    <button onclick="dashKeLayarNilai()" style="margin-top:12px;background:transparent;border:1px solid #D4AE3A;color:#D4AE3A;border-radius:8px;padding:7px 14px;font-size:11px;cursor:pointer;">+ Tambah Siswa di Layar Nilai</button>
+    <button onclick="dashKeLayarNilai()" class="ds-btn-back" style="margin-top:12px;color:#D4AE3A;border-color:rgba(212,174,58,.4);">+ Tambah Siswa di Layar Nilai</button>
   </div>` : siswaList.map(s => {
     const st  = statusMap[s.id] || 'A';
     const cfg = STATUS_CFG[st];
     return `
-  <div id="presensi-row-${s.id}"
-       style="display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);background:${cfg.bg};">
-    <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,174,58,.15);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#D4AE3A;flex-shrink:0;">${s.nomor}</div>
-    <div style="flex:1;font-size:13px;font-weight:500;color:rgba(255,255,255,.8);">${_escape(s.nama)}</div>
-    <div style="display:flex;gap:4px;">
+  <div id="presensi-row-${s.id}" class="ds-presensi-row" style="background:${cfg.bg};">
+    <div class="ds-siswa-nomor">${s.nomor}</div>
+    <div class="ds-siswa-nama">${_escape(s.nama)}</div>
+    <div class="ds-status-btns">
       ${['H','S','I','A'].map(k => `
-      <button onclick="dashSetStatus('${s.id}','${k}')"
-        style="padding:4px 8px;border-radius:6px;border:1px solid ${st===k ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'};background:${st===k ? STATUS_CFG[k].dot : 'transparent'};color:${st===k ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)'};font-size:10px;font-weight:700;cursor:pointer;">
+      <button onclick="dashSetStatus('${s.id}','${k}')" class="ds-status-btn"
+        style="border-color:${st===k ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'};background:${st===k ? STATUS_CFG[k].dot : 'transparent'};color:${st===k ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)'};">
         ${k}
       </button>`).join('')}
     </div>
   </div>`;
   }).join('');
 
-  // Render tab materi/skenario
   const tpData    = _getTP(tp.nomor);
   const tabMateri = _skenario.tab === 'materi';
 
@@ -477,28 +451,25 @@ function _buildSesiHTML() {
     : '<div style="font-size:11px;color:rgba(255,255,255,.3);">Data tidak tersedia.</div>';
 
   return `
-<div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:12px;">
+<div class="ds-wrap">
 
-  <!-- BREADCRUMB -->
-  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-    <button onclick="dashKeLanding()" style="background:transparent;border:1px solid rgba(212,174,58,.4);color:rgba(212,174,58,.8);border-radius:8px;padding:6px 12px;font-size:11px;cursor:pointer;">← Rombel</button>
-    <button onclick="dashKePilihTP()" style="background:transparent;border:1px solid rgba(212,174,58,.4);color:rgba(212,174,58,.8);border-radius:8px;padding:6px 12px;font-size:11px;cursor:pointer;">← TP</button>
-    <div style="font-size:11px;color:rgba(212,174,58,.6);">TP ${tp.nomor} · ${_escape(rombel.nama)}</div>
+  <div class="ds-breadcrumb">
+    <button onclick="dashKeLanding()" class="ds-btn-back">← Rombel</button>
+    <button onclick="dashKePilihTP()" class="ds-btn-back">← TP</button>
+    <div class="ds-breadcrumb-label">TP ${tp.nomor} · ${_escape(rombel.nama)}</div>
   </div>
 
-  <!-- HEADER SESI -->
-  <div style="background:rgba(92,138,110,.12);border:1px solid rgba(92,138,110,.3);border-radius:14px;padding:16px;">
-    <div style="font-size:9px;font-weight:700;color:#D4AE3A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Sesi Berlangsung</div>
-    <div style="font-size:10px;font-weight:700;color:#B05A46;">TP ${String(tp.nomor).padStart(2,'0')}</div>
-    <div style="font-size:15px;font-weight:800;color:#fff;margin-top:2px;">${_escape(tp.nama)}</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:4px;">${_escape(rombel.nama)}</div>
-    <div style="font-size:11px;color:rgba(212,174,58,.6);margin-top:4px;">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div>
+  <div class="ds-sesi-header">
+    <div class="ds-sesi-tag">Sesi Berlangsung</div>
+    <div class="ds-sesi-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
+    <div class="ds-sesi-tp-name">${_escape(tp.nama)}</div>
+    <div class="ds-sesi-rombel">${_escape(rombel.nama)}</div>
+    <div class="ds-sesi-date">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div>
   </div>
 
-  <!-- PRESENSI -->
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
-    <div onclick="dashTogglePresensi()" style="display:flex;align-items:center;justify-content:space-between;padding:13px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;">
-      <div style="font-size:9px;font-weight:700;color:#D4AE3A;letter-spacing:.08em;text-transform:uppercase;">Isi Presensi</div>
+  <div class="ds-card ds-card--overflow">
+    <div onclick="dashTogglePresensi()" class="ds-list-item">
+      <div class="ds-section-label">Isi Presensi</div>
       <div style="display:flex;align-items:center;gap:8px;">
         <div id="presensi-count" style="font-size:11px;font-weight:700;color:#5C8A6E;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
         <div id="presensi-toggle-icon" style="font-size:14px;color:rgba(255,255,255,.3);transition:transform .2s;">›</div>
@@ -509,83 +480,67 @@ function _buildSesiHTML() {
     </div>
   </div>
 
-  <!-- MATERI & SKENARIO -->
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
+  <div class="ds-card ds-card--overflow">
     <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div style="font-size:9px;font-weight:700;color:#D4AE3A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Materi & Skenario</div>
-      <div style="display:flex;gap:6px;">
-        <button onclick="dashMateriTab('materi')"
-          style="padding:5px 14px;border-radius:6px;border:1px solid ${tabMateri ? 'rgba(212,174,58,.5)' : 'rgba(255,255,255,.1)'};background:${tabMateri ? 'rgba(212,174,58,.1)' : 'transparent'};color:${tabMateri ? '#D4AE3A' : 'rgba(255,255,255,.35)'};font-size:10px;font-weight:700;cursor:pointer;">
-          Materi
-        </button>
-        <button onclick="dashMateriTab('skenario')"
-          style="padding:5px 14px;border-radius:6px;border:1px solid ${!tabMateri ? 'rgba(92,138,110,.5)' : 'rgba(255,255,255,.1)'};background:${!tabMateri ? 'rgba(92,138,110,.1)' : 'transparent'};color:${!tabMateri ? '#5C8A6E' : 'rgba(255,255,255,.35)'};font-size:10px;font-weight:700;cursor:pointer;">
-          Skenario
-        </button>
+      <div class="ds-section-label" style="margin-bottom:8px;">Materi & Skenario</div>
+      <div class="ds-tab-row">
+        <button onclick="dashMateriTab('materi')" class="ds-tab-btn ${tabMateri ? 'ds-tab-btn--gold-active' : ''}">Materi</button>
+        <button onclick="dashMateriTab('skenario')" class="ds-tab-btn ${!tabMateri ? 'ds-tab-btn--sage-active' : ''}">Skenario</button>
       </div>
     </div>
     <div style="padding:0 16px 16px;">
-      <div id="materi-konten" style="padding-top:12px;">
-        ${materiKonten}
-      </div>
+      <div id="materi-konten" class="ds-materi-konten">${materiKonten}</div>
     </div>
   </div>
 
-  <!-- REFLEKSI -->
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
-    <div style="font-size:9px;font-weight:700;color:#D4AE3A;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">Refleksi Mengajar</div>
+  <div class="ds-card" style="padding:14px;">
+    <div class="ds-section-label" style="margin-bottom:8px;">Refleksi Mengajar</div>
     <textarea id="sesi-refleksi"
       placeholder="Catatan singkat tentang sesi ini..."
       maxlength="300"
-      style="width:100%;height:72px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:12px;padding:8px 10px;resize:none;outline:none;font-family:inherit;box-sizing:border-box;"
+      class="ds-refleksi-textarea"
       onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
       onblur="this.style.borderColor='rgba(255,255,255,.1)'"
     ></textarea>
     <div style="margin-top:10px;">
-      <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Kendala sesi</div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <div class="ds-sub-label" style="font-size:9px;color:rgba(255,255,255,.35);margin-bottom:6px;">Kendala sesi</div>
+      <div class="ds-kendala-wrap">
         ${[
-          { val: 'lancar',       label: '✅ Lancar' },
-          { val: 'waktu_kurang', label: '⏱ Waktu kurang' },
+          { val: 'lancar',          label: '✅ Lancar' },
+          { val: 'waktu_kurang',    label: '⏱ Waktu kurang' },
           { val: 'kurang_kondusif', label: '📢 Kurang kondusif' },
           { val: 'media_tidak_ada', label: '🖼 Media tidak ada' },
-          { val: 'lainnya',      label: '📝 Lainnya' },
+          { val: 'lainnya',         label: '📝 Lainnya' },
         ].map(k => `
         <button onclick="dashPilihKendala('${k.val}')"
           id="kendala-btn-${k.val}"
-          style="padding:5px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.15);background:transparent;color:rgba(255,255,255,.4);font-size:10px;cursor:pointer;">
+          class="ds-kendala-btn">
           ${k.label}
         </button>`).join('')}
       </div>
     </div>
   </div>
 
-  <!-- TOMBOL -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-    <button onclick="dashKeLanding()"
-      style="padding:13px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;font-size:12px;font-weight:600;color:rgba(255,255,255,.45);cursor:pointer;">
-      Batalkan
-    </button>
-    <button onclick="dashSelesaiSesi()"
-      style="padding:13px;background:rgba(92,138,110,.12);border:1px solid rgba(92,138,110,.3);border-radius:12px;font-size:13px;font-weight:800;color:#5C8A6E;cursor:pointer;letter-spacing:.04em;">
-      ✓ Selesai
-    </button>
+  <div class="ds-action-grid">
+    <button onclick="dashKeLanding()" class="ds-btn-cancel">Batalkan</button>
+    <button onclick="dashSelesaiSesi()" class="ds-btn-selesai">✓ Selesai</button>
   </div>
 
 </div>`;
 }
 
-// --- HELPERS: RE-RENDER MATERI KONTEN ----------------------------------------
+// --- HELPERS: RE-RENDER ------------------------------------------------------
 
 function _rerenderMateriKonten() {
   const el = _container && _container.querySelector('#materi-konten');
   if (!el) return;
   const tpData = _getTP(_flow.tp?.nomor);
   if (!tpData) return;
-  const scrollY = window.scrollY;
+  const vp        = document.getElementById('app-viewport');
+  const scrollY   = vp?.scrollTop ?? 0;
   const tabMateri = _skenario.tab === 'materi';
-  el.innerHTML = tabMateri ? _buildTabMateri(tpData) : _buildTabSkenario(tpData);
-  window.scrollTo({ top: scrollY, behavior: 'instant' });
+  el.innerHTML    = tabMateri ? _buildTabMateri(tpData) : _buildTabSkenario(tpData);
+  if (vp) vp.scrollTop = scrollY;
 }
 
 function _rerenderPresensiUI() {
@@ -633,7 +588,6 @@ async function _refreshJejakCard() {
 // --- TTS ---------------------------------------------------------------------
 
 let _ttsUtterance = null;
-
 let _ttsActiveBtn = null;
 
 function _ttsSpeak(teks, btnEl) {
@@ -650,7 +604,7 @@ function _ttsSpeak(teks, btnEl) {
   if (btnEl) {
     _ttsActiveBtn = btnEl;
     btnEl.textContent = '⏸';
-    btnEl.style.background = 'rgba(92,138,110,.5)';
+    btnEl.style.background  = 'rgba(92,138,110,.5)';
     btnEl.style.borderColor = '#5C8A6E';
   }
   window.speechSynthesis.speak(u);
@@ -659,7 +613,7 @@ function _ttsSpeak(teks, btnEl) {
 function _ttsResetBtn() {
   if (_ttsActiveBtn) {
     _ttsActiveBtn.textContent = '▶';
-    _ttsActiveBtn.style.background = 'rgba(92,138,110,.2)';
+    _ttsActiveBtn.style.background  = 'rgba(92,138,110,.2)';
     _ttsActiveBtn.style.borderColor = 'rgba(92,138,110,.4)';
     _ttsActiveBtn = null;
   }
@@ -678,8 +632,8 @@ window.dashTogglePresensi = function() {
   const icon  = document.getElementById('presensi-toggle-icon');
   if (!panel || !icon) return;
   const isOpen = panel.style.display !== 'none';
-  panel.style.display = isOpen ? 'none' : 'block';
-  icon.style.transform = isOpen ? '' : 'rotate(90deg)';
+  panel.style.display    = isOpen ? 'none' : 'block';
+  icon.style.transform   = isOpen ? '' : 'rotate(90deg)';
 };
 
 window.dashMateriTab = function(tab) {
@@ -701,21 +655,16 @@ window.dashTTS = function(idx, teks) {
   _ttsSpeak(decoded, btnEl);
 };
 
+window.dashTTSStop = function() {
+  _ttsStop();
+};
+
 window.dashPilihKendala = function(val) {
   _skenario.kendala = val;
-  // Reset semua tombol
   ['lancar','waktu_kurang','kurang_kondusif','media_tidak_ada','lainnya'].forEach(k => {
     const btn = document.getElementById(`kendala-btn-${k}`);
     if (!btn) return;
-    if (k === val) {
-      btn.style.background   = 'rgba(212,174,58,.15)';
-      btn.style.borderColor  = 'rgba(212,174,58,.5)';
-      btn.style.color        = '#D4AE3A';
-    } else {
-      btn.style.background   = 'transparent';
-      btn.style.borderColor  = 'rgba(255,255,255,.15)';
-      btn.style.color        = 'rgba(255,255,255,.4)';
-    }
+    btn.classList.toggle('ds-kendala-btn--active', k === val);
   });
 };
 
@@ -723,11 +672,13 @@ window.dashNilaiUpdate = function(siswaId) {
   const l = parseInt(document.getElementById(`nilai-l-${siswaId}`)?.value) || null;
   const s = parseInt(document.getElementById(`nilai-s-${siswaId}`)?.value) || null;
   const r = parseInt(document.getElementById(`nilai-r-${siswaId}`)?.value) || null;
-  const valid = [l, s, r].filter(v => v !== null && !isNaN(v));
+  const valid  = [l, s, r].filter(v => v !== null && !isNaN(v));
   const rerata = valid.length > 0 ? Math.round(valid.reduce((a,b) => a+b, 0) / valid.length) : null;
   const el = document.getElementById(`nilai-rerata-${siswaId}`);
-  if (el) el.textContent = rerata !== null ? rerata : '—';
-  if (el) el.style.color = rerata !== null ? (rerata >= 80 ? '#5C8A6E' : rerata >= 70 ? '#D4AE3A' : '#B05A46') : '#D4AE3A';
+  if (el) {
+    el.textContent = rerata !== null ? rerata : '—';
+    el.style.color = rerata !== null ? (rerata >= 80 ? '#5C8A6E' : rerata >= 70 ? '#D4AE3A' : '#B05A46') : '#D4AE3A';
+  }
 };
 
 window.dashCatatanSimpan = async function(siswaId) {
@@ -746,17 +697,14 @@ window.dashNilaiSimpanSemua = async function() {
   if (!rombel || !tp || !siswaList) return;
   let saved = 0;
   for (const s of siswaList) {
-    const l = parseInt(document.getElementById(`nilai-l-${s.id}`)?.value);
+    const l  = parseInt(document.getElementById(`nilai-l-${s.id}`)?.value);
     const sv = parseInt(document.getElementById(`nilai-s-${s.id}`)?.value);
-    const r = parseInt(document.getElementById(`nilai-r-${s.id}`)?.value);
-    const cl = isNaN(l) ? null : Math.max(0, Math.min(100, l));
+    const r  = parseInt(document.getElementById(`nilai-r-${s.id}`)?.value);
+    const cl = isNaN(l)  ? null : Math.max(0, Math.min(100, l));
     const cs = isNaN(sv) ? null : Math.max(0, Math.min(100, sv));
-    const cr = isNaN(r) ? null : Math.max(0, Math.min(100, r));
+    const cr = isNaN(r)  ? null : Math.max(0, Math.min(100, r));
     if (cl !== null || cs !== null || cr !== null) {
-      try {
-        await nilai.setNilaiFormatif(rombel.id, s.id, tp.nomor, cl, cs, cr);
-        saved++;
-      } catch (err) {
+      try { await nilai.setNilaiFormatif(rombel.id, s.id, tp.nomor, cl, cs, cr); saved++; } catch (err) {
         console.warn('[DASHBOARD] setNilaiFormatif gagal:', s.nama, err.message);
       }
     }
@@ -780,7 +728,7 @@ window.dashKeLayarNilai = function() {
 
 window.dashKeLanding = async function() {
   _ttsStop();
-  _flow = { view: 'landing', rombel: null, tp: null, statusMap: {}, siswaList: [] };
+  _flow     = { view: 'landing', rombel: null, tp: null, statusMap: {}, siswaList: [] };
   _skenario = { tab: 'materi', faseIndex: 0, langkahIndex: 0, speaking: false };
   try {
     const [session, kelasList, rekapList, streak, summary] = await Promise.all([
@@ -843,10 +791,10 @@ window.dashSetStatus = function(siswaId, status) {
     ['H','S','I','A'].forEach((k, i) => {
       const btn = btns[i];
       if (!btn) return;
-      const active = k === status;
-      btn.style.border     = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'}`;
+      const active       = k === status;
+      btn.style.border   = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'}`;
       btn.style.background = active ? STATUS_CFG[k].dot : 'transparent';
-      btn.style.color      = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)';
+      btn.style.color    = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)';
     });
   }
   _rerenderPresensiUI();
@@ -901,7 +849,6 @@ function _escape(str) {
 }
 
 function _escapeTTS(str) {
-  // Escape untuk atribut onclick — hanya escape karakter yang merusak JS string
   if (!str) return '';
   return String(str)
     .replace(/\\/g, '\\\\')
@@ -912,11 +859,11 @@ function _escapeTTS(str) {
 
 function _renderSkeleton(container) {
   container.innerHTML = `
-  <div style="padding:16px;display:flex;flex-direction:column;gap:12px">
+  <div class="ds-skeleton-wrap">
     ${['70%','90%','100%','80%'].map(w => `
-    <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:14px">
-      <div style="height:10px;width:${w};background:var(--parchment);border-radius:4px;margin-bottom:10px"></div>
-      <div style="height:20px;width:50%;background:var(--parchment);border-radius:4px"></div>
+    <div class="ds-skeleton-card">
+      <div class="ds-skeleton-line" style="width:${w};"></div>
+      <div class="ds-skeleton-line ds-skeleton-line--short"></div>
     </div>`).join('')}
   </div>`;
 }
