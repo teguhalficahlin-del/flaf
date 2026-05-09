@@ -195,7 +195,6 @@ body {
 
 .splash-atom { opacity: .9; line-height: 0; }
 .splash-atom svg {
-  /* +50% dari 220px. Min 270px agar proporsional, 72vw = ~230px di HP 320px */
   width: clamp(270px, 72vw, 330px);
   height: clamp(270px, 72vw, 330px);
 }
@@ -355,7 +354,7 @@ body {
   width: 100%;
   display: flex; flex-direction: column;
   align-items: center; gap: 12px;
-  margin: clamp(16px, 3vh, 28px) auto 0;
+  margin-top: auto;
 }
 .act-btn {
   width: 100%; padding: 16px; min-height: 56px;
@@ -826,6 +825,7 @@ body {
   .splash-title       { font-size: 18px; }
   .splash-tagline-new { font-size: 13px; }
   .splash-btn-mulai   { min-height: 48px; font-size: 15px; }
+  .splash-atom svg    { width: 80px; height: 80px; }
   .act-wrap           { padding: 20px clamp(20px, 8vw, 60px); }
   .act-title          { font-size: 18px; }
   .act-tagline-new    { font-size: 13px; }
@@ -838,6 +838,7 @@ body {
 /* ── HP pendek: 600–720px tinggi ── */
 @media (max-height: 720px) and (min-height: 601px) {
   .splash-welcome     { gap: clamp(12px, 2.5vh, 20px); }
+  .splash-atom svg    { width: 180px; height: 180px; }
   .splash-atom svg    { width: 180px; height: 180px; }
   .act-wrap           { padding: 32px clamp(24px, 8vw, 60px) 28px; }
   .act-fields         { margin-top: 18px; gap: 12px; }
