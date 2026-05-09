@@ -241,7 +241,7 @@ function _buildPilihTPHTML() {
   const tpHTML = tpList.map(tp => `
   <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item">
     <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,174,58,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <span style="font-size:10px;font-weight:700;color:#D4AE3A;">${tp.nomor}</span>
+      <span style="font-size:15px;font-weight:700;color:#D4AE3A;">${tp.nomor}</span>
     </div>
     <div style="flex:1;min-width:0;">
       <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(tp.nama)}</div>
@@ -471,7 +471,7 @@ function _buildSesiHTML() {
     <div onclick="dashTogglePresensi()" class="ds-list-item">
       <div class="ds-section-label">Isi Presensi</div>
       <div style="display:flex;align-items:center;gap:8px;">
-        <div id="presensi-count" style="font-size:11px;font-weight:700;color:#D4AE3A;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
+        <div id="presensi-count" style="font-size:16px;font-weight:700;color:#D4AE3A;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
         <div id="presensi-toggle-icon" style="font-size:14px;color:rgba(255,255,255,.3);transition:transform .2s;">›</div>
       </div>
     </div>

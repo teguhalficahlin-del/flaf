@@ -194,13 +194,13 @@ function _buildLevelTangga(hariAktif, totalSesi) {
       return `
         <div style="margin-top:8px;">
           <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-            <span style="font-size:12px;color:rgba(255,255,255,.55);">${lv.progressInLevel} / ${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'}</span>
-            <span style="font-size:12px;color:rgba(212,174,58,.7);">${barPct}%</span>
+            <span style="font-size:14px;color:rgba(255,255,255,.55);">${lv.progressInLevel} / ${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'}</span>
+            <span style="font-size:14px;color:rgba(212,174,58,.7);">${barPct}%</span>
           </div>
           <div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;">
             <div style="height:5px;width:${barPct}%;background:#D4AE3A;border-radius:3px;"></div>
           </div>
-          ${lv.next ? `<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;">${lv.next.min - hariAktif} hari lagi ke level berikutnya</div>` : ''}
+          ${lv.next ? `<div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px;">${lv.next.min - hariAktif} hari lagi ke level berikutnya</div>` : ''}
         </div>`;
     })() : '';
 
@@ -212,10 +212,10 @@ function _buildLevelTangga(hariAktif, totalSesi) {
         <div style="flex:1;min-width:0;">
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
             <div style="font-size:15px;font-weight:800;color:${isCurrent ? '#fff' : isDone ? 'rgba(255,255,255,.7)' : 'rgba(255,255,255,.25)'};">${level.nama}</div>
-            ${badgeText ? `<span style="font-size:12px;font-weight:700;color:${labelColor};border:1px solid ${borderColor};border-radius:4px;padding:1px 6px;">${badgeText}</span>` : ''}
+            ${badgeText ? `<span style="font-size:14px;font-weight:700;color:${labelColor};border:1px solid ${borderColor};border-radius:4px;padding:1px 6px;">${badgeText}</span>` : ''}
           </div>
           <div style="font-size:15px;font-weight:700;color:${isDone ? '#D4AE3A' : isCurrent ? '#D4AE3A' : 'rgba(255,255,255,.2)'};margin-top:2px;">${level.gaji}</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:1px;">TP ${level.min}–${level.max}</div>
+          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:1px;">TP ${level.min}–${level.max}</div>
         </div>
         ${isDone ? `<div style="font-size:18px;">✅</div>` : ''}
       </div>
