@@ -471,7 +471,7 @@ function _buildSesiHTML() {
     <div onclick="dashTogglePresensi()" class="ds-list-item">
       <div class="ds-section-label">Isi Presensi</div>
       <div style="display:flex;align-items:center;gap:8px;">
-        <div id="presensi-count" style="font-size:11px;font-weight:700;color:#5C8A6E;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
+        <div id="presensi-count" style="font-size:11px;font-weight:700;color:#D4AE3A;">${totalH > 0 ? `${totalH}/${total} hadir` : ''}</div>
         <div id="presensi-toggle-icon" style="font-size:14px;color:rgba(255,255,255,.3);transition:transform .2s;">›</div>
       </div>
     </div>
@@ -717,7 +717,7 @@ window.dashNilaiSimpanSemua = async function() {
   if (btn) {
     const orig = btn.textContent;
     btn.textContent = `✓ Tersimpan (${saved})`;
-    btn.style.color = '#5C8A6E';
+    btn.style.color = '#D4AE3A';
     setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 2000);
   }
 };
