@@ -82,7 +82,23 @@ function navigateTo(screenId, opts = {}) {
     });
   });
 
-  next.scrollTop = 0;
+  /*
+   * Reset scroll ke atas saat berganti screen.
+   * Dalam arsitektur baru, scroll ada di #app-viewport — bukan di screen.
+   * next.scrollTop = 0 tidak efektif lagi; yang harus di-reset adalah viewport.
+   */
+  const viewport = document.getElementById('app-viewport');
+  if (viewport) {
+    viewport.scrollTop = 0;
+    /*
+     * Screen dengan nav mengelola scrollnya sendiri (area konten internal).
+     * Tambah class 'viewport-locked' agar #app-viewport tidak ikut scroll —
+     * mencegah double-scroll yang membingungkan di layar dengan nav.
+     */
+    const nextHasNav = next.classList.contains('screen-with-nav');
+    viewport.classList.toggle('viewport-locked', nextHasNav);
+  }
+
   currentScreen = screenId;
 
   logger.info('app', `navigasi ke: ${screenId}`);
@@ -308,6 +324,21 @@ async function initApp() {
   } catch (err) {
     console.error('[APP] logger.init() gagal:', err?.message);
   }
+
+  /*
+   * STEP 0.5: Inisialisasi state #app-viewport.
+   * Splash adalah screen pertama dan bukan screen-with-nav,
+   * jadi viewport dimulai dalam mode scroll (tidak locked).
+   * Ini juga memastikan state konsisten jika halaman di-reload
+   * dari screen yang berbeda via back-button popstate.
+   */
+  const viewport = document.getElementById('app-viewport');
+  if (viewport) {
+    const initialScreen = document.querySelector('.screen.screen-active');
+    const initialHasNav = initialScreen?.classList.contains('screen-with-nav') ?? false;
+    viewport.classList.toggle('viewport-locked', initialHasNav);
+  }
+
 
   // STEP 1: Registrasi SW (non-blocking — tidak perlu tunggu)
   _registerServiceWorker();

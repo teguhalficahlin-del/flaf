@@ -76,20 +76,57 @@ body {
 /* ── PHONE SHELL ── */
 .phone { display: contents; }
 
-/* =============================================================
-   SCREEN SYSTEM
-   Semua .screen: position fixed, full viewport.
-   Masing-masing layar mengatur overflow-nya sendiri.
-   ============================================================= */
-.screen {
+/*
+ * SCREEN SYSTEM — Arsitektur baru (FLAF-compliant)
+ *
+ * SEBELUM (melanggar prinsip):
+ *   .screen { position: fixed; inset: 0; height: 100dvh; }
+ *   Problem: keyboard virtual memotong konten, address bar resize
+ *   menyebabkan layout jump, overflow:hidden di setiap screen
+ *   membuat scroll tidak natural.
+ *
+ * SESUDAH (mobile-first, scroll natural):
+ *   #app-viewport { position: fixed; inset: 0; overflow-y: auto; }
+ *   .screen { position: static; min-height: 100%; }
+ *
+ * KEUNTUNGAN:
+ *   1. Hanya SATU element fixed — lebih predictable di semua browser mobile
+ *   2. Keyboard virtual mengecilkan #app-viewport, bukan memotong konten
+ *   3. Scroll terjadi di dalam container — overscroll bounce alami di iOS
+ *   4. Transisi animasi tetap bekerja — screen ada di DOM layer yang sama
+ *   5. Tidak ada height:100dvh di screen individual — tidak ada layout jump
+ * ============================================================= */
+
+/* Container tunggal yang menggantikan position:fixed di setiap screen */
+#app-viewport {
   position: fixed;
   inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  /* Pastikan scroll kembali ke atas saat screen berganti (via JS) */
+  scroll-behavior: auto;
+}
+
+/*
+ * Saat screen aktif memiliki nav (screen-with-nav), viewport tidak perlu scroll —
+ * scroll ada di dalam area konten screen tersebut.
+ * Class ini di-toggle oleh navigateTo() di app.js.
+ */
+#app-viewport.viewport-locked {
+  overflow-y: hidden;
+}
+
+.screen {
+  /* position: static — screen mengalir dalam #app-viewport */
+  position: static;
   width: 100%;
-  height: 100%;
-  height: 100dvh;
+  /* min-height: 100% memastikan screen memenuhi viewport container */
+  min-height: 100%;
   display: none;
   flex-direction: column;
-  overflow: hidden;
+  /* Tidak ada overflow:hidden — scroll terjadi di #app-viewport */
   will-change: opacity, transform;
 }
 .screen[hidden]        { display: none !important; }
@@ -115,27 +152,31 @@ body {
   pointer-events: none;
 }
 
-/* Layar dengan bottom nav: overflow hidden agar nav tetap di bawah */
+/* Layar dengan bottom nav: flex column agar nav tetap di bawah konten.
+ * height:100% diperlukan agar flex:1 pada scroll area internal bekerja.
+ * Ini berbeda dari layar tanpa nav (splash, activation) yang pakai min-height:100%.
+ */
 .screen-with-nav {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* overflow:hidden di sini OK karena scroll ada di child scroll-area,
+   * bukan di #app-viewport — mencegah double scroll bar */
   overflow: hidden;
-  overscroll-behavior: none;
 }
 
 /* =============================================================
    SPLASH — #s-splash
-   Pakai overflow-y:auto agar HP sangat pendek bisa scroll
+   Scroll ditangani oleh #app-viewport — screen ini static.
+   align-items/justify-content stretch agar .splash-welcome memenuhi tinggi.
    ============================================================= */
 #s-splash {
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
+  /* Tidak perlu overflow-y:auto — scroll ada di #app-viewport */
   background: var(--ink);
   align-items: stretch;
   justify-content: stretch;
 }
+
 
 .splash-welcome {
   display: flex;
@@ -143,8 +184,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: clamp(16px, 3.5vh, 32px);
-  min-height: 100dvh;
-  min-height: 100vh; /* fallback */
+  /* min-height: 100% mengisi #app-viewport (bukan window viewport) */
+  min-height: 100%;
   padding: clamp(32px, 6vh, 56px) clamp(20px, 6vw, 36px) clamp(32px, 5vh, 48px);
   background: var(--ink);
   background-image: radial-gradient(circle, rgba(212,174,58,.05) 1px, transparent 1px);
@@ -194,8 +235,13 @@ body {
 
 .splash-atom { opacity: .9; line-height: 0; }
 .splash-atom svg {
-  width: clamp(282px, 88vw, 360px);
-  height: clamp(282px, 88vw, 360px);
+  /* 
+   * Mobile-first: minimum 160px agar tidak mendominasi layar 320px.
+   * 55vw = 176px di 320px, 228px di 414px — cukup terlihat tanpa memenuhi layar.
+   * Max 300px untuk tablet/desktop.
+   */
+  width: clamp(160px, 55vw, 300px);
+  height: clamp(160px, 55vw, 300px);
 }
 
 .splash-welcome-bottom {
@@ -230,18 +276,11 @@ body {
 
 /* =============================================================
    AKTIVASI — #s-activation
-   PENTING: tidak override display dari .screen.
-   Gunakan overflow-y:auto saja agar konten bisa scroll.
+   Scroll dihandle #app-viewport. Screen ini static.
    ============================================================= */
 #s-activation {
-  /* TIDAK override display — biarkan .screen-active yang atur */
-  /* TIDAK override position — biarkan fixed dari .screen */
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
+  /* Tidak perlu overflow-y:auto — scroll ada di #app-viewport */
   background: var(--ink);
-  /* display flex column sudah dari .screen-active + .screen */
   align-items: stretch;
   justify-content: flex-start;
 }
@@ -253,8 +292,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100dvh;
-  min-height: 100vh;
+  /* min-height: 100% mengisi #app-viewport */
+  min-height: 100%;
   /* Padding horizontal kontrol lebar efektif — tidak perlu max-width */
   padding: clamp(40px, 8vh, 72px) clamp(24px, 8vw, 80px) clamp(36px, 7vh, 60px);
   background: var(--ink);
@@ -352,7 +391,12 @@ body {
   width: 100%;
   display: flex; flex-direction: column;
   align-items: center; gap: 12px;
-  margin-top: auto;
+  /*
+   * PENTING: margin-top: auto melanggar prinsip FLAF — tombol terdorong
+   * ke luar viewport saat keyboard muncul atau layar pendek.
+   * Ganti dengan clamp agar ada jarak minimum yang predictable.
+   */
+  margin-top: clamp(20px, 4vh, 36px);
 }
 .act-btn {
   width: 100%; padding: 16px; min-height: 56px;
@@ -469,8 +513,8 @@ body {
 
 .home-wrap {
   width: 100%;
-  min-height: 100dvh;
-  min-height: 100vh;
+  /* min-height: 100% mengisi #app-viewport */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
@@ -570,7 +614,7 @@ body {
 .home-backup--warn svg                { stroke: #C87941; }
 .home-backup--warn .home-backup-btn   { color: #fff; background: #C87941; border-color: #C87941; }
 
-.coming-wrap { display: flex; flex-direction: column; min-height: 100dvh; background: var(--ink); background-image: radial-gradient(circle, rgba(212,174,58,.04) 1px, transparent 1px); background-size: 22px 22px; }
+.coming-wrap { display: flex; flex-direction: column; min-height: 100%; background: var(--ink); background-image: radial-gradient(circle, rgba(212,174,58,.04) 1px, transparent 1px); background-size: 22px 22px; }
 .coming-back { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.6); cursor: pointer; margin: 20px 20px 0; flex-shrink: 0; }
 .coming-inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 32px 64px; text-align: center; gap: 16px; }
 .coming-atom { opacity: .7; }
@@ -835,8 +879,9 @@ body {
 
 /* ── HP pendek: 600–720px tinggi ── */
 @media (max-height: 720px) and (min-height: 601px) {
-  .splash-welcome     { gap: clamp(12px, 2.5vh, 20px); }
-  .splash-atom svg    { width: 200px; height: 200px; }
+  .splash-welcome     { gap: clamp(10px, 2vh, 16px); }
+  /* Atom lebih kecil di layar 640–720px agar tombol tetap terlihat tanpa scroll */
+  .splash-atom svg    { width: 160px; height: 160px; }
   .act-wrap           { padding: 32px clamp(24px, 8vw, 60px) 28px; }
   .act-fields         { margin-top: 18px; gap: 12px; }
   .act-input          { min-height: 52px; }

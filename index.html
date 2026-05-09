@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="screens/kurikulum.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script>window.__FLAF_VERSION__ = 'flaf-v14';</script>
+  <script>window.__FLAF_VERSION__ = 'flaf-v16';</script>
 </head>
 <body>
 
@@ -30,6 +30,16 @@
   <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
 
   <div class="phone">
+
+  <!--
+    #app-viewport: SATU-SATUNYA element position:fixed dalam app.
+    Ini adalah viewport container. Screen individual di dalamnya
+    menggunakan position:static + min-height:100% sehingga:
+    - Keyboard virtual mengecilkan viewport, bukan memotong konten
+    - Scroll natural terjadi di dalam container, bukan di window
+    - Transisi animasi antar screen tetap bekerja
+  -->
+  <div id="app-viewport">
 
   <!-- ═══════════════════════════════════════════════════════
        SCREEN: s-splash — Splash / Intro
@@ -538,6 +548,8 @@
       </div>
     </div>
   </div>
+
+  </div><!-- /#app-viewport -->
 
   </div><!-- /.phone -->
 
