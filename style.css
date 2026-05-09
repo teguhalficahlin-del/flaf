@@ -1008,13 +1008,13 @@ body {
 }
 .ds-hero-inner { position: relative; }
 .ds-hero-label {
-  font-size: 9px; font-weight: 700;
-  color: rgba(212,174,58,.7);
+  font-size: 12px; font-weight: 700;
+  color: rgba(212,174,58,.85);
   letter-spacing: .1em; text-transform: uppercase;
   margin-bottom: 6px;
 }
 .ds-hero-name { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.2; }
-.ds-hero-school { font-size: 10px; color: rgba(255,255,255,.45); margin-top: 3px; }
+.ds-hero-school { font-size: 10px; color: rgba(255,255,255,.80); margin-top: 3px; }
 
 /* ── Empty state (belum ada rombel) ── */
 .ds-empty {
