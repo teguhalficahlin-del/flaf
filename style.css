@@ -1461,13 +1461,13 @@ body {
   justify-content: space-between;
   padding: 14px 16px 10px;
 }
-.nv-rombel-name { font-size: 14px; font-weight: 700; color: #fff; }
-.nv-rombel-sub  { font-size: 10px; color: rgba(255,255,255,.3); margin-top: 2px; }
+.nv-rombel-name { font-size: 15px; font-weight: 700; color: #fff; }
+.nv-rombel-sub  { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
 .nv-rombel-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .nv-btn {
   background: transparent; cursor: pointer;
   border-radius: 8px; padding: 6px 12px;
-  font-size: 11px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1477,12 +1477,12 @@ body {
 .nv-btn--sage  { border: 1px solid #5C8A6E; color: #5C8A6E; }
 .nv-btn--gold-solid { background: #D4AE3A; border: none; color: #1A1A1A; }
 .nv-btn--slate-solid { background: #7B9FD4; border: none; color: #fff; }
-.nv-btn--sm { padding: 4px 8px; font-size: 10px; }
+.nv-btn--sm { padding: 4px 8px; font-size: 12px; }
 
 .nv-stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0 16px 14px; gap: 8px; }
 .nv-stat-box { background: rgba(255,255,255,.04); border-radius: 10px; padding: 10px 8px; text-align: center; }
 .nv-stat-num { font-size: 16px; font-weight: 800; }
-.nv-stat-label { font-size: 9px; color: rgba(255,255,255,.35); margin-top: 3px; letter-spacing: .05em; text-transform: uppercase; }
+.nv-stat-label { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 3px; letter-spacing: .05em; text-transform: uppercase; }
 
 /* TP grid progress */
 .nv-tp-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
@@ -1501,7 +1501,7 @@ body {
 }
 .nv-legend-dot--done { background: rgba(92,138,110,.25); border: 1px solid rgba(92,138,110,.5); }
 .nv-legend-dot--todo { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
-.nv-legend-label { font-size: 9px; color: rgba(255,255,255,.35); }
+.nv-legend-label { font-size: 12px; color: rgba(255,255,255,.55); }
 
 /* Menu card */
 .nv-menu-card {
@@ -1518,8 +1518,8 @@ body {
   width: 36px; height: 36px; border-radius: 10px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.nv-menu-title { font-size: 13px; font-weight: 700; color: #fff; }
-.nv-menu-sub   { font-size: 11px; color: rgba(255,255,255,.4); margin-top: 2px; }
+.nv-menu-title { font-size: 15px; font-weight: 700; color: #fff; }
+.nv-menu-sub   { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
 .nv-menu-arrow { color: rgba(255,255,255,.3); font-size: 16px; flex-shrink: 0; }
 
 /* TP list item */
@@ -1530,12 +1530,12 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.05);
 }
 .nv-tp-item:last-child { border-bottom: none; }
-.nv-tp-num  { font-size: 10px; font-weight: 700; color: #B05A46; letter-spacing: .05em; }
+.nv-tp-num  { font-size: 12px; font-weight: 700; color: #B05A46; letter-spacing: .05em; }
 .nv-tp-name {
   font-size: 13px; font-weight: 600; color: #fff; margin-top: 2px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.nv-tp-status { font-size: 10px; margin-top: 3px; }
+.nv-tp-status { font-size: 12px; margin-top: 3px; }
 .nv-tp-actions { display: flex; gap: 6px; align-items: center; flex-shrink: 0; margin-left: 10px; }
 
 /* Input nilai siswa baris */
@@ -1554,7 +1554,7 @@ body {
   min-width: 28px; text-align: right; flex-shrink: 0;
 }
 .nv-lsr-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 8px; }
-.nv-lsr-label { font-size: 9px; font-weight: 700; color: rgba(255,255,255,.4); letter-spacing: .05em; text-align: center; margin-bottom: 3px; }
+.nv-lsr-label { font-size: 12px; font-weight: 700; color: rgba(255,255,255,.55); letter-spacing: .05em; text-align: center; margin-bottom: 3px; }
 .nv-lsr-input {
   width: 100%; background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12); border-radius: 8px;
@@ -1588,13 +1588,13 @@ body {
 }
 .nv-rapor-row:last-child { border-bottom: none; }
 .nv-rapor-col { text-align: center; min-width: 36px; }
-.nv-rapor-col-label { font-size: 9px; color: rgba(255,255,255,.3); }
+.nv-rapor-col-label { font-size: 12px; color: rgba(255,255,255,.55); }
 .nv-rapor-col-val { font-size: 12px; font-weight: 700; }
 .nv-rapor-col--main {
   text-align: center; min-width: 44px;
   background: rgba(250,199,117,.08); border-radius: 8px; padding: 4px 6px;
 }
-.nv-rapor-main-label { font-size: 9px; color: rgba(250,199,117,.6); }
+.nv-rapor-main-label { font-size: 12px; color: rgba(250,199,117,.6); }
 .nv-rapor-main-val   { font-size: 14px; font-weight: 800; }
 
 /* Tombol simpan */
@@ -1642,7 +1642,7 @@ body {
 .nv-siswa-hapus-btn {
   background: rgba(176,90,70,.15); border: 1px solid rgba(176,90,70,.3);
   color: #B05A46; border-radius: 6px; padding: 4px 10px;
-  font-size: 11px; cursor: pointer; font-family: inherit;
+  font-size: 12px; cursor: pointer; font-family: inherit;
 }
 .nv-textarea-siswa {
   width: 100%; height: 140px;
@@ -1671,17 +1671,17 @@ body {
 /* Info bar */
 .nv-info-row {
   margin: 0 16px;
-  font-size: 11px; color: rgba(255,255,255,.35);
+  font-size: 13px; color: rgba(255,255,255,.55);
 }
 .nv-legend-row { margin: 0 16px; display: flex; gap: 16px; align-items: center; }
-.nv-legend-text { font-size: 10px; color: rgba(255,255,255,.4); }
+.nv-legend-text { font-size: 12px; color: rgba(255,255,255,.55); }
 
 /* Color indicator dots */
 .nv-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .nv-dot--sage  { background: #5C8A6E; }
 .nv-dot--gold  { background: #D4AE3A; }
 .nv-dot--clay  { background: #B05A46; }
-.nv-dot-label  { font-size: 9px; color: rgba(255,255,255,.3); }
+.nv-dot-label  { font-size: 12px; color: rgba(255,255,255,.5); }
 
 /* Color legend row */
 .nv-color-legend { margin: 0 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
