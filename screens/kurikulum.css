@@ -56,7 +56,7 @@
 
 .kur-cp-section { border-left: 3px solid var(--tema-secondary); padding-left: 12px; }
 .kur-cp-label { font-size: 10.5px; font-weight: 700; color: var(--tema-secondary); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
-.kur-cp-text { font-size: 12.5px; color: rgba(255,255,255,.7); line-height: 1.65; }
+.kur-cp-text { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.65; }
 
 .kur-atp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -16px; padding: 0 16px; }
 .kur-atp-table { width: 100%; min-width: 340px; border-collapse: collapse; font-size: 12px; }
@@ -82,10 +82,10 @@
 }
 .kur-tp-head:active { background: var(--tema-primary-pale); }
 .kur-tp-head-left { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
-.kur-tp-num { font-size: 10px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; }
+.kur-tp-num { font-size: 14px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; }
 .kur-tp-nama { font-size: 14px; font-weight: 700; color: rgba(255,255,255,.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .kur-tp-head-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.kur-tp-jp { font-size: 11px; color: var(--tema-muted); }
+.kur-tp-jp { font-size: 14px; color: var(--tema-muted); }
 .kur-tp-body {
   padding: 14px 16px 18px; background: var(--tema-bg-light);
   border-top: 1px dashed var(--tema-border-light);
@@ -93,8 +93,8 @@
 }
 .kur-tp-tema { display: flex; gap: 8px; align-items: center; }
 .kur-tp-tema-label { font-size: 10px; font-weight: 700; color: var(--tema-primary); text-transform: uppercase; letter-spacing: .06em; }
-.kur-tp-tema-val { font-size: 12px; color: var(--tema-primary); font-weight: 600; }
-.kur-tp-desc { font-size: 12.5px; color: rgba(255,255,255,.7); line-height: 1.65; }
+.kur-tp-tema-val { font-size: 14px; color: var(--tema-primary); font-weight: 600; }
+.kur-tp-desc { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.65; }
 
 .kur-ind-title { font-size: 11px; font-weight: 700; color: rgba(212,174,58,.7); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 8px; }
 .kur-ind-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
