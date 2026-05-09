@@ -118,7 +118,7 @@ function _getTP(nomor) {
 // --- LEVEL SYSTEM ------------------------------------------------------------
 
 const LEVELS = [
-  { min: 0,  max: 3,        emoji: '<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 36 36"><rect x="2" y="14" width="28" height="16" rx="3" fill="#C0392B"/><rect x="2" y="14" width="28" height="16" rx="3" fill="none" stroke="#922B21" stroke-width="1"/><rect x="4" y="9" width="28" height="16" rx="3" fill="#E74C3C"/><rect x="4" y="9" width="28" height="16" rx="3" fill="none" stroke="#C0392B" stroke-width="1"/><rect x="6" y="4" width="28" height="16" rx="3" fill="#EC7063"/><rect x="6" y="4" width="28" height="16" rx="3" fill="none" stroke="#E74C3C" stroke-width="1"/><circle cx="20" cy="12" r="4" fill="#C0392B"/><circle cx="20" cy="12" r="2.5" fill="#922B21"/></svg>', nama: 'Tunjangan Sertifikasi', gaji: 'Rp 15.000.000' },
+  { min: 0,  max: 3,        emoji: '🎖️', nama: 'Tunjangan Sertifikasi', gaji: 'Rp 15.000.000' },
   { min: 4,  max: 7,        emoji: '💰', nama: 'Tunjangan Kinerja',      gaji: 'Rp 25.000.000' },
   { min: 8,  max: 11,       emoji: '🏦', nama: 'Tunjangan Penuh',        gaji: 'Rp 40.000.000' },
   { min: 12, max: 15,       emoji: '🚗', nama: 'Mobil Dinas',            gaji: 'Rp 65.000.000' },
@@ -201,7 +201,7 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
     <div class="ds-empty-icon">🏫</div>
     <div class="ds-empty-title">Belum ada rombel</div>
     <div class="ds-empty-desc">
-      Buat rombel di Layar Nilai dulu.<br>Rombel dibutuhkan untuk mencatat presensi saat mengajar.
+      Buat rombel di Layar Nilai dulu<br>agar presensi bisa dicatat.
     </div>
     <button onclick="dashKeLayarNilai()" class="ds-empty-btn">📋 Buat Rombel di Layar Nilai</button>
   </div>` : `
