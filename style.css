@@ -1186,7 +1186,7 @@ body {
   font-size: 16px; font-weight: 800; color: #fff;
 }
 .ds-stat-num--gold  { color: #D4AE3A; }
-.ds-stat-num--sage  { color: #5C8A6E; }
+.ds-stat-num--sage  { color: #D4AE3A; }
 .ds-stat-num--slate { color: #5D7A8C; }
 .ds-stat-label {
   font-size: 11px; color: rgba(255,255,255,.35);
