@@ -1058,14 +1058,14 @@ body {
   gap: 8px; flex-wrap: wrap;
 }
 .ds-breadcrumb-label {
-  font-size: 11px; color: rgba(212,174,58,.6);
+  font-size: 13px; color: rgba(212,174,58,.75);
 }
 .ds-btn-back {
   background: transparent;
   border: 1px solid rgba(212,174,58,.4);
   color: rgba(212,174,58,.8);
-  border-radius: 8px; padding: 6px 12px;
-  font-size: 11px; font-weight: 700;
+  border-radius: 8px; padding: 8px 14px;
+  font-size: 13px; font-weight: 700;
   cursor: pointer; font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1094,14 +1094,14 @@ body {
   width: 28px; height: 28px; border-radius: 50%;
   background: rgba(212,174,58,.15);
   display: flex; align-items: center; justify-content: center;
-  font-size: 10px; font-weight: 700; color: #D4AE3A;
+  font-size: 12px; font-weight: 700; color: #D4AE3A;
   flex-shrink: 0;
 }
 .ds-siswa-nomor--sage {
-  background: rgba(92,138,110,.15); color: #5C8A6E;
+  background: rgba(212,174,58,.15); color: #D4AE3A;
 }
 .ds-siswa-nomor--slate {
-  background: rgba(123,159,212,.15); color: #7B9FD4;
+  background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
 }
 .ds-siswa-nama {
   flex: 1; font-size: 13px; font-weight: 500;
@@ -1197,11 +1197,11 @@ body {
 /* ── Materi & skenario panel ── */
 .ds-tab-row { display: flex; gap: 6px; }
 .ds-tab-btn {
-  padding: 5px 14px; border-radius: 6px;
+  padding: 8px 16px; border-radius: 6px;
   border: 1px solid rgba(255,255,255,.1);
   background: transparent;
-  color: rgba(255,255,255,.35);
-  font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,.55);
+  font-size: 13px; font-weight: 700;
   cursor: pointer; font-family: inherit;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
@@ -1211,42 +1211,42 @@ body {
   background: rgba(212,174,58,.1); color: #D4AE3A;
 }
 .ds-tab-btn--sage-active {
-  border-color: rgba(92,138,110,.5);
-  background: rgba(92,138,110,.1); color: #5C8A6E;
+  border-color: rgba(212,174,58,.5);
+  background: rgba(212,174,58,.1); color: #D4AE3A;
 }
 .ds-materi-konten { padding-top: 12px; }
 
 /* Indikator item */
 .ds-indikator-item { display: flex; gap: 8px; margin-bottom: 6px; }
 .ds-indikator-num {
-  min-width: 16px; height: 16px; border-radius: 50%;
+  min-width: 20px; height: 20px; border-radius: 50%;
   background: rgba(212,174,58,.15); color: #D4AE3A;
-  font-size: 9px; font-weight: 700;
+  font-size: 11px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px;
 }
 .ds-indikator-teks {
-  font-size: 11px; color: rgba(255,255,255,.65); line-height: 1.5;
+  font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5;
 }
 .ds-vocab-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
 .ds-vocab-chip {
   background: rgba(212,174,58,.1);
   border: 1px solid rgba(212,174,58,.2);
-  color: rgba(212,174,58,.8);
+  color: rgba(212,174,58,.9);
   border-radius: 5px; padding: 3px 8px;
-  font-size: 10px; font-weight: 600;
+  font-size: 12px; font-weight: 600;
 }
 .ds-materi-meta {
-  font-size: 10px; color: rgba(255,255,255,.4);
+  font-size: 12px; color: rgba(255,255,255,.55);
   margin-bottom: 10px; padding-top: 4px;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .ds-materi-desc {
-  font-size: 11px; color: rgba(255,255,255,.55);
+  font-size: 13px; color: rgba(255,255,255,.65);
   line-height: 1.6; margin-bottom: 12px;
 }
 .ds-sub-label {
-  font-size: 9px; font-weight: 700;
+  font-size: 11px; font-weight: 700;
   color: rgba(212,174,58,.7);
   letter-spacing: .08em; text-transform: uppercase;
   margin-bottom: 8px;
@@ -1255,63 +1255,63 @@ body {
 /* Langkah skenario */
 .ds-langkah-wrap { display: flex; flex-direction: column; gap: 8px; }
 .ds-langkah-audio {
-  background: rgba(92,138,110,.08);
-  border: 1px solid rgba(92,138,110,.2);
+  background: rgba(212,174,58,.06);
+  border: 1px solid rgba(212,174,58,.2);
   border-radius: 10px; padding: 10px 12px;
   display: flex; align-items: flex-start; gap: 10px;
 }
 .ds-tts-btn {
   flex-shrink: 0; width: 32px; height: 32px;
   border-radius: 50%;
-  background: rgba(92,138,110,.2); border: 1px solid rgba(92,138,110,.4);
-  color: #5C8A6E; font-size: 14px; cursor: pointer;
+  background: rgba(212,174,58,.15); border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A; font-size: 14px; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   -webkit-tap-highlight-color: transparent;
 }
 .ds-langkah-audio-label {
-  font-size: 9px; font-weight: 700; color: #5C8A6E;
+  font-size: 11px; font-weight: 700; color: rgba(212,174,58,.8);
   letter-spacing: .05em; text-transform: uppercase; margin-bottom: 3px;
 }
 .ds-langkah-audio-teks {
-  font-size: 12px; color: rgba(255,255,255,.8);
+  font-size: 13px; color: rgba(255,255,255,.8);
   line-height: 1.5; font-style: italic;
 }
 .ds-langkah-instruksi {
   display: flex; gap: 10px; align-items: flex-start; padding: 6px 0;
 }
 .ds-langkah-num {
-  width: 20px; height: 20px; border-radius: 50%;
+  width: 22px; height: 22px; border-radius: 50%;
   background: rgba(212,174,58,.15); color: #D4AE3A;
-  font-size: 9px; font-weight: 700;
+  font-size: 11px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; margin-top: 1px;
 }
 .ds-langkah-teks {
-  font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.5;
+  font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5;
 }
 
 /* Fase tabs skenario */
 .ds-fase-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
 .ds-fase-tab {
-  padding: 5px 10px; border-radius: 6px;
+  padding: 7px 12px; border-radius: 6px;
   border: 1px solid rgba(255,255,255,.1);
   background: transparent;
-  color: rgba(255,255,255,.35);
-  font-size: 10px; font-weight: 700;
+  color: rgba(255,255,255,.55);
+  font-size: 13px; font-weight: 700;
   cursor: pointer; font-family: inherit; white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
 }
 .ds-fase-tab--gold-active { border-color: #D4AE3A; background: rgba(212,174,58,.1); color: #D4AE3A; }
-.ds-fase-tab--sage-active { border-color: #5C8A6E; background: rgba(92,138,110,.15); color: #5C8A6E; }
+.ds-fase-tab--sage-active { border-color: #D4AE3A; background: rgba(212,174,58,.1); color: #D4AE3A; }
 .ds-fase-header {
   display: flex; align-items: center;
   justify-content: space-between; margin-bottom: 10px;
 }
 .ds-fase-title {
-  font-size: 10px; font-weight: 700; color: rgba(212,174,58,.7);
+  font-size: 12px; font-weight: 700; color: rgba(212,174,58,.8);
 }
 .ds-tts-stop {
-  font-size: 9px; color: rgba(255,255,255,.3);
+  font-size: 12px; color: rgba(255,255,255,.5);
   background: transparent; border: none; cursor: pointer; font-family: inherit;
 }
 
@@ -1321,20 +1321,20 @@ body {
   justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;
 }
 .ds-penilaian-title {
-  font-size: 10px; font-weight: 700; color: #5C8A6E;
+  font-size: 12px; font-weight: 700; color: #D4AE3A;
 }
 .ds-penilaian-save-btn {
-  background: rgba(92,138,110,.15);
-  border: 1px solid rgba(92,138,110,.4);
-  color: #5C8A6E; border-radius: 8px;
-  padding: 5px 12px; font-size: 10px; font-weight: 700;
+  background: rgba(212,174,58,.12);
+  border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A; border-radius: 8px;
+  padding: 8px 14px; font-size: 12px; font-weight: 700;
   cursor: pointer; font-family: inherit;
 }
 .ds-penilaian-note {
-  font-size: 9px; color: rgba(255,255,255,.3); width: 100%;
+  font-size: 12px; color: rgba(255,255,255,.5); width: 100%;
 }
 .ds-penilaian-desc {
-  font-size: 10px; color: rgba(255,255,255,.35); margin-bottom: 10px;
+  font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 10px;
 }
 .ds-siswa-row {
   border-bottom: 1px solid rgba(255,255,255,.05); padding: 10px 0;
@@ -1353,8 +1353,8 @@ body {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;
 }
 .ds-lsr-label {
-  font-size: 9px; font-weight: 700;
-  color: rgba(255,255,255,.4);
+  font-size: 11px; font-weight: 700;
+  color: rgba(212,174,58,.7);
   letter-spacing: .05em; text-align: center; margin-bottom: 3px;
 }
 .ds-lsr-input {
@@ -1369,20 +1369,20 @@ body {
   -webkit-appearance: none;
   transition: border-color .18s;
 }
-.ds-lsr-input:focus { border-color: rgba(92,138,110,.5); }
+.ds-lsr-input:focus { border-color: rgba(212,174,58,.5); }
 
 /* Textarea catatan */
 .ds-textarea {
   width: 100%;
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.1);
-  border-radius: 8px; color: rgba(255,255,255,.7);
-  font-size: 11px; padding: 6px 8px;
+  border-radius: 8px; color: rgba(255,255,255,.75);
+  font-size: 13px; padding: 6px 8px;
   resize: none; outline: none; font-family: inherit;
   box-sizing: border-box;
   transition: border-color .18s;
 }
-.ds-textarea:focus { border-color: rgba(92,138,110,.4); }
+.ds-textarea:focus { border-color: rgba(212,174,58,.4); }
 
 /* Refleksi */
 .ds-refleksi-textarea {
@@ -1399,10 +1399,10 @@ body {
 /* Kendala buttons */
 .ds-kendala-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
 .ds-kendala-btn {
-  padding: 5px 10px; border-radius: 20px;
+  padding: 8px 12px; border-radius: 20px;
   border: 1px solid rgba(255,255,255,.15);
-  background: transparent; color: rgba(255,255,255,.4);
-  font-size: 10px; cursor: pointer; font-family: inherit;
+  background: transparent; color: rgba(255,255,255,.55);
+  font-size: 12px; cursor: pointer; font-family: inherit;
   -webkit-tap-highlight-color: transparent;
   transition: background .15s, border-color .15s, color .15s;
 }
@@ -1419,15 +1419,15 @@ body {
   padding: 13px;
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.1);
-  border-radius: 12px; font-size: 12px; font-weight: 600;
-  color: rgba(255,255,255,.45); cursor: pointer; font-family: inherit;
+  border-radius: 12px; font-size: 13px; font-weight: 600;
+  color: rgba(255,255,255,.6); cursor: pointer; font-family: inherit;
 }
 .ds-btn-selesai {
   padding: 13px;
-  background: rgba(92,138,110,.12);
-  border: 1px solid rgba(92,138,110,.3);
+  background: rgba(212,174,58,.12);
+  border: 1px solid rgba(212,174,58,.35);
   border-radius: 12px; font-size: 13px; font-weight: 800;
-  color: #5C8A6E; cursor: pointer; font-family: inherit;
+  color: #D4AE3A; cursor: pointer; font-family: inherit;
   letter-spacing: .04em;
 }
 
