@@ -72,8 +72,8 @@ window.kurFilterKelas = function(kelas) {
     el.style.display = (kelas === 'semua' || String(k) === String(kelas)) ? '' : 'none';
   });
 
-  const activeStyle  = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:11px;font-weight:700;cursor:pointer;`;
-  const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:11px;font-weight:700;cursor:pointer;`;
+  const activeStyle  = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;`;
+  const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;`;
 
   document.getElementById('kur-filter-1').style.cssText = kelas === 1 ? activeStyle : inactiveStyle;
   document.getElementById('kur-filter-2').style.cssText = kelas === 2 ? activeStyle : inactiveStyle;
@@ -268,8 +268,8 @@ function _buildTPListHTML(tps) {
         <span class="kur-panel-title">Detail Tujuan Pembelajaran</span>
       </div>
       <div style="display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--tema-border-light);">
-        <button onclick="kurFilterKelas(1)" id="kur-filter-1" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:11px;font-weight:700;cursor:pointer;">Kelas 1</button>
-        <button onclick="kurFilterKelas(2)" id="kur-filter-2" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:11px;font-weight:700;cursor:pointer;">Kelas 2</button>
+        <button onclick="kurFilterKelas(1)" id="kur-filter-1" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;">Kelas 1</button>
+        <button onclick="kurFilterKelas(2)" id="kur-filter-2" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;">Kelas 2</button>
       </div>
       <div class="kur-tp-list" id="kur-tp-list">
         ${items}
