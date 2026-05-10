@@ -1929,3 +1929,71 @@ html {
   .ds-subfase-label    { font-size: 13px; }
   .ds-subfase-meta     { font-size: 11px; }
 }
+/* ═══════════════════════════════════════════════════════════════
+   SPRINT 6.1 — Optimasi Font-Size Alur Mengajar
+   Lolos audit FLAF: aman 320px, tidak overflow, tidak fixed width
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Nama siswa di Presensi & Asesmen — naik dari 13px → 14px
+   (dipertahankan 14px, bukan 15px, agar tidak terpotong di 320px) */
+.ds-siswa-nama {
+  font-size: 14px;
+}
+
+/* Tombol H/S/I/A — naik dari 10px → 12px + tap target ≥36px
+   (kompromi: tidak 14px supaya tidak menggeser nama di 320px) */
+.ds-status-btn {
+  font-size: 12px;
+  padding: 7px 10px;
+  min-height: 36px;
+  min-width: 32px;
+}
+
+/* Label kolom L / S / R — naik dari 11px → 13px */
+.ds-lsr-label {
+  font-size: 13px;
+}
+
+/* Judul "Asesmen L / S / R" — naik dari 12px → 15px
+   (font-weight tetap 700, ini header section bukan caption) */
+.ds-penilaian-title {
+  font-size: 15px;
+}
+
+/* Keterangan L: Listening dst + observasi — naik dari 12px → 13px */
+.ds-penilaian-note {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Progress halaman "Halaman 1/5 · Hadir 0/25" — naik dari 12px → 13px */
+.ds-penilaian-progress {
+  font-size: 13px;
+}
+
+/* Tombol "Sebelumnya" / "Lanjut →" — naik dari 13px → 15px
+   (aksi utama paginasi, dipakai 5–10× per sesi) */
+.ds-page-btn {
+  font-size: 15px;
+}
+
+/* Teks instruksi langkah skenario — naik dari 13px → 15px
+   (dibaca guru saat mengikuti skenario di kelas) */
+.ds-langkah-teks {
+  font-size: 15px;
+}
+
+/* Teks audio TTS "Good morning" — naik dari 13px → 15px */
+.ds-langkah-audio-teks {
+  font-size: 15px;
+}
+
+/* Override media query 360px supaya tombol page-btn tetap terbaca */
+@media (max-width: 360px) {
+  .ds-page-btn { font-size: 14px; padding: 10px 8px; }
+  .ds-status-btn { font-size: 11px; padding: 6px 8px; min-width: 30px; }
+  .ds-langkah-teks { font-size: 14px; }
+  .ds-langkah-audio-teks { font-size: 14px; }
+  .ds-siswa-nama { font-size: 13px; }
+  .ds-penilaian-title { font-size: 14px; }
+}
