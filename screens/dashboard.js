@@ -279,7 +279,7 @@ function _buildPilihTPHTML() {
 function _buildTabMateri(tp) {
   const indikatorHTML = tp.indikator.map((ind, i) => `
     <div class="ds-indikator-item">
-      <div class="ds-indikator-num">${i+1}</div>
+      <div class="ds-siswa-nomor ds-siswa-nomor--sage">${i+1}</div>
       <div class="ds-indikator-teks">${_escape(ind)}</div>
     </div>`).join('');
 
