@@ -125,12 +125,11 @@ async function _renderRombel(token) {
         </div>
         <div class="nv-rombel-actions">
           <button onclick="nilaiPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})" class="nv-btn nv-btn--gold">Buka →</button>
-          <button onclick="nilaiHapusKelas('${k.id}','${_escape(k.nama)}')" class="nv-btn nv-btn--clay">🗑</button>
+          <button onclick="nilaiHapusKelas('${k.id}','${_escape(k.nama)}')" class="nv-btn" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.5);">🗑</button>
         </div>
       </div>
       <div class="nv-stat-grid">
-        ${_statBox('Rerata S', rerata, _nilaiColor(r.rerata))}
-        ${_statBox('Peserta', peserta, 'rgba(255,255,255,.7)')}
+        ${_statBox('Siswa', r.totalSiswa || 0, 'rgba(255,255,255,.7)')}
         ${_statBox('TP Tuntas', tpTuntas, 'rgba(255,255,255,.7)')}
       </div>
     </div>`;
@@ -174,50 +173,31 @@ async function _renderMenu(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div class="nv-stat-grid">
-      ${_statBox('Rerata S', rerata, _nilaiColor(rombelRekap.rerata))}
-      ${_statBox('Peserta', peserta, 'rgba(255,255,255,.7)')}
+      ${_statBox('Siswa', rombelRekap.totalSiswa || 0, 'rgba(255,255,255,.7)')}
       ${_statBox('TP Tuntas', tpTuntas, 'rgba(255,255,255,.7)')}
     </div>
   </div>
-
-  <div class="nv-info-row">${siswaList.length} siswa terdaftar</div>
-
-  <div class="nv-card nv-card--inset" style="padding:14px 16px;">
-    <div class="ds-section-label" style="margin-bottom:10px;">Progres Asesmen — ${_escape(_state.kelasNama)}</div>
-    <div class="nv-tp-grid">
-      ${_tpList(_state.tingkat).map(tp => {
-        const sudah = tpSelesai.has(tp.nomor);
-        return `<div title="TP ${tp.nomor} — ${tp.nama}" class="nv-tp-chip ${sudah ? 'nv-tp-chip--done' : 'nv-tp-chip--todo'}">${tp.nomor}</div>`;
-      }).join('')}
-    </div>
-    <div class="nv-legend">
-      <div class="nv-legend-dot nv-legend-dot--done"></div>
-      <span class="nv-legend-label">Sudah diajarkan (${tpSelesai.size}/9)</span>
-      <div class="nv-legend-dot nv-legend-dot--todo"></div>
-      <span class="nv-legend-label">Belum diajarkan</span>
-    </div>
-  </div>
-
+  
   <div class="nv-card--inset" style="display:flex;flex-direction:column;gap:8px;">
     ${_menuCard('nilaiKelolaSiswa()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>`,
       'rgba(212,174,58,.15)', 'Kelola Siswa', 'Tambah atau hapus siswa di rombel ini')}
 
     ${_menuCard('nilaiMenuTP()',
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5C8A6E" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
-      'rgba(92,138,110,.15)', 'Sumatif Lingkup Materi', 'Input nilai L/S/R per TP — masuk nilai rapor')}
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
+      'rgba(212,174,58,.15)', 'Sumatif Lingkup Materi', 'Input nilai L/S/R per TP — masuk nilai rapor')}
 
     ${_menuCard('nilaiMenuSAS()',
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7B9FD4" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
-      'rgba(123,159,212,.15)', 'Sumatif Akhir Semester', 'Input nilai ujian akhir semester — masuk nilai rapor')}
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      'rgba(212,174,58,.15)', 'Sumatif Akhir Semester', 'Input nilai ujian akhir semester — masuk nilai rapor')}
 
     ${_menuCard('nilaiMenuRapor()',
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAC775" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-      'rgba(250,199,117,.15)', 'Nilai Rapor', 'Lihat & unduh rekap nilai rapor (S + AS) ÷ 2')}
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      'rgba(212,174,58,.15)', 'Nilai Rapor', 'Lihat & unduh rekap nilai rapor (S + AS) ÷ 2')}
 
     ${_menuCard('nilaiMenuUnduh()',
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B05A46" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
-      'rgba(176,90,70,.15)', 'Unduh & Cetak', 'Semua unduhan PDF: nilai dan presensi')}
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+      'rgba(212,174,58,.15)', 'Unduh & Cetak', 'Semua unduhan PDF: nilai dan presensi')}
   </div>
 </div>`;
 }
@@ -244,9 +224,9 @@ async function _renderTP(token) {
     const dinilai    = tpStatus[tp.nomor] || 0;
     const total      = siswaList.length;
     const nilaiLabel = total > 0 ? `${dinilai}/${total} dinilai` : '—';
-    const nilaiColor = dinilai === total && total > 0 ? '#5C8A6E'
-                     : dinilai > 0 ? '#D4AE3A'
-                     : 'rgba(255,255,255,.2)';
+    const nilaiColor = dinilai === total && total > 0 ? 'rgba(212,174,58,.9)'
+                     : dinilai > 0 ? 'rgba(255,255,255,.6)'
+                     : 'rgba(255,255,255,.3)';
     return `
     <div class="nv-tp-item" onclick="nilaiPilihTP(${tp.nomor},'${_escape(tp.nama)}')" style="cursor:pointer;">
       <div style="flex:1;min-width:0;">
@@ -268,8 +248,9 @@ async function _renderTP(token) {
     <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Sumatif Lingkup Materi — nilai per TP, masuk nilai rapor</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div class="ds-section-label">Pilih TP — Input Nilai L / S / R</div>
+    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);display:flex;align-items:center;justify-content:space-between;">
+      <div class="ds-section-label">Pilih TP</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);">${Object.values(tpStatus).filter(v => v > 0).length}/9 TP dinilai</div>
     </div>
     ${tpHTML}
   </div>
@@ -345,9 +326,10 @@ async function _renderInput(token) {
       return `
       <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-group-${gi}">
         <div class="ds-subfase-head" onclick="nilaiToggleGroup(${gi})">
-          <div class="ds-subfase-num">${gi + 1}</div>
           <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div class="ds-subfase-meta">${group.length} siswa</div>
+          <div style="font-size:12px;color:${group.some(s => { const l = lsrMap[s.id]; return l && (l.l !== null || l.s !== null || l.r !== null); }) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+            ${group.filter(s => { const l = lsrMap[s.id]; return l && (l.l !== null || l.s !== null || l.r !== null); }).length}/${group.length} diisi
+          </div>
           <div class="ds-collapse-chevron" id="nv-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
@@ -440,9 +422,10 @@ async function _renderSAS(token) {
       return `
       <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sas-group-${gi}">
         <div class="ds-subfase-head" onclick="nilaiToggleSASGroup(${gi})">
-          <div class="ds-subfase-num">${gi + 1}</div>
           <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div class="ds-subfase-meta">${group.length} siswa</div>
+          <div style="font-size:12px;color:${group.some(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+            ${group.filter(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined).length}/${group.length} diisi
+          </div>
           <div class="ds-collapse-chevron" id="nv-sas-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
@@ -484,21 +467,17 @@ async function _renderRapor(token) {
 
   function _raporRowHTML(s) {
     const val = (v) => v !== null && v !== undefined ? v : '—';
+    const hasRapor = s.rapor !== null && s.rapor !== undefined;
     return `
-    <div class="nv-rapor-row">
-      <div class="ds-siswa-nomor">${s.nomor}</div>
-      <div class="nv-siswa-name">${_escape(s.nama)}</div>
-      <div class="nv-rapor-col">
-        <div class="nv-rapor-col-label">S</div>
-        <div class="nv-rapor-col-val" style="color:${_nilaiColor(s.s)};">${val(s.s)}</div>
+    <div class="nv-rapor-row" style="flex-direction:column;align-items:flex-start;gap:4px;">
+      <div style="display:flex;align-items:center;gap:8px;width:100%;">
+        <div class="ds-siswa-nomor">${s.nomor}</div>
+        <div class="nv-siswa-name">${_escape(s.nama)}</div>
       </div>
-      <div class="nv-rapor-col">
-        <div class="nv-rapor-col-label">AS</div>
-        <div class="nv-rapor-col-val" style="color:${_nilaiColor(s.sas)};">${val(s.sas)}</div>
-      </div>
-      <div class="nv-rapor-col--main">
-        <div class="nv-rapor-main-label">Rapor</div>
-        <div class="nv-rapor-main-val" style="color:${_nilaiColor(s.rapor)};">${val(s.rapor)}</div>
+      <div style="display:flex;gap:12px;padding-left:36px;">
+        <span style="font-size:12px;color:rgba(255,255,255,.5);">S: <span style="color:${_nilaiColor(s.s)};font-weight:700;">${val(s.s)}</span></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.5);">AS: <span style="color:${_nilaiColor(s.sas)};font-weight:700;">${val(s.sas)}</span></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.5);">Rapor: <span style="color:${hasRapor ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};font-weight:800;">${val(s.rapor)}</span></span>
       </div>
     </div>`;
   }
@@ -517,9 +496,10 @@ async function _renderRapor(token) {
       return `
       <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-rapor-group-${gi}">
         <div class="ds-subfase-head" onclick="nilaiToggleRaporGroup(${gi})">
-          <div class="ds-subfase-num">${gi + 1}</div>
           <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div class="ds-subfase-meta">${group.length} siswa</div>
+          <div style="font-size:12px;color:${group.some(s => s.rapor !== null && s.rapor !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+            ${group.filter(s => s.rapor !== null && s.rapor !== undefined).length}/${group.length} ada nilai
+          </div>
           <div class="ds-collapse-chevron" id="nv-rapor-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
@@ -537,13 +517,8 @@ async function _renderRapor(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Nilai Rapor</div>
-    <div style="font-size:13px;color:rgba(250,199,117,.8);margin-top:4px;">Rumus Kurikulum Merdeka: (S + AS) ÷ 2</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:2px;">Nilai rapor bersifat referensi — guru memiliki kewenangan penuh</div>
-  </div>
-
-  <div class="nv-legend-row">
-    <div class="nv-legend-text">S = Rerata Sumatif per TP</div>
-    <div class="nv-legend-text">AS = Sumatif Akhir Semester</div>
+    <div style="font-size:13px;color:rgba(212,174,58,.8);margin-top:4px;">Rumus: (S + AS) ÷ 2 · Nilai bersifat referensi</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;">S = Rerata Sumatif per TP · AS = Sumatif Akhir Semester</div>
   </div>
 
   <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(250,199,117,.3);">
