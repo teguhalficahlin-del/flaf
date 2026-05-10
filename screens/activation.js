@@ -14,7 +14,7 @@ import { db }                                        from '../storage/db.js';
 import { SUPABASE_URL, SUPABASE_ANON_KEY, SECRET_SALT } from '../secrets.js';
 
 const CODE_REGEX  = /^FLAF-2026-[A-Z0-9]{4}$/;
-const MAX_DEVICES = 2;
+const MAX_DEVICES = 20;
 const KEY_SESSION   = 'session';
 const KEY_DEVICE_ID = 'device_id';
 
@@ -289,7 +289,7 @@ const ERROR_MESSAGES = {
   INPUT_EMPTY    : 'Nama, sekolah, dan kode aktivasi wajib diisi.',
   FORMAT_INVALID : 'Format kode tidak valid. Contoh: FLAF-2026-AB1C',
   CODE_WRONG     : 'Kode tidak ditemukan. Periksa kembali kode yang diberikan.',
-  CODE_FULL      : 'Kode ini sudah digunakan di 2 perangkat. Hubungi administrator.',
+  CODE_FULL      : 'Kode ini sudah digunakan di 20 perangkat. Hubungi administrator.',
   SUPABASE_DOWN  : 'Server tidak dapat dihubungi. Silakan coba lagi.',
   DB_UNAVAILABLE : 'Penyimpanan tidak tersedia. Coba buka ulang di mode non-private.',
   UNKNOWN        : 'Terjadi kesalahan. Coba lagi.',
