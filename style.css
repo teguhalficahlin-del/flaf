@@ -1101,7 +1101,7 @@ body {
   background: rgba(212,174,58,.15); color: #D4AE3A;
 }
 .ds-siswa-nomor--slate {
-  background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
+  background: rgba(212,174,58,.15); color: rgba(212,174,58,.8);
 }
 .ds-siswa-nama {
   flex: 1; font-size: 14px; font-weight: 500;
@@ -1533,7 +1533,7 @@ body {
   border-bottom: 1px solid rgba(255,255,255,.05);
 }
 .nv-tp-item:last-child { border-bottom: none; }
-.nv-tp-num  { font-size: 12px; font-weight: 700; color: #B05A46; letter-spacing: .05em; }
+.nv-tp-num  { font-size: 12px; font-weight: 700; color: rgba(212,174,58,.7); letter-spacing: .05em; }
 .nv-tp-name {
   font-size: 13px; font-weight: 600; color: #fff; margin-top: 2px;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -1576,13 +1576,13 @@ body {
 .nv-sas-row:last-child { border-bottom: none; }
 .nv-sas-input {
   width: 64px; background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12); border-radius: 8px;
+  border: 1px solid rgba(212,174,58,.25); border-radius: 8px;
   color: #fff; font-size: 15px; font-weight: 700;
   text-align: center; padding: 6px 4px; outline: none;
   font-family: inherit; -webkit-appearance: none; flex-shrink: 0;
   transition: border-color .18s;
 }
-.nv-sas-input:focus { border-color: rgba(123,159,212,.5); }
+.nv-sas-input:focus { border-color: rgba(212,174,58,.6); }
 
 /* Rapor baris */
 .nv-rapor-row {
@@ -1608,7 +1608,7 @@ body {
   cursor: pointer; letter-spacing: .04em; font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
-.nv-btn-simpan--slate { background: #7B9FD4; color: #fff; }
+.nv-btn-simpan--slate { background: #D4AE3A; color: #1A1A1A; }
 
 /* Modal */
 .nv-modal-overlay {
@@ -1687,7 +1687,8 @@ body {
 .nv-dot-label  { font-size: 12px; color: rgba(255,255,255,.5); }
 
 /* Color legend row */
-.nv-color-legend { margin: 0 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.nv-color-legend { margin: 0 16px; display: flex; flex-direction: column; gap: 6px; }
+.nv-color-legend-row { display: flex; gap: 12px; align-items: center; }
 
 /* =============================================================
    EDGE CASE PROTECTION & MICRO-ADAPTIVE
