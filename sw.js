@@ -37,7 +37,7 @@ const APP_SHELL = [
   '/modules/pdf-generator.js',
 
   // assets
-  '/icons/icon-192.png',
+  './icons/icon-192.png',
 
   // secrets.js sengaja TIDAK masuk precache
   // karena berisi credentials Supabase — hanya dimuat saat runtime
