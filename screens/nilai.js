@@ -380,7 +380,8 @@ async function _renderSAS(token) {
   const barisHTML = siswaList.length === 0 ? `
     <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
   ` : siswaList.map(s => {
-    const val = sas !== null && sas !== undefined ? sas : '';
+    const sas = sasMap[s.id];
+const val = sas !== null && sas !== undefined ? sas : '';
     return `
     <div class="nv-sas-row">
       <div class="ds-siswa-nomor ds-siswa-nomor--slate">${s.nomor}</div>
