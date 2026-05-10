@@ -1482,6 +1482,7 @@ body {
 .nv-btn--sm { padding: 4px 8px; font-size: 12px; }
 
 .nv-stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; gap: 0; background: rgba(0,0,0,.2); border-radius: 8px; overflow: hidden; }
+.nv-stat-grid--2col { grid-template-columns: 1fr 1fr; }
 .nv-stat-box { background: transparent; border-right: 1px solid rgba(255,255,255,.07); padding: 10px 8px; text-align: center; }
 .nv-stat-box:last-child { border-right: none; }
 .nv-stat-num { font-size: 18px; font-weight: 800; line-height: 1.1; }
