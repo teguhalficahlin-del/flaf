@@ -1457,15 +1457,15 @@ body {
 .nv-card--overflow { overflow: hidden; }
 
 /* Rombel list */
-.nv-rombel-item { border-bottom: 1px solid rgba(255,255,255,.06); }
+.nv-rombel-item { padding: 14px 16px; border-bottom: 1px solid rgba(212,174,58,.1); }
 .nv-rombel-top {
   display: flex; align-items: center;
   justify-content: space-between;
-  padding: 14px 16px 10px;
+  padding: 0 0 10px;
 }
 .nv-rombel-name { font-size: 15px; font-weight: 700; color: #fff; }
 .nv-rombel-sub  { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
-.nv-rombel-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+.nv-rombel-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
 .nv-btn {
   background: transparent; cursor: pointer;
   border-radius: 8px; padding: 7px 13px;
@@ -1481,10 +1481,11 @@ body {
 .nv-btn--slate-solid { background: #7B9FD4; border: none; color: #fff; }
 .nv-btn--sm { padding: 4px 8px; font-size: 12px; }
 
-.nv-stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0 16px 14px; gap: 8px; }
-.nv-stat-box { background: rgba(255,255,255,.04); border-radius: 10px; padding: 10px 8px; text-align: center; }
-.nv-stat-num { font-size: 16px; font-weight: 800; }
-.nv-stat-label { font-size: 12px; color: rgba(255,255,255,.55); margin-top: 3px; letter-spacing: .05em; text-transform: uppercase; }
+.nv-stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; gap: 0; background: rgba(0,0,0,.2); border-radius: 8px; overflow: hidden; }
+.nv-stat-box { background: transparent; border-right: 1px solid rgba(255,255,255,.07); padding: 10px 8px; text-align: center; }
+.nv-stat-box:last-child { border-right: none; }
+.nv-stat-num { font-size: 18px; font-weight: 800; line-height: 1.1; }
+.nv-stat-label { font-size: 11px; color: rgba(255,255,255,.5); margin-top: 3px; letter-spacing: .04em; text-transform: uppercase; }
 
 /* TP grid progress */
 .nv-tp-grid { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
@@ -1744,8 +1745,6 @@ html {
   /* Stat box sedikit lebih lapang */
   .ds-stat-box  { padding: 10px; }
   .ds-stat-num  { font-size: 18px; }
-  .nv-stat-box  { padding: 12px 8px; }
-  .nv-stat-num  { font-size: 18px; }
 }
 
 /* ── 5. High contrast text protection ── */
