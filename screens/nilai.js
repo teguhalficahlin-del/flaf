@@ -90,6 +90,7 @@ async function _render() {
   if (_state.view === 'input')  await _renderInput(token);
   if (_state.view === 'sas')    await _renderSAS(token);
   if (_state.view === 'rapor')  await _renderRapor(token);
+  if (_state.view === 'unduh')  await _renderUnduh(token);
 }
 
 // --- LEVEL 1: DAFTAR ROMBEL --------------------------------------------------
@@ -214,9 +215,9 @@ async function _renderMenu(token) {
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAC775" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
       'rgba(250,199,117,.15)', 'Nilai Rapor', 'Lihat & unduh rekap nilai rapor (S + AS) ÷ 2')}
 
-    ${_menuCard(`nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')`,
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B05A46" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-      'rgba(176,90,70,.15)', 'Rekap Kehadiran', 'Unduh PDF presensi per sesi mengajar')}
+    ${_menuCard('nilaiMenuUnduh()',
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B05A46" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+      'rgba(176,90,70,.15)', 'Unduh & Cetak', 'Semua unduhan PDF: nilai dan presensi')}
   </div>
 </div>`;
 }
@@ -247,19 +248,13 @@ async function _renderTP(token) {
                      : dinilai > 0 ? '#D4AE3A'
                      : 'rgba(255,255,255,.2)';
     return `
-    <div class="nv-tp-item">
-      <div style="flex:1;min-width:0;cursor:pointer;" onclick="nilaiPilihTP(${tp.nomor},'${_escape(tp.nama)}')">
+    <div class="nv-tp-item" onclick="nilaiPilihTP(${tp.nomor},'${_escape(tp.nama)}')" style="cursor:pointer;">
+      <div style="flex:1;min-width:0;">
         <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
         <div class="nv-tp-name">${_escape(tp.nama)}</div>
         <div class="nv-tp-status" style="color:${nilaiColor};">${nilaiLabel}</div>
       </div>
-      <div class="nv-tp-actions">
-        <button onclick="nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')"
-          class="nv-btn nv-btn--slate nv-btn--sm">⬇ Formatif</button>
-        <button onclick="nilaiDownloadRekap1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')"
-          class="nv-btn nv-btn--sage nv-btn--sm">⬇ Sumatif</button>
-        <div onclick="nilaiPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="nv-menu-arrow" style="cursor:pointer;">›</div>
-      </div>
+      <div class="nv-menu-arrow">›</div>
     </div>`;
   }).join('');
 
@@ -468,9 +463,8 @@ async function _renderRapor(token) {
   </div>
 
   <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(250,199,117,.3);">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(250,199,117,.15);">
+    <div style="padding:12px 16px;border-bottom:1px solid rgba(250,199,117,.15);">
       <div class="ds-section-label" style="color:rgba(250,199,117,.8);">Rekap Nilai (${siswaList.length} siswa)</div>
-      <button onclick="nilaiDownloadRapor()" class="nv-btn nv-btn--gold nv-btn--sm">⬇ PDF Rapor</button>
     </div>
     ${barisHTML}
   </div>
@@ -522,6 +516,7 @@ window.nilaiBack = function() {
   if (_state.view === 'input') { _state.view = 'tp'; _state.tpNomor = null; _state.tpNama = null; }
   if (_state.view === 'sas')   { _state.view = 'menu'; }
   if (_state.view === 'rapor') { _state.view = 'menu'; }
+  if (_state.view === 'unduh') { _state.view = 'menu'; }
   _render();
 };
 
@@ -529,6 +524,7 @@ window.nilaiBackToMenu = function() { _state.view = 'menu'; _render(); };
 window.nilaiMenuTP     = function() { _state.view = 'tp';    _render(); };
 window.nilaiMenuSAS    = function() { _state.view = 'sas';   _render(); };
 window.nilaiMenuRapor  = function() { _state.view = 'rapor'; _render(); };
+window.nilaiMenuUnduh  = function() { _state.view = 'unduh'; _render(); };
 
 window.nilaiPilihRombel = function(id, nama, tingkat) {
   _state.view      = 'menu';
@@ -607,7 +603,78 @@ window.nilaiSimpanSAS = async function() {
     setTimeout(() => { btn.textContent = 'SIMPAN NILAI AS'; }, 2000);
   }
 };
+// --- LEVEL 3: SUB-LAYAR UNDUH & CETAK ----------------------------------------
 
+async function _renderUnduh(token) {
+  const tpList = _tpList(_state.tingkat);
+  if (token !== _renderToken) return;
+
+  const formatifHTML = tpList.map(tp => `
+    <div class="nv-tp-item" onclick="nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')" style="cursor:pointer;">
+      <div style="flex:1;min-width:0;">
+        <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
+        <div class="nv-tp-name">${_escape(tp.nama)}</div>
+      </div>
+      <div class="nv-menu-arrow" style="color:rgba(123,159,212,.7);">⬇</div>
+    </div>`).join('');
+
+  const sumatifHTML = tpList.map(tp => `
+    <div class="nv-tp-item" onclick="nilaiDownloadRekap1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')" style="cursor:pointer;">
+      <div style="flex:1;min-width:0;">
+        <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
+        <div class="nv-tp-name">${_escape(tp.nama)}</div>
+      </div>
+      <div class="nv-menu-arrow" style="color:rgba(92,138,110,.7);">⬇</div>
+    </div>`).join('');
+
+  _container.innerHTML = `
+<div class="nv-wrap">
+  <div class="nv-card nv-card--inset" style="padding:14px 16px;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+      <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
+      <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
+    </div>
+    <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Unduh & Cetak</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Semua unduhan dalam format PDF</div>
+  </div>
+
+  <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(123,159,212,.3);">
+    <div style="padding:12px 16px;border-bottom:1px solid rgba(123,159,212,.15);">
+      <div class="ds-section-label" style="color:rgba(123,159,212,.8);">Nilai Formatif — per TP</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">Observasi proses (L/S/R) — tidak masuk rapor</div>
+    </div>
+    ${formatifHTML}
+  </div>
+
+  <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(92,138,110,.3);">
+    <div style="padding:12px 16px;border-bottom:1px solid rgba(92,138,110,.15);">
+      <div class="ds-section-label" style="color:rgba(92,138,110,.8);">Nilai Sumatif — per TP</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">Sumatif Lingkup Materi — masuk rapor</div>
+    </div>
+    ${sumatifHTML}
+  </div>
+
+  <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(250,199,117,.3);">
+    <div onclick="nilaiDownloadRapor()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:rgba(250,199,117,.9);">Nilai Rapor</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh PDF rapor lengkap (S + AS) ÷ 2</div>
+      </div>
+      <div class="nv-menu-arrow" style="color:rgba(250,199,117,.8);">⬇</div>
+    </div>
+  </div>
+
+  <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(176,90,70,.3);">
+    <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:rgba(176,90,70,.9);">Rekap Kehadiran</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh PDF presensi semua sesi mengajar</div>
+      </div>
+      <div class="nv-menu-arrow" style="color:rgba(176,90,70,.8);">⬇</div>
+    </div>
+  </div>
+</div>`;
+}
 window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
   try {
     const session     = await db.get('kv', 'session');
