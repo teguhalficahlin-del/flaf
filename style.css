@@ -1997,3 +1997,39 @@ html {
   .ds-siswa-nama { font-size: 13px; }
   .ds-penilaian-title { font-size: 14px; }
 }
+/* ═══════════════════════════════════════════════════════════════
+   SPRINT 6.2 — Optimasi Font Tab Materi
+   Konten bacaan utama: deskripsi, indikator, vocab
+   Lolos audit FLAF: aman 320px, tidak overflow
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Paragraf deskripsi materi — naik dari 13px → 15px
+   (paragraf bacaan utama, bukan label) */
+.ds-materi-desc {
+  font-size: 15px;
+}
+
+/* Teks indikator — naik dari 13px → 15px
+   (konten substansial yang harus dipahami guru) */
+.ds-indikator-teks {
+  font-size: 15px;
+}
+
+/* Indikator item — sesuaikan vertical alignment dengan lingkaran 28px */
+.ds-indikator-item {
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+/* Chip kosakata — naik dari 12px → 13px + padding lebih lega */
+.ds-vocab-chip {
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+/* Override untuk layar 320–360px supaya tetap muat */
+@media (max-width: 360px) {
+  .ds-materi-desc { font-size: 14px; }
+  .ds-indikator-teks { font-size: 14px; }
+  .ds-vocab-chip { font-size: 12px; padding: 4px 9px; }
+}
