@@ -1132,28 +1132,28 @@ body {
 .ds-jejak-streak-row {
   display: flex; align-items: center; gap: 14px; width: 100%;
 }
-.ds-streak-emoji { font-size: 28px; line-height: 1; }
+.ds-streak-emoji { font-size: 22px; line-height: 1; }
 .ds-streak-num {
-  font-size: 24px; font-weight: 800; color: #D4AE3A;
+  font-size: 18px; font-weight: 800; color: #D4AE3A;
 }
 .ds-streak-unit {
-  font-size: 16px; font-weight: 600;
+  font-size: 13px; font-weight: 600;
   color: rgba(255,255,255,.6); margin-left: 4px;
 }
 .ds-streak-label {
-  font-size: 16px; font-weight: 700; color: #fff; margin-top: 3px;
+  font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px;
 }
 .ds-jejak-level-col {
   display: flex; align-items: center; gap: 10px; width: 100%;
 }
-.ds-level-emoji { font-size: 22px; line-height: 1; }
+.ds-level-emoji { font-size: 18px; line-height: 1; }
 .ds-level-nama {
-  font-size: 16px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   color: rgba(255,255,255,.7); margin-top: 0; flex: 1; min-width: 0;
 }
 .ds-level-nama--current { color: #fff; }
 .ds-level-gaji {
-  font-size: 16px; font-weight: 800; color: #D4AE3A;
+  font-size: 13px; font-weight: 800; color: #D4AE3A;
 }
 .ds-jejak-progress-wrap {
   display: flex; align-items: flex-start; margin-bottom: 8px;
