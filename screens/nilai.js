@@ -120,15 +120,14 @@ async function _renderRombel(token) {
     <div class="nv-rombel-item">
       <div class="nv-rombel-top">
         <div>
-          <div class="nv-rombel-name">${_escape(k.nama)}</div>
-          <div class="nv-rombel-sub">Kelas ${k.tingkat || 1} · ${r.totalSiswa || 0} siswa</div>
+          <div class="nv-rombel-name">${_escape(k.nama)}</div>          
         </div>
         <div class="nv-rombel-actions">
           <button onclick="nilaiPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})" class="nv-btn nv-btn--gold">Buka →</button>
           <button onclick="nilaiHapusKelas('${k.id}','${_escape(k.nama)}')" class="nv-btn" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.5);">🗑</button>
         </div>
       </div>
-      <div class="nv-stat-grid">
+      <div class="nv-stat-grid nv-stat-grid--2col">
         ${_statBox('Siswa', r.totalSiswa || 0, 'rgba(255,255,255,.7)')}
         ${_statBox('TP Tuntas', tpTuntas, 'rgba(255,255,255,.7)')}
       </div>
@@ -172,7 +171,7 @@ async function _renderMenu(token) {
       <button onclick="nilaiBack()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Rombel</button>
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
-    <div class="nv-stat-grid">
+    <div class="nv-stat-grid nv-stat-grid--2col">
       ${_statBox('Siswa', rombelRekap.totalSiswa || 0, 'rgba(255,255,255,.7)')}
       ${_statBox('TP Tuntas', tpTuntas, 'rgba(255,255,255,.7)')}
     </div>
