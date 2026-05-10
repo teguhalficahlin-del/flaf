@@ -698,11 +698,11 @@ function _buildSesiHTML() {
       <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Kendala sesi</div>
       <div class="ds-kendala-wrap">
         ${[
-          { val: 'lancar',          label: '✅ Lancar' },
-          { val: 'waktu_kurang',    label: '⏱ Waktu kurang' },
-          { val: 'kurang_kondusif', label: '📢 Kurang kondusif' },
-          { val: 'media_tidak_ada', label: '🖼 Media tidak ada' },
-          { val: 'lainnya',         label: '📝 Lainnya' },
+          { val: 'lancar',          label: 'Lancar' },
+          { val: 'waktu_kurang',    label: 'Waktu kurang' },
+          { val: 'kurang_kondusif', label: 'Kurang kondusif' },
+          { val: 'media_tidak_ada', label: 'Media tidak ada' },
+          { val: 'lainnya',         label: 'Lainnya' },
         ].map(k => `
         <button onclick="dashPilihKendala('${k.val}')"
           id="kendala-btn-${k.val}"
