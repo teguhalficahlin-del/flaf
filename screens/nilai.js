@@ -106,10 +106,10 @@ async function _renderRombel(token) {
   const rekapMap = Object.fromEntries(rekap.map(r => [r.id, r]));
 
   const rombelHTML = list.length === 0 ? `
-    <div style="padding:40px;text-align:center;">
-      <div style="font-size:32px;margin-bottom:10px;">🏫</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.6);">Belum ada rombel.</div>
-      <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Tap "+ Tambah Rombel" untuk mulai.</div>
+    <div style="padding:40px 24px;text-align:center;">
+      <div style="font-size:40px;margin-bottom:14px;">🏫</div>
+      <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:6px;">Belum ada rombel.</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.5;">Tap <span style="color:#D4AE3A;font-weight:600;">+ Tambah Rombel</span> untuk mulai.</div>
     </div>
   ` : list.map(k => {
     const r        = rekapMap[k.id] || {};
@@ -139,13 +139,13 @@ async function _renderRombel(token) {
   _container.innerHTML = `
 <div class="nv-wrap">
   <div class="nv-card nv-card--inset" style="padding:14px 16px;">
-    <div class="ds-section-label" style="margin-bottom:2px;font-size:12px;">Manajemen Kelas</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.7);">Pilih rombel untuk input atau lihat nilai</div>
+    <div class="ds-section-label" style="margin-bottom:4px;">Manajemen Kelas</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.75);">Pilih rombel untuk input atau lihat nilai</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div class="ds-section-label" style="font-size:12px;">Daftar Rombel (${list.length})</div>
-      <button onclick="nilaiTambahKelas()" class="nv-btn nv-btn--gold">+ Tambah Rombel</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(212,174,58,.2);">
+      <div class="ds-section-label">Daftar Rombel (${list.length})</div>
+      <button onclick="nilaiTambahKelas()" class="nv-btn nv-btn--gold" style="font-size:13px;padding:8px 14px;">+ Tambah Rombel</button>
     </div>
     ${rombelHTML}
   </div>
