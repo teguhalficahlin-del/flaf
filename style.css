@@ -1777,8 +1777,8 @@ html {
   min-height: 48px;
 }
 .ds-collapse-chevron {
-  font-size: 18px;
-  color: rgba(255,255,255,.5);
+  font-size: 16px;
+  color: rgba(212,174,58,.7);
   transition: transform .15s ease;
   flex-shrink: 0;
   width: 14px;
