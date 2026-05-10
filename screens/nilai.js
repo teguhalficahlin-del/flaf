@@ -381,7 +381,6 @@ async function _renderSAS(token) {
     <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
   ` : siswaList.map(s => {
     const sas = sasMap[s.id];
-const sas = sasMap[s.id];
 const val = sas !== null && sas !== undefined ? sas : '';
     return `
     <div class="nv-sas-row">
