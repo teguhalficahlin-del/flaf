@@ -1104,17 +1104,18 @@ body {
   background: rgba(255,255,255,.08); color: rgba(255,255,255,.7);
 }
 .ds-siswa-nama {
-  flex: 1; font-size: 13px; font-weight: 500;
+  flex: 1; font-size: 14px; font-weight: 500;
   color: rgba(255,255,255,.8);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .ds-status-btns { display: flex; gap: 4px; }
 .ds-status-btn {
-  padding: 4px 8px; border-radius: 6px;
+  padding: 7px 10px; border-radius: 6px;
   border: 1px solid rgba(255,255,255,.1);
   background: transparent;
   color: rgba(255,255,255,.25);
-  font-size: 10px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
+  min-height: 36px; min-width: 32px;
   cursor: pointer; font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1217,7 +1218,7 @@ body {
 .ds-materi-konten { padding-top: 12px; }
 
 /* Indikator item */
-.ds-indikator-item { display: flex; gap: 8px; margin-bottom: 6px; }
+.ds-indikator-item { display: flex; gap: 8px; margin-bottom: 8px; align-items: flex-start; }
 .ds-indikator-num {
   min-width: 20px; height: 20px; border-radius: 50%;
   background: rgba(212,174,58,.15); color: #D4AE3A;
@@ -1226,15 +1227,15 @@ body {
   flex-shrink: 0; margin-top: 1px;
 }
 .ds-indikator-teks {
-  font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5;
+  font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.5;
 }
 .ds-vocab-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
 .ds-vocab-chip {
   background: rgba(212,174,58,.1);
   border: 1px solid rgba(212,174,58,.2);
   color: rgba(212,174,58,.9);
-  border-radius: 5px; padding: 3px 8px;
-  font-size: 12px; font-weight: 600;
+  border-radius: 5px; padding: 5px 10px;
+  font-size: 13px; font-weight: 600;
 }
 .ds-materi-meta {
   font-size: 12px; color: rgba(255,255,255,.55);
@@ -1242,7 +1243,7 @@ body {
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .ds-materi-desc {
-  font-size: 13px; color: rgba(255,255,255,.65);
+  font-size: 15px; color: rgba(255,255,255,.65);
   line-height: 1.6; margin-bottom: 12px;
 }
 .ds-sub-label {
@@ -1273,7 +1274,7 @@ body {
   letter-spacing: .05em; text-transform: uppercase; margin-bottom: 3px;
 }
 .ds-langkah-audio-teks {
-  font-size: 13px; color: rgba(255,255,255,.8);
+  font-size: 15px; color: rgba(255,255,255,.8);
   line-height: 1.5; font-style: italic;
 }
 .ds-langkah-instruksi {
@@ -1287,7 +1288,7 @@ body {
   flex-shrink: 0; margin-top: 1px;
 }
 .ds-langkah-teks {
-  font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5;
+  font-size: 15px; color: rgba(255,255,255,.75); line-height: 1.5;
 }
 
 /* Fase tabs skenario */
@@ -1321,7 +1322,7 @@ body {
   justify-content: space-between; flex-wrap: wrap; gap: 6px; margin-bottom: 10px;
 }
 .ds-penilaian-title {
-  font-size: 12px; font-weight: 700; color: #D4AE3A;
+  font-size: 15px; font-weight: 700; color: #D4AE3A;
 }
 .ds-penilaian-save-btn {
   background: rgba(212,174,58,.12);
@@ -1331,7 +1332,8 @@ body {
   cursor: pointer; font-family: inherit;
 }
 .ds-penilaian-note {
-  font-size: 12px; color: rgba(255,255,255,.5); width: 100%;
+  font-size: 13px; color: rgba(255,255,255,.5); width: 100%;
+  line-height: 1.5;
 }
 .ds-penilaian-desc {
   font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 10px;
@@ -1353,7 +1355,7 @@ body {
   display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 6px;
 }
 .ds-lsr-label {
-  font-size: 11px; font-weight: 700;
+  font-size: 13px; font-weight: 700;
   color: rgba(212,174,58,.7);
   letter-spacing: .05em; text-align: center; margin-bottom: 3px;
 }
@@ -1450,7 +1452,7 @@ body {
 .ds-skeleton-line--short { height: 20px; width: 50%; margin-bottom: 0; }
 
 /* ── Nilai screen spesifik ── */
-.nv-card        { background: rgba(255,255,255,.04); border: 1px solid rgba(212,174,58,.2); border-radius: 14px; }
+.nv-card        { background: rgba(255,255,255,.04); border: 1px solid rgba(212,174,58,.25); border-radius: 14px; }
 .nv-card--inset { margin: 0 16px; }
 .nv-card--overflow { overflow: hidden; }
 
@@ -1466,8 +1468,8 @@ body {
 .nv-rombel-actions { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .nv-btn {
   background: transparent; cursor: pointer;
-  border-radius: 8px; padding: 6px 12px;
-  font-size: 12px; font-weight: 700;
+  border-radius: 8px; padding: 7px 13px;
+  font-size: 13px; font-weight: 700;
   font-family: inherit;
   -webkit-tap-highlight-color: transparent;
 }
@@ -1837,7 +1839,7 @@ html {
 
 /* ── Asesmen Formatif: progress + nav halaman ── */
 .ds-penilaian-progress {
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(255,255,255,.6);
   margin-bottom: 10px;
   padding: 6px 10px;
@@ -1857,7 +1859,7 @@ html {
   min-height: 44px;
   padding: 10px 12px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
@@ -1928,128 +1930,4 @@ html {
   .ds-page-btn         { font-size: 12px; padding: 9px 8px; }
   .ds-subfase-label    { font-size: 13px; }
   .ds-subfase-meta     { font-size: 11px; }
-}
-/* ═══════════════════════════════════════════════════════════════
-   SPRINT 6.1 — Optimasi Font-Size Alur Mengajar
-   Lolos audit FLAF: aman 320px, tidak overflow, tidak fixed width
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Nama siswa di Presensi & Asesmen — naik dari 13px → 14px
-   (dipertahankan 14px, bukan 15px, agar tidak terpotong di 320px) */
-.ds-siswa-nama {
-  font-size: 14px;
-}
-
-/* Tombol H/S/I/A — naik dari 10px → 12px + tap target ≥36px
-   (kompromi: tidak 14px supaya tidak menggeser nama di 320px) */
-.ds-status-btn {
-  font-size: 12px;
-  padding: 7px 10px;
-  min-height: 36px;
-  min-width: 32px;
-}
-
-/* Label kolom L / S / R — naik dari 11px → 13px */
-.ds-lsr-label {
-  font-size: 13px;
-}
-
-/* Judul "Asesmen L / S / R" — naik dari 12px → 15px
-   (font-weight tetap 700, ini header section bukan caption) */
-.ds-penilaian-title {
-  font-size: 15px;
-}
-
-/* Keterangan L: Listening dst + observasi — naik dari 12px → 13px */
-.ds-penilaian-note {
-  font-size: 13px;
-  line-height: 1.5;
-}
-
-/* Progress halaman "Halaman 1/5 · Hadir 0/25" — naik dari 12px → 13px */
-.ds-penilaian-progress {
-  font-size: 13px;
-}
-
-/* Tombol "Sebelumnya" / "Lanjut →" — naik dari 13px → 15px
-   (aksi utama paginasi, dipakai 5–10× per sesi) */
-.ds-page-btn {
-  font-size: 15px;
-}
-
-/* Teks instruksi langkah skenario — naik dari 13px → 15px
-   (dibaca guru saat mengikuti skenario di kelas) */
-.ds-langkah-teks {
-  font-size: 15px;
-}
-
-/* Teks audio TTS "Good morning" — naik dari 13px → 15px */
-.ds-langkah-audio-teks {
-  font-size: 15px;
-}
-
-/* Override media query 360px supaya tombol page-btn tetap terbaca */
-@media (max-width: 360px) {
-  .ds-page-btn { font-size: 14px; padding: 10px 8px; }
-  .ds-status-btn { font-size: 11px; padding: 6px 8px; min-width: 30px; }
-  .ds-langkah-teks { font-size: 14px; }
-  .ds-langkah-audio-teks { font-size: 14px; }
-  .ds-siswa-nama { font-size: 13px; }
-  .ds-penilaian-title { font-size: 14px; }
-}
-/* ═══════════════════════════════════════════════════════════════
-   SPRINT 6.2 — Optimasi Font Tab Materi
-   Konten bacaan utama: deskripsi, indikator, vocab
-   Lolos audit FLAF: aman 320px, tidak overflow
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Paragraf deskripsi materi — naik dari 13px → 15px
-   (paragraf bacaan utama, bukan label) */
-.ds-materi-desc {
-  font-size: 15px;
-}
-
-/* Teks indikator — naik dari 13px → 15px
-   (konten substansial yang harus dipahami guru) */
-.ds-indikator-teks {
-  font-size: 15px;
-}
-
-/* Indikator item — sesuaikan vertical alignment dengan lingkaran 28px */
-.ds-indikator-item {
-  align-items: flex-start;
-  margin-bottom: 8px;
-}
-
-/* Chip kosakata — naik dari 12px → 13px + padding lebih lega */
-.ds-vocab-chip {
-  font-size: 13px;
-  padding: 5px 10px;
-}
-
-/* Override untuk layar 320–360px supaya tetap muat */
-@media (max-width: 360px) {
-  .ds-materi-desc { font-size: 14px; }
-  .ds-indikator-teks { font-size: 14px; }
-  .ds-vocab-chip { font-size: 12px; padding: 4px 9px; }
-}
-/* ═══════════════════════════════════════════════════════════════
-   SPRINT 6.3 — Optimasi Layar Manajemen Kelas (s-nilai)
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Tombol utama nv-btn ukuran default naik dari 12px → 13px */
-.nv-btn {
-  font-size: 13px;
-  padding: 7px 13px;
-}
-
-/* Tombol kecil tetap 12px */
-.nv-btn.nv-btn--sm {
-  font-size: 12px;
-  padding: 4px 8px;
-}
-
-/* Card border lebih terlihat */
-.nv-card {
-  border-color: rgba(212,174,58,.25);
 }
