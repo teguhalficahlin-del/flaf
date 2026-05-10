@@ -17,35 +17,7 @@ let _session   = null;
 
 // ─── LEVEL SYSTEM ─────────────────────────────────────────────────────────────
 
-// Level berbasis HARI AKTIF all-time — tidak bisa turun karena hari aktif
-// hanya bertambah, tidak pernah berkurang.
 
-const LEVELS = [
-  { min: 0,  max: 3,        emoji: '🎖️', nama: 'Tunjangan Sertifikasi',   gaji: 'Rp 15.000.000' },
-  { min: 4,  max: 7,        emoji: '💰', nama: 'Tunjangan Kinerja',       gaji: 'Rp 25.000.000' },
-  { min: 8,  max: 11,       emoji: '🏦', nama: 'Tunjangan Penuh',         gaji: 'Rp 40.000.000' },
-  { min: 12, max: 15,       emoji: '🚗', nama: 'Mobil Dinas',             gaji: 'Rp 65.000.000' },
-  { min: 16, max: Infinity, emoji: '🎖️', nama: 'Tunjangan Guru Teladan', gaji: 'Rp 100.000.000' },
-];
-
-function _getLevelInfo(hariAktif) {
-  const current         = [...LEVELS].reverse().find(l => hariAktif >= l.min) ?? LEVELS[0];
-  const nextIndex       = LEVELS.indexOf(current) + 1;
-  const next            = LEVELS[nextIndex] ?? null;
-  const progressInLevel = hariAktif - current.min;
-  const levelSpan       = current.max === Infinity ? null : (current.max - current.min + 1);
-  return { current, next, progressInLevel, levelSpan, nextIndex };
-}
-
-function _getTotalStats(logs) {
-  const activeDays = new Set(
-    logs
-      .filter(l => l.action !== 'reset')
-      .map(l => l.taught_at.slice(0, 10))
-  );
-  const totalSesi = logs.filter(l => l.action === 'selesai').length;
-  return { totalHariAktif: activeDays.size, totalSesi };
-}
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
 
@@ -158,92 +130,10 @@ function _buildCalendar(activeDays) {
   `;
 }
 
-// ─── TANGGA LEVEL ─────────────────────────────────────────────────────────────
-
-function _buildLevelTangga(hariAktif, totalSesi) {
-  const lv = _getLevelInfo(hariAktif);
-
-  const visibleLevels = LEVELS.filter((level, i) => {
-    const isDone    = hariAktif > level.max;
-    const isCurrent = i === LEVELS.indexOf(lv.current);
-    return isDone || isCurrent;
-  });
-
-  const steps = visibleLevels.map((level) => {
-    const i         = LEVELS.indexOf(level);
-    const isDone    = hariAktif > level.max;
-    const isCurrent = i === LEVELS.indexOf(lv.current);
-
-    let bgColor, borderColor, labelColor, badgeText;
-    if (isDone) {
-      bgColor = 'rgba(212,174,58,.07)'; borderColor = 'rgba(212,174,58,.3)';
-      labelColor = '#D4AE3A'; badgeText = '✓ Selesai';
-    } else if (isCurrent) {
-      bgColor = 'rgba(212,174,58,.1)'; borderColor = 'rgba(212,174,58,.5)';
-      labelColor = '#D4AE3A'; badgeText = '← Sekarang';
-    } else {
-      bgColor = 'rgba(255,255,255,.03)'; borderColor = 'rgba(255,255,255,.06)';
-      labelColor = 'rgba(255,255,255,.25)'; badgeText = '';
-    }
-
-    // Progress bar hanya untuk level aktif
-    const barHtml = isCurrent ? (() => {
-      const barPct = lv.levelSpan
-        ? Math.round((lv.progressInLevel / lv.levelSpan) * 100)
-        : 100;
-      return `
-        <div style="margin-top:8px;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
-            <span style="font-size:14px;color:rgba(255,255,255,.55);">${lv.progressInLevel} / ${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'}</span>
-            <span style="font-size:14px;color:rgba(212,174,58,.7);">${barPct}%</span>
-          </div>
-          <div style="height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;">
-            <div style="height:5px;width:${barPct}%;background:#D4AE3A;border-radius:3px;"></div>
-          </div>
-          ${lv.next ? `<div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:4px;">${lv.next.min - hariAktif} hari lagi ke level berikutnya</div>` : ''}
-        </div>`;
-    })() : '';
-
-    return `
-    <div style="background:${bgColor};border:1px solid ${borderColor};border-radius:12px;padding:12px 14px;">
-      ${isCurrent ? `<div style="font-size:15px;color:rgba(212,174,58,.85);font-style:italic;margin-bottom:8px;">💡 Gaji virtual. Semoga suatu saat jadi nyata! 😄</div>` : ''}
-      <div style="display:flex;align-items:center;gap:10px;">
-        <div style="font-size:24px;line-height:1;${isDone || isCurrent ? '' : 'opacity:.35'}">${level.emoji}</div>
-        <div style="flex:1;min-width:0;">
-          <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-            <div style="font-size:15px;font-weight:800;color:${isCurrent ? '#fff' : isDone ? 'rgba(255,255,255,.7)' : 'rgba(255,255,255,.25)'};">${level.nama}</div>
-            ${badgeText ? `<span style="font-size:14px;font-weight:700;color:${labelColor};border:1px solid ${borderColor};border-radius:4px;padding:1px 6px;">${badgeText}</span>` : ''}
-          </div>
-          <div style="font-size:15px;font-weight:700;color:${isDone ? '#D4AE3A' : isCurrent ? '#D4AE3A' : 'rgba(255,255,255,.2)'};margin-top:2px;">${level.gaji}</div>
-          <div style="font-size:14px;color:rgba(255,255,255,.5);margin-top:1px;">TP ${level.min}–${level.max}</div>
-        </div>
-        ${isDone ? `<div style="font-size:18px;">✅</div>` : ''}
-      </div>
-      ${barHtml}
-    </div>`;
-  });
-
-  // Connector lines antar level (top-to-bottom urut terbalik = level tinggi di atas)
-  const reversedSteps = [...steps].reverse();
-
-  return `
-  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-      <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;">Tangga Level Guru</div>
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.5);">${hariAktif} hari aktif · ${totalSesi} sesi</div>
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:6px;">
-      ${reversedSteps.join('')}
-    </div>    
-  </div>`;
-}
-
 // ─── BUILD HTML ───────────────────────────────────────────────────────────────
 
 function _buildJejakHTML(streak, summary, logs) {
   const recentLogs  = logs.slice(0, 10);
-  const totalStats  = _getTotalStats(logs);
 
   return `
 <div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:10px;">
@@ -293,9 +183,6 @@ function _buildJejakHTML(streak, summary, logs) {
     <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;">35 Hari Terakhir</div>
     ${_buildCalendar(summary.active_days)}
   </div>
-
-  <!-- TANGGA LEVEL -->
-  ${_buildLevelTangga(totalStats.totalHariAktif, totalStats.totalSesi)}
 
   <!-- RIWAYAT TERBARU -->
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;overflow:hidden;">
