@@ -2033,3 +2033,23 @@ html {
   .ds-indikator-teks { font-size: 14px; }
   .ds-vocab-chip { font-size: 12px; padding: 4px 9px; }
 }
+/* ═══════════════════════════════════════════════════════════════
+   SPRINT 6.3 — Optimasi Layar Manajemen Kelas (s-nilai)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tombol utama nv-btn ukuran default naik dari 12px → 13px */
+.nv-btn {
+  font-size: 13px;
+  padding: 7px 13px;
+}
+
+/* Tombol kecil tetap 12px */
+.nv-btn.nv-btn--sm {
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* Card border lebih terlihat */
+.nv-card {
+  border-color: rgba(212,174,58,.25);
+}
