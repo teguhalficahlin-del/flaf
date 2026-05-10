@@ -3,38 +3,38 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v37';          // ← dinaikkan dari v4
+const CACHE_VERSION  = 'flaf-v21';          // ← dinaikkan untuk apply path fix
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
-  '/',
-  '/index.html',
-  '/app.js',
-  '/style.css',
-  '/manifest.json',
+  './',
+  './index.html',
+  './app.js',
+  './style.css',
+  './manifest.json',
   // screens
-  '/screens/activation.js',
-  '/screens/kurikulum.js',
-  '/screens/dashboard.js',
-  '/screens/jejak.js',
-  '/screens/nilai.js',
-  '/screens/kurikulum.css',
+  './screens/activation.js',
+  './screens/kurikulum.js',
+  './screens/dashboard.js',
+  './screens/jejak.js',
+  './screens/nilai.js',
+  './screens/kurikulum.css',
 
   // storage
-  '/storage/db.js',
-  '/storage/logger.js',
-  '/storage/export.js',
-  '/storage/jejak.js',
-  '/storage/nilai.js',
-  '/storage/presensi.js',
+  './storage/db.js',
+  './storage/logger.js',
+  './storage/export.js',
+  './storage/jejak.js',
+  './storage/nilai.js',
+  './storage/presensi.js',
 
   // data
-  '/data/index.js',
-  '/data/fase-a.js',
+  './data/index.js',
+  './data/fase-a.js',
 
   // modules
-  '/modules/pdf-handler.js',
-  '/modules/pdf-generator.js',
+  './modules/pdf-handler.js',
+  './modules/pdf-generator.js',
 
   // assets
   './icons/icon-192.png',
@@ -44,24 +44,24 @@ const APP_SHELL = [
 ];
 
 const PDF_MANIFEST = [
-  '/pdf/tp-01-v1.pdf',
-  '/pdf/tp-02-v1.pdf',
-  '/pdf/tp-03-v1.pdf',
-  '/pdf/tp-04-v1.pdf',
-  '/pdf/tp-05-v1.pdf',
-  '/pdf/tp-06-v1.pdf',
-  '/pdf/tp-07-v1.pdf',
-  '/pdf/tp-08-v1.pdf',
-  '/pdf/tp-09-v1.pdf',
-  '/pdf/tp-10-v1.pdf',
-  '/pdf/tp-11-v1.pdf',
-  '/pdf/tp-12-v1.pdf',
-  '/pdf/tp-13-v1.pdf',
-  '/pdf/tp-14-v1.pdf',
-  '/pdf/tp-15-v1.pdf',
-  '/pdf/tp-16-v1.pdf',
-  '/pdf/tp-17-v1.pdf',
-  '/pdf/tp-18-v1.pdf',
+  './pdf/tp-01-v1.pdf',
+  './pdf/tp-02-v1.pdf',
+  './pdf/tp-03-v1.pdf',
+  './pdf/tp-04-v1.pdf',
+  './pdf/tp-05-v1.pdf',
+  './pdf/tp-06-v1.pdf',
+  './pdf/tp-07-v1.pdf',
+  './pdf/tp-08-v1.pdf',
+  './pdf/tp-09-v1.pdf',
+  './pdf/tp-10-v1.pdf',
+  './pdf/tp-11-v1.pdf',
+  './pdf/tp-12-v1.pdf',
+  './pdf/tp-13-v1.pdf',
+  './pdf/tp-14-v1.pdf',
+  './pdf/tp-15-v1.pdf',
+  './pdf/tp-16-v1.pdf',
+  './pdf/tp-17-v1.pdf',
+  './pdf/tp-18-v1.pdf',
 ];
 
 // Network-only: Supabase + CDN eksternal (jsPDF, dll)
