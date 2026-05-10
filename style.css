@@ -1078,7 +1078,7 @@ body {
   border-radius: 14px; padding: 16px;
 }
 .ds-sesi-tag     { font-size: 14px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
-.ds-sesi-tp-num  { font-size: 16px; font-weight: 700; color: #B05A46; }
+.ds-sesi-tp-num  { font-size: 16px; font-weight: 700; color: rgba(212,174,58,.8); }
 .ds-sesi-tp-name { font-size: 15px; font-weight: 800; color: #fff; margin-top: 2px; }
 .ds-sesi-rombel  { font-size: 16px; color: rgba(255,255,255,.5); margin-top: 4px; }
 .ds-sesi-date    { font-size: 16px; color: rgba(212,174,58,.6); margin-top: 4px; }
@@ -1111,9 +1111,9 @@ body {
 .ds-status-btns { display: flex; gap: 4px; }
 .ds-status-btn {
   padding: 7px 10px; border-radius: 6px;
-  border: 1px solid rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25);
   background: transparent;
-  color: rgba(255,255,255,.25);
+  color: rgba(255,255,255,.55);
   font-size: 12px; font-weight: 700;
   min-height: 36px; min-width: 32px;
   cursor: pointer; font-family: inherit;
@@ -1234,16 +1234,16 @@ body {
   background: rgba(212,174,58,.1);
   border: 1px solid rgba(212,174,58,.2);
   color: rgba(212,174,58,.9);
-  border-radius: 5px; padding: 5px 10px;
+  border-radius: 5px; padding: 7px 14px;
   font-size: 13px; font-weight: 600;
 }
 .ds-materi-meta {
-  font-size: 12px; color: rgba(255,255,255,.55);
+  font-size: 12px; color: rgba(255,255,255,.75);
   margin-bottom: 10px; padding-top: 4px;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .ds-materi-desc {
-  font-size: 15px; color: rgba(255,255,255,.65);
+  font-size: 15px; color: rgba(255,255,255,.8);
   line-height: 1.6; margin-bottom: 12px;
 }
 .ds-sub-label {
@@ -1419,10 +1419,10 @@ body {
 }
 .ds-btn-cancel {
   padding: 13px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 12px; font-size: 13px; font-weight: 600;
-  color: rgba(255,255,255,.6); cursor: pointer; font-family: inherit;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px; font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,.75); cursor: pointer; font-family: inherit;
 }
 .ds-btn-selesai {
   padding: 13px;
@@ -1842,7 +1842,7 @@ html {
 /* ── Asesmen Formatif: progress + nav halaman ── */
 .ds-penilaian-progress {
   font-size: 13px;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.8);
   margin-bottom: 10px;
   padding: 6px 10px;
   background: rgba(255,255,255,.03);
@@ -1865,9 +1865,9 @@ html {
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  color: rgba(255,255,255,.75);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.85);
   -webkit-tap-highlight-color: transparent;
 }
 .ds-page-btn:active { background: rgba(255,255,255,.08); }
