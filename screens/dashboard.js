@@ -445,9 +445,9 @@ function _buildSubFaseCollapseItem(fase, idx) {
 
   const headerHTML = `
     <div onclick="dashToggleSubFase(${idx})" class="ds-subfase-head">
-      <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0;">
+      <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
         <div class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
-        <div class="ds-subfase-num">${nomor}.</div>
+        <div class="ds-siswa-nomor ds-siswa-nomor--sage">${nomor}</div>
         <div class="ds-subfase-label">${_escape(label)}</div>
       </div>
       ${meta ? `<div class="ds-subfase-meta">${meta}</div>` : ''}
@@ -529,9 +529,11 @@ function _buildAsesmenPaginated() {
   return `
   <div>
     <div class="ds-penilaian-header">
-      <div class="ds-penilaian-title">Asesmen · L / S / R</div>
-      <button onclick="dashNilaiSimpanSemua()" class="ds-penilaian-save-btn">Simpan Semua</button>
-      <div class="ds-penilaian-note">Observasi proses — tidak masuk nilai rapor</div>
+      <div class="ds-penilaian-title">Asesmen L / S / R</div>
+      <div class="ds-penilaian-note">
+        <span style="color:rgba(212,174,58,.85);">L: Listening &nbsp; S: Speaking &nbsp; R: Reading</span><br>
+        Observasi proses — tidak masuk nilai rapor
+      </div>
     </div>
 
     <div class="ds-penilaian-progress">
@@ -547,7 +549,7 @@ function _buildAsesmenPaginated() {
         ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
       <button onclick="dashSimpanLanjut()" class="ds-page-btn ds-page-btn--primary"
         ${navNextDisabled ? 'disabled' : ''}>
-        ${navNextDisabled ? 'Halaman Terakhir' : `Simpan & Lanjut → ${nextStart}–${nextEnd}`}
+        ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
       </button>
     </div>
   </div>`;
@@ -713,7 +715,7 @@ function _buildSesiHTML() {
 
   <div class="ds-action-grid">
     <button onclick="dashKeLanding()" class="ds-btn-cancel">Batalkan</button>
-    <button onclick="dashSelesaiSesi()" class="ds-btn-selesai">✓ Selesai</button>
+    <button onclick="dashSelesaiSesi()" class="ds-btn-selesai">✓ Simpan & Selesai</button>
   </div>
 
 </div>`;
