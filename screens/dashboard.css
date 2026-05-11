@@ -366,93 +366,72 @@
   margin-bottom: var(--sp-sm);
 }
 
-/* ── Langkah skenario ── */
-.ds-langkah-wrap  { display: flex; flex-direction: column; gap: var(--sp-sm); }
-.ds-langkah-audio {
-  background: var(--tema-primary-bg);
-  border: 1px solid var(--tema-primary-border);
-  border-radius: 10px;
-  padding: 10px var(--sp-md);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-.ds-tts-btn {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--tema-primary-bg);
-  border: 1px solid var(--tema-primary-border);
-  color: var(--tema-primary);
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-.ds-langkah-audio-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(212,174,58,.8);
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.ds-langkah-audio-teks {
-  font-size: 14px;
+/* ── Asesmen Formatif: progress + nav halaman ── */
+.ds-penilaian-progress {
+  font-size: 13px;
   color: rgba(255,255,255,.8);
-  line-height: 1.5;
-  font-style: italic;
-}
-.ds-langkah-instruksi {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 6px 0;
-}
-.ds-langkah-num {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--tema-primary-bg);
-  color: var(--tema-primary);
-  font-size: 11px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.ds-langkah-teks { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5; }
-
-/* ── Fase tabs skenario ── */
-.ds-fase-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: var(--sp-md); }
-.ds-fase-tab {
-  padding: 7px var(--sp-md);
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,.03);
   border-radius: 6px;
-  border: 1px solid rgba(255,255,255,.1);
-  background: transparent;
-  color: rgba(255,255,255,.55);
+}
+.ds-asesmen-list { margin-bottom: var(--sp-md); }
+.ds-asesmen-nav  { display: flex; gap: var(--sp-sm); flex-wrap: wrap; }
+.ds-page-btn {
+  flex: 1 1 100px;
+  min-height: 44px;
+  padding: 10px var(--sp-md);
+  border-radius: 8px;
   font-size: 13px;
   font-weight: 700;
-  cursor: pointer;
   font-family: inherit;
-  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.85);
   -webkit-tap-highlight-color: transparent;
 }
-.ds-fase-tab--gold-active { border-color: var(--tema-primary); background: var(--tema-primary-bg); color: var(--tema-primary); }
-.ds-fase-tab--sage-active { border-color: var(--tema-primary); background: var(--tema-primary-bg); color: var(--tema-primary); }
-.ds-fase-header {
+.ds-page-btn:active   { background: rgba(255,255,255,.08); }
+.ds-page-btn:disabled { opacity: .35; cursor: not-allowed; }
+.ds-page-btn--primary {
+  background: var(--tema-primary-bg);
+  border-color: var(--tema-primary-border);
+  color: var(--tema-primary);
+  flex: 2 1 180px;
+}
+.ds-page-btn--primary:active { background: rgba(212,174,58,.2); }
+
+/* ── Siswa collapse item ── */
+.ds-siswa-collapse-item {
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+.ds-siswa-collapse-item:last-child { margin-bottom: 0; }
+.ds-siswa-collapse-item--open      { border-color: var(--tema-primary-border); }
+.ds-siswa-collapse-head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  gap: var(--sp-sm);
+  padding: 10px;
+  min-height: 48px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.ds-fase-title  { font-size: 12px; font-weight: 700; color: rgba(212,174,58,.8); }
-.ds-tts-stop    { font-size: 12px; color: rgba(255,255,255,.5); background: transparent; border: none; cursor: pointer; font-family: inherit; }
+.ds-siswa-collapse-head:active { background: rgba(255,255,255,.03); }
+.ds-siswa-collapse-body {
+  padding: 10px 10px var(--sp-md);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.ds-siswa-status-dots {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--tema-primary);
+  flex-shrink: 0;
+  font-family: monospace;
+}
 
 /* ── Penilaian siswa input ── */
 .ds-penilaian-header {
@@ -570,7 +549,7 @@
   color: var(--tema-primary);
 }
 
-/* ── Tombol selesai / batalkan ── */
+/* ── Tombol selesai / batalkan (dipertahankan untuk kompatibilitas) ── */
 .ds-action-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -628,12 +607,7 @@
 }
 .ds-skeleton-line--short { height: 20px; width: 50%; margin-bottom: 0; }
 
-/* =============================================================
-   SPRINT 6 — Collapse Pattern (Materi, Skenario, Asesmen)
-   ============================================================= */
-
-/* ── Header collapse (Materi & Skenario top-level) ── */
-.ds-collapse-head    { min-height: 48px; }
+/* ── Collapse chevron (dipertahankan untuk siswa accordion di asesmen) ── */
 .ds-collapse-chevron {
   font-size: 16px;
   color: rgba(212,174,58,.7);
@@ -643,128 +617,370 @@
   text-align: center;
   line-height: 1;
 }
-.ds-collapse-body {
-  padding: var(--sp-md) var(--sp-lg) var(--sp-lg);
-  border-top: 1px solid rgba(255,255,255,.05);
-}
-.ds-collapse-body--nested { padding: var(--sp-sm) var(--sp-sm) 10px; }
-
-/* ── Sub-fase collapse (Pembuka / Inti / Penutup / Asesmen) ── */
-.ds-subfase-item {
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 10px;
-  margin-bottom: 6px;
-  background: rgba(255,255,255,.02);
-  overflow: hidden;
-}
-.ds-subfase-item:last-child  { margin-bottom: 0; }
-.ds-subfase-item--open       { border-color: var(--tema-primary-border); }
-.ds-subfase-head {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-  padding: var(--sp-md);
-  min-height: 44px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.ds-subfase-head:active { background: rgba(255,255,255,.03); }
-.ds-subfase-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ds-subfase-num  { font-size: 13px; font-weight: 700; color: var(--tema-primary); flex-shrink: 0; min-width: 16px; }
-.ds-subfase-meta { font-size: 12px; color: rgba(212,174,58,.7); flex-shrink: 0; }
-.ds-subfase-body {
-  padding: 10px var(--sp-md) var(--sp-md);
-  border-top: 1px solid rgba(255,255,255,.05);
-}
-
-/* ── Asesmen Formatif: progress + nav halaman ── */
-.ds-penilaian-progress {
-  font-size: 13px;
-  color: rgba(255,255,255,.8);
-  margin-bottom: 10px;
-  padding: 6px 10px;
-  background: rgba(255,255,255,.03);
-  border-radius: 6px;
-}
-.ds-asesmen-list { margin-bottom: var(--sp-md); }
-.ds-asesmen-nav  { display: flex; gap: var(--sp-sm); flex-wrap: wrap; }
-.ds-page-btn {
-  flex: 1 1 100px;
-  min-height: 44px;
-  padding: 10px var(--sp-md);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  font-family: inherit;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,.25);
-  color: rgba(255,255,255,.85);
-  -webkit-tap-highlight-color: transparent;
-}
-.ds-page-btn:active   { background: rgba(255,255,255,.08); }
-.ds-page-btn:disabled { opacity: .35; cursor: not-allowed; }
-.ds-page-btn--primary {
-  background: var(--tema-primary-bg);
-  border-color: var(--tema-primary-border);
-  color: var(--tema-primary);
-  flex: 2 1 180px;
-}
-.ds-page-btn--primary:active { background: rgba(212,174,58,.2); }
-
-/* ── Siswa collapse item ── */
-.ds-siswa-collapse-item {
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 8px;
-  margin-bottom: 6px;
-  background: rgba(255,255,255,.02);
-  overflow: hidden;
-}
-.ds-siswa-collapse-item:last-child { margin-bottom: 0; }
-.ds-siswa-collapse-item--open      { border-color: var(--tema-primary-border); }
-.ds-siswa-collapse-head {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-sm);
-  padding: 10px;
-  min-height: 48px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.ds-siswa-collapse-head:active { background: rgba(255,255,255,.03); }
-.ds-siswa-collapse-body {
-  padding: 10px 10px var(--sp-md);
-  border-top: 1px solid rgba(255,255,255,.05);
-}
-.ds-siswa-status-dots {
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: var(--tema-primary);
-  flex-shrink: 0;
-  font-family: monospace;
-}
 
 /* ── 320px guard ── */
 @media (max-width: 360px) {
-  .ds-subfase-head          { padding: 10px var(--sp-sm); }
-  .ds-subfase-body          { padding: var(--sp-sm) var(--sp-sm) 10px; }
   .ds-siswa-collapse-head   { padding: var(--sp-sm); gap: 6px; }
   .ds-siswa-collapse-body   { padding: var(--sp-sm) var(--sp-sm) 10px; }
-  .ds-collapse-body         { padding: 10px var(--sp-md) var(--sp-md); }
   .ds-page-btn              { font-size: 12px; padding: 9px var(--sp-sm); }
-  .ds-subfase-label         { font-size: 13px; }
-  .ds-subfase-meta          { font-size: 11px; }
 }
 
 /* ── HP besar: stat box lebih lapang ── */
 @media (min-width: 440px) {
   .ds-stat-box { padding: 10px; }
   .ds-stat-num { font-size: 18px; }
+}
+
+/* =============================================================
+   STEPPER — Navigasi sesi berlangsung
+   ============================================================= */
+
+.ds-stepper-wrap {
+  padding-bottom: 90px;
+}
+
+/* ── Step indicator (label + dots) ── */
+.ds-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 2px;
+}
+
+.ds-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #D4AE3A;
+}
+
+.ds-step-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.ds-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: background .2s, transform .2s;
+}
+
+.ds-step-dot--idle   { background: rgba(255,255,255,.15); }
+.ds-step-dot--done   { background: rgba(212,174,58,.4); }
+.ds-step-dot--active { background: #D4AE3A; transform: scale(1.35); }
+
+/* ── Step body ── */
+.ds-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ds-step-empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+}
+
+/* ── Step nav (fixed bottom bar) ── */
+.ds-step-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(18,18,24,.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,.08);
+  z-index: 50;
+}
+
+.ds-step-btn {
+  padding: 13px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-step-btn:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.ds-step-btn--prev {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.7);
+}
+
+.ds-step-btn--prev:active { background: rgba(255,255,255,.06); }
+
+.ds-step-btn--next {
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A;
+}
+
+.ds-step-btn--next:active { background: rgba(212,174,58,.25); }
+
+.ds-step-btn--selesai {
+  background: rgba(212,174,58,.2);
+  border: 1px solid #D4AE3A;
+  color: #D4AE3A;
+}
+
+.ds-step-btn--selesai:active { background: rgba(212,174,58,.35); }
+
+/* ── Langkah item ── */
+.ds-langkah-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ds-langkah-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+  background: rgba(255,255,255,.03);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-langkah-item:active { background: rgba(255,255,255,.06); }
+
+.ds-langkah-item--aktif {
+  background: rgba(212,174,58,.08);
+  border-color: rgba(212,174,58,.3);
+}
+
+.ds-langkah-item--done {
+  opacity: .5;
+}
+
+.ds-langkah-item--diferensiasi {
+  background: rgba(100,180,255,.06);
+  border-color: rgba(100,180,255,.2);
+}
+
+.ds-langkah-item--darurat {
+  background: rgba(255,160,80,.06);
+  border-color: rgba(255,160,80,.2);
+}
+
+/* ── Langkah nomor badge ── */
+.ds-langkah-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.5);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ds-langkah-num--done {
+  background: rgba(212,174,58,.2);
+  color: #D4AE3A;
+}
+
+.ds-langkah-num--audio {
+  background: rgba(212,174,58,.15);
+  color: #D4AE3A;
+}
+
+.ds-langkah-num--dif {
+  background: rgba(100,180,255,.15);
+  color: rgba(100,180,255,.9);
+}
+
+.ds-langkah-num--darurat {
+  background: rgba(255,160,80,.15);
+  color: rgba(255,160,80,.9);
+}
+
+/* ── Langkah teks ── */
+.ds-langkah-teks {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.ds-langkah-audio-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(212,174,58,.6);
+  margin-bottom: 4px;
+}
+
+.ds-langkah-audio-teks {
+  font-size: 14px;
+  color: rgba(255,255,255,.9);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Tombol TTS inline (hanya tampil di langkah aktif) ── */
+.ds-tts-btn-inline {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  border-radius: 7px;
+  color: #D4AE3A;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-tts-btn-inline:active { background: rgba(212,174,58,.28); }
+
+/* ── Tombol TTS stop (lama, dipertahankan) ── */
+.ds-tts-stop {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── Fase header (nama fase + timer) ── */
+.ds-fase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ds-fase-durasi {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  font-weight: 400;
+}
+
+.ds-timer-btn {
+  font-size: 11px;
+  background: rgba(212,174,58,.1);
+  border: 1px solid rgba(212,174,58,.3);
+  color: #D4AE3A;
+  border-radius: 6px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ds-timer-display {
+  font-size: 12px;
+  color: #D4AE3A;
+  font-weight: 700;
+}
+
+/* ── Warn banner (asesmen / selesai) ── */
+.ds-warn-banner {
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.35);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.ds-warn-title {
+  font-size: 13px;
+  color: #D4AE3A;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ds-warn-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ds-warn-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ds-warn-btn {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-warn-btn--cancel {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.7);
+}
+
+.ds-warn-btn--ok {
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A;
+}
+
+/* ── Step Selesai: ringkasan sesi ── */
+.ds-selesai-ringkasan {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-ringkasan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.ds-ringkasan-row:last-child { border-bottom: none; }
+
+.ds-ringkasan-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+}
+
+.ds-ringkasan-val {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  font-weight: 600;
+  text-align: right;
+  max-width: 65%;
 }

@@ -1,11 +1,16 @@
 /**
  * screens/dashboard.js — FLAF Dashboard Guru
  *
- * Alur: Landing → Pilih Rombel → Pilih TP → Sesi Berlangsung
+ * Alur: Landing → Pilih Rombel → Pilih TP → Sesi Berlangsung (Stepper)
  *
- * Card Materi & Skenario:
- *   Tab MATERI  — deskripsi, indikator, vocab
- *   Tab SKENARIO — langkah bertahap dengan TTS + penilaian L/S/R per siswa
+ * Stepper Sesi:
+ *   Step 0 — Materi    (deskripsi, indikator, vocab, persiapan)
+ *   Step 1 — Presensi  (kehadiran siswa, paginasi)
+ *   Step 2 — Pembuka   (langkah linear, TTS)
+ *   Step 3 — Inti      (langkah linear, TTS)
+ *   Step 4 — Penutup   (langkah linear, TTS)
+ *   Step 5 — Asesmen   (nilai L/S/R per siswa, opsional)
+ *   Step 6 — Selesai   (ringkasan, refleksi, kendala)
  *
  * Public API:
  *   renderDashboard(container, opts) → render ke container
@@ -35,23 +40,36 @@ let _flow = {
 };
 
 let _skenario = {
-  tab        : 'materi',
-  faseIndex  : 0,
-  langkahIndex: 0,
-  speaking   : false,
-  kendala    : null,
-  // Sprint 6 — accordion state
-  openPresensi: false,
-  openMateri : false,
-  openSkenario: false,
-  openSubFase: -1,
-  presensiPage: 0,
-  asesmenPage: 0,
-  openSiswaId: null,
+  stepIndex       : 0,   // 0=Materi 1=Presensi 2=Pembuka 3=Inti 4=Penutup 5=Asesmen 6=Selesai
+  langkahIndex    : 0,   // langkah aktif dalam step fase (2–4)
+  speaking        : false,
+  kendala         : null,
+  presensiPage    : 0,
+  asesmenPage     : 0,
+  openSiswaId     : null,
   asesmenModeCepat: false,
+  warnAsesmen     : false, // true = tampilkan peringatan lewati asesmen
 };
 
 const SISWA_PER_HALAMAN = 5;
+
+// Stepper — urutan step dan mapping ke fase skenario
+const STEPS = [
+  { id: 'materi',   label: 'Materi'   },
+  { id: 'presensi', label: 'Presensi' },
+  { id: 'pembuka',  label: 'Pembuka'  },
+  { id: 'inti',     label: 'Inti'     },
+  { id: 'penutup',  label: 'Penutup'  },
+  { id: 'asesmen',  label: 'Asesmen'  },
+  { id: 'selesai',  label: 'Selesai'  },
+];
+const STEP_FASE = { 2: 'Pembuka', 3: 'Inti', 4: 'Penutup', 5: 'Penilaian' };
+
+function _getFaseData(tp, stepIndex) {
+  const faseName = STEP_FASE[stepIndex];
+  if (!faseName || !tp?.skenario) return null;
+  return tp.skenario.find(f => f.fase === faseName) || null;
+}
 
 // --- PUBLIC API --------------------------------------------------------------
 
@@ -148,9 +166,9 @@ function _getLevelInfo(hariAktif) {
 function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, streakEmoji, streakLabel) {
   const lv      = _getLevelInfo(hariAktif);
   const barPct  = Math.round((lv.progressInLevel / (lv.levelSpan ?? 1)) * 100);
-  const nextText = lv.next
+  const nextText = lv.next && hariAktif > 0
     ? `${lv.next.min - hariAktif} hari lagi → ${lv.next.nama}`
-    : '🏆 Level Tertinggi!';
+    : lv.next ? '' : '🏆 Level Tertinggi!';
 
   return `
   <div class="ds-jejak-card">
@@ -169,7 +187,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
       <div class="ds-jejak-level-col">
         <div id="jejak-card-level-emoji" class="ds-level-emoji">${lv.current.emoji}</div>
         <div id="jejak-card-level-nama" class="ds-level-nama ds-level-nama--current">${lv.current.nama}</div>
-        <div id="jejak-card-level-gaji" class="ds-level-gaji">${lv.current.gaji}</div>
+        <div id="jejak-card-level-gaji" class="ds-level-gaji" style="${hariAktif > 0 ? '' : 'display:none;'}">${lv.current.gaji}</div>
       </div>
     </div>
     <div class="ds-jejak-progress-wrap">
@@ -178,7 +196,7 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
         <div class="ds-progress-track">
           <div id="jejak-card-bar" class="ds-progress-fill" style="width:${barPct}%;"></div>
         </div>
-        <div id="jejak-card-bar-label" class="ds-progress-bar-label">${lv.progressInLevel}/${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'} di level ini</div>
+        <div id="jejak-card-bar-label" class="ds-progress-bar-label" style="${hariAktif > 0 ? '' : 'display:none;'}">${lv.progressInLevel}/${lv.levelSpan !== null ? lv.levelSpan + ' hari' : '60+ hari ✔'} di level ini</div>
       </div>
     </div>
     <div class="ds-stat-grid" style="margin-top:4px;">
@@ -207,18 +225,6 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
   const streakEmoji = streak === 0 ? '📚' : streak < 3 ? '✨' : streak < 7 ? '⚡' : streak < 14 ? '🌟' : '🔥';
   const streakLabel = streak === 0 ? 'Belum ada aktivitas' : streak < 3 ? 'Awal yang bagus!' : streak < 7 ? 'Terus semangat!' : streak < 14 ? 'Guru Konsisten!' : 'Luar Biasa!';
 
-  // Poin 4: onboarding card hanya muncul jika belum pernah mengajar
-  const onboardingHTML = pertemuan === 0 ? `
-  <div class="ds-card" style="padding:14px 16px;border-color:rgba(212,174,58,.35);">
-    <div style="font-size:11px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Selamat Datang di FLAF</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;">
-      <strong style="color:#D4AE3A;">Fase A</strong> · Bahasa Inggris SD Kelas 1 &amp; 2<br>
-      18 Tujuan Pembelajaran · 306 Jam Pelajaran<br>
-      <span style="color:rgba(255,255,255,.5);font-size:12px;">Pilih rombel di bawah untuk mulai mengajar.</span>
-    </div>
-  </div>` : '';
-
-  // Poin 1: ambil TP terakhir selesai per rombel untuk tombol lanjut
   const tpSelesaiPerRombel = {};
   for (const k of kelasList) {
     try {
@@ -260,7 +266,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
         ? `<div style="margin-top:4px;font-size:12px;color:${lanjut.nomor ? '#D4AE3A' : 'rgba(255,255,255,.4)'};">${_escape(lanjut.label)}</div>`
         : '';
       return `
-    <div onclick="dashPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})"
+    <div onclick="dashPilihRombel('${k.id}','${k.nama.replace(/'/g, "\\'")}',${k.tingkat || 1})"
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
@@ -281,7 +287,6 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
       ${session.school ? `<div class="ds-hero-school">${_escape(session.school)}</div>` : ''}
     </div>
   </div>
-  ${onboardingHTML}
   ${mulaiSection}
   ${_buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, streakEmoji, streakLabel)}
 </div>`;
@@ -326,7 +331,7 @@ async function _buildPilihTPHTML() {
 </div>`;
 }
 
-// --- MATERI PANEL: TAB MATERI ------------------------------------------------
+// --- MATERI PANEL ------------------------------------------------------------
 
 function _buildTabMateri(tp) {
   const indikatorHTML = tp.indikator.map((ind, i) => `
@@ -335,19 +340,16 @@ function _buildTabMateri(tp) {
       <div class="ds-indikator-teks">${_escape(ind)}</div>
     </div>`).join('');
 
-  // Poin 10: vocab chip bisa diputar TTS
   const vocabHTML = tp.vocab.map((v, vi) =>
     `<span class="ds-vocab-chip" onclick="dashTTS(${vi + 1000},'${_escapeTTS(v)}')" style="cursor:pointer;" title="Putar audio">▶ ${_escape(v)}</span>`
   ).join('');
 
-  // Poin 7: daftar bahan ajar dari field persiapan[] jika ada
   const persiapanHTML = (tp.persiapan && tp.persiapan.length > 0) ? `
     <div class="ds-sub-label" style="margin-top:10px;">Siapkan Sebelum Kelas</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
       ${tp.persiapan.map(p => `<span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:4px 10px;font-size:12px;color:rgba(255,255,255,.7);">📌 ${_escape(p)}</span>`).join('')}
     </div>` : '';
 
-  // Poin 6: ringkasan CP satu kalimat + link ke kurikulum
   const cpHTML = `
     <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
       <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">Tujuan Akhir Fase A</div>
@@ -366,7 +368,18 @@ function _buildTabMateri(tp) {
     ${cpHTML}`;
 }
 
-// --- COLLAPSE: PRESENSI (paginasi 5 siswa per halaman) ----------------------
+// --- STEP 0: MATERI ----------------------------------------------------------
+
+function _buildStepMateri(tp) {
+  if (!tp) return `<div class="ds-step-empty">Data materi tidak tersedia.</div>`;
+  return `
+  <div class="ds-card ds-card--overflow" style="padding:14px 16px;">
+    <div class="ds-section-label" style="margin-bottom:10px;">Materi & Persiapan</div>
+    ${_buildTabMateri(tp)}
+  </div>`;
+}
+
+// --- STEP 1: PRESENSI --------------------------------------------------------
 
 const PRESENSI_STATUS_CFG = {
   H: { bg: 'rgba(212,174,58,.12)',  color: '#D4AE3A',               dot: 'rgba(212,174,58,.25)'  },
@@ -375,34 +388,22 @@ const PRESENSI_STATUS_CFG = {
   A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)',  dot: 'rgba(255,255,255,.06)' },
 };
 
-function _buildPresensiCollapse() {
+function _buildStepPresensi() {
   const { siswaList, statusMap } = _flow;
   const total  = siswaList.length;
   const totalH = Object.values(statusMap).filter(v => v === 'H').length;
-  const isOpen = _skenario.openPresensi;
-
-  const headerHTML = `
-    <div onclick="dashTogglePresensi()" class="ds-list-item ds-collapse-head">
-      <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0;">
-        <div id="presensi-toggle-icon" class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
-        <div class="ds-section-label" style="margin:0;">Isi Presensi</div>
-      </div>
-      <div id="presensi-count" style="font-size:14px;font-weight:700;color:#D4AE3A;">
-        ${totalH > 0 ? `${totalH}/${total} hadir` : ''}
-      </div>
-    </div>`;
-
-  if (!isOpen) return headerHTML;
 
   if (total === 0) {
     return `
-      ${headerHTML}
-      <div class="ds-collapse-body">
-        <div style="padding:8px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">
-          Belum ada siswa di rombel ini.<br>
-          <button onclick="dashKeLayarNilai()" class="ds-btn-back" style="margin-top:12px;color:#D4AE3A;border-color:rgba(212,174,58,.4);">+ Tambah Siswa di Layar Nilai</button>
-        </div>
-      </div>`;
+    <div class="ds-card" style="padding:20px;text-align:center;">
+      <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:12px;">
+        Belum ada siswa di rombel ini.
+      </div>
+      <button onclick="dashKeLayarNilai()" class="ds-btn-back"
+        style="color:#D4AE3A;border-color:rgba(212,174,58,.4);">
+        + Tambah Siswa di Layar Nilai
+      </button>
+    </div>`;
   }
 
   const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
@@ -411,6 +412,11 @@ function _buildPresensiCollapse() {
   const startIdx   = safePage * SISWA_PER_HALAMAN;
   const endIdx     = Math.min(startIdx + SISWA_PER_HALAMAN, total);
   const halaman    = siswaList.slice(startIdx, endIdx);
+
+  const navPrevDisabled = safePage <= 0;
+  const navNextDisabled = safePage >= totalPages - 1;
+  const nextStart       = endIdx + 1;
+  const nextEnd         = Math.min(endIdx + SISWA_PER_HALAMAN, total);
 
   const siswaHTML = halaman.map(s => {
     const st  = statusMap[s.id] || 'A';
@@ -422,160 +428,270 @@ function _buildPresensiCollapse() {
       <div class="ds-status-btns">
         ${['H','S','I','A'].map(k => `
         <button onclick="dashSetStatus('${s.id}','${k}')" class="ds-status-btn"
-          style="border-color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.1)'};background:${st===k ? PRESENSI_STATUS_CFG[k].dot : 'transparent'};color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.25)'};">
+          style="border-color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.1)'};
+                 background:${st===k ? PRESENSI_STATUS_CFG[k].dot : 'transparent'};
+                 color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.25)'};">
           ${k}
         </button>`).join('')}
       </div>
     </div>`;
   }).join('');
 
-  const navPrevDisabled = safePage <= 0;
-  const navNextDisabled = safePage >= totalPages - 1;
-  const nextStart       = endIdx + 1;
-  const nextEnd         = Math.min(endIdx + SISWA_PER_HALAMAN, total);
-
   return `
-    ${headerHTML}
-    <div class="ds-collapse-body">
-      <div class="ds-penilaian-progress">
-        Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}
+  <div class="ds-card ds-card--overflow">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px 10px;">
+      <div class="ds-section-label" style="margin:0;">Presensi</div>
+      <div id="presensi-count" style="font-size:14px;font-weight:700;color:#D4AE3A;">
+        ${totalH > 0 ? `${totalH}/${total} hadir` : ''}
       </div>
-      <div class="ds-asesmen-list">${siswaHTML}</div>
-      <div class="ds-asesmen-nav">
-        <button onclick="dashPresensiPrev()" class="ds-page-btn"
-          ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
-        <button onclick="dashPresensiNext()" class="ds-page-btn ds-page-btn--primary"
-          ${navNextDisabled ? 'disabled' : ''}>
-          ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
-        </button>
-      </div>
-    </div>`;
+    </div>
+    <div class="ds-penilaian-progress" style="margin:0 16px 10px;">
+      Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}
+    </div>
+    <div class="ds-asesmen-list">${siswaHTML}</div>
+    <div class="ds-asesmen-nav" style="padding:10px 16px 14px;">
+      <button onclick="dashPresensiPrev()" class="ds-page-btn"
+        ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
+      <button onclick="dashPresensiNext()" class="ds-page-btn ds-page-btn--primary"
+        ${navNextDisabled ? 'disabled' : ''}>
+        ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
+      </button>
+    </div>
+  </div>`;
 }
 
-function _buildMateriCollapse(tp) {
-  const isOpen = _skenario.openMateri;
-  const headerHTML = `
-    <div onclick="dashToggleMateri()" class="ds-list-item ds-collapse-head">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div id="materi-chevron" class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
-        <div class="ds-section-label" style="margin:0;">Materi</div>
-      </div>
-    </div>`;
+// --- STEP 2–4: FASE (Pembuka / Inti / Penutup) --------------------------------
 
-  if (!isOpen) return headerHTML;
+function _buildStepFase(tpData, step) {
+  const fase = _getFaseData(tpData, step);
+  if (!fase) return `<div class="ds-step-empty">Data fase tidak tersedia.</div>`;
 
-  const isiHTML = tp
-    ? _buildTabMateri(tp)
-    : '<div style="font-size:13px;color:rgba(255,255,255,.5);">Data tidak tersedia.</div>';
+  const langkahList = fase.langkah || [];
+  const total       = langkahList.length;
+  const aktif       = Math.max(0, Math.min(_skenario.langkahIndex, total - 1));
 
-  return `
-    ${headerHTML}
-    <div class="ds-collapse-body">${isiHTML}</div>`;
-}
+  const langkahHTML = langkahList.map((l, idx) => {
+    const isAktif = idx === aktif;
+    const isAudio = l.tipe === 'audio';
+    const isDone  = idx < aktif;
 
-// --- COLLAPSE: SKENARIO (parent + 4 sub-fase accordion) ----------------------
+    const isDiferensiasi = !isAudio && l.teks.startsWith('DIFERENSIASI');
+    const isDarurat      = !isAudio && l.teks.startsWith('JIKA WAKTU');
 
-function _buildSkenarioCollapse(tp) {
-  const isOpen = _skenario.openSkenario;
-  const headerHTML = `
-    <div onclick="dashToggleSkenario()" class="ds-list-item ds-collapse-head">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div id="skenario-chevron" class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
-        <div class="ds-section-label" style="margin:0;">Skenario</div>
-      </div>
-    </div>`;
+    let itemClass = 'ds-langkah-item';
+    if (isAktif) itemClass += ' ds-langkah-item--aktif';
+    if (isDone)  itemClass += ' ds-langkah-item--done';
+    if (isDiferensiasi) itemClass += ' ds-langkah-item--diferensiasi';
+    if (isDarurat)      itemClass += ' ds-langkah-item--darurat';
 
-  if (!isOpen) return headerHTML;
+    const numHTML = isDone
+      ? `<div class="ds-langkah-num ds-langkah-num--done">✓</div>`
+      : isAudio
+        ? `<div class="ds-langkah-num ds-langkah-num--audio">▶</div>`
+        : isDiferensiasi
+          ? `<div class="ds-langkah-num ds-langkah-num--dif">≠</div>`
+          : isDarurat
+            ? `<div class="ds-langkah-num ds-langkah-num--darurat">!</div>`
+            : `<div class="ds-langkah-num">${idx + 1}</div>`;
 
-  if (!tp || !tp.skenario || tp.skenario.length === 0) {
+    const bodyHTML = isAudio
+      ? `
+        <div style="flex:1;">
+          <div class="ds-langkah-audio-label">Ucapkan ke siswa</div>
+          <div class="ds-langkah-audio-teks">"${_escape(l.teks)}"</div>
+          ${isAktif ? `<button onclick="dashTTS(${idx},'${_escapeTTS(l.teks)}')"
+            id="tts-btn-${idx}" class="ds-tts-btn-inline">▶ Putar Audio</button>` : ''}
+        </div>`
+      : `<div class="ds-langkah-teks">${_escape(l.teks)}</div>`;
+
     return `
-      ${headerHTML}
-      <div class="ds-collapse-body">
-        <div style="font-size:13px;color:rgba(255,255,255,.5);padding:8px 0;">Skenario belum tersedia.</div>
-      </div>`;
-  }
-
-  const subFaseHTML = tp.skenario.map((fase, i) =>
-    _buildSubFaseCollapseItem(fase, i)
-  ).join('');
-
-  return `
-    ${headerHTML}
-    <div class="ds-collapse-body ds-collapse-body--nested">
-      ${subFaseHTML}
+    <div class="${itemClass}" onclick="dashLangkahPilih(${idx})">
+      ${numHTML}
+      ${bodyHTML}
     </div>`;
-}
-
-function _buildSubFaseCollapseItem(fase, idx) {
-  const isOpen      = _skenario.openSubFase === idx;
-  const isPenilaian = fase.fase === 'Penilaian';
-  const label       = isPenilaian ? 'Asesmen Formatif' : fase.fase;
-  const meta        = fase.durasi ? `${fase.durasi} menit` : '';
-  const nomor       = idx + 1;
-  const timerId     = `fase-timer-${idx}`;
-
-  // Poin 9: tombol timer per fase (hanya bukan penilaian)
-  const timerHTML = (!isPenilaian && fase.durasi) ? `
-    <button onclick="dashStartTimer(${idx},${fase.durasi})" id="${timerId}-btn"
-      style="font-size:11px;background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.3);
-      color:#D4AE3A;border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;margin-left:6px;">
-      ▶ Timer
-    </button>
-    <span id="${timerId}" style="font-size:12px;color:#D4AE3A;margin-left:4px;display:none;font-weight:700;"></span>` : '';
-
-  const headerHTML = `
-    <div onclick="dashToggleSubFase(${idx})" class="ds-subfase-head">
-      <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0;">
-        <div class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
-        <div class="ds-siswa-nomor ds-siswa-nomor--sage">${nomor}</div>
-        <div class="ds-subfase-label">${_escape(label)}</div>
-        ${timerHTML}
-      </div>
-      ${meta ? `<div class="ds-subfase-meta">${meta}</div>` : ''}
-    </div>`;
-
-  if (!isOpen) return `<div class="ds-subfase-item">${headerHTML}</div>`;
-
-  let isiHTML = '';
-  if (isPenilaian) {
-    isiHTML = _buildAsesmenPaginated();
-  } else {
-    isiHTML = _buildLangkahFase(fase);
-  }
-
-  return `
-    <div class="ds-subfase-item ds-subfase-item--open">
-      ${headerHTML}
-      <div class="ds-subfase-body">${isiHTML}</div>
-    </div>`;
-}
-
-function _buildLangkahFase(fase) {
-  const langkahHTML = (fase.langkah || []).map((l, idx) => {
-    if (l.tipe === 'audio') {
-      return `
-        <div class="ds-langkah-audio">
-          <button onclick="dashTTS(${idx},'${_escapeTTS(l.teks)}')"
-            id="tts-btn-${idx}" class="ds-tts-btn">▶</button>
-          <div style="flex:1;">
-            <div class="ds-langkah-audio-label">Audio untuk siswa</div>
-            <div class="ds-langkah-audio-teks">"${_escape(l.teks)}"</div>
-          </div>
-        </div>`;
-    } else {
-      return `
-        <div class="ds-langkah-instruksi">
-          <div class="ds-langkah-num">${idx+1}</div>
-          <div class="ds-langkah-teks">${_escape(l.teks)}</div>
-        </div>`;
-    }
   }).join('');
 
+  const metaHTML = fase.durasi
+    ? `<span class="ds-fase-durasi">${fase.durasi} menit</span>` : '';
+
+  const timerHTML = fase.durasi ? `
+    <button onclick="dashStartTimer(99,${fase.durasi})" id="fase-timer-99-btn"
+      class="ds-timer-btn">▶ Timer</button>
+    <span id="fase-timer-99" class="ds-timer-display" style="display:none;"></span>` : '';
+
   return `
-    <div style="display:flex;justify-content:flex-end;margin-bottom:8px;">
-      <button onclick="dashTTSStop()" class="ds-tts-stop">⏹ Stop</button>
+  <div class="ds-card ds-card--overflow" style="padding:14px 16px;">
+    <div class="ds-fase-header">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div class="ds-section-label" style="margin:0;">${_escape(fase.fase)}</div>
+        ${metaHTML}
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        ${timerHTML}
+        <button onclick="dashTTSStop()" class="ds-tts-stop">⏹ Stop</button>
+      </div>
     </div>
-    <div class="ds-langkah-wrap">${langkahHTML}</div>`;
+    <div class="ds-langkah-list">
+      ${langkahHTML}
+    </div>
+  </div>`;
+}
+
+// --- STEP 5: ASESMEN ---------------------------------------------------------
+
+function _buildStepAsesmen() {
+  const warn = _skenario.warnAsesmen;
+
+  const warnHTML = warn ? `
+  <div class="ds-warn-banner" id="asesmen-warn">
+    <div class="ds-warn-title">⚠ Asesmen belum diisi</div>
+    <div class="ds-warn-desc">Anda bisa lewati asesmen, tapi data nilai tidak akan tercatat untuk sesi ini.</div>
+    <div class="ds-warn-actions">
+      <button onclick="dashWarnBatalkan()" class="ds-warn-btn ds-warn-btn--cancel">← Kembali Isi</button>
+      <button onclick="dashWarnLanjut()" class="ds-warn-btn ds-warn-btn--ok">Lewati Asesmen</button>
+    </div>
+  </div>` : '';
+
+  return `
+  ${warnHTML}
+  <div class="ds-card ds-card--overflow">
+    ${_buildAsesmenPaginated()}
+  </div>`;
+}
+
+// --- STEP 6: SELESAI ---------------------------------------------------------
+
+function _buildStepSelesai() {
+  const { rombel, tp } = _flow;
+  const totalH  = Object.values(_flow.statusMap).filter(v => v === 'H').length;
+  const total   = (_flow.siswaList || []).length;
+  const dinilai = _hitungSiswaDinilai();
+
+  return `
+  <div class="ds-card" style="padding:16px;">
+    <div class="ds-section-label" style="margin-bottom:8px;">Ringkasan Sesi</div>
+    <div class="ds-selesai-ringkasan">
+      <div class="ds-ringkasan-row">
+        <span class="ds-ringkasan-label">Rombel</span>
+        <span class="ds-ringkasan-val">${_escape(rombel.nama)}</span>
+      </div>
+      <div class="ds-ringkasan-row">
+        <span class="ds-ringkasan-label">TP</span>
+        <span class="ds-ringkasan-val">TP ${String(tp.nomor).padStart(2,'0')} · ${_escape(tp.nama)}</span>
+      </div>
+      <div class="ds-ringkasan-row">
+        <span class="ds-ringkasan-label">Hadir</span>
+        <span class="ds-ringkasan-val">${totalH}/${total} siswa</span>
+      </div>
+      <div class="ds-ringkasan-row">
+        <span class="ds-ringkasan-label">Dinilai</span>
+        <span class="ds-ringkasan-val" style="color:${dinilai > 0 ? '#D4AE3A' : 'rgba(255,255,255,.4)'};">
+          ${dinilai}/${total} siswa
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-card" style="padding:14px;">
+    <div class="ds-section-label" style="margin-bottom:8px;">Refleksi Mengajar</div>
+    <textarea id="sesi-refleksi"
+      placeholder="Catatan singkat tentang sesi ini..."
+      maxlength="300"
+      class="ds-refleksi-textarea"
+      onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
+      onblur="this.style.borderColor='rgba(255,255,255,.1)'"
+    ></textarea>
+    <div style="margin-top:12px;">
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Kendala sesi</div>
+      <div class="ds-kendala-wrap">
+        ${[
+          { val: 'lancar',          label: 'Lancar'          },
+          { val: 'waktu_kurang',    label: 'Waktu kurang'    },
+          { val: 'kurang_kondusif', label: 'Kurang kondusif' },
+          { val: 'media_tidak_ada', label: 'Media tidak ada' },
+          { val: 'lainnya',         label: 'Lainnya'         },
+        ].map(k => `
+        <button onclick="dashPilihKendala('${k.val}')"
+          id="kendala-btn-${k.val}"
+          class="ds-kendala-btn ${_skenario.kendala === k.val ? 'ds-kendala-btn--active' : ''}">
+          ${k.label}
+        </button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+// --- VIEW: SESI BERLANGSUNG --------------------------------------------------
+
+function _buildSesiHTML() {
+  const { rombel, tp } = _flow;
+  const tpData  = _getTP(tp.nomor);
+  const step    = _skenario.stepIndex;
+  const isFirst = step === 0;
+  const isLast  = step === 6;
+
+  return `
+<div class="ds-wrap ds-stepper-wrap">
+
+  <div class="ds-breadcrumb">
+    <button onclick="dashKeLanding()" class="ds-btn-back">← Rombel</button>
+    <button onclick="dashKePilihTP()" class="ds-btn-back">← TP</button>
+    <div class="ds-breadcrumb-label">TP ${tp.nomor} · ${_escape(rombel.nama)}</div>
+  </div>
+
+  <div class="ds-sesi-header">
+    <div class="ds-sesi-tag">SESI BERLANGSUNG</div>
+    <div class="ds-sesi-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
+    <div class="ds-sesi-tp-name">${_escape(tp.nama)}</div>
+    <div class="ds-sesi-rombel">${_escape(rombel.nama)}</div>
+    <div class="ds-sesi-date">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div>
+  </div>
+
+  ${_buildStepIndicator(step)}
+
+  <div id="ds-step-body" class="ds-step-body">
+    ${_buildStepBody(tpData, step)}
+  </div>
+
+  <div class="ds-step-nav" id="ds-step-nav">
+    <button
+      onclick="dashStepPrev()"
+      class="ds-step-btn ds-step-btn--prev"
+      ${isFirst ? 'disabled' : ''}>
+      ← Sebelumnya
+    </button>
+    ${isLast
+      ? `<button onclick="dashSelesaiSesi()" class="ds-step-btn ds-step-btn--selesai">✓ Simpan & Selesai</button>`
+      : `<button onclick="dashStepNext()" class="ds-step-btn ds-step-btn--next">Lanjut →</button>`
+    }
+  </div>
+
+</div>`;
+}
+
+function _buildStepIndicator(step) {
+  const dots = STEPS.map((s, i) => {
+    const state = i < step ? 'done' : i === step ? 'active' : 'idle';
+    return `<div class="ds-step-dot ds-step-dot--${state}" title="${s.label}"></div>`;
+  }).join('');
+  return `
+  <div class="ds-step-indicator">
+    <div class="ds-step-label">${STEPS[step].label}</div>
+    <div class="ds-step-dots">${dots}</div>
+  </div>`;
+}
+
+function _buildStepBody(tpData, step) {
+  switch (step) {
+    case 0: return _buildStepMateri(tpData);
+    case 1: return _buildStepPresensi();
+    case 2:
+    case 3:
+    case 4: return _buildStepFase(tpData, step);
+    case 5: return _buildStepAsesmen();
+    case 6: return _buildStepSelesai();
+    default: return '';
+  }
 }
 
 // --- FASE PENILAIAN: paginated + collapse per siswa --------------------------
@@ -605,28 +721,33 @@ function _buildAsesmenPaginated() {
   const nextStart       = endIdx + 1;
   const nextEnd         = Math.min(endIdx + SISWA_PER_HALAMAN, total);
 
-  // Poin 11: mode cepat — semua siswa flat satu halaman
   let siswaHTML;
   if (modeCepat) {
-    siswaHTML = siswaList.map(s => {
-      const cached = _flow.nilaiCache && _flow.nilaiCache[s.id];
-      const l = cached?.l ?? ''; const sv = cached?.s ?? ''; const r = cached?.r ?? '';
+    siswaHTML = halaman.map(s => {
+      const cached  = _flow.nilaiCache?.[s.id];
+      const aktif   = cached?.cepatPilihan || null;
+      const catatan = cached?.catatan || '';
+      const btnStyle = (k) =>
+        `font-size:16px;width:36px;height:36px;border-radius:8px;cursor:pointer;font-family:inherit;` +
+        `border:1px solid ${aktif === k ? '#D4AE3A' : 'rgba(255,255,255,.15)'};` +
+        `background:${aktif === k ? 'rgba(212,174,58,.2)' : 'rgba(255,255,255,.05)'};` +
+        `color:${aktif === k ? '#D4AE3A' : 'rgba(255,255,255,.4)'};`;
       return `
-      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.05);">
-        <div class="ds-siswa-nomor ds-siswa-nomor--sage" style="flex-shrink:0;">${s.nomor}</div>
-        <div style="flex:1;min-width:0;font-size:13px;color:rgba(255,255,255,.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(s.nama)}</div>
-        <div style="display:flex;gap:4px;flex-shrink:0;">
-          ${['l','s','r'].map((dim, di) => {
-            const vals = [l, sv, r];
-            return `<input id="nilai-${dim}-${s.id}" type="number" min="0" max="100" placeholder="${dim.toUpperCase()}"
-              value="${vals[di]}"
-              oninput="dashNilaiUpdate('${s.id}')"
-              style="width:40px;padding:4px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:12px;font-family:inherit;"
-              onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
-              onblur="this.style.borderColor='rgba(255,255,255,.12)'">`;
-          }).join('')}
-          <div id="nilai-rerata-head-${s.id}" style="width:30px;text-align:center;font-size:12px;font-weight:700;color:rgba(212,174,58,.8);line-height:28px;">—</div>
+      <div style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.05);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+          <div class="ds-siswa-nomor ds-siswa-nomor--sage" style="flex-shrink:0;">${s.nomor}</div>
+          <div style="flex:1;font-size:13px;color:rgba(255,255,255,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(s.nama)}</div>
+          <div style="display:flex;gap:6px;flex-shrink:0;">
+            <button onclick="dashNilaiCepat('${s.id}','sudah')" style="${btnStyle('sudah')}">★</button>
+            <button onclick="dashNilaiCepat('${s.id}','perlu')" style="${btnStyle('perlu')}">◐</button>
+            <button onclick="dashNilaiCepat('${s.id}','belum')" style="${btnStyle('belum')}">○</button>
+          </div>
         </div>
+        <input type="text" placeholder="Observasi singkat..." maxlength="100"
+          value="${_escape(catatan)}"
+          onblur="dashCatatanCepat('${s.id}',this.value)"
+          style="width:100%;padding:6px 8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;color:rgba(255,255,255,.7);font-size:12px;font-family:inherit;box-sizing:border-box;"
+          onfocus="this.style.borderColor='rgba(212,174,58,.3)'">
       </div>`;
     }).join('');
   } else {
@@ -634,37 +755,37 @@ function _buildAsesmenPaginated() {
   }
 
   return `
-  <div>
+  <div style="padding:14px 16px;">
     <div class="ds-penilaian-header">
       <div class="ds-penilaian-title">Asesmen L / S / R</div>
       <div class="ds-penilaian-note">
-        <span style="color:rgba(212,174,58,.85);">L: Listening &nbsp; S: Speaking &nbsp; R: Reading</span><br>
-        Observasi proses — tidak masuk nilai rapor
+        ${modeCepat
+          ? `<span style="color:rgba(212,174,58,.85);">★ Sudah bisa &nbsp;·&nbsp; ◐ Perlu latihan &nbsp;·&nbsp; ○ Belum bisa</span>`
+          : `<span style="color:rgba(212,174,58,.85);">L: Listening &nbsp; S: Speaking &nbsp; R: Reading</span><br>Observasi proses — tidak masuk nilai rapor`}
       </div>
     </div>
 
     <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0 4px;">
-      <div class="ds-penilaian-progress">
-        ${modeCepat ? `Semua ${total} siswa` : `Halaman ${safePage + 1}/${totalPages}`} · Dinilai ${dinilaiCount}/${total}
+      <div class="ds-penilaian-progress" style="margin:0;">
+        Halaman ${safePage + 1}/${totalPages} · Dinilai ${dinilaiCount}/${total}
       </div>
       <button onclick="dashToggleAsesmenMode()" style="font-size:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;">
         ${modeCepat ? '📋 Mode detail' : '⚡ Mode cepat'}
       </button>
     </div>
+  </div>
 
-    <div class="ds-asesmen-list">
-      ${siswaHTML}
-    </div>
+  <div class="ds-asesmen-list">
+    ${siswaHTML}
+  </div>
 
-    ${!modeCepat ? `
-    <div class="ds-asesmen-nav">
-      <button onclick="dashHalamanPrev()" class="ds-page-btn"
-        ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
-      <button onclick="dashSimpanLanjut()" class="ds-page-btn ds-page-btn--primary"
-        ${navNextDisabled ? 'disabled' : ''}>
-        ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
-      </button>
-    </div>` : ''}
+  <div class="ds-asesmen-nav" style="padding:10px 16px 14px;">
+    <button onclick="dashHalamanPrev()" class="ds-page-btn"
+      ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
+    <button onclick="dashSimpanLanjut()" class="ds-page-btn ds-page-btn--primary"
+      ${navNextDisabled ? 'disabled' : ''}>
+      ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
+    </button>
   </div>`;
 }
 
@@ -735,6 +856,44 @@ function _buildSiswaCollapseItem(s) {
     </div>`;
 }
 
+// --- RE-RENDER STEPPER -------------------------------------------------------
+
+function _rerenderStep() {
+  const body = _container?.querySelector('#ds-step-body');
+  const nav  = _container?.querySelector('#ds-step-nav');
+  const ind  = _container?.querySelector('.ds-step-indicator');
+  if (!body) return;
+
+  const tpData  = _getTP(_flow.tp?.nomor);
+  const step    = _skenario.stepIndex;
+  const isLast  = step === 6;
+  const isFirst = step === 0;
+
+  body.innerHTML = _buildStepBody(tpData, step);
+
+  if (ind) ind.outerHTML = _buildStepIndicator(step);
+
+  if (nav) {
+    nav.innerHTML = `
+      <button onclick="dashStepPrev()" class="ds-step-btn ds-step-btn--prev"
+        ${isFirst ? 'disabled' : ''}>← Sebelumnya</button>
+      ${isLast
+        ? `<button onclick="dashSelesaiSesi()" class="ds-step-btn ds-step-btn--selesai">✓ Simpan & Selesai</button>`
+        : `<button onclick="dashStepNext()" class="ds-step-btn ds-step-btn--next">Lanjut →</button>`
+      }`;
+  }
+
+  // Auto-scroll langkah aktif ke tengah layar
+  if (step >= 2 && step <= 4) {
+    requestAnimationFrame(() => {
+      const aktif = body.querySelector('.ds-langkah-item--aktif');
+      aktif?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+}
+
+// --- HELPERS -----------------------------------------------------------------
+
 function _hitungSiswaDinilai() {
   const cache = _flow.nilaiCache || {};
   let count = 0;
@@ -761,113 +920,6 @@ async function _loadNilaiCache() {
     }
   }
   _flow.nilaiCache = cache;
-}
-
-// --- VIEW: SESI BERLANGSUNG --------------------------------------------------
-
-function _buildSesiHTML() {
-  const { rombel, tp } = _flow;
-  const tpData = _getTP(tp.nomor);
-
-  return `
-<div class="ds-wrap">
-
-  <div class="ds-breadcrumb">
-    <button onclick="dashKeLanding()" class="ds-btn-back">← Rombel</button>
-    <button onclick="dashKePilihTP()" class="ds-btn-back">← TP</button>
-    <div class="ds-breadcrumb-label">TP ${tp.nomor} · ${_escape(rombel.nama)}</div>
-  </div>
-
-  <div class="ds-sesi-header">
-    <div class="ds-sesi-tag">Sesi Berlangsung</div>
-    <div class="ds-sesi-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
-    <div class="ds-sesi-tp-name">${_escape(tp.nama)}</div>
-    <div class="ds-sesi-rombel">${_escape(rombel.nama)}</div>
-    <div class="ds-sesi-date">${new Date().toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</div>
-  </div>
-
-  <div id="collapse-presensi-wrap" class="ds-card ds-card--overflow">
-    ${_buildPresensiCollapse()}
-  </div>
-
-  <div id="collapse-materi-wrap" class="ds-card ds-card--overflow">
-    ${_buildMateriCollapse(tpData)}
-  </div>
-
-  <div id="collapse-skenario-wrap" class="ds-card ds-card--overflow">
-    ${_buildSkenarioCollapse(tpData)}
-  </div>
-
-  <div class="ds-card" style="padding:14px;">
-    <div class="ds-section-label" style="margin-bottom:8px;">Refleksi Mengajar</div>
-    <textarea id="sesi-refleksi"
-      placeholder="Catatan singkat tentang sesi ini..."
-      maxlength="300"
-      class="ds-refleksi-textarea"
-      onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
-      onblur="this.style.borderColor='rgba(255,255,255,.1)'"
-    ></textarea>
-    <div style="margin-top:10px;">
-      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Kendala sesi</div>
-      <div class="ds-kendala-wrap">
-        ${[
-          { val: 'lancar',          label: 'Lancar' },
-          { val: 'waktu_kurang',    label: 'Waktu kurang' },
-          { val: 'kurang_kondusif', label: 'Kurang kondusif' },
-          { val: 'media_tidak_ada', label: 'Media tidak ada' },
-          { val: 'lainnya',         label: 'Lainnya' },
-        ].map(k => `
-        <button onclick="dashPilihKendala('${k.val}')"
-          id="kendala-btn-${k.val}"
-          class="ds-kendala-btn">
-          ${k.label}
-        </button>`).join('')}
-      </div>
-    </div>
-  </div>
-
-  <div class="ds-action-grid">
-    <button onclick="dashKeLanding()" class="ds-btn-cancel">Batalkan</button>
-    <button onclick="dashSelesaiSesi()" class="ds-btn-selesai">✓ Simpan & Selesai</button>
-  </div>
-
-</div>`;
-}
-
-// --- HELPERS: RE-RENDER ------------------------------------------------------
-
-function _rerenderCollapsePresensi() {
-  const wrap = _container && _container.querySelector('#collapse-presensi-wrap');
-  if (!wrap) return;
-  wrap.innerHTML = _buildPresensiCollapse();
-}
-
-function _rerenderCollapseMateri() {
-  const wrap = _container && _container.querySelector('#collapse-materi-wrap');
-  if (!wrap) return;
-  const tpData = _getTP(_flow.tp?.nomor);
-  wrap.innerHTML = _buildMateriCollapse(tpData);
-}
-
-function _rerenderCollapseSkenario() {
-  const wrap = _container && _container.querySelector('#collapse-skenario-wrap');
-  if (!wrap) return;
-  const tpData = _getTP(_flow.tp?.nomor);
-  wrap.innerHTML = _buildSkenarioCollapse(tpData);
-}
-
-function _rerenderPresensiUI() {
-  if (!_container) return;
-  const countEl = _container.querySelector('#presensi-count');
-  const total   = _flow.siswaList.length;
-  const totalH  = Object.values(_flow.statusMap).filter(v => v === 'H').length;
-  if (countEl) countEl.textContent = totalH > 0 ? `${totalH}/${total} hadir` : '';
-  const progressEl = _container.querySelector('#collapse-presensi-wrap .ds-penilaian-progress');
-  if (progressEl && _skenario.openPresensi) {
-    const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
-    const page       = _skenario.presensiPage;
-    progressEl.textContent = `Halaman ${page + 1}/${totalPages} · Hadir ${totalH}/${total}`;
-  }
 }
 
 async function _refreshJejakCard() {
@@ -903,148 +955,6 @@ async function _refreshJejakCard() {
     console.warn('[DASHBOARD] _refreshJejakCard error:', err.message);
   }
 }
-
-// --- TTS ---------------------------------------------------------------------
-
-let _ttsUtterance = null;
-let _ttsActiveBtn = null;
-
-function _ttsSpeak(teks, btnEl) {
-  if (!window.speechSynthesis) return;
-  window.speechSynthesis.cancel();
-  _ttsResetBtn();
-  const u  = new SpeechSynthesisUtterance(teks);
-  u.lang   = 'en-US';
-  u.rate   = 0.85;
-  u.pitch  = 1.0;
-  u.onend  = () => _ttsResetBtn();
-  u.onerror = () => _ttsResetBtn();
-  _ttsUtterance = u;
-  if (btnEl) {
-    _ttsActiveBtn = btnEl;
-    btnEl.textContent = '⏸';
-    btnEl.style.background  = 'rgba(212,174,58,.3)';
-    btnEl.style.borderColor = '#D4AE3A';
-  }
-  window.speechSynthesis.speak(u);
-}
-
-function _ttsResetBtn() {
-  if (_ttsActiveBtn) {
-    _ttsActiveBtn.textContent = '▶';
-    _ttsActiveBtn.style.background  = 'rgba(212,174,58,.15)';
-    _ttsActiveBtn.style.borderColor = 'rgba(212,174,58,.4)';
-    _ttsActiveBtn = null;
-  }
-}
-
-function _ttsStop() {
-  if (window.speechSynthesis) window.speechSynthesis.cancel();
-  _ttsResetBtn();
-  _ttsUtterance = null;
-}
-
-// --- GLOBAL HANDLERS ---------------------------------------------------------
-
-function _rerenderSemuaCollapseSesi() {
-  _rerenderCollapsePresensi();
-  _rerenderCollapseMateri();
-  _rerenderCollapseSkenario();
-}
-
-window.dashTogglePresensi = function() {
-  const willOpen = !_skenario.openPresensi;
-  _skenario.openPresensi = willOpen;
-  if (willOpen) {
-    _skenario.openMateri   = false;
-    _skenario.openSkenario = false;
-    _ttsStop();
-  }
-  _rerenderSemuaCollapseSesi();
-};
-
-window.dashToggleMateri = function() {
-  const willOpen = !_skenario.openMateri;
-  _skenario.openMateri = willOpen;
-  if (willOpen) {
-    _skenario.openPresensi = false;
-    _skenario.openSkenario = false;
-    _ttsStop();
-  }
-  _rerenderSemuaCollapseSesi();
-};
-
-window.dashToggleSkenario = async function() {
-  const willOpen = !_skenario.openSkenario;
-  _skenario.openSkenario = willOpen;
-  _ttsStop();
-  if (willOpen) {
-    _skenario.openPresensi = false;
-    _skenario.openMateri   = false;
-    if (!_flow.nilaiCache) await _loadNilaiCache();
-  }
-  _rerenderSemuaCollapseSesi();
-};
-
-window.dashPresensiPrev = function() {
-  _skenario.presensiPage = Math.max(0, _skenario.presensiPage - 1);
-  _rerenderCollapsePresensi();
-};
-
-window.dashPresensiNext = function() {
-  const total      = (_flow.siswaList || []).length;
-  const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
-  _skenario.presensiPage = Math.min(totalPages - 1, _skenario.presensiPage + 1);
-  _rerenderCollapsePresensi();
-};
-
-window.dashToggleSubFase = async function(idx) {
-  _ttsStop();
-  if (_skenario.openSubFase === idx) {
-    _skenario.openSubFase = -1;
-  } else {
-    _skenario.openSubFase = idx;
-    _skenario.openSiswaId = null;
-    const tpData = _getTP(_flow.tp?.nomor);
-    const fase   = tpData?.skenario?.[idx];
-    if (fase && fase.fase === 'Penilaian' && !_flow.nilaiCache) {
-      await _loadNilaiCache();
-    }
-    if (fase && fase.fase === 'Penilaian') {
-      _autoPilihSiswaPertamaBelum();
-    }
-  }
-  _rerenderCollapseSkenario();
-};
-
-window.dashToggleSiswa = async function(siswaId) {
-  if (_skenario.openSiswaId === siswaId) {
-    await _autoSaveSiswa(siswaId);
-    _skenario.openSiswaId = null;
-  } else {
-    if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
-    _skenario.openSiswaId = siswaId;
-  }
-  _rerenderCollapseSkenario();
-};
-
-window.dashHalamanPrev = async function() {
-  if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
-  _skenario.asesmenPage  = Math.max(0, _skenario.asesmenPage - 1);
-  _skenario.openSiswaId  = null;
-  _autoPilihSiswaPertamaBelum();
-  _rerenderCollapseSkenario();
-};
-
-window.dashSimpanLanjut = async function() {
-  if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
-  const total      = _flow.siswaList.length;
-  const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
-  _skenario.asesmenPage  = Math.min(totalPages - 1, _skenario.asesmenPage + 1);
-  _skenario.openSiswaId  = null;
-  _autoPilihSiswaPertamaBelum();
-  _rerenderCollapseSkenario();
-};
 
 function _autoPilihSiswaPertamaBelum() {
   const total    = _flow.siswaList.length;
@@ -1092,6 +1002,272 @@ async function _autoSaveSiswa(siswaId) {
   _flow.nilaiCache[siswaId] = { l, s, r, catatan: teks.trim() };
 }
 
+// --- TTS ---------------------------------------------------------------------
+
+let _ttsUtterance = null;
+let _ttsActiveBtn = null;
+
+function _ttsSpeak(teks, btnEl) {
+  if (!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  _ttsResetBtn();
+  const u  = new SpeechSynthesisUtterance(teks);
+  u.lang   = 'en-US';
+  u.rate   = 0.85;
+  u.pitch  = 1.0;
+  u.onend  = () => _ttsResetBtn();
+  u.onerror = () => _ttsResetBtn();
+  _ttsUtterance = u;
+  if (btnEl) {
+    _ttsActiveBtn = btnEl;
+    btnEl.textContent = '⏸';
+    btnEl.style.background  = 'rgba(212,174,58,.3)';
+    btnEl.style.borderColor = '#D4AE3A';
+  }
+  window.speechSynthesis.speak(u);
+}
+
+function _ttsResetBtn() {
+  if (_ttsActiveBtn) {
+    _ttsActiveBtn.textContent = '▶ Putar Audio';
+    _ttsActiveBtn.style.background  = 'rgba(212,174,58,.15)';
+    _ttsActiveBtn.style.borderColor = 'rgba(212,174,58,.4)';
+    _ttsActiveBtn = null;
+  }
+}
+
+function _ttsStop() {
+  if (window.speechSynthesis) window.speechSynthesis.cancel();
+  _ttsResetBtn();
+  _ttsUtterance = null;
+}
+
+// --- GLOBAL HANDLERS ---------------------------------------------------------
+
+// Stepper navigasi
+window.dashStepNext = async function() {
+  _ttsStop();
+  const step = _skenario.stepIndex;
+
+  // Step 5 (Asesmen): cek apakah ada nilai terisi
+  if (step === 5) {
+    const dinilai = _hitungSiswaDinilai();
+    const total   = (_flow.siswaList || []).length;
+    if (total > 0 && dinilai === 0 && !_skenario.warnAsesmen) {
+      _skenario.warnAsesmen = true;
+      _rerenderStep();
+      return;
+    }
+    if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
+    _skenario.openSiswaId = null;
+  }
+
+  _skenario.warnAsesmen  = false;
+  _skenario.langkahIndex = 0;
+  _skenario.stepIndex    = Math.min(6, step + 1);
+
+  // Preload nilai cache saat masuk step Asesmen
+  if (_skenario.stepIndex === 5 && !_flow.nilaiCache) {
+    await _loadNilaiCache();
+  }
+
+  _rerenderStep();
+};
+
+window.dashStepPrev = function() {
+  _ttsStop();
+  _skenario.warnAsesmen  = false;
+  _skenario.langkahIndex = 0;
+  _skenario.stepIndex    = Math.max(0, _skenario.stepIndex - 1);
+  _rerenderStep();
+};
+
+window.dashLangkahPilih = function(idx) {
+  _skenario.langkahIndex = idx;
+  _rerenderStep();
+};
+
+window.dashWarnBatalkan = function() {
+  _skenario.warnAsesmen = false;
+  _rerenderStep();
+};
+
+window.dashWarnLanjut = function() {
+  _skenario.warnAsesmen  = false;
+  _skenario.langkahIndex = 0;
+  _skenario.stepIndex    = 6;
+  _rerenderStep();
+};
+
+// Presensi paginasi
+window.dashPresensiPrev = function() {
+  _skenario.presensiPage = Math.max(0, _skenario.presensiPage - 1);
+  _rerenderStep();
+};
+
+window.dashPresensiNext = function() {
+  const total      = (_flow.siswaList || []).length;
+  const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
+  _skenario.presensiPage = Math.min(totalPages - 1, _skenario.presensiPage + 1);
+  _rerenderStep();
+};
+
+// Asesmen paginasi
+window.dashHalamanPrev = async function() {
+  if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
+  _skenario.asesmenPage = Math.max(0, _skenario.asesmenPage - 1);
+  _skenario.openSiswaId = null;
+  _autoPilihSiswaPertamaBelum();
+  _rerenderStep();
+};
+
+window.dashSimpanLanjut = async function() {
+  if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
+  const total      = _flow.siswaList.length;
+  const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
+  _skenario.asesmenPage = Math.min(totalPages - 1, _skenario.asesmenPage + 1);
+  _skenario.openSiswaId = null;
+  _autoPilihSiswaPertamaBelum();
+  _rerenderStep();
+};
+
+window.dashToggleSiswa = async function(siswaId) {
+  if (_skenario.openSiswaId === siswaId) {
+    await _autoSaveSiswa(siswaId);
+    _skenario.openSiswaId = null;
+  } else {
+    if (_skenario.openSiswaId) await _autoSaveSiswa(_skenario.openSiswaId);
+    _skenario.openSiswaId = siswaId;
+  }
+  _rerenderStep();
+};
+
+window.dashSetStatus = function(siswaId, status) {
+  _flow.statusMap[siswaId] = status;
+  const STATUS_CFG = {
+    H: { bg: 'rgba(212,174,58,.12)',  color: '#D4AE3A',             dot: 'rgba(212,174,58,.25)'  },
+    S: { bg: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.55)', dot: 'rgba(255,255,255,.12)' },
+    I: { bg: 'rgba(255,255,255,.03)', color: 'rgba(255,255,255,.35)', dot: 'rgba(255,255,255,.08)' },
+    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)',  dot: 'rgba(255,255,255,.06)' },
+  };
+  const row = _container && _container.querySelector(`#presensi-row-${siswaId}`);
+  if (row) {
+    const cfg = STATUS_CFG[status];
+    row.style.background = cfg.bg;
+    const btns = row.querySelectorAll('button');
+    ['H','S','I','A'].forEach((k, i) => {
+      const btn = btns[i];
+      if (!btn) return;
+      const active       = k === status;
+      btn.style.border   = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'}`;
+      btn.style.background = active ? STATUS_CFG[k].dot : 'transparent';
+      btn.style.color    = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)';
+    });
+  }
+  // Update count label tanpa re-render penuh
+  const countEl = _container?.querySelector('#presensi-count');
+  if (countEl) {
+    const totalH = Object.values(_flow.statusMap).filter(v => v === 'H').length;
+    const total  = _flow.siswaList.length;
+    countEl.textContent = totalH > 0 ? `${totalH}/${total} hadir` : '';
+  }
+  const progressEl = _container?.querySelector('.ds-penilaian-progress');
+  if (progressEl && _skenario.stepIndex === 1) {
+    const totalH     = Object.values(_flow.statusMap).filter(v => v === 'H').length;
+    const total      = _flow.siswaList.length;
+    const totalPages = Math.max(1, Math.ceil(total / SISWA_PER_HALAMAN));
+    progressEl.textContent = `Halaman ${_skenario.presensiPage + 1}/${totalPages} · Hadir ${totalH}/${total}`;
+  }
+};
+
+window.dashSelesaiSesi = async function() {
+  _ttsStop();
+
+  if (_skenario.openSiswaId) {
+    await _autoSaveSiswa(_skenario.openSiswaId);
+  }
+
+  const dinilai = _hitungSiswaDinilai();
+  const total   = (_flow.siswaList || []).length;
+
+  if (total > 0 && dinilai < total) {
+    const existingWarn = _container?.querySelector('#sesi-warn-banner');
+    if (!existingWarn) {
+      const stepBody = _container?.querySelector('#ds-step-body');
+      if (stepBody) {
+        const warn = document.createElement('div');
+        warn.id = 'sesi-warn-banner';
+        warn.className = 'ds-warn-banner';
+        warn.style.marginBottom = '10px';
+        warn.innerHTML = `
+          <div class="ds-warn-title">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
+          <div class="ds-warn-actions">
+            <button onclick="document.getElementById('sesi-warn-banner').remove()"
+              class="ds-warn-btn ds-warn-btn--cancel">← Kembali Isi</button>
+            <button onclick="dashKonfirmasiSelesai()"
+              class="ds-warn-btn ds-warn-btn--ok">Tetap Simpan</button>
+          </div>`;
+        stepBody.insertBefore(warn, stepBody.firstChild);
+        warn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+  }
+
+  await _doSelesaiSesi();
+};
+
+window.dashKonfirmasiSelesai = async function() {
+  document.getElementById('sesi-warn-banner')?.remove();
+  await _doSelesaiSesi();
+};
+
+async function _doSelesaiSesi() {
+  const refleksi = _container?.querySelector('#sesi-refleksi')?.value?.trim() || null;
+  const { tp, rombel } = _flow;
+  const totalH = Object.values(_flow.statusMap).filter(v => v === 'H').length;
+  const dinilai = _hitungSiswaDinilai();
+  const total   = (_flow.siswaList || []).length;
+
+  if (Object.keys(_flow.statusMap).length > 0) {
+    try {
+      await presensi.simpan({
+        kelasId  : rombel.id,
+        kelasNama: rombel.nama,
+        tpNomor  : tp.nomor,
+        tpNama   : tp.nama,
+        statusMap: _flow.statusMap,
+        siswaList: _flow.siswaList,
+      });
+    } catch (err) {
+      console.warn('[DASHBOARD] presensi.simpan gagal:', err.message);
+    }
+  }
+
+  try {
+    await jejak.log(tp.nomor, tp.nama, 'selesai', refleksi, {
+      rombel_nama : rombel.nama,
+      jumlah_siswa: totalH,
+      kendala     : _skenario.kendala || null,
+    });
+  } catch (err) {
+    console.warn('[DASHBOARD] jejak.log gagal:', err.message);
+  }
+
+  const _ringkasan = { rombel: rombel.nama, tp: tp.nomor, tpNama: tp.nama, hadir: totalH, siswa: total, dinilai };
+
+  await window.dashKeLanding();
+  _refreshJejakCard();
+  if (window.__FLAF_NAV__) window.__FLAF_NAV__._setJejakDirty?.();
+
+  if (window.__FLAF__?.showToast) {
+    window.__FLAF__.showToast(
+      `✓ Sesi selesai · ${_ringkasan.rombel} · TP ${String(_ringkasan.tp).padStart(2,'0')} · ${_ringkasan.hadir}/${_ringkasan.siswa} hadir · ${_ringkasan.dinilai} dinilai`,
+      5000
+    );
+  }
+}
+
 window.dashTTS = function(idx, teks) {
   const decoded = teks.replace(/\\n/g, '\n').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
   const btnEl = document.getElementById(`tts-btn-${idx}`);
@@ -1111,7 +1287,6 @@ window.dashPilihKendala = function(val) {
   });
 };
 
-// Poin 9: timer countdown per fase
 let _timerInterval = null;
 window.dashStartTimer = function(idx, durasiMenit) {
   if (_timerInterval) clearInterval(_timerInterval);
@@ -1140,11 +1315,38 @@ window.dashStartTimer = function(idx, durasiMenit) {
   }, 1000);
 };
 
-// Poin 11: toggle mode asesmen cepat/detail
 window.dashToggleAsesmenMode = async function() {
   _skenario.asesmenModeCepat = !(_skenario.asesmenModeCepat || false);
   await _loadNilaiCache();
-  _rerenderCollapseSkenario();
+  _rerenderStep();
+};
+
+window.dashNilaiCepat = async function(siswaId, pilihan) {
+  const CEPAT_MAP = { sudah: 85, perlu: 70, belum: 55 };
+  const v = CEPAT_MAP[pilihan];
+  const { rombel, tp } = _flow;
+  if (!rombel || !tp) return;
+  try {
+    await nilai.setNilaiFormatif(rombel.id, siswaId, tp.nomor, v, v, v);
+  } catch (err) { console.warn('[DASHBOARD] cepat save gagal:', err.message); }
+  if (!_flow.nilaiCache) _flow.nilaiCache = {};
+  if (!_flow.nilaiCache[siswaId]) _flow.nilaiCache[siswaId] = {};
+  _flow.nilaiCache[siswaId].l = v;
+  _flow.nilaiCache[siswaId].s = v;
+  _flow.nilaiCache[siswaId].r = v;
+  _flow.nilaiCache[siswaId].cepatPilihan = pilihan;
+  _rerenderStep();
+};
+
+window.dashCatatanCepat = async function(siswaId, teks) {
+  const { rombel, tp } = _flow;
+  if (!rombel || !tp || !teks.trim()) return;
+  try {
+    await nilai.setCatatanFormatif(rombel.id, siswaId, tp.nomor, teks.trim());
+  } catch (err) { console.warn('[DASHBOARD] cepat catatan gagal:', err.message); }
+  if (!_flow.nilaiCache) _flow.nilaiCache = {};
+  if (!_flow.nilaiCache[siswaId]) _flow.nilaiCache[siswaId] = {};
+  _flow.nilaiCache[siswaId].catatan = teks.trim();
 };
 
 window.dashNilaiUpdate = function(siswaId) {
@@ -1234,10 +1436,10 @@ window.dashKeLanding = async function() {
   _ttsStop();
   _flow     = { view: 'landing', rombel: null, tp: null, statusMap: {}, siswaList: [], nilaiCache: null };
   _skenario = {
-    tab: 'materi', faseIndex: 0, langkahIndex: 0, speaking: false,
+    stepIndex: 0, langkahIndex: 0, speaking: false,
     kendala: null,
-    openPresensi: false, openMateri: false, openSkenario: false, openSubFase: -1,
-    presensiPage: 0, asesmenPage: 0, openSiswaId: null, asesmenModeCepat: false,
+    presensiPage: 0, asesmenPage: 0, openSiswaId: null,
+    asesmenModeCepat: false, warnAsesmen: false,
   };
   try {
     const [session, kelasList, rekapList, streak, summary] = await Promise.all([
@@ -1276,10 +1478,10 @@ window.dashPilihTP = async function(nomor, nama) {
   _flow.view       = 'sesi';
   _flow.nilaiCache = null;
   _skenario        = {
-    tab: 'materi', faseIndex: 0, langkahIndex: 0, speaking: false,
+    stepIndex: 0, langkahIndex: 0, speaking: false,
     kendala: null,
-    openPresensi: false, openMateri: false, openSkenario: false, openSubFase: -1,
-    presensiPage: 0, asesmenPage: 0, openSiswaId: null, asesmenModeCepat: false,
+    presensiPage: 0, asesmenPage: 0, openSiswaId: null,
+    asesmenModeCepat: false, warnAsesmen: false,
   };
   try {
     _flow.siswaList = await nilai.getSiswaList(_flow.rombel.id);
@@ -1289,125 +1491,6 @@ window.dashPilihTP = async function(nomor, nama) {
   }
   if (_container) _container.innerHTML = _buildSesiHTML();
 };
-
-window.dashSetStatus = function(siswaId, status) {
-  _flow.statusMap[siswaId] = status;
-  const STATUS_CFG = {
-    H: { bg: 'rgba(212,174,58,.12)',  color: '#D4AE3A',             dot: 'rgba(212,174,58,.25)'  },
-    S: { bg: 'rgba(255,255,255,.05)', color: 'rgba(255,255,255,.55)', dot: 'rgba(255,255,255,.12)' },
-    I: { bg: 'rgba(255,255,255,.03)', color: 'rgba(255,255,255,.35)', dot: 'rgba(255,255,255,.08)' },
-    A: { bg: 'transparent',           color: 'rgba(255,255,255,.2)',  dot: 'rgba(255,255,255,.06)' },
-  };
-  const row = _container && _container.querySelector(`#presensi-row-${siswaId}`);
-  if (row) {
-    const cfg = STATUS_CFG[status];
-    row.style.background = cfg.bg;
-    const btns = row.querySelectorAll('button');
-    ['H','S','I','A'].forEach((k, i) => {
-      const btn = btns[i];
-      if (!btn) return;
-      const active       = k === status;
-      btn.style.border   = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'}`;
-      btn.style.background = active ? STATUS_CFG[k].dot : 'transparent';
-      btn.style.color    = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)';
-    });
-  }
-  _rerenderPresensiUI();
-};
-
-window.dashSelesaiSesi = async function() {
-  _ttsStop();
-
-  if (_skenario.openSiswaId) {
-    await _autoSaveSiswa(_skenario.openSiswaId);
-  }
-
-  const dinilai = _hitungSiswaDinilai();
-  const total   = (_flow.siswaList || []).length;
-
-  // Poin 13: ganti confirm() dengan inline warning banner
-  if (total > 0 && dinilai < total) {
-    const existingWarn = _container?.querySelector('#sesi-warn-banner');
-    if (!existingWarn) {
-      const actionGrid = _container?.querySelector('.ds-action-grid');
-      if (actionGrid) {
-        const warn = document.createElement('div');
-        warn.id = 'sesi-warn-banner';
-        warn.style.cssText = 'background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.35);border-radius:10px;padding:12px 14px;margin-bottom:8px;';
-        warn.innerHTML = `
-          <div style="font-size:13px;color:#D4AE3A;font-weight:700;margin-bottom:8px;">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-            <button onclick="document.getElementById('sesi-warn-banner').remove()"
-              style="padding:10px;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
-              ← Kembali Isi
-            </button>
-            <button onclick="dashKonfirmasiSelesai()"
-              style="padding:10px;background:rgba(212,174,58,.15);border:1px solid rgba(212,174,58,.4);border-radius:8px;color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
-              Tetap Simpan
-            </button>
-          </div>`;
-        actionGrid.parentNode.insertBefore(warn, actionGrid);
-        actionGrid.scrollIntoView({ behavior: 'smooth', block: 'end' });
-      }
-      return;
-    }
-  }
-
-  await _doSelesaiSesi();
-};
-
-window.dashKonfirmasiSelesai = async function() {
-  document.getElementById('sesi-warn-banner')?.remove();
-  await _doSelesaiSesi();
-};
-
-async function _doSelesaiSesi() {
-  const refleksi = _container?.querySelector('#sesi-refleksi')?.value?.trim() || null;
-  const { tp, rombel } = _flow;
-  const totalH = Object.values(_flow.statusMap).filter(v => v === 'H').length;
-  const dinilai = _hitungSiswaDinilai();
-  const total   = (_flow.siswaList || []).length;
-
-  if (Object.keys(_flow.statusMap).length > 0) {
-    try {
-      await presensi.simpan({
-        kelasId  : rombel.id,
-        kelasNama: rombel.nama,
-        tpNomor  : tp.nomor,
-        tpNama   : tp.nama,
-        statusMap: _flow.statusMap,
-        siswaList: _flow.siswaList,
-      });
-    } catch (err) {
-      console.warn('[DASHBOARD] presensi.simpan gagal:', err.message);
-    }
-  }
-
-  try {
-    await jejak.log(tp.nomor, tp.nama, 'selesai', refleksi, {
-      rombel_nama : rombel.nama,
-      jumlah_siswa: totalH,
-      kendala     : _skenario.kendala || null,
-    });
-  } catch (err) {
-    console.warn('[DASHBOARD] jejak.log gagal:', err.message);
-  }
-
-  // Poin 3: simpan info ringkasan sebelum reset state
-  const _ringkasan = { rombel: rombel.nama, tp: tp.nomor, tpNama: tp.nama, hadir: totalH, siswa: total, dinilai };
-
-  await window.dashKeLanding();
-  _refreshJejakCard();
-  if (window.__FLAF_NAV__) window.__FLAF_NAV__._setJejakDirty?.();
-
-  // Poin 3: tampilkan toast ringkasan setelah kembali ke landing
-  if (window.__FLAF__?.showToast) {
-    window.__FLAF__.showToast(
-      `✓ Sesi selesai · ${_ringkasan.rombel} · TP ${String(_ringkasan.tp).padStart(2,'0')} · ${_ringkasan.hadir}/${_ringkasan.siswa} hadir · ${_ringkasan.dinilai} dinilai`,
-      5000
-    );
-  }
-}
 
 // --- UTILITY -----------------------------------------------------------------
 
