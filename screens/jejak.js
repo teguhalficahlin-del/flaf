@@ -1,39 +1,17 @@
 /**
  * screens/jejak.js — FLAF Layar Jejak Mengajar
- *
- * Dirender oleh app.js → _onScreenEnter('s-jejak')
- * Bergantung pada storage/jejak.js untuk data
- *
- * API publik:
- *   renderJejakScreen(container, session) → void
  */
 
 import { jejak } from '../storage/jejak.js';
 
-// ─── STATE ────────────────────────────────────────────────────────────────────
-
 let _container = null;
 let _session   = null;
-
-// ─── LEVEL SYSTEM ─────────────────────────────────────────────────────────────
-
-
-
-// ─── HELPERS ─────────────────────────────────────────────────────────────────
 
 function _escape(str) {
   if (!str) return '';
   return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
-}
-
-function _formatDate(isoStr) {
-  if (!isoStr) return '';
-  const d = new Date(isoStr);
-  return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 function _formatTime(isoStr) {
@@ -84,39 +62,30 @@ function _actionLabel(action) {
 function _actionColor(action) {
   if (action === 'selesai') return '#D4AE3A';
   if (action === 'mulai')   return '#D4AE3A';
-  if (action === 'reset')   return '#B05A46';
+  if (action === 'reset')   return 'rgba(255,255,255,.3)';
   if (action === 'nilai')   return '#D4AE3A';
-  return '#888';
+  return 'rgba(255,255,255,.3)';
 }
 
-// ─── KALENDER AKTIVITAS ───────────────────────────────────────────────────────
-
 function _buildCalendar(activeDays) {
-  const today    = new Date();
-  const days     = [];
+  const today   = new Date();
+  const days    = [];
   const activeSet = new Set(activeDays);
-
-  // Ambil 35 hari terakhir (5 minggu)
   for (let i = 34; i >= 0; i--) {
     const d = new Date(today);
     d.setDate(today.getDate() - i);
     const dateStr = d.toISOString().slice(0, 10);
     days.push({ dateStr, active: activeSet.has(dateStr), isToday: i === 0 });
   }
-
   const cells = days.map(d => `
     <div title="${d.dateStr}" style="
-      width: 16px; height: 16px; border-radius: 3px;
-      background: ${d.active ? '#D4AE3A' : d.isToday ? 'rgba(212,174,58,.2)' : 'rgba(255,255,255,.06)'};
-      border: ${d.isToday ? '1px solid rgba(212,174,58,.4)' : 'none'};
-      flex-shrink: 0;
-    "></div>
-  `).join('');
-
+      width:16px;height:16px;border-radius:3px;
+      background:${d.active ? '#D4AE3A' : d.isToday ? 'rgba(212,174,58,.2)' : 'rgba(255,255,255,.06)'};
+      border:${d.isToday ? '1px solid rgba(212,174,58,.4)' : 'none'};
+      flex-shrink:0;
+    "></div>`).join('');
   return `
-    <div style="display:flex;flex-wrap:wrap;gap:4px;">
-      ${cells}
-    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;">${cells}</div>
     <div style="display:flex;align-items:center;gap:12px;margin-top:8px;">
       <div style="display:flex;align-items:center;gap:4px;">
         <div style="width:10px;height:10px;border-radius:2px;background:#D4AE3A;"></div>
@@ -126,14 +95,29 @@ function _buildCalendar(activeDays) {
         <div style="width:10px;height:10px;border-radius:2px;background:rgba(255,255,255,.06);"></div>
         <span style="font-size:12px;color:rgba(255,255,255,.6);">Tidak aktif</span>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
-// ─── BUILD HTML ───────────────────────────────────────────────────────────────
+// Poin 20: build kendala summary card
+function _buildKendalaSummaryHTML(kendalaSummary) {
+  if (!kendalaSummary || kendalaSummary.length === 0) return '';
+  const items = kendalaSummary.map(k =>
+    `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);">
+      <span style="font-size:13px;color:rgba(255,255,255,.75);">${_escape(k.kendala)}</span>
+      <span style="font-size:13px;font-weight:700;color:#D4AE3A;">${k.jumlah}×</span>
+    </div>`
+  ).join('');
+  return `
+  <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
+    <div style="font-size:12px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;">Kendala Bulan Ini</div>
+    ${items}
+  </div>`;
+}
 
-function _buildJejakHTML(streak, summary, logs) {
-  const recentLogs  = logs.slice(0, 10);
+function _buildJejakHTML(streak, summary, logs, kendalaSummary) {
+  const recentLogs = logs.slice(0, 10);
+  const emoji      = _streakEmoji(streak);
+  const label      = _streakLabel(streak);
 
   return `
 <div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:10px;">
@@ -142,20 +126,11 @@ function _buildJejakHTML(streak, summary, logs) {
   <div style="background:rgba(212,174,58,.07);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:16px;text-align:center;position:relative;overflow:hidden;">
     <div style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(212,174,58,.06) 1px,transparent 1px);background-size:18px 18px;pointer-events:none;"></div>
     <div style="position:relative;">
-      <div style="font-size:48px;line-height:1;margin-bottom:6px;">${_streakEmoji(streak)}</div>
+      <div style="font-size:48px;line-height:1;margin-bottom:6px;">${emoji}</div>
       <div style="font-size:36px;font-weight:800;color:#D4AE3A;line-height:1;">${streak}</div>
       <div style="font-size:15px;color:rgba(255,255,255,.7);margin-top:2px;">hari berturut-turut</div>
-      <div style="font-size:15px;font-weight:700;color:#fff;margin-top:8px;">${_streakLabel(streak)}</div>
-      ${streak > 0 ? `
-      <button onclick="jejakShare()" style="
-        margin-top:12px;
-        background:#D4AE3A;color:#1A1A1A;
-        border:none;border-radius:10px;
-        padding:10px 20px;
-        font-size:13px;font-weight:800;
-        letter-spacing:.06em;cursor:pointer;
-      ">📤 Bagikan Pencapaian</button>
-      ` : ''}
+      <div style="font-size:15px;font-weight:700;color:#fff;margin-top:8px;">${label}</div>
+      ${streak > 0 ? `<button onclick="jejakShare()" style="margin-top:12px;background:#D4AE3A;color:#1A1A1A;border:none;border-radius:10px;padding:10px 20px;font-size:13px;font-weight:800;letter-spacing:.06em;cursor:pointer;">📤 Bagikan Pencapaian</button>` : ''}
     </div>
   </div>
 
@@ -177,6 +152,9 @@ function _buildJejakHTML(streak, summary, logs) {
       </div>
     </div>
   </div>
+
+  <!-- POIN 20: KENDALA BULAN INI -->
+  ${_buildKendalaSummaryHTML(kendalaSummary)}
 
   <!-- KALENDER AKTIVITAS -->
   <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,174,58,.2);border-radius:14px;padding:14px;">
@@ -208,7 +186,7 @@ function _buildJejakHTML(streak, summary, logs) {
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
           <div style="font-size:12px;color:rgba(255,255,255,.5);">${_formatTime(l.taught_at)}</div>
-          <button onclick="jejakHapusEntri('${l.id}')" style="background:transparent;border:1px solid rgba(176,90,70,.35);color:rgba(176,90,70,.7);border-radius:6px;padding:3px 8px;font-size:12px;cursor:pointer;">Hapus</button>
+          <button onclick="jejakHapusEntri('${l.id}')" style="background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.4);border-radius:6px;padding:3px 8px;font-size:12px;cursor:pointer;">Hapus</button>
         </div>
       </div>
     `).join('')}
@@ -216,8 +194,6 @@ function _buildJejakHTML(streak, summary, logs) {
 
 </div>`;
 }
-
-// ─── SHARE ───────────────────────────────────────────────────────────────────
 
 window.jejakShare = async function() {
   const summary = await jejak.getShareSummary();
@@ -227,84 +203,64 @@ window.jejakShare = async function() {
     `📚 Total pertemuan: ${summary.total_pertemuan}x\n` +
     `📆 Bulan ini: ${summary.bulan_ini.hari_aktif} hari aktif\n\n` +
     `#FLAF #GuruBahasaInggris #FaseA`;
-
   if (navigator.share) {
-    try {
-      await navigator.share({ title: 'Jejak Mengajar FLAF', text });
-    } catch (e) {
-      if (e.name !== 'AbortError') _fallbackCopy(text);
-    }
-  } else {
-    _fallbackCopy(text);
-  }
+    try { await navigator.share({ title: 'Jejak Mengajar FLAF', text }); }
+    catch (e) { if (e.name !== 'AbortError') _fallbackCopy(text); }
+  } else { _fallbackCopy(text); }
 };
 
 function _fallbackCopy(text) {
-  navigator.clipboard.writeText(text).then(() => {
-    alert('Teks pencapaian disalin! Tempel di WhatsApp atau Instagram.');
-  }).catch(() => {
-    alert('Tidak bisa menyalin otomatis. Silakan salin manual:\n\n' + text);
-  });
+  navigator.clipboard.writeText(text)
+    .then(() => { if (window.__FLAF__?.showToast) window.__FLAF__.showToast('Teks pencapaian disalin!'); })
+    .catch(() => {});
 }
 
 window.jejakHapusEntri = async function(id) {
-  if (!confirm('Hapus entri ini dari riwayat?')) return;
   try {
     await jejak.hapus(id);
-    // Re-render layar jejak dengan data terbaru
     if (_container) {
-      const [streak, summary, logs] = await Promise.all([
+      const [streak, summary, logs, kendalaSummary] = await Promise.all([
         jejak.getStreak(),
         jejak.getMonthSummary(),
         jejak.getAll(),
+        jejak.getKendalaSummary(),
       ]);
-      _container.innerHTML = _buildJejakHTML(streak, summary, logs);
+      _container.innerHTML = _buildJejakHTML(streak, summary, logs, kendalaSummary);
     }
   } catch (err) {
     console.error('[JEJAK] hapus entri error:', err.message);
-    alert('Gagal menghapus entri.');
   }
 };
-
-// ─── RENDER ──────────────────────────────────────────────────────────────────
 
 export async function renderJejakScreen(container, session) {
   if (!container) return;
   _container = container;
   _session   = session;
 
-  // Tampilkan loading dulu
   container.innerHTML = `
     <div style="display:flex;align-items:center;justify-content:center;height:60vh;">
       <div style="text-align:center;">
         <div style="font-size:32px;margin-bottom:12px;">📊</div>
         <div style="font-size:13px;color:rgba(255,255,255,.4);">Memuat jejak mengajar…</div>
       </div>
-    </div>
-  `;
+    </div>`;
 
   try {
-    const [streak, summary, logs] = await Promise.all([
+    const [streak, summary, logs, kendalaSummary] = await Promise.all([
       jejak.getStreak(),
       jejak.getMonthSummary(),
       jejak.getAll(),
+      jejak.getKendalaSummary(),
     ]);
-
-    container.innerHTML = _buildJejakHTML(streak, summary, logs);
-
-    // Trigger sync (no-op — offline-only stub)
-    if (session && session.device_id) {
-      jejak.sync(session.device_id).catch(err => {
-        console.warn('[JEJAK] sync background error:', err.message);
-      });
+    container.innerHTML = _buildJejakHTML(streak, summary, logs, kendalaSummary);
+    if (session?.device_id) {
+      jejak.sync(session.device_id).catch(() => {});
     }
-
   } catch (err) {
     console.error('[JEJAK] render error:', err);
     container.innerHTML = `
       <div style="padding:32px;text-align:center;">
         <div style="font-size:13px;color:rgba(255,255,255,.4);">Gagal memuat jejak mengajar.</div>
-      </div>
-    `;
+      </div>`;
   }
 }

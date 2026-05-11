@@ -48,6 +48,7 @@ let _skenario = {
   presensiPage: 0,
   asesmenPage: 0,
   openSiswaId: null,
+  asesmenModeCepat: false,
 };
 
 const SISWA_PER_HALAMAN = 5;
@@ -73,7 +74,7 @@ export async function renderDashboard(container, opts = {}) {
     ]);
     _faseData = faseData;
     const rekapMap = Object.fromEntries(rekapList.map(r => [r.id, r]));
-    container.innerHTML = _buildLandingHTML(session, kelasList, rekapMap, jejakStreak, jejakSummary);
+    container.innerHTML = await _buildLandingHTML(session, kelasList, rekapMap, jejakStreak, jejakSummary);
   } catch (err) {
     console.error('[DASHBOARD] Render gagal:', err.message);
     container.innerHTML = _buildErrorHTML(err.message);
@@ -128,11 +129,11 @@ function _getTP(nomor) {
 // --- LEVEL SYSTEM ------------------------------------------------------------
 
 const LEVELS = [
-  { min: 0,  max: 3,        emoji: '🎖️', nama: 'Tunjangan Sertifikasi', gaji: 'Rp 15.000.000' },
-  { min: 4,  max: 7,        emoji: '💰', nama: 'Tunjangan Kinerja',      gaji: 'Rp 25.000.000' },
-  { min: 8,  max: 11,       emoji: '🏦', nama: 'Tunjangan Penuh',        gaji: 'Rp 40.000.000' },
-  { min: 12, max: 15,       emoji: '🚗', nama: 'Mobil Dinas',            gaji: 'Rp 65.000.000' },
-  { min: 16, max: Infinity, emoji: '🎖️', nama: 'Tunjangan Guru Teladan', gaji: 'Rp 100.000.000' },
+  { min: 0,  max: 3,        emoji: '🌱', nama: 'Pemula',            gaji: 'TP 1–3 selesai' },
+  { min: 4,  max: 8,        emoji: '📚', nama: 'Fondasi Terbentuk', gaji: 'TP 4–8 selesai' },
+  { min: 9,  max: 13,       emoji: '⭐', nama: 'Kosakata Meluas',   gaji: 'TP 9–13 selesai' },
+  { min: 14, max: 17,       emoji: '🏅', nama: 'Integrasi Aktif',   gaji: 'TP 14–17 selesai' },
+  { min: 18, max: Infinity, emoji: '🏆', nama: 'Fase A Tuntas',     gaji: 'Semua 18 TP selesai' },
 ];
 
 function _getLevelInfo(hariAktif) {
@@ -199,12 +200,46 @@ function _buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, 
 
 // --- VIEW: LANDING -----------------------------------------------------------
 
-function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
+async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
   const hariAktif   = jejakSummary.hari_aktif || 0;
   const pertemuan   = jejakSummary.pertemuan  || 0;
   const tpSelesai   = jejakSummary.tp_selesai || 0;
   const streakEmoji = streak === 0 ? '📚' : streak < 3 ? '✨' : streak < 7 ? '⚡' : streak < 14 ? '🌟' : '🔥';
   const streakLabel = streak === 0 ? 'Belum ada aktivitas' : streak < 3 ? 'Awal yang bagus!' : streak < 7 ? 'Terus semangat!' : streak < 14 ? 'Guru Konsisten!' : 'Luar Biasa!';
+
+  // Poin 4: onboarding card hanya muncul jika belum pernah mengajar
+  const onboardingHTML = pertemuan === 0 ? `
+  <div class="ds-card" style="padding:14px 16px;border-color:rgba(212,174,58,.35);">
+    <div style="font-size:11px;font-weight:700;color:rgba(212,174,58,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;">Selamat Datang di FLAF</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;">
+      <strong style="color:#D4AE3A;">Fase A</strong> · Bahasa Inggris SD Kelas 1 &amp; 2<br>
+      18 Tujuan Pembelajaran · 306 Jam Pelajaran<br>
+      <span style="color:rgba(255,255,255,.5);font-size:12px;">Pilih rombel di bawah untuk mulai mengajar.</span>
+    </div>
+  </div>` : '';
+
+  // Poin 1: ambil TP terakhir selesai per rombel untuk tombol lanjut
+  const tpSelesaiPerRombel = {};
+  for (const k of kelasList) {
+    try {
+      const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
+      const range = k.tingkat === 2 ? [10,11,12,13,14,15,16,17,18] : [1,2,3,4,5,6,7,8,9];
+      const selesaiDiRange = range.filter(n => selesaiSet.has(n));
+      if (selesaiDiRange.length === 0) {
+        tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
+      } else {
+        const maks = Math.max(...selesaiDiRange);
+        const next = range.find(n => n > maks);
+        if (next) {
+          tpSelesaiPerRombel[k.id] = { nomor: next, label: `Lanjut → TP ${String(next).padStart(2,'0')}` };
+        } else {
+          tpSelesaiPerRombel[k.id] = { nomor: null, label: 'Semua TP selesai ✓' };
+        }
+      }
+    } catch {
+      tpSelesaiPerRombel[k.id] = null;
+    }
+  }
 
   const mulaiSection = kelasList.length === 0 ? `
   <div class="ds-empty">
@@ -219,15 +254,22 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
     <div class="ds-section-header">
       <div class="ds-section-label">Mulai Mengajar — Pilih Rombel</div>
     </div>
-    ${kelasList.map(k => `
+    ${kelasList.map(k => {
+      const lanjut = tpSelesaiPerRombel[k.id];
+      const lanjutHTML = lanjut
+        ? `<div style="margin-top:4px;font-size:12px;color:${lanjut.nomor ? '#D4AE3A' : 'rgba(255,255,255,.4)'};">${_escape(lanjut.label)}</div>`
+        : '';
+      return `
     <div onclick="dashPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})"
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
         <div class="ds-list-item-sub">TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        ${lanjutHTML}
       </div>
       <div class="ds-list-arrow">›</div>
-    </div>`).join('')}
+    </div>`;
+    }).join('')}
   </div>`;
 
   return `
@@ -239,6 +281,7 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
       ${session.school ? `<div class="ds-hero-school">${_escape(session.school)}</div>` : ''}
     </div>
   </div>
+  ${onboardingHTML}
   ${mulaiSection}
   ${_buildJejakCard(streak, jejakSummary, tpSelesai, hariAktif, pertemuan, streakEmoji, streakLabel)}
 </div>`;
@@ -246,18 +289,27 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
 
 // --- VIEW: PILIH TP ----------------------------------------------------------
 
-function _buildPilihTPHTML() {
+async function _buildPilihTPHTML() {
   const tpList = _tpList(_flow.rombel.tingkat);
-  const tpHTML = tpList.map(tp => `
-  <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item">
-    <div style="width:28px;height:28px;border-radius:50%;background:rgba(212,174,58,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <span style="font-size:15px;font-weight:700;color:#D4AE3A;">${tp.nomor}</span>
+  let tpSelesaiSet = new Set();
+  try {
+    tpSelesaiSet = await jejak.getTPSelesaiPerRombel(_flow.rombel.nama);
+  } catch { /* abaikan error */ }
+
+  const tpHTML = tpList.map(tp => {
+    const sudah = tpSelesaiSet.has(tp.nomor);
+    return `
+  <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
+    <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(212,174,58,.25)' : 'rgba(212,174,58,.15)'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <span style="font-size:15px;font-weight:700;color:#D4AE3A;">${sudah ? '✓' : tp.nomor}</span>
     </div>
     <div style="flex:1;min-width:0;">
       <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(tp.nama)}</div>
+      ${sudah ? `<div style="font-size:11px;color:rgba(212,174,58,.6);margin-top:1px;">Sudah diajarkan</div>` : ''}
     </div>
     <div class="ds-list-arrow">›</div>
-  </div>`).join('');
+  </div>`;
+  }).join('');
 
   return `
 <div class="ds-wrap">
@@ -283,17 +335,35 @@ function _buildTabMateri(tp) {
       <div class="ds-indikator-teks">${_escape(ind)}</div>
     </div>`).join('');
 
-  const vocabHTML = tp.vocab.map(v =>
-    `<span class="ds-vocab-chip">${_escape(v)}</span>`
+  // Poin 10: vocab chip bisa diputar TTS
+  const vocabHTML = tp.vocab.map((v, vi) =>
+    `<span class="ds-vocab-chip" onclick="dashTTS(${vi + 1000},'${_escapeTTS(v)}')" style="cursor:pointer;" title="Putar audio">▶ ${_escape(v)}</span>`
   ).join('');
+
+  // Poin 7: daftar bahan ajar dari field persiapan[] jika ada
+  const persiapanHTML = (tp.persiapan && tp.persiapan.length > 0) ? `
+    <div class="ds-sub-label" style="margin-top:10px;">Siapkan Sebelum Kelas</div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
+      ${tp.persiapan.map(p => `<span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:4px 10px;font-size:12px;color:rgba(255,255,255,.7);">📌 ${_escape(p)}</span>`).join('')}
+    </div>` : '';
+
+  // Poin 6: ringkasan CP satu kalimat + link ke kurikulum
+  const cpHTML = `
+    <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
+      <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">Tujuan Akhir Fase A</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;">Peserta didik menggunakan bahasa Inggris sederhana untuk berinteraksi dalam situasi sosial dan kelas.</div>
+      <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal')" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
+    </div>`;
 
   return `
     <div class="ds-materi-meta">${_escape(tp.tema)} · ${tp.jp} JP</div>
     <div class="ds-materi-desc">${_escape(tp.deskripsi)}</div>
+    ${persiapanHTML}
     <div class="ds-sub-label">Indikator</div>
     ${indikatorHTML}
-    <div class="ds-sub-label" style="margin-top:10px;">Kosakata Kunci</div>
-    <div class="ds-vocab-wrap">${vocabHTML}</div>`;
+    <div class="ds-sub-label" style="margin-top:10px;">Kosakata Kunci <span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:400;">(ketuk untuk audio)</span></div>
+    <div class="ds-vocab-wrap">${vocabHTML}</div>
+    ${cpHTML}`;
 }
 
 // --- COLLAPSE: PRESENSI (paginasi 5 siswa per halaman) ----------------------
@@ -442,6 +512,16 @@ function _buildSubFaseCollapseItem(fase, idx) {
   const label       = isPenilaian ? 'Asesmen Formatif' : fase.fase;
   const meta        = fase.durasi ? `${fase.durasi} menit` : '';
   const nomor       = idx + 1;
+  const timerId     = `fase-timer-${idx}`;
+
+  // Poin 9: tombol timer per fase (hanya bukan penilaian)
+  const timerHTML = (!isPenilaian && fase.durasi) ? `
+    <button onclick="dashStartTimer(${idx},${fase.durasi})" id="${timerId}-btn"
+      style="font-size:11px;background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.3);
+      color:#D4AE3A;border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;margin-left:6px;">
+      ▶ Timer
+    </button>
+    <span id="${timerId}" style="font-size:12px;color:#D4AE3A;margin-left:4px;display:none;font-weight:700;"></span>` : '';
 
   const headerHTML = `
     <div onclick="dashToggleSubFase(${idx})" class="ds-subfase-head">
@@ -449,6 +529,7 @@ function _buildSubFaseCollapseItem(fase, idx) {
         <div class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
         <div class="ds-siswa-nomor ds-siswa-nomor--sage">${nomor}</div>
         <div class="ds-subfase-label">${_escape(label)}</div>
+        ${timerHTML}
       </div>
       ${meta ? `<div class="ds-subfase-meta">${meta}</div>` : ''}
     </div>`;
@@ -516,15 +597,41 @@ function _buildAsesmenPaginated() {
   const startIdx    = safePage * SISWA_PER_HALAMAN;
   const endIdx      = Math.min(startIdx + SISWA_PER_HALAMAN, total);
   const halaman     = siswaList.slice(startIdx, endIdx);
-
   const dinilaiCount = _hitungSiswaDinilai();
-
-  const siswaHTML = halaman.map(s => _buildSiswaCollapseItem(s)).join('');
+  const modeCepat   = _skenario.asesmenModeCepat || false;
 
   const navPrevDisabled = safePage <= 0;
   const navNextDisabled = safePage >= totalPages - 1;
   const nextStart       = endIdx + 1;
   const nextEnd         = Math.min(endIdx + SISWA_PER_HALAMAN, total);
+
+  // Poin 11: mode cepat — semua siswa flat satu halaman
+  let siswaHTML;
+  if (modeCepat) {
+    siswaHTML = siswaList.map(s => {
+      const cached = _flow.nilaiCache && _flow.nilaiCache[s.id];
+      const l = cached?.l ?? ''; const sv = cached?.s ?? ''; const r = cached?.r ?? '';
+      return `
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid rgba(255,255,255,.05);">
+        <div class="ds-siswa-nomor ds-siswa-nomor--sage" style="flex-shrink:0;">${s.nomor}</div>
+        <div style="flex:1;min-width:0;font-size:13px;color:rgba(255,255,255,.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(s.nama)}</div>
+        <div style="display:flex;gap:4px;flex-shrink:0;">
+          ${['l','s','r'].map((dim, di) => {
+            const vals = [l, sv, r];
+            return `<input id="nilai-${dim}-${s.id}" type="number" min="0" max="100" placeholder="${dim.toUpperCase()}"
+              value="${vals[di]}"
+              oninput="dashNilaiUpdate('${s.id}')"
+              style="width:40px;padding:4px;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;color:#fff;font-size:12px;font-family:inherit;"
+              onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
+              onblur="this.style.borderColor='rgba(255,255,255,.12)'">`;
+          }).join('')}
+          <div id="nilai-rerata-head-${s.id}" style="width:30px;text-align:center;font-size:12px;font-weight:700;color:rgba(212,174,58,.8);line-height:28px;">—</div>
+        </div>
+      </div>`;
+    }).join('');
+  } else {
+    siswaHTML = halaman.map(s => _buildSiswaCollapseItem(s)).join('');
+  }
 
   return `
   <div>
@@ -536,14 +643,20 @@ function _buildAsesmenPaginated() {
       </div>
     </div>
 
-    <div class="ds-penilaian-progress">
-      Halaman ${safePage + 1}/${totalPages} · Dinilai ${dinilaiCount}/${total}
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0 4px;">
+      <div class="ds-penilaian-progress">
+        ${modeCepat ? `Semua ${total} siswa` : `Halaman ${safePage + 1}/${totalPages}`} · Dinilai ${dinilaiCount}/${total}
+      </div>
+      <button onclick="dashToggleAsesmenMode()" style="font-size:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);border-radius:6px;padding:3px 8px;cursor:pointer;font-family:inherit;">
+        ${modeCepat ? '📋 Mode detail' : '⚡ Mode cepat'}
+      </button>
     </div>
 
     <div class="ds-asesmen-list">
       ${siswaHTML}
     </div>
 
+    ${!modeCepat ? `
     <div class="ds-asesmen-nav">
       <button onclick="dashHalamanPrev()" class="ds-page-btn"
         ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
@@ -551,7 +664,7 @@ function _buildAsesmenPaginated() {
         ${navNextDisabled ? 'disabled' : ''}>
         ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
       </button>
-    </div>
+    </div>` : ''}
   </div>`;
 }
 
@@ -998,6 +1111,42 @@ window.dashPilihKendala = function(val) {
   });
 };
 
+// Poin 9: timer countdown per fase
+let _timerInterval = null;
+window.dashStartTimer = function(idx, durasiMenit) {
+  if (_timerInterval) clearInterval(_timerInterval);
+  let sisa = durasiMenit * 60;
+  const el  = document.getElementById(`fase-timer-${idx}`);
+  const btn = document.getElementById(`fase-timer-${idx}-btn`);
+  if (!el) return;
+  el.style.display = 'inline';
+  const stopFn = () => {
+    clearInterval(_timerInterval);
+    _timerInterval = null;
+    el.style.display = 'none';
+    if (btn) { btn.textContent = '▶ Timer'; btn.onclick = () => window.dashStartTimer(idx, durasiMenit); }
+  };
+  if (btn) { btn.textContent = '⏹ Stop'; btn.onclick = stopFn; }
+  _timerInterval = setInterval(() => {
+    sisa--;
+    const m = Math.floor(sisa / 60);
+    const s = String(sisa % 60).padStart(2, '0');
+    el.textContent = `${m}:${s}`;
+    if (sisa <= 0) {
+      clearInterval(_timerInterval);
+      _timerInterval = null;
+      el.textContent = '0:00 ✓';
+    }
+  }, 1000);
+};
+
+// Poin 11: toggle mode asesmen cepat/detail
+window.dashToggleAsesmenMode = async function() {
+  _skenario.asesmenModeCepat = !(_skenario.asesmenModeCepat || false);
+  await _loadNilaiCache();
+  _rerenderCollapseSkenario();
+};
+
 window.dashNilaiUpdate = function(siswaId) {
   const l = parseInt(document.getElementById(`nilai-l-${siswaId}`)?.value) || null;
   const s = parseInt(document.getElementById(`nilai-s-${siswaId}`)?.value) || null;
@@ -1088,7 +1237,7 @@ window.dashKeLanding = async function() {
     tab: 'materi', faseIndex: 0, langkahIndex: 0, speaking: false,
     kendala: null,
     openPresensi: false, openMateri: false, openSkenario: false, openSubFase: -1,
-    presensiPage: 0, asesmenPage: 0, openSiswaId: null,
+    presensiPage: 0, asesmenPage: 0, openSiswaId: null, asesmenModeCepat: false,
   };
   try {
     const [session, kelasList, rekapList, streak, summary] = await Promise.all([
@@ -1099,7 +1248,7 @@ window.dashKeLanding = async function() {
       jejak.getMonthSummary(),
     ]);
     const rekapMap = Object.fromEntries(rekapList.map(r => [r.id, r]));
-    if (_container) _container.innerHTML = _buildLandingHTML(session, kelasList, rekapMap, streak, summary);
+    if (_container) _container.innerHTML = await _buildLandingHTML(session, kelasList, rekapMap, streak, summary);
   } catch (err) {
     console.error('[DASHBOARD] dashKeLanding error:', err.message);
   }
@@ -1110,15 +1259,15 @@ window.dashPilihRombel = async function(id, nama, tingkat) {
   _flow.view      = 'pilihTP';
   _flow.statusMap = {};
   _flow.siswaList = [];
-  if (_container) _container.innerHTML = _buildPilihTPHTML();
+  if (_container) _container.innerHTML = await _buildPilihTPHTML();
 };
 
-window.dashKePilihTP = function() {
+window.dashKePilihTP = async function() {
   _ttsStop();
   _flow.tp        = null;
   _flow.statusMap = {};
   _flow.view      = 'pilihTP';
-  if (_container) _container.innerHTML = _buildPilihTPHTML();
+  if (_container) _container.innerHTML = await _buildPilihTPHTML();
 };
 
 window.dashPilihTP = async function(nomor, nama) {
@@ -1130,7 +1279,7 @@ window.dashPilihTP = async function(nomor, nama) {
     tab: 'materi', faseIndex: 0, langkahIndex: 0, speaking: false,
     kendala: null,
     openPresensi: false, openMateri: false, openSkenario: false, openSubFase: -1,
-    presensiPage: 0, asesmenPage: 0, openSiswaId: null,
+    presensiPage: 0, asesmenPage: 0, openSiswaId: null, asesmenModeCepat: false,
   };
   try {
     _flow.siswaList = await nilai.getSiswaList(_flow.rombel.id);
@@ -1175,16 +1324,49 @@ window.dashSelesaiSesi = async function() {
 
   const dinilai = _hitungSiswaDinilai();
   const total   = (_flow.siswaList || []).length;
+
+  // Poin 13: ganti confirm() dengan inline warning banner
   if (total > 0 && dinilai < total) {
-    const lanjut = window.confirm(
-      `Baru ${dinilai} dari ${total} siswa yang dinilai.\n\nTetap selesaikan sesi?`
-    );
-    if (!lanjut) return;
+    const existingWarn = _container?.querySelector('#sesi-warn-banner');
+    if (!existingWarn) {
+      const actionGrid = _container?.querySelector('.ds-action-grid');
+      if (actionGrid) {
+        const warn = document.createElement('div');
+        warn.id = 'sesi-warn-banner';
+        warn.style.cssText = 'background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.35);border-radius:10px;padding:12px 14px;margin-bottom:8px;';
+        warn.innerHTML = `
+          <div style="font-size:13px;color:#D4AE3A;font-weight:700;margin-bottom:8px;">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <button onclick="document.getElementById('sesi-warn-banner').remove()"
+              style="padding:10px;background:transparent;border:1px solid rgba(255,255,255,.2);border-radius:8px;color:rgba(255,255,255,.7);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
+              ← Kembali Isi
+            </button>
+            <button onclick="dashKonfirmasiSelesai()"
+              style="padding:10px;background:rgba(212,174,58,.15);border:1px solid rgba(212,174,58,.4);border-radius:8px;color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">
+              Tetap Simpan
+            </button>
+          </div>`;
+        actionGrid.parentNode.insertBefore(warn, actionGrid);
+        actionGrid.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }
+      return;
+    }
   }
 
+  await _doSelesaiSesi();
+};
+
+window.dashKonfirmasiSelesai = async function() {
+  document.getElementById('sesi-warn-banner')?.remove();
+  await _doSelesaiSesi();
+};
+
+async function _doSelesaiSesi() {
   const refleksi = _container?.querySelector('#sesi-refleksi')?.value?.trim() || null;
   const { tp, rombel } = _flow;
   const totalH = Object.values(_flow.statusMap).filter(v => v === 'H').length;
+  const dinilai = _hitungSiswaDinilai();
+  const total   = (_flow.siswaList || []).length;
 
   if (Object.keys(_flow.statusMap).length > 0) {
     try {
@@ -1211,10 +1393,21 @@ window.dashSelesaiSesi = async function() {
     console.warn('[DASHBOARD] jejak.log gagal:', err.message);
   }
 
+  // Poin 3: simpan info ringkasan sebelum reset state
+  const _ringkasan = { rombel: rombel.nama, tp: tp.nomor, tpNama: tp.nama, hadir: totalH, siswa: total, dinilai };
+
   await window.dashKeLanding();
   _refreshJejakCard();
   if (window.__FLAF_NAV__) window.__FLAF_NAV__._setJejakDirty?.();
-};
+
+  // Poin 3: tampilkan toast ringkasan setelah kembali ke landing
+  if (window.__FLAF__?.showToast) {
+    window.__FLAF__.showToast(
+      `✓ Sesi selesai · ${_ringkasan.rombel} · TP ${String(_ringkasan.tp).padStart(2,'0')} · ${_ringkasan.hadir}/${_ringkasan.siswa} hadir · ${_ringkasan.dinilai} dinilai`,
+      5000
+    );
+  }
+}
 
 // --- UTILITY -----------------------------------------------------------------
 

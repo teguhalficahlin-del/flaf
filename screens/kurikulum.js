@@ -160,7 +160,7 @@ function _buildKurikulumHTML(fase, tps, meta) {
 
       ${_buildHeaderHTML(meta)}
       ${_buildTPListHTML(tps)}
-      ${_buildATPHTML(tps, meta)}
+      ${_buildATPHTML(tps, meta, fase)}
       ${_buildCPHTML(fase.cp)}
 
     </div>
@@ -220,7 +220,7 @@ function _buildCPHTML(cp) {
 }
 
 // ── Panel ATP ─────────────────────────────────────────────
-function _buildATPHTML(tps, meta) {
+function _buildATPHTML(tps, meta, fase) {
   const rows = tps.map(tp => `
     <tr class="kur-atp-row" data-tp-id="${_esc(tp.id)}">
       <td class="kur-atp-num">${tp.nomor}</td>
@@ -229,6 +229,11 @@ function _buildATPHTML(tps, meta) {
       <td class="kur-atp-jp">${tp.jp}</td>
     </tr>
   `).join('');
+
+  // Poin 5: deskripsi spiral dari fase.atp.deskripsi
+  const atpDeskripsi = fase?.atp?.deskripsi
+    ? `<p class="kur-cp-text" style="margin-bottom:10px;">${_esc(fase.atp.deskripsi.trim())}</p>`
+    : '';
 
   return `
     <div class="kur-panel kur-panel-atp">
@@ -239,6 +244,7 @@ function _buildATPHTML(tps, meta) {
         <span class="kur-chevron">▼</span>
       </button>
       <div class="kur-panel-body" id="kur-atp-body" hidden>
+        ${atpDeskripsi}
         <div class="kur-atp-scroll">
           <table class="kur-atp-table">
             <thead>
