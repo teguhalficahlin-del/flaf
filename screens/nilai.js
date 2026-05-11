@@ -394,7 +394,7 @@ async function _renderInput(token) {
               class="nv-lsr-input"
               oninput="nilaiUpdateRerata('${s.id}')"
               onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
-              onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+              onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSiswa('${s.id}')">
           </div>`;
         }).join('')}
       </div>
@@ -402,7 +402,7 @@ async function _renderInput(token) {
       <textarea id="catatan-${s.id}" placeholder="Catatan observasi (opsional)..." maxlength="500" rows="2"
         class="ds-textarea"
         onfocus="this.style.borderColor='rgba(212,174,58,.3)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.08)'"
+        onblur="this.style.borderColor='rgba(255,255,255,.08)';nilaiAutoSaveSiswa('${s.id}')"
       >${_escape(lsr.catatan || '')}</textarea>
     </div>`;
   }
@@ -501,7 +501,7 @@ async function _renderSAS(token) {
         class="nv-sas-input"
         oninput="this.style.color=nilaiWarna(parseInt(this.value))"
         onfocus="this.style.borderColor='rgba(212,174,58,.5)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.12)'">
+        onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSAS('${s.id}')">
     </div>`;
   }
 
@@ -666,7 +666,9 @@ async function _renderModalKelolaSiswa() {
 
 // --- ACTIONS -----------------------------------------------------------------
 
-window.nilaiBack = function() {
+window.nilaiBack = async function() {
+  if (_state.view === 'input') await _flushSemuaNilai();
+  if (_state.view === 'sas')   await _flushSemuaSAS();
   if (_state.view === 'menu')  { _state.view = 'rombel'; _state.kelasId = null; _state.kelasNama = null; }
   if (_state.view === 'tp')    { _state.view = 'menu'; }
   if (_state.view === 'input') { _state.view = 'tp'; _state.tpNomor = null; _state.tpNama = null; }
@@ -676,7 +678,12 @@ window.nilaiBack = function() {
   _render();
 };
 
-window.nilaiBackToMenu = function() { _state.view = 'menu'; _render(); };
+window.nilaiBackToMenu = async function() {
+  if (_state.view === 'input') await _flushSemuaNilai();
+  if (_state.view === 'sas')   await _flushSemuaSAS();
+  _state.view = 'menu';
+  _render();
+};
 window.nilaiMenuTP     = function() { _state.view = 'tp';    _render(); };
 window.nilaiMenuSAS    = function() { _state.view = 'sas';   _render(); };
 window.nilaiMenuRapor  = function() { _state.view = 'rapor'; _render(); };
@@ -829,6 +836,68 @@ window.nilaiUpdateRerata = function(siswaId) {
   if (el) { el.textContent = rerata !== null ? rerata : '—'; el.style.color = _nilaiColor(rerata); }
 };
 
+window.nilaiAutoSaveSiswa = async function(siswaId) {
+  if (!_state.kelasId || _state.tpNomor === null) return;
+  const lRaw = document.getElementById(`input-l-${siswaId}`)?.value.trim();
+  const sRaw = document.getElementById(`input-s-${siswaId}`)?.value.trim();
+  const rRaw = document.getElementById(`input-r-${siswaId}`)?.value.trim();
+  const cat  = document.getElementById(`catatan-${siswaId}`)?.value || '';
+  const parse = (raw) => {
+    if (!raw) return null;
+    const n = parseInt(raw);
+    return isNaN(n) ? null : Math.max(0, Math.min(100, n));
+  };
+  const cl = parse(lRaw), cs = parse(sRaw), cr = parse(rRaw);
+  try {
+    if (cl !== null || cs !== null || cr !== null) {
+      await nilai.setNilaiLSR(_state.kelasId, siswaId, _state.tpNomor, cl, cs, cr);
+    }
+    if (cat.trim()) {
+      await nilai.setCatatan(_state.kelasId, siswaId, _state.tpNomor, cat);
+    }
+  } catch (err) {
+    console.warn('[NILAI] autosave siswa gagal:', err.message);
+  }
+};
+
+window.nilaiAutoSaveSAS = async function(siswaId) {
+  if (!_state.kelasId) return;
+  const raw = document.getElementById(`sas-${siswaId}`)?.value.trim();
+  if (!raw) return;
+  const n = parseInt(raw);
+  if (isNaN(n)) return;
+  const v = Math.max(0, Math.min(100, n));
+  try {
+    await nilai.setNilaiSAS(_state.kelasId, siswaId, v);
+  } catch (err) {
+    console.warn('[NILAI] autosave SAS gagal:', err.message);
+  }
+};
+async function _flushSemuaNilai() {
+  if (!_state.kelasId || _state.tpNomor === null) return;
+  try {
+    const siswaList = await nilai.getSiswaList(_state.kelasId);
+    for (const s of siswaList) {
+      await window.nilaiAutoSaveSiswa(s.id);
+    }
+  } catch (err) {
+    console.warn('[NILAI] flush nilai gagal:', err.message);
+  }
+}
+
+async function _flushSemuaSAS() {
+  if (!_state.kelasId) return;
+  try {
+    const siswaList = await nilai.getSiswaList(_state.kelasId);
+    for (const s of siswaList) {
+      await window.nilaiAutoSaveSAS(s.id);
+    }
+  } catch (err) {
+    console.warn('[NILAI] flush SAS gagal:', err.message);
+  }
+}
+
+window.nilaiSimpanSemua = async function() {
 window.nilaiSimpanSemua = async function() {
   const siswaList = await nilai.getSiswaList(_state.kelasId);
   let saved = 0, clamped = 0;
