@@ -256,6 +256,37 @@ async function getTPSelesaiPerRombel(rombelNama) {
   );
 }
 
+// --- KENDALA SUMMARY --------------------------------------------------------
+
+/**
+ * Agregasi kendala sesi untuk bulan ini.
+ * @returns {Promise<Array<{kendala: string, jumlah: number}>>} diurutkan terbanyak dulu
+ */
+async function getKendalaSummary() {
+  const logs      = await getAll();
+  const now       = new Date();
+  const thisMonth = now.toISOString().slice(0, 7);
+
+  const counter = {};
+  logs
+    .filter(l => l.action === 'selesai' && l.taught_at.startsWith(thisMonth) && l.kendala)
+    .forEach(l => {
+      counter[l.kendala] = (counter[l.kendala] || 0) + 1;
+    });
+
+  const LABEL = {
+    lancar          : 'Lancar',
+    waktu_kurang    : 'Waktu kurang',
+    kurang_kondusif : 'Kurang kondusif',
+    media_tidak_ada : 'Media tidak ada',
+    lainnya         : 'Lainnya',
+  };
+
+  return Object.entries(counter)
+    .sort((a, b) => b[1] - a[1])
+    .map(([k, n]) => ({ kendala: LABEL[k] || k, jumlah: n }));
+}
+
 // --- EXPORTS -----------------------------------------------------------------
 
 export const jejak = {
@@ -267,7 +298,8 @@ export const jejak = {
   getMonthSummary,
   getShareSummary,
   getTPSelesaiPerRombel,
+  getKendalaSummary,
   sync,
 };
 
-export { log, hapus, getAll, getStreak, getByDate, getMonthSummary, getShareSummary, getTPSelesaiPerRombel, sync };
+export { log, hapus, getAll, getStreak, getByDate, getMonthSummary, getShareSummary, getTPSelesaiPerRombel, getKendalaSummary, sync };
