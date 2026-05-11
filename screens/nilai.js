@@ -39,36 +39,6 @@ function _escape(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-// Poin 14: ganti alert() — gunakan showToast dari app.js jika tersedia
-function _toast(msg, durasi = 3000) {
-  if (window.__FLAF__?.showToast) {
-    window.__FLAF__.showToast(msg, durasi);
-  } else {
-    console.info('[NILAI]', msg);
-  }
-}
-
-// Poin 14: ganti confirm() — tombol inline dua langkah
-function _konfirmHapus(elBtn, onYa) {
-  if (elBtn.dataset.konfirm === '1') {
-    onYa();
-    return;
-  }
-  const orig = elBtn.textContent;
-  elBtn.textContent = 'Yakin hapus?';
-  elBtn.dataset.konfirm = '1';
-  elBtn.style.borderColor = 'rgba(255,100,80,.5)';
-  elBtn.style.color = 'rgba(255,120,100,.9)';
-  setTimeout(() => {
-    if (elBtn.dataset.konfirm === '1') {
-      elBtn.textContent = orig;
-      delete elBtn.dataset.konfirm;
-      elBtn.style.borderColor = '';
-      elBtn.style.color = '';
-    }
-  }, 2500);
-}
-
 function _nilaiColor(n) {
   if (n === null || n === undefined) return 'rgba(255,255,255,.25)';
   if (n >= 80) return '#5C8A6E';
@@ -135,26 +105,6 @@ async function _renderRombel(token) {
   }
   const rekapMap = Object.fromEntries(rekap.map(r => [r.id, r]));
 
-  // Poin 18: cek backup reminder berbasis sesi
-  let backupReminderHTML = '';
-  try {
-    const jejakSummary = await jejak.getMonthSummary();
-    const lastExport   = await db.get('kv', 'last_export_at').catch(() => null);
-    const pertemuan    = jejakSummary.pertemuan || 0;
-    const belumBackup  = !lastExport && pertemuan >= 3;
-    const sudahLama    = lastExport && (Date.now() - lastExport) > 7 * 24 * 60 * 60 * 1000;
-    if (belumBackup || sudahLama) {
-      const msg = belumBackup
-        ? `${pertemuan} sesi belum dibackup — simpan sekarang`
-        : `Backup terakhir ${Math.floor((Date.now() - lastExport) / 86400000)} hari lalu`;
-      backupReminderHTML = `
-      <div style="margin:0 16px 8px;padding:10px 14px;background:rgba(212,174,58,.1);border:1px solid rgba(212,174,58,.3);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
-        <div style="font-size:12px;color:#D4AE3A;">⚠ ${_escape(msg)}</div>
-        <button onclick="nilaiBackupSekarang()" style="font-size:11px;background:rgba(212,174,58,.15);border:1px solid rgba(212,174,58,.4);color:#D4AE3A;border-radius:6px;padding:4px 10px;cursor:pointer;font-family:inherit;white-space:nowrap;">Simpan Backup</button>
-      </div>`;
-    }
-  } catch { /* abaikan */ }
-
   const rombelHTML = list.length === 0 ? `
     <div style="padding:40px 24px;text-align:center;">
       <div style="font-size:40px;margin-bottom:14px;">🏫</div>
@@ -190,7 +140,6 @@ async function _renderRombel(token) {
     <div class="ds-section-label" style="margin-bottom:4px;">Manajemen Kelas</div>
     <div style="font-size:14px;color:rgba(255,255,255,.75);">Pilih rombel untuk input atau lihat nilai</div>
   </div>
-  ${backupReminderHTML}
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid rgba(212,174,58,.2);">
       <div class="ds-section-label">Daftar Rombel (${list.length})</div>
@@ -352,9 +301,7 @@ async function _renderInput(token) {
 
   const lsrMap = {};
   for (const s of siswaList) {
-    const lsr       = await nilai.getNilaiLSR(_state.kelasId, s.id, _state.tpNomor);
-    const formatif  = await nilai.getNilaiFormatif(_state.kelasId, s.id, _state.tpNomor);
-    lsrMap[s.id]    = { ...lsr, catatan_formatif: formatif?.catatan || '' };
+    lsrMap[s.id] = await nilai.getNilaiLSR(_state.kelasId, s.id, _state.tpNomor);
   }
   if (token !== _renderToken) return;
 
@@ -367,15 +314,6 @@ async function _renderInput(token) {
     const valS   = lsr.s    !== null && lsr.s    !== undefined ? lsr.s    : '';
     const valR   = lsr.r    !== null && lsr.r    !== undefined ? lsr.r    : '';
     const rerata = lsr.nilai !== null && lsr.nilai !== undefined ? lsr.nilai : '—';
-
-    // Poin 19: tampilkan catatan formatif dari sesi mengajar jika ada
-    const catatanFormatif = lsr.catatan_formatif || '';
-    const catatanFormatifHTML = catatanFormatif ? `
-      <div style="margin-bottom:6px;padding:6px 8px;background:rgba(212,174,58,.06);border-left:2px solid rgba(212,174,58,.3);border-radius:4px;">
-        <div style="font-size:10px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;">Catatan saat mengajar</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.6);font-style:italic;">"${_escape(catatanFormatif)}"</div>
-      </div>` : '';
-
     return `
     <div class="nv-input-row">
       <div class="nv-input-top">
@@ -398,7 +336,6 @@ async function _renderInput(token) {
           </div>`;
         }).join('')}
       </div>
-      ${catatanFormatifHTML}
       <textarea id="catatan-${s.id}" placeholder="Catatan observasi (opsional)..." maxlength="500" rows="2"
         class="ds-textarea"
         onfocus="this.style.borderColor='rgba(212,174,58,.3)'"
@@ -818,7 +755,7 @@ window.nilaiPilihRombel = function(id, nama, tingkat) {
 
 window.nilaiPilihTP = function(nomor, nama) {
   nilai.getSiswaList(_state.kelasId).then(list => {
-    if (list.length === 0) { _toast('Tambah siswa dulu sebelum input nilai.'); return; }
+    if (list.length === 0) { alert('Tambah siswa dulu sebelum input nilai.'); return; }
     _state.view    = 'input';
     _state.tpNomor = nomor;
     _state.tpNama  = nama;
@@ -873,6 +810,7 @@ window.nilaiAutoSaveSAS = async function(siswaId) {
     console.warn('[NILAI] autosave SAS gagal:', err.message);
   }
 };
+
 async function _flushSemuaNilai() {
   if (!_state.kelasId || _state.tpNomor === null) return;
   try {
@@ -898,7 +836,6 @@ async function _flushSemuaSAS() {
 }
 
 window.nilaiSimpanSemua = async function() {
-window.nilaiSimpanSemua = async function() {
   const siswaList = await nilai.getSiswaList(_state.kelasId);
   let saved = 0, clamped = 0;
   for (const s of siswaList) {
@@ -919,7 +856,7 @@ window.nilaiSimpanSemua = async function() {
     }
     if (cat.trim()) await nilai.setCatatan(_state.kelasId, s.id, _state.tpNomor, cat);
   }
-  if (clamped > 0) if (clamped > 0) _toast(`${clamped} nilai dikoreksi ke rentang 0–100 ✓`); if(false);
+  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
   if (saved > 0) {
     jejak.log(_state.tpNomor, _state.tpNama, 'nilai', null, {
       rombel_nama: _state.kelasNama, jumlah_siswa: saved,
@@ -940,7 +877,7 @@ window.nilaiSimpanSAS = async function() {
     await nilai.setNilaiSAS(_state.kelasId, s.id, v);
     saved++;
   }
-  if (clamped > 0) if (clamped > 0) _toast(`${clamped} nilai dikoreksi ke rentang 0–100 ✓`); if(false);
+  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
   const btn = document.querySelector('button[onclick="nilaiSimpanSAS()"]');
   if (btn) {
     btn.textContent = `✓ Tersimpan (${saved})`;
@@ -1040,7 +977,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
     await generatePDFRekap({ namaSekolah, namaGuru, kelasNama, tpNomor, tpNama: `[Formatif] ${tpNama}`, siswaList });
   } catch (err) {
     console.error('[NILAI] download formatif error:', err);
-    _toast('Gagal membuat PDF rekap formatif.');
+    alert('Gagal membuat PDF rekap formatif.');
   }
 };
 
@@ -1053,7 +990,7 @@ window.nilaiDownloadRekap1 = async function(kelasId, kelasNama, tpNomor, tpNama)
     await generatePDFRekap({ namaSekolah, namaGuru, kelasNama, tpNomor, tpNama, siswaList });
   } catch (err) {
     console.error('[NILAI] download rekap1 error:', err);
-    _toast('Gagal membuat PDF rekap TP.');
+    alert('Gagal membuat PDF rekap TP.');
   }
 };
 
@@ -1068,7 +1005,7 @@ window.nilaiDownloadRapor = async function() {
     await generatePDFRapor({ namaSekolah, namaGuru, kelasNama: _state.kelasNama, tingkat: kelas?.tingkat || 1, siswaList });
   } catch (err) {
     console.error('[NILAI] download rapor error:', err);
-    _toast('Gagal membuat PDF nilai rapor.');
+    alert('Gagal membuat PDF nilai rapor.');
   }
 };
 
@@ -1104,50 +1041,35 @@ window.nilaiPilihTingkat = function(t) {
 window.nilaiSimpanRombel = async function() {
   const nama    = document.getElementById('input-nama-rombel')?.value?.trim();
   const tingkat = parseInt(document.getElementById('input-tingkat-rombel')?.value) || 1;
-  if (!nama) { _toast('Nama rombel tidak boleh kosong.'); return; }
+  if (!nama) { alert('Nama rombel tidak boleh kosong.'); return; }
   await nilai.tambahKelas(nama, tingkat);
   nilaiTutupModal(); _render();
 };
 
 window.nilaiHapusKelas = function(id, nama) {
-  const btn = document.querySelector(`button[onclick="nilaiHapusKelas('${id}','${nama}')"]`);
-  _konfirmHapus(btn || { dataset: {}, textContent: '' }, () => {
-    nilai.hapusKelas(id).then(() => _render());
-  });
+  if (!confirm(`Hapus rombel "${nama}" beserta semua siswa dan nilainya?`)) return;
+  nilai.hapusKelas(id).then(() => _render());
 };
 
 window.nilaiKelolaSiswa     = function() { _renderModalKelolaSiswa(); };
 
 window.nilaiSimpanSiswaBaru = async function() {
   const textarea = document.getElementById('textarea-siswa-baru');
-  if (!textarea?.value?.trim()) { _toast('Masukkan minimal satu nama siswa.'); return; }
+  if (!textarea?.value?.trim()) { alert('Masukkan minimal satu nama siswa.'); return; }
   const count = await nilai.tambahSiswaBatch(_state.kelasId, textarea.value);
   nilaiTutupModal();
-  _toast(`${count} siswa berhasil ditambahkan. ✓`);
+  alert(`${count} siswa berhasil ditambahkan.`);
   _render();
 };
 
 window.nilaiHapusSiswaModal = function(id, nama) {
-  const btn = document.querySelector(`button[onclick="nilaiHapusSiswaModal('${id}','${nama}')"]`);
-  _konfirmHapus(btn || { dataset: {}, textContent: '' }, () => {
-    nilai.hapusSiswa(_state.kelasId, id).then(() => { nilaiTutupModal(); _renderModalKelolaSiswa(); });
-  });
+  if (!confirm(`Hapus siswa "${nama}" beserta semua nilainya?`)) return;
+  nilai.hapusSiswa(_state.kelasId, id).then(() => { nilaiTutupModal(); _renderModalKelolaSiswa(); });
 };
 
 window.nilaiTutupModal = function() {
   document.getElementById('modal-kelola-siswa')?.remove();
   document.getElementById('modal-tambah-rombel')?.remove();
-};
-
-// Poin 18: trigger backup dari banner reminder
-window.nilaiBackupSekarang = function() {
-  if (window.__FLAF__?.triggerExport) {
-    window.__FLAF__.triggerExport();
-  } else if (window.__FLAF__?.exportData) {
-    window.__FLAF__.exportData();
-  } else {
-    _toast('Buka menu Pengaturan untuk backup data.');
-  }
 };
 
 window.nilaiWarna = function(n) {
@@ -1187,8 +1109,8 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
       }
     }
 
-    if (koloms.length === 0) { _toast('Belum ada sesi mengajar yang tercatat.'); return; }
-    if (!window.jspdf)       { _toast('Library PDF tidak tersedia.'); return; }
+    if (koloms.length === 0) { alert('Belum ada sesi mengajar yang tercatat.'); return; }
+    if (!window.jspdf)       { alert('Library PDF tidak tersedia.'); return; }
 
     const { jsPDF } = window.jspdf;
     const doc   = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
@@ -1266,7 +1188,7 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
     doc.save(`rekap-hadir-${kelasNama.replace(/\s+/g,'-')}.pdf`);
   } catch (err) {
     console.error('[NILAI] download kehadiran error:', err);
-    _toast('Gagal membuat PDF rekap kehadiran.');
+    alert('Gagal membuat PDF rekap kehadiran.');
   }
 };
 
@@ -1305,6 +1227,6 @@ window.nilaiDownloadRekap2 = async function(kelasId, kelasNama, tingkat) {
     await generatePDFRekap2({ namaSekolah, namaGuru, kelasNama, tingkat: parseInt(tingkat) || 1, siswaList });
   } catch (err) {
     console.error('[NILAI] download rekap2 error:', err);
-    _toast('Gagal membuat PDF rekap akhir.');
+    alert('Gagal membuat PDF rekap akhir.');
   }
 };

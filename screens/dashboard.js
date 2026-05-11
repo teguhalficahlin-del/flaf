@@ -358,7 +358,7 @@ function _buildTabMateri(tp) {
     </div>`;
 
   return `
-    <div class="ds-materi-meta">${_escape(tp.tema)} · ${tp.jp} JP</div>
+    <div class="ds-materi-meta">${_escape(tp.tema)}</div>
     <div class="ds-materi-desc">${_escape(tp.deskripsi)}</div>
     ${persiapanHTML}
     <div class="ds-sub-label">Indikator</div>
