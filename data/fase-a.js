@@ -30,7 +30,6 @@ const FASE_A = {
     mata_pelajaran: 'Bahasa Inggris',
     data_version  : '2026-05-v3',
     total_tp      : 18,
-    total_jp      : 306,
   },
 
   cp: {
@@ -57,7 +56,6 @@ const FASE_A = {
       tematik. TP 13–18 mengintegrasikan kemampuan dalam konteks yang lebih
       kompleks dan bermakna.`,
     total_tp: 18,
-    total_jp: 306,
   },
 
   tujuan_pembelajaran: [
@@ -69,7 +67,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Greetings & Farewells',
       tema     : 'Interaksi Sosial Dasar',
-      jp       : 16,
       deskripsi: `Peserta didik belajar mengucapkan salam dan perpisahan dalam
         bahasa Inggris sesuai waktu dan situasi. Fokus pada interaksi lisan
         yang natural dalam rutinitas kelas.`,
@@ -150,7 +147,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Introducing Myself',
       tema     : 'Interaksi Sosial Dasar',
-      jp       : 16,
       deskripsi: `Peserta didik belajar memperkenalkan diri sendiri meliputi nama
         dan usia. Interaksi dilakukan secara berpasangan dan di depan kelas.`,
       indikator: [
@@ -224,7 +220,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Classroom Instructions',
       tema     : 'Interaksi Sosial Dasar',
-      jp       : 16,
       deskripsi: `Peserta didik memahami dan merespons instruksi kelas yang sering
         digunakan guru. Fokus pada pemahaman mendengar dan respons fisik (TPR).`,
       indikator: [
@@ -289,7 +284,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Numbers 1–20',
       tema     : 'Dunia di Sekitar Kita',
-      jp       : 16,
       deskripsi: `Peserta didik mengenal dan menggunakan angka 1–20 dalam bahasa
         Inggris. Angka diintegrasikan dengan kegiatan menghitung benda nyata
         dan penggunaan dalam konteks sehari-hari.`,
@@ -355,7 +349,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Colours',
       tema     : 'Dunia di Sekitar Kita',
-      jp       : 16,
       deskripsi: `Peserta didik mengenal dan menggunakan nama-nama warna dalam
         bahasa Inggris. Warna diintegrasikan dengan benda-benda di lingkungan
         kelas dan kehidupan sehari-hari.`,
@@ -420,7 +413,6 @@ const FASE_A = {
       kelas    : 1,
       nama     : 'Shapes',
       tema     : 'Dunia di Sekitar Kita',
-      jp       : 16,
       deskripsi: `Peserta didik mengenal bentuk geometri dasar dalam bahasa Inggris
         dan menghubungkannya dengan benda-benda nyata di sekitar mereka.`,
       indikator: [
@@ -481,7 +473,7 @@ const FASE_A = {
     // TP 7 ────────────────────────────────────────────────────────────────────
     {
       id: 'tp-07', nomor: 7, kelas: 1,
-      nama: 'My Family', tema: 'Keluarga dan Rumah', jp: 16,
+      nama: 'My Family', tema: 'Keluarga dan Rumah',
       deskripsi: 'Peserta didik mengenal anggota keluarga inti dan memperkenalkan keluarga menggunakan struktur sederhana.',
       indikator: [
         'Peserta didik dapat menyebut anggota keluarga inti (mother, father, sister, brother, grandmother, grandfather) dengan lafal yang benar.',
@@ -520,7 +512,7 @@ const FASE_A = {
     // TP 8 ────────────────────────────────────────────────────────────────────
     {
       id: 'tp-08', nomor: 8, kelas: 1,
-      nama: 'My House', tema: 'Keluarga dan Rumah', jp: 18,
+      nama: 'My House', tema: 'Keluarga dan Rumah',
       deskripsi: 'Peserta didik mengenal ruangan dan benda-benda dalam rumah menggunakan bahasa Inggris.',
       indikator: [
         'Peserta didik dapat menyebut nama ruangan utama (bedroom, kitchen, bathroom, living room) dengan lafal yang benar.',
@@ -559,7 +551,7 @@ const FASE_A = {
     // TP 9 ────────────────────────────────────────────────────────────────────
     {
       id: 'tp-09', nomor: 9, kelas: 1,
-      nama: 'Animals', tema: 'Alam dan Lingkungan', jp: 18,
+      nama: 'Animals', tema: 'Alam dan Lingkungan',
       deskripsi: 'Peserta didik mengenal nama hewan umum dan suara yang mereka hasilkan.',
       indikator: [
         'Peserta didik dapat menyebut nama 10 hewan umum (cat, dog, bird, fish, rabbit, cow, chicken, elephant, monkey, snake) dengan lafal yang benar.',
@@ -599,7 +591,7 @@ const FASE_A = {
     // TP 10 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-10', nomor: 10, kelas: 2,
-      nama: 'Food and Drinks', tema: 'Kehidupan Sehari-hari', jp: 18,
+      nama: 'Food and Drinks', tema: 'Kehidupan Sehari-hari',
       deskripsi: 'Peserta didik mengenal makanan dan minuman dalam bahasa Inggris dan mengungkapkan preferensi makanan.',
       indikator: [
         'Peserta didik dapat menyebut nama 10 makanan dan minuman umum dengan lafal yang benar.',
@@ -640,7 +632,7 @@ const FASE_A = {
     // TP 11 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-11', nomor: 11, kelas: 2,
-      nama: 'Daily Routines', tema: 'Kehidupan Sehari-hari', jp: 18,
+      nama: 'Daily Routines', tema: 'Kehidupan Sehari-hari',
       deskripsi: 'Peserta didik mengenal dan mengungkapkan kegiatan rutin sehari-hari menggunakan kalimat sederhana.',
       indikator: [
         'Peserta didik dapat menyebut kegiatan rutin harian (wake up, brush teeth, eat breakfast, go to school, study, sleep) dengan lafal yang benar.',
@@ -680,7 +672,7 @@ const FASE_A = {
     // TP 12 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-12', nomor: 12, kelas: 2,
-      nama: 'Body Parts', tema: 'Tubuh dan Kesehatan', jp: 16,
+      nama: 'Body Parts', tema: 'Tubuh dan Kesehatan',
       deskripsi: 'Peserta didik mengenal nama anggota tubuh dan menggunakannya dalam konteks deskripsi dan lagu.',
       indikator: [
         'Peserta didik dapat menyebut nama anggota tubuh utama (head, eyes, ears, nose, mouth, hands, legs, feet) dengan lafal yang benar.',
@@ -719,7 +711,7 @@ const FASE_A = {
     // TP 13 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-13', nomor: 13, kelas: 2,
-      nama: 'Weather and Seasons', tema: 'Alam dan Lingkungan', jp: 18,
+      nama: 'Weather and Seasons', tema: 'Alam dan Lingkungan',
       deskripsi: 'Peserta didik mengenal kondisi cuaca dan musim dalam bahasa Inggris serta menghubungkannya dengan aktivitas sehari-hari.',
       indikator: [
         'Peserta didik dapat menyebut kondisi cuaca (sunny, cloudy, rainy, windy, hot, cold) dengan lafal yang benar.',
@@ -760,7 +752,7 @@ const FASE_A = {
     // TP 14 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-14', nomor: 14, kelas: 2,
-      nama: 'In the Classroom', tema: 'Sekolah dan Benda-benda', jp: 16,
+      nama: 'In the Classroom', tema: 'Sekolah dan Benda-benda',
       deskripsi: 'Peserta didik mengenal nama benda-benda di kelas dan menggunakannya dalam percakapan.',
       indikator: [
         'Peserta didik dapat menyebut benda-benda kelas (book, pen, pencil, eraser, ruler, bag, table, chair, whiteboard) dengan lafal yang benar.',
@@ -801,7 +793,7 @@ const FASE_A = {
     // TP 15 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-15', nomor: 15, kelas: 2,
-      nama: 'Feelings and Emotions', tema: 'Diri Sendiri dan Perasaan', jp: 16,
+      nama: 'Feelings and Emotions', tema: 'Diri Sendiri dan Perasaan',
       deskripsi: 'Peserta didik belajar mengungkapkan perasaan dan emosi dasar dalam bahasa Inggris.',
       indikator: [
         'Peserta didik dapat menyebut perasaan dasar (happy, sad, angry, scared, tired, excited, bored) dengan lafal yang benar.',
@@ -842,7 +834,7 @@ const FASE_A = {
     // TP 16 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-16', nomor: 16, kelas: 2,
-      nama: 'Simple Story Retelling', tema: 'Literasi Awal', jp: 18,
+      nama: 'Simple Story Retelling', tema: 'Literasi Awal',
       deskripsi: 'Peserta didik menyimak cerita bergambar sederhana dan menceritakan kembali menggunakan kosakata yang sudah dipelajari.',
       indikator: [
         'Peserta didik dapat memahami cerita bergambar sederhana dan menjawab pertanyaan "who, what, where" tentang isi cerita.',
@@ -883,7 +875,7 @@ const FASE_A = {
     // TP 17 ───────────────────────────────────────────────────────────────────
     {
       id: 'tp-17', nomor: 17, kelas: 2,
-      nama: 'My Hobbies', tema: 'Diri Sendiri dan Perasaan', jp: 18,
+      nama: 'My Hobbies', tema: 'Diri Sendiri dan Perasaan',
       deskripsi: 'Peserta didik memperkenalkan hobi dan aktivitas waktu luang menggunakan kalimat sederhana.',
       indikator: [
         'Peserta didik dapat menyebut nama hobi (reading, drawing, singing, dancing, playing football, cooking, swimming, cycling) menggunakan gerund dengan benar.',
@@ -930,7 +922,6 @@ const FASE_A = {
       kelas    : 2,
       nama     : 'Integrative Project — My World',
       tema     : 'Proyek Integratif',
-      jp       : 18,
       deskripsi: `TP penutup Fase A. Peserta didik mengintegrasikan seluruh
         kemampuan yang telah dipelajari dalam proyek presentasi "My World".`,
       indikator: [
@@ -1005,7 +996,6 @@ const FASE_A = {
     const num = i + 1;
     if (!tp.id)        throw new Error(`[FLAF] fase-a.js: TP ${num} tidak punya id`);
     if (!tp.nama)      throw new Error(`[FLAF] fase-a.js: TP ${num} tidak punya nama`);
-    if (typeof tp.jp !== 'number') throw new Error(`[FLAF] fase-a.js: TP ${num} jp harus number`);
     if (!Array.isArray(tp.indikator) || tp.indikator.length !== 3)
       throw new Error(`[FLAF] fase-a.js: TP ${num} harus punya tepat 3 indikator`);
     if (!Array.isArray(tp.vocab) || tp.vocab.length === 0)
@@ -1013,9 +1003,6 @@ const FASE_A = {
     if (!Array.isArray(tp.skenario) || tp.skenario.length === 0)
       throw new Error(`[FLAF] fase-a.js: TP ${num} skenario tidak boleh kosong`);
   });
-  const totalJP = tps.reduce((sum, tp) => sum + tp.jp, 0);
-  if (totalJP !== meta.total_jp)
-    console.warn(`[FLAF] fase-a.js: total JP ${totalJP} tidak sama dengan meta.total_jp ${meta.total_jp}`);
 })();
 
 export default FASE_A;
