@@ -224,7 +224,7 @@ function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSummary) {
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
-        <div class="ds-list-item-sub">Kelas ${k.tingkat || 1} · TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-sub">TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
       </div>
       <div class="ds-list-arrow">›</div>
     </div>`).join('')}
