@@ -974,7 +974,7 @@ body {
   border-radius: 14px;
 }
 .ds-card--gold   { background: rgba(212,174,58,.07); border-color: rgba(212,174,58,.2); }
-.ds-card--sage   { background: rgba(92,138,110,.12); border-color: rgba(92,138,110,.3); }
+.ds-card--sage   { background: rgba(212,174,58,.07); border-color: rgba(212,174,58,.2); }
 .ds-card--inset  { margin: 0 16px; }
 .ds-card--overflow { overflow: hidden; }
 
@@ -1073,8 +1073,8 @@ body {
 
 /* ── Header sesi berlangsung ── */
 .ds-sesi-header {
-  background: rgba(92,138,110,.12);
-  border: 1px solid rgba(92,138,110,.3);
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.25);
   border-radius: 14px; padding: 16px;
 }
 .ds-sesi-tag     { font-size: 14px; font-weight: 700; color: #D4AE3A; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
@@ -1189,7 +1189,7 @@ body {
 }
 .ds-stat-num--gold  { color: #D4AE3A; }
 .ds-stat-num--sage  { color: #D4AE3A; }
-.ds-stat-num--slate { color: #5D7A8C; }
+.ds-stat-num--slate { color: rgba(255,255,255,.6); }
 .ds-stat-label {
   font-size: 12px; color: rgba(255,255,255,.55);
   margin-top: 2px; text-transform: uppercase; letter-spacing: .05em;
@@ -1474,11 +1474,11 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 .nv-btn--gold  { border: 1px solid #D4AE3A; color: #D4AE3A; }
-.nv-btn--clay  { border: 1px solid #B05A46; color: #B05A46; }
-.nv-btn--slate { border: 1px solid #7B9FD4; color: #7B9FD4; }
-.nv-btn--sage  { border: 1px solid #5C8A6E; color: #5C8A6E; }
+.nv-btn--clay  { border: 1px solid rgba(255,255,255,.4); color: rgba(255,255,255,.6); }
+.nv-btn--slate { border: 1px solid rgba(255,255,255,.4); color: rgba(255,255,255,.6); }
+.nv-btn--sage  { border: 1px solid #D4AE3A; color: #D4AE3A; }
 .nv-btn--gold-solid { background: #D4AE3A; border: none; color: #1A1A1A; }
-.nv-btn--slate-solid { background: #7B9FD4; border: none; color: #fff; }
+.nv-btn--slate-solid { background: rgba(255,255,255,.15); border: none; color: #fff; }
 .nv-btn--sm { padding: 4px 8px; font-size: 12px; }
 
 .nv-stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 0; gap: 0; background: rgba(0,0,0,.2); border-radius: 8px; overflow: hidden; }
@@ -1495,7 +1495,7 @@ body {
   display: flex; align-items: center; justify-content: center;
   font-size: 10px; font-weight: 700;
 }
-.nv-tp-chip--done  { background: rgba(92,138,110,.25); border: 1px solid rgba(92,138,110,.5); color: #5C8A6E; }
+.nv-tp-chip--done  { background: rgba(212,174,58,.2); border: 1px solid rgba(212,174,58,.5); color: #D4AE3A; }
 .nv-tp-chip--todo  { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.25); }
 
 /* Legend */
@@ -1503,7 +1503,7 @@ body {
 .nv-legend-dot {
   width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0;
 }
-.nv-legend-dot--done { background: rgba(92,138,110,.25); border: 1px solid rgba(92,138,110,.5); }
+.nv-legend-dot--done { background: rgba(212,174,58,.2); border: 1px solid rgba(212,174,58,.5); }
 .nv-legend-dot--todo { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); }
 .nv-legend-label { font-size: 12px; color: rgba(255,255,255,.55); }
 
@@ -1645,8 +1645,8 @@ body {
 .nv-siswa-list-item:last-child { border-bottom: none; }
 .nv-siswa-list-name { font-size: 13px; color: rgba(255,255,255,.8); }
 .nv-siswa-hapus-btn {
-  background: rgba(176,90,70,.15); border: 1px solid rgba(176,90,70,.3);
-  color: #B05A46; border-radius: 6px; padding: 4px 10px;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.55); border-radius: 6px; padding: 4px 10px;
   font-size: 12px; cursor: pointer; font-family: inherit;
 }
 .nv-textarea-siswa {
@@ -1683,9 +1683,9 @@ body {
 
 /* Color indicator dots */
 .nv-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-.nv-dot--sage  { background: #5C8A6E; }
+.nv-dot--sage  { background: rgba(212,174,58,.9); }
 .nv-dot--gold  { background: #D4AE3A; }
-.nv-dot--clay  { background: #B05A46; }
+.nv-dot--clay  { background: rgba(255,255,255,.35); }
 .nv-dot-label  { font-size: 12px; color: rgba(255,255,255,.5); }
 
 /* Color legend row */
