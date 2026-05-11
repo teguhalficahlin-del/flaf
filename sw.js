@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v46';          // ← dinaikkan untuk apply path fix
+const CACHE_VERSION  = 'flaf-v47';          // ← dinaikkan untuk apply path fix
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
