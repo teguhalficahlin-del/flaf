@@ -78,6 +78,7 @@ const FASE_A = {
       ],
       vocab: ['hello', 'hi', 'goodbye', 'bye', 'see you', 'good morning',
               'good afternoon', 'good evening', 'good night'],
+      persiapan: ['Kartu gambar salam (pagi/siang/sore)', 'Kartu waktu (matahari/bulan)'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -143,6 +144,7 @@ const FASE_A = {
       ],
       vocab: ['name', 'my name is', 'I am', 'years old', 'how old',
               'nice to meet you', 'what is your name'],
+      persiapan: ['Papan tulis + spidol', 'Kertas name tag kosong'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -205,6 +207,7 @@ const FASE_A = {
       ],
       vocab: ['sit down', 'stand up', 'open', 'close', 'listen', 'look',
               'repeat', 'read', 'write', 'draw', 'stop', 'go'],
+      persiapan: ['Kartu instruksi bergambar (sit/stand/open/close)', 'Poster TPR'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -270,6 +273,7 @@ const FASE_A = {
               'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
               'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty',
               'how many', 'count'],
+      persiapan: ['Kartu angka 1–20', 'Benda-benda di kelas untuk dihitung'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -332,6 +336,7 @@ const FASE_A = {
       ],
       vocab: ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink',
               'black', 'white', 'brown', 'colour', 'favourite', 'what colour'],
+      persiapan: ['Kartu warna 8 warna dasar', 'Benda berwarna dari kelas/tas siswa'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -393,6 +398,7 @@ const FASE_A = {
       ],
       vocab: ['circle', 'square', 'triangle', 'rectangle', 'star', 'heart',
               'diamond', 'oval', 'shape', 'this is', 'I see'],
+      persiapan: ['Kartu bentuk geometri', 'Spidol warna untuk gambar di papan'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -454,6 +460,7 @@ const FASE_A = {
       ],
       vocab: ['father', 'mother', 'brother', 'sister', 'grandfather',
               'grandmother', 'family', 'this is my', 'I have', 'parents'],
+      persiapan: ['Gambar pohon keluarga', 'Foto keluarga siswa (PR sebelumnya)'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -514,6 +521,7 @@ const FASE_A = {
       ],
       vocab: ['head', 'shoulders', 'knees', 'toes', 'eyes', 'ears',
               'nose', 'mouth', 'hair', 'hands', 'fingers', 'legs', 'feet', 'body'],
+      persiapan: ['Poster tubuh manusia', 'Lagu Head Shoulders Knees and Toes'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -575,6 +583,7 @@ const FASE_A = {
       vocab: ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken',
               'duck', 'butterfly', 'ant', 'elephant', 'animal', 'can fly',
               'can swim', 'can run'],
+      persiapan: ['Kartu gambar hewan', 'Lagu Old MacDonald Had a Farm'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -636,6 +645,7 @@ const FASE_A = {
       vocab: ['rice', 'noodles', 'bread', 'egg', 'milk', 'water', 'juice',
               'fruit', 'apple', 'banana', 'I like', "I don't like",
               'I want', 'can I have', 'food', 'drink'],
+      persiapan: ['Kartu gambar makanan dan minuman', 'Properti bermain peran kantin'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -697,6 +707,7 @@ const FASE_A = {
       vocab: ['book', 'pencil', 'pen', 'ruler', 'eraser', 'bag', 'chair',
               'table', 'board', 'crayon', 'scissors', 'glue', 'my', 'your',
               'borrow', 'here you are', 'thank you'],
+      persiapan: ['Label nama benda kelas (buku/pensil/penggaris)', 'Benda-benda di meja'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -758,6 +769,7 @@ const FASE_A = {
       vocab: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',
               'Saturday', 'Sunday', 'today', 'tomorrow', 'yesterday',
               'week', 'day', 'on Monday'],
+      persiapan: ['Kartu nama hari (Mon–Sun)', 'Kalender kelas'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -821,6 +833,7 @@ const FASE_A = {
               'go to school', 'study', 'play', 'eat lunch', 'eat dinner',
               'take a bath', 'sleep', 'every day', 'every morning',
               'every afternoon', 'every evening'],
+      persiapan: ['Kartu gambar seri rutinitas harian', 'Kertas gambar untuk siswa'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -882,6 +895,7 @@ const FASE_A = {
       vocab: ['bedroom', 'bathroom', 'kitchen', 'living room', 'dining room',
               'garden', 'house', 'room', 'in', 'on', 'under', 'next to',
               'we sleep', 'we cook', 'we eat'],
+      persiapan: ['Gambar denah rumah sederhana', 'Kartu gambar ruangan'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -944,6 +958,7 @@ const FASE_A = {
       vocab: ['sunny', 'cloudy', 'rainy', 'windy', 'hot', 'cold', 'wet',
               'weather', 'today', 'it is', 'umbrella', 'raincoat',
               "how's the weather"],
+      persiapan: ['Kartu cuaca (sunny/rainy/cloudy)', 'Jurnal cuaca kelas (kertas)'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -1007,6 +1022,7 @@ const FASE_A = {
       vocab: ['shirt', 'trousers', 'skirt', 'dress', 'shoes', 'socks',
               'hat', 'jacket', 'uniform', 'wear', 'I am wearing',
               'he is wearing', 'she is wearing'],
+      persiapan: ['Kartu gambar pakaian', 'Cermin kecil (opsional untuk show and tell)'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -1071,6 +1087,7 @@ const FASE_A = {
       vocab: ['reading', 'drawing', 'singing', 'dancing', 'playing football',
               'cooking', 'swimming', 'cycling', 'hobby', 'I like',
               'because', 'fun', 'interesting', 'what do you like'],
+      persiapan: ['Kartu gambar hobi', 'Tabel survei kelas kosong'],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -1133,6 +1150,7 @@ const FASE_A = {
       ],
       vocab: ['my world', 'this is me', 'my family', 'my house', 'I like',
               'every day', 'my hobby', 'present', 'poster', 'project'],
+      persiapan: ['Poster/buku mini siswa (PR sebelumnya)', 'Kertas untuk siswa yang belum siap'],
       skenario: [
         {
           fase  : 'Pembuka',
