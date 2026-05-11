@@ -1252,7 +1252,7 @@ function _buildErrorHTML(msg) {
   return `
   <div style="padding:24px;text-align:center">
     <div style="font-size:24px;margin-bottom:10px">⚠</div>
-    <div style="font-size:13px;font-weight:700;color:var(--clay);margin-bottom:6px">Dashboard tidak bisa dimuat</div>
+    <div style="font-size:13px;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:6px">Dashboard tidak bisa dimuat</div>
     <div style="font-size:13px;color:var(--muted);margin-bottom:16px">${_escape(msg)}</div>
     <button onclick="window.__FLAF_DASH__.reload()"
             style="background:var(--ink);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer">
