@@ -318,13 +318,22 @@ async function _onActivationSuccess(teacherData) {
   session = teacherData;
   dashboardRendered = false;
 
-  // Init export manager tapi TIDAK auto-export saat aktivasi pertama
-  // — data masih kosong, tidak ada yang perlu di-backup
   exportManager.init({ getTeacherName: () => session?.name });
-
   logger.info('app', 'aktivasi berhasil', { name: teacherData.name });
 
   navigateTo('s-start');
+
+  // Poin 12: pre-cache semua PDF di background jika online
+  if (navigator.onLine) {
+    setTimeout(() => {
+      try {
+        precacheAllPDF();
+        showToast('Mengunduh modul ajar untuk offline…');
+      } catch (e) {
+        console.warn('[APP] precacheAllPDF gagal:', e.message);
+      }
+    }, 1500);
+  }
 }
 
 // ─── BOOT SEQUENCE ────────────────────────────────────────────────────────────
@@ -1010,6 +1019,27 @@ function _updateSplashStatus(text) {
 
 // ─── PUBLIC API ───────────────────────────────────────────────────────────────
 
+// Poin 17: backup via Web Share API (Share Sheet native iOS/Android)
+async function triggerExport() {
+  try {
+    // Coba Web Share API dengan file jika tersedia
+    if (exportManager.getExportBlob && navigator.canShare) {
+      const blob = await exportManager.getExportBlob();
+      const file = new File([blob], `flaf-backup-${new Date().toISOString().slice(0,10)}.json`, { type: 'application/json' });
+      if (navigator.canShare({ files: [file] })) {
+        await navigator.share({ files: [file], title: 'Backup FLAF', text: 'Data mengajar FLAF' });
+        showToast('✓ Backup dibagikan');
+        return;
+      }
+    }
+    // Fallback: download manual biasa
+    await exportManager.triggerManualExport();
+    showToast('✓ Backup berhasil disimpan');
+  } catch (err) {
+    if (err.name !== 'AbortError') showToast('Backup gagal. Coba lagi.');
+  }
+}
+
 window.__FLAF__ = {
   softUpdate,
   hardReset,
@@ -1017,6 +1047,7 @@ window.__FLAF__ = {
   precacheAllPDF,
   getPDFCacheStatus,
   clearPDFCache,
+  triggerExport,
 };
 
 window.__FLAF_NAV__ = {
