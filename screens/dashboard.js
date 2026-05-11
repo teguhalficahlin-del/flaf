@@ -462,6 +462,12 @@ function _buildStepPresensi() {
 
 // --- STEP 2–4: FASE (Pembuka / Inti / Penutup) --------------------------------
 
+const PM_CFG = {
+  mindful  : { label: 'Mindful',   color: 'rgba(120,180,255,.9)', bg: 'rgba(120,180,255,.12)', border: 'rgba(120,180,255,.3)' },
+  meaningful: { label: 'Bermakna', color: 'rgba(100,220,160,.9)', bg: 'rgba(100,220,160,.1)',  border: 'rgba(100,220,160,.3)' },
+  joyful   : { label: 'Joyful',   color: 'rgba(255,190,80,.9)',  bg: 'rgba(255,190,80,.1)',   border: 'rgba(255,190,80,.3)'  },
+};
+
 function _buildStepFase(tpData, step) {
   const fase = _getFaseData(tpData, step);
   if (!fase) return `<div class="ds-step-empty">Data fase tidak tersedia.</div>`;
@@ -471,43 +477,88 @@ function _buildStepFase(tpData, step) {
   const aktif       = Math.max(0, Math.min(_skenario.langkahIndex, total - 1));
 
   const langkahHTML = langkahList.map((l, idx) => {
+    const tipe    = l.tipe;
     const isAktif = idx === aktif;
-    const isAudio = l.tipe === 'audio';
     const isDone  = idx < aktif;
+    const pm      = l.pm ? PM_CFG[l.pm] : null;
 
-    const isDiferensiasi = !isAudio && l.teks.startsWith('DIFERENSIASI');
-    const isDarurat      = !isAudio && l.teks.startsWith('JIKA WAKTU');
-
+    // Tentukan class item
     let itemClass = 'ds-langkah-item';
-    if (isAktif) itemClass += ' ds-langkah-item--aktif';
-    if (isDone)  itemClass += ' ds-langkah-item--done';
-    if (isDiferensiasi) itemClass += ' ds-langkah-item--diferensiasi';
-    if (isDarurat)      itemClass += ' ds-langkah-item--darurat';
+    if (isAktif)                  itemClass += ' ds-langkah-item--aktif';
+    if (isDone)                   itemClass += ' ds-langkah-item--done';
+    if (tipe === 'diferensiasi')  itemClass += ' ds-langkah-item--diferensiasi';
+    if (tipe === 'darurat')       itemClass += ' ds-langkah-item--darurat';
+    if (tipe === 'respons_siswa') itemClass += ' ds-langkah-item--respons';
 
-    const numHTML = isDone
-      ? `<div class="ds-langkah-num ds-langkah-num--done">✓</div>`
-      : isAudio
-        ? `<div class="ds-langkah-num ds-langkah-num--audio">▶</div>`
-        : isDiferensiasi
-          ? `<div class="ds-langkah-num ds-langkah-num--dif">≠</div>`
-          : isDarurat
-            ? `<div class="ds-langkah-num ds-langkah-num--darurat">!</div>`
-            : `<div class="ds-langkah-num">${idx + 1}</div>`;
+    // Badge PM (pojok kanan atas)
+    const pmBadge = pm ? `
+      <div class="ds-pm-badge" style="background:${pm.bg};border-color:${pm.border};color:${pm.color};">
+        ${pm.label}
+      </div>` : '';
 
-    const bodyHTML = isAudio
-      ? `
+    // Nomor/ikon kiri
+    let numHTML;
+    if (isDone) {
+      numHTML = `<div class="ds-langkah-num ds-langkah-num--done">✓</div>`;
+    } else if (tipe === 'audio') {
+      numHTML = `<div class="ds-langkah-num ds-langkah-num--audio">▶</div>`;
+    } else if (tipe === 'respons_siswa') {
+      numHTML = `<div class="ds-langkah-num ds-langkah-num--respons">💬</div>`;
+    } else if (tipe === 'diferensiasi') {
+      numHTML = `<div class="ds-langkah-num ds-langkah-num--dif">≠</div>`;
+    } else if (tipe === 'darurat') {
+      numHTML = `<div class="ds-langkah-num ds-langkah-num--darurat">!</div>`;
+    } else {
+      numHTML = `<div class="ds-langkah-num">${idx + 1}</div>`;
+    }
+
+    // Konten body sesuai tipe
+    let bodyHTML;
+    if (tipe === 'audio') {
+      bodyHTML = `
         <div style="flex:1;">
           <div class="ds-langkah-audio-label">Ucapkan ke siswa</div>
           <div class="ds-langkah-audio-teks">"${_escape(l.teks)}"</div>
           ${isAktif ? `<button onclick="dashTTS(${idx},'${_escapeTTS(l.teks)}')"
             id="tts-btn-${idx}" class="ds-tts-btn-inline">▶ Putar Audio</button>` : ''}
-        </div>`
-      : `<div class="ds-langkah-teks">${_escape(l.teks)}</div>`;
+        </div>`;
+    } else if (tipe === 'respons_siswa') {
+      bodyHTML = `
+        <div style="flex:1;">
+          <div class="ds-langkah-audio-label" style="color:rgba(160,220,255,.7);">Respons siswa</div>
+          <div class="ds-langkah-audio-teks" style="color:rgba(160,220,255,.9);">"${_escape(l.teks)}"</div>
+          ${isAktif ? `<button onclick="dashTTS(${idx},'${_escapeTTS(l.teks)}')"
+            id="tts-btn-${idx}" class="ds-tts-btn-inline" style="border-color:rgba(160,220,255,.4);color:rgba(160,220,255,.9);">▶ Putar Contoh</button>` : ''}
+        </div>`;
+    } else if (tipe === 'diferensiasi') {
+      bodyHTML = `
+        <div style="flex:1;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div style="background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.2);border-radius:8px;padding:8px 10px;">
+              <div style="font-size:10px;font-weight:700;color:rgba(100,180,255,.7);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;">Sudah bisa</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;">${_escape(l.sudah)}</div>
+            </div>
+            <div style="background:rgba(255,160,80,.08);border:1px solid rgba(255,160,80,.2);border-radius:8px;padding:8px 10px;">
+              <div style="font-size:10px;font-weight:700;color:rgba(255,160,80,.7);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;">Belum bisa</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.8);line-height:1.5;">${_escape(l.belum)}</div>
+            </div>
+          </div>
+        </div>`;
+    } else if (tipe === 'darurat') {
+      bodyHTML = `
+        <div style="flex:1;">
+          <div style="font-size:10px;font-weight:700;color:rgba(255,160,80,.7);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px;">Jika waktu tersisa ≤10 menit</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;">${_escape(l.teks)}</div>
+        </div>`;
+    } else {
+      bodyHTML = `<div class="ds-langkah-teks">${_escape(l.teks)}</div>`;
+    }
 
     return `
     <div class="${itemClass}" onclick="dashLangkahPilih(${idx})">
       ${numHTML}
       ${bodyHTML}
+      ${pmBadge}
     </div>`;
   }).join('');
 

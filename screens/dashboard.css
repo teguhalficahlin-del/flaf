@@ -984,3 +984,37 @@
   text-align: right;
   max-width: 65%;
 }
+
+/* ─── TIPE LANGKAH: RESPONS SISWA ─────────────────────────────────────────── */
+
+.ds-langkah-item--respons {
+  background: rgba(120,180,255,.05);
+  border-color: rgba(120,180,255,.18);
+}
+
+.ds-langkah-item--respons.ds-langkah-item--aktif {
+  background: rgba(120,180,255,.1);
+  border-color: rgba(120,180,255,.35);
+}
+
+.ds-langkah-num--respons {
+  background: rgba(120,180,255,.15);
+  color: rgba(120,180,255,.9);
+  font-size: 13px;
+}
+
+/* ─── PM BADGE (Pembelajaran Mendalam) ────────────────────────────────────── */
+
+.ds-pm-badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-left: auto;
+  white-space: nowrap;
+}
