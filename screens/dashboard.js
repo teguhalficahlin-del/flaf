@@ -1830,7 +1830,7 @@ function _buildSesiHTML() {
   const isLast  = step === 6;
 
   return `
-<div class="ds-wrap ds-stepper-wrap" style="height:100%;overflow:hidden;padding-bottom:0;">
+<div class="ds-wrap ds-stepper-wrap">
 
   <div class="ds-breadcrumb">
     <button onclick="dashKeLanding()" class="ds-btn-back">← Rombel</button>

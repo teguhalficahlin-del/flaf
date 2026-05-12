@@ -1704,11 +1704,8 @@
 .ds-stepper-wrap.ds-stepper-wrap--runtime {
   padding: 0;
   gap: 0;
-  /* Rantai height: harus explicit agar flex:1 di dalam bekerja */
-  height: 100%;
   min-height: 0;
   overflow: hidden;
-  /* flex column sudah dari .ds-wrap — inherit */
   display: flex;
   flex-direction: column;
 }
