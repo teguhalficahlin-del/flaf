@@ -827,7 +827,7 @@ function _rtDoSitAct(tpData) {
 // Runtime fade out → closure surface fade in, in-place.
 // Transisi ritme, bukan perpindahan wizard.
 
-function _rtOpenSelesai() {
+async function _rtOpenSelesai() {
   if (_rt.closureMode) return; // Guard double-trigger
   _rt.closureMode    = true;
   _rt.closureKendala = null;
@@ -1153,8 +1153,8 @@ window.rtCloseOv = function(id) {
   _rtCloseOv(id);
 };
 
-window.rtOpenSelesai = function() {
-  _rtOpenSelesai();
+window.rtOpenSelesai = async function() {
+  await _rtOpenSelesai();
 };
 
 // rtKonfirmasiSelesai — tidak lagi dipakai dari runtime overlay.
