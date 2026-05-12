@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>FLAF — Functional Language Accumulation Framework</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- display=swap: layout tidak shift saat font belum dimuat / offline -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="screens/kurikulum.css">
+  <link rel="stylesheet" href="screens/dashboard.css">
+  <link rel="stylesheet" href="screens/nilai.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>window.__FLAF_VERSION__ = 'flaf-v16';</script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       TOAST NOTIFICATION (global, di atas semua screen)
+  ═══════════════════════════════════════════════════════ -->
+  <div id="toast" class="toast" role="alert" aria-live="polite" aria-atomic="true"></div>
+
+  <div class="phone">
+
+  <!--
+    #app-viewport: SATU-SATUNYA element position:fixed dalam app.
+    Ini adalah viewport container. Screen individual di dalamnya
+    menggunakan position:static + min-height:100% sehingga:
+    - Keyboard virtual mengecilkan viewport, bukan memotong konten
+    - Scroll natural terjadi di dalam container, bukan di window
+    - Transisi animasi antar screen tetap bekerja
+  -->
+  <div id="app-viewport">
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: s-splash — Splash / Intro
+  ═══════════════════════════════════════════════════════ -->
+  <section id="s-splash" class="screen screen-active" aria-label="Layar pembuka" style="display:flex;">
+    <div class="splash-welcome">
+      <div class="splash-welcome-top">
+        <div class="splash-badge">✦ FASE A · SD KELAS 1 &amp; 2</div>
+        <h1 class="splash-title">
+          <span class="splash-title-plain">Functional Language</span>
+          <span class="splash-title-italic">Accumulation</span>
+          <span class="splash-title-plain">Framework</span>
+        </h1>
+        <p class="splash-tagline-new">Berani bicara dibangun<br>dari latihan kecil.</p>
+      </div>
+
+      <div class="splash-atom" aria-hidden="true">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="220" height="220">
+          <defs>
+            <filter id="glow-splash">
+              <feGaussianBlur stdDeviation="2.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!--
+              Path dihitung secara matematis dengan rotasi yang sudah di-embed.
+              mpath tidak mewarisi transform SVG, jadi koordinat harus eksplisit.
+              Ellipse: cx=100 cy=100 rx=80 ry=30
+            -->
+            <!-- Orbit 1: rot=0° -->
+            <path id="op1" d="M 180,100 A 80,30 0 0 1 20,100 A 80,30 0 0 1 180,100"/>
+            <!-- Orbit 2: rot=60° -->
+            <path id="op2" d="M 140,169.282 A 80,30 0 0 1 60,30.718 A 80,30 0 0 1 140,169.282"/>
+            <!-- Orbit 3: rot=120° -->
+            <path id="op3" d="M 60,169.282 A 80,30 0 0 1 140,30.718 A 80,30 0 0 1 60,169.282"/>
+          </defs>
+
+          <!-- Garis orbit DIAM — tidak berputar -->
+          <ellipse cx="100" cy="100" rx="80" ry="30"
+            fill="none" stroke="#D4AE3A" stroke-width="2" opacity="0.7"/>
+          <ellipse cx="100" cy="100" rx="80" ry="30"
+            fill="none" stroke="#5C8A6E" stroke-width="2" opacity="0.7"
+            transform="rotate(60 100 100)"/>
+          <ellipse cx="100" cy="100" rx="80" ry="30"
+            fill="none" stroke="#B05A46" stroke-width="2" opacity="0.7"
+            transform="rotate(120 100 100)"/>
+
+          <!-- Nukleus berdenyut -->
+          <circle cx="100" cy="100" r="13" fill="#D4AE3A" filter="url(#glow-splash)"
+            style="animation:splash-pulse 2s ease-in-out infinite;transform-origin:100px 100px;"/>
+          <circle cx="100" cy="100" r="8" fill="#C49A20"/>
+
+          <!-- Elektron 1 — gold, 4 detik, bergerak di op1 -->
+          <circle r="7" fill="#D4AE3A" filter="url(#glow-splash)">
+            <animateMotion dur="4s" repeatCount="indefinite" rotate="none">
+              <mpath href="#op1"/>
+            </animateMotion>
+          </circle>
+
+          <!-- Elektron 2 — sage, 6 detik, bergerak di op2 -->
+          <circle r="7" fill="#5C8A6E" filter="url(#glow-splash)">
+            <animateMotion dur="6s" repeatCount="indefinite" rotate="none">
+              <mpath href="#op2"/>
+            </animateMotion>
+          </circle>
+
+          <!-- Elektron 3 — clay, 8 detik, bergerak di op3 -->
+          <circle r="7" fill="#B05A46" filter="url(#glow-splash)">
+            <animateMotion dur="8s" repeatCount="indefinite" rotate="none">
+              <mpath href="#op3"/>
+            </animateMotion>
+          </circle>
+        </svg>
+      </div>
+
+      <div class="splash-welcome-bottom">
+        <button id="btn-mulai" class="splash-btn-mulai" disabled>
+          <span id="btn-mulai-text">Memuat…</span>
+        </button>
+        <div class="splash-footer">PLATFORM GURU BAHASA INGGRIS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: s-activation — Aktivasi Guru
+  ═══════════════════════════════════════════════════════ -->
+  <section id="s-activation" class="screen" aria-label="Aktivasi guru" hidden>
+    <!-- Dirender oleh screens/activation.js → renderActivationScreen() -->
+    <div id="activation-root"></div>
+  </section>
+
+   <section id="s-start" class="screen" aria-label="Menu utama" hidden>
+    <div class="home-wrap">
+
+      <div class="home-header">
+  <div class="home-header-left">
+    <div class="home-welcome">Halo,</div>
+    <div class="home-name" id="start-teacher-name">—</div>
+    <div class="home-school" id="start-teacher-school">—</div>
+  </div>
+  <button class="home-avatar" id="btn-settings" aria-label="Pengaturan">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,.8)" stroke-width="2">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+    </svg>
+  </button>
+</div>
+
+      <div class="home-progress-bar-wrap" id="home-progress-wrap">
+        <div class="home-progress-top">
+          <div class="home-progress-label">Progres Fase A</div>
+          <div class="home-progress-count"><span id="home-tp-done">0</span> / 18 TP</div>
+        </div>
+        <div class="home-progress-track">
+          <div class="home-progress-fill" id="home-progress-fill" style="width:0%"></div>
+        </div>
+        <div class="home-progress-sub" id="home-progress-sub">0% · Ayo mulai langkah pertama!</div>
+      </div>
+
+      <div class="home-menu">
+
+        <button class="home-card home-card-primary" id="btn-go-dash">
+          <div class="home-card-icon home-card-icon-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title" style="color:#D4AE3A;">Sesi Mengajar</div>
+            <div class="home-card-desc" id="home-dash-last">Presensi, TP, materi &amp; skenario</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(212,174,58,.8)" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <button class="home-card" id="btn-go-nilai">
+          <div class="home-card-icon home-card-icon-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title">Manajemen Kelas</div>
+            <div class="home-card-desc">Input nilai, kelola siswa, rekap kehadiran</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <button class="home-card" id="btn-go-jadwal">
+          <div class="home-card-icon home-card-icon-sage">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5C8A6E" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title">Dokumen Kurikulum</div>
+            <div class="home-card-desc">CP, ATP, 18 TP + modul PDF siap unduh</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <button class="home-card" id="btn-go-jejak">
+          <div class="home-card-icon home-card-icon-clay">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B05A46" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><circle cx="8" cy="15" r="1" fill="#B05A46"/><circle cx="12" cy="15" r="1" fill="#B05A46"/><circle cx="16" cy="15" r="1" fill="#B05A46"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title">Jejak Mengajar</div>
+            <div class="home-card-desc">Streak, refleksi harian, timeline aktif</div>
+          </div>
+          <div class="home-streak-badge" id="home-streak-badge" hidden>🔥 <span id="home-streak-count">0</span></div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <button class="home-card" id="btn-install-pwa" hidden>
+          <div class="home-card-icon home-card-icon-slate">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5D7A8C" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="8 12 12 16 16 12"/><line x1="12" y1="8" x2="12" y2="16"/></svg>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title">Pasang Aplikasi</div>
+            <div class="home-card-desc">Jalankan FLAF dari layar utama HP</div>
+          </div>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="export-reminder" id="export-reminder" hidden>
+          <div class="export-reminder-icon">⚠️</div>
+          <div class="export-reminder-body">
+            <div class="export-reminder-title">Backup diperlukan</div>
+            <div class="export-reminder-desc">Data belum dicadangkan lebih dari 7 hari. Simpan sekarang agar data aman.</div>
+          </div>
+          <button class="export-reminder-btn" id="btn-manual-export">Simpan →</button>
+        </div>
+
+        <div class="home-backup" id="home-backup-bar">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" style="flex-shrink:0;" id="home-backup-icon"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <div class="home-backup-body">
+            <div class="home-backup-title">Backup Terakhir</div>
+            <div class="home-backup-desc" id="home-backup-desc">Memeriksa…</div>
+          </div>
+          <button class="home-backup-btn" id="home-backup-action">Simpan →</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="s-jejak" class="screen screen-with-nav" aria-label="Jejak Mengajar" hidden>
+    <div id="jejak-root" style="
+      background:#1A1A1A;
+      background-image:radial-gradient(circle,rgba(212,174,58,.05) 1px,transparent 1px);
+      background-size:22px 22px;
+      flex:1;
+      overflow-y:auto;
+      -webkit-overflow-scrolling:touch;
+      position:relative;
+    ">
+            
+      <!-- Konten dirender oleh screens/jejak.js -->
+      <div id="jejak-content"></div>
+    </div>
+    <nav class="bot-nav" aria-label="Navigasi utama">
+      <button class="bot-nav-item" id="jejak-nav-menu" aria-label="Menu Utama">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        <span>Menu</span>
+      </button>
+      <button class="bot-nav-item" id="jejak-nav-dash" aria-label="Sesi Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Mengajar</span>
+      </button>
+      <button class="bot-nav-item" id="jejak-nav-nilai" aria-label="Manajemen Kelas">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>Kelas</span>
+      </button>
+      <button class="bot-nav-item" id="jejak-nav-dokumen" aria-label="Dokumen Kurikulum">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span>Kurikulum</span>
+      </button>
+      <button class="bot-nav-item bot-nav-active" id="jejak-nav-jejak" aria-label="Jejak Mengajar" aria-current="page">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="15" r="1" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1" fill="currentColor"/>
+        </svg>
+        <span>Jejak</span>
+      </button>
+    </nav>
+  </section>
+
+  <section id="s-nilai" class="screen screen-with-nav" aria-label="Manajemen Kelas" hidden>
+    <div id="nilai-root" style="flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;background:#1A1A1A;background-image:radial-gradient(circle,rgba(212,174,58,.05) 1px,transparent 1px);background-size:22px 22px;"></div>
+    <nav class="bot-nav" aria-label="Navigasi utama">
+      <button class="bot-nav-item" id="nilai-nav-menu" aria-label="Menu Utama">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        <span>Menu</span>
+      </button>
+      <button class="bot-nav-item" id="nilai-nav-dash" aria-label="Sesi Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Mengajar</span>
+      </button>
+      <button class="bot-nav-item bot-nav-active" id="nilai-nav-nilai" aria-label="Manajemen Kelas" aria-current="page">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>Kelas</span>
+      </button>
+      <button class="bot-nav-item" id="nilai-nav-dokumen" aria-label="Dokumen Kurikulum">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span>Kurikulum</span>
+      </button>
+      <button class="bot-nav-item" id="nilai-nav-jejak" aria-label="Jejak Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="15" r="1" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1" fill="currentColor"/>
+        </svg>
+        <span>Jejak</span>
+      </button>
+    </nav>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: s-dash — Dashboard Mengajar (Sprint 5)
+  ═══════════════════════════════════════════════════════ -->
+  <section id="s-dash" class="screen screen-with-nav" aria-label="Sesi mengajar" hidden>
+
+    <!-- Top bar -->
+    <div class="dash-topbar">
+      <button class="dash-back-btn" id="dash-back" aria-label="Kembali ke menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M19 12H5M12 5l-7 7 7 7"/>
+        </svg>
+      </button>
+      <div class="dash-topbar-title">Sesi Mengajar</div>
+      <div class="dash-topbar-right" id="dash-connectivity-badge"></div>
+    </div>
+
+    <!-- Konten dashboard di-render oleh screens/dashboard.js -->
+    <div id="dash-root" class="dash-scroll-area">
+      <!-- Skeleton loading ditampilkan saat pertama kali load -->
+      <div class="dash-skeleton" id="dash-skeleton" aria-label="Memuat data..." aria-live="polite">
+        <div class="sk-block sk-tall"></div>
+        <div class="sk-block sk-medium"></div>
+        <div class="sk-block sk-short"></div>
+        <div class="sk-block sk-medium"></div>
+        <div class="sk-block sk-short"></div>
+      </div>
+    </div>
+
+    <!-- Bottom navigation: 4 tab -->
+    <nav class="bot-nav" aria-label="Navigasi utama">
+      <button class="bot-nav-item" id="dash-nav-menu" aria-label="Menu Utama">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        <span>Menu</span>
+      </button>
+      <button class="bot-nav-item bot-nav-active" id="dash-nav-dash" aria-label="Sesi Mengajar" aria-current="page">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Mengajar</span>
+      </button>
+      <button class="bot-nav-item" id="dash-nav-nilai" aria-label="Manajemen Kelas">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>Kelas</span>
+      </button>
+      <button class="bot-nav-item" id="dash-nav-dokumen" aria-label="Dokumen Kurikulum">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span>Kurikulum</span>
+      </button>
+      <button class="bot-nav-item" id="dash-nav-jejak" aria-label="Jejak Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="15" r="1" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1" fill="currentColor"/>
+        </svg>
+        <span>Jejak</span>
+      </button>
+    </nav>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCREEN: s-jadwal — Dokumen Kurikulum + Modul PDF
+  ═══════════════════════════════════════════════════════ -->
+  <section id="s-jadwal" class="screen screen-with-nav" aria-label="Dokumen kurikulum" hidden>
+    
+    <!-- Konten kurikulum di-render oleh screens/kurikulum.js -->
+    <div class="jadwal-scroll-area" id="kurikulum-root">
+      <div class="panel-loading">Memuat kurikulum…</div>
+    </div>
+
+    <!-- Bottom navigation: 4 item -->
+    <nav class="bot-nav" aria-label="Navigasi utama">
+      <button class="bot-nav-item" id="jadwal-nav-menu" aria-label="Menu Utama">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+        <span>Menu</span>
+      </button>
+      <button class="bot-nav-item" id="jadwal-nav-dash" aria-label="Sesi Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        <span>Mengajar</span>
+      </button>
+      <button class="bot-nav-item" id="jadwal-nav-nilai" aria-label="Manajemen Kelas">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+        </svg>
+        <span>Kelas</span>
+      </button>
+      <button class="bot-nav-item bot-nav-active" id="jadwal-nav-dokumen" aria-label="Dokumen Kurikulum" aria-current="page">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14,2 14,8 20,8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+        </svg>
+        <span>Kurikulum</span>
+      </button>
+      <button class="bot-nav-item" id="jadwal-nav-jejak" aria-label="Jejak Mengajar">
+        <svg class="bot-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <circle cx="8" cy="15" r="1" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1" fill="currentColor"/>
+        </svg>
+        <span>Jejak</span>
+      </button>
+    </nav>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MODAL: Settings
+  ═══════════════════════════════════════════════════════ -->
+  <div id="modal-settings" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-settings-title" hidden>
+    <div class="modal-overlay" id="modal-settings-overlay"></div>
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <h2 id="modal-settings-title" class="modal-title">Pengaturan</h2>
+        <button class="modal-close" id="modal-settings-close" aria-label="Tutup">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="settings-section">
+          <div class="settings-label">Akun</div>
+          <div class="settings-row">
+            <span class="settings-row-key">Nama</span>
+            <span class="settings-row-val" id="settings-name">—</span>
+          </div>
+          <div class="settings-row">
+            <span class="settings-row-key">Sekolah</span>
+            <span class="settings-row-val" id="settings-school">—</span>
+          </div>
+          <div class="settings-row">
+            <span class="settings-row-key">Kode</span>
+            <span class="settings-row-val" id="settings-code">—</span>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-label">Storage</div>
+          <div class="settings-row">
+            <span class="settings-row-key">Cache App</span>
+            <span class="settings-row-val" id="settings-cache-app">—</span>
+          </div>
+          <div class="settings-row">
+            <span class="settings-row-key">Cache PDF</span>
+            <span class="settings-row-val" id="settings-cache-pdf">—</span>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-label">Backup Data</div>
+          <button class="settings-btn settings-btn-primary" id="btn-export-now">
+            💾 Simpan Backup Sekarang
+          </button>
+          <button class="settings-btn" id="btn-import-data">
+            📂 Pulihkan dari Backup
+          </button>
+          <input type="file" id="import-file-input" accept=".json" hidden>
+        </div>
+
+        <div class="settings-section">
+          <div class="settings-label">Update Aplikasi</div>
+          <button class="settings-btn" id="btn-soft-update">
+            🔄 Periksa Update Data
+          </button>
+        </div>
+
+        <div class="settings-section settings-section-danger">
+          <div class="settings-label">Zona Berbahaya</div>
+          <button class="settings-btn settings-btn-danger" id="btn-hard-reset">
+            ⚠ Hard Reset Aplikasi
+          </button>
+          <p class="settings-danger-note">
+            Menghapus semua cache dan data lokal. Membutuhkan koneksi internet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /#app-viewport -->
+
+  </div><!-- /.phone -->
+
+  <!-- Entry point ES module -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>FLAF · v6</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold:#C9A84C; --gd:rgba(201,168,76,.12); --gb:rgba(201,168,76,.24);
+  --bg:#0C0B09; --sf:#151310; --s2:#1A1714; --s3:#201D19;
+  --text:rgba(255,255,255,.88); --mu:rgba(255,255,255,.36); --hi:rgba(255,255,255,.13);
+  --br:rgba(255,255,255,.055);
+  --teal:#4DB896; --td:rgba(77,184,150,.1);
+  --coral:#D97B5A; --cd:rgba(217,123,90,.09);
+  --blue:#5B9BD5; --bd:rgba(91,155,213,.1);
+  --r:11px; --rs:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;}
+
+.shell{width:360px;max-width:100%;background:var(--sf);border-radius:26px;border:1px solid var(--br);overflow:hidden;display:flex;flex-direction:column;min-height:640px;position:relative;}
+.sbar{height:24px;background:var(--bg);display:flex;align-items:center;justify-content:space-between;padding:0 14px;flex-shrink:0;}
+.sbar span{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);}
+
+/* SCREENS */
+.screen{display:none;flex-direction:column;flex:1;overflow-y:auto;animation:fi .15s ease;}
+.screen.active{display:flex;}
+@keyframes fi{from{opacity:0;transform:translateY(3px);}to{opacity:1;transform:none;}}
+
+/* RUNTIME */
+.runtime{display:none;flex-direction:column;flex:1;overflow:hidden;}
+.runtime.active{display:flex;}
+
+/* ═══════════════════════════════════
+   PERIPHERAL BAND
+═══════════════════════════════════ */
+.periph{
+  flex-shrink:0;display:flex;align-items:center;gap:8px;
+  padding:7px 14px 6px;border-bottom:1px solid var(--br);
+}
+.p-fase{font-family:'DM Mono',monospace;font-size:9px;color:var(--gold);letter-spacing:.07em;white-space:nowrap;flex-shrink:0;}
+.p-sep{width:1px;height:10px;background:var(--br);flex-shrink:0;}
+.p-aw{flex:1;font-size:10px;color:var(--mu);line-height:1.3;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.p-aw .al{color:var(--coral);}
+.p-aw .ok{color:var(--teal);}
+.p-timer{font-family:'DM Mono',monospace;font-size:10px;color:var(--hi);flex-shrink:0;}
+
+/* ═══════════════════════════════════
+   MICRO-CONTEXT AREA
+   — fixed, quick acknowledgement
+═══════════════════════════════════ */
+.micro{
+  flex-shrink:0;overflow:hidden;
+  height:0;transition:height .17s ease;
+  border-bottom:0px solid var(--br);
+}
+.micro.open{height:48px;border-bottom-width:1px;}
+.micro-inner{
+  display:flex;align-items:center;gap:0;
+  padding:0 14px;height:48px;
+}
+.micro-name{
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:700;
+  color:var(--text);margin-right:10px;flex-shrink:0;min-width:44px;
+}
+/* PRIMARY — takes most space */
+.micro-primary{
+  flex:1;padding:7px 12px;border-radius:5px;
+  background:var(--td);border:1px solid rgba(77,184,150,.24);
+  font-size:11px;color:var(--teal);cursor:pointer;
+  transition:all .1s;text-align:center;font-weight:500;
+}
+.micro-primary:active{transform:scale(.97);}
+/* SECONDARY — small text links */
+.micro-secondary{
+  display:flex;gap:0;flex-shrink:0;margin-left:8px;
+}
+.micro-sec-btn{
+  padding:4px 7px;font-size:10px;color:var(--mu);
+  cursor:pointer;border:none;background:transparent;
+  font-family:inherit;transition:color .1s;
+  border-left:1px solid var(--br);
+}
+.micro-sec-btn:first-child{border-left:none;}
+.micro-sec-btn:active{color:var(--coral);}
+.micro-close{
+  width:18px;height:18px;border-radius:50%;
+  border:1px solid var(--br);background:transparent;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--hi);cursor:pointer;
+  margin-left:6px;flex-shrink:0;
+}
+
+/* ═══════════════════════════════════
+   SIGNAL STRIP
+═══════════════════════════════════ */
+.sig-strip{
+  flex-shrink:0;display:flex;gap:4px;
+  padding:4px 14px;border-bottom:1px solid var(--br);
+  overflow-x:auto;scrollbar-width:none;
+}
+.sig-strip::-webkit-scrollbar{display:none;}
+.sp{
+  padding:3px 7px;border:1px solid var(--br);border-radius:7px;
+  font-size:9px;font-family:'DM Mono',monospace;color:var(--mu);
+  background:transparent;cursor:pointer;white-space:nowrap;
+  transition:all .11s;flex-shrink:0;
+}
+.sp:active{transform:scale(.95);}
+.sp.on{border-color:rgba(217,123,90,.24);background:var(--cd);color:var(--coral);}
+.sp.ok{border-color:rgba(77,184,150,.2);background:var(--td);color:var(--teal);}
+
+/* ═══════════════════════════════════
+   FOCUS ZONE — two attention states
+═══════════════════════════════════ */
+.focus-zone{
+  flex:1;display:flex;flex-direction:column;
+  justify-content:center;padding:16px 18px 10px;
+  overflow:hidden;position:relative;
+}
+
+/* STATE A: active cue */
+.focus-cue{
+  position:absolute;inset:16px 18px 10px;
+  display:flex;flex-direction:column;justify-content:center;
+  transition:opacity .7s ease;
+  cursor:pointer;
+}
+.focus-cue.dimmed{opacity:0;pointer-events:none;}
+
+.fc-type{display:flex;align-items:center;gap:7px;margin-bottom:7px;}
+.ft-ic{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;}
+.ft-ic.au{background:var(--gd);color:var(--gold);}
+.ft-ic.rs{background:var(--bd);color:var(--blue);}
+.ft-ic.df{background:var(--td);color:var(--teal);}
+.ft-ic.dr{background:var(--cd);color:var(--coral);}
+.ft-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;}
+.ft-lbl.au{color:var(--gold);}
+.ft-lbl.rs{color:var(--blue);}
+.ft-lbl.df{color:var(--teal);}
+.ft-lbl.dr{color:var(--coral);}
+.ft-pm{font-family:'DM Mono',monospace;font-size:8px;padding:1px 5px;border-radius:3px;margin-left:auto;}
+
+.focus-teks{font-family:'Syne',sans-serif;font-size:21px;font-weight:500;color:var(--text);line-height:1.4;}
+.focus-teks.plain{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;line-height:1.6;}
+.dif-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:2px;}
+.dif-cell{padding:8px 9px;border-radius:7px;font-size:11px;line-height:1.45;color:var(--mu);}
+.dif-cell.s{background:rgba(77,184,150,.07);border:1px solid rgba(77,184,150,.14);}
+.dif-cell.b{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14);}
+.dif-lbl{font-size:8px;font-weight:500;margin-bottom:3px;}
+.dif-lbl.s{color:var(--teal);}
+.dif-lbl.b{color:var(--gold);}
+
+/* STATE B: awareness — shown when cue is dimmed */
+.focus-awareness{
+  position:absolute;inset:16px 18px 10px;
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  opacity:0;transition:opacity .7s ease;
+  pointer-events:none;
+}
+.focus-awareness.visible{opacity:1;}
+.aw-label{
+  font-family:'DM Mono',monospace;font-size:9px;
+  color:var(--hi);letter-spacing:.08em;text-transform:uppercase;
+  margin-bottom:10px;
+}
+.aw-names{
+  font-family:'Syne',sans-serif;
+  font-size:18px;font-weight:400;
+  /* low contrast, calm — not alarming */
+  color:rgba(255,255,255,.28);
+  line-height:1.5;letter-spacing:.01em;
+}
+.aw-names .name-chip{
+  display:inline-block;margin-right:10px;margin-bottom:4px;
+  cursor:pointer;pointer-events:all;
+  transition:color .2s;
+}
+.aw-names .name-chip:active{color:rgba(255,255,255,.55);}
+.aw-sub{
+  font-size:10px;color:var(--hi);margin-top:10px;
+  font-family:'DM Mono',monospace;
+}
+/* tap to return to cue */
+.aw-return{
+  position:absolute;bottom:0;right:0;
+  font-size:9px;color:var(--hi);cursor:pointer;
+  font-family:'DM Mono',monospace;letter-spacing:.05em;
+  padding:4px 0;pointer-events:all;
+}
+
+/* ═══════════════════════════════════
+   FOCUS NAV
+═══════════════════════════════════ */
+.focus-nav{
+  flex-shrink:0;display:flex;gap:5px;align-items:center;
+  padding:0 18px 10px;
+}
+.fn-btn{
+  flex:1;padding:9px 5px;border-radius:var(--rs);border:1px solid var(--br);
+  background:transparent;color:var(--mu);font-family:'Inter',sans-serif;
+  font-size:11px;cursor:pointer;transition:all .12s;text-align:center;
+}
+.fn-btn:active{transform:scale(.97);}
+.fn-btn.p{background:var(--gd);border-color:var(--gb);color:var(--gold);}
+.fn-btn.d{opacity:.18;pointer-events:none;}
+.fn-info{font-family:'DM Mono',monospace;font-size:9px;color:var(--hi);text-align:center;min-width:34px;flex-shrink:0;}
+
+/* ═══════════════════════════════════
+   SITUATIONAL MAP — peripheral orientation
+   no borders, only text intensity
+═══════════════════════════════════ */
+.sitmap{
+  flex-shrink:0;border-top:1px solid var(--br);
+  padding:5px 14px 3px;
+}
+.sitmap-scroll{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.sitmap-scroll::-webkit-scrollbar{display:none;}
+.sm-item{
+  flex-shrink:0;cursor:pointer;padding:2px 0;
+  /* no border, no background — just text */
+}
+.sm-ic{font-size:8px;margin-right:3px;opacity:.5;}
+.sm-txt{
+  font-family:'DM Mono',monospace;font-size:9px;
+  white-space:nowrap;transition:opacity .15s;
+  color:var(--mu);opacity:.35;
+}
+.sm-txt.now{opacity:1;color:var(--gold);}
+.sm-txt.been{opacity:.2;}
+.sm-txt.next{opacity:.55;}
+
+/* ═══════════════════════════════════
+   SPEAKING PERIPHERAL
+═══════════════════════════════════ */
+.spk-periph{
+  flex-shrink:0;padding:5px 14px 6px;border-top:1px solid var(--br);
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.spk-chip{
+  padding:3px 9px;border-radius:7px;border:1px solid var(--br);
+  background:var(--s2);font-size:10px;color:var(--mu);
+  cursor:pointer;transition:all .13s;font-family:'DM Mono',monospace;
+}
+.spk-chip:active{transform:scale(.95);}
+.spk-chip.sudah{border-color:rgba(77,184,150,.22);background:var(--td);color:var(--teal);}
+.spk-chip.perlu{border-color:rgba(217,123,90,.2);background:var(--cd);color:var(--coral);}
+
+/* ANCHOR */
+.anchor{
+  flex-shrink:0;display:flex;gap:4px;
+  padding:6px 13px 10px;border-top:1px solid var(--br);
+}
+.anc{
+  flex:1;padding:7px 3px;border-radius:var(--rs);border:1px solid var(--br);
+  background:transparent;font-size:10px;font-family:'Inter',sans-serif;
+  color:var(--mu);cursor:pointer;text-align:center;transition:all .12s;
+}
+.anc:active{transform:scale(.97);}
+.anc.end{background:var(--td);border-color:rgba(77,184,150,.24);color:var(--teal);}
+
+/* ═══════════════════════════════════
+   OVERLAYS
+═══════════════════════════════════ */
+.ov-back{
+  position:absolute;inset:0;background:rgba(0,0,0,.38);z-index:20;
+  display:none;align-items:flex-end;
+}
+.ov-back.open{display:flex;animation:bdin .14s ease;}
+@keyframes bdin{from{opacity:0;}to{opacity:1;}}
+.ov-sheet{
+  width:100%;background:var(--sf);
+  border-radius:18px 18px 0 0;border-top:1px solid var(--br);
+  padding:12px 15px 18px;animation:sdup .17s ease;
+}
+@keyframes sdup{from{transform:translateY(14px);opacity:0;}to{transform:none;opacity:1;}}
+.ov-handle{width:26px;height:3px;border-radius:2px;background:var(--br);margin:0 auto 11px;}
+.ov-lbl{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+.ov-resp{font-size:12px;color:var(--text);line-height:1.55;padding:9px 10px;border-radius:var(--rs);background:var(--s2);border:1px solid var(--br);margin-bottom:9px;}
+.ov-acts{display:flex;gap:5px;}
+.ov-act{flex:1;padding:9px 5px;border-radius:var(--rs);border:1px solid var(--br);background:transparent;font-size:11px;font-family:'Inter',sans-serif;color:var(--mu);cursor:pointer;text-align:center;transition:all .12s;}
+.ov-act.p{background:var(--gd);border-color:var(--gb);color:var(--gold);}
+.ov-sit-list{display:flex;flex-direction:column;gap:4px;margin-bottom:9px;}
+.ov-sit-opt{padding:9px 11px;border:1px solid var(--br);border-radius:var(--rs);font-size:11px;color:var(--mu);cursor:pointer;transition:all .12s;display:flex;align-items:center;gap:8px;}
+.ov-sit-opt:active{background:var(--s2);}
+.ov-sit-ic{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;}
+
+/* ═══════════════════════════════════
+   PRE/POST SCREENS
+═══════════════════════════════════ */
+.topbar{display:flex;align-items:center;gap:7px;padding:10px 13px 7px;}
+.back{font-size:10px;color:var(--gold);background:var(--gd);border:1px solid var(--gb);border-radius:4px;padding:3px 7px;cursor:pointer;white-space:nowrap;}
+.bc{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.p{padding:0 13px;} .pb{padding-bottom:12px;}
+.card{background:var(--s2);border:1px solid var(--br);border-radius:var(--r);padding:10px 11px;margin-bottom:7px;}
+.ct{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.cs{font-size:11px;color:var(--mu);line-height:1.5;}
+.sl2{font-family:'DM Mono',monospace;font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;}
+.bdg{display:inline-block;font-size:9px;padding:2px 6px;border-radius:4px;margin-right:3px;margin-bottom:3px;font-family:'DM Mono',monospace;}
+.bg{background:var(--gd);color:var(--gold);border:1px solid var(--gb);}
+.bb{background:var(--bd);color:var(--blue);border:1px solid rgba(91,155,213,.2);}
+.bt{background:var(--td);color:var(--teal);border:1px solid rgba(77,184,150,.2);}
+.bx{background:rgba(255,255,255,.03);color:var(--mu);border:1px solid var(--br);}
+.li{display:flex;align-items:center;gap:9px;padding:9px 11px;background:var(--s2);border:1px solid var(--br);border-radius:var(--rs);margin-bottom:5px;cursor:pointer;transition:all .12s;}
+.li:active{background:var(--s3);}
+.li.hi{border-color:var(--gb);background:var(--gd);}
+.nc{width:22px;height:22px;border-radius:50%;background:rgba(201,168,76,.1);border:1px solid var(--gb);display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:9px;color:var(--gold);flex-shrink:0;}
+.nc.dn{background:rgba(77,184,150,.1);border-color:rgba(77,184,150,.22);color:var(--teal);}
+.arr{font-size:13px;color:var(--hi);margin-left:auto;}
+.chip{display:inline-block;font-size:9px;padding:1px 5px;border-radius:8px;border:1px solid var(--br);color:var(--mu);margin-right:3px;margin-bottom:2px;}
+.chip.g{border-color:var(--gb);color:var(--gold);background:var(--gd);}
+.divider{height:1px;background:var(--br);margin:7px 0;}
+.bnav{display:flex;gap:5px;padding:9px 13px 13px;background:var(--sf);border-top:1px solid var(--br);flex-shrink:0;}
+.btn{flex:1;padding:9px 4px;border-radius:var(--rs);border:1px solid var(--br);background:transparent;color:var(--mu);font-family:'Inter',sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all .12s;text-align:center;}
+.btn:active{transform:scale(.97);}
+.btn.pp{background:var(--gd);border-color:var(--gb);color:var(--gold);}
+.btn.ss{background:var(--td);border-color:rgba(77,184,150,.26);color:var(--teal);}
+.btn.dd{opacity:.2;pointer-events:none;}
+.spacer{flex:1;}
+.media-row{display:flex;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid var(--br);}
+.media-row:last-child{border-bottom:none;}
+.mdot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.pbar{height:3px;border-radius:2px;background:var(--br);margin-bottom:7px;}
+.pbar-f{height:100%;border-radius:2px;background:var(--gold);transition:width .25s;}
+.prow{display:flex;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid var(--br);}
+.prow:last-child{border-bottom:none;}
+.prn{font-family:'DM Mono',monospace;font-size:9px;color:var(--hi);width:14px;text-align:center;flex-shrink:0;}
+.prname{font-size:11px;color:var(--text);flex:1;}
+.pbtns{display:flex;gap:3px;}
+.pb2{width:22px;height:22px;border-radius:4px;border:1px solid var(--br);background:transparent;font-size:9px;color:var(--mu);cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;transition:all .1s;}
+.pb2.h{border-color:var(--gb);background:var(--gd);color:var(--gold);}
+.pb2.s{border-color:rgba(91,155,213,.26);background:var(--bd);color:var(--blue);}
+.prompt-opt{padding:7px 9px;border:1px solid var(--br);border-radius:var(--rs);font-size:11px;color:var(--mu);margin-bottom:4px;cursor:pointer;transition:all .13s;}
+.prompt-opt.sel{border-color:var(--gb);background:var(--gd);color:var(--gold);}
+textarea{width:100%;background:var(--s3);border:1px solid var(--br);border-radius:var(--rs);color:var(--text);font-family:'Inter',sans-serif;font-size:11px;padding:8px 9px;resize:none;outline:none;}
+textarea:focus{border-color:var(--gb);}
+.kendala-btn{display:inline-block;padding:4px 8px;border:1px solid var(--br);border-radius:8px;font-size:10px;color:var(--mu);margin-right:4px;margin-bottom:4px;cursor:pointer;transition:all .13s;font-family:inherit;background:transparent;}
+.kendala-btn.active{border-color:var(--gb);background:var(--gd);color:var(--gold);}
+.rk-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid var(--br);}
+.rk-row:last-child{border-bottom:none;}
+.rk-lbl{font-size:10px;color:var(--mu);}
+.rk-val{font-size:11px;color:var(--text);font-weight:500;}
+.rk-val.ac{color:var(--gold);}
+.rk-val.wa{color:var(--coral);}
+.vocab-chip{display:inline-block;font-size:10px;padding:3px 7px;border:1px solid var(--gb);border-radius:8px;color:var(--gold);margin-right:3px;margin-bottom:4px;cursor:pointer;background:var(--gd);font-family:'DM Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="sbar">
+    <span id="sid">Pilih TP</span>
+    <span>FLAF · v6</span>
+    <span id="clk">09:14</span>
+  </div>
+
+  <!-- PILIH TP -->
+  <div class="screen active" id="s-tp">
+    <div class="topbar"><span style="font-size:11px;color:var(--text)">Kelas 1 Abdullah</span></div>
+    <div class="p pb" style="padding-top:4px;">
+      <div class="sl2" style="margin-bottom:8px">Pilih tujuan pembelajaran</div>
+      <div class="li" onclick="go('s-prev')"><div class="nc dn">✓</div><div style="flex:1"><div style="font-size:12px;font-weight:500">Greetings &amp; Farewells</div><div style="font-size:10px;color:var(--mu);margin-top:1px">5 hari lalu · 18/20 hadir</div></div><div class="arr">›</div></div>
+      <div class="li hi" onclick="go('s-prev')"><div class="nc dn">✓</div><div style="flex:1"><div style="font-size:12px;font-weight:500;color:var(--gold)">Introducing Myself</div><div style="font-size:10px;color:var(--gold);margin-top:1px">Lanjut dari sini →</div></div><div class="arr" style="color:var(--gold)">›</div></div>
+      <div class="li" onclick="go('s-prev')"><div class="nc">3</div><div style="flex:1"><div style="font-size:12px;font-weight:500">Classroom Instructions</div><div style="margin-top:3px"><span class="chip g">Speaking</span><span class="chip g">Pair work</span><span class="chip">Energi tinggi</span></div></div><div class="arr">›</div></div>
+      <div class="li" onclick="go('s-prev')"><div class="nc">4</div><div style="flex:1"><div style="font-size:12px;font-weight:500">Numbers 1–20</div></div><div class="arr">›</div></div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="screen" id="s-prev">
+    <div class="topbar"><span class="back" onclick="go('s-tp')">← TP</span><span class="bc">TP 03 · Preview</span></div>
+    <div class="p pb">
+      <div class="card" style="text-align:center;padding:12px 11px 10px">
+        <div style="font-family:'DM Mono',monospace;font-size:8px;color:var(--gold);letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px">Classroom Instructions</div>
+        <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;line-height:1;margin-bottom:2px">TP 03</div>
+        <div style="font-size:11px;color:var(--mu)">Kelas 1 · Listening &amp; Speaking</div>
+      </div>
+      <div class="card">
+        <div style="margin-bottom:5px"><span class="bdg bg">Energi tinggi</span><span class="bdg bb">Pair work</span><span class="bdg bt">35 mnt inti</span></div>
+        <div class="cs">Siswa merespons instruksi kelas melalui permainan gerak dan pair work aktif.</div>
+        <div class="divider"></div>
+        <div style="font-size:10px;color:var(--mu);line-height:1.6"><strong style="color:var(--text)">Target minimal:</strong> Siswa merespons 4 instruksi dasar tanpa bantuan kartu.</div>
+      </div>
+      <div class="card">
+        <div class="ct">Siapkan sebelum kelas</div>
+        <div class="media-row"><div class="mdot" style="background:var(--gold)"></div><div style="flex:1;font-size:11px">Kartu instruksi (8 kartu)</div><span class="bdg bx">Belum cetak</span></div>
+        <div class="media-row"><div class="mdot" style="background:var(--teal)"></div><div style="flex:1;font-size:11px">Papan tulis + spidol</div><span class="bdg bt">Siap</span></div>
+        <div class="media-row"><div class="mdot" style="background:var(--mu)"></div><div style="flex:1;font-size:11px">Audio instruksi</div><span style="font-size:10px;color:var(--blue);cursor:pointer">▶ Preview</span></div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="bnav"><button class="btn" onclick="go('s-tp')">← Kembali</button><button class="btn pp" onclick="go('s-pres')">Presensi →</button></div>
+  </div>
+
+  <!-- PRESENSI -->
+  <div class="screen" id="s-pres">
+    <div class="topbar"><span class="back" onclick="go('s-prev')">← Preview</span><span class="bc">Presensi · TP 03</span></div>
+    <div class="p pb">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+          <div class="ct" style="margin:0">Kehadiran</div>
+          <strong id="hadir-count" style="font-family:'DM Mono',monospace;font-size:10px;color:var(--gold)">4 / 5</strong>
+        </div>
+        <div class="pbar"><div class="pbar-f" id="hadir-bar" style="width:80%"></div></div>
+        <div class="prow"><div class="prn">1</div><div class="prname">Ahmad Faruq</div><div class="pbtns" data-id="0"><button class="pb2 h" onclick="setP(this,'H')">H</button><button class="pb2" onclick="setP(this,'S')">S</button><button class="pb2" onclick="setP(this,'I')">I</button><button class="pb2" onclick="setP(this,'A')">A</button></div></div>
+        <div class="prow"><div class="prn">2</div><div class="prname">Bunga Lestari</div><div class="pbtns" data-id="1"><button class="pb2 h" onclick="setP(this,'H')">H</button><button class="pb2" onclick="setP(this,'S')">S</button><button class="pb2" onclick="setP(this,'I')">I</button><button class="pb2" onclick="setP(this,'A')">A</button></div></div>
+        <div class="prow"><div class="prn">3</div><div class="prname">Citra Dewi</div><div class="pbtns" data-id="2"><button class="pb2" onclick="setP(this,'H')">H</button><button class="pb2" onclick="setP(this,'S')">S</button><button class="pb2" onclick="setP(this,'I')">I</button><button class="pb2 h" onclick="setP(this,'A')">A</button></div></div>
+        <div class="prow"><div class="prn">4</div><div class="prname">Deni Prasetya</div><div class="pbtns" data-id="3"><button class="pb2 h" onclick="setP(this,'H')">H</button><button class="pb2" onclick="setP(this,'S')">S</button><button class="pb2" onclick="setP(this,'I')">I</button><button class="pb2" onclick="setP(this,'A')">A</button></div></div>
+        <div class="prow"><div class="prn">5</div><div class="prname">Eka Rahmawati</div><div class="pbtns" data-id="4"><button class="pb2 h" onclick="setP(this,'H')">H</button><button class="pb2" onclick="setP(this,'S')">S</button><button class="pb2" onclick="setP(this,'I')">I</button><button class="pb2" onclick="setP(this,'A')">A</button></div></div>
+      </div>
+    </div>
+    <div class="bnav"><button class="btn" onclick="go('s-prev')">← Preview</button><button class="btn pp" onclick="startRuntime()">Mulai Mengajar →</button></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CLASSROOM RUNTIME
+  ════════════════════════════════════════════ -->
+  <div class="runtime" id="runtime">
+
+    <!-- PERIPHERAL BAND -->
+    <div class="periph">
+      <span class="p-fase" id="peri-fase">Pembuka · 10 mnt</span>
+      <div class="p-sep"></div>
+      <div class="p-aw" id="peri-aw">Ketuk nama untuk catat speaking turn</div>
+      <span class="p-timer" id="peri-timer">00:00</span>
+    </div>
+
+    <!-- MICRO-CONTEXT AREA -->
+    <div class="micro" id="micro">
+      <div class="micro-inner">
+        <div class="micro-name" id="micro-name">Ahmad</div>
+        <button class="micro-primary" onclick="setMicro('sudah')">✓ Sudah bicara</button>
+        <div class="micro-secondary">
+          <button class="micro-sec-btn" onclick="setMicro('diam')">diam</button>
+          <button class="micro-sec-btn" onclick="setMicro('pair')">pair</button>
+          <button class="micro-sec-btn" onclick="setMicro('bantu')">bantu</button>
+        </div>
+        <button class="micro-close" onclick="closeMicro()">×</button>
+      </div>
+    </div>
+
+    <!-- SIGNAL STRIP -->
+    <div class="sig-strip">
+      <button class="sp" id="sp-ribut" onclick="openSituasi('ribut')">Ribut</button>
+      <button class="sp" id="sp-energi" onclick="openSituasi('energi')">Energi ↓</button>
+      <button class="sp" id="sp-pair" onclick="openSituasi('pair')">Pair macet</button>
+      <button class="sp" id="sp-waktu" onclick="openSituasi('waktu')">Waktu mepet</button>
+      <button class="sp ok" id="sp-lancar" onclick="openSituasi('lancar')">Lancar ✓</button>
+    </div>
+
+    <!-- FOCUS ZONE — two attention states -->
+    <div class="focus-zone">
+
+      <!-- STATE A: active cue -->
+      <div class="focus-cue" id="focus-cue" onclick="undim()">
+        <div class="fc-type" id="fc-type" style="display:none">
+          <div class="ft-ic" id="fc-ic"></div>
+          <span class="ft-lbl" id="fc-lbl"></span>
+          <span class="ft-pm bg" id="fc-pm" style="display:none"></span>
+        </div>
+        <div class="focus-teks" id="fc-teks"></div>
+      </div>
+
+      <!-- STATE B: classroom awareness — emerges when cue dims -->
+      <div class="focus-awareness" id="focus-aw">
+        <div class="aw-label">belum speaking turn</div>
+        <div class="aw-names" id="aw-names">
+          <!-- populated dynamically -->
+        </div>
+        <div class="aw-sub" id="aw-sub"></div>
+        <div class="aw-return" onclick="undim()">ketuk untuk kembali →</div>
+      </div>
+
+    </div>
+
+    <!-- FOCUS NAV -->
+    <div class="focus-nav">
+      <button class="fn-btn dd" id="fn-back" onclick="moveStep(-1)">←</button>
+      <span class="fn-info" id="fn-info">1/4</span>
+      <button class="fn-btn p" id="fn-fwd" onclick="moveStep(1)">→ Siswa bicara</button>
+    </div>
+
+    <!-- SITUATIONAL MAP — no borders, text intensity only -->
+    <div class="sitmap">
+      <div class="sitmap-scroll" id="sitmap"></div>
+    </div>
+
+    <!-- SPEAKING PERIPHERAL -->
+    <div class="spk-periph" id="spk-periph"></div>
+
+    <!-- ANCHOR -->
+    <div class="anchor">
+      <button class="anc" onclick="openOv('ov-situasi')">Situasi kelas</button>
+      <button class="anc end" onclick="openSelesaiOv()">Selesai sesi</button>
+    </div>
+  </div>
+
+  <!-- REFLEKSI -->
+  <div class="screen" id="s-refleksi">
+    <div class="topbar"><span class="bc" style="font-size:11px;color:var(--text)">Refleksi &amp; Selesai</span></div>
+    <div class="p pb">
+      <div class="card">
+        <div class="ct">Ringkasan sesi</div>
+        <div class="rk-row"><span class="rk-lbl">Rombel</span><span class="rk-val">Kelas 1 Abdullah</span></div>
+        <div class="rk-row"><span class="rk-lbl">TP</span><span class="rk-val">TP 03 · Classroom Instructions</span></div>
+        <div class="rk-row"><span class="rk-lbl">Hadir</span><span class="rk-val" id="sum-hadir">—</span></div>
+        <div class="rk-row"><span class="rk-lbl">Speaking turn</span><span class="rk-val ac" id="sum-spk">—</span></div>
+        <div class="rk-row"><span class="rk-lbl">Belum giliran</span><span class="rk-val wa" id="sum-belum">—</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">Refleksi terbimbing</div>
+        <div class="sl2" style="margin-bottom:5px">Pilih satu</div>
+        <div class="prompt-opt" onclick="this.classList.toggle('sel');document.querySelectorAll('.prompt-opt').forEach((e,i)=>{if(e!==this)e.classList.remove('sel');})">Siswa yang paling berkembang hari ini?</div>
+        <div class="prompt-opt" onclick="this.classList.toggle('sel');document.querySelectorAll('.prompt-opt').forEach((e,i)=>{if(e!==this)e.classList.remove('sel');})">Aktivitas mana yang paling hidup?</div>
+        <div class="prompt-opt" onclick="this.classList.toggle('sel');document.querySelectorAll('.prompt-opt').forEach((e,i)=>{if(e!==this)e.classList.remove('sel');})">Apa yang perlu diulang berikutnya?</div>
+        <textarea rows="2" placeholder="Catatan singkat..." style="margin-top:6px"></textarea>
+      </div>
+      <div class="card">
+        <div class="ct">Kendala sesi</div>
+        <div style="margin-top:4px">
+          <button class="kendala-btn" onclick="this.classList.toggle('active')">Lancar</button>
+          <button class="kendala-btn" onclick="this.classList.toggle('active')">Waktu kurang</button>
+          <button class="kendala-btn" onclick="this.classList.toggle('active')">Kurang kondusif</button>
+          <button class="kendala-btn" onclick="this.classList.toggle('active')">Media tidak ada</button>
+          <button class="kendala-btn" onclick="this.classList.toggle('active')">Lainnya</button>
+        </div>
+      </div>
+    </div>
+    <div class="bnav"><button class="btn ss" onclick="selesai()">✓ Simpan &amp; Selesai</button></div>
+  </div>
+
+  <!-- SELESAI -->
+  <div class="screen" id="s-selesai">
+    <div style="text-align:center;padding:40px 16px 16px">
+      <div style="font-family:'DM Mono',monospace;font-size:36px;color:var(--gold);margin-bottom:10px">✓</div>
+      <div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:3px">Sesi tersimpan</div>
+      <div style="font-size:12px;color:var(--mu)">TP 03 · Classroom Instructions</div>
+    </div>
+    <div class="p pb">
+      <div class="card" style="text-align:center"><div class="cs" id="selesai-sum">—</div></div>
+      <button class="btn pp" style="width:100%;margin-bottom:5px" onclick="go('s-tp')">Ajar TP Lain</button>
+      <button class="btn" style="width:100%" onclick="go('s-tp')">← Daftar TP</button>
+    </div>
+    <div class="spacer"></div>
+  </div>
+
+  <!-- SITUASI OVERLAY -->
+  <div class="ov-back" id="ov-situasi" onclick="closeOv('ov-situasi')">
+    <div class="ov-sheet" onclick="event.stopPropagation()">
+      <div class="ov-handle"></div>
+      <div id="ov-sit-pick">
+        <div class="ov-lbl" style="margin-bottom:7px">Situasi kelas sekarang</div>
+        <div class="ov-sit-list">
+          <div class="ov-sit-opt" onclick="pickSituasi('ribut')"><div class="ov-sit-ic" style="background:var(--cd);color:var(--coral)">!</div>Kelas ribut, susah fokus</div>
+          <div class="ov-sit-opt" onclick="pickSituasi('energi')"><div class="ov-sit-ic" style="background:var(--gd);color:var(--gold)">↓</div>Energi turun, siswa lesu</div>
+          <div class="ov-sit-opt" onclick="pickSituasi('pair')"><div class="ov-sit-ic" style="background:var(--cd);color:var(--coral)">⇄</div>Pair tidak berjalan</div>
+          <div class="ov-sit-opt" onclick="pickSituasi('waktu')"><div class="ov-sit-ic" style="background:var(--cd);color:var(--coral)">⌛</div>Waktu hampir habis</div>
+          <div class="ov-sit-opt" onclick="pickSituasi('lancar')"><div class="ov-sit-ic" style="background:var(--td);color:var(--teal)">✓</div>Sesi lancar, lanjutkan</div>
+        </div>
+      </div>
+      <div id="ov-sit-resp" style="display:none">
+        <div class="ov-lbl" id="ov-resp-lbl" style="margin-bottom:6px">—</div>
+        <div class="ov-resp" id="ov-resp-txt">—</div>
+        <div class="ov-acts">
+          <button class="ov-act" onclick="closeSituasiResp()">← Balik ke kelas</button>
+          <button class="ov-act p" id="ov-resp-act" onclick="doSituasiAct()">—</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SELESAI OVERLAY -->
+  <div class="ov-back" id="ov-selesai" onclick="closeOv('ov-selesai')">
+    <div class="ov-sheet" onclick="event.stopPropagation()">
+      <div class="ov-handle"></div>
+      <div class="ov-lbl" style="margin-bottom:5px">Akhiri sesi</div>
+      <div class="ov-resp" id="ov-selesai-txt">—</div>
+      <div class="ov-acts" style="margin-top:8px">
+        <button class="ov-act" onclick="closeOv('ov-selesai')">← Kembali</button>
+        <button class="ov-act p" onclick="closeOv('ov-selesai');go('s-refleksi');updateSummary()">Selesai &amp; Refleksi →</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /shell -->
+
+<script>
+/* ══════ DATA ══════ */
+const NAMES = ['Ahmad','Bunga','Citra','Deni','Eka'];
+const ST = {
+  presensi:[1,1,0,1,1],
+  spk:[null,null,null,null,null],
+  faseIdx:0, stepIdx:0,
+  dimTimer:null, dimmed:false,
+  currentStu:null,
+  situasi:null, situasiActKey:null,
+  started:false,
+};
+
+const FASES = [
+  { label:'Pembuka', dur:'10 mnt', steps:[
+    {t:'instruksi', tx:'Sambut siswa di pintu satu per satu', pm:null},
+    {t:'audio',     tx:'"Good morning, everyone! How are you today?"', pm:'Mindful'},
+    {t:'respons',   tx:'"Good morning, teacher! I am fine, thank you!"', pm:null},
+    {t:'instruksi', tx:'Tunjuk kartu waktu — biarkan siswa tebak dulu', pm:'Meaningful'},
+  ]},
+  { label:'Inti', dur:'35 mnt', steps:[
+    {t:'instruksi', tx:'Tempel kartu di papan, tunjuk satu per satu', pm:null},
+    {t:'audio',     tx:'"Stand up! Sit down! Come here! Open your book!"', pm:null},
+    {t:'audio',     tx:'"Now you say it! Point to the card!"', pm:'Joyful'},
+    {t:'respons',   tx:'"Stand up! Sit down! Come here!"', pm:null},
+    {t:'instruksi', tx:'Simon Says — lakukan hanya jika "Simon says"', pm:'Meaningful'},
+    {t:'instruksi', tx:'Pair work: A beri instruksi, B lakukan. Ganti 2 menit.', pm:'Mindful'},
+    {t:'dif',       tx:null, pm:null},
+    {t:'darurat',   tx:'Lewati Simon Says. Pair practice singkat, lalu tutup.', pm:null},
+  ]},
+  { label:'Penutup', dur:'10 mnt', steps:[
+    {t:'audio',     tx:'"Good job today! What did we learn?"', pm:null},
+    {t:'respons',   tx:'[Siswa berdiri dan lakukan instruksi]', pm:null},
+    {t:'instruksi', tx:'Review kilat: tunjuk kartu acak, siswa sebut cepat', pm:null},
+    {t:'audio',     tx:'"Great work, everyone! See you next time!"', pm:'Joyful'},
+  ]},
+];
+
+const NEXT_LABELS={audio:'→ Siswa bicara',respons:'→ Lanjutkan',instruksi:'→ Berikutnya',dif:'→ Diferensiasi',darurat:'→ Darurat'};
+const SIT_DATA={
+  ribut:{lbl:'Kelas ribut',resp:'Berhenti sejenak. "Everyone, freeze." Tunggu sunyi, lanjutkan.',act:'→ Ke Penutup',key:'penutup'},
+  energi:{lbl:'Energi turun',resp:'Minta siswa berdiri, lakukan instruksi bersama 1 menit.',act:'→ Ke Inti',key:'inti'},
+  pair:{lbl:'Pair macet',resp:'Kumpulkan kembali. Demo 1 pasangan di depan, lalu pair lagi.',act:'→ Ke Inti',key:'inti'},
+  waktu:{lbl:'Waktu mepet',resp:'Lewati langkah tersisa. Langsung ke Penutup sekarang.',act:'→ Langsung Penutup',key:'penutup'},
+  lancar:{lbl:'Sesi lancar',resp:'Lanjutkan sesuai rencana.',act:'Tutup',key:'close'},
+};
+
+/* ══════ NAVIGATION ══════ */
+const SLBLS={'s-tp':'Pilih TP','s-prev':'Preview','s-pres':'Presensi','s-refleksi':'Refleksi','s-selesai':'Selesai'};
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.runtime').forEach(r=>r.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('sid').textContent=SLBLS[id]||id;
+  document.getElementById(id).scrollTop=0;
+}
+
+function startRuntime(){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('runtime').classList.add('active');
+  document.getElementById('sid').textContent='TP 03 · Berlangsung';
+  ST.faseIdx=0;ST.stepIdx=0;
+  renderStep();renderSitmap();renderSpk();
+  if(!ST.started){ST.started=true;runTimer();}
+}
+
+/* ══════ STEP RENDER ══════ */
+function renderStep(){
+  const fase=FASES[ST.faseIdx];
+  const step=fase.steps[ST.stepIdx];
+  const total=fase.steps.length;
+
+  document.getElementById('peri-fase').textContent=fase.label+' · '+fase.dur;
+
+  const TM={
+    audio:{ic:'▶',lbl:'Ucapkan ke siswa',cls:'au'},
+    respons:{ic:'💬',lbl:'Respons siswa',cls:'rs'},
+    dif:{ic:'≠',lbl:'Diferensiasi',cls:'df'},
+    darurat:{ic:'!',lbl:'Waktu ≤ 10 mnt',cls:'dr'},
+  };
+  const tm=TM[step.t];
+  const typeEl=document.getElementById('fc-type');
+  const icEl=document.getElementById('fc-ic');
+  const lblEl=document.getElementById('fc-lbl');
+  const pmEl=document.getElementById('fc-pm');
+  const teksEl=document.getElementById('fc-teks');
+
+  if(tm){
+    typeEl.style.display='flex';
+    icEl.textContent=tm.ic;icEl.className='ft-ic '+tm.cls;
+    lblEl.textContent=tm.lbl;lblEl.className='ft-lbl '+tm.cls;
+  } else {
+    typeEl.style.display='none';
+  }
+  pmEl.style.display=step.pm?'':'none';
+  if(step.pm) pmEl.textContent=step.pm;
+
+  if(step.t==='dif'){
+    teksEl.className='focus-teks plain';
+    teksEl.innerHTML=`<div class="dif-row"><div class="dif-cell s"><div class="dif-lbl s">Sudah bisa</div>Beri instruksi ke teman tanpa kartu</div><div class="dif-cell b"><div class="dif-lbl b">Belum bisa</div>Fokus 3 instruksi saja + kartu</div></div>`;
+  } else {
+    teksEl.className=(step.t==='instruksi'||step.t==='darurat')?'focus-teks plain':'focus-teks';
+    teksEl.textContent=step.tx||'';
+  }
+
+  // dim management
+  undim(false); // reset without triggering redim on respons
+  clearTimeout(ST.dimTimer);
+  if(step.t==='audio'||step.t==='instruksi'){
+    ST.dimTimer=setTimeout(()=>dimFocus(),8000);
+  }
+
+  // nav
+  const isFirst=ST.stepIdx===0&&ST.faseIdx===0;
+  const isLast=ST.stepIdx===total-1&&ST.faseIdx===FASES.length-1;
+  document.getElementById('fn-back').classList.toggle('dd',isFirst);
+  document.getElementById('fn-info').textContent=(ST.stepIdx+1)+'/'+total;
+  const fwdBtn=document.getElementById('fn-fwd');
+  if(isLast){fwdBtn.textContent='Selesai sesi';fwdBtn.onclick=openSelesaiOv;}
+  else {
+    const nextStep=ST.stepIdx<total-1?fase.steps[ST.stepIdx+1]:(FASES[ST.faseIdx+1]?.steps[0]);
+    const nextFase=ST.stepIdx===total-1?FASES[ST.faseIdx+1]:null;
+    fwdBtn.textContent=nextFase?('→ '+nextFase.label):(NEXT_LABELS[nextStep?.t]||'→');
+    fwdBtn.onclick=()=>moveStep(1);
+  }
+
+  renderSitmap();
+}
+
+/* ══════ TWO ATTENTION STATES ══════ */
+function dimFocus(){
+  ST.dimmed=true;
+  document.getElementById('focus-cue').classList.add('dimmed');
+  // awareness state — calm, low contrast
+  renderAwNames();
+  document.getElementById('focus-aw').classList.add('visible');
+}
+
+function undim(resetTimer=true){
+  ST.dimmed=false;
+  document.getElementById('focus-cue').classList.remove('dimmed');
+  document.getElementById('focus-aw').classList.remove('visible');
+  if(resetTimer){
+    clearTimeout(ST.dimTimer);
+    const fase=FASES[ST.faseIdx];const step=fase.steps[ST.stepIdx];
+    if(step.t==='audio'||step.t==='instruksi'){
+      ST.dimTimer=setTimeout(()=>dimFocus(),8000);
+    }
+  }
+}
+
+function renderAwNames(){
+  const hadir=NAMES.filter((_,i)=>ST.presensi[i]===1);
+  const belum=hadir.filter(n=>ST.spk[NAMES.indexOf(n)]!=='sudah');
+  const namesEl=document.getElementById('aw-names');
+  const subEl=document.getElementById('aw-sub');
+
+  if(belum.length===0){
+    namesEl.innerHTML='<span style="color:rgba(77,184,150,.4);font-size:16px">Semua sudah speaking turn</span>';
+    subEl.textContent='';
+  } else {
+    // names — calm, low contrast, tappable
+    namesEl.innerHTML=belum.map(n=>{
+      const idx=NAMES.indexOf(n);
+      return `<span class="name-chip" onclick="openMicro(${idx})">${n.split(' ')[0]}</span>`;
+    }).join('');
+    subEl.textContent=belum.length===1?'1 siswa belum speaking turn':`${belum.length} siswa belum speaking turn`;
+  }
+}
+
+/* ══════ SITUATIONAL MAP ══════ */
+function renderSitmap(){
+  const fase=FASES[ST.faseIdx];
+  const TIC={audio:'▶',respons:'💬',dif:'≠',darurat:'!',instruksi:''};
+  const TLBL={audio:'Ucapkan',respons:'Respons siswa',instruksi:'Instruksi',dif:'Diferensiasi',darurat:'Darurat'};
+  const scroll=document.getElementById('sitmap');
+  scroll.innerHTML=fase.steps.map((s,i)=>{
+    const cls=i<ST.stepIdx?'been':i===ST.stepIdx?'now':i===ST.stepIdx+1?'next':'';
+    const ic=TIC[s.t]||'';
+    const lbl=s.t==='instruksi'&&s.tx?(s.tx.length>16?s.tx.substring(0,16)+'…':s.tx):TLBL[s.t]||s.t;
+    return `<div class="sm-item" onclick="jumpStep(${i})"><span class="sm-ic">${ic}</span><span class="sm-txt ${cls}">${lbl}</span></div>`;
+  }).join('');
+}
+
+function jumpStep(idx){ST.stepIdx=idx;renderStep();}
+
+function moveStep(dir){
+  const fase=FASES[ST.faseIdx];const total=fase.steps.length;
+  const next=ST.stepIdx+dir;
+  if(next<0){if(ST.faseIdx>0){ST.faseIdx--;ST.stepIdx=FASES[ST.faseIdx].steps.length-1;renderStep();}}
+  else if(next>=total){if(ST.faseIdx<FASES.length-1){ST.faseIdx++;ST.stepIdx=0;renderStep();}else openSelesaiOv();}
+  else{ST.stepIdx=next;renderStep();}
+}
+
+/* ══════ SPEAKING PERIPHERAL ══════ */
+function renderSpk(){
+  const hadir=NAMES.filter((_,i)=>ST.presensi[i]===1);
+  const periph=document.getElementById('spk-periph');
+  periph.innerHTML=hadir.map(name=>{
+    const idx=NAMES.indexOf(name);
+    const obs=ST.spk[idx];
+    let cls='spk-chip';
+    if(obs==='sudah')cls='spk-chip sudah';
+    else if(obs==='diam'||obs==='pair'||obs==='bantu')cls='spk-chip perlu';
+    return `<span class="${cls}" onclick="openMicro(${idx})">${name.split(' ')[0]}</span>`;
+  }).join('');
+
+  // peripheral band
+  const belum=hadir.filter(n=>ST.spk[NAMES.indexOf(n)]!=='sudah');
+  const awEl=document.getElementById('peri-aw');
+  if(belum.length===0) awEl.innerHTML='<span class="ok">Semua sudah speaking turn ✓</span>';
+  else if(belum.length===hadir.length) awEl.textContent='Ketuk nama untuk catat speaking turn';
+  else awEl.innerHTML='Belum: <span class="al">'+belum.map(n=>n.split(' ')[0]).join(', ')+'</span>';
+
+  // refresh awareness if currently visible
+  if(ST.dimmed) renderAwNames();
+}
+
+/* ══════ MICRO-CONTEXT ══════ */
+function openMicro(idx){
+  ST.currentStu=idx;
+  document.getElementById('micro-name').textContent=NAMES[idx].split(' ')[0];
+  document.getElementById('micro').classList.add('open');
+}
+function closeMicro(){
+  document.getElementById('micro').classList.remove('open');
+  ST.currentStu=null;
+}
+function setMicro(val){
+  if(ST.currentStu===null)return;
+  ST.spk[ST.currentStu]=val;
+  closeMicro();
+  renderSpk();
+}
+
+/* ══════ SITUASI ══════ */
+function openSituasi(key){pickSituasi(key);openOv('ov-situasi');}
+function pickSituasi(key){
+  const d=SIT_DATA[key];
+  ST.situasi=key;ST.situasiActKey=d.key;
+  document.getElementById('ov-sit-pick').style.display='none';
+  document.getElementById('ov-sit-resp').style.display='block';
+  document.getElementById('ov-resp-lbl').textContent=d.lbl;
+  document.getElementById('ov-resp-txt').textContent=d.resp;
+  document.getElementById('ov-resp-act').textContent=d.act;
+  // signal strip
+  document.querySelectorAll('.sp').forEach(b=>b.classList.remove('on','ok'));
+  const el=document.getElementById('sp-'+key);
+  if(el)el.classList.add(key==='lancar'?'ok':'on');
+}
+function closeSituasiResp(){
+  document.getElementById('ov-sit-pick').style.display='block';
+  document.getElementById('ov-sit-resp').style.display='none';
+  closeOv('ov-situasi');
+}
+function doSituasiAct(){
+  const k=ST.situasiActKey;closeSituasiResp();
+  if(k==='penutup'){ST.faseIdx=2;ST.stepIdx=0;renderStep();}
+  else if(k==='inti'){ST.faseIdx=1;ST.stepIdx=0;renderStep();}
+}
+
+/* ══════ SELESAI ══════ */
+function openSelesaiOv(){
+  const h=NAMES.filter((_,i)=>ST.presensi[i]===1).length;
+  const s=ST.spk.filter(v=>v==='sudah').length;
+  const belum=NAMES.filter((_,i)=>ST.presensi[i]===1&&ST.spk[i]!=='sudah').map(n=>n.split(' ')[0]);
+  let txt=`${h} hadir · ${s} sudah speaking turn`;
+  if(belum.length)txt+=` · Belum: ${belum.join(', ')}`;
+  document.getElementById('ov-selesai-txt').textContent=txt;
+  openOv('ov-selesai');
+}
+
+function openOv(id){document.getElementById(id).classList.add('open');}
+function closeOv(id){document.getElementById(id).classList.remove('open');}
+
+/* ══════ PRESENSI ══════ */
+function setP(btn,status){
+  const grp=btn.closest('.pbtns');
+  const idx=parseInt(grp.dataset.id);
+  grp.querySelectorAll('.pb2').forEach(b=>{b.className='pb2';if(b.textContent===status)b.classList.add(status.toLowerCase());});
+  ST.presensi[idx]=status==='H'?1:0;
+  const h=ST.presensi.filter(v=>v===1).length;
+  document.getElementById('hadir-count').textContent=h+' / 5';
+  document.getElementById('hadir-bar').style.width=(h/5*100)+'%';
+}
+
+/* ══════ SUMMARY ══════ */
+function updateSummary(){
+  const h=ST.presensi.filter(v=>v===1).length;
+  const s=ST.spk.filter(v=>v==='sudah').length;
+  const belum=NAMES.filter((_,i)=>ST.presensi[i]===1&&ST.spk[i]!=='sudah').map(n=>n.split(' ')[0]);
+  document.getElementById('sum-hadir').textContent=h+' / 5 siswa';
+  document.getElementById('sum-spk').textContent=s+' / '+h+' siswa';
+  document.getElementById('sum-belum').textContent=belum.length?belum.join(', '):'Semua mendapat giliran ✓';
+}
+function selesai(){
+  const h=ST.presensi.filter(v=>v===1).length;
+  const s=ST.spk.filter(v=>v==='sudah').length;
+  document.getElementById('selesai-sum').textContent=`${h}/5 hadir · ${s}/${h} speaking turn · Refleksi tersimpan`;
+  go('s-selesai');
+}
+
+/* ══════ TIMER & CLOCK ══════ */
+let sec=0;
+function runTimer(){setInterval(()=>{sec++;document.getElementById('peri-timer').textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0');},1000);}
+function ck(){const d=new Date();const el=document.getElementById('clk');if(el)el.textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');}
+ck();setInterval(ck,15000);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+secrets.js
+# === Tambahan keamanan ===
+.env
+.env.local
+*.local
+
+# === OS / Editor ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Dependencies & build ===
+node_modules/
+dist/
+build/
+.cache/
+
+# === Logs ===
+*.log
+npm-debug.log*
+
+# Arsip diskusi/catatan pribadi
+*.mhtml

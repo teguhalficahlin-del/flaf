@@ -1,0 +1,1921 @@
+/* =============================================================
+   FLAF — STYLES: DASHBOARD (LAYAR MENGAJAR)
+   File: dashboard.css
+   Semua warna menggunakan --tema-* variables dari style.css
+   ============================================================= */
+
+/* ── Wrapper utama konten scroll ── */
+.ds-wrap {
+  padding: var(--sp-lg) 0 120px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  min-height: 100%;
+}
+
+/* ── Card container dasar ── */
+.ds-card {
+  background: var(--tema-bg-light);
+  border: 1px solid var(--tema-border-dark);
+  border-radius: 14px;
+}
+.ds-card--gold    { background: var(--tema-primary-bg);   border-color: var(--tema-primary-border); }
+.ds-card--sage    { background: var(--tema-primary-bg);   border-color: var(--tema-primary-border); }
+.ds-card--inset   { margin: 0 var(--sp-lg); }
+.ds-card--overflow { overflow: hidden; }
+
+/* ── Section header dalam card ── */
+.ds-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(212,174,58,.7);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.ds-section-header {
+  padding: var(--sp-md) var(--sp-lg);
+  border-bottom: 1px solid var(--tema-border-dark);
+}
+.ds-section-header--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Hero card (session info di landing) ── */
+.ds-hero {
+  background: var(--tema-bg-light);
+  border: 1px solid var(--tema-border-dark);
+  border-radius: 12px;
+  padding: var(--sp-lg);
+  position: relative;
+  overflow: hidden;
+}
+.ds-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(212,174,58,.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+.ds-hero-inner    { position: relative; }
+.ds-hero-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(212,174,58,.85);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.ds-hero-name   { font-size: 16px; font-weight: 800; color: #fff; line-height: 1.2; }
+.ds-hero-school { font-size: 13px; color: rgba(255,255,255,.80); margin-top: 3px; }
+
+/* ── Empty state (belum ada rombel) ── */
+.ds-empty {
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+.ds-empty-icon  { font-size: 32px; margin-bottom: 10px; }
+.ds-empty-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.ds-empty-desc  {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.ds-empty-btn {
+  background: var(--tema-primary);
+  color: var(--tema-bg-dark);
+  border: none;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: .04em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── List item rombel / TP ── */
+.ds-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--sp-lg);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-list-item:last-child { border-bottom: none; }
+.ds-list-item:active     { background: rgba(255,255,255,.04); }
+.ds-list-item-name { font-size: 15px; font-weight: 700; color: #fff; }
+.ds-list-item-sub  { font-size: 13px; color: rgba(255,255,255,.55); margin-top: 2px; }
+.ds-list-arrow     { color: rgba(255,255,255,.5); font-size: 18px; flex-shrink: 0; }
+
+/* ── Breadcrumb / nav ── */
+.ds-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  flex-wrap: wrap;
+}
+.ds-breadcrumb-label { font-size: 13px; color: rgba(212,174,58,.75); }
+.ds-btn-back {
+  background: transparent;
+  border: 1px solid var(--tema-primary-border);
+  color: rgba(212,174,58,.8);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-btn-back:active { background: var(--tema-primary-bg); }
+
+/* ── Header sesi berlangsung ── */
+.ds-sesi-header {
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  border-radius: 14px;
+  padding: var(--sp-lg);
+}
+.ds-sesi-tag     { font-size: 14px; font-weight: 700; color: var(--tema-primary); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 6px; }
+.ds-sesi-tp-num  { font-size: 16px; font-weight: 700; color: rgba(212,174,58,.8); }
+.ds-sesi-tp-name { font-size: 15px; font-weight: 800; color: #fff; margin-top: 2px; }
+.ds-sesi-rombel  { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 4px; }
+.ds-sesi-date    { font-size: 13px; color: rgba(212,174,58,.6); margin-top: 4px; }
+
+/* ── Presensi panel ── */
+.ds-presensi-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-md);
+  padding: 10px var(--sp-lg);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  transition: background .15s;
+}
+.ds-siswa-nomor {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--tema-primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--tema-primary);
+  flex-shrink: 0;
+}
+.ds-siswa-nomor--sage  { background: var(--tema-primary-bg);  color: var(--tema-primary); }
+.ds-siswa-nomor--slate { background: var(--tema-primary-bg);  color: rgba(212,174,58,.8); }
+.ds-siswa-nama {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,.8);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ds-status-btns { display: flex; gap: 4px; }
+.ds-status-btn {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 36px;
+  min-width: 32px;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Jejak card ── */
+.ds-jejak-card {
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  border-radius: 14px;
+  padding: 14px;
+}
+.ds-jejak-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: var(--sp-md);
+}
+.ds-jejak-streak-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+.ds-streak-emoji { font-size: 22px; line-height: 1; }
+.ds-streak-num   { font-size: 18px; font-weight: 800; color: var(--tema-primary); }
+.ds-streak-unit  { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.6); margin-left: 4px; }
+.ds-streak-label { font-size: 13px; font-weight: 700; color: #fff; margin-top: 2px; }
+.ds-jejak-level-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.ds-level-emoji { font-size: 18px; line-height: 1; }
+.ds-level-nama {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.7);
+  margin-top: 0;
+  flex: 1;
+  min-width: 0;
+}
+.ds-level-nama--current { color: #fff; }
+.ds-level-gaji          { font-size: 13px; font-weight: 800; color: var(--tema-primary); }
+.ds-jejak-progress-wrap {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--sp-sm);
+}
+.ds-jejak-progress-inner { flex: 1; min-width: 0; }
+.ds-progress-next-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.55);
+  line-height: 1.4;
+}
+.ds-progress-track {
+  margin-top: 6px;
+  height: 7px;
+  background: rgba(255,255,255,.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.ds-progress-fill {
+  height: 7px;
+  background: var(--tema-primary);
+  border-radius: 3px;
+  transition: width .4s ease;
+}
+.ds-progress-bar-label { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 3px; }
+
+/* ── Stat grid (3 kolom) ── */
+.ds-stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-sm);
+}
+.ds-stat-box {
+  background: rgba(255,255,255,.04);
+  border-radius: 8px;
+  padding: var(--sp-sm);
+  text-align: center;
+}
+.ds-stat-num        { font-size: 16px; font-weight: 800; color: #fff; }
+.ds-stat-num--gold  { color: var(--tema-primary); }
+.ds-stat-num--sage  { color: var(--tema-primary); }
+.ds-stat-num--slate { color: rgba(255,255,255,.6); }
+.ds-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+/* ── Materi & skenario panel ── */
+.ds-tab-row { display: flex; gap: 6px; }
+.ds-tab-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-tab-btn--gold-active {
+  border-color: var(--tema-primary-border);
+  background: var(--tema-primary-bg);
+  color: var(--tema-primary);
+}
+.ds-tab-btn--sage-active {
+  border-color: var(--tema-primary-border);
+  background: var(--tema-primary-bg);
+  color: var(--tema-primary);
+}
+.ds-materi-konten { padding-top: var(--sp-md); }
+
+/* Indikator item */
+.ds-indikator-item { display: flex; gap: var(--sp-sm); margin-bottom: var(--sp-sm); align-items: flex-start; }
+.ds-indikator-num {
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--tema-primary-bg);
+  color: var(--tema-primary);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.ds-indikator-teks { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.5; }
+.ds-vocab-wrap     { display: flex; flex-wrap: wrap; gap: 5px; }
+.ds-vocab-chip {
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  color: rgba(212,174,58,.9);
+  border-radius: 5px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.ds-materi-meta {
+  font-size: 12px;
+  color: rgba(255,255,255,.75);
+  margin-bottom: 10px;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.ds-materi-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.6;
+  margin-bottom: var(--sp-md);
+}
+.ds-sub-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(212,174,58,.7);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-sm);
+}
+
+/* ── Asesmen Formatif: progress + nav halaman ── */
+.ds-penilaian-progress {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: rgba(255,255,255,.03);
+  border-radius: 6px;
+}
+.ds-asesmen-list { margin-bottom: var(--sp-md); }
+.ds-asesmen-nav  { display: flex; gap: var(--sp-sm); flex-wrap: wrap; }
+.ds-page-btn {
+  flex: 1 1 100px;
+  min-height: 44px;
+  padding: 10px var(--sp-md);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.85);
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-page-btn:active   { background: rgba(255,255,255,.08); }
+.ds-page-btn:disabled { opacity: .35; cursor: not-allowed; }
+.ds-page-btn--primary {
+  background: var(--tema-primary-bg);
+  border-color: var(--tema-primary-border);
+  color: var(--tema-primary);
+  flex: 2 1 180px;
+}
+.ds-page-btn--primary:active { background: rgba(212,174,58,.2); }
+
+/* ── Siswa collapse item ── */
+.ds-siswa-collapse-item {
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,.02);
+  overflow: hidden;
+}
+.ds-siswa-collapse-item:last-child { margin-bottom: 0; }
+.ds-siswa-collapse-item--open      { border-color: var(--tema-primary-border); }
+.ds-siswa-collapse-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  padding: 10px;
+  min-height: 48px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-siswa-collapse-head:active { background: rgba(255,255,255,.03); }
+.ds-siswa-collapse-body {
+  padding: 10px 10px var(--sp-md);
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.ds-siswa-status-dots {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--tema-primary);
+  flex-shrink: 0;
+  font-family: monospace;
+}
+
+/* ── Penilaian siswa input ── */
+.ds-penilaian-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.ds-penilaian-title    { font-size: 14px; font-weight: 700; color: var(--tema-primary); }
+.ds-penilaian-save-btn {
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  color: var(--tema-primary);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+}
+.ds-penilaian-note { font-size: 13px; color: rgba(255,255,255,.5); width: 100%; line-height: 1.5; }
+.ds-penilaian-desc { font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 10px; }
+.ds-siswa-row       { border-bottom: 1px solid rgba(255,255,255,.05); padding: 10px 0; }
+.ds-siswa-row:last-child { border-bottom: none; }
+.ds-siswa-top       { display: flex; align-items: center; gap: var(--sp-sm); margin-bottom: var(--sp-sm); }
+.ds-rerata-display  { font-size: 12px; font-weight: 800; color: var(--tema-primary); min-width: 28px; text-align: right; flex-shrink: 0; }
+
+/* ── LSR grid ── */
+.ds-lsr-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.ds-lsr-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(212,174,58,.7);
+  letter-spacing: .05em;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.ds-lsr-input {
+  width: 100%;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px; /* ≥16px mencegah zoom auto iOS */
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 4px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  -webkit-appearance: none;
+  transition: border-color .18s;
+}
+.ds-lsr-input:focus { border-color: var(--tema-primary-border); }
+
+/* ── Textarea catatan ── */
+.ds-textarea {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,.75);
+  font-size: 16px; /* ≥16px mencegah zoom auto iOS */
+  padding: 6px 8px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color .18s;
+}
+.ds-textarea:focus { border-color: var(--tema-primary-dot); }
+
+/* ── Refleksi ── */
+.ds-refleksi-textarea {
+  width: 100%;
+  height: 72px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px; /* ≥16px mencegah zoom auto iOS */
+  padding: 8px 10px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color .18s;
+}
+.ds-refleksi-textarea:focus { border-color: var(--tema-primary-border); }
+
+/* ── Kendala buttons ── */
+.ds-kendala-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.ds-kendala-btn {
+  padding: 8px var(--sp-md);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.ds-kendala-btn--active {
+  background: var(--tema-primary-bg);
+  border-color: var(--tema-primary-border);
+  color: var(--tema-primary);
+}
+
+/* ── Tombol selesai / batalkan (dipertahankan untuk kompatibilitas) ── */
+.ds-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-sm);
+}
+.ds-btn-cancel {
+  padding: 13px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.75);
+  cursor: pointer;
+  font-family: inherit;
+}
+.ds-btn-selesai {
+  padding: 13px;
+  background: var(--tema-primary-bg);
+  border: 1px solid var(--tema-primary-border);
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--tema-primary);
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: .04em;
+}
+
+/* ── Skeleton ── */
+.ds-skeleton-wrap {
+  padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+}
+.ds-skeleton-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 12px;
+  padding: 14px;
+}
+.ds-skeleton-line {
+  height: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  animation: sk-shimmer 1.4s infinite ease-in-out;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.07) 25%,
+    rgba(255,255,255,.13) 50%,
+    rgba(255,255,255,.07) 75%
+  );
+  background-size: 200% 100%;
+}
+.ds-skeleton-line--short { height: 20px; width: 50%; margin-bottom: 0; }
+
+/* ── Collapse chevron (dipertahankan untuk siswa accordion di asesmen) ── */
+.ds-collapse-chevron {
+  font-size: 16px;
+  color: rgba(212,174,58,.7);
+  transition: transform .15s ease;
+  flex-shrink: 0;
+  width: 14px;
+  text-align: center;
+  line-height: 1;
+}
+
+/* ── 320px guard ── */
+@media (max-width: 360px) {
+  .ds-siswa-collapse-head   { padding: var(--sp-sm); gap: 6px; }
+  .ds-siswa-collapse-body   { padding: var(--sp-sm) var(--sp-sm) 10px; }
+  .ds-page-btn              { font-size: 12px; padding: 9px var(--sp-sm); }
+}
+
+/* ── HP besar: stat box lebih lapang ── */
+@media (min-width: 440px) {
+  .ds-stat-box { padding: 10px; }
+  .ds-stat-num { font-size: 18px; }
+}
+
+/* =============================================================
+   STEPPER — Navigasi sesi berlangsung
+   ============================================================= */
+
+.ds-stepper-wrap {
+  padding-bottom: 120px;
+}
+
+/* ── Step indicator (label + dots) ── */
+.ds-step-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px 2px;
+}
+
+.ds-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #D4AE3A;
+}
+
+.ds-step-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.ds-step-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: background .2s, transform .2s;
+}
+
+.ds-step-dot--idle   { background: rgba(255,255,255,.15); }
+.ds-step-dot--done   { background: rgba(212,174,58,.4); }
+.ds-step-dot--active { background: #D4AE3A; transform: scale(1.35); }
+
+/* ── Step body ── */
+.ds-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.ds-step-empty {
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+}
+
+/* ── Step nav (fixed bottom bar) ── */
+.ds-step-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(18,18,24,.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255,255,255,.08);
+  z-index: 50;
+}
+
+.ds-step-btn {
+  padding: 13px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity .15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-step-btn:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.ds-step-btn--prev {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.7);
+}
+
+.ds-step-btn--prev:active { background: rgba(255,255,255,.06); }
+
+.ds-step-btn--next {
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A;
+}
+
+.ds-step-btn--next:active { background: rgba(212,174,58,.25); }
+
+.ds-step-btn--selesai {
+  background: rgba(212,174,58,.2);
+  border: 1px solid #D4AE3A;
+  color: #D4AE3A;
+}
+
+.ds-step-btn--selesai:active { background: rgba(212,174,58,.35); }
+
+/* ── Langkah item ── */
+.ds-langkah-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ds-langkah-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+  background: rgba(255,255,255,.03);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-langkah-item:active { background: rgba(255,255,255,.06); }
+
+.ds-langkah-item--aktif {
+  background: rgba(212,174,58,.08);
+  border-color: rgba(212,174,58,.3);
+}
+
+.ds-langkah-item--done {
+  opacity: .5;
+}
+
+.ds-langkah-item--diferensiasi {
+  background: rgba(100,180,255,.06);
+  border-color: rgba(100,180,255,.2);
+}
+
+.ds-langkah-item--darurat {
+  background: rgba(255,160,80,.06);
+  border-color: rgba(255,160,80,.2);
+}
+
+/* ── Langkah nomor badge ── */
+.ds-langkah-num {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.5);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ds-langkah-num--done {
+  background: rgba(212,174,58,.2);
+  color: #D4AE3A;
+}
+
+.ds-langkah-num--audio {
+  background: rgba(212,174,58,.15);
+  color: #D4AE3A;
+}
+
+.ds-langkah-num--dif {
+  background: rgba(100,180,255,.15);
+  color: rgba(100,180,255,.9);
+}
+
+.ds-langkah-num--darurat {
+  background: rgba(255,160,80,.15);
+  color: rgba(255,160,80,.9);
+}
+
+/* ── Langkah teks ── */
+.ds-langkah-teks {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.ds-langkah-audio-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: rgba(212,174,58,.6);
+  margin-bottom: 4px;
+}
+
+.ds-langkah-audio-teks {
+  font-size: 14px;
+  color: rgba(255,255,255,.9);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Tombol TTS inline (hanya tampil di langkah aktif) ── */
+.ds-tts-btn-inline {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  border-radius: 7px;
+  color: #D4AE3A;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-tts-btn-inline:active { background: rgba(212,174,58,.28); }
+
+/* ── Tombol TTS stop (lama, dipertahankan) ── */
+.ds-tts-stop {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── Fase header (nama fase + timer) ── */
+.ds-fase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ds-fase-durasi {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  font-weight: 400;
+}
+
+.ds-timer-btn {
+  font-size: 11px;
+  background: rgba(212,174,58,.1);
+  border: 1px solid rgba(212,174,58,.3);
+  color: #D4AE3A;
+  border-radius: 6px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ds-timer-display {
+  font-size: 12px;
+  color: #D4AE3A;
+  font-weight: 700;
+}
+
+/* ── Warn banner (asesmen / selesai) ── */
+.ds-warn-banner {
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.35);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.ds-warn-title {
+  font-size: 13px;
+  color: #D4AE3A;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ds-warn-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ds-warn-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.ds-warn-btn {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ds-warn-btn--cancel {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.7);
+}
+
+.ds-warn-btn--ok {
+  background: rgba(212,174,58,.15);
+  border: 1px solid rgba(212,174,58,.4);
+  color: #D4AE3A;
+}
+
+/* ── Step Selesai: ringkasan sesi ── */
+.ds-selesai-ringkasan {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-ringkasan-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.ds-ringkasan-row:last-child { border-bottom: none; }
+
+.ds-ringkasan-label {
+  font-size: 12px;
+  color: rgba(255,255,255,.45);
+}
+
+.ds-ringkasan-val {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  font-weight: 600;
+  text-align: right;
+  max-width: 65%;
+}
+
+/* ─── TIPE LANGKAH: RESPONS SISWA ─────────────────────────────────────────── */
+
+.ds-langkah-item--respons {
+  background: rgba(120,180,255,.05);
+  border-color: rgba(120,180,255,.18);
+}
+
+.ds-langkah-item--respons.ds-langkah-item--aktif {
+  background: rgba(120,180,255,.1);
+  border-color: rgba(120,180,255,.35);
+}
+
+.ds-langkah-num--respons {
+  background: rgba(120,180,255,.15);
+  color: rgba(120,180,255,.9);
+  font-size: 13px;
+}
+
+/* ─── PM BADGE (Pembelajaran Mendalam) ────────────────────────────────────── */
+
+.ds-pm-badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+
+/* =============================================================
+   FLAF v6 — RUNTIME SURFACE
+   Patch: runtime-v6.css
+   Ditambahkan ke dashboard.css
+   Mobile-first: 320px baseline
+   ============================================================= */
+
+/* ── Runtime wrapper — single persistent surface ── */
+.rt-surface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  /* Tidak ada animasi masuk — guru sudah di kelas */
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — PERIPHERAL BAND
+   Selalu hadir. Tidak meminta perhatian.
+══════════════════════════════════════════════ */
+.rt-periph {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 6px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  min-height: 34px;
+}
+
+.rt-p-fase {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(201,168,76,.85);
+  letter-spacing: .07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rt-p-sep {
+  width: 1px;
+  height: 10px;
+  background: rgba(255,255,255,.055);
+  flex-shrink: 0;
+}
+
+.rt-p-aw {
+  flex: 1;
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  line-height: 1.3;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rt-p-aw .rt-aw-al  { color: rgba(217,123,90,.85); }
+.rt-p-aw .rt-aw-ok  { color: rgba(77,184,150,.75); }
+
+.rt-p-timer {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,.13);
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 3 — MICRO-CONTEXT AREA
+   Height-animated. Context-triggered.
+   Muncul saat guru tap nama siswa.
+══════════════════════════════════════════════ */
+.rt-micro {
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 0;
+  transition: height .18s cubic-bezier(.4,0,.2,1);
+  border-bottom: 0px solid rgba(255,255,255,.055);
+}
+
+.rt-micro.rt-micro--open {
+  height: 50px;
+  border-bottom-width: 1px;
+}
+
+.rt-micro-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 14px;
+  height: 50px;
+}
+
+/* Nama siswa — konteks siapa yang sedang difokus */
+.rt-micro-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.88);
+  margin-right: 10px;
+  flex-shrink: 0;
+  min-width: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+/* PRIMARY action — lebih besar karena frekuensi tinggi */
+.rt-micro-primary {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(77,184,150,.1);
+  border: 1px solid rgba(77,184,150,.24);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(77,184,150,.9);
+  cursor: pointer;
+  transition: background .1s, transform .08s;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  font-family: inherit;
+}
+.rt-micro-primary:active {
+  transform: scale(.97);
+  background: rgba(77,184,150,.18);
+}
+
+/* SECONDARY actions — lebih kecil, frekuensi rendah */
+.rt-micro-secondary {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.rt-micro-sec-btn {
+  padding: 5px 8px;
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  transition: color .1s;
+  border-left: 1px solid rgba(255,255,255,.055);
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-micro-sec-btn:first-child { border-left: none; }
+.rt-micro-sec-btn:active      { color: rgba(217,123,90,.8); }
+
+.rt-micro-close {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255,255,255,.2);
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 3 — SIGNAL STRIP
+   Guru-triggered. Situasi kelas.
+══════════════════════════════════════════════ */
+.rt-sig-strip {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  padding: 5px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.rt-sig-strip::-webkit-scrollbar { display: none; }
+
+.rt-sp {
+  padding: 4px 9px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  font-size: 10px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  color: rgba(255,255,255,.36);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .12s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-sp:active              { transform: scale(.95); }
+.rt-sp.rt-sp--on           { border-color: rgba(217,123,90,.3); background: rgba(217,123,90,.09); color: rgba(217,123,90,.85); }
+.rt-sp.rt-sp--ok           { border-color: rgba(77,184,150,.25); background: rgba(77,184,150,.08); color: rgba(77,184,150,.8); }
+
+/* ══════════════════════════════════════════════
+   LAYER 1 — FOCUS ZONE
+   Dua attention states.
+   Ini inti dari runtime.
+══════════════════════════════════════════════ */
+.rt-focus-zone {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* STATE A — Active cue */
+.rt-focus-cue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px 18px 10px;
+  transition: opacity .65s ease;
+  cursor: pointer;
+}
+.rt-focus-cue.rt-focus-cue--dimmed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* TTS playing: border tipis gold, tidak mengganggu teks */
+.rt-focus-cue.rt-focus-cue--playing {
+  outline: 1px solid rgba(201,168,76,.18);
+  outline-offset: -6px;
+  border-radius: 4px;
+}
+
+/* Type row — tipe langkah */
+.rt-fc-type {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.rt-ft-ic {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.rt-ft-ic--au  { background: rgba(201,168,76,.12);  color: rgba(201,168,76,.9); }
+.rt-ft-ic--rs  { background: rgba(91,155,213,.1);   color: rgba(91,155,213,.9); }
+.rt-ft-ic--df  { background: rgba(77,184,150,.1);   color: rgba(77,184,150,.85); }
+.rt-ft-ic--dr  { background: rgba(217,123,90,.09);  color: rgba(217,123,90,.85); }
+.rt-ft-ic--in  { background: rgba(255,255,255,.06); color: rgba(255,255,255,.4); }
+
+.rt-ft-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rt-ft-lbl--au { color: rgba(201,168,76,.7); }
+.rt-ft-lbl--rs { color: rgba(91,155,213,.75); }
+.rt-ft-lbl--df { color: rgba(77,184,150,.7); }
+.rt-ft-lbl--dr { color: rgba(217,123,90,.75); }
+.rt-ft-lbl--in { color: rgba(255,255,255,.28); }
+
+.rt-ft-pm {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 8px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.rt-ft-pm--mindful    { background: rgba(91,155,213,.12);  color: rgba(91,155,213,.7);  border: 1px solid rgba(91,155,213,.2); }
+.rt-ft-pm--meaningful { background: rgba(77,184,150,.1);   color: rgba(77,184,150,.7);  border: 1px solid rgba(77,184,150,.2); }
+.rt-ft-pm--joyful     { background: rgba(201,168,76,.1);   color: rgba(201,168,76,.75); border: 1px solid rgba(201,168,76,.22); }
+
+/* Teks utama focus cue */
+.rt-focus-teks {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255,255,255,.88);
+  line-height: 1.4;
+  /* Tidak boleh terlalu panjang — runtime harus glanceable */
+}
+
+.rt-focus-teks--plain {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255,255,255,.75);
+}
+
+.rt-focus-teks--quote {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255,255,255,.88);
+  line-height: 1.45;
+}
+
+/* Diferensiasi grid */
+.rt-dif-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-top: 4px;
+}
+.rt-dif-cell {
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.55);
+}
+.rt-dif-cell--s {
+  background: rgba(77,184,150,.07);
+  border: 1px solid rgba(77,184,150,.15);
+}
+.rt-dif-cell--b {
+  background: rgba(201,168,76,.06);
+  border: 1px solid rgba(201,168,76,.14);
+}
+.rt-dif-lbl {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.rt-dif-lbl--s { color: rgba(77,184,150,.7); }
+.rt-dif-lbl--b { color: rgba(201,168,76,.7); }
+
+/* STATE B — Awareness (muncul saat cue dimmed) */
+.rt-focus-aw {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 14px 18px 10px;
+  opacity: 0;
+  transition: opacity .65s ease;
+  pointer-events: none;
+}
+.rt-focus-aw.rt-focus-aw--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.rt-aw-label {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.2);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Nama-nama siswa — tenang, low-contrast, tappable */
+.rt-aw-names {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,.26);
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+
+.rt-aw-name-chip {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .18s;
+}
+.rt-aw-name-chip:active { color: rgba(255,255,255,.5); }
+
+.rt-aw-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,.16);
+  margin-top: 10px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+.rt-aw-return {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  font-size: 9px;
+  color: rgba(255,255,255,.14);
+  cursor: pointer;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  letter-spacing: .05em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Semua sudah speaking */
+.rt-aw-all-done {
+  color: rgba(77,184,150,.35);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ══════════════════════════════════════════════
+   FOCUS NAV — minimal, peripheral
+   Navigasi antar langkah. Tidak dominan.
+══════════════════════════════════════════════ */
+.rt-focus-nav {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 14px 8px;
+}
+
+.rt-fn-btn {
+  flex: 1;
+  padding: 9px 5px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: transparent;
+  color: rgba(255,255,255,.28);
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all .12s;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-fn-btn:active           { transform: scale(.97); }
+.rt-fn-btn--primary         { background: rgba(201,168,76,.1); border-color: rgba(201,168,76,.22); color: rgba(201,168,76,.85); }
+.rt-fn-btn--disabled        { opacity: .15; pointer-events: none; }
+
+.rt-fn-info {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.16);
+  text-align: center;
+  min-width: 38px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — SITUATIONAL MAP
+   Bukan progress tracker.
+   Peripheral orientation. Text-intensity only.
+   Tidak ada border, tidak ada background.
+══════════════════════════════════════════════ */
+.rt-sitmap {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255,255,255,.055);
+  padding: 5px 14px 3px;
+}
+
+.rt-sitmap-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.rt-sitmap-scroll::-webkit-scrollbar { display: none; }
+
+.rt-sm-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 2px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rt-sm-ic {
+  font-size: 8px;
+  margin-right: 3px;
+  opacity: .45;
+}
+
+/* Text intensity sebagai satu-satunya hierarki visual */
+.rt-sm-txt {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  white-space: nowrap;
+  transition: opacity .15s;
+  color: rgba(255,255,255,.36);
+  opacity: .3;
+}
+.rt-sm-txt--now  { opacity: 1;   color: rgba(201,168,76,.9); }
+.rt-sm-txt--been { opacity: .18; color: rgba(255,255,255,.36); }
+.rt-sm-txt--next { opacity: .55; color: rgba(255,255,255,.36); }
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — SPEAKING PERIPHERAL
+   Selalu hadir. Distribusi, bukan skor.
+══════════════════════════════════════════════ */
+.rt-spk-periph {
+  flex-shrink: 0;
+  padding: 5px 14px 6px;
+  border-top: 1px solid rgba(255,255,255,.055);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  min-height: 36px;
+}
+
+.rt-spk-chip {
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.03);
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  cursor: pointer;
+  transition: all .13s;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-spk-chip:active                { transform: scale(.95); }
+.rt-spk-chip.rt-spk-chip--sudah   { border-color: rgba(77,184,150,.22); background: rgba(77,184,150,.08); color: rgba(77,184,150,.75); }
+.rt-spk-chip.rt-spk-chip--obs     { border-color: rgba(217,123,90,.2);  background: rgba(217,123,90,.07); color: rgba(217,123,90,.7);  }
+
+/* ══════════════════════════════════════════════
+   ANCHOR — Samar, tidak dominan
+   Keluar runtime atau trigger situasi
+══════════════════════════════════════════════ */
+.rt-anchor {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  padding: 6px 13px 10px;
+  border-top: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-anc {
+  flex: 1;
+  padding: 8px 3px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: transparent;
+  font-size: 10px;
+  font-family: inherit;
+  color: rgba(255,255,255,.28);
+  cursor: pointer;
+  text-align: center;
+  transition: all .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-anc:active         { transform: scale(.97); }
+.rt-anc--end           { background: rgba(77,184,150,.07); border-color: rgba(77,184,150,.18); color: rgba(77,184,150,.65); }
+
+/* ══════════════════════════════════════════════
+   OVERLAY — Situasi Kelas
+   Kecil, cepat, tidak mengambil seluruh layar
+══════════════════════════════════════════════ */
+.rt-ov-back {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 30;
+  display: none;
+  align-items: flex-end;
+}
+.rt-ov-back.rt-ov-back--open { display: flex; animation: rtOvIn .14s ease; }
+@keyframes rtOvIn { from { opacity: 0; } to { opacity: 1; } }
+
+.rt-ov-sheet {
+  width: 100%;
+  /* Tidak full-screen — Prinsip: overlay tidak boleh menghentikan kelas */
+  max-height: 70vh;
+  background: rgba(18,16,13,.97);
+  border-radius: 18px 18px 0 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 12px 15px 20px;
+  animation: rtSheetUp .18s ease;
+  overflow-y: auto;
+}
+@keyframes rtSheetUp { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.rt-ov-handle {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.1);
+  margin: 0 auto 12px;
+}
+
+.rt-ov-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.36);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 8px;
+}
+
+.rt-ov-resp {
+  font-size: 12px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.55;
+  padding: 10px 11px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+.rt-ov-acts {
+  display: flex;
+  gap: 6px;
+}
+
+.rt-ov-act {
+  flex: 1;
+  padding: 10px 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  font-size: 11px;
+  font-family: inherit;
+  color: rgba(255,255,255,.5);
+  cursor: pointer;
+  text-align: center;
+  transition: all .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-ov-act--primary { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.28); color: rgba(201,168,76,.85); }
+
+.rt-ov-sit-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+
+.rt-ov-sit-opt {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  cursor: pointer;
+  transition: all .12s;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-ov-sit-opt:active { background: rgba(255,255,255,.04); }
+
+.rt-ov-sit-ic {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+
+/* Selesai overlay */
+.rt-ov-selesai-txt {
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.55;
+  padding: 10px 11px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+/* ── Stepper sesi: ganti area step-body untuk fase runtime ── */
+/* Saat di runtime (step 2-4), step-body menjadi container runtime */
+.ds-stepper-wrap.ds-stepper-wrap--runtime {
+  padding: 0;
+  gap: 0;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-stepper-wrap--runtime .ds-breadcrumb,
+.ds-stepper-wrap--runtime .ds-sesi-header,
+.ds-stepper-wrap--runtime .ds-step-indicator,
+.ds-stepper-wrap--runtime .ds-step-nav {
+  display: none !important;
+}
+
+/* Runtime mengisi penuh sisa ruang */
+#ds-step-body.ds-step-body--runtime {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  /* Tidak ada gap, tidak ada flex-direction default */
+  display: block;
+}
+
+
+/* =============================================================
+   FLAF v6 — CLOSURE SURFACE
+   Bukan screen baru. Bukan overlay.
+   Menggantikan runtime surface in-place via fade.
+   Transisi ritme mengajar → merangkum.
+   ============================================================= */
+
+.rt-closure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  /* Fade sudah dihandle oleh rt-surface opacity transition */
+}
+
+/* ── Header: identitas sesi ── */
+.rt-cl-header {
+  flex-shrink: 0;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-cl-tp {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 2px;
+}
+
+.rt-cl-rombel {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,.28);
+  letter-spacing: .04em;
+}
+
+/* ── Section wrapper ── */
+.rt-cl-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-cl-section-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.22);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ── SESSION SNAPSHOT ── */
+/* Distribusi speaking — bukan nilai, bukan tabel */
+
+.rt-cl-all-done {
+  font-size: 14px;
+  color: rgba(77,184,150,.6);
+  font-weight: 500;
+}
+
+.rt-cl-dist {
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.rt-cl-done {
+  font-size: 32px;
+  font-weight: 800;
+  color: rgba(201,168,76,.85);
+}
+
+.rt-cl-dist-sep,
+.rt-cl-dist-label {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+}
+
+.rt-cl-total {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(255,255,255,.4);
+}
+
+/* Chips siswa belum speaking turn */
+.rt-cl-belum-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.rt-cl-chip {
+  padding: 3px 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+.rt-cl-chip--belum {
+  background: rgba(217,123,90,.08);
+  border: 1px solid rgba(217,123,90,.2);
+  color: rgba(217,123,90,.7);
+}
+
+.rt-cl-chip--more {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.25);
+}
+
+/* ── QUICK REFLECTION ── */
+/* Chips kendala + textarea singkat */
+
+.rt-cl-kendala-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.rt-cl-kendala {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  font-size: 12px;
+  color: rgba(255,255,255,.38);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .13s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-cl-kendala:active { transform: scale(.96); }
+.rt-cl-kendala.rt-cl-kendala--active {
+  background: rgba(201,168,76,.12);
+  border-color: rgba(201,168,76,.3);
+  color: rgba(201,168,76,.85);
+}
+
+.rt-cl-textarea {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,.75);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 9px 11px;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color .15s;
+  -webkit-appearance: none;
+}
+.rt-cl-textarea:focus {
+  border-color: rgba(201,168,76,.3);
+}
+.rt-cl-textarea::placeholder {
+  color: rgba(255,255,255,.2);
+}
+
+/* ── SAVE & EXIT — satu tombol, jelas ── */
+.rt-cl-footer {
+  flex-shrink: 0;
+  padding: 12px 16px 20px;
+  /* Pushes to bottom jika konten pendek */
+  margin-top: auto;
+}
+
+.rt-cl-save {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(77,184,150,.15);
+  border: 1px solid rgba(77,184,150,.3);
+  color: rgba(77,184,150,.9);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: .02em;
+}
+.rt-cl-save:active   { transform: scale(.98); background: rgba(77,184,150,.22); }
+.rt-cl-save:disabled { opacity: .45; pointer-events: none; }
