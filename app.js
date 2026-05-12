@@ -60,6 +60,16 @@ function navigateTo(screenId, opts = {}) {
   }
 
   if (prev && prev !== next) {
+    // Bersihkan runtime height jika keluar dari s-dash
+    if (prev.id === 's-dash') {
+      const dashRoot = document.getElementById('dash-root');
+      if (dashRoot) {
+        dashRoot.style.height   = '';
+        dashRoot.style.overflow = '';
+      }
+      prev.style.height   = '';
+      prev.style.overflow = '';
+    }
     // Animasi keluar
     prev.classList.remove('screen-active');
     prev.classList.add('screen-exit');
@@ -92,11 +102,21 @@ function navigateTo(screenId, opts = {}) {
     viewport.scrollTop = 0;
     /*
      * Screen dengan nav mengelola scrollnya sendiri (area konten internal).
-     * Tambah class 'viewport-locked' agar #app-viewport tidak ikut scroll —
-     * mencegah double-scroll yang membingungkan di layar dengan nav.
+     * Tambah class 'viewport-locked' agar #app-viewport tidak ikut scroll.
+     *
+     * Pengecualian: s-dash dikelola oleh _bindRuntimeObserver.
+     * Observer akan toggle viewport-locked berdasarkan state runtime v6.
+     * Saat masuk s-dash pertama kali (belum runtime), viewport tidak locked.
      */
-    const nextHasNav = next.classList.contains('screen-with-nav');
-    viewport.classList.toggle('viewport-locked', nextHasNav);
+    if (screenId !== 's-dash') {
+      const nextHasNav = next.classList.contains('screen-with-nav');
+      viewport.classList.toggle('viewport-locked', nextHasNav);
+    }
+    // s-dash: viewport-locked dikontrol oleh _bindRuntimeObserver
+    // Pastikan dimulai tidak locked (runtime belum aktif)
+    if (screenId === 's-dash') {
+      viewport.classList.remove('viewport-locked');
+    }
   }
 
   currentScreen = screenId;
@@ -298,6 +318,54 @@ async function _initDashboard() {
   }
 
   _updateDashConnectivity();
+
+  // Runtime v6: pasang observer untuk mendeteksi masuk/keluar runtime
+  // sehingga #dash-root bisa dapat height:100% yang diperlukan
+  _bindRuntimeObserver(dashRoot);
+}
+
+/**
+ * Mengamati perubahan class di dalam #dash-root.
+ * Saat runtime v6 aktif (.ds-stepper-wrap--runtime ada),
+ * #dash-root dan #s-dash perlu height:100% agar rantai flex bekerja.
+ * Saat runtime selesai, height dikembalikan ke normal (scroll biasa).
+ */
+function _bindRuntimeObserver(dashRoot) {
+  if (!dashRoot || dashRoot._rtObserver) return; // Jangan pasang dua kali
+
+  const sDash    = document.getElementById('s-dash');
+  const viewport = document.getElementById('app-viewport');
+
+  function _applyRuntimeHeight(active) {
+    // #dash-root: height:100% saat runtime, auto saat normal
+    dashRoot.style.height   = active ? '100%' : '';
+    dashRoot.style.overflow = active ? 'hidden' : '';
+
+    // #s-dash: height:100% diperlukan agar rantai sampai ke rt-surface
+    if (sDash) {
+      sDash.style.height   = active ? '100%' : '';
+      sDash.style.overflow = active ? 'hidden' : '';
+    }
+
+    // #app-viewport: saat runtime, viewport tidak boleh scroll
+    // (runtime mengelola scrollnya sendiri — tidak ada scroll)
+    if (viewport) {
+      viewport.classList.toggle('viewport-locked', active);
+    }
+  }
+
+  const observer = new MutationObserver(() => {
+    const isRuntime = !!dashRoot.querySelector('.ds-stepper-wrap--runtime');
+    _applyRuntimeHeight(isRuntime);
+  });
+
+  observer.observe(dashRoot, {
+    subtree   : true,
+    attributes: true,
+    attributeFilter: ['class'],
+  });
+
+  dashRoot._rtObserver = observer;
 }
 
 function _updateDashConnectivity() {
