@@ -1,0 +1,280 @@
+# FLAF — Skema Data TP (v4 / Hybrid Aktivitas)
+
+**Status**: Draft Fase 1 · Mei 2026
+**Tujuan**: Kontrak struktur data TP yang mendukung runtime baru "kompas guru"
+sambil mempertahankan kompatibilitas dengan runtime lama selama migrasi.
+
+---
+
+## 1. Prinsip Skema
+
+1. **Hybrid**: Setiap fase boleh punya `aktivitas[]` (baru) DAN/ATAU `langkah[]` (lama).
+   Runtime baru baca `aktivitas` jika ada, fallback ke `langkah`.
+2. **Self-contained per aktivitas**: Semua yang runtime butuh untuk menjalankan
+   satu aktivitas ada di dalam objek aktivitas itu. Tidak perlu cross-reference
+   ke aktivitas lain.
+3. **Optional fields dengan default eksplisit**: Banyak field opsional. Runtime
+   harus tahu default-nya, jangan throw saat field hilang.
+4. **Mandat dokumen**: Setiap field mengacu ke dokumen kebijakan FLAF.
+
+---
+
+## 2. Struktur Top-Level TP (tidak berubah dari v3)
+
+```javascript
+{
+  id          : string,    // 'tp-01' ... 'tp-18'
+  nomor       : number,    // 1-18
+  kelas       : number,    // 1 atau 2
+  nama        : string,    // 'Greetings & Farewells'
+  tema        : string,    // 'Interaksi Sosial Dasar'
+  deskripsi   : string,    // Tujuan pembelajaran ringkas
+  indikator   : string[],  // 3 indikator pencapaian
+  vocab       : string[],  // Vocabulary level TP
+  persiapan   : string[],  // [LAMA] daftar persiapan
+  media       : Media[],   // [BARU] referensi media library terstruktur
+  skenario    : Fase[],
+}
+```
+
+### 2.1 Object Media (BARU)
+
+Pengganti `persiapan` lama yang berupa string array. Mengikuti Dok 08 §12.
+
+```javascript
+{
+  id              : string,    // 'media-kartu-waktu-pagi'
+  nama            : string,    // 'Kartu Waktu — Pagi'
+  tipe            : string,    // 'kartu_cetak' | 'kartu_digital' | 'audio_file'
+  printable       : boolean,
+  pdf_ref         : string?,   // 'tp-01-v1.pdf' jika printable
+  pdf_halaman     : number?,   // halaman PDF
+  reusable_lintas_tp : boolean, // Dok 08 §6
+}
+```
+
+**Selama transisi**: `persiapan[]` lama tetap di TP untuk runtime lama.
+TP yang sudah migrate ke v4 tambah `media[]` di sampingnya.
+
+---
+
+## 3. Struktur Fase (modified)
+
+```javascript
+{
+  fase        : string,        // 'Pembuka' | 'Inti' | 'Penutup' | 'Penilaian'
+  durasi      : number,        // menit
+  langkah     : Langkah[]?,    // [LAMA] runtime lama
+  aktivitas   : Aktivitas[]?,  // [BARU] runtime baru
+}
+```
+
+**Kontrak**: Minimal salah satu (`langkah` atau `aktivitas`) wajib ada.
+Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama prioritaskan `langkah`.
+
+---
+
+## 4. Struktur Aktivitas (BARU — unit utama runtime baru)
+
+```javascript
+{
+  // ────────── A. IDENTITAS ──────────
+  id              : string,     // 'tp01-inti-pair-greeting'
+  tipe            : AktivitasTipe,
+  judul           : string,     // 'Sapa Teman' — untuk header layar
+  pm              : 'mindful' | 'meaningful' | 'joyful' | null,
+
+  // ────────── B. PEDAGOGI ──────────
+  tujuan_komunikasi : string,
+  vocab_target      : string[],  // Subset vocab TP yang dilatih di sini
+
+  // ────────── C. DURASI ──────────
+  durasi_target_detik : number,  // Target normal
+  durasi_min_detik    : number,  // Versi pendek (kondisi waktu mepet)
+  durasi_max_detik    : number?, // Cap maksimum jika auto-advance
+
+  // ────────── D. SCRIPT & AUDIO (Dok 07) ──────────
+  micro_script : {
+    pembuka  : string?,   // ≤ 2 kalimat (Dok 07 §4)
+    selama   : string?,   // Yang guru ucapkan sambil aktivitas jalan
+    penutup  : string?,   // Transisi ke aktivitas berikutnya
+  },
+
+  audio_cue : {                  // Yang sistem PUTAR via TTS (atau audio file masa depan)
+    contoh_guru     : string?,   // Contoh kalimat guru
+    contoh_siswa    : string?,   // Contoh respons siswa yang diharapkan
+    target_vocab    : string[]?, // Kata-kata yang bisa diputar terpisah on-demand
+  },
+
+  // ────────── E. MEDIA ──────────
+  media_dipakai : string[],      // ID media dari Media[] level TP
+
+  // ────────── F. MODE DIFERENSIASI (Dok 06 §3) ──────────
+  mode : {
+    mudah     : ModeConfig,
+    normal    : ModeConfig,
+    tantangan : ModeConfig,
+  },
+
+  // ────────── G. OBSERVATION SLOT (Dok 09 §12) ──────────
+  observation : {
+    aktif       : boolean,        // Apakah ini titik observasi
+    n_siswa     : number?,        // Berapa siswa diobservasi (default 3)
+    indikator   : Indikator[]?,   // Indikator apa yang diukur
+    rotasi_priority : string?,    // 'belum_observed' | 'belum_speaking_turn' | 'random'
+  },
+
+  // ────────── H. FALLBACK (Dok 03 §16, Dok 05 §11) ──────────
+  fallback : {
+    [kondisi_id] : string,        // Mapping kondisi → instruksi konkret
+  },
+
+  // ────────── I. AUTO-ADVANCE BEHAVIOR ──────────
+  advance : {
+    mode      : 'manual' | 'timer' | 'timer_with_grace',
+    grace_detik : number?,        // Default 15 jika mode timer_with_grace
+  },
+}
+```
+
+### 4.1 AktivitasTipe (enum)
+
+| Tipe | Deskripsi | Observation default |
+|---|---|---|
+| `sapaan_kelas` | Guru menyapa seluruh kelas, kelas merespons bersama | Tidak |
+| `sapaan_individu` | Guru menyapa siswa satu per satu (saat masuk kelas) | Ya |
+| `modeling` | Guru demonstrasi pola bahasa | Tidak |
+| `chorus` | Kelas mengulang bersama setelah guru | Tidak |
+| `chant` | Aktivitas berirama dengan tepuk/gerak | Tidak |
+| `pair_work` | Siswa berinteraksi berpasangan | Ya |
+| `game_movement` | Permainan dengan gerakan | Tidak |
+| `meaningful_link` | Mengaitkan ke kehidupan nyata siswa | Tidak |
+| `review_quick` | Review cepat di Penutup | Ya |
+| `reflection` | Siswa atau guru berefleksi | Tidak |
+| `farewell_kelas` | Perpisahan kelas bersama | Tidak |
+| `observation_validation` | [Penilaian] Validasi siswa belum terobservasi | Ya |
+
+### 4.2 ModeConfig (struktur per mode diferensiasi)
+
+```javascript
+{
+  bantuan          : string,   // Tingkat bantuan visual/verbal guru
+  panjang_speaking : string,   // Target speaking siswa di mode ini
+  audio_diputar    : boolean?, // Apakah audio cue diputar otomatis di mode ini
+  cue_extra        : string?,  // Tambahan instruksi spesifik mode (mis: untuk Mudah, "tunjuk gambar dulu")
+}
+```
+
+**Default jika `mode` tidak ada**: Sistem anggap aktivitas single-mode (semua siswa
+diperlakukan sama). Hanya untuk aktivitas yang sangat fundamental seperti
+`farewell_kelas` di mana diferensiasi tidak masuk akal.
+
+### 4.3 Indikator (enum, dari Dok 09 §3)
+
+| ID | Nama | Yang Diukur |
+|---|---|---|
+| `participation` | Participation | Apakah siswa berbicara, frekuensi giliran |
+| `response` | Response | Kemampuan merespons salam/prompt sederhana |
+| `confidence` | Confidence | Keberanian mencoba tanpa dipaksa |
+| `vocab_use` | Target Vocabulary Use | Penggunaan kosakata target dalam konteks |
+
+### 4.4 Kondisi Fallback (enum)
+
+| ID | Konteks |
+|---|---|
+| `pair_tidak_jalan` | Pair work gagal (siswa diam, pasangan tidak interaksi) |
+| `siswa_pasif` | Banyak siswa diam saat aktivitas |
+| `kelas_ribut` | Kelas sulit fokus |
+| `energi_turun` | Siswa lesu, butuh re-energize |
+| `waktu_mepet` | Sisa waktu fase tidak cukup untuk durasi normal |
+| `media_tidak_tersedia` | Kartu/PDF tidak siap |
+
+---
+
+## 5. Kontrak Auto-Advance
+
+```javascript
+advance: {
+  mode: 'manual' | 'timer' | 'timer_with_grace'
+}
+```
+
+- **`manual`**: Runtime tunggu guru tap "Lanjut." Default untuk modeling, sapaan, refleksi.
+- **`timer`**: Runtime auto-advance saat durasi habis. Default untuk pair_work,
+  chant, game_movement.
+- **`timer_with_grace`**: Saat timer habis, runtime tampilkan window grace
+  (default 15 detik) di mana guru bisa tap "Tambah 1 menit" atau "Lanjut sekarang."
+
+**Default jika `advance` tidak ada**:
+- `pair_work`, `chant`, `game_movement` → `timer_with_grace`
+- Sisanya → `manual`
+
+---
+
+## 6. Kontrak Mode Diferensiasi (Per Sesi)
+
+Mode dipilih di Preview oleh guru, disimpan di sesi state, diterapkan ke
+semua aktivitas dalam sesi tersebut.
+
+Override per aktivitas (escape hatch): runtime menyediakan tombol kecil
+"Sesuaikan kesulitan" yang muncul setelah aktivitas berjalan ≥30 detik tanpa
+respons siswa yang baik. Tap → naik/turun satu mode untuk aktivitas itu saja.
+
+---
+
+## 7. Backward Compatibility Rules
+
+Runtime lama harus tetap jalan untuk TP yang belum migrate. Aturan:
+
+1. Jangan hapus field lama: `langkah`, `persiapan`, `tipe` (di level langkah).
+2. Field baru harus opsional di sisi runtime lama (runtime lama mengabaikan
+   `aktivitas`, `media`, dll).
+3. Routing di `data/index.js` tidak berubah — getTP() return objek apa adanya,
+   runtime yang putuskan format mana yang dia baca.
+
+---
+
+## 8. Validation (untuk dijalankan di build time, bukan runtime)
+
+Sebuah TP dianggap valid v4 jika:
+
+- Punya `media[]` (boleh kosong array, tapi field harus ada)
+- Setiap fase punya `aktivitas[]` ATAU `langkah[]`
+- Setiap aktivitas dengan `mode` punya ketiga sub-mode (mudah, normal, tantangan)
+- Setiap aktivitas tipe `pair_work` punya `fallback.pair_tidak_jalan`
+- Setiap aktivitas dengan `observation.aktif = true` punya `n_siswa` ≥ 1
+
+Pelanggaran → warning di console, BUKAN throw. Kelas tetap jalan.
+
+---
+
+## 9. Yang TIDAK Ada di Skema Ini (Sengaja)
+
+- **Skoring numerik**: Asesmen fase A tidak pakai angka. Kategorisasi (Active /
+  Emerging / Passive) ditentukan runtime engine, bukan di data.
+- **Branching tree kompleks**: Tidak ada if-then-else di data. Adaptasi kondisi
+  ditangani oleh runtime engine + tabel fallback sederhana.
+- **Per-siswa diferensiasi**: Dok 06 fokus pada 3 mode kelas. Per-siswa override
+  ditunda sampai sistem matang (mungkin fase v5).
+- **Realtime sync**: Data TP statis, tidak diubah di runtime. Hanya state sesi
+  yang berubah (di-handle di Fase 2 State Machine).
+
+---
+
+## 10. Referensi Dokumen FLAF
+
+| Field | Dokumen Acuan |
+|---|---|
+| `aktivitas` sebagai unit | Dok 04 §8 |
+| `pair_work` di Inti | Dok 03 §9, Dok 04 §7 |
+| `mode` 3-tier | Dok 06 §3 |
+| `observation.aktif` | Dok 09 §12 |
+| `fallback` per aktivitas | Dok 03 §16, Dok 05 §11 |
+| `micro_script` ≤ 2 kalimat | Dok 07 §4 |
+| `media[]` dengan ID | Dok 08 §12 |
+| `vocab_target` per aktivitas | Dok 09 §7 |
+| Backward compatibility | Dok 11 §15, Dok 10 §14 |
+
+---
+
+## Akhir SCHEMA.md
