@@ -1018,3 +1018,904 @@
   margin-left: auto;
   white-space: nowrap;
 }
+
+
+/* =============================================================
+   FLAF v6 — RUNTIME SURFACE
+   Patch: runtime-v6.css
+   Ditambahkan ke dashboard.css
+   Mobile-first: 320px baseline
+   ============================================================= */
+
+/* ── Runtime wrapper — single persistent surface ── */
+.rt-surface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  /* Tidak ada animasi masuk — guru sudah di kelas */
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — PERIPHERAL BAND
+   Selalu hadir. Tidak meminta perhatian.
+══════════════════════════════════════════════ */
+.rt-periph {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px 6px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  min-height: 34px;
+}
+
+.rt-p-fase {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(201,168,76,.85);
+  letter-spacing: .07em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rt-p-sep {
+  width: 1px;
+  height: 10px;
+  background: rgba(255,255,255,.055);
+  flex-shrink: 0;
+}
+
+.rt-p-aw {
+  flex: 1;
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  line-height: 1.3;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rt-p-aw .rt-aw-al  { color: rgba(217,123,90,.85); }
+.rt-p-aw .rt-aw-ok  { color: rgba(77,184,150,.75); }
+
+.rt-p-timer {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,.13);
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 3 — MICRO-CONTEXT AREA
+   Height-animated. Context-triggered.
+   Muncul saat guru tap nama siswa.
+══════════════════════════════════════════════ */
+.rt-micro {
+  flex-shrink: 0;
+  overflow: hidden;
+  height: 0;
+  transition: height .18s cubic-bezier(.4,0,.2,1);
+  border-bottom: 0px solid rgba(255,255,255,.055);
+}
+
+.rt-micro.rt-micro--open {
+  height: 50px;
+  border-bottom-width: 1px;
+}
+
+.rt-micro-inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 14px;
+  height: 50px;
+}
+
+/* Nama siswa — konteks siapa yang sedang difokus */
+.rt-micro-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255,255,255,.88);
+  margin-right: 10px;
+  flex-shrink: 0;
+  min-width: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}
+
+/* PRIMARY action — lebih besar karena frekuensi tinggi */
+.rt-micro-primary {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(77,184,150,.1);
+  border: 1px solid rgba(77,184,150,.24);
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(77,184,150,.9);
+  cursor: pointer;
+  transition: background .1s, transform .08s;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  font-family: inherit;
+}
+.rt-micro-primary:active {
+  transform: scale(.97);
+  background: rgba(77,184,150,.18);
+}
+
+/* SECONDARY actions — lebih kecil, frekuensi rendah */
+.rt-micro-secondary {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.rt-micro-sec-btn {
+  padding: 5px 8px;
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  transition: color .1s;
+  border-left: 1px solid rgba(255,255,255,.055);
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-micro-sec-btn:first-child { border-left: none; }
+.rt-micro-sec-btn:active      { color: rgba(217,123,90,.8); }
+
+.rt-micro-close {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: rgba(255,255,255,.2);
+  cursor: pointer;
+  margin-left: 6px;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 3 — SIGNAL STRIP
+   Guru-triggered. Situasi kelas.
+══════════════════════════════════════════════ */
+.rt-sig-strip {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  padding: 5px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.rt-sig-strip::-webkit-scrollbar { display: none; }
+
+.rt-sp {
+  padding: 4px 9px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  font-size: 10px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  color: rgba(255,255,255,.36);
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .12s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-sp:active              { transform: scale(.95); }
+.rt-sp.rt-sp--on           { border-color: rgba(217,123,90,.3); background: rgba(217,123,90,.09); color: rgba(217,123,90,.85); }
+.rt-sp.rt-sp--ok           { border-color: rgba(77,184,150,.25); background: rgba(77,184,150,.08); color: rgba(77,184,150,.8); }
+
+/* ══════════════════════════════════════════════
+   LAYER 1 — FOCUS ZONE
+   Dua attention states.
+   Ini inti dari runtime.
+══════════════════════════════════════════════ */
+.rt-focus-zone {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* STATE A — Active cue */
+.rt-focus-cue {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 14px 18px 10px;
+  transition: opacity .65s ease;
+  cursor: pointer;
+}
+.rt-focus-cue.rt-focus-cue--dimmed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* TTS playing: border tipis gold, tidak mengganggu teks */
+.rt-focus-cue.rt-focus-cue--playing {
+  outline: 1px solid rgba(201,168,76,.18);
+  outline-offset: -6px;
+  border-radius: 4px;
+}
+
+/* Type row — tipe langkah */
+.rt-fc-type {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.rt-ft-ic {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.rt-ft-ic--au  { background: rgba(201,168,76,.12);  color: rgba(201,168,76,.9); }
+.rt-ft-ic--rs  { background: rgba(91,155,213,.1);   color: rgba(91,155,213,.9); }
+.rt-ft-ic--df  { background: rgba(77,184,150,.1);   color: rgba(77,184,150,.85); }
+.rt-ft-ic--dr  { background: rgba(217,123,90,.09);  color: rgba(217,123,90,.85); }
+.rt-ft-ic--in  { background: rgba(255,255,255,.06); color: rgba(255,255,255,.4); }
+
+.rt-ft-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rt-ft-lbl--au { color: rgba(201,168,76,.7); }
+.rt-ft-lbl--rs { color: rgba(91,155,213,.75); }
+.rt-ft-lbl--df { color: rgba(77,184,150,.7); }
+.rt-ft-lbl--dr { color: rgba(217,123,90,.75); }
+.rt-ft-lbl--in { color: rgba(255,255,255,.28); }
+
+.rt-ft-pm {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 8px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.rt-ft-pm--mindful    { background: rgba(91,155,213,.12);  color: rgba(91,155,213,.7);  border: 1px solid rgba(91,155,213,.2); }
+.rt-ft-pm--meaningful { background: rgba(77,184,150,.1);   color: rgba(77,184,150,.7);  border: 1px solid rgba(77,184,150,.2); }
+.rt-ft-pm--joyful     { background: rgba(201,168,76,.1);   color: rgba(201,168,76,.75); border: 1px solid rgba(201,168,76,.22); }
+
+/* Teks utama focus cue */
+.rt-focus-teks {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(255,255,255,.88);
+  line-height: 1.4;
+  /* Tidak boleh terlalu panjang — runtime harus glanceable */
+}
+
+.rt-focus-teks--plain {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255,255,255,.75);
+}
+
+.rt-focus-teks--quote {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255,255,255,.88);
+  line-height: 1.45;
+}
+
+/* Diferensiasi grid */
+.rt-dif-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-top: 4px;
+}
+.rt-dif-cell {
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255,255,255,.55);
+}
+.rt-dif-cell--s {
+  background: rgba(77,184,150,.07);
+  border: 1px solid rgba(77,184,150,.15);
+}
+.rt-dif-cell--b {
+  background: rgba(201,168,76,.06);
+  border: 1px solid rgba(201,168,76,.14);
+}
+.rt-dif-lbl {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.rt-dif-lbl--s { color: rgba(77,184,150,.7); }
+.rt-dif-lbl--b { color: rgba(201,168,76,.7); }
+
+/* STATE B — Awareness (muncul saat cue dimmed) */
+.rt-focus-aw {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 14px 18px 10px;
+  opacity: 0;
+  transition: opacity .65s ease;
+  pointer-events: none;
+}
+.rt-focus-aw.rt-focus-aw--visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.rt-aw-label {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.2);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Nama-nama siswa — tenang, low-contrast, tappable */
+.rt-aw-names {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255,255,255,.26);
+  line-height: 1.55;
+  letter-spacing: .01em;
+}
+
+.rt-aw-name-chip {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color .18s;
+}
+.rt-aw-name-chip:active { color: rgba(255,255,255,.5); }
+
+.rt-aw-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,.16);
+  margin-top: 10px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+.rt-aw-return {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  font-size: 9px;
+  color: rgba(255,255,255,.14);
+  cursor: pointer;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  letter-spacing: .05em;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Semua sudah speaking */
+.rt-aw-all-done {
+  color: rgba(77,184,150,.35);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* ══════════════════════════════════════════════
+   FOCUS NAV — minimal, peripheral
+   Navigasi antar langkah. Tidak dominan.
+══════════════════════════════════════════════ */
+.rt-focus-nav {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 0 14px 8px;
+}
+
+.rt-fn-btn {
+  flex: 1;
+  padding: 9px 5px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: transparent;
+  color: rgba(255,255,255,.28);
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all .12s;
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-fn-btn:active           { transform: scale(.97); }
+.rt-fn-btn--primary         { background: rgba(201,168,76,.1); border-color: rgba(201,168,76,.22); color: rgba(201,168,76,.85); }
+.rt-fn-btn--disabled        { opacity: .15; pointer-events: none; }
+
+.rt-fn-info {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.16);
+  text-align: center;
+  min-width: 38px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — SITUATIONAL MAP
+   Bukan progress tracker.
+   Peripheral orientation. Text-intensity only.
+   Tidak ada border, tidak ada background.
+══════════════════════════════════════════════ */
+.rt-sitmap {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255,255,255,.055);
+  padding: 5px 14px 3px;
+}
+
+.rt-sitmap-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  -webkit-overflow-scrolling: touch;
+}
+.rt-sitmap-scroll::-webkit-scrollbar { display: none; }
+
+.rt-sm-item {
+  flex-shrink: 0;
+  cursor: pointer;
+  padding: 2px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rt-sm-ic {
+  font-size: 8px;
+  margin-right: 3px;
+  opacity: .45;
+}
+
+/* Text intensity sebagai satu-satunya hierarki visual */
+.rt-sm-txt {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  white-space: nowrap;
+  transition: opacity .15s;
+  color: rgba(255,255,255,.36);
+  opacity: .3;
+}
+.rt-sm-txt--now  { opacity: 1;   color: rgba(201,168,76,.9); }
+.rt-sm-txt--been { opacity: .18; color: rgba(255,255,255,.36); }
+.rt-sm-txt--next { opacity: .55; color: rgba(255,255,255,.36); }
+
+/* ══════════════════════════════════════════════
+   LAYER 2 — SPEAKING PERIPHERAL
+   Selalu hadir. Distribusi, bukan skor.
+══════════════════════════════════════════════ */
+.rt-spk-periph {
+  flex-shrink: 0;
+  padding: 5px 14px 6px;
+  border-top: 1px solid rgba(255,255,255,.055);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  min-height: 36px;
+}
+
+.rt-spk-chip {
+  padding: 3px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.03);
+  font-size: 10px;
+  color: rgba(255,255,255,.36);
+  cursor: pointer;
+  transition: all .13s;
+  font-family: 'DM Mono', 'Courier New', monospace;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-spk-chip:active                { transform: scale(.95); }
+.rt-spk-chip.rt-spk-chip--sudah   { border-color: rgba(77,184,150,.22); background: rgba(77,184,150,.08); color: rgba(77,184,150,.75); }
+.rt-spk-chip.rt-spk-chip--obs     { border-color: rgba(217,123,90,.2);  background: rgba(217,123,90,.07); color: rgba(217,123,90,.7);  }
+
+/* ══════════════════════════════════════════════
+   ANCHOR — Samar, tidak dominan
+   Keluar runtime atau trigger situasi
+══════════════════════════════════════════════ */
+.rt-anchor {
+  flex-shrink: 0;
+  display: flex;
+  gap: 5px;
+  padding: 6px 13px 10px;
+  border-top: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-anc {
+  flex: 1;
+  padding: 8px 3px;
+  border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.07);
+  background: transparent;
+  font-size: 10px;
+  font-family: inherit;
+  color: rgba(255,255,255,.28);
+  cursor: pointer;
+  text-align: center;
+  transition: all .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-anc:active         { transform: scale(.97); }
+.rt-anc--end           { background: rgba(77,184,150,.07); border-color: rgba(77,184,150,.18); color: rgba(77,184,150,.65); }
+
+/* ══════════════════════════════════════════════
+   OVERLAY — Situasi Kelas
+   Kecil, cepat, tidak mengambil seluruh layar
+══════════════════════════════════════════════ */
+.rt-ov-back {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 30;
+  display: none;
+  align-items: flex-end;
+}
+.rt-ov-back.rt-ov-back--open { display: flex; animation: rtOvIn .14s ease; }
+@keyframes rtOvIn { from { opacity: 0; } to { opacity: 1; } }
+
+.rt-ov-sheet {
+  width: 100%;
+  /* Tidak full-screen — Prinsip: overlay tidak boleh menghentikan kelas */
+  max-height: 70vh;
+  background: rgba(18,16,13,.97);
+  border-radius: 18px 18px 0 0;
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 12px 15px 20px;
+  animation: rtSheetUp .18s ease;
+  overflow-y: auto;
+}
+@keyframes rtSheetUp { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.rt-ov-handle {
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,.1);
+  margin: 0 auto 12px;
+}
+
+.rt-ov-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.36);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  margin-bottom: 8px;
+}
+
+.rt-ov-resp {
+  font-size: 12px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.55;
+  padding: 10px 11px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+.rt-ov-acts {
+  display: flex;
+  gap: 6px;
+}
+
+.rt-ov-act {
+  flex: 1;
+  padding: 10px 5px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  font-size: 11px;
+  font-family: inherit;
+  color: rgba(255,255,255,.5);
+  cursor: pointer;
+  text-align: center;
+  transition: all .12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-ov-act--primary { background: rgba(201,168,76,.12); border-color: rgba(201,168,76,.28); color: rgba(201,168,76,.85); }
+
+.rt-ov-sit-list { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
+
+.rt-ov-sit-opt {
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.55);
+  cursor: pointer;
+  transition: all .12s;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-ov-sit-opt:active { background: rgba(255,255,255,.04); }
+
+.rt-ov-sit-ic {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  flex-shrink: 0;
+}
+
+/* Selesai overlay */
+.rt-ov-selesai-txt {
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.55;
+  padding: 10px 11px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-bottom: 10px;
+}
+
+/* ── Stepper sesi: ganti area step-body untuk fase runtime ── */
+/* Saat di runtime (step 2-4), step-body menjadi container runtime */
+.ds-stepper-wrap.ds-stepper-wrap--runtime {
+  padding: 0;
+  gap: 0;
+  /* Rantai height: harus explicit agar flex:1 di dalam bekerja */
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  /* flex column sudah dari .ds-wrap — inherit */
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-stepper-wrap--runtime .ds-breadcrumb,
+.ds-stepper-wrap--runtime .ds-sesi-header,
+.ds-stepper-wrap--runtime .ds-step-indicator,
+.ds-stepper-wrap--runtime .ds-step-nav {
+  display: none !important;
+}
+
+/* Runtime mengisi penuh sisa ruang */
+#ds-step-body.ds-step-body--runtime {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+  /* Tidak ada gap, tidak ada flex-direction default */
+  display: block;
+}
+
+
+/* =============================================================
+   FLAF v6 — CLOSURE SURFACE
+   Bukan screen baru. Bukan overlay.
+   Menggantikan runtime surface in-place via fade.
+   Transisi ritme mengajar → merangkum.
+   ============================================================= */
+
+.rt-closure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  /* Fade sudah dihandle oleh rt-surface opacity transition */
+}
+
+/* ── Header: identitas sesi ── */
+.rt-cl-header {
+  flex-shrink: 0;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-cl-tp {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 2px;
+}
+
+.rt-cl-rombel {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,.28);
+  letter-spacing: .04em;
+}
+
+/* ── Section wrapper ── */
+.rt-cl-section {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+.rt-cl-section-lbl {
+  font-family: 'DM Mono', 'Courier New', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,.22);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ── SESSION SNAPSHOT ── */
+/* Distribusi speaking — bukan nilai, bukan tabel */
+
+.rt-cl-all-done {
+  font-size: 14px;
+  color: rgba(77,184,150,.6);
+  font-weight: 500;
+}
+
+.rt-cl-dist {
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.rt-cl-done {
+  font-size: 32px;
+  font-weight: 800;
+  color: rgba(201,168,76,.85);
+}
+
+.rt-cl-dist-sep,
+.rt-cl-dist-label {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+}
+
+.rt-cl-total {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(255,255,255,.4);
+}
+
+/* Chips siswa belum speaking turn */
+.rt-cl-belum-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.rt-cl-chip {
+  padding: 3px 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-family: 'DM Mono', 'Courier New', monospace;
+}
+
+.rt-cl-chip--belum {
+  background: rgba(217,123,90,.08);
+  border: 1px solid rgba(217,123,90,.2);
+  color: rgba(217,123,90,.7);
+}
+
+.rt-cl-chip--more {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  color: rgba(255,255,255,.25);
+}
+
+/* ── QUICK REFLECTION ── */
+/* Chips kendala + textarea singkat */
+
+.rt-cl-kendala-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.rt-cl-kendala {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  font-size: 12px;
+  color: rgba(255,255,255,.38);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .13s;
+  -webkit-tap-highlight-color: transparent;
+}
+.rt-cl-kendala:active { transform: scale(.96); }
+.rt-cl-kendala.rt-cl-kendala--active {
+  background: rgba(201,168,76,.12);
+  border-color: rgba(201,168,76,.3);
+  color: rgba(201,168,76,.85);
+}
+
+.rt-cl-textarea {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  color: rgba(255,255,255,.75);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 9px 11px;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color .15s;
+  -webkit-appearance: none;
+}
+.rt-cl-textarea:focus {
+  border-color: rgba(201,168,76,.3);
+}
+.rt-cl-textarea::placeholder {
+  color: rgba(255,255,255,.2);
+}
+
+/* ── SAVE & EXIT — satu tombol, jelas ── */
+.rt-cl-footer {
+  flex-shrink: 0;
+  padding: 12px 16px 20px;
+  /* Pushes to bottom jika konten pendek */
+  margin-top: auto;
+}
+
+.rt-cl-save {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(77,184,150,.15);
+  border: 1px solid rgba(77,184,150,.3);
+  color: rgba(77,184,150,.9);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all .15s;
+  -webkit-tap-highlight-color: transparent;
+  letter-spacing: .02em;
+}
+.rt-cl-save:active   { transform: scale(.98); background: rgba(77,184,150,.22); }
+.rt-cl-save:disabled { opacity: .45; pointer-events: none; }
