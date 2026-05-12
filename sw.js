@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v51';          // ← paksa refresh cache nilai.js
+const CACHE_VERSION  = 'flaf-v52';          // ← paksa refresh cache nilai.js
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
