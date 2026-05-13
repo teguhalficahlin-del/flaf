@@ -91,7 +91,7 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
   // ────────── C. DURASI ──────────
   durasi_target_detik : number,  // Target normal
   durasi_min_detik    : number,  // Versi pendek (kondisi waktu mepet)
-  durasi_max_detik    : number?, // Cap maksimum jika auto-advance
+  durasi_max_detik    : number?, // Cap maksimum (informational only — sistem tidak auto-stop)
 
   // ────────── D. SCRIPT & AUDIO (Dok 07) ──────────
   micro_script : {
@@ -131,8 +131,9 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
 
   // ────────── I. AUTO-ADVANCE BEHAVIOR ──────────
   advance : {
-    mode      : 'manual' | 'timer' | 'timer_with_grace',
-    grace_detik : number?,        // Default 15 jika mode timer_with_grace
+    mode      : 'manual' | 'timer_visible_only',
+    // Catatan: tidak ada auto-advance. Apapun mode-nya, transisi layar
+    // selalu butuh tap eksplisit dari guru. Lihat §5 untuk penjelasan.
   },
 }
 ```
@@ -191,23 +192,50 @@ diperlakukan sama). Hanya untuk aktivitas yang sangat fundamental seperti
 
 ---
 
-## 5. Kontrak Auto-Advance
+## 5. Kontrak Advance Behavior
+
+**Prinsip dasar**: Sistem tidak benar-benar tahu apa yang terjadi di kelas.
+Sistem menunjukkan dan mengarahkan, tapi kendali transisi tetap di tangan guru.
+**Layar tidak boleh berganti tanpa tap eksplisit dari guru.**
 
 ```javascript
 advance: {
-  mode: 'manual' | 'timer' | 'timer_with_grace'
+  mode: 'manual' | 'timer_visible_only'
 }
 ```
 
-- **`manual`**: Runtime tunggu guru tap "Lanjut." Default untuk modeling, sapaan, refleksi.
-- **`timer`**: Runtime auto-advance saat durasi habis. Default untuk pair_work,
-  chant, game_movement.
-- **`timer_with_grace`**: Saat timer habis, runtime tampilkan window grace
-  (default 15 detik) di mana guru bisa tap "Tambah 1 menit" atau "Lanjut sekarang."
+- **`manual`**: Tidak ada timer di layar. Guru tap "Lanjut" saat siap.
+  Default untuk: modeling, sapaan_kelas, sapaan_individu, meaningful_link,
+  reflection, review_quick, farewell_kelas, observation_validation.
 
-**Default jika `advance` tidak ada**:
-- `pair_work`, `chant`, `game_movement` → `timer_with_grace`
+- **`timer_visible_only`**: Timer tampil di layar sebagai indikator informasi
+  (countdown dari `durasi_target_detik`). Saat timer habis, layar **tidak**
+  berganti otomatis — timer hanya berubah warna (hijau → kuning → merah lembut)
+  dan menampilkan label "Waktu habis, lanjut saat siap." Guru tap "Lanjut"
+  kapanpun dia mau (sebelum, saat, atau setelah timer habis).
+  Default untuk: pair_work, chant, game_movement.
+
+### 5.1 Mengapa tidak ada auto-advance
+
+Timer berfungsi sebagai:
+
+1. **Glanceable awareness** — guru tahu kelas sudah berapa lama di aktivitas ini
+   tanpa harus ingat jam mulai (Dok 10 §3).
+2. **Visual untuk siswa** — timer bisa diperlihatkan ke siswa sebagai sinyal
+   ritme ("tinggal sedikit lagi") (Dok 02 §2, Dok 03 §15).
+3. **Sinyal soft ke guru** — kalau timer sudah merah dan kelas masih asik,
+   guru sendiri yang putuskan apakah lanjut atau perpanjang.
+
+Sistem tidak memaksa transisi karena sistem tidak punya cara tahu apakah
+aktivitas sudah "selesai" secara pedagogis. Hanya guru yang tahu.
+
+### 5.2 Default jika `advance` tidak ada di data
+
+- `pair_work`, `chant`, `game_movement` → `timer_visible_only`
 - Sisanya → `manual`
+
+Runtime engine berhak override default ini jika data eksplisit menyebut
+mode lain. Tapi tidak ada konfigurasi yang bisa mengaktifkan auto-advance.
 
 ---
 

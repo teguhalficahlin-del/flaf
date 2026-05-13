@@ -108,7 +108,7 @@ v3:
 
 v4 → 1 aktivitas tipe `game_movement` ATAU `pair_work` (kalau interaksi 2 arah):
   - Set durasi_target_detik = 120 (2 menit)
-  - advance.mode = 'timer_with_grace'
+  - advance.mode = 'timer_visible_only'
   - observation.aktif = true (peluang observasi sambil pantau)
 ```
 

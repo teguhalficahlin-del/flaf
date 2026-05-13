@@ -402,8 +402,7 @@ const TP_01 = {
           },
 
           advance: {
-            mode      : 'timer_with_grace',
-            grace_detik: 15,
+            mode: 'timer_visible_only',
           },
         },
 
@@ -465,8 +464,7 @@ const TP_01 = {
           },
 
           advance: {
-            mode      : 'timer_with_grace',
-            grace_detik: 20,
+            mode: 'timer_visible_only',
           },
         },
 
@@ -520,8 +518,7 @@ const TP_01 = {
           },
 
           advance: {
-            mode      : 'timer_with_grace',
-            grace_detik: 30,
+            mode: 'timer_visible_only',
           },
         },
 
@@ -633,8 +630,7 @@ const TP_01 = {
           },
 
           advance: {
-            mode      : 'timer_with_grace',
-            grace_detik: 15,
+            mode: 'timer_visible_only',
           },
         },
       ],
