@@ -159,9 +159,9 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
 | `game_movement` | Permainan dengan gerakan & elemen kompetitif | Tidak |
 | `tpr_action` | Total Physical Response — guru ucap instruksi, siswa lakukan aksi fisik (BUKAN ucap kembali). `audio_cue.contoh_siswa` umumnya kosong. | Ya (untuk `response`) |
 | `meaningful_link` | Mengaitkan ke kehidupan nyata siswa | Tidak |
-| `review_quick` | Review cepat di Penutup | Ya |
+| `review_quick` | Review cepat di Penutup (opsional) | Ya |
 | `reflection` | Siswa atau guru berefleksi | Tidak |
-| `farewell_kelas` | Perpisahan kelas bersama | Tidak |
+| `closure_reinforcement` | **WAJIB di setiap TP** — fase paling akhir: pengakuan pencapaian siswa + farewell. Berfungsi memperkuat hasil belajar secara emosional dan kognitif. Bukan sekadar "goodbye." | Tidak |
 | `observation_validation` | [Penilaian] Validasi siswa belum terobservasi | Ya |
 
 ### 4.2 ModeConfig (struktur per mode diferensiasi)
@@ -281,6 +281,21 @@ mode lain. Tapi tidak ada konfigurasi yang bisa mengaktifkan auto-advance.
 Mode dipilih di Preview oleh guru, disimpan di sesi state, diterapkan ke
 semua aktivitas dalam sesi tersebut.
 
+**Klarifikasi penting** — cara baca field `mode` per aktivitas:
+
+```javascript
+mode: {
+  mudah:     { ... },   // ← Konten siap-pakai untuk mode Mudah
+  normal:    { ... },   // ← Konten siap-pakai untuk mode Normal
+  tantangan: { ... },   // ← Konten siap-pakai untuk mode Tantangan
+}
+```
+
+Field `mode` di setiap aktivitas berisi **3 versi konten yang disiapkan**.
+Saat runtime, hanya **1 versi yang ditampilkan** — yang sesuai dengan pilihan
+guru di Preview. Bukan: "guru pilih per aktivitas." Engineer Fase 5 render
+satu versi `mode[effectiveMode]`, bukan tiga sekaligus.
+
 Override per aktivitas (escape hatch): runtime menyediakan tombol kecil
 "Sesuaikan kesulitan" yang muncul setelah aktivitas berjalan ≥30 detik tanpa
 respons siswa yang baik. Tap → naik/turun satu mode untuk aktivitas itu saja.
@@ -308,6 +323,7 @@ Sebuah TP dianggap valid v4 jika:
 - Setiap aktivitas dengan `mode` punya ketiga sub-mode (mudah, normal, tantangan)
 - Setiap aktivitas tipe `pair_work` punya `fallback.pair_tidak_jalan`
 - Setiap aktivitas dengan `observation.aktif = true` punya `n_siswa` ≥ 1
+- **Fase Penutup WAJIB punya tepat 1 aktivitas tipe `closure_reinforcement` sebagai aktivitas terakhir** (Schema v4.3+)
 
 Pelanggaran → warning di console, BUKAN throw. Kelas tetap jalan.
 

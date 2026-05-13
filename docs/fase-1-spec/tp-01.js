@@ -2,7 +2,7 @@
  * =============================================================
  * FLAF — TP 01 (Greetings & Farewells)
  * File: data/tp-01.js
- * Format: v4 — Hybrid (aktivitas[] + langkah[] backward compat)
+ * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
  * STATUS: DRAFT Fase 1 — Mei 2026
@@ -776,7 +776,7 @@ const TP_01 = {
 
         {
           id    : 'tp01-penutup-farewell',
-          tipe  : 'farewell_kelas',
+          tipe  : 'closure_reinforcement',
           judul : 'Goodbye Bersama',
           pm    : 'joyful',
 

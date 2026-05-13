@@ -17,6 +17,73 @@ SEBELUM commit perubahan ke SCHEMA.md.
 
 ---
 
+## [Mei 2026] — Mini-versi 4.3
+
+**Pemicu**: Review Anda atas Sesi M1 mengungkap 3 temuan inkonsistensi.
+
+**Perubahan**:
+
+1. **[Enum] Rename `farewell_kelas` → `closure_reinforcement` di AktivitasTipe**
+   Lokasi: SCHEMA §4.1
+   Konteks: TP 01 punya 3 aktivitas Penutup (`review_quick` + `reflection` +
+   `farewell_kelas`), TP 04 hanya 2 (`chant_movement` + `farewell_kelas`),
+   TP 03 hanya 2 (`tpr_action` + `farewell_kelas`). Pola Penutup belum baku.
+   Solusi: jadikan **aktivitas terakhir Penutup WAJIB** punya tipe baru
+   `closure_reinforcement` yang berfungsi memperkuat pencapaian siswa
+   (pengakuan + farewell), bukan sekadar goodbye.
+   `review_quick` dan `reflection` tetap **opsional** di Penutup.
+
+2. **[Validation] Tambah rule wajib `closure_reinforcement` di §8**
+   Setiap TP wajib punya tepat 1 aktivitas tipe `closure_reinforcement`
+   sebagai aktivitas TERAKHIR di Fase Penutup.
+
+3. **[Doc] Klarifikasi cara baca field `mode` per aktivitas di §6**
+   Field `mode: { mudah, normal, tantangan }` per aktivitas berisi
+   **3 versi konten siap-pakai**, bukan pilihan per-aktivitas. Saat
+   runtime, hanya 1 versi yang ditampilkan (sesuai pilihan Preview).
+   Klarifikasi ini muncul karena review Anda awalnya menafsirkan field
+   ini sebagai "guru pilih per aktivitas saat runtime" — kesalahpahaman
+   yang wajar, dokumentasi diperjelas untuk reduce risk masa depan.
+
+**Dampak ke TP yang sudah migrate**:
+
+- **TP 01 v4.x**: `farewell_kelas` di Penutup → rename ke `closure_reinforcement`.
+  Konten tetap.
+- **TP 02 v4.2**: `farewell_kelas` (judul "Apresiasi & Goodbye") → rename ke
+  `closure_reinforcement`. Konten **sudah** include apresiasi pencapaian +
+  farewell — sesuai definisi baru.
+- **TP 03 v4.2**: `farewell_kelas` di Penutup → rename ke `closure_reinforcement`.
+  Konten **sudah** include "Well done! Now you know..." — sesuai.
+- **TP 04 v4.x**: `farewell_kelas` (judul "Apresiasi & Goodbye") → rename ke
+  `closure_reinforcement`. Konten sudah berisi "Great work today! You can
+  count to twenty in English!" — sesuai.
+
+Tidak ada perubahan substansi — semua TP yang sudah migrate **sudah** punya
+elemen reinforcement di aktivitas farewell mereka. Pattern ini terdeteksi
+oleh Anda, schema yang menyesuaikan.
+
+**Label v4 → v4.2 relabel di TP 01 & TP 04**:
+Bonus cleanup di Sesi M2 — TP 01 header masih tulis "Format: v4," TP 04
+masih "Format: v4 — Hybrid." Update ke "Format: v4.3 — Hybrid" untuk
+konsistensi dokumentasi. Konten TP TIDAK berubah karena v4.0/4.1/4.2/4.3
+semuanya backward compatible.
+
+**Backward compatibility**:
+- ⚠️ **`farewell_kelas` masih TIDAK valid setelah v4.3** — rename, bukan
+  alias. TP yang belum migrate ke v4.3 dan punya `farewell_kelas` perlu
+  update saat migrasi. Untuk TP yang masih `langkah[]` only (belum migrate
+  ke v4 sama sekali), tidak ada dampak — runtime lama tidak mengenal tipe
+  aktivitas.
+
+**Justifikasi**:
+- Dok 04 §6 (Pembukaan & Penutupan): "Penutup berfungsi untuk review singkat,
+  closure emosional, penguatan rutinitas bahasa."
+- Dok 05 §8 (Struktur Penutup): "Penutup berfungsi untuk review singkat,
+  closure emosional, penguatan rutinitas bahasa, transisi keluar kelas."
+  Kata kunci: **penguatan**. Bukan sekadar farewell.
+
+---
+
 ## [Mei 2026] — Mini-versi 4.2
 
 **Pemicu**: Sesi M1 — migrasi TP 03 (Classroom Instructions) mengungkap
@@ -151,6 +218,13 @@ kebutuhan struktural yang tidak bisa di-akomodasi via mini-versi.
 ## Daftar Field Baru (per Mini-versi)
 
 Daftar ini diupdate setiap mini-versi rilis, untuk referensi cepat migrator.
+
+### v4.3
+- Tidak ada field baru — rename enum value + tambah validation rule
+
+### Enum v4.3
+- `AktivitasTipe`: **rename** `farewell_kelas` → `closure_reinforcement` (WAJIB di akhir Penutup)
+- Doc: klarifikasi semantik `mode` di SCHEMA §6
 
 ### v4.2
 - Tidak ada field baru — hanya tambah enum value & klarifikasi field existing

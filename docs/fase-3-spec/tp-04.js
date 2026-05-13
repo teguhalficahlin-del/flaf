@@ -2,7 +2,7 @@
  * =============================================================
  * FLAF — TP 04 (Numbers 1–20)
  * File: data/tp-04.js
- * Format: v4 — Hybrid (aktivitas[] + langkah[] backward compat)
+ * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
  * STATUS: DRAFT Fase 3 — Mei 2026
@@ -590,7 +590,7 @@ const TP_04 = {
 
         {
           id    : 'tp04-penutup-apresiasi',
-          tipe  : 'farewell_kelas',
+          tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',
           pm    : 'meaningful',
 

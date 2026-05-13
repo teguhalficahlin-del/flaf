@@ -2,7 +2,7 @@
  * =============================================================
  * FLAF — TP 02 (Introducing Myself)
  * File: data/tp-02.js
- * Format: v4.2 — Hybrid (aktivitas[] + langkah[] backward compat)
+ * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
  * STATUS: DRAFT Sesi M1 — Mei 2026
@@ -575,7 +575,7 @@ const TP_02 = {
 
         {
           id    : 'tp02-penutup-apresiasi',
-          tipe  : 'farewell_kelas',
+          tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',
           pm    : 'joyful',
 

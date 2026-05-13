@@ -2,7 +2,7 @@
  * =============================================================
  * FLAF — TP 03 (Classroom Instructions)
  * File: data/tp-03.js
- * Format: v4.2 — Hybrid (aktivitas[] + langkah[] backward compat)
+ * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
  * STATUS: DRAFT Sesi M1 — Mei 2026
@@ -534,7 +534,7 @@ const TP_03 = {
 
         {
           id    : 'tp03-penutup-farewell',
-          tipe  : 'farewell_kelas',
+          tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',
           pm    : 'joyful',
 
