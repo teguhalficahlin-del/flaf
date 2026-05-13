@@ -59,7 +59,7 @@ const TP_04 = {
 
   vocab: ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
           'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
-          'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'how many'],
+          'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'],
 
   // BACKWARD COMPAT
   persiapan: ['Kartu angka 1–20', 'Benda untuk dihitung (buku, pensil, dll)'],
@@ -329,6 +329,7 @@ const TP_04 = {
             n_siswa         : 4,
             indikator       : ['vocab_use', 'confidence'],
             rotasi_priority : 'belum_observed',
+            tag_set         : 'akurasi',  // Fokus pengukuran lafal angka belasan
           },
 
           fallback: {
@@ -345,7 +346,7 @@ const TP_04 = {
         {
           id    : 'tp04-inti-pair-count',
           tipe  : 'pair_work',
-          judul : 'Pair: Hitung Bersama Teman',
+          judul : 'Pair Work — Cooperative: Hitung Bersama Teman',
           pm    : 'meaningful',
 
           tujuan_komunikasi : 'Siswa berlatih hitung dengan dukungan teman, mengurangi rasa malu salah',
@@ -405,6 +406,7 @@ const TP_04 = {
           tipe  : 'game_movement',
           judul : 'Permainan Tunjuk Cepat',
           pm    : 'joyful',
+          flags : ['kompetitif_safety'],  // Mode mudah harus tidak kompetitif individual
 
           tujuan_komunikasi : 'Siswa mengaktifkan recall angka secara cepat dalam suasana menyenangkan',
           vocab_target      : ['one','two','three','four','five','six','seven','eight','nine','ten',
@@ -463,7 +465,7 @@ const TP_04 = {
           pm    : 'meaningful',
 
           tujuan_komunikasi : 'Siswa pakai angka untuk hitung benda nyata, jawab "how many?"',
-          vocab_target      : ['how many', 'there are', 'there is'],
+          vocab_target      : ['one','two','three','four','five','six','seven','eight','nine','ten'],
 
           durasi_target_detik : 360,  // 6 menit
           durasi_min_detik    : 180,
@@ -477,7 +479,7 @@ const TP_04 = {
           audio_cue: {
             contoh_guru  : 'How many books on my desk? Let us count!',
             contoh_siswa : 'One, two, three, four, five! There are five books!',
-            target_vocab : ['how many', 'one', 'two', 'three', 'four', 'five', 'there are'],
+            target_vocab : ['one', 'two', 'three', 'four', 'five'],
           },
 
           media_dipakai : ['media-benda-hitung'],
@@ -537,7 +539,7 @@ const TP_04 = {
       aktivitas: [
         {
           id    : 'tp04-penutup-blast-off',
-          tipe  : 'game_movement',  // movement + chant gabungan
+          tipe  : 'chant_movement',  // bukan game (tidak kompetitif) — chant + gerakan duduk
           judul : 'Blast Off! (Hitung Mundur 10-1)',
           pm    : 'joyful',
 
@@ -666,6 +668,7 @@ const TP_04 = {
             n_siswa         : 99,
             indikator       : ['vocab_use', 'response', 'confidence'],
             rotasi_priority : 'belum_observed',
+            tag_set         : 'akurasi',  // Validasi lafal angka via kartu
           },
 
           fallback: {

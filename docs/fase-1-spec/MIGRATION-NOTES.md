@@ -86,6 +86,38 @@ Untuk setiap TP, kerjakan checklist ini berurutan:
 
 Saat membaca v3, gunakan pola ini untuk mengelompokkan langkah:
 
+### Field Baru di v4.1 — Wajib Dipertimbangkan Saat Migrasi
+
+Mulai mini-versi 4.1, ada 3 field baru opsional. Lihat juga SCHEMA-CHANGELOG.md
+untuk daftar lengkap. Migrator perlu pertimbangkan:
+
+**a) `flags[]` — saat aktivitas punya elemen kompetitif**
+
+Kalau aktivitas mengandung kompetisi individual (race, who-is-fastest, game),
+tambahkan `flags: ['kompetitif_safety']`. Ini sinyal ke runtime bahwa mode
+mudah harus ditampilkan dengan reminder "tidak kompetitif individual" untuk
+emotional safety siswa pemalu (Dok 03 §14).
+
+Tidak semua `game_movement` perlu flag ini — hanya yang elemennya kompetitif.
+
+**b) `tipe: 'chant_movement'` — pisahkan dari game_movement**
+
+Kalau aktivitas adalah chant berirama + gerakan TANPA kompetisi (mis: hitung
+mundur sambil duduk, action song, countdown), pakai tipe `chant_movement`,
+bukan `game_movement`. Bedanya:
+- `chant_movement`: tidak ada pemenang/kalah, semua siswa ikut
+- `game_movement`: ada elemen kompetitif (siapa cepat/tepat)
+
+**c) `observation.tag_set: 'akurasi'` — saat fokus pengukuran lafal**
+
+Kalau aktivitas observasi fokusnya pada akurasi lafal/recall vocabulary
+(angka, nama benda, kata kunci), set `tag_set: 'akurasi'`. Runtime akan
+menampilkan rating chip `tepat/agak_tepat/belum/belum_dicoba` (bukan
+`aktif/berani/diam/perlu_help` standar).
+
+Kalau fokus observasi keberanian atau partisipasi umum, gunakan default
+`'standar'` (atau tidak set field ini sama sekali).
+
 ### Pola 1: Modeling + Chorus
 ```
 v3:

@@ -411,7 +411,7 @@ const TP_01 = {
         {
           id    : 'tp01-inti-pair-sapa-teman',
           tipe  : 'pair_work',
-          judul : 'Pair Work: Sapa Teman Sebangku',
+          judul : 'Pair Work — Dialog: Sapa Teman Sebangku',
           pm    : 'meaningful',
 
           tujuan_komunikasi : 'Siswa saling menyapa dalam bahasa Inggris kepada teman nyata',
@@ -579,7 +579,7 @@ const TP_01 = {
         {
           id    : 'tp01-inti-pair-goodbye',
           tipe  : 'pair_work',
-          judul : 'Pair Work: Bye-Bye Teman',
+          judul : 'Pair Work — Dialog: Bye-Bye Teman',
           pm    : 'joyful',
 
           tujuan_komunikasi : 'Siswa berlatih perpisahan dengan teman nyata',

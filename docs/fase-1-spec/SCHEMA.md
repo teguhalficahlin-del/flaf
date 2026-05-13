@@ -83,6 +83,7 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
   tipe            : AktivitasTipe,
   judul           : string,     // 'Sapa Teman' — untuk header layar
   pm              : 'mindful' | 'meaningful' | 'joyful' | null,
+  flags           : Flag[]?,    // Tanda perilaku khusus runtime. Lihat §4.5.
 
   // ────────── B. PEDAGOGI ──────────
   tujuan_komunikasi : string,
@@ -107,7 +108,10 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
   },
 
   // ────────── E. MEDIA ──────────
-  media_dipakai : string[],      // ID media dari Media[] level TP
+  media_dipakai : string[],      // ID media dari Media[] level TP.
+                                 // Berlaku untuk aktivitas mengajar maupun
+                                 // observation_validation (mis: kartu yang
+                                 // dibawa guru saat validasi).
 
   // ────────── F. MODE DIFERENSIASI (Dok 06 §3) ──────────
   mode : {
@@ -122,6 +126,7 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
     n_siswa     : number?,        // Berapa siswa diobservasi (default 3)
     indikator   : Indikator[]?,   // Indikator apa yang diukur
     rotasi_priority : string?,    // 'belum_observed' | 'belum_speaking_turn' | 'random'
+    tag_set     : 'standar' | 'akurasi'?,  // Rating tag set untuk capture. Default 'standar'. Lihat §4.6.
   },
 
   // ────────── H. FALLBACK (Dok 03 §16, Dok 05 §11) ──────────
@@ -148,7 +153,8 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
 | `chorus` | Kelas mengulang bersama setelah guru | Tidak |
 | `chant` | Aktivitas berirama dengan tepuk/gerak | Tidak |
 | `pair_work` | Siswa berinteraksi berpasangan | Ya |
-| `game_movement` | Permainan dengan gerakan | Tidak |
+| `chant_movement` | Chant berirama dengan gerakan (countdown, action song, dll) — bukan kompetitif | Tidak |
+| `game_movement` | Permainan dengan gerakan & elemen kompetitif | Tidak |
 | `meaningful_link` | Mengaitkan ke kehidupan nyata siswa | Tidak |
 | `review_quick` | Review cepat di Penutup | Ya |
 | `reflection` | Siswa atau guru berefleksi | Tidak |
@@ -189,6 +195,34 @@ diperlakukan sama). Hanya untuk aktivitas yang sangat fundamental seperti
 | `energi_turun` | Siswa lesu, butuh re-energize |
 | `waktu_mepet` | Sisa waktu fase tidak cukup untuk durasi normal |
 | `media_tidak_tersedia` | Kartu/PDF tidak siap |
+
+### 4.5 Flag (enum)
+
+Field `flags[]` di level aktivitas adalah array yang memberitahu runtime engine
+tentang perilaku khusus aktivitas. Optional — kalau tidak ada, behavior default.
+
+| Flag | Maksud | Behavior yang Diharapkan dari Runtime |
+|---|---|---|
+| `kompetitif_safety` | Aktivitas mengandung elemen kompetisi yang bisa membahayakan emotional safety siswa pemalu | Saat mode mudah aktif, runtime WAJIB menampilkan reminder safety di UI (mis: "Mode mudah: tidak kompetitif individual"). Saat mode normal/tantangan, reminder tidak ditampilkan. |
+
+**Catatan**: Daftar flag ini akan bertumbuh seiring migrasi TP. Lihat
+SCHEMA-CHANGELOG.md untuk riwayat penambahan.
+
+### 4.6 Tag Set (untuk Observation Capture)
+
+Field `observation.tag_set` menentukan jenis rating tag yang ditampilkan
+saat guru tap chip rating per siswa di state `ObservationCapture`.
+
+| Tag Set | Tags | Cocok untuk Indikator |
+|---|---|---|
+| `standar` (default) | `aktif`, `berani`, `diam`, `perlu_help` | `participation`, `confidence`, `response` |
+| `akurasi` | `tepat`, `agak_tepat`, `belum`, `belum_dicoba` | `vocab_use` (lafal angka, penggunaan vocabulary spesifik) |
+
+**Default**: Jika `tag_set` tidak ditetapkan, runtime gunakan `standar`.
+
+**Kapan pakai `akurasi`**: Aktivitas yang fokus utamanya pengukuran lafal/recall
+vocabulary spesifik — misalnya validasi angka di TP 04, validasi vocabulary
+target di TP fokus kosakata.
 
 ---
 
