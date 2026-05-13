@@ -17,6 +17,53 @@ SEBELUM commit perubahan ke SCHEMA.md.
 
 ---
 
+## [Mei 2026] — Mini-versi 4.2
+
+**Pemicu**: Sesi M1 — migrasi TP 03 (Classroom Instructions) mengungkap
+kebutuhan tipe aktivitas baru untuk TPR (Total Physical Response).
+
+**Perubahan**:
+
+1. **[Enum] Tambah `tpr_action` ke AktivitasTipe**
+   Lokasi: SCHEMA §4.1
+   Konteks: TP 03 dominan dengan instruksi TPR (Stand up, Sit down, Open
+   your book) di mana siswa **lakukan aksi fisik**, BUKAN ucap kembali.
+   Tipe yang ada (`modeling`, `chorus`) tidak akurat — chorus mengasumsikan
+   siswa ucap kembali, modeling mengasumsikan demonstrasi pola bahasa.
+   TPR fundamentally berbeda: input verbal → output fisik.
+   Definisi: "Total Physical Response — guru ucap instruksi, siswa lakukan
+   aksi fisik (BUKAN ucap kembali). `audio_cue.contoh_siswa` umumnya kosong."
+   Observation default: `Ya (untuk `response`)` — sistem menyarankan observasi
+   apakah siswa lakukan aksi yang benar dan tepat waktu.
+
+2. **[Doc] Klarifikasi `audio_cue.contoh_siswa` bisa kosong**
+   Lokasi: SCHEMA §4 (section D)
+   Konteks: Untuk tipe `tpr_action`, siswa tidak ucap respons verbal.
+   Sebelumnya field ini selalu diisi, sekarang eksplisit: boleh kosong
+   untuk tipe TPR. Engineer Fase 5 perlu render UI berbeda saat field
+   kosong (tidak ada bagian "Siswa akan jawab: [X]").
+
+**Dampak ke TP yang sudah migrate**:
+
+- **TP 01 v4**: Tidak ada aktivitas TPR. Tidak perlu update.
+- **TP 04 v4**: Tidak ada aktivitas TPR. Tidak perlu update.
+
+**Justifikasi**:
+- Dok 02 §2 (anak fase A "membutuhkan visual dan gerak"): TPR adalah metode
+  utama untuk usia 6-7 yang belajar melalui gerakan.
+- Dok 03 §15 (Movement Interaction Rules): aktivitas speaking fase A
+  "sebaiknya melibatkan movement ringan."
+- Hidden information problem (analisa Sesi M1): kalau TPR dikamuflase sebagai
+  modeling/chorus, engineer Fase 5 akan render kotak "siswa akan jawab" yang
+  kosong — membingungkan guru.
+
+**Backward compatibility**:
+- ✓ Field `contoh_siswa` tetap opsional — TP lama yang isi field ini tetap valid.
+- ✓ Tipe baru tidak mengganggu enum yang ada.
+- ✓ TP yang sudah migrate (TP 01, TP 04) tidak terpengaruh.
+
+---
+
 ## [Mei 2026] — Mini-versi 4.1
 
 **Pemicu**: TP 04 (Numbers 1–20) migrasi mengungkap 5 kebutuhan yang tidak
@@ -104,6 +151,13 @@ kebutuhan struktural yang tidak bisa di-akomodasi via mini-versi.
 ## Daftar Field Baru (per Mini-versi)
 
 Daftar ini diupdate setiap mini-versi rilis, untuk referensi cepat migrator.
+
+### v4.2
+- Tidak ada field baru — hanya tambah enum value & klarifikasi field existing
+
+### Enum v4.2
+- `AktivitasTipe`: tambah `tpr_action`
+- `audio_cue.contoh_siswa`: klarifikasi boleh kosong (eksplisit untuk `tpr_action`)
 
 ### v4.1
 - `aktivitas.flags[]` (optional, array of Flag enum)

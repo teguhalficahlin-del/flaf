@@ -103,7 +103,9 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
 
   audio_cue : {                  // Yang sistem PUTAR via TTS (atau audio file masa depan)
     contoh_guru     : string?,   // Contoh kalimat guru
-    contoh_siswa    : string?,   // Contoh respons siswa yang diharapkan
+    contoh_siswa    : string?,   // Contoh respons siswa yang diharapkan.
+                                 // KOSONG untuk tipe `tpr_action` (siswa
+                                 // tidak ucap kembali, hanya bertindak).
     target_vocab    : string[]?, // Kata-kata yang bisa diputar terpisah on-demand
   },
 
@@ -155,6 +157,7 @@ Jika dua-duanya ada, runtime baru prioritaskan `aktivitas`, runtime lama priorit
 | `pair_work` | Siswa berinteraksi berpasangan | Ya |
 | `chant_movement` | Chant berirama dengan gerakan (countdown, action song, dll) — bukan kompetitif | Tidak |
 | `game_movement` | Permainan dengan gerakan & elemen kompetitif | Tidak |
+| `tpr_action` | Total Physical Response — guru ucap instruksi, siswa lakukan aksi fisik (BUKAN ucap kembali). `audio_cue.contoh_siswa` umumnya kosong. | Ya (untuk `response`) |
 | `meaningful_link` | Mengaitkan ke kehidupan nyata siswa | Tidak |
 | `review_quick` | Review cepat di Penutup | Ya |
 | `reflection` | Siswa atau guru berefleksi | Tidak |

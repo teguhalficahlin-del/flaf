@@ -187,6 +187,35 @@ v4 → 1 aktivitas tipe `reflection`:
   Mode tetap perlu ada (siswa pemalu vs aktif punya gaya refleksi beda)
 ```
 
+### Pola 7: TPR (Total Physical Response) — Schema v4.2+
+
+```
+v3:
+  - instruksi: "Lakukan gerakan sebelum berkata. Stand up! Sit down!"
+  - audio:     "Stand up! Sit down!"
+  (tidak ada respons_siswa karena siswa hanya BERTINDAK, tidak ucap)
+
+v4 → 1 aktivitas tipe `tpr_action`:
+  audio_cue.contoh_guru: "Stand up! Sit down!"
+  audio_cue.contoh_siswa: ""   ← KOSONG (siswa bertindak)
+  observation.indikator: ['response', 'participation']
+  observation.tag_set: 'akurasi' (kalau fokus akurasi respons)
+```
+
+**Kapan pakai `tpr_action`**:
+- Aktivitas di mana siswa **bertindak fisik** sebagai respons input verbal
+- Contoh: classroom instructions, body parts (touch your nose), action songs
+  (clap your hands), Simon Says
+
+**Kapan TIDAK pakai `tpr_action`**:
+- Aktivitas di mana siswa juga **ucap** kembali → pakai `chorus` atau `chant`
+- Permainan dengan elemen kompetitif → pakai `game_movement` + flags
+- Chant berirama dengan gerakan tapi tanpa input verbal guru → `chant_movement`
+
+**Catatan**: Permainan "Simon Says" tetap `tpr_action`, tapi tambah
+`flags: ['kompetitif_safety']` karena ada trap mechanic. Mode mudah akan
+versi non-trap.
+
 ---
 
 ## 4. Pertanyaan yang Sering Muncul
