@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLAF — Fase 3 UI Sketch (Sesi Skenario)</title>
+<style>
+/* ═══════════════════════════════════════════════════════════
+   FLAF FASE 3 — UI SKETCH PROTOTYPE
+   Status: DRAFT, bukan styling final
+   Mobile-first: 360px viewport
+   ═══════════════════════════════════════════════════════════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #f5f5f5;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* Layout halaman: device frame di tengah, kontrol di samping */
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 12px 60px;
+  gap: 20px;
+}
+
+.page-header {
+  max-width: 560px;
+  text-align: center;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.page-header h1 {
+  font-size: 16px;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+.page-header .note {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-width: 560px;
+  padding: 10px 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.controls button {
+  font-size: 11px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555;
+}
+.controls button:hover { background: #eee; }
+.controls button.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+/* Device frame — simulasi HP 360px */
+.device {
+  width: 360px;
+  min-height: 640px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+.device-screen {
+  background: #fff;
+  border-radius: 12px;
+  min-height: 616px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* State label di atas device */
+.state-label {
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   APP CONTENT (di dalam device-screen)
+   ═══════════════════════════════════════════════════════════ */
+
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+}
+
+/* ────── HEADER (terlihat di banyak state) ────── */
+.app-header {
+  padding: 12px 16px 8px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #666;
+}
+.app-header .fase-info {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ────── TIMER ────── */
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.5s, color 0.5s;
+}
+.timer--green  { background: #e8f5e9; color: #2e7d32; }
+.timer--yellow { background: #fff8e1; color: #b27300; }
+.timer--red    { background: #ffe9e9; color: #c62828; }
+.timer--off    { display: none; }
+
+.timer-label {
+  font-size: 10px;
+  font-weight: 400;
+  margin-left: 2px;
+  opacity: 0.85;
+}
+
+/* ────── BODY UTAMA ────── */
+.app-body {
+  flex: 1;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.aktivitas-tipe-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #c97800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.aktivitas-judul {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.cue-text {
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin: 12px 0 20px;
+  padding: 0 8px;
+}
+
+.instruksi-text {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.saran-box {
+  background: #fff8e1;
+  border-left: 3px solid #c97800;
+  padding: 10px 12px;
+  margin: 14px 0;
+  text-align: left;
+  font-size: 13px;
+  color: #555;
+  border-radius: 0 6px 6px 0;
+}
+.saran-box .saran-label {
+  font-weight: 700;
+  color: #c97800;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  margin: 6px 4px;
+}
+.audio-btn:hover { background: #f5f5f5; }
+.audio-btn::before {
+  content: "▶";
+  color: #c97800;
+  font-size: 10px;
+}
+
+/* Mode badge */
+.mode-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.mode-badge.override { background: #fff3e0; color: #e65100; }
+
+/* ────── FOOTER ACTIONS ────── */
+.app-footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding: 12px 16px 16px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #333; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  color: #555;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.btn-secondary:hover { background: #f5f5f5; }
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+.btn-row > * { flex: 1; }
+
+.btn-kondisi {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  background: transparent;
+  color: #888;
+  font-size: 11px;
+  border: 1px dashed #bbb;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-kondisi:hover { background: #f5f5f5; color: #555; }
+
+/* ────── OVERLAY (FallbackUI, KondisiPrompt) ────── */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.15s;
+}
+@keyframes fadeIn { from { opacity: 0; } }
+
+.overlay-content {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  padding: 20px 18px;
+  max-height: 85%;
+  overflow-y: auto;
+}
+.overlay-content h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.overlay-content p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.overlay-content .opsi {
+  background: #f8f8f8;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-align: left;
+  width: 100%;
+  color: #333;
+}
+.overlay-content .opsi:hover {
+  background: #fff8e1;
+  border-color: #c97800;
+}
+
+/* ────── OBSERVATION CAPTURE ────── */
+.obs-question {
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.obs-card {
+  background: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.obs-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.obs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.obs-tag {
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  user-select: none;
+}
+.obs-tag.aktif    { background: #e8f5e9; border-color: #4caf50; color: #2e7d32; }
+.obs-tag.berani   { background: #e3f2fd; border-color: #2196f3; color: #1565c0; }
+.obs-tag.diam     { background: #fff8e1; border-color: #f9a825; color: #b27300; }
+.obs-tag.help     { background: #fce4ec; border-color: #e91e63; color: #ad1457; }
+.obs-tag.selected {
+  font-weight: 600;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+/* ────── TRANSISI FASE (FaseEntering, FaseSelesai) ────── */
+.fase-transisi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  text-align: center;
+}
+.fase-transisi .fase-label {
+  font-size: 12px;
+  color: #c97800;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.fase-transisi .fase-judul {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.fase-transisi .fase-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+/* ────── PREVIEW / CLOSURE / RESUME ────── */
+.preview-section {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.preview-section h2 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+.preview-section .subtitle {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+.preview-row .check { color: #2e7d32; font-weight: 700; }
+
+.mode-pick {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+.mode-option {
+  padding: 12px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fff;
+}
+.mode-option:hover { border-color: #c97800; }
+.mode-option.selected {
+  border-color: #1a1a1a;
+  background: #fff8e1;
+}
+.mode-option .mode-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.mode-option .mode-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ────── CLOSURE SCREEN ────── */
+.closure-summary {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 14px 0;
+  font-size: 13px;
+  text-align: left;
+}
+.closure-summary li {
+  list-style: none;
+  padding: 4px 0;
+}
+.closure-summary li::before {
+  content: "• ";
+  color: #c97800;
+}
+.mood-row {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+.mood-btn {
+  flex: 1;
+  padding: 14px 6px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.mood-btn .emoji { font-size: 24px; display: block; margin-bottom: 4px; }
+.mood-btn.selected { border-color: #c97800; background: #fff8e1; }
+
+.note-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  resize: vertical;
+  min-height: 60px;
+  font-family: inherit;
+}
+
+/* Debug info badge */
+.debug-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  z-index: 5;
+}
+
+/* Hidden helper */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="page-header">
+    <h1>FLAF — Fase 3 UI Sketch</h1>
+    Prototype interaktif sesi skenario mengajar. Tap tombol untuk simulasi flow.
+    <div class="note">Status: DRAFT — styling sengaja sederhana untuk fokus ke struktur dan flow, bukan estetika final.</div>
+  </div>
+
+  <!-- Quick state jumper -->
+  <div class="controls">
+    <button data-jump="preview">1. Preview</button>
+    <button data-jump="resume">1b. Resume Prompt</button>
+    <button data-jump="fase-enter">2. Masuk Fase</button>
+    <button data-jump="aktivitas-manual">3a. Aktivitas (manual)</button>
+    <button data-jump="aktivitas-timer">3b. Aktivitas (timer)</button>
+    <button data-jump="observation">4. Observation</button>
+    <button data-jump="fase-selesai">5. Fase Selesai</button>
+    <button data-jump="closure">6. Closure</button>
+  </div>
+
+  <div class="state-label" id="state-label">STATE: SesiPreviewing</div>
+
+  <!-- Device frame -->
+  <div class="device">
+    <div class="device-screen" id="screen">
+      <div class="debug-badge" id="debug">…</div>
+      <!-- Konten state akan di-inject di sini oleh JS -->
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+// FLAF FASE 3 — STATE MACHINE PROTOTYPE
+// Implementasi minimal dari STATE-MACHINE.md untuk visualisasi
+// ════════════════════════════════════════════════════════════
+
+// ─── DATA: TP 01 mini (subset dari tp-01.js untuk demo) ────
+const TP_01 = {
+  id: 'tp-01',
+  nama: 'Greetings & Farewells',
+
+  skenario: [
+    {
+      fase: 'Pembuka',
+      durasi: 10,
+      aktivitas: [
+        {
+          id: 'tp01-pembuka-sambut-pintu',
+          tipe: 'sapaan_individu',
+          judul: 'Sambut di Pintu',
+          micro_script: { pembuka: 'Berdiri di pintu. Sapa setiap siswa yang masuk.' },
+          audio_cue: { contoh_guru: 'Good morning! Come in!' },
+          advance: { mode: 'manual' },
+          observation: { aktif: true, n_siswa: 5, indikator: ['response', 'confidence'] },
+          mode_text: 'Sapa setiap siswa, tunggu balasan singkat.',
+        },
+        {
+          id: 'tp01-pembuka-sapa-kelas',
+          tipe: 'sapaan_kelas',
+          judul: 'Sapa Kelas Bersama',
+          micro_script: { pembuka: 'Berdiri di depan kelas. Sapa semua siswa.' },
+          audio_cue: { contoh_guru: 'Good morning, everyone!', contoh_siswa: 'Good morning, teacher!' },
+          advance: { mode: 'manual' },
+          observation: { aktif: false },
+          mode_text: 'Sapa langsung tanpa papan. Tunggu respons kompak.',
+        },
+        {
+          id: 'tp01-pembuka-kenalkan-waktu',
+          tipe: 'modeling',
+          judul: 'Kenalkan Waktu (Pagi/Siang/Sore)',
+          micro_script: { pembuka: 'Tunjukkan kartu waktu. Tanya: "What time is this?"' },
+          audio_cue: { contoh_guru: 'What time is this?' },
+          advance: { mode: 'manual' },
+          observation: { aktif: false },
+          mode_text: 'Tunjuk kartu, tanya, beri waktu 5 detik untuk tebak.',
+        },
+      ],
+    },
+    {
+      fase: 'Inti',
+      durasi: 30,
+      aktivitas: [
+        {
+          id: 'tp01-inti-4-kartu-salam',
+          tipe: 'chorus',
+          judul: '4 Kartu Salam',
+          micro_script: { pembuka: 'Tempel 4 kartu salam di papan, tunjuk satu per satu.' },
+          audio_cue: { contoh_guru: 'Good morning. Good afternoon. Good evening. Good night.' },
+          advance: { mode: 'manual' },
+          observation: { aktif: false },
+          mode_text: 'Tunjuk kartu, ucap sekali, siswa ikuti.',
+        },
+        {
+          id: 'tp01-inti-chant',
+          tipe: 'chant',
+          judul: 'Chant: Hello Hello',
+          micro_script: { pembuka: 'Berdiri. Mulai chant dengan tepuk tangan.' },
+          audio_cue: { contoh_guru: 'Hello hello, how are you? I am fine, thank you!' },
+          advance: { mode: 'timer_visible_only' },
+          durasi_target_detik: 240,
+          observation: { aktif: false },
+          mode_text: 'Chant 3 kali, makin cepat tiap putaran.',
+        },
+        {
+          id: 'tp01-inti-pair-sapa-teman',
+          tipe: 'pair_work',
+          judul: 'Pair Work: Sapa Teman',
+          micro_script: { pembuka: '"Turn to your partner. Say good morning."' },
+          audio_cue: { contoh_guru: 'Talk to your partner.', contoh_siswa: 'Good morning, [name]!' },
+          advance: { mode: 'timer_visible_only' },
+          durasi_target_detik: 180,  // 3 menit — dipendekkan untuk demo
+          observation: { aktif: true, n_siswa: 3, indikator: ['participation', 'confidence'] },
+          mode_text: 'Demo singkat, langsung pair work.',
+          fallback: {
+            pair_tidak_jalan: 'Demo 1 pasangan di depan kelas. Beri 30 detik, coba lagi.',
+            siswa_pasif: 'Pisahkan dari pasangan, gabung ke pair yang aktif jadi grup 3.',
+            kelas_ribut: 'Stop pair work. Kembali ke chorus 30 detik. Coba pair lagi setelah hening.',
+          },
+        },
+      ],
+    },
+    {
+      fase: 'Penutup',
+      durasi: 10,
+      aktivitas: [
+        {
+          id: 'tp01-penutup-review',
+          tipe: 'review_quick',
+          judul: 'Review Cepat 4 Salam',
+          micro_script: { pembuka: 'Panggil 3-4 siswa acak.' },
+          audio_cue: { contoh_guru: 'What greeting do we use in the morning?' },
+          advance: { mode: 'manual' },
+          observation: { aktif: true, n_siswa: 4, indikator: ['response', 'vocab_use'] },
+          mode_text: 'Pilih campuran aktif dan diam.',
+        },
+        {
+          id: 'tp01-penutup-farewell',
+          tipe: 'farewell_kelas',
+          judul: 'Goodbye Bersama',
+          micro_script: { pembuka: 'Berdiri di depan. Ajak siswa berdiri.' },
+          audio_cue: { contoh_guru: 'Goodbye, everyone!', contoh_siswa: 'Goodbye, teacher!' },
+          advance: { mode: 'manual' },
+          observation: { aktif: false },
+          mode_text: null,
+        },
+      ],
+    },
+  ],
+};
+
+// Daftar siswa demo untuk saran rotasi observasi
+const SISWA_DEMO = ['Aditia', 'Bunga', 'Citra', 'Deni', 'Eka', 'Fajar', 'Gilang', 'Hana'];
+
+// ─── STATE MACHINE ─────────────────────────────────────────
+const State = {
+  level: 'sesi',            // sesi | fase | aktivitas
+  sesi: 'previewing',       // previewing | resume_prompt | aktif | closure
+  fase_idx: 0,
+  aktivitas_idx: 0,
+  aktivitas_state: 'ready', // ready | running | fallback | obs_capture | fase_entering | fase_selesai
+  mode: 'normal',           // mudah | normal | tantangan
+  mode_override: {},        // { aktivitasId: 'mudah' }
+  timer_started_at: null,
+  timer_handle: null,
+  overlay: null,            // null | 'fallback' | 'kondisi' | 'fallback_detail'
+  fallback_kondisi: null,   // kondisi yang dipilih
+  obs_ratings: {},          // { siswaName: ['aktif', 'diam'] }
+  closure_mood: null,
+};
+
+function currentFase()       { return TP_01.skenario[State.fase_idx]; }
+function currentAktivitas()  { return currentFase().aktivitas[State.aktivitas_idx]; }
+function effectiveMode(akt)  { return State.mode_override[akt.id] || State.mode; }
+
+// ─── RENDER ────────────────────────────────────────────────
+function render() {
+  const screen = document.getElementById('screen');
+  const stateLabel = document.getElementById('state-label');
+  const debug = document.getElementById('debug');
+
+  // Clear (kecuali debug badge)
+  screen.querySelectorAll(':scope > :not(.debug-badge)').forEach(el => el.remove());
+
+  // Compute state label
+  let label = '';
+  if (State.sesi === 'previewing') label = 'STATE: SesiPreviewing';
+  else if (State.sesi === 'resume_prompt') label = 'STATE: SesiResumePrompt';
+  else if (State.sesi === 'closure') label = 'STATE: SesiClosure';
+  else if (State.aktivitas_state === 'fase_entering') label = `STATE: FaseEntering (${currentFase().fase})`;
+  else if (State.aktivitas_state === 'fase_selesai') label = `STATE: FaseSelesai (${currentFase().fase})`;
+  else if (State.aktivitas_state === 'ready') label = `STATE: AktivitasReady`;
+  else if (State.aktivitas_state === 'running') label = `STATE: AktivitasRunning`;
+  else if (State.aktivitas_state === 'obs_capture') label = `STATE: ObservationCapture`;
+
+  stateLabel.textContent = label;
+  debug.textContent = `fase ${State.fase_idx} · akt ${State.aktivitas_idx}`;
+
+  // Route by state
+  if (State.sesi === 'previewing') return renderPreview();
+  if (State.sesi === 'resume_prompt') return renderResumePrompt();
+  if (State.sesi === 'closure') return renderClosure();
+  if (State.aktivitas_state === 'fase_entering') return renderFaseEntering();
+  if (State.aktivitas_state === 'fase_selesai') return renderFaseSelesai();
+  if (State.aktivitas_state === 'ready') return renderAktivitasReady();
+  if (State.aktivitas_state === 'running') return renderAktivitasRunning();
+  if (State.aktivitas_state === 'obs_capture') return renderObservationCapture();
+}
+
+// ═══ SCREEN: PREVIEW TP ═══════════════════════════════════
+function renderPreview() {
+  const html = `
+    <div class="app">
+      <div class="preview-section">
+        <h2>TP 01 — ${TP_01.nama}</h2>
+        <div class="subtitle">Selasa, 14 Mei · 7:30</div>
+
+        <div class="preview-row"><span>25 siswa siap diajar</span><span class="check">✓</span></div>
+        <div class="preview-row"><span>3 media siap dicetak</span><span class="check">✓</span></div>
+        <div class="preview-row"><span>Audio sudah tersedia</span><span class="check">✓</span></div>
+
+        <div style="margin-top:20px;font-size:13px;color:#555;margin-bottom:8px;">
+          Pilih mode untuk kelas Anda hari ini:
+        </div>
+        <div class="mode-pick" id="mode-pick">
+          <div class="mode-option ${State.mode === 'mudah' ? 'selected' : ''}" data-mode="mudah">
+            <div class="mode-name">Mudah</div>
+            <div class="mode-desc">Bantuan tinggi, speaking pendek, banyak modeling guru</div>
+          </div>
+          <div class="mode-option ${State.mode === 'normal' ? 'selected' : ''}" data-mode="normal">
+            <div class="mode-name">Normal</div>
+            <div class="mode-desc">Speaking standar, bantuan sedang</div>
+          </div>
+          <div class="mode-option ${State.mode === 'tantangan' ? 'selected' : ''}" data-mode="tantangan">
+            <div class="mode-name">Tantangan</div>
+            <div class="mode-desc">Speaking lebih spontan, bantuan minimal</div>
+          </div>
+        </div>
+
+        <div style="flex:1"></div>
+
+        <button class="btn-primary" id="btn-mulai">Mulai mengajar →</button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.querySelectorAll('.mode-option').forEach(el => {
+    el.addEventListener('click', () => {
+      State.mode = el.dataset.mode;
+      render();
+    });
+  });
+
+  document.getElementById('btn-mulai').addEventListener('click', () => {
+    // Demo: bisa skip ke resume_prompt sebagai variasi, default langsung mulai
+    State.sesi = 'aktif';
+    State.fase_idx = 0;
+    State.aktivitas_idx = 0;
+    State.aktivitas_state = 'fase_entering';
+    render();
+  });
+}
+
+// ═══ SCREEN: RESUME PROMPT ════════════════════════════════
+function renderResumePrompt() {
+  const html = `
+    <div class="app">
+      <div class="preview-section" style="justify-content:center;text-align:center;">
+        <div style="font-size:32px;margin-bottom:16px;">⏸</div>
+        <h2>Sesi TP 01 sebelumnya tidak selesai</h2>
+        <div style="color:#666;font-size:13px;margin:8px 0 20px;">
+          Terakhir aktif: 47 menit yang lalu<br>
+          Posisi: Inti — "Pair Work: Sapa Teman"
+        </div>
+
+        <button class="btn-primary" id="btn-lanjut" style="margin-bottom:10px;">
+          Lanjut dari Pair Work: Sapa Teman
+        </button>
+        <button class="btn-secondary" id="btn-baru">
+          Mulai sesi baru dari awal
+        </button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.getElementById('btn-lanjut').addEventListener('click', () => {
+    // Demo: restore ke aktivitas pair work (Inti, idx 2)
+    State.sesi = 'aktif';
+    State.fase_idx = 1;
+    State.aktivitas_idx = 2;
+    State.aktivitas_state = 'ready';  // Sesuai §8.3: kembali ke ready, bukan running
+    render();
+  });
+  document.getElementById('btn-baru').addEventListener('click', () => {
+    State.sesi = 'aktif';
+    State.fase_idx = 0;
+    State.aktivitas_idx = 0;
+    State.aktivitas_state = 'fase_entering';
+    render();
+  });
+}
+
+// ═══ SCREEN: FASE ENTERING ════════════════════════════════
+function renderFaseEntering() {
+  const fase = currentFase();
+  const totalAkt = fase.aktivitas.length;
+  const html = `
+    <div class="app">
+      <div class="fase-transisi">
+        <div class="fase-label">SEKARANG</div>
+        <div class="fase-judul">${fase.fase}</div>
+        <div class="fase-meta">${totalAkt} aktivitas · ${fase.durasi} menit</div>
+        <button class="btn-primary" id="btn-mulai-fase" style="max-width:240px;">
+          Mulai ${fase.fase} →
+        </button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.getElementById('btn-mulai-fase').addEventListener('click', () => {
+    State.aktivitas_state = 'ready';
+    render();
+  });
+}
+
+// ═══ SCREEN: FASE SELESAI ═════════════════════════════════
+function renderFaseSelesai() {
+  const fase = currentFase();
+  const nextFase = TP_01.skenario[State.fase_idx + 1];
+  const html = `
+    <div class="app">
+      <div class="fase-transisi">
+        <div class="fase-label">SELESAI</div>
+        <div class="fase-judul">${fase.fase}</div>
+        <div class="fase-meta">
+          ${fase.aktivitas.length} aktivitas selesai<br>
+          ${nextFase ? `Berikutnya: <strong>${nextFase.fase}</strong>` : 'Sesi hampir selesai'}
+        </div>
+        <button class="btn-primary" id="btn-lanjut-fase" style="max-width:240px;">
+          ${nextFase ? `Lanjut ke ${nextFase.fase} →` : 'Lanjut ke Penutup Sesi →'}
+        </button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.getElementById('btn-lanjut-fase').addEventListener('click', () => {
+    if (nextFase) {
+      State.fase_idx++;
+      State.aktivitas_idx = 0;
+      State.aktivitas_state = 'fase_entering';
+    } else {
+      State.sesi = 'closure';
+    }
+    render();
+  });
+}
+
+// ═══ SCREEN: AKTIVITAS READY ══════════════════════════════
+function renderAktivitasReady() {
+  const akt = currentAktivitas();
+  const fase = currentFase();
+  const mode = effectiveMode(akt);
+  const isOverride = State.mode_override[akt.id] !== undefined;
+
+  // Saran siswa (jika observation aktif)
+  let saranHTML = '';
+  if (akt.observation.aktif) {
+    const saran = SISWA_DEMO.slice(0, Math.min(akt.observation.n_siswa, 4));
+    saranHTML = `
+      <div class="saran-box">
+        <div class="saran-label">💡 Saran observasi</div>
+        Belum lama bicara: ${saran.join(', ')} —
+        pilih sesuai kondisi mereka hari ini
+      </div>
+    `;
+  }
+
+  let audioBtns = '';
+  if (akt.audio_cue.contoh_guru) {
+    audioBtns += `<button class="audio-btn">Contoh guru</button>`;
+  }
+  if (akt.audio_cue.contoh_siswa) {
+    audioBtns += `<button class="audio-btn">Contoh siswa</button>`;
+  }
+
+  const html = `
+    <div class="app">
+      <div class="app-header">
+        <span class="fase-info">${fase.fase} · ${State.aktivitas_idx + 1}/${fase.aktivitas.length}</span>
+        <span class="mode-badge ${isOverride ? 'override' : ''}">${mode}${isOverride ? ' (override)' : ''}</span>
+      </div>
+
+      <div class="app-body">
+        <div class="aktivitas-tipe-badge">${akt.tipe.replace(/_/g, ' ')}</div>
+        <div class="aktivitas-judul">${akt.judul}</div>
+
+        <div class="instruksi-text">${akt.micro_script.pembuka}</div>
+
+        ${audioBtns ? `<div style="margin:8px 0;">${audioBtns}</div>` : ''}
+
+        ${akt.mode_text ? `
+          <div style="margin-top:14px;font-size:12px;color:#777;font-style:italic;padding:0 12px;">
+            Mode ${mode}: ${akt.mode_text}
+          </div>
+        ` : ''}
+
+        ${saranHTML}
+      </div>
+
+      <div class="app-footer">
+        <button class="btn-primary" id="btn-mulai-akt">${primaryLabel(akt)} →</button>
+        <button class="btn-kondisi" id="btn-kondisi">⚠ Kondisi kelas?</button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.getElementById('btn-mulai-akt').addEventListener('click', () => {
+    State.aktivitas_state = 'running';
+    State.timer_started_at = akt.advance.mode === 'timer_visible_only' ? Date.now() : null;
+    render();
+    startTimerIfNeeded();
+  });
+  document.getElementById('btn-kondisi').addEventListener('click', () => {
+    State.overlay = 'kondisi';
+    renderOverlay();
+  });
+}
+
+function primaryLabel(akt) {
+  switch (akt.tipe) {
+    case 'pair_work': return 'Mulai pair work';
+    case 'chant':     return 'Mulai chant';
+    case 'sapaan_individu':
+    case 'sapaan_kelas': return 'Sudah sapa, lanjut';
+    case 'modeling':  return 'Sudah modeling, lanjut';
+    case 'chorus':    return 'Sudah chorus, lanjut';
+    case 'review_quick': return 'Sudah review, lanjut';
+    case 'farewell_kelas': return 'Selesai sesi';
+    default: return 'Lanjut';
+  }
+}
+
+// ═══ SCREEN: AKTIVITAS RUNNING ════════════════════════════
+function renderAktivitasRunning() {
+  const akt = currentAktivitas();
+  const fase = currentFase();
+  const mode = effectiveMode(akt);
+  const isOverride = State.mode_override[akt.id] !== undefined;
+  const hasTimer = akt.advance.mode === 'timer_visible_only';
+
+  let timerHTML = '';
+  if (hasTimer) {
+    timerHTML = `
+      <span class="timer timer--green" id="timer-elem">
+        <span id="timer-text">${formatTimer(akt.durasi_target_detik)}</span>
+        <span class="timer-label" id="timer-label">tersisa</span>
+      </span>
+    `;
+  }
+
+  // Lanjut button label (sapaan_kelas dengan respons → "Siswa balas", dst)
+  let lanjutLabel = 'Lanjut →';
+  if (akt.audio_cue.contoh_siswa && akt.tipe === 'sapaan_kelas') {
+    lanjutLabel = 'Siswa balas →';
+  }
+
+  const html = `
+    <div class="app">
+      <div class="app-header">
+        <span class="fase-info">${fase.fase} · ${State.aktivitas_idx + 1}/${fase.aktivitas.length}</span>
+        ${timerHTML}
+      </div>
+
+      <div class="app-body">
+        <div class="aktivitas-tipe-badge">UCAPKAN / LAKUKAN</div>
+
+        ${akt.audio_cue.contoh_guru ? `<div class="cue-text">"${akt.audio_cue.contoh_guru}"</div>` : ''}
+
+        ${akt.audio_cue.contoh_siswa ? `
+          <div style="margin-top:8px;font-size:13px;color:#666;">
+            Mereka akan jawab:<br>
+            <strong>"${akt.audio_cue.contoh_siswa}"</strong>
+          </div>
+        ` : ''}
+
+        <div style="margin-top:24px;">
+          <button class="audio-btn">Putar contoh</button>
+        </div>
+      </div>
+
+      <div class="app-footer">
+        <button class="btn-primary" id="btn-lanjut">${lanjutLabel}</button>
+        <button class="btn-kondisi" id="btn-kondisi">⚠ Kondisi kelas?</button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.getElementById('btn-lanjut').addEventListener('click', () => advanceAktivitas());
+  document.getElementById('btn-kondisi').addEventListener('click', () => {
+    State.overlay = 'kondisi';
+    renderOverlay();
+  });
+}
+
+// ═══ TIMER ════════════════════════════════════════════════
+function startTimerIfNeeded() {
+  if (State.timer_handle) clearInterval(State.timer_handle);
+  if (!State.timer_started_at) return;
+
+  State.timer_handle = setInterval(updateTimer, 1000);
+}
+
+function stopTimer() {
+  if (State.timer_handle) clearInterval(State.timer_handle);
+  State.timer_handle = null;
+  State.timer_started_at = null;
+}
+
+function updateTimer() {
+  const akt = currentAktivitas();
+  if (!akt || State.aktivitas_state !== 'running' || !State.timer_started_at) return;
+
+  const elapsed = Math.floor((Date.now() - State.timer_started_at) / 1000);
+  const target = akt.durasi_target_detik;
+  const remaining = target - elapsed;
+
+  const timerEl = document.getElementById('timer-elem');
+  const timerText = document.getElementById('timer-text');
+  const timerLabel = document.getElementById('timer-label');
+  if (!timerEl || !timerText) return;
+
+  if (remaining > 0) {
+    timerText.textContent = formatTimer(remaining);
+    timerLabel.textContent = 'tersisa';
+    // Warna: hijau > 50%, kuning 20-50%, kuning intens < 20%
+    timerEl.classList.remove('timer--green', 'timer--yellow', 'timer--red');
+    if (remaining > target * 0.5) timerEl.classList.add('timer--green');
+    else if (remaining > target * 0.15) timerEl.classList.add('timer--yellow');
+    else timerEl.classList.add('timer--yellow');
+  } else {
+    // Habis: TIDAK auto-advance — hanya ubah warna & label
+    const over = -remaining;
+    timerText.textContent = '+' + formatTimer(over);
+    timerLabel.textContent = 'lewat — lanjut saat siap';
+    timerEl.classList.remove('timer--green', 'timer--yellow');
+    timerEl.classList.add('timer--red');
+  }
+}
+
+function formatTimer(sec) {
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+// ═══ TRANSISI: aktivitas → next ═══════════════════════════
+function advanceAktivitas() {
+  const akt = currentAktivitas();
+  stopTimer();
+
+  if (akt.observation.aktif) {
+    State.aktivitas_state = 'obs_capture';
+    State.obs_ratings = {};
+    render();
+  } else {
+    nextStep();
+  }
+}
+
+function nextStep() {
+  const fase = currentFase();
+  if (State.aktivitas_idx < fase.aktivitas.length - 1) {
+    State.aktivitas_idx++;
+    State.aktivitas_state = 'ready';
+  } else {
+    State.aktivitas_state = 'fase_selesai';
+  }
+  render();
+}
+
+// ═══ SCREEN: OBSERVATION CAPTURE ══════════════════════════
+function renderObservationCapture() {
+  const akt = currentAktivitas();
+  const fase = currentFase();
+  const n = akt.observation.n_siswa;
+  const siswa = SISWA_DEMO.slice(0, n);
+
+  const cardsHTML = siswa.map(name => `
+    <div class="obs-card">
+      <div class="obs-name">${name}</div>
+      <div class="obs-tags">
+        <span class="obs-tag aktif"  data-siswa="${name}" data-tag="aktif">aktif</span>
+        <span class="obs-tag berani" data-siswa="${name}" data-tag="berani">berani</span>
+        <span class="obs-tag diam"   data-siswa="${name}" data-tag="diam">diam</span>
+        <span class="obs-tag help"   data-siswa="${name}" data-tag="help">perlu help</span>
+      </div>
+    </div>
+  `).join('');
+
+  const html = `
+    <div class="app">
+      <div class="app-header">
+        <span class="fase-info">${fase.fase} · Catat cepat</span>
+        <span style="font-size:11px;color:#888;">30 detik</span>
+      </div>
+
+      <div class="app-body" style="text-align:left;padding-top:16px;">
+        <div class="obs-question">Bagaimana ${n} ${akt.tipe === 'pair_work' ? 'pasangan' : 'siswa'} tadi?</div>
+        ${cardsHTML}
+      </div>
+
+      <div class="app-footer">
+        <div class="btn-row">
+          <button class="btn-secondary" id="btn-skip">Skip catatan</button>
+          <button class="btn-primary" id="btn-lanjut-obs">Lanjut →</button>
+        </div>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.querySelectorAll('.obs-tag').forEach(el => {
+    el.addEventListener('click', () => {
+      el.classList.toggle('selected');
+      const name = el.dataset.siswa;
+      const tag = el.dataset.tag;
+      if (!State.obs_ratings[name]) State.obs_ratings[name] = [];
+      const idx = State.obs_ratings[name].indexOf(tag);
+      if (idx >= 0) State.obs_ratings[name].splice(idx, 1);
+      else State.obs_ratings[name].push(tag);
+    });
+  });
+  document.getElementById('btn-skip').addEventListener('click', () => nextStep());
+  document.getElementById('btn-lanjut-obs').addEventListener('click', () => nextStep());
+}
+
+// ═══ OVERLAY: KONDISI PROMPT & FALLBACK ═══════════════════
+function renderOverlay() {
+  // Remove existing overlay
+  const existing = document.querySelector('.overlay');
+  if (existing) existing.remove();
+
+  if (State.overlay === 'kondisi') {
+    return renderKondisiOverlay();
+  }
+  if (State.overlay === 'fallback_detail') {
+    return renderFallbackDetailOverlay();
+  }
+}
+
+function renderKondisiOverlay() {
+  const akt = currentAktivitas();
+  const isPairWork = akt && akt.tipe === 'pair_work';
+
+  const opsi = [
+    { id: 'kelas_ribut',      label: 'Ribut, susah fokus' },
+    { id: 'energi_turun',     label: 'Energi mulai turun' },
+    { id: 'siswa_pasif',      label: 'Banyak yang takut bicara' },
+  ];
+  if (isPairWork) opsi.push({ id: 'pair_tidak_jalan', label: 'Pair tidak jalan' });
+  opsi.push({ id: 'waktu_mepet', label: 'Waktu mepet (sisa fase singkat)' });
+  opsi.push({ id: 'lancar', label: 'Tidak, semua lancar' });
+
+  const opsiHTML = opsi.map(o =>
+    `<button class="opsi" data-kondisi="${o.id}">${o.label}</button>`
+  ).join('');
+
+  const overlayHTML = `
+    <div class="overlay">
+      <div class="overlay-content">
+        <h2>Kondisi kelas sekarang?</h2>
+        ${opsiHTML}
+        <button class="btn-secondary" id="btn-batal-kondisi" style="margin-top:12px;">Batal</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('screen').insertAdjacentHTML('beforeend', overlayHTML);
+
+  document.querySelectorAll('.overlay .opsi').forEach(el => {
+    el.addEventListener('click', () => {
+      State.fallback_kondisi = el.dataset.kondisi;
+      if (State.fallback_kondisi === 'lancar') {
+        State.overlay = null;
+        renderOverlay();
+        return;
+      }
+      State.overlay = 'fallback_detail';
+      renderOverlay();
+    });
+  });
+  document.getElementById('btn-batal-kondisi').addEventListener('click', () => {
+    State.overlay = null;
+    renderOverlay();
+  });
+}
+
+function renderFallbackDetailOverlay() {
+  const akt = currentAktivitas();
+  const kondisi = State.fallback_kondisi;
+  const instruksi = (akt && akt.fallback && akt.fallback[kondisi])
+    || fallbackGeneric(kondisi);
+
+  const kondisiNice = {
+    kelas_ribut:      'Ribut, susah fokus',
+    energi_turun:     'Energi mulai turun',
+    siswa_pasif:      'Banyak yang takut bicara',
+    pair_tidak_jalan: 'Pair tidak jalan',
+    waktu_mepet:      'Waktu mepet',
+  }[kondisi] || kondisi;
+
+  // Mode override hanya ditawarkan untuk beberapa kondisi
+  const canOverride = ['pair_tidak_jalan', 'siswa_pasif', 'kelas_ribut'].includes(kondisi)
+                   && effectiveMode(akt) !== 'mudah';
+
+  const overlayHTML = `
+    <div class="overlay">
+      <div class="overlay-content">
+        <h2>${kondisiNice}?</h2>
+        <p style="background:#f8f8f8;padding:12px;border-radius:8px;">
+          <strong>Coba ini:</strong><br>
+          ${instruksi}
+        </p>
+        <button class="opsi" id="btn-sudah-coba">Sudah coba, kembali</button>
+        ${canOverride ? `
+          <button class="opsi" id="btn-turun-mode" style="background:#fff8e1;border-color:#c97800;">
+            Mode lebih mudah untuk aktivitas ini
+          </button>
+        ` : ''}
+      </div>
+    </div>
+  `;
+  document.getElementById('screen').insertAdjacentHTML('beforeend', overlayHTML);
+
+  document.getElementById('btn-sudah-coba').addEventListener('click', () => {
+    State.overlay = null;
+    State.fallback_kondisi = null;
+    renderOverlay();
+  });
+  const overrideBtn = document.getElementById('btn-turun-mode');
+  if (overrideBtn) {
+    overrideBtn.addEventListener('click', () => {
+      State.mode_override[akt.id] = 'mudah';
+      State.overlay = null;
+      State.fallback_kondisi = null;
+      // Re-render base layer juga supaya mode badge update
+      render();
+    });
+  }
+}
+
+function fallbackGeneric(kondisi) {
+  return {
+    kelas_ribut:    'Tangan di pinggang, tunggu sunyi. Ulangi instruksi setelah hening.',
+    energi_turun:   'Berdiri, ajak tepuk pendek. Lanjut aktivitas yang lebih bergerak.',
+    siswa_pasif:    'Mulai dari baris depan. Beri jempol untuk yang berani.',
+    waktu_mepet:    'Pertimbangkan skip aktivitas berikutnya. Langsung ke Penutup.',
+  }[kondisi] || 'Lanjut sesuai feeling Anda di kelas.';
+}
+
+// ═══ SCREEN: CLOSURE ══════════════════════════════════════
+function renderClosure() {
+  const html = `
+    <div class="app">
+      <div class="preview-section" style="text-align:left;">
+        <h2>Sesi Selesai</h2>
+        <div class="subtitle">47 menit · TP 01</div>
+
+        <div style="font-size:12px;color:#888;margin:14px 0 4px;text-transform:uppercase;letter-spacing:0.5px;">
+          Yang terjadi
+        </div>
+        <ul class="closure-summary">
+          <li>19 dari 25 siswa bicara individual</li>
+          <li>Pair work jalan di Aktivitas 1 &amp; 2</li>
+          <li>Mode override 1×: Pair Sapa Teman → mudah</li>
+        </ul>
+
+        <div style="font-size:13px;color:#555;margin-top:10px;">
+          Yang Anda rasakan?
+        </div>
+        <div class="mood-row">
+          <div class="mood-btn ${State.closure_mood === 'lancar' ? 'selected' : ''}" data-mood="lancar">
+            <span class="emoji">😊</span>Lancar
+          </div>
+          <div class="mood-btn ${State.closure_mood === 'biasa' ? 'selected' : ''}" data-mood="biasa">
+            <span class="emoji">😐</span>Biasa
+          </div>
+          <div class="mood-btn ${State.closure_mood === 'berat' ? 'selected' : ''}" data-mood="berat">
+            <span class="emoji">😓</span>Berat
+          </div>
+        </div>
+
+        <textarea class="note-input" placeholder="Catatan singkat (opsional)"></textarea>
+
+        <div style="background:#fff8e1;padding:10px 12px;border-radius:8px;font-size:12px;color:#555;margin:14px 0;">
+          💡 Untuk besok: 6 siswa belum terobservasi, sistem akan prioritaskan mereka.
+        </div>
+
+        <button class="btn-primary" id="btn-simpan-selesai" style="margin-top:8px;">
+          Simpan &amp; Selesai
+        </button>
+      </div>
+    </div>
+  `;
+  inject(html);
+
+  document.querySelectorAll('.mood-btn').forEach(el => {
+    el.addEventListener('click', () => {
+      State.closure_mood = el.dataset.mood;
+      render();
+    });
+  });
+  document.getElementById('btn-simpan-selesai').addEventListener('click', () => {
+    alert('Demo: di FLAF asli, data tersimpan dan kembali ke Kurikulum.');
+    // Reset
+    State.sesi = 'previewing';
+    State.fase_idx = 0;
+    State.aktivitas_idx = 0;
+    State.aktivitas_state = 'ready';
+    State.mode = 'normal';
+    State.mode_override = {};
+    State.closure_mood = null;
+    render();
+  });
+}
+
+// ═══ HELPER: inject HTML ke screen ═════════════════════════
+function inject(html) {
+  const screen = document.getElementById('screen');
+  screen.insertAdjacentHTML('beforeend', html);
+}
+
+// ═══ JUMP CONTROLS ═════════════════════════════════════════
+document.querySelectorAll('[data-jump]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.jump;
+    stopTimer();
+    State.overlay = null;
+    State.fallback_kondisi = null;
+
+    switch (target) {
+      case 'preview':
+        State.sesi = 'previewing';
+        break;
+      case 'resume':
+        State.sesi = 'resume_prompt';
+        break;
+      case 'fase-enter':
+        State.sesi = 'aktif';
+        State.fase_idx = 0;
+        State.aktivitas_idx = 0;
+        State.aktivitas_state = 'fase_entering';
+        break;
+      case 'aktivitas-manual':
+        State.sesi = 'aktif';
+        State.fase_idx = 0;       // Pembuka
+        State.aktivitas_idx = 1;  // sapaan_kelas (manual mode)
+        State.aktivitas_state = 'ready';
+        break;
+      case 'aktivitas-timer':
+        State.sesi = 'aktif';
+        State.fase_idx = 1;       // Inti
+        State.aktivitas_idx = 2;  // pair_work (timer_visible_only)
+        State.aktivitas_state = 'ready';
+        break;
+      case 'observation':
+        State.sesi = 'aktif';
+        State.fase_idx = 1;
+        State.aktivitas_idx = 2;
+        State.aktivitas_state = 'obs_capture';
+        State.obs_ratings = {};
+        break;
+      case 'fase-selesai':
+        State.sesi = 'aktif';
+        State.fase_idx = 0;
+        State.aktivitas_idx = 2;
+        State.aktivitas_state = 'fase_selesai';
+        break;
+      case 'closure':
+        State.sesi = 'closure';
+        break;
+    }
+    render();
+  });
+});
+
+// ═══ INIT ═════════════════════════════════════════════════
+render();
+</script>
+
+</body>
+</html>
