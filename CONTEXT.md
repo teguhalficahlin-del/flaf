@@ -10,64 +10,155 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅✅✅**:
-  - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
-  - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
-  - Kelas 2: TP 09 Animals ✅ (sesi M4)
-  - Kelas 2: TP 10 Food and Drinks ✅ (sesi M5)
-  - Kelas 2: TP 11 Daily Routines ✅ (sesi M6)
-  - Kelas 2: TP 12 Body Parts ✅ (sesi M7)
-  - Kelas 2: TP 13 Weather ✅ (sesi M8)
-  - Kelas 2: TP 14 In the Classroom ✅ (sesi M9)
-  - Kelas 2: TP 15 Feelings and Emotions ✅ (sesi M10)
-  - Kelas 2: TP 16 Simple Story Retelling ✅ (sesi M11)
-  - Kelas 2: TP 17 My Hobbies ✅ (sesi M12)
-  - Kelas 2: TP 18 Integrative Project (My World) ✅ (sesi M13)
-- **Status**: FASE A MIGRATION + INTEGRATION COMPLETE
-  - TP 15-18 v4.3 successfully imported into data/fase-a.js (Opsi B hybrid approach)
-  - Runtime loads through data/index.js without modification
-  - Backward compatibility maintained via langkah[] fallback in v4.3 TPs
-- **Next**: Deployment readiness check / Fase B planning
+- **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅**
+- **UI-SKETCH.html sudah di-review dan disetujui — tidak ada revisi**
+- **Fase 5 Build sedang berjalan — B1 selesai**
+
+### Detail Migrasi TP
+- Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
+- Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
+- Kelas 2: TP 09 Animals ✅ (sesi M4)
+- Kelas 2: TP 10 Food and Drinks ✅ (sesi M5)
+- Kelas 2: TP 11 Daily Routines ✅ (sesi M6)
+- Kelas 2: TP 12 Body Parts ✅ (sesi M7)
+- Kelas 2: TP 13 Weather ✅ (sesi M8)
+- Kelas 2: TP 14 In the Classroom ✅ (sesi M9)
+- Kelas 2: TP 15 Feelings and Emotions ✅ (sesi M10)
+- Kelas 2: TP 16 Simple Story Retelling ✅ (sesi M11)
+- Kelas 2: TP 17 My Hobbies ✅ (sesi M12)
+- Kelas 2: TP 18 Integrative Project (My World) ✅ (sesi M13)
+
+## Fase 5 — Status Build Runtime Baru
+
+### Keputusan Arsitektural (Terkunci)
+- **Pengganti penuh RT v6** — tidak ada compatibility layer, semua 18 TP sudah v4.3
+- **`siswa_per_kelas` IDB store defer ke Fase 6** — observasi pakai rotasi random dulu
+- **TTS tetap ada** di AktivitasRunning
+- **7 state machine** sesuai UI-SKETCH: preview → resume → entering → ready → running → obs → selesai → closure
+
+### Progress Build
+```
+B1 ✅ — screens/sesi-runtime.js + screens/sesi-runtime.css  (SELESAI)
+B2 ⬜ — dashboard.js: hapus RT v6, mount sesi-runtime di Step 2-4
+B3 ⬜ — dashboard.css: hapus rt-* classes
+B4 ⬜ — index.html: tambah link sesi-runtime.css
+```
+
+### File Baru yang Dibuat di B1
+- `screens/sesi-runtime.js` — 1013 baris, syntax valid
+  - Public API: `mount(root, tpData, rombel, siswaList, onDone)` + `unmount()`
+  - State machine via `_transition(patch)` — satu pintu perubahan state
+  - 7 render functions: `_renderPreview`, `_renderResume`, `_renderEntering`, `_renderReady`, `_renderRunning`, `_renderObs`, `_renderSelesai`, `_renderClosure`
+  - 2 overlay: `_renderKondisiOverlay`, `_renderFallbackOverlay`
+  - Timer 3-warna (hijau/kuning/merah), tidak auto-advance
+  - TTS via Web Speech API
+  - Resume detection dari IDB `kv` key `sesi_aktif`, batas 4 jam
+- `screens/sesi-runtime.css` — 751 baris
+  - Semua class prefix `sr-*`, tidak konflik dengan `rt-*` atau `ds-*`
+  - Dark theme konsisten dengan dashboard
+
+### Yang Harus Dilakukan di B2 (Sesi Berikutnya)
+
+**File**: `screens/dashboard.js`
+
+Dua perubahan presisi:
+
+**Perubahan 1** — Tambah import di baris paling atas:
+```javascript
+import { mount as srMount, unmount as srUnmount } from './sesi-runtime.js';
+```
+
+**Perubahan 2** — Di fungsi `_buildStepBody`, case 2/3/4 (baris ~1888):
+```javascript
+// LAMA:
+case 2:
+case 3:
+case 4:
+  // Runtime v6: step 2-4 = persistent classroom surface
+  // DOM disiapkan oleh _rtMount — bukan di sini
+  return '<div id="rt-surface-placeholder" style="height:100%;"></div>';
+
+// BARU:
+case 2:
+case 3:
+case 4:
+  return '<div id="sr-root" style="height:100%;"></div>';
+```
+
+**Perubahan 3** — Di `window.dashPilihTP` setelah `_container.innerHTML = _buildSesiHTML()` (baris ~2776), tambah mount call:
+```javascript
+if (_container) {
+  _container.innerHTML = _buildSesiHTML();
+  // Mount sesi-runtime jika step sudah di fase (2-4)
+  if (_skenario.stepIndex >= 2 && _skenario.stepIndex <= 4) {
+    const srRoot = _container.querySelector('#sr-root');
+    if (srRoot) {
+      srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _onSesiDone);
+    }
+  }
+}
+```
+
+**Perubahan 4** — Di `dashStepNext` saat pindah ke step 2, tambah mount. Di `dashStepPrev` saat keluar dari step 2-4, panggil `srUnmount()`.
+
+**Perubahan 5** — Buat fungsi `_onSesiDone(hasil)` yang menggantikan `_doSelesaiSesi`:
+```javascript
+async function _onSesiDone(hasil) {
+  srUnmount();
+  _skenario.stepIndex = 6; // langsung ke Selesai
+  _skenario.kendala   = hasil.kendala;
+  if (_container) _container.innerHTML = _buildSesiHTML();
+  // Simpan ke jejak dan presensi seperti _doSelesaiSesi
+}
+```
+
+**Perubahan 6 (scope B2)** — Hapus seluruh blok RT v6 dari dashboard.js:
+- Baris 77–1222: `_rt`, `_rtMount`, `_rtBuildSurface`, `_rtRenderStep`, semua `_rt*` functions
+- Baris 1619–1738: `_buildStepFase` (diganti dengan sr-root placeholder)
+
+### Yang TIDAK Diubah di B2
+- Landing, Presensi (Step 0-1), Asesmen (Step 5), Selesai (Step 6) — tetap
+- `_doSelesaiSesi` masih dipakai untuk Step 6 Selesai button
+- `app.js`, `data/index.js`, `storage/*` — tidak disentuh
 
 ## Git Log (10 commit terakhir)
 ```
+bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
 42f2f9f  opsi-b: integrate v4.3 TP 15-18 into fase-a.js runtime
 913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
+3f7b0d1  sesi-m7/m8/m9: migrate TP 12-14 + update CONTEXT
+95e3a3b  docs: update CONTEXT TP 11 selesai, next M7
 56aad44  sesi-m6: migrate TP 11 Daily Routines + update CONTEXT
 0b4c473  sesi-m5: migrate TP 10 Food and Drinks + update CONTEXT
 d4b8a28  docs: pindah CONTEXT.md ke root, tambah CLAUDE.md, update status M5
 a105fad  sesi-m4: migrate TP 09 Animals + update CONTEXT
-0e14256  sesi-m3: migrate TP 07 & TP 08 + comparison
-a2a7a7c  audit: checkpoint kelas 1 (TP 01-06)
-946be25  sesi-m2: migrate TP 05 & TP 06 + cleanup batch
-a32c1f3  sesi-m1: migrate TP 02 & TP 03
+d62168e  docs: update context after sesi-m3
 ```
 
 ## Struktur Folder Penting
 ```
 FLAF/
 ├── screens/
-│   ├── dashboard.js      ← runtime utama (sedang diaudit gap arsitektur)
-│   ├── dashboard.css
+│   ├── dashboard.js        ← RT v6 masih ada, AKAN dihapus di B2
+│   ├── dashboard.css       ← rt-* classes masih ada, AKAN dihapus di B3
+│   ├── sesi-runtime.js     ← BARU (B1 selesai) — 7-state runtime
+│   ├── sesi-runtime.css    ← BARU (B1 selesai) — sr-* prefix
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   └── fase-a.js         ← TP 09-18 masih v3 (belum dioverride)
+│   └── fase-a.js           ← 18 TP v4.3 aktif, aktivitas[] siap dibaca
 ├── docs/
-│   ├── fase-1-spec/      ← SCHEMA.md, tp-01.js
-│   ├── fase-2-spec/      ← STATE-MACHINE.md
-│   ├── fase-3-spec/      ← tp-04.js, UI-SKETCH.html
-│   ├── fase-4-spec/      ← MIGRATION-PLAN.md
-│   ├── sesi-m1/          ← tp-02.js, tp-03.js, COMPARISON-M1.md
-│   ├── sesi-m2/          ← tp-05.js, tp-06.js, COMPARISON-M2.md, KELAS-1-AUDIT.md
-│   ├── sesi-m3/          ← tp-07.js, tp-08.js, COMPARISON-M3.md
-│   └── sesi-m4/          ← tp-09.js
+│   ├── fase-1-spec/        ← SCHEMA.md, tp-01.js
+│   ├── fase-2-spec/        ← STATE-MACHINE.md
+│   ├── fase-3-spec/        ← UI-SKETCH.html ✅ DISETUJUI, tp-04.js
+│   ├── fase-4-spec/        ← MIGRATION-PLAN.md
+│   ├── sesi-m1/ sampai sesi-m13/  ← semua TP v4.3
 ├── storage/
 │   └── db.js, logger.js, export.js, jejak.js, nilai.js, presensi.js
-├── sw.js                 ← Service Worker v52
+├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -90,92 +181,46 @@ FLAF/
 
 ## Pattern Inklusivitas (TERBENTUK di Sesi M3)
 
-Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, masa depan, dll), pattern berikut sudah terbukti efektif dan **AKAN DIPAKAI LAGI** di M4–M8 untuk TP yang topiknya personal:
+Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, masa depan, dll), pattern berikut sudah terbukti efektif:
 
-### Pattern 1 — Scripted micro_script Inklusivitas (bukan improvisasi)
+### Pattern 1 — Scripted micro_script Inklusivitas
 - Frasa inklusivitas ditulis **konkret dalam Bahasa Indonesia** di `micro_script.selama` pada aktivitas Pembuka pertama
-- Guru tinggal baca — tidak perlu improvisasi sendiri
-- Contoh dari TP 07: *"Siapa yang tinggal bersamamu di rumah? Itu keluargamu. Bisa papa, mama, kakak, adik, kakek, nenek, om, tante — siapa pun."*
-- Contoh dari TP 08: *"Rumah kalian semua berbeda. Ada yang besar, ada yang kecil. Semua rumah bagus karena itu rumahmu."*
-- **Bukan** sekadar `flags: ['privacy_sensitive']` — flag hanyalah tag tanpa instruksi konkret untuk guru
+- Contoh TP 07: *"Siapa yang tinggal bersamamu di rumah? Itu keluargamu. Bisa papa, mama, kakak, adik, kakek, nenek, om, tante — siapa pun."*
 
 ### Pattern 2 — Skip Aktivitas Personal di Main Flow
-- Aktivitas yang memaksa siswa **expose kondisi pribadi** (gambar denah rumah sendiri, presentasi keluarga ke kelas, bawa foto dari rumah) **DIHAPUS** dari main flow
-- Anak 6-7 tahun belum siap untuk tampil tunggal dalam bahasa asing
-- Presentasi ke kelas hanya muncul di `fallback.kelas_sangat_aktif` sebagai **opt-in sukarela**, bukan dipaksa
-- Pair work = primary speaking turn
+- Aktivitas yang memaksa siswa expose kondisi pribadi dihapus dari main flow
+- Presentasi ke kelas hanya di `fallback.kelas_sangat_aktif` sebagai opt-in sukarela
 
 ### Pattern 3 — Kartu Generik (Bukan Bring-from-Home)
-- Media utama = **kartu cetak generik** yang sama untuk semua siswa
-- Bring-from-home (foto keluarga, gambar rumah, dll) **TIDAK DIPAKAI** karena:
-  - Bergantung pada kondisi orang tua & keluarga
-  - Tidak bisa dijamin semua siswa bawa
-  - Memperkuat ketimpangan di kelas
-- Ilustrasi kartu dirancang **netral & beragam** (usia, penampilan)
-- Konsisten dengan zero-prep philosophy
+- Media utama = kartu cetak generik yang sama untuk semua siswa
 
 ### Pattern 4 — Aktivitas "Pretend" sebagai Substitusi
-- Untuk topik yang relate ke kondisi pribadi (rumah, makanan, dll), pakai **pretend universal**: semua siswa pakai konteks yang sama dari kartu/instruksi
-- Contoh TP 08: "Walk Through the House" — semua siswa walk through rumah PRETEND yang sama, tidak ada yang membandingkan rumahnya
-- Eksplisit ditulis di `langkah[]`: *"TIDAK ADA pemaksaan cerita rumah sendiri — semua siswa pakai kartu PRETEND yang sama."*
+- Pakai pretend universal: semua siswa pakai konteks yang sama dari kartu/instruksi
 
 ### Pattern 5 — Fallback `sensitif` Wajib di Aktivitas Personal
 - Setiap aktivitas yang berpotensi sensitif HARUS punya entry `fallback.sensitif`
-- Berisi instruksi konkret: *"Jika ada siswa terlihat sedih, jangan tunjuk dia untuk bicara. Lanjut tenang ke aktivitas berikutnya."*
-
-### Antisipasi Aplikasi Pattern di TP 09–17
-
-| TP | Topik (dari fase-a.js) | Sensitivitas | Pattern yang relevan |
-|---|---|---|---|
-| TP 09 | Animals | Rendah | — |
-| TP 10 | Food and Drinks ✅ | Sedang | Pattern 1, 4, 5 — sudah diterapkan |
-| TP 11 | Daily Routines | Sedang-Tinggi | Pattern 1, 2, 5 (rutinitas bisa expose kondisi keluarga) |
-| TP 12 | Body Parts | Rendah-Sedang | Pattern 5 (jika ada siswa disabilitas) |
-| TP 13 | Weather and Seasons | Rendah | (mungkin tidak butuh) |
-| TP 14 | In the Classroom | Rendah | (mungkin tidak butuh) |
-| TP 15 | Feelings and Emotions | Tinggi | Pattern 1, 2, 5 (emosi sangat personal) |
-| TP 16 | Simple Story Retelling | Rendah | (cerita bergambar generik) |
-| TP 17 | My Hobbies | Tinggi | Pattern 1, 2, 5 (hobi bisa expose kondisi ekonomi) |
-
-**Catatan**: ini antisipasi, bukan keputusan. Setiap TP tetap di-ANALYZE sendiri di awal sesi migrasi.
-**Koreksi**: tabel sebelumnya salah (TP 10 tercatat Body parts, TP 18 tidak ada). Sudah dikoreksi sesuai fase-a.js.
 
 ## Pattern Lain yang Sudah Terbentuk
 
 ### Pattern A — TPR sebagai Energy Break di Tengah Inti
-4 dari 8 TP yang sudah migrate punya `tpr_action` di tengah Inti:
-- TP 03: action verbs
-- TP 06: gambar bentuk di udara
-- TP 07: chant ritmis [tepuk-tepuk-mother]
-- TP 08: walk through the house
-
-**Risiko**: jadi monoton kalau dipakai di setiap TP. Untuk M4+, pertimbangkan tipe alternatif (`game`, `dialogue_practice`, dll) untuk variasi.
-
 ### Pattern B — Closure Transfer ke Rumah
-TP 06, 07, 08 punya pattern closure_reinforcement yang menyatukan apply di rumah:
-- TP 06: "Look at home — what shapes do you see?"
-- TP 07: "Tonight say Good night, tomorrow morning say Good morning to your family!" (recycle TP 01)
-- TP 08: "Touch your door, say door! Touch your window, say window!"
-
-Pattern: closure bukan sekadar farewell, tapi **bridge ke konteks nyata di rumah**.
-
 ### Pattern C — Diferensiasi 3-Tier yang Konsisten
-- **Mudah**: vocab dikurangi, pola pendek (1 kata), tempo lambat
+- **Mudah**: vocab dikurangi, pola pendek, tempo lambat
 - **Normal**: vocab penuh, pola lengkap, tempo bertahap
-- **Tantangan**: pola tambahan (2-slot, sifat), tempo cepat, atau ekstensi
-
-Tantangan **tidak menambah vocab utama** — hanya menambah kompleksitas pola atau variasi.
+- **Tantangan**: pola tambahan, tempo cepat, ekstensi
 
 ## Status Sesi
 
 ```
-✅ FASE A MIGRATION COMPLETE (M1–M12)
+✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
+✅ UI-SKETCH.html DISETUJUI (Fase 3 review selesai)
+🔄 FASE 5 BUILD SEDANG BERJALAN
 
-Semua 17 TP core Fase A sudah dimigrasi ke format v4.3 dengan:
-- Schema v4.3: closure_reinforcement + observation_validation di setiap TP
-- Pattern Inklusivitas penuh: Pattern 1, 2, 4, 5 diterapkan di TP-TP sensitif
-- Media library terstruktur: kartu reusable lintas TP
-- Backward compat: langkah[] fallback untuk runtime lama
+B1 ✅ sesi-runtime.js + sesi-runtime.css
+B2 ⬜ dashboard.js — hapus RT v6, mount sesi-runtime
+B3 ⬜ dashboard.css — hapus rt-* classes
+B4 ⬜ index.html — tambah link sesi-runtime.css
 
-Next milestone: Fase B planning atau deployment readiness check.
+Next: mulai B2 di sesi berikutnya.
+Instruksi detail B2 ada di bagian "Fase 5 — Status Build" di atas.
 ```
