@@ -27,9 +27,9 @@
  */
 
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 5;
+const DB_VERSION = 6;
 
-const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log']);
+const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'siswa_per_kelas']);
 
 let _db          = null;
 let _initPromise = null;
@@ -100,6 +100,10 @@ function init() {
       if (!upgradeDB.objectStoreNames.contains('presensi_log')) {
         upgradeDB.createObjectStore('presensi_log');
         console.log('[DB] store created: presensi_log');
+      }
+      if (!upgradeDB.objectStoreNames.contains('siswa_per_kelas')) {
+        upgradeDB.createObjectStore('siswa_per_kelas');
+        console.log('[DB] store created: siswa_per_kelas');
       }
     };
 

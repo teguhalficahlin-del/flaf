@@ -25,7 +25,8 @@
  * =============================================================
  */
 
-import { db } from '../storage/db.js';
+import { db }               from '../storage/db.js';
+import { updateSpeakCount } from '../storage/siswa-history.js';
 
 // ── Konstanta ─────────────────────────────────────────────────
 
@@ -550,6 +551,20 @@ function _renderClosure() {
     const btn     = _root.querySelector('#sr-btn-simpan');
     if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
+
+    // Hitung jumlah langkah respons_siswa di semua fase — dipakai sebagai delta
+    const allFase   = _state.tp?.skenario || [];
+    const respCount = allFase.reduce((sum, fase) => {
+      return sum + (fase.langkah || []).filter(l => l.tipe === 'respons_siswa').length;
+    }, 0);
+
+    // Update speaking history untuk semua siswa di rombel (semua belajar bersama)
+    if (_state.rombel?.id && _state.siswaList?.length) {
+      const delta      = respCount > 0 ? 1 : 1; // selalu +1 per sesi selesai
+      const siswaIds   = _state.siswaList.map(s => s.id);
+      await updateSpeakCount(_state.rombel.id, siswaIds, delta);
+    }
+
     _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan });
   });
 }
