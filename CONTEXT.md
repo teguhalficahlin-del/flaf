@@ -13,6 +13,7 @@
 - **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅**
 - **UI-SKETCH.html sudah di-review dan disetujui — acuan layout runtime**
 - **Fase 5 Build SELESAI + post-fix SELESAI ✅**
+- **Fase 6 SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -32,10 +33,8 @@
 
 ### Keputusan Arsitektural (Terkunci)
 - **Pengganti penuh RT v6** — tidak ada compatibility layer, semua 18 TP sudah v4.3
-- **`siswa_per_kelas` IDB store defer ke Fase 6** — observasi pakai rotasi random dulu
-- **TTS tetap ada** di state running
-- **5 state machine** (disederhanakan dari 7): preview → entering → running → selesai → closure
-- **Resume** sebagai cabang dari preview (bukan state tersendiri)
+- **5 state machine**: preview → entering → running → selesai → closure
+- **Resume** sebagai cabang dari preview
 - **Unit terkecil: `langkah[]`** — fase-a.js hanya punya langkah[], bukan aktivitas[]
 - **Layout mengikuti UI-SKETCH.html** — app-header tipis / app-body flex:1 / app-footer
 - **Overlay kondisi 2 tahap**: pilih kondisi → detail fallback + instruksi konkret
@@ -43,35 +42,50 @@
 
 ### Progress Build
 ```
-B1  ✅ — sesi-runtime.js + sesi-runtime.css  (commit 2f275c8)
-B2  ✅ — dashboard.js: hapus RT v6, mount sesi-runtime  (commit da46ccd)
-B3  ✅ — dashboard.css: hapus rt-* classes  (commit da46ccd)
-B4  ✅ — index.html: tambah link sesi-runtime.css  (commit ca699ab)
-FIX ✅ — sesi-runtime redesign UI-SKETCH + runtime full layar  (commit 6203e52)
+B1  ✅ sesi-runtime.js + sesi-runtime.css  (commit 2f275c8)
+B2  ✅ dashboard.js: hapus RT v6, mount sesi-runtime  (commit da46ccd)
+B3  ✅ dashboard.css: hapus rt-* classes  (commit da46ccd)
+B4  ✅ index.html: tambah link sesi-runtime.css  (commit ca699ab)
+FIX ✅ sesi-runtime redesign UI-SKETCH + runtime full layar  (commit 6203e52)
+VAL ✅ full flow validated — production ready  (commit 7ae6035)
 ```
 
-### Ringkasan sesi-runtime.js (633 baris, commit 6203e52)
-- Public API: `mount(root, tpData, rombel, siswaList, onDone)` + `unmount()`
-- State machine via `_transition(patch)` — satu pintu perubahan state
-- 6 render functions: `_renderPreview`, `_renderResume`, `_renderEntering`, `_renderRunning`, `_renderSelesai`, `_renderClosure`
-- 2 overlay: `_renderKondisiOverlay` (tahap 1), `_renderFallbackOverlay` (tahap 2)
-- TTS via Web Speech API, toggle per langkah audio/respons_siswa
-- Resume detection dari IDB `kv` key `sesi_aktif`, batas 4 jam
-- Overlay: `position: fixed`, append ke `document.body`
+## Fase 6 — siswa_per_kelas IDB Store
 
-### Ringkasan sesi-runtime.css (604 baris)
-- Semua class prefix `sr-*`, tidak konflik dengan `ds-*`
-- Light theme sesuai UI-SKETCH (background `#fafafa`, teks `#1a1a1a`)
-- Mobile-first, tidak ada fixed width, tidak ada 100vh
-- Tombol: `sr-btn-primary` (hitam penuh) / `sr-btn-secondary` (outline) / `sr-btn-kondisi` (dashed samar)
+### Keputusan Arsitektural (Terkunci)
+- **Schema**: `{ [siswaId]: { speakCount: number, lastSesi: timestamp } }` per `rombelId`
+- **Update trigger**: saat Closure selesai (Opsi B) — otomatis, tidak ada UI tambahan
+- **Delta**: +1 per sesi selesai untuk semua siswa di rombel
+- **Fallback**: jika IDB kosong, `speakCount` dianggap 0 untuk semua siswa
+- **UI saran observasi**: defer ke Fase 7 — Fase 6 hanya simpan data
 
-### Perubahan dashboard.js terkait runtime full layar
-- Step 2–4: sembunyikan breadcrumb, ds-sesi-header, ds-step-indicator, ds-step-nav; body flex:1
-- Non-runtime step: restore semua elemen; `srUnmount()`
-- `_onSesiDone(hasil)`: callback dari runtime → langsung ke Step 6 Selesai
+### Perubahan yang Dibuat
+```
+9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
+```
+
+**`storage/db.js`** (DB_VERSION: 5 → 6):
+- `VALID_STORES` ditambah `siswa_per_kelas`
+- `onupgradeneeded` ditambah store `siswa_per_kelas`
+
+**`storage/siswa-history.js`** (file baru):
+- `getSiswaHistory(rombelId)` → ambil history dari IDB
+- `updateSpeakCount(rombelId, siswaIdList, delta)` → increment speakCount
+- `getSortedBySpeakCount(rombelId, siswaList)` → sort siswa terendah dulu (untuk Fase 7)
+
+**`screens/sesi-runtime.js`**:
+- Import `updateSpeakCount` dari `siswa-history.js`
+- Di `_renderClosure` saat simpan: hitung `respons_siswa` count lalu `updateSpeakCount` semua siswa
+
+### Hasil VALIDATE
+- Store `siswa_per_kelas` ada di IDB version 6 ✅
+- Data tersimpan setelah Closure ✅
+- Console bersih ✅
 
 ## Git Log (10 commit terakhir)
 ```
+9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
+7ae6035  docs: update CONTEXT — full flow validated, production ready
 6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
 d4c4336  docs: update CONTEXT — Fase 5 complete (B1-B4)
 ca699ab  fase-5-b4: tambah link sesi-runtime.css di index.html
@@ -80,8 +94,6 @@ da46ccd  fase-5-b2-b4: integrate sesi-runtime, hapus RT v6
 bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
 42f2f9f  opsi-b: integrate v4.3 TP 15-18 into fase-a.js runtime
 913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
-3f7b0d1  sesi-m7/m8/m9: migrate TP 12-14 + update CONTEXT
-95e3a3b  docs: update CONTEXT TP 11 selesai, next M7
 ```
 
 ## Struktur Folder Penting
@@ -90,8 +102,8 @@ FLAF/
 ├── screens/
 │   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, runtime full layar
 │   ├── dashboard.css       ← rt-* classes dihapus
-│   ├── sesi-runtime.js     ← 633 baris, 5-state machine, light theme UI-SKETCH
-│   ├── sesi-runtime.css    ← 604 baris, sr-* prefix, light theme
+│   ├── sesi-runtime.js     ← 5-state machine, light theme UI-SKETCH, updateSpeakCount saat closure
+│   ├── sesi-runtime.css    ← sr-* prefix, light theme
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
@@ -99,18 +111,24 @@ FLAF/
 ├── data/
 │   ├── index.js
 │   └── fase-a.js           ← 18 TP v4.3 aktif, langkah[] siap dibaca runtime
-├── docs/
-│   ├── fase-1-spec/        ← SCHEMA.md, tp-01.js
-│   ├── fase-2-spec/        ← STATE-MACHINE.md
-│   ├── fase-3-spec/        ← UI-SKETCH.html ✅ DISETUJUI, acuan layout runtime
-│   ├── fase-4-spec/        ← MIGRATION-PLAN.md
-│   └── sesi-m1/ sampai sesi-m13/  ← semua TP v4.3
 ├── storage/
-│   └── db.js, logger.js, export.js, jejak.js, nilai.js, presensi.js
+│   ├── db.js               ← DB_VERSION 6, store siswa_per_kelas ditambahkan
+│   ├── siswa-history.js    ← BARU: getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
+│   ├── logger.js
+│   ├── export.js
+│   ├── jejak.js
+│   ├── nilai.js
+│   └── presensi.js
+├── docs/
+│   ├── fase-1-spec/        ← SCHEMA.md
+│   ├── fase-2-spec/        ← STATE-MACHINE.md
+│   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
+│   ├── fase-4-spec/        ← MIGRATION-PLAN.md
+│   └── sesi-m1/ sampai sesi-m13/
 ├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
-└── index.html              ← link sesi-runtime.css sudah ditambahkan
+└── index.html
 ```
 
 ## Aturan Kerja (WAJIB diikuti Claude)
@@ -131,8 +149,6 @@ FLAF/
 ## Pattern Inklusivitas (TERBENTUK di Sesi M3)
 
 ### Pattern 1 — Scripted micro_script Inklusivitas
-- Frasa inklusivitas ditulis **konkret dalam Bahasa Indonesia** di `micro_script.selama`
-
 ### Pattern 2 — Skip Aktivitas Personal di Main Flow
 ### Pattern 3 — Kartu Generik (Bukan Bring-from-Home)
 ### Pattern 4 — Aktivitas "Pretend" sebagai Substitusi
@@ -152,8 +168,9 @@ FLAF/
 ```
 ✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
 ✅ UI-SKETCH.html DISETUJUI (acuan layout runtime)
-✅ FASE 5 BUILD COMPLETE + POST-FIX SELESAI (commit 6203e52)
+✅ FASE 5 BUILD COMPLETE + POST-FIX + VALIDATED
+✅ FASE 6 COMPLETE (commit 9f33bcf)
 
-Next: Validasi full flow runtime (preview → closure)
-      Fase 6 — siswa_per_kelas IDB store (defer dari Fase 5)
+Next: Fase 7 — UI saran observasi berbasis getSortedBySpeakCount
+      (data sudah siap di siswa-history.js)
 ```
