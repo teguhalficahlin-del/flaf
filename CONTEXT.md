@@ -10,7 +10,7 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **13 TP sudah migrate**:
+- **18 TP sudah migrate — FASE A 100% COMPLETE ✅✅✅**:
   - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
   - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
   - Kelas 2: TP 09 Animals ✅ (sesi M4)
@@ -18,8 +18,13 @@
   - Kelas 2: TP 11 Daily Routines ✅ (sesi M6)
   - Kelas 2: TP 12 Body Parts ✅ (sesi M7)
   - Kelas 2: TP 13 Weather ✅ (sesi M8)
-- **Sisa**: TP 14–17 (4 TP) belum migrate — **TP 18 tidak ada di fase-a.js**
-- **Next**: M9 — TP 14 (In the Classroom)
+  - Kelas 2: TP 14 In the Classroom ✅ (sesi M9)
+  - Kelas 2: TP 15 Feelings and Emotions ✅ (sesi M10)
+  - Kelas 2: TP 16 Simple Story Retelling ✅ (sesi M11)
+  - Kelas 2: TP 17 My Hobbies ✅ (sesi M12)
+  - Kelas 2: TP 18 Integrative Project (My World) ✅ (sesi M13)
+- **Status**: FASE A MIGRATION COMPLETE — semua 18 TP v4.3 siap
+- **Next**: Deployment readiness check / Fase B planning
 
 ## Git Log (10 commit terakhir)
 ```
@@ -158,11 +163,16 @@ Pattern: closure bukan sekadar farewell, tapi **bridge ke konteks nyata di rumah
 
 Tantangan **tidak menambah vocab utama** — hanya menambah kompleksitas pola atau variasi.
 
-## Tugas Sesi Ini
+## Status Sesi
 
 ```
-M6: migrate TP 11 (Daily Routines) ke format v4.3.
-Gunakan tp-10.js sebagai referensi format terbaru.
-Sensitivitas: SEDANG-TINGGI — rutinitas bisa expose kondisi keluarga.
-Terapkan Pattern 1, 2, 5. Monitor Pattern A: hindari tpr_action.
+✅ FASE A MIGRATION COMPLETE (M1–M12)
+
+Semua 17 TP core Fase A sudah dimigrasi ke format v4.3 dengan:
+- Schema v4.3: closure_reinforcement + observation_validation di setiap TP
+- Pattern Inklusivitas penuh: Pattern 1, 2, 4, 5 diterapkan di TP-TP sensitif
+- Media library terstruktur: kartu reusable lintas TP
+- Backward compat: langkah[] fallback untuk runtime lama
+
+Next milestone: Fase B planning atau deployment readiness check.
 ```
