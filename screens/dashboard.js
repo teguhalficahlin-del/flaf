@@ -797,6 +797,19 @@ function _rerenderStep() {
 
   // ── sesi-runtime: step 2-4 ─────────────────────────────────
   if (step >= 2 && step <= 4) {
+    // Sembunyikan semua elemen stepper
+    const ind2  = _container?.querySelector('.ds-step-indicator');
+    const nav2  = _container?.querySelector('#ds-step-nav');
+    const bread = _container?.querySelector('.ds-breadcrumb');
+    const hdr   = _container?.querySelector('.ds-sesi-header');
+    if (ind2)  ind2.style.display  = 'none';
+    if (nav2)  nav2.style.display  = 'none';
+    if (bread) bread.style.display = 'none';
+    if (hdr)   hdr.style.display   = 'none';
+    // Step body isi penuh
+    const body2 = _container?.querySelector('#ds-step-body');
+    if (body2) body2.style.flex = '1';
+
     let srRoot = body.querySelector('#sr-root');
     if (!srRoot) {
       body.innerHTML = '<div id="sr-root" style="height:100%;"></div>';
@@ -809,7 +822,17 @@ function _rerenderStep() {
     return;
   }
 
-  // ── Non-runtime step: unmount jika perlu ───────────────────
+  // ── Non-runtime step: restore stepper UI + unmount ─────────
+  const ind3  = _container?.querySelector('.ds-step-indicator');
+  const nav3  = _container?.querySelector('#ds-step-nav');
+  const bread3 = _container?.querySelector('.ds-breadcrumb');
+  const hdr3   = _container?.querySelector('.ds-sesi-header');
+  const body3  = _container?.querySelector('#ds-step-body');
+  if (ind3)  ind3.style.display  = '';
+  if (nav3)  nav3.style.display  = '';
+  if (bread3) bread3.style.display = '';
+  if (hdr3)   hdr3.style.display   = '';
+  if (body3)  body3.style.flex     = '';
   srUnmount();
 
   body.innerHTML = _buildStepBody(tpData, step);
