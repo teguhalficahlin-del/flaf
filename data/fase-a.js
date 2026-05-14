@@ -22,6 +22,11 @@
  * =============================================================
  */
 
+import TP_15 from '../docs/sesi-m10/tp-15.js';
+import TP_16 from '../docs/sesi-m11/tp-16.js';
+import TP_17 from '../docs/sesi-m12/tp-17.js';
+import TP_18 from '../docs/sesi-m13/tp-18.js';
+
 const FASE_A = {
 
   meta: {
@@ -790,199 +795,13 @@ const FASE_A = {
       ],
     },
 
-    // TP 15 ───────────────────────────────────────────────────────────────────
-    {
-      id: 'tp-15', nomor: 15, kelas: 2,
-      nama: 'Feelings and Emotions', tema: 'Diri Sendiri dan Perasaan',
-      deskripsi: 'Peserta didik belajar mengungkapkan perasaan dan emosi dasar dalam bahasa Inggris.',
-      indikator: [
-        'Peserta didik dapat menyebut perasaan dasar (happy, sad, angry, scared, tired, excited, bored) dengan lafal yang benar.',
-        'Peserta didik dapat mengungkapkan perasaan menggunakan "I feel ..." dan "I am ..." serta menunjukkan ekspresi wajah yang sesuai.',
-        'Peserta didik dapat menanyakan dan merespons "How do you feel?" dengan kalimat lengkap dan alasan sederhana.',
-      ],
-      vocab: ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'bored', 'I feel', 'how do you feel', 'because'],
-      persiapan: ['Kartu emosi bergambar ekspresi wajah', 'Cermin kecil (opsional)'],
-      skenario: [
-        { fase: 'Pembuka', durasi: 10, langkah: [
-          { tipe: 'audio',     teks: 'Good morning! How do you feel today? I feel very happy to see you all!' },
-          { tipe: 'instruksi', teks: 'Tunjukkan ekspresi wajah berbeda tanpa kata — siswa tebak perasaannya.' },
-          { tipe: 'audio',     teks: 'How do I feel? Look at my face! Happy? Sad? Angry?' },
-        ]},
-        { fase: 'Inti', durasi: 30, langkah: [
-          { tipe: 'instruksi', teks: 'Tempel kartu emosi di papan. Tunjuk satu per satu — siswa buat ekspresi + ucapkan bersama.' },
-          { tipe: 'audio',     teks: 'Happy. Sad. Angry. Scared. Tired. Excited. Bored.' },
-          { tipe: 'instruksi', teks: 'Ajarkan "I feel ..." dan "because". Guru contohkan dengan cerita mini.' },
-          { tipe: 'audio',     teks: 'I feel happy because I have good friends. I feel tired because I walked far today.' },
-          { tipe: 'instruksi', teks: 'Permainan ekspresi: guru panggil perasaan, siswa buat ekspresi wajah + pose tubuh.' },
-          { tipe: 'instruksi', teks: 'Tanya jawab berpasangan: [How do you feel today? Why?]' },
-          { tipe: 'audio',     teks: 'How do you feel? I feel excited because today is English class!' },
-          { tipe: 'instruksi', teks: 'DIFERENSIASI — Sudah bisa: buat 2 kalimat perasaan + alasan. Belum bisa: cukup "I feel ..." tanpa alasan.' },
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip tanya jawab berpasangan, guru tanya langsung ke beberapa siswa.' },
-        ]},
-        { fase: 'Penutup', durasi: 10, langkah: [
-          { tipe: 'instruksi', teks: 'Tanya 3–4 siswa: bagaimana perasaan mereka sekarang dan mengapa.' },
-          { tipe: 'audio',     teks: 'Wonderful! You can express your feelings in English now!' },
-        ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu emosi. [How does this person feel? When do you feel like this?]' },
-          { tipe: 'instruksi', teks: 'Nilai Listening: merespons "how do you feel". Speaking: kalimat perasaan + alasan. Reading: baca nama emosi di kartu.' },
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar scared/angry atau tired/bored?' },
-        ]},
-      ],
-    },
+    TP_15,
 
-    // TP 16 ───────────────────────────────────────────────────────────────────
-    {
-      id: 'tp-16', nomor: 16, kelas: 2,
-      nama: 'Simple Story Retelling', tema: 'Literasi Awal',
-      deskripsi: 'Peserta didik menyimak cerita bergambar sederhana dan menceritakan kembali menggunakan kosakata yang sudah dipelajari.',
-      indikator: [
-        'Peserta didik dapat memahami cerita bergambar sederhana dan menjawab pertanyaan "who, what, where" tentang isi cerita.',
-        'Peserta didik dapat menceritakan kembali isi cerita dalam 3–4 kalimat menggunakan kata urutan (first, then, after that, finally).',
-        'Peserta didik dapat mengidentifikasi perasaan tokoh cerita dan mengaitkannya dengan pengalaman pribadi.',
-      ],
-      vocab: ['story', 'character', 'first', 'then', 'after that', 'finally', 'who', 'what', 'where', 'because', 'I think'],
-      persiapan: ['Buku cerita bergambar sederhana (3–6 halaman)', 'Kartu urutan cerita'],
-      skenario: [
-        { fase: 'Pembuka', durasi: 10, langkah: [
-          { tipe: 'audio',     teks: 'Today we have a story! Are you ready to listen? Sit comfortably and listen carefully!' },
-          { tipe: 'instruksi', teks: 'Tunjukkan sampul buku. Tanya siswa: siapa yang ada di gambar? Apa yang akan terjadi?' },
-          { tipe: 'audio',     teks: 'Look at the cover. What do you see? Who is in the story? What do you think will happen?' },
-        ]},
-        { fase: 'Inti', durasi: 40, langkah: [
-          { tipe: 'instruksi', teks: 'Baca cerita dengan ekspresi — tunjukkan gambar di setiap halaman. Berhenti di tengah untuk tanya prediksi.' },
-          { tipe: 'audio',     teks: 'Once upon a time... What do you think happens next?' },
-          { tipe: 'instruksi', teks: 'Selesai membaca. Tanya pemahaman: [Who is in the story? What happened? Where did the story happen?]' },
-          { tipe: 'instruksi', teks: 'Ajarkan kata urutan. Siswa susun kartu urutan sesuai isi cerita.' },
-          { tipe: 'audio',     teks: 'First... Then... After that... Finally...' },
-          { tipe: 'instruksi', teks: 'Siswa ceritakan kembali dalam pasangan menggunakan kartu urutan.' },
-          { tipe: 'instruksi', teks: 'Tanya perasaan tokoh dan kaitkan dengan pengalaman siswa. [How did the character feel? Have you ever felt like that?]' },
-          { tipe: 'instruksi', teks: 'DIFERENSIASI — Sudah bisa: ceritakan kembali 4 kalimat tanpa kartu. Belum bisa: boleh melihat kartu + gambar, 2 kalimat sudah cukup.' },
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip retelling berpasangan, langsung guru tanya jawab perasaan tokoh.' },
-        ]},
-        { fase: 'Penutup', durasi: 4, langkah: [
-          { tipe: 'instruksi', teks: 'Tanya siswa: bagian cerita mana yang paling mereka suka dan mengapa.' },
-          { tipe: 'audio',     teks: 'What a great story! You are amazing listeners and storytellers!' },
-        ]},
-        { fase: 'Penilaian', durasi: 4, langkah: [
-          { tipe: 'instruksi', teks: 'Minta 2–3 siswa ceritakan kembali isi cerita dalam 2 kalimat.' },
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami isi cerita. Speaking: retelling dengan kata urutan. Reading: membaca kartu urutan.' },
-          { tipe: 'instruksi', teks: 'Catat: siapa yang bisa menceritakan kembali secara mandiri? Siapa yang masih butuh bantuan gambar?' },
-        ]},
-      ],
-    },
+    TP_16,
 
-    // TP 17 ───────────────────────────────────────────────────────────────────
-    {
-      id: 'tp-17', nomor: 17, kelas: 2,
-      nama: 'My Hobbies', tema: 'Diri Sendiri dan Perasaan',
-      deskripsi: 'Peserta didik memperkenalkan hobi dan aktivitas waktu luang menggunakan kalimat sederhana.',
-      indikator: [
-        'Peserta didik dapat menyebut nama hobi (reading, drawing, singing, dancing, playing football, cooking, swimming, cycling) menggunakan gerund dengan benar.',
-        'Peserta didik dapat mengungkapkan hobi dan alasan menggunakan "I like ... because it is fun / interesting."',
-        'Peserta didik dapat menanyakan dan merespons "What do you like to do?" dalam percakapan sederhana.',
-      ],
-      vocab: ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling', 'I like', 'because', 'fun', 'interesting'],
-      persiapan: ['Kartu gambar hobi', 'Tabel survei kelas'],
-      skenario: [
-        { fase: 'Pembuka', durasi: 10, langkah: [
-          { tipe: 'audio',     teks: 'Hello class! What do you do in your free time? Today we talk about hobbies!' },
-          { tipe: 'instruksi', teks: 'Guru ceritakan hobi sendiri sebagai model — dengan ekspresi antusias.' },
-          { tipe: 'audio',     teks: 'I like reading. I like cooking. Reading is fun! Cooking is interesting!' },
-        ]},
-        { fase: 'Inti', durasi: 35, langkah: [
-          { tipe: 'instruksi', teks: 'Perkenalkan kartu hobi satu per satu. Siswa ucapkan bersama + tiru gerakannya.' },
-          { tipe: 'audio',     teks: 'Reading. Drawing. Singing. Dancing. Playing football. Cooking. Swimming. Cycling.' },
-          { tipe: 'instruksi', teks: 'Latihan struktur "I like + gerund". Tulis di papan, ucapkan bersama.' },
-          { tipe: 'audio',     teks: 'I like reading. I like drawing. I like singing. I like playing football.' },
-          { tipe: 'instruksi', teks: 'Tambahkan alasan. Hanya dua pilihan: fun atau interesting.' },
-          { tipe: 'audio',     teks: 'I like swimming because it is fun! I like reading because it is interesting!' },
-          { tipe: 'instruksi', teks: 'Survei kelas: buat tabel di papan. Tanya satu per satu. [Raise your hand — who likes singing?] Hitung dan tulis angkanya.' },
-          { tipe: 'audio',     teks: 'What do you like to do? I like dancing! What about you? I like playing football!' },
-          { tipe: 'instruksi', teks: 'DIFERENSIASI — Sudah bisa: tambahkan "... with my friends / with my family". Belum bisa: cukup "I like ... because it is fun" tanpa elaborasi.' },
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati survei, langsung 3–4 siswa perkenalkan hobi di penutup.' },
-        ]},
-        { fase: 'Penutup', durasi: 7, langkah: [
-          { tipe: 'instruksi', teks: 'Setiap siswa perkenalkan hobi dalam 2 kalimat. Yang mau sukarela dulu.' },
-          { tipe: 'audio',     teks: 'My name is Budi. I like drawing because it is fun!' },
-          { tipe: 'audio',     teks: 'Fantastic! You all have wonderful hobbies!' },
-        ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu hobi ke beberapa siswa. [Do you like this? Why?] — amati gerund dan alasan yang mereka gunakan.' },
-          { tipe: 'instruksi', teks: 'Nilai Listening: paham "what do you like". Speaking: kalimat hobi + alasan. Reading: baca kartu nama hobi.' },
-          { tipe: 'instruksi', teks: 'Catat: siapa yang kesulitan menggunakan gerund (reading, swimming, cycling bukan read, swim, cycle)?' },
-        ]},
-      ],
-    },
+    TP_17,
 
-    // ─── TP 18 — REVISI v3 ───────────────────────────────────────────────────
-    {
-      id       : 'tp-18',
-      nomor    : 18,
-      kelas    : 2,
-      nama     : 'Integrative Project — My World',
-      tema     : 'Proyek Integratif',
-      deskripsi: `TP penutup Fase A. Peserta didik mengintegrasikan seluruh
-        kemampuan yang telah dipelajari dalam proyek presentasi "My World".`,
-      indikator: [
-        'Peserta didik dapat membuat poster atau buku mini bergambar yang menampilkan informasi diri, keluarga, rumah, dan hobi menggunakan kalimat-kalimat sederhana dari TP 1–17.',
-        'Peserta didik dapat mempresentasikan "My World" di depan kelas dalam 3–5 kalimat dengan lafal yang jelas dan kepercayaan diri.',
-        'Peserta didik dapat merespons pertanyaan sederhana dari teman atau guru tentang isi presentasi mereka.',
-      ],
-      vocab: ['my world', 'this is me', 'my family', 'my house', 'I like',
-              'every day', 'my hobby', 'present', 'poster', 'project'],
-      persiapan: ['Poster/buku mini siswa (PR sebelumnya)', 'Kertas untuk siswa yang belum siap'],
-      skenario: [
-        {
-          fase  : 'Pembuka',
-          durasi: 10,
-          langkah: [
-            { tipe: 'audio',         teks: 'Hello everyone! Today is a special day. You will present your My World project!' },
-            { tipe: 'instruksi',     teks: 'Tenangkan siswa yang gugup. Sampaikan bahwa hari ini tidak ada yang salah — semua usaha dihargai.', pm: 'mindful' },
-            { tipe: 'instruksi',     teks: 'Tunjukkan template presentasi di papan: nama → keluarga → rumah → hobi. Siswa boleh ikuti urutan ini atau bicara tentang apa yang mereka ingat.', pm: 'meaningful' },
-            { tipe: 'audio',         teks: 'Hello! My name is ... I am ... years old. I have a ... family. I live in a house. I like ... because it is fun!' },
-            { tipe: 'respons_siswa', teks: 'Hello! My name is ... I am ... years old!' },
-          ],
-        },
-        {
-          fase  : 'Inti',
-          durasi: 40,
-          langkah: [
-            { tipe: 'instruksi',     teks: 'Beri siswa 10 menit memeriksa poster/buku mini. Guru keliling membantu yang belum siap — bantu tulis kalimat sederhana.', pm: 'mindful' },
-            { tipe: 'instruksi',     teks: 'Mulai presentasi: panggil siswa yang mengangkat tangan maju duluan. Tidak ada paksaan.', pm: 'joyful' },
-            { tipe: 'audio',         teks: 'Please come to the front. Tell us about your world!' },
-            { tipe: 'respons_siswa', teks: 'Hello! My name is ... My family has ... I live in ... I like ... because ...' },
-            { tipe: 'instruksi',     teks: 'Setelah tiap presentasi: ajukan SATU pertanyaan ringan — pilih yang mudah untuk siswa itu.', pm: 'meaningful' },
-            { tipe: 'audio',         teks: 'Do you have a sister? What is your favourite colour? What do you eat every morning?' },
-            { tipe: 'respons_siswa', teks: 'Yes, I have a sister! / No, I do not. My favourite colour is ...' },
-            { tipe: 'instruksi',     teks: 'Kelas bertepuk tangan meriah setelah tiap presentasi.', pm: 'joyful' },
-            { tipe: 'diferensiasi',  sudah: 'Presentasi tanpa melihat catatan, jawab 2 pertanyaan dari teman.', belum: 'Boleh melihat poster, guru bantu mulai kalimat pertama — tidak ada siswa yang tidak tampil.' },
-            { tipe: 'darurat',       teks: 'Jika masih ada siswa yang belum presentasi dan waktu hampir habis: beri pilihan presentasi singkat 1 kalimat saja sudah cukup. Tidak ada siswa yang tidak tampil.' },
-          ],
-        },
-        {
-          fase  : 'Penutup',
-          durasi: 4,
-          langkah: [
-            { tipe: 'instruksi',     teks: 'Rayakan bersama. Semua berdiri. Ini hari terakhir Fase A Bahasa Inggris.', pm: 'joyful' },
-            { tipe: 'audio',         teks: 'Congratulations, everyone! You have finished Phase A English! You are amazing!' },
-            { tipe: 'respons_siswa', teks: 'Thank you, teacher! We did it!' },
-            { tipe: 'instruksi',     teks: 'Minta siswa refleksi: satu hal yang paling mereka ingat dari pelajaran Bahasa Inggris selama Fase A.', pm: 'mindful' },
-            { tipe: 'audio',         teks: 'Keep speaking English every day. Goodbye and good luck!' },
-            { tipe: 'respons_siswa', teks: 'Goodbye, teacher! Thank you!' },
-          ],
-        },
-        {
-          fase  : 'Penilaian',
-          durasi: 4,
-          langkah: [
-            { tipe: 'instruksi', teks: 'Nilai berdasarkan presentasi yang sudah berlangsung. Tidak perlu tes tambahan — presentasi sudah cukup sebagai bukti belajar.' },
-            { tipe: 'instruksi', teks: 'Nilai Listening: merespons pertanyaan audience. Speaking: presentasi 3–5 kalimat dengan lafal jelas. Reading: baca teks di poster/buku mini.' },
-            { tipe: 'instruksi', teks: 'Catatan akhir Fase A: tulis satu kalimat positif tentang perkembangan setiap siswa untuk laporan.' },
-          ],
-        },
-      ],
-    },
+    TP_18,
 
   ],
 
