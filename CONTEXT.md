@@ -10,14 +10,16 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **11 TP sudah migrate**:
+- **13 TP sudah migrate**:
   - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
   - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
   - Kelas 2: TP 09 Animals ✅ (sesi M4)
   - Kelas 2: TP 10 Food and Drinks ✅ (sesi M5)
   - Kelas 2: TP 11 Daily Routines ✅ (sesi M6)
-- **Sisa**: TP 12–17 (6 TP) belum migrate — **TP 18 tidak ada di fase-a.js**
-- **Next**: M7 — TP 12 (Numbers and Colours)
+  - Kelas 2: TP 12 Body Parts ✅ (sesi M7)
+  - Kelas 2: TP 13 Weather ✅ (sesi M8)
+- **Sisa**: TP 14–17 (4 TP) belum migrate — **TP 18 tidak ada di fase-a.js**
+- **Next**: M9 — TP 14 (In the Classroom)
 
 ## Git Log (10 commit terakhir)
 ```
