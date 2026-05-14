@@ -12,7 +12,7 @@
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
 - **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅**
 - **UI-SKETCH.html sudah di-review dan disetujui — tidak ada revisi**
-- **Fase 5 Build sedang berjalan — B1 selesai**
+- **Fase 5 Build SELESAI — B1–B4 semua complete ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -38,14 +38,42 @@
 
 ### Progress Build
 ```
-B1 ✅ — screens/sesi-runtime.js + screens/sesi-runtime.css  (SELESAI)
-B2 ⬜ — dashboard.js: hapus RT v6, mount sesi-runtime di Step 2-4
-B3 ⬜ — dashboard.css: hapus rt-* classes
-B4 ⬜ — index.html: tambah link sesi-runtime.css
+B1 ✅ — screens/sesi-runtime.js + screens/sesi-runtime.css  (commit 2f275c8)
+B2 ✅ — dashboard.js: hapus RT v6, mount sesi-runtime di Step 2-4  (commit da46ccd)
+B3 ✅ — dashboard.css: hapus rt-* classes  (commit da46ccd)
+B4 ✅ — index.html: tambah link sesi-runtime.css  (commit ca699ab)
 ```
 
-### File Baru yang Dibuat di B1
-- `screens/sesi-runtime.js` — 1013 baris, syntax valid
+### Ringkasan Perubahan B2–B4
+
+**`screens/dashboard.js`** — 2827 baris → 1484 baris
+- Import `srMount`/`srUnmount` dari `sesi-runtime.js`
+- Blok RT v6 (baris 74–1221) dihapus: `const _rt`, semua `_rt*` functions, semua `window.rt*` handlers
+- `_buildStepFase` + `PM_CFG` dihapus (dead code setelah RT v6 hilang)
+- `_buildStepBody` case 2/3/4: return `<div id="sr-root">`
+- `_rerenderStep`: step 2–4 mount `srMount` jika `sr-root` belum mounted; step lain call `srUnmount()`
+- `dashStepNext`: hapus `_rt.spkMap` init block
+- `dashStepPrev`: hapus `_rt` re-init block
+- `dashKeLanding`: ganti `_rtUnmount()` + `Object.assign(_rt,...)` dengan `srUnmount()`
+- `dashPilihTP`: ganti `_rtUnmount()` + `Object.assign(_rt,...)` dengan `srUnmount()`
+- `_onSesiDone(hasil)` ditambahkan — callback dari sesi-runtime saat sesi selesai
+- `_buildSesiHTML`: hapus FOUC logic `isRuntimeStep`/`runtimeClass`
+
+**`screens/dashboard.css`** — 1921 baris → 1023 baris
+- Seluruh blok RT v6 CSS (baris 1025–1921) dihapus: `.rt-surface` sampai `.rt-cl-save`
+- `.ds-stepper-wrap--runtime` dan `.ds-step-body--runtime` dihapus
+
+**`index.html`**
+- Tambah `<link rel="stylesheet" href="screens/sesi-runtime.css">` setelah `dashboard.css`
+
+### Hasil VALIDATE
+- `SesiPreviewing` berhasil mount saat masuk Step 2 ✅
+- Console bersih — tidak ada error ✅
+- Step 0–1 (Materi, Presensi) tetap jalan normal ✅
+- Uji di: localhost:3000, 420×640px (Responsive DevTools)
+
+### File Runtime Baru (dari B1)
+- `screens/sesi-runtime.js` — 1013 baris
   - Public API: `mount(root, tpData, rombel, siswaList, onDone)` + `unmount()`
   - State machine via `_transition(patch)` — satu pintu perubahan state
   - 7 render functions: `_renderPreview`, `_renderResume`, `_renderEntering`, `_renderReady`, `_renderRunning`, `_renderObs`, `_renderSelesai`, `_renderClosure`
@@ -53,76 +81,17 @@ B4 ⬜ — index.html: tambah link sesi-runtime.css
   - Timer 3-warna (hijau/kuning/merah), tidak auto-advance
   - TTS via Web Speech API
   - Resume detection dari IDB `kv` key `sesi_aktif`, batas 4 jam
+  - Rotasi observasi random (Fase 6: history-aware)
 - `screens/sesi-runtime.css` — 751 baris
-  - Semua class prefix `sr-*`, tidak konflik dengan `rt-*` atau `ds-*`
+  - Semua class prefix `sr-*`, tidak konflik dengan `ds-*`
   - Dark theme konsisten dengan dashboard
-
-### Yang Harus Dilakukan di B2 (Sesi Berikutnya)
-
-**File**: `screens/dashboard.js`
-
-Dua perubahan presisi:
-
-**Perubahan 1** — Tambah import di baris paling atas:
-```javascript
-import { mount as srMount, unmount as srUnmount } from './sesi-runtime.js';
-```
-
-**Perubahan 2** — Di fungsi `_buildStepBody`, case 2/3/4 (baris ~1888):
-```javascript
-// LAMA:
-case 2:
-case 3:
-case 4:
-  // Runtime v6: step 2-4 = persistent classroom surface
-  // DOM disiapkan oleh _rtMount — bukan di sini
-  return '<div id="rt-surface-placeholder" style="height:100%;"></div>';
-
-// BARU:
-case 2:
-case 3:
-case 4:
-  return '<div id="sr-root" style="height:100%;"></div>';
-```
-
-**Perubahan 3** — Di `window.dashPilihTP` setelah `_container.innerHTML = _buildSesiHTML()` (baris ~2776), tambah mount call:
-```javascript
-if (_container) {
-  _container.innerHTML = _buildSesiHTML();
-  // Mount sesi-runtime jika step sudah di fase (2-4)
-  if (_skenario.stepIndex >= 2 && _skenario.stepIndex <= 4) {
-    const srRoot = _container.querySelector('#sr-root');
-    if (srRoot) {
-      srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _onSesiDone);
-    }
-  }
-}
-```
-
-**Perubahan 4** — Di `dashStepNext` saat pindah ke step 2, tambah mount. Di `dashStepPrev` saat keluar dari step 2-4, panggil `srUnmount()`.
-
-**Perubahan 5** — Buat fungsi `_onSesiDone(hasil)` yang menggantikan `_doSelesaiSesi`:
-```javascript
-async function _onSesiDone(hasil) {
-  srUnmount();
-  _skenario.stepIndex = 6; // langsung ke Selesai
-  _skenario.kendala   = hasil.kendala;
-  if (_container) _container.innerHTML = _buildSesiHTML();
-  // Simpan ke jejak dan presensi seperti _doSelesaiSesi
-}
-```
-
-**Perubahan 6 (scope B2)** — Hapus seluruh blok RT v6 dari dashboard.js:
-- Baris 77–1222: `_rt`, `_rtMount`, `_rtBuildSurface`, `_rtRenderStep`, semua `_rt*` functions
-- Baris 1619–1738: `_buildStepFase` (diganti dengan sr-root placeholder)
-
-### Yang TIDAK Diubah di B2
-- Landing, Presensi (Step 0-1), Asesmen (Step 5), Selesai (Step 6) — tetap
-- `_doSelesaiSesi` masih dipakai untuk Step 6 Selesai button
-- `app.js`, `data/index.js`, `storage/*` — tidak disentuh
+  - Mobile-first, tidak ada fixed width, tidak ada 100vh
 
 ## Git Log (10 commit terakhir)
 ```
+ca699ab  fase-5-b4: tambah link sesi-runtime.css di index.html
+da46ccd  fase-5-b2-b4: integrate sesi-runtime, hapus RT v6
+2f275c8  fase-5-b1: add sesi-runtime (7-state machine + css)
 bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
 42f2f9f  opsi-b: integrate v4.3 TP 15-18 into fase-a.js runtime
 913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
@@ -130,19 +99,16 @@ bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
 95e3a3b  docs: update CONTEXT TP 11 selesai, next M7
 56aad44  sesi-m6: migrate TP 11 Daily Routines + update CONTEXT
 0b4c473  sesi-m5: migrate TP 10 Food and Drinks + update CONTEXT
-d4b8a28  docs: pindah CONTEXT.md ke root, tambah CLAUDE.md, update status M5
-a105fad  sesi-m4: migrate TP 09 Animals + update CONTEXT
-d62168e  docs: update context after sesi-m3
 ```
 
 ## Struktur Folder Penting
 ```
 FLAF/
 ├── screens/
-│   ├── dashboard.js        ← RT v6 masih ada, AKAN dihapus di B2
-│   ├── dashboard.css       ← rt-* classes masih ada, AKAN dihapus di B3
-│   ├── sesi-runtime.js     ← BARU (B1 selesai) — 7-state runtime
-│   ├── sesi-runtime.css    ← BARU (B1 selesai) — sr-* prefix
+│   ├── dashboard.js        ← 1484 baris, RT v6 sudah dihapus, sesi-runtime terpasang
+│   ├── dashboard.css       ← 1023 baris, rt-* classes sudah dihapus
+│   ├── sesi-runtime.js     ← 7-state runtime (B1 selesai)
+│   ├── sesi-runtime.css    ← sr-* prefix (B1 selesai)
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
@@ -161,7 +127,7 @@ FLAF/
 ├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
-└── index.html
+└── index.html              ← link sesi-runtime.css sudah ditambahkan
 ```
 
 ## Aturan Kerja (WAJIB diikuti Claude)
@@ -214,13 +180,12 @@ Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, mas
 ```
 ✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
 ✅ UI-SKETCH.html DISETUJUI (Fase 3 review selesai)
-🔄 FASE 5 BUILD SEDANG BERJALAN
+✅ FASE 5 BUILD COMPLETE (B1–B4 selesai, validated)
 
-B1 ✅ sesi-runtime.js + sesi-runtime.css
-B2 ⬜ dashboard.js — hapus RT v6, mount sesi-runtime
-B3 ⬜ dashboard.css — hapus rt-* classes
-B4 ⬜ index.html — tambah link sesi-runtime.css
+B1 ✅ sesi-runtime.js + sesi-runtime.css  (commit 2f275c8)
+B2 ✅ dashboard.js — hapus RT v6, mount sesi-runtime  (commit da46ccd)
+B3 ✅ dashboard.css — hapus rt-* classes  (commit da46ccd)
+B4 ✅ index.html — tambah link sesi-runtime.css  (commit ca699ab)
 
-Next: mulai B2 di sesi berikutnya.
-Instruksi detail B2 ada di bagian "Fase 5 — Status Build" di atas.
+Next: Fase 6 — siswa_per_kelas IDB store + rotasi observasi history-aware
 ```
