@@ -10,12 +10,13 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **9 TP sudah migrate**:
+- **10 TP sudah migrate**:
   - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
   - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
   - Kelas 2: TP 09 Animals ✅ (sesi M4)
-- **Sisa**: TP 10–18 (9 TP) belum migrate
-- **Next**: M5 — TP 10 (Food and Drinks)
+  - Kelas 2: TP 10 Food and Drinks ✅ (sesi M5)
+- **Sisa**: TP 11–17 (7 TP) belum migrate — **TP 18 tidak ada di fase-a.js**
+- **Next**: M6 — TP 11 (Daily Routines)
 
 ## Git Log (10 commit terakhir)
 ```
@@ -111,21 +112,22 @@ Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, mas
 - Setiap aktivitas yang berpotensi sensitif HARUS punya entry `fallback.sensitif`
 - Berisi instruksi konkret: *"Jika ada siswa terlihat sedih, jangan tunjuk dia untuk bicara. Lanjut tenang ke aktivitas berikutnya."*
 
-### Antisipasi Aplikasi Pattern di TP 09–18
+### Antisipasi Aplikasi Pattern di TP 09–17
 
-| TP | Topik | Sensitivitas | Pattern yang relevan |
+| TP | Topik (dari fase-a.js) | Sensitivitas | Pattern yang relevan |
 |---|---|---|---|
-| TP 09 | Animals | Rendah | (mungkin tidak butuh) |
-| TP 10 | Body parts | Rendah-Sedang | Pattern 5 (jika ada disabilitas) |
-| TP 11–12 | Numbers, Food | Sedang (food) | Pattern 1, 3, 4 |
-| TP 13 | Clothes | Sedang | Pattern 1, 3 |
-| TP 14 | School | Rendah | (mungkin tidak butuh) |
-| TP 15 | Daily activities | Sedang-Tinggi | Pattern 1, 2, 5 |
-| TP 16 | Weather | Rendah | (mungkin tidak butuh) |
-| TP 17 | Hobbies | Tinggi | Pattern 1, 2, 5 |
-| TP 18 | Recap | Tergantung | Inherit dari TP yang di-recap |
+| TP 09 | Animals | Rendah | — |
+| TP 10 | Food and Drinks ✅ | Sedang | Pattern 1, 4, 5 — sudah diterapkan |
+| TP 11 | Daily Routines | Sedang-Tinggi | Pattern 1, 2, 5 (rutinitas bisa expose kondisi keluarga) |
+| TP 12 | Body Parts | Rendah-Sedang | Pattern 5 (jika ada siswa disabilitas) |
+| TP 13 | Weather and Seasons | Rendah | (mungkin tidak butuh) |
+| TP 14 | In the Classroom | Rendah | (mungkin tidak butuh) |
+| TP 15 | Feelings and Emotions | Tinggi | Pattern 1, 2, 5 (emosi sangat personal) |
+| TP 16 | Simple Story Retelling | Rendah | (cerita bergambar generik) |
+| TP 17 | My Hobbies | Tinggi | Pattern 1, 2, 5 (hobi bisa expose kondisi ekonomi) |
 
 **Catatan**: ini antisipasi, bukan keputusan. Setiap TP tetap di-ANALYZE sendiri di awal sesi migrasi.
+**Koreksi**: tabel sebelumnya salah (TP 10 tercatat Body parts, TP 18 tidak ada). Sudah dikoreksi sesuai fase-a.js.
 
 ## Pattern Lain yang Sudah Terbentuk
 
@@ -156,9 +158,8 @@ Tantangan **tidak menambah vocab utama** — hanya menambah kompleksitas pola at
 ## Tugas Sesi Ini
 
 ```
-M5: migrate TP 10 (Food and Drinks) ke format v4.3.
-Gunakan tp-09.js sebagai referensi format terbaru.
-Sensitivitas: RENDAH-SEDANG — terapkan Pattern 1 & 4 jika diperlukan
-(frame "dream plate", bukan makanan sehari-hari).
-Monitor Pattern A: hindari tpr_action, pertimbangkan production/dialogue_practice.
+M6: migrate TP 11 (Daily Routines) ke format v4.3.
+Gunakan tp-10.js sebagai referensi format terbaru.
+Sensitivitas: SEDANG-TINGGI — rutinitas bisa expose kondisi keluarga.
+Terapkan Pattern 1, 2, 5. Monitor Pattern A: hindari tpr_action.
 ```
