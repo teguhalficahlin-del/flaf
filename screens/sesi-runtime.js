@@ -26,7 +26,7 @@
  */
 
 import { db }               from '../storage/db.js';
-import { updateSpeakCount } from '../storage/siswa-history.js';
+import { updateSpeakCount, getSortedBySpeakCount } from '../storage/siswa-history.js';
 
 // ── Konstanta ─────────────────────────────────────────────────
 
@@ -481,7 +481,7 @@ function _renderSelesai() {
 
 // ─── SCREEN: SesiClosure ─────────────────────────────────────
 
-function _renderClosure() {
+async function _renderClosure() {
   const tp     = _state.tp;
   const rombel = _state.rombel;
 
@@ -523,6 +523,23 @@ function _renderClosure() {
         <div class="sr-closure-hint">
           💡 Data sesi akan tersimpan di Jejak Mengajar.
         </div>
+
+        ${await (async () => {
+          try {
+            if (!_state.rombel?.id || !_state.siswaList?.length) return '';
+            const sorted = await getSortedBySpeakCount(_state.rombel.id, _state.siswaList);
+            const top3   = sorted.slice(0, 3);
+            if (!top3.length) return '';
+            const namaHTML = top3.map(s =>
+              `<div class="sr-obs-nama">• ${_escape(s.nama || '—')}</div>`
+            ).join('');
+            return `
+              <div class="sr-obs-card">
+                <div class="sr-obs-judul">💡 Besok coba perhatikan lebih ke:</div>
+                ${namaHTML}
+              </div>`;
+          } catch { return ''; }
+        })()}
       </div>
 
       <div class="sr-footer">

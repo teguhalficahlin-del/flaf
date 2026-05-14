@@ -14,6 +14,7 @@
 - **UI-SKETCH.html sudah di-review dan disetujui — acuan layout runtime**
 - **Fase 5 Build SELESAI + post-fix SELESAI ✅**
 - **Fase 6 SELESAI ✅**
+- **Fase 7 SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -82,8 +83,33 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 - Data tersimpan setelah Closure ✅
 - Console bersih ✅
 
+## Fase 7 — UI Saran Observasi
+
+### Keputusan Arsitektural (Terkunci)
+- **Titik tampil**: Closure screen, setelah form kendala & catatan
+- **Konten**: "💡 Besok coba perhatikan lebih ke:" + top 3 siswa speakCount terendah
+- **Angka/statistik**: tidak ditampilkan ke guru
+- **Trigger**: otomatis saat `_renderClosure` dipanggil
+- **Fallback**: blok tidak muncul jika siswaList kosong atau error
+
+### Perubahan yang Dibuat
+**`screens/sesi-runtime.js`**:
+- Import tambah `getSortedBySpeakCount` dari `siswa-history.js`
+- `_renderClosure` diubah menjadi `async`
+- Inject `sr-obs-card` (top 3 nama) sebelum tombol Simpan & Selesai
+
+**`screens/sesi-runtime.css`**:
+- Tambah class `sr-obs-card`, `sr-obs-judul`, `sr-obs-nama`
+
+### Hasil VALIDATE
+- Blok saran muncul dengan 3 nama benar ✅
+- Nama terbaca jelas, tidak ada undefined ✅
+- Fallback siswaList kosong: blok tidak muncul ✅
+- Console bersih ✅
+
 ## Git Log (10 commit terakhir)
 ```
+(hash)   fase-7: UI saran observasi di Closure (getSortedBySpeakCount, top 3 siswa)
 9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
 7ae6035  docs: update CONTEXT — full flow validated, production ready
 6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
@@ -102,8 +128,8 @@ FLAF/
 ├── screens/
 │   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, runtime full layar
 │   ├── dashboard.css       ← rt-* classes dihapus
-│   ├── sesi-runtime.js     ← 5-state machine, light theme UI-SKETCH, updateSpeakCount saat closure
-│   ├── sesi-runtime.css    ← sr-* prefix, light theme
+│   ├── sesi-runtime.js     ← 5-state machine, light theme UI-SKETCH, updateSpeakCount saat closure, sr-obs-card Fase 7
+│   ├── sesi-runtime.css    ← sr-* prefix, light theme, sr-obs-card Fase 7
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
@@ -113,7 +139,7 @@ FLAF/
 │   └── fase-a.js           ← 18 TP v4.3 aktif, langkah[] siap dibaca runtime
 ├── storage/
 │   ├── db.js               ← DB_VERSION 6, store siswa_per_kelas ditambahkan
-│   ├── siswa-history.js    ← BARU: getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
+│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
 │   ├── logger.js
 │   ├── export.js
 │   ├── jejak.js
@@ -170,7 +196,7 @@ FLAF/
 ✅ UI-SKETCH.html DISETUJUI (acuan layout runtime)
 ✅ FASE 5 BUILD COMPLETE + POST-FIX + VALIDATED
 ✅ FASE 6 COMPLETE (commit 9f33bcf)
+✅ FASE 7 COMPLETE — UI saran observasi di Closure screen
 
-Next: Fase 7 — UI saran observasi berbasis getSortedBySpeakCount
-      (data sudah siap di siswa-history.js)
+Next: Fase 8 — (belum ditentukan)
 ```
