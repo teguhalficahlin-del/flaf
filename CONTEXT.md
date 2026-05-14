@@ -109,7 +109,7 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 
 ## Git Log (10 commit terakhir)
 ```
-(hash)   fase-7: UI saran observasi di Closure (getSortedBySpeakCount, top 3 siswa)
+e6ce31f   fase-7: UI saran observasi di Closure (getSortedBySpeakCount, top 3 siswa)
 9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
 7ae6035  docs: update CONTEXT — full flow validated, production ready
 6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
