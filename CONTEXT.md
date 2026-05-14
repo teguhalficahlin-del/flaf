@@ -10,11 +10,12 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **8 TP sudah migrate**:
+- **9 TP sudah migrate**:
   - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
   - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
-- **Sisa**: TP 09–18 (10 TP) belum migrate
-- **Next**: M4 (kandidat: TP 09 Animals + TP 10) ATAU mid-checkpoint Kelas 2 setelah 4 TP (konsisten dengan audit Kelas 1)
+  - Kelas 2: TP 09 Animals ✅ (sesi M4)
+- **Sisa**: TP 10–18 (9 TP) belum migrate
+- **Next**: M5 — TP 10 (Food and Drinks)
 
 ## Git Log (10 commit terakhir)
 ```
@@ -50,7 +51,8 @@ FLAF/
 │   ├── fase-4-spec/      ← MIGRATION-PLAN.md
 │   ├── sesi-m1/          ← tp-02.js, tp-03.js, COMPARISON-M1.md
 │   ├── sesi-m2/          ← tp-05.js, tp-06.js, COMPARISON-M2.md, KELAS-1-AUDIT.md
-│   └── sesi-m3/          ← tp-07.js, tp-08.js, COMPARISON-M3.md
+│   ├── sesi-m3/          ← tp-07.js, tp-08.js, COMPARISON-M3.md
+│   └── sesi-m4/          ← tp-09.js
 ├── storage/
 │   └── db.js, logger.js, export.js, jejak.js, nilai.js, presensi.js
 ├── sw.js                 ← Service Worker v52
@@ -152,12 +154,11 @@ Pattern: closure bukan sekadar farewell, tapi **bridge ke konteks nyata di rumah
 Tantangan **tidak menambah vocab utama** — hanya menambah kompleksitas pola atau variasi.
 
 ## Tugas Sesi Ini
-*Isi sesuai kebutuhan sesi — contoh:*
 
 ```
-M4: migrate TP 09 (Animals) + TP 10 (Body Parts) ke format v4.3.
-Gunakan tp-07.js dan tp-08.js sebagai referensi pola.
-Ingat Pattern Inklusivitas jika topik sensitif muncul.
-Pertimbangkan tipe aktivitas Inti selain tpr_action untuk variasi
-(monitor Pattern A risk).
+M5: migrate TP 10 (Food and Drinks) ke format v4.3.
+Gunakan tp-09.js sebagai referensi format terbaru.
+Sensitivitas: RENDAH-SEDANG — terapkan Pattern 1 & 4 jika diperlukan
+(frame "dream plate", bukan makanan sehari-hari).
+Monitor Pattern A: hindari tpr_action, pertimbangkan production/dialogue_practice.
 ```
