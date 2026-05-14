@@ -361,13 +361,19 @@ function _buildTabMateri(tp) {
 
   return `
     <div class="ds-materi-meta">${_escape(tp.tema)}</div>
-    <div class="ds-materi-desc">${_escape(tp.deskripsi)}</div>
     ${persiapanHTML}
-    <div class="ds-sub-label">Indikator</div>
-    ${indikatorHTML}
     <div class="ds-sub-label" style="margin-top:10px;">Kosakata Kunci <span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:400;">(ketuk untuk audio)</span></div>
     <div class="ds-vocab-wrap">${vocabHTML}</div>
-    ${cpHTML}`;
+    <button onclick="dashToggleDetailMateri(this)"
+      style="margin-top:12px;width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px;color:rgba(255,255,255,.5);font-size:12px;cursor:pointer;font-family:inherit;text-align:center;">
+      ▾ Lihat detail materi
+    </button>
+    <div id="ds-detail-materi" style="display:none;margin-top:10px;">
+      <div class="ds-materi-desc">${_escape(tp.deskripsi)}</div>
+      <div class="ds-sub-label" style="margin-top:10px;">Indikator</div>
+      ${indikatorHTML}
+      ${cpHTML}
+    </div>`;
 }
 
 // --- STEP 0: MATERI ----------------------------------------------------------
@@ -1236,6 +1242,14 @@ window.dashTTS = function(idx, teks) {
 
 window.dashTTSStop = function() {
   _ttsStop();
+};
+
+window.dashToggleDetailMateri = function(btn) {
+  const el = document.getElementById('ds-detail-materi');
+  if (!el) return;
+  const isHidden = el.style.display === 'none';
+  el.style.display = isHidden ? 'block' : 'none';
+  btn.textContent  = isHidden ? '▴ Sembunyikan detail' : '▾ Lihat detail materi';
 };
 
 window.dashPilihKendala = function(val) {
