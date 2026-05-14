@@ -11,8 +11,8 @@
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
 - **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅**
-- **UI-SKETCH.html sudah di-review dan disetujui — tidak ada revisi**
-- **Fase 5 Build SELESAI — B1–B4 semua complete ✅**
+- **UI-SKETCH.html sudah di-review dan disetujui — acuan layout runtime**
+- **Fase 5 Build SELESAI + post-fix SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -33,62 +33,47 @@
 ### Keputusan Arsitektural (Terkunci)
 - **Pengganti penuh RT v6** — tidak ada compatibility layer, semua 18 TP sudah v4.3
 - **`siswa_per_kelas` IDB store defer ke Fase 6** — observasi pakai rotasi random dulu
-- **TTS tetap ada** di AktivitasRunning
-- **7 state machine** sesuai UI-SKETCH: preview → resume → entering → ready → running → obs → selesai → closure
+- **TTS tetap ada** di state running
+- **5 state machine** (disederhanakan dari 7): preview → entering → running → selesai → closure
+- **Resume** sebagai cabang dari preview (bukan state tersendiri)
+- **Unit terkecil: `langkah[]`** — fase-a.js hanya punya langkah[], bukan aktivitas[]
+- **Layout mengikuti UI-SKETCH.html** — app-header tipis / app-body flex:1 / app-footer
+- **Overlay kondisi 2 tahap**: pilih kondisi → detail fallback + instruksi konkret
+- **Runtime full layar**: breadcrumb, ds-sesi-header, ds-step-indicator, ds-step-nav disembunyikan saat step 2–4
 
 ### Progress Build
 ```
-B1 ✅ — screens/sesi-runtime.js + screens/sesi-runtime.css  (commit 2f275c8)
-B2 ✅ — dashboard.js: hapus RT v6, mount sesi-runtime di Step 2-4  (commit da46ccd)
-B3 ✅ — dashboard.css: hapus rt-* classes  (commit da46ccd)
-B4 ✅ — index.html: tambah link sesi-runtime.css  (commit ca699ab)
+B1  ✅ — sesi-runtime.js + sesi-runtime.css  (commit 2f275c8)
+B2  ✅ — dashboard.js: hapus RT v6, mount sesi-runtime  (commit da46ccd)
+B3  ✅ — dashboard.css: hapus rt-* classes  (commit da46ccd)
+B4  ✅ — index.html: tambah link sesi-runtime.css  (commit ca699ab)
+FIX ✅ — sesi-runtime redesign UI-SKETCH + runtime full layar  (commit 6203e52)
 ```
 
-### Ringkasan Perubahan B2–B4
+### Ringkasan sesi-runtime.js (633 baris, commit 6203e52)
+- Public API: `mount(root, tpData, rombel, siswaList, onDone)` + `unmount()`
+- State machine via `_transition(patch)` — satu pintu perubahan state
+- 6 render functions: `_renderPreview`, `_renderResume`, `_renderEntering`, `_renderRunning`, `_renderSelesai`, `_renderClosure`
+- 2 overlay: `_renderKondisiOverlay` (tahap 1), `_renderFallbackOverlay` (tahap 2)
+- TTS via Web Speech API, toggle per langkah audio/respons_siswa
+- Resume detection dari IDB `kv` key `sesi_aktif`, batas 4 jam
+- Overlay: `position: fixed`, append ke `document.body`
 
-**`screens/dashboard.js`** — 2827 baris → 1484 baris
-- Import `srMount`/`srUnmount` dari `sesi-runtime.js`
-- Blok RT v6 (baris 74–1221) dihapus: `const _rt`, semua `_rt*` functions, semua `window.rt*` handlers
-- `_buildStepFase` + `PM_CFG` dihapus (dead code setelah RT v6 hilang)
-- `_buildStepBody` case 2/3/4: return `<div id="sr-root">`
-- `_rerenderStep`: step 2–4 mount `srMount` jika `sr-root` belum mounted; step lain call `srUnmount()`
-- `dashStepNext`: hapus `_rt.spkMap` init block
-- `dashStepPrev`: hapus `_rt` re-init block
-- `dashKeLanding`: ganti `_rtUnmount()` + `Object.assign(_rt,...)` dengan `srUnmount()`
-- `dashPilihTP`: ganti `_rtUnmount()` + `Object.assign(_rt,...)` dengan `srUnmount()`
-- `_onSesiDone(hasil)` ditambahkan — callback dari sesi-runtime saat sesi selesai
-- `_buildSesiHTML`: hapus FOUC logic `isRuntimeStep`/`runtimeClass`
+### Ringkasan sesi-runtime.css (604 baris)
+- Semua class prefix `sr-*`, tidak konflik dengan `ds-*`
+- Light theme sesuai UI-SKETCH (background `#fafafa`, teks `#1a1a1a`)
+- Mobile-first, tidak ada fixed width, tidak ada 100vh
+- Tombol: `sr-btn-primary` (hitam penuh) / `sr-btn-secondary` (outline) / `sr-btn-kondisi` (dashed samar)
 
-**`screens/dashboard.css`** — 1921 baris → 1023 baris
-- Seluruh blok RT v6 CSS (baris 1025–1921) dihapus: `.rt-surface` sampai `.rt-cl-save`
-- `.ds-stepper-wrap--runtime` dan `.ds-step-body--runtime` dihapus
-
-**`index.html`**
-- Tambah `<link rel="stylesheet" href="screens/sesi-runtime.css">` setelah `dashboard.css`
-
-### Hasil VALIDATE
-- `SesiPreviewing` berhasil mount saat masuk Step 2 ✅
-- Console bersih — tidak ada error ✅
-- Step 0–1 (Materi, Presensi) tetap jalan normal ✅
-- Uji di: localhost:3000, 420×640px (Responsive DevTools)
-
-### File Runtime Baru (dari B1)
-- `screens/sesi-runtime.js` — 1013 baris
-  - Public API: `mount(root, tpData, rombel, siswaList, onDone)` + `unmount()`
-  - State machine via `_transition(patch)` — satu pintu perubahan state
-  - 7 render functions: `_renderPreview`, `_renderResume`, `_renderEntering`, `_renderReady`, `_renderRunning`, `_renderObs`, `_renderSelesai`, `_renderClosure`
-  - 2 overlay: `_renderKondisiOverlay`, `_renderFallbackOverlay`
-  - Timer 3-warna (hijau/kuning/merah), tidak auto-advance
-  - TTS via Web Speech API
-  - Resume detection dari IDB `kv` key `sesi_aktif`, batas 4 jam
-  - Rotasi observasi random (Fase 6: history-aware)
-- `screens/sesi-runtime.css` — 751 baris
-  - Semua class prefix `sr-*`, tidak konflik dengan `ds-*`
-  - Dark theme konsisten dengan dashboard
-  - Mobile-first, tidak ada fixed width, tidak ada 100vh
+### Perubahan dashboard.js terkait runtime full layar
+- Step 2–4: sembunyikan breadcrumb, ds-sesi-header, ds-step-indicator, ds-step-nav; body flex:1
+- Non-runtime step: restore semua elemen; `srUnmount()`
+- `_onSesiDone(hasil)`: callback dari runtime → langsung ke Step 6 Selesai
 
 ## Git Log (10 commit terakhir)
 ```
+6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
+d4c4336  docs: update CONTEXT — Fase 5 complete (B1-B4)
 ca699ab  fase-5-b4: tambah link sesi-runtime.css di index.html
 da46ccd  fase-5-b2-b4: integrate sesi-runtime, hapus RT v6
 2f275c8  fase-5-b1: add sesi-runtime (7-state machine + css)
@@ -97,31 +82,29 @@ bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
 913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
 3f7b0d1  sesi-m7/m8/m9: migrate TP 12-14 + update CONTEXT
 95e3a3b  docs: update CONTEXT TP 11 selesai, next M7
-56aad44  sesi-m6: migrate TP 11 Daily Routines + update CONTEXT
-0b4c473  sesi-m5: migrate TP 10 Food and Drinks + update CONTEXT
 ```
 
 ## Struktur Folder Penting
 ```
 FLAF/
 ├── screens/
-│   ├── dashboard.js        ← 1484 baris, RT v6 sudah dihapus, sesi-runtime terpasang
-│   ├── dashboard.css       ← 1023 baris, rt-* classes sudah dihapus
-│   ├── sesi-runtime.js     ← 7-state runtime (B1 selesai)
-│   ├── sesi-runtime.css    ← sr-* prefix (B1 selesai)
+│   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, runtime full layar
+│   ├── dashboard.css       ← rt-* classes dihapus
+│   ├── sesi-runtime.js     ← 633 baris, 5-state machine, light theme UI-SKETCH
+│   ├── sesi-runtime.css    ← 604 baris, sr-* prefix, light theme
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   └── fase-a.js           ← 18 TP v4.3 aktif, aktivitas[] siap dibaca
+│   └── fase-a.js           ← 18 TP v4.3 aktif, langkah[] siap dibaca runtime
 ├── docs/
 │   ├── fase-1-spec/        ← SCHEMA.md, tp-01.js
 │   ├── fase-2-spec/        ← STATE-MACHINE.md
-│   ├── fase-3-spec/        ← UI-SKETCH.html ✅ DISETUJUI, tp-04.js
+│   ├── fase-3-spec/        ← UI-SKETCH.html ✅ DISETUJUI, acuan layout runtime
 │   ├── fase-4-spec/        ← MIGRATION-PLAN.md
-│   ├── sesi-m1/ sampai sesi-m13/  ← semua TP v4.3
+│   └── sesi-m1/ sampai sesi-m13/  ← semua TP v4.3
 ├── storage/
 │   └── db.js, logger.js, export.js, jejak.js, nilai.js, presensi.js
 ├── sw.js                   ← Service Worker v52
@@ -147,24 +130,13 @@ FLAF/
 
 ## Pattern Inklusivitas (TERBENTUK di Sesi M3)
 
-Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, masa depan, dll), pattern berikut sudah terbukti efektif:
-
 ### Pattern 1 — Scripted micro_script Inklusivitas
-- Frasa inklusivitas ditulis **konkret dalam Bahasa Indonesia** di `micro_script.selama` pada aktivitas Pembuka pertama
-- Contoh TP 07: *"Siapa yang tinggal bersamamu di rumah? Itu keluargamu. Bisa papa, mama, kakak, adik, kakek, nenek, om, tante — siapa pun."*
+- Frasa inklusivitas ditulis **konkret dalam Bahasa Indonesia** di `micro_script.selama`
 
 ### Pattern 2 — Skip Aktivitas Personal di Main Flow
-- Aktivitas yang memaksa siswa expose kondisi pribadi dihapus dari main flow
-- Presentasi ke kelas hanya di `fallback.kelas_sangat_aktif` sebagai opt-in sukarela
-
 ### Pattern 3 — Kartu Generik (Bukan Bring-from-Home)
-- Media utama = kartu cetak generik yang sama untuk semua siswa
-
 ### Pattern 4 — Aktivitas "Pretend" sebagai Substitusi
-- Pakai pretend universal: semua siswa pakai konteks yang sama dari kartu/instruksi
-
 ### Pattern 5 — Fallback `sensitif` Wajib di Aktivitas Personal
-- Setiap aktivitas yang berpotensi sensitif HARUS punya entry `fallback.sensitif`
 
 ## Pattern Lain yang Sudah Terbentuk
 
@@ -179,13 +151,9 @@ Untuk TP dengan topik **personal/sensitif** (keluarga, rumah, makanan, hobi, mas
 
 ```
 ✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
-✅ UI-SKETCH.html DISETUJUI (Fase 3 review selesai)
-✅ FASE 5 BUILD COMPLETE (B1–B4 selesai, validated)
+✅ UI-SKETCH.html DISETUJUI (acuan layout runtime)
+✅ FASE 5 BUILD COMPLETE + POST-FIX SELESAI (commit 6203e52)
 
-B1 ✅ sesi-runtime.js + sesi-runtime.css  (commit 2f275c8)
-B2 ✅ dashboard.js — hapus RT v6, mount sesi-runtime  (commit da46ccd)
-B3 ✅ dashboard.css — hapus rt-* classes  (commit da46ccd)
-B4 ✅ index.html — tambah link sesi-runtime.css  (commit ca699ab)
-
-Next: Fase 6 — siswa_per_kelas IDB store + rotasi observasi history-aware
+Next: Validasi full flow runtime (preview → closure)
+      Fase 6 — siswa_per_kelas IDB store (defer dari Fase 5)
 ```
