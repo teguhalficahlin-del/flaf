@@ -529,6 +529,56 @@ const TP_05 = {
         },
 
         {
+          id    : 'tp05-penutup-review',
+          tipe  : 'review_quick',
+          judul : 'Review Warna Cepat',
+          pm    : 'mindful',
+
+          tujuan_komunikasi : 'Recap semua warna dengan tempo cepat dan nama yang benar.',
+          vocab_target      : ['red','yellow','pink','green','orange','purple','blue'],
+
+          durasi_target_detik : 120,
+          durasi_min_detik    : 60,
+
+          micro_script: {
+            pembuka : '"Let us name the colours quickly!"',
+            selama  : 'Siswa sebut satu warna saat guru tunjuk kartu atau benda.',
+            penutup : '"Excellent! You know the colours well."',
+          },
+
+          audio_cue: {
+            contoh_guru  : 'Say the colour when I point. Red! Yellow! Blue!',
+            contoh_siswa : 'Red! Yellow! Blue!',
+            target_vocab : ['red','yellow','pink','green','orange','purple','blue'],
+          },
+
+          media_dipakai : ['media-kartu-warna-8'],
+
+          mode: {
+            mudah: {
+              bantuan: 'Tunjuk 4 warna utama. Siswa sebut bersama.',
+              panjang_speaking: 'Kata warna saja.',
+            },
+            normal: {
+              bantuan: 'Tunjuk semua 7 warna. Siswa sebut sendiri.',
+              panjang_speaking: 'Kata warna lengkap.',
+            },
+            tantangan: {
+              bantuan: 'Ajak siswa sebut 2 warna sekaligus.',
+              panjang_speaking: 'Blue and red!',
+            },
+          },
+
+          observation: { aktif: false },
+
+          fallback: {
+            siswa_pasif : 'Tunjuk warna perlahan. Ajak siswa sebut satu per satu.',
+          },
+
+          advance: { mode: 'manual' },
+        },
+
+        {
           id    : 'tp05-penutup-closure',
           tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',

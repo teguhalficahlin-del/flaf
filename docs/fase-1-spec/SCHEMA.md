@@ -324,6 +324,7 @@ Sebuah TP dianggap valid v4 jika:
 - Setiap aktivitas tipe `pair_work` punya `fallback.pair_tidak_jalan`
 - Setiap aktivitas dengan `observation.aktif = true` punya `n_siswa` ≥ 1
 - **Fase Penutup WAJIB punya tepat 1 aktivitas tipe `closure_reinforcement` sebagai aktivitas terakhir** (Schema v4.3+)
+- **Fase Penutup WAJIB punya setidaknya satu aktivitas tipe `review_quick` atau `reflection` sebelum `closure_reinforcement`** (Schema v4.3+)
 
 Pelanggaran → warning di console, BUKAN throw. Kelas tetap jalan.
 

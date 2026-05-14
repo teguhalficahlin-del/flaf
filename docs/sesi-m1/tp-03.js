@@ -533,6 +533,56 @@ const TP_03 = {
         },
 
         {
+          id    : 'tp03-penutup-reflection',
+          tipe  : 'review_quick',
+          judul : 'Reflection: What did you learn?',
+          pm    : 'mindful',
+
+          tujuan_komunikasi : 'Siswa ungkap kembali instruksi kelas dan pengalaman mereka.',
+          vocab_target      : ['sit down', 'stand up', 'open', 'close', 'listen', 'look'],
+
+          durasi_target_detik : 120,
+          durasi_min_detik    : 60,
+
+          micro_script: {
+            pembuka : '"What was the most fun instruction today?"',
+            selama  : 'Minta 2–3 siswa sebut kembali instruksi favorit mereka dan jelaskan singkat.',
+            penutup : '"Great! You listened and moved well today."',
+          },
+
+          audio_cue: {
+            contoh_guru  : 'What was the most fun instruction today? Tell me. I like listen and follow.',
+            contoh_siswa : 'I like sit down. I like open the book.',
+            target_vocab : ['sit down', 'stand up', 'open', 'close', 'listen', 'look'],
+          },
+
+          media_dipakai : [],
+
+          mode: {
+            mudah: {
+              bantuan: 'Tanya satu siswa. Ulang kata kunci saja.',
+              panjang_speaking: 'Kata kunci cukup.',
+            },
+            normal: {
+              bantuan: 'Pilih dua siswa. Tambah satu kalimat sederhana.',
+              panjang_speaking: 'I like sit down. I like open book.',
+            },
+            tantangan: {
+              bantuan: 'Minta siswa sebutkan dua instruksi dan satu alasan.',
+              panjang_speaking: 'I like sit down because it is fun.',
+            },
+          },
+
+          observation: { aktif: false },
+
+          fallback: {
+            siswa_pasif : 'Guru bantu dengan contoh sendiri: "I like ...".',
+          },
+
+          advance: { mode: 'manual' },
+        },
+
+        {
           id    : 'tp03-penutup-farewell',
           tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',

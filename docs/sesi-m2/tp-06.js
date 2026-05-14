@@ -342,6 +342,7 @@ const TP_06 = {
           tipe  : 'game_movement',
           judul : 'Permainan Tebak Bentuk',
           pm    : 'joyful',
+          flags : ['kompetitif_safety'],
 
           tujuan_komunikasi : 'Siswa identifikasi bentuk sebelum gambar selesai',
           vocab_target      : ['circle', 'square', 'triangle', 'rectangle', 'star', 'heart'],

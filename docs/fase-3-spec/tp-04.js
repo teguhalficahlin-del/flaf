@@ -589,6 +589,56 @@ const TP_04 = {
         },
 
         {
+          id    : 'tp04-penutup-review',
+          tipe  : 'review_quick',
+          judul : 'Review Hitung Mundur',
+          pm    : 'mindful',
+
+          tujuan_komunikasi : 'Recap angka 10–1 dan keberhasilan menghitung.',
+          vocab_target      : ['ten','nine','eight','seven','six','five','four','three','two','one'],
+
+          durasi_target_detik : 120,
+          durasi_min_detik    : 60,
+
+          micro_script: {
+            pembuka : '"Let us say the numbers one more time."',
+            selama  : 'Siswa hitung bersama dari sepuluh ke satu dengan tempo tenang.',
+            penutup : '"Great counting! You can do it again tomorrow."',
+          },
+
+          audio_cue: {
+            contoh_guru  : 'Ten, nine, eight, seven, six, five, four, three, two, one. Great counting!',
+            contoh_siswa : 'Ten, nine, eight, seven, six, five, four, three, two, one.',
+            target_vocab : ['ten','nine','eight','seven','six','five','four','three','two','one'],
+          },
+
+          media_dipakai : [],
+
+          mode: {
+            mudah: {
+              bantuan: 'Hitung pelan bersama guru.',
+              panjang_speaking: 'Sebut angka singkat.',
+            },
+            normal: {
+              bantuan: 'Hitung bersama semua siswa.',
+              panjang_speaking: 'Sebut semua angka lengkap.',
+            },
+            tantangan: {
+              bantuan: 'Ulang dua kali cepat.',
+              panjang_speaking: 'Tambah "Blast off!" di akhir.',
+            },
+          },
+
+          observation: { aktif: false },
+
+          fallback: {
+            siswa_pasif : 'Hitung bersama baris depan dulu.',
+          },
+
+          advance: { mode: 'manual' },
+        },
+
+        {
           id    : 'tp04-penutup-apresiasi',
           tipe  : 'closure_reinforcement',
           judul : 'Apresiasi & Goodbye',
