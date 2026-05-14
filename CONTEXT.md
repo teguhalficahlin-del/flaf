@@ -10,7 +10,7 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **18 TP sudah migrate — FASE A 100% COMPLETE ✅✅✅**:
+- **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅✅✅**:
   - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
   - Kelas 2: TP 07–08 ✅ (sesi M3, commit `6a0f035`)
   - Kelas 2: TP 09 Animals ✅ (sesi M4)
@@ -23,21 +23,24 @@
   - Kelas 2: TP 16 Simple Story Retelling ✅ (sesi M11)
   - Kelas 2: TP 17 My Hobbies ✅ (sesi M12)
   - Kelas 2: TP 18 Integrative Project (My World) ✅ (sesi M13)
-- **Status**: FASE A MIGRATION COMPLETE — semua 18 TP v4.3 siap
+- **Status**: FASE A MIGRATION + INTEGRATION COMPLETE
+  - TP 15-18 v4.3 successfully imported into data/fase-a.js (Opsi B hybrid approach)
+  - Runtime loads through data/index.js without modification
+  - Backward compatibility maintained via langkah[] fallback in v4.3 TPs
 - **Next**: Deployment readiness check / Fase B planning
 
 ## Git Log (10 commit terakhir)
 ```
-6a0f035  sesi-m3: migrate TP 07 & TP 08 + comparison
+42f2f9f  opsi-b: integrate v4.3 TP 15-18 into fase-a.js runtime
+913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
+56aad44  sesi-m6: migrate TP 11 Daily Routines + update CONTEXT
+0b4c473  sesi-m5: migrate TP 10 Food and Drinks + update CONTEXT
+d4b8a28  docs: pindah CONTEXT.md ke root, tambah CLAUDE.md, update status M5
+a105fad  sesi-m4: migrate TP 09 Animals + update CONTEXT
+0e14256  sesi-m3: migrate TP 07 & TP 08 + comparison
 a2a7a7c  audit: checkpoint kelas 1 (TP 01-06)
 946be25  sesi-m2: migrate TP 05 & TP 06 + cleanup batch
 a32c1f3  sesi-m1: migrate TP 02 & TP 03
-884d63c  docs(fase-4): add migration plan
-986ecf9  schema(v4.1): extension from TP 04
-d1625d8  docs(fase-3): add TP 04 v4 migration
-a43d527  docs(fase-2): add runtime state machine spec
-833f7bb  docs(fase-1): timer_visible_only
-783ce74  docs(fase-1): add data model spec
 ```
 
 ## Struktur Folder Penting
