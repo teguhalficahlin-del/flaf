@@ -10,7 +10,7 @@
  *   audio         — kalimat guru yang diucapkan ke siswa (bisa diputar TTS)
  *   respons_siswa — contoh kalimat yang diharapkan dari siswa (bisa TTS)
  *   diferensiasi  — dua jalur: field `sudah` dan `belum`
- *   darurat       — langkah cadangan jika waktu tersisa ≤10 menit
+ *   darurat       — langkah cadangan jika waktu tersisa Γëñ10 menit
  *
  * Tag PM (Pembelajaran Mendalam) — opsional pada tiap langkah:
  *   pm: 'mindful'    — mendorong kesadaran & refleksi siswa
@@ -65,7 +65,7 @@ const FASE_A = {
 
   tujuan_pembelajaran: [
 
-    // ─── TP 1 — REVISI v3 ────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 1 — REVISI v3 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-01',
       nomor    : 1,
@@ -368,7 +368,7 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 2 — REVISI v3 ────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 2 — REVISI v3 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-02',
       nomor    : 2,
@@ -392,7 +392,7 @@ const FASE_A = {
           langkah: [
             { tipe: 'audio',         teks: 'Good morning, class! Let us learn how to introduce ourselves today!',
               mode: {
-                mudah: { bantuan: 'Ulangi setelah guru 2×; dengarkan dengan mata tertutup dulu.' },
+                mudah: { bantuan: 'Ulangi setelah guru 2├ù; dengarkan dengan mata tertutup dulu.' },
                 normal: { bantuan: 'Dengarkan sambil lihat guru; perhatikan ekspresi wajah dan intonasi.' },
                 tantangan: { bantuan: 'Tebak berapa kata yang diucapkan guru; tulis 3 kata penting yang didengar.' },
               } },
@@ -404,7 +404,7 @@ const FASE_A = {
               } },
             { tipe: 'audio',         teks: 'Hello! My name is ... I am a teacher. Nice to meet you!',
               mode: {
-                mudah: { bantuan: 'Dengarkan kalimat pendek: "My name is ..."; minta guru ulangi 3×.' },
+                mudah: { bantuan: 'Dengarkan kalimat pendek: "My name is ..."; minta guru ulangi 3├ù.' },
                 normal: { bantuan: 'Dengarkan kalimat utuh; hitung jumlah kalimat yang diucapkan guru.' },
                 tantangan: { bantuan: 'Dengarkan dan identifikasi apa pekerjaan guru; tebak berapa teman sekelas yang sudah kenal guru.' },
               } },
@@ -434,8 +434,8 @@ const FASE_A = {
           langkah: [
             { tipe: 'instruksi',     teks: 'Tulis di papan: "My name is ___." Tunjuk papan, ucapkan bersama dua kali.', pm: 'mindful',
               mode: {
-                mudah: { bantuan: 'Guru tulis nama guru sendiri di dalam garis kosong; siswa lihat dan dengarkan guru ucapkan 3× pelan.' },
-                normal: { bantuan: 'Guru tulis nama contoh; siswa lihat papan dan ucapkan bersama guru 2× dengan ritme normal.' },
+                mudah: { bantuan: 'Guru tulis nama guru sendiri di dalam garis kosong; siswa lihat dan dengarkan guru ucapkan 3├ù pelan.' },
+                normal: { bantuan: 'Guru tulis nama contoh; siswa lihat papan dan ucapkan bersama guru 2├ù dengan ritme normal.' },
                 tantangan: { bantuan: 'Guru tulis garis kosong dulu; siswa prediksi kalimat apa; baru guru tulis nama; siswa ucapkan dengan variasi intonasi.' },
               } },
             { tipe: 'audio',         teks: 'My name is Budi. My name is Sari. My name is Andi.',
@@ -482,7 +482,7 @@ const FASE_A = {
               } },
             { tipe: 'audio',         teks: 'Hello! My name is ... I am ... years old. Nice to meet you!',
               mode: {
-                mudah: { bantuan: 'Guru ucapkan perlahan dengan jeda; siswa dengarkan dan tunjuk: "Itu siapa?" Guru ulangi 2× tanpa siswa harus balas.' },
+                mudah: { bantuan: 'Guru ucapkan perlahan dengan jeda; siswa dengarkan dan tunjuk: "Itu siapa?" Guru ulangi 2├ù tanpa siswa harus balas.' },
                 normal: { bantuan: 'Guru model kalimat lengkap; siswa dengarkan semuanya; guru tanya: "Siapa namanya?" siswa jawab satu kata.' },
                 tantangan: { bantuan: 'Guru ucapkan; siswa ulang kalimat lengkap; guru tanya: "Berapa umurnya?" siswa jawab detail; guru tulis nama dan usia di papan.' },
               } },
@@ -541,7 +541,7 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 3 ───────────────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 3 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-03',
       nomor    : 3,
@@ -574,7 +574,7 @@ const FASE_A = {
             },
             {
               tipe: 'instruksi',
-              teks: 'Langsung demonstrasikan tanpa penjelasan — lakukan gerakan sebelum berkata. [Stand up!] — berdiri. [Sit down!] — duduk. Ulangi 3×.',
+              teks: 'Langsung demonstrasikan tanpa penjelasan — lakukan gerakan sebelum berkata. [Stand up!] — berdiri. [Sit down!] — duduk. Ulangi 3├ù.',
               mode: {
                 mudah: { bantuan: 'Lakukan gerakan pelan dan jelas, beri jeda setiap siklus.' },
                 normal: { bantuan: 'Lakukan dengan ritme natural, siswa ikuti gerakan dengan melihat.' },
@@ -708,7 +708,7 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 4 ───────────────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 4 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-04',
       nomor    : 4,
@@ -804,7 +804,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati permainan berlomba, langsung ke penutup hitung bersama.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati permainan berlomba, langsung ke penutup hitung bersama.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -839,7 +839,7 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 5 ───────────────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 5 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-05',
       nomor    : 5,
@@ -886,7 +886,7 @@ const FASE_A = {
           fase  : 'Inti',
           durasi: 30,
           langkah: [
-            { tipe: 'instruksi', teks: 'Tempel kartu di papan. Tunjuk, siswa ucapkan bersama. Ulangi 2× per warna. [Say it together!]' ,
+            { tipe: 'instruksi', teks: 'Tempel kartu di papan. Tunjuk, siswa ucapkan bersama. Ulangi 2├ù per warna. [Say it together!]' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -934,7 +934,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati show and tell, langsung ke nyanyian penutup.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati show and tell, langsung ke nyanyian penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -969,7 +969,7 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 6 ───────────────────────────────────────────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 6 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id       : 'tp-06',
       nomor    : 6,
@@ -1057,7 +1057,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati aktivitas mencari benda, langsung review 5 bentuk di penutup.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati aktivitas mencari benda, langsung review 5 bentuk di penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1092,9 +1092,9 @@ const FASE_A = {
       ],
     },
 
-    // ─── TP 7–17: placeholder — belum direvisi ke v3 ─────────────────────────
+    // ΓöÇΓöÇΓöÇ TP 7–17: placeholder — belum direvisi ke v3 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     // Format masih v2, akan direvisi bertahap.
-    // TP 7 ────────────────────────────────────────────────────────────────────
+    // TP 7 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-07', nomor: 7, kelas: 1,
       nama: 'My Family', tema: 'Keluarga dan Rumah',
@@ -1164,7 +1164,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati presentasi ke kelas, cukup latihan berpasangan.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati presentasi ke kelas, cukup latihan berpasangan.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1185,8 +1185,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 8 ────────────────────────────────────────────────────────────────────
+    // TP 8 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-08', nomor: 8, kelas: 1,
       nama: 'My House', tema: 'Keluarga dan Rumah',
@@ -1256,7 +1258,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip menggambar, langsung latihan lisan berpasangan.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: skip menggambar, langsung latihan lisan berpasangan.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1277,8 +1279,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 9 ────────────────────────────────────────────────────────────────────
+    // TP 9 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-09', nomor: 9, kelas: 1,
       nama: 'Animals', tema: 'Alam dan Lingkungan',
@@ -1354,7 +1358,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati teka-teki siswa, langsung review nama hewan di penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati teka-teki siswa, langsung review nama hewan di penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1375,8 +1379,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 10 ───────────────────────────────────────────────────────────────────
+    // TP 10 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-10', nomor: 10, kelas: 2,
       nama: 'Food and Drinks', tema: 'Kehidupan Sehari-hari',
@@ -1458,7 +1464,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati survei, langsung ke penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati survei, langsung ke penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1479,8 +1485,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 11 ───────────────────────────────────────────────────────────────────
+    // TP 11 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-11', nomor: 11, kelas: 2,
       nama: 'Daily Routines', tema: 'Kehidupan Sehari-hari',
@@ -1556,7 +1564,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati presentasi berpasangan, langsung penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati presentasi berpasangan, langsung penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1577,8 +1585,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 12 ───────────────────────────────────────────────────────────────────
+    // TP 12 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-12', nomor: 12, kelas: 2,
       nama: 'Body Parts', tema: 'Tubuh dan Kesehatan',
@@ -1598,7 +1608,7 @@ const FASE_A = {
     normal: { bantuan: 'Ucapkan natural dan beri waktu untuk siswa mengulang jawaban.' },
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
-          { tipe: 'instruksi', teks: 'Nyanyikan Head Shoulders Knees and Toes sambil sentuh bagian tubuh. Ulangi 2× — makin cepat di putaran kedua.' ,
+          { tipe: 'instruksi', teks: 'Nyanyikan Head Shoulders Knees and Toes sambil sentuh bagian tubuh. Ulangi 2├ù — makin cepat di putaran kedua.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1648,7 +1658,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: langsung ke lagu penutup, skip permainan fungsi.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: langsung ke lagu penutup, skip permainan fungsi.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1669,8 +1679,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 13 ───────────────────────────────────────────────────────────────────
+    // TP 13 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-13', nomor: 13, kelas: 2,
       nama: 'Weather and Seasons', tema: 'Alam dan Lingkungan',
@@ -1752,7 +1764,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati menggambar, langsung tanya-jawab cuaca.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati menggambar, langsung tanya-jawab cuaca.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1773,8 +1785,10 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
-    // TP 14 ───────────────────────────────────────────────────────────────────
+    // TP 14 ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
     {
       id: 'tp-14', nomor: 14, kelas: 2,
       nama: 'In the Classroom', tema: 'Sekolah dan Benda-benda',
@@ -1856,7 +1870,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip roleplay, langsung review nama benda.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: skip roleplay, langsung review nama benda.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1877,6 +1891,8 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
+      ],
+    },
 
     TP_15,
 
