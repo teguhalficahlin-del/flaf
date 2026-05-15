@@ -27,9 +27,9 @@
  */
 
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 6;
+const DB_VERSION = 8;
 
-const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'siswa_per_kelas']);
+const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'siswa_per_kelas', 'obs_log', 'penilaian_log']);
 
 let _db          = null;
 let _initPromise = null;
@@ -104,6 +104,14 @@ function init() {
       if (!upgradeDB.objectStoreNames.contains('siswa_per_kelas')) {
         upgradeDB.createObjectStore('siswa_per_kelas');
         console.log('[DB] store created: siswa_per_kelas');
+      }
+      if (!upgradeDB.objectStoreNames.contains('obs_log')) {
+        upgradeDB.createObjectStore('obs_log');
+        console.log('[DB] store created: obs_log');
+      }
+      if (!upgradeDB.objectStoreNames.contains('penilaian_log')) {
+        upgradeDB.createObjectStore('penilaian_log');
+        console.log('[DB] store created: penilaian_log');
       }
     };
 
@@ -327,13 +335,14 @@ async function exportAll() {
   }
 
   return {
-    version      : 2,
-    exported_at  : new Date().toISOString(),
-    kv           : await _toObj('kv'),
-    teacher_data : await _toObj('teacher_data'),
-    nilai_data   : await _toObj('nilai_data'),
-    teaching_log : await _toObj('teaching_log'),
-    presensi_log : await _toObj('presensi_log'),
+    version        : 2,
+    exported_at    : new Date().toISOString(),
+    kv             : await _toObj('kv'),
+    teacher_data   : await _toObj('teacher_data'),
+    nilai_data     : await _toObj('nilai_data'),
+    teaching_log   : await _toObj('teaching_log'),
+    presensi_log   : await _toObj('presensi_log'),
+    penilaian_log  : await _toObj('penilaian_log'),
   };
 }
 
@@ -389,11 +398,12 @@ async function importMerge(parsed, onConflict) {
     }
   }
 
-  await mergeStore('kv',           parsed.kv);
-  await mergeStore('teacher_data', parsed.teacher_data);
-  await mergeStore('nilai_data',   parsed.nilai_data);
-  await mergeStore('teaching_log', parsed.teaching_log);
-  await mergeStore('presensi_log', parsed.presensi_log);
+  await mergeStore('kv',            parsed.kv);
+  await mergeStore('teacher_data',  parsed.teacher_data);
+  await mergeStore('nilai_data',    parsed.nilai_data);
+  await mergeStore('teaching_log',  parsed.teaching_log);
+  await mergeStore('presensi_log',  parsed.presensi_log);
+  await mergeStore('penilaian_log', parsed.penilaian_log);
 
   return { merged: merged, kept: kept, conflicts: conflicts };
 }

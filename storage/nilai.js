@@ -299,22 +299,77 @@ async function setCatatanFormatif(kelasId, siswaId, tpNomor, teks) {
 
 /**
  * Rekap nilai Formatif per siswa untuk satu TP — untuk PDF Rekap Formatif.
+ * Fase 12: membaca dari store penilaian_log (bukan formatif_l/s/r).
+ * Satu TP bisa punya banyak sesi — nilai per siswa = rerata semua sesi.
+ *
+ * Return format sama seperti sebelumnya agar nilaiDownloadFormatif1 tidak perlu diubah:
+ *   { nomor, nama, l, s, r, nilai, catatan }
+ *   l/s/r : rerata dimensi dari sesi mode detail (null jika tidak ada)
+ *   nilai : rerata semua sesi (cepat + detail digabung)
+ *   catatan: selalu '' (Fase 12 tidak ada catatan)
  */
 async function getRekapFormatifTP(kelasId, tpNomor) {
   const siswaList = await getSiswaList(kelasId);
-  const hasil     = [];
+  const STORE     = 'penilaian_log';
+
+  // Ambil semua record penilaian_log untuk kelasId + tpNomor ini
+  let allRecords = [];
+  try {
+    const semua = await db.getAll(STORE);
+    allRecords  = semua
+      .map(e => e.value)
+      .filter(v => v && v.kelasId === kelasId && String(v.tpNomor) === String(tpNomor));
+  } catch (e) {
+    console.warn('[NILAI] getRekapFormatifTP — gagal baca penilaian_log:', e.message);
+  }
+
+  // Grup per siswaId
+  const perSiswa = {};
+  for (const rec of allRecords) {
+    if (!perSiswa[rec.siswaId]) perSiswa[rec.siswaId] = [];
+    perSiswa[rec.siswaId].push(rec);
+  }
+
+  // Hitung rerata per siswa
+  const hasil = [];
   for (const siswa of siswaList) {
-    const f = await getNilaiFormatif(kelasId, siswa.id, tpNomor);
+    const sesiList = perSiswa[siswa.id] || [];
+
+    const allNilai = [];
+    const allL     = [];
+    const allS     = [];
+    const allR     = [];
+
+    for (const sesi of sesiList) {
+      if (sesi.mode === 'cepat' && sesi.capaian !== null) {
+        allNilai.push(sesi.capaian);
+      } else if (sesi.mode === 'detail') {
+        const valid = [sesi.l, sesi.s, sesi.r].filter(v => v !== null && !isNaN(v));
+        if (valid.length > 0) {
+          const rerata = Math.round(valid.reduce((a, b) => a + b, 0) / valid.length);
+          allNilai.push(rerata);
+        }
+        if (sesi.l !== null) allL.push(sesi.l);
+        if (sesi.s !== null) allS.push(sesi.s);
+        if (sesi.r !== null) allR.push(sesi.r);
+      }
+    }
+
+    const _avg = arr => arr.length > 0
+      ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length)
+      : null;
+
     hasil.push({
       nomor  : siswa.nomor,
       nama   : siswa.nama,
-      l      : f.l,
-      s      : f.s,
-      r      : f.r,
-      nilai  : f.nilai,
-      catatan: f.catatan,
+      l      : _avg(allL),
+      s      : _avg(allS),
+      r      : _avg(allR),
+      nilai  : _avg(allNilai),
+      catatan: '',
     });
   }
+
   return hasil;
 }
 

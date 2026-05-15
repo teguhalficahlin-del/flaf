@@ -83,3 +83,83 @@ export async function getSortedBySpeakCount(rombelId, siswaList) {
     return siswaList;
   }
 }
+/**
+ * Simpan hasil observasi tag per siswa per fase.
+ * Dipanggil dari ObservationCapture di _renderSelesai.
+ *
+ * @param {string} rombelId
+ * @param {Array<{siswaId, siswaName, tags[]}>} entries
+ * @param {number} tpNomor
+ * @param {string} faseNama
+ */
+export async function saveObsTags(rombelId, entries, tpNomor, faseNama) {
+  if (!rombelId || !entries?.length) return;
+  const OBS_STORE = 'obs_log';
+  try {
+    const now = Date.now();
+    for (const entry of entries) {
+      for (const tag of (entry.tags || [])) {
+        const id = `${rombelId}_${entry.siswaId}_${tag}_${now}`;
+        await db.set(OBS_STORE, id, {
+          id,
+          rombelId,
+          siswaId   : entry.siswaId,
+          siswaName : entry.siswaName,
+          tag,
+          tpNomor,
+          faseNama,
+          createdAt : now,
+        });
+      }
+    }
+  } catch (e) {
+    console.warn('[SISWA-HISTORY] saveObsTags gagal:', e.message);
+  }
+}
+
+/**
+ * Simpan hasil penilaian proses per siswa per sesi (Fase 12).
+ * Dipanggil dari overlay penilaian di sesi-runtime.js saat guru tap Simpan.
+ *
+ * Mode Cepat  : capaian = 85|75|65, l/s/r = null
+ * Mode Detail : capaian = null, l/s/r = 0–100
+ * Perilaku    : 'aktif' | 'dorongan' | 'belum_siap'
+ *
+ * @param {string} kelasId
+ * @param {string} tpNomor
+ * @param {string} sesiId       — id unik sesi mengajar (dari _state di runtime)
+ * @param {string} mode         — 'cepat' | 'detail'
+ * @param {Array<{
+ *   siswaId  : string,
+ *   capaian  : 85|75|65|null,
+ *   l        : number|null,
+ *   s        : number|null,
+ *   r        : number|null,
+ *   perilaku : string|null,
+ * }>} entries  — semua siswa, yang kosong tetap disimpan sebagai null
+ */
+export async function savePenilaian(kelasId, tpNomor, sesiId, mode, entries) {
+  if (!kelasId || !tpNomor || !sesiId || !entries?.length) return;
+  const STORE = 'penilaian_log';
+  try {
+    const now = Date.now();
+    for (const entry of entries) {
+      const key = `${kelasId}_${tpNomor}_${sesiId}_${entry.siswaId}`;
+      await db.set(STORE, key, {
+        kelasId,
+        siswaId  : entry.siswaId,
+        tpNomor,
+        sesiId,
+        mode,
+        capaian  : entry.capaian  ?? null,
+        l        : entry.l        ?? null,
+        s        : entry.s        ?? null,
+        r        : entry.r        ?? null,
+        perilaku : entry.perilaku ?? null,
+        createdAt: now,
+      });
+    }
+  } catch (e) {
+    console.warn('[SISWA-HISTORY] savePenilaian gagal:', e.message);
+  }
+}

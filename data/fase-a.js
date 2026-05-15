@@ -365,48 +365,6 @@ const FASE_A = {
             },
           ],
         },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            {
-              tipe: 'instruksi',
-              teks: 'Sambil siswa berkemas, ucapkan salam ke beberapa siswa satu per satu. Amati apakah mereka merespons dengan tepat tanpa dibantu.',
-              mode: {
-                mudah: { bantuan: 'Beri contoh dahulu, lalu amati respons siswa yang lambat.' },
-                normal: { bantuan: 'Ucapkan salam ke siswa satu per satu dan catat respons mereka.' },
-                tantangan: { bantuan: 'Gunakan salam berbeda agar siswa perlu memilih jawaban yang tepat.' },
-              },
-            },
-            {
-              tipe: 'audio',
-              teks: 'Good morning, Ahmad!',
-              mode: {
-                mudah: { bantuan: 'Ucapkan nama siswa dengan jelas dan beri jeda untuk jawab.' },
-                normal: { bantuan: 'Ucapkan natural dengan intonasi sapaan hangat.' },
-                tantangan: { bantuan: 'Tanyakan "How are you?" setelah salam untuk respons tambahan.' },
-              },
-            },
-            {
-              tipe: 'instruksi',
-              teks: 'Nilai Listening: merespons salam dengan kata yang benar. Speaking: lafal terdengar jelas. Reading: bisa baca kartu salam.',
-              mode: {
-                mudah: { bantuan: 'Fokus pada apakah siswa mengulang salam dengan benar.' },
-                normal: { bantuan: 'Nilai seberapa jelas siswa mengucapkan salam dan membaca kartu.' },
-                tantangan: { bantuan: 'Perhatikan apakah siswa bisa memilih salam yang tepat untuk pagi atau sore.' },
-              },
-            },
-            {
-              tipe: 'instruksi',
-              teks: 'Catat: siapa yang masih diam saat disapa? Siapa yang mencampur morning/afternoon?',
-              mode: {
-                mudah: { bantuan: 'Catat secara sederhana siapa yang butuh bantuan tambahan.' },
-                normal: { bantuan: 'Catat kesalahan umum seperti mixing time greetings.' },
-                tantangan: { bantuan: 'Catat juga siapa yang bisa menjawab dengan cepat dan benar.' },
-              },
-            },
-          ],
-        },
       ],
     },
 
@@ -580,36 +538,6 @@ const FASE_A = {
               } },
           ],
         },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            { tipe: 'instruksi', teks: 'Sambil siswa berkemas, dekati 4–5 siswa dan tanya langsung tanpa pemberitahuan.',
-              mode: {
-                mudah: { bantuan: 'Guru dekati siswa satu per satu; tanya nama guru saja; terima jawaban dalam bahasa apapun atau tunjuk guru di papan.' },
-                normal: { bantuan: 'Guru dekati 4–5 siswa acak; tanya nama dan usia; catat yang menjawab dengan Inggris, yang pakai Indonesia, atau yang diam.' },
-                tantangan: { bantuan: 'Guru tanya pertanyaan follow-up: "Siapa nama teman baru yang kamu kenal? Berapa usianya?" Siswa jawab 2–3 pertanyaan tanpa persiapan.' },
-              } },
-            { tipe: 'audio',     teks: 'What is your name? How old are you?',
-              mode: {
-                mudah: { bantuan: 'Guru tanya 1 pertanyaan: "What is your name?" Siswa jawab nama saja atau tunjuk name tag; guru terima apa adanya.' },
-                normal: { bantuan: 'Guru tanya 2 pertanyaan; siswa jawab satu per satu; guru tunggu respons sebelum tanya yang kedua; catat jawaban jelas atau tidak jelas.' },
-                tantangan: { bantuan: 'Guru tanya 2 pertanyaan sekaligus; siswa jawab kedua-duanya dalam satu respons; guru tanya lanjut: "When is your birthday?".' },
-              } },
-            { tipe: 'instruksi', teks: 'Nilai Listening: merespons pertanyaan nama/usia. Speaking: mengucapkan nama sendiri dengan jelas. Reading: bisa baca name tag.',
-              mode: {
-                mudah: { bantuan: 'Guru amati: Listening = ada reaksi?  Speaking = coba berbicara meski salah? Reading = lihat ke papan/name tag? Catat proses, bukan hasil sempurna.' },
-                normal: { bantuan: 'Guru gunakan rubrik sederhana: Listening (mengerti/tidak), Speaking (jelas/tidak jelas), Reading (bisa baca/belum bisa). Beri tanda ✓ atau ✗.' },
-                tantangan: { bantuan: 'Guru amati detail: Listening (langsung balas/perlu ulang), Speaking (lafal baik/harus diperbaiki), Reading (baca lancar/perlu bantuan). Catat catatan khusus.' },
-              } },
-            { tipe: 'instruksi', teks: 'Catat: siapa yang hanya diam? Siapa yang menjawab dalam bahasa Indonesia? Mereka perlu latihan lebih.',
-              mode: {
-                mudah: { bantuan: 'Guru catat nama siswa yang belum berani berbicara atau hanya pakai bahasa Indonesia; kelompokkan mereka untuk latihan ulang besok.' },
-                normal: { bantuan: 'Guru buat catatan: "Diam = [nama-nama]", "Indonesia = [nama-nama]", "Inggris = [nama-nama]". Persiapkan strategi berbeda untuk tiap kelompok.' },
-                tantangan: { bantuan: 'Guru analisis alasan diam/pakai Indonesia: malu? tidak paham? tidak tahu struktur? Guru catat strategi remedial spesifik untuk tiap siswa minggu depan.' },
-              } },
-          ],
-        },
       ],
     },
 
@@ -777,39 +705,6 @@ const FASE_A = {
             },
           ],
         },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            {
-              tipe: 'instruksi',
-              teks: 'Ucapkan 5 instruksi berbeda secara acak. Amati: siapa yang langsung bergerak? Siapa yang menunggu melihat teman dulu?',
-              mode: {
-                mudah: { bantuan: 'Gunakan instruksi yang sudah dilatih berulang kali.' },
-                normal: { bantuan: 'Gunakan instruksi yang lebih bervariasi dengan gerakan berbeda.' },
-                tantangan: { bantuan: 'Gunakan instruksi dua langkah atau sambil berbicara cepat.' },
-              },
-            },
-            {
-              tipe: 'instruksi',
-              teks: 'Nilai Listening: respons fisik benar/salah. Speaking: bisa ucapkan instruksi. Reading: bisa baca kartu instruksi.',
-              mode: {
-                mudah: { bantuan: 'Fokus pada listening dan respons fisik saja, minimal speaking.' },
-                normal: { bantuan: 'Nilai ketiga aspek dengan bobot seimbang.' },
-                tantangan: { bantuan: 'Nilai speaking lebih tinggi untuk siswa yang maju leadership.' },
-              },
-            },
-            {
-              tipe: 'instruksi',
-              teks: 'Catat: siapa yang masih bingung open/close atau sit/stand?',
-              mode: {
-                mudah: { bantuan: 'Identifikasi siswa yang masih perlu pengulangan.' },
-                normal: { bantuan: 'Catat dan rencanakan intervensi untuk sesi berikutnya.' },
-                tantangan: { bantuan: 'Analisis pola kesalahan untuk penyesuaian metodologi.' },
-              },
-            },
-          ],
-        },
       ],
     },
 
@@ -938,30 +833,6 @@ const FASE_A = {
     mudah: { bantuan: 'Ucapkan pelan dengan gesture; siswa cukup dengarkan atau ulang pendek.' },
     normal: { bantuan: 'Ucapkan natural dan beri waktu untuk siswa mengulang jawaban.' },
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
-  }},
-          ],
-        },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            { tipe: 'instruksi', teks: 'Sambil siswa istirahat, tunjukkan kartu angka acak ke beberapa siswa. [What number is this?] — amati tanpa tekanan.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Nilai Listening: merespons "how many". Speaking: lafal angka. Reading: baca angka di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Catat: siapa yang masih kesulitan 11–19? Itu wajar — butuh lebih banyak latihan berulang.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
           ],
         },
@@ -1095,30 +966,6 @@ const FASE_A = {
   }},
           ],
         },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            { tipe: 'instruksi', teks: 'Tunjukkan kartu warna acak ke 5–6 siswa. [What colour is this?] — catat respons langsung mereka.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Nilai Listening: merespons "what colour is it". Speaking: lafal warna benar. Reading: baca nama warna di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Catat: siapa yang masih menukar purple/orange atau black/brown?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          ],
-        },
       ],
     },
 
@@ -1242,30 +1089,6 @@ const FASE_A = {
   }},
           ],
         },
-        {
-          fase  : 'Penilaian',
-          durasi: 6,
-          langkah: [
-            { tipe: 'instruksi', teks: 'Tunjukkan kartu bentuk acak ke beberapa siswa. [What shape is this?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Nilai Listening: merespons "what shape is it". Speaking: lafal bentuk benar. Reading: baca nama bentuk di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-            { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar triangle/rectangle atau circle/oval?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          ],
-        },
       ],
     },
 
@@ -1362,28 +1185,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 4, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu anggota keluarga acak ke beberapa siswa. [Who is this?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami "who is this". Speaking: menyebut anggota keluarga. Reading: baca kata di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar grandmother/grandfather?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 8 ────────────────────────────────────────────────────────────────────
     {
@@ -1476,28 +1277,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk ruangan di gambar denah. [What room is this? What is in this room?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: merespons "what room". Speaking: menyebut ruangan + benda. Reading: baca label ruangan.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar kitchen/bathroom?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 9 ────────────────────────────────────────────────────────────────────
     {
@@ -1596,28 +1375,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Beri deskripsi singkat, siswa tebak hewannya. [It is big. It has a long nose. What is it?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami deskripsi hewan. Speaking: menyebut nama + suara. Reading: baca nama hewan di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih kesulitan hewan yang lebih jarang (rabbit, snake)?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 10 ───────────────────────────────────────────────────────────────────
     {
@@ -1722,28 +1479,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu makanan. [Do you like this? Yes or no?] — amati jawaban lengkap mereka.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: merespons "do you like". Speaking: kalimat preferensi. Reading: baca nama makanan di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih menjawab hanya "yes/no" tanpa "I do / I do not"?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 11 ───────────────────────────────────────────────────────────────────
     {
@@ -1842,28 +1577,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu kegiatan acak. [What is this? When do you do this?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami pertanyaan "what do you do". Speaking: menyebut kegiatan dalam urutan. Reading: baca kata di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih kesulitan menggunakan kata urutan?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 12 ───────────────────────────────────────────────────────────────────
     {
@@ -1956,28 +1669,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Sebut fungsi, siswa sentuh. [Touch the part you use to smell. Touch the part you use to walk.]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: respons instruksi "touch your". Speaking: menyebut nama + fungsi. Reading: baca label di poster.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar ears/eyes atau hands/feet?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 13 ───────────────────────────────────────────────────────────────────
     {
@@ -2082,28 +1773,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Tunjuk kartu cuaca acak. [What weather is this? What do you do when it is like this?]' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami deskripsi cuaca. Speaking: mendeskripsikan cuaca + aktivitas. Reading: baca kata cuaca di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar cloudy/rainy atau hot/cold?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     // TP 14 ───────────────────────────────────────────────────────────────────
     {
@@ -2208,28 +1877,6 @@ const FASE_A = {
     tantangan: { bantuan: 'Ucapkan cepat/variasi intonasi untuk challenge listening.' },
   }},
         ]},
-        { fase: 'Penilaian', durasi: 6, langkah: [
-          { tipe: 'instruksi', teks: 'Taruh benda di posisi berbeda. [Where is the ...?] — amati kalimat preposisi siswa.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Nilai Listening: memahami preposisi. Speaking: kalimat lokasi benda. Reading: baca nama benda di kartu.' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-          { tipe: 'instruksi', teks: 'Catat: siapa yang masih tertukar on/under atau in/next to?' ,
-  mode: {
-    mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
-    normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
-    tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
-  }},
-        ]},
-      ],
-    },
 
     TP_15,
 

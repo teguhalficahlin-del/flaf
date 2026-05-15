@@ -26,7 +26,7 @@
  */
 
 import { db }               from '../storage/db.js';
-import { updateSpeakCount, getSortedBySpeakCount } from '../storage/siswa-history.js';
+import { savePenilaian } from '../storage/siswa-history.js';
 
 // ── Konstanta ─────────────────────────────────────────────────
 
@@ -63,6 +63,7 @@ let _state = {
   closureMood    : null,
   kendala        : null,
   ttsUtterance   : null,
+  sesiId         : null,   // id unik per sesi — dibuat saat mulai, dipakai penilaian_log
 };
 
 let _root   = null;
@@ -92,6 +93,7 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
     closureMood    : null,
     kendala        : null,
     ttsUtterance   : null,
+    sesiId         : null,
   });
 
   // Cek resume
@@ -296,7 +298,12 @@ function _renderPreview() {
   });
 
   _root.querySelector('#sr-btn-mulai').addEventListener('click', () => {
-    _transition({ aktState: 'entering', faseIdx: 0, langkahIdx: 0 });
+    _transition({
+      aktState: 'entering',
+      faseIdx : 0,
+      langkahIdx: 0,
+      sesiId  : Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+    });
   });
 }
 
@@ -445,6 +452,8 @@ function _renderRunning() {
           </button>
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
+        ${faseName === 'Inti' ? `
+        <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Catat penilaian siswa</button>` : ''}
       </div>
     </div>`;
 
@@ -454,6 +463,7 @@ function _renderRunning() {
   _root.querySelector('#sr-btn-next').addEventListener('click', () => _langkahNext());
   _root.querySelector('#sr-btn-prev').addEventListener('click', () => _langkahPrev());
   _root.querySelector('#sr-btn-kondisi').addEventListener('click', () => _renderKondisiOverlay());
+  _root.querySelector('#sr-btn-penilaian')?.addEventListener('click', () => _renderPenilaianOverlay());
 }
 
 // ─── SCREEN: FaseSelesai ─────────────────────────────────────
@@ -485,12 +495,14 @@ function _renderSelesai() {
   _root.querySelector('#sr-btn-closure')?.addEventListener('click', () => {
     _transition({ aktState: 'closure' });
   });
-  _root.querySelector('#sr-btn-next-fase')?.addEventListener('click', () => _nextFase());
+  _root.querySelector('#sr-btn-next-fase')?.addEventListener('click', () => {
+    _nextFase();
+  });
 }
 
 // ─── SCREEN: SesiClosure ─────────────────────────────────────
 
-async function _renderClosure() {
+function _renderClosure() {
   const tp     = _state.tp;
   const rombel = _state.rombel;
 
@@ -532,23 +544,6 @@ async function _renderClosure() {
         <div class="sr-closure-hint">
           💡 Data sesi akan tersimpan di Jejak Mengajar.
         </div>
-
-        ${await (async () => {
-          try {
-            if (!_state.rombel?.id || !_state.siswaList?.length) return '';
-            const sorted = await getSortedBySpeakCount(_state.rombel.id, _state.siswaList);
-            const top3   = sorted.slice(0, 3);
-            if (!top3.length) return '';
-            const namaHTML = top3.map(s =>
-              `<div class="sr-obs-nama">• ${_escape(s.nama || '—')}</div>`
-            ).join('');
-            return `
-              <div class="sr-obs-card">
-                <div class="sr-obs-judul">💡 Besok coba perhatikan lebih ke:</div>
-                ${namaHTML}
-              </div>`;
-          } catch { return ''; }
-        })()}
       </div>
 
       <div class="sr-footer">
@@ -577,19 +572,6 @@ async function _renderClosure() {
     const btn     = _root.querySelector('#sr-btn-simpan');
     if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
-
-    // Hitung jumlah langkah respons_siswa di semua fase — dipakai sebagai delta
-    const allFase   = _state.tp?.skenario || [];
-    const respCount = allFase.reduce((sum, fase) => {
-      return sum + (fase.langkah || []).filter(l => l.tipe === 'respons_siswa').length;
-    }, 0);
-
-    // Update speaking history untuk semua siswa di rombel (semua belajar bersama)
-    if (_state.rombel?.id && _state.siswaList?.length) {
-      const delta      = respCount > 0 ? 1 : 1; // selalu +1 per sesi selesai
-      const siswaIds   = _state.siswaList.map(s => s.id);
-      await updateSpeakCount(_state.rombel.id, siswaIds, delta);
-    }
 
     _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan });
   });
@@ -671,4 +653,274 @@ function _renderFallbackOverlay() {
     overlay.remove();
   });
   overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+}
+
+// ─── OVERLAY: Penilaian Siswa ─────────────────────────────────
+
+function _renderPenilaianOverlay() {
+  document.querySelector('.sr-overlay')?.remove();
+
+  const siswaList = _state.siswaList || [];
+  if (!siswaList.length) {
+    alert('Belum ada siswa di rombel ini.');
+    return;
+  }
+
+  // State overlay — hidup dalam closure ini
+  const PAGE_SIZE  = 5;
+  let modePenilaian = 'cepat';   // 'cepat' | 'detail'
+  let halaman       = 0;
+  let openIdx       = 0;         // indeks siswa yang accordion-nya terbuka
+
+  // Hasil per siswaId — default semua kosong
+  const hasil = {};
+  for (const s of siswaList) {
+    hasil[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null };
+  }
+
+  const totalHal = Math.ceil(siswaList.length / PAGE_SIZE);
+
+  // ── Builder ──────────────────────────────────────────────────
+
+  function _penilaianNilaiAngka(siswaId) {
+    const h = hasil[siswaId];
+    if (modePenilaian === 'cepat') return h.capaian;
+    const valid = [h.l, h.s, h.r].filter(v => v !== null && !isNaN(v));
+    return valid.length ? Math.round(valid.reduce((a, b) => a + b, 0) / valid.length) : null;
+  }
+
+  function _sudahDiisi(siswaId) {
+    const h = hasil[siswaId];
+    if (modePenilaian === 'cepat') return h.capaian !== null;
+    return h.l !== null || h.s !== null || h.r !== null;
+  }
+
+  function _buildSiswaItem(siswa, localIdx) {
+    const globalIdx = halaman * PAGE_SIZE + localIdx;
+    const isOpen    = localIdx === openIdx;
+    const sudah     = _sudahDiisi(siswa.id);
+    const nilaiTamp = _penilaianNilaiAngka(siswa.id);
+    const h         = hasil[siswa.id];
+
+    // ── Isi accordion ──
+    let isiHTML = '';
+    if (modePenilaian === 'cepat') {
+      const opsiCapaian = [
+        { val: 85, sym: '★', label: 'Lancar'         },
+        { val: 75, sym: '◐', label: 'Berkembang'     },
+        { val: 65, sym: '○', label: 'Perlu dampingi' },
+      ];
+      isiHTML = `
+        <div class="sr-pn-capaian-row">
+          ${opsiCapaian.map(o => `
+            <button class="sr-pn-capaian-btn${h.capaian === o.val ? ' sr-pn-capaian-btn--active' : ''}"
+                    data-capaian="${o.val}" data-siswa="${siswa.id}">
+              <span class="sr-pn-sym">${o.sym}</span>
+              <span class="sr-pn-lbl">${o.label}</span>
+            </button>`).join('')}
+        </div>
+        <div class="sr-pn-perilaku-row">
+          ${['aktif','dorongan','belum_siap'].map(p => {
+            const label = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' }[p];
+            return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
+                            data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
+          }).join('')}
+        </div>`;
+    } else {
+      isiHTML = `
+        <div class="sr-pn-lsr-grid">
+          ${['l','s','r'].map(dim => `
+            <div class="sr-pn-lsr-col">
+              <div class="sr-pn-lsr-label">${dim.toUpperCase()}</div>
+              <input class="sr-pn-lsr-input" type="number" min="0" max="100"
+                     placeholder="—" value="${h[dim] !== null ? h[dim] : ''}"
+                     data-dim="${dim}" data-siswa="${siswa.id}">
+            </div>`).join('')}
+        </div>
+        <div class="sr-pn-perilaku-row">
+          ${['aktif','dorongan','belum_siap'].map(p => {
+            const label = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' }[p];
+            return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
+                            data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
+          }).join('')}
+        </div>`;
+    }
+
+    return `
+      <div class="sr-pn-siswa${isOpen ? ' sr-pn-siswa--open' : ''}" data-local-idx="${localIdx}">
+        <div class="sr-pn-siswa-head" data-toggle="${localIdx}">
+          <div class="sr-pn-siswa-info">
+            <span class="sr-pn-nomor">${siswa.nomor}</span>
+            <span class="sr-pn-nama">${_escape(siswa.nama)}</span>
+          </div>
+          <div class="sr-pn-siswa-right">
+            ${sudah ? `<span class="sr-pn-nilai-chip">${nilaiTamp}</span>` : ''}
+            <span class="sr-pn-chevron">${isOpen ? '▲' : '▼'}</span>
+          </div>
+        </div>
+        ${isOpen ? `<div class="sr-pn-siswa-body">${isiHTML}</div>` : ''}
+      </div>`;
+  }
+
+  function _buildOverlay() {
+    const pageSiswa  = siswaList.slice(halaman * PAGE_SIZE, halaman * PAGE_SIZE + PAGE_SIZE);
+    const paginasiHTML = totalHal > 1 ? `
+      <div class="sr-pn-paginasi">
+        <button class="sr-pn-hal-btn" id="sr-pn-prev-hal" ${halaman === 0 ? 'disabled' : ''}>‹</button>
+        <span class="sr-pn-hal-info">Halaman ${halaman + 1} / ${totalHal}</span>
+        <button class="sr-pn-hal-btn" id="sr-pn-next-hal" ${halaman >= totalHal - 1 ? 'disabled' : ''}>›</button>
+      </div>` : '';
+
+    const modeTabHTML = `
+      <div class="sr-pn-mode-tab">
+        <button class="sr-pn-tab-btn${modePenilaian === 'cepat'  ? ' sr-pn-tab-btn--active' : ''}" data-mode="cepat">Mode Cepat</button>
+        <button class="sr-pn-tab-btn${modePenilaian === 'detail' ? ' sr-pn-tab-btn--active' : ''}" data-mode="detail">Mode Detail</button>
+      </div>`;
+
+    const siswaHTML = pageSiswa.map((s, i) => _buildSiswaItem(s, i)).join('');
+
+    return `
+      <div class="sr-overlay-content sr-pn-overlay-content">
+        <div class="sr-pn-header">
+          <div class="sr-pn-judul">Penilaian Siswa</div>
+          <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')} · Fase Inti</div>
+        </div>
+        ${modeTabHTML}
+        ${paginasiHTML}
+        <div class="sr-pn-list" id="sr-pn-list">
+          ${siswaHTML}
+        </div>
+        <div class="sr-pn-footer">
+          <button class="sr-btn-secondary sr-pn-btn-tutup" id="sr-pn-tutup">Tutup</button>
+          <button class="sr-btn-primary sr-pn-btn-simpan" id="sr-pn-simpan">Simpan</button>
+        </div>
+      </div>`;
+  }
+
+  // ── Mount overlay ────────────────────────────────────────────
+
+  const overlay = document.createElement('div');
+  overlay.className = 'sr-overlay sr-pn-overlay';
+
+  function _mount() {
+    overlay.innerHTML = _buildOverlay();
+    _bindEvents();
+  }
+
+  function _bindEvents() {
+    // Toggle accordion
+    overlay.querySelectorAll('[data-toggle]').forEach(head => {
+      head.addEventListener('click', () => {
+        const li = parseInt(head.dataset.toggle);
+        openIdx  = openIdx === li ? -1 : li;
+        _mount();
+      });
+    });
+
+    // Mode tab
+    overlay.querySelectorAll('[data-mode]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        modePenilaian = btn.dataset.mode;
+        openIdx = 0;
+        _mount();
+      });
+    });
+
+    // Capaian (mode cepat)
+    overlay.querySelectorAll('[data-capaian]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const val     = parseInt(btn.dataset.capaian);
+        hasil[siswaId].capaian = hasil[siswaId].capaian === val ? null : val;
+        // Auto-tutup accordion dan buka siswa berikutnya
+        _autoNext();
+      });
+    });
+
+    // LSR input (mode detail)
+    overlay.querySelectorAll('.sr-pn-lsr-input').forEach(input => {
+      input.addEventListener('change', () => {
+        const siswaId = input.dataset.siswa;
+        const dim     = input.dataset.dim;
+        const raw     = parseInt(input.value);
+        hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
+      });
+      input.addEventListener('blur', () => {
+        const siswaId = input.dataset.siswa;
+        const dim     = input.dataset.dim;
+        const raw     = parseInt(input.value);
+        hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
+        _mount();
+      });
+    });
+
+    // Perilaku
+    overlay.querySelectorAll('[data-perilaku]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const p       = btn.dataset.perilaku;
+        hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
+        _mount();
+      });
+    });
+
+    // Paginasi
+    overlay.querySelector('#sr-pn-prev-hal')?.addEventListener('click', () => {
+      if (halaman > 0) { halaman--; openIdx = 0; _mount(); }
+    });
+    overlay.querySelector('#sr-pn-next-hal')?.addEventListener('click', () => {
+      if (halaman < totalHal - 1) { halaman++; openIdx = 0; _mount(); }
+    });
+
+    // Tutup
+    overlay.querySelector('#sr-pn-tutup')?.addEventListener('click', () => {
+      overlay.remove();
+    });
+
+    // Simpan
+    overlay.querySelector('#sr-pn-simpan')?.addEventListener('click', async () => {
+      const btn = overlay.querySelector('#sr-pn-simpan');
+      if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
+      try {
+        const kelasId = _state.rombel?.id;
+        const tpNomor = _state.tp?.nomor;
+        const sesiId  = _state.sesiId || Date.now().toString(36);
+        const entries = siswaList.map(s => ({
+          siswaId : s.id,
+          capaian : hasil[s.id].capaian,
+          l       : hasil[s.id].l,
+          s       : hasil[s.id].s,
+          r       : hasil[s.id].r,
+          perilaku: hasil[s.id].perilaku,
+        }));
+        await savePenilaian(kelasId, tpNomor, sesiId, modePenilaian, entries);
+        overlay.remove();
+      } catch (e) {
+        console.error('[SR] savePenilaian gagal:', e);
+        if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
+      }
+    });
+  }
+
+  // Auto-buka siswa berikutnya setelah capaian diisi
+  function _autoNext() {
+    const pageSiswa = siswaList.slice(halaman * PAGE_SIZE, halaman * PAGE_SIZE + PAGE_SIZE);
+    const nextIdx   = openIdx + 1;
+    if (nextIdx < pageSiswa.length) {
+      openIdx = nextIdx;
+      _mount();
+    } else if (halaman < totalHal - 1) {
+      // Siswa terakhir di halaman → auto-next halaman
+      halaman++;
+      openIdx = 0;
+      _mount();
+    } else {
+      // Siswa terakhir keseluruhan → tutup accordion, biarkan guru simpan
+      openIdx = -1;
+      _mount();
+    }
+  }
+
+  document.body.appendChild(overlay);
+  _mount();
 }
