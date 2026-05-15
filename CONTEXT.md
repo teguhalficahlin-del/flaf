@@ -17,6 +17,9 @@
 - **Fase 7 SELESAI ✅**
 - **Fase 8 (UI sprint) SELESAI ✅**
 - **Fase 9 SELESAI ✅**
+- **Fase 10 SELESAI ✅**
+- **Fase 11 SELESAI ✅ (akan direvisi di Fase 12)**
+- **Fase 12 SEDANG DIRANCANG**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -54,78 +57,66 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 ```
 
 ## Fase 6 — siswa_per_kelas IDB Store
-
-### Keputusan Arsitektural (Terkunci)
-- **Schema**: `{ [siswaId]: { speakCount: number, lastSesi: timestamp } }` per `rombelId`
-- **Update trigger**: saat Closure selesai (Opsi B) — otomatis, tidak ada UI tambahan
-- **Delta**: +1 per sesi selesai untuk semua siswa di rombel
-- **Fallback**: jika IDB kosong, `speakCount` dianggap 0 untuk semua siswa
-
-### Perubahan yang Dibuat
-**`storage/db.js`** (DB_VERSION: 5 → 6): tambah store `siswa_per_kelas`
-**`storage/siswa-history.js`** (file baru): getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
-
-### Hasil VALIDATE
-- Store `siswa_per_kelas` ada di IDB version 6 ✅
-- Data tersimpan setelah Closure ✅
-- Console bersih ✅
+- DB_VERSION: 5 → 6
+- Store `siswa_per_kelas` ditambahkan
+- `updateSpeakCount` dipanggil saat Closure
 
 ## Fase 7 — UI Saran Observasi
+- Closure screen: "💡 Besok coba perhatikan lebih ke:" + top 3 siswa
+- `_renderClosure` async, inject `sr-obs-card`
+
+## Fase 8 — UI Sprint
+- Dark theme selaras `style.css` & `dashboard.css`
+- `_buildTabMateri` ringkas — collapse deskripsi & indikator
+
+## Fase 9 — Mode Fungsional TP 15–18
+- Field `mode` ditambah ke `langkah[]` TP 15–18
+- Runtime baca `langkah.mode?.[_state.mode]?.bantuan` → panel `sr-mode-bantuan`
+
+## Fase 10 — Mode Fungsional TP 01–14
+- Field `mode` ditambah ke semua `langkah[]` TP 01–14 di `fase-a.js`
+- Commit: `c796acc`
+
+## Fase 11 — ObservationCapture
+- `_renderSelesai` async + inject kartu observasi (3 siswa, 4 tag)
+- Store `obs_log` ditambah (DB_VERSION 7)
+- `saveObsTags` ditambah ke `siswa-history.js`
+- **CATATAN**: Fase 11 akan DIREVISI di Fase 12 — ObservationCapture dihapus, digantikan overlay penilaian
+
+## Fase 12 — Overlay Penilaian Siswa (SEDANG DIRANCANG)
 
 ### Keputusan Arsitektural (Terkunci)
-- **Titik tampil**: Closure screen, setelah form kendala & catatan
-- **Konten**: "💡 Besok coba perhatikan lebih ke:" + top 3 siswa speakCount terendah
-- **Fallback**: blok tidak muncul jika siswaList kosong atau error
+- **Posisi tombol**: layar `running`, di bawah "⚠ Kondisi kelas bermasalah?", hanya muncul saat fase Inti
+- **Format**: overlay — tidak memutus alur mengajar
+- **Isi overlay**: semua siswa di rombel
+- **Accordion**: auto-open per siswa — setelah dinilai, tutup otomatis dan siswa berikutnya terbuka
+- **Pagination**: 5 siswa per halaman, auto-next setelah siswa ke-5 dinilai
+- **Mode Cepat**: ★ Lancar / ◐ Berkembang / ○ Perlu dampingi + aktif/perlu dorongan/belum siap
+- **Mode Detail**: L/S/R angka 0–100 + aktif/perlu dorongan/belum siap
+- **Catatan**: tidak ada di kedua mode
+- **Simpan**: semua siswa tersimpan (yang belum diisi = kosong)
+- **Download & cetak**: tersedia di layar Nilai (`nilai.js`) — card "Unduh & Cetak"
+- **ObservationCapture (Fase 11)**: DIHAPUS — digantikan overlay ini
 
-### Perubahan yang Dibuat
-**`screens/sesi-runtime.js`**: `_renderClosure` async, inject `sr-obs-card`
-**`screens/sesi-runtime.css`**: tambah `sr-obs-card`, `sr-obs-judul`, `sr-obs-nama`
+### File yang Akan Disentuh
+| File | Perubahan |
+|------|-----------|
+| `screens/sesi-runtime.js` | Tambah tombol penilaian di `_renderRunning`, tambah `_renderPenilaianOverlay`, hapus ObservationCapture dari `_renderSelesai` |
+| `screens/sesi-runtime.css` | Tambah class overlay penilaian, hapus sr-obs-capture |
+| `storage/db.js` | DB_VERSION 7 → 8, tambah store `penilaian_log` |
+| `storage/siswa-history.js` | Tambah `savePenilaian()` |
+| `screens/nilai.js` | Tambah card unduh & cetak |
+| `screens/nilai.css` | Styling card baru |
 
-### Hasil VALIDATE
-- Blok saran muncul dengan 3 nama benar ✅
-- Console bersih ✅
-
-## Fase 8 — UI Sprint (Dark Theme + Keterbacaan + UX)
-
-### Perubahan yang Dibuat
-**`screens/sesi-runtime.css`**: dark theme selaras `style.css` & `dashboard.css`
-- Background `#1A1A1A`, aksen `#D4AE3A`, semua warna hardcoded diganti
-- Perbaikan keterbacaan: tombol audio, label closure, teks opsi, placeholder
-- Tombol "Kondisi kelas bermasalah?" lebih besar dan terang
-
-**`screens/dashboard.js`** — `_buildTabMateri` ringkas:
-- Default: hanya `persiapan` + `vocab` terlihat
-- `deskripsi`, `indikator`, CP di-collapse "▾ Lihat detail materi"
-
-### Hasil VALIDATE
-- Dark theme konsisten di semua layar runtime ✅
-- Layar Materi ringkas ✅
-- Toggle detail berfungsi ✅
-
-## Fase 9 — Mode Fungsional (Mudah/Normal/Tantangan)
-
-### Keputusan Arsitektural (Terkunci)
-- **Mode fungsional untuk TP 15–18** — field `mode` ditambah ke `langkah[]`
-- **TP 1–14**: belum ada field `mode` di `langkah[]` — defer ke Fase 10
-- **Runtime**: baca `langkah.mode?.[_state.mode]?.bantuan` → panel `sr-mode-bantuan`
-- **Fallback**: panel tidak muncul jika `mode` null/undefined (TP 1–14 aman)
-
-### Perubahan yang Dibuat
-**`screens/sesi-runtime.js`**: inject panel `sr-mode-bantuan` jika data ada
-**`screens/sesi-runtime.css`**: tambah `sr-mode-bantuan`, `sr-mode-bantuan-label`, `sr-mode-bantuan-teks`
-**`docs/sesi-m10/tp-15.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
-**`docs/sesi-m11/tp-16.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
-**`docs/sesi-m12/tp-17.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
-**`docs/sesi-m13/tp-18.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
-
-### Hasil VALIDATE
-- Panel "MODE MUDAH" muncul di langkah INSTRUKSI & AUDIO ✅
-- Teks bantuan sesuai data TP 15 ✅
-- TP 1–14 tidak terpengaruh ✅
-- Console bersih ✅
+### Wireframe Sudah Disetujui
+- Mode Cepat: accordion per siswa, ★◐○ + perilaku 3 tombol
+- Mode Detail: accordion per siswa, L/S/R input + perilaku 3 tombol
+- Pagination header dengan navigasi ‹ ›
+- Footer: tombol Tutup + Simpan
 
 ## Git Log (10 commit terakhir)
 ```
+8e66442  docs: update CONTEXT — Fase 8 & 9 complete
 93669c3  fase-9: tambah field mode di langkah[] TP 16-18
 ad269b3  fase-9: mode fungsional di runtime - panel bantuan per langkah TP 15-18
 83a069b  docs: update CONTEXT — Fase 7 complete
@@ -135,7 +126,6 @@ c7136b6  docs: update CONTEXT — Fase 6 complete
 9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
 7ae6035  docs: update CONTEXT — full flow validated, production ready
 6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
-d4c4336  docs: update CONTEXT — Fase 5 complete (B1-B4)
 ```
 
 ## Struktur Folder Penting
@@ -144,33 +134,30 @@ FLAF/
 ├── screens/
 │   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, _buildTabMateri ringkas
 │   ├── dashboard.css       ← rt-* classes dihapus
-│   ├── sesi-runtime.js     ← 5-state machine, dark theme, mode bantuan panel (Fase 9)
-│   ├── sesi-runtime.css    ← sr-* prefix, dark theme, sr-mode-bantuan (Fase 9)
+│   ├── sesi-runtime.js     ← 5-state machine, dark theme, mode bantuan, ObservationCapture (akan direvisi)
+│   ├── sesi-runtime.css    ← sr-* prefix, dark theme, sr-mode-bantuan, sr-obs-capture (akan direvisi)
+│   ├── nilai.js            ← layar Kelas — akan ditambah card unduh & cetak (Fase 12)
+│   ├── nilai.css           ← akan ditambah styling card baru (Fase 12)
 │   ├── kurikulum.js/css
-│   ├── nilai.js/css
 │   ├── jejak.js
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   └── fase-a.js           ← 18 TP v4.3 aktif, import TP 15-18 dari docs/sesi-m*/
+│   └── fase-a.js           ← 18 TP v4.3, semua langkah[] sudah punya field mode
 ├── storage/
-│   ├── db.js               ← DB_VERSION 6, store siswa_per_kelas
-│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
+│   ├── db.js               ← DB_VERSION 7, stores: kv, log_queue, nilai_data, obs_log, presensi_log, siswa_per_kelas, teacher_data, teaching_log
+│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount, saveObsTags
 │   ├── logger.js
 │   ├── export.js
 │   ├── jejak.js
 │   ├── nilai.js
 │   └── presensi.js
 ├── docs/
-│   ├── fase-1-spec/        ← SCHEMA.md
-│   ├── fase-2-spec/        ← STATE-MACHINE.md
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
-│   ├── fase-4-spec/        ← MIGRATION-PLAN.md
-│   ├── sesi-m1/ sampai sesi-m9/
-│   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅ (Fase 9)
-│   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅ (Fase 9)
-│   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅ (Fase 9)
-│   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅ (Fase 9)
+│   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅
+│   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅
+│   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
+│   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
@@ -194,13 +181,10 @@ FLAF/
 
 ## Mode Fungsional — Status per TP
 
-| TP | Nama | Mode di langkah[] | Status |
-|----|------|-------------------|--------|
-| 01–14 | Greetings s/d In the Classroom | ❌ Belum ada | Fase 10 |
-| 15 | Feelings and Emotions | ✅ Ada | Fase 9 |
-| 16 | Simple Story Retelling | ✅ Ada | Fase 9 |
-| 17 | My Hobbies | ✅ Ada | Fase 9 |
-| 18 | Integrative Project | ✅ Ada | Fase 9 |
+| TP | Nama | Mode di langkah[] |
+|----|------|-------------------|
+| 01–14 | Greetings s/d In the Classroom | ✅ Fase 10 |
+| 15–18 | Feelings s/d My World | ✅ Fase 9 |
 
 ## Pattern Inklusivitas (TERBENTUK di Sesi M3)
 
@@ -229,7 +213,12 @@ FLAF/
 ✅ FASE 7 COMPLETE — UI saran observasi di Closure screen
 ✅ FASE 8 COMPLETE — dark theme + UI ringkas layar Materi
 ✅ FASE 9 COMPLETE — mode fungsional TP 15-18
+✅ FASE 10 COMPLETE — mode fungsional TP 01-14
+✅ FASE 11 COMPLETE — ObservationCapture (akan direvisi)
 
-Next: Fase 10 — tambah field mode ke langkah[] TP 01-14
-      (konten pedagogis per langkah per mode, dikerjakan bertahap)
+Next: Fase 12 — Overlay Penilaian Siswa
+      - Hapus ObservationCapture (Fase 11)
+      - Tambah tombol penilaian di running (fase Inti)
+      - Overlay accordion 2 mode (cepat & detail)
+      - Download & cetak di layar Nilai
 ```
