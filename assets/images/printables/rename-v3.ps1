@@ -1,0 +1,103 @@
+$source = "D:\ribuan_pengguna\CLAUDE\FLAF\assets\images\printablessss"
+$names = @(
+    "tp01-salam-pagi",
+    "tp01-salam-siang",
+    "tp01-salam-sore",
+    "tp01-salam-malam",
+    "tp01-waktu-pagi",
+    "tp01-waktu-siang",
+    "tp01-waktu-sore",
+    "tp01-waktu-malam",
+    "tp02-nametag",
+    "tp02-perkenalan",
+    "tp02-umur",
+    "tp03-sit",
+    "tp03-stand",
+    "tp03-open",
+    "tp03-close",
+    "tp03-listen",
+    "tp03-poster-tpr",
+    "tp04-angka-1",
+    "tp04-angka-2",
+    "tp04-angka-3",
+    "tp04-angka-4",
+    "tp04-angka-5",
+    "tp04-angka-6",
+    "tp04-angka-7",
+    "tp04-angka-8",
+    "tp04-angka-9",
+    "tp04-angka-10",
+    "tp04-angka-11",
+    "tp04-angka-12",
+    "tp04-angka-13",
+    "tp04-angka-14",
+    "tp04-angka-15",
+    "tp04-angka-16",
+    "tp04-angka-17",
+    "tp04-angka-18",
+    "tp04-angka-19",
+    "tp04-angka-20",
+    "tp05-warna-red",
+    "tp05-warna-orange",
+    "tp05-warna-yellow",
+    "tp05-warna-green",
+    "tp05-warna-blue",
+    "tp05-warna-purple",
+    "tp05-warna-pink",
+    "tp05-warna-brown",
+    "tp06-bentuk-circle",
+    "tp06-bentuk-square",
+    "tp06-bentuk-triangle",
+    "tp06-bentuk-rectangle",
+    "tp06-bentuk-star",
+    "tp06-bentuk-heart",
+    "tp07-ayah",
+    "tp07-ibu",
+    "tp07-kakak-laki",
+    "tp07-kakak-perempuan",
+    "tp07-adik-laki",
+    "tp07-adik-perempuan",
+    "tp07-kakek",
+    "tp07-nenek",
+    "tp08-kamar-tidur",
+    "tp08-ruang-tamu",
+    "tp08-dapur",
+    "tp08-kamar-mandi",
+    "tp08-garasi",
+    "tp08-denah-rumah",
+    "tp09-hewan-cat",
+    "tp09-hewan-dog",
+    "tp09-hewan-bird",
+    "tp09-hewan-fish",
+    "tp09-hewan-rabbit",
+    "tp09-hewan-elephant",
+    "tp09-hewan-lion",
+    "tp09-hewan-monkey",
+    "tp09-hewan-snake",
+    "tp09-hewan-frog",
+    "tp10-nasi",
+    "tp10-roti",
+    "tp10-telur",
+    "tp10-apel",
+    "tp10-pisang",
+    "tp10-susu",
+    "tp10-air",
+    "tp10-jus",
+    "tp10-mie",
+    "tp10-ayam"
+)
+
+$files = Get-ChildItem -Path $source -Filter "*.png" | Sort-Object Name
+Write-Host "Ditemukan: $($files.Count) file"
+Write-Host "Nama tersedia: $($names.Count)"
+
+$count = [Math]::Min($files.Count, $names.Count)
+
+for ($i = 0; $i -lt $count; $i++) {
+    $oldPath = $files[$i].FullName
+    $newName = $names[$i] + ".png"
+    Rename-Item -Path $oldPath -NewName $newName
+    Write-Host "OK: $($files[$i].Name) -> $newName"
+}
+
+Write-Host "Selesai: $count file di-rename"

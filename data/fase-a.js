@@ -83,6 +83,16 @@ const FASE_A = {
       vocab: ['hello', 'hi', 'goodbye', 'bye', 'see you', 'good morning',
               'good afternoon', 'good evening', 'good night'],
       persiapan: ['Kartu gambar salam (pagi/siang/sore)', 'Kartu waktu (matahari/bulan)'],
+      printables: [
+        { file: 'tp01-salam-pagi.png',    label: 'Kartu Salam Pagi' },
+        { file: 'tp01-salam-siang.png',   label: 'Kartu Salam Siang' },
+        { file: 'tp01-salam-sore.png',    label: 'Kartu Salam Sore' },
+        { file: 'tp01-salam-malam.png',   label: 'Kartu Salam Malam' },
+        { file: 'tp01-waktu-pagi.png',    label: 'Kartu Waktu Pagi' },
+        { file: 'tp01-waktu-siang.png',   label: 'Kartu Waktu Siang' },
+        { file: 'tp01-waktu-sore.png',    label: 'Kartu Waktu Sore' },
+        { file: 'tp01-waktu-malam.png',   label: 'Kartu Waktu Malam' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -385,6 +395,11 @@ const FASE_A = {
       vocab: ['name', 'my name is', 'I am', 'years old', 'how old',
               'nice to meet you', 'what is your name'],
       persiapan: ['Papan tulis + spidol', 'Kertas name tag kosong'],
+      printables: [
+        { file: 'tp02-nametag.png',     label: 'Kartu Name Tag' },
+        { file: 'tp02-perkenalan.png',  label: 'Kartu Perkenalan' },
+        { file: 'tp02-umur.png',        label: 'Kartu Umur' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -558,6 +573,14 @@ const FASE_A = {
       vocab: ['sit down', 'stand up', 'open', 'close', 'listen', 'look',
               'repeat', 'read', 'write', 'draw', 'stop', 'go'],
       persiapan: ['Kartu instruksi bergambar (sit/stand/open/close)', 'Poster TPR'],
+      printables: [
+        { file: 'tp03-sit.png',        label: 'Kartu Sit Down' },
+        { file: 'tp03-stand.png',      label: 'Kartu Stand Up' },
+        { file: 'tp03-open.png',       label: 'Kartu Open' },
+        { file: 'tp03-close.png',      label: 'Kartu Close' },
+        { file: 'tp03-listen.png',     label: 'Kartu Listen' },
+        { file: 'tp03-poster-tpr.png', label: 'Poster TPR' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -727,6 +750,28 @@ const FASE_A = {
               'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
               'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'how many'],
       persiapan: ['Kartu angka 1–20', 'Benda untuk dihitung (buku, pensil, dll)'],
+      printables: [
+        { file: 'tp04-angka-1.png',  label: 'Kartu Angka 1' },
+        { file: 'tp04-angka-2.png',  label: 'Kartu Angka 2' },
+        { file: 'tp04-angka-3.png',  label: 'Kartu Angka 3' },
+        { file: 'tp04-angka-4.png',  label: 'Kartu Angka 4' },
+        { file: 'tp04-angka-5.png',  label: 'Kartu Angka 5' },
+        { file: 'tp04-angka-6.png',  label: 'Kartu Angka 6' },
+        { file: 'tp04-angka-7.png',  label: 'Kartu Angka 7' },
+        { file: 'tp04-angka-8.png',  label: 'Kartu Angka 8' },
+        { file: 'tp04-angka-9.png',  label: 'Kartu Angka 9' },
+        { file: 'tp04-angka-10.png', label: 'Kartu Angka 10' },
+        { file: 'tp04-angka-11.png', label: 'Kartu Angka 11' },
+        { file: 'tp04-angka-12.png', label: 'Kartu Angka 12' },
+        { file: 'tp04-angka-13.png', label: 'Kartu Angka 13' },
+        { file: 'tp04-angka-14.png', label: 'Kartu Angka 14' },
+        { file: 'tp04-angka-15.png', label: 'Kartu Angka 15' },
+        { file: 'tp04-angka-16.png', label: 'Kartu Angka 16' },
+        { file: 'tp04-angka-17.png', label: 'Kartu Angka 17' },
+        { file: 'tp04-angka-18.png', label: 'Kartu Angka 18' },
+        { file: 'tp04-angka-19.png', label: 'Kartu Angka 19' },
+        { file: 'tp04-angka-20.png', label: 'Kartu Angka 20' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -857,6 +902,16 @@ const FASE_A = {
       vocab: ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink',
               'black', 'white', 'brown', 'colour', 'favourite', 'what colour'],
       persiapan: ['Kartu warna 8 warna dasar', 'Benda berwarna dari kelas/tas siswa'],
+      printables: [
+        { file: 'tp05-warna-red.png',    label: 'Kartu Warna Merah' },
+        { file: 'tp05-warna-orange.png', label: 'Kartu Warna Oranye' },
+        { file: 'tp05-warna-yellow.png', label: 'Kartu Warna Kuning' },
+        { file: 'tp05-warna-green.png',  label: 'Kartu Warna Hijau' },
+        { file: 'tp05-warna-blue.png',   label: 'Kartu Warna Biru' },
+        { file: 'tp05-warna-purple.png', label: 'Kartu Warna Ungu' },
+        { file: 'tp05-warna-pink.png',   label: 'Kartu Warna Pink' },
+        { file: 'tp05-warna-brown.png',  label: 'Kartu Warna Coklat' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -986,6 +1041,14 @@ const FASE_A = {
       vocab: ['circle', 'square', 'triangle', 'rectangle', 'star', 'heart',
               'diamond', 'oval', 'shape', 'this is', 'I see'],
       persiapan: ['Kartu bentuk berwarna', 'Gunting + kertas warna (opsional)'],
+      printables: [
+        { file: 'tp06-bentuk-circle.png',    label: 'Kartu Bentuk Lingkaran' },
+        { file: 'tp06-bentuk-square.png',    label: 'Kartu Bentuk Persegi' },
+        { file: 'tp06-bentuk-triangle.png',  label: 'Kartu Bentuk Segitiga' },
+        { file: 'tp06-bentuk-rectangle.png', label: 'Kartu Bentuk Persegi Panjang' },
+        { file: 'tp06-bentuk-star.png',      label: 'Kartu Bentuk Bintang' },
+        { file: 'tp06-bentuk-heart.png',     label: 'Kartu Bentuk Hati' },
+      ],
       skenario: [
         {
           fase  : 'Pembuka',
@@ -1106,6 +1169,16 @@ const FASE_A = {
       ],
       vocab: ['mother', 'father', 'sister', 'brother', 'grandmother', 'grandfather', 'family', 'this is my'],
       persiapan: ['Gambar keluarga dari majalah/buku', 'Foto keluarga guru (opsional)'],
+      printables: [
+        { file: 'tp07-ayah.png',           label: 'Kartu Ayah' },
+        { file: 'tp07-ibu.png',            label: 'Kartu Ibu' },
+        { file: 'tp07-kakak-laki.png',     label: 'Kartu Kakak Laki-laki' },
+        { file: 'tp07-kakak-perempuan.png',label: 'Kartu Kakak Perempuan' },
+        { file: 'tp07-adik-laki.png',      label: 'Kartu Adik Laki-laki' },
+        { file: 'tp07-adik-perempuan.png', label: 'Kartu Adik Perempuan' },
+        { file: 'tp07-kakek.png',          label: 'Kartu Kakek' },
+        { file: 'tp07-nenek.png',          label: 'Kartu Nenek' },
+      ],
       skenario: [
         { fase: 'Pembuka', durasi: 10, langkah: [
           { tipe: 'audio',     teks: 'Hello everyone! Today we talk about family. Do you love your family?' ,
@@ -1200,6 +1273,14 @@ const FASE_A = {
       ],
       vocab: ['bedroom', 'kitchen', 'bathroom', 'living room', 'bed', 'table', 'chair', 'sofa', 'there is', 'in the'],
       persiapan: ['Gambar denah rumah sederhana', 'Kartu nama ruangan'],
+      printables: [
+        { file: 'tp08-kamar-tidur.png', label: 'Kartu Kamar Tidur' },
+        { file: 'tp08-ruang-tamu.png',  label: 'Kartu Ruang Tamu' },
+        { file: 'tp08-dapur.png',       label: 'Kartu Dapur' },
+        { file: 'tp08-kamar-mandi.png', label: 'Kartu Kamar Mandi' },
+        { file: 'tp08-garasi.png',      label: 'Kartu Garasi' },
+        { file: 'tp08-denah-rumah.png', label: 'Denah Rumah' },
+      ],
       skenario: [
         { fase: 'Pembuka', durasi: 10, langkah: [
           { tipe: 'audio',     teks: 'Hello class! Let us talk about our homes today! What rooms do you have at home?' ,
@@ -1294,6 +1375,18 @@ const FASE_A = {
       ],
       vocab: ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken', 'elephant', 'monkey', 'snake', 'can', 'has'],
       persiapan: ['Kartu gambar hewan', 'Poster hewan'],
+      printables: [
+        { file: 'tp09-hewan-cat.png',      label: 'Kartu Cat' },
+        { file: 'tp09-hewan-dog.png',      label: 'Kartu Dog' },
+        { file: 'tp09-hewan-bird.png',     label: 'Kartu Bird' },
+        { file: 'tp09-hewan-fish.png',     label: 'Kartu Fish' },
+        { file: 'tp09-hewan-rabbit.png',   label: 'Kartu Rabbit' },
+        { file: 'tp09-hewan-elephant.png', label: 'Kartu Elephant' },
+        { file: 'tp09-hewan-lion.png',     label: 'Kartu Lion' },
+        { file: 'tp09-hewan-monkey.png',   label: 'Kartu Monkey' },
+        { file: 'tp09-hewan-snake.png',    label: 'Kartu Snake' },
+        { file: 'tp09-hewan-frog.png',     label: 'Kartu Frog' },
+      ],
       skenario: [
         { fase: 'Pembuka', durasi: 10, langkah: [
           { tipe: 'audio',     teks: 'Hello everyone! Do you like animals? What is your favourite animal?' ,
@@ -1394,6 +1487,18 @@ const FASE_A = {
       ],
       vocab: ['rice', 'noodles', 'bread', 'egg', 'chicken', 'fish', 'milk', 'water', 'juice', 'like', 'do not like'],
       persiapan: ['Kartu gambar makanan/minuman', 'Gambar piring kosong'],
+      printables: [
+        { file: 'tp10-nasi.png',   label: 'Kartu Nasi' },
+        { file: 'tp10-roti.png',   label: 'Kartu Roti' },
+        { file: 'tp10-telur.png',  label: 'Kartu Telur' },
+        { file: 'tp10-apel.png',   label: 'Kartu Apel' },
+        { file: 'tp10-pisang.png', label: 'Kartu Pisang' },
+        { file: 'tp10-susu.png',   label: 'Kartu Susu' },
+        { file: 'tp10-air.png',    label: 'Kartu Air' },
+        { file: 'tp10-jus.png',    label: 'Kartu Jus' },
+        { file: 'tp10-mie.png',    label: 'Kartu Mie' },
+        { file: 'tp10-ayam.png',   label: 'Kartu Ayam' },
+      ],
       skenario: [
         { fase: 'Pembuka', durasi: 10, langkah: [
           { tipe: 'audio',     teks: 'Good morning! Are you hungry? What did you eat for breakfast today?' ,

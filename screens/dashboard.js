@@ -23,6 +23,7 @@ import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
 import { mount as srMount, unmount as srUnmount } from './sesi-runtime.js';
+import { generatePrintHTML } from '../data/printables.js';
 
 const STORE_KV = 'kv';
 
@@ -346,11 +347,17 @@ function _buildTabMateri(tp) {
     `<span class="ds-vocab-chip" onclick="dashTTS(${vi + 1000},'${_escapeTTS(v)}')" style="cursor:pointer;" title="Putar audio">▶ ${_escape(v)}</span>`
   ).join('');
 
+  const cetakBtn = (tp.printables && tp.printables.length > 0) ? `
+    <button onclick="dashCetakKartu()" style="margin-top:8px;width:100%;background:transparent;border:1px solid rgba(212,174,58,.35);border-radius:8px;padding:7px;color:rgba(212,174,58,.85);font-size:12px;cursor:pointer;font-family:inherit;text-align:center;">
+      🖨 Cetak Kartu Persiapan (${tp.printables.length} kartu)
+    </button>` : '';
+
   const persiapanHTML = (tp.persiapan && tp.persiapan.length > 0) ? `
     <div class="ds-sub-label" style="margin-top:10px;">Siapkan Sebelum Kelas</div>
     <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
       ${tp.persiapan.map(p => `<span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:4px 10px;font-size:12px;color:rgba(255,255,255,.7);">📌 ${_escape(p)}</span>`).join('')}
-    </div>` : '';
+    </div>
+    ${cetakBtn}` : '';
 
   const cpHTML = `
     <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
@@ -375,6 +382,18 @@ function _buildTabMateri(tp) {
       ${cpHTML}
     </div>`;
 }
+
+function dashCetakKartu() {
+  const tp = _getTP(_flow.tp?.nomor);
+  if (!tp) return;
+  const html = generatePrintHTML(tp);
+  if (!html) return;
+  const win = window.open('', '_blank');
+  if (!win) { alert('Izinkan popup di browser untuk mencetak.'); return; }
+  win.document.write(html);
+  win.document.close();
+}
+window.dashCetakKartu = dashCetakKartu;
 
 // --- STEP 0: MATERI ----------------------------------------------------------
 
