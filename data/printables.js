@@ -119,8 +119,8 @@ export function generatePrintHTML(tp) {
 
   <div class="print-header">
     <div class="print-header-label">Kartu Cetak Guru — FLAF</div>
-    <div class="print-header-title">${tp.judul}</div>
-    <div class="print-header-sub">${tp.kelas || ''} &mdash; ${tp.printables.length} kartu</div>
+    <div class="print-header-title">${tp.nama}</div>
+    <div class="print-header-sub">TP ${String(tp.nomor).padStart(2,'0')} &mdash; ${tp.printables.length} kartu</div>
   </div>
 
   <div class="print-scissors">✂ Gunting sepanjang garis kartu</div>
