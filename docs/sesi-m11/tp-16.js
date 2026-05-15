@@ -5,9 +5,7 @@
  * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
- * STATUS: DRAFT Sesi M11 — Mei 2026
- *
- * Migrated from: fase-a.js → tujuan_pembelajaran[15] (v3)
+ * STATUS: UPDATED — langkah[] ditambah field mode (Fase 9)
  *
  * KARAKTER KHAS TP 16:
  *   - Topik RENDAH sensitif — cerita bergambar generic.
@@ -25,11 +23,10 @@
  *   - Retelling: card-assisted di semua mode (mudah-normal-tantangan)
  *
  * PENERAPAN PATTERN INKLUSIVITAS (CONTEXT.md):
- *   - Pattern 1: Scripted micro_script untuk story reading (guru baca dengan ekspresi konsisten).
- *   - Pattern 4: Pair retelling universal — semua bisa ceritakan dengan kartu support,
- *     tidak asumsi berbicara lancar.
+ *   - Pattern 1: Scripted micro_script untuk story reading.
+ *   - Pattern 4: Pair retelling universal — semua bisa ceritakan dengan kartu support.
  *   - Pattern 5: Fallback untuk siswa yang kesulitan ingat cerita atau gugup saat pair.
- *   - Character emotion reflection: MINDFUL ONLY — siswa identify emosi tokoh, tidak expose pribadi.
+ *   - Character emotion reflection: MINDFUL ONLY.
  *
  * REFERENSI:
  *   - SCHEMA.md v4.3
@@ -147,8 +144,24 @@ Guru NOT sebutkan cerita title atau plot — keep surprise!`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Tunjuk cover cerita. Tanya siswa: siapa yang ada di gambar? Apa yang akan terjadi? Tunggu prediksi mereka (boleh bahasa Indonesia).' },
-        { tipe: 'audio',     teks: 'Look at the cover. Who is in the picture? What do you think will happen in this story?' },
+        {
+          tipe: 'instruksi',
+          teks: 'Tunjuk cover cerita. Tanya siswa: siapa yang ada di gambar? Apa yang akan terjadi? Tunggu prediksi mereka (boleh bahasa Indonesia).',
+          mode: {
+            mudah:     { bantuan: 'Guru tanya simple: "Who is in the picture?" Siswa boleh jawab dalam bahasa Indonesia atau gesture/tunjuk gambar.' },
+            normal:    { bantuan: 'Guru tanya who/what in cover, siswa jawab dalam Inggris atau Indonesian mix.' },
+            tantangan: { bantuan: 'Guru tanya lebih detail: "What do you see? What is the girl doing?" Siswa jawab kalimat.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Look at the cover. Who is in the picture? What do you think will happen in this story?',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan pelan, tunjuk gambar. Siswa boleh jawab satu kata atau gesture.' },
+            normal:    { bantuan: 'Tanya natural, tunggu prediksi siswa.' },
+            tantangan: { bantuan: 'Tanya + follow up "Why do you think so?"' },
+          },
+        },
       ],
     },
 
@@ -174,8 +187,8 @@ Guru NOT sebutkan cerita title atau plot — keep surprise!`,
             selama  : `Guru baca cerita halaman per halaman dengan intonasi & ekspresi natural:
 - TONE: Natural, tidak over-dramatic, tapi jelas & engaging.
 - PACING: Lambat, beri waktu siswa visualize setiap halaman.
-- GESTURE: Tunjuk gambar, gesture untuk action (misalnya: "find" = gesture mencari, "run" = gesture berlari).
-- STOP POINTS: Di 1-2 tempat, berhenti & tanya prediksi: "What do you think happens next?" (tapi short, jangan interrupt flow).
+- GESTURE: Tunjuk gambar, gesture untuk action.
+- STOP POINTS: Di 1-2 tempat, berhenti & tanya prediksi: "What do you think happens next?"
 
 Contoh script (asumsi cerita "Ani Finds Cat"):
 Page 1: "Once upon a time, there was a girl named Ani. One day, she was walking in the park..."
@@ -283,7 +296,7 @@ Rotate: Siswa B jadi yang tanya.`,
               panjang_speaking: 'Jawab one-word atau frasa: "Ani" / "A cat" / "In the park".',
             },
             tantangan: {
-              bantuan: 'Siswa pair buat pertanyaan sendiri (who/what/where) atau follow-up "Why did she help the cat?" (introduce causal thinking).',
+              bantuan: 'Siswa pair buat pertanyaan sendiri (who/what/where) atau follow-up "Why did she help the cat?"',
               panjang_speaking: 'Jawab panjang atau tanya back: "Because the cat was sad" atau "Where did she find food for the cat?"',
             },
           },
@@ -316,13 +329,9 @@ Rotate: Siswa B jadi yang tanya.`,
             selama  : `PHASE 1 — INTRODUCE 4 VOCAB (2 menit):
 Guru tunjuk kartu urutan satu per satu:
 1. "First" — gerakan: pointing ke awal cerita (halaman 1)
-   Guru: "First, Ani was walking in the park."
 2. "Then" — gerakan: gerakan ke depan (panah)
-   Guru: "Then, she heard a sound! Meow, meow!"
 3. "After that" — gerakan: lanjut depan
-   Guru: "After that, Ani helped the cat."
 4. "Finally" — gerakan: ke ending (end marker)
-   Guru: "Finally, they found the cat's home!"
 
 Kelas ulang setiap kata + cerita sambil dengarkan guru.
 Ulangi 4 urutan cepat: "First, then, after that, finally!"
@@ -330,14 +339,7 @@ Ulangi 4 urutan cepat: "First, then, after that, finally!"
 PHASE 2 — APPLY KE CERITA (2 menit):
 Guru susun kartu urutan di papan (left to right):
 [First] [Then] [After that] [Finally]
-
-Guru tunjuk setiap kartu sambil cerita garis besar ulang:
-"First, [tunjuk halaman 1] Ani walked in the park."
-"Then, [tunjuk halaman 2] she found a sad cat."
-"After that, [tunjuk halaman 3] she helped the cat."
-"Finally, [tunjuk halaman 4-5] they found the home!"
-
-Kelas ulang bersama sambil guru tunjuk kartu.`,
+Guru tunjuk setiap kartu sambil cerita garis besar ulang.`,
             penutup : '"You know the magic words! First, then, after that, finally!"',
           },
 
@@ -359,7 +361,7 @@ Kelas ulang bersama sambil guru tunjuk kartu.`,
               panjang_speaking: 'Ulang "First, then, after that, finally" + cerita garis besar dengan bantuan guru.',
             },
             tantangan: {
-              bantuan: '4 kata, siswa boleh lead atau create alternative story order (jika cerita allow).',
+              bantuan: '4 kata, siswa boleh lead atau create alternative story order.',
               panjang_speaking: 'Buat kalimat sendiri per urutan card: "First, the girl walked..." tanpa guru prompt.',
             },
           },
@@ -381,7 +383,7 @@ Kelas ulang bersama sambil guru tunjuk kartu.`,
           judul : 'Pair Retelling — Card-Assisted Ceritakan Kembali',
           pm    : 'meaningful',
 
-          tujuan_komunikasi : 'Siswa ceritakan ulang cerita dengan struktur sequential (first/then/after/finally) & kartu support (card-assisted all modes).',
+          tujuan_komunikasi : 'Siswa ceritakan ulang cerita dengan struktur sequential (first/then/after/finally) & kartu support.',
           vocab_target      : ['first', 'then', 'after that', 'finally', 'story', 'character'],
 
           durasi_target_detik : 480,
@@ -393,29 +395,21 @@ Kelas ulang bersama sambil guru tunjuk kartu.`,
 Guru + 1 siswa model dulu. Guru jadi Siswa A, volunteer jadi Siswa B:
 Guru: "I tell you the story. [pegang kartu First] First, Ani was walking in the park. [Next kartu Then] Then, she found a sad cat. [Next kartu After] After that, Ani helped the cat. [Next kartu Finally] Finally, they found the home!"
 Siswa B: "Thank you! That was a good story!"
-(ini model, untuk show pairing structure)
 
 FASE 2 — PAIR RETELLING (5 menit):
 Siswa pasang 2 orang. Beri setiap pair 1 set kartu urutan.
 Siswa A: ceritakan ulang cerita (bisa lihat halaman cerita + kartu di tangan).
 Siswa B: dengarkan.
 Guru walk around, listen & support.
-Format:
-- Mudah: "First, [melihat halaman 1, baca/cerita] ... Then, [halaman 2] ..." (boleh pakai gambar + kartu)
-- Normal: Sama, kartu di tangan sebagai guide (boleh lihat halaman sebagai memory trigger)
-- Tantangan: Kartu di tangan, cerita tanpa buka halaman (but can refer to kartu sequence)
 
 FASE 3 — ROTATE & REVERSE (3 menit):
-Siswa B sekarang jadi storyteller, Siswa A jadi listener.
-Sama proses, 2-3 menit cerita.
-
-TARGET: Setiap siswa dapat giliran cerita minimal 1x. Quality tidak perlu perfect — fokus pada participation & sequencing attempt.`,
+Siswa B sekarang jadi storyteller, Siswa A jadi listener.`,
             penutup : '"Wonderful! You are great storytellers!"',
           },
 
           audio_cue: {
             contoh_guru  : 'First, Ani was walking in the park. Then, she found a cat. After that, she helped the cat. Finally, they found the home!',
-            contoh_siswa : 'First, the girl walked. Then, she saw a cat. After that, she gave food. Finally, they went home! / (variations OK)',
+            contoh_siswa : 'First, the girl walked. Then, she saw a cat. After that, she gave food. Finally, they went home!',
             target_vocab : ['first', 'then', 'after that', 'finally'],
           },
 
@@ -439,10 +433,10 @@ TARGET: Setiap siswa dapat giliran cerita minimal 1x. Quality tidak perlu perfec
           observation: { aktif: true, n_siswa: 4, indikator: ['vocab_use', 'response', 'confidence'], rotasi_priority: 'belum_observed', tag_set: 'standar' },
 
           fallback: {
-            siswa_malu : 'Guru pair dengan siswa itu dulu, atau 3-orang group (Guru + 2 siswa). Jangan paksa 1:1 pair jika shy.',
+            siswa_malu : 'Guru pair dengan siswa itu dulu, atau 3-orang group. Jangan paksa 1:1 pair jika shy.',
             siswa_lupa_cerita : 'Kartu + halaman cerita both visible — tidak masalah. Fokus pada attempting sequence, bukan memorization.',
-            pasangan_canggung : 'Rotate pasangan atau format group 3. Atau guru jadi listener untuk siswa yang nervous.',
-            waktu_mepet : 'Cukup Fase 1 (model) + Fase 2 partial (2 min). Skip full rotation — fokus pada siswa yang belum speaking.',
+            pasangan_canggung : 'Rotate pasangan atau format group 3.',
+            waktu_mepet : 'Cukup Fase 1 (model) + Fase 2 partial (2 min). Skip full rotation.',
           },
 
           advance: { mode: 'manual' },
@@ -454,7 +448,7 @@ TARGET: Setiap siswa dapat giliran cerita minimal 1x. Quality tidak perlu perfec
           judul : 'Character Emotion — Mindful Reflection (No Forced Exposure)',
           pm    : 'mindful',
 
-          tujuan_komunikasi : 'Siswa identify & reflect on character emotion (Ani, the cat) secara mindful — cognitive linking WITHOUT personal share demand.',
+          tujuan_komunikasi : 'Siswa identify & reflect on character emotion secara mindful — cognitive linking WITHOUT personal share demand.',
           vocab_target      : ['because', 'happy', 'sad'],
 
           durasi_target_detik : 240,
@@ -464,33 +458,23 @@ TARGET: Setiap siswa dapat giliran cerita minimal 1x. Quality tidak perlu perfec
             pembuka : '"Let us think about the feelings in the story!"',
             selama  : `Guru tanya tentang karakter emosi (MINDFUL REFLECTION ONLY — no hand up, no forced share):
 "In the story, the cat felt sad at first. Why was the cat sad?
-[tunggu 2 detik, guru jawab sendiri atau dari kelas]
 Yes, the cat was lost. The cat was alone.
 Later, Ani helped the cat. How did the cat feel then?
-[tunggu jawab] Happy! Yes, the cat was happy because Ani helped.
+Happy! Yes, the cat was happy because Ani helped.
 
 And Ani? How did Ani feel?
-At first, Ani found a sad kitten. Maybe she felt... sad too, or worried?
-Then she helped. How did she feel?
-[jawab] Happy! Yes, Ani felt happy because she helped someone.
-
-You know what? In life, we all feel happy, sad, worried, scared sometimes.
-Like Ani. Like the cat. Like everyone.
 When we help someone, we feel happy inside.
 That is normal. That is beautiful."
 
 REFLECTION (not sharing):
 "Did this story remind you of a time YOU helped someone?
 [PAUSE — no hand up]
-You do not need to tell me. Just think quietly.
-It is OK to remember. Keep that feeling in your heart."
-
-[Long pause. Quiet. No pressure.]`,
+You do not need to tell me. Just think quietly."`,
             penutup : '"The characters had feelings. You have feelings too. That is normal and beautiful!"',
           },
 
           audio_cue: {
-            contoh_guru  : 'Why was the cat sad? / The cat was lost. / How did Ani feel? / Happy because she helped. / Have you ever helped someone? (quiet reflection, no answer needed)',
+            contoh_guru  : 'Why was the cat sad? / The cat was lost. / How did Ani feel? / Happy because she helped.',
             contoh_siswa : 'The cat was sad! / Lost! / Ani was happy! / (silent reflection)',
             target_vocab : ['because', 'happy', 'sad'],
           },
@@ -501,8 +485,8 @@ It is OK to remember. Keep that feeling in your heart."
 
           fallback: {
             siswa_sedih_muncul : 'STOP. Jangan lanjut. Guru dekati quiet, eye contact gentle. "It is OK. You can take a break." Lanjut tenang, skip sisa reflection.',
-            silence_awkward : 'Normal di usia 7. Guru bisa isi dengan: "Some of you might be thinking... some might be remembering... that is good."',
-            siswa_ingin_share : 'Gentle redirect: "Thank you for thinking about that. You can tell me later at break time if you want. For now, keep that feeling in your heart."',
+            silence_awkward : 'Normal di usia 7. Guru bisa isi dengan: "Some of you might be thinking... that is good."',
+            siswa_ingin_share : 'Gentle redirect: "Thank you for thinking about that. You can tell me later at break time if you want."',
           },
 
           advance: { mode: 'manual' },
@@ -510,13 +494,69 @@ It is OK to remember. Keep that feeling in your heart."
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Guru baca cerita halaman per halaman dengan ekspresi. Tunjuk gambar, gesture untuk action. Berhenti 1-2x untuk tanya prediksi (short).' },
-        { tipe: 'audio',     teks: 'Once upon a time... What do you think happens next? / Finally, they found the home!' },
-        { tipe: 'instruksi', teks: 'Tanya comprehension: Who/what/where? Kelas jawab, lalu pair practice 3 questions.' },
-        { tipe: 'instruksi', teks: 'Introduce sequencing vocab via kartu: First, Then, After that, Finally. Guru model apply ke cerita.' },
-        { tipe: 'audio',     teks: 'First, Ani walked in the park. Then, she found a cat. After that, she helped the cat. Finally, they found the home!' },
-        { tipe: 'instruksi', teks: 'Pair retelling: Guru model dulu. Siswa pasang 2 orang, cerita ulang dengan kartu urutan + halaman cerita sebagai support. Rotate.' },
-        { tipe: 'instruksi', teks: 'Character emotion reflection: Tanya perasaan Ani & kucing. Siswa think quietly (NO hand up, NO forced sharing). Guru: "It is OK to feel things. That is normal."' },
+        {
+          tipe: 'instruksi',
+          teks: 'Guru baca cerita halaman per halaman dengan ekspresi. Tunjuk gambar, gesture untuk action. Berhenti 1-2x untuk tanya prediksi (short).',
+          mode: {
+            mudah:     { bantuan: 'Guru baca lebih lambat, gesture lebih jelas. Jangan tanya prediksi — cukup listening saja.' },
+            normal:    { bantuan: 'Guru baca dengan normal pace, gesture natural. Tanya 1 prediksi di tengah.' },
+            tantangan: { bantuan: 'Guru baca natural pace, tanya 2 prediksi. Siswa boleh tanya pertanyaan tentang cerita.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Once upon a time... What do you think happens next? / Finally, they found the home!',
+          mode: {
+            mudah:     { bantuan: 'Fokus pada storytelling saja, tidak perlu tanya prediksi.' },
+            normal:    { bantuan: 'Baca + tanya "What happens next?" di 1 titik.' },
+            tantangan: { bantuan: 'Baca + tanya 2x, siswa boleh jawab kalimat.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Tanya comprehension: Who/what/where? Kelas jawab, lalu pair practice 3 questions.',
+          mode: {
+            mudah:     { bantuan: 'Guru tanya, kelas jawab bersama. Pair practice: guru assist dengan repetition dulu. Boleh cukup 1 question saja.' },
+            normal:    { bantuan: 'Guru model, siswa pair practice 3 questions dengan minimal prompt.' },
+            tantangan: { bantuan: 'Siswa pair buat pertanyaan sendiri atau follow-up "Why did she help the cat?"' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Introduce sequencing vocab via kartu: First, Then, After that, Finally. Guru model apply ke cerita.',
+          mode: {
+            mudah:     { bantuan: 'Kenalkan 2 vocab dulu (First, Finally). Guru demo apply ke 2 titik cerita.' },
+            normal:    { bantuan: '4 vocab sequencing. Guru model, siswa ulang.' },
+            tantangan: { bantuan: 'Siswa coba apply vocab ke cerita sendiri tanpa prompt guru.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'First, Ani walked in the park. Then, she found a cat. After that, she helped the cat. Finally, they found the home!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan perlahan, tunjuk halaman cerita per kalimat.' },
+            normal:    { bantuan: 'Ucapkan natural, kelas ulang bersama.' },
+            tantangan: { bantuan: 'Ucapkan 1x, siswa coba retell sendiri.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Pair retelling: Guru model dulu. Siswa pasang 2 orang, cerita ulang dengan kartu urutan + halaman cerita sebagai support. Rotate.',
+          mode: {
+            mudah:     { bantuan: 'Guru model 2x. Pair boleh baca dari halaman cerita langsung. Cukup 2 kalimat.' },
+            normal:    { bantuan: 'Guru model 1x. Siswa pair retell dengan kartu urutan sebagai support.' },
+            tantangan: { bantuan: 'Siswa retell tanpa melihat halaman cerita. Spontan dengan sequencing vocab.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Character emotion reflection: Tanya perasaan Ani & kucing. Siswa think quietly (NO hand up, NO forced sharing). Guru: "It is OK to feel things. That is normal."',
+          mode: {
+            mudah:     { bantuan: 'Guru sebutkan emosi Ani dulu ("She feels happy"). Siswa dengarkan dan nod.' },
+            normal:    { bantuan: 'Guru tanya, siswa think quietly. Optional 1-2 siswa share jika mau.' },
+            tantangan: { bantuan: 'Siswa boleh reflect dan share: "I think Ani feels... because..."' },
+          },
+        },
       ],
     },
 
@@ -547,21 +587,12 @@ Guru tunjuk kartu urutan acak, kelas sebutkan nama:
 [Tunjuk After that] → Kelas: "After that!"
 Ulangi 2-3 round, cepat tempo.
 
-ALT: GURU CERITA SINGKAT STORY, SISWA ANGKAT KARTU:
-Guru cerita: "In the story... First, Ani walked."
-Siswa yang punya kartu "First" angkat tangan.
-Guru: "Good! Then, she found the cat!"
-Siswa dengan "Then" angkat tangan.
-(etc)
-
-ATAU: SISWA SUSUN KARTU URUTAN ACAK JADI SEQUENCE BENAR:
-Guru acak kartu di papan (not in order). Siswa atur kembali jadi: First → Then → After → Finally.
-Guru: "Perfect! That is the right order!"`,
+ALT: SISWA SUSUN KARTU URUTAN ACAK JADI SEQUENCE BENAR.`,
             penutup : '"Great! You know the sequencing words!"',
           },
 
           audio_cue: {
-            contoh_guru  : 'What is this card? First! Then! After that! Finally! / In the story, first...then...after...finally!',
+            contoh_guru  : 'What is this card? First! Then! After that! Finally!',
             contoh_siswa : 'First! / Then! / After that! / Finally!',
             target_vocab : ['first', 'then', 'after that', 'finally'],
           },
@@ -586,7 +617,7 @@ Guru: "Perfect! That is the right order!"`,
           observation: { aktif: false },
 
           fallback: {
-            energi_turun : 'Ubah ke movement: "When I say First, jump! When I say Then, clap!" Atau buat mini action sequence.',
+            energi_turun : 'Ubah ke movement: "When I say First, jump! When I say Then, clap!"',
             waktu_mepet : 'Cukup 1 round guru tunjuk kartu, cepat, lanjut closure.',
           },
 
@@ -609,16 +640,13 @@ Guru: "Perfect! That is the right order!"`,
             pembuka : '"Before we finish, remember: stories are everywhere!"',
             selama  : `Guru: "The story we read today — about Ani and the cat — that is one story.
 But there are many more stories in the world.
-Stories in your home. Stories in your family. Stories you see in books, or movies, or when someone tells you something.
+Stories in your home. Stories in your family. Stories you see in books, or movies.
 
-Tonight when you go home, maybe your parent or older sibling will tell you a story.
+Tonight when you go home, maybe your parent will tell you a story.
 Or maybe you will see a story on TV.
-Maybe a picture book with a story.
-When you hear or see a story, remember the words we learned today:
-First... then... after that... finally.
+When you hear or see a story, remember the words: First... then... after that... finally.
 
-You do not have to study it. Just notice it. Just remember.
-Listening to stories is fun. And you are very good listeners!"
+You do not have to study it. Just notice it. Just remember."
 
 CLOSURE:
 "Thank you for listening to Ani's story today.
@@ -642,10 +670,38 @@ See you next time! Goodbye!"`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Review cepat: Guru tunjuk kartu urutan acak, kelas sebutkan nama. 2-3 round, tempo cepat. Atau siswa susun kartu jadi sequence benar.' },
-        { tipe: 'audio',     teks: 'First! Then! After that! Finally!' },
-        { tipe: 'instruksi', teks: 'Jembatan rumah: Guru jelaskan bahwa cerita ada di mana-mana (rumah, buku, TV). Minta siswa perhatikan cerita natural (tanpa pressure). Closure: "Goodbye, amazing storytellers!"' },
-        { tipe: 'audio',     teks: 'Stories are everywhere. You are great listeners and thinkers. Goodbye, class!' },
+        {
+          tipe: 'instruksi',
+          teks: 'Review cepat: Guru tunjuk kartu urutan acak, kelas sebutkan nama. 2-3 round, tempo cepat. Atau siswa susun kartu jadi sequence benar.',
+          mode: {
+            mudah:     { bantuan: 'Guru sebut dulu, siswa ulang. Cukup 2 kartu (first, finally).' },
+            normal:    { bantuan: 'Guru tunjuk, siswa jawab nama kartu. Atau angkat kartu saat guru cerita.' },
+            tantangan: { bantuan: 'Siswa susun kartu dari acak. Atau lead game (guru tunjuk, siswa jawab cepat).' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'First! Then! After that! Finally!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan pelan, siswa ulang per kata.' },
+            normal:    { bantuan: 'Ucapkan natural, siswa ulang bersama.' },
+            tantangan: { bantuan: 'Siswa lead: sebutkan sendiri atau buat kalimat per vocab.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Jembatan rumah: Guru jelaskan bahwa cerita ada di mana-mana (rumah, buku, TV). Minta siswa perhatikan cerita natural (tanpa pressure). Closure: "Goodbye, amazing storytellers!"',
+          mode: {
+            mudah:     { bantuan: 'Pesan simple: "Di rumah ada banyak cerita. Dengarkan saja." Tidak perlu siswa respond.' },
+            normal:    { bantuan: 'Guru jelaskan jembatan natural. Siswa dengarkan.' },
+            tantangan: { bantuan: 'Guru invite: "Cerita apa yang kamu suka di rumah?" — voluntary sharing.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Stories are everywhere. You are great listeners and thinkers. Goodbye, class!',
+          mode: null,
+        },
       ],
     },
 
@@ -669,13 +725,13 @@ See you next time! Goodbye!"`,
           micro_script: {
             pembuka : 'Sambil siswa bersiap pulang, dekati beberapa siswa yang belum sempat berbicara banyak di Inti. Beri prompt comprehension + retelling.',
             selama  : `Contoh prompt (dengan kartu urutan & halaman cerita di tangan):
-1. Comprehension: "Who is the main character in the story? / What did she find? / Where did they find the home?"
+1. Comprehension: "Who is the main character? / What did she find? / Where did they find the home?"
 2. Retelling: "Can you tell me the story again? Use first, then, after that, finally."
 3. Emotion: "How did Ani feel when she helped the cat? Why?"
 
 Amati:
 - Bisa jawab 2-3 comprehension questions dengan benar?
-- Bisa ceritakan kembali dengan minimal 2 sequencing vocab (first/then atau after/finally)?
+- Bisa ceritakan kembali dengan minimal 2 sequencing vocab?
 - Bisa identify character emotion & reason?`,
             penutup : '',
           },

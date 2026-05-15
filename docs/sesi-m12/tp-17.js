@@ -5,9 +5,7 @@
  * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
- * STATUS: DRAFT Sesi M12 — Mei 2026
- *
- * Migrated from: fase-a.js → tujuan_pembelajaran[16] (v3)
+ * STATUS: UPDATED — langkah[] ditambah field mode (Fase 9)
  *
  * KARAKTER KHAS TP 17:
  *   - Topik TINGGI sensitif — hobi bisa expose kondisi ekonomi keluarga.
@@ -16,24 +14,18 @@
  *   - Aktivitas utama: hobi identification + pola practice (I like...because...)
  *     + pair dialogue + voluntary sharing.
  *   - Pembuka hook: guru model hobi sendiri (show enthusiasm, not expertise).
- *   - Inti: introduce 8 hobbies via kartu + gerund structure + pola practice +
- *     pair dialogue + class survey (REIMAGINED: silent preference, no verbal count).
- *   - Penutup: voluntary presentation (raise hand only, NO pressure).
- *   - Closure: jembatan rumah — perhatikan hobi di sekitar (natural curiosity).
  *
  * SCOPE DESIGN:
  *   - Hobbies: 8 item (reading, drawing, singing, dancing, playing football,
- *     cooking, swimming, cycling) — universal framing, bukan "do you have access?"
- *   - Pola: "I like [gerund] because it is [fun / interesting]" (binary reason only)
- *   - Reason: 2 pilihan (fun, interesting) — simple, clear
+ *     cooking, swimming, cycling)
+ *   - Pola: "I like [gerund] because it is [fun / interesting]"
+ *   - Reason: 2 pilihan (fun, interesting)
  *
  * PENERAPAN PATTERN INKLUSIVITAS (CONTEXT.md §Pattern Inklusivitas):
- *   - Pattern 1: Scripted micro_script untuk hobi modeling (guru baca script).
- *   - Pattern 2: Skip aktivitas personal expose — presentation VOLUNTARY,
- *     survey diubah (silent preference, bukan verbal count).
- *   - Pattern 4: Pair dialogue universal — semua siswa dapat turn, universal context.
- *   - Pattern 5: Fallback sensitif ketat — siswa yang tidak volunteer TIDAK dipaksa,
- *     tetap dihargai ("You can tell me later if you prefer").
+ *   - Pattern 1: Scripted micro_script untuk hobi modeling.
+ *   - Pattern 2: Skip aktivitas personal expose — presentation VOLUNTARY.
+ *   - Pattern 4: Pair dialogue universal.
+ *   - Pattern 5: Fallback sensitif ketat.
  *
  * REFERENSI:
  *   - SCHEMA.md v4.3
@@ -72,7 +64,7 @@ const TP_17 = {
       pdf_ref            : 'tp-17-v1.pdf',
       pdf_halaman        : 1,
       reusable_lintas_tp : true,
-      keterangan         : '8 kartu A5 dengan gambar & text: reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. Ilustrasi netral & beragam. Universal framing (tidak "do you have?", tapi "which appeals to you?").',
+      keterangan         : '8 kartu A5 dengan gambar & text: reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. Ilustrasi netral & beragam. Universal framing.',
     },
   ],
 
@@ -102,8 +94,8 @@ const TP_17 = {
 I also like cooking. I cook dinner at home. Cooking is interesting because I try new recipes.
 What about you? What do you like to do?"
 
-TONE: Enthusiastic, natural, relatable — guru menunjukkan bahwa semua orang punya hobi.
-TIDAK: "I HAVE an expensive hobby" atau "I AFFORD to..." — cukup "I like X because it is fun."
+TONE: Enthusiastic, natural, relatable.
+TIDAK: "I HAVE an expensive hobby" — cukup "I like X because it is fun."
 
 Guru: "Hobbies are things we love to do. Everyone has hobbies. Today, we learn hobbies in English!"`,
             penutup : '"Let us learn about hobbies together!"',
@@ -144,8 +136,24 @@ Guru: "Hobbies are things we love to do. Everyone has hobbies. Today, we learn h
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Guru ceritakan hobi sendiri dengan enthusiasm. "I like reading because it is fun. I like cooking because it is interesting." Tanya siswa: "What do you like to do?" (listen, jangan push respons).' },
-        { tipe: 'audio',     teks: 'I like reading because it is fun! I like cooking because it is interesting! What do you like to do?' },
+        {
+          tipe: 'instruksi',
+          teks: 'Guru ceritakan hobi sendiri dengan enthusiasm. "I like reading because it is fun. I like cooking because it is interesting." Tanya siswa: "What do you like to do?" (listen, jangan push respons).',
+          mode: {
+            mudah:     { bantuan: 'Guru ceritakan hobi dengan gesture/action yang jelas. Siswa dengarkan saja, tidak perlu respond.' },
+            normal:    { bantuan: 'Guru ceritakan, tanya "What do you like?" — siswa boleh jawab atau shrug (OK).' },
+            tantangan: { bantuan: 'Guru tanya detailed: "What hobbies do you have?" — siswa jawab panjang atau ask follow-up questions.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'I like reading because it is fun! I like cooking because it is interesting! What do you like to do?',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan pelan dengan gesture. Siswa dengarkan.' },
+            normal:    { bantuan: 'Ucapkan natural. Siswa optional respond.' },
+            tantangan: { bantuan: 'Ucapkan + tanya balik siswa langsung.' },
+          },
+        },
       ],
     },
 
@@ -180,20 +188,18 @@ Guru tunjuk kartu satu per satu, ucapkan + action/gesture:
 8. CYCLING — "cycling" (gesture: pegang setir, pedal)
 
 Kelas ulang setiap gerund setelah guru ucap.
-Ulangi 8 hobbies cepat (2 detik per hobi): "Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling!"
+Ulangi 8 hobbies cepat: "Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling!"
 
 FASE 2 — GERUND STRUCTURE (2 menit):
-Guru tulis di papan: "I like ___" (blank)
 "I like reading. I like drawing. I like singing. I like dancing. I like playing football. I like cooking. I like swimming. I like cycling!"
 Kelas ulang setiap kalimat.
-
 KEY: Gerund MUST digunakan — bukan "I like read" tapi "I like reading"`,
             penutup : '"You know all the hobbies now!"',
           },
 
           audio_cue: {
             contoh_guru  : 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling! / I like reading. I like drawing. I like singing...',
-            contoh_siswa : 'Reading! / Drawing! / Singing! / Dancing! / Playing football! / Cooking! / Swimming! / Cycling! / (ulang pola)',
+            contoh_siswa : 'Reading! / Drawing! / Singing! / Dancing! / Playing football! / Cooking! / Swimming! / Cycling!',
             target_vocab : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
           },
 
@@ -218,7 +224,7 @@ KEY: Gerund MUST digunakan — bukan "I like read" tapi "I like reading"`,
 
           fallback: {
             kelas_gelisah : 'Tambah lebih banyak gesture/action — buat lebih fun, less formal.',
-            siswa_lupa_gerund : 'Normal. Guru repeat "reading, not read" di context natural — tidak perlu formal grammar lesson.',
+            siswa_lupa_gerund : 'Normal. Guru repeat "reading, not read" di context natural.',
             energi_turun : 'Do action lebih exaggerated, atau ajak siswa lead gesture 1-2 hobi.',
           },
 
@@ -243,24 +249,19 @@ KEY: Gerund MUST digunakan — bukan "I like read" tapi "I like reading"`,
 Guru: "Why do we like hobbies? There are 2 reasons:
 1. Because it is FUN! (gesture: smiley, happy)
 2. Because it is INTERESTING! (gesture: thinking, curious eyes)"
-
 Kelas ulang: "Fun! Interesting!"
 
 FASE 2 — FULL POLA (3 menit):
 Guru model pola lengkap dengan hobi + reason (mixed):
-"I like reading because it is interesting." (gesture: thinking)
-"I like dancing because it is fun!" (gesture: happy, dance)
-"I like cooking because it is fun!" (gesture: smile)
-"I like singing because it is interesting." (gesture: thinking)
-"I like swimming because it is fun!" (gesture: happy)
-
-Kelas ulang setiap kalimat sambil guru model.
-PENTING: Guru randomize — bukan semua FUN, tidak semua INTERESTING — show choice.
+"I like reading because it is interesting."
+"I like dancing because it is fun!"
+"I like cooking because it is fun!"
+"I like singing because it is interesting."
+Kelas ulang setiap kalimat.
+PENTING: Guru randomize — bukan semua FUN, tidak semua INTERESTING.
 
 FASE 3 — GURU TANYA, KELAS JAWAB (1 menit):
-Guru: "I like drawing. Why?" → Kelas: "Because it is fun!" atau "Because it is interesting!"
-Guru: "I like cycling. Why?" → Kelas: "Because it is fun!"
-(Kelas boleh pilih, no single right answer — fokus pada structure)`,
+Guru: "I like drawing. Why?" → Kelas: "Because it is fun!" atau "Because it is interesting!"`,
             penutup : '"You know why we like things!"',
           },
 
@@ -292,7 +293,7 @@ Guru: "I like cycling. Why?" → Kelas: "Because it is fun!"
           fallback: {
             siswa_confused : 'Focus pada 1 reason saja. Interesting adalah grammar-heavy — fun lebih mudah untuk usia 7.',
             kelas_lupa : 'Ulangi cycle 2x. Repetisi adalah kunci.',
-            waktu_mepet : 'Cukup Fase 1 + 2. Skip guru tanya (Fase 3). Lanjut ke pair work dengan kartu di tangan.',
+            waktu_mepet : 'Cukup Fase 1 + 2. Skip guru tanya (Fase 3).',
           },
 
           advance: { mode: 'manual' },
@@ -316,25 +317,17 @@ Guru: "I like cycling. Why?" → Kelas: "Because it is fun!"
 Guru + 1 siswa model dulu:
 Guru (A): "What do you like to do?"
 Siswa (B): "I like reading because it is interesting."
-Guru (A): "Oh, nice! Reading is fun!"
-Siswa (B): "Yes! What about you? What do you like?"
-Guru (A): "I like dancing because it is fun!"
-(Simple, natural, bukan over-formal)
+Guru (A): "Oh, nice! What about you? What do you like?"
+Siswa (B): "I like dancing because it is fun!"
 
 FASE 2 — PAIR PRACTICE (5 menit):
-Siswa pasang 2 orang. Beri setiap pair 1 set kartu hobi (atau reference list).
+Siswa pasang 2 orang. Beri setiap pair kartu hobi.
 Siswa A: "What do you like to do?"
-Siswa B: "I like [hobi kartu 1] because it is [fun/interesting]. What about you?"
-Siswa A: "I like [hobi kartu 2] because it is [fun/interesting]."
-(Guru walk around, listen & assist. Jangan interrupt flow)
-
-CYCLE: 3-4 hobi pair, lalu rotate (Siswa B jadi yang tanya).
-TARGET: Setiap siswa dapat 2+ turns. Tidak perlu perfect — fokus pada attempt & participation.
+Siswa B: "I like [hobi] because it is [fun/interesting]. What about you?"
+CYCLE: 3-4 hobi pair, lalu rotate.
 
 FASE 3 — CIRCLE (2 menit — optional):
-Lingkar, guru atau siswa tanya 3-4 orang:
-"What do you like?"
-Siswa respond dengan pola (atau simpel jawab)`,
+Lingkar, guru atau siswa tanya 3-4 orang.`,
             penutup : '"You can talk about hobbies in English now!"',
           },
 
@@ -367,7 +360,7 @@ Siswa respond dengan pola (atau simpel jawab)`,
             pair_tidak_jalan : 'Guru pair dengan siswa itu dulu, atau 3-orang group. Model dulu sebelum peer pair.',
             siswa_malu : 'Guru jadi listener/partner. Jangan push ke peer pair jika tidak siap.',
             pair_canggung : 'Change pasangan atau format group 3. Fleksibel dengan pairing.',
-            waktu_mepet : 'Cukup Fase 1 + 2 partial (2 min). Skip Circle. Focus pada participation, bukan completion.',
+            waktu_mepet : 'Cukup Fase 1 + 2 partial (2 min). Skip Circle.',
           },
 
           advance: { mode: 'manual' },
@@ -387,28 +380,18 @@ Siswa respond dengan pola (atau simpel jawab)`,
 
           micro_script: {
             pembuka : '"Let us see which hobbies everyone likes! Stand up!"',
-            selama  : `REIMAGINED SURVEY (bukan line 900 v3 yang "Raise your hand — who likes singing?"):
+            selama  : `REIMAGINED SURVEY (bukan verbal count):
 Guru: "I will show hobi card. If you like this hobby, give me thumbs up!"
 [Tunjuk READING] → Siswa thumbs up (silent, no count)
 [Tunjuk DRAWING] → Thumbs up
-[Tunjuk SINGING] → Thumbs up
 (etc)
 
 Guru: "Nice! So many of you have different hobbies. That is beautiful!"
 
-BENEFIT:
-- Silent participation (no social pressure from counting)
-- No "siapa yang tidak suka apa-apa?" exposure
-- Fokus pada expression, bukan comparison
-- Inclusive — semua siswa participate equally
-
-ALT: MOVEMENT GAME (jika kelas energik):
-Guru: "I say a hobby. If you like it, move like it! Reading = turn head like reading. Drawing = pretend draw. Singing = sing 'la la'. Dancing = dance!"
-Guru cue: "Reading!" → Siswa gesture reading
-Guru cue: "Dancing!" → Siswa gesture dancing
-(etc)
-
-Tujuan sama: express preference via movement, tidak verbal count.`,
+ALT: MOVEMENT GAME:
+Guru: "I say a hobby. If you like it, move like it!"
+"Reading!" → Siswa gesture reading
+"Dancing!" → Siswa gesture dancing`,
             penutup : '"Everyone likes different things! That is OK! That is normal!"',
           },
 
@@ -447,12 +430,60 @@ Tujuan sama: express preference via movement, tidak verbal count.`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Tunjuk kartu hobi satu per satu + gesture/action. Kelas ulang hobi (gerund form). Ulangi cepat semua 8 hobi.' },
-        { tipe: 'audio',     teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling! / I like reading. I like dancing...' },
-        { tipe: 'instruksi', teks: 'Guru model pola "I like... because it is fun/interesting" dengan mixed examples. Kelas ulang.' },
-        { tipe: 'audio',     teks: 'I like reading because it is interesting. I like dancing because it is fun!' },
-        { tipe: 'instruksi', teks: 'Pair dialogue: Siswa A tanya "What do you like?" Siswa B jawab "I like... because...". Rotate 3-4 hobi per pair, kemudian switch roles.' },
-        { tipe: 'instruksi', teks: 'Class survey (reimagined): Guru tunjuk kartu hobi, siswa beri thumbs up (SILENT, bukan verbal count). Atau movement gesture per hobi.' },
+        {
+          tipe: 'instruksi',
+          teks: 'Tunjuk kartu hobi satu per satu + gesture/action. Kelas ulang hobi (gerund form). Ulangi cepat semua 8 hobi.',
+          mode: {
+            mudah:     { bantuan: 'Cukup 4 hobi utama (reading, drawing, singing, dancing). Guru action + gesture jelas. Siswa dengarkan & gesture mirror.' },
+            normal:    { bantuan: '8 hobi, guru introduce dengan action. Siswa ulang setiap hobi setelah guru.' },
+            tantangan: { bantuan: '8 hobi, siswa boleh lead atau ciptakan gesture alternatif sendiri.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling! / I like reading. I like dancing...',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan 4 hobi saja perlahan. Siswa mirror gesture.' },
+            normal:    { bantuan: 'Ucapkan semua 8. Siswa ulang setiap hobi.' },
+            tantangan: { bantuan: 'Ucapkan cepat atau acak. Siswa respond spontan.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Guru model pola "I like... because it is fun/interesting" dengan mixed examples. Kelas ulang.',
+          mode: {
+            mudah:     { bantuan: 'Cukup focus pada 1 reason dulu (fun). Guru repeat, siswa ulang. Tidak perlu both reasons.' },
+            normal:    { bantuan: '2 reasons (fun/interesting). Guru model mixed, siswa ulang & answer guru questions.' },
+            tantangan: { bantuan: '2 reasons, siswa ciptakan kalimat sendiri atau elaborate alasan ("fun because I can move a lot").' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'I like reading because it is interesting. I like dancing because it is fun!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan 1 contoh saja (I like reading because it is fun). Siswa ulang.' },
+            normal:    { bantuan: 'Ucapkan 2 contoh. Kelas ulang bersama.' },
+            tantangan: { bantuan: 'Ucapkan 1x, siswa buat kalimat sendiri dengan hobi berbeda.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Pair dialogue: Siswa A tanya "What do you like?" Siswa B jawab "I like... because...". Rotate 3-4 hobi per pair, kemudian switch roles.',
+          mode: {
+            mudah:     { bantuan: 'Guru model banyak. Pair practice: guru assist dengan prompt dulu. Cukup 1-2 hobi per pair.' },
+            normal:    { bantuan: 'Guru model 1x, siswa pair practice dengan minimal prompt. 3-4 hobi per cycle.' },
+            tantangan: { bantuan: 'Siswa pair buat dialogue panjang atau elaborate alasan mereka.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Class survey (reimagined): Guru tunjuk kartu hobi, siswa beri thumbs up (SILENT, bukan verbal count). Atau movement gesture per hobi.',
+          mode: {
+            mudah:     { bantuan: 'Cukup thumbs up/down — simple, clear, no verbal response needed.' },
+            normal:    { bantuan: 'Thumbs up atau movement gesture saat guru show kartu.' },
+            tantangan: { bantuan: 'Elaborasi gesture atau tanya teman: "Why do you like swimming?" setelah survey.' },
+          },
+        },
       ],
     },
 
@@ -476,17 +507,10 @@ Tujuan sama: express preference via movement, tidak verbal count.`,
           micro_script: {
             pembuka : '"Let us remember all the hobbies one more time!"',
             selama  : `MINI GAME — GURU TUNJUK KARTU ACAK, KELAS SEBUTKAN:
-Guru tunjuk kartu hobi acak (shuffle), kelas sebutkan:
-[Reading] → "Reading!"
-[Dancing] → "Dancing!"
-[Cycling] → "Cycling!"
-(etc, 3-4 round, cepat tempo)
+Guru tunjuk kartu hobi acak (shuffle), kelas sebutkan (3-4 round, cepat tempo).
 
 ALT: GESTURE GAME:
-Guru do gesture (reading, dancing, swimming, etc), kelas sebutkan hobi + tiru gesture.
-
-ALT: WHISPER GAME (small classes):
-Guru bisik satu hobi ke siswa pertama, siswa pass ke teman (telephone game), last siswa say loud.`,
+Guru do gesture, kelas sebutkan hobi + tiru gesture.`,
             penutup : '"Perfect! You know all the hobbies!"',
           },
 
@@ -516,7 +540,7 @@ Guru bisik satu hobi ke siswa pertama, siswa pass ke teman (telephone game), las
           observation: { aktif: false },
 
           fallback: {
-            energi_turun : 'Ubah ke full body action: "When I say swimming, everyone swim! When I say reading, everyone pretend read!"',
+            energi_turun : 'Ubah ke full body action: "When I say swimming, everyone swim!"',
             waktu_mepet : 'Cukup 1-2 round guru tunjuk kartu, cepat, lanjut closure.',
           },
 
@@ -529,7 +553,7 @@ Guru bisik satu hobi ke siswa pertama, siswa pass ke teman (telephone game), las
           judul : 'Voluntary Hobby Sharing (ZERO Pressure)',
           pm    : 'joyful',
 
-          tujuan_komunikasi : 'Optional sharing — siswa yang ingin bicara tentang hobi mereka dapat safe space, siswa lain tetap dihargai.',
+          tujuan_komunikasi : 'Optional sharing — siswa yang ingin bicara tentang hobi mereka dapat safe space.',
           vocab_target      : [],
 
           durasi_target_detik : 300,
@@ -538,24 +562,17 @@ Guru bisik satu hobi ke siswa pertama, siswa pass ke teman (telephone game), las
           micro_script: {
             pembuka : '"Some of you might want to share your favorite hobby! You do not have to. But if you want, I love to hear!"',
             selama  : `Guru: "Raise your hand if you want to share your hobby in 1-2 sentences.
-Example: 'My name is Budi. I like drawing because it is fun.'
-Or just: 'I like swimming because it is fun!'
+Example: 'I like drawing because it is fun.'
 Anything is OK. Just do your best!"
 
 [TUNGGU HAND RAISE — jangan force]
 
-Jika ada yang raise hand:
-Guru: "Thank you! Come tell us!"
-(Siswa share di depan atau dari tempat duduk — fleksibel)
-[Kelas tepuk tangan setelah setiap share]
-
 Jika tidak ada yang raise hand:
 Guru: "That is OK! You can tell me at break time if you want.
-Or just keep it in your heart. Both are beautiful. Thank you all for learning today!"
+Or just keep it in your heart. Both are beautiful."
 
 FALLBACK KETAT:
-"You do NOT have to share. No one will be angry. Sharing is volunteer.
-If you do not want, that is PERFECT. I am proud of you anyway."`,
+"You do NOT have to share. No one will be angry. Sharing is volunteer."`,
             penutup : '"Thank you for being brave and kind today!"',
           },
 
@@ -571,7 +588,7 @@ If you do not want, that is PERFECT. I am proud of you anyway."`,
 
           fallback: {
             tidak_ada_volunteer : 'GOOD. Tidak masalah. Guru acknowledge: "That is OK! Listening is also important. You were great listeners today."',
-            siswa_malu_saat_raising_hand : 'Guru boleh encourage gentle: "Go ahead, you can do it. Just 1 sentence." Tapi jika masih malu, guru respect (jangan push).',
+            siswa_malu_saat_raising_hand : 'Guru boleh encourage gentle. Tapi jika masih malu, guru respect (jangan push).',
             siswa_yang_share_gugup : 'Guru berdiri dekat, encouraging eye contact. "Take your time. No rush. You are doing great."',
           },
 
@@ -593,29 +610,15 @@ If you do not want, that is PERFECT. I am proud of you anyway."`,
           micro_script: {
             pembuka : '"Before we finish, remember: hobbies are everywhere!"',
             selama  : `Guru: "Today we learned about hobbies.
-But hobbies are not just in this classroom.
-When you go home, you will see people with hobbies.
-Your mother, father, sibling — they all have hobbies.
-Your teacher has hobbies. Your friends have hobbies.
-Some people like reading. Some like cooking. Some like sports. Some like art.
-
-Here is my question for you (silent answer, in your heart):
-'What is ONE hobby you think is fun?'
-You do not have to tell me. Just think about it.
-Maybe you like reading. Maybe you like dancing. Maybe you like swimming.
-Maybe you like something we did not even talk about!
-
 Tonight, notice people's hobbies at home. Just notice. Observe.
 'Mama likes cooking. Papa likes watching football. Sister likes drawing.'
 It is fun to notice.
 
-And remember: all hobbies are OK. All people are OK.
-Your hobbies are beautiful. Your friends' hobbies are beautiful.
-Different people like different things. That is what makes the world interesting!"
+And remember: all hobbies are OK. Different people like different things.
+That is what makes the world interesting!"
 
 CLOSURE:
-"Thank you for learning about hobbies today.
-You did an amazing job!
+"Thank you for learning about hobbies today. You did an amazing job!
 See you next time! Goodbye!"`,
             penutup : '"Everyone has hobbies. That is beautiful! Goodbye, class!"',
           },
@@ -635,11 +638,47 @@ See you next time! Goodbye!"`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Review cepat: Guru tunjuk kartu hobi acak, kelas sebutkan nama. 2-3 round, tempo cepat.' },
-        { tipe: 'audio',     teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling!' },
-        { tipe: 'instruksi', teks: 'Voluntary sharing: Guru tanya "Who wants to share their hobby?" Raise hand only. ZERO pressure — jika tidak ada volunteer, itu OK.' },
-        { tipe: 'instruksi', teks: 'Jembatan rumah: Guru jelaskan bahwa hobi ada di mana-mana. Minta siswa notice hobi di rumah (silent observation, tidak ada assessment). Closure: "Different people like different things. That is beautiful."' },
-        { tipe: 'audio',     teks: 'Hobbies are everywhere. Notice them at home. Everyone has hobbies. That is beautiful! Goodbye, class!' },
+        {
+          tipe: 'instruksi',
+          teks: 'Review cepat: Guru tunjuk kartu hobi acak, kelas sebutkan nama. 2-3 round, tempo cepat.',
+          mode: {
+            mudah:     { bantuan: 'Guru sebut dulu, siswa ulang. Cukup 4 hobi. Gesture optional.' },
+            normal:    { bantuan: 'Guru tunjuk, siswa jawab nama hobi + gesture.' },
+            tantangan: { bantuan: 'Siswa lead game atau gesture cepat, teman tebak hobi.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling!',
+          mode: {
+            mudah:     { bantuan: 'Cukup 4 hobi, perlahan.' },
+            normal:    { bantuan: 'Semua 8 hobi, natural.' },
+            tantangan: { bantuan: 'Cepat atau siswa lead.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Voluntary sharing: Guru tanya "Who wants to share their hobby?" Raise hand only. ZERO pressure — jika tidak ada volunteer, itu OK.',
+          mode: {
+            mudah:     { bantuan: 'Skip voluntary sharing jika energi kelas rendah. Langsung ke jembatan rumah.' },
+            normal:    { bantuan: 'Tanya voluntary, tunggu 5 detik. Jika tidak ada, lanjut — OK.' },
+            tantangan: { bantuan: 'Undang 2-3 siswa untuk share + reason.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Jembatan rumah: Guru jelaskan bahwa hobi ada di mana-mana. Minta siswa notice hobi di rumah (silent observation, tidak ada assessment). Closure: "Different people like different things. That is beautiful."',
+          mode: {
+            mudah:     { bantuan: 'Pesan simple: "Di rumah kamu suka apa? Perhatikan saja." Tidak perlu respond.' },
+            normal:    { bantuan: 'Guru jelaskan jembatan natural. Siswa dengarkan.' },
+            tantangan: { bantuan: 'Guru invite: "Coba bilang 1 hobi yang kamu suka di rumah — besok ceritakan!" — voluntary.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Hobbies are everywhere. Notice them at home. Everyone has hobbies. That is beautiful! Goodbye, class!',
+          mode: null,
+        },
       ],
     },
 

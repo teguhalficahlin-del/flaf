@@ -5,38 +5,30 @@
  * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
  * =============================================================
  *
- * STATUS: DRAFT Sesi M13 — Mei 2026
- *
- * Migrated from: fase-a.js → tujuan_pembelajaran[17] (v3)
+ * STATUS: UPDATED — langkah[] ditambah field mode (Fase 9)
  *
  * KARAKTER KHAS TP 18:
  *   - Tipe CAPSTONE — penutup Fase A, integrative project + culminating assessment.
- *   - Desain: mandatory presentation (semua siswa) + guru support untuk pemalu
- *     (bukan forced, tapi encouraged dengan bantuan konkret).
+ *   - Desain: mandatory presentation (semua siswa) + guru support untuk pemalu.
  *   - Media: template poster standardized (in-class creation, 10 menit).
- *   - Assessment: portfolio-based — presentasi adalah satu-satunya bukti belajar
- *     (tidak ada tes tambahan).
- *   - Tone: CELEBRATORY — ini hari terakhir Fase A, "You finished Phase A!"
+ *   - Assessment: portfolio-based — presentasi adalah satu-satunya bukti belajar.
+ *   - Tone: CELEBRATORY — ini hari terakhir Fase A.
  *   - Closure: Refleksi + applause + goodbye (emotional closure untuk phase).
  *
  * SCOPE DESIGN:
  *   - Poster content: nama → keluarga → rumah → hobi (recycle dari TP 01–17)
  *   - Speaking target: 2–5 kalimat integration dari TP 01–17
- *   - Assessment: Listening (merespons Q&A), Speaking (presentasi clarity),
- *     Reading (baca poster sendiri)
+ *   - Assessment: Listening, Speaking, Reading (baca poster sendiri)
  *
  * PENERAPAN PATTERN INKLUSIVITAS (CONTEXT.md):
- *   - Pattern 1: Scripted calm tone — guru set expectation aman ("tidak ada salah").
- *   - Pattern 2: Mandatory BUT supported — semua siswa harus present, tapi guru
- *     assist pemalu (no forced shame, supportive environment).
- *   - Pattern 5: Fallback sensitif — guru boleh start kalimat, adjust vocabulary,
- *     give time if nervous.
- *   - CELEBRATION: Final emotional closure untuk Fase A — semua berdiri, applause,
- *     reflect, goodbye ritual.
+ *   - Pattern 1: Scripted calm tone — guru set expectation aman.
+ *   - Pattern 2: Mandatory BUT supported — semua siswa present, guru assist pemalu.
+ *   - Pattern 5: Fallback sensitif — guru boleh start kalimat, adjust vocabulary.
+ *   - CELEBRATION: Final emotional closure untuk Fase A.
  *
  * REFERENSI:
  *   - SCHEMA.md v4.3
- *   - docs/sesi-m12/tp-17.js (format reference — last TP)
+ *   - docs/sesi-m12/tp-17.js (format reference)
  *   - CONTEXT.md §Pattern Inklusivitas
  */
 
@@ -108,23 +100,14 @@ const TP_18 = {
             pembuka : '"Hello everyone! Today is a very special day. This is the LAST day of Phase A English!"',
             selama  : `Guru ceritakan dengan calm, warm tone:
 "Today, you will share your 'My World' project with the class.
-Your project shows everything you learned in Phase A.
-Your name, your family, your house, your hobbies.
-
-I want to say something important:
-There is NO wrong answer today.
-There is NO test today.
+There is NO wrong answer today. There is NO test today.
 Today is CELEBRATION.
-You learned SO MUCH. You spoke English. You listened. You made friends.
-That is AMAZING.
 
 When you present, you might be nervous. That is OK.
-Your heart might beat fast. That is OK.
 You might forget a word. That is OK.
-I will help you. You can start, and I will help you finish.
+I will help you.
 
 Everyone will clap for you. Because you tried. Because you were brave.
-
 So today, we celebrate YOU. All of you. Together.
 Are you ready?"
 
@@ -158,8 +141,8 @@ Are you ready?"
           observation: { aktif: false },
 
           fallback: {
-            siswa_terlihat_nervous : 'Guru dekati, eye contact gentle, hand on shoulder (if appropriate). "You will do great. I will help you."',
-            kelas_energy_down : 'Tambah clap/cheer ke diri sendiri dulu ("Let us clap for ourselves for learning so much!"). Energy boost.',
+            siswa_terlihat_nervous : 'Guru dekati, eye contact gentle. "You will do great. I will help you."',
+            kelas_energy_down : 'Tambah clap/cheer ke diri sendiri dulu. Energy boost.',
           },
 
           advance: { mode: 'manual' },
@@ -190,10 +173,8 @@ Guru model contoh ringkas (5 kalimat):
 I have a big family. We live in a house.
 I like reading because it is fun!"
 
-Guru: "See? Simple. You know all these words from Phases A lessons!
-Your poster is YOUR story. YOUR world.
-Draw pictures. Write sentences. Make it beautiful or simple — it does not matter.
-What matters is YOU share YOUR world. That is what makes it special."`,
+Guru: "See? Simple. You know all these words from Phase A lessons!
+Your poster is YOUR story. YOUR world."`,
             penutup : '"Now, let us make YOUR poster! You have 10 minutes with my help!"',
           },
 
@@ -232,10 +213,42 @@ What matters is YOU share YOUR world. That is what makes it special."`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Set calm tone: "Today is special — last day of Phase A! This is celebration, not a test. You will all be amazing. I will help you."' },
-        { tipe: 'audio',     teks: 'This is the LAST day of Phase A! There is no test, no wrong answer. You will share your My World project. You are amazing!' },
-        { tipe: 'instruksi', teks: 'Tunjuk poster template: "My name — my family — my house — my hobby." Model contoh ringkas (5 kalimat guru bicara sendiri).' },
-        { tipe: 'audio',     teks: 'Hello! My name is... I am... years old. I have a... family. I live in a house. I like... because it is fun!' },
+        {
+          tipe: 'instruksi',
+          teks: 'Set calm tone: "Today is special — last day of Phase A! This is celebration, not a test. You will all be amazing. I will help you."',
+          mode: {
+            mudah:     { bantuan: 'Guru cerita lebih pendek, dengan more gesture & visual support (smile, thumbs up, open arms).' },
+            normal:    { bantuan: 'Guru cerita full script dengan warm tone, eye contact semua siswa.' },
+            tantangan: { bantuan: 'Guru bisa invite reflection: "How are you feeling today?" — siswa bisa verbalize.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'This is the LAST day of Phase A! There is no test, no wrong answer. You will share your My World project. You are amazing!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan hangat dan pelan. Siswa cukup dengarkan dan rasakan pesan positif.' },
+            normal:    { bantuan: 'Ucapkan dengan enthusiasm natural.' },
+            tantangan: { bantuan: 'Ucapkan + tanya "How are you feeling right now?" — siswa respond.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Tunjuk poster template: "My name — my family — my house — my hobby." Model contoh ringkas (5 kalimat guru bicara sendiri).',
+          mode: {
+            mudah:     { bantuan: 'Guru point tiap section + explain simple ("nama di sini, keluarga di sini"). Draw contoh atau show picture.' },
+            normal:    { bantuan: 'Guru show template & model example. Siswa understand struktur via visual + example.' },
+            tantangan: { bantuan: 'Guru tanya: "What will you write about your family?" — invite preview.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Hello! My name is... I am... years old. I have a... family. I live in a house. I like... because it is fun!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan perlahan per kalimat, tunjuk section poster.' },
+            normal:    { bantuan: 'Ucapkan natural sebagai model.' },
+            tantangan: { bantuan: 'Siswa bisa try preview kalimat mereka sendiri.' },
+          },
+        },
       ],
     },
 
@@ -268,13 +281,12 @@ Guru walk around:
 - Siswa yang cepat: "Draw pictures! Make it beautiful!"
 - Siswa yang stuck: "What is your family? Tell me. I help you write."
 - Siswa yang nervous: "You are doing great. Take your time."
-- Siswa yang blank: "Think of your hobby. You like playing? drawing? singing? Let us write it."
+- Siswa yang blank: "Think of your hobby. You like playing? drawing? Let us write it."
 
 PENTING:
-- Spelling bukan priority — focus pada confidence & expression
-- Drawing + writing BOTH OK — mixed media oke
-- Guru facilitate, bukan judge
-- Semua siswa selesai sebelum presentation (guru bantu yang belum selesai)`,
+- Spelling bukan priority
+- Drawing + writing BOTH OK
+- Guru facilitate, bukan judge`,
             penutup : '"Time! Your posters are beautiful! Now, we present!"',
           },
 
@@ -297,7 +309,7 @@ PENTING:
             },
             tantangan: {
               bantuan: 'Siswa create poster sendiri (guru available untuk Q&A). Bisa add decoration atau extra sentences.',
-              panjang_speaking: 'Write sentences full sendiri atau add elaboration (panjang speaking tidak required di fase ini).',
+              panjang_speaking: 'Write sentences full sendiri atau add elaboration.',
             },
           },
 
@@ -306,7 +318,7 @@ PENTING:
           fallback: {
             siswa_belum_selesai_saat_waktu_habis : 'OK. Lanjut presentation dengan poster yang ada. Guru bisa complete during presentation jika perlu.',
             siswa_panik_tidak_tahu_tulis : 'Guru scribe — siswa bicara, guru tulis. "Tell me your name. I write." Confidence > mechanics.',
-            energi_turun : 'Play soft music atau encourage peer help ("Ask your friend for idea"). Keep mood light.',
+            energi_turun : 'Play soft music atau encourage peer help. Keep mood light.',
           },
 
           advance: { mode: 'manual' },
@@ -331,29 +343,24 @@ Guru present sendiri dulu (role model):
 "Hello! My name is [teacher]. I am [age]. I have a big family.
 We live in a house. I like reading because it is fun!"
 
-FASE 2 — PRESENT CYCLE (banyak menit):
-Guru: "Who wants to go first? Or I will call on you." [tunggu volunteer atau randomly select]
-
-Siswa maju (berdiri di depan atau dari tempat duduk — fleksibel):
+FASE 2 — PRESENT CYCLE:
+Guru: "Who wants to go first? Or I will call on you."
+Siswa maju (berdiri di depan atau dari tempat duduk — fleksibel).
 Siswa present poster + read/speak 2–5 kalimat.
 
-Jika siswa berhenti/gugup:
-Guru NOT repeat. Guru ENCOURAGE: "You are doing great! What is next?" [gesture ke poster]
-Guru juga HELP: "Your family... tell us about them?"
-Guru support sentence starter jika perlu (dari media-reference-sentences).
+Jika siswa gugup:
+Guru ENCOURAGE: "You are doing great! What is next?" [gesture ke poster]
+Guru support sentence starter jika perlu.
 
 Setelah selesai:
-Guru: "Thank you! Class, clap your hands!" [semua tepuk]
-Guru ALSO: "You were so brave! That was wonderful!"
+Guru: "Thank you! Class, clap your hands!"
 
 FASE 3 — ROTATION:
-Lanjut siswa berikutnya. Guru panggil sambil assist yang gugup.
-TARGET: Semua siswa dapat giliran (ada 20-30 siswa, ~2-3 menit per siswa).
+Lanjut siswa berikutnya. TARGET: Semua siswa dapat giliran.
 
 KEY:
-- Zero judgment. Zero counting for grade per se.
-- Focus pada courage & attempt, bukan perfection.
-- Guru ACTIVELY assist pemalu (start sentence, give vocab, give time).
+- Zero judgment. Focus pada courage & attempt, bukan perfection.
+- Guru ACTIVELY assist pemalu.
 - Applause AFTER setiap siswa (ritual respect).`,
             penutup : '"Everyone presented! You are ALL amazing!"',
           },
@@ -373,7 +380,7 @@ KEY:
             },
             normal: {
               bantuan: 'Guru assist minimal — give prompt atau tanya "What is next?" jika stuck. Siswa present 3-4 kalimat dengan guide.',
-              panjang_speaking: 'Ucapkan 3-4 kalimat dengan struktur dari template (mungkin lihat poster atau card reference).',
+              panjang_speaking: 'Ucapkan 3-4 kalimat dengan struktur dari template.',
             },
             tantangan: {
               bantuan: 'Siswa present 4-5 kalimat spontan (minimal prompt). Guru tanya follow-up Q&A jika ada waktu.',
@@ -384,10 +391,10 @@ KEY:
           observation: { aktif: true, n_siswa: null, indikator: ['confidence', 'response', 'participation'], rotasi_priority: 'all_students', tag_set: 'standar' },
 
           fallback: {
-            siswa_sangat_nervous : 'Guru jadi front person: "This is Budi. Budi likes drawing. Budi has a big family." Siswa bisa cukup nod/point. Still counts sebagai participation.',
-            siswa_blank : 'Guru ask simple Q&A: "What is your name?" → "What do you like?" → Siswa answer. Guru announce: "He likes swimming!" — count sebagai presented.',
-            waktu_tidak_cukup_semua : 'OK. Present sebanyak bisa. Siswa yang belum, guru bilang: "You will present at break time or next day. You will get your turn. I promise." No siswa ditinggal.',
-            kelas_mulai_bosan : 'Accelerate pace: "Quick presentations! 1 kalimat OK today!" atau take short break sebelum lanjut.',
+            siswa_sangat_nervous : 'Guru jadi front person: "This is Budi. Budi likes drawing." Siswa bisa cukup nod/point. Still counts sebagai participation.',
+            siswa_blank : 'Guru ask simple Q&A: "What is your name?" → "What do you like?" Guru announce hasil — count sebagai presented.',
+            waktu_tidak_cukup_semua : 'OK. Siswa yang belum, guru bilang: "You will present at break time or next day. I promise." No siswa ditinggal.',
+            kelas_mulai_bosan : 'Accelerate pace: "Quick presentations! 1 kalimat OK today!"',
           },
 
           advance: { mode: 'manual' },
@@ -395,10 +402,42 @@ KEY:
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'In-class creation (10 menit): Bagi template poster. Siswa isi 4 sections (nama/keluarga/rumah/hobi). Guru walk around assist. Semua selesai sebelum presentation.' },
-        { tipe: 'audio',     teks: 'Write your name! What is your family? Tell me. I help you write. You are doing great!' },
-        { tipe: 'instruksi', teks: 'Guru model presentation dulu. Kemudian setiap siswa present My World poster (2–5 kalimat). Guru assist jika perlu. Kelas tepuk setelah setiap siswa.' },
-        { tipe: 'audio',     teks: 'Hello! My name is... I have a... family. I like... because... / Thank you! Class, clap your hands!' },
+        {
+          tipe: 'instruksi',
+          teks: 'In-class creation (10 menit): Bagi template poster. Siswa isi 4 sections (nama/keluarga/rumah/hobi). Guru walk around assist. Semua selesai sebelum presentation.',
+          mode: {
+            mudah:     { bantuan: 'Guru assist step-by-step: "Write name first. Then family. What is your family? I write for you." Tidak perlu siswa tulis sendiri — guru scribe OK.' },
+            normal:    { bantuan: 'Guru assist per section: "What is your hobby? How do you say it in English?" Siswa write dengan minimal prompt.' },
+            tantangan: { bantuan: 'Siswa create poster sendiri (guru available untuk Q&A). Bisa add decoration atau extra sentences.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Write your name! What is your family? Tell me. I help you write. You are doing great!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan sambil bantu siswa satu per satu. Guru scribe jika perlu.' },
+            normal:    { bantuan: 'Walk around, encourage. Ucapkan ke kelas secara umum.' },
+            tantangan: { bantuan: 'Ucapkan ke siswa yang perlu motivasi saja. Biarkan yang lain mandiri.' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Guru model presentation dulu. Kemudian setiap siswa present My World poster (2–5 kalimat). Guru assist jika perlu. Kelas tepuk setelah setiap siswa.',
+          mode: {
+            mudah:     { bantuan: 'Guru assist heavily — start kalimat, give vocabulary, give time jika nervous. Bisa read dari poster atau guru help read. Clap meriah setelah selesai.' },
+            normal:    { bantuan: 'Guru assist minimal — give prompt atau tanya "What is next?" jika stuck. Siswa present 3-4 kalimat dengan guide.' },
+            tantangan: { bantuan: 'Siswa present 4-5 kalimat spontan (minimal prompt). Guru tanya follow-up Q&A jika ada waktu.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Hello! My name is... I have a... family. I like... because... / Thank you! Class, clap your hands!',
+          mode: {
+            mudah:     { bantuan: 'Guru bisa ucapkan kalimat, siswa repeat/nod. Clap meriah setelah setiap siswa.' },
+            normal:    { bantuan: 'Ucapkan setelah setiap siswa selesai sebagai encouragement.' },
+            tantangan: { bantuan: 'Siswa ucapkan sendiri. Guru ucapkan sebagai affirmation.' },
+          },
+        },
       ],
     },
 
@@ -429,44 +468,29 @@ And you learned SO MUCH in Phase A!
 From Greetings to Hobbies — you learned EVERYTHING!
 You can say your name. You can talk about your family.
 You can describe your house. You can tell your hobbies.
-You can understand instructions. You can tell stories.
-You can share feelings. You can present projects.
-
 THAT IS AMAZING!
 
 Now, let me ask you one question:
 What is ONE thing you will REMEMBER about English class in Phase A?
 Just think in your heart. You do NOT have to say out loud.
 
-Maybe you remember a song? A game? A friend?
-Maybe you remember learning 'happy' or 'cat' or 'swimming'?
-Maybe you remember how your teacher said 'wonderful'?
-Keep that memory in your heart. That is your treasure from Phase A.
-
 Now, everybody — let us CLAP for OURSELVES!"
-
-[Lead clap — semua siswa clap untuk diri sendiri]
+[Lead clap]
 
 Guru: "You did it! You FINISHED Phase A English!
 Congratulations! You are amazing! I am so proud of you!"
 
-[More claps, cheers, celebration energy]
-
 CLOSURE RITUAL:
-Guru: "Before we finish, let us say goodbye to Phase A together.
-Repeat after me:
+"Repeat after me:
 Thank you, Phase A!
 I learned, I tried, I was brave!
-I will keep speaking English!
-Goodbye, Phase A!
-See you, Phase B!
-Let us clap one more time!"`,
+Goodbye, Phase A! See you, Phase B!"`,
             penutup : '"You are future English speakers! I believe in you!"',
           },
 
           audio_cue: {
-            contoh_guru  : 'You were so BRAVE! You finished Phase A! Congratulations! I am SO PROUD OF YOU! / Thank you Phase A! I learned, I tried, I was brave! / Goodbye, Phase A! See you, Phase B!',
-            contoh_siswa : '(reflection quiet) / (clapping + cheering) / (repeat ritual phrases if invited)',
+            contoh_guru  : 'You were so BRAVE! You finished Phase A! Congratulations! / Thank you Phase A! I learned, I tried, I was brave! / Goodbye, Phase A! See you, Phase B!',
+            contoh_siswa : '(reflection quiet) / (clapping + cheering) / (repeat ritual phrases)',
             target_vocab : [],
           },
 
@@ -475,8 +499,8 @@ Let us clap one more time!"`,
           observation  : { aktif: false },
 
           fallback: {
-            siswa_tired : 'Keep celebration short. Skip reflection if perlu. Focus pada applause ritual — that is the important part.',
-            emotional_overflow : 'Normal (some kids cry happy). Guru normalize: "It is OK to feel happy. You did great. I am proud of you." Hug OK if appropriate.',
+            siswa_tired : 'Keep celebration short. Skip reflection if perlu. Focus pada applause ritual.',
+            emotional_overflow : 'Normal (some kids cry happy). Guru normalize: "It is OK to feel happy. You did great." Hug OK if appropriate.',
           },
 
           advance: { mode: 'manual' },
@@ -500,30 +524,14 @@ Let us clap one more time!"`,
 "You all started Phase A as beginners.
 Today, you FINISH Phase A as English speakers.
 
-In Phase A, you learned:
-- How to greet & say goodbye
-- How to introduce yourself
-- How to talk about colors, numbers, animals, food
-- How to describe house, family, hobbies
-- How to tell your feelings & dreams
-- How to listen, speak, read, write in English
-
-You learned from each other. You helped friends.
-You were kind. You were brave.
-That is what learning is about.
+In Phase A, you learned greetings, self introduction, colors, numbers, animals, food,
+house, family, hobbies, feelings — EVERYTHING!
 
 Now, Phase A ends. But your English DOES NOT END.
 You will keep speaking English.
-At home, in the playground, with friends — keep practicing!
-
-And next, Phase B will come. More adventures in English!
-New words, new stories, new friends.
-But remember Phase A. Remember your courage.
-Because THAT is who you are — English learners! Brave learners!
+And next, Phase B will come. More adventures!
 
 Thank you for learning with me. Thank you for being amazing.
-I will never forget your faces, your voices, your hearts.
-
 Goodbye, Phase A! Thank you!
 Hello, Phase B!
 Keep speaking English!
@@ -532,7 +540,7 @@ Goodbye, everyone! I love you all!"`,
           },
 
           audio_cue: {
-            contoh_guru  : 'You learned SO MUCH in Phase A! From greetings to hobbies! You are English speakers now! / Keep speaking English! Phase B comes next! Goodbye, Phase A! Thank you! / I love you all! Goodbye!',
+            contoh_guru  : 'You learned SO MUCH in Phase A! You are English speakers now! Keep speaking English! Phase B comes next! Goodbye, Phase A!',
             contoh_siswa : 'Goodbye, teacher! Thank you! / We will keep speaking English!',
             target_vocab : ['goodbye', 'thank you'],
           },
@@ -546,10 +554,38 @@ Goodbye, everyone! I love you all!"`,
       ],
 
       langkah: [
-        { tipe: 'instruksi', teks: 'Semua siswa berdiri. Guru lead celebration: "You were brave! You finished Phase A! Congratulations!" Semua clap untuk diri sendiri. Guru: "I am so proud of you!"' },
-        { tipe: 'audio',     teks: 'You were SO BRAVE! You finished Phase A! Congratulations! I am SO PROUD OF YOU!' },
-        { tipe: 'instruksi', teks: 'Reflection ritual: Guru tanya "1 hal yang paling ingat dari Phase A?" (silent reflection — no hand up). Guru lead closure: "Thank you, Phase A! I learned, I tried, I was brave!"' },
-        { tipe: 'audio',     teks: 'Thank you, Phase A! / I learned, I tried, I was brave! / Goodbye, Phase A! / See you, Phase B! / Keep speaking English!' },
+        {
+          tipe: 'instruksi',
+          teks: 'Semua siswa berdiri. Guru lead celebration: "You were brave! You finished Phase A! Congratulations!" Semua clap untuk diri sendiri. Guru: "I am so proud of you!"',
+          mode: {
+            mudah:     { bantuan: 'Guru lead dengan gesture meriah. Semua siswa ikut clap — tidak ada yang perlu verbal respond.' },
+            normal:    { bantuan: 'Guru lead celebration natural. Semua siswa participate dengan clap.' },
+            tantangan: { bantuan: 'Siswa boleh lead yell atau chant sendiri ("We did it!").' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'You were SO BRAVE! You finished Phase A! Congratulations! I am SO PROUD OF YOU!',
+          mode: {
+            mudah:     { bantuan: 'Ucapkan hangat, pelan, dengan eye contact ke semua siswa.' },
+            normal:    { bantuan: 'Ucapkan dengan genuine enthusiasm.' },
+            tantangan: { bantuan: 'Kelas bisa join chant: "We did it! Phase A done!"' },
+          },
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Reflection ritual: Guru tanya "1 hal yang paling ingat dari Phase A?" (silent reflection — no hand up). Guru lead closure: "Thank you, Phase A! I learned, I tried, I was brave!"',
+          mode: {
+            mudah:     { bantuan: 'Skip silent reflection jika kelas masih energik. Langsung ke closure chant.' },
+            normal:    { bantuan: 'Guru lead 30 detik silent reflection, lalu closure chant bersama.' },
+            tantangan: { bantuan: '1-2 siswa voluntary share ingatan Phase A sebelum closure chant.' },
+          },
+        },
+        {
+          tipe: 'audio',
+          teks: 'Thank you, Phase A! / I learned, I tried, I was brave! / Goodbye, Phase A! / See you, Phase B! / Keep speaking English!',
+          mode: null,
+        },
       ],
     },
 
@@ -576,27 +612,25 @@ Goodbye, everyone! I love you all!"`,
 
 1. SPEAKING CLARITY:
    - Can siswa say nama + usia dengan jelas?
-   - Can siswa describe family, house, hobby dengan benar (tata bahasa basic)?
+   - Can siswa describe family, house, hobby dengan benar?
    - Pronunciation clear enough untuk dipahami?
 
 2. INTEGRATION DARI TP 01–17:
    - Ada evidence dari TP 01 (greetings)?
    - Ada evidence dari TP 02 (introduce self)?
-   - Ada evidence dari TP 10 (food), TP 11 (routines), TP 15 (feelings), TP 17 (hobbies)?
+   - Ada evidence dari TP 15 (feelings), TP 17 (hobbies)?
 
 3. CONFIDENCE & PARTICIPATION:
    - Siswa attempt despite nervousness?
-   - Siswa complete presentation (dengan/tanpa guru help)?
-   - Siswa respond to feedback (Q&A dari guru)?
+   - Siswa complete presentation?
 
 RUBRIK SIMPLE:
-- Emerging (1): Guru assist heavily, 1-2 kalimat, incomplete
-- Developing (2): Some guru assist, 3-4 kalimat, mostly clear
-- Proficient (3): Minimal guru assist, 4-5 kalimat, clear & complete
-- Advanced (4): No guru assist, 5+ kalimat, fluent & elaborate
+- Emerging (1): Guru assist heavily, 1-2 kalimat
+- Developing (2): Some guru assist, 3-4 kalimat
+- Proficient (3): Minimal guru assist, 4-5 kalimat, clear
+- Advanced (4): No guru assist, 5+ kalimat, fluent
 
-NOTE: Grade bukan punitive — fokus pada growth & effort, bukan perfection.
-Semua siswa yang present = passing (mereka sudah brave enough).`,
+NOTE: Semua siswa yang present = passing.`,
             penutup : '',
           },
 
@@ -619,8 +653,8 @@ Semua siswa yang present = passing (mereka sudah brave enough).`,
 
           fallback: {
             siswa_yang_gugup : 'Give credit untuk attempt. Guru assist = still counts. Courage > perfection.',
-            tidak_semua_sempat_present : 'Present sebanyak bisa di kelas. Siswa yang belum, guru note untuk makeup presentation (bisa 1-on-1 atau next day).',
-            kesulitan_menilai : 'Focus pada 3 kriteria simple: could speak (yes/no), could integrate past lessons (yes/no), tried their best (yes/no). Bukan overthinking.',
+            tidak_semua_sempat_present : 'Present sebanyak bisa di kelas. Siswa yang belum, guru note untuk makeup presentation.',
+            kesulitan_menilai : 'Focus pada 3 kriteria simple: could speak, could integrate past lessons, tried their best.',
           },
 
           advance: { mode: 'manual' },
