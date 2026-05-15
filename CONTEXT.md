@@ -19,7 +19,7 @@
 - **Fase 9 SELESAI ✅**
 - **Fase 10 SELESAI ✅**
 - **Fase 11 SELESAI ✅ (akan direvisi di Fase 12)**
-- **Fase 12 SEDANG DIRANCANG**
+- **Fase 12 SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -216,9 +216,12 @@ FLAF/
 ✅ FASE 10 COMPLETE — mode fungsional TP 01-14
 ✅ FASE 11 COMPLETE — ObservationCapture (akan direvisi)
 
-Next: Fase 12 — Overlay Penilaian Siswa
-      - Hapus ObservationCapture (Fase 11)
-      - Tambah tombol penilaian di running (fase Inti)
-      - Overlay accordion 2 mode (cepat & detail)
-      - Download & cetak di layar Nilai
+✅ FASE 12 COMPLETE — Overlay penilaian siswa
+   - penilaian_log store (DB_VERSION 8)
+   - Overlay accordion Mode Cepat (★◐○) & Mode Detail (L/S/R)
+   - savePenilaian() + getRekapFormatifTP() baca penilaian_log
+   - Fase Penilaian dihapus dari semua 18 TP
+   - ObservationCapture & card Fase 7 dihapus
+
+Next: Fase 13 — (belum ditentukan)
 ```
