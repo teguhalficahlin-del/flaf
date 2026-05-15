@@ -10,7 +10,7 @@
  *   audio         — kalimat guru yang diucapkan ke siswa (bisa diputar TTS)
  *   respons_siswa — contoh kalimat yang diharapkan dari siswa (bisa TTS)
  *   diferensiasi  — dua jalur: field `sudah` dan `belum`
- *   darurat       — langkah cadangan jika waktu tersisa Γëñ10 menit
+ *   darurat       — langkah cadangan jika waktu tersisa ≤10 menit
  *
  * Tag PM (Pembelajaran Mendalam) — opsional pada tiap langkah:
  *   pm: 'mindful'    — mendorong kesadaran & refleksi siswa
@@ -849,7 +849,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati permainan berlomba, langsung ke penutup hitung bersama.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati permainan berlomba, langsung ke penutup hitung bersama.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -989,7 +989,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati show and tell, langsung ke nyanyian penutup.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati show and tell, langsung ke nyanyian penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1120,7 +1120,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati aktivitas mencari benda, langsung review 5 bentuk di penutup.' ,
+            { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati aktivitas mencari benda, langsung review 5 bentuk di penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1237,7 +1237,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati presentasi ke kelas, cukup latihan berpasangan.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati presentasi ke kelas, cukup latihan berpasangan.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1339,7 +1339,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: skip menggambar, langsung latihan lisan berpasangan.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip menggambar, langsung latihan lisan berpasangan.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1451,7 +1451,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati teka-teki siswa, langsung review nama hewan di penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati teka-teki siswa, langsung review nama hewan di penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1569,7 +1569,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati survei, langsung ke penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati survei, langsung ke penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1669,7 +1669,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati presentasi berpasangan, langsung penutup.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati presentasi berpasangan, langsung penutup.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1763,7 +1763,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: langsung ke lagu penutup, skip permainan fungsi.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: langsung ke lagu penutup, skip permainan fungsi.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1869,7 +1869,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: lewati menggambar, langsung tanya-jawab cuaca.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: lewati menggambar, langsung tanya-jawab cuaca.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
@@ -1975,7 +1975,7 @@ const FASE_A = {
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
     tantangan: { bantuan: 'Tantang siswa memimpin atau elaborasi jawaban lebih panjang.' },
   }},
-          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA Γëñ10 MENIT: skip roleplay, langsung review nama benda.' ,
+          { tipe: 'instruksi', teks: 'JIKA WAKTU TERSISA ≤10 MENIT: skip roleplay, langsung review nama benda.' ,
   mode: {
     mudah: { bantuan: 'Gunakan model guru dan contoh visual. Bantu siswa ulang kata/aksi.' },
     normal: { bantuan: 'Instruksi jelas, minta siswa praktek berulang secara berkelompok.' },
