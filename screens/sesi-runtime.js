@@ -390,6 +390,14 @@ function _renderRunning() {
     ? `<span class="sr-pm-badge sr-pm-badge--${langkah.pm}">${PM_LABEL[langkah.pm] || langkah.pm}</span>`
     : '';
 
+  // Mode bantuan
+  const bantuan = langkah.mode?.[_state.mode]?.bantuan;
+  const bantuanHTML = bantuan ? `
+    <div class="sr-mode-bantuan">
+      <div class="sr-mode-bantuan-label">📋 Mode ${_state.mode.charAt(0).toUpperCase() + _state.mode.slice(1)}</div>
+      <div class="sr-mode-bantuan-teks">${_escape(bantuan)}</div>
+    </div>` : '';
+
   // Body content
   let bodyContent = '';
   if (tipe === 'diferensiasi') {
@@ -425,6 +433,7 @@ function _renderRunning() {
           ${pmBadge}
         </div>
         ${bodyContent}
+        ${bantuanHTML}
       </div>
 
       <div class="sr-footer">

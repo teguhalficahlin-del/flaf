@@ -4,6 +4,7 @@
    Prefix: sr-*
    Mobile-first: 360px minimum
    Layout mengikuti UI-SKETCH.html
+   Theme: dark — selaras dengan style.css & dashboard.css
    ============================================================= */
 
 /* ── Root container ── */
@@ -12,9 +13,9 @@
   flex-direction: column;
   height: 100%;
   font-family: -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
-  color: #1a1a1a;
+  color: rgba(255,255,255,.9);
   position: relative;
-  background: #fafafa;
+  background: #1A1A1A;
 }
 
 /* ── App wrapper (setiap screen) ── */
@@ -22,7 +23,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #fafafa;
+  background: #1A1A1A;
   animation: sr-fadein 0.18s ease;
   min-height: 0;
 }
@@ -37,8 +38,8 @@
    ============================================================= */
 .sr-app-header {
   padding: 10px 16px 8px;
-  background: #fff;
-  border-bottom: 1px solid #eee;
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid rgba(255,255,255,.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +49,7 @@
 .sr-fase-info {
   font-size: 13px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: rgba(255,255,255,.85);
 }
 
 .sr-mode-badge {
@@ -56,8 +57,9 @@
   font-weight: 600;
   padding: 3px 10px;
   border-radius: 10px;
-  background: #e3f2fd;
-  color: #1565c0;
+  background: rgba(212,174,58,.12);
+  border: 1px solid rgba(212,174,58,.3);
+  color: #D4AE3A;
   text-transform: capitalize;
 }
 
@@ -83,8 +85,8 @@
    FOOTER — selalu di bawah
    ============================================================= */
 .sr-footer {
-  background: #fff;
-  border-top: 1px solid #eee;
+  background: rgba(26,26,26,.97);
+  border-top: 1px solid rgba(255,255,255,.08);
   padding: 12px 16px 16px;
   flex-shrink: 0;
 }
@@ -96,31 +98,31 @@
   display: block;
   width: 100%;
   padding: 14px;
-  background: #1a1a1a;
-  color: #fff;
+  background: rgba(212,174,58,.15);
+  color: #D4AE3A;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: inherit;
-  border: none;
+  border: 1px solid rgba(212,174,58,.4);
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.15s;
 }
-.sr-btn-primary:active   { background: #333; }
-.sr-btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+.sr-btn-primary:active   { background: rgba(212,174,58,.25); }
+.sr-btn-primary:disabled { background: rgba(255,255,255,.05); color: rgba(255,255,255,.25); border-color: rgba(255,255,255,.08); cursor: not-allowed; }
 
 .sr-btn-secondary {
   display: block;
   width: 100%;
   padding: 12px;
-  background: #fff;
-  color: #555;
+  background: transparent;
+  color: rgba(255,255,255,.65);
   font-size: 14px;
   font-weight: 500;
   font-family: inherit;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
@@ -128,7 +130,7 @@
   -webkit-tap-highlight-color: transparent;
   transition: background 0.15s;
 }
-.sr-btn-secondary:active   { background: #f5f5f5; }
+.sr-btn-secondary:active   { background: rgba(255,255,255,.06); }
 .sr-btn-secondary:disabled { opacity: 0.35; pointer-events: none; }
 
 /* Row tombol (Sebelumnya + Lanjut) */
@@ -143,13 +145,13 @@
 .sr-btn-kondisi {
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 8px;
   background: transparent;
-  color: #888;
-  font-size: 11px;
+  color: rgba(255,255,255,.6);
+  font-size: 13px;
   font-family: inherit;
-  border: 1px dashed #bbb;
+  border: 1px dashed rgba(255,255,255,.3);
   border-radius: 6px;
   cursor: pointer;
   text-align: center;
@@ -157,8 +159,8 @@
   transition: color 0.15s, border-color 0.15s;
 }
 .sr-btn-kondisi:active {
-  color: #555;
-  border-color: #888;
+  color: rgba(255,255,255,.6);
+  border-color: rgba(255,255,255,.35);
 }
 
 /* =============================================================
@@ -167,26 +169,26 @@
 .sr-fase-label {
   font-size: 11px;
   font-weight: 700;
-  color: #c97800;
+  color: #D4AE3A;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
 
 .sr-fase-label--done {
-  color: #2e7d32;
+  color: rgba(92,138,110,.9);
 }
 
 .sr-fase-judul {
   font-size: 28px;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .sr-fase-meta {
   font-size: 14px;
-  color: #888;
+  color: rgba(255,255,255,.4);
   margin-bottom: 32px;
 }
 
@@ -196,21 +198,21 @@
 .sr-preview-title {
   font-size: 17px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 4px;
 }
 
 .sr-preview-sub {
   font-size: 13px;
-  color: #888;
+  color: rgba(255,255,255,.5);
   margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .sr-checklist {
   list-style: none;
-  background: #fff;
-  border: 1px solid #eee;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
   border-radius: 10px;
   padding: 4px 14px;
   margin-bottom: 20px;
@@ -220,20 +222,20 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
   font-size: 13px;
-  color: #333;
+  color: rgba(255,255,255,.75);
 }
 .sr-checklist li:last-child { border-bottom: none; }
 
 .sr-check {
   font-weight: 700;
-  color: #2e7d32;
+  color: rgba(92,138,110,.9);
 }
 
 .sr-mode-label {
   font-size: 13px;
-  color: #555;
+  color: rgba(255,255,255,.55);
   margin-bottom: 10px;
 }
 
@@ -245,31 +247,31 @@
 
 .sr-mode-option {
   padding: 12px 14px;
-  border: 1.5px solid #ddd;
+  border: 1.5px solid rgba(255,255,255,.12);
   border-radius: 10px;
   cursor: pointer;
-  background: #fff;
+  background: rgba(255,255,255,.03);
   text-align: left;
   transition: border-color 0.15s, background 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
-.sr-mode-option:active { background: #f5f5f5; }
+.sr-mode-option:active { background: rgba(255,255,255,.06); }
 .sr-mode-option--selected {
-  border-color: #c97800;
-  background: #fff8e1;
+  border-color: rgba(212,174,58,.4);
+  background: rgba(212,174,58,.08);
 }
 
 .sr-mode-name {
   font-size: 14px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: rgba(255,255,255,.85);
   margin-bottom: 3px;
 }
-.sr-mode-option--selected .sr-mode-name { color: #c97800; }
+.sr-mode-option--selected .sr-mode-name { color: #D4AE3A; }
 
 .sr-mode-desc {
   font-size: 12px;
-  color: #888;
+  color: rgba(255,255,255,.65);
   line-height: 1.4;
 }
 
@@ -284,23 +286,23 @@
 .sr-resume-title {
   font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 6px;
 }
 
 .sr-resume-sub {
   font-size: 13px;
-  color: #888;
+  color: rgba(255,255,255,.5);
   margin-bottom: 8px;
 }
 
 .sr-resume-pos {
   font-size: 13px;
-  color: #555;
+  color: rgba(255,255,255,.6);
   line-height: 1.6;
   margin-bottom: 28px;
 }
-.sr-resume-pos strong { color: #1a1a1a; }
+.sr-resume-pos strong { color: #fff; }
 
 /* =============================================================
    RUNNING — tipe badge + konten
@@ -315,16 +317,16 @@
 .sr-aktivitas-tipe-badge {
   font-size: 11px;
   font-weight: 700;
-  color: #c97800;
+  color: #D4AE3A;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.sr-tipe--au { color: #c97800; }
-.sr-tipe--rs { color: #1565c0; }
-.sr-tipe--df { color: #2e7d32; }
-.sr-tipe--dr { color: #c62828; }
-.sr-tipe--in { color: #555;    }
+.sr-tipe--au { color: #D4AE3A; }
+.sr-tipe--rs { color: rgba(120,180,255,.9); }
+.sr-tipe--df { color: rgba(92,138,110,.9); }
+.sr-tipe--dr { color: rgba(255,100,80,.9); }
+.sr-tipe--in { color: rgba(255,255,255,.55); }
 
 /* PM badge */
 .sr-pm-badge {
@@ -333,16 +335,16 @@
   padding: 2px 8px;
   border-radius: 8px;
 }
-.sr-pm-badge--mindful    { background: #e3f2fd; color: #1565c0; }
-.sr-pm-badge--meaningful { background: #e8f5e9; color: #2e7d32; }
-.sr-pm-badge--joyful     { background: #fff8e1; color: #c97800; }
+.sr-pm-badge--mindful    { background: rgba(120,180,255,.12); color: rgba(120,180,255,.9); }
+.sr-pm-badge--meaningful { background: rgba(92,138,110,.15);  color: rgba(92,138,110,.9); }
+.sr-pm-badge--joyful     { background: rgba(212,174,58,.12);  color: #D4AE3A; }
 
 /* Teks konten */
 .sr-cue-text {
   font-size: 22px;
   font-weight: 700;
   font-style: italic;
-  color: #1a1a1a;
+  color: #fff;
   line-height: 1.3;
   margin: 12px 0 20px;
   padding: 0 8px;
@@ -351,7 +353,7 @@
 
 .sr-instruksi-text {
   font-size: 15px;
-  color: #333;
+  color: rgba(255,255,255,.8);
   line-height: 1.55;
   margin-bottom: 16px;
   text-align: left;
@@ -362,23 +364,24 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 8px 14px;
-  background: #fff;
-  border: 1px solid #ddd;
+  padding: 8px 16px;
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.3);
   border-radius: 20px;
   font-size: 13px;
-  color: #555;
+  font-weight: 600;
+  color: #D4AE3A;
   cursor: pointer;
   font-family: inherit;
   margin: 6px 0;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.12s;
 }
-.sr-audio-btn:active { background: #f5f5f5; }
+.sr-audio-btn:active { background: rgba(255,255,255,.08); }
 .sr-audio-btn--playing {
-  background: #fff8e1;
-  border-color: #c97800;
-  color: #c97800;
+  background: rgba(212,174,58,.12);
+  border-color: rgba(212,174,58,.4);
+  color: #D4AE3A;
 }
 
 /* Diferensiasi */
@@ -393,12 +396,12 @@
   padding: 12px;
 }
 .sr-dif-col--s {
-  background: #e8f5e9;
-  border: 1px solid #c8e6c9;
+  background: rgba(92,138,110,.12);
+  border: 1px solid rgba(92,138,110,.25);
 }
 .sr-dif-col--b {
-  background: #fff8e1;
-  border: 1px solid #ffe082;
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.2);
 }
 .sr-dif-lbl {
   font-size: 10px;
@@ -407,11 +410,11 @@
   text-transform: uppercase;
   margin-bottom: 6px;
 }
-.sr-dif-col--s .sr-dif-lbl { color: #2e7d32; }
-.sr-dif-col--b .sr-dif-lbl { color: #c97800; }
+.sr-dif-col--s .sr-dif-lbl { color: rgba(92,138,110,.9); }
+.sr-dif-col--b .sr-dif-lbl { color: #D4AE3A; }
 .sr-dif-teks {
   font-size: 13px;
-  color: #333;
+  color: rgba(255,255,255,.75);
   line-height: 1.5;
 }
 
@@ -428,19 +431,20 @@
 .sr-closure-title {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 4px;
 }
 
 .sr-closure-sub {
   font-size: 13px;
-  color: #888;
+  color: rgba(255,255,255,.5);
   margin-bottom: 20px;
 }
 
 .sr-closure-label {
   font-size: 13px;
-  color: #555;
+  font-weight: 600;
+  color: rgba(255,255,255,.75);
   margin: 14px 0 6px;
 }
 
@@ -454,23 +458,23 @@
 .sr-mood-btn {
   flex: 1;
   padding: 12px 6px;
-  background: #fff;
-  border: 1.5px solid #ddd;
+  background: rgba(255,255,255,.03);
+  border: 1.5px solid rgba(255,255,255,.12);
   border-radius: 10px;
   font-size: 13px;
   font-family: inherit;
-  color: #555;
+  color: rgba(255,255,255,.8);
   cursor: pointer;
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.15s;
 }
 .sr-mood-btn--selected {
-  border-color: #c97800;
-  background: #fff8e1;
-  color: #c97800;
+  border-color: rgba(212,174,58,.4);
+  background: rgba(212,174,58,.08);
+  color: #D4AE3A;
 }
-.sr-mood-btn:active { background: #f5f5f5; }
+.sr-mood-btn:active { background: rgba(255,255,255,.06); }
 
 .sr-mood-emoji {
   font-size: 22px;
@@ -482,29 +486,30 @@
 .sr-note-input {
   width: 100%;
   padding: 10px 12px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 16px;
   font-family: inherit;
-  color: #333;
+  color: rgba(255,255,255,.85);
   resize: vertical;
   min-height: 60px;
   line-height: 1.5;
   box-sizing: border-box;
 }
-.sr-note-input::placeholder { color: #bbb; }
+.sr-note-input::placeholder { color: rgba(255,255,255,.35); }
 .sr-note-input:focus {
   outline: none;
-  border-color: #c97800;
+  border-color: rgba(212,174,58,.4);
 }
 
 .sr-closure-hint {
-  background: #fff8e1;
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.2);
   padding: 10px 12px;
   border-radius: 8px;
   font-size: 12px;
-  color: #555;
+  color: rgba(255,255,255,.55);
   margin: 14px 0;
   line-height: 1.5;
 }
@@ -524,34 +529,33 @@
   width: 100%;
   text-align: left;
   padding: 12px 14px;
-  background: #fff;
-  border: 1px solid #ddd;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 8px;
   font-size: 14px;
   font-family: inherit;
-  color: #333;
+  color: rgba(255,255,255,.88);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.12s, border-color 0.12s;
 }
 .sr-opsi:active {
-  background: #f5f5f5;
+  background: rgba(255,255,255,.06);
 }
 .sr-opsi--selected {
-  border-color: #c97800;
-  background: #fff8e1;
-  color: #c97800;
+  border-color: rgba(212,174,58,.4);
+  background: rgba(212,174,58,.08);
+  color: #D4AE3A;
   font-weight: 600;
 }
 
 /* =============================================================
    OVERLAY — full screen backdrop + sheet
-   Mengikuti pola UI-SKETCH: overlay penuh, konten di tengah
    ============================================================= */
 .sr-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.6);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -561,7 +565,8 @@
 }
 
 .sr-overlay-content {
-  background: #fff;
+  background: #1e1e1e;
+  border: 1px solid rgba(255,255,255,.1);
   border-radius: 14px;
   padding: 20px 18px 24px;
   width: 100%;
@@ -572,19 +577,20 @@
 }
 
 .sr-overlay-title {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 14px;
 }
 
 /* Fallback box */
 .sr-fallback-box {
-  background: #f8f8f8;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
   padding: 12px;
   border-radius: 8px;
   font-size: 14px;
-  color: #333;
+  color: rgba(255,255,255,.75);
   line-height: 1.6;
   margin-bottom: 14px;
 }
@@ -592,7 +598,7 @@
   display: block;
   font-size: 11px;
   font-weight: 700;
-  color: #c97800;
+  color: #D4AE3A;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 4px;
@@ -602,22 +608,44 @@
    UTILITY
    ============================================================= */
 .sr-hidden { display: none !important; }
+
 /* ── Observasi card (Fase 7) ───────────────────────── */
 .sr-obs-card {
   margin-top: 16px;
   padding: 12px 14px;
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  background: rgba(212,174,58,.08);
+  border: 1px solid rgba(212,174,58,.25);
   border-radius: 10px;
 }
 .sr-obs-judul {
   font-size: 0.82rem;
   font-weight: 600;
-  color: #92400e;
+  color: #D4AE3A;
   margin-bottom: 8px;
 }
 .sr-obs-nama {
   font-size: 0.9rem;
-  color: #1c1917;
+  color: rgba(255,255,255,.8);
   padding: 2px 0;
+}
+/* ── Mode bantuan card (Fase 9 — mode fungsional) ── */
+.sr-mode-bantuan {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: rgba(212,174,58,.06);
+  border: 1px solid rgba(212,174,58,.2);
+  border-radius: 10px;
+}
+.sr-mode-bantuan-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(212,174,58,.7);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.sr-mode-bantuan-teks {
+  font-size: 13px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.55;
 }
