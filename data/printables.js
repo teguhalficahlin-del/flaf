@@ -25,7 +25,7 @@ export function generatePrintHTML(tp) {
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Kartu Cetak — ${tp.judul}</title>
+  <title>Kartu Cetak — ${tp.nama}</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
