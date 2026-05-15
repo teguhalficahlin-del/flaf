@@ -15,6 +15,8 @@
 - **Fase 5 Build SELESAI + post-fix SELESAI ✅**
 - **Fase 6 SELESAI ✅**
 - **Fase 7 SELESAI ✅**
+- **Fase 8 (UI sprint) SELESAI ✅**
+- **Fase 9 SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -58,25 +60,10 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 - **Update trigger**: saat Closure selesai (Opsi B) — otomatis, tidak ada UI tambahan
 - **Delta**: +1 per sesi selesai untuk semua siswa di rombel
 - **Fallback**: jika IDB kosong, `speakCount` dianggap 0 untuk semua siswa
-- **UI saran observasi**: defer ke Fase 7 — Fase 6 hanya simpan data
 
 ### Perubahan yang Dibuat
-```
-9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
-```
-
-**`storage/db.js`** (DB_VERSION: 5 → 6):
-- `VALID_STORES` ditambah `siswa_per_kelas`
-- `onupgradeneeded` ditambah store `siswa_per_kelas`
-
-**`storage/siswa-history.js`** (file baru):
-- `getSiswaHistory(rombelId)` → ambil history dari IDB
-- `updateSpeakCount(rombelId, siswaIdList, delta)` → increment speakCount
-- `getSortedBySpeakCount(rombelId, siswaList)` → sort siswa terendah dulu (untuk Fase 7)
-
-**`screens/sesi-runtime.js`**:
-- Import `updateSpeakCount` dari `siswa-history.js`
-- Di `_renderClosure` saat simpan: hitung `respons_siswa` count lalu `updateSpeakCount` semua siswa
+**`storage/db.js`** (DB_VERSION: 5 → 6): tambah store `siswa_per_kelas`
+**`storage/siswa-history.js`** (file baru): getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
 
 ### Hasil VALIDATE
 - Store `siswa_per_kelas` ada di IDB version 6 ✅
@@ -88,57 +75,86 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 ### Keputusan Arsitektural (Terkunci)
 - **Titik tampil**: Closure screen, setelah form kendala & catatan
 - **Konten**: "💡 Besok coba perhatikan lebih ke:" + top 3 siswa speakCount terendah
-- **Angka/statistik**: tidak ditampilkan ke guru
-- **Trigger**: otomatis saat `_renderClosure` dipanggil
 - **Fallback**: blok tidak muncul jika siswaList kosong atau error
 
 ### Perubahan yang Dibuat
-**`screens/sesi-runtime.js`**:
-- Import tambah `getSortedBySpeakCount` dari `siswa-history.js`
-- `_renderClosure` diubah menjadi `async`
-- Inject `sr-obs-card` (top 3 nama) sebelum tombol Simpan & Selesai
-
-**`screens/sesi-runtime.css`**:
-- Tambah class `sr-obs-card`, `sr-obs-judul`, `sr-obs-nama`
+**`screens/sesi-runtime.js`**: `_renderClosure` async, inject `sr-obs-card`
+**`screens/sesi-runtime.css`**: tambah `sr-obs-card`, `sr-obs-judul`, `sr-obs-nama`
 
 ### Hasil VALIDATE
 - Blok saran muncul dengan 3 nama benar ✅
-- Nama terbaca jelas, tidak ada undefined ✅
-- Fallback siswaList kosong: blok tidak muncul ✅
+- Console bersih ✅
+
+## Fase 8 — UI Sprint (Dark Theme + Keterbacaan + UX)
+
+### Perubahan yang Dibuat
+**`screens/sesi-runtime.css`**: dark theme selaras `style.css` & `dashboard.css`
+- Background `#1A1A1A`, aksen `#D4AE3A`, semua warna hardcoded diganti
+- Perbaikan keterbacaan: tombol audio, label closure, teks opsi, placeholder
+- Tombol "Kondisi kelas bermasalah?" lebih besar dan terang
+
+**`screens/dashboard.js`** — `_buildTabMateri` ringkas:
+- Default: hanya `persiapan` + `vocab` terlihat
+- `deskripsi`, `indikator`, CP di-collapse "▾ Lihat detail materi"
+
+### Hasil VALIDATE
+- Dark theme konsisten di semua layar runtime ✅
+- Layar Materi ringkas ✅
+- Toggle detail berfungsi ✅
+
+## Fase 9 — Mode Fungsional (Mudah/Normal/Tantangan)
+
+### Keputusan Arsitektural (Terkunci)
+- **Mode fungsional untuk TP 15–18** — field `mode` ditambah ke `langkah[]`
+- **TP 1–14**: belum ada field `mode` di `langkah[]` — defer ke Fase 10
+- **Runtime**: baca `langkah.mode?.[_state.mode]?.bantuan` → panel `sr-mode-bantuan`
+- **Fallback**: panel tidak muncul jika `mode` null/undefined (TP 1–14 aman)
+
+### Perubahan yang Dibuat
+**`screens/sesi-runtime.js`**: inject panel `sr-mode-bantuan` jika data ada
+**`screens/sesi-runtime.css`**: tambah `sr-mode-bantuan`, `sr-mode-bantuan-label`, `sr-mode-bantuan-teks`
+**`docs/sesi-m10/tp-15.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
+**`docs/sesi-m11/tp-16.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
+**`docs/sesi-m12/tp-17.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
+**`docs/sesi-m13/tp-18.js`**: field `mode` di semua `langkah[]` Pembuka/Inti/Penutup
+
+### Hasil VALIDATE
+- Panel "MODE MUDAH" muncul di langkah INSTRUKSI & AUDIO ✅
+- Teks bantuan sesuai data TP 15 ✅
+- TP 1–14 tidak terpengaruh ✅
 - Console bersih ✅
 
 ## Git Log (10 commit terakhir)
 ```
-e6ce31f   fase-7: UI saran observasi di Closure (getSortedBySpeakCount, top 3 siswa)
+93669c3  fase-9: tambah field mode di langkah[] TP 16-18
+ad269b3  fase-9: mode fungsional di runtime - panel bantuan per langkah TP 15-18
+83a069b  docs: update CONTEXT — Fase 7 complete
+e6ce31f  fase-7: UI saran observasi di Closure screen
+434b8c9  feat: ringkas layar Materi - collapse deskripsi dan indikator
+c7136b6  docs: update CONTEXT — Fase 6 complete
 9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
 7ae6035  docs: update CONTEXT — full flow validated, production ready
 6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
 d4c4336  docs: update CONTEXT — Fase 5 complete (B1-B4)
-ca699ab  fase-5-b4: tambah link sesi-runtime.css di index.html
-da46ccd  fase-5-b2-b4: integrate sesi-runtime, hapus RT v6
-2f275c8  fase-5-b1: add sesi-runtime (7-state machine + css)
-bb77ef7  docs: update CONTEXT — Opsi B integration complete (Fase A + Runtime)
-42f2f9f  opsi-b: integrate v4.3 TP 15-18 into fase-a.js runtime
-913f823  sesi-m10 to m13: migrate TP 15–18 (Fase A Complete)
 ```
 
 ## Struktur Folder Penting
 ```
 FLAF/
 ├── screens/
-│   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, runtime full layar
+│   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, _buildTabMateri ringkas
 │   ├── dashboard.css       ← rt-* classes dihapus
-│   ├── sesi-runtime.js     ← 5-state machine, light theme UI-SKETCH, updateSpeakCount saat closure, sr-obs-card Fase 7
-│   ├── sesi-runtime.css    ← sr-* prefix, light theme, sr-obs-card Fase 7
+│   ├── sesi-runtime.js     ← 5-state machine, dark theme, mode bantuan panel (Fase 9)
+│   ├── sesi-runtime.css    ← sr-* prefix, dark theme, sr-mode-bantuan (Fase 9)
 │   ├── kurikulum.js/css
 │   ├── nilai.js/css
 │   ├── jejak.js
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   └── fase-a.js           ← 18 TP v4.3 aktif, langkah[] siap dibaca runtime
+│   └── fase-a.js           ← 18 TP v4.3 aktif, import TP 15-18 dari docs/sesi-m*/
 ├── storage/
-│   ├── db.js               ← DB_VERSION 6, store siswa_per_kelas ditambahkan
+│   ├── db.js               ← DB_VERSION 6, store siswa_per_kelas
 │   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount
 │   ├── logger.js
 │   ├── export.js
@@ -150,7 +166,11 @@ FLAF/
 │   ├── fase-2-spec/        ← STATE-MACHINE.md
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
 │   ├── fase-4-spec/        ← MIGRATION-PLAN.md
-│   └── sesi-m1/ sampai sesi-m13/
+│   ├── sesi-m1/ sampai sesi-m9/
+│   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅ (Fase 9)
+│   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅ (Fase 9)
+│   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅ (Fase 9)
+│   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅ (Fase 9)
 ├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
@@ -172,6 +192,16 @@ FLAF/
 - Natural scroll diprioritaskan
 - Tidak ada horizontal scroll di 320px width
 
+## Mode Fungsional — Status per TP
+
+| TP | Nama | Mode di langkah[] | Status |
+|----|------|-------------------|--------|
+| 01–14 | Greetings s/d In the Classroom | ❌ Belum ada | Fase 10 |
+| 15 | Feelings and Emotions | ✅ Ada | Fase 9 |
+| 16 | Simple Story Retelling | ✅ Ada | Fase 9 |
+| 17 | My Hobbies | ✅ Ada | Fase 9 |
+| 18 | Integrative Project | ✅ Ada | Fase 9 |
+
 ## Pattern Inklusivitas (TERBENTUK di Sesi M3)
 
 ### Pattern 1 — Scripted micro_script Inklusivitas
@@ -185,9 +215,9 @@ FLAF/
 ### Pattern A — TPR sebagai Energy Break di Tengah Inti
 ### Pattern B — Closure Transfer ke Rumah
 ### Pattern C — Diferensiasi 3-Tier yang Konsisten
-- **Mudah**: vocab dikurangi, pola pendek, tempo lambat
-- **Normal**: vocab penuh, pola lengkap, tempo bertahap
-- **Tantangan**: pola tambahan, tempo cepat, ekstensi
+- **Mudah**: vocab dikurangi, pola pendek, tempo lambat, bantuan tinggi
+- **Normal**: vocab penuh, pola lengkap, tempo bertahap, bantuan sedang
+- **Tantangan**: pola tambahan, tempo cepat, ekstensi, bantuan minimal
 
 ## Status Sesi
 
@@ -195,8 +225,11 @@ FLAF/
 ✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
 ✅ UI-SKETCH.html DISETUJUI (acuan layout runtime)
 ✅ FASE 5 BUILD COMPLETE + POST-FIX + VALIDATED
-✅ FASE 6 COMPLETE (commit 9f33bcf)
+✅ FASE 6 COMPLETE — siswa_per_kelas IDB store
 ✅ FASE 7 COMPLETE — UI saran observasi di Closure screen
+✅ FASE 8 COMPLETE — dark theme + UI ringkas layar Materi
+✅ FASE 9 COMPLETE — mode fungsional TP 15-18
 
-Next: Fase 8 — (belum ditentukan)
+Next: Fase 10 — tambah field mode ke langkah[] TP 01-14
+      (konten pedagogis per langkah per mode, dikerjakan bertahap)
 ```
