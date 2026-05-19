@@ -159,6 +159,7 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+e2c73ac  fix: pdf-handler path, cache lookup, MIME detection for .docx
 147eed4  fix: title tab cetak undefined → tp.nama
 792582c  fix: judul lembar cetak undefined → tp.nama
 c494685  merge: pertahankan versi lokal fase-13
@@ -323,6 +324,11 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf_ref ditambah ke fase-a.js untuk TP01–14
    - kurikulum.js: baca tp.pdf_ref (fallback ke tp.id-v1.pdf)
    - pdf-handler.js: validasi terima .docx selain .pdf
+✅ BUG FIX: SW cache test + pdf-handler .docx support (e2c73ac)
+   - sw.js: cache.match './index.html' (fix FATAL log salah path)
+   - pdf-handler.js: PDF_BASE_PATH './pdf/' (fix 404 GitHub Pages)
+   - pdf-handler.js: caches.match() semua cache (fix miss APP_SHELL)
+   - pdf-handler.js: MIME detection .docx via _mimeForFilename/_isValidContentType
 ```
 
 Next: Fase 14 — (belum ditentukan)
