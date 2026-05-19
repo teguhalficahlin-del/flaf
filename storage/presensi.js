@@ -50,7 +50,7 @@ async function simpan({ kelasId, kelasNama, tpNomor, tpNama, statusMap, siswaLis
   // Inisialisasi semua siswa ke 'A' dulu, lalu tindih dari statusMap
   const fullStatusMap = {};
   for (const s of siswaList) {
-    fullStatusMap[s.id] = statusMap[s.id] || 'A';
+    fullStatusMap[s.id] = statusMap[s.id] || 'H';
   }
 
   const totalH = Object.values(fullStatusMap).filter(v => v === 'H').length;

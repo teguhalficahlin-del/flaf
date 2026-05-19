@@ -446,7 +446,7 @@ function _buildStepPresensi() {
   const nextEnd         = Math.min(endIdx + SISWA_PER_HALAMAN, total);
 
   const siswaHTML = halaman.map(s => {
-    const st  = statusMap[s.id] || 'A';
+    const st  = statusMap[s.id] || 'H';
     const cfg = PRESENSI_STATUS_CFG[st];
     return `
     <div id="presensi-row-${s.id}" class="ds-presensi-row" style="background:${cfg.bg};">
