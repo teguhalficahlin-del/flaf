@@ -305,7 +305,7 @@ function _validateArgs(tpId, pdfFilename) {
   if (typeof tpId !== 'string' || !tpId.trim()) {
     throw new Error('[FLAF] downloadPDF: tpId harus string non-kosong');
   }
-  if (typeof pdfFilename !== 'string' || !pdfFilename.endsWith('.pdf')) {
+  if (typeof pdfFilename !== 'string' || (!pdfFilename.endsWith('.pdf') && !pdfFilename.endsWith('.docx'))) {
     throw new Error('[FLAF] downloadPDF: pdfFilename harus string berakhiran .pdf');
   }
   // Guard path traversal
