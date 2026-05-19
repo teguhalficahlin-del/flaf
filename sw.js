@@ -246,7 +246,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_VERSION).then(async cache => {
       await cache.addAll(APP_SHELL);
-      const test = await cache.match('/index.html');
+      const test = await cache.match('./index.html');
       if (!test) {
         console.error('[SW] FATAL: index.html tidak masuk cache');
       }

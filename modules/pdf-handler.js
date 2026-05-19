@@ -36,7 +36,7 @@ import { logger } from '../storage/logger.js';
 // KONSTANTA
 // ----------------------------------------------------------
 const SCREEN        = 's-jadwal';
-const PDF_BASE_PATH = '/pdf/';                // path relatif dari root PWA
+const PDF_BASE_PATH = './pdf/';               // relative — benar di GitHub Pages /flaf/
 const CACHE_NAME    = 'flaf-pdf-v1';              // harus sinkron dengan sw.js PDF_CACHE_NAME
 const VALID_MIME    = 'application/pdf';
 const MAX_PDF_SIZE  = 10 * 1024 * 1024;           // 10 MB — guard ukuran wajar
@@ -157,7 +157,7 @@ async function _fetchAndDownload(url, pdfFilename, tpId, saveToCache) {
   try {
     response = await fetch(url, {
       method : 'GET',
-      headers: { 'Accept': 'application/pdf' },
+      headers: { 'Accept': _mimeForFilename(pdfFilename) },
     });
   } catch (networkErr) {
     // fetch() sendiri melempar error saat offline atau DNS fail
@@ -176,8 +176,8 @@ async function _fetchAndDownload(url, pdfFilename, tpId, saveToCache) {
 
   // ── Validasi content-type ─────────────────────────────────
   const contentType = response.headers.get('content-type') || '';
-  if (!contentType.includes('pdf')) {
-    logger.error(SCREEN, '[pdf] content-type bukan PDF', { tpId, contentType });
+  if (!_isValidContentType(contentType, pdfFilename)) {
+    logger.error(SCREEN, '[pdf] content-type tidak valid', { tpId, contentType });
     throw new PDFInvalidError(pdfFilename, `content-type: ${contentType}`);
   }
 
@@ -228,8 +228,8 @@ async function _fetchAndDownload(url, pdfFilename, tpId, saveToCache) {
 // ----------------------------------------------------------
 
 async function _getFromCache(url) {
-  const cache = await caches.open(CACHE_NAME);
-  const match = await cache.match(url);
+  // caches.match() periksa semua cache — termasuk APP_SHELL SW (flaf-v55)
+  const match = await caches.match(url);
   return match || null;
 }
 
@@ -253,9 +253,10 @@ async function _saveToCache(url, response, tpId) {
  */
 function _triggerDownload(blob, filename) {
   // Pastikan MIME type benar
-  const pdfBlob = blob.type === VALID_MIME
+  const mime    = _mimeForFilename(filename);
+  const pdfBlob = blob.type === mime
     ? blob
-    : new Blob([blob], { type: VALID_MIME });
+    : new Blob([blob], { type: mime });
 
   // Strategy 1: Blob URL
   if (window.URL && window.URL.createObjectURL) {
@@ -300,6 +301,21 @@ function _triggerDownload(blob, filename) {
 // ----------------------------------------------------------
 // INTERNAL — VALIDASI & UTILITY
 // ----------------------------------------------------------
+
+function _mimeForFilename(filename) {
+  return filename.endsWith('.docx')
+    ? 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    : 'application/pdf';
+}
+
+function _isValidContentType(contentType, filename) {
+  if (filename.endsWith('.docx')) {
+    return contentType.includes('wordprocessingml')
+      || contentType.includes('octet-stream')
+      || contentType.includes('zip');
+  }
+  return contentType.includes('pdf');
+}
 
 function _validateArgs(tpId, pdfFilename) {
   if (typeof tpId !== 'string' || !tpId.trim()) {
