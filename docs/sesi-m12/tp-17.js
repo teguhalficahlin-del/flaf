@@ -53,7 +53,7 @@ const TP_17 = {
 
   vocab: ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling', 'I like', 'because', 'fun', 'interesting'],
 
-  persiapan: ['Kartu hobi bergambar 8 item dengan gerund form', 'Chart/tabel untuk class survey (optional)'],
+  persiapan: ['Kartu hobi bergambar 8 item dengan gerund form'],
 
   media: [
     {
@@ -66,6 +66,17 @@ const TP_17 = {
       reusable_lintas_tp : true,
       keterangan         : '8 kartu A5 dengan gambar & text: reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. Ilustrasi netral & beragam. Universal framing.',
     },
+  ],
+
+  printables: [
+    { file: 'tp17-cooking.png',         label: 'Cooking' },
+    { file: 'tp17-cycling.png',         label: 'Cycling' },
+    { file: 'tp17-dancing.png',         label: 'Dancing' },
+    { file: 'tp17-drawing.png',         label: 'Drawing' },
+    { file: 'tp17-playing-football.png',label: 'Playing Football' },
+    { file: 'tp17-reading.png',         label: 'Reading' },
+    { file: 'tp17-singing.png',         label: 'Singing' },
+    { file: 'tp17-swimming.png',        label: 'Swimming' },
   ],
 
   skenario: [

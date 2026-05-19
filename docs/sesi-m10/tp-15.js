@@ -55,7 +55,7 @@ const TP_15 = {
 
   vocab: ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'bored', 'I feel', 'how do you feel', 'because'],
 
-  persiapan: ['Kartu emosi bergambar 7 emosi', 'Scenario card (opsional)'],
+  persiapan: ['Kartu emosi bergambar 7 emosi'],
 
   media: [
     {
@@ -68,6 +68,16 @@ const TP_15 = {
       reusable_lintas_tp : true,
       keterangan         : '7 kartu A5 berisi ekspresi wajah anak (happy, sad, angry, scared, tired, excited, bored) — ilustrasi netral & beragam (usia, penampilan, inklusi). Bisa dipakai ulang di TP-TP lain tentang emosi.',
     },
+  ],
+
+  printables: [
+    { file: 'tp15-happy.png',   label: 'Happy' },
+    { file: 'tp15-sad.png',     label: 'Sad' },
+    { file: 'tp15-angry.png',   label: 'Angry' },
+    { file: 'tp15-scared.png',  label: 'Scared' },
+    { file: 'tp15-bored.png',   label: 'Bored' },
+    { file: 'tp15-excited.png', label: 'Excited' },
+    { file: 'tp15-tired.png',   label: 'Tired' },
   ],
 
   skenario: [

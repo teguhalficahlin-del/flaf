@@ -20,6 +20,7 @@
 - **Fase 10 SELESAI ✅**
 - **Fase 11 SELESAI ✅ (akan direvisi di Fase 12)**
 - **Fase 12 SELESAI ✅**
+- **Fase 13 SELESAI ✅**
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -81,51 +82,90 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 - `_renderSelesai` async + inject kartu observasi (3 siswa, 4 tag)
 - Store `obs_log` ditambah (DB_VERSION 7)
 - `saveObsTags` ditambah ke `siswa-history.js`
-- **CATATAN**: Fase 11 akan DIREVISI di Fase 12 — ObservationCapture dihapus, digantikan overlay penilaian
+- **CATATAN**: Fase 11 direvisi di Fase 12 — ObservationCapture dihapus
 
-## Fase 12 — Overlay Penilaian Siswa (SEDANG DIRANCANG)
+## Fase 12 — Overlay Penilaian Siswa
 
 ### Keputusan Arsitektural (Terkunci)
 - **Posisi tombol**: layar `running`, di bawah "⚠ Kondisi kelas bermasalah?", hanya muncul saat fase Inti
 - **Format**: overlay — tidak memutus alur mengajar
-- **Isi overlay**: semua siswa di rombel
 - **Accordion**: auto-open per siswa — setelah dinilai, tutup otomatis dan siswa berikutnya terbuka
 - **Pagination**: 5 siswa per halaman, auto-next setelah siswa ke-5 dinilai
 - **Mode Cepat**: ★ Lancar / ◐ Berkembang / ○ Perlu dampingi + aktif/perlu dorongan/belum siap
 - **Mode Detail**: L/S/R angka 0–100 + aktif/perlu dorongan/belum siap
-- **Catatan**: tidak ada di kedua mode
-- **Simpan**: semua siswa tersimpan (yang belum diisi = kosong)
-- **Download & cetak**: tersedia di layar Nilai (`nilai.js`) — card "Unduh & Cetak"
-- **ObservationCapture (Fase 11)**: DIHAPUS — digantikan overlay ini
+- **ObservationCapture (Fase 11)**: DIHAPUS
 
-### File yang Akan Disentuh
+### Yang Dikerjakan
+- DB_VERSION 8, store `penilaian_log`
+- `savePenilaian()` + `getRekapFormatifTP()` di `siswa-history.js`
+- Overlay accordion Mode Cepat (★◐○) & Mode Detail (L/S/R)
+- Tombol penilaian di fase Inti, CSS `sr-pn-*`
+- Fase Penilaian dihapus dari semua 18 TP di `fase-a.js`
+- ObservationCapture & card observasi Fase 7 dihapus
+
+## Fase 13 — Printables (Kartu Cetak Guru)
+
+### Keputusan Arsitektural (Terkunci)
+- **Trigger**: tombol "🖨 Cetak Kartu Persiapan" di dalam container "Siapkan Sebelum Kelas" (layar Materi / Step 0)
+- **Output**: `window.print()` — popup window berisi halaman cetak bersih
+- **Format gambar**: PNG, square 1:1 (1024×1024), gaya ilustrasi kartun anak Indonesia
+- **Sumber gambar**: ChatGPT DALL-E, di-cache SW saat pertama online
+- **Lokasi gambar**: `assets/images/printables/`
+- **Cache strategy**: ikut `cacheFirstAppShell` (SW v54)
+- **Layout cetak**: grid 4 kolom, label per kartu, footer tanggal cetak
+
+### File yang Disentuh
 | File | Perubahan |
 |------|-----------|
-| `screens/sesi-runtime.js` | Tambah tombol penilaian di `_renderRunning`, tambah `_renderPenilaianOverlay`, hapus ObservationCapture dari `_renderSelesai` |
-| `screens/sesi-runtime.css` | Tambah class overlay penilaian, hapus sr-obs-capture |
-| `storage/db.js` | DB_VERSION 7 → 8, tambah store `penilaian_log` |
-| `storage/siswa-history.js` | Tambah `savePenilaian()` |
-| `screens/nilai.js` | Tambah card unduh & cetak |
-| `screens/nilai.css` | Styling card baru |
+| `data/fase-a.js` | Field `printables[]` di TP 01–18 (TP 15–18 via import docs/) |
+| `data/printables.js` | **BARU** — `generatePrintHTML(tp)` generator |
+| `screens/dashboard.js` | Import + tombol cetak + `dashCetakKartu()` |
+| `sw.js` | v53→v54, precache 136 path gambar (TP 01–18, semua nama dikoreksi) |
+| `assets/images/printables/` | 136 gambar PNG (TP 01–18) |
 
-### Wireframe Sudah Disetujui
-- Mode Cepat: accordion per siswa, ★◐○ + perilaku 3 tombol
-- Mode Detail: accordion per siswa, L/S/R input + perilaku 3 tombol
-- Pagination header dengan navigasi ‹ ›
-- Footer: tombol Tutup + Simpan
+### Status Gambar per TP
+| TP | Nama | Jumlah | Status |
+|----|------|--------|--------|
+| 01 | Greetings & Farewells | 8 | ✅ |
+| 02 | Introducing Myself | 3 | ✅ |
+| 03 | Classroom Instructions | 6 | ✅ |
+| 04 | Numbers | 20 | ✅ |
+| 05 | Colors | 9 | ✅ |
+| 06 | Shapes | 6 | ✅ |
+| 07 | Family | 6 | ✅ |
+| 08 | My House | 6 | ✅ |
+| 09 | Animals | 10 | ✅ |
+| 10 | Food and Drinks | 11 | ✅ |
+| 11 | Daily Routines | 8 | ✅ |
+| 12 | Body Parts | 8 | ✅ |
+| 13 | Weather | 6 | ✅ |
+| 14 | In the Classroom | 6 | ✅ |
+| 15 | Feelings & Emotions | 7 | ✅ |
+| 16 | Simple Story Retelling | 6 | ✅ |
+| 17 | My Hobbies | 8 | ✅ |
+| 18 | Integrative Project | 2 | ✅ |
+
+### Prompt File Tersedia
+- `flaf-prompts-lengkap.md` — 149 prompt ChatGPT untuk semua 18 TP
+- Style reference: Indonesian school child, flat cartoon, square 1:1, no text
+
+### Git Log Fase 13
+```
+147eed4  fix: title tab cetak undefined → tp.nama
+792582c  fix: judul lembar cetak undefined → tp.nama
+c494685  merge: pertahankan versi lokal fase-13
+8c3cbec  fase-13: printables — kartu cetak guru TP 01-10
+```
 
 ## Git Log (10 commit terakhir)
 ```
-8e66442  docs: update CONTEXT — Fase 8 & 9 complete
-93669c3  fase-9: tambah field mode di langkah[] TP 16-18
-ad269b3  fase-9: mode fungsional di runtime - panel bantuan per langkah TP 15-18
-83a069b  docs: update CONTEXT — Fase 7 complete
-e6ce31f  fase-7: UI saran observasi di Closure screen
-434b8c9  feat: ringkas layar Materi - collapse deskripsi dan indikator
-c7136b6  docs: update CONTEXT — Fase 6 complete
-9f33bcf  fase-6: siswa_per_kelas IDB store + updateSpeakCount saat closure
-7ae6035  docs: update CONTEXT — full flow validated, production ready
-6203e52  fix: sesi-runtime redesign sesuai UI-SKETCH, runtime full layar
+147eed4  fix: title tab cetak undefined → tp.nama
+792582c  fix: judul lembar cetak undefined → tp.nama
+c494685  merge: pertahankan versi lokal fase-13
+8c3cbec  fase-13: printables — kartu cetak guru TP 01-10
+4c3fc8a  docs: update CONTEXT — Fase 12 complete
+617ce24  fase-12: fix syntax fase-a.js — hapus fase Penilaian TP01-14
+08f9a11  fase-12: hapus card observasi Fase 7 + cleanup import siswa-history
 ```
 
 ## Struktur Folder Penting
@@ -143,7 +183,7 @@ FLAF/
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   ├── fase-a.js           ← 18 TP v4.3, semua langkah[] sudah punya field mode
+│   ├── fase-a.js           ← 18 TP v4.3, field mode[] + printables[] (TP 01-18)
 │   └── printables.js       ← generate HTML cetak dari tp.printables[] (PNG via assets/images/printables/)
 ├── modules/
 │   ├── pdf-generator.js    ← generate PNG rekap nilai per TP & rekap akhir semua TP (canvas HTML5, tanpa library)
@@ -156,6 +196,9 @@ FLAF/
 │   ├── jejak.js
 │   ├── nilai.js
 │   └── presensi.js
+├── assets/
+│   └── images/
+│       └── printables/     ← 136 PNG (TP 01-18)
 ├── docs/
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
 │   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅
@@ -163,8 +206,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── assets/images/printables/ ← aset PNG kartu cetak (lihat §Aset Printable)
-├── sw.js                   ← Service Worker v52
+├── sw.js                   ← Service Worker v54
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -262,17 +304,41 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 ✅ FASE 8 COMPLETE — dark theme + UI ringkas layar Materi
 ✅ FASE 9 COMPLETE — mode fungsional TP 15-18
 ✅ FASE 10 COMPLETE — mode fungsional TP 01-14
-✅ FASE 11 COMPLETE — ObservationCapture (akan direvisi)
-
+✅ FASE 11 COMPLETE — ObservationCapture (direvisi di Fase 12)
 ✅ FASE 12 COMPLETE — Overlay penilaian siswa
-   - penilaian_log store (DB_VERSION 8)
-   - Overlay accordion Mode Cepat (★◐○) & Mode Detail (L/S/R)
-   - savePenilaian() + getRekapFormatifTP() baca penilaian_log
-   - Fase Penilaian dihapus dari semua 18 TP
-   - ObservationCapture & card Fase 7 dihapus
+✅ FASE 13 COMPLETE — Printables kartu cetak guru (TP 01-18)
+   - data/printables.js: generatePrintHTML()
+   - field printables[] di fase-a.js TP 01-18 (TP 15-18 via import docs/)
+   - 136 PNG di assets/images/printables/
+   - SW v54, precache 136 gambar (semua nama dikoreksi dari v53)
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
 ✅ Tahap 4: jsPDF CDN dihapus dari index.html — DONE
 ⏳ Tahap 5: Konversi TP13–18 dari pdf ke docx — PENDING
 ```
+
+Next: Fase 14 — (belum ditentukan)
+
+## Audit Media Persiapan vs Skenario
+
+Dilakukan di sesi Mei 2026. Menelusuri seluruh 18 TP — mencocokkan
+field `persiapan[]` dan `printables[]` dengan media yang dipakai di `langkah[]`/`aktivitas[]`.
+
+### Hasil: 4 Gap Ditemukan
+
+| TP | Nama | Gap |
+|----|------|-----|
+| 07 | My Family | Instruksi Pembuka minta guru tunjukkan "foto keluarga guru" (opsional di persiapan, tidak ada di printables). Instruksi Inti minta "siswa ambil gambar keluarga yang disiapkan" — tidak jelas apakah printable atau bawa dari rumah. |
+| 10 | Food & Drinks | "Gambar piring kosong" ada di `persiapan[]` tapi tidak ada di `printables[]`. Guru yang cetak via Cetak Kartu Persiapan tidak mendapat lembar ini. |
+| 16 | Simple Story Retelling | Buku cerita bergambar pre-defined (`tp-16-story-v1.pdf`) direferensikan di `media[]` tapi belum dibuat — tidak ada di printables maupun assets. Seluruh skenario bertumpu pada media ini. |
+| 18 | Integrative Project | Template poster "My World" dan kartu Reference Sentences (`tp-18-template-v1.pdf`, `tp-18-support-v1.pdf`) direferensikan di `media[]` tapi belum dibuat. |
+
+### Status
+⏳ **Belum diaddress** — ditunda sampai semua media persiapan tersedia untuk seluruh TP.
+Gap ini akan diaddress bersamaan dengan penyiapan media PDF/cetak yang direferensikan.
+
+### TD-1 — Sinkronisasi Printables (Partially Resolved)
+- **printables[]** sekarang ada di semua TP 01–18 (TP 15–18 via docs/ import)
+- **SW precache** sudah sinkron dengan file aktual di disk (v54, 136 path, semua nama benar)
+- **Sisa**: unifikasi skema printables[] vs media[] belum dilakukan

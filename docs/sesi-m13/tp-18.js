@@ -52,7 +52,7 @@ const TP_18 = {
 
   vocab: ['my world', 'this is me', 'my family', 'my house', 'I like', 'every day', 'my hobby', 'present', 'poster', 'project'],
 
-  persiapan: ['Template poster standardized (A4 folded atau kartu pre-printed)', 'Spidol/pensil warna untuk decoration'],
+  persiapan: ['Template poster "My World" (1 per siswa, disiapkan di meja terbalik sebelum kelas masuk)', 'Spidol warna atau pensil warna (1 set per siswa)'],
 
   media: [
     {
@@ -75,6 +75,11 @@ const TP_18 = {
       reusable_lintas_tp : false,
       keterangan         : 'Kartu support: "Hello! My name is ___. I am ___ years old. I have a ___ family. I live in a house. I like ___ because it is ___." (untuk guru assist jika siswa lupa).',
     },
+  ],
+
+  printables: [
+    { file: 'tp18-poster-template.png', label: 'Poster Template' },
+    { file: 'tp18-reference-card.png',  label: 'Reference Card' },
   ],
 
   skenario: [
