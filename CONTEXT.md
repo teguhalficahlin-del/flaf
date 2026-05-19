@@ -159,6 +159,7 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+878c22c  fix: default attendance status H (hadir) instead of A
 1ad4012  fix: remove undefined JP references from kurikulum UI
 8cc01f2  docs: update CONTEXT — remove filename label fix
 a76ae4b  fix: remove filename label from kurikulum download button
