@@ -159,6 +159,7 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+1ad4012  fix: remove undefined JP references from kurikulum UI
 8cc01f2  docs: update CONTEXT — remove filename label fix
 a76ae4b  fix: remove filename label from kurikulum download button
 e2c73ac  fix: pdf-handler path, cache lookup, MIME detection for .docx
@@ -256,6 +257,11 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 ### TD-6: jsPDF CDN
 ✅ RESOLVED — Script tag jsPDF (cdnjs) dihapus dari index.html — tidak dipakai oleh kode manapun
+
+### TD-7: Field `jp` tidak ada di fase-a.js dan meta
+✅ RESOLVED — JP dihapus dari UI kurikulum (baris 172, 229, 243, 313 screens/kurikulum.js)
+- `tp.jp` dan `meta.total_jp` tidak pernah didefinisikan di fase-a.js
+- Semua referensi menghasilkan `undefined` di UI — dihapus di commit `1ad4012`
 
 ## Aturan Kerja (WAJIB diikuti Claude)
 - Setiap perubahan kode: sebutkan **nama file**, **blok lama presisi** (ctrl+F-findable), **blok baru**
