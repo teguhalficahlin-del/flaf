@@ -120,7 +120,7 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 | `data/fase-a.js` | Field `printables[]` di TP 01–18 (TP 15–18 via import docs/) |
 | `data/printables.js` | **BARU** — `generatePrintHTML(tp)` generator |
 | `screens/dashboard.js` | Import + tombol cetak + `dashCetakKartu()` |
-| `sw.js` | v53→v54, precache 136 path gambar (TP 01–18, semua nama dikoreksi) |
+| `sw.js` | v53→v55, precache 136 path gambar + 18 modul ajar .docx (TP 01–18) |
 | `assets/images/printables/` | 136 gambar PNG (TP 01–18) |
 
 ### Status Gambar per TP
@@ -225,10 +225,9 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 | Range | Format | Pola nama |
 |-------|--------|-----------|
-| TP01–12 | `.docx` | `Modul_Ajar_V3_TP{NN}_{Topic}.docx` |
-| TP13–18 | `.pdf` | `tp-{NN}-v1.pdf` (belum dikonversi) |
+| TP01–18 | `.docx` | `Modul_Ajar_V3_TP{NN}_{Topic}.docx` |
 
-**Keputusan terkunci**: semua file akan berformat `.docx`. TP13–18 pending konversi (lihat Tahap 5 di §Status Sesi).
+**Konversi selesai** — semua 18 TP sudah `.docx` (Tahap 5 ✅).
 
 ## Technical Debt yang Diketahui
 
@@ -238,7 +237,7 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 - Belum diunifikasi. Jangan merge dua skema ini tanpa keputusan arsitektural.
 
 ### TD-2: pdf_ref Mismatch di TP16 dan TP18
-✅ RESOLVED — pdf_ref dikoreksi ke tp-16-v1.pdf dan tp-18-v1.pdf
+✅ RESOLVED — pdf_ref dikoreksi ke tp-16-v1.pdf dan tp-18-v1.pdf; kemudian diupdate ke .docx (Tahap 5)
 
 ### TD-3: Mode Bantuan Boilerplate di TP03–14
 - Semua `instruksi` langkah di TP03–14 mendapat teks bantuan generik yang sama.
@@ -310,12 +309,15 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - data/printables.js: generatePrintHTML()
    - field printables[] di fase-a.js TP 01-18 (TP 15-18 via import docs/)
    - 136 PNG di assets/images/printables/
-   - SW v54, precache 136 gambar (semua nama dikoreksi dari v53)
+   - SW v54→v55, precache 136 gambar + 18 modul ajar .docx
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
 ✅ Tahap 4: jsPDF CDN dihapus dari index.html — DONE
-⏳ Tahap 5: Konversi TP13–18 dari pdf ke docx — PENDING
+✅ Tahap 5: Konversi TP13–18 dari pdf ke docx — DONE
+   - pdf/ folder: semua 18 TP sudah Modul_Ajar_V3_TP{NN}_{Topic}.docx
+   - pdf_ref di TP15–18 docs/ diupdate ke .docx
+   - SW v55, PDF_MANIFEST diupdate ke 18 path .docx
 ```
 
 Next: Fase 14 — (belum ditentukan)
