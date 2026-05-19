@@ -10,7 +10,7 @@
 
 ## Status Terakhir (Mei 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
-- **18 TP sudah migrate + integrated — FASE A 100% COMPLETE ✅**
+- **18 TP sudah migrate + integrated — schema v4.3 selesai** _(known issues: lihat §Technical Debt)_
 - **UI-SKETCH.html sudah di-review dan disetujui — acuan layout runtime**
 - **Fase 5 Build SELESAI + post-fix SELESAI ✅**
 - **Fase 6 SELESAI ✅**
@@ -134,19 +134,23 @@ FLAF/
 ├── screens/
 │   ├── dashboard.js        ← RT v6 dihapus, sesi-runtime terpasang, _buildTabMateri ringkas
 │   ├── dashboard.css       ← rt-* classes dihapus
-│   ├── sesi-runtime.js     ← 5-state machine, dark theme, mode bantuan, ObservationCapture (akan direvisi)
-│   ├── sesi-runtime.css    ← sr-* prefix, dark theme, sr-mode-bantuan, sr-obs-capture (akan direvisi)
-│   ├── nilai.js            ← layar Kelas — akan ditambah card unduh & cetak (Fase 12)
-│   ├── nilai.css           ← akan ditambah styling card baru (Fase 12)
+│   ├── sesi-runtime.js     ← 5-state machine, dark theme, mode bantuan, overlay penilaian (Fase 12 ✅)
+│   ├── sesi-runtime.css    ← sr-* prefix, dark theme, sr-mode-bantuan, overlay penilaian (Fase 12 ✅)
+│   ├── nilai.js            ← layar Kelas — card unduh & cetak (Fase 12 ✅)
+│   ├── nilai.css           ← styling card unduh & cetak (Fase 12 ✅)
 │   ├── kurikulum.js/css
 │   ├── jejak.js
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   └── fase-a.js           ← 18 TP v4.3, semua langkah[] sudah punya field mode
+│   ├── fase-a.js           ← 18 TP v4.3, semua langkah[] sudah punya field mode
+│   └── printables.js       ← generate HTML cetak dari tp.printables[] (PNG via assets/images/printables/)
+├── modules/
+│   ├── pdf-generator.js    ← generate PNG rekap nilai per TP & rekap akhir semua TP (canvas HTML5, tanpa library)
+│   └── pdf-handler.js      ← download modul ajar via cache-first (serve dari pdf/, fallback ke network)
 ├── storage/
-│   ├── db.js               ← DB_VERSION 7, stores: kv, log_queue, nilai_data, obs_log, presensi_log, siswa_per_kelas, teacher_data, teaching_log
-│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount, saveObsTags
+│   ├── db.js               ← DB_VERSION 8, stores: kv, log_queue, nilai_data, penilaian_log, presensi_log, siswa_per_kelas, teacher_data, teaching_log
+│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount, savePenilaian
 │   ├── logger.js
 │   ├── export.js
 │   ├── jejak.js
@@ -158,11 +162,55 @@ FLAF/
 │   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
+├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
+├── assets/images/printables/ ← aset PNG kartu cetak (lihat §Aset Printable)
 ├── sw.js                   ← Service Worker v52
 ├── manifest.json
 ├── app.js
 └── index.html
 ```
+
+## Aset Printable
+
+- **Lokasi**: `assets/images/printables/`
+- **Pola nama**: `tp{NN}-{descriptor}.png` (contoh: `tp01-salam-pagi.png`, `tp16-cover.png`)
+- **Cakupan**: TP01–18, semua topik lengkap
+- **Referensi**: field `printables[]` di setiap TP → dibaca oleh `data/printables.js`
+
+## Modul Ajar (pdf/)
+
+Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (cache-first):
+
+| Range | Format | Pola nama |
+|-------|--------|-----------|
+| TP01–12 | `.docx` | `Modul_Ajar_V3_TP{NN}_{Topic}.docx` |
+| TP13–18 | `.pdf` | `tp-{NN}-v1.pdf` (belum dikonversi) |
+
+**Keputusan terkunci**: semua file akan berformat `.docx`. TP13–18 pending konversi (lihat Tahap 5 di §Status Sesi).
+
+## Technical Debt yang Diketahui
+
+### TD-1: Dua Skema Printable Hidup Berdampingan
+- **TP01–14** pakai field `printables[]` → PNG via `data/printables.js`
+- **TP15–18** pakai field `media[]` → `pdf_ref` via `modules/pdf-handler.js`
+- Belum diunifikasi. Jangan merge dua skema ini tanpa keputusan arsitektural.
+
+### TD-2: pdf_ref Mismatch di TP16 dan TP18
+✅ RESOLVED — pdf_ref dikoreksi ke tp-16-v1.pdf dan tp-18-v1.pdf
+
+### TD-3: Mode Bantuan Boilerplate di TP03–14
+- Semua `instruksi` langkah di TP03–14 mendapat teks bantuan generik yang sama.
+- Semua `audio` langkah di TP03–14 mendapat teks bantuan generik yang sama.
+- TP01–02 dan TP15–18 sudah punya bantuan kontekstual per langkah.
+
+### TD-4: Encoding Artifact
+- String `'2├ù'` (harusnya `2×`) masih ada di TP02 dan TP12 — sisa mojibake dari migrasi.
+
+### TD-5: Komentar Stale di fase-a.js
+✅ RESOLVED — Dua baris stale dihapus dari header fase-a.js
+
+### TD-6: jsPDF CDN
+✅ RESOLVED — Script tag jsPDF (cdnjs) dihapus dari index.html — tidak dipakai oleh kode manapun
 
 ## Aturan Kerja (WAJIB diikuti Claude)
 - Setiap perubahan kode: sebutkan **nama file**, **blok lama presisi** (ctrl+F-findable), **blok baru**
@@ -206,7 +254,7 @@ FLAF/
 ## Status Sesi
 
 ```
-✅ FASE A MIGRATION COMPLETE (18 TP, M1–M13)
+⚠️  FASE A SCHEMA: v4.3 selesai (TP01–18). Known issues tercatat di §Technical Debt.
 ✅ UI-SKETCH.html DISETUJUI (acuan layout runtime)
 ✅ FASE 5 BUILD COMPLETE + POST-FIX + VALIDATED
 ✅ FASE 6 COMPLETE — siswa_per_kelas IDB store
@@ -223,5 +271,8 @@ FLAF/
    - Fase Penilaian dihapus dari semua 18 TP
    - ObservationCapture & card Fase 7 dihapus
 
-Next: Fase 13 — (belum ditentukan)
+✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
+✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
+✅ Tahap 4: jsPDF CDN dihapus dari index.html — DONE
+⏳ Tahap 5: Konversi TP13–18 dari pdf ke docx — PENDING
 ```

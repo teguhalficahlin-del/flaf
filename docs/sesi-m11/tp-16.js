@@ -62,7 +62,7 @@ const TP_16 = {
       nama               : 'Buku Cerita Bergambar Pre-defined',
       tipe               : 'buku_cetak',
       printable          : true,
-      pdf_ref            : 'tp-16-story-v1.pdf',
+      pdf_ref            : 'tp-16-v1.pdf',
       pdf_halaman        : '1–5',
       reusable_lintas_tp : false,
       keterangan         : 'Satu cerita standard (3–5 halaman) yang sama untuk semua kelas. Cerita: karakter positif, urutan jelas, ending baik. Contoh: "Ani finds a lost cat → she helps it → the cat finds home."',
