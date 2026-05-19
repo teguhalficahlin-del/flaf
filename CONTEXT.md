@@ -232,9 +232,10 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 ## Technical Debt yang Diketahui
 
 ### TD-1: Dua Skema Printable Hidup Berdampingan
-- **TP01–14** pakai field `printables[]` → PNG via `data/printables.js`
+- **TP01–14** pakai field `printables[]` → PNG via `data/printables.js`; field `pdf_ref` ada di tiap TP
 - **TP15–18** pakai field `media[]` → `pdf_ref` via `modules/pdf-handler.js`
 - Belum diunifikasi. Jangan merge dua skema ini tanpa keputusan arsitektural.
+- `kurikulum.js` baca `tp.pdf_ref` (bukan construct dari `tp.id`); `pdf-handler.js` terima `.docx`
 
 ### TD-2: pdf_ref Mismatch di TP16 dan TP18
 ✅ RESOLVED — pdf_ref dikoreksi ke tp-16-v1.pdf dan tp-18-v1.pdf; kemudian diupdate ke .docx (Tahap 5)
@@ -318,6 +319,10 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf/ folder: semua 18 TP sudah Modul_Ajar_V3_TP{NN}_{Topic}.docx
    - pdf_ref di TP15–18 docs/ diupdate ke .docx
    - SW v55, PDF_MANIFEST diupdate ke 18 path .docx
+✅ Tahap 6: Fix pdf_ref wiring TP01–14 — DONE
+   - pdf_ref ditambah ke fase-a.js untuk TP01–14
+   - kurikulum.js: baca tp.pdf_ref (fallback ke tp.id-v1.pdf)
+   - pdf-handler.js: validasi terima .docx selain .pdf
 ```
 
 Next: Fase 14 — (belum ditentukan)

@@ -297,7 +297,7 @@ function _buildTPItemHTML(tp) {
       </li>
     `).join('');
 
-  const pdfFilename = `${tp.id}-v1.pdf`;
+  const pdfFilename = tp.pdf_ref || `${tp.id}-v1.pdf`;
 
   const isFirst = tp.nomor === 1;
   return `

@@ -81,6 +81,7 @@ const FASE_A = {
       vocab: ['hello', 'hi', 'goodbye', 'bye', 'see you', 'good morning',
               'good afternoon', 'good evening', 'good night'],
       persiapan: ['Kartu gambar salam (pagi/siang/sore)', 'Kartu waktu (matahari/bulan)'],
+      pdf_ref: 'Modul_Ajar_V3_TP01_Greetings_And_Farewells.docx',
       printables: [
         { file: 'tp01-good-morning.png',   label: 'Good Morning' },
         { file: 'tp01-good-afternoon.png', label: 'Good Afternoon' },
@@ -393,6 +394,7 @@ const FASE_A = {
       vocab: ['name', 'my name is', 'I am', 'years old', 'how old',
               'nice to meet you', 'what is your name'],
       persiapan: ['Papan tulis + spidol', 'Kertas name tag kosong'],
+      pdf_ref: 'Modul_Ajar_V3_TP02_Introducing_Myself.docx',
       printables: [
         { file: 'tp02-name-tag.png',       label: 'Name Tag' },
         { file: 'tp02-introduce-boy.png',  label: 'Hello I am (Laki-laki)' },
@@ -571,6 +573,7 @@ const FASE_A = {
       vocab: ['sit down', 'stand up', 'open', 'close', 'listen', 'look',
               'repeat', 'read', 'write', 'draw', 'stop', 'go'],
       persiapan: ['Kartu instruksi bergambar (sit/stand/open/close)', 'Poster TPR'],
+      pdf_ref: 'Modul_Ajar_V3_TP03_Classroom_Instructions.docx',
       printables: [
         { file: 'tp03-listen.png',     label: 'Listen' },
         { file: 'tp03-look.png',       label: 'Look' },
@@ -748,6 +751,7 @@ const FASE_A = {
               'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
               'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'how many'],
       persiapan: ['Kartu angka 1–20', 'Benda untuk dihitung (buku, pensil, dll)'],
+      pdf_ref: 'Modul_Ajar_V3_TP04_Numbers_1_20.docx',
       printables: [
         { file: 'tp04-num-01.png', label: '1' },
         { file: 'tp04-num-02.png', label: '2' },
@@ -900,6 +904,7 @@ const FASE_A = {
       vocab: ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink',
               'black', 'white', 'brown', 'colour', 'favourite', 'what colour'],
       persiapan: ['Kartu warna 8 warna dasar', 'Benda berwarna dari kelas/tas siswa'],
+      pdf_ref: 'Modul_Ajar_V3_TP05_Colours.docx',
       printables: [
         { file: 'tp05-red.png',    label: 'Red' },
         { file: 'tp05-blue.png',   label: 'Blue' },
@@ -1040,6 +1045,7 @@ const FASE_A = {
       vocab: ['circle', 'square', 'triangle', 'rectangle', 'star', 'heart',
               'diamond', 'oval', 'shape', 'this is', 'I see'],
       persiapan: ['Kartu bentuk berwarna', 'Gunting + kertas warna (opsional)'],
+      pdf_ref: 'Modul_Ajar_V3_TP06_Shapes.docx',
       printables: [
         { file: 'tp06-circle.png',    label: 'Circle' },
         { file: 'tp06-square.png',    label: 'Square' },
@@ -1168,6 +1174,7 @@ const FASE_A = {
       ],
       vocab: ['mother', 'father', 'sister', 'brother', 'grandmother', 'grandfather', 'family', 'this is my'],
       persiapan: ['Gambar keluarga dari majalah/buku', 'Foto keluarga guru (opsional)'],
+      pdf_ref: 'Modul_Ajar_V3_TP07_My_Family.docx',
       printables: [
         { file: 'tp07-mother.png',      label: 'Mother' },
         { file: 'tp07-father.png',      label: 'Father' },
@@ -1270,6 +1277,7 @@ const FASE_A = {
       ],
       vocab: ['bedroom', 'kitchen', 'bathroom', 'living room', 'bed', 'table', 'chair', 'sofa', 'there is', 'in the'],
       persiapan: ['Gambar denah rumah sederhana', 'Kartu nama ruangan'],
+      pdf_ref: 'Modul_Ajar_V3_TP08_My_House.docx',
       printables: [
         { file: 'tp08-bedroom.png',    label: 'Bedroom' },
         { file: 'tp08-kitchen.png',    label: 'Kitchen' },
@@ -1372,6 +1380,7 @@ const FASE_A = {
       ],
       vocab: ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken', 'elephant', 'monkey', 'snake', 'can', 'has'],
       persiapan: ['Kartu gambar hewan', 'Poster hewan'],
+      pdf_ref: 'Modul_Ajar_V3_TP09_Animals.docx',
       printables: [
         { file: 'tp09-cat.png',      label: 'Cat' },
         { file: 'tp09-dog.png',      label: 'Dog' },
@@ -1484,6 +1493,7 @@ const FASE_A = {
       ],
       vocab: ['rice', 'noodles', 'bread', 'egg', 'chicken', 'fish', 'milk', 'water', 'juice', 'like', 'do not like'],
       persiapan: ['Kartu gambar makanan/minuman', 'Gambar piring kosong'],
+      pdf_ref: 'Modul_Ajar_V3_TP10_Food_and_Drinks.docx',
       printables: [
         { file: 'tp10-rice.png',             label: 'Rice' },
         { file: 'tp10-bread.png',            label: 'Bread' },
@@ -1603,6 +1613,7 @@ const FASE_A = {
       ],
       vocab: ['wake up', 'brush teeth', 'eat breakfast', 'go to school', 'study', 'play', 'eat dinner', 'sleep', 'every day', 'first', 'then'],
       persiapan: ['Kartu gambar kegiatan rutin', 'Kartu urutan (first/then/after that)'],
+      pdf_ref: 'Modul_Ajar_V3_TP11_Daily_Routines.docx',
       printables: [
         { file: 'tp11-wake-up.png',       label: 'Wake Up' },
         { file: 'tp11-brush-teeth.png',   label: 'Brush Teeth' },
@@ -1713,6 +1724,7 @@ const FASE_A = {
       ],
       vocab: ['head', 'eyes', 'ears', 'nose', 'mouth', 'hands', 'legs', 'feet', 'touch', 'I use my', 'to see', 'to hear'],
       persiapan: ['Poster tubuh manusia', 'Kartu nama anggota tubuh'],
+      pdf_ref: 'Modul_Ajar_V3_TP12_Body_Parts.docx',
       printables: [
         { file: 'tp12-head.png',  label: 'Head' },
         { file: 'tp12-eyes.png',  label: 'Eyes' },
@@ -1817,6 +1829,7 @@ const FASE_A = {
       ],
       vocab: ['sunny', 'cloudy', 'rainy', 'windy', 'hot', 'cold', 'weather', 'today', 'umbrella', 'when it is'],
       persiapan: ['Kartu gambar cuaca', 'Kalender cuaca kelas (opsional)'],
+      pdf_ref: 'Modul_Ajar_V3_TP13_Weather_and_Seasons.docx',
       printables: [
         { file: 'tp13-sunny.png',  label: 'Sunny' },
         { file: 'tp13-cloudy.png', label: 'Cloudy' },
@@ -1931,6 +1944,7 @@ const FASE_A = {
       ],
       vocab: ['book', 'pen', 'pencil', 'eraser', 'ruler', 'bag', 'whiteboard', 'on', 'in', 'under', 'next to', 'can I borrow'],
       persiapan: ['Benda nyata dari kelas', 'Kartu preposisi bergambar'],
+      pdf_ref: 'Modul_Ajar_V3_TP14_In_the_Classroom.docx',
       printables: [
         { file: 'tp14-book.png',   label: 'Book' },
         { file: 'tp14-pen.png',    label: 'Pen' },
