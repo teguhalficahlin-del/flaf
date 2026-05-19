@@ -54,7 +54,7 @@ const TP_16 = {
 
   vocab: ['story', 'character', 'first', 'then', 'after that', 'finally', 'who', 'what', 'where', 'because', 'I think'],
 
-  persiapan: ['Buku cerita bergambar sederhana pre-defined (3–5 halaman)', 'Kartu urutan 4 item (first, then, after that, finally)'],
+  persiapan: ['Buku cerita bergambar pre-defined: "Ani Finds a Cat" (3–5 halaman)', 'Kartu urutan: first, then, after that, finally (1 set per pasang)'],
 
   media: [
     {
@@ -77,6 +77,15 @@ const TP_16 = {
       reusable_lintas_tp : true,
       keterangan         : '4 kartu A5 dengan text + visual: "First" (start icon), "Then" (arrow), "After that" (continuation), "Finally" (end icon). Untuk scaffold pair retelling.',
     },
+  ],
+
+  printables: [
+    { file: 'tp16-cover.png',          label: 'Story Cover' },
+    { file: 'tp16-page-01.png',        label: 'Page 1' },
+    { file: 'tp16-page-02.png',        label: 'Page 2' },
+    { file: 'tp16-page-03.png',        label: 'Page 3' },
+    { file: 'tp16-page-04.png',        label: 'Page 4' },
+    { file: 'tp16-sequence-cards.png', label: 'Sequence Cards' },
   ],
 
   skenario: [
