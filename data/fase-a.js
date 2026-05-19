@@ -17,8 +17,6 @@
  *   pm: 'meaningful' — mengaitkan dengan konteks nyata / kehidupan
  *   pm: 'joyful'     — aktivitas yang memicu semangat & rasa ingin tahu
  *
- * TP 1, 2, 18 sudah direvisi ke standar v3.
- * TP 3–17 masih format v2 (akan direvisi bertahap).
  * =============================================================
  */
 
