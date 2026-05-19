@@ -61,7 +61,7 @@ const TP_17 = {
       nama               : 'Kartu Hobi Bergambar (8 item)',
       tipe               : 'kartu_cetak',
       printable          : true,
-      pdf_ref            : 'tp-17-v1.pdf',
+      pdf_ref            : 'Modul_Ajar_V3_TP17_My_Hobbies.docx',
       pdf_halaman        : 1,
       reusable_lintas_tp : true,
       keterangan         : '8 kartu A5 dengan gambar & text: reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. Ilustrasi netral & beragam. Universal framing.',

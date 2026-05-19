@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v54';          // ← fase-13+: printables cache lengkap TP01-18
+const CACHE_VERSION  = 'flaf-v55';          // ← tahap-5: semua modul ajar .docx TP01-18
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -200,24 +200,24 @@ const APP_SHELL = [
 ];
 
 const PDF_MANIFEST = [
-  './pdf/tp-01-v1.pdf',
-  './pdf/tp-02-v1.pdf',
-  './pdf/tp-03-v1.pdf',
-  './pdf/tp-04-v1.pdf',
-  './pdf/tp-05-v1.pdf',
-  './pdf/tp-06-v1.pdf',
-  './pdf/tp-07-v1.pdf',
-  './pdf/tp-08-v1.pdf',
-  './pdf/tp-09-v1.pdf',
-  './pdf/tp-10-v1.pdf',
-  './pdf/tp-11-v1.pdf',
-  './pdf/tp-12-v1.pdf',
-  './pdf/tp-13-v1.pdf',
-  './pdf/tp-14-v1.pdf',
-  './pdf/tp-15-v1.pdf',
-  './pdf/tp-16-v1.pdf',
-  './pdf/tp-17-v1.pdf',
-  './pdf/tp-18-v1.pdf',
+  './pdf/Modul_Ajar_V3_TP01_Greetings_And_Farewells.docx',
+  './pdf/Modul_Ajar_V3_TP02_Introducing_Myself.docx',
+  './pdf/Modul_Ajar_V3_TP03_Classroom_Instructions.docx',
+  './pdf/Modul_Ajar_V3_TP04_Numbers_1_20.docx',
+  './pdf/Modul_Ajar_V3_TP05_Colours.docx',
+  './pdf/Modul_Ajar_V3_TP06_Shapes.docx',
+  './pdf/Modul_Ajar_V3_TP07_My_Family.docx',
+  './pdf/Modul_Ajar_V3_TP08_My_House.docx',
+  './pdf/Modul_Ajar_V3_TP09_Animals.docx',
+  './pdf/Modul_Ajar_V3_TP10_Food_and_Drinks.docx',
+  './pdf/Modul_Ajar_V3_TP11_Daily_Routines.docx',
+  './pdf/Modul_Ajar_V3_TP12_Body_Parts.docx',
+  './pdf/Modul_Ajar_V3_TP13_Weather_and_Seasons.docx',
+  './pdf/Modul_Ajar_V3_TP14_In_the_Classroom.docx',
+  './pdf/Modul_Ajar_V3_TP15_Feelings_and_Emotions.docx',
+  './pdf/Modul_Ajar_V3_TP16_Simple_Story_Retelling.docx',
+  './pdf/Modul_Ajar_V3_TP17_My_Hobbies.docx',
+  './pdf/Modul_Ajar_V3_TP18_Integrative_Project_My_World.docx',
 ];
 
 // Network-only: Supabase + CDN eksternal (jsPDF, dll)

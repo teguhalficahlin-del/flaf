@@ -63,7 +63,7 @@ const TP_15 = {
       nama               : 'Kartu Emosi Bergambar (7 Emosi)',
       tipe               : 'kartu_cetak',
       printable          : true,
-      pdf_ref            : 'tp-15-v1.pdf',
+      pdf_ref            : 'Modul_Ajar_V3_TP15_Feelings_and_Emotions.docx',
       pdf_halaman        : 1,
       reusable_lintas_tp : true,
       keterangan         : '7 kartu A5 berisi ekspresi wajah anak (happy, sad, angry, scared, tired, excited, bored) — ilustrasi netral & beragam (usia, penampilan, inklusi). Bisa dipakai ulang di TP-TP lain tentang emosi.',
