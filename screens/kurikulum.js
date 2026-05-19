@@ -344,7 +344,6 @@ function _buildTPItemHTML(tp) {
           >
             <span class="kur-pdf-icon">📄</span>
             <span class="kur-pdf-label">Download Modul Ajar — ${_esc(tp.nama)}</span>
-            <span class="kur-pdf-filename">${_esc(pdfFilename)}</span>
           </button>
         </div>
 
