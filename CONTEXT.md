@@ -325,7 +325,33 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf-handler.js: validasi terima .docx selain .pdf
 ```
 
-Next: Fase 15 — (belum ditentukan)
+Next: Fase 15 — Audit & fix pm TP01–14
+
+## Fase 15 — Audit pm TP01–14
+
+### Temuan
+- Total warning instruksi tanpa pm: 115
+- TP01–02: 5 warning (sporadis)
+- TP03–14: ~88 warning (sistematis — Pembuka[1], 
+  semua Inti[genap], Penutup[0])
+- TP15–16: ~14 warning
+- TP17–18: 3 warning
+- Pola: omission dari Fase 10 saat migrasi awal
+
+### Status
+- TP01–14 format v4.3: ✅ VALID
+  (langkah[], mode mudah/normal/tantangan, bantuan)
+- pm missing: ⏳ PENDING KEPUTUSAN
+  Opsi A: fix per langkah (butuh review konten)
+  Opsi B: tandai intentional by design
+
+### Keputusan Terkunci
+- Format fase-a.js TIDAK perlu migrasi struktur
+- Hanya pm yang perlu ditangani di sesi berikutnya
+
+### Next Session Bootstrap
+Akun baru: paste CONTEXT.md ke Claude.ai baru
+lalu jalankan audit pm di atas untuk konfirmasi posisi.
 
 ## Fase 14 — Migrasi langkah[] TP15–18
 
