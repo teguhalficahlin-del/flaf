@@ -2,7 +2,7 @@
  * =============================================================
  * FLAF — TP 17 (My Hobbies)
  * File: docs/sesi-m12/tp-17.js
- * Format: v4.3 — Hybrid (aktivitas[] + langkah[] backward compat)
+ * Format: v4.3 — langkah[] only
  * =============================================================
  *
  * STATUS: UPDATED — langkah[] ditambah field mode (Fase 9)
@@ -85,85 +85,34 @@ const TP_17 = {
       fase  : 'Pembuka',
       durasi: 10,
 
-      aktivitas: [
-        {
-          id    : 'tp17-pembuka-meaningful',
-          tipe  : 'meaningful_link',
-          judul : 'Guru Model Hobi Sendiri',
-          pm    : 'joyful',
-
-          tujuan_komunikasi : 'Siswa connect hobi sebagai natural part of life. Guru model dengan enthusiasm, bukan expertise.',
-          vocab_target      : [],
-
-          durasi_target_detik : 300,
-          durasi_min_detik    : 180,
-
-          micro_script: {
-            pembuka : '"Hello class! Today we talk about hobbies. What do you do in your free time?"',
-            selama  : `Guru ceritakan hobi sendiri (PERSONAL & AUTHENTIC, bukan script):
-"I like reading. In my free time, I read books. Reading is fun!
-I also like cooking. I cook dinner at home. Cooking is interesting because I try new recipes.
-What about you? What do you like to do?"
-
-TONE: Enthusiastic, natural, relatable.
-TIDAK: "I HAVE an expensive hobby" — cukup "I like X because it is fun."
-
-Guru: "Hobbies are things we love to do. Everyone has hobbies. Today, we learn hobbies in English!"`,
-            penutup : '"Let us learn about hobbies together!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'I like reading because it is fun! I like cooking because it is interesting! What do you like to do?',
-            contoh_siswa : '',
-            target_vocab : [],
-          },
-
-          media_dipakai : [],
-
-          mode: {
-            mudah: {
-              bantuan: 'Guru ceritakan hobi dengan gesture/action yang jelas. Siswa dengarkan saja, tidak perlu respond.',
-              panjang_speaking: 'Tidak perlu speaking di tahap ini. Listen saja.',
-            },
-            normal: {
-              bantuan: 'Guru ceritakan, tanya "What do you like?" — siswa boleh jawab atau shrug (OK).',
-              panjang_speaking: 'Optional jawab "I like..." atau sekedar nod/gesture.',
-            },
-            tantangan: {
-              bantuan: 'Guru tanya detailed: "What hobbies do you have?" — siswa jawab panjang atau ask follow-up questions.',
-              panjang_speaking: 'Coba respond "I like... because..." atau tanya balik guru.',
-            },
-          },
-
-          observation: { aktif: false },
-
-          fallback: {
-            siswa_diam : 'Normal. Guru lanjut. Listening comprehension adalah goal utama di pembuka.',
-            energi_rendah : 'Tambah gesture berlebihan (exaggerated action untuk hobi). Buat siswa tertawa.',
-          },
-
-          advance: { mode: 'manual' },
-        },
-      ],
-
       langkah: [
         {
           tipe: 'instruksi',
-          teks: 'Guru ceritakan hobi sendiri dengan enthusiasm. "I like reading because it is fun. I like cooking because it is interesting." Tanya siswa: "What do you like to do?" (listen, jangan push respons).',
+          pm  : 'mindful',
+          teks: 'Guru berdiri di depan kelas. Ucap: "Good morning, everyone! How are you today?" — tunggu respons kelas. Ucap: "I\'m fine, thank you! Are you ready? Let\'s start." Cue kritis: layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
           mode: {
-            mudah:     { bantuan: 'Guru ceritakan hobi dengan gesture/action yang jelas. Siswa dengarkan saja, tidak perlu respond.' },
-            normal:    { bantuan: 'Guru ceritakan, tanya "What do you like?" — siswa boleh jawab atau shrug (OK).' },
-            tantangan: { bantuan: 'Guru tanya detailed: "What hobbies do you have?" — siswa jawab panjang atau ask follow-up questions.' },
+            solo : { teks: 'Guru ucap greeting, tunggu respons, lanjut.', bantuan: '' },
+            duo  : { teks: 'Guru ucap greeting, tunggu respons, lanjut.', bantuan: '' },
+            grup : { teks: 'Guru ucap greeting, tunggu respons kelas, lanjut.', bantuan: '' },
           },
         },
         {
           tipe: 'audio',
-          teks: 'I like reading because it is fun! I like cooking because it is interesting! What do you like to do?',
+          teks: 'Good morning, everyone! How are you today? / I\'m fine, thank you! Are you ready? Let\'s start.',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'joyful',
+          teks: 'Guru berdiri di tengah kelas — tidak ada kartu. Gesture membuka buku, pura-pura membaca: "I like reading!" [tunggu 2–3 detik]. Gesture mengaduk masakan: "I like cooking!" [tunggu 2–3 detik]. Gesture menendang bola: "I like playing football!" [tunggu 2–3 detik]. Ucap: "These are hobbies. Things we love to do. Today — hobbies in English." Tunggu respons bebas. Cue kritis: guru yang perform — bukan meminta siswa respond dulu. Tiga hobi cukup, jangan perkenalkan semua 8. Respons bebas siswa diterima tanpa koreksi.',
           mode: {
-            mudah:     { bantuan: 'Ucapkan pelan dengan gesture. Siswa dengarkan.' },
-            normal:    { bantuan: 'Ucapkan natural. Siswa optional respond.' },
-            tantangan: { bantuan: 'Ucapkan + tanya balik siswa langsung.' },
+            solo : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas.', bantuan: '' },
+            duo  : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas.', bantuan: '' },
+            grup : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas kelas.', bantuan: '' },
           },
+        },
+        {
+          tipe: 'respons_siswa',
+          teks: 'Respons bebas — boleh nama hobi dalam bahasa Indonesia atau Inggris, gesture ikut, atau ekspresi pengenalan. Tidak dikoreksi, tidak dikonfirmasi.',
         },
       ],
     },
@@ -172,327 +121,145 @@ Guru: "Hobbies are things we love to do. Everyone has hobbies. Today, we learn h
       fase  : 'Inti',
       durasi: 35,
 
-      aktivitas: [
-        {
-          id    : 'tp17-inti-hobi-intro',
-          tipe  : 'modeling',
-          judul : 'Introduce 8 Hobbies + Gerund Structure',
-          pm    : 'joyful',
-
-          tujuan_komunikasi : 'Siswa mengenal 8 hobi dengan gerund form yang benar via kartu + gesture/action.',
-          vocab_target      : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
-
-          durasi_target_detik : 360,
-          durasi_min_detik    : 240,
-
-          micro_script: {
-            pembuka : '"Now let me show you hobbies in English!"',
-            selama  : `FASE 1 — INTRODUCE VIA CARDS + ACTION (4 menit):
-Guru tunjuk kartu satu per satu, ucapkan + action/gesture:
-1. READING — "reading" (gesture: membuka buku, baca)
-2. DRAWING — "drawing" (gesture: pegang pensil, gambar di udara)
-3. SINGING — "singing" (gesture: tangan ke mulut, nyanyi "la la la")
-4. DANCING — "dancing" (gesture: gerak badan, dance)
-5. PLAYING FOOTBALL — "playing football" (gesture: menendang bola)
-6. COOKING — "cooking" (gesture: mengaduk, masak)
-7. SWIMMING — "swimming" (gesture: gerakan berenang)
-8. CYCLING — "cycling" (gesture: pegang setir, pedal)
-
-Kelas ulang setiap gerund setelah guru ucap.
-Ulangi 8 hobbies cepat: "Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling!"
-
-FASE 2 — GERUND STRUCTURE (2 menit):
-"I like reading. I like drawing. I like singing. I like dancing. I like playing football. I like cooking. I like swimming. I like cycling!"
-Kelas ulang setiap kalimat.
-KEY: Gerund MUST digunakan — bukan "I like read" tapi "I like reading"`,
-            penutup : '"You know all the hobbies now!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling! / I like reading. I like drawing. I like singing...',
-            contoh_siswa : 'Reading! / Drawing! / Singing! / Dancing! / Playing football! / Cooking! / Swimming! / Cycling!',
-            target_vocab : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
-          },
-
-          media_dipakai : ['media-kartu-hobi'],
-
-          mode: {
-            mudah: {
-              bantuan: 'Cukup 4 hobi utama (reading, drawing, singing, dancing). Guru action + gesture jelas. Siswa dengarkan & gesture mirror.',
-              panjang_speaking: 'Dengarkan & mirror gesture, atau ulang setelah guru (tidak perlu sempurna).',
-            },
-            normal: {
-              bantuan: '8 hobi, guru introduce dengan action. Siswa ulang setiap hobi setelah guru.',
-              panjang_speaking: 'Sebutkan hobi & mirror gesture setelah guru cue.',
-            },
-            tantangan: {
-              bantuan: '8 hobi, siswa boleh lead atau ciptakan gesture alternatif sendiri.',
-              panjang_speaking: 'Ucapkan hobi atau lead gesture untuk teman.',
-            },
-          },
-
-          observation: { aktif: false },
-
-          fallback: {
-            kelas_gelisah : 'Tambah lebih banyak gesture/action — buat lebih fun, less formal.',
-            siswa_lupa_gerund : 'Normal. Guru repeat "reading, not read" di context natural.',
-            energi_turun : 'Do action lebih exaggerated, atau ajak siswa lead gesture 1-2 hobi.',
-          },
-
-          advance: { mode: 'manual' },
-        },
-
-        {
-          id    : 'tp17-inti-reason-practice',
-          tipe  : 'modeling',
-          judul : 'Pola Practice — "Because It Is Fun / Interesting"',
-          pm    : 'mindful',
-
-          tujuan_komunikasi : 'Siswa practice pola lengkap "I like [hobby] because it is [fun/interesting]" via modeling.',
-          vocab_target      : ['I like', 'because', 'fun', 'interesting'],
-
-          durasi_target_detik : 300,
-          durasi_min_detik    : 180,
-
-          micro_script: {
-            pembuka : '"Now we say WHY we like hobbies!"',
-            selama  : `FASE 1 — INTRODUCE 2 REASON (2 menit):
-Guru: "Why do we like hobbies? There are 2 reasons:
-1. Because it is FUN! (gesture: smiley, happy)
-2. Because it is INTERESTING! (gesture: thinking, curious eyes)"
-Kelas ulang: "Fun! Interesting!"
-
-FASE 2 — FULL POLA (3 menit):
-Guru model pola lengkap dengan hobi + reason (mixed):
-"I like reading because it is interesting."
-"I like dancing because it is fun!"
-"I like cooking because it is fun!"
-"I like singing because it is interesting."
-Kelas ulang setiap kalimat.
-PENTING: Guru randomize — bukan semua FUN, tidak semua INTERESTING.
-
-FASE 3 — GURU TANYA, KELAS JAWAB (1 menit):
-Guru: "I like drawing. Why?" → Kelas: "Because it is fun!" atau "Because it is interesting!"`,
-            penutup : '"You know why we like things!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'Why do we like hobbies? Because it is fun! Because it is interesting! / I like reading because it is interesting. I like dancing because it is fun!',
-            contoh_siswa : 'Fun! / Interesting! / Because it is fun! / Because it is interesting!',
-            target_vocab : ['because', 'fun', 'interesting'],
-          },
-
-          media_dipakai : ['media-kartu-hobi'],
-
-          mode: {
-            mudah: {
-              bantuan: 'Cukup focus pada 1 reason dulu (fun). Guru repeat, siswa ulang. Tidak perlu both reasons.',
-              panjang_speaking: 'Ulang "because it is fun" setelah guru, atau gesture only.',
-            },
-            normal: {
-              bantuan: '2 reasons (fun/interesting). Guru model mixed, siswa ulang & answer guru questions.',
-              panjang_speaking: 'Ucapkan pola "I like... because it is..." atau jawab reason saat guru tanya.',
-            },
-            tantangan: {
-              bantuan: '2 reasons, siswa ciptakan kalimat sendiri atau elaborate alasan ("fun because I can move a lot").',
-              panjang_speaking: 'Buat kalimat pola sendiri atau explain why (reason elaboration).',
-            },
-          },
-
-          observation: { aktif: false },
-
-          fallback: {
-            siswa_confused : 'Focus pada 1 reason saja. Interesting adalah grammar-heavy — fun lebih mudah untuk usia 7.',
-            kelas_lupa : 'Ulangi cycle 2x. Repetisi adalah kunci.',
-            waktu_mepet : 'Cukup Fase 1 + 2. Skip guru tanya (Fase 3).',
-          },
-
-          advance: { mode: 'manual' },
-        },
-
-        {
-          id    : 'tp17-inti-pair-dialogue',
-          tipe  : 'pair_work',
-          judul : 'Pair Dialogue — "What Do You Like?" Q&A',
-          pm    : 'meaningful',
-
-          tujuan_komunikasi : 'Siswa practice pola via pair dialogue: menanya & menjawab hobi + alasan.',
-          vocab_target      : ['I like', 'because', 'fun', 'interesting', 'what do you like'],
-
-          durasi_target_detik : 480,
-          durasi_min_detik    : 360,
-
-          micro_script: {
-            pembuka : '"Now you ask each other! What do you like to do?"',
-            selama  : `FASE 1 — GURU MODEL DIALOGUE (2 menit):
-Guru + 1 siswa model dulu:
-Guru (A): "What do you like to do?"
-Siswa (B): "I like reading because it is interesting."
-Guru (A): "Oh, nice! What about you? What do you like?"
-Siswa (B): "I like dancing because it is fun!"
-
-FASE 2 — PAIR PRACTICE (5 menit):
-Siswa pasang 2 orang. Beri setiap pair kartu hobi.
-Siswa A: "What do you like to do?"
-Siswa B: "I like [hobi] because it is [fun/interesting]. What about you?"
-CYCLE: 3-4 hobi pair, lalu rotate.
-
-FASE 3 — CIRCLE (2 menit — optional):
-Lingkar, guru atau siswa tanya 3-4 orang.`,
-            penutup : '"You can talk about hobbies in English now!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'What do you like to do? / I like reading because it is interesting. / I like dancing because it is fun!',
-            contoh_siswa : 'I like drawing because it is fun! / I like swimming because it is interesting! / What about you?',
-            target_vocab : ['I like', 'because', 'fun', 'interesting'],
-          },
-
-          media_dipakai : ['media-kartu-hobi'],
-
-          mode: {
-            mudah: {
-              bantuan: 'Guru model banyak. Pair practice: guru assist dengan prompt dulu. Cukup 1-2 hobi per pair.',
-              panjang_speaking: 'Jawab "I like..." dengan bantuan guru atau kartu reference. Alasan boleh satu kata.',
-            },
-            normal: {
-              bantuan: 'Guru model 1x, siswa pair practice dengan minimal prompt. 3-4 hobi per cycle.',
-              panjang_speaking: 'Ucapkan "I like [hobi] because it is [fun/interesting]" sesuai kartu.',
-            },
-            tantangan: {
-              bantuan: 'Siswa pair buat dialogue panjang atau elaborate alasan mereka.',
-              panjang_speaking: 'Buat pola lengkap atau jawab follow-up questions ("Why do you like reading?").',
-            },
-          },
-
-          observation: { aktif: true, n_siswa: 4, indikator: ['vocab_use', 'response', 'confidence'], rotasi_priority: 'belum_observed', tag_set: 'standar' },
-
-          fallback: {
-            pair_tidak_jalan : 'Guru pair dengan siswa itu dulu, atau 3-orang group. Model dulu sebelum peer pair.',
-            siswa_malu : 'Guru jadi listener/partner. Jangan push ke peer pair jika tidak siap.',
-            pair_canggung : 'Change pasangan atau format group 3. Fleksibel dengan pairing.',
-            waktu_mepet : 'Cukup Fase 1 + 2 partial (2 min). Skip Circle.',
-          },
-
-          advance: { mode: 'manual' },
-        },
-
-        {
-          id    : 'tp17-inti-class-survey',
-          tipe  : 'game_movement',
-          judul : 'Class Survey — Silent Preference (Bukan Verbal Count)',
-          pm    : 'joyful',
-
-          tujuan_komunikasi : 'Engagement activity yang SAFE — siswa express hobi preference tanpa expose atau tekanan verbal.',
-          vocab_target      : [],
-
-          durasi_target_detik : 240,
-          durasi_min_detik    : 120,
-
-          micro_script: {
-            pembuka : '"Let us see which hobbies everyone likes! Stand up!"',
-            selama  : `REIMAGINED SURVEY (bukan verbal count):
-Guru: "I will show hobi card. If you like this hobby, give me thumbs up!"
-[Tunjuk READING] → Siswa thumbs up (silent, no count)
-[Tunjuk DRAWING] → Thumbs up
-(etc)
-
-Guru: "Nice! So many of you have different hobbies. That is beautiful!"
-
-ALT: MOVEMENT GAME:
-Guru: "I say a hobby. If you like it, move like it!"
-"Reading!" → Siswa gesture reading
-"Dancing!" → Siswa gesture dancing`,
-            penutup : '"Everyone likes different things! That is OK! That is normal!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'Do you like reading? Thumbs up! Do you like dancing? Thumbs up! Everyone has different hobbies!',
-            contoh_siswa : '(thumbs up gestures) / (movement gestures)',
-            target_vocab : [],
-          },
-
-          media_dipakai : ['media-kartu-hobi'],
-
-          mode: {
-            mudah: {
-              bantuan: 'Cukup thumbs up/down — simple, clear, no verbal response needed.',
-              panjang_speaking: 'Gesture saja (thumbs up, nod, movement). No speaking required.',
-            },
-            normal: {
-              bantuan: 'Thumbs up atau movement gesture saat guru show kartu.',
-              panjang_speaking: 'Gesture expression, atau optional whisper "I like..." to neighbor.',
-            },
-            tantangan: {
-              bantuan: 'Elaborasi gesture atau tanya teman: "Why do you like swimming?" setelah survey.',
-              panjang_speaking: 'Optional: share reason dengan teman sebelah.',
-            },
-          },
-
-          observation: { aktif: false },
-
-          fallback: {
-            siswa_tidak_participate : 'OK. Guru tidak push. Berdiri saja sudah participate. Gesture optional.',
-            kelas_ribut : 'Cukup thumbs up saja (lebih simple, less chaotic). Skip movement version.',
-          },
-
-          advance: { mode: 'manual' },
-        },
-      ],
-
       langkah: [
         {
           tipe: 'instruksi',
-          teks: 'Tunjuk kartu hobi satu per satu + gesture/action. Kelas ulang hobi (gerund form). Ulangi cepat semua 8 hobi.',
+          pm  : 'meaningful',
+          teks: 'Tempel 4 kartu satu per satu — reading, drawing, singing, dancing. Setiap kartu: tunjuk kartu → gesture → ucap gerund, satu detik jeda. Ucap: "Listen. My turn." — "Reading." [gesture membuka buku, mata ke bawah — tunjuk kartu] — "Drawing." [gesture pegang pensil, gambar di udara — tunjuk kartu] — "Singing." [gesture tangan ke mulut, kepala sedikit naik — tunjuk kartu] — "Dancing." [gesture gerak badan kiri kanan — tunjuk kartu]. Ucap: "One more time." — ulang sekali. Cue kritis: gesture harus exaggerated dan berbeda jelas — ini anchor utama. Reading = mata ke bawah, tangan diam / drawing = tangan bergerak di udara. Guru belum minta kelas produksi di layar ini.',
           mode: {
-            mudah:     { bantuan: 'Cukup 4 hobi utama (reading, drawing, singing, dancing). Guru action + gesture jelas. Siswa dengarkan & gesture mirror.' },
-            normal:    { bantuan: '8 hobi, guru introduce dengan action. Siswa ulang setiap hobi setelah guru.' },
-            tantangan: { bantuan: '8 hobi, siswa boleh lead atau ciptakan gesture alternatif sendiri.' },
+            solo : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
+            duo  : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
+            grup : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
           },
         },
         {
           tipe: 'audio',
-          teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling! / I like reading. I like dancing...',
-          mode: {
-            mudah:     { bantuan: 'Ucapkan 4 hobi saja perlahan. Siswa mirror gesture.' },
-            normal:    { bantuan: 'Ucapkan semua 8. Siswa ulang setiap hobi.' },
-            tantangan: { bantuan: 'Ucapkan cepat atau acak. Siswa respond spontan.' },
-          },
+          teks: 'Listen. My turn. Reading. Drawing. Singing. Dancing. One more time.',
         },
         {
           tipe: 'instruksi',
-          teks: 'Guru model pola "I like... because it is fun/interesting" dengan mixed examples. Kelas ulang.',
+          pm  : 'joyful',
+          teks: 'Ucap: "Now together. I show — you say." Gesture membuka buku — kelas ucap "Reading!". Gesture pensil di udara — "Drawing!". Gesture tangan ke mulut — "Singing!". Gesture gerak badan — "Dancing!". Putaran 2: tunjuk 2 kartu acak — kelas ucap. Langsung lanjut contrast drill (15 detik): ucap "Watch." → gesture reading (mata ke bawah, tangan diam): "Reading — hands still." → gesture drawing (tangan bergerak di udara): "Drawing — hands move." Ucap: "Ready? Which one?" — "Hands still — show me!" → kelas gesture reading — "Hands move — show me!" → kelas gesture drawing. Ulangi 2 putaran, cepat. Cue kritis: contrast drill reading vs drawing wajib — anchor perbedaan: reading = tangan diam / drawing = tangan bergerak. Jangan explain — tunjukkan perbedaan fisik dan lanjut.',
           mode: {
-            mudah:     { bantuan: 'Cukup focus pada 1 reason dulu (fun). Guru repeat, siswa ulang. Tidak perlu both reasons.' },
-            normal:    { bantuan: '2 reasons (fun/interesting). Guru model mixed, siswa ulang & answer guru questions.' },
-            tantangan: { bantuan: '2 reasons, siswa ciptakan kalimat sendiri atau elaborate alasan ("fun because I can move a lot").' },
+            solo : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+            duo  : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+            grup : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+          },
+        },
+        {
+          tipe: 'respons_siswa',
+          teks: 'Kelas ucap "Reading!", "Drawing!", "Singing!", "Dancing!" sesuai gesture guru. Di contrast drill: kelas gesture reading (tangan diam) atau drawing (tangan bergerak) sesuai cue "Hands still" / "Hands move".',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'meaningful',
+          teks: 'Reactivation (15–20 detik): ucap "Quick check." — gesture 4 hobi gelombang 1 berurutan, kelas ucap. Tidak dikoreksi, tidak diulang, langsung lanjut. LISTEN FIRST Gelombang 2: tempel 4 kartu berikutnya — playing football, cooking, swimming, cycling. Ucap: "Listen. My turn." — "Playing football." [gesture menendang bola — tunjuk kartu] — "Cooking." [gesture mengaduk panci — tunjuk kartu] — "Swimming." [gesture lengan berenang ke samping — tunjuk kartu] — "Cycling." [gesture pegang setir + kaki mengayuh — tunjuk kartu]. Ucap: "One more time." — ulang sekali. Cue kritis: reactivation wajib 15–20 detik. Swimming = kedua lengan ke samping / cycling = tangan pegang setir + kaki mengayuh. "Playing football" tiga kata — ucap pelan. Jika satu item lambat: ulang item itu saja, tidak restart semua 4.',
+          mode: {
+            solo : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
+            duo  : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
+            grup : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
           },
         },
         {
           tipe: 'audio',
-          teks: 'I like reading because it is interesting. I like dancing because it is fun!',
+          teks: 'Listen. My turn. Playing football. Cooking. Swimming. Cycling. One more time.',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'joyful',
+          teks: 'Fase A — gelombang 2 saja, lambat. Ucap: "Together." — gesture menendang: "Playing football!" — gesture mengaduk: "Cooking!" — gesture lengan ke samping: "Swimming!" — gesture pegang setir: "Cycling!". Fase B — campur 8 kartu, medium. Ucap: "Now — all together." — tunjuk semua 8 kartu berurutan, kelas ucap. Fase C — 4 kartu acak, cepat. Ucap: "Ready? Fast — but clear." — pilih 4 kartu acak, tahan 1 detik sebelum lanjut. Jika energi naik liar setelah Fase B: langsung masuk Fase C tanpa ulang. Contrast drill swimming vs cycling langsung setelah Fase C (15 detik): ucap "Watch." — gesture swimming (kedua lengan ke samping): "Swimming — arms out." — gesture cycling (tangan setir + kaki): "Cycling — hands and feet." Ucap: "Which one? Arms out — show me!" → kelas gesture swimming. "Hands and feet — show me!" → kelas gesture cycling. Ulangi 2 putaran, cepat. Cue kritis: swimming dan cycling tidak berurutan di Fase C. Di Fase C cukup tunjuk kartu, tidak perlu gesture penuh. Jika energi turun setelah Fase C: langsung masuk contrast drill tanpa repeat.',
           mode: {
-            mudah:     { bantuan: 'Ucapkan 1 contoh saja (I like reading because it is fun). Siswa ulang.' },
-            normal:    { bantuan: 'Ucapkan 2 contoh. Kelas ulang bersama.' },
-            tantangan: { bantuan: 'Ucapkan 1x, siswa buat kalimat sendiri dengan hobi berbeda.' },
+            solo : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+            duo  : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+            grup : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+          },
+        },
+        {
+          tipe: 'respons_siswa',
+          teks: 'Kelas ucap nama 8 hobi sesuai kartu/gesture di Fase A–C. Di contrast drill: kelas gesture swimming (lengan ke samping) atau cycling (tangan setir + kaki) sesuai cue "Arms out" / "Hands and feet".',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'joyful',
+          teks: 'Lepas semua kartu dari papan — simpan. Siswa tidak pegang apa-apa. Ucap: "No cards. Just me and you." Cue semua 8 hobi berurutan: "Show me reading!" → kelas gesture → "Show me drawing!" → ... → "Show me cycling!". Putaran acak — maksimal 5 cue. Ucap: "My turn to watch. You show me." — pilih 5 cue acak, pisahkan pasangan mirip: reading/drawing tidak berurutan, swimming/cycling tidak berurutan. Setelah 5 cue: langsung stop. Ucap: "Stop. Good." [tepuk 1 kali — freeze]. Ucap: "Sit down. Hands down." [jeda 3 detik]. Cue kritis: guru tidak ikut di putaran acak — fokus observasi siapa yang tertukar. Maksimal 5 cue, langsung stop. Freeze wajib sebelum masuk frame kalimat.',
+          mode: {
+            solo : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+            duo  : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+            grup : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+          },
+        },
+        {
+          tipe: 'respons_siswa',
+          teks: 'Kelas gesture sesuai cue "Show me…" untuk semua 8 hobi. Di putaran acak: kelas gesture sendiri tanpa guru ikut. Setelah "Stop. Good." dan tepuk 1 kali — semua berhenti, duduk, tangan turun.',
+        },
+        {
+          tipe: 'instruksi',
+          teks: 'Ucap: "Good. Now — hobbies become sentences. Watch." Tempel kembali kartu reading dan dancing. Tunjuk papan — I like ___ because it is ___. Ucap: "Listen. My turn." → gesture reading, tunjuk kartu: "I like reading — because it is interesting." [gesture curious eyes] [jeda 2 detik] → gesture dancing, tunjuk kartu: "I like dancing — because it is fun!" [gesture senyum lebar, tangan naik] [jeda 2 detik] → gesture cooking, tunjuk kartu cooking: "I like cooking — because it is fun!". Ucap: "One more time." — ulang tiga kalimat. Cue kritis: "Hobbies become sentences." wajib diucapkan — reset mode mental dari TPR ke frame kalimat. Jeda 2 detik setelah contoh pertama wajib. Tunjuk papan setiap kali ucap frame. Guru randomize reason. Guru tidak tanya kelas dulu di layar ini.',
+          mode: {
+            solo : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
+            duo  : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
+            grup : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
           },
         },
         {
           tipe: 'instruksi',
-          teks: 'Pair dialogue: Siswa A tanya "What do you like?" Siswa B jawab "I like... because...". Rotate 3-4 hobi per pair, kemudian switch roles.',
+          pm  : 'joyful',
+          teks: 'Ucap: "Together now. Whole sentence." Tunjuk papan: I like ___ because it is ___. Pattern wajib: guru model penuh → kelas ulang penuh → baru fill-in. Giliran 1 — gesture reading: guru model "I like reading because it is interesting." → kelas ulang penuh. Giliran 2 — gesture singing: guru model "I like singing because it is…" [tangan buka, tunggu] → kelas isi "…fun!" → kelas ulang penuh. Giliran 3 — gesture playing football: guru model "I like playing football because it is…" [tangan buka] → kelas isi "…fun!" → kelas ulang penuh. Giliran 4 — gesture swimming: guru model "I like swimming because it is…" [tangan buka] → kelas isi "…interesting!" → kelas ulang penuh. Cue kritis: jangan balik urutan pattern. Guru randomize fun/interesting. "Playing football" tiga kata — ucap pelan. Koreksi via model ulang, bukan teguran terbuka.',
           mode: {
-            mudah:     { bantuan: 'Guru model banyak. Pair practice: guru assist dengan prompt dulu. Cukup 1-2 hobi per pair.' },
-            normal:    { bantuan: 'Guru model 1x, siswa pair practice dengan minimal prompt. 3-4 hobi per cycle.' },
-            tantangan: { bantuan: 'Siswa pair buat dialogue panjang atau elaborate alasan mereka.' },
+            solo : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
+            duo  : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
+            grup : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
           },
         },
         {
+          tipe: 'respons_siswa',
+          teks: 'Kelas ulang kalimat penuh setelah guru model. Kelas isi bagian reason saat guru buka tangan. Kelas ulang kalimat penuh setelah fill-in.',
+        },
+        {
           tipe: 'instruksi',
-          teks: 'Class survey (reimagined): Guru tunjuk kartu hobi, siswa beri thumbs up (SILENT, bukan verbal count). Atau movement gesture per hobi.',
+          pm  : 'meaningful',
+          teks: 'Whole-class QA drill — 2 putaran. Ucap: "Now you ask. Ready?" → gesture reading, berdiri diam → ucap: "Ask me." → kelas bersama: "What do you like to do?" → guru: "I like reading because it is interesting!" → gesture dancing → kelas: "What do you like to do?" → guru: "I like dancing because it is fun!" Ucap: "Good. That\'s the question. That\'s the answer." Demo pasang — 1 siswa sukarela: ucap "Watch them." → bisik ke Siswa A: "You like cooking." → Siswa A pegang kartu cooking → Siswa B tanya: "What do you like to do?" → Siswa A jawab: "I like cooking because it is fun!" → guru: "Good. Full sentence." Instruksi sebelum practice (chunk pendek): "Partner voice — not shouting." "Partner A holds a card — face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." Ucap: "Go." Cue kritis: QA drill 2 putaran wajib. Guru bisik hobi ke Siswa A — tidak diucapkan ke kelas. Tugas Listener: "Raise the card" — bukan "hold".',
           mode: {
-            mudah:     { bantuan: 'Cukup thumbs up/down — simple, clear, no verbal response needed.' },
-            normal:    { bantuan: 'Thumbs up atau movement gesture saat guru show kartu.' },
-            tantangan: { bantuan: 'Elaborasi gesture atau tanya teman: "Why do you like swimming?" setelah survey.' },
+            solo : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
+            duo  : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
+            grup : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
+          },
+        },
+        {
+          tipe: 'respons_siswa',
+          teks: 'Kelas bersama ucap "What do you like to do?" saat guru gesture dan diam. Demo: Siswa B tanya, Siswa A jawab "I like cooking because it is fun!". Semua siswa latih stop signal tepuk 1 kali.',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'joyful',
+          teks: 'Distribusi kartu hobi — 1 set per pasang. Tunggu semua siap sebelum instruksi. Ucap dalam chunk pendek: "Partner A picks a card — holds it face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." "Full sentence. Go." Total durasi Â±4 menit — jangan lewati. Checkpoint tengah (Â±2 menit): [tepuk 1 kali — freeze] "Switch." "Partner B picks a card." "Partner A asks and raises." [tepuk 1 kali — lanjut]. Saat circulate: bergerak huruf U — cek Partner B angkat kartu setelah mendengar, bukan sebelum. Fokus pada produksi bahasa — tidak verifikasi apakah hobi benar-benar dilakukan siswa. Guru tidak koreksi grammar.',
+          mode: {
+            solo : { teks: 'Distribusi → instruksi chunk → circulate huruf U → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+            duo  : { teks: 'Distribusi → instruksi chunk → masing-masing guru circulate separuh kelas → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+            grup : { teks: 'Distribusi → instruksi chunk → circulate huruf U → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+          },
+        },
+        {
+          tipe: 'darurat',
+          teks: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, duduk diam 3 detik, lanjut.',
+        },
+        {
+          tipe: 'diferensiasi',
+          sudah: [
+            'Ganti kartu setiap giliran.',
+            'Ciptakan reason sendiri selain fun/interesting.',
+          ],
+          belum: [
+            'Cukup ucap hobi saja — "Reading!" — tanpa "because".',
+          ],
+        },
+        {
+          tipe: 'instruksi',
+          teks: '[Tepuk 1 kali — freeze]. Ucap: "Stop. Look here." [jeda 2 detik]. Ucap: "Quick survey. Thumbs up if you like it — thumbs close to your chest." → tunjuk kartu reading: "Reading?" → kelas thumbs up dekat dada / diam → tunjuk kartu singing: "Singing?" → tunjuk kartu dancing: "Dancing?" → tunjuk kartu playing football: "Playing football?" → tunjuk kartu swimming: "Swimming?". Ucap: "People like different hobbies." [lanjut]. Cue kritis: "Thumbs close to your chest" wajib — mengurangi exposure sosial. Tidak ada hitung jumlah, tidak ada komentar komparatif, tidak ada "siapa yang paling banyak". Diam diterima sama seperti thumbs up — tidak dikomentari. Kalimat penutup cukup "People like different hobbies." Maksimal 5 kartu.',
+          mode: {
+            solo : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
+            duo  : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
+            grup : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
           },
         },
       ],
@@ -502,193 +269,44 @@ Guru: "I say a hobby. If you like it, move like it!"
       fase  : 'Penutup',
       durasi: 10,
 
-      aktivitas: [
-        {
-          id    : 'tp17-penutup-review',
-          tipe  : 'review_quick',
-          judul : 'Quick Review — 8 Hobbies',
-          pm    : 'joyful',
-
-          tujuan_komunikasi : 'Perkuat recall 8 hobi sebelum closure.',
-          vocab_target      : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
-
-          durasi_target_detik : 180,
-          durasi_min_detik    : 120,
-
-          micro_script: {
-            pembuka : '"Let us remember all the hobbies one more time!"',
-            selama  : `MINI GAME — GURU TUNJUK KARTU ACAK, KELAS SEBUTKAN:
-Guru tunjuk kartu hobi acak (shuffle), kelas sebutkan (3-4 round, cepat tempo).
-
-ALT: GESTURE GAME:
-Guru do gesture, kelas sebutkan hobi + tiru gesture.`,
-            penutup : '"Perfect! You know all the hobbies!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'What hobby is this? / Reading! / Dancing! / Singing! / Cycling!',
-            contoh_siswa : 'Reading! / Drawing! / Singing! / Dancing! / Playing football! / Cooking! / Swimming! / Cycling!',
-            target_vocab : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
-          },
-
-          media_dipakai : ['media-kartu-hobi'],
-
-          mode: {
-            mudah: {
-              bantuan: 'Guru sebut dulu, siswa ulang. Cukup 4 hobi. Gesture optional.',
-              panjang_speaking: 'Dengarkan & ulang nama hobi saja.',
-            },
-            normal: {
-              bantuan: 'Guru tunjuk, siswa jawab nama hobi + gesture.',
-              panjang_speaking: 'Sebutkan hobi & mirror gesture.',
-            },
-            tantangan: {
-              bantuan: 'Siswa lead game atau gesture cepat, teman tebak hobi.',
-              panjang_speaking: 'Ciptakan gesture alternatif sendiri.',
-            },
-          },
-
-          observation: { aktif: false },
-
-          fallback: {
-            energi_turun : 'Ubah ke full body action: "When I say swimming, everyone swim!"',
-            waktu_mepet : 'Cukup 1-2 round guru tunjuk kartu, cepat, lanjut closure.',
-          },
-
-          advance: { mode: 'manual' },
-        },
-
-        {
-          id    : 'tp17-penutup-presentation',
-          tipe  : 'meaningful_link',
-          judul : 'Voluntary Hobby Sharing (ZERO Pressure)',
-          pm    : 'joyful',
-
-          tujuan_komunikasi : 'Optional sharing — siswa yang ingin bicara tentang hobi mereka dapat safe space.',
-          vocab_target      : [],
-
-          durasi_target_detik : 300,
-          durasi_min_detik    : 180,
-
-          micro_script: {
-            pembuka : '"Some of you might want to share your favorite hobby! You do not have to. But if you want, I love to hear!"',
-            selama  : `Guru: "Raise your hand if you want to share your hobby in 1-2 sentences.
-Example: 'I like drawing because it is fun.'
-Anything is OK. Just do your best!"
-
-[TUNGGU HAND RAISE — jangan force]
-
-Jika tidak ada yang raise hand:
-Guru: "That is OK! You can tell me at break time if you want.
-Or just keep it in your heart. Both are beautiful."
-
-FALLBACK KETAT:
-"You do NOT have to share. No one will be angry. Sharing is volunteer."`,
-            penutup : '"Thank you for being brave and kind today!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'Who wants to share their hobby? Raise your hand! You do not have to. That is OK!',
-            contoh_siswa : 'My name is Budi. I like drawing because it is fun! / I like swimming! / (silence — OK)',
-            target_vocab : [],
-          },
-
-          media_dipakai : [],
-          mode         : null,
-          observation  : { aktif: false },
-
-          fallback: {
-            tidak_ada_volunteer : 'GOOD. Tidak masalah. Guru acknowledge: "That is OK! Listening is also important. You were great listeners today."',
-            siswa_malu_saat_raising_hand : 'Guru boleh encourage gentle. Tapi jika masih malu, guru respect (jangan push).',
-            siswa_yang_share_gugup : 'Guru berdiri dekat, encouraging eye contact. "Take your time. No rush. You are doing great."',
-          },
-
-          advance: { mode: 'manual' },
-        },
-
-        {
-          id    : 'tp17-penutup-closure',
-          tipe  : 'closure_reinforcement',
-          judul : 'Hobbies Everywhere — Closing Jembatan Rumah',
-          pm    : 'meaningful',
-
-          tujuan_komunikasi : 'Jembatan rumah: siswa perhatikan hobi di sekitar (natural curiosity), tidak ada assessment/pressure.',
-          vocab_target      : [],
-
-          durasi_target_detik : 180,
-          durasi_min_detik    : 120,
-
-          micro_script: {
-            pembuka : '"Before we finish, remember: hobbies are everywhere!"',
-            selama  : `Guru: "Today we learned about hobbies.
-Tonight, notice people's hobbies at home. Just notice. Observe.
-'Mama likes cooking. Papa likes watching football. Sister likes drawing.'
-It is fun to notice.
-
-And remember: all hobbies are OK. Different people like different things.
-That is what makes the world interesting!"
-
-CLOSURE:
-"Thank you for learning about hobbies today. You did an amazing job!
-See you next time! Goodbye!"`,
-            penutup : '"Everyone has hobbies. That is beautiful! Goodbye, class!"',
-          },
-
-          audio_cue: {
-            contoh_guru  : 'Hobbies are everywhere. Your family has hobbies. Your friends have hobbies. Notice them! Everyone is different, and that is beautiful!',
-            contoh_siswa : 'Goodbye, teacher! / Thank you!',
-            target_vocab : ['goodbye'],
-          },
-
-          media_dipakai : [],
-          mode         : null,
-          observation  : { aktif: false },
-          fallback     : {},
-          advance      : { mode: 'manual' },
-        },
-      ],
-
       langkah: [
         {
           tipe: 'instruksi',
-          teks: 'Review cepat: Guru tunjuk kartu hobi acak, kelas sebutkan nama. 2-3 round, tempo cepat.',
+          pm  : 'meaningful',
+          teks: 'Ucap: "Together — hobbies." Putaran 1: tempel kembali semua 8 kartu — tunjuk berurutan, lambat, kelas ucap nama hobi. Tahan 1 detik sebelum tunjuk kartu berikutnya — jangan biarkan kelas chant otomatis. Putaran 2: gesture reading — kelas ucap frame penuh: "I like reading because it is interesting!" → gesture dancing: "I like dancing because it is fun!" Cukup 2 hobi — tidak semua. Cue kritis: putaran 2 pakai discourse frame — bukan nama hobi saja. Tahan 1 detik per kartu di putaran 1 — retrieval harus genuine. Cukup 2 contoh di putaran 2 — tidak perlu semua 8.',
           mode: {
-            mudah:     { bantuan: 'Guru sebut dulu, siswa ulang. Cukup 4 hobi. Gesture optional.' },
-            normal:    { bantuan: 'Guru tunjuk, siswa jawab nama hobi + gesture.' },
-            tantangan: { bantuan: 'Siswa lead game atau gesture cepat, teman tebak hobi.' },
+            solo : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
+            duo  : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
+            grup : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
           },
         },
         {
-          tipe: 'audio',
-          teks: 'Reading! Drawing! Singing! Dancing! Playing football! Cooking! Swimming! Cycling!',
+          tipe: 'respons_siswa',
+          teks: 'Kelas ucap nama 8 hobi satu per satu di Putaran 1. Di Putaran 2: kelas ucap frame penuh "I like reading because it is interesting!" dan "I like dancing because it is fun!"',
+        },
+        {
+          tipe: 'instruksi',
+          pm  : 'meaningful',
+          teks: 'Ucap: "Take your pencil." [tunggu — pastikan semua siswa sudah pegang pensil]. Guru gesture cycling — tahan posisi. Tunjuk papan. Ucap: "Last. Write one sentence." → "I like ___ because it is ___." → "Look at my gesture." [tahan gesture cycling]. Tunggu 45–60 detik. Ucap: "Show me." Cue kritis: pilih cycling — bukan reading atau singing yang paling mudah. Cycling mengharuskan siswa mengingat hobi gelombang 2 yang lebih menantang. Guru tahan gesture selama siswa menulis — tidak ganti gesture. Satu hobi, satu kalimat, satu reason.',
           mode: {
-            mudah:     { bantuan: 'Cukup 4 hobi, perlahan.' },
-            normal:    { bantuan: 'Semua 8 hobi, natural.' },
-            tantangan: { bantuan: 'Cepat atau siswa lead.' },
+            solo : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
+            duo  : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
+            grup : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
           },
         },
         {
           tipe: 'instruksi',
-          teks: 'Voluntary sharing: Guru tanya "Who wants to share their hobby?" Raise hand only. ZERO pressure — jika tidak ada volunteer, itu OK.',
+          pm  : 'mindful',
+          teks: 'Retrieval mikro: ucap "One more time — show me reading!" → kelas gesture reading + ucap "Reading!". Ucap: "Show me dancing!" → kelas gesture dancing + ucap "Dancing!". Tunjuk semua 8 kartu cepat — kelas ucap nama hobi bersama. Ucap: "Today — hobbies. Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. And we say: I like ___ because it is fun or interesting. Well done. See you next time."',
           mode: {
-            mudah:     { bantuan: 'Skip voluntary sharing jika energi kelas rendah. Langsung ke jembatan rumah.' },
-            normal:    { bantuan: 'Tanya voluntary, tunggu 5 detik. Jika tidak ada, lanjut — OK.' },
-            tantangan: { bantuan: 'Undang 2-3 siswa untuk share + reason.' },
-          },
-        },
-        {
-          tipe: 'instruksi',
-          teks: 'Jembatan rumah: Guru jelaskan bahwa hobi ada di mana-mana. Minta siswa notice hobi di rumah (silent observation, tidak ada assessment). Closure: "Different people like different things. That is beautiful."',
-          mode: {
-            mudah:     { bantuan: 'Pesan simple: "Di rumah kamu suka apa? Perhatikan saja." Tidak perlu respond.' },
-            normal:    { bantuan: 'Guru jelaskan jembatan natural. Siswa dengarkan.' },
-            tantangan: { bantuan: 'Guru invite: "Coba bilang 1 hobi yang kamu suka di rumah — besok ceritakan!" — voluntary.' },
+            solo : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
+            duo  : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
+            grup : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
           },
         },
         {
           tipe: 'audio',
-          teks: 'Hobbies are everywhere. Notice them at home. Everyone has hobbies. That is beautiful! Goodbye, class!',
-          mode: null,
+          teks: 'Today — hobbies. Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. And we say: I like ___ because it is fun or interesting. Well done. See you next time.',
         },
       ],
     },
