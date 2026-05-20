@@ -325,33 +325,39 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf-handler.js: validasi terima .docx selain .pdf
 ```
 
-Next: Fase 15 — Audit & fix pm TP01–14
+Next: Fase 15 — Audit & fix struktur + pm TP01–18
 
-## Fase 15 — Audit pm TP01–14
+## Fase 15 — Audit Struktur & pm TP01–18
 
-### Temuan
-- Total warning instruksi tanpa pm: 115
-- TP01–02: 5 warning (sporadis)
-- TP03–14: ~88 warning (sistematis — Pembuka[1], 
-  semua Inti[genap], Penutup[0])
-- TP15–16: ~14 warning
-- TP17–18: 3 warning
-- Pola: omission dari Fase 10 saat migrasi awal
+### Status Per TP
+- TP01–14: format langkah[] ✅ | pm ⚠️ 93 missing
+- TP15:    format langkah[] ✅ | pm ✅ bersih | DONE
+- TP16:    format aktivitas[] ❌ BELUM MIGRASI | pm ⚠️ 8 missing
+- TP17:    format langkah[] ✅ | pm ⚠️ 2 missing
+- TP18:    format langkah[] ✅ | pm ⚠️ 1 missing
+- Total pm warning: 104 (bukan 115 — TP16 belum terhitung benar)
 
-### Status
-- TP01–14 format v4.3: ✅ VALID
-  (langkah[], mode mudah/normal/tantangan, bantuan)
-- pm missing: ⏳ PENDING KEPUTUSAN
-  Opsi A: fix per langkah (butuh review konten)
-  Opsi B: tandai intentional by design
+### Temuan Kritis
+TP16 (docs/sesi-m11/tp-16.js) masih pakai 
+aktivitas[] dengan tipe non-standard:
+modeling, review_quick, dll.
+File ini belum dimigrasikan ke langkah[] v4.3.
+Harus dimigrasikan dari skenario txt sebelum 
+pm bisa ditangani.
 
-### Keputusan Terkunci
-- Format fase-a.js TIDAK perlu migrasi struktur
-- Hanya pm yang perlu ditangani di sesi berikutnya
+### Urutan Kerja Sesi Berikutnya
+1. Baca docs/Skenario/flaf-skenario-tp16.txt
+2. Migrasi TP16 aktivitas[] → langkah[] v4.3
+3. pm audit ulang TP16
+4. Keputusan pm TP01–14 + TP17–18:
+   Opsi A: fix per langkah (review konten)
+   Opsi B: intentional by design
 
-### Next Session Bootstrap
-Akun baru: paste CONTEXT.md ke Claude.ai baru
-lalu jalankan audit pm di atas untuk konfirmasi posisi.
+### Path File TP15–18
+- TP15: docs/sesi-m10/tp-15.js
+- TP16: docs/sesi-m11/tp-16.js
+- TP17: docs/sesi-m12/tp-17.js
+- TP18: docs/sesi-m13/tp-18.js
 
 ## Fase 14 — Migrasi langkah[] TP15–18
 
