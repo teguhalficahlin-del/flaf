@@ -181,6 +181,7 @@ const TP_18 = {
         // L6 — Reset Jeda Setelah Presentasi
         {
           tipe: 'instruksi',
+          pm  : 'mindful',
           teks: 'Tepuk 1 kali — kelas freeze. Ucap: "Stop. Everyone — well done." [Jeda 3 detik — diam bersama.] Ucap: "You all presented your world. That was brave." [Jeda 2 detik — tidak tanya apa-apa.] Cue kritis: jeda reset ini wajib sebelum celebration — kelas perlu satu momen tenang setelah energi presentasi sebelum masuk puncak perayaan. Dua kalimat saja — tidak lebih. Jangan loncat langsung ke celebration.',
           mode: {
             mudah:     { bantuan: '' },

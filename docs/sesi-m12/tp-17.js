@@ -194,6 +194,7 @@ const TP_17 = {
         },
         {
           tipe: 'instruksi',
+          pm  : 'meaningful',
           teks: 'Ucap: "Good. Now — hobbies become sentences. Watch." Tempel kembali kartu reading dan dancing. Tunjuk papan — I like ___ because it is ___. Ucap: "Listen. My turn." → gesture reading, tunjuk kartu: "I like reading — because it is interesting." [gesture curious eyes] [jeda 2 detik] → gesture dancing, tunjuk kartu: "I like dancing — because it is fun!" [gesture senyum lebar, tangan naik] [jeda 2 detik] → gesture cooking, tunjuk kartu cooking: "I like cooking — because it is fun!". Ucap: "One more time." — ulang tiga kalimat. Cue kritis: "Hobbies become sentences." wajib diucapkan — reset mode mental dari TPR ke frame kalimat. Jeda 2 detik setelah contoh pertama wajib. Tunjuk papan setiap kali ucap frame. Guru randomize reason. Guru tidak tanya kelas dulu di layar ini.',
           mode: {
             mudah:     { bantuan: '' },
@@ -255,6 +256,7 @@ const TP_17 = {
         },
         {
           tipe: 'instruksi',
+          pm  : 'mindful',
           teks: '[Tepuk 1 kali — freeze]. Ucap: "Stop. Look here." [jeda 2 detik]. Ucap: "Quick survey. Thumbs up if you like it — thumbs close to your chest." → tunjuk kartu reading: "Reading?" → kelas thumbs up dekat dada / diam → tunjuk kartu singing: "Singing?" → tunjuk kartu dancing: "Dancing?" → tunjuk kartu playing football: "Playing football?" → tunjuk kartu swimming: "Swimming?". Ucap: "People like different hobbies." [lanjut]. Cue kritis: "Thumbs close to your chest" wajib — mengurangi exposure sosial. Tidak ada hitung jumlah, tidak ada komentar komparatif, tidak ada "siapa yang paling banyak". Diam diterima sama seperti thumbs up — tidak dikomentari. Kalimat penutup cukup "People like different hobbies." Maksimal 5 kartu.',
           mode: {
             mudah:     { bantuan: '' },
