@@ -327,9 +327,13 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 Next: Fase 15 — (belum ditentukan)
 
-## Fase 14 — Migrasi langkah[] TP17
+## Fase 14 — Migrasi langkah[] TP15–18
 
-✅ TP17 My Hobbies — 28 langkah v4.3, aktivitas[] dihapus (sesi M12 lanjutan)
+FASE 14 ✅ COMPLETE — Migrasi langkah[] TP15–18
+  - TP15 ✅ — 34 langkah v4.3, aktivitas[] dihapus
+  - TP16 ✅ — 27 langkah v4.3, aktivitas[] dihapus
+  - TP17 ✅ — 28 langkah v4.3, aktivitas[] dihapus
+  - TP18 ✅ — 15 langkah v4.3, aktivitas[] dihapus
 
 ## Audit Media Persiapan vs Skenario
 
