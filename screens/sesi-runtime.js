@@ -268,8 +268,8 @@ function _renderPreview() {
 
         <ul class="sr-checklist">
           <li>
-            <span>${jumlah > 0 ? jumlah + ' siswa terdaftar' : 'Belum ada siswa'}</span>
-            <span class="sr-check">${jumlah > 0 ? '✓' : '—'}</span>
+            <span>${jumlah > 0 ? jumlah + ' siswa terdaftar' : 'Belum ada siswa — penilaian tidak tersedia'}</span>
+            <span class="sr-check${jumlah === 0 ? ' sr-check--warn' : ''}">${jumlah > 0 ? '✓' : '⚠'}</span>
           </li>
           <li>
             <span>Audio TTS tersedia</span>
@@ -318,7 +318,7 @@ function _renderResume() {
       <div class="sr-body sr-body--center">
         <div class="sr-resume-icon">⏸</div>
         <div class="sr-resume-title">Sesi belum selesai</div>
-        <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')}</div>
+        <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_state.rombel?.nama || '—')}</div>
         <div class="sr-resume-pos">
           Terakhir di: <strong>${_escape(fase?.fase || '—')}</strong>,
           langkah ${_state.langkahIdx + 1} dari ${total} · Mode: ${_state.mode}
@@ -589,6 +589,7 @@ function _renderClosure() {
     if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
 
+    if (btn) { btn.textContent = 'Tersimpan ✓'; }
     _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan });
   });
 }

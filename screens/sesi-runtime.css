@@ -253,6 +253,7 @@
   font-weight: 700;
   color: rgba(92,138,110,.9);
 }
+.sr-check--warn { color: rgba(255,170,50,.85); }
 
 .sr-mode-label {
   font-size: 13px;
