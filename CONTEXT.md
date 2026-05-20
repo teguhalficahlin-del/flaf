@@ -335,6 +335,18 @@ FASE 14 ✅ COMPLETE — Migrasi langkah[] TP15–18
   - TP17 ✅ — 28 langkah v4.3, aktivitas[] dihapus
   - TP18 ✅ — 15 langkah v4.3, aktivitas[] dihapus
 
+### Hotfix Post-Fase 14
+- TP17 dan TP18: rollback format mode
+  solo/duo/grup → mudah/normal/tantangan
+  (commit 94a68f1)
+- TP15 dan TP16: sudah mudah/normal/tantangan
+  sejak awal — tidak perlu disentuh
+- fase-a.js (TP01–14): sudah mudah/normal/tantangan
+  — tidak perlu disentuh
+- Status runtime: screens/sesi-runtime.js hanya
+  mengenal mudah/normal/tantangan — konsisten
+  di semua 18 TP
+
 ## Audit Media Persiapan vs Skenario
 
 Dilakukan di sesi Mei 2026. Menelusuri seluruh 18 TP — mencocokkan
