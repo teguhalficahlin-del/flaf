@@ -323,33 +323,35 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf_ref ditambah ke fase-a.js untuk TP01–14
    - kurikulum.js: baca tp.pdf_ref (fallback ke tp.id-v1.pdf)
    - pdf-handler.js: validasi terima .docx selain .pdf
+✅ FASE 15 TP16 MIGRATED — 39 langkah v4.3, L0–L13, pm 14/14
+   ANALYZE → BUILD (4 batch) → HARDEN → VALIDATE = READY
+   aktivitas[] hybrid TP15+TP16: cleanup ✅ DONE — semua pure v4.3
+   Total pm warning: 96 (turun dari 104)
 ```
 
-Next: Fase 15 — Audit & fix struktur + pm TP01–18
+Next: pm audit TP17+TP18 → pm audit TP01–14
 
 ## Fase 15 — Audit Struktur & pm TP01–18
 
 ### Status Per TP
 - TP01–14: format langkah[] ✅ | pm ⚠️ 93 missing
-- TP15:    format langkah[] ✅ | pm ✅ bersih | DONE
-- TP16:    format aktivitas[] ❌ BELUM MIGRASI | pm ⚠️ 8 missing
+- TP15:    format langkah[] ✅ pure v4.3 | pm ✅ bersih | DONE
+- TP16:    format langkah[] ✅ pure v4.3 | pm ✅ 14/14 lengkap
+  → 39 items L0–L13 | DONE
 - TP17:    format langkah[] ✅ | pm ⚠️ 2 missing
 - TP18:    format langkah[] ✅ | pm ⚠️ 1 missing
-- Total pm warning: 104 (bukan 115 — TP16 belum terhitung benar)
+- Total pm warning: 96 (TP16 −8 fixed Mei 2026)
 
 ### Temuan Kritis
-TP16 (docs/sesi-m11/tp-16.js) masih pakai 
-aktivitas[] dengan tipe non-standard:
-modeling, review_quick, dll.
-File ini belum dimigrasikan ke langkah[] v4.3.
-Harus dimigrasikan dari skenario txt sebelum 
-pm bisa ditangani.
+✅ RESOLVED — TP16 telah dimigrasikan ke langkah[] v4.3 (Mei 2026).
+39 items L0–L13, pm 14/14 instruksi lengkap, pure v4.3 ✅
+aktivitas[] cleanup ✅ DONE (Mei 2026).
 
 ### Urutan Kerja Sesi Berikutnya
-1. Baca docs/Skenario/flaf-skenario-tp16.txt
-2. Migrasi TP16 aktivitas[] → langkah[] v4.3
-3. pm audit ulang TP16
-4. Keputusan pm TP01–14 + TP17–18:
+1. ✅ Migrasi TP16 → langkah[] v4.3 DONE (Mei 2026)
+2. ✅ Cleanup hybrid aktivitas[] TP15 + TP16 — DONE (Mei 2026)
+3. pm audit TP17 (2 missing) + TP18 (1 missing)
+4. Keputusan pm TP01–14 (93 missing):
    Opsi A: fix per langkah (review konten)
    Opsi B: intentional by design
 
@@ -362,10 +364,10 @@ pm bisa ditangani.
 ## Fase 14 — Migrasi langkah[] TP15–18
 
 FASE 14 ✅ COMPLETE — Migrasi langkah[] TP15–18
-  - TP15 ✅ — 34 langkah v4.3, aktivitas[] dihapus
-  - TP16 ✅ — 27 langkah v4.3, aktivitas[] dihapus
-  - TP17 ✅ — 28 langkah v4.3, aktivitas[] dihapus
-  - TP18 ✅ — 15 langkah v4.3, aktivitas[] dihapus
+  - TP15 ✅ — pure v4.3 | aktivitas[] cleanup DONE
+  - TP16 ✅ — 39 langkah v4.3, L0–L13, pm 14/14 | pure v4.3 | aktivitas[] cleanup DONE
+  - TP17 ✅ — pure v4.3, aktivitas[] tidak ada
+  - TP18 ✅ — pure v4.3, aktivitas[] tidak ada
 
 ### Hotfix Post-Fase 14
 - TP17 dan TP18: rollback format mode
