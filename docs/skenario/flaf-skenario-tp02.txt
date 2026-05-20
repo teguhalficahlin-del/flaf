@@ -1,0 +1,326 @@
+FLAF — SKENARIO LIVE MODE FINAL
+================================
+TP 02
+Fase A · Kelas 1
+================================
+
+
+================================================================
+TP 02 — INTRODUCING MYSELF
+Tema: Interaksi Sosial Dasar
+Total: 18 Layar
+Persiapan: Papan tulis + spidol
+           Kertas name tag kosong (atau pre-printed sebagai cadangan)
+           2 boneka tangan — Kiki dan Momo (wajib)
+================================================================
+
+CATATAN RUNTIME
+· L5 & L8: choral response dengan jawaban berbeda (nama/usia) — verifikasi
+  di lapangan apakah terkendali atau chaos.
+· L11: clap twice — verifikasi efektivitas sebagai stopping signal kelas 1.
+· L6: tracing nama — verifikasi sebagai idle management early finisher.
+
+
+
+LAYAR 0 — Pre-Opening · DOOR GREETING
+---------------------------------------
+AKSI
+Berdiri di depan kelas. Sambut siswa saat masuk dengan senyum dan anggukan.
+
+UCAP
+"Good morning! Come in, come in!"
+
+⚡ Cue kritis: Layar ini dilakukan sebelum kelas resmi dimulai. Berbeda dari TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum hangat. Jangan skip.
+
+
+LAYAR 1 — Pembuka · GURU MEMPERKENALKAN DIRI
+----------------------------------------------
+AKSI
+Semua duduk. Tulis nama di papan sambil berbicara — pelan dan jelas.
+⚡ Tunjuk nama di papan saat mengucapkannya.
+
+UCAP
+"Hello, everyone! My name is [nama guru]."
+"My name is [nama guru]. Nice to meet you!"
+
+
+LAYAR 2 — Pembuka · SISWA MENJAWAB SAPAAN
+-------------------------------------------
+AKSI
+Tunjuk diri sendiri, lalu tunjuk kelas.
+⚡ Wait 2 seconds first — beri siswa kesempatan recall sebelum modeling.
+
+UCAP
+"What is my name?"
+
+"Your name is [nama guru]! Say it with me!"
+
+RESPONS SISWA
+"Your name is [nama guru]!"
+
+BANTUAN ▸
+Jika diam: tunjuk nama di papan → ucap "Your name is..." menggantung.
+Jika jawab Bahasa Indonesia: angguk, ucapkan dalam Inggris pelan → ajak ikut.
+
+
+LAYAR 3 — Pembuka · JEMBATAN KE INTI
+--------------------------------------
+AKSI
+Tunjuk diri sendiri, lalu tunjuk kelas bergantian.
+
+UCAP
+"Now I know your teacher's name. But I don't know your names yet!"
+"Let us learn how to introduce ourselves!"
+
+
+LAYAR 4 — Inti · POLA "MY NAME IS"
+-------------------------------------
+AKSI
+Tulis di papan: My name is ___.
+Tunjuk papan — ucapkan dulu sendiri, siswa dengarkan.
+
+👂 LISTEN FIRST
+
+UCAP
+"My name is Budi. My name is Sari. My name is Andi."
+
+🗣 TOGETHER
+
+UCAP
+"Now you! My name is..."
+⚡ Tunjuk satu siswa, lalu gerakkan tangan mengajak seluruh kelas.
+
+RESPONS SISWA
+"My name is [nama sendiri]."
+
+BANTUAN ▸
+Jika diam: tunjuk name tag / papan → ucap "My name is..." menggantung → tunjuk siswa.
+Jika jawab Bahasa Indonesia: angguk, ucap "My name is..." + nama mereka → ajak ulang.
+
+
+LAYAR 5 — Inti · NAME TAG
+---------------------------
+AKSI
+Bagikan kertas name tag. Bantu yang belum bisa menulis — tidak apa-apa kalau belum rapi.
+⚡ Guru keliling, bantu satu per satu jika perlu.
+🔁 Siswa yang sudah selesai: minta mereka trace nama lagi sampai semua siap.
+
+UCAP
+"Write your name here. My name is ___."
+⚡ Tunjuk garis kosong di name tag.
+
+BANTUAN ▸
+Jika belum bisa menulis: guru tulis nama di name tag, siswa tempelkan sendiri.
+
+
+LAYAR 6 — Inti · JEMBATAN KE USIA
+------------------------------------
+AKSI
+Semua sudah pasang name tag. Tunjuk name tag sendiri, lalu tunjuk name tag siswa.
+
+UCAP
+"Great! Now I know your names."
+"But how old are you? Let us find out!"
+
+
+LAYAR 7 — Inti · POLA USIA
+----------------------------
+AKSI
+Tunjuk diri sendiri. Angkat jari sesuai jumlah usia yang diucapkan.
+
+👂 LISTEN FIRST
+
+UCAP
+"How old are you?"
+
+"I am six years old." ⚡ Angkat 6 jari — jeda.
+"I am seven years old." ⚡ Angkat 7 jari — jeda.
+
+🗣 TOGETHER
+
+UCAP
+"How old are you?"
+
+"I am..."
+⚡ Tunjuk siswa — tunggu mereka melengkapi.
+
+RESPONS SISWA
+"I am [usia] years old!"
+
+BANTUAN ▸
+Jika diam: angkat jari sebanyak usia siswa → ucap "I am..." menggantung → tunggu.
+Jika jawab angka saja ("six!"): angguk, ucap "I am six years old!" → ajak ulang.
+
+
+LAYAR 8 — Inti · DEMO WALK AND TALK
+--------------------------------------
+AKSI
+Pegang Kiki dan Momo — satu di setiap tangan.
+⚡ Demo once — tunjukkan bagaimana dua orang bertemu dan berkenalan.
+
+DEMO Kiki & Momo
+Kiki: "Hello! My name is Kiki. I am six years old."
+Momo: "Hi! My name is Momo. I am seven years old."
+
+AKSI
+Turunkan boneka. Tunjuk papan — pastikan kalimat lengkap tertulis.
+
+UCAP
+"That is what you will say to your friends. Let us practise!"
+
+
+LAYAR 9 — Inti · RESET + ATURAN WALK AND TALK
+-------------------------------------------------
+AKSI
+Angkat tangan — minta siswa tenang dan fokus.
+⚡ Turunkan tangan perlahan · Tunjuk mata sendiri.
+
+UCAP
+"Hands down. Eyes on me."
+
+AKSI
+Jelaskan aturan walk and talk dengan singkat.
+
+UCAP
+"Stand up. Walk. Find a friend. Say hello and introduce yourself."
+"Then find another friend. Three friends total!"
+⚡ Clap twice = stop and freeze. Praktikkan sekali sebelum mulai.
+
+⚠ DARURAT — Waktu ≤10 Menit
+Batalkan walk and talk → siswa perkenalkan diri ke teman di sebelah saja, duduk di tempat.
+
+
+LAYAR 10 — Inti · WALK AND TALK
+---------------------------------
+AKSI
+Beri aba-aba mulai. Pantau kelas — bantu pasangan yang kesulitan.
+🔁 2 menit · 3 teman berbeda.
+⚡ Clap twice untuk berhenti saat waktu habis.
+
+BANTUAN ▸
+Jika siswa diam saat bertemu teman: dekati, bisik "Say: Hello! My name is..."
+Jika kelas terlalu ramai: clap twice → "Hands down. Eyes on me." — reset sebentar lalu lanjut.
+
+
+LAYAR 11 — Inti · DIFERENSIASI
+---------------------------------
+AKSI
+Minta semua duduk kembali. Beri sinyal perubahan mode.
+
+UCAP
+"Well done! Now practise with your partner."
+"If you need help, look at the board. If you are ready, try without looking!"
+
+DIFERENSIASI
+Need Help:
+→ lihat papan saat berbicara
+→ boleh hanya nama saja dulu, usia bisa belakangan
+→ guru duduk dekat dan bantu
+
+Ready:
+→ tanpa lihat papan
+→ kalimat lengkap: "My name is ... I am ... years old. Nice to meet you!"
+→ tambahkan "And you? What is your name?" jika sudah lancar
+
+
+LAYAR 12 — Penutup · TRANSISI + DEMO GURU
+-------------------------------------------
+AKSI
+Tepuk tangan sekali. Minta semua perhatikan ke depan.
+
+UCAP
+"Great practice! Now, who wants to introduce themselves to the class?"
+"Watch first — I will show you."
+
+AKSI
+Guru demo sendiri sekali lagi — singkat dan natural.
+
+UCAP
+"Hello! My name is [nama guru]. Nice to meet you all!"
+⚡ Tunjuk ke kelas setelah selesai → ajak tepuk tangan.
+
+
+LAYAR 13 — Penutup · TAMPIL DI DEPAN
+--------------------------------------
+AKSI
+Panggil 2–3 siswa sukarela. Beri tepuk semangat sebelum mulai.
+🔁 2–3 siswa saja.
+⚡ Keep each turn short — jaga tempo penutup.
+
+UCAP
+"Come to the front! Introduce yourself!"
+
+RESPONS SISWA
+"Hello! My name is ... I am ... years old. Nice to meet you!"
+
+BANTUAN ▸
+Jika diam di depan: bisik "Say: Hello! My name is..." pelan — beri waktu.
+Jika hanya bilang nama: angguk, ucap "My name is [nama siswa]!" bersama kelas → beri applause.
+
+
+LAYAR 14 — Penutup · REFLEKSI
+-------------------------------
+AKSI
+Beri pujian. Tunjuk name tag beberapa siswa secara acak.
+
+UCAP
+"Excellent! Now — tell me one friend's name you learned today."
+⚡ Tunjuk satu siswa, lalu gestur tangan mengajak seluruh kelas.
+
+RESPONS SISWA
+Siswa sebut satu nama teman yang baru dikenal.
+
+BANTUAN ▸
+Jika diam: tunjuk name tag teman di sebelah → ucap "His name is..." menggantung.
+Jika jawab Bahasa Indonesia: angguk, ucap dalam Inggris → ajak ulang pelan.
+
+
+LAYAR 15 — Penutup · PENUTUP KELAS
+-------------------------------------
+AKSI
+Berdiri di depan kelas. Lambaikan tangan ke seluruh kelas.
+
+UCAP
+"Great job, everyone! You can introduce yourselves in English!"
+"See you next time. Goodbye!"
+
+🗣 TOGETHER
+
+RESPONS SISWA
+"Goodbye, teacher! See you!"
+
+BANTUAN ▸
+Jika diam: mulai lambai tangan → ucap "Good-bye..." menggantung.
+
+
+LAYAR 16 — SELESAI
+--------------------
+✓ Kumpulkan kertas name tag (simpan untuk referensi nama siswa)
+✓ Hapus tulisan di papan
+
+Catat siswa yang:
+· Diam saat walk and talk — tidak mau / tidak bisa berinteraksi
+· Hanya bisa sebut nama, belum bisa kalimat lengkap
+· Perlu bantuan menulis name tag
+
+
+================================================================
+CATATAN RUNTIME GURU
+================================================================
+
+Energi kelas:
+L0 ⚪ → L1 🔵 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 →
+L6 🟠 → L7 🟠 → L8 ⚪ → L9 🟡 → L10 🟡 → L11 🔴 → L12 🟡 → L13 🟡 →
+L14 🔵 → L15 🔵
+
+Risiko pacing:
+· L5 & L8: choral response dengan jawaban berbeda (nama/usia) — verifikasi kelas terkendali
+· L6: tracing nama — verifikasi efektivitas sebagai idle management early finisher
+· L11: clap twice — verifikasi sebagai stopping signal walk and talk kelas 1
+· L11 Walk and Talk: "Small voice" wajib diucapkan sebelum mulai — cegah eskalasi noise
+
+Teacher autonomy:
+· Jika kelas belum bisa tulis nama di L5, pakai name tag pre-printed sebagai cadangan
+· L8: jembatan ke usia cukup singkat — jangan habiskan waktu di transisi
+· Jika waktu mepet, L12 Diferensiasi cukup 2 menit partner practice
+· L14: tampil di depan — jika tidak ada volunteer, tunjuk 2 siswa serentak

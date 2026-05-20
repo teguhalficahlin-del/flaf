@@ -1,0 +1,364 @@
+TP 04 — NUMBERS 1–20
+Tema: Dunia di Sekitar Kita
+Total: 15 Layar
+Persiapan: Kartu angka 1–20
+           Benda untuk dihitung — siapkan di meja guru sebelum kelas,
+           dalam jangkauan tangan
+================================================================
+
+
+
+LAYAR 0 — Pre-Opening · PEMBUKA KELAS
+---------------------------------------
+AKSI
+Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan.
+Tunggu semua duduk tenang sebelum mulai.
+
+UCAP
+"Good morning, everyone! How are you today?"
+
+[Tunggu respons kelas]
+
+"I'm fine, thank you! Today — we count in English! Are you ready?"
+
+[Tunggu respons — berdiri diam jika kelas belum fokus]
+
+⚡ Cue kritis: Layar ini pendek dan wajib. Jangan mulai clap and count sebelum kelas tenang. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.
+
+================================================================
+
+LAYAR 1 — Pembuka · MEMBUKA KELAS + CLAP AND COUNT
+-----------------------------------------------------
+SCRIPT PEMBUKA
+Berdiri di depan kelas. Tunggu semua duduk tenang.
+
+"Good morning, everyone!"
+"Today we are going to count!"
+
+⚡ Langsung tunjuk jari satu per satu ke udara.
+"One... two... three..."
+⚡ Berhenti di tiga. Tunjuk ke kelas.
+"You continue! What comes next?"
+
+⚡ Beri 2 detik — lalu lanjut modeling tanpa tunggu.
+⚡ Do not wait too long — keep the energy moving.
+"Four! Five! Let us count together!"
+
+AKSI
+"Ready to clap?" → angkat tangan sebagai aba-aba.
+⚡ Micro-transition fisik sebelum clap and count — reset mode tubuh siswa.
+
+Guru hitung dulu sendiri satu putaran.
+"One!" 👏 "Two!" 👏 "Three!" 👏 ... "Ten!" 👏
+
+AKSI
+Ajak siswa ikut — putaran pelan dulu.
+"Now together! Slow first… ready?"
+
+RESPONS SISWA
+"One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!"
+
+AKSI
+Setelah putaran pelan stabil:
+"Now faster!"
+
+BANTUAN ▸
+Jika siswa tidak ikut: perlambat, tunjuk jari satu per satu → ajak ikut pelan.
+
+
+LAYAR 2 — Pembuka · JEMBATAN KE INTI
+--------------------------------------
+AKSI
+Tunjuk ke papan yang sudah ada kartu 1–10.
+
+UCAP
+"Great! You can count to ten!"
+"Now let us learn the numbers properly — with cards!"
+
+
+LAYAR 3 — Inti · KARTU 1–10
+-----------------------------
+AKSI
+Tempel kartu 1–10 di papan satu per satu sambil ucapkan.
+⚡ Guru ucapkan dulu — siswa dengarkan.
+
+👂 LISTEN FIRST
+
+UCAP
+"One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten."
+
+🗣 TOGETHER
+
+UCAP
+"Now say it with me!"
+⚡ Tunjuk kartu satu per satu.
+
+RESPONS SISWA
+"One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!"
+
+AKSI
+Putaran kedua — whisper voice:
+"Whisper voice!"
+⚡ Whisper menjaga bentuk bunyi asli lebih baik dari robot voice.
+⚡ Satu putaran singkat saja.
+
+BANTUAN ▸
+Jika siswa diam: tunjuk kartu + ucap "One..." menggantung → tunggu siswa lanjutkan.
+Jika suara pelan: dekatkan tangan ke telinga, angguk semangat.
+
+
+LAYAR 4 — Inti · JEMBATAN KE 11–20
+-------------------------------------
+AKSI
+Tunjuk kartu 10 di papan.
+
+UCAP
+"Ten! Good. Now what comes after ten?"
+"These numbers sound different."
+"Just listen first — no need to repeat yet."
+⚡ Menurunkan tekanan performa sebelum bagian tersulit.
+
+AKSI
+Mulai tempel kartu 11–20 satu per satu.
+
+
+LAYAR 5 — Inti · KARTU 11–20
+------------------------------
+AKSI
+Kartu 11–20 sudah tertempel. Tunjuk satu per satu.
+
+👂 LISTEN FIRST — CHUNK 1
+
+UCAP
+"Eleven. Twelve. Thirteen. Fourteen. Fifteen."
+⚡ Ucapkan pelan — fonologi 11–15 sangat berbeda.
+
+"Good listening!"
+
+👂 LISTEN FIRST — CHUNK 2
+
+UCAP
+"Sixteen. Seventeen. Eighteen. Nineteen. Twenty."
+
+🗣 TOGETHER — semi-echo SATU PUTARAN saja
+
+AKSI
+Guru ucap satu angka → jeda → siswa ikut. Satu putaran — lalu langsung chunk.
+⚡ Jangan terlalu lama di semi-echo — tempo runtuh jika over-scaffolding.
+
+"Eleven..." → siswa ikut → "Twelve..." → siswa ikut → dst sampai fifteen.
+"Sixteen..." → siswa ikut → dst sampai twenty.
+
+🔁 Ulangi sekali lagi full chunk — tidak perlu cepat.
+⚡ Fokus ke exposure, bukan akurasi. Tidak apa-apa jika belum hafal.
+
+BANTUAN ▸
+Jika siswa diam: ucapkan bersama guru — jangan koreksi individual.
+Jika kelas kuat: skip semi-echo, langsung full chunk.
+
+
+LAYAR 6 — Inti · RESET + ATURAN PERMAINAN ANGKA
+-------------------------------------------------
+AKSI
+Tepuk tangan sekali.
+"Hands down. Eyes on the board."
+
+UCAP
+"Now a game! I point to a number — you say it!"
+"Hands up if you know! First hand up, say it!"
+
+AKSI — rehearsal aturan via demo:
+Guru sengaja teriak tanpa angkat tangan → "Oh nooo~"
+Model benar: angkat tangan diam → ucap angka.
+"Like this — hand up first, then say it."
+
+⚠ DARURAT — Waktu ≤10 Menit
+Lewati permainan → lanjut ke Layar 8 (Hitung Benda Nyata).
+
+
+LAYAR 7 — Inti · PERMAINAN TUNJUK ANGKA
+-----------------------------------------
+AKSI
+Tunjuk kartu angka secara acak.
+🔁 6–8 angka saja — berhenti saat energi masih tinggi.
+
+UCAP
+Untuk angka 1–10:  "What number? Fast!"
+Untuk angka 11–20: "Look carefully… what number?"
+⚡ Jangan pakai "Fast!" untuk belasan — target masih recognition stabil, bukan speed.
+
+⚡ Selipkan 1–2 ronde whole class response:
+"Everyone together — what number?"
+Menjaga partisipasi merata — siswa lambat tetap dapat exposure.
+
+RESPONS SISWA
+Individual: angkat tangan → ucapkan angka.
+Whole class: semua ucapkan bersama.
+
+BANTUAN ▸
+Jika tidak ada yang menjawab: ucap suku kata pertama "Thir-..." → tunggu.
+Jika chaos: "Freeze. Hands down. Eyes here." → reset → lanjut.
+
+
+LAYAR 8 — Inti · HITUNG BENDA NYATA
+--------------------------------------
+AKSI
+⚡ Semua benda harus sudah reachable di meja guru — ambil langsung tanpa cari-cari.
+⚡ Keep object talk short — return quickly to counting.
+
+UCAP
+"Now let us count real things!"
+"How many books? Let us count together!"
+
+AKSI + UCAP
+Letakkan benda satu per satu sambil hitung bersama kelas.
+"One, two, three..."
+
+UCAP
+"How many?"
+
+RESPONS SISWA
+"Seven!"
+
+AKSI
+Guru model kalimat lengkap — siswa tidak wajib ikut:
+"Yes! There are seven books."
+⚡ Target utama adalah angka. Grammar "There are..." bonus — guru yang model.
+
+Ulangi dengan 2–3 benda berbeda.
+⚡ Variasikan jumlah — jangan semua 10.
+
+BANTUAN ▸
+Jika siswa diam: tunjuk benda + ucap angkanya → ajak kelas ulang.
+
+
+LAYAR 9 — Inti · DIFERENSIASI
+-------------------------------
+AKSI
+Beri sinyal perubahan mode.
+
+UCAP
+"Partner voice."
+⚡ Volume cue sebelum mulai — cegah eskalasi noise.
+
+"Now practise with your partner."
+"Count things on your table. Stay in your seat."
+"Partner A counts first. Partner B listens. Then switch."
+
+DIFERENSIASI
+Need Help:
+→ fokus angka 1–10 saja
+→ hitung benda di meja sendiri
+→ guru bantu tunjuk dan hitung bersama
+
+Ready:
+→ gunakan 11–20 jika bisa
+→ hitung benda di sekitar kursi
+→ guru model: "There are [n] [benda]." — siswa coba ikuti jika siap
+
+
+LAYAR 10 — Penutup · DEMO + ATURAN HITUNG MUNDUR
+--------------------------------------------------
+AKSI
+Minta semua berdiri.
+⚡ Tentukan kelompok sebelum mulai — sentuh fisik area + label jelas.
+
+"Everyone stand up!"
+
+Guru berjalan ke area kiri → sentuh → "Group 1 — here."
+Guru ke tengah → sentuh → "Group 2 — here."
+Guru ke kanan → sentuh → "Group 3 — here."
+Lanjut subdivisi jika kelas besar.
+⚡ Penunjukan fisik jauh lebih jelas dari label verbal saja untuk kelas 1.
+
+"I count down from ten. When I call your group — sit down!"
+
+AKSI — demo:
+"Watch. Group 1 — ten!" → kelompok 1 duduk.
+"Good — like that. Everyone stand again!"
+
+
+LAYAR 11 — Penutup · HITUNG MUNDUR BLAST OFF
+---------------------------------------------
+AKSI
+Semua berdiri. Guru mulai hitung mundur.
+⚡ Kelompok kecil per angka — ritme tetap jalan sampai "One!"
+
+UCAP + AKSI
+"Ten!" → Group 1 duduk
+"Nine!" → Group 2 duduk
+"Eight!" → Group 3 duduk
+... terus dengan subdivisi sampai "One!" → semua duduk
+"Blast off!" 🚀 → semua angkat tangan sambil tetap duduk
+⚡ Tetap duduk — cegah re-escalation sebelum refleksi.
+⚡ Jaga ritme cepat — jangan tunggu kesempurnaan.
+
+
+LAYAR 12 — Penutup · REFLEKSI
+-------------------------------
+AKSI
+Beri pujian. Tunjuk kartu angka di papan.
+
+UCAP
+"Well done! Look at all these numbers."
+"Think first…"
+⚡ Jeda scan kecil — beri waktu respons individual sebelum menunjuk.
+"Which number is hardest to say? Point to it!"
+
+RESPONS SISWA
+Siswa tunjuk satu kartu angka yang terasa paling sulit.
+✓ Cukup dengan menunjuk.
+
+BANTUAN ▸
+Jika siswa bingung: guru tunjuk angka belasan → "Thirteen? Fifteen? Hard?"
+
+
+LAYAR 13 — Penutup · PENUTUP KELAS
+-------------------------------------
+AKSI
+Berdiri di depan kelas. Lambaikan tangan.
+
+UCAP
+"Great work today! You can count to twenty in English!"
+⚡ Model volume dulu: "Soft goodbye..."
+"Goodbye, everyone! See you next time!"
+
+🗣 TOGETHER
+
+RESPONS SISWA
+"Goodbye, teacher! See you!"
+
+BANTUAN ▸
+Jika diam: mulai lambai tangan → ucap "Good-bye..." menggantung.
+
+
+LAYAR 14 — SELESAI
+--------------------
+✓ Kumpulkan kartu angka 1–20
+✓ Simpan benda yang dipakai untuk menghitung
+
+Catat siswa yang:
+· Kesulitan angka 11–19 — fonologi belasan perlu lebih banyak exposure
+· Tidak bisa menjawab "How many?" — perlu latihan konteks nyata
+· Tidak ikut clap and count — perlu observasi partisipasi
+
+
+================================================================
+CATATAN RUNTIME GURU
+================================================================
+
+Energi kelas:
+L1 🟠 → L2 ⚪ → L3 🟡 → L4 ⚪ → L5 🟡 → L6 ⚪ → L7 🔴 →
+L8 🟡 → L9 🟡 → L10 ⚪ → L11 🔴 → L12 🔵 → L13 🔵
+
+Risiko pacing:
+· L5: semi-echo satu putaran saja — jangan over-scaffold
+· L7: "Fast!" hanya untuk 1–10. Belasan: "Look carefully." Stop di 6–8 angka.
+· L8: benda sudah siap di meja — object talk singkat, kembali ke counting cepat
+· L11: kelompok kecil per angka — ritme countdown tidak habis terlalu cepat
+
+Teacher autonomy:
+· Jika kelas lancar 1–10 di L1, persingkat L3 dan fokus ke 11–20
+· Jika waktu terbatas, L9 cukup 2 menit partner counting
+· L12 boleh dilewati jika sangat mepet — langsung ke L13
+· L5: jika kelas kuat, skip semi-echo dan langsung full chunk
