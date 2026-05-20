@@ -310,7 +310,8 @@ function _renderPreview() {
 // ─── SCREEN: Resume ───────────────────────────────────────────
 
 function _renderResume() {
-  const fase = _currentFase();
+  const fase  = _currentFase();
+  const total = fase?.langkah?.length || 0;
 
   _root.innerHTML = `
     <div class="sr-app">
@@ -320,7 +321,7 @@ function _renderResume() {
         <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')}</div>
         <div class="sr-resume-pos">
           Terakhir di: <strong>${_escape(fase?.fase || '—')}</strong>,
-          langkah ${_state.langkahIdx + 1}
+          langkah ${_state.langkahIdx + 1} dari ${total} · Mode: ${_state.mode}
         </div>
       </div>
       <div class="sr-footer">
@@ -431,7 +432,11 @@ function _renderRunning() {
         </div>
       </div>`;
   } else if (tipe === 'audio' || tipe === 'respons_siswa') {
+    const speakerLabel = tipe === 'audio'
+      ? `<div class="sr-speaker-label sr-speaker-label--guru">Guru</div>`
+      : `<div class="sr-speaker-label sr-speaker-label--siswa">Siswa</div>`;
     bodyContent = `
+      ${speakerLabel}
       <div class="sr-cue-text">"${_escape(langkah.teks || '')}"</div>
       ${langkah.teks && ('speechSynthesis' in window) ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
   } else {
