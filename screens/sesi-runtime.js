@@ -366,6 +366,17 @@ function _renderEntering() {
 }
 
 // ─── SCREEN: Running ─────────────────────────────────────────
+//
+// RUNTIME CONTRACT — baca sebelum modifikasi:
+//   Runtime ini bersifat GENERIC. Semua 18 TP melewati code path yang sama.
+//   Tidak ada branching per TP nomor, id, atau schema tier.
+//   Field langkah bersifat opsional — progressive enhancement, bukan precondition.
+//
+//   DILARANG: if (tp.nomor <= 14) · startsWith('DIFERENSIASI') · per-TP checks
+//   WAJIB:    langkah.pm?  ·  langkah.mode?.[mode]?.bantuan  ·  tipe || 'instruksi'
+//
+//   Data quality tiers (canonical vs legacy) ada di fase-a.js — bukan di sini.
+//   Lihat: CONTEXT.md §Schema Tier Policy
 
 function _renderRunning() {
   const fase    = _currentFase();

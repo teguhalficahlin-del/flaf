@@ -254,6 +254,86 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 ### TD-6: jsPDF CDN
 ✅ RESOLVED — Script tag jsPDF (cdnjs) dihapus dari index.html — tidak dipakai oleh kode manapun
 
+---
+
+## Schema Tier Policy
+
+> **Kebijakan permanen** — tidak berubah kecuali ada keputusan arsitektural eksplisit baru.
+> Baca sebelum menyentuh TP, runtime, atau pm annotations.
+
+### Tiga Tier TP
+
+| Tier | TP | Karakteristik runtime |
+|------|----|-----------------------|
+| **Canonical Modern** | TP15–18 | instruksi + audio + respons_siswa + diferensiasi + darurat; pm lengkap; bantuan kontekstual; tidak ada embedded structural content |
+| **Transitional Modern** | TP01–03 | instruksi + audio + respons_siswa (TP01–02) + diferensiasi + darurat proper; pm partial; bantuan kontekstual |
+| **Quarantined Working Legacy** | TP04–14 | instruksi + audio efektif; pm tidak hadir (intentional); bantuan generik (TD-3); DIFERENSIASI/DARURAT embedded dalam instruksi.teks |
+
+**Canonical reference**: `docs/sesi-m11/tp-16.js` (TP16 — 14/14 pm, full tipe set, bantuan kontekstual)
+
+### Compatibility Boundary
+
+**Boundary berada di DATA (`fase-a.js`) — bukan di runtime CODE (`sesi-runtime.js`).**
+
+Runtime membaca semua 18 TP melalui code path yang sama. Tidak ada branching per TP nomor
+atau ID. Degradasi UX di TP04–14 (tidak ada pm badge, tidak ada 2-kolom diferensiasi,
+bantuan generik) adalah **intentional tolerated debt**, bukan bug.
+
+### Tolerated Debt TP04–14 — Tidak perlu diperbaiki tanpa sesi migration eksplisit
+
+| Debt | Jumlah | Impact runtime |
+|------|--------|----------------|
+| pm annotations absent | 97 instruksi | Kosmetik — no badge |
+| bantuan generik (TD-3) | ~110 langkah | Minor — generic advice setiap langkah |
+| Embedded DIFERENSIASI/DARURAT | 22 instruksi | Degraded — teks mentah, bukan 2-kolom |
+| Tidak ada respons_siswa | TP03–14 | Feature gap — no respons badge |
+
+**97 pm warnings = INTENTIONAL TOLERATED DEBT.** Jangan inject pm ke TP04–14 tanpa sesi
+migration eksplisit. Parity forcing tanpa review boundary = false compliance.
+
+### Anti-Branching Rule (Konstitusional)
+
+`sesi-runtime.js` tidak pernah mengandung kondisi berdasarkan identitas TP:
+
+```javascript
+// DILARANG — jangan pernah tambahkan ke sesi-runtime.js:
+if (tp.nomor <= 14) { ... }
+if (tp.id.match(/tp-0[1-9]/)) { ... }
+if (langkah.teks?.startsWith('DIFERENSIASI')) { ... }
+if (langkah.teks?.includes('JIKA WAKTU TERSISA')) { ... }
+```
+
+### Progressive Enhancement Rule (Konstitusional)
+
+Semua field langkah bersifat optional dari perspektif runtime — absennya field tidak pernah
+menjadi error atau kondisi khusus:
+
+```javascript
+// WAJIB — safe access, bukan precondition:
+const tipe    = langkah.tipe || 'instruksi';          // fallback, bukan branch
+const pm      = langkah.pm;                            // undefined = no badge, bukan error
+const bantuan = langkah.mode?.[mode]?.bantuan;         // undefined = no box, bukan error
+```
+
+### Selective Migration — Keputusan Implementasi
+
+TP baru (TP19+) wajib mengikuti canonical tier. Migrasi TP04–14 hanya dilakukan dengan
+sesi eksplisit, urutan wajib: **(1)** bantuan kontekstual → **(2)** extract embedded
+DIFERENSIASI/DARURAT → **(3)** pm annotation.
+
+**Optional low-cost migration (bisa dilakukan kapan saja):**
+- TP03: +7 pm annotations — bantuan sudah spesifik, tipe sudah proper
+- TP15: +7 pm annotations — bantuan sudah spesifik (docs/ file)
+- TP01: +2 pm missing · TP02: +3 pm missing
+
+### Schema Reference yang Berlaku
+
+`docs/fase-1-spec/SCHEMA.md` mendeskripsikan schema `aktivitas[]` dari Fase 1 — **sudah
+obsolete**. Runtime v4.3 tidak membaca `aktivitas[]`, `advance`, `observation_validation`,
+atau `closure_reinforcement` sebagai field runtime.
+
+---
+
 ## Aturan Kerja (WAJIB diikuti Claude)
 - Setiap perubahan kode: sebutkan **nama file**, **blok lama presisi** (ctrl+F-findable), **blok baru**
 - **Jangan tulis kode sebelum diminta**
