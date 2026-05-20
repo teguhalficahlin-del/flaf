@@ -325,7 +325,11 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
    - pdf-handler.js: validasi terima .docx selain .pdf
 ```
 
-Next: Fase 14 — (belum ditentukan)
+Next: Fase 15 — (belum ditentukan)
+
+## Fase 14 — Migrasi langkah[] TP17
+
+✅ TP17 My Hobbies — 28 langkah v4.3, aktivitas[] dihapus (sesi M12 lanjutan)
 
 ## Audit Media Persiapan vs Skenario
 
