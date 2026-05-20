@@ -91,9 +91,9 @@ const TP_17 = {
           pm  : 'mindful',
           teks: 'Guru berdiri di depan kelas. Ucap: "Good morning, everyone! How are you today?" — tunggu respons kelas. Ucap: "I\'m fine, thank you! Are you ready? Let\'s start." Cue kritis: layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
           mode: {
-            solo : { teks: 'Guru ucap greeting, tunggu respons, lanjut.', bantuan: '' },
-            duo  : { teks: 'Guru ucap greeting, tunggu respons, lanjut.', bantuan: '' },
-            grup : { teks: 'Guru ucap greeting, tunggu respons kelas, lanjut.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -105,9 +105,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Guru berdiri di tengah kelas — tidak ada kartu. Gesture membuka buku, pura-pura membaca: "I like reading!" [tunggu 2–3 detik]. Gesture mengaduk masakan: "I like cooking!" [tunggu 2–3 detik]. Gesture menendang bola: "I like playing football!" [tunggu 2–3 detik]. Ucap: "These are hobbies. Things we love to do. Today — hobbies in English." Tunggu respons bebas. Cue kritis: guru yang perform — bukan meminta siswa respond dulu. Tiga hobi cukup, jangan perkenalkan semua 8. Respons bebas siswa diterima tanpa koreksi.',
           mode: {
-            solo : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas.', bantuan: '' },
-            duo  : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas.', bantuan: '' },
-            grup : { teks: 'Guru perform tiga gesture berurutan, ucap kalimat per hobi, tunggu respons bebas kelas.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -127,9 +127,9 @@ const TP_17 = {
           pm  : 'meaningful',
           teks: 'Tempel 4 kartu satu per satu — reading, drawing, singing, dancing. Setiap kartu: tunjuk kartu → gesture → ucap gerund, satu detik jeda. Ucap: "Listen. My turn." — "Reading." [gesture membuka buku, mata ke bawah — tunjuk kartu] — "Drawing." [gesture pegang pensil, gambar di udara — tunjuk kartu] — "Singing." [gesture tangan ke mulut, kepala sedikit naik — tunjuk kartu] — "Dancing." [gesture gerak badan kiri kanan — tunjuk kartu]. Ucap: "One more time." — ulang sekali. Cue kritis: gesture harus exaggerated dan berbeda jelas — ini anchor utama. Reading = mata ke bawah, tangan diam / drawing = tangan bergerak di udara. Guru belum minta kelas produksi di layar ini.',
           mode: {
-            solo : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
-            duo  : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
-            grup : { teks: 'Tempel kartu satu per satu, gesture per item, ucap gerund. Ulangi sekali.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -141,9 +141,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Ucap: "Now together. I show — you say." Gesture membuka buku — kelas ucap "Reading!". Gesture pensil di udara — "Drawing!". Gesture tangan ke mulut — "Singing!". Gesture gerak badan — "Dancing!". Putaran 2: tunjuk 2 kartu acak — kelas ucap. Langsung lanjut contrast drill (15 detik): ucap "Watch." → gesture reading (mata ke bawah, tangan diam): "Reading — hands still." → gesture drawing (tangan bergerak di udara): "Drawing — hands move." Ucap: "Ready? Which one?" — "Hands still — show me!" → kelas gesture reading — "Hands move — show me!" → kelas gesture drawing. Ulangi 2 putaran, cepat. Cue kritis: contrast drill reading vs drawing wajib — anchor perbedaan: reading = tangan diam / drawing = tangan bergerak. Jangan explain — tunjukkan perbedaan fisik dan lanjut.',
           mode: {
-            solo : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
-            duo  : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
-            grup : { teks: 'Guru cue gesture, kelas ucap. Putaran 2 kartu acak, lanjut contrast drill.', bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+            mudah:     { bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+            normal:    { bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
+            tantangan: { bantuan: 'Jika kelas tertukar reading/drawing: guru berdiri diam — gesture reading (tangan diam) → gesture drawing (tangan bergerak). Lanjut.' },
           },
         },
         {
@@ -155,9 +155,9 @@ const TP_17 = {
           pm  : 'meaningful',
           teks: 'Reactivation (15–20 detik): ucap "Quick check." — gesture 4 hobi gelombang 1 berurutan, kelas ucap. Tidak dikoreksi, tidak diulang, langsung lanjut. LISTEN FIRST Gelombang 2: tempel 4 kartu berikutnya — playing football, cooking, swimming, cycling. Ucap: "Listen. My turn." — "Playing football." [gesture menendang bola — tunjuk kartu] — "Cooking." [gesture mengaduk panci — tunjuk kartu] — "Swimming." [gesture lengan berenang ke samping — tunjuk kartu] — "Cycling." [gesture pegang setir + kaki mengayuh — tunjuk kartu]. Ucap: "One more time." — ulang sekali. Cue kritis: reactivation wajib 15–20 detik. Swimming = kedua lengan ke samping / cycling = tangan pegang setir + kaki mengayuh. "Playing football" tiga kata — ucap pelan. Jika satu item lambat: ulang item itu saja, tidak restart semua 4.',
           mode: {
-            solo : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
-            duo  : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
-            grup : { teks: 'Reactivation G1 cepat, lanjut tempel 4 kartu G2 satu per satu, gesture + ucap per item.', bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
+            mudah:     { bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
+            normal:    { bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
+            tantangan: { bantuan: 'Jika kelas mulai lambat di "playing football": jangan ulang semua 4 item dari awal — ulang item itu saja, lanjut.' },
           },
         },
         {
@@ -169,9 +169,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Fase A — gelombang 2 saja, lambat. Ucap: "Together." — gesture menendang: "Playing football!" — gesture mengaduk: "Cooking!" — gesture lengan ke samping: "Swimming!" — gesture pegang setir: "Cycling!". Fase B — campur 8 kartu, medium. Ucap: "Now — all together." — tunjuk semua 8 kartu berurutan, kelas ucap. Fase C — 4 kartu acak, cepat. Ucap: "Ready? Fast — but clear." — pilih 4 kartu acak, tahan 1 detik sebelum lanjut. Jika energi naik liar setelah Fase B: langsung masuk Fase C tanpa ulang. Contrast drill swimming vs cycling langsung setelah Fase C (15 detik): ucap "Watch." — gesture swimming (kedua lengan ke samping): "Swimming — arms out." — gesture cycling (tangan setir + kaki): "Cycling — hands and feet." Ucap: "Which one? Arms out — show me!" → kelas gesture swimming. "Hands and feet — show me!" → kelas gesture cycling. Ulangi 2 putaran, cepat. Cue kritis: swimming dan cycling tidak berurutan di Fase C. Di Fase C cukup tunjuk kartu, tidak perlu gesture penuh. Jika energi turun setelah Fase C: langsung masuk contrast drill tanpa repeat.',
           mode: {
-            solo : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
-            duo  : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
-            grup : { teks: 'Fase A (G2 lambat) → Fase B (8 kartu medium) → Fase C (4 acak cepat) → contrast drill.', bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+            mudah:     { bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+            normal:    { bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
+            tantangan: { bantuan: 'Jika kelas mulai telat di Fase B/C: kurangi tempo, ulangi 2 kartu, lanjut.' },
           },
         },
         {
@@ -183,9 +183,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Lepas semua kartu dari papan — simpan. Siswa tidak pegang apa-apa. Ucap: "No cards. Just me and you." Cue semua 8 hobi berurutan: "Show me reading!" → kelas gesture → "Show me drawing!" → ... → "Show me cycling!". Putaran acak — maksimal 5 cue. Ucap: "My turn to watch. You show me." — pilih 5 cue acak, pisahkan pasangan mirip: reading/drawing tidak berurutan, swimming/cycling tidak berurutan. Setelah 5 cue: langsung stop. Ucap: "Stop. Good." [tepuk 1 kali — freeze]. Ucap: "Sit down. Hands down." [jeda 3 detik]. Cue kritis: guru tidak ikut di putaran acak — fokus observasi siapa yang tertukar. Maksimal 5 cue, langsung stop. Freeze wajib sebelum masuk frame kalimat.',
           mode: {
-            solo : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
-            duo  : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
-            grup : { teks: 'Guru cue 8 hobi berurutan, lanjut 5 cue acak. Guru observasi — tidak ikut gesture. Freeze setelah stop.', bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+            mudah:     { bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+            normal:    { bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
+            tantangan: { bantuan: 'Jika kelas tertukar swimming/cycling: guru berdiri diam — gesture swimming (lengan) → gesture cycling (setir + kaki). Lanjut.' },
           },
         },
         {
@@ -196,9 +196,9 @@ const TP_17 = {
           tipe: 'instruksi',
           teks: 'Ucap: "Good. Now — hobbies become sentences. Watch." Tempel kembali kartu reading dan dancing. Tunjuk papan — I like ___ because it is ___. Ucap: "Listen. My turn." → gesture reading, tunjuk kartu: "I like reading — because it is interesting." [gesture curious eyes] [jeda 2 detik] → gesture dancing, tunjuk kartu: "I like dancing — because it is fun!" [gesture senyum lebar, tangan naik] [jeda 2 detik] → gesture cooking, tunjuk kartu cooking: "I like cooking — because it is fun!". Ucap: "One more time." — ulang tiga kalimat. Cue kritis: "Hobbies become sentences." wajib diucapkan — reset mode mental dari TPR ke frame kalimat. Jeda 2 detik setelah contoh pertama wajib. Tunjuk papan setiap kali ucap frame. Guru randomize reason. Guru tidak tanya kelas dulu di layar ini.',
           mode: {
-            solo : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
-            duo  : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
-            grup : { teks: 'Ucap reset phrase, tempel 2 kartu, tunjuk papan, model 3 kalimat, ulangi sekali.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -206,9 +206,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Ucap: "Together now. Whole sentence." Tunjuk papan: I like ___ because it is ___. Pattern wajib: guru model penuh → kelas ulang penuh → baru fill-in. Giliran 1 — gesture reading: guru model "I like reading because it is interesting." → kelas ulang penuh. Giliran 2 — gesture singing: guru model "I like singing because it is…" [tangan buka, tunggu] → kelas isi "…fun!" → kelas ulang penuh. Giliran 3 — gesture playing football: guru model "I like playing football because it is…" [tangan buka] → kelas isi "…fun!" → kelas ulang penuh. Giliran 4 — gesture swimming: guru model "I like swimming because it is…" [tangan buka] → kelas isi "…interesting!" → kelas ulang penuh. Cue kritis: jangan balik urutan pattern. Guru randomize fun/interesting. "Playing football" tiga kata — ucap pelan. Koreksi via model ulang, bukan teguran terbuka.',
           mode: {
-            solo : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
-            duo  : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
-            grup : { teks: 'Guru model penuh → kelas ulang penuh → fill-in. Empat giliran, tunjuk papan setiap kali.', bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
+            mudah:     { bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
+            normal:    { bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
+            tantangan: { bantuan: 'Jika kelas drop "I like": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.' },
           },
         },
         {
@@ -220,9 +220,9 @@ const TP_17 = {
           pm  : 'meaningful',
           teks: 'Whole-class QA drill — 2 putaran. Ucap: "Now you ask. Ready?" → gesture reading, berdiri diam → ucap: "Ask me." → kelas bersama: "What do you like to do?" → guru: "I like reading because it is interesting!" → gesture dancing → kelas: "What do you like to do?" → guru: "I like dancing because it is fun!" Ucap: "Good. That\'s the question. That\'s the answer." Demo pasang — 1 siswa sukarela: ucap "Watch them." → bisik ke Siswa A: "You like cooking." → Siswa A pegang kartu cooking → Siswa B tanya: "What do you like to do?" → Siswa A jawab: "I like cooking because it is fun!" → guru: "Good. Full sentence." Instruksi sebelum practice (chunk pendek): "Partner voice — not shouting." "Partner A holds a card — face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." Ucap: "Go." Cue kritis: QA drill 2 putaran wajib. Guru bisik hobi ke Siswa A — tidak diucapkan ke kelas. Tugas Listener: "Raise the card" — bukan "hold".',
           mode: {
-            solo : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
-            duo  : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
-            grup : { teks: 'QA drill 2 putaran → demo pasang → instruksi partner → latih stop signal → Go.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -234,9 +234,9 @@ const TP_17 = {
           pm  : 'joyful',
           teks: 'Distribusi kartu hobi — 1 set per pasang. Tunggu semua siap sebelum instruksi. Ucap dalam chunk pendek: "Partner A picks a card — holds it face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." "Full sentence. Go." Total durasi Â±4 menit — jangan lewati. Checkpoint tengah (Â±2 menit): [tepuk 1 kali — freeze] "Switch." "Partner B picks a card." "Partner A asks and raises." [tepuk 1 kali — lanjut]. Saat circulate: bergerak huruf U — cek Partner B angkat kartu setelah mendengar, bukan sebelum. Fokus pada produksi bahasa — tidak verifikasi apakah hobi benar-benar dilakukan siswa. Guru tidak koreksi grammar.',
           mode: {
-            solo : { teks: 'Distribusi → instruksi chunk → circulate huruf U → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
-            duo  : { teks: 'Distribusi → instruksi chunk → masing-masing guru circulate separuh kelas → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
-            grup : { teks: 'Distribusi → instruksi chunk → circulate huruf U → checkpoint switch → stop.', bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+            mudah:     { bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+            normal:    { bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
+            tantangan: { bantuan: 'Pasangan diam: dekati, tunjuk kartu Partner A, bisik "I like…", tunggu lanjut — tidak hentikan kelas. Partner B tidak angkat kartu: dekati, gesture angkat tanpa bicara — tidak hentikan kelas. Pasangan selesai cepat: "Pick another card. Switch again."' },
           },
         },
         {
@@ -257,9 +257,9 @@ const TP_17 = {
           tipe: 'instruksi',
           teks: '[Tepuk 1 kali — freeze]. Ucap: "Stop. Look here." [jeda 2 detik]. Ucap: "Quick survey. Thumbs up if you like it — thumbs close to your chest." → tunjuk kartu reading: "Reading?" → kelas thumbs up dekat dada / diam → tunjuk kartu singing: "Singing?" → tunjuk kartu dancing: "Dancing?" → tunjuk kartu playing football: "Playing football?" → tunjuk kartu swimming: "Swimming?". Ucap: "People like different hobbies." [lanjut]. Cue kritis: "Thumbs close to your chest" wajib — mengurangi exposure sosial. Tidak ada hitung jumlah, tidak ada komentar komparatif, tidak ada "siapa yang paling banyak". Diam diterima sama seperti thumbs up — tidak dikomentari. Kalimat penutup cukup "People like different hobbies." Maksimal 5 kartu.',
           mode: {
-            solo : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
-            duo  : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
-            grup : { teks: 'Tepuk freeze → ucap survey → tunjuk 5 kartu → thumbs up / diam → "People like different hobbies."', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
       ],
@@ -275,9 +275,9 @@ const TP_17 = {
           pm  : 'meaningful',
           teks: 'Ucap: "Together — hobbies." Putaran 1: tempel kembali semua 8 kartu — tunjuk berurutan, lambat, kelas ucap nama hobi. Tahan 1 detik sebelum tunjuk kartu berikutnya — jangan biarkan kelas chant otomatis. Putaran 2: gesture reading — kelas ucap frame penuh: "I like reading because it is interesting!" → gesture dancing: "I like dancing because it is fun!" Cukup 2 hobi — tidak semua. Cue kritis: putaran 2 pakai discourse frame — bukan nama hobi saja. Tahan 1 detik per kartu di putaran 1 — retrieval harus genuine. Cukup 2 contoh di putaran 2 — tidak perlu semua 8.',
           mode: {
-            solo : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
-            duo  : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
-            grup : { teks: 'Tunjuk 8 kartu berurutan lambat (P1) → gesture 2 hobi, kelas frame penuh (P2).', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
@@ -289,9 +289,9 @@ const TP_17 = {
           pm  : 'meaningful',
           teks: 'Ucap: "Take your pencil." [tunggu — pastikan semua siswa sudah pegang pensil]. Guru gesture cycling — tahan posisi. Tunjuk papan. Ucap: "Last. Write one sentence." → "I like ___ because it is ___." → "Look at my gesture." [tahan gesture cycling]. Tunggu 45–60 detik. Ucap: "Show me." Cue kritis: pilih cycling — bukan reading atau singing yang paling mudah. Cycling mengharuskan siswa mengingat hobi gelombang 2 yang lebih menantang. Guru tahan gesture selama siswa menulis — tidak ganti gesture. Satu hobi, satu kalimat, satu reason.',
           mode: {
-            solo : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
-            duo  : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
-            grup : { teks: 'Ucap "Take your pencil." → gesture cycling tahan → instruksi tulis → tunggu 45–60 detik → "Show me."', bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
+            mudah:     { bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
+            normal:    { bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
+            tantangan: { bantuan: 'Terima: kalimat penuh, frasa parsial ("cycling, fun"), atau gambar hobi dengan label — tidak ada koreksi terbuka. Jika siswa belum selesai saat waktu habis: gesture hobi yang mereka suka + ucap kalimat lisan ke guru.' },
           },
         },
         {
@@ -299,9 +299,9 @@ const TP_17 = {
           pm  : 'mindful',
           teks: 'Retrieval mikro: ucap "One more time — show me reading!" → kelas gesture reading + ucap "Reading!". Ucap: "Show me dancing!" → kelas gesture dancing + ucap "Dancing!". Tunjuk semua 8 kartu cepat — kelas ucap nama hobi bersama. Ucap: "Today — hobbies. Reading, drawing, singing, dancing, playing football, cooking, swimming, cycling. And we say: I like ___ because it is fun or interesting. Well done. See you next time."',
           mode: {
-            solo : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
-            duo  : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
-            grup : { teks: 'Retrieval mikro 2 cue → tunjuk 8 kartu cepat → ucap kalimat closing.', bantuan: '' },
+            mudah:     { bantuan: '' },
+            normal:    { bantuan: '' },
+            tantangan: { bantuan: '' },
           },
         },
         {
