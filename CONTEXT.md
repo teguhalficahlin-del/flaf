@@ -159,6 +159,11 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+878c22c  fix: default attendance status H (hadir) instead of A
+1ad4012  fix: remove undefined JP references from kurikulum UI
+8cc01f2  docs: update CONTEXT — remove filename label fix
+a76ae4b  fix: remove filename label from kurikulum download button
+e2c73ac  fix: pdf-handler path, cache lookup, MIME detection for .docx
 147eed4  fix: title tab cetak undefined → tp.nama
 792582c  fix: judul lembar cetak undefined → tp.nama
 c494685  merge: pertahankan versi lokal fase-13
@@ -253,6 +258,11 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 ### TD-6: jsPDF CDN
 ✅ RESOLVED — Script tag jsPDF (cdnjs) dihapus dari index.html — tidak dipakai oleh kode manapun
+
+### TD-7: Field `jp` tidak ada di fase-a.js dan meta
+✅ RESOLVED — JP dihapus dari UI kurikulum (baris 172, 229, 243, 313 screens/kurikulum.js)
+- `tp.jp` dan `meta.total_jp` tidak pernah didefinisikan di fase-a.js
+- Semua referensi menghasilkan `undefined` di UI — dihapus di commit `1ad4012`
 
 ---
 
@@ -407,6 +417,11 @@ atau `closure_reinforcement` sebagai field runtime.
    ANALYZE → BUILD (4 batch) → HARDEN → VALIDATE = READY
    aktivitas[] hybrid TP15+TP16: cleanup ✅ DONE — semua pure v4.3
    Total pm warning: 96 (turun dari 104)
+✅ BUG FIX: SW cache test + pdf-handler .docx support (e2c73ac)
+   - sw.js: cache.match './index.html' (fix FATAL log salah path)
+   - pdf-handler.js: PDF_BASE_PATH './pdf/' (fix 404 GitHub Pages)
+   - pdf-handler.js: caches.match() semua cache (fix miss APP_SHELL)
+   - pdf-handler.js: MIME detection .docx via _mimeForFilename/_isValidContentType
 ```
 
 Next: pm audit TP17+TP18 → pm audit TP01–14

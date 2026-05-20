@@ -169,7 +169,6 @@ function _buildKurikulumHTML(fase, tps, meta) {
 
 // ── Header ────────────────────────────────────────────────
 function _buildHeaderHTML(meta) {
-  const totalJP = meta.total_jp;
   const totalTP = meta.total_tp;
   return `
     <div class="kur-header">
@@ -182,10 +181,6 @@ function _buildHeaderHTML(meta) {
         <div class="kur-stat">
           <span class="kur-stat-num">${totalTP}</span>
           <span class="kur-stat-label">TP</span>
-        </div>
-        <div class="kur-stat">
-          <span class="kur-stat-num">${totalJP}</span>
-          <span class="kur-stat-label">JP</span>
         </div>
       </div>
     </div>
@@ -226,7 +221,6 @@ function _buildATPHTML(tps, meta, fase) {
       <td class="kur-atp-num">${tp.nomor}</td>
       <td class="kur-atp-nama">${_esc(tp.nama)}</td>
       <td class="kur-atp-tema">${_esc(tp.tema)}</td>
-      <td class="kur-atp-jp">${tp.jp}</td>
     </tr>
   `).join('');
 
@@ -240,7 +234,7 @@ function _buildATPHTML(tps, meta, fase) {
       <button class="kur-panel-head" data-toggle="atp" aria-expanded="false">
         <span class="kur-panel-badge" style="background:${THEME.atp.bg};color:${THEME.atp.text}">ATP</span>
         <span class="kur-panel-title">Alur Tujuan Pembelajaran</span>
-        <span class="kur-atp-total">${meta.total_tp} TP · ${meta.total_jp} JP</span>
+        <span class="kur-atp-total">${meta.total_tp} TP</span>
         <span class="kur-chevron">▼</span>
       </button>
       <div class="kur-panel-body" id="kur-atp-body" hidden>
@@ -310,7 +304,6 @@ function _buildTPItemHTML(tp) {
           <span class="kur-tp-nama">${_esc(tp.nama)}</span>
         </div>
         <div class="kur-tp-head-right">
-          <span class="kur-tp-jp">${tp.jp} JP</span>
           <span class="kur-chevron kur-tp-chevron">${isFirst ? '▲' : '▼'}</span>
         </div>
       </button>
@@ -344,7 +337,6 @@ function _buildTPItemHTML(tp) {
           >
             <span class="kur-pdf-icon">📄</span>
             <span class="kur-pdf-label">Download Modul Ajar — ${_esc(tp.nama)}</span>
-            <span class="kur-pdf-filename">${_esc(pdfFilename)}</span>
           </button>
         </div>
 
