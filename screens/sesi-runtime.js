@@ -268,8 +268,8 @@ function _renderPreview() {
 
         <ul class="sr-checklist">
           <li>
-            <span>${jumlah > 0 ? jumlah + ' siswa terdaftar' : 'Belum ada siswa'}</span>
-            <span class="sr-check">${jumlah > 0 ? '✓' : '—'}</span>
+            <span>${jumlah > 0 ? jumlah + ' siswa terdaftar' : 'Belum ada siswa — penilaian tidak tersedia'}</span>
+            <span class="sr-check${jumlah === 0 ? ' sr-check--warn' : ''}">${jumlah > 0 ? '✓' : '⚠'}</span>
           </li>
           <li>
             <span>Audio TTS tersedia</span>
@@ -310,17 +310,18 @@ function _renderPreview() {
 // ─── SCREEN: Resume ───────────────────────────────────────────
 
 function _renderResume() {
-  const fase = _currentFase();
+  const fase  = _currentFase();
+  const total = fase?.langkah?.length || 0;
 
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-body sr-body--center">
         <div class="sr-resume-icon">⏸</div>
         <div class="sr-resume-title">Sesi belum selesai</div>
-        <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')}</div>
+        <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_state.rombel?.nama || '—')}</div>
         <div class="sr-resume-pos">
           Terakhir di: <strong>${_escape(fase?.fase || '—')}</strong>,
-          langkah ${_state.langkahIdx + 1}
+          langkah ${_state.langkahIdx + 1} dari ${total} · Mode: ${_state.mode}
         </div>
       </div>
       <div class="sr-footer">
@@ -366,6 +367,17 @@ function _renderEntering() {
 }
 
 // ─── SCREEN: Running ─────────────────────────────────────────
+//
+// RUNTIME CONTRACT — baca sebelum modifikasi:
+//   Runtime ini bersifat GENERIC. Semua 18 TP melewati code path yang sama.
+//   Tidak ada branching per TP nomor, id, atau schema tier.
+//   Field langkah bersifat opsional — progressive enhancement, bukan precondition.
+//
+//   DILARANG: if (tp.nomor <= 14) · startsWith('DIFERENSIASI') · per-TP checks
+//   WAJIB:    langkah.pm?  ·  langkah.mode?.[mode]?.bantuan  ·  tipe || 'instruksi'
+//
+//   Data quality tiers (canonical vs legacy) ada di fase-a.js — bukan di sini.
+//   Lihat: CONTEXT.md §Schema Tier Policy
 
 function _renderRunning() {
   const fase    = _currentFase();
@@ -420,9 +432,13 @@ function _renderRunning() {
         </div>
       </div>`;
   } else if (tipe === 'audio' || tipe === 'respons_siswa') {
+    const speakerLabel = tipe === 'audio'
+      ? `<div class="sr-speaker-label sr-speaker-label--guru">Guru</div>`
+      : `<div class="sr-speaker-label sr-speaker-label--siswa">Siswa</div>`;
     bodyContent = `
+      ${speakerLabel}
       <div class="sr-cue-text">"${_escape(langkah.teks || '')}"</div>
-      ${langkah.teks ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
+      ${langkah.teks && ('speechSynthesis' in window) ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
   } else {
     bodyContent = `<div class="sr-instruksi-text">${_escape(langkah.teks || '')}</div>`;
   }
@@ -452,7 +468,7 @@ function _renderRunning() {
           </button>
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
-        ${faseName === 'Inti' ? `
+        ${faseName.toLowerCase() === 'inti' ? `
         <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Catat penilaian siswa</button>` : ''}
       </div>
     </div>`;
@@ -573,6 +589,7 @@ function _renderClosure() {
     if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
 
+    if (btn) { btn.textContent = 'Tersimpan ✓'; }
     _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan });
   });
 }
@@ -898,6 +915,14 @@ function _renderPenilaianOverlay() {
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);
         if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
+        let errEl = overlay.querySelector('#sr-pn-err');
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.id = 'sr-pn-err';
+          errEl.style.cssText = 'color:#f87171;font-size:12px;text-align:center;padding:6px 18px 0;margin:0';
+          overlay.querySelector('.sr-pn-footer')?.insertAdjacentElement('beforebegin', errEl);
+        }
+        errEl.textContent = 'Gagal menyimpan. Coba lagi.';
       }
     });
   }

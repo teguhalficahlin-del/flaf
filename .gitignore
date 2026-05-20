@@ -4,6 +4,9 @@ secrets.js
 .env.local
 *.local
 
+# === Claude Code internal ===
+.claude/
+
 # === OS / Editor ===
 .DS_Store
 Thumbs.db
