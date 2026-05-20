@@ -433,7 +433,7 @@ function _renderRunning() {
   } else if (tipe === 'audio' || tipe === 'respons_siswa') {
     bodyContent = `
       <div class="sr-cue-text">"${_escape(langkah.teks || '')}"</div>
-      ${langkah.teks ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
+      ${langkah.teks && ('speechSynthesis' in window) ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
   } else {
     bodyContent = `<div class="sr-instruksi-text">${_escape(langkah.teks || '')}</div>`;
   }
@@ -463,7 +463,7 @@ function _renderRunning() {
           </button>
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
-        ${faseName === 'Inti' ? `
+        ${faseName.toLowerCase() === 'inti' ? `
         <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Catat penilaian siswa</button>` : ''}
       </div>
     </div>`;
@@ -909,6 +909,14 @@ function _renderPenilaianOverlay() {
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);
         if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
+        let errEl = overlay.querySelector('#sr-pn-err');
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.id = 'sr-pn-err';
+          errEl.style.cssText = 'color:#f87171;font-size:12px;text-align:center;padding:6px 18px 0;margin:0';
+          overlay.querySelector('.sr-pn-footer')?.insertAdjacentElement('beforebegin', errEl);
+        }
+        errEl.textContent = 'Gagal menyimpan. Coba lagi.';
       }
     });
   }
