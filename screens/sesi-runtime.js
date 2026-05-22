@@ -4,10 +4,10 @@
  * File: screens/sesi-runtime.js
  *
  * State machine untuk satu sesi mengajar satu TP.
- * Membaca langkah[] dari fase-a.js (schema v4.3).
+ * Membaca langkah[] dari fase-a.js (schema v5.0).
  *
  * States:
- *   preview   → SesiPreviewing: pilih mode, mulai
+ *   preview   → SesiPreviewing: mulai
  *   resume    → SesiResumePrompt: lanjut atau mulai ulang
  *   entering  → FaseEntering: transisi masuk fase baru
  *   running   → satu langkah aktif, guru tap lanjut/mundur
@@ -25,7 +25,7 @@
  * =============================================================
  */
 
-import { db }               from '../storage/db.js';
+import { db }            from '../storage/db.js';
 import { savePenilaian } from '../storage/siswa-history.js';
 
 // ── Konstanta ─────────────────────────────────────────────────
@@ -55,7 +55,6 @@ let _state = {
   tp             : null,
   rombel         : null,
   siswaList      : [],
-  mode           : 'normal',
   faseIdx        : 0,
   langkahIdx     : 0,
   aktState       : 'preview',
@@ -85,7 +84,6 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
     tp             : tpData,
     rombel         : rombel || { id: '', nama: '', tingkat: 1 },
     siswaList      : Array.isArray(siswaList) ? siswaList : [],
-    mode           : 'normal',
     faseIdx        : 0,
     langkahIdx     : 0,
     aktState       : 'preview',
@@ -104,7 +102,6 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
       if (age < RESUME_MAX_MS) {
         _state.faseIdx    = saved.faseIdx    ?? 0;
         _state.langkahIdx = saved.langkahIdx ?? 0;
-        _state.mode       = saved.mode       ?? 'normal';
         _state.aktState   = 'resume';
       } else {
         await db.remove(STORE_KV, RESUME_STORE_KEY).catch(() => {});
@@ -139,7 +136,6 @@ async function _persistState() {
       rombelId  : _state.rombel?.id,
       faseIdx   : _state.faseIdx,
       langkahIdx: _state.langkahIdx,
-      mode      : _state.mode,
       savedAt   : Date.now(),
     });
   } catch (e) {
@@ -246,20 +242,6 @@ function _renderPreview() {
   const rombel = _state.rombel;
   const jumlah = _state.siswaList.length;
 
-  const modeOpts = ['mudah', 'normal', 'tantangan'].map(m => {
-    const desc = {
-      mudah     : 'Bantuan tinggi, speaking pendek, banyak modeling guru',
-      normal    : 'Speaking standar, bantuan sedang',
-      tantangan : 'Speaking lebih spontan, bantuan minimal',
-    }[m];
-    const sel = _state.mode === m ? ' sr-mode-option--selected' : '';
-    return `
-      <div class="sr-mode-option${sel}" data-mode="${m}">
-        <div class="sr-mode-name">${m.charAt(0).toUpperCase() + m.slice(1)}</div>
-        <div class="sr-mode-desc">${desc}</div>
-      </div>`;
-  }).join('');
-
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-body">
@@ -280,22 +262,12 @@ function _renderPreview() {
             <span class="sr-check">✓</span>
           </li>
         </ul>
-
-        <div class="sr-mode-label">Pilih mode untuk kelas Anda hari ini:</div>
-        <div class="sr-mode-pick">${modeOpts}</div>
       </div>
 
       <div class="sr-footer">
         <button class="sr-btn-primary" id="sr-btn-mulai">Mulai mengajar →</button>
       </div>
     </div>`;
-
-  _root.querySelectorAll('.sr-mode-option').forEach(el => {
-    el.addEventListener('click', () => {
-      _state.mode = el.dataset.mode;
-      _renderPreview();
-    });
-  });
 
   _root.querySelector('#sr-btn-mulai').addEventListener('click', () => {
     _transition({
@@ -321,7 +293,7 @@ function _renderResume() {
         <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_state.rombel?.nama || '—')}</div>
         <div class="sr-resume-pos">
           Terakhir di: <strong>${_escape(fase?.fase || '—')}</strong>,
-          langkah ${_state.langkahIdx + 1} dari ${total} · Mode: ${_state.mode}
+          langkah ${_state.langkahIdx + 1} dari ${total}
         </div>
       </div>
       <div class="sr-footer">
@@ -335,7 +307,7 @@ function _renderResume() {
   });
   _root.querySelector('#sr-btn-ulang').addEventListener('click', async () => {
     await db.remove(STORE_KV, RESUME_STORE_KEY).catch(() => {});
-    _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0, mode: 'normal' });
+    _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0 });
   });
 }
 
@@ -369,12 +341,12 @@ function _renderEntering() {
 // ─── SCREEN: Running ─────────────────────────────────────────
 //
 // RUNTIME CONTRACT — baca sebelum modifikasi:
-//   Runtime ini bersifat GENERIC. Semua 18 TP melewati code path yang sama.
+//   Runtime ini bersifat GENERIC. Semua TP melewati code path yang sama.
 //   Tidak ada branching per TP nomor, id, atau schema tier.
 //   Field langkah bersifat opsional — progressive enhancement, bukan precondition.
 //
 //   DILARANG: if (tp.nomor <= 14) · startsWith('DIFERENSIASI') · per-TP checks
-//   WAJIB:    langkah.pm?  ·  langkah.mode?.[mode]?.bantuan  ·  tipe || 'instruksi'
+//   WAJIB:    langkah.bantuan  ·  langkah.cue  ·  langkah.darurat  ·  langkah.energi  ·  tipe || 'instruksi'
 //
 //   Data quality tiers (canonical vs legacy) ada di fase-a.js — bukan di sini.
 //   Lihat: CONTEXT.md §Schema Tier Policy
@@ -398,40 +370,18 @@ function _renderRunning() {
   const TIPE_INFO = {
     audio        : { label: 'Ucapkan ke siswa', cls: 'au' },
     respons_siswa: { label: 'Respons siswa',    cls: 'rs' },
-    diferensiasi : { label: 'Diferensiasi',     cls: 'df' },
-    darurat      : { label: 'Jika waktu mepet', cls: 'dr' },
     instruksi    : { label: 'Instruksi',         cls: 'in' },
   };
   const info = TIPE_INFO[tipe] || TIPE_INFO.instruksi;
 
-  const PM_LABEL = { mindful: 'Mindful', meaningful: 'Bermakna', joyful: 'Joyful' };
-  const pmBadge  = langkah.pm
-    ? `<span class="sr-pm-badge sr-pm-badge--${langkah.pm}">${PM_LABEL[langkah.pm] || langkah.pm}</span>`
+  // Energi indikator
+  const energiHTML = langkah.energi
+    ? `<span class="sr-energi-badge">${_escape(langkah.energi)}</span>`
     : '';
-
-  // Mode bantuan
-  const bantuan = langkah.mode?.[_state.mode]?.bantuan;
-  const bantuanHTML = bantuan ? `
-    <div class="sr-mode-bantuan">
-      <div class="sr-mode-bantuan-label">📋 Mode ${_state.mode.charAt(0).toUpperCase() + _state.mode.slice(1)}</div>
-      <div class="sr-mode-bantuan-teks">${_escape(bantuan)}</div>
-    </div>` : '';
 
   // Body content
   let bodyContent = '';
-  if (tipe === 'diferensiasi') {
-    bodyContent = `
-      <div class="sr-dif-wrap">
-        <div class="sr-dif-col sr-dif-col--s">
-          <div class="sr-dif-lbl">Sudah bisa</div>
-          <div class="sr-dif-teks">${_escape(langkah.sudah || '')}</div>
-        </div>
-        <div class="sr-dif-col sr-dif-col--b">
-          <div class="sr-dif-lbl">Belum bisa</div>
-          <div class="sr-dif-teks">${_escape(langkah.belum || '')}</div>
-        </div>
-      </div>`;
-  } else if (tipe === 'audio' || tipe === 'respons_siswa') {
+  if (tipe === 'audio' || tipe === 'respons_siswa') {
     const speakerLabel = tipe === 'audio'
       ? `<div class="sr-speaker-label sr-speaker-label--guru">Guru</div>`
       : `<div class="sr-speaker-label sr-speaker-label--siswa">Siswa</div>`;
@@ -443,20 +393,56 @@ function _renderRunning() {
     bodyContent = `<div class="sr-instruksi-text">${_escape(langkah.teks || '')}</div>`;
   }
 
+  // Cue kritis
+  const cueHTML = langkah.cue ? `
+    <div class="sr-cue-kritis">
+      <div class="sr-cue-kritis-label">⚡ Cue kritis</div>
+      <div class="sr-cue-kritis-teks">${_escape(langkah.cue)}</div>
+    </div>` : '';
+
+  // Bantuan (null | string | string[])
+  let bantuanHTML = '';
+  if (langkah.bantuan !== null && langkah.bantuan !== undefined) {
+    if (Array.isArray(langkah.bantuan)) {
+      const items = langkah.bantuan
+        .map(b => `<li class="sr-bantuan-item">${_escape(b)}</li>`)
+        .join('');
+      bantuanHTML = `
+        <div class="sr-bantuan">
+          <div class="sr-bantuan-label">BANTUAN ▸</div>
+          <ul class="sr-bantuan-list">${items}</ul>
+        </div>`;
+    } else {
+      bantuanHTML = `
+        <div class="sr-bantuan">
+          <div class="sr-bantuan-label">BANTUAN ▸</div>
+          <div class="sr-bantuan-teks">${_escape(langkah.bantuan)}</div>
+        </div>`;
+    }
+  }
+
+  // Darurat
+  const daruratHTML = langkah.darurat ? `
+    <div class="sr-darurat">
+      <div class="sr-darurat-label">⚠ Darurat</div>
+      <div class="sr-darurat-teks">${_escape(langkah.darurat)}</div>
+    </div>` : '';
+
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-app-header">
         <span class="sr-fase-info">${_escape(faseName)} · ${idx + 1}/${total}</span>
-        <span class="sr-mode-badge">${_state.mode}</span>
       </div>
 
       <div class="sr-body sr-body--center">
         <div class="sr-tipe-row">
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
-          ${pmBadge}
+          ${energiHTML}
         </div>
         ${bodyContent}
+        ${cueHTML}
         ${bantuanHTML}
+        ${daruratHTML}
       </div>
 
       <div class="sr-footer">

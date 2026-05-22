@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v56';          // ← pwa-hardening: precache sesi-runtime + dashboard/nilai css
+const CACHE_VERSION  = 'flaf-v57';          // ← pwa-hardening: precache sesi-runtime + dashboard/nilai css
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
