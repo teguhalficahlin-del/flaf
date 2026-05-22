@@ -329,6 +329,132 @@
 /* =============================================================
    RUNNING — tipe badge + konten
    ============================================================= */
+
+/* --- Teks segmen parseTeks --- */
+.sr-teks-biasa {
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,.8);
+  padding: 2px 0;
+}
+
+.sr-ucap-block {
+  border-left: 3px solid rgba(212,174,58,.6);
+  border-radius: 0 6px 6px 0;
+  background: rgba(212,174,58,.06);
+  padding: 10px 12px;
+  margin: 2px 0;
+}
+.sr-ucap-label {
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: rgba(212,174,58,.8);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.sr-ucap-teks {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.9);
+}
+
+/* Separator */
+.sr-sep {
+  border: none;
+  border-top: 0.5px solid rgba(255,255,255,.1);
+  margin: 12px 0 8px;
+}
+
+/* Panduan guru */
+.sr-cue-block {
+  border-radius: 6px;
+  background: rgba(255,255,255,.04);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.sr-cue-label {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.sr-cue-teks {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.6);
+}
+
+/* Bantuan */
+.sr-bantuan-block {
+  border-radius: 6px;
+  background: rgba(212,174,58,.06);
+  border: 1px solid rgba(212,174,58,.15);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.sr-bantuan-label {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  color: rgba(212,174,58,.8);
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.sr-bantuan-list {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+}
+.sr-bantuan-list li {
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.75);
+}
+.sr-bantuan-teks {
+  font-size: 11px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.75);
+}
+
+/* Darurat */
+.sr-darurat {
+  border-radius: 6px;
+  background: rgba(255,100,80,.08);
+  border: 1px solid rgba(255,100,80,.2);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.sr-darurat-label {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  color: rgba(255,100,80,.9);
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.sr-darurat-teks {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.75);
+}
+
+/* Energi pill (header) */
+.sr-energi-pill {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+.sr-energi--biru   { background: rgba(120,180,255,.12); color: rgba(120,180,255,.85); }
+.sr-energi--kuning { background: rgba(212,174,58,.12);  color: #D4AE3A; }
+.sr-energi--oren   { background: rgba(255,160,50,.12);  color: rgba(255,160,50,.9); }
+.sr-energi--merah  { background: rgba(255,100,80,.12);  color: rgba(255,100,80,.9); }
+
 .sr-tipe-row {
   display: flex;
   align-items: center;

@@ -338,6 +338,46 @@ function _renderEntering() {
   });
 }
 
+// ── Helpers: running ─────────────────────────────────────────
+
+function _parseTeks(teks) {
+  if (!teks) return [];
+  const result = [];
+  const chunks = teks.split('UCAP:');
+  chunks.forEach((chunk, i) => {
+    const trimmed = chunk.trim();
+    if (!trimmed) return;
+    if (i === 0) {
+      result.push({ jenis: 'biasa', isi: trimmed });
+    } else {
+      const m = trimmed.match(/^("[^"]*")([\s\S]*)/);
+      if (m) {
+        result.push({ jenis: 'ucap', isi: m[1] });
+        const rest = m[2].trim().replace(/^[→—–]\s*/, '').trim();
+        if (rest) result.push({ jenis: 'biasa', isi: rest });
+      } else {
+        result.push({ jenis: 'ucap', isi: trimmed });
+      }
+    }
+  });
+  return result;
+}
+
+function _energiPill(energi) {
+  if (!energi) return '';
+  const map = {
+    '🔵'      : { label: 'Rendah', cls: 'biru'   },
+    '⚪'      : { label: 'Rendah', cls: 'biru'   },
+    '🟡'      : { label: 'Sedang', cls: 'kuning' },
+    '⚪ → 🟡': { label: 'Sedang', cls: 'kuning' },
+    '🟠'      : { label: 'Tinggi', cls: 'oren'   },
+    '🔴'      : { label: 'Tinggi', cls: 'merah'  },
+  };
+  const info = map[energi] || map[energi.trim()];
+  if (!info) return '';
+  return `<span class="sr-energi-pill sr-energi--${info.cls}">● ${info.label}</span>`;
+}
+
 // ─── SCREEN: Running ─────────────────────────────────────────
 //
 // RUNTIME CONTRACT — baca sebelum modifikasi:
@@ -374,48 +414,41 @@ function _renderRunning() {
   };
   const info = TIPE_INFO[tipe] || TIPE_INFO.instruksi;
 
-  // Energi indikator
-  const energiHTML = langkah.energi
-    ? `<span class="sr-energi-badge">${_escape(langkah.energi)}</span>`
-    : '';
+  // Energi pill (header)
+  const energiPillHTML = _energiPill(langkah.energi);
 
-  // Body content
-  let bodyContent = '';
-  if (tipe === 'audio' || tipe === 'respons_siswa') {
-    const speakerLabel = tipe === 'audio'
-      ? `<div class="sr-speaker-label sr-speaker-label--guru">Guru</div>`
-      : `<div class="sr-speaker-label sr-speaker-label--siswa">Siswa</div>`;
-    bodyContent = `
-      ${speakerLabel}
-      <div class="sr-cue-text">"${_escape(langkah.teks || '')}"</div>
-      ${langkah.teks && ('speechSynthesis' in window) ? `<button class="sr-audio-btn" id="sr-tts-btn">▶ Putar Audio</button>` : ''}`;
-  } else {
-    bodyContent = `<div class="sr-instruksi-text">${_escape(langkah.teks || '')}</div>`;
-  }
+  // Teks segments
+  const teksHTML = _parseTeks(langkah.teks).map(seg =>
+    seg.jenis === 'ucap'
+      ? `<div class="sr-ucap-block"><div class="sr-ucap-label">UCAP</div>` +
+        `<div class="sr-ucap-teks">${_escape(seg.isi)}</div></div>`
+      : `<div class="sr-teks-biasa">${_escape(seg.isi)}</div>`
+  ).join('');
 
-  // Cue kritis
+  // Panduan guru
   const cueHTML = langkah.cue ? `
-    <div class="sr-cue-kritis">
-      <div class="sr-cue-kritis-label">⚡ Cue kritis</div>
-      <div class="sr-cue-kritis-teks">${_escape(langkah.cue)}</div>
+    <hr class="sr-sep">
+    <div class="sr-cue-block">
+      <div class="sr-cue-label">⚡ Panduan guru</div>
+      <div class="sr-cue-teks">${_escape(langkah.cue)}</div>
     </div>` : '';
 
   // Bantuan (null | string | string[])
   let bantuanHTML = '';
-  if (langkah.bantuan !== null && langkah.bantuan !== undefined) {
+  if (langkah.bantuan != null) {
     if (Array.isArray(langkah.bantuan)) {
       const items = langkah.bantuan
-        .map(b => `<li class="sr-bantuan-item">${_escape(b)}</li>`)
+        .map(b => `<li>${_escape(b)}</li>`)
         .join('');
       bantuanHTML = `
-        <div class="sr-bantuan">
-          <div class="sr-bantuan-label">BANTUAN ▸</div>
-          <ul class="sr-bantuan-list">${items}</ul>
+        <div class="sr-bantuan-block">
+          <div class="sr-bantuan-label">BANTUAN</div>
+          <ol class="sr-bantuan-list">${items}</ol>
         </div>`;
     } else {
       bantuanHTML = `
-        <div class="sr-bantuan">
-          <div class="sr-bantuan-label">BANTUAN ▸</div>
+        <div class="sr-bantuan-block">
+          <div class="sr-bantuan-label">BANTUAN</div>
           <div class="sr-bantuan-teks">${_escape(langkah.bantuan)}</div>
         </div>`;
     }
@@ -432,14 +465,14 @@ function _renderRunning() {
     <div class="sr-app">
       <div class="sr-app-header">
         <span class="sr-fase-info">${_escape(faseName)} · ${idx + 1}/${total}</span>
+        ${energiPillHTML}
       </div>
 
-      <div class="sr-body sr-body--center">
+      <div class="sr-body">
         <div class="sr-tipe-row">
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
-          ${energiHTML}
         </div>
-        ${bodyContent}
+        ${teksHTML}
         ${cueHTML}
         ${bantuanHTML}
         ${daruratHTML}
