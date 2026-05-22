@@ -21,6 +21,8 @@
 - **Fase 11 SELESAI ✅ (akan direvisi di Fase 12)**
 - **Fase 12 SELESAI ✅**
 - **Fase 13 SELESAI ✅**
+- **Skenario Live Mode v2 SELESAI ✅ (Mei 2026)** — `flaf-skenario-tp01-v2.txt` s/d `tp18-v2.txt`, semua verified
+- **Schema v5.0 TP 15–18 SELESAI ✅ (Mei 2026)** — `tp-15-v5.js` s/d `tp-18-v5.js` ditulis ke `docs/sesi-m{10–13}/`; file lama tidak ditimpa
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -397,6 +399,12 @@ atau `closure_reinforcement` sebagai field runtime.
 ✅ FASE 11 COMPLETE — ObservationCapture (direvisi di Fase 12)
 ✅ FASE 12 COMPLETE — Overlay penilaian siswa
 ✅ FASE 13 COMPLETE — Printables kartu cetak guru (TP 01-18)
+✅ SKENARIO LIVE MODE v2 COMPLETE — flaf-skenario-tp01-v2.txt s/d tp18-v2.txt (Mei 2026)
+✅ SCHEMA v5.0 TP15–18 COMPLETE — tp-15-v5.js s/d tp-18-v5.js (Mei 2026)
+   Struktur: tipe/teks/bantuan(string|string[]|null)/cue/darurat/energi per langkah
+   Root baru: checklist[], energi_map[], catatan{risiko[],autonomy[]}
+   mode.mudah/normal/tantangan DIHAPUS | pm DIHAPUS | file lama tidak ditimpa
+⏳ LANGKAH BERIKUTNYA: HTML converter txt skenario → v5.0 JS download
    - data/printables.js: generatePrintHTML()
    - field printables[] di fase-a.js TP 01-18 (TP 15-18 via import docs/)
    - 136 PNG di assets/images/printables/
@@ -424,7 +432,7 @@ atau `closure_reinforcement` sebagai field runtime.
    - pdf-handler.js: MIME detection .docx via _mimeForFilename/_isValidContentType
 ```
 
-Next: pm audit TP17+TP18 → pm audit TP01–14
+Next: Bangun HTML converter — pilih file txt skenario di browser → download v5.0 JS otomatis
 
 ## Fase 15 — Audit Struktur & pm TP01–18
 
@@ -451,10 +459,18 @@ aktivitas[] cleanup ✅ DONE (Mei 2026).
    Opsi B: intentional by design
 
 ### Path File TP15–18
+
+**v4.3 (aktif di runtime):**
 - TP15: docs/sesi-m10/tp-15.js
 - TP16: docs/sesi-m11/tp-16.js
 - TP17: docs/sesi-m12/tp-17.js
 - TP18: docs/sesi-m13/tp-18.js
+
+**v5.0 (selesai, belum diintegrasikan ke runtime):**
+- TP15: docs/sesi-m10/tp-15-v5.js ✅ — 14 langkah, 36 checklist, 14 energi_map
+- TP16: docs/sesi-m11/tp-16-v5.js ✅ — 14 langkah, 42 checklist, 14 energi_map
+- TP17: docs/sesi-m12/tp-17-v5.js ✅ — 15 langkah, 46 checklist, 15 energi_map
+- TP18: docs/sesi-m13/tp-18-v5.js ✅ — 9 langkah, 39 checklist, 9 energi_map
 
 ## Fase 14 — Migrasi langkah[] TP15–18
 
@@ -475,6 +491,39 @@ FASE 14 ✅ COMPLETE — Migrasi langkah[] TP15–18
 - Status runtime: screens/sesi-runtime.js hanya
   mengenal mudah/normal/tantangan — konsisten
   di semua 18 TP
+
+## Skenario Live Mode v2
+
+### Status
+✅ COMPLETE — semua 18 TP (Mei 2026)
+
+### File
+- Lokasi: `docs/skenario/`
+- Pola nama: `flaf-skenario-tp{NN}-v2.txt`
+- Cakupan: TP01–TP18 (`flaf-skenario-tp01-v2.txt` s/d `flaf-skenario-tp18-v2.txt`)
+
+### Format v2 (standar)
+- AKSI/UCAP tanpa simbol ▸ (hanya BANTUAN yang pakai ▸)
+- `BANTUAN ▸` untuk fallback fisik atau support siswa
+- `⚡ Cue kritis` per layar
+- `⚠ DARURAT` dengan kondisi eksplisit (time-based skip atau volume management)
+- `════` dividers antar layar
+- `[ ]` checklist selesai
+- `CATATAN RUNTIME GURU` — energi kelas per layar + Risiko pacing + Teacher autonomy
+- Energi di CATATAN konsisten dengan header layar (ending state untuk dual-energy)
+
+### Perubahan Standar dari v1 → v2
+- Hapus `(FINAL)` dari judul dan `Fokus:` dari header
+- Koreksi energi CATATAN agar konsisten dengan header layar
+- Koreksi label Risiko pacing (mislabel ke nama layar/aktivitas yang benar)
+- Perbaiki inkonsistensi internal konten (jika ada)
+
+### Riwayat Penulisan
+- TP01–TP06: selesai sebelum sesi Mei 2026
+- TP07–TP11: selesai sesi Mei 2026 (batch pertama)
+- TP12–TP18: selesai sesi Mei 2026 (batch kedua, sesi ini)
+
+---
 
 ## Audit Media Persiapan vs Skenario
 
