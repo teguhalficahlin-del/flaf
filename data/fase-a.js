@@ -5,7 +5,7 @@
  * =============================================================
  * Terakhir direvisi: Mei 2026 — Schema v5.0
  *
- * Semua TP dimuat dari file terpisah (docs/sesi-m*/tp-*-v5.js).
+ * Semua TP dimuat dari file terpisah (docs/sesi-mN/tp-N-v5.js).
  * Tidak ada definisi inline TP di file ini.
  *
  * =============================================================
