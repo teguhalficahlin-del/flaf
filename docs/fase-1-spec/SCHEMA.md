@@ -1,6 +1,23 @@
-# FLAF — Skema Data TP (v4 / Hybrid Aktivitas)
+> ⚠ **SCHEMA INI SUDAH OBSOLETE — baca notice ini sebelum menggunakan dokumen ini**
+>
+> Dokumen ini mendeskripsikan schema `aktivitas[]` dari Fase 1 (awal 2026).
+> Schema tersebut sudah **tidak digunakan** oleh runtime aktif (`sesi-runtime.js`).
+>
+> Runtime v4.3 saat ini hanya membaca `langkah[]`.
+> Field-field berikut **tidak ada** di runtime aktif:
+> `aktivitas[]` · `advance` · `observation_validation` · `closure_reinforcement` (sebagai field langkah)
+>
+> **Source of truth yang berlaku:**
+> - `CONTEXT.md §Schema Tier Policy` — boundary canonical vs legacy tier
+> - `docs/sesi-m11/tp-16.js` — canonical reference format TP
+>
+> Dokumen ini dipertahankan sebagai sejarah arsitektural saja. Jangan jadikan authority.
 
-**Status**: Draft Fase 1 · Mei 2026
+---
+
+# FLAF — Skema Data TP (v4 / Hybrid Aktivitas) *(OBSOLETE)*
+
+**Status**: ~~Draft Fase 1 · Mei 2026~~ **SUPERSEDED oleh langkah[]-only v4.3**
 **Tujuan**: Kontrak struktur data TP yang mendukung runtime baru "kompas guru"
 sambil mempertahankan kompatibilitas dengan runtime lama selama migrasi.
 

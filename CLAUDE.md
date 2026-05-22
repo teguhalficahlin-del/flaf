@@ -47,7 +47,8 @@ Jangan putuskan sendiri:
 - Tunggu persetujuan eksplisit sebelum lanjut ke BUILD
 
 ## BUILD
-- Baca `docs/fase-1-spec/SCHEMA.md` jika ada keraguan struktur
+- Jika ada keraguan struktur: baca `CONTEXT.md §Schema Tier Policy` dan gunakan `docs/sesi-m11/tp-16.js` sebagai canonical reference
+- Jangan gunakan `docs/fase-1-spec/SCHEMA.md` — schema itu obsolete (era aktivitas[])
 - Tulis full file — tidak ada placeholder
 - Sebutkan nama file sebelum mengedit
 
@@ -56,13 +57,14 @@ Jangan putuskan sendiri:
 - Laporkan temuan saja — tunggu instruksi sebelum fix
 
 ## VALIDATE
-- Verifikasi checklist schema v4.3:
-  - `closure_reinforcement` hadir
-  - `observation_validation` hadir di Penilaian
-  - `vocab[]` hanya lexical items (bukan audio_cue)
-  - Semua aktivitas punya `advance`
-  - `export default` ada di akhir file
+- Verifikasi checklist schema v4.3 langkah[]-only:
+  - `vocab[]` hanya lexical items (bukan frasa audio atau nama tipe aktivitas)
+  - Semua `instruksi` dan `audio` langkah punya field `mode` dengan `mudah/normal/tantangan`
+  - Semua `instruksi` langkah punya `pm` (mindful/meaningful/joyful) — kecuali TP04–14 yang tolerated legacy
+  - Tidak ada `instruksi.teks` dimulai `'DIFERENSIASI'` atau `'JIKA WAKTU TERSISA'` di TP baru
+  - `export default` ada di akhir file (untuk TP docs/ terpisah)
 - Declare selesai hanya setelah semua checklist hijau
+- Catatan: `closure_reinforcement`, `observation_validation`, `advance` adalah field schema lama (aktivitas[]) — tidak relevan untuk langkah[] v4.3
 
 ---
 
@@ -70,6 +72,30 @@ Jangan putuskan sendiri:
 Baca bagian **Pattern Inklusivitas** dan **Pattern Lain** di `CONTEXT.md`
 hanya jika topik TP yang sedang dikerjakan sensitif (keluarga, makanan,
 tubuh, hobi, dll). Untuk TP netral (Animals, Weather, School): skip.
+
+---
+
+## Anti-Pattern Rules
+
+Larangan ini berlaku di semua sesi tanpa pengecualian:
+
+1. **Jangan tambahkan branching per-TP di `sesi-runtime.js`:**
+   - `if (tp.nomor <= 14)` — DILARANG
+   - `if (langkah.teks?.startsWith('DIFERENSIASI'))` — DILARANG
+   - Compatibility logic atas nama "legacy support" — DILARANG
+   - Semua TP melewati code path yang sama; degradasi UX ada di data, bukan di runtime
+
+2. **Jangan inject pm massal ke TP04–14:**
+   - 97 warning adalah INTENTIONAL TOLERATED DEBT — baca `CONTEXT.md §Schema Tier Policy`
+   - Parity forcing tanpa sesi migration eksplisit = false compliance
+
+3. **Jangan gunakan `docs/fase-1-spec/SCHEMA.md` sebagai schema authority:**
+   - Schema itu mendeskripsikan era aktivitas[] yang sudah obsolete
+   - Source of truth = `CONTEXT.md §Schema Tier Policy` + `docs/sesi-m11/tp-16.js`
+
+4. **Jangan cleanup "semua TP harus punya X"** tanpa review boundary:
+   - Cek dulu apakah X adalah tolerated debt di tier legacy
+   - Jika TP04–14 terlibat: baca tier policy sebelum menyentuh apapun
 
 ---
 

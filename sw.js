@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v55';          // ← tahap-5: semua modul ajar .docx TP01-18
+const CACHE_VERSION  = 'flaf-v57';          // ← pwa-hardening: precache sesi-runtime + dashboard/nilai css
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -18,7 +18,11 @@ const APP_SHELL = [
   './screens/dashboard.js',
   './screens/jejak.js',
   './screens/nilai.js',
+  './screens/sesi-runtime.js',
   './screens/kurikulum.css',
+  './screens/sesi-runtime.css',
+  './screens/dashboard.css',
+  './screens/nilai.css',
 
   // storage
   './storage/db.js',

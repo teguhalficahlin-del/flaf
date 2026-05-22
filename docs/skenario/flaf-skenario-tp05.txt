@@ -1,0 +1,292 @@
+TP 05 — COLOURS
+Tema: Dunia di Sekitar Kita
+Total: 14 Layar
+Persiapan: Kartu warna 8 warna (red, blue, green, yellow,
+           orange, purple, black, white) + kartu pink kecil (opsional)
+           Benda berwarna di meja guru — siapkan sebelum kelas
+================================================================
+
+
+
+LAYAR 0 — Pre-Opening · PEMBUKA KELAS
+---------------------------------------
+AKSI
+Berdiri di depan kelas. Kartu warna disimpan di meja — belum ditunjukkan.
+Tunggu semua duduk tenang.
+
+UCAP
+"Good morning, everyone! How are you today?"
+
+[Tunggu respons kelas]
+
+"I'm fine, thank you! Today is a very colourful day! Are you ready?"
+
+[Tunggu respons — berdiri diam jika kelas belum fokus]
+
+⚡ Cue kritis: Layar ini pendek dan wajib. Kartu warna belum boleh ditunjukkan di sini — simpan kejutan untuk Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.
+
+================================================================
+
+LAYAR 1 — Pembuka · MEMBUKA KELAS + WARNA PERTAMA
+---------------------------------------------------
+AKSI
+Tunggu semua duduk tenang.
+"Good morning!"
+"Colourful day today!"
+
+Ambil satu kartu warna. Tunjuk ke kelas.
+"Look first."
+⚡ Jeda 3 detik.
+"What colour is this?"
+Beri 2 detik. Lanjut.
+"Red! This is red."
+
+Tunjuk kartu kedua.
+"And this one?"
+⚡ Pause.
+"Blue!"
+"This is blue."
+
+
+LAYAR 2 — Pembuka · SEMUA 8 WARNA
+------------------------------------
+👂 LISTEN FIRST — GELOMBANG 1
+
+"Red. Blue. Green. Yellow."
+
+🗣 TOGETHER → "Red! Blue! Green! Yellow!"
+
+"Good! Now four more colours."
+
+👂 LISTEN FIRST — GELOMBANG 2
+
+"Orange. Purple. Black. White."
+
+🗣 TOGETHER → "Orange! Purple! Black! White!"
+
+🗣 FULL 8 → "All together!"
+"Red! Blue! Green! Yellow! Orange! Purple! Black! White!"
+
+🔁 Putaran kedua: "Whisper voice!"
+
+BANTUAN ▸
+Jika diam: tunjuk kartu + ucap "Red..." menggantung.
+Jika pelan: dekatkan tangan ke telinga.
+
+
+LAYAR 3 — Pembuka · JEMBATAN KE INTI
+--------------------------------------
+AKSI
+Tunjuk kartu kiri ke kanan — satu putaran predictable.
+"What colour?" → siswa jawab bersama.
+
+Setelah satu putaran:
+"Now — surprise cards!"
+Tunjuk 3–4 kartu acak cepat.
+
+
+LAYAR 4 — Inti · DRILL WARNA + POLA KALIMAT
+---------------------------------------------
+AKSI
+Tunjuk kartu satu per satu.
+"What colour?" → siswa jawab → guru: "It is [warna]."
+
+⚡ Urutan drill: red → blue → green → yellow → orange → purple → black → white.
+⚡ Setelah red, blue, green, black: "Fast voice!"
+⚡ Yellow, orange, purple — tempo normal, fonologi lebih sulit.
+
+BANTUAN ▸
+Jika diam: ucap huruf pertama → tunggu.
+Jika Bahasa Indonesia: ucap nama warna Inggris → ajak ulang.
+
+
+LAYAR 5 — Inti · RESET + ATURAN SENTUH WARNA
+----------------------------------------------
+AKSI
+Tepuk tangan sekali.
+"Hands down. Eyes on me."
+"Walk, don't run. Only touch near you."
+
+AKSI — rehearsal stop signal:
+"Clap twice — come back and freeze."
+⚡ Come back dulu, baru freeze.
+Guru clap twice → kembali ke tempat → freeze → tunjuk lantai dekat tempat duduk.
+"Come back… freeze!"
+⚡ Tunjuk lantai = kembali ke sini.
+
+AKSI — demo:
+"Watch. Touch → come back → freeze."
+⚡ Pilih benda yang benar-benar dekat — model jarak pendek.
+"Ready?"
+
+⚠ DARURAT — Waktu ≤10 Menit
+Lewati sentuh warna → lanjut ke Layar 7.
+
+
+LAYAR 6 — Inti · SENTUH WARNA
+-------------------------------
+AKSI
+🔁 5–6 warna. Urutan: red → blue → green → yellow.
+
+"Touch something red in the room!"
+
+Setelah kembali → clap twice → freeze:
+"What colour?" → "Red!"
+
+⚡ Ronde akhir — variasi mikro 1x:
+"Touch something blue… quietly!"
+atau "Tiny steps!"
+
+BANTUAN ▸
+Jika berlari: clap twice → "Walk!"
+Jika tidak ada benda: "Good try! Next colour."
+
+
+LAYAR 7 — Inti · COOLDOWN + MODELING SHOW AND TELL
+----------------------------------------------------
+AKSI
+Clap twice.
+"Sit down. Hands in lap."
+⚡ Diam 15 detik.
+
+"Watch me."
+"This is my [benda]." → pause → kelas tirukan.
+"It is [warna]." → pause → kelas tirukan.
+"This is my [benda]. It is [warna]." → kelas tirukan bersama.
+
+Ulangi dengan benda kedua.
+
+"Open bag slowly."
+"Take one thing."
+"Close the bag."
+"Bag down."
+⚡ Tas ditutup dan diletakkan — fokus ke speaking.
+
+"This is my [benda]." → ulang → "It is [warna]." → ulang → gabung sekali.
+
+
+LAYAR 8 — Inti · SHOW AND TELL
+--------------------------------
+AKSI
+Panggil 4–5 siswa. Maksimal 15 detik per siswa.
+
+"Face the class."
+"Ready?"
+⚡ Pause kecil — beri anak pemalu 1 detik ekstra untuk stabil.
+
+UCAP ke kelas (model volume pelan):
+"When your friend finishes — say quietly: 'Good job!'"
+
+RESPONS SISWA
+"This is my [benda]. It is [warna]."
+✓ Hanya sebut warna — terima, model kalimat penuh.
+
+BANTUAN ▸
+Jika diam: bisik "This is my..."
+Jika lupa warna: tunjuk kartu di papan.
+
+
+LAYAR 9 — Inti · DIFERENSIASI
+-------------------------------
+AKSI
+"Turn to your partner."
+⚡ Model volume kecil: "Small voice — like this."
+"Show one thing. Say the colour. Then switch."
+⚡ 30–45 detik saja.
+"3… 2… 1… eyes here."
+
+DIFERENSIASI
+Need Help:
+→ satu kata — "Red!"
+→ lihat kartu di papan
+
+Ready:
+→ "This is my pencil. It is yellow."
+→ "My bag is blue and green."
+→ tanya partner: "What colour?"
+
+
+LAYAR 10 — Penutup · WARNA FAVORIT
+-------------------------------------
+AKSI
+"Look at all these colours!"
+Guru demo: "My favourite colour is [warna]!"
+
+"Point high — your favourite!"
+"Now say your favourite colour!"
+
+RESPONS SISWA
+"My favourite colour is [warna]!"
+🔁 4–5 siswa. Tempo cepat.
+
+BANTUAN ▸
+Jika diam: tunjuk 2 kartu → "This? Or this?"
+
+
+LAYAR 11 — Penutup · LAGU "I CAN SING A RAINBOW"
+--------------------------------------------------
+AKSI
+"Now — a song!"
+Gesture pelangi dengan kedua tangan: "Rainbow colours!"
+⚡ Jika ada kartu pink — tempel sebentar. Jika tidak — skip.
+
+"Listen first."
+Guru nyanyi:
+"Red and yellow and pink and green,
+orange and purple and blue.
+I can sing a rainbow, sing a rainbow,
+sing a rainbow too!"
+
+⚡ Gesture besar santai — tidak harus tunjuk semua kartu presisi.
+⚡ Lagu penutup = shared emotional ending, bukan akurasi drill.
+
+"Together — just the colours!"
+
+
+LAYAR 12 — Penutup · PENUTUP KELAS
+-------------------------------------
+AKSI
+"Hands down. Quiet voice."
+Lambaikan tangan.
+"Wonderful! You know your colours."
+⚡ Say softly.
+"Soft goodbye..."
+"Goodbye, everyone! See you next time!"
+
+🗣 TOGETHER → "Goodbye, teacher! See you!"
+
+BANTUAN ▸
+Jika diam: lambai tangan → "Good-bye..." menggantung.
+
+
+LAYAR 13 — SELESAI
+--------------------
+✓ Kumpulkan kartu warna
+✓ Siswa tutup tas
+
+Catat siswa yang:
+· Kesulitan warna tertentu — orange, purple, green sering tertukar
+· Tidak mau tampil show and tell
+· Tidak ikut nyanyi
+· Sulit kembali freeze setelah aktivitas gerak
+
+
+================================================================
+CATATAN RUNTIME GURU
+================================================================
+
+Energi:
+L1🟡→L2🟡→L3🟠→L4🟡→L5⚪→L6🔴→L7⚪→L8🟠→L9🟡→L10🟡→L11🟠→L12🔵
+
+Prinsip: satu instruksi — satu aksi — satu target.
+
+Risiko:
+· L6: freeze wajib setiap ronde. Variasi mikro di ronde akhir.
+· L7: 15 detik silence dulu. Tas ditutup sebelum tampil.
+· L8: 4–5 siswa, 15 detik per siswa.
+· L9: 30–45 detik. "Then switch." untuk turn-taking.
+
+Autonomy:
+· Persingkat L2 jika kelas sudah kenal warna.
+· Skip L9 jika waktu mepet.
+· L11 boleh diulang jika antusias. Gesture santai — bukan akurasi kartu.
