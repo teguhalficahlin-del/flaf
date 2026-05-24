@@ -218,10 +218,6 @@ async function _renderFormatif(token) {
         <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
         <div class="nv-tp-name">${_escape(tp.nama)}</div>
       </div>
-      <button onclick="nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')"
-              class="nv-btn nv-btn--gold" style="font-size:12px;white-space:nowrap;">
-        Unduh PDF →
-      </button>
     </div>`).join('');
 
   _container.innerHTML = `
