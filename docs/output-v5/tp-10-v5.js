@@ -25,9 +25,21 @@ const TP_10 = {
     'Peserta didik dapat menanyakan dan merespons preferensi makanan: "Do you like ...? Yes, I do / No, I do not."',
   ],
   vocab    : ['rice', 'noodles', 'bread', 'egg', 'chicken', 'fish', 'milk', 'water', 'juice', 'like', 'do not like'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu makanan bergambar 10 makanan dan minuman + lembar piring'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp10-apple.png',           label: 'Apple' },
+    { file: 'tp10-banana.png',          label: 'Banana' },
+    { file: 'tp10-bread.png',           label: 'Bread' },
+    { file: 'tp10-chicken.png',         label: 'Chicken' },
+    { file: 'tp10-egg.png',             label: 'Egg' },
+    { file: 'tp10-juice.png',           label: 'Juice' },
+    { file: 'tp10-milk.png',            label: 'Milk' },
+    { file: 'tp10-noodles.png',         label: 'Noodles' },
+    { file: 'tp10-plate-worksheet.png', label: 'Plate Worksheet' },
+    { file: 'tp10-rice.png',            label: 'Rice' },
+    { file: 'tp10-water.png',           label: 'Water' },
+  ],
 
   checklist: [
     '10 kartu printable tersedia sebelum kelas masuk',

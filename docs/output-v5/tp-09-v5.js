@@ -25,9 +25,20 @@ const TP_09 = {
     'Peserta didik dapat mengidentifikasi hewan berdasarkan deskripsi sederhana yang diucapkan guru.',
   ],
   vocab    : ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken', 'elephant', 'monkey', 'snake', 'can', 'has'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu hewan bergambar 10 hewan'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp09-bird.png',     label: 'Bird' },
+    { file: 'tp09-cat.png',      label: 'Cat' },
+    { file: 'tp09-dog.png',      label: 'Dog' },
+    { file: 'tp09-elephant.png', label: 'Elephant' },
+    { file: 'tp09-fish.png',     label: 'Fish' },
+    { file: 'tp09-frog.png',     label: 'Frog' },
+    { file: 'tp09-lion.png',     label: 'Lion' },
+    { file: 'tp09-monkey.png',   label: 'Monkey' },
+    { file: 'tp09-rabbit.png',   label: 'Rabbit' },
+    { file: 'tp09-snake.png',    label: 'Snake' },
+  ],
 
   checklist: [
     '10 kartu printable tersedia sebelum kelas masuk',

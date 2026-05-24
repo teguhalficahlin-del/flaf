@@ -25,9 +25,16 @@ const TP_13 = {
     'Peserta didik dapat menghubungkan cuaca dengan aktivitas: "When it is rainy, I use an umbrella."',
   ],
   vocab    : ['sunny', 'cloudy', 'rainy', 'windy', 'hot', 'cold', 'weather', 'today', 'umbrella', 'when it is'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu cuaca bergambar 6 kondisi cuaca'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp13-cloudy.png', label: 'Cloudy' },
+    { file: 'tp13-cold.png',   label: 'Cold' },
+    { file: 'tp13-hot.png',    label: 'Hot' },
+    { file: 'tp13-rainy.png',  label: 'Rainy' },
+    { file: 'tp13-sunny.png',  label: 'Sunny' },
+    { file: 'tp13-windy.png',  label: 'Windy' },
+  ],
 
   checklist: [
     '6 kartu printable tersedia dan bernomor urut sebelum kelas masuk',

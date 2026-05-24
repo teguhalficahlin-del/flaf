@@ -26,9 +26,18 @@ const TP_01 = {
   ],
   vocab    : ['hello', 'hi', 'goodbye', 'bye', 'see you', 'good morning',
               'good afternoon', 'good evening', 'good night'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu salam bergambar 8 waktu dan salam'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp01-afternoon.png',      label: 'Afternoon' },
+    { file: 'tp01-evening.png',        label: 'Evening' },
+    { file: 'tp01-good-afternoon.png', label: 'Good Afternoon' },
+    { file: 'tp01-good-evening.png',   label: 'Good Evening' },
+    { file: 'tp01-good-morning.png',   label: 'Good Morning' },
+    { file: 'tp01-good-night.png',     label: 'Good Night' },
+    { file: 'tp01-morning.png',        label: 'Morning' },
+    { file: 'tp01-night.png',          label: 'Night' },
+  ],
 
   checklist: [
     'Kartu salam x4 tersedia sebelum kelas masuk (pagi/siang/sore/malam)',

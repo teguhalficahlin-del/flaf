@@ -25,9 +25,18 @@ const TP_11 = {
     'Peserta didik dapat menanyakan dan merespons "What do you do every day?" dengan kalimat rutin lengkap.',
   ],
   vocab    : ['wake up', 'brush teeth', 'eat breakfast', 'go to school', 'study', 'play', 'eat dinner', 'sleep', 'every day', 'first', 'then'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu rutinitas bergambar 8 kegiatan harian'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp11-brush-teeth.png',   label: 'Brush Teeth' },
+    { file: 'tp11-eat-breakfast.png', label: 'Eat Breakfast' },
+    { file: 'tp11-eat-dinner.png',    label: 'Eat Dinner' },
+    { file: 'tp11-go-to-school.png',  label: 'Go To School' },
+    { file: 'tp11-play.png',          label: 'Play' },
+    { file: 'tp11-sleep.png',         label: 'Sleep' },
+    { file: 'tp11-study.png',         label: 'Study' },
+    { file: 'tp11-wake-up.png',       label: 'Wake Up' },
+  ],
 
   checklist: [
     '8 kartu printable tersedia sebelum kelas masuk',

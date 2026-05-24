@@ -25,9 +25,16 @@ const TP_08 = {
     'Peserta didik dapat mendeskripsikan rumah mereka dalam 3–4 kalimat sederhana.',
   ],
   vocab    : ['bedroom', 'kitchen', 'bathroom', 'living room', 'bed', 'table', 'chair', 'sofa', 'there is', 'in the'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu ruangan bergambar 6 ruangan rumah'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp08-bathroom.png',   label: 'Bathroom' },
+    { file: 'tp08-bedroom.png',    label: 'Bedroom' },
+    { file: 'tp08-floor-plan.png', label: 'Floor Plan' },
+    { file: 'tp08-garage.png',     label: 'Garage' },
+    { file: 'tp08-kitchen.png',    label: 'Kitchen' },
+    { file: 'tp08-living-room.png',label: 'Living Room' },
+  ],
 
   checklist: [
     'Kartu printable x6 tersedia sebelum kelas masuk (bedroom, kitchen, bathroom, living room, garage, floor plan)',

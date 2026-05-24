@@ -26,9 +26,19 @@ const TP_05 = {
   ],
   vocab    : ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink',
               'black', 'white', 'brown', 'colour', 'favourite', 'what colour'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu warna bergambar 9 warna'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp05-black.png',  label: 'Black' },
+    { file: 'tp05-blue.png',   label: 'Blue' },
+    { file: 'tp05-green.png',  label: 'Green' },
+    { file: 'tp05-orange.png', label: 'Orange' },
+    { file: 'tp05-pink.png',   label: 'Pink' },
+    { file: 'tp05-purple.png', label: 'Purple' },
+    { file: 'tp05-red.png',    label: 'Red' },
+    { file: 'tp05-white.png',  label: 'White' },
+    { file: 'tp05-yellow.png', label: 'Yellow' },
+  ],
 
   checklist: [
     'Kartu warna x8 tersedia sebelum kelas masuk',

@@ -26,9 +26,13 @@ const TP_02 = {
   ],
   vocab    : ['name', 'my name is', 'I am', 'years old', 'how old',
               'nice to meet you', 'what is your name'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu perkenalan bergambar 3 kartu'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp02-introduce-boy.png',  label: 'Introduce Boy' },
+    { file: 'tp02-introduce-girl.png', label: 'Introduce Girl' },
+    { file: 'tp02-name-tag.png',       label: 'Name Tag' },
+  ],
 
   checklist: [
     'Papan tulis + spidol tersedia sebelum kelas masuk',

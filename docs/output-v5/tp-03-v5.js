@@ -26,9 +26,16 @@ const TP_03 = {
   ],
   vocab    : ['sit down', 'stand up', 'open', 'close', 'listen', 'look',
               'repeat', 'read', 'write', 'draw', 'stop', 'go'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu instruksi bergambar 6 perintah kelas'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp03-close-book.png', label: 'Close Book' },
+    { file: 'tp03-draw.png',       label: 'Draw' },
+    { file: 'tp03-listen.png',     label: 'Listen' },
+    { file: 'tp03-look.png',       label: 'Look' },
+    { file: 'tp03-open-book.png',  label: 'Open Book' },
+    { file: 'tp03-write.png',      label: 'Write' },
+  ],
 
   checklist: [
     'Kartu instruksi bergambar x6 (listen/look/write/open/close/draw) tersedia sebelum kelas masuk',

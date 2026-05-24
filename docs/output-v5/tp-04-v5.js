@@ -27,9 +27,30 @@ const TP_04 = {
   vocab    : ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
               'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
               'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty', 'how many'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu angka bergambar 20 angka (1–20)'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp04-num-01.png', label: 'Num 01' },
+    { file: 'tp04-num-02.png', label: 'Num 02' },
+    { file: 'tp04-num-03.png', label: 'Num 03' },
+    { file: 'tp04-num-04.png', label: 'Num 04' },
+    { file: 'tp04-num-05.png', label: 'Num 05' },
+    { file: 'tp04-num-06.png', label: 'Num 06' },
+    { file: 'tp04-num-07.png', label: 'Num 07' },
+    { file: 'tp04-num-08.png', label: 'Num 08' },
+    { file: 'tp04-num-09.png', label: 'Num 09' },
+    { file: 'tp04-num-10.png', label: 'Num 10' },
+    { file: 'tp04-num-11.png', label: 'Num 11' },
+    { file: 'tp04-num-12.png', label: 'Num 12' },
+    { file: 'tp04-num-13.png', label: 'Num 13' },
+    { file: 'tp04-num-14.png', label: 'Num 14' },
+    { file: 'tp04-num-15.png', label: 'Num 15' },
+    { file: 'tp04-num-16.png', label: 'Num 16' },
+    { file: 'tp04-num-17.png', label: 'Num 17' },
+    { file: 'tp04-num-18.png', label: 'Num 18' },
+    { file: 'tp04-num-19.png', label: 'Num 19' },
+    { file: 'tp04-num-20.png', label: 'Num 20' },
+  ],
 
   checklist: [
     'Kartu angka 1–20 tersedia sebelum kelas masuk',

@@ -25,9 +25,16 @@ const TP_14 = {
     'Peserta didik dapat meminjam benda menggunakan ekspresi "Can I borrow your ...? Sure! / Sorry, I am using it."',
   ],
   vocab    : ['book', 'pen', 'pencil', 'eraser', 'ruler', 'bag', 'whiteboard', 'on', 'in', 'under', 'next to', 'can I borrow'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu benda kelas bergambar 6 benda'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp14-bag.png',    label: 'Bag' },
+    { file: 'tp14-book.png',   label: 'Book' },
+    { file: 'tp14-eraser.png', label: 'Eraser' },
+    { file: 'tp14-pen.png',    label: 'Pen' },
+    { file: 'tp14-pencil.png', label: 'Pencil' },
+    { file: 'tp14-ruler.png',  label: 'Ruler' },
+  ],
 
   checklist: [
     'Kartu benda kelas tersedia dan bernomor urut sebelum kelas masuk',

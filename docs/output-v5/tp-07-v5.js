@@ -25,9 +25,16 @@ const TP_07 = {
     'Peserta didik dapat memperkenalkan keluarga inti dalam 3–4 kalimat sederhana.',
   ],
   vocab    : ['mother', 'father', 'sister', 'brother', 'grandmother', 'grandfather', 'family', 'this is my'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu keluarga bergambar 6 anggota keluarga'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp07-brother.png',     label: 'Brother' },
+    { file: 'tp07-father.png',      label: 'Father' },
+    { file: 'tp07-grandfather.png', label: 'Grandfather' },
+    { file: 'tp07-grandmother.png', label: 'Grandmother' },
+    { file: 'tp07-mother.png',      label: 'Mother' },
+    { file: 'tp07-sister.png',      label: 'Sister' },
+  ],
 
   checklist: [
     'Kartu printable x6 (mother/father/sister/brother/grandmother/grandfather) tersedia sebelum kelas masuk',

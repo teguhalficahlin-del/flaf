@@ -26,9 +26,16 @@ const TP_06 = {
   ],
   vocab    : ['circle', 'square', 'triangle', 'rectangle', 'star', 'heart',
               'diamond', 'oval', 'shape', 'this is', 'I see'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu bentuk bergambar 6 bentuk'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp06-circle.png',    label: 'Circle' },
+    { file: 'tp06-heart.png',     label: 'Heart' },
+    { file: 'tp06-rectangle.png', label: 'Rectangle' },
+    { file: 'tp06-square.png',    label: 'Square' },
+    { file: 'tp06-star.png',      label: 'Star' },
+    { file: 'tp06-triangle.png',  label: 'Triangle' },
+  ],
 
   checklist: [
     'Kartu bentuk berwarna x6 (circle/square/triangle/rectangle/star/heart) tersedia sebelum kelas masuk',

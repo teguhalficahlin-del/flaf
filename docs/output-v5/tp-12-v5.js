@@ -25,9 +25,18 @@ const TP_12 = {
     'Peserta didik dapat merespons instruksi "touch your ..." dengan tindakan yang tepat.',
   ],
   vocab    : ['head', 'eyes', 'ears', 'nose', 'mouth', 'hands', 'legs', 'feet', 'touch', 'I use my', 'to see', 'to hear'],
-  persiapan: [],         // TODO: isi manual
+  persiapan: ['Kartu anggota tubuh bergambar 8 bagian tubuh'],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp12-ears.png',  label: 'Ears' },
+    { file: 'tp12-eyes.png',  label: 'Eyes' },
+    { file: 'tp12-feet.png',  label: 'Feet' },
+    { file: 'tp12-hands.png', label: 'Hands' },
+    { file: 'tp12-head.png',  label: 'Head' },
+    { file: 'tp12-legs.png',  label: 'Legs' },
+    { file: 'tp12-mouth.png', label: 'Mouth' },
+    { file: 'tp12-nose.png',  label: 'Nose' },
+  ],
 
   checklist: [
     '8 kartu printable tersedia sebelum kelas masuk',
