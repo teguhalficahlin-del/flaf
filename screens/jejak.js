@@ -118,6 +118,7 @@ function _buildJejakHTML(streak, summary, logs, kendalaSummary) {
   const recentLogs = logs.slice(0, 10);
   const emoji      = _streakEmoji(streak);
   const label      = _streakLabel(streak);
+  const MOOD_MAP   = { lancar: '😊 Lancar', biasa: '😐 Biasa', berat: '😓 Berat' };
 
   return `
 <div style="padding:16px 16px 90px;display:flex;flex-direction:column;gap:10px;">
@@ -182,6 +183,7 @@ function _buildJejakHTML(streak, summary, logs, kendalaSummary) {
           <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;">${_actionLabel(l.action)} · ${_relativeTime(l.taught_at)}</div>
           ${l.rombel_nama ? `<div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:3px;">📋 ${_escape(l.rombel_nama)}${l.jumlah_siswa !== null ? ` · ${l.jumlah_siswa} siswa` : ''}</div>` : ''}
           ${l.kendala ? `<div style="font-size:12px;color:rgba(212,174,58,.5);margin-top:3px;">${{ lancar: '✅ Lancar', waktu_kurang: '⏱ Waktu kurang', kurang_kondusif: '📢 Kurang kondusif', media_tidak_ada: '🖼 Media tidak ada', lainnya: '📝 Lainnya' }[l.kendala] || ''}</div>` : ''}
+          ${l.mood ? `<div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:3px;">${MOOD_MAP[l.mood] || l.mood}</div>` : ''}
           ${l.note ? `<div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;font-style:italic;">"${_escape(l.note)}"</div>` : ''}
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">

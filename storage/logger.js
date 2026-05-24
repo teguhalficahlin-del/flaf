@@ -13,20 +13,15 @@
      Tidak ada koneksi ke server eksternal.
    =============================================================*/
 
-import { get, set, remove, isAvailable } from './db.js';
-
 // ── KONSTANTA ─────────────────────────────────────────────────
 
 const BATCH_SIZE_NORMAL   = 20;              // flush jika antrian normal ≥ 20
 const BATCH_INTERVAL_MS   = 5 * 60 * 1000;  // 5 menit
-const RATE_LIMIT_PER_HOUR = 100;             // max entry/jam yang disimpan ke IDB
-const IDB_QUEUE_KEY       = 'log_queue_v1';
-const IDB_RATE_KEY        = 'log_rate_v1';
+const RATE_LIMIT_PER_HOUR = 100;             // max entry/jam
 
 // ── STATE ─────────────────────────────────────────────────────
 
 let _initialized  = false;
-let _consoleOnly  = false;   // IDB tidak tersedia
 let _queue        = [];      // antrian log in-memory
 let _priorityQ    = [];      // antrian prioritas (error severity)
 let _timer        = null;    // setInterval untuk flush berkala
@@ -41,41 +36,8 @@ const logger = {
   async init() {
     if (_initialized) return;
 
-    // Cek IDB
-    const idbOk = await isAvailable();
-    if (!idbOk) {
-      console.warn('[logger] IDB tidak tersedia — mode console-only aktif');
-      _consoleOnly = true;
-      _initialized = true;
-      return;
-    }
-
-    // Pulihkan antrian yang belum ter-flush dari sesi sebelumnya
-    try {
-      const savedQueue = await get(IDB_QUEUE_KEY);
-      if (Array.isArray(savedQueue) && savedQueue.length > 0) {
-        _queue = savedQueue;
-        console.info(`[logger] Pulihkan ${_queue.length} log dari sesi sebelumnya`);
-      }
-    } catch (err) {
-      console.warn('[logger] Gagal pulihkan antrian:', err?.message);
-    }
-
-    // Pulihkan rate limit counter
-    try {
-      const rateData = await get(IDB_RATE_KEY);
-      if (rateData && rateData.resetAt > Date.now()) {
-        _hourlyCount = rateData.count ?? 0;
-        _hourlyReset = rateData.resetAt;
-      } else {
-        _resetRateCounter();
-      }
-    } catch {
-      _resetRateCounter();
-    }
-
-    // Cache device info
     _deviceInfo = _buildDeviceInfo();
+    _resetRateCounter();
 
     // Setup flush berkala (5 menit)
     _timer = setInterval(() => {
@@ -100,10 +62,7 @@ const logger = {
     });
 
     _initialized = true;
-    console.info('[logger] init selesai', {
-      queueRestored: _queue.length,
-      consoleOnly: false
-    });
+    console.info('[logger] init selesai — queue in-memory');
   },
 
   // ── PUBLIC API ───────────────────────────────────────────────
@@ -135,9 +94,6 @@ const logger = {
                     : 'log';
     console[consoleFn](`[FLAF/${screen}]`, event, data);
 
-    // Console-only mode: tidak perlu lanjut
-    if (_consoleOnly) return;
-
     const entry = {
       ts:         new Date().toISOString(),
       severity,
@@ -155,7 +111,6 @@ const logger = {
     } else {
       // info/warn → antrian normal
       _queue.push(entry);
-      this._persistQueue();   // simpan ke IDB asinkron
 
       // Flush jika antrian sudah mencapai batas
       if (_queue.length >= BATCH_SIZE_NORMAL) {
@@ -182,7 +137,6 @@ const logger = {
 
     const batch = [..._queue];
     _queue = [];
-    await remove(IDB_QUEUE_KEY); // hapus dari IDB
 
     await this._sendBatch(batch);
   },
@@ -213,34 +167,9 @@ const logger = {
       console[consoleFn]('[FLAF/logger]', entry.screen, entry.event, entry.data);
     }
 
-    // Update rate counter lokal
+    // Update rate counter lokal (in-memory; reset per jam)
+    if (_hourlyReset && Date.now() > _hourlyReset) _resetRateCounter();
     _hourlyCount += entries.length;
-    this._persistRateCounter();
-  },
-
-  // ── INTERNAL: persist ────────────────────────────────────────
-
-  async _persistQueue() {
-    if (_consoleOnly) return;
-    try {
-      // Batas antrian: 200 entry agar tidak membebani IDB
-      const toSave = _queue.slice(-200);
-      await set(IDB_QUEUE_KEY, toSave);
-    } catch (err) {
-      console.warn('[logger] Gagal persist queue ke IDB:', err?.message);
-    }
-  },
-
-  async _persistRateCounter() {
-    if (_consoleOnly) return;
-    try {
-      await set(IDB_RATE_KEY, {
-        count:   _hourlyCount,
-        resetAt: _hourlyReset,
-      });
-    } catch {
-      // Non-critical — abaikan
-    }
   },
 
 };
@@ -259,7 +188,6 @@ function _buildDeviceInfo() {
     online:   navigator.onLine,
     lang:     navigator.language ?? '',
     sw:       'serviceWorker' in navigator,
-    idb:      !_consoleOnly,
   };
 }
 

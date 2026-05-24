@@ -27,9 +27,9 @@
  */
 
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 8;
+const DB_VERSION = 10;
 
-const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'siswa_per_kelas', 'obs_log', 'penilaian_log']);
+const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'penilaian_log']);
 
 let _db          = null;
 let _initPromise = null;
@@ -101,13 +101,13 @@ function init() {
         upgradeDB.createObjectStore('presensi_log');
         console.log('[DB] store created: presensi_log');
       }
-      if (!upgradeDB.objectStoreNames.contains('siswa_per_kelas')) {
-        upgradeDB.createObjectStore('siswa_per_kelas');
-        console.log('[DB] store created: siswa_per_kelas');
+      if (upgradeDB.objectStoreNames.contains('siswa_per_kelas')) {
+        upgradeDB.deleteObjectStore('siswa_per_kelas');
+        console.log('[DB] store deleted: siswa_per_kelas');
       }
-      if (!upgradeDB.objectStoreNames.contains('obs_log')) {
-        upgradeDB.createObjectStore('obs_log');
-        console.log('[DB] store created: obs_log');
+      if (upgradeDB.objectStoreNames.contains('obs_log')) {
+        upgradeDB.deleteObjectStore('obs_log');
+        console.log('[DB] store deleted: obs_log');
       }
       if (!upgradeDB.objectStoreNames.contains('penilaian_log')) {
         upgradeDB.createObjectStore('penilaian_log');
