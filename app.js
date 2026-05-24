@@ -412,12 +412,11 @@ async function _onActivationSuccess(teacherData) {
 
   navigateTo('s-start');
 
-  // Poin 12: pre-cache semua PDF di background jika online
+  // Pre-cache PDF di background jika online — tanpa notifikasi
   if (navigator.onLine) {
     setTimeout(() => {
       try {
         precacheAllPDF();
-        showToast('Mengunduh modul ajar untuk offline…');
       } catch (e) {
         console.warn('[APP] precacheAllPDF gagal:', e.message);
       }
