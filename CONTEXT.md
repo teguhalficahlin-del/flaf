@@ -24,6 +24,11 @@
 - **Skenario Live Mode v2 SELESAI ✅ (Mei 2026)** — `flaf-skenario-tp01-v2.txt` s/d `tp18-v2.txt`, semua verified
 - **Schema v5.0 TP 15–18 SELESAI ✅ (Mei 2026)** — `tp-15-v5.js` s/d `tp-18-v5.js` ditulis ke `docs/sesi-m{10–13}/`; file lama tidak ditimpa
 - **Sprint Data Flow SELESAI ✅ (Mei 2026)** — `teacher_data` terhubung, mood closure aktif, layar Nilai Formatif live (commit `2527af6`)
+- **Sprint Dead Code + Batch Converter SELESAI ✅ (Mei 2026)** — obs_log + siswa_per_kelas dihapus, logger in-memory, mood render di jejak, TP01–14 v5.0 di `docs/output-v5/` (commit `0fe6dae`)
+- **Sprint Output-v5 Data Completion SELESAI ✅ (Mei 2026)** — printables/persiapan TP01–14 (113 entries), vocab fix TP09/10, kelas field TP01–14, kurikulum default Kelas 1, SW v59 (commit `a904b73`)
+- **Sprint Lihat Kurikulum Fix SELESAI ✅ (Mei 2026)** — "Lihat Kurikulum lengkap →" kini navigasi ke TP dan kelas yang benar (commit `d4ea64c`)
+- **Sprint UX & Nilai Formatif SELESAI ✅ (Mei 2026)** — reorder menu, rename Sumatif Mid Semester, Nilai Formatif view-only, detail per sesi per siswa, auto-next penilaian, hapus toast precache (commit `179695d`)
+- **Sprint Offline Readiness Audit SELESAI ✅ (Mei 2026)** — siswa-history.js ditambah ke SW precache, PDF_PATTERN diupdate ke .docx, dead code dihapus, SW v60 (commit `4b382dc`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -162,16 +167,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-2527af6  fix: connect progress TP, mood closure, formatif view
-abcbf1e  feat(runtime): redesign running state
-878c22c  fix: default attendance status H (hadir) instead of A
-1ad4012  fix: remove undefined JP references from kurikulum UI
-8cc01f2  docs: update CONTEXT — remove filename label fix
-a76ae4b  fix: remove filename label from kurikulum download button
-e2c73ac  fix: pdf-handler path, cache lookup, MIME detection for .docx
-147eed4  fix: title tab cetak undefined → tp.nama
-792582c  fix: judul lembar cetak undefined → tp.nama
-c494685  merge: pertahankan versi lokal fase-13
+4b382dc  fix: hapus VALID_MIME stale + perbaiki error string di pdf-handler.js
+6f8aee4  fix: update PDF_PATTERN ke .docx + hapus cleanupOldPDFVersions (dead code)
+8e55c96  fix: tambah siswa-history.js ke SW precache + bump ke v60
+179695d  fix: hapus toast notifikasi precache PDF saat aktivasi
+6cdb0e9  fix: auto-next setelah pilih perilaku, bukan setelah pilih capaian
+7d7a0af  fix: remove duplicate export of getSesiFormatifTP
+4429d83  feat: nilai formatif detail per sesi per siswa
+460a68f  fix: hapus tombol Unduh PDF di Nilai Formatif — view only
+5122800  fix: rename Sumatif Lingkup Materi → Sumatif Mid Semester
+30d85a2  fix: reorder menu kelas — Nilai Formatif naik ke posisi 2
 ```
 
 ## Struktur Folder Penting
@@ -189,14 +194,14 @@ FLAF/
 │   └── activation.js
 ├── data/
 │   ├── index.js
-│   ├── fase-a.js           ← 18 TP v4.3, field mode[] + printables[] (TP 01-18)
+│   ├── fase-a.js           ← 18 TP v4.3, field mode[] + printables[] (TP 01-18); import TP01–14 dari docs/output-v5/
 │   └── printables.js       ← generate HTML cetak dari tp.printables[] (PNG via assets/images/printables/)
 ├── modules/
 │   ├── pdf-generator.js    ← generate PNG rekap nilai per TP & rekap akhir semua TP (canvas HTML5, tanpa library)
 │   └── pdf-handler.js      ← download modul ajar via cache-first (serve dari pdf/, fallback ke network)
 ├── storage/
-│   ├── db.js               ← DB_VERSION 8, stores: kv, log_queue, nilai_data, penilaian_log, presensi_log, siswa_per_kelas, teacher_data, teaching_log
-│   ├── siswa-history.js    ← getSiswaHistory, updateSpeakCount, getSortedBySpeakCount, savePenilaian
+│   ├── db.js               ← DB_VERSION 10, stores: kv, log_queue, nilai_data, penilaian_log, presensi_log, teacher_data, teaching_log (obs_log + siswa_per_kelas DIHAPUS)
+│   ├── siswa-history.js    ← savePenilaian() saja (getSiswaHistory, updateSpeakCount, getSortedBySpeakCount DIHAPUS)
 │   ├── logger.js
 │   ├── export.js
 │   ├── jejak.js
@@ -207,12 +212,13 @@ FLAF/
 │       └── printables/     ← 136 PNG (TP 01-18)
 ├── docs/
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
+│   ├── output-v5/          ← tp-01..14-v5.js — generated batch converter (Mei 2026)
 │   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅
 │   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v54
+├── sw.js                   ← Service Worker v59
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -279,9 +285,9 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 | `presensi_log` | ✅ AKTIF | `presensi.simpan()` dari `_doSelesaiSesi()` | PDF rekap presensi |
 | `nilai_data` | ✅ AKTIF (sumatif) | `nilai.js:setNilaiFormatif/LSR/SAS` (via stepper) | `getRekapRapor()` |
 | `kv` | ✅ AKTIF | session, resume state | App-wide |
-| `siswa_per_kelas` | ⚠️ DEAD — tidak ada writer aktif | `updateSpeakCount()` — tidak dipanggil dari layar manapun | `getSiswaList()` — terpanggil tapi data hanya muncul jika guru sudah input manual |
-| `obs_log` | ⚠️ DEAD — tidak ada writer aktif | `saveObsTags()` — tidak dipanggil dari layar manapun | Tidak ada reader |
-| `log_queue` | ⚠️ DEAD — konvensi call salah | `logger.js` call `db.get('log_queue_v1')` — salah, butuh `db.get('log_queue', key)` | Tidak efektif |
+| `siswa_per_kelas` | 🗑️ **DIHAPUS** (DB v10) | Store dihapus dari IDB + semua fungsi di siswa-history.js dihapus | — |
+| `obs_log` | 🗑️ **DIHAPUS** (DB v9) | Store dihapus dari IDB + saveObsTags() dihapus dari siswa-history.js | — |
+| `log_queue` | ℹ️ **IN-MEMORY ONLY** | logger.js queue in-memory, tidak ada IDB read/write | — (flush ke console saja) |
 
 **Key format `teacher_data`:** `progress_tp_N` (N = 1–18)
 **Value format:** `{ status: 'selesai', rombel_id, rombel_nama, taught_at: Date.now() }`
@@ -305,16 +311,17 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 - **Router:** `_render()` di `screens/nilai.js` — `if (_state.view === 'formatif') await _renderFormatif(token);`
 - **Entry point:** `window.nilaiMenuFormatif()` → set `_state.view = 'formatif'`
-- **Card di menu:** setelah "Sumatif Lingkup Materi", sebelum "Sumatif Akhir Semester"
-- **Konten:** daftar 18 TP dari `_tpList(_state.tingkat)` — tiap TP tombol "Unduh PDF →" memanggil `nilaiDownloadFormatif1()`
-- **Back:** `nilaiBackToMenu()` → kembali ke `'menu'`
+- **Card di menu:** posisi 2 (setelah "Kelola Siswa"), sebelum "Sumatif Mid Semester"
+- **Konten:** daftar TP view-only — tiap TP row clickable → `nilaiBukaFormatifTP(nomor)` → view `formatif-detail`
+- **Detail view:** `_renderFormatifDetail` via `getSesiFormatifTP(kelasId, tpNomor)` — per-sesi breakdown dari `penilaian_log`
+- **Back:** `nilaiBackToFormatif()` → kembali ke `'formatif'`
 
-### Dead Features (Belum Disentuh — Intentional)
+### Dead Features — Status Terkini
 
-- `obs_log`: tidak ada writer aktif — `saveObsTags()` tidak dipanggil dari screens
-- `siswa_per_kelas.updateSpeakCount()`: tidak dipanggil dari screens
-- `log_queue`: logger.js salah konvensi call — belum difix
-- `nilai_data.formatif_*`: ditulis stepper lama (Step 5 sudah jadi placeholder) — tidak dibaca output apapun; data lama aman tapi tidak terpakai
+- `obs_log`: ✅ **DIHAPUS** (commit `2145cd8`) — store dihapus DB v9, saveObsTags() dihapus dari siswa-history.js
+- `siswa_per_kelas`: ✅ **DIHAPUS** (commit `2145cd8`) — store dihapus DB v10, getSiswaHistory/updateSpeakCount/getSortedBySpeakCount dihapus
+- `log_queue` IDB: ✅ **DISEDERHANAKAN** (commit `2145cd8`) — logger.js kini in-memory only, tidak ada IDB read/write
+- `nilai_data.formatif_*`: ⏳ masih ada — ditulis stepper lama (Step 5 sudah jadi placeholder) — tidak dibaca output apapun; data lama aman tapi tidak terpakai
 
 ### Commit Referensi Sprint Ini
 
@@ -472,11 +479,48 @@ atau `closure_reinforcement` sebagai field runtime.
    - nilai.js: view 'formatif' aktif → daftar TP + tombol Unduh PDF per TP
    - dashboard.js: Step 5 asesmen → placeholder informatif
 
-⏳ LANGKAH BERIKUTNYA: HTML converter txt skenario → v5.0 JS download
-   - data/printables.js: generatePrintHTML()
-   - field printables[] di fase-a.js TP 01-18 (TP 15-18 via import docs/)
-   - 136 PNG di assets/images/printables/
-   - SW v54→v55, precache 136 gambar + 18 modul ajar .docx
+✅ SPRINT DEAD CODE + BATCH CONVERTER COMPLETE (Mei 2026) — 2145cd8, 0fe6dae
+   - obs_log store + siswa_per_kelas store DIHAPUS (DB_VERSION 10)
+   - logger.js: IDB logic dihapus → queue in-memory only
+   - screens/jejak.js: mood render aktif (MOOD_MAP lancar/biasa/berat → emoji + label)
+   - tools/converter.html: fix PRE-OPENING bug di determineFase()
+   - tools/batch-convert.js: batch converter Node.js (TP01–14 dari skenario txt)
+   - docs/output-v5/tp-01..14-v5.js: 14 file v5.0 dengan checklist, energi_map, catatan, indikator, vocab
+   - data/fase-a.js: import TP01–14 dimigrasikan dari sesi-mN/ ke docs/output-v5/
+
+✅ SPRINT OUTPUT-V5 DATA COMPLETION (Mei 2026) — 025c47b → a904b73
+   - printables[] + persiapan[] diisi TP01–14 (113 entries PNG, format { file, label })
+   - vocab TP09: +frog, +lion | vocab TP10: +apple, +banana
+   - printables label TP04: 'Num 01–20' → '1–20'
+   - kelas field TP01–14: TP01–09=1, TP10–14=2 (filter kurikulum aktif)
+   - docs/output-v5/ (14 file) ditambah ke SW APP_SHELL precache
+   - screens/kurikulum.js: defaultKelas 'semua' → 1 (Kelas 1 aktif saat load)
+   - SW: v57 → v58 → v59
+
+✅ SPRINT LIHAT KURIKULUM FIX (Mei 2026) — 29de097 → d4ea64c
+   - dashboard.js: "Lihat Kurikulum lengkap →" meneruskan tpNomor+kelas ke navigateTo
+   - app.js: navigateTo meneruskan opts ke _onScreenEnter
+   - app.js: _onScreenEnter menerima opts = {} sebagai parameter
+   - app.js: kurRoot.dataset.rendered di-set setelah renderKurikulum berhasil (defer)
+   - app.js: kurFilterKelas dipanggil sebelum scrollIntoView agar kelas filter aktif dulu
+
+✅ SPRINT UX & NILAI FORMATIF (Mei 2026) — 30d85a2 → 179695d
+   - nilai.js: reorder menu Kelas — Nilai Formatif naik ke posisi 2
+   - nilai.js: rename "Sumatif Lingkup Materi" → "Sumatif Mid Semester"
+   - nilai.js: hapus tombol Unduh PDF dari Nilai Formatif (view-only)
+   - nilai.js + storage/nilai.js: Nilai Formatif detail per sesi per siswa (klik TP → riwayat sesi via getSesiFormatifTP)
+   - sesi-runtime.js: auto-next setelah pilih perilaku (bukan setelah pilih capaian)
+   - app.js: hapus showToast saat precache PDF di background
+
+✅ SPRINT OFFLINE READINESS AUDIT (Mei 2026) — 8e55c96 → 4b382dc
+   - sw.js: tambah storage/siswa-history.js ke APP_SHELL precache (bug: 404 saat offline)
+   - sw.js: bump CACHE_VERSION v59 → v60
+   - sw.js: PDF_PATTERN diupdate ke /\/pdf\/.*\.docx$/i (era .docx)
+   - sw.js: hapus cleanupOldPDFVersions (dead code — regex .pdf tidak pernah match .docx)
+   - modules/pdf-handler.js: hapus konstanta VALID_MIME stale (tidak dipakai)
+   - modules/pdf-handler.js: perbaiki error string _validateArgs (.pdf → .pdf atau .docx)
+
+⏳ LANGKAH BERIKUTNYA: —
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
@@ -500,7 +544,7 @@ atau `closure_reinforcement` sebagai field runtime.
    - pdf-handler.js: MIME detection .docx via _mimeForFilename/_isValidContentType
 ```
 
-Next: Bangun HTML converter — pilih file txt skenario di browser → download v5.0 JS otomatis
+Next: —
 
 ## Fase 15 — Audit Struktur & pm TP01–18
 
