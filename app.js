@@ -128,7 +128,7 @@ function navigateTo(screenId, opts = {}) {
   }
 
   if (!opts.skipRender) {
-    _onScreenEnter(screenId);
+    _onScreenEnter(screenId, opts);
   }
 }
 
@@ -138,7 +138,7 @@ window.addEventListener('popstate', (e) => {
   navigateTo(screenId, { skipHistory: true });
 });
 
-function _onScreenEnter(screenId) {
+function _onScreenEnter(screenId, opts = {}) {
   switch (screenId) {
 
     case 's-activation': {
