@@ -101,7 +101,7 @@ window.kurFilterKelas = function(kelas) {
   }
 };
 
-export function renderKurikulum({ onDownloadPDF, defaultKelas = 'semua' } = {}) {
+export function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) {
   const root = document.getElementById(ROOT_ID);
   if (!root) {
     logger.error(SCREEN, `[kurikulum] #${ROOT_ID} tidak ditemukan di DOM`);
