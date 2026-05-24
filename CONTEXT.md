@@ -23,6 +23,7 @@
 - **Fase 13 SELESAI ✅**
 - **Skenario Live Mode v2 SELESAI ✅ (Mei 2026)** — `flaf-skenario-tp01-v2.txt` s/d `tp18-v2.txt`, semua verified
 - **Schema v5.0 TP 15–18 SELESAI ✅ (Mei 2026)** — `tp-15-v5.js` s/d `tp-18-v5.js` ditulis ke `docs/sesi-m{10–13}/`; file lama tidak ditimpa
+- **Sprint Data Flow SELESAI ✅ (Mei 2026)** — `teacher_data` terhubung, mood closure aktif, layar Nilai Formatif live (commit `2527af6`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -161,6 +162,8 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+2527af6  fix: connect progress TP, mood closure, formatif view
+abcbf1e  feat(runtime): redesign running state
 878c22c  fix: default attendance status H (hadir) instead of A
 1ad4012  fix: remove undefined JP references from kurikulum UI
 8cc01f2  docs: update CONTEXT — remove filename label fix
@@ -169,10 +172,6 @@ e2c73ac  fix: pdf-handler path, cache lookup, MIME detection for .docx
 147eed4  fix: title tab cetak undefined → tp.nama
 792582c  fix: judul lembar cetak undefined → tp.nama
 c494685  merge: pertahankan versi lokal fase-13
-8c3cbec  fase-13: printables — kartu cetak guru TP 01-10
-4c3fc8a  docs: update CONTEXT — Fase 12 complete
-617ce24  fase-12: fix syntax fase-a.js — hapus fase Penilaian TP01-14
-08f9a11  fase-12: hapus card observasi Fase 7 + cleanup import siswa-history
 ```
 
 ## Struktur Folder Penting
@@ -265,6 +264,69 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 ✅ RESOLVED — JP dihapus dari UI kurikulum (baris 172, 229, 243, 313 screens/kurikulum.js)
 - `tp.jp` dan `meta.total_jp` tidak pernah didefinisikan di fase-a.js
 - Semua referensi menghasilkan `undefined` di UI — dihapus di commit `1ad4012`
+
+---
+
+## Sprint Data Flow — Mei 2026
+
+### IndexedDB Store — Status Live
+
+| Store | Status | Writer | Reader |
+|-------|--------|--------|--------|
+| `teacher_data` | ✅ **AKTIF** | `dashboard.js:_doSelesaiSesi()` saat sesi selesai | `app.js:_populateStartScreen()` → progress bar X/18 |
+| `teaching_log` | ✅ **AKTIF** — field `mood` ditambahkan | `jejak.log()` via `_doSelesaiSesi()` | Jejak card, streak, share summary |
+| `penilaian_log` | ✅ **AKTIF** — jalur utama nilai formatif | `siswa-history.js:savePenilaian()` dari overlay runtime | `nilai.js:getRekapFormatifTP()` → `_renderFormatif()` + `nilaiDownloadFormatif1()` |
+| `presensi_log` | ✅ AKTIF | `presensi.simpan()` dari `_doSelesaiSesi()` | PDF rekap presensi |
+| `nilai_data` | ✅ AKTIF (sumatif) | `nilai.js:setNilaiFormatif/LSR/SAS` (via stepper) | `getRekapRapor()` |
+| `kv` | ✅ AKTIF | session, resume state | App-wide |
+| `siswa_per_kelas` | ⚠️ DEAD — tidak ada writer aktif | `updateSpeakCount()` — tidak dipanggil dari layar manapun | `getSiswaList()` — terpanggil tapi data hanya muncul jika guru sudah input manual |
+| `obs_log` | ⚠️ DEAD — tidak ada writer aktif | `saveObsTags()` — tidak dipanggil dari layar manapun | Tidak ada reader |
+| `log_queue` | ⚠️ DEAD — konvensi call salah | `logger.js` call `db.get('log_queue_v1')` — salah, butuh `db.get('log_queue', key)` | Tidak efektif |
+
+**Key format `teacher_data`:** `progress_tp_N` (N = 1–18)
+**Value format:** `{ status: 'selesai', rombel_id, rombel_nama, taught_at: Date.now() }`
+
+**Field `mood` di `teaching_log`:**
+- Ditulis dari `_state.closureMood` (sesi-runtime.js)
+- Propagasi: `_onDone({ mood })` → `_onSesiDone()` → `_skenario.mood` → `jejak.log(extra.mood)` → entry IDB
+
+**`nilai_data.formatif_*`:** ditulis Step 5 stepper lama (diganti placeholder) — tidak dibaca output apapun. Data lama yang tersimpan tidak dipakai.
+
+### Fitur — Status Live
+
+| Fitur | Status Sebelum | Status Sekarang |
+|-------|---------------|-----------------|
+| Progress bar X/18 TP (home screen) | ❌ PUTUS — `teacher_data` tidak ditulis | ✅ TERHUBUNG |
+| Mood closure | ❌ PUTUS — `closureMood` tidak dipropagasi | ✅ TERHUBUNG — tersimpan di `teaching_log` |
+| Nilai Formatif | ⚠️ PARSIAL — dua jalur tak terhubung | ✅ TERHUBUNG — jalur tunggal via `penilaian_log` |
+| Step 5 asesmen stepper | ❌ PUTUS — tulis ke `nilai_data.formatif_*` yang tidak dibaca | ✅ DIGANTI — placeholder informatif |
+
+### Layar Nilai — View `formatif`
+
+- **Router:** `_render()` di `screens/nilai.js` — `if (_state.view === 'formatif') await _renderFormatif(token);`
+- **Entry point:** `window.nilaiMenuFormatif()` → set `_state.view = 'formatif'`
+- **Card di menu:** setelah "Sumatif Lingkup Materi", sebelum "Sumatif Akhir Semester"
+- **Konten:** daftar 18 TP dari `_tpList(_state.tingkat)` — tiap TP tombol "Unduh PDF →" memanggil `nilaiDownloadFormatif1()`
+- **Back:** `nilaiBackToMenu()` → kembali ke `'menu'`
+
+### Dead Features (Belum Disentuh — Intentional)
+
+- `obs_log`: tidak ada writer aktif — `saveObsTags()` tidak dipanggil dari screens
+- `siswa_per_kelas.updateSpeakCount()`: tidak dipanggil dari screens
+- `log_queue`: logger.js salah konvensi call — belum difix
+- `nilai_data.formatif_*`: ditulis stepper lama (Step 5 sudah jadi placeholder) — tidak dibaca output apapun; data lama aman tapi tidak terpakai
+
+### Commit Referensi Sprint Ini
+
+```
+abcbf1e  feat(runtime): redesign running state
+2527af6  fix: connect progress TP, mood closure, formatif view
+         ├── dashboard.js: write progress_tp_N to teacher_data on sesi selesai
+         ├── sesi-runtime.js + dashboard.js + jejak.js: propagate closureMood
+         │   through _onDone → _onSesiDone → jejak.log → teaching_log
+         ├── dashboard.js: replace Step 5 asesmen with informational placeholder
+         └── nilai.js: add Nilai Formatif card + _renderFormatif() view
+```
 
 ---
 
@@ -404,6 +466,12 @@ atau `closure_reinforcement` sebagai field runtime.
    Struktur: tipe/teks/bantuan(string|string[]|null)/cue/darurat/energi per langkah
    Root baru: checklist[], energi_map[], catatan{risiko[],autonomy[]}
    mode.mudah/normal/tantangan DIHAPUS | pm DIHAPUS | file lama tidak ditimpa
+✅ SPRINT DATA FLOW COMPLETE (Mei 2026) — 2527af6
+   - teacher_data: progress_tp_N ditulis saat sesi selesai → progress bar X/18 hidup
+   - teaching_log: field mood aktif (closureMood dari closure screen)
+   - nilai.js: view 'formatif' aktif → daftar TP + tombol Unduh PDF per TP
+   - dashboard.js: Step 5 asesmen → placeholder informatif
+
 ⏳ LANGKAH BERIKUTNYA: HTML converter txt skenario → v5.0 JS download
    - data/printables.js: generatePrintHTML()
    - field printables[] di fase-a.js TP 01-18 (TP 15-18 via import docs/)
