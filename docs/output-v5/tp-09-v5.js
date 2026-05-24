@@ -24,7 +24,7 @@ const TP_09 = {
     'Peserta didik dapat mendeskripsikan hewan menggunakan "A ... can ..." dan "A ... has ...".',
     'Peserta didik dapat mengidentifikasi hewan berdasarkan deskripsi sederhana yang diucapkan guru.',
   ],
-  vocab    : ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken', 'elephant', 'monkey', 'snake', 'can', 'has'],
+  vocab    : ['cat', 'dog', 'bird', 'fish', 'rabbit', 'cow', 'chicken', 'elephant', 'monkey', 'snake', 'frog', 'lion', 'can', 'has'],
   persiapan: ['Kartu hewan bergambar 10 hewan'],
   media    : [],         // TODO: isi manual
   printables: [

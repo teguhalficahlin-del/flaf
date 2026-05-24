@@ -24,7 +24,7 @@ const TP_10 = {
     'Peserta didik dapat mengungkapkan preferensi menggunakan "I like ..." dan "I do not like ..." dengan alasan sederhana.',
     'Peserta didik dapat menanyakan dan merespons preferensi makanan: "Do you like ...? Yes, I do / No, I do not."',
   ],
-  vocab    : ['rice', 'noodles', 'bread', 'egg', 'chicken', 'fish', 'milk', 'water', 'juice', 'like', 'do not like'],
+  vocab    : ['apple', 'banana', 'rice', 'noodles', 'bread', 'egg', 'chicken', 'fish', 'milk', 'water', 'juice', 'like', 'do not like'],
   persiapan: ['Kartu makanan bergambar 10 makanan dan minuman + lembar piring'],
   media    : [],         // TODO: isi manual
   printables: [
