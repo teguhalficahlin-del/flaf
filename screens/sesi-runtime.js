@@ -868,8 +868,7 @@ function _renderPenilaianOverlay() {
         const siswaId = btn.dataset.siswa;
         const val     = parseInt(btn.dataset.capaian);
         hasil[siswaId].capaian = hasil[siswaId].capaian === val ? null : val;
-        // Auto-tutup accordion dan buka siswa berikutnya
-        _autoNext();
+        _mount();
       });
     });
 
@@ -896,7 +895,7 @@ function _renderPenilaianOverlay() {
         const siswaId = btn.dataset.siswa;
         const p       = btn.dataset.perilaku;
         hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
-        _mount();
+        _autoNext();
       });
     });
 
