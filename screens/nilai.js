@@ -90,7 +90,8 @@ async function _render() {
   if (_state.view === 'input')  await _renderInput(token);
   if (_state.view === 'sas')    await _renderSAS(token);
   if (_state.view === 'rapor')  await _renderRapor(token);
-  if (_state.view === 'unduh')  await _renderUnduh(token);
+  if (_state.view === 'unduh')    await _renderUnduh(token);
+  if (_state.view === 'formatif') await _renderFormatif(token);
 }
 
 // --- LEVEL 1: DAFTAR ROMBEL --------------------------------------------------
@@ -186,6 +187,10 @@ async function _renderMenu(token) {
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
       'rgba(212,174,58,.15)', 'Sumatif Lingkup Materi', 'Input nilai L/S/R per TP — masuk nilai rapor')}
 
+    ${_menuCard('nilaiMenuFormatif()',
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
+      'rgba(212,174,58,.15)', 'Nilai Formatif', 'Hasil observasi proses saat mengajar — per TP')}
+
     ${_menuCard('nilaiMenuSAS()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
       'rgba(212,174,58,.15)', 'Sumatif Akhir Semester', 'Input nilai ujian akhir semester — masuk nilai rapor')}
@@ -197,6 +202,38 @@ async function _renderMenu(token) {
     ${_menuCard('nilaiMenuUnduh()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
       'rgba(212,174,58,.15)', 'Unduh & Cetak', 'Semua unduhan PDF: nilai dan presensi')}
+  </div>
+</div>`;
+}
+
+// --- LEVEL: NILAI FORMATIF ---------------------------------------------------
+
+async function _renderFormatif(token) {
+  const tpList = _tpList(_state.tingkat);
+  if (token !== _renderToken) return;
+
+  const rowsHTML = tpList.map(tp => `
+    <div class="nv-tp-item" style="border-top:1px solid rgba(212,174,58,.1);">
+      <div style="flex:1;min-width:0;">
+        <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
+        <div class="nv-tp-name">${_escape(tp.nama)}</div>
+      </div>
+      <button onclick="nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')"
+              class="nv-btn nv-btn--gold" style="font-size:12px;white-space:nowrap;">
+        Unduh PDF →
+      </button>
+    </div>`).join('');
+
+  _container.innerHTML = `
+<div class="nv-wrap">
+  <div class="nv-card nv-card--inset" style="padding:14px 16px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Kembali</button>
+      <div class="ds-section-label">Nilai Formatif — ${_escape(_state.kelasNama)}</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset">
+    ${rowsHTML}
   </div>
 </div>`;
 }
@@ -621,10 +658,11 @@ window.nilaiBackToMenu = async function() {
   _state.view = 'menu';
   _render();
 };
-window.nilaiMenuTP     = function() { _state.view = 'tp';    _render(); };
-window.nilaiMenuSAS    = function() { _state.view = 'sas';   _render(); };
-window.nilaiMenuRapor  = function() { _state.view = 'rapor'; _render(); };
-window.nilaiMenuUnduh  = function() { _state.view = 'unduh'; _render(); };
+window.nilaiMenuTP       = function() { _state.view = 'tp';       _render(); };
+window.nilaiMenuSAS      = function() { _state.view = 'sas';      _render(); };
+window.nilaiMenuRapor    = function() { _state.view = 'rapor';    _render(); };
+window.nilaiMenuUnduh    = function() { _state.view = 'unduh';    _render(); };
+window.nilaiMenuFormatif = function() { _state.view = 'formatif'; _render(); };
 window.nilaiToggleGroup = function(gi) {
   const item    = document.getElementById(`nv-group-${gi}`);
   const body    = item?.querySelector('.ds-subfase-body');

@@ -609,7 +609,7 @@ function _renderClosure() {
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
 
     if (btn) { btn.textContent = 'Tersimpan ✓'; }
-    _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan });
+    _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan, mood: _state.closureMood || null });
   });
 }
 

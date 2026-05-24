@@ -490,22 +490,17 @@ function _buildStepPresensi() {
 // --- STEP 5: ASESMEN ---------------------------------------------------------
 
 function _buildStepAsesmen() {
-  const warn = _skenario.warnAsesmen;
-
-  const warnHTML = warn ? `
-  <div class="ds-warn-banner" id="asesmen-warn">
-    <div class="ds-warn-title">⚠ Asesmen belum diisi</div>
-    <div class="ds-warn-desc">Anda bisa lewati asesmen, tapi data nilai tidak akan tercatat untuk sesi ini.</div>
-    <div class="ds-warn-actions">
-      <button onclick="dashWarnBatalkan()" class="ds-warn-btn ds-warn-btn--cancel">← Kembali Isi</button>
-      <button onclick="dashWarnLanjut()" class="ds-warn-btn ds-warn-btn--ok">Lewati Asesmen</button>
-    </div>
-  </div>` : '';
-
   return `
-  ${warnHTML}
-  <div class="ds-card ds-card--overflow">
-    ${_buildAsesmenPaginated()}
+  <div class="ds-card" style="text-align:center;padding:32px 16px;">
+    <div style="font-size:32px;margin-bottom:12px">📋</div>
+    <div style="font-weight:500;margin-bottom:8px">
+      Penilaian dicatat saat mengajar
+    </div>
+    <div style="font-size:13px;opacity:0.6;line-height:1.6">
+      Gunakan tombol "Catat penilaian siswa" di layar
+      sesi mengajar untuk mencatat nilai proses siswa.
+      Hasil penilaian bisa diunduh di menu Nilai → Unduh & Cetak.
+    </div>
   </div>`;
 }
 
@@ -1234,9 +1229,23 @@ async function _doSelesaiSesi() {
       rombel_nama : rombel.nama,
       jumlah_siswa: totalH,
       kendala     : _skenario.kendala || null,
+      mood        : _skenario.mood    || null,
     });
   } catch (err) {
     console.warn('[DASHBOARD] jejak.log gagal:', err.message);
+  }
+
+  if (tp?.nomor) {
+    try {
+      await db.set('teacher_data', `progress_tp_${tp.nomor}`, {
+        status      : 'selesai',
+        rombel_id   : rombel?.id   || null,
+        rombel_nama : rombel?.nama || null,
+        taught_at   : Date.now(),
+      });
+    } catch (e) {
+      console.warn('[DASHBOARD] progress_tp write gagal:', e.message);
+    }
   }
 
   const _ringkasan = { rombel: rombel.nama, tp: tp.nomor, tpNama: tp.nama, hadir: totalH, siswa: total, dinilai };
@@ -1491,6 +1500,7 @@ async function _onSesiDone(hasil) {
   srUnmount();
   _skenario.stepIndex = 6;
   _skenario.kendala   = hasil.kendala || null;
+  _skenario.mood      = hasil.mood    || null;
   if (_container) _container.innerHTML = _buildSesiHTML();
 }
 

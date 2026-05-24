@@ -75,6 +75,7 @@ async function log(tpNomor, tpNama, action, note, extra) {
     kendala     : extra?.kendala || null,
     rombel_nama : extra?.rombel_nama  || null,
     jumlah_siswa: extra?.jumlah_siswa ?? null,
+    mood        : extra?.mood         || null,
     taught_at   : now.toISOString(),
     synced      : false,
   };
