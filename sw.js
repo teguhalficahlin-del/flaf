@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v57';          // ← pwa-hardening: precache sesi-runtime + dashboard/nilai css
+const CACHE_VERSION  = 'flaf-v58';          // ← precache docs/output-v5 TP01-14
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -36,6 +36,22 @@ const APP_SHELL = [
   './data/index.js',
   './data/fase-a.js',
   './data/printables.js',
+
+  // docs/output-v5 — TP01–14 (kelas 1 & 2)
+  './docs/output-v5/tp-01-v5.js',
+  './docs/output-v5/tp-02-v5.js',
+  './docs/output-v5/tp-03-v5.js',
+  './docs/output-v5/tp-04-v5.js',
+  './docs/output-v5/tp-05-v5.js',
+  './docs/output-v5/tp-06-v5.js',
+  './docs/output-v5/tp-07-v5.js',
+  './docs/output-v5/tp-08-v5.js',
+  './docs/output-v5/tp-09-v5.js',
+  './docs/output-v5/tp-10-v5.js',
+  './docs/output-v5/tp-11-v5.js',
+  './docs/output-v5/tp-12-v5.js',
+  './docs/output-v5/tp-13-v5.js',
+  './docs/output-v5/tp-14-v5.js',
 
   // printables images — TP01
   './assets/images/printables/tp01-good-morning.png',
