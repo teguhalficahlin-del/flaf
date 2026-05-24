@@ -1,0 +1,378 @@
+TP 06 — SHAPES
+Tema: Dunia di Sekitar Kita
+Total layar: 14 (termasuk Layar 0)
+
+PERSIAPAN MEDIA:
+- Kartu bentuk berwarna x6 (circle/square/triangle/rectangle/star/heart)
+- Tidak perlu benda tambahan — bentuk sudah ada di kelas
+  (papan tulis = rectangle, jam = circle, pintu = rectangle)
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 0 — PRE-OPENING · PEMBUKA KELAS
+⚪ Reset
+
+AKSI: Berdiri di depan kelas. Kartu bentuk belum ditunjukkan. Tunggu semua duduk tenang.
+
+UCAP: "Good morning, everyone! How are you today?"
+
+[Tunggu respons kelas]
+
+"I'm fine, thank you! Today — shapes are everywhere! Are you ready?"
+
+[Tunggu respons — berdiri diam jika kelas belum fokus]
+
+⚡ Cue kritis: Layar ini pendek dan wajib. Jangan tunjukkan kartu atau mulai tunjuk benda di kelas sebelum Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 1 — PEMBUKA · BENTUK DI SEKITAR KELAS
+🟡 Focused
+
+AKSI: Tunggu semua duduk tenang.
+
+UCAP: "Good morning!"
+"Shapes are everywhere!"
+
+AKSI: Tunjuk papan tulis — gerakkan tangan membentuk persegi panjang di udara.
+
+UCAP: "Look — the board. Rectangle!"
+
+AKSI: Tunjuk jam dinding — gerakkan tangan membentuk lingkaran.
+
+UCAP: "The clock. Circle!"
+
+AKSI: Tunjuk pintu.
+
+UCAP: "The door — what shape?"
+"Show me with your hands!"
+
+→ Siswa bentuk tangan → guru konfirmasi: "Yes — rectangle!"
+
+⚡ Cue kritis: Gesture tangan bentuk dilakukan bersamaan dengan menyebut nama — sebelum kartu dikeluarkan. Tunggu siswa bentuk tangan sendiri saat "what shape?" sebelum konfirmasi.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 2 — PEMBUKA · JEMBATAN KE INTI
+⚪ Reset
+
+AKSI: Ambil kartu bentuk pertama. Tunjuk ke kelas.
+
+UCAP: "Today — six shapes!"
+"Let us see them all."
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 3 — INTI · KARTU BENTUK
+🟡 Focused
+
+AKSI: Tempel kartu di papan — dua batch.
+
+👂 LISTEN FIRST — BATCH 1
+
+UCAP: "Circle." [bentuk tangan bulat — pause 1 detik]
+"Square." [bentuk tangan kotak — pause 1 detik]
+"Triangle." [bentuk tangan segitiga — pause 1 detik]
+
+🗣 TOGETHER
+
+→ Siswa: "Circle! Square! Triangle!"
+
+UCAP: "Hands down. Look." [freeze mini 3 detik]
+
+👂 LISTEN FIRST — BATCH 2
+
+UCAP: "Rectangle." [bentuk tangan persegi panjang — pause 1 detik]
+"Star." [bentuk tangan bintang — pause 1 detik]
+"Heart." [bentuk tangan hati — pause 1 detik]
+
+🗣 TOGETHER
+
+→ Siswa: "Rectangle! Star! Heart!"
+
+🗣 FULL 6
+
+UCAP: "All together!"
+
+→ Siswa: "Circle! Square! Triangle! Rectangle! Star! Heart!"
+
+🔁 Putaran kedua: "Slow voice!"
+
+BANTUAN ▸ Jika diam: bentuk tangan + ucap "Cir-..." menggantung → tunggu.
+BANTUAN ▸ Jika salah: bentuk tangan lebih jelas → model ulang.
+
+⚡ Cue kritis: Pause 1 detik setelah setiap bentuk saat modeling. Freeze mini 3 detik antara BATCH 1 dan BATCH 2. Slow voice menjaga artikulasi lebih baik dari whisper.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 4 — INTI · DRILL + SURPRISE CARDS
+🟠 Active
+
+AKSI: Tunjuk kartu kiri ke kanan — satu putaran predictable.
+
+UCAP: "What shape?" [siswa jawab bersama]
+
+AKSI: Sebelum surprise:
+→ "Hands on knees."
+→ "Eyes ready."
+[Reset 3 detik]
+
+UCAP: "Now — surprise cards!"
+
+AKSI: Tunjuk 4–5 kartu acak cepat.
+🔁 Sesekali putar kartu atau ubah tinggi saat menunjuk.
+
+BANTUAN ▸ Jika diam: bentuk tangan → ucap suku kata pertama → tunggu.
+
+⚡ Cue kritis: Sesekali putar atau ubah tinggi kartu — cegah siswa hafal pola gerak guru, bukan bentuknya.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 5 — INTI · RESET + ATURAN TEBAK GAMBAR
+⚪ Reset
+
+AKSI: Tepuk tangan sekali.
+→ "Hands down. Eyes on me."
+
+UCAP: "Now — a guessing game!" [sambil bicara — gambar bentuk di udara sebagai gesture visual instruksi]
+"I draw slowly. You guess."
+"Hands up. Mouth closed."
+
+AKSI: Demo aturan:
+→ Angkat tangan sambil tutup mulut → "Like this."
+
+AKSI: Demo permainan:
+→ Gambar lingkaran perlahan → siswa angkat tangan diam → pilih siswa → siswa jawab.
+
+UCAP: "Ready?"
+
+⚠ DARURAT: Waktu ≤10 menit → lewati tebak gambar, lanjut ke Layar 7 (Warna + Bentuk).
+
+⚡ Cue kritis: Gambar bentuk di udara sambil ucapkan instruksi — gesture visual membantu pemahaman. Demo aturan dan demo permainan wajib dilakukan sebelum mulai.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 6 — INTI · TEBAK GAMBAR
+🟠 Active
+
+AKSI: Gambar bentuk perlahan — satu garis per detik.
+🔁 4–5 bentuk saja.
+
+UCAP: "What is it?"
+
+→ Siswa angkat tangan → jawab nama bentuk.
+
+AKSI: Sesekali berhenti → lihat kelas → pilih siswa → baru lanjut gambar.
+
+AKSI: Setelah selesai — reset sebelum masuk Layar 7:
+→ "Stand still."
+→ "Deep breath."
+→ "Sit nicely."
+[Reset 5 detik]
+
+BANTUAN ▸ Jika tidak ada yang menjawab: selesaikan gambar → bentuk tangan → tunggu.
+BANTUAN ▸ Jika chaos: "Hands up. Mouth closed." → reset → lanjut.
+
+⚡ Cue kritis: Prioritas: circle, triangle, square — paling mudah dikontrol sambil awasi kelas. Heart opsional — gunakan hanya jika kelas masih terkendali. Berhenti sesekali dan lihat kelas sebelum lanjut gambar.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 7 — INTI · WARNA + BENTUK
+🟡 Focused
+
+AKSI: Tunjuk kartu bentuk berwarna di papan.
+
+UCAP: "Now — colour and shape!"
+
+AKSI: Ladder mini dulu:
+→ Tunjuk lingkaran merah → "Red circle." → siswa ulang.
+→ Guru model: "I see a red circle."
+
+→ Tunjuk kotak biru → "Blue square." → siswa ulang.
+→ Guru model: "I see a blue square."
+
+AKSI: Kartu ke-3/4 — tunjuk cepat:
+"Yellow triangle?" → biarkan siswa isi sendiri.
+[Kurangi support bertahap — tidak semua perlu full scaffold.]
+
+→ Siswa: "Red circle!" atau "I see a red circle!"
+[Target utama: dua kata (colour + shape) — kalimat penuh = bonus — terima jawaban partial.]
+
+BANTUAN ▸ Jika diam: tunjuk warna → "Red..." → tunjuk bentuk → "Circle..." → sambungkan.
+
+⚡ Cue kritis: Ladder mini dua kata dulu sebelum model full sentence. Kurangi scaffold bertahap di kartu ke-3/4. Target utama dua kata: colour + shape.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 8 — INTI · CARI BENTUK DI TAS
+🟡 Focused
+
+UCAP: "Open bag slowly."
+"One thing only."
+"No talking."
+"Close the bag."
+"Freeze. Bag down."
+[Tas harus ditutup dan diletakkan sebelum lanjut]
+
+AKSI: Guru demo dulu:
+"My eraser — rectangle!"
+
+UCAP: "What shape is it?"
+"Best shape — closest shape." [terima jawaban paling dekat untuk benda ambigu — jangan debat]
+
+→ Siswa: "[Bentuk]!" [satu kata bentuk sudah cukup]
+
+BANTUAN ▸ Jika diam: tunjuk benda siswa → bentuk tangan → ucap suku kata pertama → tunggu.
+BANTUAN ▸ Jika tidak tahu: tunjuk kartu yang mirip di papan → ajak pilih.
+
+⚡ Cue kritis: Tas harus ditutup dan diletakkan sebelum lanjut — fokus ke speaking. Guru demo dulu sebelum siswa cari benda. Terima closest shape untuk benda ambigu — jangan debat.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 9 — INTI · DIFERENSIASI
+🟡 Focused
+
+AKSI: "Show me your empty hands."
+"Eyes here."
+"Turn to your partner."
+
+UCAP: "Small voice." [guru model volume kecil]
+
+AKSI: Demo switch 10 detik:
+→ A bicara → "Switch." → B bicara.
+
+UCAP: "One turn each only."
+"Show one thing. Say the shape. Switch."
+"3… 2… 1… eyes here."
+
+Diferensiasi:
+- Need Help: satu kata saja "Circle!" — boleh lihat kartu di papan — guru bantu bentuk tangan.
+- Ready: kalimat penuh "This is my eraser. It is a rectangle." — tambah warna "My red eraser is a rectangle." — tanya partner "What shape is it?"
+
+⚡ Cue kritis: Demo switch A→B sebelum mulai. Aktivitas ini hanya 30–45 detik — jaga tempo.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 10 — PENUTUP · REVIEW BENTUK DI KELAS
+🟠 Active
+
+AKSI: Tunjuk benda di kelas — variasi pola respons dan tempo.
+🔁 5–6 benda. Pola: cepat → cepat → pause → cepat lagi.
+
+UCAP: "What shape?" [siswa jawab lisan — cepat]
+"Find rectangle!" [siswa tunjuk — cepat]
+[Pause 2 detik]
+"Show me circle!" [siswa tunjuk — lanjut]
+
+BANTUAN ▸ Jika diam: bentuk tangan → ucap suku kata pertama → tunggu.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 11 — PENUTUP · REFLEKSI
+🔵 Calm
+
+AKSI: Tunjuk kartu bentuk di papan.
+
+UCAP: "Which shape do you like best?"
+"Point to a card!"
+
+AKSI: Guru demo: tunjuk kartu bintang → "I like the star."
+
+→ Siswa tunjuk satu kartu favorit — cukup menunjuk, tidak wajib ucapkan.
+
+BANTUAN ▸ Jika bingung: tunjuk dua kartu → "This one? Or this one?"
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 12 — PENUTUP · PENUTUP KELAS
+🔵 Calm
+
+AKSI: "Hands down. Quiet voice."
+Lambaikan tangan.
+
+UCAP: "Excellent! You know your shapes!"
+"Soft goodbye..." [guru ucap pelan → siswa ikut]
+"Goodbye, everyone! See you next time!"
+
+🗣 TOGETHER
+
+→ Siswa: "Goodbye, teacher! See you!"
+
+BANTUAN ▸ Jika diam: lambai tangan → "Good-bye..." menggantung.
+
+⚡ Cue kritis: Ucapkan "Soft goodbye" dulu sebelum chorus — set volume penutup yang tenang.
+
+════════════════════════════════════════════════════════════════
+
+LAYAR 13 — PENUTUP SESI · SELESAI
+🔵 Calm
+
+AKSI: Kumpulkan dan simpan semua material:
+→ Kumpulkan kartu bentuk
+→ Siswa tutup tas
+
+AKSI: Catat siswa yang:
+→ Kesulitan bentuk — triangle/rectangle sering tertukar
+→ Tidak bisa identifikasi bentuk di benda nyata
+→ Belum bisa gabung warna + bentuk
+
+════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST SELESAI TP 06
+[ ] Kartu bentuk berwarna x6 (circle/square/triangle/rectangle/star/heart) tersedia sebelum kelas masuk
+[ ] Kartu bentuk belum ditunjukkan saat Layar 0
+[ ] Layar 0 dilakukan sebelum kelas resmi dimulai
+[ ] Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam (Layar 0)
+[ ] Gesture tangan bentuk dilakukan bersamaan dengan menyebut nama — sebelum kartu (Layar 1)
+[ ] Tunggu siswa bentuk tangan sendiri saat "what shape?" sebelum konfirmasi (Layar 1)
+[ ] Pause 1 detik setelah setiap bentuk saat modeling BATCH 1 dan BATCH 2 (Layar 3)
+[ ] Freeze mini 3 detik antara BATCH 1 dan BATCH 2 (Layar 3)
+[ ] Putaran "Slow voice" dilakukan setelah Full 6 (Layar 3)
+[ ] Sesekali putar atau ubah tinggi kartu saat surprise — cegah hafal pola gerak (Layar 4)
+[ ] Demo aturan dan demo permainan tebak gambar dilakukan sebelum mulai (Layar 5)
+[ ] Jika waktu ≤10 menit saat masuk Layar 5: lewati tebak gambar, lanjut ke Layar 7
+[ ] Tebak gambar dibatasi 4–5 bentuk saja (Layar 6)
+[ ] Prioritas tebak gambar: circle/triangle/square — heart opsional (Layar 6)
+[ ] Berhenti sesekali dan lihat kelas sebelum lanjut gambar (Layar 6)
+[ ] Reset 5 detik di akhir Layar 6 sebelum masuk Layar 7 (Layar 6)
+[ ] Ladder mini dua kata dulu sebelum model full sentence (Layar 7)
+[ ] Kurangi scaffold bertahap di kartu ke-3/4 (Layar 7)
+[ ] Tas ditutup dan diletakkan sebelum siswa lanjut (Layar 8)
+[ ] Guru demo dulu sebelum siswa cari bentuk di tas (Layar 8)
+[ ] Terima closest shape untuk benda ambigu — jangan debat (Layar 8)
+[ ] "Small voice" dimodelkan sebelum partner practice (Layar 9)
+[ ] Demo switch A→B sebelum partner practice dimulai (Layar 9)
+[ ] Diferensiasi dibatasi 30–45 detik (Layar 9)
+[ ] Review dibatasi 5–6 benda — pola: cepat → cepat → pause → cepat lagi (Layar 10)
+[ ] "Soft goodbye" dimodelkan sebelum chorus penutup (Layar 12)
+[ ] Kumpulkan kartu bentuk setelah sesi selesai
+[ ] Siswa tutup tas setelah sesi selesai
+[ ] Catat siswa yang kesulitan bentuk (triangle/rectangle tertukar)
+[ ] Catat siswa yang tidak bisa identifikasi bentuk di benda nyata
+[ ] Catat siswa yang belum bisa gabung warna + bentuk
+
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 ⚪ → L3 🟡 → L4 🟠 → L5 ⚪ → L6 🟠 →
+L7 🟡 → L8 🟡 → L9 🟡 → L10 🟠 → L11 🔵 → L12 🔵
+
+Prinsip: satu instruksi — satu aksi — satu target.
+
+Risiko pacing:
+· L3: pause 1 detik setelah tiap bentuk saat modeling
+· L4: sesekali putar atau ubah tinggi kartu — cegah hafal pola gerak
+· L6: prioritas circle/triangle/square — heart opsional
+      berhenti sesekali, lihat kelas sebelum lanjut gambar
+· L7: ladder mini dulu (dua kata) — kurangi scaffold bertahap di kartu ke-3/4
+· L8: tas harus ditutup — terima closest shape untuk benda ambigu
+· L9: demo switch sebelum mulai — one turn each only
+· L10: pola cepat → cepat → pause → cepat lagi
+
+Teacher autonomy:
+· Persingkat L3 jika kelas sudah kenal bentuk
+· Skip L6 jika waktu mepet
+· Skip L9 jika waktu terbatas

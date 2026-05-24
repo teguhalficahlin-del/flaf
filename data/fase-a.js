@@ -11,20 +11,20 @@
  * =============================================================
  */
 
-import TP_01 from '../docs/fase-1-spec/tp-01-v5.js';
-import TP_02 from '../docs/sesi-m1/tp-02-v5.js';
-import TP_03 from '../docs/sesi-m1/tp-03-v5.js';
-import TP_04 from '../docs/fase-3-spec/tp-04-v5.js';
-import TP_05 from '../docs/sesi-m2/tp-05-v5.js';
-import TP_06 from '../docs/sesi-m2/tp-06-v5.js';
-import TP_07 from '../docs/sesi-m3/tp-07-v5.js';
-import TP_08 from '../docs/sesi-m3/tp-08-v5.js';
-import TP_09 from '../docs/sesi-m4/tp-09-v5.js';
-import TP_10 from '../docs/sesi-m5/tp-10-v5.js';
-import TP_11 from '../docs/sesi-m6/tp-11-v5.js';
-import TP_12 from '../docs/sesi-m7/tp-12-v5.js';
-import TP_13 from '../docs/sesi-m8/tp-13-v5.js';
-import TP_14 from '../docs/sesi-m9/tp-14-v5.js';
+import TP_01 from '../docs/output-v5/tp-01-v5.js';
+import TP_02 from '../docs/output-v5/tp-02-v5.js';
+import TP_03 from '../docs/output-v5/tp-03-v5.js';
+import TP_04 from '../docs/output-v5/tp-04-v5.js';
+import TP_05 from '../docs/output-v5/tp-05-v5.js';
+import TP_06 from '../docs/output-v5/tp-06-v5.js';
+import TP_07 from '../docs/output-v5/tp-07-v5.js';
+import TP_08 from '../docs/output-v5/tp-08-v5.js';
+import TP_09 from '../docs/output-v5/tp-09-v5.js';
+import TP_10 from '../docs/output-v5/tp-10-v5.js';
+import TP_11 from '../docs/output-v5/tp-11-v5.js';
+import TP_12 from '../docs/output-v5/tp-12-v5.js';
+import TP_13 from '../docs/output-v5/tp-13-v5.js';
+import TP_14 from '../docs/output-v5/tp-14-v5.js';
 import TP_15 from '../docs/sesi-m10/tp-15-v5.js';
 import TP_16 from '../docs/sesi-m11/tp-16-v5.js';
 import TP_17 from '../docs/sesi-m12/tp-17-v5.js';
