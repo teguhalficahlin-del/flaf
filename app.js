@@ -162,18 +162,37 @@ function _onScreenEnter(screenId) {
 
     case 's-jadwal': {
       const kurRoot = document.getElementById('kurikulum-root');
+      const tpNomor = opts?.tpNomor ?? null;
+      const _scrollToTP = (nomor) => {
+        if (!nomor) return;
+        const tpId = `tp-${String(nomor).padStart(2, '0')}`;
+        const el = document.getElementById(`kur-${tpId}`);
+        if (!el) return;
+        // Buka accordion jika tertutup
+        const head = el.querySelector('.kur-tp-head');
+        const body = document.getElementById(`kur-${tpId}-body`);
+        if (head && body && body.hidden) head.click();
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      };
       if (kurRoot && !kurRoot.dataset.rendered) {
         kurRoot.dataset.rendered = 'true';
         nilai.getKelasList()
           .then(kelasList => {
-            const defaultKelas = (kelasList && kelasList.length > 0)
-              ? (kelasList[0].tingkat || 1)
-              : 'semua';
+            const defaultKelas = tpNomor
+              ? (opts?.kelas ?? 1)
+              : (kelasList && kelasList.length > 0)
+                ? (kelasList[0].tingkat || 1)
+                : 'semua';
             renderKurikulum({ onDownloadPDF: downloadPDF, defaultKelas });
+            setTimeout(() => _scrollToTP(tpNomor), 300);
           })
           .catch(() => {
             renderKurikulum({ onDownloadPDF: downloadPDF });
+            setTimeout(() => _scrollToTP(tpNomor), 300);
           });
+      } else {
+        // Sudah rendered — langsung scroll
+        setTimeout(() => _scrollToTP(tpNomor), 100);
       }
       break;
     }

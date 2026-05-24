@@ -363,7 +363,7 @@ function _buildTabMateri(tp) {
     <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
       <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">Tujuan Akhir Fase A</div>
       <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.5;">Peserta didik menggunakan bahasa Inggris sederhana untuk berinteraksi dalam situasi sosial dan kelas.</div>
-      <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal')" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
+      <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal',{tpNomor:${tp.nomor},kelas:${tp.kelas||1}})" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
     </div>`;
 
   return `
