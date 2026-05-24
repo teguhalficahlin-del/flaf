@@ -9,7 +9,7 @@
  *   - Rekap Kehadiran
  */
 
-import { nilai }    from '../storage/nilai.js';
+import { nilai, getSesiFormatifTP } from '../storage/nilai.js';
 import FASE_A       from '../data/fase-a.js';
 import { db }       from '../storage/db.js';
 import { jejak }    from '../storage/jejak.js';
@@ -19,12 +19,13 @@ import { generatePDFRekap, generatePDFRekap2, generatePDFRapor } from '../module
 // --- STATE -------------------------------------------------------------------
 
 let _state = {
-  view     : 'rombel',
-  kelasId  : null,
-  kelasNama: null,
-  tingkat  : 1,
-  tpNomor  : null,
-  tpNama   : null,
+  view      : 'rombel',
+  kelasId   : null,
+  kelasNama : null,
+  tingkat   : 1,
+  tpNomor   : null,
+  tpNama    : null,
+  formatifTP: null,   // nomor TP yang sedang dibuka di detail formatif
 };
 
 let _container   = null;
@@ -92,6 +93,7 @@ async function _render() {
   if (_state.view === 'rapor')  await _renderRapor(token);
   if (_state.view === 'unduh')    await _renderUnduh(token);
   if (_state.view === 'formatif') await _renderFormatif(token);
+  if (_state.view === 'formatif-detail') await _renderFormatifDetail(token);
 }
 
 // --- LEVEL 1: DAFTAR ROMBEL --------------------------------------------------
@@ -213,11 +215,13 @@ async function _renderFormatif(token) {
   if (token !== _renderToken) return;
 
   const rowsHTML = tpList.map(tp => `
-    <div class="nv-tp-item" style="border-top:1px solid rgba(212,174,58,.1);">
+    <div class="nv-tp-item" style="border-top:1px solid rgba(212,174,58,.1);cursor:pointer;"
+         onclick="nilaiBukaFormatifTP(${tp.nomor})">
       <div style="flex:1;min-width:0;">
         <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
         <div class="nv-tp-name">${_escape(tp.nama)}</div>
       </div>
+      <div style="color:rgba(212,174,58,.5);font-size:14px;flex-shrink:0;">›</div>
     </div>`).join('');
 
   _container.innerHTML = `
@@ -1263,4 +1267,75 @@ window.nilaiDownloadRekap2 = async function(kelasId, kelasNama, tingkat) {
     console.error('[NILAI] download rekap2 error:', err);
     alert('Gagal membuat PDF rekap akhir.');
   }
+};
+
+async function _renderFormatifDetail(token) {
+  if (_state.view !== 'formatif-detail') return;
+  const tpNomor  = _state.formatifTP;
+  const sesiList = await getSesiFormatifTP(_state.kelasId, tpNomor);
+  const allTP    = FASE_A.tujuan_pembelajaran || [];
+  const tp       = allTP.find(t => t.nomor === tpNomor);
+  const tpNama   = tp ? tp.nama : `TP ${tpNomor}`;
+
+  if (sesiList.length === 0) {
+    _container.innerHTML = `
+    <div class="nv-wrap">
+      <div class="nv-card nv-card--inset" style="padding:14px 16px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <button onclick="nilaiBackToFormatif()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Kembali</button>
+          <div class="ds-section-label">TP ${String(tpNomor).padStart(2,'0')} — ${_escape(tpNama)}</div>
+        </div>
+      </div>
+      <div class="nv-card nv-card--inset" style="padding:24px 16px;text-align:center;color:rgba(255,255,255,.4);font-size:13px;">
+        Belum ada penilaian tercatat untuk TP ini.
+      </div>
+    </div>`;
+    return;
+  }
+
+  const sesiHTML = sesiList.map(sesi => `
+    <div class="nv-card nv-card--inset" style="margin-bottom:8px;">
+      <div style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);">
+        <span style="font-size:12px;font-weight:700;color:rgba(212,174,58,.8);">Sesi ${sesi.sesiIdx}</span>
+        <span style="font-size:11px;color:rgba(255,255,255,.4);margin-left:8px;">${_escape(sesi.tanggal)}</span>
+        <span style="font-size:11px;color:rgba(255,255,255,.3);margin-left:6px;">(${sesi.mode === 'cepat' ? 'Cepat' : 'Detail'})</span>
+      </div>
+      <div style="padding:8px 14px;">
+        ${sesi.siswa.map(s => {
+          const nilaiTeks = sesi.mode === 'cepat'
+            ? (s.capaian !== null ? `${s.capaian}` : '—')
+            : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
+          const perilakuTeks = s.perilaku ? ` · ${s.perilaku}` : '';
+          return `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);">
+            <div style="font-size:12px;color:rgba(255,255,255,.75);">${s.nomor}. ${_escape(s.nama)}</div>
+            <div style="font-size:12px;color:rgba(212,174,58,.9);white-space:nowrap;">${nilaiTeks}<span style="color:rgba(255,255,255,.35);font-size:11px;">${_escape(perilakuTeks)}</span></div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  _container.innerHTML = `
+  <div class="nv-wrap">
+    <div class="nv-card nv-card--inset" style="padding:14px 16px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <button onclick="nilaiBackToFormatif()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Kembali</button>
+        <div class="ds-section-label">TP ${String(tpNomor).padStart(2,'0')} — ${_escape(tpNama)}</div>
+      </div>
+    </div>
+    ${sesiHTML}
+  </div>`;
+}
+
+window.nilaiBackToFormatif = function() {
+  _state.view       = 'formatif';
+  _state.formatifTP = null;
+  _render();
+};
+
+window.nilaiBukaFormatifTP = async function(tpNomor) {
+  _state.view       = 'formatif-detail';
+  _state.formatifTP = tpNomor;
+  _render();
 };

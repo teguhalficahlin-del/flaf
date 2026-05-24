@@ -373,6 +373,51 @@ async function getRekapFormatifTP(kelasId, tpNomor) {
   return hasil;
 }
 
+/**
+ * Ambil data penilaian per sesi mentah untuk satu TP satu kelas.
+ * Return: Array sesi, tiap sesi berisi tanggal + array nilai per siswa.
+ */
+export async function getSesiFormatifTP(kelasId, tpNomor) {
+  const siswaList = await getSiswaList(kelasId);
+  const STORE     = 'penilaian_log';
+  let allRecords  = [];
+  try {
+    const semua = await db.getAll(STORE);
+    allRecords  = semua
+      .map(e => e.value)
+      .filter(v => v && v.kelasId === kelasId && String(v.tpNomor) === String(tpNomor));
+  } catch (e) {
+    console.warn('[NILAI] getSesiFormatifTP gagal:', e.message);
+  }
+
+  // Grup per sesiId
+  const perSesi = {};
+  for (const rec of allRecords) {
+    if (!perSesi[rec.sesiId]) perSesi[rec.sesiId] = { sesiId: rec.sesiId, createdAt: rec.createdAt, mode: rec.mode, entries: {} };
+    perSesi[rec.sesiId].entries[rec.siswaId] = rec;
+  }
+
+  // Sort sesi by createdAt ascending
+  const sesiList = Object.values(perSesi).sort((a, b) => a.createdAt - b.createdAt);
+
+  // Map ke format tampilan
+  return sesiList.map((sesi, idx) => ({
+    sesiIdx  : idx + 1,
+    tanggal  : new Date(sesi.createdAt).toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }),
+    mode     : sesi.mode,
+    siswa    : siswaList.map(s => ({
+      id      : s.id,
+      nama    : s.nama,
+      nomor   : s.nomor,
+      capaian : sesi.entries[s.id]?.capaian ?? null,
+      l       : sesi.entries[s.id]?.l       ?? null,
+      s       : sesi.entries[s.id]?.s       ?? null,
+      r       : sesi.entries[s.id]?.r       ?? null,
+      perilaku: sesi.entries[s.id]?.perilaku ?? null,
+    })),
+  }));
+}
+
 // --- REKAP -------------------------------------------------------------------
 
 async function getRekapSemua() {
@@ -513,6 +558,7 @@ export const nilai = {
   getRekapSemua,
   getRekapTP,
   getRekapFormatifTP,
+  getSesiFormatifTP,
   getRekapAkhir,
   setNilaiSAS,
   getNilaiSAS,
@@ -543,6 +589,7 @@ export {
   getRekapSemua,
   getRekapTP,
   getRekapFormatifTP,
+  getSesiFormatifTP,
   getRekapAkhir,
   setNilaiSAS,
   getNilaiSAS,
