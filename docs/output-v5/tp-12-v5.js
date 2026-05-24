@@ -14,7 +14,7 @@ const TP_12 = {
 
   id       : 'tp-12',
   nomor    : 12,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Body Parts',
   tema     : 'Tubuh dan Kesehatan',
   deskripsi: '',         // TODO: isi manual

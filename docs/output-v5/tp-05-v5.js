@@ -14,7 +14,7 @@ const TP_05 = {
 
   id       : 'tp-05',
   nomor    : 5,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Colours',
   tema     : 'Dunia di Sekitar Kita',
   deskripsi: '',         // TODO: isi manual

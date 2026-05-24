@@ -14,7 +14,7 @@ const TP_02 = {
 
   id       : 'tp-02',
   nomor    : 2,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Introducing Myself',
   tema     : 'Interaksi Sosial Dasar',
   deskripsi: '',         // TODO: isi manual

@@ -14,7 +14,7 @@ const TP_09 = {
 
   id       : 'tp-09',
   nomor    : 9,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Animals',
   tema     : 'Alam dan Lingkungan',
   deskripsi: '',         // TODO: isi manual

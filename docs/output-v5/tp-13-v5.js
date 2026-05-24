@@ -14,7 +14,7 @@ const TP_13 = {
 
   id       : 'tp-13',
   nomor    : 13,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Weather and Seasons',
   tema     : 'Alam dan Lingkungan',
   deskripsi: '',         // TODO: isi manual

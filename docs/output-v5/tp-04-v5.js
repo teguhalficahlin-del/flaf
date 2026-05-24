@@ -14,7 +14,7 @@ const TP_04 = {
 
   id       : 'tp-04',
   nomor    : 4,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Numbers 1–20',
   tema     : 'Dunia di Sekitar Kita',
   deskripsi: '',         // TODO: isi manual

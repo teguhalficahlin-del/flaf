@@ -14,7 +14,7 @@ const TP_14 = {
 
   id       : 'tp-14',
   nomor    : 14,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'In the Classroom',
   tema     : 'Sekolah dan Benda-benda',
   deskripsi: '',         // TODO: isi manual

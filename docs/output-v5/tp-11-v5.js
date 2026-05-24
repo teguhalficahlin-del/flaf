@@ -14,7 +14,7 @@ const TP_11 = {
 
   id       : 'tp-11',
   nomor    : 11,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Daily Routines',
   tema     : 'Kehidupan Sehari-hari',
   deskripsi: '',         // TODO: isi manual

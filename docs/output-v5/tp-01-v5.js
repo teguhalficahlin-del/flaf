@@ -14,7 +14,7 @@ const TP_01 = {
 
   id       : 'tp-01',
   nomor    : 1,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Greetings & Farewells',
   tema     : 'Interaksi Sosial Dasar',
   deskripsi: '',         // TODO: isi manual

@@ -14,7 +14,7 @@ const TP_08 = {
 
   id       : 'tp-08',
   nomor    : 8,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'My House',
   tema     : 'Keluarga dan Rumah',
   deskripsi: '',         // TODO: isi manual

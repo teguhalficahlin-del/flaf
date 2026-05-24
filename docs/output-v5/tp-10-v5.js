@@ -14,7 +14,7 @@ const TP_10 = {
 
   id       : 'tp-10',
   nomor    : 10,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Food and Drinks',
   tema     : 'Kehidupan Sehari-hari',
   deskripsi: '',         // TODO: isi manual

@@ -14,7 +14,7 @@ const TP_03 = {
 
   id       : 'tp-03',
   nomor    : 3,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 1,
   nama     : 'Classroom Instructions',
   tema     : 'Interaksi Sosial Dasar',
   deskripsi: '',         // TODO: isi manual
