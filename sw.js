@@ -31,6 +31,7 @@ const APP_SHELL = [
   './storage/jejak.js',
   './storage/nilai.js',
   './storage/presensi.js',
+  './storage/siswa-history.js',
 
   // data
   './data/index.js',
