@@ -589,7 +589,6 @@ export {
   getRekapSemua,
   getRekapTP,
   getRekapFormatifTP,
-  getSesiFormatifTP,
   getRekapAkhir,
   setNilaiSAS,
   getNilaiSAS,
