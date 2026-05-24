@@ -38,7 +38,6 @@ import { logger } from '../storage/logger.js';
 const SCREEN        = 's-jadwal';
 const PDF_BASE_PATH = './pdf/';               // relative — benar di GitHub Pages /flaf/
 const CACHE_NAME    = 'flaf-pdf-v1';              // harus sinkron dengan sw.js PDF_CACHE_NAME
-const VALID_MIME    = 'application/pdf';
 const MAX_PDF_SIZE  = 10 * 1024 * 1024;           // 10 MB — guard ukuran wajar
 
 // ----------------------------------------------------------
@@ -322,7 +321,7 @@ function _validateArgs(tpId, pdfFilename) {
     throw new Error('[FLAF] downloadPDF: tpId harus string non-kosong');
   }
   if (typeof pdfFilename !== 'string' || (!pdfFilename.endsWith('.pdf') && !pdfFilename.endsWith('.docx'))) {
-    throw new Error('[FLAF] downloadPDF: pdfFilename harus string berakhiran .pdf');
+    throw new Error('[FLAF] downloadPDF: pdfFilename harus string berakhiran .pdf atau .docx');
   }
   // Guard path traversal
   if (pdfFilename.includes('/') || pdfFilename.includes('..')) {
