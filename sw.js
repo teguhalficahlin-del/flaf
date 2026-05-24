@@ -257,7 +257,7 @@ const FONT_PATTERNS = [
   /fonts\.gstatic\.com/,
 ];
 
-const PDF_PATTERN = /\/pdf\/tp-\d{2}-v\d+\.pdf$/;
+const PDF_PATTERN = /\/pdf\/.*\.docx$/i;
 const MAX_PDF_VERSIONS = 2;
 
 // ============================================================
@@ -428,7 +428,6 @@ async function cacheFirstPDF(request) {
     const response = await fetch(request);
     if (response.ok) {
       await pdfCache.put(request, response.clone());
-      await cleanupOldPDFVersions(pdfCache, request.url);
     }
     return response;
   } catch {
@@ -439,38 +438,7 @@ async function cacheFirstPDF(request) {
   }
 }
 
-// ============================================================
-// PDF CLEANUP
-// ============================================================
-async function cleanupOldPDFVersions(cache, currentUrl) {
-  try {
-    const match = currentUrl.match(/\/pdf\/(tp-\d{2})-v\d+\.pdf$/);
-    if (!match) return;
 
-    const baseName  = match[1];
-    const keys      = await cache.keys();
-    const versions  = keys
-      .map(req => req.url)
-      .filter(url => new RegExp(`/pdf/${baseName}-v(\\d+)\\.pdf$`).test(url))
-      .map(url => ({ url, version: parseInt(url.match(/v(\d+)\.pdf$/)[1]) }))
-      .sort((a, b) => b.version - a.version);
-
-    const toDelete = versions.slice(MAX_PDF_VERSIONS);
-    for (const item of toDelete) {
-      await cache.delete(item.url);
-    }
-
-    if (toDelete.length > 0) {
-      broadcastToClients({
-        type   : 'PDF_CLEANUP',
-        deleted: toDelete.map(i => i.url),
-        kept   : versions.slice(0, MAX_PDF_VERSIONS).map(i => i.url),
-      });
-    }
-  } catch (err) {
-    console.warn('[SW] PDF cleanup error:', err.message);
-  }
-}
 
 // ============================================================
 // PRECACHE ALL PDF
