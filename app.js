@@ -175,7 +175,6 @@ function _onScreenEnter(screenId) {
         setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
       };
       if (kurRoot && !kurRoot.dataset.rendered) {
-        kurRoot.dataset.rendered = 'true';
         nilai.getKelasList()
           .then(kelasList => {
             const defaultKelas = tpNomor
@@ -183,10 +182,12 @@ function _onScreenEnter(screenId) {
               : (kelasList && kelasList.length > 0)
                 ? (kelasList[0].tingkat || 1)
                 : 'semua';
+            kurRoot.dataset.rendered = 'true';
             renderKurikulum({ onDownloadPDF: downloadPDF, defaultKelas });
             setTimeout(() => _scrollToTP(tpNomor), 300);
           })
           .catch(() => {
+            kurRoot.dataset.rendered = 'true';
             renderKurikulum({ onDownloadPDF: downloadPDF });
             setTimeout(() => _scrollToTP(tpNomor), 300);
           });
