@@ -657,7 +657,7 @@ function _buildAsesmenPaginated() {
   const startIdx    = safePage * SISWA_PER_HALAMAN;
   const endIdx      = Math.min(startIdx + SISWA_PER_HALAMAN, total);
   const halaman     = siswaList.slice(startIdx, endIdx);
-  const dinilaiCount = _hitungSiswaDinilai();
+  const dinilaiCount = _hitungSiswaDinilai(_flow.logSetDinilai);
   const modeCepat   = _skenario.asesmenModeCepat || false;
 
   const navPrevDisabled = safePage <= 0;
@@ -802,7 +802,7 @@ function _buildSiswaCollapseItem(s) {
 
 // --- RE-RENDER STEPPER -------------------------------------------------------
 
-function _rerenderStep() {
+async function _rerenderStep() {
   const body = _container?.querySelector('#ds-step-body');
   const nav  = _container?.querySelector('#ds-step-nav');
   const ind  = _container?.querySelector('.ds-step-indicator');
@@ -853,6 +853,7 @@ function _rerenderStep() {
   if (body3)  body3.style.flex     = '';
   srUnmount();
 
+  if (step === 6) await _loadLogSetDinilai();
   body.innerHTML = _buildStepBody(tpData, step);
 
   if (ind) ind.outerHTML = _buildStepIndicator(step);
@@ -1035,7 +1036,7 @@ window.dashStepNext = async function() {
 
   // Step 5 (Asesmen): cek apakah ada nilai terisi
   if (step === 5) {
-    const dinilai = _hitungSiswaDinilai();
+    const dinilai = _hitungSiswaDinilai(_flow.logSetDinilai);
     const total   = (_flow.siswaList || []).length;
     if (total > 0 && dinilai === 0 && !_skenario.warnAsesmen) {
       _skenario.warnAsesmen = true;
@@ -1165,6 +1166,10 @@ window.dashSetStatus = function(siswaId, status) {
   }
 };
 
+window._refreshLogSetDinilai = async function() {
+  await _loadLogSetDinilai();
+};
+
 window.dashSelesaiSesi = async function() {
   _ttsStop();
 
@@ -1213,7 +1218,7 @@ async function _doSelesaiSesi() {
   const refleksi = _container?.querySelector('#sesi-refleksi')?.value?.trim() || null;
   const { tp, rombel } = _flow;
   const totalH = Object.values(_flow.statusMap).filter(v => v === 'H').length;
-  const dinilai = _hitungSiswaDinilai();
+  const dinilai = _hitungSiswaDinilai(_flow.logSetDinilai);
   const total   = (_flow.siswaList || []).length;
 
   if (Object.keys(_flow.statusMap).length > 0) {

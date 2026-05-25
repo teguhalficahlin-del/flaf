@@ -947,6 +947,9 @@ function _renderPenilaianOverlay() {
         }));
         await savePenilaian(kelasId, tpNomor, _state.sesiId, modePenilaian, entries);
         overlay.remove();
+        if (typeof window._refreshLogSetDinilai === 'function') {
+          await window._refreshLogSetDinilai();
+        }
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);
         if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
