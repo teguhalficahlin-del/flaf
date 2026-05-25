@@ -425,12 +425,14 @@ function _renderRunning() {
   const energiPillHTML = _energiPill(langkah.energi);
 
   // Teks segments
-  const teksHTML = _parseTeks(langkah.teks).map(seg =>
-    seg.jenis === 'ucap'
-      ? `<div class="sr-ucap-block"><div class="sr-ucap-label">UCAP</div>` +
-        `<div class="sr-ucap-teks">${_escape(seg.isi)}</div></div>`
-      : `<div class="sr-teks-biasa">${_escape(seg.isi)}</div>`
-  ).join('');
+  const teksHTML = _parseTeks(langkah.teks).map(seg => {
+    if (seg.jenis === 'ucap') {
+      return `<div class="sr-ucap-block"><div class="sr-ucap-label">UCAP</div>` +
+        `<div class="sr-ucap-teks">${_escape(seg.isi)}</div></div>`;
+    }
+    const paragraphs = seg.isi.split(/(?=Fase [A-Z]\s*[—–-])/).map(p => p.trim()).filter(Boolean);
+    return paragraphs.map(p => `<div class="sr-teks-biasa">${_escape(p)}</div>`).join('');
+  }).join('');
 
   // Panduan guru
   const cueHTML = langkah.cue ? `
