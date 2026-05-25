@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v61';          // ← bump: presensi fix, DARURAT batch, runtime teks, TP15-18 data
+const CACHE_VERSION  = 'flaf-v62';          // ← bump: fix duplicate export PDF, rewrite nilaiDownloadFormatif1 CSV per sesi
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
