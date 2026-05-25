@@ -29,6 +29,10 @@
 - **Sprint Lihat Kurikulum Fix SELESAI ✅ (Mei 2026)** — "Lihat Kurikulum lengkap →" kini navigasi ke TP dan kelas yang benar (commit `d4ea64c`)
 - **Sprint UX & Nilai Formatif SELESAI ✅ (Mei 2026)** — reorder menu, rename Sumatif Mid Semester, Nilai Formatif view-only, detail per sesi per siswa, auto-next penilaian, hapus toast precache (commit `179695d`)
 - **Sprint Offline Readiness Audit SELESAI ✅ (Mei 2026)** — siswa-history.js ditambah ke SW precache, PDF_PATTERN diupdate ke .docx, dead code dihapus, SW v60 (commit `4b382dc`)
+- **Sprint TTS Vocab Chip SELESAI ✅ (Mei 2026)** — vocab chip di layar Kurikulum kini memutar TTS via Web Speech API, event delegation, no window exposure (commit `f38ca3d`)
+- **Sprint Bug Fix — Presensi & Runtime SELESAI ✅ (Mei 2026)** — 7 bug fix di dashboard.js + sesi-runtime.js (commit `6f5218e`)
+- **Sprint Presensi Fix + DARURAT Batch + Runtime Teks + TP15–18 Data SELESAI ✅ (Mei 2026)** — presensi default H, nav fix, batch-convert.js rewrite DARURAT_RE, TP01–18 regenerated, teks Fase A/B/C split paragraf, data manual TP15–18 lengkap, SW v61 (commit `3f384c2`)
+- **Sprint CSV Download + SAS SELESAI ✅ (Mei 2026)** — rename label PDF→CSV, migrasi 4 fungsi download ke CSV, nilaiDownloadSAS baru, card Sumatif Akhir Semester di Unduh & Cetak (commit `f307eb9`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -167,16 +171,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-4b382dc  fix: hapus VALID_MIME stale + perbaiki error string di pdf-handler.js
-6f8aee4  fix: update PDF_PATTERN ke .docx + hapus cleanupOldPDFVersions (dead code)
-8e55c96  fix: tambah siswa-history.js ke SW precache + bump ke v60
-179695d  fix: hapus toast notifikasi precache PDF saat aktivasi
-6cdb0e9  fix: auto-next setelah pilih perilaku, bukan setelah pilih capaian
-7d7a0af  fix: remove duplicate export of getSesiFormatifTP
-4429d83  feat: nilai formatif detail per sesi per siswa
-460a68f  fix: hapus tombol Unduh PDF di Nilai Formatif — view only
-5122800  fix: rename Sumatif Lingkup Materi → Sumatif Mid Semester
-30d85a2  fix: reorder menu kelas — Nilai Formatif naik ke posisi 2
+f307eb9  fix: hapus duplicate export generatePDFKehadiran
+0d54dcf  feat: tambah download SAS CSV + card Sumatif Akhir Semester di Unduh & Cetak, update label PDF → CSV
+ef9e2eb  feat: migrasi semua fungsi download ke CSV di layar nilai
+38280cf  feat: generatePDFKehadiran via canvas + migrasi nilaiDownloadKehadiran dari jsPDF
+7f4a3e7  fix: rename Sumatif Lingkup Materi → Sumatif Mid Semester di layar nilai
+3f384c2  fix: bump SW v61
+15774b6  feat: isi data manual TP15-18 (kelas, indikator, vocab, persiapan, printables, pdf_ref)
+0388d14  fix: hitungSiswaDinilai gabungkan nilaiCache dan penilaian_log
+7393938  fix: statusMap diinisialisasi setelah siswaList terload
+1dff4ce  feat: pecah teks Fase A/B/C menjadi paragraf terpisah di runtime
 ```
 
 ## Struktur Folder Penting
@@ -212,13 +216,13 @@ FLAF/
 │       └── printables/     ← 136 PNG (TP 01-18)
 ├── docs/
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
-│   ├── output-v5/          ← tp-01..14-v5.js — generated batch converter (Mei 2026)
+│   ├── output-v5/          ← tp-01..18-v5.js — generated batch converter (Mei 2026)
 │   ├── sesi-m10/tp-15.js   ← langkah[] + field mode ✅
 │   ├── sesi-m11/tp-16.js   ← langkah[] + field mode ✅
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v59
+├── sw.js                   ← Service Worker v60
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -520,7 +524,60 @@ atau `closure_reinforcement` sebagai field runtime.
    - modules/pdf-handler.js: hapus konstanta VALID_MIME stale (tidak dipakai)
    - modules/pdf-handler.js: perbaiki error string _validateArgs (.pdf → .pdf atau .docx)
 
-⏳ LANGKAH BERIKUTNYA: —
+✅ SPRINT TTS VOCAB CHIP (Mei 2026) — f38ca3d, ba89e1d
+   - screens/kurikulum.js: _kurTtsStop + _kurTtsSpeak (Web Speech API, lang en-US, rate 0.9)
+   - Vocab chip: <span> → <button data-vocab="..."> + event delegation di _attachEventListeners
+   - screens/kurikulum.css: hover/active/kur-vocab-chip--playing states
+   - assets/images/printablessss/: 88 PNG typo folder dihapus (ba89e1d)
+
+✅ SPRINT PDF_REF FIX (Mei 2026) — 4859bd3, e30a3f8
+   - docs/output-v5/tp-01..14-v5.js: tambah root-level pdf_ref ke 14 file TP01–14
+   - screens/kurikulum.js: resolve pdfFilename via tp.pdf_ref || tp.media?.find()?.pdf_ref || null
+   - screens/kurikulum.js: button guard null — disabled + kur-pdf-btn--unavailable jika pdf_ref tidak ada
+   - pdf/Modul_Ajar_V3_TP15_Feelings_and_Emotions.docx + TP16: konten diperbarui (e30a3f8)
+
+✅ SPRINT BUG FIX — PRESENSI & RUNTIME (Mei 2026) — a0cbe43..6f5218e
+   - screens/dashboard.js: navigasi presensi → ‹ Halaman X/Y › (a0cbe43)
+   - screens/dashboard.js: reload nilaiCache sebelum hitung dinilai di dashSelesaiSesi (919bfc7)
+   - screens/sesi-runtime.js: _langkahPrev mundur ke fase sebelumnya jika langkahIdx=0 (011f4aa)
+   - screens/sesi-runtime.js: auto-next penilaian hanya jika capaian sudah diisi (0881d97)
+   - screens/sesi-runtime.js: nilai overlay persist via _state.nilaiDraft (0d242fc)
+   - screens/sesi-runtime.js: persist dan restore sesiId saat resume (b98b828)
+   - screens/sesi-runtime.js: log warning saat langkah null di _renderRunning (6f5218e)
+
+✅ SPRINT PRESENSI FIX + DARURAT BATCH + RUNTIME TEKS + TP15–18 DATA (Mei 2026) — 2beca0b..3f384c2
+   - screens/dashboard.js: presensi default H semua siswa saat sesi baru (2beca0b)
+   - screens/dashboard.js: nav paginasi presensi pindah ke atas list (2beca0b)
+   - screens/dashboard.js: tombol nav presensi fixed 40px, tidak stretch (6166fd8)
+   - tools/batch-convert.js: port parser dari converter.html ke Node.js CommonJS
+   - tools/batch-convert.js: DARURAT_RE fix — support em-dash (⚠ DARURAT —) selain colon
+   - tools/batch-convert.js: multi-line DARURAT continuation logic (lastWas flag)
+   - tools/batch-convert.js: extractManualFields() — preservasi kelas, vocab, pdf_ref, dll
+   - docs/output-v5/tp-01..18-v5.js: batch regenerated, darurat field terpisah dari teks (2fc27b3)
+   - screens/sesi-runtime.js: teks biasa dipecah per Fase A/B/C menjadi div terpisah (1dff4ce)
+   - screens/dashboard.js: statusMap diinisialisasi setelah siswaList terload (7393938)
+   - storage/nilai.js: getSiswaDinilaiFromLog() — query penilaian_log per kelas+TP (0388d14)
+   - screens/dashboard.js: _hitungSiswaDinilai gabungkan nilaiCache dan penilaian_log (0388d14)
+   - docs/output-v5/tp-15..18-v5.js: kelas, indikator, vocab, persiapan, printables, pdf_ref (15774b6)
+   - sw.js: bump CACHE_VERSION v60 → v61 (3f384c2)
+
+✅ SPRINT CSV DOWNLOAD + SAS (Mei 2026) — 7f4a3e7..f307eb9
+   - screens/nilai.js: rename "Sumatif Lingkup Materi" → "Sumatif Mid Semester" (3 occurrences) (7f4a3e7)
+   - modules/pdf-generator.js: generatePDFKehadiran() via canvas HTML5, PNG per halaman (38280cf)
+   - screens/nilai.js: nilaiDownloadKehadiran migrasi jsPDF → generatePDFKehadiran (38280cf)
+   - screens/nilai.js: _downloadCSV helper — BOM UTF-8, Blob + anchor click (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadFormatif1 → CSV detail L/S/R + CSV cepat dari penilaian_log (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadRekap1 dihapus — redundan (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadRapor → CSV (Sumatif Mid Semester, SAS, Rapor) (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadKehadiran → CSV (kolom TP{N} DD/MM, status H/S/I/A) (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadRekap2 → CSV (kolom per TP + Rerata) (ef9e2eb)
+   - screens/nilai.js: nilaiDownloadSAS baru → CSV via getRekapSAS() (0d54dcf)
+   - screens/nilai.js: card Sumatif Akhir Semester ditambah di Unduh & Cetak (0d54dcf)
+   - modules/pdf-generator.js: hapus duplicate export generatePDFKehadiran (f307eb9)
+
+⏳ LANGKAH BERIKUTNYA:
+   - Audit layar nilai
+   - Penyediaan soal ujian mid semester dan akhir semester
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
