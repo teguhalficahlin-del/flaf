@@ -901,7 +901,6 @@ async function _loadNilaiCache() {
 }
 
 async function _loadLogSetDinilai() {
-  console.log('[DEBUG loadLogSet] rombel:', _flow.rombel?.id, 'tp:', _flow.tp?.nomor, 'sesiId:', _flow.sesiId);
   _flow.logSetDinilai = await nilai.getSiswaDinilaiFromLog(
     _flow.rombel?.id, _flow.tp?.nomor, _flow.sesiId ?? undefined
   );
@@ -1055,11 +1054,6 @@ window.dashStepNext = async function() {
   if (_skenario.stepIndex === 5 && !_flow.nilaiCache) {
     await _loadNilaiCache();
   }
-  // Preload logSet penilaian saat masuk step Selesai
-  if (_skenario.stepIndex === 6) {
-    await _loadLogSetDinilai();
-  }
-
   _rerenderStep();
 };
 
@@ -1083,11 +1077,10 @@ window.dashWarnBatalkan = function() {
   _rerenderStep();
 };
 
-window.dashWarnLanjut = async function() {
+window.dashWarnLanjut = function() {
   _skenario.warnAsesmen  = false;
   _skenario.langkahIndex = 0;
   _skenario.stepIndex    = 6;
-  await _loadLogSetDinilai();
   _rerenderStep();
 };
 
@@ -1511,7 +1504,6 @@ window.dashPilihTP = async function(nomor, nama) {
 };
 
 async function _onSesiDone(hasil) {
-  console.log('[DEBUG onSesiDone] hasil:', JSON.stringify(hasil));
   srUnmount();
   _skenario.stepIndex = 6;
   _skenario.kendala   = hasil.kendala || null;
