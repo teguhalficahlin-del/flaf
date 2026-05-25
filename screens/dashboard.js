@@ -476,13 +476,12 @@ function _buildStepPresensi() {
       Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}
     </div>
     <div class="ds-asesmen-list">${siswaHTML}</div>
-    <div class="ds-asesmen-nav" style="padding:10px 16px 14px;">
+    <div class="ds-asesmen-nav" style="padding:10px 16px 14px; display:flex; align-items:center; justify-content:space-between;">
       <button onclick="dashPresensiPrev()" class="ds-page-btn"
-        ${navPrevDisabled ? 'disabled' : ''}>‹ Sebelumnya</button>
+        ${navPrevDisabled ? 'disabled' : ''}>‹</button>
+      <span style="font-size:13px; color:rgba(255,255,255,.55);">Halaman ${safePage + 1}/${totalPages}</span>
       <button onclick="dashPresensiNext()" class="ds-page-btn ds-page-btn--primary"
-        ${navNextDisabled ? 'disabled' : ''}>
-        ${navNextDisabled ? 'Halaman Terakhir' : `Lanjut → ${nextStart}–${nextEnd}`}
-      </button>
+        ${navNextDisabled ? 'disabled' : ''}>›</button>
     </div>
   </div>`;
 }
