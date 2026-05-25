@@ -948,7 +948,7 @@ function _renderPenilaianOverlay() {
         await savePenilaian(kelasId, tpNomor, _state.sesiId, modePenilaian, entries);
         overlay.remove();
         if (typeof window._refreshLogSetDinilai === 'function') {
-          await window._refreshLogSetDinilai();
+          await window._refreshLogSetDinilai(_state.sesiId);
         }
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);

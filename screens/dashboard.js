@@ -1166,7 +1166,8 @@ window.dashSetStatus = function(siswaId, status) {
   }
 };
 
-window._refreshLogSetDinilai = async function() {
+window._refreshLogSetDinilai = async function(sesiId) {
+  if (sesiId) _flow.sesiId = sesiId;
   await _loadLogSetDinilai();
 };
 
