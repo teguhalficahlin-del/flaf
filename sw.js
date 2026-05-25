@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v62';          // ← bump: fix duplicate export PDF, rewrite nilaiDownloadFormatif1 CSV per sesi
+const CACHE_VERSION  = 'flaf-v63';          // ← bump: audit renderUnduh — subtitle CSV, sumatif 1 tombol, perilaku label Indonesia
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
