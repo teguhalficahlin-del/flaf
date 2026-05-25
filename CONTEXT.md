@@ -33,6 +33,7 @@
 - **Sprint Bug Fix — Presensi & Runtime SELESAI ✅ (Mei 2026)** — 7 bug fix di dashboard.js + sesi-runtime.js (commit `6f5218e`)
 - **Sprint Presensi Fix + DARURAT Batch + Runtime Teks + TP15–18 Data SELESAI ✅ (Mei 2026)** — presensi default H, nav fix, batch-convert.js rewrite DARURAT_RE, TP01–18 regenerated, teks Fase A/B/C split paragraf, data manual TP15–18 lengkap, SW v61 (commit `3f384c2`)
 - **Sprint CSV Download + SAS SELESAI ✅ (Mei 2026)** — rename label PDF→CSV, migrasi 4 fungsi download ke CSV, nilaiDownloadSAS baru, card Sumatif Akhir Semester di Unduh & Cetak (commit `f307eb9`)
+- **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -171,16 +172,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
+9b31ac1  chore: bump SW v63 → v64 — fix nilaiDraft leak antar TP
+d990716  fix: reset nilaiDraft di mount() — cegah draft penilaian bocor antar TP
+2fbac15  chore: bump SW v62 → v63 — audit renderUnduh fixes
+a91e454  fix: audit _renderUnduh — subtitle CSV, sumatif 1 tombol, perilaku label Indonesia
+9014127  chore: bump SW v61 → v62 — aktifkan fix duplicate export PDF + rewrite CSV formatif per sesi
+ca6e44a  fix: rewrite nilaiDownloadFormatif1 — CSV per sesi, per mode (cepat/detail), kolom Perilaku
+f7b4492  fix: hapus duplicate export generatePDFRapor (baris 682)
 f307eb9  fix: hapus duplicate export generatePDFKehadiran
 0d54dcf  feat: tambah download SAS CSV + card Sumatif Akhir Semester di Unduh & Cetak, update label PDF → CSV
 ef9e2eb  feat: migrasi semua fungsi download ke CSV di layar nilai
-38280cf  feat: generatePDFKehadiran via canvas + migrasi nilaiDownloadKehadiran dari jsPDF
-7f4a3e7  fix: rename Sumatif Lingkup Materi → Sumatif Mid Semester di layar nilai
-3f384c2  fix: bump SW v61
-15774b6  feat: isi data manual TP15-18 (kelas, indikator, vocab, persiapan, printables, pdf_ref)
-0388d14  fix: hitungSiswaDinilai gabungkan nilaiCache dan penilaian_log
-7393938  fix: statusMap diinisialisasi setelah siswaList terload
-1dff4ce  feat: pecah teks Fase A/B/C menjadi paragraf terpisah di runtime
 ```
 
 ## Struktur Folder Penting
@@ -222,7 +223,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v60
+├── sw.js                   ← Service Worker v64
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -575,8 +576,14 @@ atau `closure_reinforcement` sebagai field runtime.
    - screens/nilai.js: card Sumatif Akhir Semester ditambah di Unduh & Cetak (0d54dcf)
    - modules/pdf-generator.js: hapus duplicate export generatePDFKehadiran (f307eb9)
 
+✅ SPRINT AUDIT LAYAR NILAI + FIX NILAIDRAFT LEAK (Mei 2026) — f7b4492..9b31ac1
+   - modules/pdf-generator.js: hapus duplicate export generatePDFRapor (baris 682) (f7b4492)
+   - screens/nilai.js: rewrite nilaiDownloadFormatif1 — CSV per sesi, per mode (cepat/detail), kolom Perilaku (ca6e44a)
+   - screens/nilai.js: audit _renderUnduh — subtitle "format CSV", sumatif 1 tombol (nilaiDownloadRekap2), perilaku label Indonesia (a91e454)
+   - screens/sesi-runtime.js: reset nilaiDraft: null di mount() — cegah draft bocor antar TP (d990716)
+   - sw.js: bump CACHE_VERSION v61 → v64 (9b31ac1)
+
 ⏳ LANGKAH BERIKUTNYA:
-   - Audit layar nilai
    - Penyediaan soal ujian mid semester dan akhir semester
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
