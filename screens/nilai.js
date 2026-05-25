@@ -1006,14 +1006,13 @@ async function _renderUnduh(token) {
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
-  <div class="nv-card">
-    <div onclick="nilaiDownloadSoalSTS()"
-         style="display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;">
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTS()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div class="nv-card-title">Soal Sumatif Tengah Semester</div>
-        <div class="nv-card-subtitle">Fase A Kelas 1 — TP 01–05 · format DOCX</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF TENGAH SEMESTER</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–05 · format DOCX</div>
       </div>
-      <div style="font-size:20px;color:rgba(255,255,255,.5);">⬇</div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
 </div>`;
