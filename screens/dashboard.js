@@ -902,7 +902,7 @@ async function _loadNilaiCache() {
 
 async function _loadLogSetDinilai() {
   _flow.logSetDinilai = await nilai.getSiswaDinilaiFromLog(
-    _flow.rombel?.id, _flow.tp?.nomor
+    _flow.rombel?.id, _flow.tp?.nomor, _flow.sesiId ?? undefined
   );
 }
 
@@ -1514,6 +1514,7 @@ async function _onSesiDone(hasil) {
   _skenario.stepIndex = 6;
   _skenario.kendala   = hasil.kendala || null;
   _skenario.mood      = hasil.mood    || null;
+  _flow.sesiId        = hasil.sesiId  || null;
   await _loadLogSetDinilai();
   if (_container) _container.innerHTML = _buildSesiHTML();
 }

@@ -267,13 +267,17 @@ async function getNilaiFormatif(kelasId, siswaId, tpNomor) {
   };
 }
 
-async function getSiswaDinilaiFromLog(kelasId, tpNomor) {
+async function getSiswaDinilaiFromLog(kelasId, tpNomor, sesiId) {
   try {
     const semua = await db.getAll('penilaian_log');
     const set = new Set();
     for (const e of semua) {
       const v = e.value;
-      if (v.kelasId === kelasId && String(v.tpNomor) === String(tpNomor)) {
+      if (
+        v.kelasId === kelasId &&
+        String(v.tpNomor) === String(tpNomor) &&
+        (sesiId === undefined || v.sesiId === sesiId)
+      ) {
         set.add(v.siswaId);
       }
     }
