@@ -899,7 +899,11 @@ function _renderPenilaianOverlay() {
         const siswaId = btn.dataset.siswa;
         const p       = btn.dataset.perilaku;
         hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
-        _autoNext();
+        if (_sudahDiisi(siswaId)) {
+          _autoNext();
+        } else {
+          _mount();
+        }
       });
     });
 
