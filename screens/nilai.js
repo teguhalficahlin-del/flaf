@@ -314,7 +314,7 @@ async function _renderTP(token) {
       <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
-    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Sumatif Lingkup Materi — nilai per TP, masuk nilai rapor</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Sumatif Mid Semester — nilai per TP, masuk nilai rapor</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);display:flex;align-items:center;justify-content:space-between;">
@@ -419,7 +419,7 @@ async function _renderInput(token) {
     </div>
     <div class="nv-tp-num" style="margin-top:2px;">TP ${String(_state.tpNomor).padStart(2,'0')}</div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">${_escape(_state.tpNama)}</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Sumatif Lingkup Materi — nilai ini masuk rapor</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Sumatif Mid Semester — nilai ini masuk rapor</div>
   </div>
 
   <div class="nv-color-legend">
@@ -975,7 +975,7 @@ async function _renderUnduh(token) {
     <div class="ds-subfase-head" onclick="nilaiToggleUnduh('sumatif')" style="padding:14px 16px;">
       <div style="flex:1;">
         <div class="ds-section-label">Nilai Sumatif — per TP</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Sumatif Lingkup Materi — masuk rapor</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Sumatif Mid Semester — masuk rapor</div>
       </div>
       <div class="ds-collapse-chevron" id="nv-unduh-chevron-sumatif">▼</div>
     </div>
@@ -1121,7 +1121,7 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
   try {
     const session   = await db.get('kv', 'session');
     const namaGuru  = session?.payload?.name   || '—';
-    const sekolah   = session?.payload?.school || '—';
+    const namaSekolah = session?.payload?.school || '—';
     const siswaList = await nilai.getSiswaList(kelasId);
     const kelasList = await nilai.getKelasList();
     const kelas     = kelasList.find(k => k.id === kelasId);
@@ -1148,82 +1148,15 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
     }
 
     if (koloms.length === 0) { alert('Belum ada sesi mengajar yang tercatat.'); return; }
-    if (!window.jspdf)       { alert('Library PDF tidak tersedia.'); return; }
 
-    const { jsPDF } = window.jspdf;
-    const doc   = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
-    const pageW = doc.internal.pageSize.getWidth();
-    const pageH = doc.internal.pageSize.getHeight();
-    const mg    = 12;
-    const rowH  = 6.5, colNo = 8, colNama = 44;
-    const colSesi = Math.min(12, (pageW - mg*2 - colNo - colNama) / Math.max(koloms.length, 1));
-    const dataBottom = pageH - 38;
-
-    const drawHeader = () => {
-      doc.setFillColor(26,26,26); doc.rect(0,0,pageW,22,'F');
-      doc.setTextColor(212,174,58); doc.setFontSize(13); doc.setFont('helvetica','bold');
-      doc.text(`REKAP KEHADIRAN — ${kelasNama}`, mg, 10);
-      doc.setFontSize(8); doc.setFont('helvetica','normal'); doc.setTextColor(200,200,200);
-      doc.text(`${namaGuru}   |   ${sekolah}`, mg, 16);
-      doc.setTextColor(150,150,150);
-      doc.text(`Dicetak: ${new Date().toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}`, pageW-mg, 16, {align:'right'});
-    };
-
-    const drawTableHeader = (yStart) => {
-      const rh = 6.5;
-      doc.setFillColor(30,30,30); doc.rect(mg,yStart,pageW-mg*2,rh,'F');
-      doc.setTextColor(212,174,58); doc.setFontSize(6); doc.setFont('helvetica','bold');
-      let hx = mg;
-      doc.text('No', hx+colNo/2, yStart+4.2, {align:'center'}); hx+=colNo;
-      doc.text('Nama Siswa', hx+2, yStart+4.2); hx+=colNama;
-      for (const k of koloms) { doc.text(k.hari, hx+colSesi/2, yStart+4.2, {align:'center'}); hx+=colSesi; }
-      const h2Y = yStart+rh;
-      doc.setFillColor(40,40,40); doc.rect(mg,h2Y,pageW-mg*2,rh,'F');
-      doc.setTextColor(200,200,200); doc.setFontSize(5.5);
-      hx = mg+colNo+colNama;
-      for (const k of koloms) { doc.text(k.tanggal, hx+colSesi/2, h2Y+4, {align:'center'}); hx+=colSesi; }
-      const h3Y = h2Y+rh;
-      doc.setFillColor(50,50,50); doc.rect(mg,h3Y,pageW-mg*2,rh,'F');
-      doc.setTextColor(176,90,70);
-      hx = mg+colNo+colNama;
-      for (const k of koloms) { doc.text(`TP${k.tpNomor}`, hx+colSesi/2, h3Y+4, {align:'center'}); hx+=colSesi; }
-      return h3Y+rh;
-    };
-
-    drawHeader();
-    let curY = drawTableHeader(28);
-
-    for (let si = 0; si < siswaList.length; si++) {
-      const s = siswaList[si];
-      if (curY + rowH > dataBottom) {
-        doc.setTextColor(150,150,150); doc.setFontSize(7); doc.setFont('helvetica','normal');
-        doc.text('FLAF — Functional Language Accumulation Framework', pageW/2, pageH-6, {align:'center'});
-        doc.addPage(); drawHeader(); curY = drawTableHeader(28);
-      }
-      if (si%2===0) { doc.setFillColor(248,248,244); doc.rect(mg,curY,pageW-mg*2,rowH,'F'); }
-      doc.setTextColor(30,30,30); doc.setFontSize(6);
-      let x = mg;
-      doc.text(String(s.nomor), x+colNo/2, curY+4.2, {align:'center'}); x+=colNo;
-      doc.text(s.nama.substring(0,26), x+2, curY+4.2); x+=colNama;
-      for (const k of koloms) {
-        const st = k.statusMap[s.id] || 'A';
-        const stColor = st==='H'?[60,120,80]:st==='S'?[70,130,180]:st==='I'?[180,130,20]:[180,60,50];
-        doc.setTextColor(...stColor); doc.setFont('helvetica','bold');
-        doc.text(st, x+colSesi/2, curY+4.2, {align:'center'}); doc.setFont('helvetica','normal');
-        x+=colSesi;
-      }
-      curY += rowH;
-    }
-
-    doc.setTextColor(150,150,150); doc.setFontSize(7); doc.setFont('helvetica','normal');
-    doc.text('FLAF — Functional Language Accumulation Framework', pageW/2, pageH-6, {align:'center'});
-    const ttX = pageW-mg-60, ttY = pageH-30;
-    doc.setTextColor(30,30,30); doc.setFontSize(7);
-    doc.text('Guru Bahasa Inggris', ttX+30, ttY+5, {align:'center'});
-    doc.setDrawColor(30,30,30); doc.setLineWidth(0.3);
-    doc.line(ttX, ttY+18, ttX+60, ttY+18);
-    doc.setFont('helvetica','bold'); doc.text(namaGuru, ttX+30, ttY+23, {align:'center'});
-    doc.save(`rekap-hadir-${kelasNama.replace(/\s+/g,'-')}.pdf`);
+    const { generatePDFKehadiran } = await import('../modules/pdf-generator.js');
+    await generatePDFKehadiran({
+      namaGuru,
+      namaSekolah,
+      kelasNama,
+      siswaList,
+      koloms,
+    });
   } catch (err) {
     console.error('[NILAI] download kehadiran error:', err);
     alert('Gagal membuat PDF rekap kehadiran.');
