@@ -1029,8 +1029,8 @@ async function _renderUnduh(token) {
 
 window.nilaiDownloadSoalSTS = function() {
   const link = document.createElement('a');
-  link.href = './pdf/Soal_STS_Fase_A_Kelas_1.docx';
-  link.download = 'Soal_STS_Fase_A_Kelas_1.docx';
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_1.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_1.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -1038,8 +1038,8 @@ window.nilaiDownloadSoalSTS = function() {
 
 window.nilaiDownloadSoalSTS2 = function() {
   const link = document.createElement('a');
-  link.href = './pdf/Soal_STS_Fase_A_Kelas_2.docx';
-  link.download = 'Soal_STS_Fase_A_Kelas_2.docx';
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_2.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_2.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
