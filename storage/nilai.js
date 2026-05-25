@@ -273,6 +273,7 @@ async function getSiswaDinilaiFromLog(kelasId, tpNomor, sesiId) {
     const set = new Set();
     for (const e of semua) {
       const v = e.value;
+      console.log('[DEBUG getLog] record sesiId:', v.sesiId, 'filter sesiId:', sesiId, 'match:', sesiId === undefined || v.sesiId === sesiId);
       if (
         v.kelasId === kelasId &&
         String(v.tpNomor) === String(tpNomor) &&

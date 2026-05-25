@@ -901,6 +901,7 @@ async function _loadNilaiCache() {
 }
 
 async function _loadLogSetDinilai() {
+  console.log('[DEBUG loadLogSet] rombel:', _flow.rombel?.id, 'tp:', _flow.tp?.nomor, 'sesiId:', _flow.sesiId);
   _flow.logSetDinilai = await nilai.getSiswaDinilaiFromLog(
     _flow.rombel?.id, _flow.tp?.nomor, _flow.sesiId ?? undefined
   );
@@ -1510,6 +1511,7 @@ window.dashPilihTP = async function(nomor, nama) {
 };
 
 async function _onSesiDone(hasil) {
+  console.log('[DEBUG onSesiDone] hasil:', JSON.stringify(hasil));
   srUnmount();
   _skenario.stepIndex = 6;
   _skenario.kendala   = hasil.kendala || null;

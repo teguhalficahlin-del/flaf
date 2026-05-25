@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v64';          // ← bump: fix nilaiDraft leak antar TP
+const CACHE_VERSION  = 'flaf-v65';          // ← bump: debug logs dinilai count
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
