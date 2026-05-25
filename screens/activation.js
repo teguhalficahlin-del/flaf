@@ -76,6 +76,7 @@ async function _saveSession(data) {
     issued_at : data.issued_at,
     expires_at: data.expires_at,
     via       : data.via || 'server',
+    kelas     : data.kelas || 'all',
   };
 
   const signature = await _signSession(payload);
@@ -141,6 +142,7 @@ export async function checkExistingSession() {
       code     : payload.code,
       via      : payload.via,
       device_id: payload.device_id,
+      kelas    : payload.kelas || 'all',
     };
 
   } catch (err) {
@@ -190,6 +192,7 @@ export async function activate({ name, school, code }) {
 
     const record    = rows[0];
     const deviceIds = record.device_ids || [];
+    const kelas     = record.kelas || 'all';
 
     if (deviceIds.includes(deviceId)) {
       return _finalizeActivation({
@@ -197,6 +200,7 @@ export async function activate({ name, school, code }) {
         school: cleanSchool,
         code  : cleanCode,
         device_id: deviceId,
+        kelas,
         via   : 'supabase_known_device',
       });
     }
@@ -217,6 +221,7 @@ export async function activate({ name, school, code }) {
       school: cleanSchool,
       code  : cleanCode,
       device_id: deviceId,
+      kelas,
       via   : 'supabase_new',
     });
 
@@ -249,6 +254,7 @@ async function _finalizeActivation(data) {
     code     : data.code,
     device_id: data.device_id,
     via      : data.via || 'server',
+    kelas    : data.kelas || 'all',
   };
 }
 
