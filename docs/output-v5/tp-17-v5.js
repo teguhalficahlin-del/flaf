@@ -13,17 +13,35 @@
 const TP_17 = {
 
   id       : 'tp-17',
+  pdf_ref  : 'Modul_Ajar_V3_TP17_My_Hobbies.docx',
   nomor    : 17,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'My Hobbies',
   tema     : 'Diri Sendiri dan Perasaan',
   deskripsi: '',         // TODO: isi manual
 
-  indikator: [],         // TODO: isi manual
-  vocab    : [],         // TODO: isi manual
-  persiapan: [],         // TODO: isi manual
+  indikator: [
+    'Peserta didik dapat menyebutkan 8 kata hobi dalam Bahasa Inggris.',
+    'Peserta didik dapat menggunakan frame "I like ___ because it is ___."',
+    'Peserta didik dapat bertanya dan menjawab tentang hobi dengan partner.',
+  ],
+  vocab    : ['reading', 'drawing', 'singing', 'dancing', 'playing football', 'cooking', 'swimming', 'cycling'],
+  persiapan: [
+    'Kartu hobi bergambar 8 kartu (reading, drawing, singing, dancing, playing football, cooking, swimming, cycling)',
+    'Papan tulis: tulis "I like ___ because it is ___." sebelum kelas masuk',
+    'Buku/kertas exit ticket disiapkan di bawah meja siswa sebelum kelas masuk',
+  ],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp17-reading.png',          label: 'Reading' },
+    { file: 'tp17-drawing.png',          label: 'Drawing' },
+    { file: 'tp17-singing.png',          label: 'Singing' },
+    { file: 'tp17-dancing.png',          label: 'Dancing' },
+    { file: 'tp17-playing-football.png', label: 'Playing Football' },
+    { file: 'tp17-cooking.png',          label: 'Cooking' },
+    { file: 'tp17-swimming.png',         label: 'Swimming' },
+    { file: 'tp17-cycling.png',          label: 'Cycling' },
+  ],
 
   checklist: [
     '8 kartu hobi tersedia sebelum kelas masuk',

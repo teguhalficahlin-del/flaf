@@ -13,17 +13,34 @@
 const TP_15 = {
 
   id       : 'tp-15',
+  pdf_ref  : 'Modul_Ajar_V3_TP15_Feelings_And_Emotions.docx',
   nomor    : 15,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Feelings and Emotions',
   tema     : 'Diri Sendiri dan Perasaan',
   deskripsi: '',         // TODO: isi manual
 
-  indikator: [],         // TODO: isi manual
-  vocab    : [],         // TODO: isi manual
-  persiapan: [],         // TODO: isi manual
+  indikator: [
+    'Peserta didik dapat menyebutkan 7 kata emosi dalam Bahasa Inggris.',
+    'Peserta didik dapat menggunakan frame "I feel ___ because ___."',
+    'Peserta didik dapat merespons cue emosi dengan ekspresi wajah dan gestur.',
+  ],
+  vocab    : ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'bored'],
+  persiapan: [
+    'Kartu emosi bergambar 7 kartu (happy, sad, angry, scared, tired, excited, bored)',
+    'Papan tulis: tulis "I feel ___ because ___." sebelum kelas masuk',
+    'Buku/kertas exit ticket disiapkan di bawah meja siswa sebelum kelas masuk',
+  ],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp15-happy.png',   label: 'Happy' },
+    { file: 'tp15-sad.png',     label: 'Sad' },
+    { file: 'tp15-angry.png',   label: 'Angry' },
+    { file: 'tp15-scared.png',  label: 'Scared' },
+    { file: 'tp15-tired.png',   label: 'Tired' },
+    { file: 'tp15-excited.png', label: 'Excited' },
+    { file: 'tp15-bored.png',   label: 'Bored' },
+  ],
 
   checklist: [
     '7 kartu emosi tersedia sebelum kelas masuk',

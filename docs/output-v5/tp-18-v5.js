@@ -13,17 +13,31 @@
 const TP_18 = {
 
   id       : 'tp-18',
+  pdf_ref  : 'Modul_Ajar_V3_TP18_Integrative_Project_My_World.docx',
   nomor    : 18,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Integrative Project: My World',
   tema     : 'Proyek Integratif — Penutup Fase A',
   deskripsi: '',         // TODO: isi manual
 
-  indikator: [],         // TODO: isi manual
-  vocab    : [],         // TODO: isi manual
-  persiapan: [],         // TODO: isi manual
+  indikator: [
+    'Peserta didik dapat menggunakan kosakata dari TP01–17 dalam konteks terintegrasi.',
+    'Peserta didik dapat mempresentasikan diri menggunakan frame kalimat lengkap.',
+    'Peserta didik dapat membuat poster "My World" dengan panduan struktur kalimat.',
+  ],
+  vocab    : [],
+  persiapan: [
+    'Template poster "My World" (1 per siswa, disiapkan di meja — terbalik sebelum kelas masuk)',
+    'Spidol warna atau pensil warna (1 set per siswa)',
+    'Kartu reference sentences disiapkan di meja guru',
+    'Papan tulis: tulis frame kalimat sebelum kelas masuk',
+    'Timer 10 menit disiapkan',
+  ],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp18-poster-template.png', label: 'Template Poster My World' },
+    { file: 'tp18-reference-card.png',  label: 'Kartu Reference Sentences' },
+  ],
 
   checklist: [
     'Template poster (1 per siswa) sudah di meja — terbalik/face down sebelum kelas masuk',

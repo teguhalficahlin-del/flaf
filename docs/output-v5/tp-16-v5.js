@@ -13,17 +13,34 @@
 const TP_16 = {
 
   id       : 'tp-16',
+  pdf_ref  : 'Modul_Ajar_V3_TP16_Simple_Story_Retelling.docx',
   nomor    : 16,
-  kelas    : 0,          // TODO: isi manual
+  kelas    : 2,
   nama     : 'Simple Story Retelling',
   tema     : 'Literasi Awal',
   deskripsi: '',         // TODO: isi manual
 
-  indikator: [],         // TODO: isi manual
-  vocab    : [],         // TODO: isi manual
-  persiapan: [],         // TODO: isi manual
+  indikator: [
+    'Peserta didik dapat memahami urutan cerita sederhana dalam Bahasa Inggris.',
+    'Peserta didik dapat menggunakan kata urutan: first, then, after that, finally.',
+    'Peserta didik dapat menceritakan ulang cerita sederhana dengan frame urutan.',
+  ],
+  vocab    : ['first', 'then', 'after that', 'finally'],
+  persiapan: [
+    'Buku cerita bergambar "Ani Finds a Cat" (3–5 halaman)',
+    'Kartu urutan: first, then, after that, finally (1 set per pasang)',
+    'Papan tulis: tulis "First · Then · After that · Finally" sebelum kelas masuk',
+    'Buku/kertas exit ticket disiapkan di bawah meja siswa sebelum kelas masuk',
+  ],
   media    : [],         // TODO: isi manual
-  printables: [],        // TODO: isi manual
+  printables: [
+    { file: 'tp16-cover.png',          label: 'Cover Cerita' },
+    { file: 'tp16-page-01.png',        label: 'Halaman 1' },
+    { file: 'tp16-page-02.png',        label: 'Halaman 2' },
+    { file: 'tp16-page-03.png',        label: 'Halaman 3' },
+    { file: 'tp16-page-04.png',        label: 'Halaman 4' },
+    { file: 'tp16-sequence-cards.png', label: 'Kartu Urutan' },
+  ],
 
   checklist: [
     'Buku cerita "Ani Finds a Cat" tersedia sebelum kelas masuk',
