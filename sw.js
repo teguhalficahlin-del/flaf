@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v72';          // ← bump: tambah Soal STS Fase A Kelas 1
+const CACHE_VERSION  = 'flaf-v73';          // ← bump: tambah Soal STS Fase A Kelas 2
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -240,6 +240,7 @@ const PDF_MANIFEST = [
   './pdf/Modul_Ajar_V3_TP17_My_Hobbies.docx',
   './pdf/Modul_Ajar_V3_TP18_Integrative_Project_My_World.docx',
   './pdf/Soal_STS_Fase_A_Kelas_1.docx',
+  './pdf/Soal_STS_Fase_A_Kelas_2.docx',
 ];
 
 // Network-only: Supabase + CDN eksternal (jsPDF, dll)

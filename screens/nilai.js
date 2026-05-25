@@ -1015,6 +1015,15 @@ async function _renderUnduh(token) {
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTS2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF TENGAH SEMESTER</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–14 · format DOCX</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
 </div>`;
 }
 
@@ -1022,6 +1031,15 @@ window.nilaiDownloadSoalSTS = function() {
   const link = document.createElement('a');
   link.href = './pdf/Soal_STS_Fase_A_Kelas_1.docx';
   link.download = 'Soal_STS_Fase_A_Kelas_1.docx';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSTS2 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_2.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_2.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
