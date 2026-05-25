@@ -1166,6 +1166,7 @@ window.dashSelesaiSesi = async function() {
     await _autoSaveSiswa(_skenario.openSiswaId);
   }
 
+  await _loadNilaiCache();
   const dinilai = _hitungSiswaDinilai();
   const total   = (_flow.siswaList || []).length;
 
