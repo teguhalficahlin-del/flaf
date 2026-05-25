@@ -1476,7 +1476,6 @@ window.dashKePilihTP = async function() {
 
 window.dashPilihTP = async function(nomor, nama) {
   _flow.tp         = { nomor, nama };
-  _flow.statusMap  = Object.fromEntries((_flow.siswaList || []).map(s => [s.id, 'H']));
   _flow.view       = 'sesi';
   _flow.nilaiCache = null;
   _skenario        = {
@@ -1492,6 +1491,7 @@ window.dashPilihTP = async function(nomor, nama) {
     console.warn('[DASHBOARD] gagal load siswa:', err.message);
     _flow.siswaList = [];
   }
+  _flow.statusMap  = Object.fromEntries((_flow.siswaList || []).map(s => [s.id, 'H']));
   if (_container) _container.innerHTML = _buildSesiHTML();
 };
 
