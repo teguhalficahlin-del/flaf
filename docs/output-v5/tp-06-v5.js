@@ -13,6 +13,7 @@
 const TP_06 = {
 
   id       : 'tp-06',
+  pdf_ref  : 'Modul_Ajar_V3_TP06_Shapes.docx',
   nomor    : 6,
   kelas    : 1,
   nama     : 'Shapes',

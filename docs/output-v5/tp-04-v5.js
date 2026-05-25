@@ -13,6 +13,7 @@
 const TP_04 = {
 
   id       : 'tp-04',
+  pdf_ref  : 'Modul_Ajar_V3_TP04_Numbers_1_20.docx',
   nomor    : 4,
   kelas    : 1,
   nama     : 'Numbers 1–20',

@@ -13,6 +13,7 @@
 const TP_09 = {
 
   id       : 'tp-09',
+  pdf_ref  : 'Modul_Ajar_V3_TP09_Animals.docx',
   nomor    : 9,
   kelas    : 1,
   nama     : 'Animals',

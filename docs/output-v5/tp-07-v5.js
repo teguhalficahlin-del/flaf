@@ -13,6 +13,7 @@
 const TP_07 = {
 
   id       : 'tp-07',
+  pdf_ref  : 'Modul_Ajar_V3_TP07_My_Family.docx',
   nomor    : 7,
   kelas    : 1,
   nama     : 'My Family',

@@ -13,6 +13,7 @@
 const TP_02 = {
 
   id       : 'tp-02',
+  pdf_ref  : 'Modul_Ajar_V3_TP02_Introducing_Myself.docx',
   nomor    : 2,
   kelas    : 1,
   nama     : 'Introducing Myself',

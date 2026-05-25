@@ -13,6 +13,7 @@
 const TP_01 = {
 
   id       : 'tp-01',
+  pdf_ref  : 'Modul_Ajar_V3_TP01_Greetings_And_Farewells.docx',
   nomor    : 1,
   kelas    : 1,
   nama     : 'Greetings & Farewells',

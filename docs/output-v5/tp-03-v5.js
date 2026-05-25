@@ -13,6 +13,7 @@
 const TP_03 = {
 
   id       : 'tp-03',
+  pdf_ref  : 'Modul_Ajar_V3_TP03_Classroom_Instructions.docx',
   nomor    : 3,
   kelas    : 1,
   nama     : 'Classroom Instructions',

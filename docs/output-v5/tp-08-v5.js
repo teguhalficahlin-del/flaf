@@ -13,6 +13,7 @@
 const TP_08 = {
 
   id       : 'tp-08',
+  pdf_ref  : 'Modul_Ajar_V3_TP08_My_House.docx',
   nomor    : 8,
   kelas    : 1,
   nama     : 'My House',

@@ -311,7 +311,9 @@ function _buildTPItemHTML(tp) {
       </li>
     `).join('');
 
-  const pdfFilename = tp.pdf_ref || `${tp.id}-v1.pdf`;
+  const pdfFilename = tp.pdf_ref
+    || tp.media?.find(m => m.pdf_ref)?.pdf_ref
+    || null;
 
   const isFirst = tp.nomor === 1;
   return `
@@ -350,10 +352,11 @@ function _buildTPItemHTML(tp) {
 
         <div class="kur-pdf-wrap">
           <button
-            class="kur-pdf-btn"
-            data-pdf="${_esc(pdfFilename)}"
+            class="kur-pdf-btn${pdfFilename ? '' : ' kur-pdf-btn--unavailable'}"
+            data-pdf="${_esc(pdfFilename || '')}"
             data-tp-id="${_esc(tp.id)}"
             aria-label="Unduh modul ajar ${_esc(tp.nama)}"
+            ${pdfFilename ? '' : 'disabled'}
           >
             <span class="kur-pdf-icon">📄</span>
             <span class="kur-pdf-label">Download Modul Ajar — ${_esc(tp.nama)}</span>

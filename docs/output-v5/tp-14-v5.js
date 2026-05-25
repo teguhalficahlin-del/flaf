@@ -13,6 +13,7 @@
 const TP_14 = {
 
   id       : 'tp-14',
+  pdf_ref  : 'Modul_Ajar_V3_TP14_In_the_Classroom.docx',
   nomor    : 14,
   kelas    : 2,
   nama     : 'In the Classroom',

@@ -13,6 +13,7 @@
 const TP_11 = {
 
   id       : 'tp-11',
+  pdf_ref  : 'Modul_Ajar_V3_TP11_Daily_Routines.docx',
   nomor    : 11,
   kelas    : 2,
   nama     : 'Daily Routines',

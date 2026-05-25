@@ -13,6 +13,7 @@
 const TP_13 = {
 
   id       : 'tp-13',
+  pdf_ref  : 'Modul_Ajar_V3_TP13_Weather_and_Seasons.docx',
   nomor    : 13,
   kelas    : 2,
   nama     : 'Weather and Seasons',

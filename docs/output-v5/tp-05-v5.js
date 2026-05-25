@@ -13,6 +13,7 @@
 const TP_05 = {
 
   id       : 'tp-05',
+  pdf_ref  : 'Modul_Ajar_V3_TP05_Colours.docx',
   nomor    : 5,
   kelas    : 1,
   nama     : 'Colours',

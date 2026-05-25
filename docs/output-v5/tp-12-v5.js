@@ -13,6 +13,7 @@
 const TP_12 = {
 
   id       : 'tp-12',
+  pdf_ref  : 'Modul_Ajar_V3_TP12_Body_Parts.docx',
   nomor    : 12,
   kelas    : 2,
   nama     : 'Body Parts',

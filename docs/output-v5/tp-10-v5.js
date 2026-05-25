@@ -13,6 +13,7 @@
 const TP_10 = {
 
   id       : 'tp-10',
+  pdf_ref  : 'Modul_Ajar_V3_TP10_Food_and_Drinks.docx',
   nomor    : 10,
   kelas    : 2,
   nama     : 'Food and Drinks',
