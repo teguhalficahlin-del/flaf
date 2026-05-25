@@ -116,6 +116,22 @@
   font-size: 15px; font-weight: 600; padding: 3px 8px;
   font-family: 'JetBrains Mono', monospace, sans-serif;
 }
+.kur-vocab-chip {
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.kur-vocab-chip:hover {
+  background: rgba(212,174,58,.1);
+  border-color: rgba(212,174,58,.5);
+}
+.kur-vocab-chip:active {
+  background: rgba(212,174,58,.2);
+}
+.kur-vocab-chip--playing {
+  background: rgba(212,174,58,.25);
+  border-color: rgba(212,174,58,.8);
+  color: #D4AE3A;
+}
 
 .kur-pdf-btn {
   display: flex; align-items: center; gap: 10px; width: 100%; padding: 13px 14px;

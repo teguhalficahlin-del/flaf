@@ -167,6 +167,26 @@ function _buildKurikulumHTML(fase, tps, meta) {
   `;
 }
 
+// ── TTS ─────────────────────────────────────────────────────────────
+function _kurTtsStop() {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+}
+
+function _kurTtsSpeak(teks, btnEl) {
+  if (!('speechSynthesis' in window)) return;
+  _kurTtsStop();
+  const u  = new SpeechSynthesisUtterance(teks);
+  u.lang   = 'en-US';
+  u.rate   = 0.9;
+  u.pitch  = 1.1;
+  if (btnEl) btnEl.classList.add('kur-vocab-chip--playing');
+  u.onend = u.onerror = () => {
+    if (btnEl) btnEl.classList.remove('kur-vocab-chip--playing');
+  };
+  window.speechSynthesis.speak(u);
+}
+
 // ── Header ────────────────────────────────────────────────
 function _buildHeaderHTML(meta) {
   const totalTP = meta.total_tp;
@@ -280,7 +300,7 @@ function _buildTPListHTML(tps) {
 
 function _buildTPItemHTML(tp) {
   const vocabHTML = tp.vocab
-    .map(v => `<span class="kur-vocab-chip">${_esc(v)}</span>`)
+    .map(v => `<button class="kur-vocab-chip" data-vocab="${_esc(v)}" aria-label="Putar ${_esc(v)}">▶ ${_esc(v)}</button>`)
     .join('');
 
   const indikatorHTML = tp.indikator
@@ -428,6 +448,14 @@ function _attachEventListeners(root, tps, onDownloadPDF) {
         _setPDFBtnState(btn, 'unavailable');
         logger.warn(SCREEN, '[kurikulum] onDownloadPDF tidak tersedia', { tpId });
       }
+    });
+  });
+
+  // ── Vocab chip TTS ───────────────────────────────────────────────
+  root.querySelectorAll('.kur-vocab-chip[data-vocab]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      _kurTtsSpeak(btn.dataset.vocab, btn);
     });
   });
 }
