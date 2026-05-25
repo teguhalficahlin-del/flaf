@@ -172,16 +172,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-9b31ac1  chore: bump SW v63 → v64 — fix nilaiDraft leak antar TP
-d990716  fix: reset nilaiDraft di mount() — cegah draft penilaian bocor antar TP
-2fbac15  chore: bump SW v62 → v63 — audit renderUnduh fixes
-a91e454  fix: audit _renderUnduh — subtitle CSV, sumatif 1 tombol, perilaku label Indonesia
-9014127  chore: bump SW v61 → v62 — aktifkan fix duplicate export PDF + rewrite CSV formatif per sesi
-ca6e44a  fix: rewrite nilaiDownloadFormatif1 — CSV per sesi, per mode (cepat/detail), kolom Perilaku
-f7b4492  fix: hapus duplicate export generatePDFRapor (baris 682)
-f307eb9  fix: hapus duplicate export generatePDFKehadiran
-0d54dcf  feat: tambah download SAS CSV + card Sumatif Akhir Semester di Unduh & Cetak, update label PDF → CSV
-ef9e2eb  feat: migrasi semua fungsi download ke CSV di layar nilai
+d16da57  feat: tambah unduh Soal STS Fase A Kelas 2 di Unduh & Cetak
+e396528  fix: seragamkan tampilan kartu Soal STS dengan kartu lain di Unduh & Cetak
+a0c1868  feat: tambah file Soal_STS_Fase_A_Kelas_1.docx ke folder pdf
+c2d59c0  feat: tambah unduh Soal STS Fase A Kelas 1 di Unduh & Cetak
+9e5d452  feat: filter akses TP dan rombel berdasarkan kelas session guru
+a9530d4  feat: tambah field kelas ke session aktivasi
+17fa254  fix: sesiId null saat savePenilaian — guard assign ke _state sebelum simpan
+5233c2d  fix: logSetDinilai ditimpa path tanpa sesiId — hapus reload di dashStepNext/dashWarnLanjut
+97ec51c  debug: tambah console.log untuk trace sesiId chain — dinilai count
+54319cf  fix: dinilai count hitung semua sesi — tambah filter sesiId ke penilaian_log
 ```
 
 ## Struktur Folder Penting
@@ -583,8 +583,27 @@ atau `closure_reinforcement` sebagai field runtime.
    - screens/sesi-runtime.js: reset nilaiDraft: null di mount() — cegah draft bocor antar TP (d990716)
    - sw.js: bump CACHE_VERSION v61 → v64 (9b31ac1)
 
+✅ SPRINT FIX COUNTER DINILAI SELESAI ✅ (Mei 2026)
+   - getSiswaDinilaiFromLog: filter sudahDinilai (capaian/l/s/r tidak null)
+   - _rerenderStep: async + guard await _loadLogSetDinilai() saat step === 6
+   - _refreshLogSetDinilai: terima sesiId, sync _flow.sesiId dari runtime
+   - SW v70 (commit a58e0c7)
+
+✅ SPRINT FILTER KELAS PER SESSION SELESAI ✅ (Mei 2026)
+   - Supabase activation_codes: tambah kolom kelas (text, default 'all')
+   - activation.js: baca kelas dari Supabase → simpan ke session IDB
+   - dashboard.js: _loadSession return kelas, _buildPilihTPHTML guard kelasOk
+   - nilai.js: nilaiTambahKelas disable tombol tingkat tidak sesuai kelas session
+   - SW v71 (commit 9e5d452)
+
+✅ SPRINT SOAL STS SELESAI ✅ (Mei 2026)
+   - Soal_STS_Fase_A_Kelas_1.docx: 50 soal PG TP 01–05 — di folder pdf/
+   - Soal_STS_Fase_A_Kelas_2.docx: 50 soal PG TP 10–14 — di folder pdf/
+   - nilai.js: kartu unduh Soal STS Kelas 1 + Kelas 2 di Unduh & Cetak
+   - SW v73 (commit d16da57)
+
 ⏳ LANGKAH BERIKUTNYA:
-   - Penyediaan soal ujian mid semester dan akhir semester
+   - Soal ujian akhir semester Kelas 1 (TP 01–09) dan Kelas 2 (TP 10–18) — belum dikerjakan
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
