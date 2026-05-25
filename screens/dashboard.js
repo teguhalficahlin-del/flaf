@@ -508,7 +508,7 @@ function _buildStepSelesai() {
   const { rombel, tp } = _flow;
   const totalH  = Object.values(_flow.statusMap).filter(v => v === 'H').length;
   const total   = (_flow.siswaList || []).length;
-  const dinilai = _hitungSiswaDinilai();
+  const dinilai = _hitungSiswaDinilai(_flow.logSetDinilai);
 
   return `
   <div class="ds-card" style="padding:16px;">
@@ -900,6 +900,12 @@ async function _loadNilaiCache() {
   _flow.nilaiCache = cache;
 }
 
+async function _loadLogSetDinilai() {
+  _flow.logSetDinilai = await nilai.getSiswaDinilaiFromLog(
+    _flow.rombel?.id, _flow.tp?.nomor
+  );
+}
+
 async function _refreshJejakCard() {
   try {
     const [streak, summary] = await Promise.all([
@@ -1048,6 +1054,10 @@ window.dashStepNext = async function() {
   if (_skenario.stepIndex === 5 && !_flow.nilaiCache) {
     await _loadNilaiCache();
   }
+  // Preload logSet penilaian saat masuk step Selesai
+  if (_skenario.stepIndex === 6) {
+    await _loadLogSetDinilai();
+  }
 
   _rerenderStep();
 };
@@ -1072,10 +1082,11 @@ window.dashWarnBatalkan = function() {
   _rerenderStep();
 };
 
-window.dashWarnLanjut = function() {
+window.dashWarnLanjut = async function() {
   _skenario.warnAsesmen  = false;
   _skenario.langkahIndex = 0;
   _skenario.stepIndex    = 6;
+  await _loadLogSetDinilai();
   _rerenderStep();
 };
 
@@ -1503,6 +1514,7 @@ async function _onSesiDone(hasil) {
   _skenario.stepIndex = 6;
   _skenario.kendala   = hasil.kendala || null;
   _skenario.mood      = hasil.mood    || null;
+  await _loadLogSetDinilai();
   if (_container) _container.innerHTML = _buildSesiHTML();
 }
 
