@@ -679,4 +679,3 @@ export async function generatePDFKehadiran(opts) {
   }
 }
 
-export { generatePDFRekap, generatePDFRekap2, generatePDFRapor };
