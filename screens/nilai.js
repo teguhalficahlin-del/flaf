@@ -203,7 +203,7 @@ async function _renderMenu(token) {
 
     ${_menuCard('nilaiMenuUnduh()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
-      'rgba(212,174,58,.15)', 'Unduh & Cetak', 'Semua unduhan: soal, nilai dan kehadiran')}
+      'rgba(212,174,58,.15)', 'Unduh & Cetak', 'Unduh dalam format CSV dan DOCX')}
   </div>
 </div>`;
 }
@@ -957,7 +957,7 @@ async function _renderUnduh(token) {
     <div class="ds-subfase-head" onclick="nilaiToggleUnduh('formatif')" style="padding:14px 16px;">
       <div style="flex:1;">
         <div class="ds-section-label">Nilai Formatif — per TP</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Observasi proses (L/S/R) — tidak masuk rapor</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai formatif per TP</div>
       </div>
       <div class="ds-collapse-chevron" id="nv-unduh-chevron-formatif">▼</div>
     </div>
@@ -972,7 +972,7 @@ async function _renderUnduh(token) {
          style="padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;">
         <div class="ds-section-label">Nilai Sumatif</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Rekap nilai semua TP — masuk rapor</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -983,7 +983,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSAS('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Sumatif Akhir Semester</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV nilai ujian akhir semester</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -992,7 +992,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadRapor()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV rapor lengkap (S + AS) ÷ 2</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -1001,7 +1001,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Rekap Kehadiran</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV presensi semua sesi mengajar</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh rekap kehadiran siswa</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -1009,7 +1009,7 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSTS()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF TENGAH SEMESTER</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
         <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–05 · format DOCX</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
@@ -1018,7 +1018,7 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSTS2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF TENGAH SEMESTER</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
         <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–14 · format DOCX</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
