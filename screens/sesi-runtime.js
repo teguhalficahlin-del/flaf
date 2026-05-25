@@ -204,6 +204,10 @@ function _langkahNext() {
 function _langkahPrev() {
   if (_state.langkahIdx > 0) {
     _transition({ langkahIdx: _state.langkahIdx - 1 });
+  } else if (_state.faseIdx > 0) {
+    const faseBefore = _state.tp?.skenario?.[_state.faseIdx - 1];
+    const lastIdx = Math.max(0, (faseBefore?.langkah || []).length - 1);
+    _transition({ faseIdx: _state.faseIdx - 1, langkahIdx: lastIdx, aktState: 'running' });
   }
 }
 
