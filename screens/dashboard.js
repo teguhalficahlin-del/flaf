@@ -474,9 +474,11 @@ function _buildStepPresensi() {
     </div>
     <div style="display:flex; align-items:center; justify-content:space-between; padding:0 16px 10px;">
       <button onclick="dashPresensiPrev()" class="ds-page-btn"
+        style="flex:0 0 40px; width:40px; padding:0; text-align:center;"
         ${navPrevDisabled ? 'disabled' : ''}>‹</button>
       <span style="font-size:13px; color:rgba(255,255,255,.55);">Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}</span>
       <button onclick="dashPresensiNext()" class="ds-page-btn ds-page-btn--primary"
+        style="flex:0 0 40px; width:40px; padding:0; text-align:center;"
         ${navNextDisabled ? 'disabled' : ''}>›</button>
     </div>
     <div class="ds-asesmen-list">${siswaHTML}</div>
