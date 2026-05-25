@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v63';          // ← bump: audit renderUnduh — subtitle CSV, sumatif 1 tombol, perilaku label Indonesia
+const CACHE_VERSION  = 'flaf-v64';          // ← bump: fix nilaiDraft leak antar TP
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
