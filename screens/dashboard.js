@@ -116,9 +116,10 @@ async function _loadSession() {
     return {
       name  : payload?.name   ? String(payload.name).slice(0, 60)   : 'Guru',
       school: payload?.school ? String(payload.school).slice(0, 80) : '',
+      kelas : payload?.kelas  || 'all',
     };
   } catch {
-    return { name: 'Guru', school: '' };
+    return { name: 'Guru', school: '', kelas: 'all' };
   }
 }
 
@@ -298,7 +299,16 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
 // --- VIEW: PILIH TP ----------------------------------------------------------
 
 async function _buildPilihTPHTML() {
-  const tpList = _tpList(_flow.rombel.tingkat);
+  const sessionData = await _loadSession();
+  const kelasSesi   = sessionData.kelas || 'all';
+  const tingkat     = _flow.rombel.tingkat;
+
+  // Guard: jika kelas sesi tidak cocok dengan tingkat rombel, tampilkan pesan
+  const kelasOk = kelasSesi === 'all' ||
+    (kelasSesi === '1' && tingkat === 1) ||
+    (kelasSesi === '2' && tingkat === 2);
+
+  const tpList = kelasOk ? _tpList(tingkat) : [];
   let tpSelesaiSet = new Set();
   try {
     tpSelesaiSet = await jejak.getTPSelesaiPerRombel(_flow.rombel.nama);
@@ -329,7 +339,12 @@ async function _buildPilihTPHTML() {
     <div class="ds-section-header">
       <div class="ds-section-label">Pilih Tujuan Pembelajaran</div>
     </div>
-    ${tpList.length > 0 ? tpHTML : `<div style="padding:24px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Data kurikulum belum tersedia.</div>`}
+    ${!kelasOk
+      ? `<div style="padding:16px;text-align:center;color:rgba(255,255,255,.5);font-size:13px;">
+          Rombel ini tidak sesuai dengan kelas yang Anda ampu.
+        </div>`
+      : tpList.length > 0 ? tpHTML : `<div style="padding:16px;text-align:center;color:rgba(255,255,255,.5);font-size:13px;">Data kurikulum belum tersedia.</div>`
+    }
   </div>
 </div>`;
 }

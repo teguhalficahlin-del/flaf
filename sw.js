@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v70';          // ← bump: fix getSiswaDinilaiFromLog — hanya hitung siswa dengan nilai terisi
+const CACHE_VERSION  = 'flaf-v71';          // ← bump: feat filter kelas per session
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [

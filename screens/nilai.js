@@ -1106,6 +1106,21 @@ window.nilaiTambahKelas = function() {
     </div>
   `;
   document.body.appendChild(modal);
+
+  // Guard kelas
+  (async () => {
+    try {
+      const stored  = await db.get('kv', 'session');
+      const kelas   = stored?.payload?.kelas || 'all';
+      if (kelas === '1') {
+        document.getElementById('btn-tingkat-2')?.setAttribute('disabled', 'true');
+        document.getElementById('btn-tingkat-2')?.style.setProperty('opacity', '0.3');
+      } else if (kelas === '2') {
+        document.getElementById('btn-tingkat-1')?.setAttribute('disabled', 'true');
+        document.getElementById('btn-tingkat-1')?.style.setProperty('opacity', '0.3');
+      }
+    } catch { /* abaikan */ }
+  })();
 };
 
 window.nilaiPilihTingkat = function(t) {
