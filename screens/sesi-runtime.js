@@ -407,6 +407,7 @@ function _renderRunning() {
   const isLast   = idx === total - 1;
 
   if (!langkah) {
+    console.warn('[SR] langkah null — faseIdx:', _state.faseIdx, 'langkahIdx:', _state.langkahIdx, 'fase:', fase?.fase ?? 'null');
     _transition({ aktState: 'selesai' });
     return;
   }
