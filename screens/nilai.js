@@ -1010,7 +1010,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSoalSTS()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–05 · format DOCX</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–09 · format DOCX (Semester Ganjil)</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -1019,7 +1019,25 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSoalSTS2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–14 · format DOCX</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–18 · format DOCX (Semester Ganjil)</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSASGenap1()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GENAP</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–09 · format DOCX</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSASGenap2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GENAP</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–18 · format DOCX</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -1029,8 +1047,8 @@ async function _renderUnduh(token) {
 
 window.nilaiDownloadSoalSTS = function() {
   const link = document.createElement('a');
-  link.href = './pdf/Soal_SAS_Fase_A_Kelas_1.docx';
-  link.download = 'Soal_SAS_Fase_A_Kelas_1.docx';
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_1_Ganjil.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_1_Ganjil.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -1038,8 +1056,26 @@ window.nilaiDownloadSoalSTS = function() {
 
 window.nilaiDownloadSoalSTS2 = function() {
   const link = document.createElement('a');
-  link.href = './pdf/Soal_SAS_Fase_A_Kelas_2.docx';
-  link.download = 'Soal_SAS_Fase_A_Kelas_2.docx';
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_2_Ganjil.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_2_Ganjil.docx';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSASGenap1 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_1_Genap.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_1_Genap.docx';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSASGenap2 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_SAS_Fase_A_Kelas_2_Genap.docx';
+  link.download = 'Soal_SAS_Fase_A_Kelas_2_Genap.docx';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
