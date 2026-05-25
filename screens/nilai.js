@@ -984,22 +984,30 @@ async function _renderUnduh(token) {
     </div>
   </div>
 
-  <!-- Rapor & Kehadiran -->
+  <!-- Rapor, SAS & Kehadiran -->
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div onclick="nilaiDownloadRapor()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div onclick="nilaiDownloadSAS('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh PDF rapor lengkap (S + AS) ÷ 2</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Sumatif Akhir Semester</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV nilai ujian akhir semester</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
-
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadRapor()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV rapor lengkap (S + AS) ÷ 2</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Rekap Kehadiran</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh PDF presensi semua sesi mengajar</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh CSV presensi semua sesi mengajar</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -1223,6 +1231,19 @@ window.nilaiDownloadRekap2 = async function(kelasId, kelasNama, tingkat) {
   } catch (err) {
     console.error('[NILAI] download rekap2 error:', err);
     alert('Gagal membuat CSV rekap akhir.');
+  }
+};
+
+window.nilaiDownloadSAS = async function(kelasId, kelasNama) {
+  try {
+    const siswaList = await nilai.getRekapSAS(kelasId);
+    const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const rows      = [['No', 'Nama', 'Nilai Akhir Semester']];
+    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sas ?? '']));
+    _downloadCSV(`nilai-akhir-semester-${safeName}.csv`, rows);
+  } catch (err) {
+    console.error('[NILAI] download SAS error:', err);
+    alert('Gagal membuat CSV nilai akhir semester.');
   }
 };
 
