@@ -712,11 +712,14 @@ function _renderPenilaianOverlay() {
   let halaman       = 0;
   let openIdx       = 0;         // indeks siswa yang accordion-nya terbuka
 
-  // Hasil per siswaId — default semua kosong
-  const hasil = {};
+  // Hasil per siswaId — persist selama sesi, tidak reset saat overlay dibuka ulang
+  if (!_state.nilaiDraft) _state.nilaiDraft = {};
   for (const s of siswaList) {
-    hasil[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null };
+    if (!_state.nilaiDraft[s.id]) {
+      _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null };
+    }
   }
+  const hasil = _state.nilaiDraft;
 
   const totalHal = Math.ceil(siswaList.length / PAGE_SIZE);
 
