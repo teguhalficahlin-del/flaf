@@ -582,3 +582,101 @@ export async function generatePDFRapor(opts) {
   const safeName = (opts.kelasNama || 'kelas').replace(/\s+/g, '_').toLowerCase();
   _triggerDownload(canvas, `FLAF_Nilai_Rapor_${safeName}.png`);
 }
+
+// --- DOKUMEN 4: REKAP KEHADIRAN ----------------------------------------------
+
+export async function generatePDFKehadiran(opts) {
+  const { namaGuru, namaSekolah, kelasNama, siswaList, koloms } = opts;
+  // koloms: Array<{ tpNomor, hari, tanggal, statusMap }>
+
+  const ROW_H   = 22;
+  const HEAD_H  = 60;
+  const COL_NO  = 28;
+  const COL_NAMA= 160;
+  const COL_SESI= Math.max(18, Math.min(28, Math.floor((1123 - 80 - COL_NO - COL_NAMA) / Math.max(koloms.length, 1))));
+  const W       = 80 + COL_NO + COL_NAMA + COL_SESI * koloms.length;
+  const ROWS_PER_PAGE = Math.floor((1587 - 120 - HEAD_H) / ROW_H);
+  const pages   = Math.ceil(siswaList.length / ROWS_PER_PAGE);
+
+  for (let p = 0; p < pages; p++) {
+    const H      = 1587; // A4 landscape px @96dpi
+    const canvas = _createCanvas(W < 1587 ? 1587 : W, H);
+    const ctx    = _ctx(canvas);
+
+    // Background
+    _rect(ctx, 0, 0, canvas.width, H, '#1A1A1A');
+
+    // Header
+    _rect(ctx, 0, 0, canvas.width, 70, '#1A1A1A');
+    _text(ctx, `REKAP KEHADIRAN — ${kelasNama}`, 40, 14, { size: 16, weight: 700, color: '#D4AE3A' });
+    _text(ctx, `${namaGuru}   |   ${namaSekolah}`, 40, 36, { size: 9, color: '#C8C8C8' });
+    const tgl = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    _text(ctx, `Dicetak: ${tgl}   |   Halaman ${p + 1}/${pages}`, 40, 50, { size: 8, color: '#909090' });
+
+    // Table header row 1 — hari
+    let hx = 40;
+    _rect(ctx, 40, 75, COL_NO, 20, '#2A2A2A');
+    _rect(ctx, 40 + COL_NO, 75, COL_NAMA, 20, '#2A2A2A');
+    _text(ctx, 'No',   40 + COL_NO / 2, 81, { size: 8, weight: 700, color: '#D4AE3A', align: 'center' });
+    _text(ctx, 'Nama', 40 + COL_NO + 8, 81, { size: 8, weight: 700, color: '#D4AE3A' });
+    hx = 40 + COL_NO + COL_NAMA;
+    koloms.forEach(k => {
+      _rect(ctx, hx, 75, COL_SESI, 20, '#2A2A2A');
+      _text(ctx, k.hari, hx + COL_SESI / 2, 81, { size: 7, weight: 700, color: '#D4AE3A', align: 'center' });
+      hx += COL_SESI;
+    });
+
+    // Table header row 2 — tanggal
+    hx = 40 + COL_NO + COL_NAMA;
+    koloms.forEach(k => {
+      _rect(ctx, hx, 95, COL_SESI, 20, '#323232');
+      _text(ctx, k.tanggal, hx + COL_SESI / 2, 101, { size: 6, color: '#C8C8C8', align: 'center' });
+      hx += COL_SESI;
+    });
+
+    // Table header row 3 — TP
+    hx = 40 + COL_NO + COL_NAMA;
+    koloms.forEach(k => {
+      _rect(ctx, hx, 115, COL_SESI, 20, '#3A2A1A');
+      _text(ctx, `TP${k.tpNomor}`, hx + COL_SESI / 2, 121, { size: 6, color: '#B05A46', align: 'center' });
+      hx += COL_SESI;
+    });
+
+    // Rows
+    const slice = siswaList.slice(p * ROWS_PER_PAGE, (p + 1) * ROWS_PER_PAGE);
+    let ry = 135;
+    slice.forEach((s, i) => {
+      const bg = i % 2 === 0 ? '#232323' : '#1E1E1E';
+      _rect(ctx, 40, ry, COL_NO + COL_NAMA + COL_SESI * koloms.length, ROW_H, bg);
+      _text(ctx, String(s.nomor), 40 + COL_NO / 2, ry + 6, { size: 8, color: '#C8C8C8', align: 'center' });
+      _text(ctx, s.nama.substring(0, 28), 40 + COL_NO + 6, ry + 6, { size: 8, color: '#E8E8E8' });
+      hx = 40 + COL_NO + COL_NAMA;
+      koloms.forEach(k => {
+        const st = k.statusMap[s.id] || 'A';
+        const stColor = st==='H' ? '#3C7850' : st==='S' ? '#4682B4' : st==='I' ? '#B48214' : '#B43C32';
+        _text(ctx, st, hx + COL_SESI / 2, ry + 6, { size: 8, weight: 700, color: stColor, align: 'center' });
+        hx += COL_SESI;
+      });
+      ry += ROW_H;
+    });
+
+    // Footer
+    _text(ctx, 'FLAF — Functional Language Accumulation Framework',
+      canvas.width / 2, H - 30, { size: 8, color: '#606060', align: 'center' });
+
+    // Tanda tangan (halaman terakhir)
+    if (p === pages - 1) {
+      const ttX = canvas.width - 40 - 200;
+      const ttY = H - 110;
+      _text(ctx, 'Guru Bahasa Inggris', ttX + 100, ttY, { size: 9, color: '#909090', align: 'center' });
+      _line(ctx, ttX, ttY + 55, ttX + 200, ttY + 55, '#606060', 0.5);
+      _text(ctx, namaGuru || '', ttX + 100, ttY + 62, { size: 9, weight: 700, color: '#C8C8C8', align: 'center' });
+    }
+
+    const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    _triggerDownload(canvas, `FLAF_Rekap_Hadir_${safeName}_hal${p + 1}.png`);
+    await new Promise(r => setTimeout(r, 300));
+  }
+}
+
+export { generatePDFRekap, generatePDFRekap2, generatePDFRapor, generatePDFKehadiran };
