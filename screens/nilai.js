@@ -1006,8 +1006,27 @@ async function _renderUnduh(token) {
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
+  <div class="nv-card">
+    <div onclick="nilaiDownloadSoalSTS()"
+         style="display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;">
+      <div style="flex:1;min-width:0;">
+        <div class="nv-card-title">Soal Sumatif Tengah Semester</div>
+        <div class="nv-card-subtitle">Fase A Kelas 1 — TP 01–05 · format DOCX</div>
+      </div>
+      <div style="font-size:20px;color:rgba(255,255,255,.5);">⬇</div>
+    </div>
+  </div>
 </div>`;
 }
+
+window.nilaiDownloadSoalSTS = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_1.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_1.docx';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 // ── CSV helper ─────────────────────────────────
 function _downloadCSV(filename, rows) {
   const csv = rows.map(r =>
