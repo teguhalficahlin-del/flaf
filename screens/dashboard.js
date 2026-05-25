@@ -870,16 +870,18 @@ function _rerenderStep() {
 
 // --- HELPERS -----------------------------------------------------------------
 
-function _hitungSiswaDinilai() {
+function _hitungSiswaDinilai(logSet) {
   const cache = _flow.nilaiCache || {};
   let count = 0;
   for (const s of (_flow.siswaList || [])) {
     const c = cache[s.id];
-    if (!c) continue;
-    const hasAny = (c.l !== null && !isNaN(c.l))
-                || (c.s !== null && !isNaN(c.s))
-                || (c.r !== null && !isNaN(c.r));
-    if (hasAny) count++;
+    const hasFormatif = c && (
+      (c.l !== null && !isNaN(c.l)) ||
+      (c.s !== null && !isNaN(c.s)) ||
+      (c.r !== null && !isNaN(c.r))
+    );
+    const hasLog = logSet instanceof Set && logSet.has(s.id);
+    if (hasFormatif || hasLog) count++;
   }
   return count;
 }
@@ -1166,7 +1168,8 @@ window.dashSelesaiSesi = async function() {
   }
 
   await _loadNilaiCache();
-  const dinilai = _hitungSiswaDinilai();
+  const logSet  = await nilai.getSiswaDinilaiFromLog(_flow.rombel?.id, _flow.tp?.nomor);
+  const dinilai = _hitungSiswaDinilai(logSet);
   const total   = (_flow.siswaList || []).length;
 
   if (total > 0 && dinilai < total) {

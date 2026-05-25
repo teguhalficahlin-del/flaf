@@ -267,6 +267,22 @@ async function getNilaiFormatif(kelasId, siswaId, tpNomor) {
   };
 }
 
+async function getSiswaDinilaiFromLog(kelasId, tpNomor) {
+  try {
+    const semua = await db.getAll('penilaian_log');
+    const set = new Set();
+    for (const e of semua) {
+      const v = e.value;
+      if (v.kelasId === kelasId && String(v.tpNomor) === String(tpNomor)) {
+        set.add(v.siswaId);
+      }
+    }
+    return set;
+  } catch {
+    return new Set();
+  }
+}
+
 async function setNilaiFormatif(kelasId, siswaId, tpNomor, l, s, r) {
   const cl     = _clampNilai(l);
   const cs     = _clampNilai(s);
@@ -549,6 +565,7 @@ export const nilai = {
   getNilaiLSR,
   setNilaiLSR,
   getNilaiFormatif,
+  getSiswaDinilaiFromLog,
   setNilaiFormatif,
   setCatatanFormatif,
   getCatatan,
@@ -580,6 +597,7 @@ export {
   getNilaiLSR,
   setNilaiLSR,
   getNilaiFormatif,
+  getSiswaDinilaiFromLog,
   setNilaiFormatif,
   setCatatanFormatif,
   getCatatan,
