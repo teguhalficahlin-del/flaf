@@ -4,7 +4,7 @@
  * File: tp-08-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp08-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -219,10 +219,10 @@ const TP_08 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `⚠ DARURAT — Waktu ≤12 menit: skip ke Layar 11. AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2 kartu ruangan acak per pasangan. Tunggu semua kartu sampai. AKSI: Baru instruksi: "Partner A — point to a room. Say: 'There is a ___ in the ___.' Partner B — listen. Then switch." "Two cards each. Go!" "Finished? Do it again — faster! But partner voice." UCAP: "Change voice — robot voice! Slow voice! Tiny voice!" ⚡ Lebih aman daripada tambah task baru atau tukar kartu. ⚡ ACCEPTANCE RULE: pasangan yang hanya bilang "Bed — bedroom!" tetap diterima sementara. Guru model ulang saat lewat tanpa menghentikan flow: Siswa: "Bed — bedroom." Guru: "Yes! There is a bed in the bedroom." → lanjut jalan. ⚡ SCAFFOLD PARSIAL — hanya setelah jeda 2–3 detik atau pasangan benar-benar freeze: Guru: "There is a…" → siswa isi. Jangan terlalu cepat membantu. ⚡ DEMO VOLUME: keras ❌ → pelan ❌ → partner voice ✅ ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." "3… 2… 1… hands down." → tunggu 2–3 detik → siswa isi → guru lanjut jalan. bukan bersamaan. Acceptance rule berlaku — koreksi saat lewat, bukan berhenti.`,
+          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2 kartu ruangan acak per pasangan. Tunggu semua kartu sampai. AKSI: Baru instruksi: "Partner A — point to a room. Say: 'There is a ___ in the ___.' Partner B — listen. Then switch." "Two cards each. Go!" "Finished? Do it again — faster! But partner voice." UCAP: "Change voice — robot voice! Slow voice! Tiny voice!" ⚡ Lebih aman daripada tambah task baru atau tukar kartu. ⚡ ACCEPTANCE RULE: pasangan yang hanya bilang "Bed — bedroom!" tetap diterima sementara. Guru model ulang saat lewat tanpa menghentikan flow: Siswa: "Bed — bedroom." Guru: "Yes! There is a bed in the bedroom." → lanjut jalan. ⚡ SCAFFOLD PARSIAL — hanya setelah jeda 2–3 detik atau pasangan benar-benar freeze: Guru: "There is a…" → siswa isi. Jangan terlalu cepat membantu. ⚡ DEMO VOLUME: keras ❌ → pelan ❌ → partner voice ✅ ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." "3… 2… 1… hands down." → tunggu 2–3 detik → siswa isi → guru lanjut jalan. bukan bersamaan. Acceptance rule berlaku — koreksi saat lewat, bukan berhenti.`,
           bantuan: 'Pasangan diam/freeze: guru pegang kartu, ucap "There is a…"',
           cue    : 'Distribusi kartu diam dulu, instruksi belakangan —',
-          darurat: null,
+          darurat: 'Waktu ≤12 menit: skip ke Layar 11.',
           energi : '🟠',
         },
 

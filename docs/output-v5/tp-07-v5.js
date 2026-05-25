@@ -4,7 +4,7 @@
  * File: tp-07-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp07-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -224,10 +224,10 @@ const TP_07 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `⚠ DARURAT — Waktu ≤12 menit: skip ke Layar 12. Belum bisa → Sebutkan vocab saja. Boleh tunjuk kartu tanpa kalimat. Normal → "This is my mother. This is my father." Tantangan → "This is my mother. She is kind." "This is my brother. He is funny." ⚡ Contoh kalimat tantangan ditempel di SISI papan — bukan tengah. Extension opsional, bukan fokus kelas.`,
+          teks   : `Belum bisa → Sebutkan vocab saja. Boleh tunjuk kartu tanpa kalimat. Normal → "This is my mother. This is my father." Tantangan → "This is my mother. She is kind." "This is my brother. He is funny." ⚡ Contoh kalimat tantangan ditempel di SISI papan — bukan tengah. Extension opsional, bukan fokus kelas.`,
           bantuan: null,
           cue    : null,
-          darurat: null,
+          darurat: 'Waktu ≤12 menit: skip ke Layar 12.',
           energi : '🟡',
         },
 

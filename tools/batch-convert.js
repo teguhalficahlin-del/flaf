@@ -1,108 +1,67 @@
 'use strict';
-
 /**
- * tools/batch-convert.js
- * Batch convert docs/skenario/flaf-skenario-tp{NN}-v2.txt → docs/output-v5/tp-{NN}-v5.js
- * Parser functions extracted from tools/converter.html (same logic, no DOM deps).
+ * tools/batch-convert.js — FLAF Batch Skenario Converter
+ *
+ * Node.js (CommonJS) port of tools/converter.html parser.
+ * Processes all docs/skenario/flaf-skenario-tp*-v2.txt
+ * and writes to docs/output-v5/tp-{N}-v5.js.
+ *
+ * Changes from converter.html:
+ *   - parseLayer(): DARURAT_RE fixed to also match em-dash variant (⚠ DARURAT —)
+ *   - generateJS(): accepts optional `manual` param to preserve existing fields
+ *   - Added: batch file I/O loop + manual-field preservation
+ *
+ * Preserved fields (if already non-default in the existing output file):
+ *   kelas, deskripsi, indikator, vocab, persiapan, media, printables
  *
  * Usage:
- *   node tools/batch-convert.js              — convert TP01–14
- *   node tools/batch-convert.js --all        — convert TP01–18
+ *   node tools/batch-convert.js          # process all TP (all *-v2.txt found)
+ *   node tools/batch-convert.js 8        # process TP 8 only
  */
 
 const fs   = require('fs');
 const path = require('path');
 
-const ROOT         = path.join(__dirname, '..');
-const SKENARIO_DIR = path.join(ROOT, 'docs', 'skenario');
-const OUTPUT_DIR   = path.join(ROOT, 'docs', 'output-v5');
+const ROOT     = path.resolve(__dirname, '..');
+const SKENARIO = path.join(ROOT, 'docs', 'skenario');
+const OUTPUT   = path.join(ROOT, 'docs', 'output-v5');
 
-const convertAll = process.argv.includes('--all');
-const MAX_TP     = convertAll ? 18 : 14;
+// ═════════════════════════════════════════════════════════════════════════════
+// Parser — ported verbatim from tools/converter.html
+// (Only change: DARURAT_RE / DARURAT_STRIP in parseLayer, documented inline)
+// ═════════════════════════════════════════════════════════════════════════════
 
-// ─────────────────────────────────────────────────────────────
-// Parser (identical to tools/converter.html — keep in sync)
-// ─────────────────────────────────────────────────────────────
+function toTitleCase(str) {
+  const small = new Set(['and','or','the','in','of','a','an','to','for','with','at','by','from','but','as']);
+  return str.toLowerCase().split(/\s+/).map((w, i) =>
+    (i === 0 || !small.has(w)) ? w.charAt(0).toUpperCase() + w.slice(1) : w
+  ).join(' ');
+}
 
-function parseSkenario(text) {
-  const warnings = [];
+function extractEnergi(line) {
+  return line
+    .replace(/\b[A-Za-z]+\b/g, '')
+    .replace(/\s*→\s*/g, ' → ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
-  // 1. Header
-  const headerMatch = text.match(/^TP\s+(\d+)\s*[—\-]+\s*(.+)/m);
-  if (!headerMatch) {
-    throw new Error('Format tidak dikenali — baris "TP N — JUDUL" tidak ditemukan di awal file');
-  }
-  const nomor    = parseInt(headerMatch[1], 10);
-  const nPad     = String(nomor).padStart(2, '0');
-  const nama     = toTitleCase(headerMatch[2].trim());
-  const id       = `tp-${nPad}`;
-  const varName  = `TP_${nPad}`;
-  const filename = `tp-${nPad}-v5.js`;
-
-  const temaMatch = text.match(/^Tema:\s*(.+)/m);
-  const tema = temaMatch ? temaMatch[1].trim() : '';
-  if (!tema) warnings.push('Baris "Tema:" tidak ditemukan — field tema akan kosong');
-
-  // 2. Split into blocks by ════ dividers
-  const blocks = text.split(/═{3,}/);
-
-  // 3. Parse layers
-  const layers = [];
-  for (const block of blocks) {
-    const trimmed = block.trim();
-    if (!trimmed) continue;
-    const firstLine = trimmed.split('\n')[0].trim();
-    if (/^LAYAR\s+\d+/.test(firstLine)) {
-      layers.push(parseLayer(trimmed));
-    }
-  }
-
-  if (layers.length === 0) {
-    throw new Error('Tidak ada LAYAR yang terdeteksi — pastikan file menggunakan format flaf-skenario-tp{N}-v2.txt');
-  }
-
-  // 4. Parse checklist
-  const checklist = [];
-  for (const line of text.split('\n')) {
-    const t = line.trim();
-    if (t.startsWith('[ ] ') || t === '[ ]') {
-      checklist.push(t.slice(4).trim());
-    }
-  }
-  if (checklist.length === 0) {
-    warnings.push('✅ CHECKLIST tidak ditemukan — field checklist akan kosong');
-  }
-
-  // 5. Parse catatan
-  const catatan = parseCatatan(text, warnings);
-
-  // 6. Build energi_map from layer headers
-  const energi_map = layers.map(l => `L${l.num} ${l.energi}`);
-
-  // 7. Group into skenario phases
-  const skenario = buildSkenario(layers);
-
-  // 8. Content warnings
-  layers.forEach(l => {
-    if (!l.teks.trim()) {
-      warnings.push(`L${l.num}: teks kosong — periksa blok layar ini`);
-    }
-  });
-  warnings.push('durasi fase diset default (Pembuka=10, Inti=30, Penutup=10) — verifikasi manual jika berbeda');
-  warnings.push('kelas / deskripsi / indikator / vocab / persiapan / media / printables harus diisi manual');
-
-  return { nomor, nPad, id, varName, filename, nama, tema, checklist, energi_map, catatan, skenario, warnings };
+function determineFase(category) {
+  const u = category.toUpperCase();
+  if (u.includes('PEMBUKA') || u.includes('PRE-OPENING')) return 'Pembuka';
+  if (u.includes('PENUTUP'))                               return 'Penutup';
+  return 'Inti';
 }
 
 function parseLayer(blockText) {
   const lines = blockText.split('\n').map(l => l.trimEnd());
 
-  const nonEmpty    = lines.filter(l => l.trim());
-  const headerLine  = nonEmpty[0] || '';
-  const energiLine  = nonEmpty[1] || '';
+  const nonEmpty   = lines.filter(l => l.trim());
+  const headerLine = nonEmpty[0] || '';
+  const energiLine = nonEmpty[1] || '';
 
   const numMatch = headerLine.match(/^LAYAR\s+(\d+)/);
-  const num = numMatch ? parseInt(numMatch[1], 10) : -1;
+  const num      = numMatch ? parseInt(numMatch[1], 10) : -1;
 
   const afterDash = headerLine.replace(/^LAYAR\s+\d+\s*[—\-]+\s*/, '');
   const category  = afterDash.split(/\s*·\s*/)[0].trim();
@@ -126,55 +85,58 @@ function parseLayer(blockText) {
 
   const BANTUAN_RE = /^BANTUAN\s*[▸►]\s*/;
   const CUE_RE     = /^[⚡★]\s*Cue kritis:\s*/i;
-  const DARURAT_RE = /^[⚠⛔]\s*DARURAT:\s*/i;
+
+  // FIX vs converter.html:
+  //   Original DARURAT_RE: /^[⚠⛔]\s*DARURAT:\s*/i
+  //   Only matched "⚠ DARURAT: …" (colon variant).
+  //   TP08+ use em-dash: "⚠ DARURAT — …" which fell through to teksLines,
+  //   embedding the full DARURAT sentence into the instruction teks field.
+  //   New pattern matches colon (:), em-dash (—), en-dash (–), or hyphen (-).
+  //   DARURAT_STRIP (for replacement) greedily consumes all separator chars.
+  const DARURAT_RE    = /^[⚠⛔]\s*DARURAT[\s:—–-]/i;
+  const DARURAT_STRIP = /^[⚠⛔]\s*DARURAT[\s:—–-]+\s*/i;
+
+  let lastWas = null;  // tracks last special marker: 'darurat' | null
 
   for (const line of contentLines) {
     const t = line.trim();
-    if (!t || t === '---') continue;
+
+    // Empty / separator line — reset continuation flag, skip
+    if (!t || t === '---') {
+      lastWas = null;
+      continue;
+    }
 
     if (BANTUAN_RE.test(t)) {
+      lastWas = null;
       const text = t.replace(BANTUAN_RE, '').trim();
       if (text) bantuan.push(text);
     } else if (CUE_RE.test(t)) {
+      lastWas = null;
       cue = t.replace(CUE_RE, '').trim();
     } else if (DARURAT_RE.test(t)) {
-      darurat = t.replace(DARURAT_RE, '').trim();
+      darurat  = t.replace(DARURAT_STRIP, '').trim();
+      lastWas  = 'darurat';
+    } else if (lastWas === 'darurat') {
+      // Continuation line of a multi-line DARURAT — append to darurat, not teks
+      darurat = (darurat ? darurat + ' ' : '') + t;
     } else {
       teksLines.push(t);
     }
   }
 
-  const teks = teksLines.join(' ').replace(/\s{2,}/g, ' ').trim();
-
-  const bantuanVal =
-    bantuan.length === 0 ? null :
-    bantuan.length === 1 ? bantuan[0] :
-    bantuan;
-
-  const fase = determineFase(category);
+  const teks       = teksLines.join(' ').replace(/\s{2,}/g, ' ').trim();
+  const bantuanVal = bantuan.length === 0 ? null :
+                     bantuan.length === 1 ? bantuan[0] :
+                     bantuan;
+  const fase       = determineFase(category);
 
   return { num, fase, energi, teks, bantuan: bantuanVal, cue, darurat };
-}
-
-function determineFase(category) {
-  const u = category.toUpperCase();
-  if (u.includes('PEMBUKA') || u.includes('PRE-OPENING')) return 'Pembuka';
-  if (u.includes('PENUTUP')) return 'Penutup';
-  return 'Inti';
-}
-
-function extractEnergi(line) {
-  return line
-    .replace(/\b[A-Za-z]+\b/g, '')
-    .replace(/\s*→\s*/g, ' → ')
-    .replace(/\s+/g, ' ')
-    .trim();
 }
 
 function parseCatatan(text, warnings) {
   const risiko   = [];
   const autonomy = [];
-
   const BULLET_RE = /^[·•‧]\s*/;
 
   const risikoMatch = text.match(/Risiko pacing:\s*\n([\s\S]*?)(?:Teacher autonomy:|[═]{3,}|$)/);
@@ -201,7 +163,7 @@ function parseCatatan(text, warnings) {
 }
 
 function buildSkenario(layers) {
-  const defaultDurasi = { Pembuka: 10, Inti: 30, Penutup: 10 };
+  const defaultDurasi = { 'Pembuka': 10, 'Inti': 30, 'Penutup': 10 };
   const groups   = [];
   let curFase    = null;
   let curLangkah = [];
@@ -224,19 +186,180 @@ function buildSkenario(layers) {
   return groups;
 }
 
-function toTitleCase(str) {
-  const small = new Set(['and','or','the','in','of','a','an','to','for','with','at','by','from','but','as']);
-  return str.toLowerCase().split(/\s+/).map((w, i) =>
-    (i === 0 || !small.has(w)) ? w.charAt(0).toUpperCase() + w.slice(1) : w
-  ).join(' ');
+function parseSkenario(text) {
+  const warnings = [];
+
+  // 1. Header
+  const headerMatch = text.match(/^TP\s+(\d+)\s*[—\-]+\s*(.+)/m);
+  if (!headerMatch) {
+    throw new Error('Format tidak dikenali — baris "TP N — JUDUL" tidak ditemukan di awal file');
+  }
+  const nomor    = parseInt(headerMatch[1], 10);
+  const nPad     = String(nomor).padStart(2, '0');
+  const nama     = toTitleCase(headerMatch[2].trim());
+  const id       = `tp-${nPad}`;
+  const varName  = `TP_${nPad}`;
+  const filename = `tp-${nPad}-v5.js`;
+
+  const temaMatch = text.match(/^Tema:\s*(.+)/m);
+  const tema      = temaMatch ? temaMatch[1].trim() : '';
+  if (!tema) warnings.push('Baris "Tema:" tidak ditemukan — field tema akan kosong');
+
+  // 2. Split into blocks by ════ dividers
+  const blocks = text.split(/═{3,}/);
+
+  // 3. Parse layers
+  const layers = [];
+  for (const block of blocks) {
+    const trimmed = block.trim();
+    if (!trimmed) continue;
+    const firstLine = trimmed.split('\n')[0].trim();
+    if (/^LAYAR\s+\d+/.test(firstLine)) {
+      layers.push(parseLayer(trimmed));
+    }
+  }
+
+  if (layers.length === 0) {
+    throw new Error('Tidak ada LAYAR yang terdeteksi — pastikan file menggunakan format flaf-skenario-tp{N}-v2.txt');
+  }
+
+  // 4. Parse checklist (scan full text)
+  const checklist = [];
+  for (const line of text.split('\n')) {
+    const t = line.trim();
+    if (t.startsWith('[ ] ') || t === '[ ]') {
+      checklist.push(t.slice(4).trim());
+    }
+  }
+  if (checklist.length === 0) {
+    warnings.push('✅ CHECKLIST tidak ditemukan — field checklist akan kosong');
+  }
+
+  // 5. Parse catatan (scan full text)
+  const catatan = parseCatatan(text, warnings);
+
+  // 6. Build energi_map from layer headers
+  const energi_map = layers.map(l => `L${l.num} ${l.energi}`);
+
+  // 7. Group into skenario phases
+  const skenario = buildSkenario(layers);
+
+  // 8. Content warnings
+  layers.forEach(l => {
+    if (!l.teks.trim()) {
+      warnings.push(`L${l.num}: teks kosong — periksa blok layar ini`);
+    }
+  });
+  warnings.push(
+    'durasi fase diset default (Pembuka=10, Inti=30, Penutup=10) — verifikasi manual jika berbeda'
+  );
+  warnings.push(
+    'kelas / deskripsi / indikator / vocab / persiapan / media / printables harus diisi manual'
+  );
+
+  return { nomor, nPad, id, varName, filename, nama, tema, checklist, energi_map, catatan, skenario, warnings };
 }
 
-// ─────────────────────────────────────────────────────────────
-// Code generator
-// ─────────────────────────────────────────────────────────────
+// ═════════════════════════════════════════════════════════════════════════════
+// String helpers — ported verbatim from tools/converter.html
+// ═════════════════════════════════════════════════════════════════════════════
 
-function generateJS(data) {
-  const { nomor, nPad, id, varName, filename, nama, tema, checklist, energi_map, catatan, skenario } = data;
+/** Single-quoted JS string literal — escapes \ and ' */
+function sq(str) {
+  if (str === null || str === undefined) return 'null';
+  return "'" + String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
+}
+
+/** Template literal — escapes ` and ${ */
+function tl(str) {
+  if (!str) return "''";
+  const escaped = String(str)
+    .replace(/\\/g, '\\\\')
+    .replace(/`/g,  '\\`')
+    .replace(/\$\{/g, '\\${');
+  return '`' + escaped + '`';
+}
+
+function fmtNullable(val) {
+  return (val === null || val === undefined) ? 'null' : sq(val);
+}
+
+function fmtBantuan(val) {
+  if (val === null || val === undefined) return 'null';
+  if (Array.isArray(val)) {
+    const items = val.map(v => `            ${sq(v)},`).join('\n');
+    return `[\n${items}\n          ]`;
+  }
+  return sq(val);
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Manual field preservation
+// ═════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Read manually-filled fields from an existing output file.
+ * Returns only fields that differ from the TODO placeholder defaults.
+ *
+ * Scalar defaults treated as "not set":  kelas=0, deskripsi='' or ""
+ * Array  defaults treated as "not set":  any field = []
+ *
+ * @param {string} text  — content of existing tp-{N}-v5.js
+ * @returns {object}     — subset of { kelas, deskripsi, indikator, vocab, persiapan, media, printables }
+ */
+function extractManualFields(text) {
+  const fields = {};
+
+  // ── Scalar fields ──────────────────────────────────────────────────────────
+  const scalars = [
+    { name: 'pdf_ref',   defaults: [] },          // always preserve if present
+    { name: 'kelas',     defaults: ['0'] },
+    { name: 'deskripsi', defaults: ["''", '""'] },
+  ];
+  for (const { name, defaults } of scalars) {
+    const re = new RegExp(`^\\s*${name}\\s*:\\s*(.+)`, 'm');
+    const m  = re.exec(text);
+    if (!m) continue;
+    let raw = m[1].trim();
+    // Strip inline comment FIRST, then all trailing commas
+    raw = raw.replace(/\s*\/\/.*$/, '').trim();
+    raw = raw.replace(/,+$/, '').trim();
+    if (!defaults.includes(raw)) fields[name] = raw;
+  }
+
+  // ── Array fields ───────────────────────────────────────────────────────────
+  for (const name of ['indikator', 'vocab', 'persiapan', 'media', 'printables']) {
+    const re = new RegExp(`^\\s*${name}\\s*:\\s*`, 'm');
+    const m  = re.exec(text);
+    if (!m) continue;
+    const start = m.index + m[0].length;
+    const sub   = text.slice(start);
+    if (!sub.startsWith('[')) continue;
+    // Bracket-match to find the closing ]
+    let depth = 0, i = 0;
+    for (; i < sub.length; i++) {
+      if      (sub[i] === '[') depth++;
+      else if (sub[i] === ']') { depth--; if (depth === 0) { i++; break; } }
+    }
+    const raw = sub.slice(0, i).trim();
+    if (raw !== '[]') fields[name] = raw;
+  }
+
+  return fields;
+}
+
+// ═════════════════════════════════════════════════════════════════════════════
+// Code generator — ported from tools/converter.html, adds `manual` param
+// ═════════════════════════════════════════════════════════════════════════════
+
+/**
+ * @param {object} data     — from parseSkenario()
+ * @param {object} manual   — from extractManualFields(), may be {}
+ * @returns {string}        — JS source for the output file
+ */
+function generateJS(data, manual = {}) {
+  const { nomor, nPad, id, varName, filename, nama, tema,
+          checklist, energi_map, catatan, skenario } = data;
   const today = new Date().toISOString().slice(0, 10);
 
   const out = [];
@@ -256,17 +379,58 @@ function generateJS(data) {
   out.push(`const ${varName} = {`);
   out.push(``);
   out.push(`  id       : '${id}',`);
+  if (manual.pdf_ref !== undefined) {
+    out.push(`  pdf_ref  : ${manual.pdf_ref},`);
+  }
   out.push(`  nomor    : ${nomor},`);
-  out.push(`  kelas    : 0,          // TODO: isi manual`);
+
+  if (manual.kelas !== undefined) {
+    out.push(`  kelas    : ${manual.kelas},`);
+  } else {
+    out.push(`  kelas    : 0,          // TODO: isi manual`);
+  }
+
   out.push(`  nama     : ${sq(nama)},`);
   out.push(`  tema     : ${sq(tema)},`);
-  out.push(`  deskripsi: '',         // TODO: isi manual`);
+
+  if (manual.deskripsi !== undefined) {
+    out.push(`  deskripsi: ${manual.deskripsi},`);
+  } else {
+    out.push(`  deskripsi: '',         // TODO: isi manual`);
+  }
+
   out.push(``);
-  out.push(`  indikator: [],         // TODO: isi manual`);
-  out.push(`  vocab    : [],         // TODO: isi manual`);
-  out.push(`  persiapan: [],         // TODO: isi manual`);
-  out.push(`  media    : [],         // TODO: isi manual`);
-  out.push(`  printables: [],        // TODO: isi manual`);
+
+  if (manual.indikator !== undefined) {
+    out.push(`  indikator: ${manual.indikator},`);
+  } else {
+    out.push(`  indikator: [],         // TODO: isi manual`);
+  }
+
+  if (manual.vocab !== undefined) {
+    out.push(`  vocab    : ${manual.vocab},`);
+  } else {
+    out.push(`  vocab    : [],         // TODO: isi manual`);
+  }
+
+  if (manual.persiapan !== undefined) {
+    out.push(`  persiapan: ${manual.persiapan},`);
+  } else {
+    out.push(`  persiapan: [],         // TODO: isi manual`);
+  }
+
+  if (manual.media !== undefined) {
+    out.push(`  media    : ${manual.media},`);
+  } else {
+    out.push(`  media    : [],         // TODO: isi manual`);
+  }
+
+  if (manual.printables !== undefined) {
+    out.push(`  printables: ${manual.printables},`);
+  } else {
+    out.push(`  printables: [],        // TODO: isi manual`);
+  }
+
   out.push(``);
   out.push(`  checklist: [`);
   for (const item of checklist) out.push(`    ${sq(item)},`);
@@ -324,80 +488,110 @@ function generateJS(data) {
   return out.join('\n');
 }
 
-// ─────────────────────────────────────────────────────────────
-// String helpers
-// ─────────────────────────────────────────────────────────────
+// ═════════════════════════════════════════════════════════════════════════════
+// Batch runner
+// ═════════════════════════════════════════════════════════════════════════════
 
-function sq(str) {
-  if (str === null || str === undefined) return 'null';
-  return "'" + String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'") + "'";
-}
-
-function tl(str) {
-  if (!str) return "''";
-  const escaped = String(str)
-    .replace(/\\/g, '\\\\')
-    .replace(/`/g,  '\\`')
-    .replace(/\$\{/g, '\\${');
-  return '`' + escaped + '`';
-}
-
-function fmtNullable(val) {
-  return (val === null || val === undefined) ? 'null' : sq(val);
-}
-
-function fmtBantuan(val) {
-  if (val === null || val === undefined) return 'null';
-  if (Array.isArray(val)) {
-    const items = val.map(v => `            ${sq(v)},`).join('\n');
-    return `[\n${items}\n          ]`;
+function run(filterTp) {
+  // ── Ensure output directory exists ─────────────────────────────────────────
+  if (!fs.existsSync(OUTPUT)) {
+    fs.mkdirSync(OUTPUT, { recursive: true });
   }
-  return sq(val);
-}
 
-// ─────────────────────────────────────────────────────────────
-// Main
-// ─────────────────────────────────────────────────────────────
-
-if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-
-const files = fs.readdirSync(SKENARIO_DIR)
-  .filter(f => {
-    if (!f.endsWith('-v2.txt')) return false;
-    const m = f.match(/tp(\d+)-v2\.txt$/);
-    if (!m) return false;
-    const n = parseInt(m[1], 10);
-    return n >= 1 && n <= MAX_TP;
-  })
-  .sort();
-
-if (files.length === 0) {
-  console.error('Tidak ada file yang cocok di', SKENARIO_DIR);
-  process.exit(1);
-}
-
-let ok = 0;
-let fail = 0;
-
-for (const file of files) {
+  // ── Collect input files ─────────────────────────────────────────────────────
+  let files;
   try {
-    const text = fs.readFileSync(path.join(SKENARIO_DIR, file), 'utf8');
-    const data = parseSkenario(text);
-    const js   = generateJS(data);
-    const out  = path.join(OUTPUT_DIR, data.filename);
-    fs.writeFileSync(out, js, 'utf8');
-
-    const warnCount = data.warnings.length;
-    const warnLabel = warnCount > 0 ? ` (${warnCount} warnings)` : '';
-    console.log(`✅  ${file.padEnd(38)} → ${data.filename}${warnLabel}`);
-
-    const faseList = data.skenario.map(f => `${f.fase}:${f.langkah.length}`).join(' + ');
-    console.log(`    langkah: ${faseList} | checklist: ${data.checklist.length} | energi_map: ${data.energi_map.length}`);
-    ok++;
+    files = fs.readdirSync(SKENARIO)
+      .filter(f => /^flaf-skenario-tp\d+-v2\.txt$/.test(f))
+      .sort((a, b) => {
+        const na = parseInt(a.match(/tp(\d+)/)[1], 10);
+        const nb = parseInt(b.match(/tp(\d+)/)[1], 10);
+        return na - nb;
+      });
   } catch (err) {
-    console.error(`❌  ${file}: ${err.message}`);
-    fail++;
+    console.error(`❌ Cannot read skenario dir: ${SKENARIO}\n   ${err.message}`);
+    process.exit(1);
   }
+
+  if (filterTp !== undefined) {
+    files = files.filter(f => {
+      const m = f.match(/tp(\d+)/);
+      return m && parseInt(m[1], 10) === filterTp;
+    });
+    if (files.length === 0) {
+      console.error(`❌ No skenario file found for TP ${filterTp}`);
+      process.exit(1);
+    }
+  }
+
+  console.log(`\nFLAF Batch Converter — ${files.length} file(s)\n`);
+
+  let ok = 0, errors = 0;
+
+  for (const file of files) {
+    const inputPath = path.join(SKENARIO, file);
+    let parsed;
+
+    // ── Parse ──────────────────────────────────────────────────────────────
+    try {
+      const text = fs.readFileSync(inputPath, 'utf8');
+      parsed = parseSkenario(text);
+    } catch (err) {
+      console.error(`❌ ${file} — PARSE ERROR: ${err.message}`);
+      errors++;
+      continue;
+    }
+
+    // ── Preserve manual fields from existing output ─────────────────────────
+    const outputPath = path.join(OUTPUT, parsed.filename);
+    let manual = {};
+    if (fs.existsSync(outputPath)) {
+      try {
+        const existing = fs.readFileSync(outputPath, 'utf8');
+        manual = extractManualFields(existing);
+      } catch (err) {
+        console.warn(`   ⚠  Could not read existing ${parsed.filename}: ${err.message}`);
+      }
+    }
+
+    // ── Generate JS ────────────────────────────────────────────────────────
+    let js;
+    try {
+      js = generateJS(parsed, manual);
+    } catch (err) {
+      console.error(`❌ ${file} — GENERATE ERROR: ${err.message}`);
+      errors++;
+      continue;
+    }
+
+    // ── Write output ────────────────────────────────────────────────────────
+    try {
+      fs.writeFileSync(outputPath, js, 'utf8');
+    } catch (err) {
+      console.error(`❌ ${file} — WRITE ERROR: ${err.message}`);
+      errors++;
+      continue;
+    }
+
+    // ── Log ─────────────────────────────────────────────────────────────────
+    const total     = parsed.skenario.reduce((s, f) => s + f.langkah.length, 0);
+    const preserved = Object.keys(manual);
+    const extraWarn = parsed.warnings.slice(0, -2); // skip the 2 always-present boilerplate warnings
+
+    const preservedNote = preserved.length ? `  [preserved: ${preserved.join(', ')}]` : '';
+    console.log(`✅ ${file} → ${parsed.filename}  (${total} langkah${preservedNote})`);
+    for (const w of extraWarn) console.warn(`   ⚠  ${w}`);
+
+    ok++;
+  }
+
+  console.log(`\n─────────────────────────────────`);
+  console.log(`   ${ok} OK  /  ${errors} ERROR(S)`);
+  console.log(`─────────────────────────────────\n`);
 }
 
-console.log(`\n${ok} file berhasil, ${fail} gagal → ${OUTPUT_DIR}`);
+// ─── Entry point ──────────────────────────────────────────────────────────────
+
+const argStr   = process.argv[2];
+const filterTp = argStr !== undefined ? parseInt(argStr, 10) : undefined;
+run(!isNaN(filterTp) ? filterTp : undefined);

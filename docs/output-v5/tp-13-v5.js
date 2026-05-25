@@ -4,7 +4,7 @@
  * File: tp-13-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp13-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -229,10 +229,10 @@ const TP_13 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `⚠ DARURAT — Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral weather. AKSI: Pasang 4 kartu di papan: rainy, sunny, cold, hot. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 6 kartu, buat 3 kalimat berbeda - Perlu support: cukup 2 kartu — rainy dan sunny`,
+          teks   : `AKSI: Pasang 4 kartu di papan: rainy, sunny, cold, hot. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 6 kartu, buat 3 kalimat berbeda - Perlu support: cukup 2 kartu — rainy dan sunny`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to rainy. Say: When it is rainy, I use an umbrella." Tidak hentikan kelas.',
           cue    : 'Listener harus ulang kalimat — bukan hanya diam menonton. Guru tidak koreksi grammar saat jalan. Acceptance rule berlaku — fragment diterima, model ulang saat lewat. Saat circulate, sesekali model: "When it is cold, I wear a jacket." — supaya retrieval tidak collapse ke rainy/umbrella terus.',
-          darurat: null,
+          darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral weather.',
           energi : '🔴',
         },
 

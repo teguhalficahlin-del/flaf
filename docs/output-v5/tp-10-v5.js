@@ -4,7 +4,7 @@
  * File: tp-10-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp10-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -232,10 +232,10 @@ const TP_10 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `⚠ DARURAT — Waktu ≤10 menit: skip ke Layar 11 — lewati demo dan partner practice, langsung survei oral. UCAP: "Watch first." Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. Guru [badan kiri]: "Do you like rice?" Siswa: "Yes, I do!" / "No, I don't." Guru: "Do you like banana?" Siswa jawab. "Good. Switch." Siswa [badan kiri]: "Do you like chicken?" Guru jawab. UCAP ke kelas: "That's the game. Ask — answer — switch." Sebelum distribusi — ucapkan 3 hal ini: "Partner voice — not shouting." [Tunjuk simbol A/B di papan] "A asks first. B answers." "Use these 5 cards only." [tunjuk: rice, banana, milk, noodles, chicken] DISTRIBUSI piring kosong: Bagikan sekarang — 1 per siswa. Guru tidak bicara instruksi baru saat distribusi. UCAP: "Circle the foods you like. Quick — no coloring." [Countdown: "5… 4… 3… 2… 1." — guru tetap di depan] Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Now — ask your partner. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Other partner asks now." [Tepuk 1 kali — lanjut] rice?" Tidak hentikan kelas. rule berlaku. Piring kosong adalah bahan bicara — bukan aktivitas utama.`,
+          teks   : `UCAP: "Watch first." Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. Guru [badan kiri]: "Do you like rice?" Siswa: "Yes, I do!" / "No, I don't." Guru: "Do you like banana?" Siswa jawab. "Good. Switch." Siswa [badan kiri]: "Do you like chicken?" Guru jawab. UCAP ke kelas: "That's the game. Ask — answer — switch." Sebelum distribusi — ucapkan 3 hal ini: "Partner voice — not shouting." [Tunjuk simbol A/B di papan] "A asks first. B answers." "Use these 5 cards only." [tunjuk: rice, banana, milk, noodles, chicken] DISTRIBUSI piring kosong: Bagikan sekarang — 1 per siswa. Guru tidak bicara instruksi baru saat distribusi. UCAP: "Circle the foods you like. Quick — no coloring." [Countdown: "5… 4… 3… 2… 1." — guru tetap di depan] Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Now — ask your partner. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Other partner asks now." [Tepuk 1 kali — lanjut] rice?" Tidak hentikan kelas. rule berlaku. Piring kosong adalah bahan bicara — bukan aktivitas utama.`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Ask: Do you like',
           cue    : 'Guru tidak koreksi grammar saat practice. Acceptance',
-          darurat: null,
+          darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati demo dan partner practice, langsung survei oral.',
           energi : '🔴',
         },
 

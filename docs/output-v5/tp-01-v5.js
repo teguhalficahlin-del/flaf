@@ -4,7 +4,7 @@
  * File: tp-01-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp01-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================

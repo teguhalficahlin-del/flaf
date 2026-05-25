@@ -4,7 +4,7 @@
  * File: tp-12-v5.js
  * Format: v5.0
  * Source: flaf-skenario-tp12-v2.txt
- * Generated: 2026-05-24
+ * Generated: 2026-05-25
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -233,10 +233,10 @@ const TP_12 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `⚠ DARURAT — Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral body parts. AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 8 kartu, tambah legs dan feet - Perlu support: cukup 2 kartu — eyes dan ears`,
+          teks   : `AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 8 kartu, tambah legs dan feet - Perlu support: cukup 2 kartu — eyes dan ears`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to eyes. Say: I use my eyes to see." Tidak hentikan kelas.',
           cue    : 'Listener harus ulang kalimat — bukan hanya diam menonton. Guru tidak koreksi grammar saat jalan. Acceptance rule berlaku — fragment diterima, model ulang saat lewat. Saat circulate, sesekali model: "I use my nose to smell." — supaya retrieval tidak collapse ke hands/write terus.',
-          darurat: null,
+          darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral body parts.',
           energi : '🔴',
         },
 
