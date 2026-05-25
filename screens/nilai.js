@@ -1032,27 +1032,44 @@ function _downloadCSV(filename, rows) {
 }
 
 window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
+  const _labelPerilaku = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
   try {
-    const siswaList = await nilai.getRekapFormatifTP(kelasId, tpNomor);
-    const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
-    // Mode Detail (L/S/R)
-    const detailRows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata']];
-    siswaList.forEach(s => detailRows.push([s.nomor, s.nama, s.l ?? '', s.s ?? '', s.r ?? '', s.nilai ?? '']));
-    _downloadCSV(`nilai-formatif-detail-tp${tpNomor}-${safeName}.csv`, detailRows);
-    // Mode Cepat (capaian + perilaku) — dari penilaian_log
-    const logSet  = await db.getAll('penilaian_log');
-    const cepat   = logSet.filter(e => e.value.kelasId === kelasId && String(e.value.tpNomor) === String(tpNomor) && e.value.mode === 'cepat');
-    if (cepat.length > 0) {
+    const sesiList = await getSesiFormatifTP(kelasId, tpNomor);
+    if (!sesiList || sesiList.length === 0) {
+      alert('Belum ada data penilaian untuk TP ini.');
+      return;
+    }
+    const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const safeTP   = String(tpNomor).padStart(2, '0');
+    for (const sesi of sesiList) {
+      const tgl  = sesi.tanggal;
+      const mode = sesi.mode || 'cepat';
+      let rows;
+      if (mode === 'detail') {
+        rows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata', 'Perilaku']];
+        for (const s of sesi.siswa) {
+          const rerata = [s.l, s.s, s.r].filter(v => v !== null && !isNaN(v));
+          const avg    = rerata.length ? Math.round(rerata.reduce((a, b) => a + b, 0) / rerata.length) : '';
+          rows.push([
+            s.nomor, s.nama,
+            s.l ?? '', s.s ?? '', s.r ?? '',
+            avg,
+            _labelPerilaku[s.perilaku] ?? '',
+          ]);
+        }
+      } else {
+        rows = [['No', 'Nama', 'Nilai', 'Perilaku']];
+        for (const s of sesi.siswa) {
+          rows.push([
+            s.nomor, s.nama,
+            s.capaian ?? '',
+            _labelPerilaku[s.perilaku] ?? '',
+          ]);
+        }
+      }
+      const filename = `formatif-tp${safeTP}-sesi${sesi.sesiIdx}-${mode}-${safeName}.csv`;
       await new Promise(r => setTimeout(r, 300));
-      const cepatRows = [['No', 'Nama', 'Tanggal', 'Capaian', 'Perilaku']];
-      const siswaMap  = Object.fromEntries(siswaList.map(s => [s.id || s.nama, s]));
-      cepat.forEach(e => {
-        const v = e.value;
-        const s = siswaMap[v.siswaId] || { nomor: '', nama: v.siswaId };
-        const tgl = new Date(v.createdAt).toLocaleDateString('id-ID');
-        cepatRows.push([s.nomor, s.nama, tgl, v.capaian ?? '', v.perilaku ?? '']);
-      });
-      _downloadCSV(`nilai-formatif-cepat-tp${tpNomor}-${safeName}.csv`, cepatRows);
+      _downloadCSV(filename, rows);
     }
   } catch (err) {
     console.error('[NILAI] download formatif error:', err);
