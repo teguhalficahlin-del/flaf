@@ -941,10 +941,6 @@ async function _renderUnduh(token) {
     _tpItemHTML(tp, `nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')`
   )).join('');
 
-  const sumatifHTML = tpList.map(tp =>
-    _tpItemHTML(tp, `nilaiDownloadRekap1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')`
-  )).join('');
-
   _container.innerHTML = `
 <div class="nv-wrap">
   <div class="nv-card nv-card--inset" style="padding:14px 16px;">
@@ -953,7 +949,7 @@ async function _renderUnduh(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Unduh & Cetak</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Semua unduhan dalam format PDF</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Semua unduhan dalam format CSV</div>
   </div>
 
   <!-- Formatif collapse -->
@@ -970,17 +966,15 @@ async function _renderUnduh(token) {
     </div>
   </div>
 
-  <!-- Sumatif collapse -->
+  <!-- Sumatif -->
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div class="ds-subfase-head" onclick="nilaiToggleUnduh('sumatif')" style="padding:14px 16px;">
+    <div onclick="nilaiDownloadRekap2('${_state.kelasId}','${_escape(_state.kelasNama)}',${_state.tingkat})"
+         style="padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;">
-        <div class="ds-section-label">Nilai Sumatif — per TP</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Sumatif Mid Semester — masuk rapor</div>
+        <div class="ds-section-label">Nilai Sumatif</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Rekap nilai semua TP — masuk rapor</div>
       </div>
-      <div class="ds-collapse-chevron" id="nv-unduh-chevron-sumatif">▼</div>
-    </div>
-    <div id="nv-unduh-body-sumatif" style="display:none;">
-      ${sumatifHTML}
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
 
@@ -1300,7 +1294,8 @@ async function _renderFormatifDetail(token) {
           const nilaiTeks = sesi.mode === 'cepat'
             ? (s.capaian !== null ? `${s.capaian}` : '—')
             : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
-          const perilakuTeks = s.perilaku ? ` · ${s.perilaku}` : '';
+          const _lp = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
+          const perilakuTeks = s.perilaku ? ` · ${_lp[s.perilaku] ?? s.perilaku}` : '';
           return `
           <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);">
             <div style="font-size:12px;color:rgba(255,255,255,.75);">${s.nomor}. ${_escape(s.nama)}</div>
