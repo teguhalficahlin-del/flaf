@@ -187,7 +187,7 @@ async function _renderMenu(token) {
 
     ${_menuCard('nilaiMenuFormatif()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
-      'rgba(212,174,58,.15)', 'Nilai Formatif', 'Hasil observasi proses saat mengajar — per TP')}
+      'rgba(212,174,58,.15)', 'Nilai Formatif', 'Lihat penilaian proses dan observasi per TP')}
 
     ${_menuCard('nilaiMenuTP()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
