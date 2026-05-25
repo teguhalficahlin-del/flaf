@@ -273,10 +273,12 @@ async function getSiswaDinilaiFromLog(kelasId, tpNomor, sesiId) {
     const set = new Set();
     for (const e of semua) {
       const v = e.value;
+      const sudahDinilai = v.capaian !== null || v.l !== null || v.s !== null || v.r !== null;
       if (
         v.kelasId === kelasId &&
         String(v.tpNomor) === String(tpNomor) &&
-        (sesiId === undefined || v.sesiId === sesiId)
+        (sesiId === undefined || v.sesiId === sesiId) &&
+        sudahDinilai
       ) {
         set.add(v.siswaId);
       }

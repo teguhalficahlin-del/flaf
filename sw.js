@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v69';          // ← bump: fix BL-1 — sesiId sync saat Simpan penilaian
+const CACHE_VERSION  = 'flaf-v70';          // ← bump: fix getSiswaDinilaiFromLog — hanya hitung siswa dengan nilai terisi
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
