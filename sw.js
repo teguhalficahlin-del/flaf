@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v66';          // ← bump: fix logSetDinilai double-load
+const CACHE_VERSION  = 'flaf-v67';          // ← bump: fix sesiId null saat savePenilaian
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [

@@ -936,7 +936,7 @@ function _renderPenilaianOverlay() {
       try {
         const kelasId = _state.rombel?.id;
         const tpNomor = _state.tp?.nomor;
-        const sesiId  = _state.sesiId || Date.now().toString(36);
+        if (!_state.sesiId) _state.sesiId = Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
         const entries = siswaList.map(s => ({
           siswaId : s.id,
           capaian : hasil[s.id].capaian,
@@ -945,7 +945,7 @@ function _renderPenilaianOverlay() {
           r       : hasil[s.id].r,
           perilaku: hasil[s.id].perilaku,
         }));
-        await savePenilaian(kelasId, tpNomor, sesiId, modePenilaian, entries);
+        await savePenilaian(kelasId, tpNomor, _state.sesiId, modePenilaian, entries);
         overlay.remove();
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);
