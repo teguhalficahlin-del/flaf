@@ -1006,44 +1006,63 @@ async function _renderUnduh(token) {
   </div>
 </div>`;
 }
+// ── CSV helper ─────────────────────────────────
+function _downloadCSV(filename, rows) {
+  const csv = rows.map(r =>
+    r.map(v => {
+      const s = String(v ?? '');
+      return s.includes(',') || s.includes('"') || s.includes('\n')
+        ? `"${s.replace(/"/g, '""')}"` : s;
+    }).join(',')
+  ).join('\r\n');
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href = url; a.download = filename; a.style.display = 'none';
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 2000);
+}
+
 window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
   try {
-    const session     = await db.get('kv', 'session');
-    const namaGuru    = session?.payload?.name   || '—';
-    const namaSekolah = session?.payload?.school || '—';
-    const siswaList   = await nilai.getRekapFormatifTP(kelasId, tpNomor);
-    await generatePDFRekap({ namaSekolah, namaGuru, kelasNama, tpNomor, tpNama: `[Formatif] ${tpNama}`, siswaList });
+    const siswaList = await nilai.getRekapFormatifTP(kelasId, tpNomor);
+    const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    // Mode Detail (L/S/R)
+    const detailRows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata']];
+    siswaList.forEach(s => detailRows.push([s.nomor, s.nama, s.l ?? '', s.s ?? '', s.r ?? '', s.nilai ?? '']));
+    _downloadCSV(`nilai-formatif-detail-tp${tpNomor}-${safeName}.csv`, detailRows);
+    // Mode Cepat (capaian + perilaku) — dari penilaian_log
+    const logSet  = await db.getAll('penilaian_log');
+    const cepat   = logSet.filter(e => e.value.kelasId === kelasId && String(e.value.tpNomor) === String(tpNomor) && e.value.mode === 'cepat');
+    if (cepat.length > 0) {
+      await new Promise(r => setTimeout(r, 300));
+      const cepatRows = [['No', 'Nama', 'Tanggal', 'Capaian', 'Perilaku']];
+      const siswaMap  = Object.fromEntries(siswaList.map(s => [s.id || s.nama, s]));
+      cepat.forEach(e => {
+        const v = e.value;
+        const s = siswaMap[v.siswaId] || { nomor: '', nama: v.siswaId };
+        const tgl = new Date(v.createdAt).toLocaleDateString('id-ID');
+        cepatRows.push([s.nomor, s.nama, tgl, v.capaian ?? '', v.perilaku ?? '']);
+      });
+      _downloadCSV(`nilai-formatif-cepat-tp${tpNomor}-${safeName}.csv`, cepatRows);
+    }
   } catch (err) {
     console.error('[NILAI] download formatif error:', err);
-    alert('Gagal membuat PDF rekap formatif.');
+    alert('Gagal membuat CSV rekap formatif.');
   }
 };
 
-window.nilaiDownloadRekap1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
-  try {
-    const session     = await db.get('kv', 'session');
-    const namaGuru    = session?.payload?.name   || '—';
-    const namaSekolah = session?.payload?.school || '—';
-    const siswaList   = await nilai.getRekapTP(kelasId, tpNomor);
-    await generatePDFRekap({ namaSekolah, namaGuru, kelasNama, tpNomor, tpNama, siswaList });
-  } catch (err) {
-    console.error('[NILAI] download rekap1 error:', err);
-    alert('Gagal membuat PDF rekap TP.');
-  }
-};
 
 window.nilaiDownloadRapor = async function() {
   try {
-    const session     = await db.get('kv', 'session');
-    const namaGuru    = session?.payload?.name   || '—';
-    const namaSekolah = session?.payload?.school || '—';
-    const kelasList   = await nilai.getKelasList();
-    const kelas       = kelasList.find(k => k.id === _state.kelasId);
-    const siswaList   = await nilai.getRekapRapor(_state.kelasId);
-    await generatePDFRapor({ namaSekolah, namaGuru, kelasNama: _state.kelasNama, tingkat: kelas?.tingkat || 1, siswaList });
+    const siswaList = await nilai.getRekapRapor(_state.kelasId);
+    const safeName  = _state.kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const rows = [['No', 'Nama', 'Sumatif Mid Semester', 'Sumatif Akhir Semester', 'Nilai Rapor']];
+    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.s ?? '', s.sas ?? '', s.rapor ?? '']));
+    _downloadCSV(`nilai-rapor-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download rapor error:', err);
-    alert('Gagal membuat PDF nilai rapor.');
+    alert('Gagal membuat CSV nilai rapor.');
   }
 };
 
@@ -1119,9 +1138,6 @@ window.nilaiWarna = function(n) {
 
 window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
   try {
-    const session   = await db.get('kv', 'session');
-    const namaGuru  = session?.payload?.name   || '—';
-    const namaSekolah = session?.payload?.school || '—';
     const siswaList = await nilai.getSiswaList(kelasId);
     const kelasList = await nilai.getKelasList();
     const kelas     = kelasList.find(k => k.id === kelasId);
@@ -1140,7 +1156,6 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
         const tgl = new Date(sesi.taught_at);
         koloms.push({
           tpNomor  : tp.nomor,
-          hari     : tgl.toLocaleDateString('id-ID', { weekday: 'short' }),
           tanggal  : tgl.toLocaleDateString('id-ID', { day: '2-digit', month: '2-digit' }),
           statusMap: sesi.status_map || {},
         });
@@ -1149,17 +1164,16 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
 
     if (koloms.length === 0) { alert('Belum ada sesi mengajar yang tercatat.'); return; }
 
-    const { generatePDFKehadiran } = await import('../modules/pdf-generator.js');
-    await generatePDFKehadiran({
-      namaGuru,
-      namaSekolah,
-      kelasNama,
-      siswaList,
-      koloms,
-    });
+    const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const header   = ['No', 'Nama', ...koloms.map(k => `TP${k.tpNomor} ${k.tanggal}`)];
+    const rows     = [header];
+    for (const s of siswaList) {
+      rows.push([s.nomor, s.nama, ...koloms.map(k => k.statusMap[s.id] || '—')]);
+    }
+    _downloadCSV(`rekap-kehadiran-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download kehadiran error:', err);
-    alert('Gagal membuat PDF rekap kehadiran.');
+    alert('Gagal membuat CSV rekap kehadiran.');
   }
 };
 
@@ -1191,14 +1205,24 @@ export async function renderNilaiScreen(container) {
 // Fungsi legacy yang tetap diperlukan
 window.nilaiDownloadRekap2 = async function(kelasId, kelasNama, tingkat) {
   try {
-    const session     = await db.get('kv', 'session');
-    const namaGuru    = session?.payload?.name   || '—';
-    const namaSekolah = session?.payload?.school || '—';
-    const siswaList   = await nilai.getRekapAkhir(kelasId);
-    await generatePDFRekap2({ namaSekolah, namaGuru, kelasNama, tingkat: parseInt(tingkat) || 1, siswaList });
+    const siswaList = await nilai.getRekapAkhir(kelasId);
+    const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const tpList    = _tpList(parseInt(tingkat) || 1);
+
+    const header = ['No', 'Nama', ...tpList.map(tp => `TP${String(tp.nomor).padStart(2, '0')}`), 'Rerata'];
+    const rows   = [header];
+    for (const s of siswaList) {
+      rows.push([
+        s.nomor,
+        s.nama,
+        ...tpList.map(tp => s.tp?.[tp.nomor] ?? ''),
+        s.rerata ?? '',
+      ]);
+    }
+    _downloadCSV(`rekap-akhir-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download rekap2 error:', err);
-    alert('Gagal membuat PDF rekap akhir.');
+    alert('Gagal membuat CSV rekap akhir.');
   }
 };
 
