@@ -102,6 +102,7 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
       if (age < RESUME_MAX_MS) {
         _state.faseIdx    = saved.faseIdx    ?? 0;
         _state.langkahIdx = saved.langkahIdx ?? 0;
+        _state.sesiId     = saved.sesiId     ?? null;
         _state.aktState   = 'resume';
       } else {
         await db.remove(STORE_KV, RESUME_STORE_KEY).catch(() => {});
@@ -136,6 +137,7 @@ async function _persistState() {
       rombelId  : _state.rombel?.id,
       faseIdx   : _state.faseIdx,
       langkahIdx: _state.langkahIdx,
+      sesiId    : _state.sesiId,
       savedAt   : Date.now(),
     });
   } catch (e) {
