@@ -92,6 +92,7 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
     kendala        : null,
     ttsUtterance   : null,
     sesiId         : null,
+    nilaiDraft     : null,
   });
 
   // Cek resume
