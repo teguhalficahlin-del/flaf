@@ -472,17 +472,14 @@ function _buildStepPresensi() {
         ${totalH > 0 ? `${totalH}/${total} hadir` : ''}
       </div>
     </div>
-    <div class="ds-penilaian-progress" style="margin:0 16px 10px;">
-      Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}
-    </div>
-    <div class="ds-asesmen-list">${siswaHTML}</div>
-    <div class="ds-asesmen-nav" style="padding:10px 16px 14px; display:flex; align-items:center; justify-content:space-between;">
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:0 16px 10px;">
       <button onclick="dashPresensiPrev()" class="ds-page-btn"
         ${navPrevDisabled ? 'disabled' : ''}>‹</button>
-      <span style="font-size:13px; color:rgba(255,255,255,.55);">Halaman ${safePage + 1}/${totalPages}</span>
+      <span style="font-size:13px; color:rgba(255,255,255,.55);">Halaman ${safePage + 1}/${totalPages} · Hadir ${totalH}/${total}</span>
       <button onclick="dashPresensiNext()" class="ds-page-btn ds-page-btn--primary"
         ${navNextDisabled ? 'disabled' : ''}>›</button>
     </div>
+    <div class="ds-asesmen-list">${siswaHTML}</div>
   </div>`;
 }
 
@@ -1477,7 +1474,7 @@ window.dashKePilihTP = async function() {
 
 window.dashPilihTP = async function(nomor, nama) {
   _flow.tp         = { nomor, nama };
-  _flow.statusMap  = {};
+  _flow.statusMap  = Object.fromEntries((_flow.siswaList || []).map(s => [s.id, 'H']));
   _flow.view       = 'sesi';
   _flow.nilaiCache = null;
   _skenario        = {
