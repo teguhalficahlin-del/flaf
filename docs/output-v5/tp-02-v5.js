@@ -101,6 +101,15 @@ const TP_02 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Sambut siswa saat masuk dengan senyum dan anggukan. UCAP: "Good morning! Come in, come in!"`,
+    bantuan: null,
+    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai. Berbeda dari TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum hangat. Jangan skip.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -108,16 +117,6 @@ const TP_02 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Sambut siswa saat masuk dengan senyum dan anggukan. UCAP: "Good morning! Come in, come in!"`,
-          bantuan: null,
-          cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai. Berbeda dari TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum hangat. Jangan skip.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -243,8 +242,12 @@ const TP_02 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Minta semua duduk kembali. Beri sinyal perubahan mode. UCAP: "Well done! Now practise with your partner." "If you need help, look at the board. If you are ready, try without looking!" Diferensiasi: - Need Help: lihat papan saat berbicara — boleh hanya nama saja dulu, usia bisa belakangan — guru duduk dekat dan bantu. - Ready: tanpa lihat papan — kalimat lengkap: "My name is ... I am ... years old. Nice to meet you!" — tambahkan "And you? What is your name?" jika sudah lancar.`,
+          teks   : `AKSI: Minta semua duduk kembali. Beri sinyal perubahan mode. UCAP: "Well done! Now practise with your partner." "If you need help, look at the board. If you are ready, try without looking!"`,
           bantuan: null,
+          diferensiasi: {
+            needHelp: 'Lihat papan saat berbicara — boleh hanya nama saja dulu, usia bisa belakangan — guru duduk dekat dan bantu.',
+            ready   : 'Tanpa lihat papan — kalimat lengkap: "My name is ... I am ... years old. Nice to meet you!" — tambahkan "And you? What is your name?" jika sudah lancar.',
+          },
           cue    : null,
           darurat: null,
           energi : '🔴',

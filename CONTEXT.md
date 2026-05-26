@@ -911,6 +911,16 @@ Berlaku untuk TP lain: Fix ini generik — berlaku otomatis
 untuk semua TP karena perubahan ada di dashboard.js dan
 sesi-runtime.js, bukan di data TP.
 
+#### FIX 8 — Pisah label LISTEN FIRST dari teks berikutnya
+Commit: c88f64d
+Masalah: Label 👂 LISTEN FIRST masih menempel dengan
+teks AKSI: berikutnya dalam satu div.
+Solusi: Renderer memotong teks item 👂/🗣 sampai akhir
+label saja — sisa teks (AKSI:/UCAP:) dirender sebagai
+div sr-teks-biasa terpisah.
+Berlaku untuk TP lain: Fix generik — berlaku otomatis
+untuk semua TP.
+
 ### Fitur Baru — Penilaian Formatif dan Observasi
 (siswa-history.js, sesi-runtime.js, sesi-runtime.css,
 screens/nilai.js, storage/nilai.js)
@@ -949,3 +959,46 @@ Setiap TP perlu dicek:
 [ ] Konten audit: bandingkan semua layar dengan txt sumber
 [ ] Verifikasi alur penutup sesi tidak melewati closure
     lama — pastikan langsung ke Step 6 dashboard
+[ ] Cek semua kemunculan 👂 LISTEN FIRST dan 🗣 TOGETHER
+    — pastikan label terpisah dari teks AKSI/UCAP
+    berikutnya (sudah handled oleh renderer, verifikasi
+    visual tetap diperlukan)
+
+---
+
+## AUDIT & FIX TP 02 — Introducing Myself
+Tanggal: 27 Mei 2026
+File aktif: docs/output-v5/tp-02-v5.js
+Status: 2 fix diterapkan, 15/17 langkah OK tanpa perubahan.
+
+### Fix yang Diterapkan
+
+#### FIX-1 — L0 dipindah ke `preOpening`
+L0 (Door Greeting) dipindah dari array `langkah[]` fase Pembuka ke
+field `preOpening` di root TP_02. Pola identik dengan FIX-1 TP 01.
+Konten teks dan cue tidak diubah. Cue khusus TP 02: "Berbeda dari
+TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum
+hangat."
+
+#### FIX-2 — L11 Diferensiasi dipisah ke field terpisah
+Blok "Diferensiasi: - Need Help: ... - Ready: ..." dihapus dari
+field `teks` dan dipindah ke field baru `diferensiasi: { needHelp,
+ready }`. Urutan field L11: `tipe → teks → bantuan → diferensiasi
+→ cue → darurat → energi`.
+
+### Konfirmasi Tidak Butuh Fix
+
+- **FIX-3 (encoding artifact '2├ù')** — tidak ditemukan di file
+  aktif. Karakter `×` tidak dipakai, diganti `·`. Clear.
+- **`bantuan` string vs array** — renderer `sesi-runtime.js`
+  baris 465–480 sudah handle keduanya: array → `<ol>`, string →
+  blok teks, null → tidak dirender. L5 dan L15 dengan `bantuan`
+  string aman.
+
+### Catatan Struktur
+
+- `preOpening` adalah pola global — berlaku untuk semua TP yang
+  memiliki Layar 0 pre-kelas.
+- Field `diferensiasi: { needHelp, ready }` pertama kali
+  diterapkan di TP 02. Renderer perlu dikonfirmasi support field
+  ini sebelum audit TP berikutnya.
