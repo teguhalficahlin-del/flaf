@@ -209,6 +209,7 @@
 
 .sr-fase-meta {
   font-size: 15px;
+  line-height: 1.6;
   color: rgba(255,255,255,.4);
   margin-bottom: 20px;
 }
@@ -225,6 +226,7 @@
 }
 .sr-preopening-label {
   font-size: 11px;
+  line-height: 1.5;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .06em;
@@ -269,6 +271,7 @@
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,.05);
   font-size: 14px;
+  line-height: 1.65;
   color: rgba(255,255,255,.75);
 }
 .sr-checklist li:last-child { border-bottom: none; }
@@ -318,7 +321,7 @@
 .sr-mode-desc {
   font-size: 13px;
   color: rgba(255,255,255,.65);
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 /* =============================================================
@@ -436,12 +439,12 @@
 }
 .sr-bantuan-list li {
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.65;
   color: rgba(255,255,255,.75);
 }
 .sr-bantuan-teks {
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.65;
   color: rgba(255,255,255,.75);
 }
 
@@ -540,7 +543,7 @@
 .sr-instruksi-text {
   font-size: 15px;
   color: rgba(255,255,255,.8);
-  line-height: 1.55;
+  line-height: 1.65;
   margin-bottom: 16px;
   text-align: left;
 }
@@ -601,7 +604,7 @@
 .sr-dif-teks {
   font-size: 15px;
   color: rgba(255,255,255,.75);
-  line-height: 1.5;
+  line-height: 1.65;
 }
 
 /* =============================================================
@@ -680,7 +683,7 @@
   color: rgba(255,255,255,.85);
   resize: vertical;
   min-height: 60px;
-  line-height: 1.5;
+  line-height: 1.6;
   box-sizing: border-box;
 }
 .sr-note-input::placeholder { color: rgba(255,255,255,.35); }
@@ -697,7 +700,7 @@
   font-size: 13px;
   color: rgba(255,255,255,.55);
   margin: 14px 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* =============================================================
@@ -833,7 +836,7 @@
 .sr-mode-bantuan-teks {
   font-size: 13px;
   color: rgba(255,255,255,.75);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 /* =============================================================
