@@ -109,6 +109,15 @@ const TP_13 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -116,16 +125,6 @@ const TP_13 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -229,8 +228,12 @@ const TP_13 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Pasang 4 kartu di papan: rainy, sunny, cold, hot. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 6 kartu, buat 3 kalimat berbeda - Perlu support: cukup 2 kartu — rainy dan sunny`,
+          teks   : `AKSI: Pasang 4 kartu di papan: rainy, sunny, cold, hot. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut]`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to rainy. Say: When it is rainy, I use an umbrella." Tidak hentikan kelas.',
+          diferensiasi: {
+            needHelp: 'Cukup 2 kartu — rainy dan sunny.',
+            ready   : 'Pakai semua 6 kartu, buat 3 kalimat berbeda.',
+          },
           cue    : 'Listener harus ulang kalimat — bukan hanya diam menonton. Guru tidak koreksi grammar saat jalan. Acceptance rule berlaku — fragment diterima, model ulang saat lewat. Saat circulate, sesekali model: "When it is cold, I wear a jacket." — supaya retrieval tidak collapse ke rainy/umbrella terus.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral weather.',
           energi : '🔴',
