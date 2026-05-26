@@ -513,7 +513,7 @@ function _renderRunning() {
           </button>
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
-        ${faseName.toLowerCase() === 'inti' ? `
+        ${faseName.toLowerCase() === 'inti' || (faseName.toLowerCase() === 'penutup' && isLast) ? `
         <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Catat penilaian siswa</button>` : ''}
       </div>
     </div>`;
