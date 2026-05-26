@@ -113,6 +113,15 @@ const TP_15 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -120,16 +129,6 @@ const TP_15 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -233,12 +232,16 @@ const TP_15 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Siswa pakai ekspresi wajah masing-masing — tidak ada benda atau kartu. "Partner A gives scenario." "Partner B asks." "Partner A answers." [tunjuk papan] "Full sentence. Go." Total durasi partner practice: ±3 menit maksimal. Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch." "Partner B gives scenario." "Partner A asks." "Partner A answers." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: ciptakan scenario sendiri, ganti emosi setiap putaran - Perlu support: cukup ucap emosi saja — "Happy!" — tanpa "because"`,
+          teks   : `Partner practice — siswa pakai ekspresi wajah masing-masing, tidak ada kartu. UCAP: "Partner A gives scenario. Partner B asks. Partner A answers." (tunjuk papan) "Full sentence. Go." Total ±3 menit maksimal. Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] UCAP: "Switch. Partner B gives scenario. Partner A asks. Partner A answers." [Tepuk 1 kali — lanjut]`,
           bantuan: [
             'Pasangan diam total: dekati, bisik scenario ke Partner A. Tunjuk Partner B — gestur tanya. Jika masih diam: ucap "How do you feel?" ke Partner A, tunggu. Tidak hentikan kelas.',
             'Frame collapse — Partner B tidak tanya, langsung tebak: dekati, gestur tanya ke Partner B tanpa hentikan kelas.',
             'Scenario absurd memecah fokus kelas: bisik scenario konkret baru ke pasangan itu — tanpa debat, lanjut.',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Ciptakan scenario sendiri, ganti emosi setiap putaran.',
+            perluSupport: 'Cukup ucap emosi saja — "Happy!" — tanpa "because".',
+          },
           cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Partner B masih pakai "How do you feel?" — frame collapse terjadi diam-diam. Guru tidak koreksi grammar saat jalan. Total ±3 menit — jangan lewati, Fase A cepat fatigue.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, semua duduk diam 3 detik, lanjut partner practice.',
           energi : '🔴',
