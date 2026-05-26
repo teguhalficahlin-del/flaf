@@ -1002,3 +1002,43 @@ ready }`. Urutan field L11: `tipe → teks → bantuan → diferensiasi
 - Field `diferensiasi: { needHelp, ready }` pertama kali
   diterapkan di TP 02. Renderer perlu dikonfirmasi support field
   ini sebelum audit TP berikutnya.
+
+---
+
+## AUDIT & FIX TP 03 — Classroom Instructions
+Tanggal: 27 Mei 2026
+File aktif: docs/output-v5/tp-03-v5.js
+Status: 2 fix diterapkan. FIX-0 dan FIX-2 sudah ada di file —
+batch converter sudah menangani saat generate 2026-05-25.
+
+### Fix yang Diterapkan
+
+#### FIX-1 — L0 dipindah ke `preOpening`
+L0 (Pembuka Kelas) dipindah dari array langkah[] fase Pembuka
+ke field preOpening di root TP_03. Pola identik dengan TP 01
+dan TP 02. Konten teks dan cue tidak diubah.
+
+#### FIX-3 — L10 Diferensiasi dipisah ke field terpisah
+Blok "Diferensiasi: - Need Help: ... - Ready: ..." dihapus dari
+field teks dan dipindah ke field baru diferensiasi: { needHelp,
+ready }. Pola identik dengan TP 02 L11. Urutan field L10:
+tipe → teks → bantuan → diferensiasi → cue → darurat → energi.
+
+### Konfirmasi Tidak Butuh Fix
+
+- **FIX-0 — Struktur 3 fase** — sudah ada di file. Batch
+  converter sudah memecah Pembuka/Inti/Penutup dengan benar saat
+  generate 2026-05-25. Dikonfirmasi: Pembuka (L1–L2), Inti
+  (L3–L10), Penutup (L11–L14).
+- **FIX-2 — L3 bantuan ke-2** — sudah ada di file. "Jika siswa
+  menulis di meja: tunjuk udara → 'In the air! Like this.'" ada
+  di bantuan[1] baris 158. Batch converter sudah menangani.
+
+### Catatan Pola Batch Converter
+
+Mulai TP 03, batch converter sudah:
+- Memecah fase dengan benar (3 fase terpisah)
+- Menambah bantuan ke-2 yang ada di txt sumber
+
+Audit TP 04–18 perlu verifikasi apakah pola ini konsisten atau
+ada regresi di TP tertentu.
