@@ -1104,3 +1104,52 @@ teks → bantuan → diferensiasi → cue → darurat → energi.
 - **Struktur 3 fase** — sudah benar. Batch converter memecah
   Pembuka (L1–L3), Inti (L4–L9), Penutup (L10–L14) dengan
   benar. Pola konsisten dengan TP 03–04.
+
+---
+
+## AUDIT & FIX TP 06–14 — Batch Audit
+Tanggal: 27 Mei 2026
+Scope: docs/output-v5/tp-06-v5.js s/d tp-14-v5.js
+Status: Semua TP selesai diaudit dan diperbaiki.
+
+### Fix yang Diterapkan (semua TP)
+
+#### FIX-1 — L0 dipindah ke `preOpening` (universal)
+Berlaku di semua TP 06–14. L0 (Pembuka Kelas) dipindah dari
+array langkah[] fase Pembuka ke field preOpening di root TP.
+Pola identik dengan TP 01–05.
+
+#### FIX-2 — Diferensiasi dipisah ke field terpisah (per-TP)
+
+| TP | Langkah | Label asli | needHelp | ready |
+|----|---------|-----------|---------|-------|
+| 06 | L9  | Need Help / Ready | Satu kata "Circle!" — boleh lihat kartu | Kalimat penuh "This is my eraser..." |
+| 07 | —   | Tidak ada embedded diferensiasi | — | — |
+| 08 | —   | Tidak ada embedded diferensiasi | — | — |
+| 09 | L10 | Perlu support / Sudah bisa | Sebut nama + suara saja | Buat 3 clue per hewan |
+| 10 | —   | Tidak ada embedded diferensiasi | — | — |
+| 11 | L9  | Perlu support / Sudah bisa | Cukup 2 kartu — "First … Then …" | Cerita 5–6 kartu + "then" berulang |
+| 12 | L10 | Perlu support / Sudah bisa | Cukup 2 kartu — eyes dan ears | Pakai semua 8 kartu, tambah legs dan feet |
+| 13 | L10 | Perlu support / Sudah bisa | Cukup 2 kartu — rainy dan sunny | Pakai semua 6 kartu, buat 3 kalimat berbeda |
+| 14 | L10 | Perlu support / Sudah bisa | Cukup 1 preposisi — on atau in | Pakai 3 preposisi berbeda, ganti benda setiap putaran |
+
+### Pola yang Terkonfirmasi
+
+- TP 07, 08, 10 tidak punya embedded diferensiasi — langkah
+  diferensiasi menggunakan pola "Belum bisa / Normal / Tantangan"
+  yang bukan needHelp/ready, atau tidak ada sama sekali.
+- TP 09, 11–14 memakai label Indonesia "Perlu support / Sudah bisa"
+  (bukan "Need Help / Ready") — tetap diekstrak ke schema yang sama.
+- Urutan field setelah fix: tipe → teks → bantuan → diferensiasi
+  → cue → darurat → energi (konsisten dengan TP 02–05).
+
+### Commit Summary
+- af4c0b6 — fix: TP 06 — preOpening L0, diferensiasi L9
+- 2bbdb12 — fix: TP 07 — preOpening L0
+- f9350b2 — fix: TP 08 — preOpening L0
+- 25eae3a — fix: TP 09 — preOpening L0, diferensiasi L10
+- df21406 — fix: TP 10 — preOpening L0
+- 47a9090 — fix: TP 11 — preOpening L0, diferensiasi L9
+- cf46463 — fix: TP 12 — preOpening L0, diferensiasi L10
+- 68b5a3c — fix: TP 13 — preOpening L0, diferensiasi L10
+- 430b173 — fix: TP 14 — preOpening L0, diferensiasi L10
