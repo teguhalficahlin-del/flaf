@@ -636,8 +636,18 @@ atau `closure_reinforcement` sebagai field runtime.
    - 4 kartu unduh STS di _renderUnduh
    - SW v77 (commit 0fc813c)
 
+✅ SPRINT AUDIT DISTRIBUSI MASAL SELESAI ✅ (Mei 2026)
+   - window.onerror + onunhandledrejection — global error handler (commit 2672657)
+   - TP15–18 + icon-512 ditambah ke APP_SHELL precache SW v78 (commit e54fdfd)
+   - PNG printables dikompres 219MB → 48MB, 78% reduction, sharp compressionLevel 9 (commit 2b93ee6)
+   - SW reload ditunda saat sesi mengajar aktif — reload otomatis setelah sesi selesai (commit 3d3da74)
+   - Supabase error handling: semua skenario tertangani
+   - Samsung Internet v14+: semua fitur kompatibel
+   - Export/backup data: lengkap via export.js
+   - pm TP01–14 (93 missing): INTENTIONAL BY DESIGN
+
 ⏳ LANGKAH BERIKUTNYA:
-   - Tidak ada task aktif. Semua sprint selesai.
+   - Belum ditentukan.
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
