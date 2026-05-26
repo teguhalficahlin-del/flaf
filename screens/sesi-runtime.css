@@ -208,7 +208,7 @@
 }
 
 .sr-fase-meta {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255,255,255,.4);
   margin-bottom: 20px;
 }
@@ -232,7 +232,7 @@
   margin-bottom: 8px;
 }
 .sr-preopening-teks {
-  font-size: 14px;
+  font-size: 15px;
   color: rgba(255,255,255,.75);
   line-height: 1.6;
 }
@@ -268,7 +268,7 @@
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255,255,255,.05);
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255,255,255,.75);
 }
 .sr-checklist li:last-child { border-bottom: none; }
@@ -316,7 +316,7 @@
 .sr-mode-option--selected .sr-mode-name { color: #D4AE3A; }
 
 .sr-mode-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(255,255,255,.65);
   line-height: 1.4;
 }
@@ -356,7 +356,7 @@
 
 /* --- Teks segmen parseTeks --- */
 .sr-teks-biasa {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
   color: rgba(255,255,255,.8);
   padding: 2px 0;
@@ -370,7 +370,7 @@
   margin: 2px 0;
 }
 .sr-ucap-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   font-weight: 500;
   color: rgba(212,174,58,.8);
@@ -378,7 +378,7 @@
   margin-bottom: 6px;
 }
 .sr-ucap-teks {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.6;
   color: rgba(255,255,255,.9);
 }
@@ -398,7 +398,7 @@
   margin-bottom: 8px;
 }
 .sr-cue-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.8px;
   font-weight: 500;
   color: rgba(255,255,255,.45);
@@ -406,7 +406,7 @@
   margin-bottom: 5px;
 }
 .sr-cue-teks {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: rgba(255,255,255,.6);
 }
@@ -420,7 +420,7 @@
   margin-bottom: 8px;
 }
 .sr-bantuan-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.8px;
   font-weight: 500;
   color: rgba(212,174,58,.8);
@@ -435,12 +435,12 @@
   margin: 0;
 }
 .sr-bantuan-list li {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
   color: rgba(255,255,255,.75);
 }
 .sr-bantuan-teks {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
   color: rgba(255,255,255,.75);
 }
@@ -454,7 +454,7 @@
   margin-bottom: 8px;
 }
 .sr-darurat-label {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.8px;
   font-weight: 500;
   color: rgba(255,100,80,.9);
@@ -462,7 +462,7 @@
   margin-bottom: 5px;
 }
 .sr-darurat-teks {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: rgba(255,255,255,.75);
 }
@@ -590,7 +590,7 @@
   border: 1px solid rgba(212,174,58,.2);
 }
 .sr-dif-lbl {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -599,7 +599,7 @@
 .sr-dif-col--s .sr-dif-lbl { color: rgba(92,138,110,.9); }
 .sr-dif-col--b .sr-dif-lbl { color: #D4AE3A; }
 .sr-dif-teks {
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255,255,255,.75);
   line-height: 1.5;
 }
@@ -694,7 +694,7 @@
   border: 1px solid rgba(212,174,58,.2);
   padding: 10px 12px;
   border-radius: 8px;
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(255,255,255,.55);
   margin: 14px 0;
   line-height: 1.5;
@@ -865,7 +865,7 @@
   color: #fff;
 }
 .sr-pn-sub {
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(255,255,255,.45);
   margin-top: 2px;
 }
@@ -954,7 +954,7 @@
   min-width: 0;
 }
 .sr-pn-nomor {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: rgba(212,174,58,.6);
   min-width: 20px;
@@ -1025,7 +1025,7 @@
 }
 .sr-pn-capaian-btn--active .sr-pn-sym { color: #D4AE3A; }
 .sr-pn-lbl {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   color: rgba(255,255,255,.55);
   letter-spacing: .02em;
@@ -1076,7 +1076,7 @@
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.1);
   border-radius: 8px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   font-family: inherit;
   color: rgba(255,255,255,.55);
@@ -1093,7 +1093,7 @@
 
 /* Alasan sub-pilihan */
 .sr-pn-alasan-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .05em;
@@ -1112,7 +1112,7 @@
   border: 1px solid rgba(255,255,255,.08);
   border-radius: 6px;
   color: rgba(255,255,255,.5);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   text-align: left;
   cursor: pointer;
