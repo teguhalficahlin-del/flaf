@@ -27,6 +27,7 @@ let _state = {
   tpNama    : null,
   formatifTP: null,   // nomor TP yang sedang dibuka di detail formatif
   semester  : null,
+  page      : 0,
 };
 
 let _container   = null;
@@ -261,11 +262,31 @@ async function _renderSTS(token) {
   }
   if (token !== _renderToken) return;
 
-  const PAGE_SIZE_STS = 5;
-  const filteredSTS   = siswaList.filter(s => s && s.id);
-  const semLabel      = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
+  const PAGE_SIZE  = 5;
+  const filtered   = siswaList.filter(s => s && s.id);
+  const totalPage  = Math.ceil(filtered.length / PAGE_SIZE);
+  const page       = Math.min(_state.page, Math.max(0, totalPage - 1));
+  const pageItems  = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const semLabel   = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
 
-  function _stsRowHTML(s) {
+  const navHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
+      <button onclick="nilaiSTSPrevPage()"
+        style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
+        background:transparent;color:rgba(255,255,255,.5);font-size:18px;
+        opacity:${page === 0 ? '0.3' : '1'};cursor:${page === 0 ? 'default' : 'pointer'};">‹</button>
+      <div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;">
+        Halaman ${page + 1}/${totalPage || 1}
+      </div>
+      <button onclick="nilaiSTSNextPage()"
+        style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
+        background:transparent;color:rgba(255,255,255,.5);font-size:18px;
+        opacity:${page >= totalPage - 1 ? '0.3' : '1'};cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};">›</button>
+    </div>`;
+
+  const barisHTML = filtered.length === 0 ? `
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
+  ` : navHTML + pageItems.map(s => {
     const sts = stsMap[s.id];
     const val = sts !== null && sts !== undefined ? sts : '';
     return `
@@ -279,34 +300,7 @@ async function _renderSTS(token) {
         onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
         onblur="this.style.borderColor='rgba(255,255,255,.15)';nilaiAutoSaveSTS('${s.id}')">
     </div>`;
-  }
-
-  const barisHTML = filteredSTS.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : (() => {
-    const groups = [];
-    for (let i = 0; i < filteredSTS.length; i += PAGE_SIZE_STS) {
-      groups.push(filteredSTS.slice(i, i + PAGE_SIZE_STS));
-    }
-    return groups.map((group, gi) => {
-      const dari  = group[0].nomor;
-      const ke    = group[group.length - 1].nomor;
-      const isOpen = gi === 0;
-      return `
-      <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sts-group-${gi}">
-        <div class="ds-subfase-head" onclick="nilaiToggleSTSGroup(${gi})">
-          <div class="ds-subfase-label" style="color:rgba(255,255,255,.55);">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined) ? 'rgba(212,174,58,.7)' : 'rgba(255,255,255,.35)'};">
-            ${group.filter(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined).length}/${group.length} diisi
-          </div>
-          <div class="ds-collapse-chevron" id="nv-sts-chevron-${gi}" style="color:rgba(212,174,58,.5);">${isOpen ? '▲' : '▼'}</div>
-        </div>
-        <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
-          ${group.map(s => _stsRowHTML(s)).join('')}
-        </div>
-      </div>`;
-    }).join('');
-  })();
+  }).join('');
 
   _container.innerHTML = `
 <div class="nv-wrap">
@@ -342,10 +336,25 @@ async function _renderSAS(token) {
   }
   if (token !== _renderToken) return;
 
-  const PAGE_SIZE_SAS = 5;
-  const filteredSAS   = siswaList.filter(s => s && s.id);
+  const PAGE_SIZE  = 5;
+  const filtered   = siswaList.filter(s => s && s.id);
+  const totalPage  = Math.ceil(filtered.length / PAGE_SIZE);
+  const page       = Math.min(_state.page, Math.max(0, totalPage - 1));
+  const pageItems  = filtered.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+  const semLabel   = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
 
-  function _sasRowHTML(s) {
+  const navHTML = filtered.length === 0 ? '' : `
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.1);">
+    <button onclick="nilaiSASPrevPage()"
+      style="font-size:18px;background:none;border:none;color:rgba(212,174,58,${page === 0 ? '.2' : '.7'});cursor:${page === 0 ? 'default' : 'pointer'};">‹</button>
+    <div style="font-size:12px;color:rgba(255,255,255,.45);">Halaman ${page + 1} / ${totalPage}</div>
+    <button onclick="nilaiSASNextPage()"
+      style="font-size:18px;background:none;border:none;color:rgba(212,174,58,${page >= totalPage - 1 ? '.2' : '.7'});cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};">›</button>
+  </div>`;
+
+  const barisHTML = filtered.length === 0 ? `
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
+  ` : navHTML + pageItems.map(s => {
     const sas = sasMap[s.id];
     const val = sas !== null && sas !== undefined ? sas : '';
     return `
@@ -359,34 +368,7 @@ async function _renderSAS(token) {
         onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
         onblur="this.style.borderColor='rgba(255,255,255,.15)';nilaiAutoSaveSAS('${s.id}')">
     </div>`;
-  }
-
-  const barisHTML = filteredSAS.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : (() => {
-    const groups = [];
-    for (let i = 0; i < filteredSAS.length; i += PAGE_SIZE_SAS) {
-      groups.push(filteredSAS.slice(i, i + PAGE_SIZE_SAS));
-    }
-    return groups.map((group, gi) => {
-      const dari  = group[0].nomor;
-      const ke    = group[group.length - 1].nomor;
-      const isOpen = gi === 0;
-      return `
-      <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sas-group-${gi}">
-        <div class="ds-subfase-head" onclick="nilaiToggleSASGroup(${gi})">
-          <div class="ds-subfase-label" style="color:rgba(255,255,255,.55);">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined) ? 'rgba(212,174,58,.7)' : 'rgba(255,255,255,.35)'};">
-            ${group.filter(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined).length}/${group.length} diisi
-          </div>
-          <div class="ds-collapse-chevron" id="nv-sas-chevron-${gi}" style="color:rgba(212,174,58,.5);">${isOpen ? '▲' : '▼'}</div>
-        </div>
-        <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
-          ${group.map(s => _sasRowHTML(s)).join('')}
-        </div>
-      </div>`;
-    }).join('');
-  })();
+  }).join('');
 
   _container.innerHTML = `
 <div class="nv-wrap">
@@ -542,6 +524,7 @@ async function _renderModalKelolaSiswa() {
 window.nilaiBack = async function() {
   if (_state.view === 'sas')   await _flushSemuaSAS();
   if (_state.view === 'sts')   await _flushSemuaSTS();
+  if (_state.view === 'sas' || _state.view === 'sts') _state.page = 0;
   if (_state.view === 'menu')  { _state.view = 'rombel'; _state.kelasId = null; _state.kelasNama = null; }
   if (_state.view === 'sas')   { _state.view = 'menu'; }
   if (_state.view === 'sts')   { _state.view = 'menu'; }
@@ -553,6 +536,7 @@ window.nilaiBack = async function() {
 window.nilaiBackToMenu = async function() {
   if (_state.view === 'sas')   await _flushSemuaSAS();
   if (_state.view === 'sts')   await _flushSemuaSTS();
+  if (_state.view === 'sas' || _state.view === 'sts') _state.page = 0;
   _state.view = 'menu';
   _render();
 };
@@ -560,10 +544,10 @@ window.nilaiMenuSAS      = function() { _state.view = 'sas';      _render(); };
 window.nilaiMenuRapor    = function() { _state.view = 'rapor';    _render(); };
 window.nilaiMenuUnduh    = function() { _state.view = 'unduh';    _render(); };
 window.nilaiMenuFormatif  = function() { _state.view = 'formatif'; _render(); };
-window.nilaiMenuSTSGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sts'; _render(); };
-window.nilaiMenuSTSGenap  = function() { _state.semester = 'genap';  _state.view = 'sts'; _render(); };
-window.nilaiMenuSASGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sas'; _render(); };
-window.nilaiMenuSASGenap  = function() { _state.semester = 'genap';  _state.view = 'sas'; _render(); };
+window.nilaiMenuSTSGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sts'; _state.page = 0; _render(); };
+window.nilaiMenuSTSGenap  = function() { _state.semester = 'genap';  _state.view = 'sts'; _state.page = 0; _render(); };
+window.nilaiMenuSASGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sas'; _state.page = 0; _render(); };
+window.nilaiMenuSASGenap  = function() { _state.semester = 'genap';  _state.view = 'sas'; _state.page = 0; _render(); };
 window.nilaiToggleSASGroup = function(gi) {
   const item    = document.getElementById(`nv-sas-group-${gi}`);
   const body    = item?.querySelector('.ds-subfase-body');
@@ -618,6 +602,10 @@ window.nilaiToggleSTSGroup = function(gi) {
   chevron.textContent = isOpen ? '▼' : '▲';
   item.classList.toggle('ds-subfase-item--open', !isOpen);
 };
+window.nilaiSTSNextPage = function() { _state.page++; _render(); };
+window.nilaiSTSPrevPage = function() { if (_state.page > 0) { _state.page--; _render(); } };
+window.nilaiSASNextPage = function() { _state.page++; _render(); };
+window.nilaiSASPrevPage = function() { if (_state.page > 0) { _state.page--; _render(); } };
 window.nilaiToggleRaporGroup = function(gi) {
   const item    = document.getElementById(`nv-rapor-group-${gi}`);
   const body    = item?.querySelector('.ds-subfase-body');
