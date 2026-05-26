@@ -110,6 +110,15 @@ const TP_12 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -117,16 +126,6 @@ const TP_12 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -233,8 +232,12 @@ const TP_12 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai semua 8 kartu, tambah legs dan feet - Perlu support: cukup 2 kartu — eyes dan ears`,
+          teks   : `AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut]`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to eyes. Say: I use my eyes to see." Tidak hentikan kelas.',
+          diferensiasi: {
+            needHelp: 'Cukup 2 kartu — eyes dan ears.',
+            ready   : 'Pakai semua 8 kartu, tambah legs dan feet.',
+          },
           cue    : 'Listener harus ulang kalimat — bukan hanya diam menonton. Guru tidak koreksi grammar saat jalan. Acceptance rule berlaku — fragment diterima, model ulang saat lewat. Saat circulate, sesekali model: "I use my nose to smell." — supaya retrieval tidak collapse ke hands/write terus.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral body parts.',
           energi : '🔴',
