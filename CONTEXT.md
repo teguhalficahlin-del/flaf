@@ -621,6 +621,18 @@ atau `closure_reinforcement` sebagai field runtime.
    - dead code dihapus: _renderTP, _renderInput, nilaiDownloadRekap2 + helpers
    - SW v76 (commit 9688c09)
 
+✅ SPRINT UI NILAI + SOAL STS SELESAI ✅ (Mei 2026)
+   - _renderSTS, _renderSAS, _renderRapor: ganti accordion → paginasi ‹ Halaman X/Y ›
+   - Tombol paginasi: gold, 52×44px, border #D4AE3A
+   - Hierarki warna: badge gold redup, nama siswa .85, label grup .55, counter .35
+   - Subtitle kartu Unduh & Cetak disederhanakan → "Unduh nilai" / "Unduh soal"
+   - Soal_STS_Fase_A_Kelas_1_Ganjil.docx: 50 soal TP 01–03
+   - Soal_STS_Fase_A_Kelas_1_Genap.docx: 50 soal TP 06–07
+   - Soal_STS_Fase_A_Kelas_2_Ganjil.docx: 50 soal TP 10–12
+   - Soal_STS_Fase_A_Kelas_2_Genap.docx: 50 soal TP 15–16
+   - 4 kartu unduh STS di _renderUnduh
+   - SW v77 (commit 0fc813c)
+
 ⏳ LANGKAH BERIKUTNYA:
    - pm audit TP17 (2 missing) + TP18 (1 missing)
    - Keputusan pm TP01–14 (93 missing): Opsi A fix per langkah / Opsi B intentional by design
