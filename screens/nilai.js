@@ -991,6 +991,13 @@ function _downloadCSV(filename, rows) {
 
 window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
   const _labelPerilaku = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
+  const _labelAlasan   = {
+    menjawab_sendiri: 'Menjawab sendiri', membantu_teman: 'Membantu teman',
+    berani_mencoba: 'Berani mencoba', perlu_dipancing: 'Perlu dipancing',
+    ikut_bersama_diam_sendiri: 'Ikut bersama, diam sendiri',
+    butuh_visual: 'Butuh visual/kartu', tidak_merespons: 'Tidak merespons',
+    mencoba_tapi_salah: 'Mencoba tapi masih salah', terlihat_bingung: 'Terlihat bingung',
+  };
   try {
     const sesiList = await getSesiFormatifTP(kelasId, tpNomor);
     if (!sesiList || sesiList.length === 0) {
@@ -1004,7 +1011,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
       const mode = sesi.mode || 'cepat';
       let rows;
       if (mode === 'detail') {
-        rows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata', 'Perilaku']];
+        rows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata', 'Perilaku', 'Alasan']];
         for (const s of sesi.siswa) {
           const rerata = [s.l, s.s, s.r].filter(v => v !== null && !isNaN(v));
           const avg    = rerata.length ? Math.round(rerata.reduce((a, b) => a + b, 0) / rerata.length) : '';
@@ -1013,15 +1020,17 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
             s.l ?? '', s.s ?? '', s.r ?? '',
             avg,
             _labelPerilaku[s.perilaku] ?? '',
+            _labelAlasan[s.alasan]     ?? '',
           ]);
         }
       } else {
-        rows = [['No', 'Nama', 'Nilai', 'Perilaku']];
+        rows = [['No', 'Nama', 'Nilai', 'Perilaku', 'Alasan']];
         for (const s of sesi.siswa) {
           rows.push([
             s.nomor, s.nama,
             s.capaian ?? '',
             _labelPerilaku[s.perilaku] ?? '',
+            _labelAlasan[s.alasan]     ?? '',
           ]);
         }
       }
@@ -1269,11 +1278,19 @@ async function _renderFormatifDetail(token) {
             ? (s.capaian !== null ? `${s.capaian}` : '—')
             : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
           const _lp = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
+          const _la = {
+            menjawab_sendiri: 'Menjawab sendiri', membantu_teman: 'Membantu teman',
+            berani_mencoba: 'Berani mencoba', perlu_dipancing: 'Perlu dipancing',
+            ikut_bersama_diam_sendiri: 'Ikut bersama, diam sendiri',
+            butuh_visual: 'Butuh visual/kartu', tidak_merespons: 'Tidak merespons',
+            mencoba_tapi_salah: 'Mencoba tapi masih salah', terlihat_bingung: 'Terlihat bingung',
+          };
           const perilakuTeks = s.perilaku ? ` · ${_lp[s.perilaku] ?? s.perilaku}` : '';
+          const alasanTeks   = s.alasan   ? ` · ${_la[s.alasan]   ?? s.alasan}`   : '';
           return `
           <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);">
             <div style="font-size:12px;color:rgba(255,255,255,.75);">${s.nomor}. ${_escape(s.nama)}</div>
-            <div style="font-size:12px;color:rgba(212,174,58,.9);white-space:nowrap;">${nilaiTeks}<span style="color:rgba(255,255,255,.35);font-size:11px;">${_escape(perilakuTeks)}</span></div>
+            <div style="font-size:12px;color:rgba(212,174,58,.9);white-space:nowrap;">${nilaiTeks}<span style="color:rgba(255,255,255,.35);font-size:11px;">${_escape(perilakuTeks)}${_escape(alasanTeks)}</span></div>
           </div>`;
         }).join('')}
       </div>

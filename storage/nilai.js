@@ -436,6 +436,7 @@ export async function getSesiFormatifTP(kelasId, tpNomor) {
       s       : sesi.entries[s.id]?.s       ?? null,
       r       : sesi.entries[s.id]?.r       ?? null,
       perilaku: sesi.entries[s.id]?.perilaku ?? null,
+      alasan  : sesi.entries[s.id]?.alasan   ?? null,
     })),
   }));
 }
