@@ -837,8 +837,8 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSTS()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–09 · format DOCX (Semester Ganjil)</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal SAS Ganjil Kelas 1</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -846,8 +846,8 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSTS2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GANJIL</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–18 · format DOCX (Semester Ganjil)</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal SAS Ganjil Kelas 2</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -855,8 +855,8 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSASGenap1()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GENAP</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 1 — TP 01–09 · format DOCX</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal SAS Genap Kelas 1</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -864,8 +864,8 @@ async function _renderUnduh(token) {
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSASGenap2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">SOAL SUMATIF AKHIR SEMESTER GENAP</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Fase A Kelas 2 — TP 10–18 · format DOCX</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal SAS Genap Kelas 2</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
