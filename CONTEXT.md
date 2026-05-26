@@ -1122,6 +1122,81 @@ TP 15–18 belum diaudit.
 
 ---
 
+## FIX RENDERER — Diferensiasi Object
+
+**Tanggal:** 2026-05-27
+**Commit:** 3479781
+**File:** screens/sesi-runtime.js
+
+### Masalah
+Field `diferensiasi: { needHelp, ready }` yang diekstrak
+di TP 02–14 tidak dirender — renderer lama hanya handle
+string "Diferensiasi:" sebagai teks biasa.
+
+### Solusi
+Tambah handler dinamis menggunakan Object.entries —
+tidak hardcode key, handle semua variasi label:
+
+  if (langkah.diferensiasi != null
+      && typeof langkah.diferensiasi === 'object') {
+    const items = Object.entries(langkah.diferensiasi)
+      .map(([key, val]) =>
+        `<div class="sr-dif-item">${_escape(val)}</div>`)
+      .join('');
+    difHTML = `
+      <div class="sr-dif-block">
+        <div class="sr-label-diferensiasi">DIFERENSIASI</div>
+        ${items}
+      </div>`;
+  }
+
+### Urutan render langkah (setelah fix)
+teksHTML → bantuanHTML → difHTML → cueHTML → daruratHTML
+
+### Berlaku untuk
+Semua TP yang punya field diferensiasi object —
+TP 02–15 dan seterusnya. Handle semua variasi key:
+- needHelp / ready (TP 02–14)
+- sudahBisa / perluSupport (TP 15)
+- variasi lain di TP 16–18 jika ada
+
+---
+
+## AUDIT & FIX TP 15 — Feelings and Emotions
+
+**Audit selesai:** 2026-05-27
+**File aktif:** `docs/output-v5/tp-15-v5.js`
+**Commit:** d13d040
+**Status:** 2 fix diterapkan, 12/14 langkah OK tanpa
+perubahan.
+
+### Fix yang diterapkan
+
+**FIX-1 — L0 dipindah ke `preOpening`**
+L0 (Greeting) dipindah dari array langkah[] fase Pembuka
+ke field preOpening di root TP_15. Pola identik TP 01–14.
+Catatan khusus: energi preOpening TP 15 = 🔵 (bukan ⚪
+seperti TP lain) — sesuai txt sumber.
+
+**FIX-2 — L10 Diferensiasi dipisah ke field terpisah**
+Blok embedded dipindah ke field baru
+diferensiasi: { sudahBisa, perluSupport }.
+Label berbeda dari TP 02–14 (needHelp/ready) —
+mengikuti label asli txt sumber TP 15.
+Urutan field L10: tipe → teks → bantuan → diferensiasi
+→ cue → darurat → energi.
+
+### Catatan format baru
+
+TP 15 menggunakan label diferensiasi berbeda:
+- TP 02–14: { needHelp, ready }
+- TP 15: { sudahBisa, perluSupport }
+
+Renderer dinamis (commit 3479781) handle keduanya
+tanpa perubahan tambahan.
+
+---
+
 ## AUDIT & FIX TP 05 — Colours
 Tanggal: 27 Mei 2026
 File aktif: docs/output-v5/tp-05-v5.js
