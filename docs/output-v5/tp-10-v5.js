@@ -112,6 +112,15 @@ const TP_10 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "Great! Me too. Are you ready? Let's start." mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -119,16 +128,6 @@ const TP_10 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "Great! Me too. Are you ready? Let's start." mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
