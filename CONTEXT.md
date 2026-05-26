@@ -1042,3 +1042,65 @@ Mulai TP 03, batch converter sudah:
 
 Audit TP 04–18 perlu verifikasi apakah pola ini konsisten atau
 ada regresi di TP tertentu.
+
+---
+
+## AUDIT & FIX TP 04 — Numbers 1–20
+Tanggal: 27 Mei 2026
+File aktif: docs/output-v5/tp-04-v5.js
+Commit: 6856459
+Status: 2 fix diterapkan, 13/15 langkah OK tanpa perubahan.
+
+### Fix yang Diterapkan
+
+#### FIX-1 — L0 dipindah ke `preOpening`
+L0 (Pembuka Kelas) dipindah dari array langkah[] fase Pembuka
+ke field preOpening di root TP_04. Pola identik dengan TP 01,
+02, dan 03. Konten teks dan cue tidak diubah.
+
+#### FIX-2 — L9 Diferensiasi dipisah ke field terpisah
+Blok "Diferensiasi: - Need Help: ... - Ready: ..." dihapus dari
+field teks dan dipindah ke field baru diferensiasi: { needHelp,
+ready }. Pola identik dengan TP 02 L11 dan TP 03 L10. Urutan
+field L9: tipe → teks → bantuan → diferensiasi → cue → darurat
+→ energi.
+
+### Konfirmasi Tidak Butuh Fix
+
+- **Struktur 3 fase** — sudah benar. Batch converter memecah
+  Pembuka (L1–L2), Inti (L3–L9), Penutup (L10–L14) dengan
+  benar. Pola konsisten dengan TP 03.
+
+### Pola yang Terkonfirmasi Konsisten (TP 02–04)
+
+Setiap TP yang punya Layar Diferensiasi selalu memiliki blok
+embedded "Diferensiasi: - Need Help: ... - Ready: ..." di field
+teks. Fix ini perlu diterapkan di semua TP berikutnya yang
+punya layar serupa.
+
+---
+
+## AUDIT & FIX TP 05 — Colours
+Tanggal: 27 Mei 2026
+File aktif: docs/output-v5/tp-05-v5.js
+Commit: 7e5e8ba
+Status: 2 fix diterapkan, langkah lain OK tanpa perubahan.
+
+### Fix yang Diterapkan
+
+#### FIX-1 — L0 dipindah ke `preOpening`
+L0 (Pembuka Kelas) dipindah dari array langkah[] fase Pembuka
+ke field preOpening di root TP_05. Pola identik dengan TP 01–04.
+Konten teks dan cue tidak diubah.
+
+#### FIX-2 — L9 Diferensiasi dipisah ke field terpisah
+Blok "Diferensiasi: - Need Help: ... - Ready: ..." dihapus dari
+field teks dan dipindah ke field baru diferensiasi: { needHelp,
+ready }. Pola identik dengan TP 02–04. Urutan field L9: tipe →
+teks → bantuan → diferensiasi → cue → darurat → energi.
+
+### Konfirmasi Tidak Butuh Fix
+
+- **Struktur 3 fase** — sudah benar. Batch converter memecah
+  Pembuka (L1–L3), Inti (L4–L9), Penutup (L10–L14) dengan
+  benar. Pola konsisten dengan TP 03–04.
