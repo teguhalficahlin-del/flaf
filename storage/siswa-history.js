@@ -26,6 +26,7 @@ import { db } from './db.js';
  *   s        : number|null,
  *   r        : number|null,
  *   perilaku : string|null,
+ *   alasan   : string|null,
  * }>} entries  — semua siswa, yang kosong tetap disimpan sebagai null
  */
 export async function savePenilaian(kelasId, tpNomor, sesiId, mode, entries) {
@@ -46,6 +47,7 @@ export async function savePenilaian(kelasId, tpNomor, sesiId, mode, entries) {
         s        : entry.s        ?? null,
         r        : entry.r        ?? null,
         perilaku : entry.perilaku ?? null,
+        alasan   : entry.alasan   ?? null,
         createdAt: now,
       });
     }

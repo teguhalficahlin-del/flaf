@@ -1091,6 +1091,40 @@
   color: rgba(120,180,255,.9);
 }
 
+/* Alasan sub-pilihan */
+.sr-pn-alasan-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: rgba(255,255,255,.35);
+  margin: 10px 0 6px;
+}
+.sr-pn-alasan-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sr-pn-alasan-btn {
+  width: 100%;
+  padding: 7px 10px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 6px;
+  color: rgba(255,255,255,.5);
+  font-size: 11px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.1s, border-color 0.1s;
+}
+.sr-pn-alasan-btn--active {
+  background: rgba(120,180,255,.08);
+  border-color: rgba(120,180,255,.25);
+  color: rgba(120,180,255,.8);
+}
+
 /* Footer overlay */
 .sr-pn-footer {
   display: flex;

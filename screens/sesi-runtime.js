@@ -514,7 +514,7 @@ function _renderRunning() {
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
         ${faseName.toLowerCase() === 'inti' || (faseName.toLowerCase() === 'penutup' && isLast) ? `
-        <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Catat penilaian siswa</button>` : ''}
+        <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Penilaian Formatif dan Observasi</button>` : ''}
       </div>
     </div>`;
 
@@ -742,7 +742,7 @@ function _renderPenilaianOverlay() {
   if (!_state.nilaiDraft) _state.nilaiDraft = {};
   for (const s of siswaList) {
     if (!_state.nilaiDraft[s.id]) {
-      _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null };
+      _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null, alasan: null };
     }
   }
   const hasil = _state.nilaiDraft;
@@ -764,12 +764,40 @@ function _renderPenilaianOverlay() {
     return h.l !== null || h.s !== null || h.r !== null;
   }
 
+  const ALASAN_MAP = {
+    aktif      : [
+      { val: 'menjawab_sendiri',          label: 'Menjawab sendiri'                },
+      { val: 'membantu_teman',            label: 'Membantu teman'                  },
+      { val: 'berani_mencoba',            label: 'Berani mencoba'                  },
+    ],
+    dorongan   : [
+      { val: 'perlu_dipancing',           label: 'Perlu dipancing dulu'            },
+      { val: 'ikut_bersama_diam_sendiri', label: 'Ikut bersama, diam saat sendiri' },
+      { val: 'butuh_visual',              label: 'Butuh visual/kartu'              },
+    ],
+    belum_siap : [
+      { val: 'tidak_merespons',           label: 'Tidak merespons'                 },
+      { val: 'mencoba_tapi_salah',        label: 'Mencoba tapi masih salah'        },
+      { val: 'terlihat_bingung',          label: 'Terlihat bingung'               },
+    ],
+  };
+
   function _buildSiswaItem(siswa, localIdx) {
     const globalIdx = halaman * PAGE_SIZE + localIdx;
     const isOpen    = localIdx === openIdx;
     const sudah     = _sudahDiisi(siswa.id);
     const nilaiTamp = _penilaianNilaiAngka(siswa.id);
     const h         = hasil[siswa.id];
+
+    // ── Alasan sub-pilihan ──
+    const alasanOpts = h.perilaku ? ALASAN_MAP[h.perilaku] : null;
+    const alasanHTML = alasanOpts ? `
+        <div class="sr-pn-alasan-label">Lebih spesifik:</div>
+        <div class="sr-pn-alasan-row">
+          ${alasanOpts.map(a => `
+            <button class="sr-pn-alasan-btn${h.alasan === a.val ? ' sr-pn-alasan-btn--active' : ''}"
+                    data-alasan="${a.val}" data-siswa="${siswa.id}">${_escape(a.label)}</button>`).join('')}
+        </div>` : '';
 
     // ── Isi accordion ──
     let isiHTML = '';
@@ -794,7 +822,8 @@ function _renderPenilaianOverlay() {
             return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
                             data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
           }).join('')}
-        </div>`;
+        </div>
+        ${alasanHTML}`;
     } else {
       isiHTML = `
         <div class="sr-pn-lsr-grid">
@@ -812,7 +841,8 @@ function _renderPenilaianOverlay() {
             return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
                             data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
           }).join('')}
-        </div>`;
+        </div>
+        ${alasanHTML}`;
     }
 
     return `
@@ -851,8 +881,8 @@ function _renderPenilaianOverlay() {
     return `
       <div class="sr-overlay-content sr-pn-overlay-content">
         <div class="sr-pn-header">
-          <div class="sr-pn-judul">Penilaian Siswa</div>
-          <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')} · Fase Inti</div>
+          <div class="sr-pn-judul">Penilaian Formatif dan Observasi</div>
+          <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_currentFase()?.fase || '—')}</div>
         </div>
         ${modeTabHTML}
         ${paginasiHTML}
@@ -922,13 +952,25 @@ function _renderPenilaianOverlay() {
       });
     });
 
-    // Perilaku
+    // Perilaku — reset alasan saat perilaku berubah, auto-next dipindah ke alasan
     overlay.querySelectorAll('[data-perilaku]').forEach(btn => {
       btn.addEventListener('click', () => {
         const siswaId = btn.dataset.siswa;
         const p       = btn.dataset.perilaku;
-        hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
-        if (_sudahDiisi(siswaId)) {
+        const prev    = hasil[siswaId].perilaku;
+        hasil[siswaId].perilaku = prev === p ? null : p;
+        if (hasil[siswaId].perilaku !== prev) hasil[siswaId].alasan = null;
+        _mount();
+      });
+    });
+
+    // Alasan — auto-next setelah alasan dipilih dan capaian sudah terisi
+    overlay.querySelectorAll('[data-alasan]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const a       = btn.dataset.alasan;
+        hasil[siswaId].alasan = hasil[siswaId].alasan === a ? null : a;
+        if (hasil[siswaId].alasan !== null && _sudahDiisi(siswaId)) {
           _autoNext();
         } else {
           _mount();
@@ -964,6 +1006,7 @@ function _renderPenilaianOverlay() {
           s       : hasil[s.id].s,
           r       : hasil[s.id].r,
           perilaku: hasil[s.id].perilaku,
+          alasan  : hasil[s.id].alasan,
         }));
         await savePenilaian(kelasId, tpNomor, _state.sesiId, modePenilaian, entries);
         overlay.remove();
