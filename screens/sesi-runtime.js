@@ -41,13 +41,6 @@ const FALLBACK_GENERIC = {
   waktu_mepet  : 'Skip langkah yang tersisa. Langsung ke Penutup sekarang.',
 };
 
-const KONDISI_CLOSURE = [
-  { val: 'lancar',          label: 'Lancar, sesuai rencana' },
-  { val: 'waktu_kurang',    label: 'Waktu tidak cukup'      },
-  { val: 'kurang_kondusif', label: 'Kelas kurang kondusif'  },
-  { val: 'media_tidak_ada', label: 'Media tidak tersedia'   },
-  { val: 'lainnya',         label: 'Lainnya'                },
-];
 
 // ── State ─────────────────────────────────────────────────────
 
@@ -59,8 +52,6 @@ let _state = {
   langkahIdx     : 0,
   aktState       : 'preview',
   fallbackKondisi: null,
-  closureMood    : null,
-  kendala        : null,
   ttsUtterance   : null,
   sesiId         : null,   // id unik per sesi — dibuat saat mulai, dipakai penilaian_log
 };
@@ -88,8 +79,6 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
     langkahIdx     : 0,
     aktState       : 'preview',
     fallbackKondisi: null,
-    closureMood    : null,
-    kendala        : null,
     ttsUtterance   : null,
     sesiId         : null,
     nilaiDraft     : null,
@@ -131,7 +120,7 @@ function _transition(patch) {
 }
 
 async function _persistState() {
-  if (_state.aktState === 'closure' || _state.aktState === 'preview') return;
+  if (_state.aktState === 'preview') return;
   try {
     await db.set(STORE_KV, RESUME_STORE_KEY, {
       tpNomor   : _state.tp?.nomor,
@@ -214,12 +203,13 @@ function _langkahPrev() {
   }
 }
 
-function _nextFase() {
+async function _nextFase() {
   const nextFaseIdx = _state.faseIdx + 1;
   if (nextFaseIdx < (_state.tp?.skenario?.length || 0)) {
     _transition({ aktState: 'entering', faseIdx: nextFaseIdx, langkahIdx: 0 });
   } else {
-    _transition({ aktState: 'closure' });
+    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
+    _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null });
   }
 }
 
@@ -236,7 +226,6 @@ function _render() {
     case 'entering' : return _renderEntering();
     case 'running'  : return _renderRunning();
     case 'selesai'  : return _renderSelesai();
-    case 'closure'  : return _renderClosure();
     default:
       _root.innerHTML = `<div class="sr-app"><div class="sr-body">State tidak dikenal</div></div>`;
   }
@@ -561,95 +550,19 @@ function _renderSelesai() {
       </div>
     </div>`;
 
-  _root.querySelector('#sr-btn-closure')?.addEventListener('click', () => {
-    _transition({ aktState: 'closure' });
+  _root.querySelector('#sr-btn-closure')?.addEventListener('click', async () => {
+    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
+    if (sessionStorage.getItem('sw_pending_update') === '1') {
+      sessionStorage.removeItem('sw_pending_update');
+      setTimeout(() => location.reload(), 1500);
+    }
+    _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null });
   });
   _root.querySelector('#sr-btn-next-fase')?.addEventListener('click', () => {
     _nextFase();
   });
 }
 
-// ─── SCREEN: SesiClosure ─────────────────────────────────────
-
-function _renderClosure() {
-  const tp     = _state.tp;
-  const rombel = _state.rombel;
-
-  const moodOpts = [
-    { id: 'lancar', emoji: '😊', label: 'Lancar' },
-    { id: 'biasa',  emoji: '😐', label: 'Biasa'  },
-    { id: 'berat',  emoji: '😓', label: 'Berat'  },
-  ];
-
-  const moodHTML = moodOpts.map(m => `
-    <div class="sr-mood-btn${_state.closureMood === m.id ? ' sr-mood-btn--selected' : ''}"
-         data-mood="${m.id}">
-      <span class="sr-mood-emoji">${m.emoji}</span>${m.label}
-    </div>`).join('');
-
-  const kendalaHTML = KONDISI_CLOSURE.map(k => `
-    <button class="sr-opsi${_state.kendala === k.val ? ' sr-opsi--selected' : ''}"
-            data-kendala="${k.val}">
-      ${_escape(k.label)}
-    </button>`).join('');
-
-  _root.innerHTML = `
-    <div class="sr-app">
-      <div class="sr-closure">
-        <h2 class="sr-closure-title">Sesi Selesai</h2>
-        <div class="sr-closure-sub">${_escape(tp?.nama || '—')} · ${_escape(rombel?.nama || '—')}</div>
-
-        <div class="sr-closure-label">Yang Anda rasakan?</div>
-        <div class="sr-mood-row">${moodHTML}</div>
-
-        <div class="sr-closure-label">Kendala hari ini</div>
-        <div class="sr-opsi-list">${kendalaHTML}</div>
-
-        <div class="sr-closure-label">Catatan singkat (opsional)</div>
-        <textarea class="sr-note-input" id="sr-note"
-          placeholder="Apa yang ingin diingat untuk sesi berikutnya?"
-          maxlength="300"></textarea>
-
-        <div class="sr-closure-hint">
-          💡 Data sesi akan tersimpan di Jejak Mengajar.
-        </div>
-      </div>
-
-      <div class="sr-footer">
-        <button class="sr-btn-primary" id="sr-btn-simpan">Simpan &amp; Selesai</button>
-      </div>
-    </div>`;
-
-  _root.querySelectorAll('[data-mood]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      _state.closureMood = btn.dataset.mood;
-      _root.querySelectorAll('[data-mood]').forEach(b => b.classList.remove('sr-mood-btn--selected'));
-      btn.classList.add('sr-mood-btn--selected');
-    });
-  });
-
-  _root.querySelectorAll('[data-kendala]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      _state.kendala = btn.dataset.kendala;
-      _root.querySelectorAll('[data-kendala]').forEach(b => b.classList.remove('sr-opsi--selected'));
-      btn.classList.add('sr-opsi--selected');
-    });
-  });
-
-  _root.querySelector('#sr-btn-simpan').addEventListener('click', async () => {
-    const catatan = _root.querySelector('#sr-note')?.value?.trim() || null;
-    const btn     = _root.querySelector('#sr-btn-simpan');
-    if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
-    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
-
-    if (btn) { btn.textContent = 'Tersimpan ✓'; }
-    _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan, mood: _state.closureMood || null, sesiId: _state.sesiId || null });
-    if (sessionStorage.getItem('sw_pending_update') === '1') {
-      sessionStorage.removeItem('sw_pending_update');
-      setTimeout(() => location.reload(), 1500);
-    }
-  });
-}
 
 // ─── OVERLAY: Kondisi kelas tahap 1 ──────────────────────────
 

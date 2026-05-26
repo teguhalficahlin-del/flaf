@@ -46,6 +46,7 @@ let _skenario = {
   langkahIndex    : 0,   // langkah aktif dalam step fase (2–4)
   speaking        : false,
   kendala         : null,
+  mood            : null,
   presensiPage    : 0,
   asesmenPage     : 0,
   openSiswaId     : null,
@@ -552,6 +553,21 @@ function _buildStepSelesai() {
 
   <div class="ds-card" style="padding:14px;">
     <div class="ds-section-label" style="margin-bottom:8px;">Refleksi Mengajar</div>
+    <div style="margin-bottom:12px;">
+      <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Yang Anda rasakan?</div>
+      <div class="ds-kendala-wrap">
+        ${[
+          { val: 'lancar', label: '😊 Lancar' },
+          { val: 'biasa',  label: '😐 Biasa'  },
+          { val: 'berat',  label: '😟 Berat'  },
+        ].map(m => `
+        <button onclick="dashPilihMood('${m.val}')"
+          id="mood-btn-${m.val}"
+          class="ds-kendala-btn ${_skenario.mood === m.val ? 'ds-kendala-btn--active' : ''}">
+          ${m.label}
+        </button>`).join('')}
+      </div>
+    </div>
     <textarea id="sesi-refleksi"
       placeholder="Catatan singkat tentang sesi ini..."
       maxlength="300"
@@ -1317,6 +1333,15 @@ window.dashPilihKendala = function(val) {
   });
 };
 
+window.dashPilihMood = function(val) {
+  _skenario.mood = val;
+  ['lancar','biasa','berat'].forEach(m => {
+    const btn = document.getElementById(`mood-btn-${m}`);
+    if (!btn) return;
+    btn.classList.toggle('ds-kendala-btn--active', m === val);
+  });
+};
+
 let _timerInterval = null;
 window.dashStartTimer = function(idx, durasiMenit) {
   if (_timerInterval) clearInterval(_timerInterval);
@@ -1468,7 +1493,7 @@ window.dashKeLanding = async function() {
   _flow     = { view: 'landing', rombel: null, tp: null, statusMap: {}, siswaList: [], nilaiCache: null };
   _skenario = {
     stepIndex: 0, langkahIndex: 0, speaking: false,
-    kendala: null,
+    kendala: null, mood: null,
     presensiPage: 0, asesmenPage: 0, openSiswaId: null,
     asesmenModeCepat: false, warnAsesmen: false,
   };
@@ -1509,7 +1534,7 @@ window.dashPilihTP = async function(nomor, nama) {
   _flow.nilaiCache = null;
   _skenario        = {
     stepIndex: 0, langkahIndex: 0, speaking: false,
-    kendala: null,
+    kendala: null, mood: null,
     presensiPage: 0, asesmenPage: 0, openSiswaId: null,
     asesmenModeCepat: false, warnAsesmen: false,
   };
@@ -1527,8 +1552,6 @@ window.dashPilihTP = async function(nomor, nama) {
 async function _onSesiDone(hasil) {
   srUnmount();
   _skenario.stepIndex = 6;
-  _skenario.kendala   = hasil.kendala || null;
-  _skenario.mood      = hasil.mood    || null;
   _flow.sesiId        = hasil.sesiId  || null;
   await _loadLogSetDinilai();
   if (_container) _container.innerHTML = _buildSesiHTML();

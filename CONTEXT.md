@@ -810,3 +810,112 @@ Gap ini akan diaddress bersamaan dengan penyiapan media PDF/cetak yang direferen
 - **printables[]** sekarang ada di semua TP 01–18 (TP 15–18 via docs/ import)
 - **SW precache** sudah sinkron dengan file aktual di disk (v54, 136 path, semua nama benar)
 - **Sisa**: unifikasi skema printables[] vs media[] belum dilakukan
+
+---
+
+## AUDIT & FIX TP 01 — Greetings & Farewells
+Tanggal: 27 Mei 2026
+Commit range: 52f84d7 → 51c73da
+File disentuh: tp-01-v5.js, sesi-runtime.js, sesi-runtime.css,
+siswa-history.js, screens/nilai.js, storage/nilai.js
+
+### Status Konten
+18 layar diaudit terhadap skenario txt — 100% sesuai.
+Tidak ada konten yang hilang atau salah.
+
+### Fix yang Diterapkan
+
+#### FIX 1 — Offset nomor Pembuka (tp-01-v5.js, sesi-runtime.js)
+Masalah: Pre-Opening masuk array fase Pembuka → header
+"Pembuka · 1/4" sampai "4/4".
+Solusi: Pre-Opening dipindah ke field `preOpening` di level
+atas objek TP. Ditampilkan sebagai card "Sebelum Memulai"
+di layar FaseEntering sebelum tombol "Mulai Pembuka" ditekan.
+Hasil: Header sekarang "Pembuka · 1/3" sampai "3/3".
+Berlaku untuk TP lain: Cek apakah TP 02-18 juga punya
+Pre-Opening di dalam array fase — jika ya, perlakukan sama.
+
+#### FIX 2 — Render teks per baris (sesi-runtime.js)
+Masalah: Dialog boneka dan daftar → tampil satu blok
+paragraf panjang.
+Solusi: Regex split `/\n|\s+(?=→)/` diterapkan di renderer
+— setiap item → dan pemisah \n jadi div terpisah.
+Hasil: Guru tinggal scan ke bawah satu baris per aksi.
+Berlaku untuk TP lain: Fix ini sudah generik — berlaku
+otomatis untuk semua TP yang menggunakan → di data.
+
+#### FIX 3 — Label LISTEN FIRST dan TOGETHER (sesi-runtime.js, sesi-runtime.css)
+Masalah: 👂 LISTEN FIRST dan 🗣 TOGETHER tenggelam dalam
+paragraf narasi.
+Solusi: Ditambahkan ke regex split. Item yang diawali 👂
+atau 🗣 dirender dengan class sr-label-aktivitas (muted,
+uppercase, margin atas).
+Hasil: Tampil sebagai label transisi yang terlihat jelas.
+Berlaku untuk TP lain: Fix sudah generik — berlaku otomatis
+untuk semua TP yang menggunakan 👂 atau 🗣 di data.
+
+#### FIX 4 — Diferensiasi dua jalur (sesi-runtime.js, sesi-runtime.css)
+Masalah: Item "- Need Help" dan "- Ready" tampil satu blok
+tanpa pemisah visual.
+Solusi: Ditambahkan ke regex split. "Diferensiasi:" dirender
+sebagai sr-label-diferensiasi (uppercase, muted). Item "- "
+dirender sebagai sr-dif-item (border kiri, padding).
+Hasil: Dua jalur terpecah dan mudah dibaca sekilas.
+Berlaku untuk TP lain: Fix sudah generik — berlaku otomatis
+untuk semua TP yang menggunakan format "- " di data.
+
+#### FIX 5 — Font-size (sesi-runtime.css)
+Masalah: 23 class CSS berkisar 10–13px — terlalu kecil
+untuk dibaca sambil mengajar.
+Solusi: 23 class dinaikkan. Yang paling signifikan:
+  .sr-teks-biasa      13px → 15px
+  .sr-ucap-teks       14px → 17px
+  .sr-bantuan-list li 11px → 13px
+  .sr-darurat-teks    12px → 14px
+Berlaku untuk TP lain: Perubahan CSS berlaku global —
+semua TP otomatis ikut.
+
+#### FIX 6 — Line-height (sesi-runtime.css)
+Masalah: 8 class di bawah 1.6, 3 class tanpa line-height
+eksplisit.
+Solusi: 8 class dinaikkan ke 1.6–1.65. 3 class ditambahkan
+line-height eksplisit.
+Berlaku untuk TP lain: Perubahan CSS berlaku global —
+semua TP otomatis ikut.
+
+### Fitur Baru — Penilaian Formatif dan Observasi
+(siswa-history.js, sesi-runtime.js, sesi-runtime.css,
+screens/nilai.js, storage/nilai.js)
+
+Perubahan:
+- Nama tombol dan overlay: "Catat penilaian siswa" →
+  "Penilaian Formatif dan Observasi"
+- Tombol ditambahkan di Penutup langkah terakhir
+  (sebelumnya hanya fase Inti)
+- Sub-pilihan "Lebih spesifik:" muncul setelah pilih
+  perilaku — 3 alasan per perilaku, 9 nilai total:
+    Aktif:       menjawab_sendiri | membantu_teman | berani_mencoba
+    Dorongan:    perlu_dipancing | ikut_bersama_diam_sendiri | butuh_visual
+    Belum siap:  tidak_merespons | mencoba_tapi_salah | terlihat_bingung
+- Subtitle overlay dinamis (bukan hardcode "Fase Inti")
+- Auto-next setelah alasan dipilih (bukan setelah perilaku)
+- Field alasan tersimpan di IDB (penilaian_log)
+- Alasan tampil di Nilai Formatif per TP:
+  "Perlu dorongan · Perlu dipancing"
+- Kolom Alasan masuk CSV export Mode Cepat dan Mode Detail
+
+Berlaku untuk TP lain: Fitur ini generik — berlaku
+otomatis untuk semua TP tanpa perubahan tambahan.
+
+### Checklist untuk Audit TP 02-18
+Setiap TP perlu dicek:
+[ ] Apakah ada Pre-Opening di dalam array fase?
+    → Jika ya, pindahkan ke field preOpening
+[ ] Apakah ada teks multi-baris yang masih satu blok?
+    → Cek dengan regex split sudah cukup atau perlu
+      tambah pemisah di data
+[ ] Apakah ada label transisi selain 👂 dan 🗣?
+    → Jika ya, tambahkan ke regex split dan renderer
+[ ] Apakah ada format diferensiasi selain "- "?
+    → Jika ya, tambahkan deteksi di renderer
+[ ] Konten audit: bandingkan semua layar dengan txt sumber
