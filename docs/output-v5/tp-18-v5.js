@@ -109,6 +109,15 @@ const TP_18 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Today is a very special day. Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Tambahkan "Today is a very special day" — ini anchor emosional pertama untuk tone capstone. Jika kelas belum fokus: berdiri diam, tunggu, ulangi "Are you ready?"',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -116,16 +125,6 @@ const TP_18 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Today is a very special day. Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Tambahkan "Today is a very special day" — ini anchor emosional pertama untuk tone capstone. Jika kelas belum fokus: berdiri diam, tunggu, ulangi "Are you ready?"',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {

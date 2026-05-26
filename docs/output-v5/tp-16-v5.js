@@ -119,6 +119,15 @@ const TP_16 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -126,16 +135,6 @@ const TP_16 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -232,13 +231,17 @@ const TP_16 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `"Partner A tells." "Partner B holds cards — raise when you hear the word." "Buku tertutup di meja — boleh lihat sebentar jika lupa." "Go." Total durasi: ±4 menit maksimal. Checkpoint tengah (±2 menit): [Tepuk 1 kali — freeze] "Switch." "Partner B tells." "Partner A holds cards." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: cerita tanpa lihat buku — kartu saja sebagai scaffold - Perlu support: boleh lihat buku sebentar jika lupa`,
+          teks   : `"Partner A tells." "Partner B holds cards — raise when you hear the word." "Buku tertutup di meja — boleh lihat sebentar jika lupa." "Go." Total durasi: ±4 menit maksimal. Checkpoint tengah (±2 menit): [Tepuk 1 kali — freeze] "Switch." "Partner B tells." "Partner A holds cards." [Tepuk 1 kali — lanjut]`,
           bantuan: [
             'Pasangan diam total: dekati, tunjuk kartu "First" di tangan mereka — bisik: "First, Ani walked…" Tunggu Partner A lanjut. Tidak hentikan kelas.',
             'Storyteller lupa urutan: tunjuk kartu berikutnya di tangannya — tanpa bicara. Tidak hentikan kelas.',
             'Listener tidak angkat kartu: dekati, tunjuk kartu yang sesuai — gesture angkat. Tidak hentikan kelas.',
             'Pasangan selesai terlalu cepat: tukar role lagi — "Try again. No book this time."',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Cerita tanpa lihat buku — kartu saja sebagai scaffold.',
+            perluSupport: 'Boleh lihat buku sebentar jika lupa.',
+          },
           cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Listener aktif angkat kartu — tugas Listener paling cepat collapse. Buku tertutup di meja — boleh dilihat sebentar jika lupa, tidak ditelusuri. Guru tidak koreksi grammar. Total ±4 menit — jangan lewati.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, duduk diam 3 detik, lanjut.',
           energi : '🔴',

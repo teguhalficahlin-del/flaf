@@ -125,6 +125,15 @@ const TP_17 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -132,16 +141,6 @@ const TP_17 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -245,12 +244,16 @@ const TP_17 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Distribusi kartu hobi — 1 set per pasang. Tunggu semua siap sebelum instruksi. "Partner A picks a card — holds it face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." "Full sentence. Go." Total durasi: ±4 menit maksimal. Checkpoint tengah (±2 menit): [Tepuk 1 kali — freeze] "Switch." "Partner B picks a card." "Partner A asks and raises." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: ganti kartu setiap giliran, ciptakan reason sendiri selain fun/interesting - Perlu support: cukup ucap hobi saja — "Reading!" — tanpa "because"`,
+          teks   : `AKSI: Distribusi kartu hobi — 1 set per pasang. Tunggu semua siap sebelum instruksi. "Partner A picks a card — holds it face down." "Partner B asks: What do you like to do?" "Partner A answers: I like ___ because it is ___." [tunjuk papan] "Partner B: raise the card when you hear the hobby." "Full sentence. Go." Total durasi: ±4 menit maksimal. Checkpoint tengah (±2 menit): [Tepuk 1 kali — freeze] "Switch." "Partner B picks a card." "Partner A asks and raises." [Tepuk 1 kali — lanjut]`,
           bantuan: [
             'Pasangan diam total: dekati, tunjuk kartu di tangan Partner A — bisik: "I like…" Tunggu Partner A lanjut. Tidak hentikan kelas.',
             'Partner B tidak angkat kartu: dekati, gesture angkat kartu ke Partner B — tanpa bicara. Tidak hentikan kelas.',
             'Pasangan selesai terlalu cepat: "Pick another card. Switch again."',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Ganti kartu setiap giliran, ciptakan reason sendiri selain fun/interesting.',
+            perluSupport: 'Cukup ucap hobi saja — "Reading!" — tanpa "because".',
+          },
           cue    : 'Distribusi kartu wajib selesai sebelum instruksi practice. Saat circulate: bergerak huruf U — cek apakah Partner B mengangkat kartu setelah mendengar hobby, bukan sebelum. Fokus pada produksi bahasa — jangan verifikasi apakah hobi yang disebut benar-benar dilakukan siswa. Guru tidak koreksi grammar. Total ±4 menit — jangan lewati.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, duduk diam 3 detik, lanjut.',
           energi : '🔴',
