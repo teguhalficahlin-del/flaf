@@ -586,6 +586,9 @@ export const nilai = {
   setNilaiSAS,
   getNilaiSAS,
   getRekapSAS,
+  setNilaiSumatif,
+  getNilaiSumatif,
+  getRekapSumatif,
   getRekapRapor,
   sync,
 };
@@ -617,6 +620,9 @@ export {
   setNilaiSAS,
   getNilaiSAS,
   getRekapSAS,
+  setNilaiSumatif,
+  getNilaiSumatif,
+  getRekapSumatif,
   getRekapRapor,
   sync,
 };
@@ -626,19 +632,39 @@ export {
 /**
  * Key SAS per kelas per siswa — satu nilai per siswa per semester.
  */
-function _sasKey(kelasId, siswaId) {
-  return `sas_${kelasId}_${siswaId}`;
+function _sasKey(kelasId, siswaId, semester) {
+  return `sas_${semester}_${kelasId}_${siswaId}`;
+}
+
+function _sumatifKey(kelasId, siswaId, semester) {
+  return `sumatif_${semester}_${kelasId}_${siswaId}`;
 }
 
 /**
  * Simpan nilai Sumatif Akhir Semester (SAS).
  * @param {string} kelasId
  * @param {string} siswaId
+ * @param {string} semester  'ganjil' | 'genap'
  * @param {number|null} nilaiAngka
  */
-async function setNilaiSAS(kelasId, siswaId, nilaiAngka) {
+async function setNilaiSAS(kelasId, siswaId, semester, nilaiAngka) {
   const v = _clampNilai(nilaiAngka);
-  await db.set(STORE, _sasKey(kelasId, siswaId), {
+  await db.set(STORE, _sasKey(kelasId, siswaId, semester), {
+    nilai     : v,
+    updated_at: new Date().toISOString(),
+  });
+}
+
+/**
+ * Simpan nilai Sumatif Tengah Semester (STS).
+ * @param {string} kelasId
+ * @param {string} siswaId
+ * @param {string} semester  'ganjil' | 'genap'
+ * @param {number|null} nilaiAngka
+ */
+async function setNilaiSumatif(kelasId, siswaId, semester, nilaiAngka) {
+  const v = _clampNilai(nilaiAngka);
+  await db.set(STORE, _sumatifKey(kelasId, siswaId, semester), {
     nilai     : v,
     updated_at: new Date().toISOString(),
   });
@@ -646,71 +672,78 @@ async function setNilaiSAS(kelasId, siswaId, nilaiAngka) {
 
 /**
  * Ambil nilai SAS satu siswa.
+ * @param {string} semester  'ganjil' | 'genap'
  * @returns {Promise<number|null>}
  */
-async function getNilaiSAS(kelasId, siswaId) {
-  const raw = await db.get(STORE, _sasKey(kelasId, siswaId));
+async function getNilaiSAS(kelasId, siswaId, semester) {
+  const raw = await db.get(STORE, _sasKey(kelasId, siswaId, semester));
+  return raw?.nilai ?? null;
+}
+
+/**
+ * Ambil nilai STS satu siswa.
+ * @param {string} semester  'ganjil' | 'genap'
+ * @returns {Promise<number|null>}
+ */
+async function getNilaiSumatif(kelasId, siswaId, semester) {
+  const raw = await db.get(STORE, _sumatifKey(kelasId, siswaId, semester));
   return raw?.nilai ?? null;
 }
 
 /**
  * Rekap SAS seluruh siswa dalam satu kelas.
+ * @param {string} semester  'ganjil' | 'genap'
  * @returns {Promise<Array<{ nomor, nama, sas }>>}
  */
-async function getRekapSAS(kelasId) {
+async function getRekapSAS(kelasId, semester) {
   const siswaList = await getSiswaList(kelasId);
   const hasil     = [];
   for (const s of siswaList) {
-    const sas = await getNilaiSAS(kelasId, s.id);
+    const sas = await getNilaiSAS(kelasId, s.id, semester);
     hasil.push({ nomor: s.nomor, nama: s.nama, sas });
   }
   return hasil;
 }
 
 /**
- * Rekap Nilai Rapor per siswa.
- * Rumus resmi Kurikulum Merdeka: (S + AS) ÷ 2
- *   S  = rerata nilai Sumatif Lingkup Materi semua TP
- *   AS = Sumatif Akhir Semester
+ * Rekap STS seluruh siswa dalam satu kelas.
+ * @param {string} semester  'ganjil' | 'genap'
+ * @returns {Promise<Array<{ nomor, nama, sts }>>}
+ */
+async function getRekapSumatif(kelasId, semester) {
+  const siswaList = await getSiswaList(kelasId);
+  const hasil     = [];
+  for (const s of siswaList) {
+    const sts = await getNilaiSumatif(kelasId, s.id, semester);
+    hasil.push({ nomor: s.nomor, nama: s.nama, sts });
+  }
+  return hasil;
+}
+
+/**
+ * Rekap Nilai Rapor per siswa per semester.
+ * Rumus resmi Kurikulum Merdeka: (STS + SAS) ÷ 2
  *
  * Nilai akhir ditampilkan sebagai referensi — guru tetap punya kendali penuh.
  *
- * @returns {Promise<Array<{ nomor, nama, tp, s, as: sas, rapor }>>}
+ * @param {string} semester  'ganjil' | 'genap'
+ * @returns {Promise<Array<{ nomor, nama, sts, sas, rapor }>>}
  */
-async function getRekapRapor(kelasId) {
-  const kelas   = (await getKelasList()).find(k => k.id === kelasId);
-  const tingkat = kelas?.tingkat === 2 ? 2 : 1;
-  const tpRange = tingkat === 1
-    ? [1,2,3,4,5,6,7,8,9]
-    : [10,11,12,13,14,15,16,17,18];
-
+async function getRekapRapor(kelasId, semester) {
   const siswaList = await getSiswaList(kelasId);
   const hasil     = [];
 
   for (const siswa of siswaList) {
-    const record  = await _getNilaiRecord(kelasId, siswa.id);
-    const sas     = await getNilaiSAS(kelasId, siswa.id);
-    const tpNilai = {};
-    let totalS    = 0;
-    let jumlahS   = 0;
-
-    for (const tp of tpRange) {
-      const entry  = record[`tp_${tp}`];
-      const n      = entry?.nilai ?? null;
-      tpNilai[tp]  = n;
-      if (n !== null) { totalS += n; jumlahS++; }
-    }
-
-    const s     = jumlahS > 0 ? Math.round(totalS / jumlahS) : null;
-    const rapor = (s !== null && sas !== null)
-      ? Math.round((s + sas) / 2)
+    const sts   = await getNilaiSumatif(kelasId, siswa.id, semester);
+    const sas   = await getNilaiSAS(kelasId, siswa.id, semester);
+    const rapor = (sts !== null && sas !== null)
+      ? Math.round((sts + sas) / 2)
       : null;
 
     hasil.push({
       nomor: siswa.nomor,
       nama : siswa.nama,
-      tp   : tpNilai,
-      s,
+      sts,
       sas,
       rapor,
     });

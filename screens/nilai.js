@@ -26,6 +26,7 @@ let _state = {
   tpNomor   : null,
   tpNama    : null,
   formatifTP: null,   // nomor TP yang sedang dibuka di detail formatif
+  semester  : null,
 };
 
 let _container   = null;
@@ -87,10 +88,10 @@ async function _render() {
   const token = ++_renderToken;
   if (_state.view === 'rombel') await _renderRombel(token);
   if (_state.view === 'menu')   await _renderMenu(token);
-  if (_state.view === 'tp')     await _renderTP(token);
-  if (_state.view === 'input')  await _renderInput(token);
-  if (_state.view === 'sas')    await _renderSAS(token);
-  if (_state.view === 'rapor')  await _renderRapor(token);
+  if (_state.view === 'sas')          await _renderSAS(token);
+  if (_state.view === 'sts')          await _renderSTS(token);
+  if (_state.view === 'rapor-toggle') await _renderRapor(token);
+  if (_state.view === 'rapor')        await _renderRapor(token);
   if (_state.view === 'unduh')    await _renderUnduh(token);
   if (_state.view === 'formatif') await _renderFormatif(token);
   if (_state.view === 'formatif-detail') await _renderFormatifDetail(token);
@@ -189,17 +190,25 @@ async function _renderMenu(token) {
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>`,
       'rgba(212,174,58,.15)', 'Nilai Formatif', 'Lihat penilaian proses dan observasi per TP')}
 
-    ${_menuCard('nilaiMenuTP()',
-      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>`,
-      'rgba(212,174,58,.15)', 'Sumatif Mid Semester', 'Input nilai per TP — masuk nilai rapor')}
-
-    ${_menuCard('nilaiMenuSAS()',
+    ${_menuCard('nilaiMenuSTSGanjil()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
-      'rgba(212,174,58,.15)', 'Sumatif Akhir Semester', 'Input nilai ujian akhir semester — masuk nilai rapor')}
+      'rgba(212,174,58,.15)', 'STS Ganjil', 'Input nilai ujian tengah semester ganjil')}
+
+    ${_menuCard('nilaiMenuSTSGenap()',
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      'rgba(212,174,58,.15)', 'STS Genap', 'Input nilai ujian tengah semester genap')}
+
+    ${_menuCard('nilaiMenuSASGanjil()',
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      'rgba(212,174,58,.15)', 'SAS Ganjil', 'Input nilai ujian akhir semester ganjil')}
+
+    ${_menuCard('nilaiMenuSASGenap()',
+      `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+      'rgba(212,174,58,.15)', 'SAS Genap', 'Input nilai ujian akhir semester genap')}
 
     ${_menuCard('nilaiMenuRapor()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-      'rgba(212,174,58,.15)', 'Nilai Rapor', 'Lihat nilai rapor (STS + SAS) ÷ 2')}
+      'rgba(212,174,58,.15)', 'Nilai Rapor', 'Lihat nilai rapor (STS + SAS) ÷ 2 per semester')}
 
     ${_menuCard('nilaiMenuUnduh()',
       `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4AE3A" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
@@ -240,171 +249,60 @@ async function _renderFormatif(token) {
 
 // --- LEVEL 3: DAFTAR TP ------------------------------------------------------
 
-async function _renderTP(token) {
-  const tpList    = _tpList(_state.tingkat);
+// --- LEVEL 5b: SUMATIF TENGAH SEMESTER ----------------------------------------
+
+async function _renderSTS(token) {
   const siswaList = await nilai.getSiswaList(_state.kelasId);
   if (token !== _renderToken) return;
 
-  const tpStatus = {};
-  for (const tp of tpList) {
-    if (token !== _renderToken) return;
-    let adaNilai = 0;
-    for (const s of siswaList) {
-      const n = await nilai.getNilai(_state.kelasId, s.id, tp.nomor);
-      if (n !== null && n !== undefined) adaNilai++;
-    }
-    tpStatus[tp.nomor] = adaNilai;
-  }
-
-  const totalDinilai = Object.values(tpStatus).filter(v => v > 0).length;
-  const totalSiswa   = siswaList.length;
-
-  // Kelompokkan per 5 TP
-  const GRUP_SIZE = 5;
-  const tpGroups  = [];
-  for (let i = 0; i < tpList.length; i += GRUP_SIZE) {
-    tpGroups.push(tpList.slice(i, i + GRUP_SIZE));
-  }
-
-  const accordionHTML = tpGroups.map((group, gi) => {
-    const isOpen    = gi === 0;
-    const firstNum  = String(group[0].nomor).padStart(2, '0');
-    const lastNum   = String(group[group.length - 1].nomor).padStart(2, '0');
-    const dinilaiGrup = group.filter(tp => (tpStatus[tp.nomor] || 0) > 0).length;
-    const allDone   = dinilaiGrup === group.length;
-    const anyDone   = dinilaiGrup > 0;
-    const countColor = allDone ? 'rgba(212,174,58,.9)' : anyDone ? 'rgba(255,255,255,.6)' : 'rgba(255,255,255,.3)';
-
-    const itemsHTML = group.map(tp => {
-      const dinilai    = tpStatus[tp.nomor] || 0;
-      const nilaiLabel = totalSiswa > 0 ? `${dinilai}/${totalSiswa} dinilai` : '—';
-      const nilaiColor = dinilai === totalSiswa && totalSiswa > 0 ? 'rgba(212,174,58,.9)'
-                       : dinilai > 0 ? 'rgba(255,255,255,.6)'
-                       : 'rgba(255,255,255,.3)';
-      return `
-      <div class="nv-tp-item" onclick="nilaiPilihTP(${tp.nomor},'${_escape(tp.nama)}')" style="cursor:pointer;border-top:1px solid rgba(212,174,58,.1);">
-        <div style="flex:1;min-width:0;">
-          <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
-          <div class="nv-tp-name">${_escape(tp.nama)}</div>
-          <div class="nv-tp-status" style="color:${nilaiColor};">${nilaiLabel}</div>
-        </div>
-        <div class="nv-menu-arrow">›</div>
-      </div>`;
-    }).join('');
-
-    return `
-    <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-tp-group-${gi}" style="margin-bottom:8px;border-radius:10px;overflow:hidden;border:1px solid rgba(212,174,58,.15);">
-      <div class="ds-subfase-head" onclick="nilaiToggleTPGroup(${gi})" style="padding:13px 16px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:11px;font-weight:700;color:rgba(212,174,58,.8);letter-spacing:.08em;margin-bottom:2px;">TP ${firstNum} – TP ${lastNum}</div>
-          <div style="font-size:12px;color:${countColor};">${dinilaiGrup}/${group.length} TP dinilai</div>
-        </div>
-        <div class="ds-collapse-chevron" id="nv-tp-chevron-${gi}" style="font-size:14px;color:rgba(212,174,58,.7);">${isOpen ? '▲' : '▼'}</div>
-      </div>
-      <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
-        ${itemsHTML}
-      </div>
-    </div>`;
-  }).join('');
-
-  _container.innerHTML = `
-<div class="nv-wrap">
-  <div class="nv-card nv-card--inset" style="padding:14px 16px;">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-      <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
-      <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
-    </div>
-    <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:4px;">Sumatif Mid Semester — nilai per TP, masuk nilai rapor</div>
-  </div>
-  <div class="nv-card nv-card--inset nv-card--overflow">
-    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);display:flex;align-items:center;justify-content:space-between;">
-      <div class="ds-section-label">Pilih TP</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.45);">${totalDinilai}/${tpList.length} TP dinilai</div>
-    </div>
-    <div style="padding:12px;">
-      ${accordionHTML}
-    </div>
-  </div>
-</div>`;
-}
-
-// --- LEVEL 4: INPUT NILAI L/S/R ----------------------------------------------
-
-async function _renderInput(token) {
-  if (!_state.kelasId || _state.tpNomor === null || _state.tpNomor === undefined) return;
-
-  const siswaList = await nilai.getSiswaList(_state.kelasId);
-  if (token !== _renderToken) return;
-
-  const lsrMap = {};
+  const stsMap = {};
   for (const s of siswaList) {
-    lsrMap[s.id] = await nilai.getNilaiLSR(_state.kelasId, s.id, _state.tpNomor);
+    stsMap[s.id] = await nilai.getNilaiSumatif(_state.kelasId, s.id, _state.semester);
   }
   if (token !== _renderToken) return;
 
-  const PAGE_SIZE = 5;
-  const filtered  = siswaList.filter(s => s && s.id);
+  const PAGE_SIZE_STS = 5;
+  const filteredSTS   = siswaList.filter(s => s && s.id);
+  const semLabel      = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
 
-  function _siswaRowHTML(s) {
-    const lsr    = lsrMap[s.id] || { l: null, s: null, r: null, nilai: null, catatan: '' };
-    const valL   = lsr.l    !== null && lsr.l    !== undefined ? lsr.l    : '';
-    const valS   = lsr.s    !== null && lsr.s    !== undefined ? lsr.s    : '';
-    const valR   = lsr.r    !== null && lsr.r    !== undefined ? lsr.r    : '';
-    const rerata = lsr.nilai !== null && lsr.nilai !== undefined ? lsr.nilai : '—';
+  function _stsRowHTML(s) {
+    const sts = stsMap[s.id];
+    const val = sts !== null && sts !== undefined ? sts : '';
     return `
-    <div class="nv-input-row">
-      <div class="nv-input-top">
-        <div class="ds-siswa-nomor">${s.nomor}</div>
-        <div class="nv-siswa-name">${_escape(s.nama)}</div>
-        <div id="rerata-display-${s.id}" class="nv-rerata-display" style="color:${_nilaiColor(lsr.nilai)};">${rerata}</div>
-      </div>
-      <div class="nv-lsr-grid">
-        ${['L','S','R'].map((dim, i) => {
-          const vals = [valL, valS, valR];
-          return `
-          <div>
-            <div class="nv-lsr-label">${dim}</div>
-            <input id="input-${dim.toLowerCase()}-${s.id}" type="number" min="0" max="100" placeholder="—"
-              value="${vals[i]}"
-              class="nv-lsr-input"
-              oninput="nilaiUpdateRerata('${s.id}')"
-              onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
-              onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSiswa('${s.id}')">
-          </div>`;
-        }).join('')}
-      </div>
-      <textarea id="catatan-${s.id}" placeholder="Catatan observasi (opsional)..." maxlength="500" rows="2"
-        class="ds-textarea"
-        onfocus="this.style.borderColor='rgba(212,174,58,.3)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.08)';nilaiAutoSaveSiswa('${s.id}')"
-      >${_escape(lsr.catatan || '')}</textarea>
+    <div class="nv-sas-row">
+      <div class="ds-siswa-nomor ds-siswa-nomor--slate">${s.nomor}</div>
+      <div class="nv-siswa-name">${_escape(s.nama)}</div>
+      <input id="sts-${s.id}" type="number" min="0" max="100" placeholder="—"
+        value="${val}"
+        class="nv-sas-input"
+        oninput="this.style.color=nilaiWarna(parseInt(this.value))"
+        onfocus="this.style.borderColor='rgba(212,174,58,.5)'"
+        onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSTS('${s.id}')">
     </div>`;
   }
 
-  const barisHTML = filtered.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">
-      Belum ada siswa. Tambah siswa dulu di menu Kelola Siswa.
-    </div>
+  const barisHTML = filteredSTS.length === 0 ? `
+    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
   ` : (() => {
     const groups = [];
-    for (let i = 0; i < filtered.length; i += PAGE_SIZE) {
-      groups.push(filtered.slice(i, i + PAGE_SIZE));
+    for (let i = 0; i < filteredSTS.length; i += PAGE_SIZE_STS) {
+      groups.push(filteredSTS.slice(i, i + PAGE_SIZE_STS));
     }
     return groups.map((group, gi) => {
       const dari  = group[0].nomor;
       const ke    = group[group.length - 1].nomor;
       const isOpen = gi === 0;
       return `
-      <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-group-${gi}">
-        <div class="ds-subfase-head" onclick="nilaiToggleGroup(${gi})">
+      <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sts-group-${gi}">
+        <div class="ds-subfase-head" onclick="nilaiToggleSTSGroup(${gi})">
           <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => { const l = lsrMap[s.id]; return l && (l.l !== null || l.s !== null || l.r !== null); }) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
-            ${group.filter(s => { const l = lsrMap[s.id]; return l && (l.l !== null || l.s !== null || l.r !== null); }).length}/${group.length} diisi
+          <div style="font-size:12px;color:${group.some(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+            ${group.filter(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined).length}/${group.length} diisi
           </div>
-          <div class="ds-collapse-chevron" id="nv-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
+          <div class="ds-collapse-chevron" id="nv-sts-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
-          ${group.map(s => _siswaRowHTML(s)).join('')}
+          ${group.map(s => _stsRowHTML(s)).join('')}
         </div>
       </div>`;
     }).join('');
@@ -414,36 +312,20 @@ async function _renderInput(token) {
 <div class="nv-wrap">
   <div class="nv-card nv-card--inset" style="padding:14px 16px;">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-      <button onclick="nilaiBack()" class="nv-btn nv-btn--gold" style="font-size:12px;">← TP</button>
+      <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
-    <div class="nv-tp-num" style="margin-top:2px;">TP ${String(_state.tpNomor).padStart(2,'0')}</div>
-    <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">${_escape(_state.tpNama)}</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Sumatif Mid Semester — nilai ini masuk rapor</div>
+    <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">STS ${semLabel}</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Nilai ujian tengah semester ${_state.semester} — masuk rapor sebagai STS</div>
   </div>
-
-  <div class="nv-color-legend">
-    <div class="nv-color-legend-row">
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">L = Listening</div>
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">S = Speaking</div>
-      <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.55);">R = Reading</div>
-    </div>
-    <div class="nv-color-legend-row">
-      <div class="nv-dot nv-dot--sage"></div><span class="nv-dot-label">≥80</span>
-      <div class="nv-dot nv-dot--gold"></div><span class="nv-dot-label">≥70</span>
-      <div class="nv-dot nv-dot--clay"></div><span class="nv-dot-label">&lt;70</span>
-    </div>
-  </div>
-
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div class="ds-section-label">Input Nilai (${siswaList.length} siswa)</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.55);">Nilai = Rerata L+S+R</div>
+    <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
+      <div class="ds-section-label">Input Nilai STS (${siswaList.length} siswa)</div>
     </div>
     ${barisHTML}
   </div>
   <div class="nv-card--inset">
-    <button onclick="nilaiSimpanSemua()" class="nv-btn-simpan">SIMPAN NILAI</button>
+    <button onclick="nilaiSimpanSTS()" class="nv-btn-simpan nv-btn-simpan--slate">SIMPAN NILAI STS</button>
   </div>
 </div>`;
 }
@@ -456,7 +338,7 @@ async function _renderSAS(token) {
 
   const sasMap = {};
   for (const s of siswaList) {
-    sasMap[s.id] = await nilai.getNilaiSAS(_state.kelasId, s.id);
+    sasMap[s.id] = await nilai.getNilaiSAS(_state.kelasId, s.id, _state.semester);
   }
   if (token !== _renderToken) return;
 
@@ -513,12 +395,12 @@ async function _renderSAS(token) {
       <button onclick="nilaiBackToMenu()" class="nv-btn nv-btn--gold" style="font-size:12px;">← Menu</button>
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
-    <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Sumatif Akhir Semester</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Nilai ujian akhir semester — masuk rapor sebagai AS</div>
+    <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Sumatif Akhir Semester — ${_state.semester === 'ganjil' ? 'Ganjil' : 'Genap'}</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);margin-top:4px;">Nilai ujian akhir semester ${_state.semester} — masuk rapor sebagai SAS</div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div style="padding:12px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
-      <div class="ds-section-label">Input Nilai AS (${siswaList.length} siswa)</div>
+      <div class="ds-section-label">Input Nilai SAS (${siswaList.length} siswa)</div>
     </div>
     ${barisHTML}
   </div>
@@ -531,10 +413,12 @@ async function _renderSAS(token) {
 // --- LEVEL 6: NILAI RAPOR ----------------------------------------------------
 
 async function _renderRapor(token) {
-  const siswaList = await nilai.getRekapRapor(_state.kelasId);
+  if (!_state.semester) _state.semester = 'ganjil';
+  const siswaList = await nilai.getRekapRapor(_state.kelasId, _state.semester);
   if (token !== _renderToken) return;
 
   const PAGE_SIZE_RAPOR = 5;
+  const semLabel = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
 
   function _raporRowHTML(s) {
     const val = (v) => v !== null && v !== undefined ? v : '—';
@@ -546,8 +430,8 @@ async function _renderRapor(token) {
         <div class="nv-siswa-name">${_escape(s.nama)}</div>
       </div>
       <div style="display:flex;gap:12px;padding-left:36px;">
-        <span style="font-size:12px;color:rgba(255,255,255,.5);">S: <span style="color:${_nilaiColor(s.s)};font-weight:700;">${val(s.s)}</span></span>
-        <span style="font-size:12px;color:rgba(255,255,255,.5);">AS: <span style="color:${_nilaiColor(s.sas)};font-weight:700;">${val(s.sas)}</span></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.5);">STS: <span style="color:${_nilaiColor(s.sts)};font-weight:700;">${val(s.sts)}</span></span>
+        <span style="font-size:12px;color:rgba(255,255,255,.5);">SAS: <span style="color:${_nilaiColor(s.sas)};font-weight:700;">${val(s.sas)}</span></span>
         <span style="font-size:12px;color:rgba(255,255,255,.5);">Rapor: <span style="color:${hasRapor ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};font-weight:800;">${val(s.rapor)}</span></span>
       </div>
     </div>`;
@@ -588,8 +472,23 @@ async function _renderRapor(token) {
       <div class="ds-section-label">${_escape(_state.kelasNama)}</div>
     </div>
     <div style="font-size:15px;font-weight:700;color:#fff;margin-top:2px;">Nilai Rapor</div>
-    <div style="font-size:13px;color:rgba(212,174,58,.8);margin-top:4px;">Rumus: (S + AS) ÷ 2 · Nilai bersifat referensi</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;">S = Rerata Sumatif per TP · AS = Sumatif Akhir Semester</div>
+    <div style="font-size:13px;color:rgba(212,174,58,.8);margin-top:4px;">Rumus: (STS + SAS) ÷ 2 · Semester ${semLabel}</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.4);margin-top:3px;">STS = Sumatif Tengah Semester · SAS = Sumatif Akhir Semester</div>
+  </div>
+
+  <div class="nv-card nv-card--inset" style="padding:14px 16px;">
+    <div style="display:flex;gap:8px;margin-bottom:12px;">
+      <button onclick="nilaiToggleRaporSemester('ganjil')"
+        style="flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;
+        border: ${_state.semester==='ganjil' ? '2px solid #D4AE3A' : '1px solid rgba(255,255,255,.2)'};
+        color: ${_state.semester==='ganjil' ? '#D4AE3A' : 'rgba(255,255,255,.4)'};
+        background:transparent;">Ganjil</button>
+      <button onclick="nilaiToggleRaporSemester('genap')"
+        style="flex:1;padding:10px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;
+        border: ${_state.semester==='genap' ? '2px solid #D4AE3A' : '1px solid rgba(255,255,255,.2)'};
+        color: ${_state.semester==='genap' ? '#D4AE3A' : 'rgba(255,255,255,.4)'};
+        background:transparent;">Genap</button>
+    </div>
   </div>
 
   <div class="nv-card nv-card--inset nv-card--overflow" style="border-color:rgba(250,199,117,.3);">
@@ -641,81 +540,30 @@ async function _renderModalKelolaSiswa() {
 // --- ACTIONS -----------------------------------------------------------------
 
 window.nilaiBack = async function() {
-  if (_state.view === 'input') await _flushSemuaNilai();
   if (_state.view === 'sas')   await _flushSemuaSAS();
+  if (_state.view === 'sts')   await _flushSemuaSTS();
   if (_state.view === 'menu')  { _state.view = 'rombel'; _state.kelasId = null; _state.kelasNama = null; }
-  if (_state.view === 'tp')    { _state.view = 'menu'; }
-  if (_state.view === 'input') { _state.view = 'tp'; _state.tpNomor = null; _state.tpNama = null; }
   if (_state.view === 'sas')   { _state.view = 'menu'; }
+  if (_state.view === 'sts')   { _state.view = 'menu'; }
   if (_state.view === 'rapor') { _state.view = 'menu'; }
   if (_state.view === 'unduh') { _state.view = 'menu'; }
   _render();
 };
 
 window.nilaiBackToMenu = async function() {
-  if (_state.view === 'input') await _flushSemuaNilai();
   if (_state.view === 'sas')   await _flushSemuaSAS();
+  if (_state.view === 'sts')   await _flushSemuaSTS();
   _state.view = 'menu';
   _render();
 };
-window.nilaiMenuTP       = function() { _state.view = 'tp';       _render(); };
 window.nilaiMenuSAS      = function() { _state.view = 'sas';      _render(); };
 window.nilaiMenuRapor    = function() { _state.view = 'rapor';    _render(); };
 window.nilaiMenuUnduh    = function() { _state.view = 'unduh';    _render(); };
-window.nilaiMenuFormatif = function() { _state.view = 'formatif'; _render(); };
-window.nilaiToggleGroup = function(gi) {
-  const item    = document.getElementById(`nv-group-${gi}`);
-  const body    = item?.querySelector('.ds-subfase-body');
-  const chevron = document.getElementById(`nv-chevron-${gi}`);
-  if (!body) return;
-  const isOpen = body.style.display !== 'none';
-
-  // Tutup semua group lain
-  let idx = 0;
-  while (true) {
-    const other = document.getElementById(`nv-group-${idx}`);
-    if (!other) break;
-    if (idx !== gi) {
-      const otherBody    = other.querySelector('.ds-subfase-body');
-      const otherChevron = document.getElementById(`nv-chevron-${idx}`);
-      if (otherBody)    otherBody.style.display = 'none';
-      if (otherChevron) otherChevron.textContent = '▼';
-      other.classList.remove('ds-subfase-item--open');
-    }
-    idx++;
-  }
-
-  // Toggle group yang dipilih
-  body.style.display  = isOpen ? 'none' : '';
-  chevron.textContent = isOpen ? '▼' : '▲';
-  item.classList.toggle('ds-subfase-item--open', !isOpen);
-};
-window.nilaiToggleTPGroup = function(gi) {
-  const item    = document.getElementById(`nv-tp-group-${gi}`);
-  const body    = item?.querySelector('.ds-subfase-body');
-  const chevron = document.getElementById(`nv-tp-chevron-${gi}`);
-  if (!body) return;
-  const isOpen = body.style.display !== 'none';
-
-  // Tutup semua grup lain
-  let idx = 0;
-  while (true) {
-    const other = document.getElementById(`nv-tp-group-${idx}`);
-    if (!other) break;
-    if (idx !== gi) {
-      const otherBody    = other.querySelector('.ds-subfase-body');
-      const otherChevron = document.getElementById(`nv-tp-chevron-${idx}`);
-      if (otherBody)    otherBody.style.display = 'none';
-      if (otherChevron) otherChevron.textContent = '▼';
-      other.classList.remove('ds-subfase-item--open');
-    }
-    idx++;
-  }
-
-  body.style.display  = isOpen ? 'none' : '';
-  chevron.textContent = isOpen ? '▼' : '▲';
-  item.classList.toggle('ds-subfase-item--open', !isOpen);
-};
+window.nilaiMenuFormatif  = function() { _state.view = 'formatif'; _render(); };
+window.nilaiMenuSTSGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sts'; _render(); };
+window.nilaiMenuSTSGenap  = function() { _state.semester = 'genap';  _state.view = 'sts'; _render(); };
+window.nilaiMenuSASGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sas'; _render(); };
+window.nilaiMenuSASGenap  = function() { _state.semester = 'genap';  _state.view = 'sas'; _render(); };
 window.nilaiToggleSASGroup = function(gi) {
   const item    = document.getElementById(`nv-sas-group-${gi}`);
   const body    = item?.querySelector('.ds-subfase-body');
@@ -731,6 +579,33 @@ window.nilaiToggleSASGroup = function(gi) {
     if (idx !== gi) {
       const otherBody    = other.querySelector('.ds-subfase-body');
       const otherChevron = document.getElementById(`nv-sas-chevron-${idx}`);
+      if (otherBody)    otherBody.style.display = 'none';
+      if (otherChevron) otherChevron.textContent = '▼';
+      other.classList.remove('ds-subfase-item--open');
+    }
+    idx++;
+  }
+
+  // Toggle group yang dipilih
+  body.style.display  = isOpen ? 'none' : '';
+  chevron.textContent = isOpen ? '▼' : '▲';
+  item.classList.toggle('ds-subfase-item--open', !isOpen);
+};
+window.nilaiToggleSTSGroup = function(gi) {
+  const item    = document.getElementById(`nv-sts-group-${gi}`);
+  const body    = item?.querySelector('.ds-subfase-body');
+  const chevron = document.getElementById(`nv-sts-chevron-${gi}`);
+  if (!body) return;
+  const isOpen = body.style.display !== 'none';
+
+  // Tutup semua group lain
+  let idx = 0;
+  while (true) {
+    const other = document.getElementById(`nv-sts-group-${idx}`);
+    if (!other) break;
+    if (idx !== gi) {
+      const otherBody    = other.querySelector('.ds-subfase-body');
+      const otherChevron = document.getElementById(`nv-sts-chevron-${idx}`);
       if (otherBody)    otherBody.style.display = 'none';
       if (otherChevron) otherChevron.textContent = '▼';
       other.classList.remove('ds-subfase-item--open');
@@ -768,6 +643,10 @@ window.nilaiToggleRaporGroup = function(gi) {
   chevron.textContent = isOpen ? '▼' : '▲';
   item.classList.toggle('ds-subfase-item--open', !isOpen);
 };
+window.nilaiToggleRaporSemester = function(semester) {
+  _state.semester = semester;
+  _renderRapor(++_renderToken);
+};
 window.nilaiToggleUnduh = function(key) {
   const keys = ['formatif', 'sumatif'];
   keys.forEach(k => {
@@ -791,50 +670,6 @@ window.nilaiPilihRombel = function(id, nama, tingkat) {
   _render();
 };
 
-window.nilaiPilihTP = function(nomor, nama) {
-  nilai.getSiswaList(_state.kelasId).then(list => {
-    if (list.length === 0) { alert('Tambah siswa dulu sebelum input nilai.'); return; }
-    _state.view    = 'input';
-    _state.tpNomor = nomor;
-    _state.tpNama  = nama;
-    _render();
-  });
-};
-
-window.nilaiUpdateRerata = function(siswaId) {
-  const l = parseInt(document.getElementById(`input-l-${siswaId}`)?.value);
-  const s = parseInt(document.getElementById(`input-s-${siswaId}`)?.value);
-  const r = parseInt(document.getElementById(`input-r-${siswaId}`)?.value);
-  const valid  = [l, s, r].filter(v => !isNaN(v));
-  const rerata = valid.length > 0 ? Math.round(valid.reduce((a,b) => a+b, 0) / valid.length) : null;
-  const el     = document.getElementById(`rerata-display-${siswaId}`);
-  if (el) { el.textContent = rerata !== null ? rerata : '—'; el.style.color = _nilaiColor(rerata); }
-};
-
-window.nilaiAutoSaveSiswa = async function(siswaId) {
-  if (!_state.kelasId || _state.tpNomor === null) return;
-  const lRaw = document.getElementById(`input-l-${siswaId}`)?.value.trim();
-  const sRaw = document.getElementById(`input-s-${siswaId}`)?.value.trim();
-  const rRaw = document.getElementById(`input-r-${siswaId}`)?.value.trim();
-  const cat  = document.getElementById(`catatan-${siswaId}`)?.value || '';
-  const parse = (raw) => {
-    if (!raw) return null;
-    const n = parseInt(raw);
-    return isNaN(n) ? null : Math.max(0, Math.min(100, n));
-  };
-  const cl = parse(lRaw), cs = parse(sRaw), cr = parse(rRaw);
-  try {
-    if (cl !== null || cs !== null || cr !== null) {
-      await nilai.setNilaiLSR(_state.kelasId, siswaId, _state.tpNomor, cl, cs, cr);
-    }
-    if (cat.trim()) {
-      await nilai.setCatatan(_state.kelasId, siswaId, _state.tpNomor, cat);
-    }
-  } catch (err) {
-    console.warn('[NILAI] autosave siswa gagal:', err.message);
-  }
-};
-
 window.nilaiAutoSaveSAS = async function(siswaId) {
   if (!_state.kelasId) return;
   const raw = document.getElementById(`sas-${siswaId}`)?.value.trim();
@@ -843,23 +678,25 @@ window.nilaiAutoSaveSAS = async function(siswaId) {
   if (isNaN(n)) return;
   const v = Math.max(0, Math.min(100, n));
   try {
-    await nilai.setNilaiSAS(_state.kelasId, siswaId, v);
+    await nilai.setNilaiSAS(_state.kelasId, siswaId, _state.semester, v);
   } catch (err) {
     console.warn('[NILAI] autosave SAS gagal:', err.message);
   }
 };
 
-async function _flushSemuaNilai() {
-  if (!_state.kelasId || _state.tpNomor === null) return;
+window.nilaiAutoSaveSTS = async function(siswaId) {
+  if (!_state.kelasId) return;
+  const raw = document.getElementById(`sts-${siswaId}`)?.value.trim();
+  if (!raw) return;
+  const n = parseInt(raw);
+  if (isNaN(n)) return;
+  const v = Math.max(0, Math.min(100, n));
   try {
-    const siswaList = await nilai.getSiswaList(_state.kelasId);
-    for (const s of siswaList) {
-      await window.nilaiAutoSaveSiswa(s.id);
-    }
+    await nilai.setNilaiSumatif(_state.kelasId, siswaId, _state.semester, v);
   } catch (err) {
-    console.warn('[NILAI] flush nilai gagal:', err.message);
+    console.warn('[NILAI] autosave STS gagal:', err.message);
   }
-}
+};
 
 async function _flushSemuaSAS() {
   if (!_state.kelasId) return;
@@ -873,36 +710,17 @@ async function _flushSemuaSAS() {
   }
 }
 
-window.nilaiSimpanSemua = async function() {
-  const siswaList = await nilai.getSiswaList(_state.kelasId);
-  let saved = 0, clamped = 0;
-  for (const s of siswaList) {
-    const lRaw = document.getElementById(`input-l-${s.id}`)?.value.trim();
-    const sRaw = document.getElementById(`input-s-${s.id}`)?.value.trim();
-    const rRaw = document.getElementById(`input-r-${s.id}`)?.value.trim();
-    const cat  = document.getElementById(`catatan-${s.id}`)?.value || '';
-    const parse = (raw) => {
-      if (!raw) return null;
-      const n = parseInt(raw); if (isNaN(n)) return null;
-      const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
-      return v;
-    };
-    const cl = parse(lRaw), cs = parse(sRaw), cr = parse(rRaw);
-    if (cl !== null || cs !== null || cr !== null) {
-      await nilai.setNilaiLSR(_state.kelasId, s.id, _state.tpNomor, cl, cs, cr);
-      saved++;
+async function _flushSemuaSTS() {
+  if (!_state.kelasId) return;
+  try {
+    const siswaList = await nilai.getSiswaList(_state.kelasId);
+    for (const s of siswaList) {
+      await window.nilaiAutoSaveSTS(s.id);
     }
-    if (cat.trim()) await nilai.setCatatan(_state.kelasId, s.id, _state.tpNomor, cat);
+  } catch (err) {
+    console.warn('[NILAI] flush STS gagal:', err.message);
   }
-  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
-  if (saved > 0) {
-    jejak.log(_state.tpNomor, _state.tpNama, 'nilai', null, {
-      rombel_nama: _state.kelasNama, jumlah_siswa: saved,
-    }).catch(() => {});
-  }
-  _state.view = 'tp'; _state.tpNomor = null; _state.tpNama = null;
-  await _render();
-};
+}
 
 window.nilaiSimpanSAS = async function() {
   const siswaList = await nilai.getSiswaList(_state.kelasId);
@@ -912,7 +730,7 @@ window.nilaiSimpanSAS = async function() {
     if (!raw) continue;
     const n = parseInt(raw); if (isNaN(n)) continue;
     const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
-    await nilai.setNilaiSAS(_state.kelasId, s.id, v);
+    await nilai.setNilaiSAS(_state.kelasId, s.id, _state.semester, v);
     saved++;
   }
   if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
@@ -920,6 +738,25 @@ window.nilaiSimpanSAS = async function() {
   if (btn) {
     btn.textContent = `✓ Tersimpan (${saved})`;
     setTimeout(() => { btn.textContent = 'SIMPAN NILAI AS'; }, 2000);
+  }
+};
+
+window.nilaiSimpanSTS = async function() {
+  const siswaList = await nilai.getSiswaList(_state.kelasId);
+  let saved = 0, clamped = 0;
+  for (const s of siswaList) {
+    const raw = document.getElementById(`sts-${s.id}`)?.value.trim();
+    if (!raw) continue;
+    const n = parseInt(raw); if (isNaN(n)) continue;
+    const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
+    await nilai.setNilaiSumatif(_state.kelasId, s.id, _state.semester, v);
+    saved++;
+  }
+  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
+  const btn = document.querySelector('button[onclick="nilaiSimpanSTS()"]');
+  if (btn) {
+    btn.textContent = `✓ Tersimpan (${saved})`;
+    setTimeout(() => { btn.textContent = 'SIMPAN NILAI STS'; }, 2000);
   }
 };
 // --- LEVEL 3: SUB-LAYAR UNDUH & CETAK ----------------------------------------
@@ -966,37 +803,67 @@ async function _renderUnduh(token) {
     </div>
   </div>
 
-  <!-- Sumatif -->
+  <!-- STS -->
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div onclick="nilaiDownloadRekap2('${_state.kelasId}','${_escape(_state.kelasNama)}',${_state.tingkat})"
-         style="padding:14px 16px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;">
-      <div style="flex:1;">
-        <div class="ds-section-label">Nilai Sumatif</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester</div>
+    <div onclick="nilaiDownloadSTS('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai STS Ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester ganjil</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSTS('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai STS Genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester genap</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
 
-  <!-- Rapor, SAS & Kehadiran -->
+  <!-- SAS -->
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div onclick="nilaiDownloadSAS('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div onclick="nilaiDownloadSAS('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">Sumatif Akhir Semester</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai SAS Ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester ganjil</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div onclick="nilaiDownloadRapor()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div onclick="nilaiDownloadSAS('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
-        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor</div>
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai SAS Genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester genap</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
   </div>
+
+  <!-- Rapor -->
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadRapor('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor Ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor semester ganjil</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadRapor('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor Genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor semester genap</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+
+  <!-- Kehadiran -->
   <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
@@ -1144,13 +1011,15 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
 };
 
 
-window.nilaiDownloadRapor = async function() {
+window.nilaiDownloadRapor = async function(semester) {
   try {
-    const siswaList = await nilai.getRekapRapor(_state.kelasId);
-    const safeName  = _state.kelasNama.replace(/\s+/g, '_').toLowerCase();
-    const rows = [['No', 'Nama', 'Sumatif Mid Semester', 'Sumatif Akhir Semester', 'Nilai Rapor']];
-    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.s ?? '', s.sas ?? '', s.rapor ?? '']));
-    _downloadCSV(`nilai-rapor-${safeName}.csv`, rows);
+    const kelasId   = _state.kelasId;
+    const kelasNama = _state.kelasNama;
+    const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
+    const siswaList = await nilai.getRekapRapor(kelasId, semester);
+    const rows = [['No', 'Nama', 'STS', 'SAS', 'Nilai Rapor']];
+    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '', s.sas ?? '', s.rapor ?? '']));
+    _downloadCSV(`nilai-rapor-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download rapor error:', err);
     alert('Gagal membuat CSV nilai rapor.');
@@ -1308,40 +1177,33 @@ export async function renderNilaiScreen(container) {
   }
 }
 
-// Fungsi legacy yang tetap diperlukan
-window.nilaiDownloadRekap2 = async function(kelasId, kelasNama, tingkat) {
+window.nilaiDownloadSAS = async function(semester) {
   try {
-    const siswaList = await nilai.getRekapAkhir(kelasId);
+    const kelasId   = _state.kelasId;
+    const kelasNama = _state.kelasNama;
     const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
-    const tpList    = _tpList(parseInt(tingkat) || 1);
-
-    const header = ['No', 'Nama', ...tpList.map(tp => `TP${String(tp.nomor).padStart(2, '0')}`), 'Rerata'];
-    const rows   = [header];
-    for (const s of siswaList) {
-      rows.push([
-        s.nomor,
-        s.nama,
-        ...tpList.map(tp => s.tp?.[tp.nomor] ?? ''),
-        s.rerata ?? '',
-      ]);
-    }
-    _downloadCSV(`rekap-akhir-${safeName}.csv`, rows);
+    const siswaList = await nilai.getRekapSAS(kelasId, semester);
+    const rows      = [['No', 'Nama', 'Nilai SAS']];
+    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sas ?? '']));
+    _downloadCSV(`nilai-sas-${semester}-${safeName}.csv`, rows);
   } catch (err) {
-    console.error('[NILAI] download rekap2 error:', err);
-    alert('Gagal membuat CSV rekap akhir.');
+    console.error('[NILAI] download SAS error:', err);
+    alert('Gagal membuat CSV nilai SAS.');
   }
 };
 
-window.nilaiDownloadSAS = async function(kelasId, kelasNama) {
+window.nilaiDownloadSTS = async function(semester) {
   try {
-    const siswaList = await nilai.getRekapSAS(kelasId);
+    const kelasId   = _state.kelasId;
+    const kelasNama = _state.kelasNama;
     const safeName  = kelasNama.replace(/\s+/g, '_').toLowerCase();
-    const rows      = [['No', 'Nama', 'Nilai Akhir Semester']];
-    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sas ?? '']));
-    _downloadCSV(`nilai-akhir-semester-${safeName}.csv`, rows);
+    const siswaList = await nilai.getRekapSumatif(kelasId, semester);
+    const rows      = [['No', 'Nama', 'Nilai STS']];
+    siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '']));
+    _downloadCSV(`nilai-sts-${semester}-${safeName}.csv`, rows);
   } catch (err) {
-    console.error('[NILAI] download SAS error:', err);
-    alert('Gagal membuat CSV nilai akhir semester.');
+    console.error('[NILAI] download STS error:', err);
+    alert('Gagal membuat CSV nilai STS.');
   }
 };
 

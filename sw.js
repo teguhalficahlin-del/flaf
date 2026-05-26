@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v75';          // ← bump: tambah Soal SAS Genap + rename Ganjil
+const CACHE_VERSION  = 'flaf-v76';          // ← bump: Sprint Semester Ganjil/Genap — STS + SAS + Rapor per semester
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
