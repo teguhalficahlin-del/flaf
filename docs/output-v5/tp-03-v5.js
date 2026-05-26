@@ -103,6 +103,15 @@ const TP_03 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Pastikan semua siswa sudah duduk dan buku ada di atas meja sebelum mulai. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we learn classroom instructions. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Fungsinya mengunci perhatian sebelum aktivitas TPR dimulai. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam. Jangan mulai Layar 1 sebelum kelas benar-benar tenang.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -110,16 +119,6 @@ const TP_03 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Pastikan semua siswa sudah duduk dan buku ada di atas meja sebelum mulai. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we learn classroom instructions. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Fungsinya mengunci perhatian sebelum aktivitas TPR dimulai. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam. Jangan mulai Layar 1 sebelum kelas benar-benar tenang.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -232,8 +231,12 @@ const TP_03 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Minta semua duduk. Beri sinyal perubahan mode. Guru keliling selama partner practice. Prioritas monitoring: → Noise level — jika naik, reset segera → Semua siswa tetap ikut — tidak ada yang diam → Baru diferensiasi level UCAP: "Great! Now practise with your partner." "Small voice. Only your partner listens." "Partner A gives 3 instructions. STOP. Then Partner B." "If you need help, look at the cards. If you are ready, try without cards!" "If you finish early — do it again." Diferensiasi: - Need Help: lihat kartu saat memberi instruksi — cukup 1 instruksi per giliran — guru bantu dengan bisik kata instruksi. - Ready: tanpa kartu, 3 instruksi per giliran — jika sudah lancar: coba dua langkah "Open your book and write!" — jika sangat lancar: tambahkan "Simon says".`,
+          teks   : `AKSI: Minta semua duduk. Beri sinyal perubahan mode. Guru keliling selama partner practice. Prioritas monitoring: → Noise level — jika naik, reset segera → Semua siswa tetap ikut — tidak ada yang diam → Baru diferensiasi level UCAP: "Great! Now practise with your partner." "Small voice. Only your partner listens." "Partner A gives 3 instructions. STOP. Then Partner B." "If you need help, look at the cards. If you are ready, try without cards!" "If you finish early — do it again."`,
           bantuan: 'Jika noise pecah: tepuk tangan dua kali → "Hands down. Eyes on me." → reset → lanjut.',
+          diferensiasi: {
+            needHelp: 'Lihat kartu saat memberi instruksi — cukup 1 instruksi per giliran — guru bantu dengan bisik kata instruksi.',
+            ready   : 'Tanpa kartu, 3 instruksi per giliran — jika sudah lancar: coba dua langkah "Open your book and write!" — jika sangat lancar: tambahkan "Simon says".',
+          },
           cue    : 'Batas waktu 3–4 menit. Naik satu level per satu — jangan tumpuk sekaligus. Proximity control lebih efektif daripada teguran verbal — guru terus bergerak keliling.',
           darurat: null,
           energi : '🟡',
