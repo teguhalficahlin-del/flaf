@@ -883,6 +883,34 @@ line-height eksplisit.
 Berlaku untuk TP lain: Perubahan CSS berlaku global —
 semua TP otomatis ikut.
 
+#### FIX 7 — Konsolidasi layar penutup sesi (sesi-runtime.js, dashboard.js)
+Commit: ee144cd
+Masalah: Ada dua layar penutup sesi yang redundan:
+- Layar 1: _renderClosure() di sesi-runtime.js —
+  guru mengisi mood, kendala, catatan. Catatan TIDAK
+  tersimpan ke IDB — hilang diam-diam.
+- Layar 2: Step 6 _buildStepSelesai() di dashboard.js —
+  guru mengisi kendala dan refleksi lagi. Baru tersimpan
+  ke IDB di sini.
+  Guru mengisi dua kali. Catatan dari layar 1 hilang.
+Solusi:
+- Hapus _renderClosure() dari sesi-runtime.js beserta
+  semua referensinya (_state.closureMood, _state.kendala,
+  state machine closure)
+- Setelah "Selesai Fase →" di Penutup langkah terakhir,
+  langsung panggil _onDone() tanpa melewati closure
+- Step 6 dashboard diperkaya:
+    · Pilihan mood (😊 Lancar / 😐 Biasa / 😟 Berat)
+      ditambahkan di atas kendala
+    · Textarea placeholder diselaraskan
+    · Mood disimpan ke teaching_log via _doSelesaiSesi()
+Hasil: Satu layar penutup, satu kali simpan, tidak ada
+data yang hilang. Mood + kendala + refleksi tersimpan
+semua ke IDB.
+Berlaku untuk TP lain: Fix ini generik — berlaku otomatis
+untuk semua TP karena perubahan ada di dashboard.js dan
+sesi-runtime.js, bukan di data TP.
+
 ### Fitur Baru — Penilaian Formatif dan Observasi
 (siswa-history.js, sesi-runtime.js, sesi-runtime.css,
 screens/nilai.js, storage/nilai.js)
@@ -919,3 +947,5 @@ Setiap TP perlu dicek:
 [ ] Apakah ada format diferensiasi selain "- "?
     → Jika ya, tambahkan deteksi di renderer
 [ ] Konten audit: bandingkan semua layar dengan txt sumber
+[ ] Verifikasi alur penutup sesi tidak melewati closure
+    lama — pastikan langsung ke Step 6 dashboard

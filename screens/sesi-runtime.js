@@ -435,7 +435,7 @@ function _renderRunning() {
     }
     const paragraphs = seg.isi.split(/(?=Fase [A-Z]\s*[—–-])/).map(p => p.trim()).filter(Boolean);
     return paragraphs.map(p => {
-      const items = p.split(/\n|\s+(?=→)|\s+(?=👂)|\s+(?=🗣)|\s+(?=- )/).map(s => s.trim()).filter(Boolean);
+      const items = p.split(/\n|\s+(?=→)|\s+(?=👂)|\s+(?=🗣)|\s+(?=- )|\s+(?=AKSI:)/).map(s => s.trim()).filter(Boolean);
       return items.map(item => {
         if (item.startsWith('👂') || item.startsWith('🗣'))
           return `<div class="sr-label-aktivitas">${_escape(item)}</div>`;
