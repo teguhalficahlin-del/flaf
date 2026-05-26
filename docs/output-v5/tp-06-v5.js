@@ -106,6 +106,15 @@ const TP_06 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Kartu bentuk belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — shapes are everywhere! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jangan tunjukkan kartu atau mulai tunjuk benda di kelas sebelum Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -113,16 +122,6 @@ const TP_06 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Kartu bentuk belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — shapes are everywhere! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jangan tunjukkan kartu atau mulai tunjuk benda di kelas sebelum Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -225,8 +224,12 @@ const TP_06 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Show me your empty hands." "Eyes here." "Turn to your partner." UCAP: "Small voice." [guru model volume kecil] AKSI: Demo switch 10 detik: → A bicara → "Switch." → B bicara. UCAP: "One turn each only." "Show one thing. Say the shape. Switch." "3… 2… 1… eyes here." Diferensiasi: - Need Help: satu kata saja "Circle!" — boleh lihat kartu di papan — guru bantu bentuk tangan. - Ready: kalimat penuh "This is my eraser. It is a rectangle." — tambah warna "My red eraser is a rectangle." — tanya partner "What shape is it?"`,
+          teks   : `AKSI: "Show me your empty hands." "Eyes here." "Turn to your partner." UCAP: "Small voice." [guru model volume kecil] AKSI: Demo switch 10 detik: → A bicara → "Switch." → B bicara. UCAP: "One turn each only." "Show one thing. Say the shape. Switch." "3… 2… 1… eyes here."`,
           bantuan: null,
+          diferensiasi: {
+            needHelp: 'Satu kata saja "Circle!" — boleh lihat kartu di papan — guru bantu bentuk tangan.',
+            ready   : 'Kalimat penuh "This is my eraser. It is a rectangle." — tambah warna "My red eraser is a rectangle." — tanya partner "What shape is it?"',
+          },
           cue    : 'Demo switch A→B sebelum mulai. Aktivitas ini hanya 30–45 detik — jaga tempo.',
           darurat: null,
           energi : '🟡',
