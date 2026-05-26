@@ -118,6 +118,15 @@ const TP_04 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we count in English! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jangan mulai clap and count sebelum kelas tenang. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -125,16 +134,6 @@ const TP_04 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we count in English! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jangan mulai clap and count sebelum kelas tenang. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -237,8 +236,12 @@ const TP_04 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri sinyal perubahan mode. UCAP: "Partner voice." "Now practise with your partner." "Count things on your table. Stay in your seat." "Partner A counts first. Partner B listens. Then switch." Diferensiasi: - Need Help: fokus angka 1–10 saja — hitung benda di meja sendiri — guru bantu tunjuk dan hitung bersama. - Ready: gunakan 11–20 jika bisa — hitung benda di sekitar kursi — guru model "There are [n] [benda]" jika siswa siap ikuti.`,
+          teks   : `AKSI: Beri sinyal perubahan mode. UCAP: "Partner voice." "Now practise with your partner." "Count things on your table. Stay in your seat." "Partner A counts first. Partner B listens. Then switch."`,
           bantuan: null,
+          diferensiasi: {
+            needHelp: 'Fokus angka 1–10 saja — hitung benda di meja sendiri — guru bantu tunjuk dan hitung bersama.',
+            ready   : 'Gunakan 11–20 jika bisa — hitung benda di sekitar kursi — guru model "There are [n] [benda]" jika siswa siap ikuti.',
+          },
           cue    : 'Ucapkan "Partner voice" sebelum mulai — volume cue cegah eskalasi noise.',
           darurat: null,
           energi : '🟡',
