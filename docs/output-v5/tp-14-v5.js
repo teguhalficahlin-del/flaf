@@ -117,6 +117,15 @@ const TP_14 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -124,16 +133,6 @@ const TP_14 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -237,8 +236,12 @@ const TP_14 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Siswa pakai benda di meja masing-masing — buku, pensil, penghapus. UCAP: "Use your own things. Partner A hides — Partner B asks and answers." "Full sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B hides now." [Tepuk 1 kali — lanjut] Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: pakai 3 preposisi berbeda, ganti benda setiap putaran - Perlu support: cukup 1 preposisi — on atau in`,
+          teks   : `AKSI: Siswa pakai benda di meja masing-masing — buku, pensil, penghapus. UCAP: "Use your own things. Partner A hides — Partner B asks and answers." "Full sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B hides now." [Tepuk 1 kali — lanjut]`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Hide your eraser. Now ask: Where is the eraser?" Tidak hentikan kelas.',
+          diferensiasi: {
+            needHelp: 'Cukup 1 preposisi — on atau in.',
+            ready   : 'Pakai 3 preposisi berbeda, ganti benda setiap putaran.',
+          },
           cue    : 'Siswa pakai benda nyata di meja sendiri — ini transfer ke konteks real. Gunakan tas demonstrasi guru untuk modeling "in" — siswa cukup pakai satu tas terdekat per pasangan, tidak perlu semua buka tas sendiri. Listener harus bertanya dengan "Where is the ___?" — bukan hanya menebak. Hide — but visible: benda disembunyikan tapi masih terlihat oleh partner. Guru tidak koreksi grammar saat jalan. Saat circulate, sesekali model ulang gestur preposisi tanpa menghentikan kelas.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati partner practice, langsung choral benda kelas.',
           energi : '🔴',
