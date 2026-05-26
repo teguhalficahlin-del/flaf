@@ -261,6 +261,9 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 - Semua `instruksi` langkah di TP03–14 mendapat teks bantuan generik yang sama.
 - Semua `audio` langkah di TP03–14 mendapat teks bantuan generik yang sama.
 - TP01–02 dan TP15–18 sudah punya bantuan kontekstual per langkah.
+- Catatan pm: pm annotations TP01–14 (93 missing) — INTENTIONAL BY DESIGN (keputusan Mei 2026).
+  Runtime berjalan normal tanpa pm. Tidak berdampak ke pengalaman guru di lapangan.
+  Jangan inject pm ke TP01–14 tanpa sesi migration eksplisit.
 
 ### TD-4: Encoding Artifact
 - String `'2├ù'` (harusnya `2×`) masih ada di TP02 dan TP12 — sisa mojibake dari migrasi.
@@ -634,8 +637,7 @@ atau `closure_reinforcement` sebagai field runtime.
    - SW v77 (commit 0fc813c)
 
 ⏳ LANGKAH BERIKUTNYA:
-   - pm audit TP17 (2 missing) + TP18 (1 missing)
-   - Keputusan pm TP01–14 (93 missing): Opsi A fix per langkah / Opsi B intentional by design
+   - Tidak ada task aktif. Semua sprint selesai.
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
