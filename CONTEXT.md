@@ -1162,6 +1162,52 @@ TP 02–15 dan seterusnya. Handle semua variasi key:
 
 ---
 
+## AUDIT BATCH TP 16–18
+
+**Audit selesai:** 2026-05-27
+**Commit batch:** 756d1c4
+**File disentuh:** tp-16-v5.js, tp-17-v5.js, tp-18-v5.js
+
+### Fix yang diterapkan (semua TP)
+
+**FIX-1 — L0 dipindah ke `preOpening` (TP 16, 17, 18)**
+Identik dengan pola TP 01–15. Energi preOpening = 🔵
+untuk ketiga TP — konsisten dengan TP 15–17.
+TP 18 cue khusus: "Tambahkan 'Today is a very special
+day' — ini anchor emosional pertama untuk tone capstone."
+
+**FIX-2 — Diferensiasi ditambah sebagai field baru**
+Berbeda dari TP 02–14 (extract dari teks yang ada) —
+di TP 16 dan 17, blok Diferensiasi ada di txt sumber
+tapi tidak dimasukkan ke runtime saat generate.
+Field ditambahkan langsung tanpa hapus dari teks.
+
+| TP | Layar | sudahBisa | perluSupport |
+|----|-------|-----------|--------------|
+| 16 | L9  | cerita tanpa lihat buku — kartu saja sebagai scaffold | boleh lihat buku sebentar jika lupa |
+| 17 | L10 | ganti kartu setiap giliran, ciptakan reason sendiri | cukup ucap hobi saja tanpa "because" |
+
+TP 18 tidak memiliki layar Diferensiasi — hanya FIX-1.
+
+### Konfirmasi tidak butuh fix
+
+Struktur 3 fase sudah benar di semua TP 16–18.
+Semua konten langkah sesuai txt sumber.
+Bantuan, cue, darurat lengkap tanpa perubahan.
+
+### Status keseluruhan audit FLAF
+
+**TP 01–18 selesai diaudit dan diperbaiki.**
+Audit sprint selesai 2026-05-27.
+
+Pola fix yang konsisten di semua TP:
+- FIX-1 (preOpening): berlaku di semua 18 TP
+- FIX-2 (diferensiasi): berlaku di TP yang punya
+  layar Diferensiasi (TP 02–17, kecuali 07, 08, 10, 18)
+- Renderer diferensiasi object: commit 3479781
+
+---
+
 ## AUDIT & FIX TP 15 — Feelings and Emotions
 
 **Audit selesai:** 2026-05-27
