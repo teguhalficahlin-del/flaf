@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v77';          // ← bump: tambah kartu + precache Soal STS Ganjil/Genap Kelas 1 & 2
+const CACHE_VERSION  = 'flaf-v78';          // ← bump: precache TP15–18 + icon-512
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -53,6 +53,12 @@ const APP_SHELL = [
   './docs/output-v5/tp-12-v5.js',
   './docs/output-v5/tp-13-v5.js',
   './docs/output-v5/tp-14-v5.js',
+
+  // docs/sesi-m* — TP15–18 (kelas 2 lanjut)
+  './docs/sesi-m10/tp-15-v5.js',
+  './docs/sesi-m11/tp-16-v5.js',
+  './docs/sesi-m12/tp-17-v5.js',
+  './docs/sesi-m13/tp-18-v5.js',
 
   // printables images — TP01
   './assets/images/printables/tp01-good-morning.png',
@@ -215,6 +221,7 @@ const APP_SHELL = [
 
   // assets
   './icons/icon-192.png',
+  './icons/icon-512.png',
 
   // secrets.js sengaja TIDAK masuk precache
   // karena berisi credentials Supabase — hanya dimuat saat runtime
