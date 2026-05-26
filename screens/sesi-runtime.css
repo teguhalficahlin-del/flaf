@@ -358,6 +358,35 @@
    ============================================================= */
 
 /* --- Teks segmen parseTeks --- */
+.sr-label-aktivitas {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  margin: 12px 0 4px;
+  letter-spacing: 0.03em;
+}
+
+.sr-label-diferensiasi {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,.45);
+  margin: 12px 0 4px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.sr-dif-item {
+  display: block;
+  font-size: 15px;
+  line-height: 1.65;
+  color: #fff;
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-left: 2px solid rgba(255,255,255,.2);
+}
+
 .sr-teks-biasa {
   font-size: 15px;
   line-height: 1.65;

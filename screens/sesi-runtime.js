@@ -446,8 +446,16 @@ function _renderRunning() {
     }
     const paragraphs = seg.isi.split(/(?=Fase [A-Z]\s*[—–-])/).map(p => p.trim()).filter(Boolean);
     return paragraphs.map(p => {
-      const items = p.split(/\n|\s+(?=→)/).map(s => s.trim()).filter(Boolean);
-      return items.map(item => `<div class="sr-teks-biasa">${_escape(item)}</div>`).join('');
+      const items = p.split(/\n|\s+(?=→)|\s+(?=👂)|\s+(?=🗣)|\s+(?=- )/).map(s => s.trim()).filter(Boolean);
+      return items.map(item => {
+        if (item.startsWith('👂') || item.startsWith('🗣'))
+          return `<div class="sr-label-aktivitas">${_escape(item)}</div>`;
+        if (item.startsWith('Diferensiasi:'))
+          return `<div class="sr-label-diferensiasi">${_escape(item)}</div>`;
+        if (item.startsWith('- '))
+          return `<div class="sr-dif-item">${_escape(item)}</div>`;
+        return `<div class="sr-teks-biasa">${_escape(item)}</div>`;
+      }).join('');
     }).join('');
   }).join('');
 
