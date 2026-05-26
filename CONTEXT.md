@@ -610,26 +610,20 @@ atau `closure_reinforcement` sebagai field runtime.
    - nilai.js: 4 kartu unduh soal SAS di Unduh & Cetak
    - SW v75 (commit 4f8a8f8)
 
-⚠️ ARSITEKTUR PENDING — Sprint Semester Ganjil/Genap belum dikerjakan
-   - STS dan SAS saat ini tidak punya field semester di storage
-   - Rapor belum bisa dihitung per semester
-   - Ditunda ke sesi berikutnya — scope lengkap di §LANGKAH BERIKUTNYA
+✅ SPRINT SEMESTER GANJIL/GENAP SELESAI ✅ (Mei 2026) — commit 9688c09
+   - storage/nilai.js: setNilaiSumatif/getNilaiSumatif/getRekapSumatif BARU
+   - storage/nilai.js: setNilaiSAS/getNilaiSAS/getRekapSAS +semester param
+   - storage/nilai.js: getRekapRapor rewrite — (STS + SAS) ÷ 2 per semester
+   - screens/nilai.js: menu 8 kartu — STS Ganjil/Genap + SAS Ganjil/Genap
+   - screens/nilai.js: _renderSTS BARU — 1 angka per siswa per semester
+   - screens/nilai.js: _renderRapor toggle Ganjil/Genap
+   - screens/nilai.js: download CSV STS/SAS/Rapor per semester
+   - dead code dihapus: _renderTP, _renderInput, nilaiDownloadRekap2 + helpers
+   - SW v76 (commit 9688c09)
 
 ⏳ LANGKAH BERIKUTNYA:
-   - Sprint Semester Ganjil/Genap — refactor STS + SAS + Rapor per semester
-     Scope:
-     - storage/nilai.js: tambah parameter semester ke setNilaiSAS, getNilaiSAS,
-       getRekapSAS, setNilaiSumatif, getNilaiSumatif, getRekapRapor
-       Key format baru: sas_{semester}_{kelasId}_{siswaId}
-                        sumatif_{semester}_{kelasId}_{tpNomor}_{siswaId}
-     - screens/nilai.js: duplikasi card STS → STS Ganjil + STS Genap
-     - screens/nilai.js: duplikasi card SAS → SAS Ganjil + SAS Genap
-     - screens/nilai.js: _renderSAS dan _renderSumatif terima parameter semester
-     - screens/nilai.js: getRekapRapor per semester
-       Rapor Ganjil = (STS_Ganjil + SAS_Ganjil) ÷ 2
-       Rapor Genap  = (STS_Genap + SAS_Genap) ÷ 2
-     - screens/nilai.js: download CSV rapor per semester
-     CATATAN: Data lama (key tanpa semester) boleh dibuang — FLAF belum dipakai guru manapun
+   - pm audit TP17 (2 missing) + TP18 (1 missing)
+   - Keputusan pm TP01–14 (93 missing): Opsi A fix per langkah / Opsi B intentional by design
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
