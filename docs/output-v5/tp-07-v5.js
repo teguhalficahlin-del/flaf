@@ -104,6 +104,15 @@ const TP_07 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu disimpan di meja. Tunggu semua siswa duduk dan tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a special day. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus] Jangan tergesa masuk ke Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.`,
+    bantuan: null,
+    cue    : 'Tone calm dijaga dari sini — TP 07 bertumpu pada koneksi personal.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -111,16 +120,6 @@ const TP_07 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu disimpan di meja. Tunggu semua siswa duduk dan tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a special day. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus] Jangan tergesa masuk ke Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.`,
-          bantuan: null,
-          cue    : 'Tone calm dijaga dari sini — TP 07 bertumpu pada koneksi personal.',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
