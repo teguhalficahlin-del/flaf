@@ -620,6 +620,10 @@ function _renderClosure() {
 
     if (btn) { btn.textContent = 'Tersimpan ✓'; }
     _onDone({ tp: _state.tp, rombel: _state.rombel, kendala: _state.kendala, catatan, mood: _state.closureMood || null, sesiId: _state.sesiId || null });
+    if (sessionStorage.getItem('sw_pending_update') === '1') {
+      sessionStorage.removeItem('sw_pending_update');
+      setTimeout(() => location.reload(), 1500);
+    }
   });
 }
 

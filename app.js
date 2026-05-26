@@ -767,6 +767,14 @@ async function _registerServiceWorker() {
       if (!newWorker) return;
       newWorker.addEventListener('statechange', () => {
         if (newWorker.state === 'activated') {
+          const sesiAktif =
+            document.querySelector('#sesi-runtime-root') !== null ||
+            document.body.classList.contains('sr-active');
+          if (sesiAktif) {
+            sessionStorage.setItem('sw_pending_update', '1');
+            showToast('Versi baru tersedia — akan diperbarui setelah sesi selesai');
+            return;
+          }
           // Reload otomatis agar halaman dikontrol SW baru
           // Flag di sessionStorage mencegah reload loop
           if (!sessionStorage.getItem('sw_reloaded')) {
