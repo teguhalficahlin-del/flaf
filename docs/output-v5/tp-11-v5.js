@@ -108,6 +108,15 @@ const TP_11 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start." ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus:',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -115,16 +124,6 @@ const TP_11 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start." ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus:',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -218,8 +217,12 @@ const TP_11 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Watch me. My morning routine." → Guru tunjuk kartu satu per satu sambil gerak tangan ke kanan tiap langkah: "First, I wake up." [gerak tangan kanan] "Then, I brush my teeth." [gerak tangan kanan] "Then, I eat breakfast." [gerak tangan kanan] "Then, I go to school." [gerak tangan kanan] UCAP: "See? First — then — then — then." [gerak tangan ke kanan 4 langkah] Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. "Tell me your morning. Use the cards. In order." Siswa tunjuk kartu dan cerita. Jika siswa beku: guru bisik — "First, I…" dan tunjuk kartu wake up. Kelas menonton. Sebelum partner practice — ucapkan 4 hal ini: "Partner voice — not shouting." "Partner A tells first. Partner B listens." "Listener — point to the cards." [demo: tunjuk kartu saat partner cerita] "Use 3 cards in order." [gerak tangan ke kanan 3 langkah] UCAP: "Not fast. In order. Go." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x sebelum "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B tells now." [Tepuk 1 kali — lanjut] Say: First, I wake up." Tidak hentikan kelas. Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: cerita 5–6 kartu + "then" berulang - Perlu support: cukup 2 kartu — "First … Then …" cerita. Tanpa ini setengah kelas mental-off. Guru tidak koreksi grammar. Acceptance rule berlaku — fragment diterima, model ulang saat lewat.`,
+          teks   : `UCAP: "Watch me. My morning routine." → Guru tunjuk kartu satu per satu sambil gerak tangan ke kanan tiap langkah: "First, I wake up." [gerak tangan kanan] "Then, I brush my teeth." [gerak tangan kanan] "Then, I eat breakfast." [gerak tangan kanan] "Then, I go to school." [gerak tangan kanan] UCAP: "See? First — then — then — then." [gerak tangan ke kanan 4 langkah] Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. "Tell me your morning. Use the cards. In order." Siswa tunjuk kartu dan cerita. Jika siswa beku: guru bisik — "First, I…" dan tunjuk kartu wake up. Kelas menonton. Sebelum partner practice — ucapkan 4 hal ini: "Partner voice — not shouting." "Partner A tells first. Partner B listens." "Listener — point to the cards." [demo: tunjuk kartu saat partner cerita] "Use 3 cards in order." [gerak tangan ke kanan 3 langkah] UCAP: "Not fast. In order. Go." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x sebelum "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B tells now." [Tepuk 1 kali — lanjut] Say: First, I wake up." Tidak hentikan kelas. Guru tidak koreksi grammar. Acceptance rule berlaku — fragment diterima, model ulang saat lewat.`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to wake up.',
+          diferensiasi: {
+            needHelp: 'Cukup 2 kartu — "First … Then …".',
+            ready   : 'Cerita 5–6 kartu + "then" berulang.',
+          },
           cue    : 'Listener harus punya tugas — tunjuk kartu saat partner',
           darurat: 'Waktu ≤10 menit: skip ke Layar 10 — lewati demo dan partner practice, langsung choral rutinitas.',
           energi : '🔴',
