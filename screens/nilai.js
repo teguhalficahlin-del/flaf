@@ -769,7 +769,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSTS('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai STS Ganjil</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -778,7 +778,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSTS('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai STS Genap</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif tengah semester genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -789,7 +789,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSAS('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai SAS Ganjil</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -798,7 +798,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadSAS('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai SAS Genap</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai sumatif akhir semester genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -809,7 +809,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadRapor('ganjil')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor Ganjil</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor semester ganjil</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -818,7 +818,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadRapor('genap')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Nilai Rapor Genap</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai rapor semester genap</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh nilai</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
@@ -829,7 +829,7 @@ async function _renderUnduh(token) {
     <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Rekap Kehadiran</div>
-        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh rekap kehadiran siswa</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh rekap</div>
       </div>
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>
