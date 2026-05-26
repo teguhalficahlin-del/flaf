@@ -104,6 +104,15 @@ const TP_05 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Kartu warna disimpan di meja — belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a very colourful day! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Kartu warna belum boleh ditunjukkan di sini — simpan kejutan untuk Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -111,16 +120,6 @@ const TP_05 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Kartu warna disimpan di meja — belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a very colourful day! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Kartu warna belum boleh ditunjukkan di sini — simpan kejutan untuk Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -226,8 +225,12 @@ const TP_05 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Turn to your partner." UCAP: "Small voice — like this." [guru model volume kecil] "Show one thing. Say the colour. Then switch." "3… 2… 1… eyes here." Diferensiasi: - Need Help: satu kata saja "Red!" — boleh lihat kartu di papan. - Ready: kalimat penuh "This is my pencil. It is yellow." — boleh tanya partner "What colour?" — coba "My bag is blue and green."`,
+          teks   : `AKSI: "Turn to your partner." UCAP: "Small voice — like this." [guru model volume kecil] "Show one thing. Say the colour. Then switch." "3… 2… 1… eyes here."`,
           bantuan: null,
+          diferensiasi: {
+            needHelp: 'Satu kata saja "Red!" — boleh lihat kartu di papan.',
+            ready   : 'Kalimat penuh "This is my pencil. It is yellow." — boleh tanya partner "What colour?" — coba "My bag is blue and green."',
+          },
           cue    : 'Aktivitas ini hanya 30–45 detik — jaga tempo, jangan biarkan meluas.',
           darurat: null,
           energi : '🟡',
