@@ -272,15 +272,15 @@ async function _renderSTS(token) {
   const navHTML = `
     <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
       <button onclick="nilaiSTSPrevPage()"
-        style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
-        background:transparent;color:rgba(255,255,255,.5);font-size:18px;
+        style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;
+        background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;
         opacity:${page === 0 ? '0.3' : '1'};cursor:${page === 0 ? 'default' : 'pointer'};">‹</button>
       <div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;">
         Halaman ${page + 1}/${totalPage || 1}
       </div>
       <button onclick="nilaiSTSNextPage()"
-        style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
-        background:transparent;color:rgba(255,255,255,.5);font-size:18px;
+        style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;
+        background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;
         opacity:${page >= totalPage - 1 ? '0.3' : '1'};cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};">›</button>
     </div>`;
 
@@ -346,10 +346,10 @@ async function _renderSAS(token) {
   const navHTML = filtered.length === 0 ? '' : `
   <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.1);">
     <button onclick="nilaiSASPrevPage()"
-      style="font-size:18px;background:none;border:none;color:rgba(212,174,58,${page === 0 ? '.2' : '.7'});cursor:${page === 0 ? 'default' : 'pointer'};">‹</button>
+      style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;cursor:${page === 0 ? 'default' : 'pointer'};opacity:${page === 0 ? '0.3' : '1'};">‹</button>
     <div style="font-size:12px;color:rgba(255,255,255,.45);">Halaman ${page + 1} / ${totalPage}</div>
     <button onclick="nilaiSASNextPage()"
-      style="font-size:18px;background:none;border:none;color:rgba(212,174,58,${page >= totalPage - 1 ? '.2' : '.7'});cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};">›</button>
+      style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};opacity:${page >= totalPage - 1 ? '0.3' : '1'};">›</button>
   </div>`;
 
   const barisHTML = filtered.length === 0 ? `
@@ -425,15 +425,15 @@ async function _renderRapor(token) {
   const navHTML = siswaList.length === 0 ? '' : `
   <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
     <button onclick="nilaiRaporPrevPage()"
-      style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
-      background:transparent;font-size:18px;cursor:pointer;
+      style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;
+      background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;cursor:pointer;
       opacity:${page === 0 ? '0.3' : '1'};">‹</button>
     <div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;">
       Halaman ${page + 1}/${totalPage || 1}
     </div>
     <button onclick="nilaiRaporNextPage()"
-      style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
-      background:transparent;font-size:18px;cursor:pointer;
+      style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;
+      background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;cursor:pointer;
       opacity:${page >= totalPage - 1 ? '0.3' : '1'};">›</button>
   </div>`;
 
