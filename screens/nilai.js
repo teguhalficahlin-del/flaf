@@ -835,6 +835,42 @@ async function _renderUnduh(token) {
     </div>
   </div>
   <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTSGanjil1()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal STS Ganjil Kelas 1</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTSGanjil2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal STS Ganjil Kelas 2</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTSGenap1()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal STS Genap Kelas 1</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
+    <div onclick="nilaiDownloadSoalSTSGenap2()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#fff;">Soal STS Genap Kelas 2</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh soal</div>
+      </div>
+      <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
+    </div>
+  </div>
+  <div class="nv-card nv-card--inset nv-card--overflow">
     <div onclick="nilaiDownloadSoalSTS()" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Soal SAS Ganjil Kelas 1</div>
@@ -889,6 +925,34 @@ window.nilaiDownloadSoalSTS2 = function() {
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSTSGanjil1 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_1_Ganjil.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_1_Ganjil.docx';
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSTSGanjil2 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_2_Ganjil.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_2_Ganjil.docx';
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSTSGenap1 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_1_Genap.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_1_Genap.docx';
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+};
+
+window.nilaiDownloadSoalSTSGenap2 = function() {
+  const link = document.createElement('a');
+  link.href = './pdf/Soal_STS_Fase_A_Kelas_2_Genap.docx';
+  link.download = 'Soal_STS_Fase_A_Kelas_2_Genap.docx';
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
 };
 
 window.nilaiDownloadSoalSASGenap1 = function() {

@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v76';          // ← bump: Sprint Semester Ganjil/Genap — STS + SAS + Rapor per semester
+const CACHE_VERSION  = 'flaf-v77';          // ← bump: tambah kartu + precache Soal STS Ganjil/Genap Kelas 1 & 2
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -239,6 +239,10 @@ const PDF_MANIFEST = [
   './pdf/Modul_Ajar_V3_TP16_Simple_Story_Retelling.docx',
   './pdf/Modul_Ajar_V3_TP17_My_Hobbies.docx',
   './pdf/Modul_Ajar_V3_TP18_Integrative_Project_My_World.docx',
+  './pdf/Soal_STS_Fase_A_Kelas_1_Ganjil.docx',
+  './pdf/Soal_STS_Fase_A_Kelas_2_Ganjil.docx',
+  './pdf/Soal_STS_Fase_A_Kelas_1_Genap.docx',
+  './pdf/Soal_STS_Fase_A_Kelas_2_Genap.docx',
   './pdf/Soal_SAS_Fase_A_Kelas_1_Ganjil.docx',
   './pdf/Soal_SAS_Fase_A_Kelas_2_Ganjil.docx',
   './pdf/Soal_SAS_Fase_A_Kelas_1_Genap.docx',
