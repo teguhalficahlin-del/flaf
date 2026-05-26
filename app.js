@@ -23,6 +23,55 @@ import { renderNilaiScreen }                                       from './scree
 import { jejak }                                                   from './storage/jejak.js';
 import { nilai }                                                   from './storage/nilai.js';
 
+// --- GLOBAL ERROR HANDLER ---------------------------------------------------
+
+window.onerror = function(message, source, lineno, colno, error) {
+  console.error('[FLAF] Global error:', message, 'at', source, lineno, colno, error);
+  const existing = document.getElementById('flaf-error-overlay');
+  if (existing) return false;
+  const overlay = document.createElement('div');
+  overlay.id = 'flaf-error-overlay';
+  overlay.style.cssText = [
+    'position:fixed', 'inset:0', 'z-index:99999',
+    'background:rgba(18,18,18,.97)',
+    'display:flex', 'flex-direction:column',
+    'align-items:center', 'justify-content:center',
+    'padding:32px', 'text-align:center',
+    'font-family:system-ui,sans-serif',
+  ].join(';');
+  overlay.innerHTML = `
+    <div style="font-size:36px;margin-bottom:16px;">⚠️</div>
+    <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:10px;">
+      Terjadi kesalahan
+    </div>
+    <div style="font-size:14px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:24px;">
+      Coba tutup dan buka kembali aplikasi.<br>
+      Jika masalah berlanjut, hubungi admin.
+    </div>
+    <button onclick="location.reload()"
+      style="padding:12px 28px;border-radius:10px;border:none;
+      background:#D4AE3A;color:#1a1a1a;font-size:15px;
+      font-weight:700;cursor:pointer;">
+      Muat Ulang
+    </button>
+    <div style="margin-top:16px;font-size:11px;color:rgba(255,255,255,.25);">
+      ${message || ''} · ${source ? source.split('/').pop() : ''} :${lineno || ''}
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  return false;
+};
+
+window.onunhandledrejection = function(event) {
+  console.error('[FLAF] Unhandled promise rejection:', event.reason);
+  window.onerror(
+    event.reason?.message || 'Unhandled promise rejection',
+    event.reason?.stack || '',
+    0, 0,
+    event.reason
+  );
+};
+
 window.db = db;
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
