@@ -270,14 +270,14 @@ async function _renderSTS(token) {
     const val = sts !== null && sts !== undefined ? sts : '';
     return `
     <div class="nv-sas-row">
-      <div class="ds-siswa-nomor ds-siswa-nomor--slate">${s.nomor}</div>
-      <div class="nv-siswa-name">${_escape(s.nama)}</div>
+      <div class="ds-siswa-nomor ds-siswa-nomor--slate" style="background:rgba(212,174,58,.15);color:rgba(212,174,58,.7);">${s.nomor}</div>
+      <div class="nv-siswa-name" style="color:rgba(255,255,255,.85);">${_escape(s.nama)}</div>
       <input id="sts-${s.id}" type="number" min="0" max="100" placeholder="—"
         value="${val}"
         class="nv-sas-input"
         oninput="this.style.color=nilaiWarna(parseInt(this.value))"
-        onfocus="this.style.borderColor='rgba(212,174,58,.5)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSTS('${s.id}')">
+        onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
+        onblur="this.style.borderColor='rgba(255,255,255,.15)';nilaiAutoSaveSTS('${s.id}')">
     </div>`;
   }
 
@@ -295,11 +295,11 @@ async function _renderSTS(token) {
       return `
       <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sts-group-${gi}">
         <div class="ds-subfase-head" onclick="nilaiToggleSTSGroup(${gi})">
-          <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+          <div class="ds-subfase-label" style="color:rgba(255,255,255,.55);">Siswa ${dari}–${ke}</div>
+          <div style="font-size:12px;color:${group.some(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined) ? 'rgba(212,174,58,.7)' : 'rgba(255,255,255,.35)'};">
             ${group.filter(s => stsMap[s.id] !== null && stsMap[s.id] !== undefined).length}/${group.length} diisi
           </div>
-          <div class="ds-collapse-chevron" id="nv-sts-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
+          <div class="ds-collapse-chevron" id="nv-sts-chevron-${gi}" style="color:rgba(212,174,58,.5);">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
           ${group.map(s => _stsRowHTML(s)).join('')}
@@ -350,14 +350,14 @@ async function _renderSAS(token) {
     const val = sas !== null && sas !== undefined ? sas : '';
     return `
     <div class="nv-sas-row">
-      <div class="ds-siswa-nomor ds-siswa-nomor--slate">${s.nomor}</div>
-      <div class="nv-siswa-name">${_escape(s.nama)}</div>
+      <div class="ds-siswa-nomor ds-siswa-nomor--slate" style="background:rgba(212,174,58,.15);color:rgba(212,174,58,.7);">${s.nomor}</div>
+      <div class="nv-siswa-name" style="color:rgba(255,255,255,.85);">${_escape(s.nama)}</div>
       <input id="sas-${s.id}" type="number" min="0" max="100" placeholder="—"
         value="${val}"
         class="nv-sas-input"
         oninput="this.style.color=nilaiWarna(parseInt(this.value))"
-        onfocus="this.style.borderColor='rgba(212,174,58,.5)'"
-        onblur="this.style.borderColor='rgba(255,255,255,.12)';nilaiAutoSaveSAS('${s.id}')">
+        onfocus="this.style.borderColor='rgba(212,174,58,.4)'"
+        onblur="this.style.borderColor='rgba(255,255,255,.15)';nilaiAutoSaveSAS('${s.id}')">
     </div>`;
   }
 
@@ -375,11 +375,11 @@ async function _renderSAS(token) {
       return `
       <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-sas-group-${gi}">
         <div class="ds-subfase-head" onclick="nilaiToggleSASGroup(${gi})">
-          <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
+          <div class="ds-subfase-label" style="color:rgba(255,255,255,.55);">Siswa ${dari}–${ke}</div>
+          <div style="font-size:12px;color:${group.some(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined) ? 'rgba(212,174,58,.7)' : 'rgba(255,255,255,.35)'};">
             ${group.filter(s => sasMap[s.id] !== null && sasMap[s.id] !== undefined).length}/${group.length} diisi
           </div>
-          <div class="ds-collapse-chevron" id="nv-sas-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
+          <div class="ds-collapse-chevron" id="nv-sas-chevron-${gi}" style="color:rgba(212,174,58,.5);">${isOpen ? '▲' : '▼'}</div>
         </div>
         <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
           ${group.map(s => _sasRowHTML(s)).join('')}
