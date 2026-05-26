@@ -1080,6 +1080,48 @@ punya layar serupa.
 
 ---
 
+## AUDIT BATCH TP 05–14
+
+**Audit selesai:** 2026-05-27
+**Commit batch:** 4d0fbba
+**File disentuh:** tp-05-v5.js sampai tp-14-v5.js
+
+### Fix yang diterapkan (semua TP)
+
+**FIX-1 — L0 dipindah ke `preOpening` (semua TP 05–14)**
+Identik dengan pola TP 01–04. L0 di setiap TP dipindah
+dari array langkah[] fase Pembuka ke field preOpening
+di root objek TP. Konten teks dan cue tidak diubah.
+
+**FIX-2 — Diferensiasi dipisah ke field terpisah**
+Berlaku untuk TP yang memiliki layar Diferensiasi.
+Blok embedded dipindah ke field diferensiasi: { needHelp, ready }.
+
+| TP | Layar Diferensiasi | Label field |
+|----|-------------------|-------------|
+| 05 | L9  | needHelp / ready |
+| 06 | L9  | needHelp / ready |
+| 09 | L10 | needHelp / ready |
+| 11 | L9  | needHelp / ready |
+| 12 | L10 | needHelp / ready |
+| 13 | L10 | needHelp / ready |
+| 14 | L10 | needHelp / ready |
+
+TP 07, 08, 10 tidak memiliki layar Diferensiasi —
+tidak ada FIX-2 untuk ketiga TP ini.
+
+### Konfirmasi tidak butuh fix
+
+Struktur 3 fase (Pembuka/Inti/Penutup) sudah benar
+di semua TP 05–14 — batch converter konsisten.
+
+### Status keseluruhan audit
+
+TP 01–14 selesai diaudit dan diperbaiki.
+TP 15–18 belum diaudit.
+
+---
+
 ## AUDIT & FIX TP 05 — Colours
 Tanggal: 27 Mei 2026
 File aktif: docs/output-v5/tp-05-v5.js
