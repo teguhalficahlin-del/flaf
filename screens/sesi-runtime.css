@@ -210,7 +210,31 @@
 .sr-fase-meta {
   font-size: 14px;
   color: rgba(255,255,255,.4);
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+}
+
+/* Pre-Opening card — FaseEntering screen sebelum Pembuka */
+.sr-preopening-card {
+  width: 100%;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 14px 16px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.sr-preopening-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 8px;
+}
+.sr-preopening-teks {
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  line-height: 1.6;
 }
 
 /* =============================================================

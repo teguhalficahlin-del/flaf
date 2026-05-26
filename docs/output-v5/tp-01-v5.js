@@ -103,6 +103,15 @@ const TP_01 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di pintu. Pegang Kiki di tangan kiri. Sambut siswa satu per satu saat masuk. UCAP: "Good morning! Come in, come in!"`,
+    bantuan: null,
+    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai — saat siswa masuk satu per satu. Boneka Kiki wajib ada di tangan. Lambaikan Kiki ke setiap siswa yang masuk. Layar ini pendek dan tidak boleh dilewati karena menjadi anchor emosi pertama siswa.',
+    darurat: null,
+    energi : '⚪',
+  },
+
   skenario: [
 
     {
@@ -110,16 +119,6 @@ const TP_01 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di pintu. Pegang Kiki di tangan kiri. Sambut siswa satu per satu saat masuk. UCAP: "Good morning! Come in, come in!"`,
-          bantuan: null,
-          cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai — saat siswa masuk satu per satu. Boneka Kiki wajib ada di tangan. Lambaikan Kiki ke setiap siswa yang masuk. Layar ini pendek dan tidak boleh dilewati karena menjadi anchor emosi pertama siswa.',
-          darurat: null,
-          energi : '⚪',
-        },
 
         // L1 — PEMBUKA
         {
@@ -317,7 +316,7 @@ const TP_01 = {
         // L17 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kartu waktu + kartu salam → Simpan Kiki dan Momo AKSI: Catat siswa yang: → Diam sepanjang sesi → Salah greeting berulang → Butuh kartu terus`,
+          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kartu waktu + kartu salam → Simpan Kiki dan Momo\nAKSI: Catat siswa yang: → Diam sepanjang sesi → Salah greeting berulang → Butuh kartu terus`,
           bantuan: null,
           cue    : null,
           darurat: null,

@@ -322,9 +322,21 @@ function _renderResume() {
 
 function _renderEntering() {
   const fase     = _currentFase();
+  const tp       = _state.tp;
   const total    = fase?.langkah?.length || 0;
   const durasi   = fase?.durasi || '—';
   const faseName = fase?.fase   || '—';
+
+  const preOp     = _state.faseIdx === 0 ? tp?.preOpening : null;
+  const preOpHTML = preOp ? `
+    <div class="sr-preopening-card">
+      <div class="sr-preopening-label">Sebelum memulai</div>
+      <div class="sr-preopening-teks">${_escape(preOp.teks)}</div>
+      ${preOp.cue ? `<div class="sr-cue-block" style="margin-top:10px">
+        <div class="sr-cue-label">⚡ Panduan guru</div>
+        <div class="sr-cue-teks">${_escape(preOp.cue)}</div>
+      </div>` : ''}
+    </div>` : '';
 
   _root.innerHTML = `
     <div class="sr-app">
@@ -332,6 +344,7 @@ function _renderEntering() {
         <div class="sr-fase-label">SEKARANG</div>
         <div class="sr-fase-judul">${_escape(faseName)}</div>
         <div class="sr-fase-meta">${total} langkah · ${durasi} menit</div>
+        ${preOpHTML}
       </div>
       <div class="sr-footer">
         <button class="sr-btn-primary" id="sr-btn-mulai-fase">
@@ -432,7 +445,10 @@ function _renderRunning() {
         `<div class="sr-ucap-teks">${_escape(seg.isi)}</div></div>`;
     }
     const paragraphs = seg.isi.split(/(?=Fase [A-Z]\s*[—–-])/).map(p => p.trim()).filter(Boolean);
-    return paragraphs.map(p => `<div class="sr-teks-biasa">${_escape(p)}</div>`).join('');
+    return paragraphs.map(p => {
+      const items = p.split(/\n|\s+(?=→)/).map(s => s.trim()).filter(Boolean);
+      return items.map(item => `<div class="sr-teks-biasa">${_escape(item)}</div>`).join('');
+    }).join('');
   }).join('');
 
   // Panduan guru
