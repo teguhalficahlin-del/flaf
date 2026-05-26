@@ -482,6 +482,20 @@ function _renderRunning() {
     }
   }
 
+  // Diferensiasi (null | { [label]: string })
+  let difHTML = '';
+  if (langkah.diferensiasi != null
+      && typeof langkah.diferensiasi === 'object') {
+    const items = Object.entries(langkah.diferensiasi)
+      .map(([key, val]) => `<div class="sr-dif-item">${_escape(val)}</div>`)
+      .join('');
+    difHTML = `
+      <div class="sr-dif-block">
+        <div class="sr-label-diferensiasi">DIFERENSIASI</div>
+        ${items}
+      </div>`;
+  }
+
   // Darurat
   const daruratHTML = langkah.darurat ? `
     <div class="sr-darurat">
@@ -501,8 +515,9 @@ function _renderRunning() {
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
         </div>
         ${teksHTML}
-        ${cueHTML}
         ${bantuanHTML}
+        ${difHTML}
+        ${cueHTML}
         ${daruratHTML}
       </div>
 
