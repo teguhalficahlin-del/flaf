@@ -646,8 +646,32 @@ atau `closure_reinforcement` sebagai field runtime.
    - Export/backup data: lengkap via export.js
    - pm TP01–14 (93 missing): INTENTIONAL BY DESIGN
 
-⏳ LANGKAH BERIKUTNYA:
-   - Belum ditentukan.
+⏳ LANGKAH BERIKUTNYA — Sprint Refactor Multi-Fase (Fase A → A+B+C)
+
+   KONTEKS:
+   - Audit kode selesai (Mei 2026) — 4 file perlu diubah, effort ~2–3 jam
+   - Supabase kolom 'kelas' sudah fleksibel — nilai '1'–'6' + 'all', tidak perlu ubah schema
+   - data/index.js sudah siap multi-fase — tinggal uncomment 2 baris saat fase-b.js siap
+   - Pendekatan: satu perubahan per langkah, validasi sebelum commit — jaga Fase A tidak rusak
+
+   LANGKAH (urutan wajib diikuti):
+   1. screens/nilai.js — _tpRange: extend ke kelas 3–6, mapping kelas → tpRange dinamis
+   2. screens/dashboard.js — _tpList + _buildPilihTPHTML: extend kelasOk ke kelas 3–6
+   3. storage/nilai.js — getRekapFormatif + getRekapAkhir: tpRange dinamis per kelas
+   4. app.js — angka 18 hardcode → dinamis (minor, kosmetik)
+   Setiap langkah: ubah → audit → validasi Fase A tidak rusak → commit
+
+   SETELAH REFACTOR SELESAI:
+   - Tulis data/fase-b.js (18 TP Kelas 3–4) — schema v4.3 sama dengan Fase A
+   - Uncomment fase-b.js di data/index.js
+   - Tambah path fase-b.js ke SW precache
+   - Buat soal STS + SAS Fase B
+   - Distribusi ke guru Kelas 3–4
+
+   CATATAN ARSITEKTUR:
+   - Satu app untuk SD Fase A + B + C — tidak pisah app
+   - Fase D (SMP) dan E–F+SMK → evaluasi arsitektur terpisah setelah Fase C selesai
+   - Kolom 'kelas' Supabase: '1'/'2' = Fase A, '3'/'4' = Fase B, '5'/'6' = Fase C, 'all' = semua
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
