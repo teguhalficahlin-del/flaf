@@ -399,8 +399,11 @@ async function _renderRapor(token) {
   const siswaList = await nilai.getRekapRapor(_state.kelasId, _state.semester);
   if (token !== _renderToken) return;
 
-  const PAGE_SIZE_RAPOR = 5;
-  const semLabel = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
+  const semLabel  = _state.semester === 'ganjil' ? 'Ganjil' : 'Genap';
+  const PAGE_SIZE = 5;
+  const totalPage = Math.ceil(siswaList.length / PAGE_SIZE);
+  const page      = Math.min(_state.page, Math.max(0, totalPage - 1));
+  const pageItems = siswaList.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   function _raporRowHTML(s) {
     const val = (v) => v !== null && v !== undefined ? v : '—';
@@ -419,32 +422,24 @@ async function _renderRapor(token) {
     </div>`;
   }
 
+  const navHTML = siswaList.length === 0 ? '' : `
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid rgba(212,174,58,.15);">
+    <button onclick="nilaiRaporPrevPage()"
+      style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
+      background:transparent;font-size:18px;cursor:pointer;
+      opacity:${page === 0 ? '0.3' : '1'};">‹</button>
+    <div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;">
+      Halaman ${page + 1}/${totalPage || 1}
+    </div>
+    <button onclick="nilaiRaporNextPage()"
+      style="width:36px;height:36px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
+      background:transparent;font-size:18px;cursor:pointer;
+      opacity:${page >= totalPage - 1 ? '0.3' : '1'};">›</button>
+  </div>`;
+
   const barisHTML = siswaList.length === 0 ? `
     <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : (() => {
-    const groups = [];
-    for (let i = 0; i < siswaList.length; i += PAGE_SIZE_RAPOR) {
-      groups.push(siswaList.slice(i, i + PAGE_SIZE_RAPOR));
-    }
-    return groups.map((group, gi) => {
-      const dari   = group[0].nomor;
-      const ke     = group[group.length - 1].nomor;
-      const isOpen = gi === 0;
-      return `
-      <div class="ds-subfase-item ${isOpen ? 'ds-subfase-item--open' : ''}" id="nv-rapor-group-${gi}">
-        <div class="ds-subfase-head" onclick="nilaiToggleRaporGroup(${gi})">
-          <div class="ds-subfase-label">Siswa ${dari}–${ke}</div>
-          <div style="font-size:12px;color:${group.some(s => s.rapor !== null && s.rapor !== undefined) ? 'rgba(212,174,58,.9)' : 'rgba(255,255,255,.3)'};">
-            ${group.filter(s => s.rapor !== null && s.rapor !== undefined).length}/${group.length} ada nilai
-          </div>
-          <div class="ds-collapse-chevron" id="nv-rapor-chevron-${gi}">${isOpen ? '▲' : '▼'}</div>
-        </div>
-        <div class="ds-subfase-body" ${isOpen ? '' : 'style="display:none;"'}>
-          ${group.map(s => _raporRowHTML(s)).join('')}
-        </div>
-      </div>`;
-    }).join('');
-  })();
+  ` : navHTML + pageItems.map(s => _raporRowHTML(s)).join('');
 
   _container.innerHTML = `
 <div class="nv-wrap">
@@ -541,7 +536,7 @@ window.nilaiBackToMenu = async function() {
   _render();
 };
 window.nilaiMenuSAS      = function() { _state.view = 'sas';      _render(); };
-window.nilaiMenuRapor    = function() { _state.view = 'rapor';    _render(); };
+window.nilaiMenuRapor    = function() { _state.view = 'rapor'; _state.page = 0; _render(); };
 window.nilaiMenuUnduh    = function() { _state.view = 'unduh';    _render(); };
 window.nilaiMenuFormatif  = function() { _state.view = 'formatif'; _render(); };
 window.nilaiMenuSTSGanjil = function() { _state.semester = 'ganjil'; _state.view = 'sts'; _state.page = 0; _render(); };
@@ -606,35 +601,13 @@ window.nilaiSTSNextPage = function() { _state.page++; _render(); };
 window.nilaiSTSPrevPage = function() { if (_state.page > 0) { _state.page--; _render(); } };
 window.nilaiSASNextPage = function() { _state.page++; _render(); };
 window.nilaiSASPrevPage = function() { if (_state.page > 0) { _state.page--; _render(); } };
-window.nilaiToggleRaporGroup = function(gi) {
-  const item    = document.getElementById(`nv-rapor-group-${gi}`);
-  const body    = item?.querySelector('.ds-subfase-body');
-  const chevron = document.getElementById(`nv-rapor-chevron-${gi}`);
-  if (!body) return;
-  const isOpen = body.style.display !== 'none';
-
-  let idx = 0;
-  while (true) {
-    const other = document.getElementById(`nv-rapor-group-${idx}`);
-    if (!other) break;
-    if (idx !== gi) {
-      const otherBody    = other.querySelector('.ds-subfase-body');
-      const otherChevron = document.getElementById(`nv-rapor-chevron-${idx}`);
-      if (otherBody)    otherBody.style.display = 'none';
-      if (otherChevron) otherChevron.textContent = '▼';
-      other.classList.remove('ds-subfase-item--open');
-    }
-    idx++;
-  }
-
-  body.style.display  = isOpen ? 'none' : '';
-  chevron.textContent = isOpen ? '▼' : '▲';
-  item.classList.toggle('ds-subfase-item--open', !isOpen);
-};
 window.nilaiToggleRaporSemester = function(semester) {
   _state.semester = semester;
+  _state.page = 0;
   _renderRapor(++_renderToken);
 };
+window.nilaiRaporNextPage = function() { _state.page++; _renderRapor(++_renderToken); };
+window.nilaiRaporPrevPage = function() { if (_state.page > 0) { _state.page--; _renderRapor(++_renderToken); } };
 window.nilaiToggleUnduh = function(key) {
   const keys = ['formatif', 'sumatif'];
   keys.forEach(k => {
