@@ -109,6 +109,15 @@ const TP_08 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu denah dan kartu ruangan belum ditunjukkan. Tunggu semua duduk tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we talk about your house. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus] dijaga dari sini. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.`,
+    bantuan: null,
+    cue    : 'Jangan tunjukkan kartu denah sebelum Layar 2. Tone calm',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -116,16 +125,6 @@ const TP_08 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu denah dan kartu ruangan belum ditunjukkan. Tunggu semua duduk tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today — we talk about your house. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus] dijaga dari sini. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.`,
-          bantuan: null,
-          cue    : 'Jangan tunjukkan kartu denah sebelum Layar 2. Tone calm',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
