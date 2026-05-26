@@ -105,6 +105,15 @@ const TP_09 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start." perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya mengunci',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -112,16 +121,6 @@ const TP_09 = {
       durasi: 10,  // TODO: verifikasi
 
       langkah: [
-
-        // L0 — PEMBUKA
-        {
-          tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start." perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya mengunci',
-          darurat: null,
-          energi : '🔵',
-        },
 
         // L1 — PEMBUKA
         {
@@ -225,8 +224,12 @@ const TP_09 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `"Before we play — watch me." AKSI: Guru pegang 1 kartu tersembunyi (snake). Tidak ditunjukkan. UCAP: "I give clues. You guess." → Tunjuk papan: "It can hiss. It is long. What is it?" → Kelas tebak: "Snake!" UCAP: "Now — partner game. Watch first." Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. Berikan kartu frog. "Give clues. Use this." [tunjuk papan — It can… / It has…] Jika siswa beku: guru bisik — "It can… jump." Kelas tebak setelah siswa beri 1–2 clue. Sebelum distribusi — ucapkan 3 hal ini: "Partner voice — not shouting." "Partner A gives clues first. Partner B guesses." "Too hard? Just say the name and sound. That's okay." DISTRIBUSI: Bagikan 1 kartu per pasangan — sekarang. Guru tidak bicara instruksi baru saat distribusi. Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B now." [Tepuk 1 kali — lanjut] Tidak hentikan kelas. Diferensiasi (di sisi papan, tidak dibacakan): - Sudah bisa: buat 3 clue per hewan - Perlu support: sebut nama + suara saja Catat, model ulang saat lewat. Acceptance rule berlaku.`,
+          teks   : `"Before we play — watch me." AKSI: Guru pegang 1 kartu tersembunyi (snake). Tidak ditunjukkan. UCAP: "I give clues. You guess." → Tunjuk papan: "It can hiss. It is long. What is it?" → Kelas tebak: "Snake!" UCAP: "Now — partner game. Watch first." Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. Berikan kartu frog. "Give clues. Use this." [tunjuk papan — It can… / It has…] Jika siswa beku: guru bisik — "It can… jump." Kelas tebak setelah siswa beri 1–2 clue. Sebelum distribusi — ucapkan 3 hal ini: "Partner voice — not shouting." "Partner A gives clues first. Partner B guesses." "Too hard? Just say the name and sound. That's okay." DISTRIBUSI: Bagikan 1 kartu per pasangan — sekarang. Guru tidak bicara instruksi baru saat distribusi. Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B now." [Tepuk 1 kali — lanjut] Tidak hentikan kelas. Catat, model ulang saat lewat. Acceptance rule berlaku.`,
           bantuan: 'Pasangan diam total: dekati, bisik — "It can jump. Say that."',
+          diferensiasi: {
+            needHelp: 'Sebut nama + suara saja.',
+            ready   : 'Buat 3 clue per hewan.',
+          },
           cue    : 'Guru tidak koreksi kalimat saat practice berlangsung.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — langsung speed round, lewati partner practice.',
           energi : '🔴',
