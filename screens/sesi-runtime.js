@@ -437,8 +437,13 @@ function _renderRunning() {
     return paragraphs.map(p => {
       const items = p.split(/\n|\s+(?=→)|\s+(?=👂)|\s+(?=🗣)|\s+(?=- )|\s+(?=AKSI:)/).map(s => s.trim()).filter(Boolean);
       return items.map(item => {
-        if (item.startsWith('👂') || item.startsWith('🗣'))
-          return `<div class="sr-label-aktivitas">${_escape(item)}</div>`;
+        if (item.startsWith('👂') || item.startsWith('🗣')) {
+          const labelEnd = item.search(/\s+(?=AKSI:|UCAP:)/);
+          const label    = labelEnd > -1 ? item.slice(0, labelEnd) : item;
+          const sisa     = labelEnd > -1 ? item.slice(labelEnd).trim() : null;
+          return `<div class="sr-label-aktivitas">${_escape(label)}</div>`
+               + (sisa ? `<div class="sr-teks-biasa">${_escape(sisa)}</div>` : '');
+        }
         if (item.startsWith('Diferensiasi:'))
           return `<div class="sr-label-diferensiasi">${_escape(item)}</div>`;
         if (item.startsWith('- '))
