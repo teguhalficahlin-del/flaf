@@ -361,6 +361,13 @@ async function _populateStartScreen() {
   } catch (err) {
     console.warn('[APP] backup status gagal:', err.message);
   }
+
+  const homeBackupAction = document.getElementById('home-backup-action');
+  if (homeBackupAction) {
+    homeBackupAction.addEventListener('click', () => {
+      exportManager.triggerManualExport();
+    });
+  }
 }
 
 // ─── SCREEN: DASHBOARD ────────────────────────────────────────────────────────
