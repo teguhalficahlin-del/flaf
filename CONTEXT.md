@@ -34,6 +34,7 @@
 - **Sprint Presensi Fix + DARURAT Batch + Runtime Teks + TP15–18 Data SELESAI ✅ (Mei 2026)** — presensi default H, nav fix, batch-convert.js rewrite DARURAT_RE, TP01–18 regenerated, teks Fase A/B/C split paragraf, data manual TP15–18 lengkap, SW v61 (commit `3f384c2`)
 - **Sprint CSV Download + SAS SELESAI ✅ (Mei 2026)** — rename label PDF→CSV, migrasi 4 fungsi download ke CSV, nilaiDownloadSAS baru, card Sumatif Akhir Semester di Unduh & Cetak (commit `f307eb9`)
 - **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
+- **Sprint Refactor Multi-Fase SELESAI ✅ (Mei 2026)** — `_tpRange` → `_TP_RANGE_MAP`, `kelasOk` extend ke kelas 3–6, progress bar dinamis via `getAllTP().length`
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -646,7 +647,7 @@ atau `closure_reinforcement` sebagai field runtime.
    - Export/backup data: lengkap via export.js
    - pm TP01–14 (93 missing): INTENTIONAL BY DESIGN
 
-⏳ LANGKAH BERIKUTNYA — Sprint Refactor Multi-Fase (Fase A → A+B+C)
+✅ LANGKAH BERIKUTNYA — Sprint Refactor Multi-Fase (Fase A → A+B+C)
 
    KONTEKS:
    - Audit kode selesai (Mei 2026) — 4 file perlu diubah, effort ~2–3 jam
@@ -661,6 +662,12 @@ atau `closure_reinforcement` sebagai field runtime.
    4. app.js — angka 18 hardcode → dinamis (minor, kosmetik)
    Setiap langkah: ubah → audit → validasi Fase A tidak rusak → commit
 
+   Hasil sprint:
+   - screens/nilai.js: `_tpRange` → `_TP_RANGE_MAP` — kelas 3–6 → `[]`, 'all' dinamis dari `getAllTP()`
+   - screens/dashboard.js: `kelasOk` extend ke kelas 3–6 — pesan "Rombel tidak sesuai" tidak lagi muncul untuk kelas 3–6
+   - app.js: `getAllTP().length` menggantikan hardcode `18` di `_populateStartScreen`
+   - Empat sisa angka 18 dibiarkan: warna CSS, default param, label denominator, fallback SW
+
    SETELAH REFACTOR SELESAI:
    - Tulis data/fase-b.js (18 TP Kelas 3–4) — schema v4.3 sama dengan Fase A
    - Uncomment fase-b.js di data/index.js
@@ -672,6 +679,15 @@ atau `closure_reinforcement` sebagai field runtime.
    - Satu app untuk SD Fase A + B + C — tidak pisah app
    - Fase D (SMP) dan E–F+SMK → evaluasi arsitektur terpisah setelah Fase C selesai
    - Kolom 'kelas' Supabase: '1'/'2' = Fase A, '3'/'4' = Fase B, '5'/'6' = Fase C, 'all' = semua
+
+⏳ LANGKAH BERIKUTNYA — Fase B (Kelas 3–4)
+
+   LANGKAH (urutan wajib diikuti):
+   1. Tulis data/fase-b.js — 18 TP Kelas 3–4, schema v4.3 sama dengan Fase A
+   2. Uncomment fase-b.js di data/index.js
+   3. Tambah path fase-b.js ke SW precache
+   4. Buat soal STS + SAS Fase B
+   5. Distribusi ke guru Kelas 3–4
 
 ✅ Tahap 2: Koreksi pdf_ref di TP16 dan TP18 — DONE
 ✅ Tahap 3: Hapus komentar format v2 di fase-a.js — DONE
