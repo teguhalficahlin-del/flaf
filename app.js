@@ -552,8 +552,10 @@ async function initApp() {
       // Auto-download dihapus — cukup tampilkan pengingat jika backup sudah lama
       exportManager.getExportInfo().then(info => {
         if (info.isDue) {
-          const reminder = document.getElementById('export-reminder');
-          if (reminder) reminder.removeAttribute('hidden');
+          const reminder   = document.getElementById('export-reminder');
+          const backupBar  = document.getElementById('home-backup-bar');
+          const barIsWarning = backupBar?.classList.contains('home-backup--warn');
+          if (reminder && !barIsWarning) reminder.removeAttribute('hidden');
         }
       }).catch(() => {});
     } catch (err) {
@@ -708,8 +710,11 @@ function _bindNavigation() {
 
   window.addEventListener('flaf:export-needed', (e) => {
     const { urgent } = e.detail || {};
-    const reminder = document.getElementById('export-reminder');
-    if (reminder) reminder.removeAttribute('hidden');
+    const reminder  = document.getElementById('export-reminder');
+    const backupBar = document.getElementById('home-backup-bar');
+    if (reminder && !backupBar?.classList.contains('home-backup--warn')) {
+      reminder.removeAttribute('hidden');
+    }
     if (urgent) showToast('⚠ Backup diperlukan segera');
   });
 
