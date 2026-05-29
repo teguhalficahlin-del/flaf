@@ -10,7 +10,7 @@
  */
 
 import { nilai, getSesiFormatifTP } from '../storage/nilai.js';
-import FASE_A       from '../data/fase-a.js';
+import { getAllTP } from '../data/index.js';
 import { db }       from '../storage/db.js';
 import { jejak }    from '../storage/jejak.js';
 import { presensi } from '../storage/presensi.js';
@@ -49,27 +49,10 @@ function _nilaiColor(n) {
   return '#B05A46';
 }
 
-const _TP_RANGE_MAP = {
-  1: [1,2,3,4,5,6,7,8,9],
-  2: [10,11,12,13,14,15,16,17,18],
-  3: [],
-  4: [],
-  5: [],
-  6: [],
-};
-
-function _tpRange(tingkat) {
-  if (tingkat === 'all') {
-    return (FASE_A.tujuan_pembelajaran || [])
-      .map(tp => tp?.nomor)
-      .filter(n => n !== undefined);
-  }
-  return _TP_RANGE_MAP[Number(tingkat)] ?? [];
-}
-
 function _tpList(tingkat) {
-  const range = _tpRange(tingkat);
-  return (FASE_A.tujuan_pembelajaran || []).filter(tp => tp && range.includes(tp.nomor));
+  const all = getAllTP();
+  if (tingkat === 'all') return all;
+  return all.filter(tp => tp.kelas === tingkat);
 }
 
 function _statBox(label, value, color) {
@@ -1263,7 +1246,7 @@ async function _renderFormatifDetail(token) {
   if (_state.view !== 'formatif-detail') return;
   const tpNomor  = _state.formatifTP;
   const sesiList = await getSesiFormatifTP(_state.kelasId, tpNomor);
-  const allTP    = FASE_A.tujuan_pembelajaran || [];
+  const allTP    = getAllTP().filter(tp => tp.kelas === _state.tingkat);
   const tp       = allTP.find(t => t.nomor === tpNomor);
   const tpNama   = tp ? tp.nama : `TP ${tpNomor}`;
 
