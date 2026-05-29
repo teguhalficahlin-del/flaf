@@ -1412,6 +1412,67 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 - Bug `tp-07-v5.js:326` adalah pre-existing — ditemukan saat verifikasi runtime, bukan akibat edit integrasi
 - Scan 22 file Fase B: hanya 1 bug ditemukan, sudah diperbaiki
 
+## REVERT & ROOT CAUSE — Integrasi Fase B Pertama (29/05/2026)
+
+**Commit revert: `2a4cc2f`** — kembalikan runtime ke Fase A stabil
+
+### Penyebab revert
+- Schema mismatch pada field `kelas`:
+  - Fase A: `kelas` hanya ada di level objek fase (`meta.kelas = '1 & 2 SD'`) — tidak ada per TP
+  - Fase B: `kelas` ada per TP sebagai integer (3 atau 4)
+- Filter `_tpList()` di `dashboard.js` diganti pakai `tp.kelas` untuk mendukung Fase B
+- Karena TP Fase A tidak punya `tp.kelas`, filter gagal — semua TP Fase A tidak tampil
+
+### Temuan saat investigasi
+- `tp.kelas` sebenarnya **sudah ada** di semua 18 TP Fase A (integer: 1 atau 2)
+  — terverifikasi via Node, `typeof tp.kelas === 'number'`
+- Masalah bukan di data files, tapi di `dashboard.js`:
+  - `_tpList()` pakai range hardcoded `[1..9]` / `[10..18]` — tidak pakai `tp.kelas`
+  - `kelasOk` hanya menangani string `'1'` dan `'2'` — tidak ada case untuk `'3'` dan `'4'`
+  - Progress range di `_buildLandingHTML()` juga hardcoded nomor TP
+- `data/index.js` lama pakai `FASE_AKTIF` sebagai global switch — tidak bisa dua fase aktif bersamaan
+
+---
+
+## SELESAI — Integrasi Fase B Multi-Fase (29/05/2026)
+
+**Commit: `8bd08d1`** — 4 files changed, 79 insertions, 91 deletions
+
+### Arsitektur baru: multi-fase registry
+- Hapus `FASE_AKTIF` switch — semua fase aktif bersamaan
+- `data/index.js`: REGISTRY memuat `'A': FASE_A, 'B': FASE_B`
+- `getAllTP()`: merge `tujuan_pembelajaran` dari semua fase, sort by `kelas` lalu `nomor`
+- `getFase(key)`: ambil satu objek fase by key — wajib pakai argumen
+- `getTP(id)`: cari di semua fase
+- `getMeta(key)`: meta per fase by key
+- `getFaseList()`: daftar key fase yang terdaftar
+- `getFaseAktif()`: deprecated, tetap ada untuk backward compat
+
+### Yang berubah per file
+- `data/index.js`: rewrite full — multi-fase registry, tidak ada FASE_AKTIF
+- `screens/dashboard.js`:
+  - import: `getFase` → `getAllTP`
+  - `_loadFaseData()`: pakai `getAllTP()`, return `{ tujuan_pembelajaran: tps }`
+  - `_tpList(tingkat)`: filter `tp.kelas === tingkat` (ganti range hardcoded)
+  - `_buildLandingHTML()` progress range: derive dari `_faseData` by `tp.kelas`
+  - `kelasOk`: `parseInt(kelasSesi, 10) === tingkat` (dinamis, tidak hardcode per kelas)
+- `screens/kurikulum.js`: `getFase()` → `getFase('A')` sementara
+- `sw.js`: bump `flaf-v79` → `flaf-v80`
+
+### Verifikasi runtime
+- `getAllTP().length` → `40` ✅
+- Kelas 1: 9 TP — Greetings & Farewells ✅
+- Kelas 2: 9 TP — Food and Drinks ✅
+- Kelas 3: 11 TP — My School Life ✅
+- Kelas 4: 11 TP — Jobs and Community Helpers ✅
+
+### Yang ditahan untuk sprint berikutnya
+- `app.js` `DATA_FASE_URL`: masih fetch `fase-a.js` untuk soft update check — tidak crash, hanya soft update kurang presisi untuk Fase B
+- `screens/nilai.js`: masih import `FASE_A` langsung, `_tpList` kosong untuk kelas 3/4 — tidak crash, guru Fase B tidak bisa input nilai formatif
+- `screens/kurikulum.js`: CP dan ATP yang tampil masih Fase A untuk semua guru — perlu render per fase berdasarkan session guru
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
