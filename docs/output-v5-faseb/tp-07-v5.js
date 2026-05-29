@@ -323,7 +323,7 @@ AKSI: Beri waktu 4 menit — masing-masing 2 menit per arah. Circulate dan denga
             perluSupport: 'cukup satu kalimat — "On Monday, I go to school."',
             sudahBisa   : 'ceritakan dua atau tiga kegiatan dalam satu hari, gunakan "first/then/after that."',
           },
-          bantuan: 'Jika satu pasang tidak tahu mulai dari mana: tunjuk daftar hari di papan, ucap — "Choose one day — which one?" — setelah mereka memilih, arahkan: "Now say: \'On [day], I...'"',
+          bantuan: `Jika satu pasang tidak tahu mulai dari mana: tunjuk daftar hari di papan, ucap — "Choose one day — which one?" — setelah mereka memilih, arahkan: "Now say: 'On [day], I...'"`,
           cue    : 'Pair practice boleh menggunakan hari yang berbeda per pasang — satu pasang cerita tentang Monday, pasang lain tentang Wednesday. Ini mencegah semua pasang menghasilkan output yang identik.',
           darurat: '[FLEX — lewati jika waktu tersisa < 18 menit atau energi kelas di bawah 🟡] Jika pair practice menjadi gaduh dalam 1 menit: hentikan, ucap "Okay — take your pencil. Let\'s write." Lanjut ke L8 langsung.',
           energi : '🟡',

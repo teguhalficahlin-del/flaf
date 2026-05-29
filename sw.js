@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v78';          // ← bump: precache TP15–18 + icon-512
+const CACHE_VERSION  = 'flaf-v79';          // ← bump: precache TP15–18 + icon-512
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -36,6 +36,13 @@ const APP_SHELL = [
   // data
   './data/index.js',
   './data/fase-a.js',
+  './data/fase-b.js',
+  './data/fase-b-kluster-a.js',
+  './data/fase-b-kluster-b.js',
+  './data/fase-b-kluster-c.js',
+  './data/fase-b-kluster-d.js',
+  './data/fase-b-kluster-e.js',
+  './data/fase-b-capstone.js',
   './data/printables.js',
 
   // docs/output-v5 — TP01–14 (kelas 1 & 2)
