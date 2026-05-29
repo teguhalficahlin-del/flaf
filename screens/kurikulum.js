@@ -29,6 +29,7 @@
  */
 
 import { getFase, getAllTP, getMeta } from '../data/index.js';
+import { db } from '../storage/db.js';
 import { logger } from '../storage/logger.js';
 
 // ----------------------------------------------------------
@@ -75,8 +76,10 @@ window.kurFilterKelas = function(kelas) {
   const activeStyle  = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;`;
   const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;`;
 
-  document.getElementById('kur-filter-1').style.cssText = kelas === 1 ? activeStyle : inactiveStyle;
-  document.getElementById('kur-filter-2').style.cssText = kelas === 2 ? activeStyle : inactiveStyle;
+  [1, 2, 3, 4].forEach(n => {
+    const el = document.getElementById(`kur-filter-${n}`);
+    if (el) el.style.cssText = (String(kelas) === String(n)) ? activeStyle : inactiveStyle;
+  });
 
   // Buka TP pertama yang tampil di kelas yang dipilih
   const firstVisible = [...items].find(el => el.style.display !== 'none');
@@ -101,7 +104,52 @@ window.kurFilterKelas = function(kelas) {
   }
 };
 
-export function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) {
+// ----------------------------------------------------------
+// SESSION HELPERS
+// ----------------------------------------------------------
+
+async function _getSessionKelas() {
+  try {
+    const stored = await db.get('kv', 'session');
+    return stored?.payload?.kelas || 'all';
+  } catch {
+    return 'all';
+  }
+}
+
+async function _resolveKurikulumData(kelas) {
+  const kelasNum = parseInt(kelas, 10);
+  let faseKey, defaultKelas, kelasList;
+
+  if (kelasNum === 1 || kelasNum === 2) {
+    faseKey      = 'A';
+    defaultKelas = kelasNum;
+    kelasList    = [1, 2];
+  } else if (kelasNum === 3 || kelasNum === 4) {
+    faseKey      = 'B';
+    defaultKelas = kelasNum;
+    kelasList    = [3, 4];
+  } else {
+    faseKey      = 'ALL';
+    defaultKelas = 1;
+    kelasList    = [1, 2, 3, 4];
+  }
+
+  let fase, tps, meta;
+  if (faseKey === 'ALL') {
+    fase = getFase('A');
+    tps  = getAllTP();
+    meta = getMeta('A');
+  } else {
+    fase = getFase(faseKey);
+    tps  = getAllTP().filter(tp => kelasList.includes(tp.kelas));
+    meta = getMeta(faseKey);
+  }
+
+  return { faseKey, fase, tps, meta, defaultKelas, kelasList };
+}
+
+export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) {
   const root = document.getElementById(ROOT_ID);
   if (!root) {
     logger.error(SCREEN, `[kurikulum] #${ROOT_ID} tidak ditemukan di DOM`);
@@ -113,15 +161,14 @@ export function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) {
   if (_rendered) return;
 
   try {
-    const fase  = getFase('A');
-    const tps   = getAllTP();
-    const meta  = getMeta();
+    const kelasUser = await _getSessionKelas();
+    const { fase, tps, meta, defaultKelas, kelasList } = await _resolveKurikulumData(kelasUser);
 
-    root.innerHTML = _buildKurikulumHTML(fase, tps, meta);
+    root.innerHTML = _buildKurikulumHTML(fase, tps, meta, kelasList);
     _attachEventListeners(root, tps, onDownloadPDF);
     _rendered = true;
 
-    // Apply filter default sesuai rombel aktif
+    // Apply filter default sesuai kelas dari session user
     if (defaultKelas !== 'semua') {
       window.kurFilterKelas(defaultKelas);
     }
@@ -154,12 +201,12 @@ export function resetKurikulum() {
 // BUILD HTML
 // ----------------------------------------------------------
 
-function _buildKurikulumHTML(fase, tps, meta) {
+function _buildKurikulumHTML(fase, tps, meta, kelasList) {
   return `
     <div class="kur-wrap">
 
       ${_buildHeaderHTML(meta)}
-      ${_buildTPListHTML(tps)}
+      ${_buildTPListHTML(tps, kelasList)}
       ${_buildATPHTML(tps, meta, fase)}
       ${_buildCPHTML(fase.cp)}
 
@@ -279,8 +326,13 @@ function _buildATPHTML(tps, meta, fase) {
 }
 
 // ── Panel TP List ─────────────────────────────────────────
-function _buildTPListHTML(tps) {
+function _buildTPListHTML(tps, kelasList) {
   const items = tps.map(tp => _buildTPItemHTML(tp)).join('');
+  const activeStyle   = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;`;
+  const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;`;
+  const filterBtns = kelasList.map((k, i) =>
+    `<button onclick="kurFilterKelas(${k})" id="kur-filter-${k}" style="${i === 0 ? activeStyle : inactiveStyle}">Kelas ${k}</button>`
+  ).join('');
   return `
     <div class="kur-panel kur-panel-tp">
       <div class="kur-panel-head kur-panel-head--static">
@@ -288,8 +340,7 @@ function _buildTPListHTML(tps) {
         <span class="kur-panel-title">Detail Tujuan Pembelajaran</span>
       </div>
       <div style="display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--tema-border-light);">
-        <button onclick="kurFilterKelas(1)" id="kur-filter-1" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;">Kelas 1</button>
-        <button onclick="kurFilterKelas(2)" id="kur-filter-2" style="flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;">Kelas 2</button>
+        ${filterBtns}
       </div>
       <div class="kur-tp-list" id="kur-tp-list">
         ${items}
