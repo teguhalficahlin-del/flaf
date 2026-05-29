@@ -1332,3 +1332,52 @@ Pola identik dengan TP 01–05.
 - cf46463 — fix: TP 12 — preOpening L0, diferensiasi L10
 - 68b5a3c — fix: TP 13 — preOpening L0, diferensiasi L10
 - 430b173 — fix: TP 14 — preOpening L0, diferensiasi L10
+
+---
+
+## FASE B — TP Individual (docs/output-v5-faseb/)
+
+**Status: SELESAI ✅ — 29/05/2026**
+
+### Yang dikerjakan
+- Folder `docs/output-v5-faseb/` sekarang lengkap: 22 file TP (tp-01-v5.js s/d tp-22-v5.js)
+- TP 01–18 ditulis dari skenario sumber `Fase B/Skenario/flaf-skenario-tpXX-v2.txt`
+- TP 19–22 ditulis dalam sesi 29/05/2026 (skenario diterima di pertengahan sesi)
+- Semua 22 file lolos checklist 23 item (schema v5.0)
+
+### Schema v5.0 — field wajib per TP
+`id`, `nomor`, `kelas`, `nama`, `tema`, `kluster`, `jenis`, `deskripsi`, `indikator[]`, `vocab[]`, `persiapan[]`, `checklist[]`, `energi_map[]`, `catatan { risiko[], autonomy[] }`, `preOpening`, `skenario[]`, `export default`
+
+### Distribusi jenis
+- Kluster A (TP 01–04, Kelas 3): Biasa ×3, Panen ×1
+- Kluster B (TP 05–08, Kelas 3): Biasa ×3, Panen ×1
+- Kluster C (TP 09–11, Kelas 3): Biasa ×2, Kompleks ×1
+- Kluster D (TP 12–15, Kelas 4): Biasa ×3, Panen ×1
+- Kluster E (TP 16–20, Kelas 4): Biasa ×2, Kompleks ×2, Panen ×1
+- Capstone (TP 21–22, Kelas 4): Capstone ×2
+
+### Perbaikan post-review
+- `tp-19-v5.js`: inkonsistensi "lunch" vs "rice" → diseragamkan ke "rice"
+- `tp-21-v5.js`: inkonsistensi "Eight!" vs teks sumber → diseragamkan ke "Every day!"
+
+### Catatan penting
+- Field `kluster` dan `jenis` ditambahkan di Fase B (tidak ada di Fase A)
+- Field `pdf_ref`, `media`, `printables` tidak disertakan (belum tersedia untuk Fase B)
+- TP Panen memiliki field `breakpoint { posisi, instruksi }` di root
+- TP Kompleks: 13 langkah, Inti ≥ 45 menit
+- TP Capstone: 13–14 langkah, tidak ada kosakata baru, tidak ada template wajib
+
+---
+
+## NEXT TASK — File Kluster Fase B
+
+Tulis 6 file kluster di `data/` yang mengimport semua TP dan menyusun struktur FASE_B:
+- `data/fase-b-kluster-a.js` — import TP 01–04
+- `data/fase-b-kluster-b.js` — import TP 05–08
+- `data/fase-b-kluster-c.js` — import TP 09–11
+- `data/fase-b-kluster-d.js` — import TP 12–15
+- `data/fase-b-kluster-e.js` — import TP 16–20
+- `data/fase-b-capstone.js`  — import TP 21–22
+
+Pola import mengikuti `data/fase-a.js` — semua TP dari `../docs/output-v5-faseb/`.
+Setelah 6 file kluster selesai: tulis `data/fase-b.js` yang mengimport semua kluster.

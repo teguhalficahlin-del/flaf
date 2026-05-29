@@ -1,0 +1,421 @@
+/**
+ * =============================================================
+ * FLAF — TP B04 (Writing: Who and Where)
+ * File: docs/output-v5-faseb/tp-04-v5.js
+ * Format: v5.0
+ * Fase: B (Kelas 3–4)
+ * Jenis: Panen — Kluster A
+ * Source: flaf-skenario-tp04-v2.txt (Fase B)
+ * =============================================================
+ */
+
+const TP_B04 = {
+
+  id       : 'tp-b04',
+  nomor    : 4,
+  kelas    : 3,
+  nama     : 'Writing: Who and Where',
+  tema     : 'Menulis paragraf pendek tentang seseorang dan tempat di sekitarnya',
+  kluster  : 'A',
+  jenis    : 'Panen',
+  deskripsi: '',
+
+  indikator: [
+    'Peserta didik dapat merencanakan dan menulis paragraf pendek (minimal 6 kalimat) tentang satu orang menggunakan kosakata deskripsi dari Kluster A.',
+    'Peserta didik dapat mengintegrasikan kosakata tempat dan preposisi posisi (next to, across from, near) dalam kalimat yang koheren di dalam paragraf.',
+    'Peserta didik dapat membacakan paragraf yang ditulis sendiri dengan percaya diri di depan kelas.',
+  ],
+
+  vocab    : ['library', 'canteen', 'raise your hand', 'curly', 'straight', 'kind', 'She has...', 'market', 'mosque', 'next to', 'across from', 'near', 'house', 'school', 'mother', 'father', 'eyes', 'pencil', 'big', 'door'],
+
+  persiapan: [
+    'Lembar kerja siswa: 1 per siswa — Bagian A (Planning Sheet) dan Bagian B (Writing Space) dalam satu lembar',
+    'Contoh teks guru sudah ditulis di kertas besar atau papan SEBELUM kelas dimulai — tidak ditulis saat L5 berlangsung (lihat L5)',
+    'Papan tulis + spidol untuk mencatat kata-kata kunci yang diminta siswa selama L6–L7',
+  ],
+
+  checklist: [
+    'Teks contoh guru sudah disiapkan sebelum kelas — bukan ditulis saat L5 berlangsung',
+    'Lembar kerja sudah dicetak — Bagian A (Planning Sheet) dan Bagian B (Writing Space) dalam satu lembar',
+    'Struktur enam kalimat sudah tertulis di papan sebelum L6 dimulai',
+    'Penilaian formatif sudah dibuka di L6 atau L7 — minimal 4 siswa sudah dinilai',
+    'Breakpoint Alami sudah disampaikan ke siswa jika sesi terpotong — siswa tahu mereka akan lanjut dari L6 di pertemuan berikutnya',
+    'Guru tidak mendominasi lebih dari 40% layar — L4 sampai L10 adalah layar siswa',
+    'Siswa yang membacakan di L11 berbeda dari siswa yang paling aktif menjawab di L2',
+    'Kalimat "Nobody else has the same paragraph" diucapkan di L12 — ini ritual penutup Panen, bukan opsional',
+    'Tidak ada kosakata baru yang diperkenalkan secara formal — kata yang ditulis atas permintaan siswa adalah pengayaan organik',
+  ],
+
+  energi_map: [
+    'L0 ⚪',
+    'L1 🟠',
+    'L2 🟡',
+    'L3 🔵',
+    'L4 🟡',
+    'L5 🔵',
+    'L6 🔵',
+    'L7 🔵',
+    'L8 🔵',
+    'L9 🟡',
+    'L10 🔵',
+    'L11 🟡',
+    'L12 🔵',
+  ],
+
+  catatan: {
+    risiko: [
+      'L6: Ini adalah layar terpanjang dan paling kritis. Jika siswa menulis lambat — itu normal. Jangan potong L6 lebih awal dari 8 menit. Produksi yang tidak selesai lebih baik daripada produksi yang terburu-buru.',
+      'L7: Guru akan tergoda untuk membantu terlalu banyak — memperbaiki ejaan, menulis ulang kalimat, memberikan kata-kata. Tahan. Tugas guru di L7 hanya: konfirmasi ada orang, konfirmasi ada tempat. Sisanya milik siswa.',
+      'L4 dan L6 bersama-sama memakan ~17 menit. Ini normal untuk Panen. Jika total waktu terasa mepet, potong L8, L9, atau L10 — jangan potong L6.',
+      'Breakpoint Alami: jika digunakan, pastikan siswa menyimpan lembar kerja secara fisik — bukan hanya meletakkan di meja. Lembar kerja yang hilang sebelum sesi berikutnya adalah risiko nyata.',
+    ],
+    autonomy: [
+      'Teks contoh guru di L5 boleh menggunakan orang dan tempat yang nyata di sekolah — lebih bermakna dari karakter fiksi. Pilih seseorang yang dikenal siswa (bukan siswa itu sendiri).',
+      'Jika siswa meminta kosakata yang tidak ada di TP01–03 (misalnya nama sayuran spesifik, nama tempat lain), tuliskan di pojok papan tanpa komentar. Ini pengayaan organik — valid dan tidak perlu dilarang.',
+      'Peer sharing di L9 boleh dilakukan dalam Bahasa Indonesia sebagian jika partner kesulitan — yang penting paragraf yang dibacakan tetap dalam Bahasa Inggris.',
+      'Jika kelas menggunakan sesi kedua (setelah Breakpoint Alami), tidak perlu chant atau warm-up panjang di sesi kedua — cukup L0 singkat (settling), minta siswa buka lembar kerja, lanjutkan dari L6.',
+    ],
+  },
+
+  breakpoint: {
+    posisi    : 'Setelah L5, sebelum L6',
+    instruksi : `Jika waktu tidak cukup: hentikan di sini. Sesi berikutnya mulai dari L6. Siswa simpan lembar kerja mereka — Planning Sheet sudah terisi, teks guru sudah terlihat. Di awal sesi kedua: minta siswa buka Planning Sheet (Bagian A) terlebih dahulu — baca ulang siapa yang mereka pilih dan tempat apa. Baru kemudian buka Bagian B dan mulai menulis dari L6. Guru tidak perlu menjelaskan ulang struktur — scaffold di papan cukup untuk mengingatkan.`,
+  },
+
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `AKSI: Berdiri di depan kelas. Tunggu siswa duduk dan tenang. Rutinitas yang sudah terbentuk sejak TP01 — tunggu 80% fokus sebelum mulai.
+
+UCAP: "Good morning, everyone."
+→ Tunggu respons kelas.
+UCAP: "Sit down, please. Listen. Today is a special day."`,
+    bantuan: 'Jika ada siswa yang masih gaduh — beri jeda 3 detik diam, pandang bagian kelas yang paling ramai, lanjutkan hanya setelah mereka berhenti.',
+    cue    : '"Today is a special day" bukan hiperbola — ini adalah Panen. Siswa perlu merasakan bahwa hari ini berbeda dari TP01–03. Ucap dengan tulus, bukan terburu-buru.',
+    darurat: null,
+    energi : '⚪',
+  },
+
+  skenario: [
+
+    {
+      fase  : 'Pembuka',
+      durasi: 12,
+
+      langkah: [
+
+        // L1 — Reconnect — Chant Gabungan Kluster A
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Tepuk tangan dua kali.
+
+👂 LISTEN FIRST — guru demo sekali.
+
+UCAP (ketuk meja 1×1):
+"Library — canteen — raise your hand — GO!
+Curly — straight — kind — she has — GO!
+Market — mosque — next to — across from — GO!
+This is our world — let's GO!"
+
+🗣 TOGETHER — ulangi 2 putaran. Putaran kedua lebih cepat.`,
+          bantuan: 'Jika siswa tidak hafal semua kata di putaran pertama: itu normal untuk chant baru yang panjang. Lakukan perlahan, tunjuk papan jika kata-kata sudah tertulis di sana. Putaran kedua akan lebih baik.',
+          cue    : 'Chant ini merangkum tiga TP sekaligus dalam urutan yang benar. Ini bukan drill — ini pengingat bahwa siswa sudah belajar banyak. Biarkan momen ini terasa seperti perayaan kecil, bukan ujian.',
+          darurat: null,
+          energi : '🟠',
+        },
+
+        // L2 — Warm-Up — Review Kosakata Tiga TP
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Tanya kelas dengan ritme cepat — satu pertanyaan per 5 detik. Ini bukan tes — ini pemanasan memori.
+
+UCAP: "Where do we read books?"
+→ Kelas: "Library!"
+UCAP: "Where do we eat at school?"
+→ Kelas: "Canteen!"
+UCAP: "How do we describe hair that is keriting?"
+→ Kelas: "Curly!"
+UCAP: "And lurus?"
+→ Kelas: "Straight!"
+UCAP: "If someone is baik hati — one word?"
+→ Kelas: "Kind!"
+UCAP: "Where do we buy food in our neighborhood?"
+→ Kelas: "Market!"
+UCAP: "And where do we pray?"
+→ Kelas: "Mosque!"
+UCAP: "If the market is di sebelah the school — two words?"
+→ Kelas: "Next to!"
+UCAP: "If the mosque is di seberang the school — two words?"
+→ Kelas: "Across from!"
+
+UCAP: "Good. You remember everything. Now — today we put it all together."`,
+          bantuan: 'Jika kelas stagnan di satu pertanyaan lebih dari 5 detik: ucapkan jawabannya sendiri dengan lantang, minta kelas echo, lanjut ke pertanyaan berikutnya. Ini pemanasan, bukan penilaian.',
+          cue    : 'Jika kelas tidak bisa menjawab dua atau lebih pertanyaan — jangan panik dan jangan mundur ke re-teaching. Lanjut ke L3. Scaffold di L5 akan mengingatkan kembali semua kata yang perlu diingat untuk writing.',
+          darurat: null,
+          energi : '🟡',
+        },
+
+        // L3 — Orientasi Panen — Apa yang Kita Buat Hari Ini
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Kembali ke depan kelas. Suara lebih pelan dari L1 dan L2.
+
+UCAP: "Today — we write. Not just one sentence. A paragraph."
+→ Jeda.
+UCAP: "A paragraph about — one person. And one place."
+
+AKSI: Tulis di papan:
+  WHO? → satu orang (teman, ibu, ayah, siapapun)
+  WHERE? → satu tempat (market, library, mosque, school, canteen)
+
+UCAP: "You choose the person. You choose the place."
+UCAP: "Then you describe them — using everything you learned."
+
+UCAP: "Let me show you first. Then you write your own."`,
+          bantuan: null,
+          cue    : '"You choose" adalah kalimat terpenting di layar ini. Ini Panen — siswa punya pilihan nyata. Jangan batasi pilihan mereka. Jika ada siswa yang ingin menulis tentang kucing peliharaan di kantin — itu valid.',
+          darurat: null,
+          energi : '🔵',
+        },
+
+      ],
+    },
+
+    {
+      fase  : 'Inti',
+      durasi: 50,
+
+      langkah: [
+
+        // L4 — Planning — Siswa Memilih Siapa dan Di Mana
+        {
+          tipe        : 'instruksi',
+          teks        : `AKSI: Bagikan lembar kerja (1 per siswa). Minta siswa buka Bagian A — Planning Sheet.
+
+Bagian A berisi:
+  My person: _______________________
+  What do they look like?
+    Hair: _________________ (curly / straight / long / short)
+    Eyes: _________________ (big / small / kind)
+    They are: _________________ (kind / happy / ...)
+  My place: _______________________
+  Where is it?
+    The _______ is next to / across from / near / in front of _______
+
+UCAP: "Fill in Bagian A. Just words — not sentences yet."
+UCAP: "You have 4 minutes. Think. Choose. Write key words."
+
+AKSI: Circulate pelan. Jangan intervensi kecuali ada siswa yang benar-benar bingung tentang instruksi.`,
+          diferensiasi: {
+            perluSupport: 'bantu siswa memilih dengan tanya langsung — "Siapa satu orang yang kamu kenal baik?" dan "Tempat mana yang ada di dekat rumahmu?" — lalu biarkan mereka mengisi sendiri.',
+            sudahBisa   : 'jika selesai sebelum 4 menit, minta mereka tambah satu detail lagi di Planning Sheet — misalnya warna rambut atau ukuran tempat.',
+          },
+          bantuan: 'Jika siswa duduk diam tidak menulis apapun setelah 1 menit: dekati, tunjuk baris pertama, tanya pelan — "Who is one person in your family?" — tunggu mereka menjawab lisan, lalu arahkan tangan mereka ke kertas: "Write their name here."',
+          cue    : 'Planning Sheet adalah alat berpikir, bukan tes. Siswa boleh mengganti pilihan mereka nanti. Yang penting mereka mulai dengan satu nama dan satu tempat.',
+          darurat: 'Jika sebagian besar kelas tidak mengerti instruksi Planning Sheet: bacakan setiap baris dengan keras sambil mengisi contoh di papan. Maksimal 2 menit ekstra — lanjutkan ke L5 setelahnya.',
+          energi : '🟡',
+        },
+
+        // L5 — Modeling — Guru Demo Teks Lengkap
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Tunjukkan teks yang sudah disiapkan sebelum kelas — di kertas besar atau tulis di papan. Teks guru:
+
+  "This is my mother.
+  She has black hair. Her hair is straight.
+  She has kind eyes.
+  She goes to the market near our house.
+  The market is next to the mosque. It has a big door.
+  My mother is kind and happy."
+
+UCAP: "Listen. I will read my paragraph."
+→ Baca seluruh teks dengan pelan dan jelas. Tidak ada yang perlu diikuti siswa — ini momen mendengar.
+
+UCAP: "Now — let's look at the structure."
+AKSI: Tunjuk kalimat per kalimat:
+UCAP: "Kalimat pertama — who? 'This is my mother.'" [tunjuk baris 1]
+UCAP: "Kalimat dua dan tiga — what do they look like? 'She has...'" [tunjuk baris 2–3]
+UCAP: "Kalimat empat — where do they go? 'She goes to...'" [tunjuk baris 4]
+UCAP: "Kalimat lima — where is that place? 'The market is next to...'" [tunjuk baris 5]
+UCAP: "Kalimat enam — satu kalimat penutup." [tunjuk baris 6]
+
+UCAP: "Six sentences. That is your target. Six sentences — or more."`,
+          bantuan: 'Jika siswa tampak bingung dengan struktur enam kalimat: tunjuk Planning Sheet mereka — "Lihat Bagian A kamu. Kalimat satu = nama orang kamu. Kalimat dua = rambutnya. Kalimat tiga = matanya. Kalimat empat = dia ke mana. Kalimat lima = tempat itu di mana. Kalimat enam = satu kalimat tentang perasaanmu." Satu pemetaan konkret ini lebih efektif dari penjelasan ulang.',
+          cue    : 'Teks ini harus sudah ditulis sebelum kelas dimulai — jangan menulis di depan siswa saat L5 berlangsung. Waktu L5 terlalu singkat untuk itu dan akan memecah momen "mendengar utuh."',
+          darurat: null,
+          energi : '🔵',
+        },
+
+        // L6 — Writing Draft — Paragraf Siswa
+        {
+          tipe        : 'instruksi',
+          teks        : `AKSI: Minta siswa buka Bagian B — Writing Space di lembar kerja.
+
+UCAP: "Now — your turn. Use your Planning Sheet. Write your paragraph."
+UCAP: "Six sentences — or more. Your person, your place, your words."
+
+AKSI: Tulis di papan sebagai pengingat struktur (bukan template kalimat per kalimat):
+  1. Who? → This is _______.
+  2. What do they look like? → She/He has _______.
+  3. More description → She/He is _______.
+  4. Where do they go? → She/He goes to _______.
+  5. Where is that place? → The _______ is _______.
+  6. Your closing sentence.
+
+UCAP: "The words on the board help you. But your sentences — your ideas."
+
+AKSI: Mundur dari depan kelas. Circulate pelan — bergerak ke meja siswa, jangan berdiri di tengah atau di depan.`,
+          diferensiasi: {
+            perluSupport: 'boleh menyalin struktur dari papan dan hanya mengisi nama, kata sifat, dan nama tempat dari Planning Sheet. Enam kalimat dengan template penuh tetap dihitung sebagai produksi valid.',
+            sudahBisa   : 'setelah enam kalimat selesai, minta mereka tambah satu kalimat yang tidak ada di struktur — bebas, dari pengalaman mereka sendiri.',
+          },
+          bantuan: null,
+          cue    : 'Ini waktu yang tepat untuk buka overlay penilaian formatif — prioritaskan siswa yang belum pernah dinilai di TP ini. Selama L6, guru tidak mengajar. Guru mengamati, mendengarkan, dan mencatat kata-kata yang siswa minta di papan kecil. Jika ada siswa bertanya kosakata yang tidak ada di TP01–03 — tulis di pojok papan tanpa komentar.',
+          darurat: 'Jika setelah 5 menit lebih dari separuh kelas masih belum menulis kalimat pertama: hentikan semua, minta kelas membaca struktur di papan bersama-sama sekali, lalu lanjutkan. Jangan beri instruksi baru — baca ulang yang sudah ada.',
+          energi : '🔵',
+        },
+
+        // L7 — Circulation + Penilaian Formatif
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Teruskan circulate dari L6. Fokus sekarang bergeser ke penilaian.
+
+UCAP: "Keep writing. I will come to you."
+
+AKSI: Kunjungi tiap meja. Untuk setiap siswa yang dikunjungi:
+→ Baca 2–3 kalimat pertama mereka diam-diam.
+→ Jika struktur sudah benar: angguk, ucap pelan "Good — keep going."
+→ Jika ada kalimat yang kehilangan kata kunci: tunjuk bagian itu, ucap pelan "What about the place — is it next to something?" Jangan tulis ulang kalimat mereka.`,
+          bantuan: 'Jika menemukan siswa yang menulis hanya satu atau dua kalimat dan berhenti: duduk sebentar di sebelah mereka, baca kalimat yang sudah ada, lalu tanya pelan — "And where does your person go?" — tunggu mereka menjawab lisan, lalu arahkan: "Write that." Jangan tulis untuk mereka.',
+          cue    : 'Ini waktu yang tepat untuk buka overlay penilaian formatif jika belum dibuka di L6 — prioritaskan siswa yang belum pernah dinilai di TP ini. Di L7, guru tidak memperbaiki ejaan. Fokus hanya pada dua hal: apakah ada satu orang yang dideskripsikan, dan apakah ada satu tempat yang disebutkan. Jika ya — itu sudah Panen yang valid.',
+          darurat: 'Jika menit ke-50 sudah tercapai sebelum L7 selesai: hentikan circulate, lanjut ke L11 (Gallery Sharing) langsung. Lewati L8, L9, dan L10.',
+          energi : '🔵',
+        },
+
+        // L8 — Silent Reread — Garis Bawahi Kalimat Terbaik [FLEX]
+        {
+          tipe   : 'instruksi',
+          teks   : `UCAP: "Stop for a moment. Put your pen down."
+→ Jeda 3 detik. Tunggu semua pena diletakkan.
+UCAP: "Read your paragraph — from the beginning. Just for yourself."
+→ Jeda 30 detik. Biarkan siswa membaca diam-diam.
+
+UCAP: "Now — find your favorite sentence. The one you like the most."
+UCAP: "Underline it."
+→ Beri waktu 30 detik.
+
+UCAP: "Good. That sentence — that is yours. Remember it."`,
+          bantuan: 'Jika ada siswa yang tampak bingung harus menggaris bawahi yang mana: dekati pelan, bisikkan — "Kalimat mana yang paling kamu suka? Garis bawahi itu." Tidak perlu penjelasan lebih.',
+          cue    : 'Tidak ada yang perlu dibagikan di layar ini. Ini adalah momen privat — siswa dan tulisan mereka sendiri. Guru tidak perlu berkeliling atau bertanya. Cukup berdiri di depan dan biarkan ruang menjadi tenang.',
+          darurat: '[FLEX — lewati jika waktu tersisa < 18 menit]',
+          energi : '🔵',
+        },
+
+        // L9 — Peer Sharing — Baca ke Partner [FLEX]
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Minta siswa duduk menghadap partner di sebelah mereka.
+
+UCAP: "Stop writing for a moment. Read your paragraph to your partner."
+UCAP: "Partner — listen. Then say one thing you like about it."
+
+AKSI: Beri waktu 3 menit — masing-masing 90 detik per arah. Circulate dan dengarkan tanpa menyela.
+
+UCAP (setelah 3 menit): "Good. Now — you can go back and add or change one thing."
+→ Beri 1 menit untuk siswa melakukan perubahan kecil berdasarkan respons partner.`,
+          bantuan: `Jika partner tidak tahu harus berkata apa setelah mendengar: berikan contoh kalimat: "You can say: 'I like your sentence about the market' atau 'I like the word kind.'" Satu contoh konkret membuka pintu.`,
+          cue    : '"Say one thing you like" adalah instruksi yang sengaja positif — bukan "say what\'s wrong" atau "give feedback." Siswa kelas 3 belum siap untuk peer critique. Apresiasi adalah feedback yang cukup di tahap ini.',
+          darurat: '[FLEX — lewati jika waktu tersisa < 15 menit atau draft siswa rata-rata kurang dari 4 kalimat] Jika peer sharing menjadi gaduh dalam 1 menit: hentikan. Ucap "Okay — back to your own paper. Finish your paragraph." Lanjut ke L10 langsung.',
+          energi : '🟡',
+        },
+
+        // L10 — Revisi Ringan — Satu Tambahan [FLEX]
+        {
+          tipe   : 'instruksi',
+          teks   : `UCAP: "Look at your paragraph one more time."
+UCAP: "Can you add one more sentence? Or change one word to make it better?"
+→ Jeda 30 detik. Biarkan siswa membaca tulisan sendiri.
+
+UCAP: "You have 3 minutes. One sentence. One word. Your choice."
+
+AKSI: Circulate. Jangan instruksikan apa yang harus diubah — biarkan siswa memutuskan sendiri.`,
+          bantuan: `Jika siswa bertanya "Apa yang harus saya ubah?": balik pertanyaan — "Kalimat mana yang menurutmu paling bagus?" — setelah mereka menunjuk satu kalimat, ucap: "Good. Now — can you add one more sentence like that?" Jangan arahkan isi.`,
+          cue    : 'Ini bukan sesi koreksi. Ini sesi kepemilikan — siswa membaca tulisan mereka sendiri dan memutuskan apakah ada yang ingin mereka perbaiki. Beberapa siswa tidak akan mengubah apapun — itu valid. Mereka sudah merasa selesai.',
+          darurat: '[FLEX — lewati jika waktu tersisa < 10 menit]',
+          energi : '🔵',
+        },
+
+      ],
+    },
+
+    {
+      fase  : 'Penutup',
+      durasi: 8,
+
+      langkah: [
+
+        // L11 — Gallery Sharing — Dua Suara
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Minta semua siswa meletakkan pena. Kembali ke depan kelas.
+
+UCAP: "We are almost done. I want to hear from two people."
+UCAP: "Who wants to read their paragraph to the class?"
+→ Tunggu sukarelawan. Jika tidak ada dalam 5 detik, tunjuk siswa yang terlihat paling siap — bukan yang paling pendiam.
+
+AKSI: Siswa pertama membacakan paragrafnya.
+→ Kelas mendengarkan tanpa komentar.
+→ Guru: "Thank you. What was the person's name in that paragraph?"
+→ Kelas menjawab nama yang disebutkan.
+
+AKSI: Siswa kedua membacakan paragrafnya.
+→ Kelas mendengarkan.
+→ Guru: "Thank you. Where did that person go?"
+→ Kelas menjawab tempat yang disebutkan.
+
+UCAP: "Good listening, everyone."`,
+          bantuan: `Jika tidak ada sukarelawan sama sekali setelah 10 detik: tunjuk siswa yang kamu ketahui sudah menulis dengan baik dari observasi di L7 — dan ucap dengan hangat: "[nama], I read your paragraph — it's really nice. Can you share it?" Persetujuan personal lebih efektif dari penunjukan acak.`,
+          cue    : 'Pertanyaan setelah setiap pembacaan ("What was the person\'s name?" dan "Where did that person go?") membuat kelas tetap aktif mendengarkan — bukan sekadar menunggu giliran mereka. Ini juga menegaskan bahwa "who" dan "where" adalah inti dari paragraf yang baru saja ditulis.',
+          darurat: null,
+          energi : '🟡',
+        },
+
+        // L12 — Closure Emosional — Refleksi Kluster A
+        {
+          tipe   : 'instruksi',
+          teks   : `AKSI: Minta siswa memegang lembar kerja mereka. Suara guru pelan.
+
+UCAP: "Look at what you wrote today."
+→ Jeda 5 detik. Biarkan siswa membaca tulisan mereka sendiri.
+
+UCAP: "Three months ago — you learned library and canteen."
+UCAP: "Then you learned curly and kind."
+UCAP: "Then you learned next to and across from."
+UCAP: "Today — you put it all together in your own paragraph."
+
+→ Jeda 3 detik.
+
+UCAP: "That is yours. Nobody else has the same paragraph."
+
+UCAP: "Next time — we start something new. Time. Days. Schedules."
+[Teaser Kluster B — TP05 Telling Time]
+
+UCAP: "But today — well done."
+
+UCAP: "For now — goodbye, everyone."
+→ Tunggu kelas menjawab: "Goodbye!"
+
+AKSI: Jika ada sisa waktu 1–2 menit: minta siswa menulis nama mereka besar-besar di bagian atas lembar kerja. Ini bukan instruksi administratif — ini ritual kepemilikan.`,
+          bantuan: null,
+          cue    : 'Kalimat "Nobody else has the same paragraph" adalah penutup afektif yang paling penting di sesi ini. Ucap dengan tulus — ini kebenaran literal yang juga bermakna secara emosional bagi siswa kelas 3.',
+          darurat: null,
+          energi : '🔵',
+        },
+
+      ],
+    },
+
+  ],
+
+};
+
+export default TP_B04;
