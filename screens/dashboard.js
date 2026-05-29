@@ -239,7 +239,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
   for (const k of kelasList) {
     try {
       const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
-      const range = k.tingkat === 2 ? [10,11,12,13,14,15,16,17,18] : [1,2,3,4,5,6,7,8,9];
+      const range = _TP_RANGE_MAP[k.tingkat] ?? [1,2,3,4,5,6,7,8,9];
       const selesaiDiRange = range.filter(n => selesaiSet.has(n));
       if (selesaiDiRange.length === 0) {
         tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
@@ -280,7 +280,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
-        <div class="ds-list-item-sub">TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22' }[k.tingkat] ?? '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
         ${lanjutHTML}
       </div>
       <div class="ds-list-arrow">›</div>
