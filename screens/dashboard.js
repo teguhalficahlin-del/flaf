@@ -367,9 +367,12 @@ function _buildTabMateri(tp) {
 
   const persiapanHTML = (tp.persiapan && tp.persiapan.length > 0) ? `
     <div class="ds-sub-label" style="margin-top:10px;">Siapkan Sebelum Kelas</div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;">
-      ${tp.persiapan.map(p => `<span style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:4px 10px;font-size:12px;color:rgba(255,255,255,.7);">📌 ${_escape(p)}</span>`).join('')}
-    </div>
+    <ul style="list-style:none;padding:0;margin:4px 0 0;display:flex;flex-direction:column;gap:6px;">
+      ${tp.persiapan.map((p, i) => {
+        if (p.length <= 60) return `<li style="font-size:12px;color:rgba(255,255,255,.7);display:flex;align-items:flex-start;gap:4px;"><span>📌 ${_escape(p)}</span></li>`;
+        return `<li style="font-size:12px;color:rgba(255,255,255,.7);display:flex;align-items:flex-start;gap:4px;"><span>📌 ${_escape(p.slice(0,60))}…</span><button onclick="dashTogglePersiapan(this)" data-idx="${i}" data-expanded="false" style="flex-shrink:0;background:transparent;border:none;color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;padding:0 2px;font-family:inherit;line-height:1;">▼</button></li>`;
+      }).join('')}
+    </ul>
     ${cetakBtn}` : '';
 
   const cpHTML = `
@@ -407,6 +410,23 @@ function dashCetakKartu() {
   win.document.close();
 }
 window.dashCetakKartu = dashCetakKartu;
+
+window.dashTogglePersiapan = function(btn) {
+  const idx  = parseInt(btn.dataset.idx);
+  const tp   = _getTP(_flow.tp?.id);
+  if (!tp || !tp.persiapan?.[idx]) return;
+  const span     = btn.previousElementSibling;
+  const expanded = btn.dataset.expanded === 'true';
+  if (expanded) {
+    span.textContent = '📌 ' + tp.persiapan[idx].slice(0, 60) + '…';
+    btn.textContent  = '▼';
+    btn.dataset.expanded = 'false';
+  } else {
+    span.textContent = '📌 ' + tp.persiapan[idx];
+    btn.textContent  = '▲';
+    btn.dataset.expanded = 'true';
+  }
+};
 
 // --- STEP 0: MATERI ----------------------------------------------------------
 
