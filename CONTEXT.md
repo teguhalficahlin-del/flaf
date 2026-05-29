@@ -35,6 +35,7 @@
 - **Sprint CSV Download + SAS SELESAI ✅ (Mei 2026)** — rename label PDF→CSV, migrasi 4 fungsi download ke CSV, nilaiDownloadSAS baru, card Sumatif Akhir Semester di Unduh & Cetak (commit `f307eb9`)
 - **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
 - **Sprint Refactor Multi-Fase SELESAI ✅ (Mei 2026)** — `_tpRange` → `_TP_RANGE_MAP`, `kelasOk` extend ke kelas 3–6, progress bar dinamis via `getAllTP().length`
+- **Sprint Fix Kurikulum.js Fase B SELESAI ✅ (Mei 2026)** — fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas, konten CP & ATP Fase B diperbarui sesuai BSKAP 046/2025 (commit `4bfa872`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
@@ -173,16 +174,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-d16da57  feat: tambah unduh Soal STS Fase A Kelas 2 di Unduh & Cetak
-e396528  fix: seragamkan tampilan kartu Soal STS dengan kartu lain di Unduh & Cetak
-a0c1868  feat: tambah file Soal_STS_Fase_A_Kelas_1.docx ke folder pdf
-c2d59c0  feat: tambah unduh Soal STS Fase A Kelas 1 di Unduh & Cetak
-9e5d452  feat: filter akses TP dan rombel berdasarkan kelas session guru
-a9530d4  feat: tambah field kelas ke session aktivasi
-17fa254  fix: sesiId null saat savePenilaian — guard assign ke _state sebelum simpan
-5233c2d  fix: logSetDinilai ditimpa path tanpa sesiId — hapus reload di dashStepNext/dashWarnLanjut
-97ec51c  debug: tambah console.log untuk trace sesiId chain — dinilai count
-54319cf  fix: dinilai count hitung semua sesi — tambah filter sesiId ke penilaian_log
+4bfa872  fix(kurikulum): CP & ATP Fase B reaktif per filter kelas + konten CP & ATP Fase B
+bcac49e  fix(kurikulum): fase dinamis dari session.kelas + bump cache v86
+9aa902d  chore(sw): bump cache v85
+d4b93fe  fix(printables): object-fit contain + footer fase dinamis
+367313e  fix: bump cache flaf-v83 → flaf-v84 — refetch dashboard.js patch truncate persiapan
+9b71ee3  feat: truncate+expand teks persiapan panjang di layar Materi & Persiapan
+2e4f242  feat: ringkasan presensi di layar pre-mengajar
+bf79fcb  fix: TP lookup pakai tp.id — cegah ambiguitas cross-fase
+8bd08d1  feat: integrasi Fase B multi-fase registry
+2a4cc2f  revert: kembalikan runtime ke Fase A stabil
 ```
 
 ## Struktur Folder Penting
@@ -224,7 +225,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v64
+├── sw.js                   ← Service Worker v87 (flaf-v87)
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -1456,7 +1457,7 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
   - `_tpList(tingkat)`: filter `tp.kelas === tingkat` (ganti range hardcoded)
   - `_buildLandingHTML()` progress range: derive dari `_faseData` by `tp.kelas`
   - `kelasOk`: `parseInt(kelasSesi, 10) === tingkat` (dinamis, tidak hardcode per kelas)
-- `screens/kurikulum.js`: `getFase()` → `getFase('A')` sementara
+- ✅ `screens/kurikulum.js`: fase dinamis dari session.kelas, header/CP/ATP reaktif — commit `4bfa872`
 - `sw.js`: bump `flaf-v79` → `flaf-v80`
 
 ### Verifikasi runtime
@@ -1468,8 +1469,8 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ### Yang ditahan untuk sprint berikutnya
 - `app.js` `DATA_FASE_URL`: masih fetch `fase-a.js` untuk soft update check — tidak crash, hanya soft update kurang presisi untuk Fase B
-- `screens/nilai.js`: masih import `FASE_A` langsung, `_tpList` kosong untuk kelas 3/4 — tidak crash, guru Fase B tidak bisa input nilai formatif
-- `screens/kurikulum.js`: CP dan ATP yang tampil masih Fase A untuk semua guru — perlu render per fase berdasarkan session guru
+- ⏳ **NEXT TASK AKTIF** — `screens/nilai.js`: masih pakai range Fase A, guru Fase B tidak bisa input nilai formatif — perlu extend `_tpList` dan import data ke `getAllTP()`
+- ✅ **SELESAI** — `screens/kurikulum.js`: fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas (commit `4bfa872`)
 
 ---
 

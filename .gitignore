@@ -27,3 +27,7 @@ npm-debug.log*
 
 # Arsip diskusi/catatan pribadi
 *.mhtml
+
+# === Dokumen kerja & media lokal ===
+Dokumen AI/
+media fase b/
