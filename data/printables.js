@@ -77,8 +77,8 @@ export function generatePrintHTML(tp) {
 
     .print-card img {
       width: 100%;
-      aspect-ratio: 1;
-      object-fit: cover;
+      object-fit: contain;
+      max-width: 100%;
       display: block;
     }
 
@@ -130,7 +130,7 @@ export function generatePrintHTML(tp) {
   </div>
 
   <div class="print-footer">
-    <span>FLAF &mdash; Bahasa Inggris Fase A</span>
+    <span>FLAF &mdash; Bahasa Inggris ${tp.kelas <= 2 ? 'Fase A' : 'Fase B'}</span>
     <span>Dicetak ${new Date().toLocaleDateString('id-ID')}</span>
   </div>
 
