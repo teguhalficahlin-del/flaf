@@ -142,8 +142,8 @@ function _tpList(tingkat) {
   return (_faseData?.tujuan_pembelajaran || []).filter(tp => tp.kelas === tingkat);
 }
 
-function _getTP(nomor) {
-  return (_faseData?.tujuan_pembelajaran || []).find(t => t.nomor === nomor) || null;
+function _getTP(id) {
+  return (_faseData?.tujuan_pembelajaran || []).find(t => t.id === id) || null;
 }
 
 // --- LEVEL SYSTEM ------------------------------------------------------------
@@ -315,7 +315,7 @@ async function _buildPilihTPHTML() {
   const tpHTML = tpList.map(tp => {
     const sudah = tpSelesaiSet.has(tp.nomor);
     return `
-  <div onclick="dashPilihTP(${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
+  <div onclick="dashPilihTP('${tp.id}',${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
     <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(212,174,58,.25)' : 'rgba(212,174,58,.15)'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <span style="font-size:15px;font-weight:700;color:#D4AE3A;">${sudah ? '✓' : tp.nomor}</span>
     </div>
@@ -397,7 +397,7 @@ function _buildTabMateri(tp) {
 }
 
 function dashCetakKartu() {
-  const tp = _getTP(_flow.tp?.nomor);
+  const tp = _getTP(_flow.tp?.id);
   if (!tp) return;
   const html = generatePrintHTML(tp);
   if (!html) return;
@@ -596,7 +596,7 @@ function _buildStepSelesai() {
 
 function _buildSesiHTML() {
   const { rombel, tp } = _flow;
-  const tpData  = _getTP(tp.nomor);
+  const tpData  = _getTP(tp.id);
   const step    = _skenario.stepIndex;
   const isFirst = step === 0;
   const isLast  = step === 6;
@@ -836,7 +836,7 @@ async function _rerenderStep() {
   const ind  = _container?.querySelector('.ds-step-indicator');
   if (!body) return;
 
-  const tpData  = _getTP(_flow.tp?.nomor);
+  const tpData  = _getTP(_flow.tp?.id);
   const step    = _skenario.stepIndex;
   const isLast  = step === 6;
   const isFirst = step === 0;
@@ -1525,8 +1525,8 @@ window.dashKePilihTP = async function() {
   if (_container) _container.innerHTML = await _buildPilihTPHTML();
 };
 
-window.dashPilihTP = async function(nomor, nama) {
-  _flow.tp         = { nomor, nama };
+window.dashPilihTP = async function(id, nomor, nama) {
+  _flow.tp         = { id, nomor, nama };
   _flow.view       = 'sesi';
   _flow.nilaiCache = null;
   _skenario        = {
