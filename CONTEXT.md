@@ -36,6 +36,7 @@
 - **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
 - **Sprint Refactor Multi-Fase SELESAI ✅ (Mei 2026)** — `_tpRange` → `_TP_RANGE_MAP`, `kelasOk` extend ke kelas 3–6, progress bar dinamis via `getAllTP().length`
 - **Sprint Fix Kurikulum.js Fase B SELESAI ✅ (Mei 2026)** — fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas, konten CP & ATP Fase B diperbarui sesuai BSKAP 046/2025 (commit `4bfa872`)
+- **Fix nilai.js Fase B — integrasi multi-fase SELESAI ✅ (30/05/2026)** — ganti import FASE_A → getAllTP() dari registry, hapus _TP_RANGE_MAP dan _tpRange() hardcode, _tpList() filter by tp.kelas, fix lookup _renderFormatifDetail filter allTP by _state.tingkat sebelum .find() — cegah overlap nomor TP lintas fase (commit `ee0ad26`)
 
 ### Detail Migrasi TP
 - Kelas 1: TP 01–06 ✅ (lengkap, sudah diaudit di commit `a2a7a7c`)
