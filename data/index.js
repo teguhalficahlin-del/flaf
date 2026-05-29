@@ -87,7 +87,7 @@ export function getFase() {
  *   semua.forEach(tp => console.log(tp.id, tp.nama));
  */
 export function getAllTP() {
-  return DATA_AKTIF.tujuan_pembelajaran;
+  return Object.values(REGISTRY).flatMap(fase => fase.tujuan_pembelajaran || []);
 }
 
 /**

@@ -18,7 +18,7 @@
  */
 
 import { db }       from '../storage/db.js';
-import { getFase }  from '../data/index.js';
+import { getFase, getAllTP }  from '../data/index.js';
 import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
@@ -127,11 +127,11 @@ async function _loadSession() {
 async function _loadFaseData() {
   if (_faseData) return _faseData;
   try {
-    const data = getFase();
-    if (!data || !Array.isArray(data.tujuan_pembelajaran)) {
-      throw new Error('Struktur data fase tidak valid');
+    const tpList = getAllTP();
+    if (!Array.isArray(tpList)) {
+      throw new Error('Struktur data TP tidak valid');
     }
-    return data;
+    return { tujuan_pembelajaran: tpList };
   } catch (err) {
     console.warn('[DASHBOARD] Gagal load fase data:', err.message);
     return { tujuan_pembelajaran: [] };
@@ -146,8 +146,8 @@ const _TP_RANGE_MAP = {
 };
 
 function _tpList(tingkat) {
-  const range = _TP_RANGE_MAP[tingkat] ?? [];
-  return (_faseData?.tujuan_pembelajaran || []).filter(tp => range.includes(tp.nomor));
+  const kelasTingkat = { 1: 1, 2: 2, 3: 3, 4: 4 }[tingkat];
+  return (_faseData?.tujuan_pembelajaran || []).filter(tp => tp.kelas === kelasTingkat);
 }
 
 function _getTP(nomor) {
