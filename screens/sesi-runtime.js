@@ -48,6 +48,7 @@ let _state = {
   tp             : null,
   rombel         : null,
   siswaList      : [],
+  statusMap      : {},
   faseIdx        : 0,
   langkahIdx     : 0,
   aktState       : 'preview',
@@ -61,7 +62,7 @@ let _onDone = null;
 
 // ── Public API ────────────────────────────────────────────────
 
-export async function mount(root, tpData, rombel, siswaList, onDone) {
+export async function mount(root, tpData, rombel, siswaList, statusMap, onDone) {
   if (!root || !tpData) {
     console.error('[SR] mount: root atau tpData null');
     return;
@@ -75,6 +76,7 @@ export async function mount(root, tpData, rombel, siswaList, onDone) {
     tp             : tpData,
     rombel         : rombel || { id: '', nama: '', tingkat: 1 },
     siswaList      : Array.isArray(siswaList) ? siswaList : [],
+    statusMap      : (statusMap && typeof statusMap === 'object') ? statusMap : {},
     faseIdx        : 0,
     langkahIdx     : 0,
     aktState       : 'preview',
@@ -234,9 +236,24 @@ function _render() {
 // ─── SCREEN: SesiPreviewing ───────────────────────────────────
 
 function _renderPreview() {
-  const tp     = _state.tp;
-  const rombel = _state.rombel;
-  const jumlah = _state.siswaList.length;
+  const tp        = _state.tp;
+  const rombel    = _state.rombel;
+  const jumlah    = _state.siswaList.length;
+  const statusMap = _state.statusMap;
+  const hasPresensi = Object.keys(statusMap).length > 0;
+  const hadir     = hasPresensi ? Object.values(statusMap).filter(v => v === 'H').length : jumlah;
+  const tidakHadir = jumlah - hadir;
+
+  let presensiLabel;
+  if (jumlah === 0) {
+    presensiLabel = 'Belum ada siswa — penilaian tidak tersedia';
+  } else if (!hasPresensi) {
+    presensiLabel = jumlah + ' siswa terdaftar';
+  } else if (tidakHadir === 0) {
+    presensiLabel = `${jumlah}/${jumlah} hadir`;
+  } else {
+    presensiLabel = `${hadir} hadir · ${tidakHadir} tidak hadir`;
+  }
 
   _root.innerHTML = `
     <div class="sr-app">
@@ -246,7 +263,7 @@ function _renderPreview() {
 
         <ul class="sr-checklist">
           <li>
-            <span>${jumlah > 0 ? jumlah + ' siswa terdaftar' : 'Belum ada siswa — penilaian tidak tersedia'}</span>
+            <span>${presensiLabel}</span>
             <span class="sr-check${jumlah === 0 ? ' sr-check--warn' : ''}">${jumlah > 0 ? '✓' : '⚠'}</span>
           </li>
           <li>
