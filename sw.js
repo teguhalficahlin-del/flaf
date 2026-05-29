@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v80';          // ← bump: integrasi Fase B multi-fase
+const CACHE_VERSION  = 'flaf-v81';          // ← bump: paksa refetch dashboard.js patch TP range label
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
