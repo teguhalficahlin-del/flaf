@@ -25,12 +25,12 @@
  */
 
 import FASE_A from './fase-a.js';
-import FASE_B from './fase-b.js';
+// import FASE_B from './fase-b.js'; // ← aktifkan saat Sprint 6
 
 // ----------------------------------------------------------
 // KONFIGURASI — SATU BARIS INI YANG DIUBAH SAAT GANTI FASE
 // ----------------------------------------------------------
-const FASE_AKTIF = 'B'; // 'A' | 'B' | 'C'
+const FASE_AKTIF = 'A'; // 'A' | 'B' | 'C'
 
 // ----------------------------------------------------------
 // REGISTRY FASE
@@ -38,7 +38,7 @@ const FASE_AKTIF = 'B'; // 'A' | 'B' | 'C'
 // ----------------------------------------------------------
 const REGISTRY = {
   'A': FASE_A,
-  'B': FASE_B,
+  // 'B': FASE_B, // ← aktifkan saat Sprint 6
 };
 
 // ----------------------------------------------------------
@@ -87,7 +87,7 @@ export function getFase() {
  *   semua.forEach(tp => console.log(tp.id, tp.nama));
  */
 export function getAllTP() {
-  return Object.values(REGISTRY).flatMap(fase => fase.tujuan_pembelajaran || []);
+  return DATA_AKTIF.tujuan_pembelajaran;
 }
 
 /**

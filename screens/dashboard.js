@@ -18,7 +18,7 @@
  */
 
 import { db }       from '../storage/db.js';
-import { getFase, getAllTP }  from '../data/index.js';
+import { getFase }  from '../data/index.js';
 import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
@@ -127,27 +127,22 @@ async function _loadSession() {
 async function _loadFaseData() {
   if (_faseData) return _faseData;
   try {
-    const tpList = getAllTP();
-    if (!Array.isArray(tpList)) {
-      throw new Error('Struktur data TP tidak valid');
+    const data = getFase();
+    if (!data || !Array.isArray(data.tujuan_pembelajaran)) {
+      throw new Error('Struktur data fase tidak valid');
     }
-    return { tujuan_pembelajaran: tpList };
+    return data;
   } catch (err) {
     console.warn('[DASHBOARD] Gagal load fase data:', err.message);
     return { tujuan_pembelajaran: [] };
   }
 }
 
-const _TP_RANGE_MAP = {
-  1: [1,2,3,4,5,6,7,8,9],
-  2: [10,11,12,13,14,15,16,17,18],
-  3: [1,2,3,4,5,6,7,8,9,10,11],
-  4: [12,13,14,15,16,17,18,19,20,21,22],
-};
-
 function _tpList(tingkat) {
-  const kelasTingkat = { 1: 1, 2: 2, 3: 3, 4: 4 }[tingkat];
-  return (_faseData?.tujuan_pembelajaran || []).filter(tp => tp.kelas === kelasTingkat);
+  const range = tingkat === 2
+    ? [10,11,12,13,14,15,16,17,18]
+    : [1,2,3,4,5,6,7,8,9];
+  return (_faseData?.tujuan_pembelajaran || []).filter(tp => range.includes(tp.nomor));
 }
 
 function _getTP(nomor) {
@@ -239,7 +234,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
   for (const k of kelasList) {
     try {
       const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
-      const range = _TP_RANGE_MAP[k.tingkat] ?? [1,2,3,4,5,6,7,8,9];
+      const range = k.tingkat === 2 ? [10,11,12,13,14,15,16,17,18] : [1,2,3,4,5,6,7,8,9];
       const selesaiDiRange = range.filter(n => selesaiSet.has(n));
       if (selesaiDiRange.length === 0) {
         tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
@@ -280,7 +275,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
-        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22' }[k.tingkat] ?? '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-sub">TP ${k.tingkat === 2 ? '10–18' : '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
         ${lanjutHTML}
       </div>
       <div class="ds-list-arrow">›</div>
@@ -312,8 +307,7 @@ async function _buildPilihTPHTML() {
   // Guard: jika kelas sesi tidak cocok dengan tingkat rombel, tampilkan pesan
   const kelasOk = kelasSesi === 'all' ||
     (kelasSesi === '1' && tingkat === 1) ||
-    (kelasSesi === '2' && tingkat === 2) ||
-    ['3','4','5','6'].includes(kelasSesi);
+    (kelasSesi === '2' && tingkat === 2);
 
   const tpList = kelasOk ? _tpList(tingkat) : [];
   let tpSelesaiSet = new Set();
