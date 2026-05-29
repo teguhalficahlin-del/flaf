@@ -1473,6 +1473,45 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ---
 
+## SELESAI — Fix Bug Post-Integrasi Fase B (29/05/2026)
+
+**Commit terakhir: `bf79fcb`** — rangkaian 4 commit perbaikan setelah integrasi
+
+### Bug yang ditemukan dan diperbaiki
+
+**1. Label TP range di rombel card salah untuk Kelas 3 & 4**
+- `storage/nilai.js` `tambahKelas`: `tingkat === 2 ? 2 : 1` — hanya simpan tingkat 1 atau 2
+- Fix: `Number(tingkat) || 1` — menerima tingkat 1–4
+- Commit: `4043c0c`
+
+**2. Konten materi salah — Kelas 3 tampil konten Fase A**
+- `dashboard.js` `_getTP(nomor)`: cari TP by `nomor` integer
+- Fase A TP 01 dan Fase B TP B01 sama-sama punya `nomor: 1` — Fase A selalu menang karena posisi array
+- Fix 1: `_getTP(id)` — cari by `tp.id` string (unik cross-fase)
+- Fix 2: `dashPilihTP(id, nomor, nama)` — pass `tp.id` sebagai argumen pertama
+- Fix 3: `_flow.tp = { id, nomor, nama }` — simpan `id` di state
+- Commit: `69c559b`
+
+**3. SW cache stale — file yang sudah dipatch belum ter-serve**
+- `dashboard.js` ada di APP_SHELL (cache-first) — bump SW version paksa refetch
+- Bump `flaf-v80` → `flaf-v81` setelah patch TP range label — commit `152787c`
+- Bump `flaf-v81` → `flaf-v82` setelah patch `tp.id` — commit `bf79fcb`
+
+### Pola yang terkonfirmasi
+- Setiap edit `dashboard.js` atau file APP_SHELL lain butuh bump `CACHE_VERSION` di `sw.js`
+- TP lookup harus pakai `tp.id` (string, unik cross-fase) — bukan `tp.nomor` (integer, ambigu)
+- `tambahKelas` menerima tingkat 1–4; data lama yang salah perlu dihapus dan dibuat ulang
+
+### Verifikasi final (browser, 29/05/2026)
+- Kelas 1 Abdullah → TP 1–9, konten Fase A ✅
+- Kelas 2 Aminah → TP 10–18, konten Fase A ✅
+- Kelas 3 Ibrahim → TP 1–11, konten Fase B ✅
+- Kelas 4 Siti Sarah → TP 12–22, konten Fase B ✅
+
+**Integrasi Fase B selesai dan terverifikasi end-to-end.**
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
