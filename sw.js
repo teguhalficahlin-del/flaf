@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v87';          // ← bump: CP & ATP Fase B reaktif per filter kelas
+const CACHE_VERSION  = 'flaf-v88';          // ← bump: fix nilai.js multi-fase Fase B
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
