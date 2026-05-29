@@ -1390,3 +1390,24 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 1. Uncomment `fase-b.js` di `data/index.js`
 2. Tambah `fase-b.js` ke SW precache
 3. Test runtime — pastikan 22 TP Fase B terbaca oleh aplikasi
+
+## SELESAI — Integrasi Fase B ke Runtime (29/05/2026)
+
+**Commit: `a260688`** — 3 files changed, 12 insertions, 5 deletions
+
+### Yang dikerjakan
+- `data/index.js`: uncomment import FASE_B, FASE_AKTIF → `'B'`, uncomment registry entry `'B': FASE_B`
+- `sw.js`: tambah 7 file Fase B ke APP_SHELL precache, bump CACHE_VERSION → `flaf-v79`
+- `docs/output-v5-faseb/tp-07-v5.js:326`: fix syntax bug — outer single-quote → backtick pada field `bantuan`
+
+### Verifikasi runtime
+- `getFaseAktif()` → `'B'` ✅
+- `getAllTP().length` → `22` ✅
+- Range ID: `tp-b01` s/d `tp-b22` ✅
+
+### Catatan arsitektur
+- `FASE_AKTIF` adalah global switch di `data/index.js` — tidak perlu filter per guru
+- Filter akses per guru tetap dilakukan di downstream: `kelasOk` di `dashboard.js`, `_TP_RANGE_MAP` di `nilai.js`
+- Guru Fase A (`kelas 1/2`) tidak terdampak — `kelasOk` memblokir TP Fase B di layer UI
+- Bug `tp-07-v5.js:326` adalah pre-existing — ditemukan saat verifikasi runtime, bukan akibat edit integrasi
+- Scan 22 file Fase B: hanya 1 bug ditemukan, sudah diperbaiki
