@@ -1512,6 +1512,55 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ---
 
+## Sesi Runtime UX — Ringkasan Presensi & Truncate Persiapan (29/05/2026)
+
+### Yang dikerjakan
+
+**1. Ringkasan presensi di layar pre-mengajar**
+- `sesi-runtime.js` `mount()`: tambah parameter `statusMap` di antara `siswaList` dan `onDone`
+- `sesi-runtime.js` `_renderPreview()`: hitung hadir/tidakHadir dari `statusMap`, render label dinamis
+  - Semua hadir → `"25/25 hadir"`
+  - Ada absen → `"17 hadir · 3 tidak hadir"`
+  - Fallback (statusMap kosong) → `"X siswa terdaftar"`
+- `dashboard.js` baris 866: teruskan `_flow.statusMap` ke `srMount` sebagai argumen ke-5
+- Commit: `2e4f242`, bump cache: `565c532`
+
+**2. Truncate+expand teks persiapan panjang di layar Materi & Persiapan**
+- `dashboard.js` `_buildTabMateri()`: ganti `<div flex-wrap>` chip → `<ul>` list vertikal
+- Teks `persiapan[]` > 60 karakter: potong + tombol `▼` inline
+- Teks ≤ 60 karakter: tampil penuh, tidak ada tombol
+- `dashTogglePersiapan(btn)`: toggle expand/collapse — akses teks asli via `_getTP(_flow.tp?.id)` (hindari double-escaping)
+- Commit: `9b71ee3`, bump cache: `367313e`
+
+### Verifikasi runtime (browser, 29/05/2026)
+- Kelas 1 Abdullah → presensi 25/25, konten Fase A ✅
+- Kelas 2 Aminah → presensi tampil, konten Fase A ✅
+- Kelas 3 Ibrahim → presensi 17/20, konten Fase B ✅
+- Kelas 4 Siti Sarah → presensi tampil, konten Fase B ✅
+- Teks persiapan panjang Fase B terpotong rapi, expand berjalan ✅
+
+---
+
+## NEXT TASK — Printable & Worksheet Fase B
+
+**Status: BELUM dikerjakan — tahan sampai konten worksheet selesai di-author**
+
+### Konteks
+- UI tombol "Cetak Kartu Persiapan" sudah ada di `_buildTabMateri()` — muncul otomatis jika `tp.printables` terisi
+- Generator HTML ada di `data/printables.js`
+- TP Fase B belum punya field `printables[]` dan `pdf_ref`
+
+### Yang perlu dilakukan
+- Author konten worksheet per TP Fase B (di luar sesi coding)
+- Tambah field `printables[]` dan `pdf_ref` ke masing-masing TP Fase B setelah konten siap
+- Verifikasi tombol muncul dan print dialog terbuka dengan benar
+
+### Catatan
+- Tidak ada perubahan UI atau runtime yang dibutuhkan — infrastruktur sudah siap
+- Prioritas setelah Fix Pembatasan Akses Per Guru selesai
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
