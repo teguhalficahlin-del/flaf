@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v79';          // ← bump: precache TP15–18 + icon-512
+const CACHE_VERSION  = 'flaf-v80';          // ← bump: integrasi Fase B multi-fase
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [

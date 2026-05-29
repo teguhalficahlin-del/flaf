@@ -18,7 +18,7 @@
  */
 
 import { db }       from '../storage/db.js';
-import { getFase }  from '../data/index.js';
+import { getAllTP } from '../data/index.js';
 import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
@@ -127,11 +127,11 @@ async function _loadSession() {
 async function _loadFaseData() {
   if (_faseData) return _faseData;
   try {
-    const data = getFase();
-    if (!data || !Array.isArray(data.tujuan_pembelajaran)) {
+    const tps = getAllTP();
+    if (!Array.isArray(tps) || tps.length === 0) {
       throw new Error('Struktur data fase tidak valid');
     }
-    return data;
+    return { tujuan_pembelajaran: tps };
   } catch (err) {
     console.warn('[DASHBOARD] Gagal load fase data:', err.message);
     return { tujuan_pembelajaran: [] };
@@ -139,10 +139,7 @@ async function _loadFaseData() {
 }
 
 function _tpList(tingkat) {
-  const range = tingkat === 2
-    ? [10,11,12,13,14,15,16,17,18]
-    : [1,2,3,4,5,6,7,8,9];
-  return (_faseData?.tujuan_pembelajaran || []).filter(tp => range.includes(tp.nomor));
+  return (_faseData?.tujuan_pembelajaran || []).filter(tp => tp.kelas === tingkat);
 }
 
 function _getTP(nomor) {
@@ -234,7 +231,9 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
   for (const k of kelasList) {
     try {
       const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
-      const range = k.tingkat === 2 ? [10,11,12,13,14,15,16,17,18] : [1,2,3,4,5,6,7,8,9];
+      const range = (_faseData?.tujuan_pembelajaran || [])
+        .filter(tp => tp.kelas === k.tingkat)
+        .map(tp => tp.nomor);
       const selesaiDiRange = range.filter(n => selesaiSet.has(n));
       if (selesaiDiRange.length === 0) {
         tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
@@ -305,9 +304,7 @@ async function _buildPilihTPHTML() {
   const tingkat     = _flow.rombel.tingkat;
 
   // Guard: jika kelas sesi tidak cocok dengan tingkat rombel, tampilkan pesan
-  const kelasOk = kelasSesi === 'all' ||
-    (kelasSesi === '1' && tingkat === 1) ||
-    (kelasSesi === '2' && tingkat === 2);
+  const kelasOk = kelasSesi === 'all' || parseInt(kelasSesi, 10) === tingkat;
 
   const tpList = kelasOk ? _tpList(tingkat) : [];
   let tpSelesaiSet = new Set();

@@ -113,7 +113,7 @@ export function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) {
   if (_rendered) return;
 
   try {
-    const fase  = getFase();
+    const fase  = getFase('A');
     const tps   = getAllTP();
     const meta  = getMeta();
 

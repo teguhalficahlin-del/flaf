@@ -5,152 +5,143 @@
  * =============================================================
  *
  * FUNGSI FILE INI:
- *   Satu-satunya tempat untuk mengatur fase aktif.
+ *   Satu-satunya tempat untuk mendaftarkan fase aktif.
  *   App tidak pernah import langsung dari fase-a.js atau fase-b.js.
  *   Semua akses data kurikulum melewati file ini.
  *
- * CARA GANTI FASE:
- *   1. Deploy file fase-b.js ke folder data/
- *   2. Ubah FASE_AKTIF di bawah dari 'A' menjadi 'B'
+ * CARA TAMBAH FASE BARU:
+ *   1. Deploy file fase-X.js ke folder data/
+ *   2. Import dan daftarkan di REGISTRY di bawah
  *   3. Update CACHE_VERSION di sw.js
- *   4. Deploy — selesai
+ *   4. Deploy — selesai. Fase lama tidak terganggu.
  *
  * YANG TIDAK BOLEH DIUBAH:
- *   - Nama export (export default, getFase, getTP, getAllTP)
+ *   - Nama export (getFase, getTP, getAllTP, getMeta, getFaseAktif)
  *   - Struktur return value setiap fungsi
  *   - Blok validasi di bagian bawah
  *
- * Terakhir direvisi : April 2026
+ * Terakhir direvisi : Mei 2026
  * =============================================================
  */
 
 import FASE_A from './fase-a.js';
-// import FASE_B from './fase-b.js'; // ← aktifkan saat Sprint 6
-
-// ----------------------------------------------------------
-// KONFIGURASI — SATU BARIS INI YANG DIUBAH SAAT GANTI FASE
-// ----------------------------------------------------------
-const FASE_AKTIF = 'A'; // 'A' | 'B' | 'C'
+import FASE_B from './fase-b.js';
 
 // ----------------------------------------------------------
 // REGISTRY FASE
-// Daftarkan setiap fase di sini saat tersedia.
+// Daftarkan setiap fase yang tersedia di sini.
+// Tidak ada lagi FASE_AKTIF — semua fase aktif bersamaan,
+// filter per guru dilakukan di layer UI via tp.kelas.
 // ----------------------------------------------------------
 const REGISTRY = {
   'A': FASE_A,
-  // 'B': FASE_B, // ← aktifkan saat Sprint 6
+  'B': FASE_B,
 };
 
 // ----------------------------------------------------------
-// GUARD — validasi fase aktif ada di registry
+// GUARD — validasi setiap fase punya tujuan_pembelajaran
 // ----------------------------------------------------------
-if (!REGISTRY[FASE_AKTIF]) {
-  throw new Error(
-    `[FLAF] data/index.js: FASE_AKTIF='${FASE_AKTIF}' tidak ditemukan di REGISTRY. ` +
-    `Fase yang tersedia: ${Object.keys(REGISTRY).join(', ')}`
-  );
+for (const [key, fase] of Object.entries(REGISTRY)) {
+  if (!fase || !Array.isArray(fase.tujuan_pembelajaran)) {
+    throw new Error(
+      `[FLAF] data/index.js: Fase '${key}' tidak punya tujuan_pembelajaran yang valid.`
+    );
+  }
 }
-
-const DATA_AKTIF = REGISTRY[FASE_AKTIF];
 
 // ----------------------------------------------------------
 // PUBLIC API
 // ----------------------------------------------------------
 
 /**
- * getFase()
- * Mengembalikan seluruh objek data fase aktif.
- * Gunakan ini kalau butuh CP, meta, atau atp.
+ * getAllTP()
+ * Mengembalikan array semua TP dari semua fase yang terdaftar,
+ * diurutkan berdasarkan kelas lalu nomor.
+ * Gunakan ini untuk filter di dashboard (_tpList).
  *
- * @returns {Object} — objek FASE lengkap
- *
- * Contoh:
- *   import { getFase } from './data/index.js';
- *   const fase = getFase();
- *   console.log(fase.meta.fase);      // 'A'
- *   console.log(fase.cp.menyimak_berbicara);
+ * @returns {Array}
  */
-export function getFase() {
-  return DATA_AKTIF;
+export function getAllTP() {
+  return Object.values(REGISTRY)
+    .flatMap(f => f.tujuan_pembelajaran)
+    .sort((a, b) => a.kelas - b.kelas || a.nomor - b.nomor);
 }
 
 /**
- * getAllTP()
- * Mengembalikan array semua Tujuan Pembelajaran fase aktif.
- * Gunakan ini untuk render daftar TP di panel Kurikulum.
+ * getFase(key)
+ * Mengembalikan objek fase lengkap berdasarkan key ('A', 'B', dst.)
+ * Gunakan ini di kurikulum.js untuk mendapat CP, ATP, dan meta fase tertentu.
  *
- * @returns {Array} — array TP, sudah terurut nomor 1–18
- *
- * Contoh:
- *   import { getAllTP } from './data/index.js';
- *   const semua = getAllTP();
- *   semua.forEach(tp => console.log(tp.id, tp.nama));
+ * @param {string} key — 'A' | 'B' | dst.
+ * @returns {Object|null}
  */
-export function getAllTP() {
-  return DATA_AKTIF.tujuan_pembelajaran;
+export function getFase(key) {
+  if (!key) {
+    console.warn('[FLAF] getFase: key diperlukan. Gunakan getFaseList() untuk melihat fase yang tersedia.');
+    return null;
+  }
+  return REGISTRY[key] || null;
 }
 
 /**
  * getTP(id)
- * Mengembalikan satu objek TP berdasarkan id-nya.
- * Gunakan ini untuk render detail TP atau modul ajar.
+ * Mengembalikan satu objek TP berdasarkan id-nya, dicari di semua fase.
  *
- * @param {string} id — format 'tp-01' sampai 'tp-18'
- * @returns {Object|null} — objek TP, atau null jika tidak ditemukan
- *
- * Contoh:
- *   import { getTP } from './data/index.js';
- *   const tp1 = getTP('tp-01');
- *   if (tp1) console.log(tp1.nama, tp1.indikator);
+ * @param {string} id — 'tp-01' s/d 'tp-18', 'tp-b01' s/d 'tp-b22'
+ * @returns {Object|null}
  */
 export function getTP(id) {
   if (typeof id !== 'string' || !id.trim()) {
     console.warn('[FLAF] getTP: id harus berupa string non-kosong');
     return null;
   }
-  const tp = DATA_AKTIF.tujuan_pembelajaran.find(t => t.id === id);
-  if (!tp) {
-    console.warn(`[FLAF] getTP: TP dengan id '${id}' tidak ditemukan di fase ${FASE_AKTIF}`);
-    return null;
+  for (const fase of Object.values(REGISTRY)) {
+    const tp = fase.tujuan_pembelajaran.find(t => t.id === id);
+    if (tp) return tp;
   }
-  return tp;
+  console.warn(`[FLAF] getTP: TP '${id}' tidak ditemukan di semua fase yang terdaftar`);
+  return null;
 }
 
 /**
- * getMeta()
- * Mengembalikan meta data fase aktif (versi, total TP, total JP, dll.)
- * Gunakan ini untuk header panel atau info app.
+ * getMeta(key)
+ * Mengembalikan meta data fase tertentu.
  *
- * @returns {Object} — objek meta
- *
- * Contoh:
- *   import { getMeta } from './data/index.js';
- *   const meta = getMeta();
- *   console.log(meta.data_version); // dipakai app.js untuk Soft Update
+ * @param {string} key — 'A' | 'B' | dst.
+ * @returns {Object|null}
  */
-export function getMeta() {
-  return DATA_AKTIF.meta;
+export function getMeta(key) {
+  return getFase(key)?.meta || null;
+}
+
+/**
+ * getFaseList()
+ * Mengembalikan array key fase yang terdaftar.
+ * Gunakan ini di kurikulum.js untuk render tab per fase.
+ *
+ * @returns {string[]} — ['A', 'B']
+ */
+export function getFaseList() {
+  return Object.keys(REGISTRY);
 }
 
 /**
  * getFaseAktif()
- * Mengembalikan string kode fase aktif ('A', 'B', dst.)
- * Gunakan ini untuk label UI atau kondisional rendering.
- *
- * @returns {string}
+ * @deprecated — tidak relevan di arsitektur multi-fase.
+ * Tetap ada untuk backward compat. Mengembalikan key fase pertama.
  */
 export function getFaseAktif() {
-  return FASE_AKTIF;
+  return Object.keys(REGISTRY)[0];
 }
 
 // ----------------------------------------------------------
-// DEFAULT EXPORT — seluruh API dalam satu objek
-// Untuk konsumsi via: import dataRouter from './data/index.js'
+// DEFAULT EXPORT
 // ----------------------------------------------------------
 export default {
   getFase,
   getAllTP,
   getTP,
   getMeta,
+  getFaseList,
   getFaseAktif,
 };
