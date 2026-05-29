@@ -1369,15 +1369,24 @@ Pola identik dengan TP 01–05.
 
 ---
 
-## NEXT TASK — File Kluster Fase B
+## NEXT TASK — Integrasi Fase B ke Runtime
 
-Tulis 6 file kluster di `data/` yang mengimport semua TP dan menyusun struktur FASE_B:
-- `data/fase-b-kluster-a.js` — import TP 01–04
-- `data/fase-b-kluster-b.js` — import TP 05–08
-- `data/fase-b-kluster-c.js` — import TP 09–11
-- `data/fase-b-kluster-d.js` — import TP 12–15
-- `data/fase-b-kluster-e.js` — import TP 16–20
-- `data/fase-b-capstone.js`  — import TP 21–22
+**Status file data: SELESAI ✅ — commit `2fc2c37`**
 
-Pola import mengikuti `data/fase-a.js` — semua TP dari `../docs/output-v5-faseb/`.
-Setelah 6 file kluster selesai: tulis `data/fase-b.js` yang mengimport semua kluster.
+File kluster dan induk sudah ada di repo:
+- `data/fase-b-kluster-a.js` — TP 01–04
+- `data/fase-b-kluster-b.js` — TP 05–08
+- `data/fase-b-kluster-c.js` — TP 09–11
+- `data/fase-b-kluster-d.js` — TP 12–15
+- `data/fase-b-kluster-e.js` — TP 16–20
+- `data/fase-b-capstone.js`  — TP 21–22
+- `data/fase-b.js`           — induk, spread 22 TP
+
+Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
+- `docs/fase-b-authoring/` — 3 dokumen (Briefing, Curriculum Standard, Quality Gate)
+- `docs/fase-b-skenario/`  — 22 file skenario sumber (flaf-skenario-tp01..22-v2.txt)
+
+### Yang belum dikerjakan
+1. Uncomment `fase-b.js` di `data/index.js`
+2. Tambah `fase-b.js` ke SW precache
+3. Test runtime — pastikan 22 TP Fase B terbaca oleh aplikasi
