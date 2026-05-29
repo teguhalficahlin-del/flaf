@@ -1411,3 +1411,21 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 - Guru Fase A (`kelas 1/2`) tidak terdampak — `kelasOk` memblokir TP Fase B di layer UI
 - Bug `tp-07-v5.js:326` adalah pre-existing — ditemukan saat verifikasi runtime, bukan akibat edit integrasi
 - Scan 22 file Fase B: hanya 1 bug ditemukan, sudah diperbaiki
+
+## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
+
+**Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
+
+### Bug yang ditemukan (29/05/2026)
+- File: `screens/activation.js` baris 240–248 (`_finalizeActivation`)
+- Masalah: field `kelas` dari Supabase tidak diteruskan ke `_saveSession()`
+- Akibat: semua guru tersimpan dengan `kelas: 'all'` — tidak ada pembatasan akses
+
+### Yang perlu diperbaiki
+- `_finalizeActivation` di `activation.js`: teruskan `kelas` dari `data` ke `_saveSession()`
+- Verifikasi `kelasOk` di `dashboard.js` berjalan benar setelah fix
+
+### Catatan
+- `kelas: 'all'` saat ini disengaja untuk memudahkan review dan testing
+- Tidak ada guru aktif di production — aman ditahan
+- Setelah fix: guru kelas 3/4 hanya akses Fase B, guru kelas 1/2 hanya Fase A
