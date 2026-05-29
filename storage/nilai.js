@@ -88,7 +88,7 @@ async function tambahKelas(nama, tingkat) {
   list.push({
     id,
     nama,
-    tingkat   : tingkat === 2 ? 2 : 1,
+    tingkat   : Number(tingkat) || 1,
     created_at: new Date().toISOString(),
   });
   await db.set(STORE, 'kelas_list', list);
