@@ -49,10 +49,22 @@ function _nilaiColor(n) {
   return '#B05A46';
 }
 
+const _TP_RANGE_MAP = {
+  1: [1,2,3,4,5,6,7,8,9],
+  2: [10,11,12,13,14,15,16,17,18],
+  3: [],
+  4: [],
+  5: [],
+  6: [],
+};
+
 function _tpRange(tingkat) {
-  return tingkat === 2
-    ? [10,11,12,13,14,15,16,17,18]
-    : [1,2,3,4,5,6,7,8,9];
+  if (tingkat === 'all') {
+    return (FASE_A.tujuan_pembelajaran || [])
+      .map(tp => tp?.nomor)
+      .filter(n => n !== undefined);
+  }
+  return _TP_RANGE_MAP[Number(tingkat)] ?? [];
 }
 
 function _tpList(tingkat) {
@@ -1075,6 +1087,8 @@ window.nilaiTambahKelas = function() {
       <div class="nv-tingkat-grid">
         <button onclick="nilaiPilihTingkat(1)" id="btn-tingkat-1" class="nv-tingkat-btn nv-tingkat-btn--active">Kelas 1<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 9</span></button>
         <button onclick="nilaiPilihTingkat(2)" id="btn-tingkat-2" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 2<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 10 – 18</span></button>
+        <button onclick="nilaiPilihTingkat(3)" id="btn-tingkat-3" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 3<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 11</span></button>
+        <button onclick="nilaiPilihTingkat(4)" id="btn-tingkat-4" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 4<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 12 – 22</span></button>
       </div>
       <input type="hidden" id="input-tingkat-rombel" value="1">
       <button onclick="nilaiSimpanRombel()" class="nv-btn-simpan">SIMPAN ROMBEL</button>
@@ -1094,6 +1108,8 @@ window.nilaiTambahKelas = function() {
         document.getElementById('btn-tingkat-1')?.setAttribute('disabled', 'true');
         document.getElementById('btn-tingkat-1')?.style.setProperty('opacity', '0.3');
       }
+      if (kelas === '3') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-4')?.classList.add('disabled'); nilaiPilihTingkat(3); }
+      if (kelas === '4') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-3')?.classList.add('disabled'); nilaiPilihTingkat(4); }
     } catch { /* abaikan */ }
   })();
 };
@@ -1102,6 +1118,8 @@ window.nilaiPilihTingkat = function(t) {
   document.getElementById('input-tingkat-rombel').value = t;
   document.getElementById('btn-tingkat-1').className = `nv-tingkat-btn ${t === 1 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
   document.getElementById('btn-tingkat-2').className = `nv-tingkat-btn ${t === 2 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
+  document.getElementById('btn-tingkat-3').className = `nv-tingkat-btn ${t === 3 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
+  document.getElementById('btn-tingkat-4').className = `nv-tingkat-btn ${t === 4 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
 };
 
 window.nilaiSimpanRombel = async function() {
