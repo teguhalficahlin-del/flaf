@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v83';          // ← bump: refetch sesi-runtime.js dan dashboard.js
+const CACHE_VERSION  = 'flaf-v84';          // ← bump: refetch dashboard.js patch truncate persiapan
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
