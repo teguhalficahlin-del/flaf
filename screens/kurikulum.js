@@ -32,6 +32,64 @@ import { getFase, getAllTP, getMeta } from '../data/index.js';
 import { db } from '../storage/db.js';
 import { logger } from '../storage/logger.js';
 
+let _metaMap = null;
+// { 1: metaFaseA, 2: metaFaseA, 3: metaFaseB, 4: metaFaseB }
+// null = mode non-'all', header tidak reaktif
+
+let _faseMap = null;
+// { 1: faseA, 2: faseA, 3: faseB, 4: faseB }
+// null = mode non-'all'
+
+function _updateHeader(kelas) {
+  if (!_metaMap) return;
+  const meta = _metaMap[kelas];
+  if (!meta) return;
+  const root = document.getElementById('kurikulum-root');
+  if (!root) return;
+  const badge   = root.querySelector('.kur-fase-badge');
+  const kelasEl = root.querySelector('.kur-kelas');
+  const statNum = root.querySelector('.kur-stat-num');
+  if (badge)   badge.textContent   = 'Fase ' + _esc(String(meta.fase));
+  if (kelasEl) kelasEl.textContent = _esc(String(meta.kelas));
+  if (statNum) statNum.textContent = meta.total_tp;
+}
+
+function _updateCP(fase) {
+  if (!fase?.cp) return;
+  const body = document.getElementById('kur-cp-body');
+  if (!body) return;
+  const sections = body.querySelectorAll('.kur-cp-section');
+  const fields = ['menyimak_berbicara', 'membaca_memirsa', 'menulis_mempresentasikan'];
+  sections.forEach((sec, i) => {
+    const p = sec.querySelector('.kur-cp-text');
+    if (p && fase.cp[fields[i]]) p.textContent = fase.cp[fields[i]].trim();
+  });
+}
+
+function _updateATP(fase, tps, kelas) {
+  if (!fase?.atp) return;
+
+  // Update deskripsi
+  const body = document.getElementById('kur-atp-body');
+  if (!body) return;
+  const desc = body.querySelector('.kur-cp-text');
+  if (desc && fase.atp.deskripsi) desc.textContent = fase.atp.deskripsi.trim();
+
+  // Update total TP di header panel
+  const total = document.querySelector('.kur-atp-total');
+  if (total && fase.atp.total_tp) total.textContent = fase.atp.total_tp + ' TP';
+
+  // Update isi tabel — show/hide baris sesuai kelas aktif
+  const rows = body.querySelectorAll('.kur-atp-row');
+  rows.forEach(row => {
+    const tpId = row.dataset.tpId;
+    const tp = tps.find(t => t.id === tpId);
+    if (tp) {
+      row.style.display = (String(tp.kelas) === String(kelas)) ? '' : 'none';
+    }
+  });
+}
+
 // ----------------------------------------------------------
 // KONSTANTA
 // ----------------------------------------------------------
@@ -102,6 +160,24 @@ window.kurFilterKelas = function(kelas) {
       if (ch) ch.textContent = '▲';
     }
   }
+
+  _updateHeader(Number(kelas));
+
+  if (_faseMap) {
+    const fase = _faseMap[Number(kelas)];
+    if (fase) {
+      _updateCP(fase);
+      _updateATP(fase, getAllTP(), kelas);
+    }
+  }
+
+  if (_metaMap) {
+    const meta = _metaMap[Number(kelas)];
+    if (meta) {
+      const atpTotal = document.querySelector('.kur-atp-total');
+      if (atpTotal) atpTotal.textContent = meta.total_tp + ' TP';
+    }
+  }
 };
 
 // ----------------------------------------------------------
@@ -163,6 +239,25 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
   try {
     const kelasUser = await _getSessionKelas();
     const { fase, tps, meta, defaultKelas, kelasList } = await _resolveKurikulumData(kelasUser);
+
+    if (kelasUser === 'all') {
+      _metaMap = {
+        1: getMeta('A'),
+        2: getMeta('A'),
+        3: getMeta('B'),
+        4: getMeta('B'),
+      };
+    } else {
+      _metaMap = null;
+    }
+
+    if (kelasUser === 'all') {
+      const faseA = getFase('A');
+      const faseB = getFase('B');
+      _faseMap = { 1: faseA, 2: faseA, 3: faseB, 4: faseB };
+    } else {
+      _faseMap = null;
+    }
 
     root.innerHTML = _buildKurikulumHTML(fase, tps, meta, kelasList);
     _attachEventListeners(root, tps, onDownloadPDF);

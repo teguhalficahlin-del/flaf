@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v86';          // ← bump: fase dinamis dari session.kelas
+const CACHE_VERSION  = 'flaf-v87';          // ← bump: CP & ATP Fase B reaktif per filter kelas
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [

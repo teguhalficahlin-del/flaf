@@ -31,25 +31,35 @@ const FASE_B = {
   },
 
   cp: {
-    menyimak_berbicara: `Pada akhir Fase A, peserta didik menggunakan bahasa Inggris
-      sederhana untuk berinteraksi dalam situasi sosial dan kelas seperti berkenalan,
-      memberikan informasi diri, mengucapkan salam dan perpisahan, serta merespons
-      instruksi sederhana. Mereka memahami dan menggunakan kosakata dasar terkait
-      lingkungan sekitar, anggota keluarga, warna, bentuk, angka, dan rutinitas
-      sehari-hari. Peserta didik mampu menyanyikan lagu dan melakukan chant sederhana
-      dalam bahasa Inggris.`,
-    membaca_memirsa: `Pada akhir Fase A, peserta didik mampu memahami teks sangat
-      sederhana berupa kata, frasa, dan kalimat pendek yang disertai gambar. Mereka
-      dapat mengenali huruf, membaca nyaring kata-kata yang sudah dikenal, dan
-      memahami makna kata-kata tersebut dalam konteks bergambar.`,
-    menulis_mempresentasikan: `Pada akhir Fase A, peserta didik mampu menulis kata
-      dan kalimat sangat sederhana dengan bantuan gambar atau model. Mereka dapat
-      menyalin kata-kata yang sudah dikenal dan menulis label sederhana untuk
-      benda-benda di sekitar mereka.`,
+    menyimak_berbicara: `Pada akhir Fase B, peserta didik menggunakan bahasa
+    Inggris untuk merespons dan berinteraksi dalam situasi sosial dan kelas
+    yang lebih beragam menggunakan kalimat sederhana sesuai konteks. Mereka
+    mampu memahami teks lisan dan multimodal sederhana tentang kehidupan
+    sehari-hari dan meresponsnya secara verbal maupun non-verbal. Peserta
+    didik mulai menggunakan pola kalimat yang lebih bervariasi untuk
+    menyampaikan informasi, perasaan, dan kebutuhan dasar.`,
+
+    membaca_memirsa: `Pada akhir Fase B, peserta didik mampu memahami teks
+    tulis pendek sederhana dan teks multimodal tentang topik kehidupan
+    sehari-hari. Mereka dapat membaca dan merespons teks pendek secara
+    verbal maupun non-verbal sesuai konteks. Peserta didik mulai mengenali
+    struktur teks sederhana dan memahami makna kata-kata dalam konteks
+    yang familiar.`,
+
+    menulis_mempresentasikan: `Pada akhir Fase B, peserta didik mampu
+    mengomunikasikan gagasan tentang topik sehari-hari dalam teks tulis
+    pendek atau teks multimodal sesuai konteks. Mereka dapat menulis
+    kalimat sederhana secara mandiri dan mempresentasikan ide menggunakan
+    kombinasi teks tulis dan elemen visual.`,
   },
 
   atp: {
-    deskripsi: 'Fase B — Kelas 3–4, 22 Tujuan Pembelajaran dalam 5 Kluster + Capstone',
+    deskripsi: `ATP Fase B Bahasa Inggris disusun secara spiral dan tematik.
+    TP 1–11 membangun kemampuan interaksi, deskripsi, dan penulisan dasar
+    pada Kelas 3 dalam tiga kluster: Diri & Komunitas, Waktu & Jadwal, serta
+    Alam & Kesehatan. TP 12–22 memperluas keterampilan ke konteks budaya,
+    narasi, dan teks multimodal pada Kelas 4, ditutup dengan Proyek
+    Integratif Akhir Fase B.`,
     total_tp  : 22,
   },
 
