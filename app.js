@@ -22,6 +22,7 @@ import { renderJejakScreen }                                       from './scree
 import { renderNilaiScreen }                                       from './screens/nilai.js';
 import { jejak }                                                   from './storage/jejak.js';
 import { nilai }                                                   from './storage/nilai.js';
+import { getAllTP }                                                 from './data/index.js';
 
 // --- GLOBAL ERROR HANDLER ---------------------------------------------------
 
@@ -295,13 +296,14 @@ async function _populateStartScreen() {
     for (const { key, value } of all) {
       if (/^progress_tp_\d+$/.test(key) && value?.status === 'selesai') selesai++;
     }
-    const pct    = Math.round((selesai / 18) * 100);
+    const totalTP = getAllTP().length;
+    const pct    = Math.round((selesai / totalTP) * 100);
     const fillEl = document.getElementById('home-progress-fill');
     const countEl= document.getElementById('home-tp-done');
     const subEl  = document.getElementById('home-progress-sub');
     if (fillEl)  fillEl.style.width  = pct + '%';
     if (countEl) countEl.textContent = selesai;
-    if (subEl)   subEl.textContent   = _buildProgressText(selesai);
+    if (subEl)   subEl.textContent   = _buildProgressText(selesai, totalTP);
   } catch (err) {
     console.warn('[APP] progress bar gagal:', err.message);
   }
@@ -911,10 +913,10 @@ function _onPDFPrecacheDone({ total, failed } = {}) {
   if (btn) { btn.disabled = false; btn.textContent = 'Simpan Semua'; }
 
   const msg = failed > 0
-    ? `⚠ ${total - failed}/18 tersimpan (${failed} gagal)`
+    ? `⚠ ${total - failed}/${total} tersimpan (${failed} gagal)`
     : `✓ Semua ${total} PDF tersimpan offline`;
 
-  if (status) status.textContent = failed > 0 ? `${total - failed}/18 tersimpan` : 'Semua tersimpan ✓';
+  if (status) status.textContent = failed > 0 ? `${total - failed}/${total} tersimpan` : 'Semua tersimpan ✓';
   showToast(msg);
 }
 
