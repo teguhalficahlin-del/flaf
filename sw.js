@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v88';          // ← bump: fix nilai.js multi-fase Fase B
+const CACHE_VERSION  = 'flaf-v89';          // ← bump: tambah preOpening + diferensiasi TP 15–18 runtime
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [

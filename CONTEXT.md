@@ -1581,3 +1581,38 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 - `kelas: 'all'` saat ini disengaja untuk memudahkan review dan testing
 - Tidak ada guru aktif di production — aman ditahan
 - Setelah fix: guru kelas 3/4 hanya akses Fase B, guru kelas 1/2 hanya Fase A
+
+---
+
+## feat: tambah preOpening dan diferensiasi ke TP 15–18 runtime (Fase A)
+
+**Commit:** bf7753e — 4 file, 48 insertions
+
+**Latar belakang:**
+TP 15–18 Fase A menggunakan file runtime dari folder sesi-mN
+(sesi-m10 s.d. sesi-m13), bukan dari docs/output-v5. Field
+preOpening dan diferensiasi sudah ditulis di output-v5 sejak
+commit d13d040/756d1c4, tapi tidak pernah dimigrasikan ke file
+runtime yang benar-benar dipakai app.
+
+**Yang ditambahkan:**
+- sesi-m10/tp-15-v5.js: preOpening + diferensiasi di Inti L10
+  (Partner Practice — sudahBisa/perluSupport)
+- sesi-m11/tp-16-v5.js: preOpening + diferensiasi di Inti L9
+  (Pair Retelling — sudahBisa/perluSupport)
+- sesi-m12/tp-17-v5.js: preOpening + diferensiasi di Inti L10
+  (Pair Dialogue — sudahBisa/perluSupport)
+- sesi-m13/tp-18-v5.js: preOpening saja — TP 18 adalah capstone
+  (poster + presentasi), tidak punya diferensiasi di kedua versi
+
+**Catatan arsitektur:**
+- TP 01–14 Fase A: runtime dari docs/output-v5/ ✅ sudah benar
+- TP 15–18 Fase A: runtime dari docs/sesi-mN/ — sudah diperbaiki ✅
+- Field diferensiasi di Fase A muncul dengan dua konvensi key:
+  needHelp/ready (TP 02–14) dan sudahBisa/perluSupport (TP 15–17)
+- sesi-runtime.js sudah menangani kedua konvensi dengan benar
+  via Object.entries() — tidak perlu perubahan di runtime
+
+**Status:**
+- Rendering diferensiasi di sesi-runtime.js: tampil tanpa label
+- Keputusan label ditunda — belum ada keputusan dari pemilik
