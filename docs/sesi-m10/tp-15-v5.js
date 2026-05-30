@@ -123,6 +123,15 @@ const TP_15 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -249,6 +258,10 @@ const TP_15 = {
             'Frame collapse (B tidak tanya, langsung tebak): dekati, gestur tanya ke B tanpa hentikan kelas.',
             'Scenario absurd memecah fokus: bisik scenario konkret baru ke pasangan itu — tanpa debat, lanjut.',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Ciptakan scenario sendiri, ganti emosi setiap putaran.',
+            perluSupport: 'Cukup ucap emosi saja — "Happy!" — tanpa "because".',
+          },
           cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Partner B masih pakai "How do you feel?" — frame collapse terjadi diam-diam. Guru tidak koreksi grammar saat jalan. Total ±3 menit — jangan lewati, kelas cepat fatigue.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, semua duduk diam 3 detik, lanjut partner practice.',
           energi : '🔴',

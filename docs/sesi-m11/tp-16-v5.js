@@ -141,6 +141,15 @@ const TP_16 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -261,6 +270,10 @@ const TP_16 = {
             'Listener tidak angkat kartu: dekati, tunjuk kartu yang sesuai — gesture angkat. Tidak hentikan kelas.',
             'Pasangan selesai terlalu cepat: tukar role lagi — "Try again. No book this time."',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Cerita tanpa lihat buku — kartu saja sebagai scaffold.',
+            perluSupport: 'Boleh lihat buku sebentar jika lupa.',
+          },
           cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Listener aktif angkat kartu — tugas Listener paling cepat collapse. Buku tertutup di meja — boleh dilihat sebentar jika lupa, tidak ditelusuri. Guru tidak koreksi grammar. Total ±4 menit — jangan lewati.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, duduk diam 3 detik, lanjut.',
           energi : '🔴',

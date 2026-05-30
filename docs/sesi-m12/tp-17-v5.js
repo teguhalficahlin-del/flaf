@@ -135,6 +135,15 @@ const TP_17 = {
     ],
   },
 
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    bantuan: null,
+    cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
+    darurat: null,
+    energi : '🔵',
+  },
+
   skenario: [
 
     {
@@ -261,6 +270,10 @@ const TP_17 = {
             'Partner B tidak angkat kartu: dekati, gesture angkat kartu ke Partner B — tanpa bicara. Tidak hentikan kelas.',
             'Pasangan selesai terlalu cepat: "Pick another card. Switch again."',
           ],
+          diferensiasi: {
+            sudahBisa   : 'Ganti kartu setiap giliran, ciptakan reason sendiri selain fun/interesting.',
+            perluSupport: 'Cukup ucap hobi saja — "Reading!" — tanpa "because".',
+          },
           cue    : 'Distribusi kartu wajib selesai sebelum instruksi practice. Saat circulate: bergerak huruf U — cek apakah Partner B mengangkat kartu setelah mendengar hobby, bukan sebelum. Fokus pada produksi bahasa — jangan verifikasi apakah hobi yang disebut benar-benar dilakukan siswa. Guru tidak koreksi grammar. Total ±4 menit — jangan lewati.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, duduk diam 3 detik, lanjut.',
           energi : '🔴',
