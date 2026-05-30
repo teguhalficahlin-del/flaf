@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v89';          // ← bump: tambah preOpening + diferensiasi TP 15–18 runtime
+const CACHE_VERSION  = 'flaf-v90';          // ← bump: label diferensiasi
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
