@@ -503,8 +503,20 @@ function _renderRunning() {
   let difHTML = '';
   if (langkah.diferensiasi != null
       && typeof langkah.diferensiasi === 'object') {
+    const LABEL_MAP = {
+      perluSupport: 'Perlu support',
+      sudahBisa   : 'Sudah bisa',
+      needHelp    : 'Perlu support',
+      ready       : 'Sudah bisa',
+    };
     const items = Object.entries(langkah.diferensiasi)
-      .map(([key, val]) => `<div class="sr-dif-item">${_escape(val)}</div>`)
+      .map(([key, val]) => {
+        const label = LABEL_MAP[key] || key;
+        return `<div class="sr-dif-item">
+        <span class="sr-dif-label">${_escape(label)}:</span>
+        ${_escape(val)}
+      </div>`;
+      })
       .join('');
     difHTML = `
       <div class="sr-dif-block">
