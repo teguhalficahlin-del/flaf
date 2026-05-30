@@ -1616,3 +1616,15 @@ runtime yang benar-benar dipakai app.
 **Status:**
 - Rendering diferensiasi di sesi-runtime.js: tampil tanpa label
 - Keputusan label ditunda — belum ada keputusan dari pemilik
+
+---
+
+## feat: label diferensiasi di card runtime (420fbf9)
+
+- Tambah LABEL_MAP di sesi-runtime.js untuk memetakan key
+  diferensiasi ke label bahasa Indonesia
+- perluSupport → "Perlu support", sudahBisa → "Sudah bisa"
+- needHelp → "Perlu support", ready → "Sudah bisa"
+- Berlaku untuk semua TP semua fase yang punya field diferensiasi
+- Key tidak dikenal fallback ke nama key mentah
+- SW cache bump v90 (3758201)
