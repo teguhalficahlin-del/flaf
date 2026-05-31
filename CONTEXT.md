@@ -36,7 +36,9 @@
 - **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
 - **Sprint Refactor Multi-Fase SELESAI ✅ (Mei 2026)** — `_tpRange` → `_TP_RANGE_MAP`, `kelasOk` extend ke kelas 3–6, progress bar dinamis via `getAllTP().length`
 - **Sprint Fix Kurikulum.js Fase B SELESAI ✅ (Mei 2026)** — fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas, konten CP & ATP Fase B diperbarui sesuai BSKAP 046/2025 (commit `4bfa872`)
-- **Fix nilai.js Fase B — integrasi multi-fase SELESAI ✅ (30/05/2026)** — ganti import FASE_A → getAllTP() dari registry, hapus _TP_RANGE_MAP dan _tpRange() hardcode, _tpList() filter by tp.kelas, fix lookup _renderFormatifDetail filter allTP by _state.tingkat sebelum .find() — cegah overlap nomor TP lintas fase (commit `ee0ad26`)
+- **Fix nilai.js Fase B — integrasi multi-fase SELESAI ✅ (30/05/2026)** — fix mencakup dua layer:
+  - `screens/nilai.js` (commit `ee0ad26`): ganti import FASE_A → getAllTP() dari registry, hapus _TP_RANGE_MAP dan _tpRange() hardcode, _tpList() filter by tp.kelas, fix lookup _renderFormatifDetail filter allTP by _state.tingkat sebelum .find() — cegah overlap nomor TP lintas fase
+  - `storage/nilai.js` (commit `76e95e4`): getRekapSemua & getRekapAkhir dinamis per tingkat (1–4) + totalTP dinamis via tpRange.length + fix fungsi SASGanjil1/2
   - SW cache bump v88 (commit `986d4ca`) — verified live di browser ✅
 
 ### Detail Migrasi TP
@@ -1471,7 +1473,7 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ### Yang ditahan untuk sprint berikutnya
 - `app.js` `DATA_FASE_URL`: masih fetch `fase-a.js` untuk soft update check — tidak crash, hanya soft update kurang presisi untuk Fase B
-- ⏳ **NEXT TASK AKTIF** — `screens/nilai.js`: masih pakai range Fase A, guru Fase B tidak bisa input nilai formatif — perlu extend `_tpList` dan import data ke `getAllTP()`
+- ✅ **SELESAI** — `screens/nilai.js` + `storage/nilai.js`: fix multi-fase — screens pakai getAllTP() (commit `ee0ad26`), storage tpRange dinamis per tingkat + fix SASGanjil1/2 (commit `76e95e4`)
 - ✅ **SELESAI** — `screens/kurikulum.js`: fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas (commit `4bfa872`)
 
 ---
