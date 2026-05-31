@@ -449,10 +449,12 @@ async function getRekapSemua() {
 
   for (const kelas of kelasList) {
     const siswaList = await getSiswaList(kelas.id);
-    const tingkat   = kelas.tingkat === 2 ? 2 : 1;
-    const tpRange   = tingkat === 1
-      ? [1,2,3,4,5,6,7,8,9]
-      : [10,11,12,13,14,15,16,17,18];
+    const tingkat   = kelas.tingkat;
+    const tpRange   =
+      tingkat === 1 ? [1,2,3,4,5,6,7,8,9] :
+      tingkat === 2 ? [10,11,12,13,14,15,16,17,18] :
+      tingkat === 3 ? [1,2,3,4,5,6,7,8,9,10,11] :
+                     [12,13,14,15,16,17,18,19,20,21,22];
 
     let totalNilai     = 0;
     let jumlahNilai    = 0;
@@ -482,7 +484,7 @@ async function getRekapSemua() {
       peserta   : pesertaDinilai,
       totalSiswa: siswaList.length,
       tpTuntas  : tpAdaNilai.size,
-      totalTP   : 9,
+      totalTP   : tpRange.length,
     });
   }
 
@@ -515,10 +517,12 @@ async function getRekapTP(kelasId, tpNomor) {
  */
 async function getRekapAkhir(kelasId) {
   const kelas   = (await getKelasList()).find(k => k.id === kelasId);
-  const tingkat = kelas?.tingkat === 2 ? 2 : 1;
-  const tpRange = tingkat === 1
-    ? [1,2,3,4,5,6,7,8,9]
-    : [10,11,12,13,14,15,16,17,18];
+  const tingkat = kelas?.tingkat;
+  const tpRange =
+    tingkat === 1 ? [1,2,3,4,5,6,7,8,9] :
+    tingkat === 2 ? [10,11,12,13,14,15,16,17,18] :
+    tingkat === 3 ? [1,2,3,4,5,6,7,8,9,10,11] :
+                   [12,13,14,15,16,17,18,19,20,21,22];
 
   const siswaList = await getSiswaList(kelasId);
   const hasil     = [];
