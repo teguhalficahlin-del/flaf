@@ -1480,7 +1480,7 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ## SELESAI — Fix Bug Post-Integrasi Fase B (29/05/2026)
 
-**Commit terakhir: `6caf5ef`** — rangkaian 4 commit perbaikan setelah integrasi
+**Commit terakhir: `5bf94fb`** — rangkaian 4 commit perbaikan setelah integrasi
 
 ### Bug yang ditemukan dan diperbaiki
 
@@ -1631,3 +1631,4 @@ runtime yang benar-benar dipakai app.
 - Key tidak dikenal fallback ke nama key mentah
 - SW cache bump v90 (3758201)
 * Audit layar nilai — Fix 1/2/3 selesai: tpRange 4-way Fase B di getRekapSemua + getRekapAkhir, soalCards dinamis per tingkat di _renderUnduh (76e95e4, 6caf5ef)
+* UI polish dashboard.js — 8 item: chevron gold, opacity raise (Halaman/Hadir, Tujuan Akhir, list-arrow), Sebelumnya sejajar Lanjut, ds-warn-btn--cancel diperkuat, H S I A border+text, vocab chip padding (5bf94fb)
