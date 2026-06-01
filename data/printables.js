@@ -12,13 +12,24 @@ const PRINTABLES_BASE_MAP = {
   'c': 'assets/images/printables_fase_c/',
 };
 
+const PRINT_MODE_CONFIG = {
+  hemat:   { cols: 4, rows: 4, labelSize: '9px',  cardLabel: 'Hemat (4×4)' },
+  standar: { cols: 2, rows: 4, labelSize: '11px', cardLabel: 'Standar (2×4)' },
+  flash:   { cols: 2, rows: 2, labelSize: '13px', cardLabel: 'Flash Card (2×2)' },
+  display: { cols: 1, rows: 2, labelSize: '16px', cardLabel: 'Display (1×2)' },
+  poster:  { cols: 1, rows: 1, labelSize: '20px', cardLabel: 'Poster (1×1)' },
+};
+
 /**
  * Generate HTML lembar cetak untuk satu TP.
  * @param {Object} tp - object TP dari fase-a.js
+ * @param {string} mode - mode cetak: hemat|standar|flash|display|poster
  * @returns {string} HTML string siap di-inject ke print window
  */
-export function generatePrintHTML(tp) {
+export function generatePrintHTML(tp, mode = 'standar') {
   if (!tp.printables || tp.printables.length === 0) return null;
+
+  const cfg = PRINT_MODE_CONFIG[mode] ?? PRINT_MODE_CONFIG['standar'];
 
   const fase = tp.fase
     ?? (tp.id.startsWith('tp-b') ? 'b'
@@ -75,7 +86,7 @@ export function generatePrintHTML(tp) {
 
     .print-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(${cfg.cols}, 1fr);
       gap: 8px;
     }
 
@@ -95,7 +106,7 @@ export function generatePrintHTML(tp) {
     }
 
     .print-card-label {
-      font-size: 10px;
+      font-size: ${cfg.labelSize};
       text-align: center;
       padding: 4px 4px 6px;
       color: #333;
@@ -132,7 +143,7 @@ export function generatePrintHTML(tp) {
   <div class="print-header">
     <div class="print-header-label">Kartu Cetak Guru — FLAF</div>
     <div class="print-header-title">${tp.nama}</div>
-    <div class="print-header-sub">TP ${String(tp.nomor).padStart(2,'0')} &mdash; ${tp.printables.length} kartu</div>
+    <div class="print-header-sub">TP ${String(tp.nomor).padStart(2,'0')} &mdash; ${tp.printables.length} kartu · ${cfg.cardLabel}</div>
   </div>
 
   <div class="print-scissors">✂ Gunting sepanjang garis kartu</div>

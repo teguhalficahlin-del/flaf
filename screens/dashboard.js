@@ -399,15 +399,125 @@ function _buildTabMateri(tp) {
     </div>`;
 }
 
-function dashCetakKartu() {
-  const tp = _getTP(_flow.tp?.id);
-  if (!tp) return;
-  const html = generatePrintHTML(tp);
+function _showPrintModal(tp) {
+  // Backdrop
+  const backdrop = document.createElement('div');
+  Object.assign(backdrop.style, {
+    position: 'fixed', inset: '0', background: 'rgba(0,0,0,0.72)',
+    zIndex: '9999', display: 'flex', alignItems: 'center', justifyContent: 'center',
+  });
+
+  // Container
+  const box = document.createElement('div');
+  Object.assign(box.style, {
+    background: '#1a1a1a', borderRadius: '12px', padding: '20px',
+    maxWidth: '360px', width: '90%', fontFamily: 'inherit',
+  });
+
+  // Judul
+  const title = document.createElement('div');
+  title.textContent = 'Pilih Mode Cetak';
+  Object.assign(title.style, {
+    color: 'rgba(212,174,58,1)', fontSize: '14px', fontWeight: '700', marginBottom: '4px',
+  });
+
+  // Subjudul
+  const sub = document.createElement('div');
+  sub.textContent = `${tp.printables.length} kartu · ${tp.nama}`;
+  Object.assign(sub.style, {
+    fontSize: '11px', color: 'rgba(255,255,255,0.5)', marginBottom: '16px',
+  });
+
+  // Helper: buat SVG grid preview
+  function _makeGridSVG(cols, rows) {
+    const W = 36, H = 28, pad = 2;
+    const cw = (W - pad * 2) / cols;
+    const rh = (H - pad * 2) / rows;
+    let rects = '';
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const x = pad + c * cw + 0.5;
+        const y = pad + r * rh + 0.5;
+        rects += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}"
+          width="${(cw - 1).toFixed(1)}" height="${(rh - 1).toFixed(1)}"
+          rx="1" fill="rgba(212,174,58,0.25)" stroke="rgba(212,174,58,0.6)"
+          stroke-width="0.8"/>`;
+      }
+    }
+    return `<svg width="${W}" height="${H}" xmlns="http://www.w3.org/2000/svg"
+      style="flex-shrink:0">${rects}</svg>`;
+  }
+
+  // Data 5 mode
+  const MODES = [
+    { mode: 'hemat',   label: 'Hemat',      cols: 4, rows: 4, desc: 'Potong & bagikan ke siswa' },
+    { mode: 'standar', label: 'Standar',     cols: 2, rows: 4, desc: 'Kartu pegangan guru di meja' },
+    { mode: 'flash',   label: 'Flash Card',  cols: 2, rows: 2, desc: 'Ditunjukkan ke kelas' },
+    { mode: 'display', label: 'Display',     cols: 1, rows: 2, desc: 'Ditempel papan tulis' },
+    { mode: 'poster',  label: 'Poster',      cols: 1, rows: 1, desc: 'Focal point dinding kelas' },
+  ];
+
+  // Tombol tiap mode
+  const btnList = document.createElement('div');
+  MODES.forEach(({ mode, label, cols, rows, desc }) => {
+    const btn = document.createElement('button');
+    btn.innerHTML = `
+      ${_makeGridSVG(cols, rows)}
+      <div style="text-align:left">
+        <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.85);margin-bottom:2px">${label}</div>
+        <div style="font-size:10px;color:rgba(255,255,255,0.45)">${desc}</div>
+      </div>`;
+    Object.assign(btn.style, {
+      background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)',
+      borderRadius: '8px', padding: '10px 12px', cursor: 'pointer', width: '100%',
+      marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '12px',
+      fontFamily: 'inherit',
+    });
+    btn.onmouseenter = () => {
+      btn.style.borderColor = 'rgba(212,174,58,0.5)';
+      btn.style.background = 'rgba(212,174,58,0.06)';
+    };
+    btn.onmouseleave = () => {
+      btn.style.borderColor = 'rgba(255,255,255,0.1)';
+      btn.style.background = 'rgba(255,255,255,0.04)';
+    };
+    btn.onclick = () => { document.body.removeChild(backdrop); _doCetak(tp, mode); };
+    btnList.appendChild(btn);
+  });
+
+  // Tombol Batal
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = 'Batal';
+  Object.assign(cancelBtn.style, {
+    background: 'transparent', border: '1px solid rgba(255,255,255,0.15)',
+    color: 'rgba(255,255,255,0.4)', borderRadius: '8px', padding: '8px',
+    width: '100%', marginTop: '8px', cursor: 'pointer', fontFamily: 'inherit',
+    fontSize: '12px',
+  });
+  cancelBtn.onclick = () => document.body.removeChild(backdrop);
+
+  // Klik backdrop (luar box) → tutup
+  backdrop.onclick = (e) => { if (e.target === backdrop) document.body.removeChild(backdrop); };
+
+  // Rakit DOM
+  box.append(title, sub, btnList, cancelBtn);
+  backdrop.appendChild(box);
+  document.body.appendChild(backdrop);
+}
+
+function _doCetak(tp, mode) {
+  const html = generatePrintHTML(tp, mode);
   if (!html) return;
   const win = window.open('', '_blank');
   if (!win) { alert('Izinkan popup di browser untuk mencetak.'); return; }
   win.document.write(html);
   win.document.close();
+}
+
+function dashCetakKartu() {
+  const tp = _getTP(_flow.tp?.id);
+  if (!tp) return;
+  _showPrintModal(tp);
 }
 window.dashCetakKartu = dashCetakKartu;
 
