@@ -229,7 +229,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v87 (flaf-v87)
+├── sw.js                   ← Service Worker v90 (flaf-v90)
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -1480,7 +1480,7 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ## SELESAI — Fix Bug Post-Integrasi Fase B (29/05/2026)
 
-**Commit terakhir: `bf79fcb`** — rangkaian 4 commit perbaikan setelah integrasi
+**Commit terakhir: `6caf5ef`** — rangkaian 4 commit perbaikan setelah integrasi
 
 ### Bug yang ditemukan dan diperbaiki
 
@@ -1630,3 +1630,4 @@ runtime yang benar-benar dipakai app.
 - Berlaku untuk semua TP semua fase yang punya field diferensiasi
 - Key tidak dikenal fallback ke nama key mentah
 - SW cache bump v90 (3758201)
+* Audit layar nilai — Fix 1/2/3 selesai: tpRange 4-way Fase B di getRekapSemua + getRekapAkhir, soalCards dinamis per tingkat di _renderUnduh (76e95e4, 6caf5ef)
