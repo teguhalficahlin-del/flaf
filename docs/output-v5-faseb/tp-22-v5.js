@@ -49,6 +49,11 @@ const TP_B22 = {
     'Tidak ada kosakata baru diperkenalkan di manapun dalam skenario ini',
   ],
 
+  printables: [
+    { file: 'tp-b22-planning-guide-card.png',      label: 'Planning Guide Card' },
+    { file: 'tp-b22-project-poster-template.png',  label: 'Project Poster Template' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🟠',

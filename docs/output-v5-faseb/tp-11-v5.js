@@ -46,6 +46,16 @@ const TP_B11 = {
     'Closure di L13 diakhiri dengan pertanyaan komitmen — bukan sekadar recap',
   ],
 
+  printables: [
+    { file: 'tp-b11-brush-teeth.png',              label: 'Brush Teeth' },
+    { file: 'tp-b11-drink-water.png',              label: 'Drink Water' },
+    { file: 'tp-b11-eat-vegetables.png',           label: 'Eat Vegetables' },
+    { file: 'tp-b11-exercise.png',                 label: 'Exercise' },
+    { file: 'tp-b11-healthy-habits-worksheet.png', label: 'Healthy Habits Worksheet' },
+    { file: 'tp-b11-sleep-early.png',              label: 'Sleep Early' },
+    { file: 'tp-b11-wash-hands.png',               label: 'Wash Hands' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

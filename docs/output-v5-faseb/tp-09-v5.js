@@ -46,6 +46,19 @@ const TP_B09 = {
     'Baris "One more fact" di lembar kerja boleh diisi dalam Bahasa Indonesia — ini tidak perlu dikoreksi',
   ],
 
+  printables: [
+    { file: 'tp-b09-bird.png',               label: 'Bird' },
+    { file: 'tp-b09-butterfly.png',          label: 'Butterfly' },
+    { file: 'tp-b09-cat.png',                label: 'Cat' },
+    { file: 'tp-b09-dog.png',                label: 'Dog' },
+    { file: 'tp-b09-fish.png',               label: 'Fish' },
+    { file: 'tp-b09-flower.png',             label: 'Flower' },
+    { file: 'tp-b09-grass.png',              label: 'Grass' },
+    { file: 'tp-b09-habitat-worksheet.png',  label: 'Habitat Worksheet' },
+    { file: 'tp-b09-leaf.png',               label: 'Leaf' },
+    { file: 'tp-b09-tree.png',               label: 'Tree' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

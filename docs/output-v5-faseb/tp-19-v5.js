@@ -46,6 +46,12 @@ const TP_B19 = {
     'Teaser TP20 diucapkan dengan antusias — "you write YOUR story"',
   ],
 
+  printables: [
+    { file: 'tp-b19-budis-day-text.png',                  label: 'Budis Day Text' },
+    { file: 'tp-b19-reading-comprehension-worksheet.png', label: 'Reading Comprehension Worksheet' },
+    { file: 'tp-b19-sequence-cards.png',                  label: 'Sequence Cards' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

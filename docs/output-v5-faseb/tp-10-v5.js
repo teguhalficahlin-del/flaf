@@ -46,6 +46,20 @@ const TP_B10 = {
     '"Look outside" diucapkan di L11 — ini tidak bisa diganti dengan instruksi hipotetis',
   ],
 
+  printables: [
+    { file: 'tp-b10-cloudy.png',                    label: 'Cloudy' },
+    { file: 'tp-b10-hat.png',                       label: 'Hat' },
+    { file: 'tp-b10-jacket.png',                    label: 'Jacket' },
+    { file: 'tp-b10-raincoat.png',                  label: 'Raincoat' },
+    { file: 'tp-b10-rainy.png',                     label: 'Rainy' },
+    { file: 'tp-b10-sandals.png',                   label: 'Sandals' },
+    { file: 'tp-b10-shorts.png',                    label: 'Shorts' },
+    { file: 'tp-b10-sunny.png',                     label: 'Sunny' },
+    { file: 'tp-b10-umbrella.png',                  label: 'Umbrella' },
+    { file: 'tp-b10-weather-outfit-worksheet.png',  label: 'Weather Outfit Worksheet' },
+    { file: 'tp-b10-windy.png',                     label: 'Windy' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

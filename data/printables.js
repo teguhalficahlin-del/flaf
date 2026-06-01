@@ -6,6 +6,12 @@
 
 const PRINTABLES_BASE = 'assets/images/printables/';
 
+const PRINTABLES_BASE_MAP = {
+  'a': 'assets/images/printables/',
+  'b': 'assets/images/printables_fase_b/',
+  'c': 'assets/images/printables_fase_c/',
+};
+
 /**
  * Generate HTML lembar cetak untuk satu TP.
  * @param {Object} tp - object TP dari fase-a.js
@@ -14,9 +20,15 @@ const PRINTABLES_BASE = 'assets/images/printables/';
 export function generatePrintHTML(tp) {
   if (!tp.printables || tp.printables.length === 0) return null;
 
+  const fase = tp.fase
+    ?? (tp.id.startsWith('tp-b') ? 'b'
+      : tp.id.startsWith('tp-c') ? 'c'
+      : 'a');
+  const base = PRINTABLES_BASE_MAP[fase] ?? PRINTABLES_BASE_MAP['a'];
+
   const cards = tp.printables.map(item => `
     <div class="print-card">
-      <img src="${PRINTABLES_BASE}${item.file}" alt="${item.label}" />
+      <img src="${base}${item.file}" alt="${item.label}" />
       <div class="print-card-label">${item.label}</div>
     </div>
   `).join('');

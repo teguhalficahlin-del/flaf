@@ -46,6 +46,18 @@ const TP_B03 = {
     'Teaser TP04 sudah disampaikan dengan framing "sesuatu yang spesial" — bukan sekadar nama topik',
   ],
 
+  printables: [
+    { file: 'tp-b03-bank.png',                        label: 'Bank' },
+    { file: 'tp-b03-behind.png',                      label: 'Behind' },
+    { file: 'tp-b03-hospital.png',                    label: 'Hospital' },
+    { file: 'tp-b03-in-front-of.png',                 label: 'In Front Of' },
+    { file: 'tp-b03-market.png',                      label: 'Market' },
+    { file: 'tp-b03-mosque.png',                      label: 'Mosque' },
+    { file: 'tp-b03-neighborhood-map-worksheet.png',  label: 'Neighborhood Map Worksheet' },
+    { file: 'tp-b03-next-to.png',                     label: 'Next To' },
+    { file: 'tp-b03-park.png',                        label: 'Park' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

@@ -46,6 +46,12 @@ const TP_B15 = {
     'Tidak ada kosakata baru yang diperkenalkan — semua dari TP12–14',
   ],
 
+  printables: [
+    { file: 'tp-b15-indonesia-poster-template.png', label: 'Indonesia Poster Template' },
+    { file: 'tp-b15-my-country-worksheet.png',      label: 'My Country Worksheet' },
+    { file: 'tp-b15-sentence-starter-card.png',     label: 'Sentence Starter Card' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🟠',

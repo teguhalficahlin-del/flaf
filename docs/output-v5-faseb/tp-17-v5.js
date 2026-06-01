@@ -45,6 +45,17 @@ const TP_B17 = {
     'Siswa yang membacakan di L9 berbeda dari yang menjawab di L4',
   ],
 
+  printables: [
+    { file: 'tp-b17-crossroad.png',                label: 'Crossroad' },
+    { file: 'tp-b17-direction-phrase-card.png',    label: 'Direction Phrase Card' },
+    { file: 'tp-b17-directions-map-worksheet.png', label: 'Directions Map Worksheet' },
+    { file: 'tp-b17-go-straight.png',              label: 'Go Straight' },
+    { file: 'tp-b17-stop.png',                     label: 'Stop' },
+    { file: 'tp-b17-traffic-light.png',            label: 'Traffic Light' },
+    { file: 'tp-b17-turn-left.png',                label: 'Turn Left' },
+    { file: 'tp-b17-turn-right.png',               label: 'Turn Right' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

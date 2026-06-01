@@ -47,6 +47,11 @@ const TP_B21 = {
     'Tidak ada kosakata baru diperkenalkan di manapun dalam skenario ini',
   ],
 
+  printables: [
+    { file: 'tp-b21-budis-week-table.png',    label: 'Budis Week Table' },
+    { file: 'tp-b21-stay-healthy-poster.png', label: 'Stay Healthy Poster' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🟠',

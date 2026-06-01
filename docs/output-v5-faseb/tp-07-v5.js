@@ -45,6 +45,18 @@ const TP_B07 = {
     'Teaser TP08 disampaikan dengan nada antusias — bukan formal',
   ],
 
+  printables: [
+    { file: 'tp-b07-calendar-worksheet.png',    label: 'Calendar Worksheet' },
+    { file: 'tp-b07-friday.png',                label: 'Friday' },
+    { file: 'tp-b07-monday.png',                label: 'Monday' },
+    { file: 'tp-b07-months-reference-card.png', label: 'Months Reference Card' },
+    { file: 'tp-b07-saturday.png',              label: 'Saturday' },
+    { file: 'tp-b07-sunday.png',                label: 'Sunday' },
+    { file: 'tp-b07-thursday.png',              label: 'Thursday' },
+    { file: 'tp-b07-tuesday.png',               label: 'Tuesday' },
+    { file: 'tp-b07-wednesday.png',             label: 'Wednesday' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

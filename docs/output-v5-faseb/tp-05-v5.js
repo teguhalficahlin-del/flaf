@@ -45,6 +45,16 @@ const TP_B05 = {
     'Ada jam yang terlihat di kelas untuk pertanyaan "What time is it right now?" di L11',
   ],
 
+  printables: [
+    { file: 'tp-b05-clock-worksheet.png',          label: 'Clock Worksheet' },
+    { file: 'tp-b05-draw-the-clock-worksheet.png', label: 'Draw The Clock Worksheet' },
+    { file: 'tp-b05-half-past.png',                label: 'Half Past' },
+    { file: 'tp-b05-oclock.png',                   label: 'Oclock' },
+    { file: 'tp-b05-quarter-past.png',             label: 'Quarter Past' },
+    { file: 'tp-b05-quarter-to.png',               label: 'Quarter To' },
+    { file: 'tp-b05-time-reference-card.png',      label: 'Time Reference Card' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

@@ -46,6 +46,11 @@ const TP_B08 = {
     'Tidak ada kosakata baru yang diperkenalkan secara formal — kata yang ditulis atas permintaan siswa adalah pengayaan organik',
   ],
 
+  printables: [
+    { file: 'tp-b08-weekly-schedule-worksheet.png', label: 'Weekly Schedule Worksheet' },
+    { file: 'tp-b08-writing-guide-card.png',        label: 'Writing Guide Card' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🟠',

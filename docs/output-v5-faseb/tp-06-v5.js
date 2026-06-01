@@ -45,6 +45,17 @@ const TP_B06 = {
     'Closure di L11 diakhiri dengan goodbye ritual — bukan instruksi administratif',
   ],
 
+  printables: [
+    { file: 'tp-b06-go-to-school.png',       label: 'Go To School' },
+    { file: 'tp-b06-have-breakfast.png',     label: 'Have Breakfast' },
+    { file: 'tp-b06-have-lunch.png',         label: 'Have Lunch' },
+    { file: 'tp-b06-play.png',               label: 'Play' },
+    { file: 'tp-b06-schedule-worksheet.png', label: 'Schedule Worksheet' },
+    { file: 'tp-b06-sleep.png',              label: 'Sleep' },
+    { file: 'tp-b06-study.png',              label: 'Study' },
+    { file: 'tp-b06-wake-up.png',            label: 'Wake Up' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

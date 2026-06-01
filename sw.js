@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v90';          // ← bump: label diferensiasi
+const CACHE_VERSION  = 'flaf-v91';          // ← bump: label diferensiasi
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
@@ -221,6 +221,190 @@ const APP_SHELL = [
   // printables images — TP18
   './assets/images/printables/tp18-poster-template.png',
   './assets/images/printables/tp18-reference-card.png',
+
+  // printables images — TP-B01
+  './assets/images/printables_fase_b/tp-b01-canteen.png',
+  './assets/images/printables_fase_b/tp-b01-classroom.png',
+  './assets/images/printables_fase_b/tp-b01-gate.png',
+  './assets/images/printables_fase_b/tp-b01-hall.png',
+  './assets/images/printables_fase_b/tp-b01-library.png',
+  './assets/images/printables_fase_b/tp-b01-office.png',
+  './assets/images/printables_fase_b/tp-b01-playground.png',
+  './assets/images/printables_fase_b/tp-b01-school-map-worksheet.png',
+  './assets/images/printables_fase_b/tp-b01-toilet.png',
+
+  // printables images — TP-B02
+  './assets/images/printables_fase_b/tp-b02-curly.png',
+  './assets/images/printables_fase_b/tp-b02-describe-me-worksheet.png',
+  './assets/images/printables_fase_b/tp-b02-funny.png',
+  './assets/images/printables_fase_b/tp-b02-kind.png',
+  './assets/images/printables_fase_b/tp-b02-long-hair.png',
+  './assets/images/printables_fase_b/tp-b02-short-hair.png',
+  './assets/images/printables_fase_b/tp-b02-short.png',
+  './assets/images/printables_fase_b/tp-b02-smart.png',
+  './assets/images/printables_fase_b/tp-b02-straight.png',
+  './assets/images/printables_fase_b/tp-b02-tall.png',
+
+  // printables images — TP-B03
+  './assets/images/printables_fase_b/tp-b03-bank.png',
+  './assets/images/printables_fase_b/tp-b03-behind.png',
+  './assets/images/printables_fase_b/tp-b03-hospital.png',
+  './assets/images/printables_fase_b/tp-b03-in-front-of.png',
+  './assets/images/printables_fase_b/tp-b03-market.png',
+  './assets/images/printables_fase_b/tp-b03-mosque.png',
+  './assets/images/printables_fase_b/tp-b03-neighborhood-map-worksheet.png',
+  './assets/images/printables_fase_b/tp-b03-next-to.png',
+  './assets/images/printables_fase_b/tp-b03-park.png',
+
+  // printables images — TP-B04
+  './assets/images/printables_fase_b/tp-b04-sentence-frame-card.png',
+  './assets/images/printables_fase_b/tp-b04-writing-worksheet.png',
+
+  // printables images — TP-B05
+  './assets/images/printables_fase_b/tp-b05-clock-worksheet.png',
+  './assets/images/printables_fase_b/tp-b05-draw-the-clock-worksheet.png',
+  './assets/images/printables_fase_b/tp-b05-half-past.png',
+  './assets/images/printables_fase_b/tp-b05-oclock.png',
+  './assets/images/printables_fase_b/tp-b05-quarter-past.png',
+  './assets/images/printables_fase_b/tp-b05-quarter-to.png',
+  './assets/images/printables_fase_b/tp-b05-time-reference-card.png',
+
+  // printables images — TP-B06
+  './assets/images/printables_fase_b/tp-b06-go-to-school.png',
+  './assets/images/printables_fase_b/tp-b06-have-breakfast.png',
+  './assets/images/printables_fase_b/tp-b06-have-lunch.png',
+  './assets/images/printables_fase_b/tp-b06-play.png',
+  './assets/images/printables_fase_b/tp-b06-schedule-worksheet.png',
+  './assets/images/printables_fase_b/tp-b06-sleep.png',
+  './assets/images/printables_fase_b/tp-b06-study.png',
+  './assets/images/printables_fase_b/tp-b06-wake-up.png',
+
+  // printables images — TP-B07
+  './assets/images/printables_fase_b/tp-b07-calendar-worksheet.png',
+  './assets/images/printables_fase_b/tp-b07-friday.png',
+  './assets/images/printables_fase_b/tp-b07-monday.png',
+  './assets/images/printables_fase_b/tp-b07-months-reference-card.png',
+  './assets/images/printables_fase_b/tp-b07-saturday.png',
+  './assets/images/printables_fase_b/tp-b07-sunday.png',
+  './assets/images/printables_fase_b/tp-b07-thursday.png',
+  './assets/images/printables_fase_b/tp-b07-tuesday.png',
+  './assets/images/printables_fase_b/tp-b07-wednesday.png',
+
+  // printables images — TP-B08
+  './assets/images/printables_fase_b/tp-b08-weekly-schedule-worksheet.png',
+  './assets/images/printables_fase_b/tp-b08-writing-guide-card.png',
+
+  // printables images — TP-B09
+  './assets/images/printables_fase_b/tp-b09-bird.png',
+  './assets/images/printables_fase_b/tp-b09-butterfly.png',
+  './assets/images/printables_fase_b/tp-b09-cat.png',
+  './assets/images/printables_fase_b/tp-b09-dog.png',
+  './assets/images/printables_fase_b/tp-b09-fish.png',
+  './assets/images/printables_fase_b/tp-b09-flower.png',
+  './assets/images/printables_fase_b/tp-b09-grass.png',
+  './assets/images/printables_fase_b/tp-b09-habitat-worksheet.png',
+  './assets/images/printables_fase_b/tp-b09-leaf.png',
+  './assets/images/printables_fase_b/tp-b09-tree.png',
+
+  // printables images — TP-B10
+  './assets/images/printables_fase_b/tp-b10-cloudy.png',
+  './assets/images/printables_fase_b/tp-b10-hat.png',
+  './assets/images/printables_fase_b/tp-b10-jacket.png',
+  './assets/images/printables_fase_b/tp-b10-raincoat.png',
+  './assets/images/printables_fase_b/tp-b10-rainy.png',
+  './assets/images/printables_fase_b/tp-b10-sandals.png',
+  './assets/images/printables_fase_b/tp-b10-shorts.png',
+  './assets/images/printables_fase_b/tp-b10-sunny.png',
+  './assets/images/printables_fase_b/tp-b10-umbrella.png',
+  './assets/images/printables_fase_b/tp-b10-weather-outfit-worksheet.png',
+  './assets/images/printables_fase_b/tp-b10-windy.png',
+
+  // printables images — TP-B11
+  './assets/images/printables_fase_b/tp-b11-brush-teeth.png',
+  './assets/images/printables_fase_b/tp-b11-drink-water.png',
+  './assets/images/printables_fase_b/tp-b11-eat-vegetables.png',
+  './assets/images/printables_fase_b/tp-b11-exercise.png',
+  './assets/images/printables_fase_b/tp-b11-healthy-habits-worksheet.png',
+  './assets/images/printables_fase_b/tp-b11-sleep-early.png',
+  './assets/images/printables_fase_b/tp-b11-wash-hands.png',
+
+  // printables images — TP-B12
+  './assets/images/printables_fase_b/tp-b12-chef.png',
+  './assets/images/printables_fase_b/tp-b12-doctor.png',
+  './assets/images/printables_fase_b/tp-b12-driver.png',
+  './assets/images/printables_fase_b/tp-b12-farmer.png',
+  './assets/images/printables_fase_b/tp-b12-firefighter.png',
+  './assets/images/printables_fase_b/tp-b12-job-description-worksheet.png',
+  './assets/images/printables_fase_b/tp-b12-nurse.png',
+  './assets/images/printables_fase_b/tp-b12-police.png',
+  './assets/images/printables_fase_b/tp-b12-teacher.png',
+
+  // printables images — TP-B13
+  './assets/images/printables_fase_b/tp-b13-gado-gado.png',
+  './assets/images/printables_fase_b/tp-b13-my-favorite-food-worksheet.png',
+  './assets/images/printables_fase_b/tp-b13-nasi-goreng.png',
+  './assets/images/printables_fase_b/tp-b13-rendang.png',
+  './assets/images/printables_fase_b/tp-b13-sate.png',
+  './assets/images/printables_fase_b/tp-b13-soto.png',
+  './assets/images/printables_fase_b/tp-b13-tempeh.png',
+
+  // printables images — TP-B14
+  './assets/images/printables_fase_b/tp-b14-birthday.png',
+  './assets/images/printables_fase_b/tp-b14-christmas.png',
+  './assets/images/printables_fase_b/tp-b14-eid.png',
+  './assets/images/printables_fase_b/tp-b14-graduation.png',
+  './assets/images/printables_fase_b/tp-b14-my-celebration-worksheet.png',
+  './assets/images/printables_fase_b/tp-b14-nyepi.png',
+
+  // printables images — TP-B15
+  './assets/images/printables_fase_b/tp-b15-indonesia-poster-template.png',
+  './assets/images/printables_fase_b/tp-b15-my-country-worksheet.png',
+  './assets/images/printables_fase_b/tp-b15-sentence-starter-card.png',
+
+  // printables images — TP-B16
+  './assets/images/printables_fase_b/tp-b16-badminton.png',
+  './assets/images/printables_fase_b/tp-b16-cycling.png',
+  './assets/images/printables_fase_b/tp-b16-football.png',
+  './assets/images/printables_fase_b/tp-b16-martial-arts.png',
+  './assets/images/printables_fase_b/tp-b16-running.png',
+  './assets/images/printables_fase_b/tp-b16-sports-survey-worksheet.png',
+  './assets/images/printables_fase_b/tp-b16-swimming.png',
+
+  // printables images — TP-B17
+  './assets/images/printables_fase_b/tp-b17-crossroad.png',
+  './assets/images/printables_fase_b/tp-b17-direction-phrase-card.png',
+  './assets/images/printables_fase_b/tp-b17-directions-map-worksheet.png',
+  './assets/images/printables_fase_b/tp-b17-go-straight.png',
+  './assets/images/printables_fase_b/tp-b17-stop.png',
+  './assets/images/printables_fase_b/tp-b17-traffic-light.png',
+  './assets/images/printables_fase_b/tp-b17-turn-left.png',
+  './assets/images/printables_fase_b/tp-b17-turn-right.png',
+
+  // printables images — TP-B18
+  './assets/images/printables_fase_b/tp-b18-ago.png',
+  './assets/images/printables_fase_b/tp-b18-last-month.png',
+  './assets/images/printables_fase_b/tp-b18-last-week.png',
+  './assets/images/printables_fase_b/tp-b18-past-event-worksheet.png',
+  './assets/images/printables_fase_b/tp-b18-this-morning.png',
+  './assets/images/printables_fase_b/tp-b18-verb-past-tense-card.png',
+  './assets/images/printables_fase_b/tp-b18-yesterday.png',
+
+  // printables images — TP-B19
+  './assets/images/printables_fase_b/tp-b19-budis-day-text.png',
+  './assets/images/printables_fase_b/tp-b19-reading-comprehension-worksheet.png',
+  './assets/images/printables_fase_b/tp-b19-sequence-cards.png',
+
+  // printables images — TP-B20
+  './assets/images/printables_fase_b/tp-b20-my-story-worksheet.png',
+  './assets/images/printables_fase_b/tp-b20-story-frame-card.png',
+
+  // printables images — TP-B21
+  './assets/images/printables_fase_b/tp-b21-budis-week-table.png',
+  './assets/images/printables_fase_b/tp-b21-stay-healthy-poster.png',
+
+  // printables images — TP-B22
+  './assets/images/printables_fase_b/tp-b22-planning-guide-card.png',
+  './assets/images/printables_fase_b/tp-b22-project-poster-template.png',
 
   // modules
   './modules/pdf-handler.js',

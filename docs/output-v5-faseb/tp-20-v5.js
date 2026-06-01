@@ -48,6 +48,11 @@ const TP_B20 = {
     'Tidak ada kosakata baru yang diperkenalkan — semua dari TP16–19',
   ],
 
+  printables: [
+    { file: 'tp-b20-my-story-worksheet.png',  label: 'My Story Worksheet' },
+    { file: 'tp-b20-story-frame-card.png',    label: 'Story Frame Card' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🟠',

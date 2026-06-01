@@ -45,6 +45,16 @@ const TP_B18 = {
     'Overgeneralisasi "goed/eated" TIDAK dikoreksi keras selama L10 — dicatat untuk feedback individual',
   ],
 
+  printables: [
+    { file: 'tp-b18-ago.png',                    label: 'Ago' },
+    { file: 'tp-b18-last-month.png',             label: 'Last Month' },
+    { file: 'tp-b18-last-week.png',              label: 'Last Week' },
+    { file: 'tp-b18-past-event-worksheet.png',   label: 'Past Event Worksheet' },
+    { file: 'tp-b18-this-morning.png',           label: 'This Morning' },
+    { file: 'tp-b18-verb-past-tense-card.png',   label: 'Verb Past Tense Card' },
+    { file: 'tp-b18-yesterday.png',              label: 'Yesterday' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

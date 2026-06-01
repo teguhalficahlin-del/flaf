@@ -45,6 +45,16 @@ const TP_B16 = {
     'Demo guru di L9 menggunakan badminton — bukan football — untuk memberi contoh yang berbeda dari modeling L7',
   ],
 
+  printables: [
+    { file: 'tp-b16-badminton.png',               label: 'Badminton' },
+    { file: 'tp-b16-cycling.png',                 label: 'Cycling' },
+    { file: 'tp-b16-football.png',                label: 'Football' },
+    { file: 'tp-b16-martial-arts.png',            label: 'Martial Arts' },
+    { file: 'tp-b16-running.png',                 label: 'Running' },
+    { file: 'tp-b16-sports-survey-worksheet.png', label: 'Sports Survey Worksheet' },
+    { file: 'tp-b16-swimming.png',                label: 'Swimming' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

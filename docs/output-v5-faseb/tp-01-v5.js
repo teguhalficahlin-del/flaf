@@ -44,6 +44,18 @@ const TP_B01 = {
     'Ejaan "library" sudah dieja bersama kelas minimal 1 kali',
   ],
 
+  printables: [
+    { file: 'tp-b01-canteen.png',              label: 'Canteen' },
+    { file: 'tp-b01-classroom.png',            label: 'Classroom' },
+    { file: 'tp-b01-gate.png',                 label: 'Gate' },
+    { file: 'tp-b01-hall.png',                 label: 'Hall' },
+    { file: 'tp-b01-library.png',              label: 'Library' },
+    { file: 'tp-b01-office.png',               label: 'Office' },
+    { file: 'tp-b01-playground.png',           label: 'Playground' },
+    { file: 'tp-b01-school-map-worksheet.png', label: 'School Map Worksheet' },
+    { file: 'tp-b01-toilet.png',               label: 'Toilet' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

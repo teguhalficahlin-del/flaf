@@ -45,6 +45,19 @@ const TP_B02 = {
     '"She has" vs "She is" sudah dijelaskan setidaknya satu kali (L6 atau L9)',
   ],
 
+  printables: [
+    { file: 'tp-b02-curly.png',                  label: 'Curly' },
+    { file: 'tp-b02-describe-me-worksheet.png',  label: 'Describe Me Worksheet' },
+    { file: 'tp-b02-funny.png',                  label: 'Funny' },
+    { file: 'tp-b02-kind.png',                   label: 'Kind' },
+    { file: 'tp-b02-long-hair.png',              label: 'Long Hair' },
+    { file: 'tp-b02-short-hair.png',             label: 'Short Hair' },
+    { file: 'tp-b02-short.png',                  label: 'Short' },
+    { file: 'tp-b02-smart.png',                  label: 'Smart' },
+    { file: 'tp-b02-straight.png',               label: 'Straight' },
+    { file: 'tp-b02-tall.png',                   label: 'Tall' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

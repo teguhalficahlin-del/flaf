@@ -46,6 +46,16 @@ const TP_B13 = {
     'Pilihan makanan siswa di L8 tidak diarahkan — semua makanan valid selama struktur "I like ___ because ___" dipakai',
   ],
 
+  printables: [
+    { file: 'tp-b13-gado-gado.png',                   label: 'Gado Gado' },
+    { file: 'tp-b13-my-favorite-food-worksheet.png',  label: 'My Favorite Food Worksheet' },
+    { file: 'tp-b13-nasi-goreng.png',                 label: 'Nasi Goreng' },
+    { file: 'tp-b13-rendang.png',                     label: 'Rendang' },
+    { file: 'tp-b13-sate.png',                        label: 'Sate' },
+    { file: 'tp-b13-soto.png',                        label: 'Soto' },
+    { file: 'tp-b13-tempeh.png',                      label: 'Tempeh' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',

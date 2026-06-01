@@ -45,6 +45,15 @@ const TP_B14 = {
     'Teaser TP15 disampaikan dengan framing "semua yang dipelajari di Kluster D" — bukan hanya nama topik',
   ],
 
+  printables: [
+    { file: 'tp-b14-birthday.png',                  label: 'Birthday' },
+    { file: 'tp-b14-christmas.png',                 label: 'Christmas' },
+    { file: 'tp-b14-eid.png',                       label: 'Eid' },
+    { file: 'tp-b14-graduation.png',                label: 'Graduation' },
+    { file: 'tp-b14-my-celebration-worksheet.png',  label: 'My Celebration Worksheet' },
+    { file: 'tp-b14-nyepi.png',                     label: 'Nyepi' },
+  ],
+
   energi_map: [
     'L0 ⚪',
     'L1 🔴',
