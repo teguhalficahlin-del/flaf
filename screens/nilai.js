@@ -1045,6 +1045,8 @@ window.nilaiTambahKelas = function() {
         <button onclick="nilaiPilihTingkat(2)" id="btn-tingkat-2" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 2<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 10 – 18</span></button>
         <button onclick="nilaiPilihTingkat(3)" id="btn-tingkat-3" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 3<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 11</span></button>
         <button onclick="nilaiPilihTingkat(4)" id="btn-tingkat-4" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 4<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 12 – 22</span></button>
+        <button onclick="nilaiPilihTingkat(5)" id="btn-tingkat-5" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 5<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 11</span></button>
+        <button onclick="nilaiPilihTingkat(6)" id="btn-tingkat-6" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 6<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 12 – 22</span></button>
       </div>
       <input type="hidden" id="input-tingkat-rombel" value="1">
       <button onclick="nilaiSimpanRombel()" class="nv-btn-simpan">SIMPAN ROMBEL</button>

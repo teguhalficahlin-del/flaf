@@ -274,7 +274,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
-        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22' }[k.tingkat] ?? '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22', 5:'1–11', 6:'12–22' }[k.tingkat] ?? '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
         ${lanjutHTML}
       </div>
       <div class="ds-list-arrow">›</div>
