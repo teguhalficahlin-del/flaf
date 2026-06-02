@@ -26,6 +26,7 @@
 
 import FASE_A from './fase-a.js';
 import FASE_B from './fase-b.js';
+import FASE_C from './fase-c.js';
 
 // ----------------------------------------------------------
 // REGISTRY FASE
@@ -36,6 +37,7 @@ import FASE_B from './fase-b.js';
 const REGISTRY = {
   'A': FASE_A,
   'B': FASE_B,
+  'C': FASE_C,
 };
 
 // ----------------------------------------------------------
@@ -87,7 +89,7 @@ export function getFase(key) {
  * getTP(id)
  * Mengembalikan satu objek TP berdasarkan id-nya, dicari di semua fase.
  *
- * @param {string} id — 'tp-01' s/d 'tp-18', 'tp-b01' s/d 'tp-b22'
+ * @param {string} id — 'tp-01' s/d 'tp-18', 'tp-b01' s/d 'tp-b22', 'tp-c01' s/d 'tp-c22'
  * @returns {Object|null}
  */
 export function getTP(id) {
