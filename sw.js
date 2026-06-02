@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v99';          // ← bump: kurikulum Fase C kelas 5-6
+const CACHE_VERSION  = 'flaf-v100';         // ← bump: tambah rombel kelas 5-6
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
