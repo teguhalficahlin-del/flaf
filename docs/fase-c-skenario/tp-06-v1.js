@@ -40,10 +40,10 @@ export const tp_c06 = {
     'Framing inklusif diucapkan di L2 — "Helping at home, watching TV, playing outside — anything counts" — sebelum siswa mulai mengisi kartu',
     'My Hobby Card terisi sebelum INTERACT dimulai (L4) — kolom My Hobby di Hobby Exchange Table terisi sebelum pair work dimulai (L6)',
     'Hobby Exchange Table kolom My Partner\'s Hobby benar-benar kosong saat dibagikan — tidak boleh diisi tanpa bertanya ke pasangan',
-    'Connector 'because' muncul dua kali di model guru (L3) — dimodelkan natural dalam dua konteks hobi berbeda, tidak diajarkan sebagai grammar',
+    'Connector "because" muncul dua kali di model guru (L3) — dimodelkan natural dalam dua konteks hobi berbeda, tidak diajarkan sebagai grammar',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8)',
     'Output siswa mencerminkan hobi mereka sendiri — bukan replikasi text-anchor football',
-    'Jika 'because' muncul dalam tulisan siswa dengan struktur tidak sempurna — guru angguk dan tidak mengoreksi (L9)',
+    'Jika "because" muncul dalam tulisan siswa dengan struktur tidak sempurna — guru angguk dan tidak mengoreksi (L9)',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
@@ -68,11 +68,11 @@ export const tp_c06 = {
     risiko: [
       'L4: Siswa yang tidak tahu nama hobi mereka dalam bahasa Inggris bisa memperlambat seluruh kelas. Daftar opsi (reading, playing, cooking, watching, helping, drawing, singing) sebaiknya sudah ditulis di papan sejak sebelum L4 dimulai.',
       'L6: Pastikan kolom My Hobby terisi sebelum pair work dimulai. Siswa yang kolomnya masih kosong tidak punya informasi untuk dibagikan — dekati mereka sebelum demonstrasi selesai jika terlihat belum siap.',
-      'L8–L9 (penanganan because tidak sempurna): Jika siswa menulis 'because' dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — biarkan. Jangan koreksi grammar di L8 atau L9. Ini adalah exposure pertama 'because' di Fase C.',
+      'L8–L9 (penanganan because tidak sempurna): Jika siswa menulis "because" dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — biarkan. Jangan koreksi grammar di L8 atau L9. Ini adalah exposure pertama "because" di Fase C.',
     ],
     autonomy: [
       'Hobi dalam model guru (L3) harus tentang kegiatan nyata guru — bukan contoh generik. Semakin personal model guru, semakin siswa merasa aman mengungkapkan hobi mereka yang sesungguhnya.',
-      'Pertanyaan "Why do you like it?" di L5 dan L6 boleh diucapkan berulang kali oleh guru saat circulate — ini cara natural untuk memunculkan 'because' tanpa mengajarkannya.',
+      'Pertanyaan "Why do you like it?" di L5 dan L6 boleh diucapkan berulang kali oleh guru saat circulate — ini cara natural untuk memunculkan "because" tanpa mengajarkannya.',
       'Boleh memperpanjang INTERACT (L6) sampai 8 menit jika pertukaran terasa hidup dan kelas kondusif.',
       'Boleh skip L10 jika kelas menunjukkan kelelahan setelah writing — cukup tutup dengan L11.',
       'Boleh menambahkan kata sifat lokal dalam daftar di L4 jika ada hobi khas daerah yang relevan untuk kelas.',
@@ -199,14 +199,14 @@ UCAP: "I always [kegiatan terkait hobi] when I have free time."
 
 UCAP: "I also like [hobi kedua] because [alasan kedua]."
 → Contoh: "I also like cooking because I like making food for my family."
-→ Jeda setelah kalimat ini — tidak perlu komentar tentang 'because'.
+→ Jeda setelah kalimat ini — tidak perlu komentar tentang "because".
 
 AKSI: Kembali ke text-anchor di papan.
 🗣 TOGETHER — guru dan siswa baca text-anchor bersama.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — siswa biasanya ikut setelah kalimat kedua.',
-          cue             : 'Connector 'because' muncul dua kali dalam model guru — sekali untuk hobi pertama, sekali untuk hobi kedua. Ini exposure yang cukup sebelum siswa diminta memproduksinya sendiri. Jangan sebut kata "because" secara terpisah atau memberi komentar tentang fungsinya.',
+          cue             : 'Connector "because" muncul dua kali dalam model guru — sekali untuk hobi pertama, sekali untuk hobi kedua. Ini exposure yang cukup sebelum siswa diminta memproduksinya sendiri. Jangan sebut kata "because" secara terpisah atau memberi komentar tentang fungsinya.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -262,13 +262,13 @@ UCAP: "What do you like to do in your free time? One sentence."
 → Siswa menjawab: "I like [hobi] because [alasan]." atau hanya "I like [hobi]."
 → Guru angguk, tidak mengoreksi.
 UCAP: "Why? Tell us."
-→ Siswa menjawab dengan alasan — 'because' muncul natural dari pertanyaan ini.
+→ Siswa menjawab dengan alasan — "because" muncul natural dari pertanyaan ini.
 
 AKSI: Lakukan dengan 3–4 siswa dari barisan berbeda — cepat.
 → Setelah tiap siswa menjawab: guru tunjuk kelas — "Who also likes that? Raise your hand."
 → Ini menciptakan resonansi natural dan memberi tahu siswa bahwa hobi yang "tidak biasa" pun diakui kelas.`,
           bantuan         : 'Jika siswa yang berdiri hanya menyebut hobi tanpa alasan: guru langsung tanya "Why do you like it?" sambil angguk — isyarat bahwa ada lanjutannya.',
-          cue             : 'Pertanyaan "Why?" memancing 'because' secara natural — guru tidak menyebut kata "because", hanya bertanya alasan. Jika siswa menjawab tanpa "because" ("because fun" atau hanya "fun") — terima saja dan lanjut.',
+          cue             : 'Pertanyaan "Why?" memancing "because" secara natural — guru tidak menyebut kata "because", hanya bertanya alasan. Jika siswa menjawab tanpa "because" ("because fun" atau hanya "fun") — terima saja dan lanjut.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -310,7 +310,7 @@ AKSI: Guru circulate — prioritaskan barisan belakang dan pojok kelas.`,
             'Jika pasangan tidak tahu harus bertanya apa: tunjuk baris pertama di tabel — "What I like" — dan ucap "What do you like to do?" Tunggu siswa meniru pertanyaan itu ke pasangannya.',
             'Jika siswa mengisi kolom My Partner tanpa bertanya (menebak sendiri): tutup tabel mereka dengan tangan, ucap "Ask first. Then write." Tunjuk ke arah pasangannya.',
           ],
-          cue             : 'Pertanyaan "Why do you like it?" adalah cara paling natural untuk memunculkan 'because' dalam percakapan. Guru tidak menyebut kata "because" dalam instruksi pair work — cukup demonstrasikan di demo di atas.',
+          cue             : 'Pertanyaan "Why do you like it?" adalah cara paling natural untuk memunculkan "because" dalam percakapan. Guru tidak menyebut kata "because" dalam instruksi pair work — cukup demonstrasikan di demo di atas.',
           darurat         : `⚠ DARURAT — pair diam > 90 detik:
 1. Hentikan seluruh kelas dengan tepukan tangan.
 2. Demo ulang dengan 1 pasangan di depan — guru menjadi pasangannya.
@@ -377,7 +377,7 @@ AKSI: Siswa menulis secara individual.
 → Prioritaskan barisan belakang dan pojok kelas.
 → Perhatikan: apakah ada siswa yang menyalin kalimat text-anchor persis? Jika ya, tepuk bahu dan tanya: "Is this your hobby or the example?"`,
           bantuan         : 'Jika siswa freeze (pensil di tangan tapi tidak menulis): ucap kalimat pertama dengan informasi siswa — "What do you like? Write: I like..." Tunggu siswa menulis satu kalimat. Tinggalkan setelah itu.',
-          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya hobi berbeda. Jika 'because' muncul dalam tulisan siswa — dengan struktur sempurna maupun tidak sempurna — ini adalah tanda connector sedang bekerja.',
+          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya hobi berbeda. Jika "because" muncul dalam tulisan siswa — dengan struktur sempurna maupun tidak sempurna — ini adalah tanda connector sedang bekerja.',
           darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:\nUcap: "Two sentences — that is enough for today." Turunkan target dan lanjut ke L9.',
           energi          : '🔵',
           energy_level    : 'calm',
@@ -402,13 +402,13 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote what you like. Can you write when you do it? I always [hobi] on [hari/waktu]." — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan kalimat kedua yang menggunakan 'because' untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka: "I always [hobi] with [orang]."
+- Sudah bisa: tambahkan kalimat kedua yang menggunakan "because" untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka: "I always [hobi] with [orang]."
 
-Catatan penanganan produksi: Jika 'because' muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — angguk dan tidak perlu mengoreksi.
+Catatan penanganan produksi: Jika "because" muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — angguk dan tidak perlu mengoreksi.
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika 'because' muncul secara spontan — angguk.
-→ Jika 'because' tidak muncul — tidak perlu dipaksakan. Fokus produksi 'because' ada di TP07.`,
+→ Jika "because" muncul secara spontan — angguk.
+→ Jika "because" tidak muncul — tidak perlu dipaksakan. Fokus produksi "because" ada di TP07.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Who do you usually do this with? Can you write: I always [hobi] with...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah tulisan mencerminkan hobi nyata siswa. Kalimat "I like helping my mother cook because she looks happy" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
           darurat         : null,
@@ -416,7 +416,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap panduan konkret — "You wrote what you like. Can you write when you do it? I always [hobi] on [hari/waktu]." — siswa tinggal melanjutkan dari sana.',
-            sudahBisa   : 'tambahkan kalimat kedua yang menggunakan 'because' untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka.',
+            sudahBisa   : 'tambahkan kalimat kedua yang menggunakan "because" untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka.',
           },
           flex            : false,
           flex_kondisi    : null,
@@ -479,7 +479,7 @@ UCAP: "What you eat. And why."
 
 UCAP: "Good work today. See you next time."`,
           bantuan         : null,
-          cue             : 'Preview "What you eat. And why." adalah undangan natural ke 'because' dan 'but' di TP07 — tanpa menyebut kata connector apapun. "And why" juga memperkuat 'because' yang sudah dikenalkan hari ini.',
+          cue             : 'Preview "What you eat. And why." adalah undangan natural ke "because" dan "but" di TP07 — tanpa menyebut kata connector apapun. "And why" juga memperkuat "because" yang sudah dikenalkan hari ini.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',

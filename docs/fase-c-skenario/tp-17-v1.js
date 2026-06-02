@@ -72,7 +72,7 @@ export const tp_c17 = {
     ],
     autonomy: [
       'Empat topik di pojok papan boleh diganti dengan topik yang lebih relevan untuk konteks kelas.',
-      'Kalimat contoh 'so' di L3 boleh diganti dengan contoh yang lebih dekat dengan konteks lokal.',
+      'Kalimat contoh "so" di L3 boleh diganti dengan contoh yang lebih dekat dengan konteks lokal.',
       'Guru boleh memperpanjang L6 sampai 8 menit jika pair exchange terasa sangat aktif.',
       'Jika ada siswa yang memilih topik di luar daftar papan: valid.',
     ],
@@ -263,7 +263,7 @@ UCAP: "Good. You have opinions. Now — write one."
 "Football · Reading · Cooking · Swimming"
 UCAP: "Choose one topic."
 → Tunjuk pojok papan.
-UCAP: "Write ONE sentence. Your opinion. Use 'because'."
+UCAP: "Write ONE sentence. Your opinion. Use "because"."
 UCAP: "Don't talk yet."
 → Siswa menulis. Waktu: 2–3 menit.
 → Guru diam. Tidak circulate belum.`,
@@ -423,14 +423,14 @@ AKSI: Circulate — prioritaskan barisan tengah yang belum tersentuh di L8.
 Diferensiasi:
 - Perlu support: dekati siswa, tunjuk kalimat mereka, ucap "Why? Add: because..." — tunggu satu alasan personal.
 - Sudah bisa: bisik "Add one more — use so. Like: 'I don't like [sesuatu], so I prefer...'"`,
-          bantuan         : 'Jika siswa tidak bisa menambah 'so': jangan paksa. Dua connector (because dan but) sudah cukup untuk TP17.',
-          cue             : ''so' adalah connector yang baru pertama kali jadi fokus produksi di TP17. Siswa yang berhasil menggunakannya sedang membuat koneksi linguistik baru.',
+          bantuan         : 'Jika siswa tidak bisa menambah "so": jangan paksa. Dua connector (because dan but) sudah cukup untuk TP17.',
+          cue             : "so" adalah connector yang baru pertama kali jadi fokus produksi di TP17. Siswa yang berhasil menggunakannya sedang membuat koneksi linguistik baru.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'dekati siswa dengan kalimat opini tanpa connector. Tunjuk kalimat mereka, ucap "Why? Add: because..." — tunggu siswa melanjutkan dengan satu alasan personal.',
-            sudahBisa   : 'bisik "Add one more — use so. Like: \'I don\'t like [sesuatu], so I prefer...\'" Kalimat dengan 'so' mendorong kesimpulan logis yang berbeda per siswa.',
+            sudahBisa   : 'bisik "Add one more — use so. Like: \'I don\'t like [sesuatu], so I prefer...\'" Kalimat dengan "so" mendorong kesimpulan logis yang berbeda per siswa.',
           },
           flex            : false,
           flex_kondisi    : null,

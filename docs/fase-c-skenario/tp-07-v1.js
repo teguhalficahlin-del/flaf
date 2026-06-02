@@ -38,12 +38,12 @@ export const tp_c07 = {
 
   checklist: [
     'Framing inklusif diucapkan di L2 sebelum siswa mulai mengisi kartu — "Whatever you eat — rice, corn, bread, noodles, anything — that is your food. No food is wrong here."',
-    'Connector 'because' muncul SEBELUM 'but' di model guru L3 — dua kalimat terpisah, tidak digabungkan',
+    'Connector "because" muncul SEBELUM "but" di model guru L3 — dua kalimat terpisah, tidak digabungkan',
     'My Food Card terisi sebelum INTERACT dimulai (L4) — kolom My Food di Food Exchange Table terisi sebelum pair work dimulai (L6)',
     'Food Exchange Table kolom My Partner\'s Food benar-benar kosong saat dibagikan — tidak boleh diisi tanpa bertanya ke pasangan',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8)',
     'Output siswa mencerminkan makanan mereka sendiri — bukan replikasi text-anchor rice dan noodles',
-    'Jika 'because' atau 'but' muncul dalam tulisan siswa dengan struktur tidak sempurna — angguk, tidak koreksi (L9)',
+    'Jika "because" atau "but" muncul dalam tulisan siswa dengan struktur tidak sempurna — angguk, tidak koreksi (L9)',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
@@ -68,12 +68,12 @@ export const tp_c07 = {
     risiko: [
       'L4: Siswa yang tidak tahu nama makanan dalam bahasa Inggris bisa memperlambat seluruh kelas. Daftar opsi (rice, corn, bread, noodles, fish, vegetables, chicken) harus ditulis di papan sejak sebelum L4 dimulai — nama makanan lokal tidak harus diterjemahkan.',
       'L6: Food Exchange Table punya tiga baris — lebih banyak dari tabel di TP05 dan TP06. Demo di awal L6 harus mencakup ketiga pertanyaan dengan cepat (maksimal 90 detik total). Jika tiga baris terasa berat: sederhanakan tabel menjadi 2 baris (What they eat + But also like).',
-      'L8–L9 (penanganan connector tidak sempurna): Jika siswa menulis 'because' atau 'but' dengan struktur tidak sempurna — biarkan. Prinsip yang sama berlaku seperti past tense di TP05 dan 'because' di TP06.',
+      'L8–L9 (penanganan connector tidak sempurna): Jika siswa menulis "because" atau "but" dengan struktur tidak sempurna — biarkan. Prinsip yang sama berlaku seperti past tense di TP05 dan "because" di TP06.',
     ],
     autonomy: [
       'Makanan dalam model guru (L3) harus tentang makanan nyata yang guru makan — semakin spesifik ("I eat rice with tempe goreng every day"), semakin siswa merasa aman menulis tentang makanan sehari-hari mereka yang sesungguhnya.',
       'Food Exchange Table boleh disederhanakan menjadi 2 baris (What they eat + But also like) jika 3 baris terasa terlalu berat untuk sesi ini.',
-      'Pertanyaan "But what else do you like?" di L5 dan L6 boleh diulang oleh guru saat circulate — ini cara natural untuk memunculkan 'but' tanpa mengajarkannya.',
+      'Pertanyaan "But what else do you like?" di L5 dan L6 boleh diulang oleh guru saat circulate — ini cara natural untuk memunculkan "but" tanpa mengajarkannya.',
       'Boleh memperpanjang INTERACT (L6) sampai 8 menit jika pertukaran terasa hidup dan kelas kondusif.',
       'Boleh skip L10 jika kelas menunjukkan kelelahan setelah writing — cukup tutup dengan L11.',
     ],
@@ -207,7 +207,7 @@ AKSI: Kembali ke text-anchor di papan.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — siswa biasanya ikut setelah kalimat kedua.',
-          cue             : 'Urutan wajib — 'because' muncul SEBELUM 'but' dalam model guru. 'because' lebih familiar (sudah di-expose di TP06), sehingga ditampilkan dulu sebagai fondasi. 'but' masuk sebagai kontras yang natural setelahnya. Keduanya dalam kalimat terpisah — tidak digabungkan dalam satu kalimat panjang.',
+          cue             : 'Urutan wajib — "because" muncul SEBELUM "but" dalam model guru. "because" lebih familiar (sudah di-expose di TP06), sehingga ditampilkan dulu sebagai fondasi. "but" masuk sebagai kontras yang natural setelahnya. Keduanya dalam kalimat terpisah — tidak digabungkan dalam satu kalimat panjang.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -265,13 +265,13 @@ UCAP: "What do you eat every day? One sentence."
 → Siswa menjawab: "I eat [makanan] every day because [alasan]." atau hanya "I eat [makanan] every day."
 → Guru angguk, tidak mengoreksi.
 UCAP: "But what else do you like?"
-→ Siswa menjawab dengan makanan lain — 'but' muncul natural dari pertanyaan ini.
+→ Siswa menjawab dengan makanan lain — "but" muncul natural dari pertanyaan ini.
 
 AKSI: Lakukan dengan 3–4 siswa dari barisan berbeda — cepat.
 → Setelah tiap siswa menjawab: guru tunjuk kelas — "Who also eats that? Raise your hand."
 → Resonansi natural — siswa yang punya makanan sama mengangkat tangan tanpa harus berbicara.`,
           bantuan         : 'Jika siswa yang berdiri hanya menyebut makanan pertama tanpa lanjutan: guru langsung tanya "But what else?" sambil angguk — ini isyarat bahwa ada kontras yang ditunggu.',
-          cue             : 'Pertanyaan "But what else do you like?" adalah cara paling natural untuk memunculkan 'but' dalam percakapan. Guru tidak menyebut kata "but" dalam pertanyaan — "but" muncul dari konteks kontras yang dibangun oleh pertanyaan itu sendiri.',
+          cue             : 'Pertanyaan "But what else do you like?" adalah cara paling natural untuk memunculkan "but" dalam percakapan. Guru tidak menyebut kata "but" dalam pertanyaan — "but" muncul dari konteks kontras yang dibangun oleh pertanyaan itu sendiri.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -314,7 +314,7 @@ AKSI: Guru circulate — prioritaskan barisan belakang dan pojok kelas.`,
             'Jika pasangan tidak tahu harus bertanya apa: tunjuk baris pertama di tabel — "What they eat" — dan ucap "What do you eat every day?" Tunggu siswa meniru pertanyaan itu ke pasangannya.',
             'Jika siswa mengisi kolom My Partner tanpa bertanya: tutup tabel mereka dengan tangan, ucap "Ask first. Then write." Tunjuk ke arah pasangannya.',
           ],
-          cue             : 'Pertanyaan "Why?" memunculkan 'because' natural — pertanyaan "But what else do you like?" memunculkan 'but' natural. Guru tidak perlu menyebut nama connector apapun dalam instruksi pair work.',
+          cue             : 'Pertanyaan "Why?" memunculkan "because" natural — pertanyaan "But what else do you like?" memunculkan "but" natural. Guru tidak perlu menyebut nama connector apapun dalam instruksi pair work.',
           darurat         : `⚠ DARURAT — pair diam > 90 detik:
 1. Hentikan seluruh kelas dengan tepukan tangan.
 2. Demo ulang dengan 1 pasangan di depan — guru menjadi pasangannya.
@@ -352,7 +352,7 @@ AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
 UCAP (opsional): "Interesting. Did anyone find a food they had never heard of?"
 → Ini memberi nilai pada keberagaman makanan — siswa dengan makanan "tidak biasa" merasa diapresiasi.`,
           bantuan         : 'Jika siswa tidak bisa merangkum: tunjuk tabel mereka dan ucap "Your food and your partner\'s — is this the same?" Minta siswa bandingkan baris pertama saja dulu.',
-          cue             : 'Pertanyaan "most interesting difference" mendorong siswa untuk menemukan kontras yang bermakna — dan kontras ini adalah konteks alami untuk 'but'. Jika 'but' muncul spontan dalam jawaban siswa, itu bukti connector bekerja.',
+          cue             : 'Pertanyaan "most interesting difference" mendorong siswa untuk menemukan kontras yang bermakna — dan kontras ini adalah konteks alami untuk "but". Jika "but" muncul spontan dalam jawaban siswa, itu bukti connector bekerja.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -381,7 +381,7 @@ AKSI: Siswa menulis secara individual.
 → Prioritaskan barisan belakang dan pojok kelas.
 → Perhatikan: apakah ada siswa yang menyalin text-anchor persis? Jika ya, tepuk bahu dan tanya: "Is this your food or the example?"`,
           bantuan         : 'Jika siswa freeze (pensil di tangan tapi tidak menulis): ucap kalimat pertama dengan informasi siswa — "What do you eat? Write: I eat..." Tunggu siswa menulis satu kalimat. Tinggalkan setelah itu.',
-          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya makanan yang berbeda. Jika 'because' atau 'but' muncul dalam tulisan — dengan struktur sempurna maupun tidak sempurna — ini adalah tanda kedua connector sedang bekerja.',
+          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya makanan yang berbeda. Jika "because" atau "but" muncul dalam tulisan — dengan struktur sempurna maupun tidak sempurna — ini adalah tanda kedua connector sedang bekerja.',
           darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:\nUcap: "Two sentences — that is enough for today." Turunkan target dan lanjut ke L9.',
           energi          : '🔵',
           energy_level    : 'calm',
@@ -406,12 +406,12 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote what you eat. Can you write why? I eat [makanan] because [alasan]." — siswa tinggal melengkapi dari sana.
-- Sudah bisa: tambahkan kalimat kontras dengan 'but' — "But I don't like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."
+- Sudah bisa: tambahkan kalimat kontras dengan "but" — "But I don't like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."
 
-Catatan penanganan produksi: Jika 'because' atau 'but' muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I eat rice because energy" atau "but I like bakso very much" — angguk dan tidak perlu mengoreksi.
+Catatan penanganan produksi: Jika "because" atau "but" muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I eat rice because energy" atau "but I like bakso very much" — angguk dan tidak perlu mengoreksi.
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika 'because' atau 'but' muncul secara spontan — angguk.
+→ Jika "because" atau "but" muncul secara spontan — angguk.
 → Jika keduanya tidak muncul — tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What else do you like? Can you write: But I also like...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar atau kehadiran kedua connector — tapi apakah tulisan mencerminkan makanan nyata siswa. Kalimat "I eat ubi every day because my grandmother cooks it" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
@@ -420,7 +420,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap panduan konkret — "You wrote what you eat. Can you write why? I eat [makanan] because [alasan]." — siswa tinggal melengkapi dari sana.',
-            sudahBisa   : 'tambahkan kalimat kontras dengan 'but' — "But I don\'t like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."',
+            sudahBisa   : 'tambahkan kalimat kontras dengan "but" — "But I don\'t like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."',
           },
           flex            : false,
           flex_kondisi    : null,

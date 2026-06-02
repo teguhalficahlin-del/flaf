@@ -38,7 +38,7 @@ export const tp_c13 = {
   checklist: [
     'Reactivation L1 adalah bridge keterampilan membaca — "Last time you read a menu. You looked for prices. Today — different text, different things."',
     'Lima kategori diekstraksi bersama di L3: event · when · where · time · what to bring',
-    ''if' dalam text-anchor tidak dijelaskan sebagai grammar — jika ditanya: "It means — for students who want to buy"',
+    "if" dalam text-anchor tidak dijelaskan sebagai grammar — jika ditanya: "It means — for students who want to buy"',
     'Setiap siswa menulis pilihan di Choice Sheet SEBELUM pair work di L6 dimulai',
     'Demo L6 menunjukkan guru MENULIS pilihan dulu, baru berbagi — bukan langsung berbicara',
     'Teks pengumuman tetap tampil saat OUTPUT (L8) — siswa butuh teks untuk merespons',
@@ -79,7 +79,7 @@ export const tp_c13 = {
   },
 
   text_anchor    : 'School Book Fair is on Thursday, 20 March. It is in the school hall from 8.00 to 12.00. All students can come. Please bring money if you want to buy a book.',
-  connector_aktif: '— (tidak ada connector baru; jangan dorong connector apapun; 'if' dalam text-anchor adalah bagian fungsional teks — bukan target pembelajaran)',
+  connector_aktif: '— (tidak ada connector baru; jangan dorong connector apapun; "if" dalam text-anchor adalah bagian fungsional teks — bukan target pembelajaran)',
   recycle_fase_b : [
     '[event] is on [day] — adaptasi pola On [day] I... (TP07 Fase B)',
     'All students can come — pola can (TP16 Fase B)',
@@ -396,7 +396,7 @@ Diferensiasi:
 - Sudah bisa: tambah kalimat yang menghubungkan pengumuman dengan rencana atau preferensi personal — contoh: "I want to go because I like reading." atau "I will bring Rp 20.000 and buy two books."
 
 AKSI: Guru circulate — cek apakah informasi utama sudah ada dalam tulisan siswa.
-→ Jika connector muncul spontan ('because', 'and') — angguk.`,
+→ Jika connector muncul spontan ("because", "and") — angguk.`,
           bantuan         : 'Jika siswa sudah menulis 3 kalimat tapi semuanya faktual: tanya "Will you go? Write one sentence." — tunggu siswa tambahkan respons personal.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada rencana konkret dan alasan personal — berbeda-beda per siswa.',
           darurat         : null,

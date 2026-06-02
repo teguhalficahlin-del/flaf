@@ -431,7 +431,7 @@ UCAP: "Different texts — different uses. Now — write."
 UCAP: "Write three things:"
 UCAP: "One: what kind of text it is."
 UCAP: "Two: what it says — what does it want you to do?"
-UCAP: "Three: what do YOU think about it. Use 'because'."
+UCAP: "Three: what do YOU think about it. Use "because"."
 → Jeda.
 UCAP: "Three sentences. Your words — not the text's words."
 → Siswa memilih teks dan mulai menulis. Waktu: 7 menit.
@@ -472,14 +472,14 @@ UCAP: "Two more minutes. Read your response."
 → Jeda.
 UCAP: "Check: is sentence three YOUR opinion? Not the text's words?"
 → Jeda singkat.
-UCAP: "Did you use 'because'? If not — add it now."
+UCAP: "Did you use "because"? If not — add it now."
 
 AKSI: Circulate — barisan tengah yang belum tersentuh di L9.
 
 Diferensiasi:
 - Perlu support: tunjuk kalimat terakhir siswa, bisik "This is what the text says. But what do YOU think about it? Start with 'I think...'"
 - Sudah bisa: bisik "Can you add: what will you DO because of this text? 'I will...' or 'I want to...'"`,
-          bantuan         : 'Jika siswa tidak bisa menambah 'because': ucap "Why do you think that? Add: because..." Satu kata, tinggalkan.',
+          bantuan         : 'Jika siswa tidak bisa menambah "because": ucap "Why do you think that? Add: because..." Satu kata, tinggalkan.',
           cue             : '"I will join the competition." / "I want to go to Warung Pak Hendra." / "I will take the 07.00 bus." — kalimat-kalimat ini membuktikan bahwa siswa memahami PURPOSE teks.',
           darurat         : null,
           energi          : '🔵',

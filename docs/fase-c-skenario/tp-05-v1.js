@@ -41,7 +41,7 @@ export const tp_c05 = {
     'My Routine Card terisi sebelum INTERACT dimulai (L4) — kolom My Week di Comparison Table terisi sebelum pair work dimulai (L6)',
     'Comparison Table kolom My Partner\'s Week benar-benar kosong saat dibagikan — tidak boleh diisi tanpa bertanya ke pasangan',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8)',
-    'Connector 'then' muncul di model guru (L3) dan di drill cepat (L5) — dimodelkan natural, tidak diajarkan sebagai grammar',
+    'Connector "then" muncul di model guru (L3) dan di drill cepat (L5) — dimodelkan natural, tidak diajarkan sebagai grammar',
     'Kalimat past tense di model guru (L3) diucapkan sekali dan dilanjutkan — tidak ditunjuk, tidak diulang, tidak dijadikan bahan komentar',
     'Output siswa mencerminkan rutinitas mereka sendiri — bukan replikasi text-anchor',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
@@ -72,7 +72,7 @@ export const tp_c05 = {
     ],
     autonomy: [
       'Rutinitas dalam model guru (L3) harus tentang minggu nyata guru — bukan contoh generik. Semakin spesifik ("Then I correct student work" alih-alih "Then I work"), semakin siswa merasakan bahwa rutinitas yang berbeda-beda itu valid.',
-      'Pertanyaan "Then what?" di L5 boleh diucapkan berulang kali oleh guru saat circulate di L6 — ini cara natural untuk memunculkan 'then' tanpa mengajarkannya.',
+      'Pertanyaan "Then what?" di L5 boleh diucapkan berulang kali oleh guru saat circulate di L6 — ini cara natural untuk memunculkan "then" tanpa mengajarkannya.',
       'Boleh memperpanjang INTERACT (L6) sampai 8 menit jika pertukaran terasa hidup dan kelas kondusif.',
       'Boleh skip L10 jika kelas menunjukkan kelelahan setelah writing — cukup tutup dengan L11.',
       'Boleh menambahkan hari-hari spesifik dalam daftar opsi di papan (Senin, Selasa, dll.) jika siswa kesulitan dengan nama hari dalam bahasa Inggris.',
@@ -210,7 +210,7 @@ AKSI: Langsung lanjut ke pembacaan bersama.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — siswa biasanya ikut setelah kalimat kedua.',
-          cue             : 'Connector 'then' muncul dua kali di model guru — dalam konteks yang natural, bukan sebagai kata yang disorot. Kalimat past tense ("Last Monday I helped my mother cook dinner.") diucapkan sekali dan langsung dilanjutkan — tidak ditunjuk, tidak diulang, tidak dijadikan bahan komentar. Ini exposure, bukan instruksi.',
+          cue             : 'Connector "then" muncul dua kali di model guru — dalam konteks yang natural, bukan sebagai kata yang disorot. Kalimat past tense ("Last Monday I helped my mother cook dinner.") diucapkan sekali dan langsung dilanjutkan — tidak ditunjuk, tidak diulang, tidak dijadikan bahan komentar. Ini exposure, bukan instruksi.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -274,7 +274,7 @@ AKSI: Lakukan dengan 3–4 siswa dari barisan berbeda — cepat, tanpa berhenti 
 → Setelah tiap siswa menjawab: guru tunjuk kelas — "Who does the same thing on Monday? Raise your hand."
 → Ini menciptakan resonansi natural tanpa memaksa siapapun berbicara panjang.`,
           bantuan         : 'Jika siswa yang berdiri berhenti setelah kalimat pertama: guru langsung tanya "Then what?" sambil angguk — ini isyarat bahwa ada lanjutannya.',
-          cue             : 'Tujuan layar ini adalah membiasakan siswa dengan pola "On [day] I... Then I..." sebelum pair work. Guru memancing pertanyaan "Then what?" agar 'then' terasa natural sebagai kelanjutan — bukan sebagai kata yang diajarkan.',
+          cue             : 'Tujuan layar ini adalah membiasakan siswa dengan pola "On [day] I... Then I..." sebelum pair work. Guru memancing pertanyaan "Then what?" agar "then" terasa natural sebagai kelanjutan — bukan sebagai kata yang diajarkan.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -317,7 +317,7 @@ AKSI: Guru circulate — prioritaskan barisan belakang dan pojok kelas.`,
             'Jika pasangan tidak tahu harus bertanya apa: tunjuk baris pertama di tabel — "This week" — dan ucap "What do you do this week?" Tunggu siswa meniru pertanyaan itu ke pasangannya.',
             'Jika siswa langsung mengisi kolom My Partner tanpa bertanya: tutup tabel mereka dengan tangan, ucap "Ask first. Then write." Tunjuk ke arah pasangannya.',
           ],
-          cue             : 'Pertanyaan "Then what?" boleh dimunculkan saat siswa bertanya ke pasangan — ini cara natural 'then' masuk ke percakapan. Jangan diinstruksikan secara eksplisit, tapi guru bisa memodelkan saat lewat dekat pasangan yang sedang tanya-jawab.',
+          cue             : 'Pertanyaan "Then what?" boleh dimunculkan saat siswa bertanya ke pasangan — ini cara natural "then" masuk ke percakapan. Jangan diinstruksikan secara eksplisit, tapi guru bisa memodelkan saat lewat dekat pasangan yang sedang tanya-jawab.',
           darurat         : `⚠ DARURAT — pair diam > 90 detik:
 1. Hentikan seluruh kelas dengan tepukan tangan.
 2. Demo ulang dengan 1 pasangan di depan — guru menjadi pasangannya.
@@ -386,7 +386,7 @@ AKSI: Siswa menulis secara individual.
 → Prioritaskan barisan belakang dan pojok kelas.
 → Perhatikan: apakah ada siswa yang menyalin text-anchor persis? Jika ya, tepuk bahu dan tanya: "Is this your week or the example?"`,
           bantuan         : 'Jika siswa freeze (pensil di tangan tapi tidak menulis): ucap kalimat pertama dengan informasi siswa — "What day do you go to school? Write: On [hari] I go to school." Tunggu siswa menulis satu kalimat. Tinggalkan setelah itu.',
-          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya rutinitas yang berbeda. Jika 'then' muncul dalam tulisan siswa secara spontan — itu bukti connector sudah bekerja. Jika tidak muncul — tidak perlu dipaksakan.',
+          cue             : 'Text-anchor sudah diturunkan. Setiap tulisan harus berbeda karena setiap siswa punya rutinitas yang berbeda. Jika "then" muncul dalam tulisan siswa secara spontan — itu bukti connector sudah bekerja. Jika tidak muncul — tidak perlu dipaksakan.',
           darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:\nUcap: "Two sentences — that is enough for today." Turunkan target dan lanjut ke L9.',
           energi          : '🔵',
           energy_level    : 'calm',
@@ -412,10 +412,10 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote about Monday. What about another day? On [hari lain] I..." — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan kalimat dengan 'then' — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."
+- Sudah bisa: tambahkan kalimat dengan "then" — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika 'then' muncul secara spontan — angguk, tidak perlu komentar.
+→ Jika "then" muncul secara spontan — angguk, tidak perlu komentar.
 → Jika ada kalimat past tense yang muncul (sempurna maupun tidak sempurna) — angguk, tidak perlu koreksi.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What do you do after school? Can you write: Then I...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah tulisan mencerminkan minggu nyata siswa. Kalimat "On Sunday I help my father at the warung" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
@@ -424,7 +424,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap panduan konkret — "You wrote about Monday. What about another day? On [hari lain] I..." — siswa tinggal melanjutkan dari sana.',
-            sudahBisa   : 'tambahkan kalimat dengan 'then' — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."',
+            sudahBisa   : 'tambahkan kalimat dengan "then" — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."',
           },
           flex            : false,
           flex_kondisi    : null,
@@ -489,7 +489,7 @@ UCAP: "Why you do it."
 
 UCAP: "Good work today. See you next time."`,
           bantuan         : null,
-          cue             : 'Preview "Why you do it" adalah undangan natural ke 'because' di TP06 — tanpa menyebut kata "because" atau menjelaskan apapun. Siswa yang penasaran akan membawa pertanyaan itu ke sesi berikutnya. Nada penutup adalah nada selesai, bukan nada penugasan.',
+          cue             : 'Preview "Why you do it" adalah undangan natural ke "because" di TP06 — tanpa menyebut kata "because" atau menjelaskan apapun. Siswa yang penasaran akan membawa pertanyaan itu ke sesi berikutnya. Nada penutup adalah nada selesai, bukan nada penugasan.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',

@@ -152,7 +152,7 @@ AKSI: Setelah 2–3 respons, bridge ke topik hari ini.
 UCAP: "Good. Today — we write about more than food."
 UCAP: "Your whole week."`,
           bantuan         : 'Jika tidak ada yang merespons dalam 5 detik: ucap satu kalimat model sederhana — "I eat rice because it gives me energy. Who has a sentence like this?" — tunggu siswa melanjutkan dengan versi mereka sendiri.',
-          cue             : 'Reactivation ini merujuk tulisan siswa sendiri dari TP07 — bukan text-anchor Rina, bukan kalimat guru. Yang penting: pola 'because' dan 'but' aktif kembali di kepala siswa sebelum masuk ke brief.',
+          cue             : 'Reactivation ini merujuk tulisan siswa sendiri dari TP07 — bukan text-anchor Rina, bukan kalimat guru. Yang penting: pola "because" dan "but" aktif kembali di kepala siswa sebelum masuk ke brief.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -181,7 +181,7 @@ UCAP: "Maybe you have a routine you like, but also one you don't."
 → Jeda.
 UCAP: "This is your text. Your week is different from everyone else."`,
           bantuan         : 'Jika siswa bertanya "harus berapa kalimat?": ucap "At least three. More is better." Tidak perlu batasan atas.',
-          cue             : ''because' dan 'but' ada dalam kalimat instruksi guru — bukan kalimat model yang bisa disalin. Guru tidak menjelaskan connector — siswa sudah kenal keduanya dari TP06 dan TP02.',
+          cue             : "because" dan "but" ada dalam kalimat instruksi guru — bukan kalimat model yang bisa disalin. Guru tidak menjelaskan connector — siswa sudah kenal keduanya dari TP06 dan TP02.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -416,7 +416,7 @@ UCAP: "Add to your text. Don't start over."
 → Writing Plan Sheet boleh dilihat kembali.
 → Waktu: 7–8 menit.
 
-AKSI: Guru circulate — jangan koreksi grammar. Perhatikan apakah 'because' atau 'but' muncul secara natural.
+AKSI: Guru circulate — jangan koreksi grammar. Perhatikan apakah "because" atau "but" muncul secara natural.
 → Jika muncul: angguk, tidak perlu komentar.
 → Jika tidak muncul sama sekali: tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa tidak tahu harus menambahkan apa setelah Stage 1: bisik "What do you eat every day? Write that." Satu kalimat sudah cukup untuk memulai Stage 2.',
