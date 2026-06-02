@@ -1,0 +1,563 @@
+/**
+ * =============================================================
+ * FLAF — TP C01 (My Extended Profile)
+ * File: docs/fase-c-skenario/tp-01-v1.js
+ * Format: Fase C Schema v1.0
+ * Fase: C (Kelas 5)
+ * Kluster: A — Diri yang Lebih Lengkap
+ * Jenis: Biasa
+ * Source: flaf-c-tp01-v2.txt
+ * Converted: Juni 2026
+ * =============================================================
+ */
+
+export const tp_c01 = {
+
+  // ── Identitas ─────────────────────────────────────────────────────────
+  id        : 'tp-c01',
+  nomor     : 1,
+  kelas     : 5,
+  nama      : 'My Extended Profile',
+  tema      : 'Diri yang Lebih Lengkap',
+  kluster   : 'A',
+  jenis     : 'Biasa',
+  deskripsi : '',
+
+  // ── Indikator ─────────────────────────────────────────────────────────
+  indikator: [
+    'Peserta didik dapat menuliskan profil diri sendiri dalam minimal tiga kalimat menggunakan pola My name is... / I am... / I live in... / I like...',
+    'Peserta didik dapat menggunakan connector and untuk menggabungkan dua kegiatan dalam satu kalimat (exposure).',
+    'Peserta didik dapat menggali informasi profil pasangan melalui pertanyaan lisan dan menuliskannya di My Partner\'s Profile Card.',
+  ],
+
+  // ── Vocab & Persiapan ─────────────────────────────────────────────────
+  vocab: ['name', 'age', 'live', 'like'],
+
+  persiapan: [
+    'My Profile Note (satu per siswa): secarik kertas kecil dengan baris isian "My name is ___ . I am ___ years old. I live in ___ . I like ___ ." Bisa dicetak sebelum kelas atau siswa menyalin dari papan di L4. Di awal L6, catatan ini diletakkan tertutup (menghadap bawah) di atas meja masing-masing siswa.',
+    'My Partner\'s Profile Card (satu per siswa): secarik kertas terpisah dengan kolom kosong: Name: ___ · Age: ___ · City: ___ · I like: ___ . Semua kolom kosong. Dibagikan guru tepat sebelum L6 dimulai. Siswa hanya bisa mengisinya dengan bertanya ke pasangan — tidak boleh melihat Profile Note pasangan.',
+    'Tampilan text-anchor di papan: tulis sebelum siswa masuk kelas. "My name is Rina. I am 11. I live in Bandung. I like reading." Tetap tampil dari L2 sampai akhir L7. Hapus atau tutup sebelum L8 dimulai.',
+  ],
+
+  // ── Checklist ─────────────────────────────────────────────────────────
+  checklist: [
+    'Setiap siswa sudah mengisi My Profile Note sebelum INTERACT dimulai (L4)',
+    'My Partner\'s Profile Card dibagikan dalam keadaan kosong — siswa tidak melihat catatan pasangan sebelum bertanya (L6)',
+    'Text-anchor Rina diturunkan dari papan sebelum OUTPUT dimulai (L8)',
+    'Connector `and` muncul di ucapan model guru di L3 — bukan diajarkan secara eksplisit, hanya dimodelkan',
+    'Output siswa tidak menyalin kalimat Rina persis — setiap profil mencerminkan siswa sendiri (cek di L8–L9)',
+    'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
+  ],
+
+  // ── Printables ────────────────────────────────────────────────────────
+  printables: [],
+
+  // ── Energi Map ────────────────────────────────────────────────────────
+  energi_map: [
+    'L0 ⚪',
+    'L1 🟡',
+    'L2 🟡',
+    'L3 🟡',
+    'L4 🟡',
+    'L5 🟠',
+    'L6 🟠',
+    'L7 🟡',
+    'L8 🔵',
+    'L9 🔵',
+    'L10 🟡',
+    'L11 🔵',
+  ],
+
+  // ── Catatan ───────────────────────────────────────────────────────────
+  catatan: {
+    risiko: [
+      'L4: Jika menyalin baris dari papan memakan waktu lama, kurangi kolom — cukup nama dan 1 kegiatan. Isi sisanya secara lisan.',
+      'L6: Demo di awal L6 harus maksimal 90 detik. Demo yang terlalu panjang membuang energi sebelum pair work dimulai.',
+      'L8: Siswa kelas 5 biasanya butuh 1–2 menit pertama untuk mulai menulis — beri waktu tanpa intervensi dulu. Baru circulate setelah menit ke-2 atau ke-3.',
+    ],
+    autonomy: [
+      'Nama "Rina" dalam text-anchor boleh diganti dengan nama siswa di kelas yang dikenal semua orang — pastikan tidak menimbulkan gangguan sosial.',
+      'Kota "Bandung" boleh diganti dengan kota asal guru atau kota yang relevan untuk siswa.',
+      'Boleh memperpanjang INTERACT (L6) sampai 8 menit jika pertukaran terasa hidup dan kelas kondusif.',
+      'Boleh skip L10 jika kelas menunjukkan kelelahan setelah writing — cukup tutup dengan L11.',
+      'Boleh mengganti aktivitas di model guru (L3) sesuai kebiasaan nyata guru — yang penting mengandung struktur "I like ___ and ___."',
+    ],
+  },
+
+  // ── Fase C — Field Baru ───────────────────────────────────────────────
+  text_anchor    : 'My name is Rina. I am 11. I live in Bandung. I like reading.',
+  connector_aktif: 'and — pertama kali muncul di ucapan model guru (INPUT L3); exposure only di TP01; fokus produksi di TP04',
+  recycle_fase_b : [
+    'I like... (TP13 Fase B)',
+    'I can... (TP16 Fase B)',
+    'My name is... / I am... (identitas dasar Fase A/B)',
+  ],
+
+  // ── Breakpoints ───────────────────────────────────────────────────────
+  breakpoints: [],
+
+  // ── PreOpening (L0) ───────────────────────────────────────────────────
+  preOpening: {
+    tipe   : 'instruksi',
+    teks   : `Guru berdiri di depan kelas sebelum bel atau saat siswa masuk.
+Papan sudah bertuliskan text-anchor Rina.
+
+AKSI: Saat siswa duduk, guru tidak berbicara — hanya berdiri dan menunggu.
+Setelah sebagian besar siswa duduk dan tenang:
+UCAP: "Good morning, everyone."
+→ Tunggu respons siswa. Jika tidak ada: angkat tangan — tunggu siswa ikut menjawab.
+UCAP: "Today we talk about ourselves. In English."
+→ Tidak perlu diterjemahkan. Lanjut ke L1.`,
+    bantuan: null,
+    cue    : null,
+    darurat: null,
+    energi : '⚪',
+  },
+
+  // ── Skenario ──────────────────────────────────────────────────────────
+  skenario: [
+
+    // ══════════════════════════════════════════════════════════════════
+    // FASE PEMBUKA
+    // ══════════════════════════════════════════════════════════════════
+    {
+      fase  : 'Pembuka',
+      durasi: 8,
+
+      langkah: [
+
+        // L1 — Warm-Up: Who Are You?
+        {
+          id              : 'l1',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Guru berdiri di depan kelas. Tidak perlu media tambahan.
+UCAP: "I have one question. One question only."
+→ Jeda 3 detik.
+UCAP: "Who are you?"
+→ Jeda lagi.
+UCAP: "Not just your name. Who are you? What do you like? Where do you live?"
+
+AKSI: Guru menunjuk satu siswa di baris pertama.
+UCAP: "Quick — your name. In English. Go."
+→ Siswa menyebut nama. Guru angguk.
+UCAP: "Good. What do you like?"
+→ Siswa menjawab. Guru tidak mengoreksi — terima apapun jawabannya.
+→ Lakukan dengan 2–3 siswa lagi, cepat, tanpa berhenti lama di satu siswa.`,
+          bantuan         : 'Jika siswa yang ditunjuk diam lebih dari 5 detik: ucap "My name is..." sambil tunjuk diri sendiri — siswa biasanya akan ikut menyebut namanya sendiri. Terima itu dan lanjut ke siswa berikutnya.',
+          cue             : 'Ini warm-up, bukan assessment. Guru tidak mengoreksi, tidak menjelaskan. Tujuannya satu: siswa masuk ke mode berbahasa Inggris sejak menit pertama.',
+          darurat         : null,
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : null,
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // L2 — Perkenalan Rina
+        {
+          id              : 'l2',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Guru menunjuk text-anchor di papan tanpa membacakannya dulu.
+UCAP: "Look at the board. There is someone here."
+→ Tunjuk kalimat pertama: "My name is Rina."
+UCAP: "Her name is Rina. She will help us today."
+
+AKSI: Guru membaca text-anchor perlahan, satu kalimat per kalimat, sambil menunjuk setiap baris.
+👂 LISTEN FIRST — siswa belum ikut, hanya mendengarkan dan membaca papan.
+
+"My name is Rina." [tunjuk baris 1]
+"I am 11." [tunjuk baris 2]
+"I live in Bandung." [tunjuk baris 3]
+"I like reading." [tunjuk baris 4]
+
+UCAP: "Four sentences. That is Rina's profile."
+→ Tidak perlu menjelaskan kosakata — semua kata ini sudah dikenal siswa dari Fase B.`,
+          bantuan         : 'Jika siswa tidak memperhatikan papan: ketuk papan 2× sebelum membaca kalimat berikutnya — tidak perlu menunggu seluruh kelas diam sempurna.',
+          cue             : 'Jangan tanya "apakah kalian mengerti?" — lanjutkan saja. Kelas yang diam sambil memandang papan adalah tanda mereka memproses, bukan tanda kebingungan.',
+          darurat         : null,
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : null,
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+      ],
+    },
+
+    // ══════════════════════════════════════════════════════════════════
+    // FASE INTI
+    // ══════════════════════════════════════════════════════════════════
+    {
+      fase  : 'Inti',
+      durasi: 37,
+
+      langkah: [
+
+        // ── BLOK INPUT ────────────────────────────────────────────────
+
+        // L3 — Model Guru + Exposure Connector and  [INPUT · CORE]
+        {
+          id              : 'l3',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Guru berdiri di depan kelas. Text-anchor Rina masih di papan.
+UCAP: "Now, my turn."
+UCAP: "My name is [nama guru]."
+→ Jeda singkat.
+UCAP: "I am [usia guru] years old."
+→ Jeda singkat.
+UCAP: "I live in [kota guru]."
+→ Jeda singkat.
+UCAP: "I like [aktivitas 1] and [aktivitas 2]."
+→ Contoh: "I like reading and teaching."
+
+AKSI: Guru menunjuk baris terakhir text-anchor Rina di papan: "I like reading."
+UCAP: "Rina says: I like reading."
+→ Tunjuk diri sendiri.
+UCAP: "I say: I like reading and teaching."
+UCAP: "And. It connects two things."
+→ Ucapkan sekali, natural. Tidak perlu penjelasan lebih panjang.
+
+AKSI: Langsung lanjut ke pembacaan bersama.
+🗣 TOGETHER — guru dan siswa baca text-anchor Rina bersama.
+UCAP: "Read with me. Ready?"
+→ Baca bersama 1×. Cukup.`,
+          bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — biasanya siswa mulai ikut setelah kalimat kedua.',
+          cue             : 'Exposure connector `and` terjadi di satu kalimat model guru — "I like reading and teaching." Cukup sekali. Jangan minta siswa mengulang kalimat itu secara terpisah atau menjelaskan grammar.',
+          darurat         : null,
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : 'INPUT',
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // L4 — My Profile Note  [INPUT · CORE]
+        {
+          id              : 'l4',
+          tipe            : 'instruksi',
+          interaction_mode: 'writing',
+          teks            : `AKSI: Bagikan My Profile Note yang sudah dicetak, atau minta siswa menyalin baris isian dari papan ke kertas kecil.
+→ Jika menyalin: tulis baris isian di papan di bawah text-anchor Rina:
+   My name is ___ .   I am ___ years old.   I live in ___ .   I like ___ .
+
+UCAP: "Fill in your profile. Use Rina as a model — but write about yourself, not Rina."
+UCAP: "Three minutes. Go."
+→ Guru diam dan biarkan siswa menulis.
+
+AKSI: Setelah 3 menit, tunjuk 2–3 siswa secara acak — bukan yang tunjuk tangan.
+UCAP: "Read one sentence. Any sentence. Go."
+→ Siswa membacakan satu kalimat dari profil mereka.
+→ Guru tidak mengoreksi. Angguk dan lanjut ke siswa berikutnya.`,
+          bantuan         : 'Jika siswa tidak tahu nama kotanya dalam bahasa Inggris: ucap "Just write the name — Bandung, Jakarta, Surabaya — same in English." Nama kota tidak diterjemahkan.',
+          cue             : 'My Profile Note ini digunakan lagi di L6 (INTERACT) sebagai sumber informasi. Pastikan setiap siswa sudah punya catatan yang terisi sebelum lanjut ke L5 atau L6.',
+          darurat         : '⚠ DARURAT — ada siswa yang masih belum menulis apapun setelah 3 menit:\nDekati, tunjuk baris pertama ("My name is ___"), tanya nama dalam bahasa Indonesia jika perlu — bantu isi baris pertama saja. Tidak perlu tunggu semua kolom terisi.',
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : 'INPUT',
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // L5 — Drill Cepat: Guess My Profile  [INPUT · FLEX]
+        {
+          id              : 'l5',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Minta satu siswa maju ke depan (pilih yang terlihat siap, bukan yang paling aktif).
+UCAP: "Stand up. Don't show your Profile Note."
+UCAP: "Class — ask them! Who are they?"
+
+AKSI: Kelas bertanya secara spontan — siswa di depan menjawab menggunakan profilnya:
+→ "What is your name?" → jawab
+→ "How old are you?" → jawab
+→ "Where do you live?" → jawab
+→ "What do you like?" → jawab
+
+AKSI: Lakukan dengan 2 siswa berbeda — cukup 4 pertanyaan per siswa, cepat.
+→ Pilih siswa dari barisan yang berbeda untuk memaksimalkan keterlibatan.`,
+          bantuan         : 'Jika kelas tidak mau bertanya: guru jadi penanya pertama — "What is your name?" — lalu tunjuk satu siswa untuk melanjutkan pertanyaan berikutnya.',
+          cue             : 'Tujuan layar ini adalah membiasakan siswa dengan ritme tanya-jawab sebelum pair work. Yang penting: kelas merasakan bahwa pertanyaan-pertanyaan itu natural dan mudah dijawab.',
+          darurat         : null,
+          energi          : '🟠',
+          energy_level    : 'active',
+          diferensiasi    : null,
+          flex            : true,
+          flex_kondisi    : 'lewati jika waktu tersisa < 10 menit sebelum INTERACT',
+          blok            : 'INPUT',
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // ── BLOK INTERACT ─────────────────────────────────────────────
+
+        // L6 — Partner Profile Card  [INTERACT · CORE]
+        {
+          id              : 'l6',
+          tipe            : 'instruksi',
+          interaction_mode: 'pairwork',
+          teks            : `AKSI: Bagikan My Partner's Profile Card — satu per siswa. Semua kolom kosong.
+UCAP: "This card is empty. You cannot fill it alone."
+UCAP: "You need to ask your partner."
+
+AKSI: Demonstrasi dengan satu pasangan di depan — maksimal 90 detik.
+👂 LISTEN FIRST — kelas perhatikan dulu.
+Guru tanya ke satu siswa: "What is your name?" → siswa jawab → guru isi kolom Name di kartu (tulis di papan mini atau tunjukkan kartu).
+Lanjutkan: "How old are you?" → "Where do you live?" → "What do you like?"
+UCAP: "Now your turn. Ask your partner — fill in the card."
+
+AKSI: Siswa bekerja berpasangan (duduk berdekatan atau berhadapan).
+→ My Profile Note masing-masing sudah ada di meja, tertutup (menghadap bawah).
+→ Siswa A bertanya ke siswa B, lalu isi kartu untuk B.
+→ Kemudian B bertanya ke A, lalu isi kartu untuk A.
+→ Waktu: 5–6 menit total untuk dua arah.
+
+AKSI: Guru circulate — prioritaskan barisan belakang dan pojok kelas.`,
+          bantuan         : [
+            'Jika pasangan diam setelah kartu dibagikan: tunjuk kolom Name di kartu dan ucap "What is your name?" — tunggu siswa meniru pertanyaan itu ke pasangannya.',
+            'Jika siswa mengintip Profile Note pasangan: tepuk bahu lembut, ucap "Ask. Don\'t look." Tunjuk pertanyaan model di papan jika masih ada dari L5.',
+          ],
+          cue             : 'Kartu harus benar-benar kosong saat dibagikan. Jika siswa melihat Profile Note pasangan, gap hilang. Tegaskan sebelum mulai: "Profile Note — face down."',
+          darurat         : `⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas dengan tepukan tangan.
+2. Demo ulang dengan 1 pasangan di depan — guru menjadi pasangannya.
+3. Sederhanakan: cukup 2 pertanyaan — "What is your name?" dan "What do you like?"
+4. Restart pair work — batasi 60 detik.`,
+          energi          : '🟠',
+          energy_level    : 'active',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : 'INTERACT',
+          assessment_overlay: {
+            recommended: true,
+            priority   : 'belum_dinilai',
+          },
+          interact_contract: {
+            gap_type         : 'information',
+            artifact_required: false,
+            artifact_type    : null,
+            collapse_signal  : 'pair diam > 90 detik',
+          },
+          artifact: null,
+        },
+
+        // L7 — Mini-Share: Tell Me About Your Partner  [INTERACT · FLEX]
+        {
+          id              : 'l7',
+          tipe            : 'instruksi',
+          interaction_mode: 'pairwork',
+          teks            : `AKSI: Setelah pair work selesai, guru tunjuk 2–3 pasangan.
+UCAP: "Tell me one thing about your partner. One sentence."
+→ Siswa menjawab menggunakan kartu yang sudah mereka isi.
+→ Contoh yang diharapkan: "Her name is Siti. She lives in Surabaya. She likes football."
+
+AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
+UCAP (opsional): "Interesting. Does anyone live in the same city?"
+→ Ini menciptakan resonansi natural — siswa mulai membandingkan satu sama lain.`,
+          bantuan         : 'Jika siswa bingung memulai: ucap "Her name is..." atau "His name is..." dan tunjuk kartu mereka — tunggu siswa melanjutkan.',
+          cue             : 'Jangan minta sharing lengkap 4 kalimat — terlalu lama. Cukup 1 kalimat per siswa, maksimal 3 pasangan.',
+          darurat         : null,
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : true,
+          flex_kondisi    : 'lewati jika waktu tersisa < 12 menit',
+          blok            : 'INTERACT',
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // ── BLOK OUTPUT ───────────────────────────────────────────────
+
+        // L8 — Write My Profile  [OUTPUT · CORE]
+        {
+          id              : 'l8',
+          tipe            : 'instruksi',
+          interaction_mode: 'writing',
+          teks            : `AKSI: Guru hapus atau tutup text-anchor Rina dari papan.
+UCAP: "Now, write your own profile. Not Rina's. Yours."
+UCAP: "At least three sentences. You can use your Profile Note to start."
+→ My Profile Note boleh dilihat kembali sekarang — itu profil siswa sendiri.
+
+AKSI: Siswa menulis secara individual.
+→ Waktu: 8–10 menit. Guru tidak mendiktekan kalimat apapun.
+→ Guru circulate setelah menit ke-2 atau ke-3 (beri waktu start dulu).
+→ Prioritaskan barisan belakang.
+→ Perhatikan: apakah ada siswa yang menulis persis kalimat Rina? Jika ya, tepuk bahu dan tanya: "Is this you or Rina?"`,
+          bantuan         : 'Jika siswa freeze (pensil di tangan tapi tidak menulis): ucap kalimat pertama dengan informasi siswa: "Your name — in English. Write: My name is..." Tunggu siswa menulis satu kalimat. Setelah itu tinggalkan — jangan dampingi terlalu lama.',
+          cue             : 'Text-anchor sudah diturunkan. Siswa boleh pakai Profile Note mereka sendiri sebagai fondasi — yang tidak boleh adalah menyalin kalimat Rina persis. Setiap profil harus mencerminkan siswa sendiri.',
+          darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:\nTidak perlu panik. Ucap: "Two sentences — that is enough for today." Turunkan target dan lanjut ke L9.',
+          energi          : '🔵',
+          energy_level    : 'calm',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : 'OUTPUT',
+          assessment_overlay: {
+            recommended: true,
+            priority   : 'barisan_belakang',
+          },
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // L9 — Check & Extend  [OUTPUT · CORE]
+        {
+          id              : 'l9',
+          tipe            : 'instruksi',
+          interaction_mode: 'writing',
+          teks            : `AKSI: Setelah 8 menit, guru memberi sinyal tanpa menghentikan siswa yang masih menulis.
+UCAP: "Two more minutes. Read your sentences. Can you add one more?"
+
+Diferensiasi:
+- Perlu support: guru dekati dan ucap kalimat pertama dengan nama siswa ("Your name is Dani, so write: My name is Dani...") — siswa tinggal melanjutkan.
+- Sudah bisa: tulis satu kalimat tambahan yang menyambungkan dua hal dengan `and` — contoh: "I like football and swimming." atau "I can read and write in English."
+
+AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
+→ Jika siswa menulis kalimat dengan `and` secara spontan — angguk, tidak perlu komentar.
+→ Jika `and` tidak muncul sama sekali — tidak perlu dipaksakan. `and` bukan fokus produksi di TP01.`,
+          bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: arahkan dengan pertanyaan, bukan perintah — "What can you do? Can you write: I can...?" — tunggu siswa menulis sendiri tanpa dikte.',
+          cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah profil mencerminkan siswa sendiri. Kalimat "I like bola" lebih berharga daripada "I like reading" yang disalin dari Rina.',
+          darurat         : null,
+          energi          : '🔵',
+          energy_level    : 'calm',
+          diferensiasi    : {
+            perluSupport: 'guru dekati dan ucap kalimat pertama dengan nama siswa ("Your name is Dani, so write: My name is Dani...") — siswa tinggal melanjutkan.',
+            sudahBisa   : 'tulis satu kalimat tambahan yang menyambungkan dua hal dengan `and` — contoh: "I like football and swimming." atau "I can read and write in English."',
+          },
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : 'OUTPUT',
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+      ],
+    },
+
+    // ══════════════════════════════════════════════════════════════════
+    // FASE PENUTUP
+    // ══════════════════════════════════════════════════════════════════
+    {
+      fase  : 'Penutup',
+      durasi: 9,
+
+      langkah: [
+
+        // L10 — Sharing ke Kelas  [FLEX]
+        {
+          id              : 'l10',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Guru minta 2–3 siswa sukarela membacakan 1–2 kalimat dari profil mereka.
+UCAP: "Who wants to share? One or two sentences — that is enough."
+→ Terima siapapun yang mau. Jangan paksa siswa yang tidak sukarela.
+
+AKSI: Setelah setiap siswa berbagi, guru bertanya ke kelas:
+UCAP: "Does anyone live in the same city?"
+→ Respon kelas ini mengalir natural — tidak perlu direkayasa.`,
+          bantuan         : 'Jika tidak ada yang mau sukarela: tunjuk siswa yang tadi paling aktif di INTERACT — mereka sudah dalam mode berbicara dan lebih siap.',
+          cue             : 'Ini bukan presentasi formal. Jangan minta siswa berdiri di depan kelas atau membacakan semua 4 kalimat. Satu atau dua kalimat dari tempat duduk sudah cukup.',
+          darurat         : null,
+          energi          : '🟡',
+          energy_level    : 'focused',
+          diferensiasi    : null,
+          flex            : true,
+          flex_kondisi    : 'lewati jika waktu tersisa < 5 menit',
+          blok            : null,
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+        // L11 — Closure  [CORE]
+        {
+          id              : 'l11',
+          tipe            : 'instruksi',
+          interaction_mode: 'teacher_input',
+          teks            : `AKSI: Guru berdiri di depan kelas.
+UCAP: "Today you wrote about yourself. In English."
+→ Jeda.
+UCAP: "Your name. Your age. Your city. What you like."
+→ Jeda.
+UCAP: "That is your profile. Keep it."
+
+AKSI: Tunjuk profile yang sudah siswa tulis.
+UCAP: "Next time — we describe someone we know."
+→ Jeda singkat.
+UCAP: "A friend. A parent. Maybe a teacher."
+→ Ini preview TP02 yang natural, tidak membebani.
+
+UCAP: "Good work today. See you next time."`,
+          bantuan         : null,
+          cue             : 'Nada penutup adalah nada selesai, bukan nada menyuruh. Kalimat terakhir adalah penutup sesi — bukan pengingat tugas atau PR.',
+          darurat         : null,
+          energi          : '🔵',
+          energy_level    : 'calm',
+          diferensiasi    : null,
+          flex            : false,
+          flex_kondisi    : null,
+          blok            : null,
+          assessment_overlay: null,
+          interact_contract : null,
+          artifact          : null,
+        },
+
+      ],
+    },
+
+  ],
+
+};
+
+export default tp_c01;
+
+/*
+ * =============================================================
+ * CATATAN KONVERSI — tp-01-v1.js
+ * =============================================================
+ *
+ * Field yang tidak bisa diisi dari .txt (diisi default):
+ *   - indikator[]: derived — .txt tidak punya section "Indikator" eksplisit.
+ *     Tiga indikator diturunkan dari tujuan TP dan instruksi skenario.
+ *   - deskripsi: kosong string — tidak ada deskripsi TP di .txt.
+ *   - printables[]: kosong — tidak ada media cetak eksplisit di .txt.
+ *
+ * Keputusan ambiguitas:
+ *   1. interaction_mode L5 (Drill Cepat): aktivitas campuran guru+kelas call-response
+ *      dan satu siswa di depan menjawab. Dipilih 'teacher_input' karena guru
+ *      yang memimpin dan pertanyaan dari kelas diarahkan guru.
+ *
+ *   2. interact_contract L6: gap_type = 'information' karena masing-masing siswa
+ *      punya informasi profil sendiri yang tidak diketahui pasangan sampai ditanya.
+ *      artifact_required = false karena Profile Note dikumpulkan sendiri, bukan
+ *      diproduksi siswa dalam sesi ini.
+ *
+ *   3. L7 blok: ditetapkan 'INTERACT' berdasarkan CATATAN RUNTIME GURU:
+ *      "INTERACT: L6–L7". Konsisten meski L7 adalah FLEX.
+ *
+ * =============================================================
+ */

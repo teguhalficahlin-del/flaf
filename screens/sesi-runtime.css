@@ -827,6 +827,97 @@
    ============================================================= */
 .sr-hidden { display: none !important; }
 
+/* =============================================================
+   FASE C — FITUR BARU (block header, assessment, breakpoint)
+   Semua di-guard di JS. Tidak mempengaruhi Fase A/B.
+   ============================================================= */
+
+/* Header badges — container untuk mode badge + energi pill */
+.sr-header-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Block header — pill kecil sebelum konten langkah */
+.sr-block-header {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.sr-block-header--input   {
+  background: rgba(120,180,255,.1);
+  color: rgba(120,180,255,.75);
+  border: 1px solid rgba(120,180,255,.2);
+}
+.sr-block-header--interact {
+  background: rgba(255,160,50,.1);
+  color: rgba(255,160,50,.8);
+  border: 1px solid rgba(255,160,50,.2);
+}
+.sr-block-header--output  {
+  background: rgba(92,138,110,.12);
+  color: rgba(92,138,110,.85);
+  border: 1px solid rgba(92,138,110,.22);
+}
+
+/* Assessment panel — terpisah dari cue block */
+.sr-assessment-panel {
+  border-radius: 6px;
+  background: rgba(212,174,58,.06);
+  border: 1px solid rgba(212,174,58,.18);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+.sr-assessment-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.sr-assessment-icon  { font-size: 14px; }
+.sr-assessment-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(212,174,58,.75);
+}
+.sr-assessment-msg {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,.6);
+}
+
+/* Breakpoint overlay — full screen, tanpa tombol close */
+.sr-bp-overlay {
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.82);
+}
+.sr-bp-content {
+  background: #1e1e1e;
+  border: 1px solid rgba(212,174,58,.25);
+  border-radius: 14px;
+  padding: 28px 20px 24px;
+  width: 100%;
+  max-width: 340px;
+}
+.sr-bp-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 /* ── Observasi card (Fase 7) ───────────────────────── */
 .sr-obs-card {
   margin-top: 16px;

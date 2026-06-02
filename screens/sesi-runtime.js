@@ -32,7 +32,18 @@ import { savePenilaian } from '../storage/siswa-history.js';
 
 const RESUME_MAX_MS    = 4 * 60 * 60 * 1000;
 const RESUME_STORE_KEY = 'sesi_aktif';
+const BP_RESUME_KEY    = 'bp_resume';
 const STORE_KV         = 'kv';
+
+const INTERACTION_MODE_LABELS = {
+  teacher_input : 'Instruksi Guru',
+  pairwork      : 'Pair Work',
+  writing       : 'Menulis',
+  silent_reading: 'Membaca',
+  peer_review   : 'Peer Review',
+  reflection    : 'Refleksi',
+  drawing       : 'Menggambar',
+};
 
 const FALLBACK_GENERIC = {
   kelas_ribut  : 'Tangan di pinggang, tunggu sunyi. Ulangi instruksi setelah hening.',
@@ -51,10 +62,11 @@ let _state = {
   statusMap      : {},
   faseIdx        : 0,
   langkahIdx     : 0,
-  aktState       : 'preview',
-  fallbackKondisi: null,
-  ttsUtterance   : null,
-  sesiId         : null,   // id unik per sesi — dibuat saat mulai, dipakai penilaian_log
+  aktState          : 'preview',
+  fallbackKondisi   : null,
+  ttsUtterance      : null,
+  sesiId            : null,   // id unik per sesi — dibuat saat mulai, dipakai penilaian_log
+  bpResumeLangkahId : null,   // langkahId dari breakpoint resume (Fase C)
 };
 
 let _root   = null;
@@ -79,11 +91,12 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone) 
     statusMap      : (statusMap && typeof statusMap === 'object') ? statusMap : {},
     faseIdx        : 0,
     langkahIdx     : 0,
-    aktState       : 'preview',
-    fallbackKondisi: null,
-    ttsUtterance   : null,
-    sesiId         : null,
-    nilaiDraft     : null,
+    aktState          : 'preview',
+    fallbackKondisi   : null,
+    ttsUtterance      : null,
+    sesiId            : null,
+    nilaiDraft        : null,
+    bpResumeLangkahId : null,
   });
 
   // Cek resume
@@ -102,6 +115,19 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone) 
     }
   } catch (e) {
     console.warn('[SR] cek resume gagal:', e.message);
+  }
+
+  // Cek breakpoint resume (Fase C — menggunakan tp.id + rombelId)
+  if (_state.aktState !== 'resume') {
+    try {
+      const bpSaved = await db.get(STORE_KV, BP_RESUME_KEY);
+      if (bpSaved && bpSaved.breakpointId && bpSaved.tpId === tpData.id && bpSaved.rombelId === rombel?.id) {
+        _state.bpResumeLangkahId = bpSaved.langkahId;
+        _state.aktState = 'bp_resume';
+      }
+    } catch (e) {
+      console.warn('[SR] cek bp_resume gagal:', e.message);
+    }
   }
 
   _render();
@@ -186,13 +212,20 @@ function _ttsStop() {
 // ── Navigate langkah ──────────────────────────────────────────
 
 function _langkahNext() {
-  const total = _currentFase()?.langkah?.length || 0;
-  const next  = _state.langkahIdx + 1;
-  if (next < total) {
-    _transition({ langkahIdx: next });
-  } else {
-    _transition({ aktState: 'selesai' });
-  }
+  const total            = _currentFase()?.langkah?.length || 0;
+  const next             = _state.langkahIdx + 1;
+  const departingLangkah = _currentLangkah();
+
+  const proceed = () => {
+    if (next < total) {
+      _transition({ langkahIdx: next });
+    } else {
+      _transition({ aktState: 'selesai' });
+    }
+  };
+
+  if (_checkBreakpoint(departingLangkah, proceed)) return;
+  proceed();
 }
 
 function _langkahPrev() {
@@ -215,6 +248,98 @@ async function _nextFase() {
   }
 }
 
+// ── Breakpoint (Fase C) ───────────────────────────────────────
+
+function _checkBreakpoint(langkah, onContinue) {
+  if (!langkah || !_state.tp?.breakpoints?.length) return false;
+  const bp = _state.tp.breakpoints.find(b => b.after_langkah_id === langkah.id);
+  if (!bp) return false;
+  _renderBreakpointOverlay(bp, onContinue);
+  return true;
+}
+
+function _renderBreakpointOverlay(bp, onContinue) {
+  document.querySelector('.sr-overlay')?.remove();
+
+  const overlay = document.createElement('div');
+  overlay.className = 'sr-overlay sr-bp-overlay';
+  overlay.innerHTML = `
+    <div class="sr-bp-content">
+      <div class="sr-bp-text">${_escape(bp.text || '')}</div>
+      <button class="sr-btn-primary" id="sr-bp-primary">${_escape(bp.ui?.primary_action || 'Simpan & keluar')}</button>
+      <button class="sr-btn-secondary" id="sr-bp-secondary" style="margin-top:10px">${_escape(bp.ui?.secondary_action || 'Lanjut mengajar')}</button>
+    </div>`;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelector('#sr-bp-primary').addEventListener('click', async () => {
+    try {
+      await db.set(STORE_KV, BP_RESUME_KEY, {
+        tpId        : _state.tp?.id,
+        rombelId    : _state.rombel?.id,
+        langkahId   : bp.resume_at,
+        breakpointId: bp.id,
+        savedAt     : Date.now(),
+      });
+    } catch (e) {
+      console.warn('[SR] bp save gagal:', e.message);
+    }
+    overlay.remove();
+    _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null, breakpoint: true });
+  });
+
+  overlay.querySelector('#sr-bp-secondary').addEventListener('click', () => {
+    overlay.remove();
+    onContinue();
+  });
+}
+
+// ── Interaction mode badge (Fase C) ──────────────────────────
+
+function _interactionModeBadge(mode) {
+  if (!mode) return '';
+  const label = INTERACTION_MODE_LABELS[mode] || mode;
+  return `<span class="sr-mode-badge">${_escape(label)}</span>`;
+}
+
+// ── Block header (Fase C) ─────────────────────────────────────
+
+function _getPrevLangkah() {
+  if (_state.langkahIdx > 0) {
+    return _currentFase()?.langkah?.[_state.langkahIdx - 1] || null;
+  }
+  if (_state.faseIdx > 0) {
+    const prevFase = _state.tp?.skenario?.[_state.faseIdx - 1];
+    const arr      = prevFase?.langkah || [];
+    return arr[arr.length - 1] || null;
+  }
+  return null;
+}
+
+function _renderBlockHeader(blok) {
+  const cls = { INPUT: 'input', INTERACT: 'interact', OUTPUT: 'output' }[blok] || 'input';
+  return `<div class="sr-block-header sr-block-header--${cls}">${_escape(blok)}</div>`;
+}
+
+// ── Assessment panel (Fase C) ─────────────────────────────────
+
+function _renderAssessmentPanel(langkah) {
+  if (!langkah.assessment_overlay) return '';
+  const priority = langkah.assessment_overlay.priority;
+  let msg;
+  if (priority === 'belum_dinilai')         msg = 'Prioritaskan: siswa yang belum dinilai di TP ini';
+  else if (priority === 'barisan_belakang') msg = 'Prioritaskan: barisan belakang';
+  else                                      msg = 'Waktu yang tepat untuk penilaian formatif';
+  return `
+    <div class="sr-assessment-panel">
+      <div class="sr-assessment-header">
+        <span class="sr-assessment-icon">📋</span>
+        <span class="sr-assessment-title">Penilaian Formatif</span>
+      </div>
+      <div class="sr-assessment-msg">${_escape(msg)}</div>
+    </div>`;
+}
+
 // ── Render ────────────────────────────────────────────────────
 
 function _render() {
@@ -223,9 +348,10 @@ function _render() {
   document.querySelector('.sr-overlay')?.remove();
 
   switch (_state.aktState) {
-    case 'preview'  : return _renderPreview();
-    case 'resume'   : return _renderResume();
-    case 'entering' : return _renderEntering();
+    case 'preview'   : return _renderPreview();
+    case 'resume'    : return _renderResume();
+    case 'bp_resume' : return _renderBpResume();
+    case 'entering'  : return _renderEntering();
     case 'running'  : return _renderRunning();
     case 'selesai'  : return _renderSelesai();
     default:
@@ -320,6 +446,50 @@ function _renderResume() {
   });
   _root.querySelector('#sr-btn-ulang').addEventListener('click', async () => {
     await db.remove(STORE_KV, RESUME_STORE_KEY).catch(() => {});
+    _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0 });
+  });
+}
+
+// ─── SCREEN: Breakpoint Resume ───────────────────────────────
+
+function _renderBpResume() {
+  const langkahId = _state.bpResumeLangkahId;
+
+  // Cari faseIdx + langkahIdx untuk langkahId ini
+  let targetFaseIdx = 0, targetLangkahIdx = 0;
+  outer:
+  for (let fi = 0; fi < (_state.tp?.skenario?.length || 0); fi++) {
+    const arr = _state.tp.skenario[fi].langkah || [];
+    for (let li = 0; li < arr.length; li++) {
+      if (arr[li].id === langkahId) {
+        targetFaseIdx = fi; targetLangkahIdx = li;
+        break outer;
+      }
+    }
+  }
+
+  const langkahLabel = langkahId ? langkahId.toUpperCase() : '—';
+
+  _root.innerHTML = `
+    <div class="sr-app">
+      <div class="sr-body sr-body--center">
+        <div class="sr-resume-icon">📌</div>
+        <div class="sr-resume-title">Lanjutkan sesi?</div>
+        <div class="sr-resume-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_state.rombel?.nama || '—')}</div>
+        <div class="sr-resume-pos">Lanjutkan dari <strong>${_escape(langkahLabel)}</strong>?</div>
+      </div>
+      <div class="sr-footer">
+        <button class="sr-btn-primary"   id="sr-bp-ya">Ya, lanjutkan →</button>
+        <button class="sr-btn-secondary" id="sr-bp-ulang">Mulai dari awal</button>
+      </div>
+    </div>`;
+
+  _root.querySelector('#sr-bp-ya').addEventListener('click', async () => {
+    await db.remove(STORE_KV, BP_RESUME_KEY).catch(() => {});
+    _transition({ aktState: 'running', faseIdx: targetFaseIdx, langkahIdx: targetLangkahIdx });
+  });
+  _root.querySelector('#sr-bp-ulang').addEventListener('click', async () => {
+    await db.remove(STORE_KV, BP_RESUME_KEY).catch(() => {});
     _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0 });
   });
 }
@@ -444,6 +614,18 @@ function _renderRunning() {
   // Energi pill (header)
   const energiPillHTML = _energiPill(langkah.energi);
 
+  // Interaction mode badge (Fase C — guard: langkah.interaction_mode)
+  const modeBadgeHTML = _interactionModeBadge(langkah.interaction_mode);
+
+  // Block header (Fase C — guard: langkah.blok)
+  const prevLangkah     = _getPrevLangkah();
+  const prevBlok        = prevLangkah?.blok || null;
+  const blockHeaderHTML = (langkah.blok && langkah.blok !== prevBlok)
+    ? _renderBlockHeader(langkah.blok) : '';
+
+  // Assessment panel (Fase C — guard: langkah.assessment_overlay)
+  const assessmentHTML = _renderAssessmentPanel(langkah);
+
   // Teks segments
   const teksHTML = _parseTeks(langkah.teks).map(seg => {
     if (seg.jenis === 'ucap') {
@@ -536,10 +718,11 @@ function _renderRunning() {
     <div class="sr-app">
       <div class="sr-app-header">
         <span class="sr-fase-info">${_escape(faseName)} · ${idx + 1}/${total}</span>
-        ${energiPillHTML}
+        <div class="sr-header-badges">${modeBadgeHTML}${energiPillHTML}</div>
       </div>
 
       <div class="sr-body">
+        ${blockHeaderHTML}
         <div class="sr-tipe-row">
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
         </div>
@@ -547,6 +730,7 @@ function _renderRunning() {
         ${bantuanHTML}
         ${difHTML}
         ${cueHTML}
+        ${assessmentHTML}
         ${daruratHTML}
       </div>
 
