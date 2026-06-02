@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v97';          // ← bump: fix backtick emphasis semua 22 TP Fase C (final)
+const CACHE_VERSION  = 'flaf-v98';          // ← bump: fix orphan quote tp-03
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
