@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v101';         // ← bump: nilaiPilihTingkat support kelas 5-6
+const CACHE_VERSION  = 'flaf-v102';         // ← bump: sederhanakan guard kelas 5-6
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
