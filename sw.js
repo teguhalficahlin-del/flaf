@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v93';          // ← bump: label diferensiasi
+const CACHE_VERSION  = 'flaf-v94';          // ← bump: Fase C renderer + 22 TP schema
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
