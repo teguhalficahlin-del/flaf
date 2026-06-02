@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v94';          // ← bump: Fase C renderer + 22 TP schema
+const CACHE_VERSION  = 'flaf-v95';          // ← bump: fix backtick syntax error 22 TP Fase C
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
