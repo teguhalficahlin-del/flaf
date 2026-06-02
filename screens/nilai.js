@@ -1068,8 +1068,8 @@ window.nilaiTambahKelas = function() {
       }
       if (kelas === '3') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-4')?.classList.add('disabled'); nilaiPilihTingkat(3); }
       if (kelas === '4') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-3')?.classList.add('disabled'); nilaiPilihTingkat(4); }
-      if (kelas === '5') { [1,2,3,4,6].forEach(n => document.getElementById('btn-tingkat-'+n)?.classList.add('disabled')); nilaiPilihTingkat(5); }
-      if (kelas === '6') { [1,2,3,4,5].forEach(n => document.getElementById('btn-tingkat-'+n)?.classList.add('disabled')); nilaiPilihTingkat(6); }
+      if (kelas === '5') { nilaiPilihTingkat(5); }
+      if (kelas === '6') { nilaiPilihTingkat(6); }
     } catch { /* abaikan */ }
   })();
 };
