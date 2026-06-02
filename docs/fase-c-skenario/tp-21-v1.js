@@ -479,7 +479,7 @@ AKSI: Circulate — barisan tengah yang belum tersentuh di L9.
 Diferensiasi:
 - Perlu support: tunjuk kalimat terakhir siswa, bisik "This is what the text says. But what do YOU think about it? Start with 'I think...'"
 - Sudah bisa: bisik "Can you add: what will you DO because of this text? 'I will...' or 'I want to...'"`,
-          bantuan         : 'Jika siswa tidak bisa menambah `because`: ucap "Why do you think that? Add: because..." Satu kata, tinggalkan.',
+          bantuan         : 'Jika siswa tidak bisa menambah 'because': ucap "Why do you think that? Add: because..." Satu kata, tinggalkan.',
           cue             : '"I will join the competition." / "I want to go to Warung Pak Hendra." / "I will take the 07.00 bus." — kalimat-kalimat ini membuktikan bahwa siswa memahami PURPOSE teks.',
           darurat         : null,
           energi          : '🔵',

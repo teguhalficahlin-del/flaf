@@ -255,7 +255,7 @@ UCAP: "Now — think. What is YOUR place? One minute."
             'Jika siswa langsung bertanya "Boleh tempat yang jauh?": jawab "Yes — any place you know well."',
             'Jika siswa bertanya "Boleh describe sesuatu, bukan tempat?": jawab "Yes — a thing you know well."',
           ],
-          cue             : 'Demo menggunakan warung — bukan library (sudah di anchor), bukan market (sudah di TP12 dan TP15). "But the food is always delicious" menanam `but` secara natural.',
+          cue             : 'Demo menggunakan warung — bukan library (sudah di anchor), bukan market (sudah di TP12 dan TP15). "But the food is always delicious" menanam 'but' secara natural.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -459,7 +459,7 @@ AKSI: Circulate — prioritaskan barisan tengah yang belum tersentuh di L9.
 Diferensiasi:
 - Perlu support: tunjuk kalimat terakhir deskripsi siswa, ucap "Why do you like it? Add: 'because...'" — tunggu siswa menulis satu kalimat.
 - Sudah bisa: bisik "Add a contrast — 'But sometimes it is...' or 'But I wish it had...'"`,
-          bantuan         : 'Jika siswa tidak bisa menambah `but`: ucap "Is there one thing that is NOT perfect about the place? Write that with \'but\'."',
+          bantuan         : 'Jika siswa tidak bisa menambah 'but': ucap "Is there one thing that is NOT perfect about the place? Write that with \'but\'."',
           cue             : '"Add your connection — why YOU go there / why YOU like it" adalah instruksi paling penting di L10. Deskripsi yang hanya berisi fakta valid tapi tidak personal.',
           darurat         : null,
           energi          : '🔵',

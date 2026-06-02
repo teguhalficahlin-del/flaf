@@ -458,7 +458,7 @@ Diferensiasi:
 - Perlu support: tunjuk satu kata present tense dalam tulisan siswa, tunjuk pasangan di papan pojok, bisik "Change this — past."
 - Sudah bisa: bisik "Add how you felt — 'I was happy because...' Or add one more detail: 'Then I also saw...'"`,
           bantuan         : 'Jika siswa tidak bisa menemukan connector yang pas: ucap "Add \'then\' between two sentences — \'First I went... then I saw...\'"',
-          cue             : '"How did you feel? \'I was happy because...\'" mendorong connector `because` dan ekspresi emosi — momen di mana past tense narrative bertemu dengan opini dari TP17.',
+          cue             : '"How did you feel? \'I was happy because...\'" mendorong connector 'because' dan ekspresi emosi — momen di mana past tense narrative bertemu dengan opini dari TP17.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',

@@ -41,7 +41,7 @@ export const tp_c02 = {
     'My Person Card terisi sebelum INTERACT dimulai (L4) — kolom My Person di Comparison Table terisi sebelum pair work dimulai (L6)',
     'Comparison Table kolom My Partner\'s Person benar-benar kosong saat dibagikan — tidak boleh diisi tanpa bertanya ke pasangan',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8)',
-    'Connector `but` muncul di ucapan model guru di L3 — dua kalimat terpisah, bukan satu kalimat majemuk',
+    'Connector 'but' muncul di ucapan model guru di L3 — dua kalimat terpisah, bukan satu kalimat majemuk',
     'Output siswa mencerminkan figur yang mereka pilih sendiri — bukan replikasi text-anchor',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
@@ -188,7 +188,7 @@ UCAP: "A friend. A parent. A sibling. A teacher. Anyone you know well."`,
           teks            : `AKSI: Guru berdiri di depan kelas. Text-anchor masih di papan sebagai referensi.
 UCAP: "Now, my turn. I will describe two people I know."
 
-Orang pertama — model dengan `and`:
+Orang pertama — model dengan 'and':
 UCAP: "My [person 1] is [trait]."
 UCAP: "She/He has [physical trait]."
 UCAP: "She/He is [trait 1] and [trait 2]."
@@ -196,7 +196,7 @@ UCAP: "She/He is [trait 1] and [trait 2]."
 
 → Jeda singkat sebelum orang kedua.
 
-Orang kedua — exposure `but`:
+Orang kedua — exposure 'but':
 UCAP: "My [person 2] is [trait]."
 UCAP: "But my [person 2] is [contrasting trait]."
 → Contoh: "My father is not tall. But my father is funny."
@@ -210,7 +210,7 @@ AKSI: Kembali ke text-anchor Rina di papan.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — siswa biasanya ikut setelah kalimat kedua.',
-          cue             : 'Exposure `but` terjadi via dua kalimat terpisah — "My mother is patient. But my father is funny." Jangan gunakan satu kalimat majemuk panjang. Dua kalimat pendek lebih mudah ditangkap dan ditiru.',
+          cue             : 'Exposure 'but' terjadi via dua kalimat terpisah — "My mother is patient. But my father is funny." Jangan gunakan satu kalimat majemuk panjang. Dua kalimat pendek lebih mudah ditangkap dan ditiru.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -352,7 +352,7 @@ UCAP: "Did you find anything the same between your person and your partner's per
 
 AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
 UCAP (opsional): "Interesting. What is different?"
-→ Ini membuka ruang natural untuk `but` — jangan paksa, tapi terima jika muncul spontan.`,
+→ Ini membuka ruang natural untuk 'but' — jangan paksa, tapi terima jika muncul spontan.`,
           bantuan         : 'Jika siswa tidak bisa menjawab pertanyaan kesamaan: ucap "OK — what is different?" Jawaban kontras sama validnya dan lebih mudah ditemukan.',
           cue             : 'Pertanyaan "What is different?" lebih mudah dijawab siswa daripada "What is the same?" — gunakan ini sebagai fallback jika tidak ada kesamaan yang ditemukan.',
           darurat         : null,
@@ -409,11 +409,11 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap kalimat pertama dengan figur siswa ("Your person is [nama] — so write: [Name] is...") — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan satu kalimat kontras dengan `but` — contoh: "My sister is quiet, but my brother is loud." atau "My teacher is strict, but she is also kind."
+- Sudah bisa: tambahkan satu kalimat kontras dengan 'but' — contoh: "My sister is quiet, but my brother is loud." atau "My teacher is strict, but she is also kind."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika `but` muncul secara spontan — angguk, tidak perlu komentar.
-→ Jika `but` tidak muncul — tidak perlu dipaksakan. Fokus produksi `but` baru di TP07.`,
+→ Jika 'but' muncul secara spontan — angguk, tidak perlu komentar.
+→ Jika 'but' tidak muncul — tidak perlu dipaksakan. Fokus produksi 'but' baru di TP07.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What does he/she like to do?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini adalah apakah deskripsi mencerminkan orang nyata yang siswa kenal — bukan kelengkapan grammar. Kalimat "She is kind and a bit strict" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
           darurat         : null,
@@ -421,7 +421,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap kalimat pertama dengan figur siswa ("Your person is [nama] — so write: [Name] is...") — siswa tinggal melanjutkan dari sana.',
-            sudahBisa   : 'tambahkan satu kalimat kontras dengan `but` — contoh: "My sister is quiet, but my brother is loud." atau "My teacher is strict, but she is also kind."',
+            sudahBisa   : 'tambahkan satu kalimat kontras dengan 'but' — contoh: "My sister is quiet, but my brother is loud." atau "My teacher is strict, but she is also kind."',
           },
           flex            : false,
           flex_kondisi    : null,

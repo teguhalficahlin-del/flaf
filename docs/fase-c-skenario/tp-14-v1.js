@@ -43,13 +43,13 @@ integrasi tiga skill di L7 (membaca-berbicara-bernalar), inferensi logis dari ga
 
   checklist: [
     'L1 menggunakan pola Kluster D: "Last time you read an announcement. One sentence. Who remembers?" → satu kalimat dari TP13 → "Today — instructions."',
-    '`then` muncul empat kali di model guru L4 — satu per transisi; `when` muncul SATU KALI sebagai opsi',
+    ''then' muncul empat kali di model guru L4 — satu per transisi; 'when' muncul SATU KALI sebagai opsi',
     'Set A (urutan 3–1–5–2–4) dan Set B (urutan 2–4–1–5–3) berbeda — dibagikan bergantian ke siswa A dan B',
     'Demo L7 menunjukkan secara konkret bahwa kartu A dan B berbeda urutannya — "my first card... your first card... different"',
     'Image Cards tidak diperlihatkan ke pasangan selama pair work — dideskripsikan secara verbal',
     'Verifikasi L8: Sequence Sheet dicek terhadap teks dengan diskusi logis dulu, bukan langsung disalin',
     'Teks prosedur tetap tampil saat OUTPUT (L9) — konsisten Kluster D',
-    'Output siswa menggunakan `then` minimal sekali — bukan menyalin verbatim dari teks',
+    'Output siswa menggunakan 'then' minimal sekali — bukan menyalin verbatim dari teks',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L9 atau L10',
   ],
 
@@ -86,7 +86,7 @@ integrasi tiga skill di L7 (membaca-berbicara-bernalar), inferensi logis dari ga
   },
 
   text_anchor    : 'First, get the oranges. Then cut them in half. Next, squeeze the oranges into a glass. After that, add sugar. Finally, stir and enjoy.',
-  connector_aktif: 'then (fokus produksi di TP14 — exposure sejak TP05) · when (fokus produksi di TP14 — exposure sejak TP10); `then` dominan di text-anchor dan model guru; `when` muncul sekali di model guru sebagai opsi alternatif',
+  connector_aktif: 'then (fokus produksi di TP14 — exposure sejak TP05) · when (fokus produksi di TP14 — exposure sejak TP10); 'then' dominan di text-anchor dan model guru; 'when' muncul sekali di model guru sebagai opsi alternatif',
   recycle_fase_b : [
     'I usually... / first, then, after that (TP06 Fase B)',
     'When it..., I... → When [condition], [action] (TP10 Fase B)',
@@ -230,12 +230,12 @@ UCAP: "Then stir and enjoy."
 
 UCAP: "Then, then, then — that is how steps connect. Each step follows the next."
 
-→ Jeda singkat. Satu contoh `when` sebagai opsi:
+→ Jeda singkat. Satu contoh 'when' sebagai opsi:
 UCAP: "Or — 'When the glass is full, stop pouring.'"
 UCAP: "When — for a condition. But for steps, 'then' is easier."
 → Ucapkan sekali. Tidak lebih.`,
           bantuan         : 'Jika siswa tidak mengikuti kecepatan model guru: perlambat antara setiap kalimat — beri jeda 2 detik setelah setiap "Then..."',
-          cue             : '`then` muncul empat kali di model guru — satu per transisi antar langkah. `when` muncul SATU KALI sebagai opsi alternatif. Siswa harus keluar dari layar ini dengan rasa bahwa `then` adalah pilihan default untuk menulis prosedur.',
+          cue             : ''then' muncul empat kali di model guru — satu per transisi antar langkah. 'when' muncul SATU KALI sebagai opsi alternatif. Siswa harus keluar dari layar ini dengan rasa bahwa 'then' adalah pilihan default untuk menulis prosedur.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -287,7 +287,7 @@ UCAP: "Read the step. Add 'then' at the beginning. Fast."
 
 AKSI: Lakukan 4–5 langkah secara acak, cepat. Tidak ada koreksi.`,
           bantuan         : 'Jika siswa lambat merespons: guru ucap "Then..." dan tunggu siswa melanjutkan sisa kalimat dari teks.',
-          cue             : 'Ini membiasakan `then` di awal kalimat instruksi sebelum siswa menulis sendiri. Cepat — tidak lebih dari 3 menit.',
+          cue             : 'Ini membiasakan 'then' di awal kalimat instruksi sebelum siswa menulis sendiri. Cepat — tidak lebih dari 3 menit.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -393,16 +393,16 @@ UCAP: "Use 'then' between each step. You can also use 'when' if it feels right."
 
 AKSI: Tunjukkan cara memulai (ucap sekali, tidak ditulis):
 UCAP: "First, get the oranges. Then..." — stop. Siswa lanjutkan sendiri.
-→ Siswa menulis 4–5 kalimat dengan `then` menghubungkan langkah-langkah.
+→ Siswa menulis 4–5 kalimat dengan 'then' menghubungkan langkah-langkah.
 → Teks prosedur boleh dirujuk untuk akurasi — tapi output harus dalam kalimat sendiri.
 
 AKSI: Siswa menulis secara individual.
 → Waktu: 8–10 menit.
 → Beri waktu start 2–3 menit sebelum circulate.
 → Prioritaskan barisan belakang.
-→ Perhatikan: apakah `then` muncul di tulisan siswa? Jika tidak ada satu pun: tunjuk baris kedua teks prosedur dan ucap bisik "Use 'then' here." Tunggu siswa menulis.`,
+→ Perhatikan: apakah 'then' muncul di tulisan siswa? Jika tidak ada satu pun: tunjuk baris kedua teks prosedur dan ucap bisik "Use 'then' here." Tunggu siswa menulis.`,
           bantuan         : 'Jika siswa freeze: tunjuk Sequence Sheet siswa di Step 1 dan ucap "Write this step first: First, [action]." Tunggu satu kalimat. Tinggalkan.',
-          cue             : 'Output di sini adalah parafrase prosedur — siswa menulis ulang langkah-langkah dengan kata-kata sendiri dan menghubungkannya dengan `then`. Perbedaan kecil dalam diksi dari teks asli sudah cukup bukti produksi mandiri.',
+          cue             : 'Output di sini adalah parafrase prosedur — siswa menulis ulang langkah-langkah dengan kata-kata sendiri dan menghubungkannya dengan 'then'. Perbedaan kecil dalam diksi dari teks asli sudah cukup bukti produksi mandiri.',
           darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 2 kalimat:\nUcap: "Three steps — that is enough. Step 1, then Step 2, then Step 3." Turunkan target.',
           energi          : '🔵',
           energy_level    : 'calm',
@@ -427,18 +427,18 @@ UCAP: "Two more minutes. Read your steps. Is the order correct? Did you use 'the
 
 Diferensiasi:
 - Perlu support: guru dekati, tunjuk Sequence Sheet siswa, ucap "Write this step — 'Then [action].'" Tunggu satu kalimat tambahan tanpa dikte kata per kata.
-- Sudah bisa: tambah kalimat dengan `when` — contoh: "When the juice is ready, you can drink it." atau tambah kalimat opini: "I like this juice because it is sweet and fresh."
+- Sudah bisa: tambah kalimat dengan 'when' — contoh: "When the juice is ready, you can drink it." atau tambah kalimat opini: "I like this juice because it is sweet and fresh."
 
-AKSI: Guru circulate — cek kehadiran `then` di tulisan, bukan grammar.
-→ Jika `when` muncul spontan — angguk.`,
-          bantuan         : 'Jika siswa sudah menulis semua 5 langkah tapi belum ada connector: tunjuk jarak antara dua kalimat dan ucap "What word connects these? Then?" — tunggu siswa menambahkan `then` sendiri.',
+AKSI: Guru circulate — cek kehadiran 'then' di tulisan, bukan grammar.
+→ Jika 'when' muncul spontan — angguk.`,
+          bantuan         : 'Jika siswa sudah menulis semua 5 langkah tapi belum ada connector: tunjuk jarak antara dua kalimat dan ucap "What word connects these? Then?" — tunggu siswa menambahkan 'then' sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada konteks setelah prosedur selesai — opini personal yang berbeda-beda per siswa.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati, tunjuk Sequence Sheet siswa, ucap "Write this step — \'Then [action].\'" Tunggu satu kalimat tambahan.',
-            sudahBisa   : 'tambah kalimat dengan `when` — contoh: "When the juice is ready, you can drink it." atau tambah kalimat opini.',
+            sudahBisa   : 'tambah kalimat dengan 'when' — contoh: "When the juice is ready, you can drink it." atau tambah kalimat opini.',
           },
           flex            : false,
           flex_kondisi    : null,

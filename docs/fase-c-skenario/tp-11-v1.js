@@ -411,7 +411,7 @@ Diferensiasi:
 - Sudah bisa: tambah kalimat keempat yang menghubungkan hewan dengan pengalaman personal atau connector dari TP sebelumnya — contoh: "I like cats because they are quiet and soft." atau "When it rains, my cat goes inside the house."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika connector (`because`, `when`) muncul spontan — angguk, tidak perlu komentar.
+→ Jika connector ('because', 'when') muncul spontan — angguk, tidak perlu komentar.
 → Jika tidak muncul — tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Does your animal have a name? Or a special color?" — tunggu siswa menulis kalimat tambahan sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada pengalaman personal siswa dengan hewan tersebut — bukan kemampuan bahasa.',

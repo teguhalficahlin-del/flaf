@@ -44,7 +44,7 @@ export const tp_c01 = {
     'Setiap siswa sudah mengisi My Profile Note sebelum INTERACT dimulai (L4)',
     'My Partner\'s Profile Card dibagikan dalam keadaan kosong — siswa tidak melihat catatan pasangan sebelum bertanya (L6)',
     'Text-anchor Rina diturunkan dari papan sebelum OUTPUT dimulai (L8)',
-    'Connector `and` muncul di ucapan model guru di L3 — bukan diajarkan secara eksplisit, hanya dimodelkan',
+    'Connector 'and' muncul di ucapan model guru di L3 — bukan diajarkan secara eksplisit, hanya dimodelkan',
     'Output siswa tidak menyalin kalimat Rina persis — setiap profil mencerminkan siswa sendiri (cek di L8–L9)',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
@@ -234,7 +234,7 @@ AKSI: Langsung lanjut ke pembacaan bersama.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — biasanya siswa mulai ikut setelah kalimat kedua.',
-          cue             : 'Exposure connector `and` terjadi di satu kalimat model guru — "I like reading and teaching." Cukup sekali. Jangan minta siswa mengulang kalimat itu secara terpisah atau menjelaskan grammar.',
+          cue             : 'Exposure connector 'and' terjadi di satu kalimat model guru — "I like reading and teaching." Cukup sekali. Jangan minta siswa mengulang kalimat itu secara terpisah atau menjelaskan grammar.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -433,11 +433,11 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap kalimat pertama dengan nama siswa ("Your name is Dani, so write: My name is Dani...") — siswa tinggal melanjutkan.
-- Sudah bisa: tulis satu kalimat tambahan yang menyambungkan dua hal dengan `and` — contoh: "I like football and swimming." atau "I can read and write in English."
+- Sudah bisa: tulis satu kalimat tambahan yang menyambungkan dua hal dengan 'and' — contoh: "I like football and swimming." atau "I can read and write in English."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika siswa menulis kalimat dengan `and` secara spontan — angguk, tidak perlu komentar.
-→ Jika `and` tidak muncul sama sekali — tidak perlu dipaksakan. `and` bukan fokus produksi di TP01.`,
+→ Jika siswa menulis kalimat dengan 'and' secara spontan — angguk, tidak perlu komentar.
+→ Jika 'and' tidak muncul sama sekali — tidak perlu dipaksakan. 'and' bukan fokus produksi di TP01.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: arahkan dengan pertanyaan, bukan perintah — "What can you do? Can you write: I can...?" — tunggu siswa menulis sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah profil mencerminkan siswa sendiri. Kalimat "I like bola" lebih berharga daripada "I like reading" yang disalin dari Rina.',
           darurat         : null,
@@ -445,7 +445,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap kalimat pertama dengan nama siswa ("Your name is Dani, so write: My name is Dani...") — siswa tinggal melanjutkan.',
-            sudahBisa   : 'tulis satu kalimat tambahan yang menyambungkan dua hal dengan `and` — contoh: "I like football and swimming." atau "I can read and write in English."',
+            sudahBisa   : 'tulis satu kalimat tambahan yang menyambungkan dua hal dengan 'and' — contoh: "I like football and swimming." atau "I can read and write in English."',
           },
           flex            : false,
           flex_kondisi    : null,

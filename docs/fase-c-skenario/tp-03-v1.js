@@ -41,7 +41,7 @@ export const tp_c03 = {
     'My Neighborhood Card terisi sebelum INTERACT dimulai (L4) — kolom My Neighborhood di Comparison Table terisi sebelum pair work dimulai (L6)',
     'Comparison Table kolom My Partner\'s Neighborhood benar-benar kosong saat dibagikan — tidak boleh diisi tanpa bertanya ke pasangan',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8)',
-    'Connector `and` muncul di ucapan model guru di L3 — dimodelkan secara natural, tidak diajarkan sebagai grammar',
+    'Connector 'and' muncul di ucapan model guru di L3 — dimodelkan secara natural, tidak diajarkan sebagai grammar',
     'Output siswa mendeskripsikan lingkungan mereka sendiri — bukan replikasi text-anchor',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
@@ -409,11 +409,11 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap kalimat pertama dengan informasi siswa — "Your house is near [tempat] — so write: My house is near..." — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan satu kalimat dengan `and` yang menghubungkan dua hal — contoh: "It is quiet and cool." atau "There is a garden and a small river next to my house."
+- Sudah bisa: tambahkan satu kalimat dengan 'and' yang menghubungkan dua hal — contoh: "It is quiet and cool." atau "There is a garden and a small river next to my house."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika `and` muncul secara spontan — angguk, tidak perlu komentar.
-→ Jika `and` tidak muncul — tidak perlu dipaksakan. Fokus produksi `and` ada di TP04.`,
+→ Jika 'and' muncul secara spontan — angguk, tidak perlu komentar.
+→ Jika 'and' tidak muncul — tidak perlu dipaksakan. Fokus produksi 'and' ada di TP04.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What is it like? Is it quiet? Is it clean?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah deskripsi mencerminkan lingkungan nyata siswa. Kalimat "There is a big sawah next to my house" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
           darurat         : null,
@@ -421,7 +421,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap kalimat pertama dengan informasi siswa — "Your house is near [tempat] — so write: My house is near..." — siswa tinggal melanjutkan dari sana.',
-            sudahBisa   : 'tambahkan satu kalimat dengan `and` yang menghubungkan dua hal — contoh: "It is quiet and cool." atau "There is a garden and a small river next to my house."',
+            sudahBisa   : 'tambahkan satu kalimat dengan 'and' yang menghubungkan dua hal — contoh: "It is quiet and cool." atau "There is a garden and a small river next to my house."',
           },
           flex            : false,
           flex_kondisi    : null,

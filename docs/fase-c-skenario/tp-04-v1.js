@@ -38,7 +38,7 @@ export const tp_c04 = {
 
   checklist: [
     'Reactivation (L1) mengaktifkan kalimat dari ketiga TP sebelumnya — bukan hanya menyebut tema TP01, TP02, dan TP03',
-    'Brief (L2) mengandung `and` secara natural dalam kalimat instruksi — tidak ada instruksi eksplisit "gunakan and"',
+    'Brief (L2) mengandung 'and' secara natural dalam kalimat instruksi — tidak ada instruksi eksplisit "gunakan and"',
     'Model guru (L3) diucapkan lisan — tidak ditulis di papan sebagai template yang bisa disalin siswa',
     'Catatan TP01–03 (My Profile Note · My Person Card · My Neighborhood Card) tersedia untuk siswa di L7',
     'Breakpoint alami disampaikan dengan UCAP konkret: "Stop where you are. Save your work. Next time we continue from Layar 9."',
@@ -181,7 +181,7 @@ UCAP: "Write about yourself — your name, your home, and your neighborhood."
 UCAP: "Five sentences — that is the minimum. You can write more."
 UCAP: "Your notes from the last three times — you can use them. But do not copy. Write in your own words."`,
           bantuan         : 'Jika siswa bertanya "harus tentang apa saja?": tunjuk brief di papan — "Your name, your home, your neighborhood — that is the guide. You decide the rest."',
-          cue             : 'Brief mengandung `and` secara natural — "your name, your home, and your neighborhood." Siswa mendengar `and` sebagai bagian dari instruksi guru, bukan sebagai target grammar yang harus dipenuhi. Jangan ulangi kata `and` secara terpisah atau beri komentar apapun tentangnya.',
+          cue             : 'Brief mengandung 'and' secara natural — "your name, your home, and your neighborhood." Siswa mendengar 'and' sebagai bagian dari instruksi guru, bukan sebagai target grammar yang harus dipenuhi. Jangan ulangi kata 'and' secara terpisah atau beri komentar apapun tentangnya.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',
@@ -220,7 +220,7 @@ UCAP: "I like living here because it is [kata sifat]."
 UCAP: "That is This Is Me — for me."
 UCAP: "Yours will be different. Because you are different."`,
           bantuan         : 'Jika siswa meminta model ditulis di papan: ucap "You can write what you heard if you want to remember — but this is mine, not yours. Your sentences are different." Tetap jangan tulis di papan.',
-          cue             : 'Model guru bukan template — tidak ada urutan yang wajib diikuti siswa. Yang ditunjukkan: (1) kalimat bisa berpindah dari satu topik ke topik lain secara natural, (2) `and` muncul dalam konteks yang berbeda tanpa terasa dipaksakan. Jangan tulis model ini di papan — cukup diucapkan, agar siswa tidak menyalin.',
+          cue             : 'Model guru bukan template — tidak ada urutan yang wajib diikuti siswa. Yang ditunjukkan: (1) kalimat bisa berpindah dari satu topik ke topik lain secara natural, (2) 'and' muncul dalam konteks yang berbeda tanpa terasa dipaksakan. Jangan tulis model ini di papan — cukup diucapkan, agar siswa tidak menyalin.',
           darurat         : null,
           energi          : '🔵',
           energy_level    : 'calm',
@@ -408,10 +408,10 @@ UCAP: "Or — can you make one sentence better?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote about your name. Can you add something about your neighborhood? Just one sentence." Jangan dikte isi kalimatnya.
-- Sudah bisa: tambahkan kalimat yang menghubungkan dua topik dengan `and` — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."
+- Sudah bisa: tambahkan kalimat yang menghubungkan dua topik dengan 'and' — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika `and` muncul spontan dalam konteks baru — angguk.
+→ Jika 'and' muncul spontan dalam konteks baru — angguk.
 → Jika ada siswa yang menulis lebih dari 8 kalimat — tidak perlu dibatasi.`,
           bantuan         : 'Jika siswa menyatakan sudah selesai tapi baru 3 kalimat: tanya "What is one more thing about you — that is not in your writing yet?" Tunggu siswa menjawab lisan, lalu dorong: "Write that."',
           cue             : 'Revisi bukan rewrite. Cukup 1 kalimat tambahan atau 1 perbaikan kecil — jangan buat siswa merasa tulisan mereka salah atau tidak cukup.',
@@ -420,7 +420,7 @@ AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
           energy_level    : 'calm',
           diferensiasi    : {
             perluSupport: 'guru dekati dan ucap panduan konkret — "You wrote about your name. Can you add something about your neighborhood? Just one sentence." Jangan dikte isi kalimatnya.',
-            sudahBisa   : 'tambahkan kalimat yang menghubungkan dua topik dengan `and` — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."',
+            sudahBisa   : 'tambahkan kalimat yang menghubungkan dua topik dengan 'and' — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."',
           },
           flex            : false,
           flex_kondisi    : null,

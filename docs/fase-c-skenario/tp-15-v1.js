@@ -422,7 +422,7 @@ Diferensiasi:
 - Sudah bisa: tambah satu kalimat opini atau reaksi personal — contoh: "I think Budi was lucky to have a good friend." atau "I like this story because it is about helping each other."
 
 AKSI: Guru circulate — cek apakah cerita punya awal dan akhir.
-→ Jika connector `then` belum ada: tunjuk jarak antara dua kalimat, bisik "Then?" — tunggu siswa menambahkan.`,
+→ Jika connector 'then' belum ada: tunjuk jarak antara dua kalimat, bisik "Then?" — tunggu siswa menambahkan.`,
           bantuan         : 'Jika siswa sudah menulis semua 6 peristiwa tapi tanpa connector: tunjuk salah satu jarak dan ucap "Add \'then\' here." Tidak perlu menunjukkan semua celah.',
           cue             : 'Diferensiasi "Sudah bisa" mendorong respons personal terhadap cerita — pendapat yang berbeda-beda per siswa.',
           darurat         : null,

@@ -44,7 +44,7 @@ export const tp_c09 = {
     'Partner\'s Town Card dibagikan dalam keadaan kosong — My Town Card tertutup saat pair work berlangsung (L6)',
     'Text-anchor diturunkan dari papan sebelum OUTPUT dimulai (L8) — diganti pattern reminder tiga baris',
     'Output siswa mencerminkan tempat yang mereka pilih dari kartu sendiri — bukan replikasi text-anchor Rina',
-    'Connector `so` dan `when` tidak muncul di skenario ini — keduanya baru di TP10',
+    'Connector 'so' dan 'when' tidak muncul di skenario ini — keduanya baru di TP10',
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
@@ -413,8 +413,8 @@ Diferensiasi:
 - Sudah bisa: tambah kalimat keempat yang memperluas dengan pola dari Kluster B — contoh: "I usually go there on Sunday with my friend." atau "I like it because it is quiet and cool."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika connector dari Kluster B muncul spontan (`because`, `but`) — angguk, tidak perlu komentar.
-→ Jika hanya `and` yang muncul — ini sudah valid untuk TP09.`,
+→ Jika connector dari Kluster B muncul spontan ('because', 'but') — angguk, tidak perlu komentar.
+→ Jika hanya 'and' yang muncul — ini sudah valid untuk TP09.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Where do you go with your friends? Write: I go there with..." — tunggu siswa menulis sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada hari dan aktivitas konkret siswa — bukan pada kemampuan grammar.',
           darurat         : null,
