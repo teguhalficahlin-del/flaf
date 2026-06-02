@@ -216,7 +216,7 @@ AKSI: Kembali ke text-anchor.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama di choral read: tunjuk kalimat demi kalimat sambil membaca — siswa biasanya ikut setelah kalimat pertama.',
-          cue             : 'Tiga pasangan paralel ini adalah inti dari L3 — bukan penjelasan grammar, tapi demonstrasi konkret bahwa `eat / live / can` adalah pola yang sudah dikenal, hanya subjeknya bergeser dari `I` ke nama hewan. Jangan tambahkan contoh keempat atau penjelasan lebih lanjut.',
+          cue             : 'Tiga pasangan paralel ini adalah inti dari L3 — bukan penjelasan grammar, tapi demonstrasi konkret bahwa "eat / live / can" adalah pola yang sudah dikenal, hanya subjeknya bergeser dari "I" ke nama hewan. Jangan tambahkan contoh keempat atau penjelasan lebih lanjut.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -273,7 +273,7 @@ UCAP: "Quick — tell me your animal and one fact. Go."
 
 AKSI: Lakukan 4–5 hewan dari barisan berbeda. Tidak ada koreksi.`,
           bantuan         : 'Jika kelas tidak merespons: guru jawab sendiri — "It eats fish" — lalu ulangi pertanyaan dan tunjuk satu siswa untuk menjawab.',
-          cue             : 'Pola `It eats / It lives / It can` harus terasa natural sebelum pair work — ini persiapan langsung untuk pertanyaan di L6.',
+          cue             : 'Pola "It eats / It lives / It can" harus terasa natural sebelum pair work — ini persiapan langsung untuk pertanyaan di L6.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -411,7 +411,7 @@ Diferensiasi:
 - Sudah bisa: tambah kalimat keempat yang menghubungkan hewan dengan pengalaman personal atau connector dari TP sebelumnya — contoh: "I like cats because they are quiet and soft." atau "When it rains, my cat goes inside the house."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika connector ("because", "when") muncul spontan — angguk, tidak perlu komentar.
+→ Jika connector ('because', 'when') muncul spontan — angguk, tidak perlu komentar.
 → Jika tidak muncul — tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Does your animal have a name? Or a special color?" — tunggu siswa menulis kalimat tambahan sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada pengalaman personal siswa dengan hewan tersebut — bukan kemampuan bahasa.',

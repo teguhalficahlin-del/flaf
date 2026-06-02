@@ -181,7 +181,7 @@ UCAP: "Maybe you have a routine you like, but also one you don't."
 → Jeda.
 UCAP: "This is your text. Your week is different from everyone else."`,
           bantuan         : 'Jika siswa bertanya "harus berapa kalimat?": ucap "At least three. More is better." Tidak perlu batasan atas.',
-          cue             : "because" dan "but" ada dalam kalimat instruksi guru — bukan kalimat model yang bisa disalin. Guru tidak menjelaskan connector — siswa sudah kenal keduanya dari TP06 dan TP02.',
+          cue             : '"because" dan "but" ada dalam kalimat instruksi guru — bukan kalimat model yang bisa disalin. Guru tidak menjelaskan connector — siswa sudah kenal keduanya dari TP06 dan TP02.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -275,7 +275,7 @@ AKSI: Setelah 2 menit, guru circulate sebentar.
 AKSI: Lakukan 4–5 starter, cepat, tanpa koreksi.
 → Jika ada respons yang menggunakan connector yang tidak diharapkan — angguk dan terima.`,
           bantuan         : 'Jika kelas tidak merespons starter pertama: ucap respons sendiri — "because it is fun" — lalu ulangi starter yang sama dan tunjuk siswa lain.',
-          cue             : 'Ini warming up, bukan tes. Tujuannya satu: connector `and · then · because · but` sudah terasa natural di mulut siswa sebelum mereka menulis.',
+          cue             : 'Ini warming up, bukan tes. Tujuannya satu: connector "and · then · because · but" sudah terasa natural di mulut siswa sebelum mereka menulis.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -416,7 +416,7 @@ UCAP: "Add to your text. Don't start over."
 → Writing Plan Sheet boleh dilihat kembali.
 → Waktu: 7–8 menit.
 
-AKSI: Guru circulate — jangan koreksi grammar. Perhatikan apakah "because" atau "but" muncul secara natural.
+AKSI: Guru circulate — jangan koreksi grammar. Perhatikan apakah 'because' atau 'but' muncul secara natural.
 → Jika muncul: angguk, tidak perlu komentar.
 → Jika tidak muncul sama sekali: tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa tidak tahu harus menambahkan apa setelah Stage 1: bisik "What do you eat every day? Write that." Satu kalimat sudah cukup untuk memulai Stage 2.',

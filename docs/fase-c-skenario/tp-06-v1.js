@@ -199,7 +199,7 @@ UCAP: "I always [kegiatan terkait hobi] when I have free time."
 
 UCAP: "I also like [hobi kedua] because [alasan kedua]."
 → Contoh: "I also like cooking because I like making food for my family."
-→ Jeda setelah kalimat ini — tidak perlu komentar tentang "because".
+→ Jeda setelah kalimat ini — tidak perlu komentar tentang 'because'.
 
 AKSI: Kembali ke text-anchor di papan.
 🗣 TOGETHER — guru dan siswa baca text-anchor bersama.
@@ -262,7 +262,7 @@ UCAP: "What do you like to do in your free time? One sentence."
 → Siswa menjawab: "I like [hobi] because [alasan]." atau hanya "I like [hobi]."
 → Guru angguk, tidak mengoreksi.
 UCAP: "Why? Tell us."
-→ Siswa menjawab dengan alasan — "because" muncul natural dari pertanyaan ini.
+→ Siswa menjawab dengan alasan — 'because' muncul natural dari pertanyaan ini.
 
 AKSI: Lakukan dengan 3–4 siswa dari barisan berbeda — cepat.
 → Setelah tiap siswa menjawab: guru tunjuk kelas — "Who also likes that? Raise your hand."
@@ -402,13 +402,13 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote what you like. Can you write when you do it? I always [hobi] on [hari/waktu]." — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan kalimat kedua yang menggunakan "because" untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka: "I always [hobi] with [orang]."
+- Sudah bisa: tambahkan kalimat kedua yang menggunakan 'because' untuk alasan berbeda — contoh: "I also like [hobi lain] because [alasan]." — atau tambahkan kalimat tentang siapa yang biasanya bersama mereka: "I always [hobi] with [orang]."
 
-Catatan penanganan produksi: Jika "because" muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — angguk dan tidak perlu mengoreksi.
+Catatan penanganan produksi: Jika 'because' muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I like football because fun" atau "I like reading because relax" — angguk dan tidak perlu mengoreksi.
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika "because" muncul secara spontan — angguk.
-→ Jika "because" tidak muncul — tidak perlu dipaksakan. Fokus produksi "because" ada di TP07.`,
+→ Jika 'because' muncul secara spontan — angguk.
+→ Jika 'because' tidak muncul — tidak perlu dipaksakan. Fokus produksi 'because' ada di TP07.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Who do you usually do this with? Can you write: I always [hobi] with...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah tulisan mencerminkan hobi nyata siswa. Kalimat "I like helping my mother cook because she looks happy" lebih berharga daripada kalimat sempurna yang tidak bermakna.',
           darurat         : null,

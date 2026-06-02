@@ -217,7 +217,7 @@ AKSI: Kembali ke text-anchor.
 UCAP: "Read with me. Ready?"
 → Baca bersama 1×. Cukup.`,
           bantuan         : 'Jika siswa tidak ikut membaca bersama: tunjuk baris demi baris sambil membaca — siswa biasanya ikut setelah kalimat kedua.',
-          cue             : 'Pola `[place] is [adj] and [adj]` dimodelkan dua kali — "big and quiet" dan "green and peaceful." Ini mempersiapkan siswa untuk kolom ketiga My Town Card ("What is it like?"). Jangan modelkan lebih dari dua kali.',
+          cue             : 'Pola "[place] is [adj] and [adj]" dimodelkan dua kali — "big and quiet" dan "green and peaceful." Ini mempersiapkan siswa untuk kolom ketiga My Town Card ("What is it like?"). Jangan modelkan lebih dari dua kali.',
           darurat         : null,
           energi          : '🟡',
           energy_level    : 'focused',
@@ -413,8 +413,8 @@ Diferensiasi:
 - Sudah bisa: tambah kalimat keempat yang memperluas dengan pola dari Kluster B — contoh: "I usually go there on Sunday with my friend." atau "I like it because it is quiet and cool."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika connector dari Kluster B muncul spontan ("because", "but") — angguk, tidak perlu komentar.
-→ Jika hanya "and" yang muncul — ini sudah valid untuk TP09.`,
+→ Jika connector dari Kluster B muncul spontan ('because', 'but') — angguk, tidak perlu komentar.
+→ Jika hanya 'and' yang muncul — ini sudah valid untuk TP09.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "Where do you go with your friends? Write: I go there with..." — tunggu siswa menulis sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" mengacu pada hari dan aktivitas konkret siswa — bukan pada kemampuan grammar.',
           darurat         : null,

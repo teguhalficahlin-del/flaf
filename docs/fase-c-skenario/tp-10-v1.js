@@ -270,7 +270,7 @@ UCAP: "Quick — read one row. What weather, and what do you wear?"
 
 AKSI: Lakukan 4–5 starter, cepat, dari barisan berbeda. Tidak ada koreksi.`,
           bantuan         : 'Jika kelas tidak merespons starter pertama: guru jawab sendiri — "I wear a raincoat" — lalu ulangi starter yang sama dan tunjuk satu siswa untuk menjawab.',
-          cue             : 'Tujuan drill ini bukan menghafalkan kalimat — tapi memastikan pasangan 'when...' → `I...` sudah terasa natural di mulut siswa sebelum mereka masuk ke pair work dan writing.',
+          cue             : 'Tujuan drill ini bukan menghafalkan kalimat — tapi memastikan pasangan "when..." → "I..." sudah terasa natural di mulut siswa sebelum mereka masuk ke pair work dan writing.',
           darurat         : null,
           energi          : '🟠',
           energy_level    : 'active',
@@ -346,7 +346,7 @@ UCAP: "Did you find anything different? Same weather — different choices?"
 
 AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
 UCAP (opsional): "Interesting. Why different?"
-→ Ini membuka ruang natural untuk "because" dari Kluster B — jangan paksa, tapi terima jika muncul spontan.`,
+→ Ini membuka ruang natural untuk 'because' dari Kluster B — jangan paksa, tapi terima jika muncul spontan.`,
           bantuan         : 'Jika siswa tidak bisa menjawab apakah ada perbedaan: ucap "Just read one row from the card — what does your partner wear?" Siswa membacakan fakta, bukan membuat perbandingan.',
           cue             : '"Same weather — different choices" adalah framing yang membuat sharing terasa bermakna, bukan sekadar membacakan kartu.',
           darurat         : null,
@@ -377,7 +377,7 @@ AKSI: Siswa menulis secara individual.
 → Prioritaskan barisan belakang.
 → Perhatikan: apakah siswa menulis tentang cuaca dari kartu mereka sendiri, atau menyalin text-anchor Rina? Jika ya: tepuk bahu dan tanya "Is this your weather or Rina's weather?"`,
           bantuan         : 'Jika siswa freeze: tunjuk kartu mereka di baris pertama dan ucap "Start here — When it is [weather], I..." Tunggu siswa menulis satu kalimat. Tinggalkan setelah satu kalimat.',
-          cue             : 'Tidak ada pattern reminder di papan. Siswa mengandalkan kartu mereka sebagai konten dan pola dari INPUT sebagai struktur. Output tidak perlu sempurna — kalimat `When it is rainy, I bring an umbrella` tanpa "so" tetap valid di TP10.',
+          cue             : 'Tidak ada pattern reminder di papan. Siswa mengandalkan kartu mereka sebagai konten dan pola dari INPUT sebagai struktur. Output tidak perlu sempurna — kalimat "When it is rainy, I bring an umbrella" tanpa "so" tetap valid di TP10.',
           darurat         : '⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:\nUcap: "Two sentences — that is enough for today." Turunkan target dan lanjut ke L9.',
           energi          : '🔵',
           energy_level    : 'calm',
@@ -402,11 +402,11 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati, tunjuk baris kedua di kartu siswa, ucap "What about this weather — when it is [weather from row 2]?" Tunggu siswa menulis kalimat tambahan tanpa dikte.
-- Sudah bisa: tambahkan kalimat yang menghubungkan cuaca dengan akibat menggunakan "so" — contoh: "When it is windy, I wear a jacket. So I feel warm outside." Atau tambahkan kalimat pendapat dengan "because": "I like rainy days because I can stay at home and read."
+- Sudah bisa: tambahkan kalimat yang menghubungkan cuaca dengan akibat menggunakan 'so' — contoh: "When it is windy, I wear a jacket. So I feel warm outside." Atau tambahkan kalimat pendapat dengan 'because': "I like rainy days because I can stay at home and read."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika "so" muncul spontan — angguk, tidak perlu komentar.
-→ Jika "so" tidak muncul — tidak perlu dipaksakan. Ini exposure, bukan produksi wajib.`,
+→ Jika 'so' muncul spontan — angguk, tidak perlu komentar.
+→ Jika 'so' tidak muncul — tidak perlu dipaksakan. Ini exposure, bukan produksi wajib.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What else do you bring when it rains?" — tunggu siswa menulis kalimat tambahan sendiri.',
           cue             : 'Diferensiasi "Sudah bisa" menawarkan dua opsi — "so" sebagai connector baru, atau "because" sebagai konfirmasi Kluster B. Keduanya valid. Siswa memilih yang paling natural bagi mereka.',
           darurat         : null,

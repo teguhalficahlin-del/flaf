@@ -265,7 +265,7 @@ UCAP: "What do you eat every day? One sentence."
 → Siswa menjawab: "I eat [makanan] every day because [alasan]." atau hanya "I eat [makanan] every day."
 → Guru angguk, tidak mengoreksi.
 UCAP: "But what else do you like?"
-→ Siswa menjawab dengan makanan lain — "but" muncul natural dari pertanyaan ini.
+→ Siswa menjawab dengan makanan lain — 'but' muncul natural dari pertanyaan ini.
 
 AKSI: Lakukan dengan 3–4 siswa dari barisan berbeda — cepat.
 → Setelah tiap siswa menjawab: guru tunjuk kelas — "Who also eats that? Raise your hand."
@@ -406,12 +406,12 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote what you eat. Can you write why? I eat [makanan] because [alasan]." — siswa tinggal melengkapi dari sana.
-- Sudah bisa: tambahkan kalimat kontras dengan "but" — "But I don't like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."
+- Sudah bisa: tambahkan kalimat kontras dengan 'but' — "But I don't like [makanan]." atau "But on [hari] I eat [makanan lain] because [alasan]."
 
-Catatan penanganan produksi: Jika "because" atau "but" muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I eat rice because energy" atau "but I like bakso very much" — angguk dan tidak perlu mengoreksi.
+Catatan penanganan produksi: Jika 'because' atau 'but' muncul dalam tulisan siswa dengan struktur tidak sempurna — contoh: "I eat rice because energy" atau "but I like bakso very much" — angguk dan tidak perlu mengoreksi.
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika "because" atau "but" muncul secara spontan — angguk.
+→ Jika 'because' atau 'but' muncul secara spontan — angguk.
 → Jika keduanya tidak muncul — tidak perlu dipaksakan.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What else do you like? Can you write: But I also like...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar atau kehadiran kedua connector — tapi apakah tulisan mencerminkan makanan nyata siswa. Kalimat "I eat ubi every day because my grandmother cooks it" lebih berharga daripada kalimat sempurna yang tidak bermakna.',

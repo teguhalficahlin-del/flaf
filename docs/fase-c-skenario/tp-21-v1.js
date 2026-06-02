@@ -431,7 +431,7 @@ UCAP: "Different texts — different uses. Now — write."
 UCAP: "Write three things:"
 UCAP: "One: what kind of text it is."
 UCAP: "Two: what it says — what does it want you to do?"
-UCAP: "Three: what do YOU think about it. Use "because"."
+UCAP: "Three: what do YOU think about it. Use 'because'."
 → Jeda.
 UCAP: "Three sentences. Your words — not the text's words."
 → Siswa memilih teks dan mulai menulis. Waktu: 7 menit.
@@ -472,7 +472,7 @@ UCAP: "Two more minutes. Read your response."
 → Jeda.
 UCAP: "Check: is sentence three YOUR opinion? Not the text's words?"
 → Jeda singkat.
-UCAP: "Did you use "because"? If not — add it now."
+UCAP: "Did you use 'because'? If not — add it now."
 
 AKSI: Circulate — barisan tengah yang belum tersentuh di L9.
 

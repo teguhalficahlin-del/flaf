@@ -355,7 +355,7 @@ UCAP: "Who found the most expensive? What is it?"
 
 AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
 UCAP (opsional): "Would you order the most expensive? Why or why not?"
-→ Ini membuka ruang natural untuk "because" dari Kluster B — jangan paksa.`,
+→ Ini membuka ruang natural untuk 'because' dari Kluster B — jangan paksa.`,
           bantuan         : 'Jika siswa tidak bisa menjawab: ucap "Look at the Price column in your table. Which number is the smallest?" — bantu siswa membaca tabel mereka sendiri.',
           cue             : 'Pertanyaan "cheapest / most expensive" hanya bisa dijawab setelah tabel terisi lengkap — ini memverifikasi bahwa pair work selesai dengan benar.',
           darurat         : null,

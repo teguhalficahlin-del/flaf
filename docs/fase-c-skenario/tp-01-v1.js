@@ -433,11 +433,11 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap kalimat pertama dengan nama siswa ("Your name is Dani, so write: My name is Dani...") — siswa tinggal melanjutkan.
-- Sudah bisa: tulis satu kalimat tambahan yang menyambungkan dua hal dengan "and" — contoh: "I like football and swimming." atau "I can read and write in English."
+- Sudah bisa: tulis satu kalimat tambahan yang menyambungkan dua hal dengan 'and' — contoh: "I like football and swimming." atau "I can read and write in English."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi.
-→ Jika siswa menulis kalimat dengan "and" secara spontan — angguk, tidak perlu komentar.
-→ Jika "and" tidak muncul sama sekali — tidak perlu dipaksakan. "and" bukan fokus produksi di TP01.`,
+→ Jika siswa menulis kalimat dengan 'and' secara spontan — angguk, tidak perlu komentar.
+→ Jika 'and' tidak muncul sama sekali — tidak perlu dipaksakan. 'and' bukan fokus produksi di TP01.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: arahkan dengan pertanyaan, bukan perintah — "What can you do? Can you write: I can...?" — tunggu siswa menulis sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah profil mencerminkan siswa sendiri. Kalimat "I like bola" lebih berharga daripada "I like reading" yang disalin dari Rina.',
           darurat         : null,

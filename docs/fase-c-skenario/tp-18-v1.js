@@ -449,7 +449,7 @@ UCAP: "Two more minutes. Read your story."
 → Jeda — biarkan siswa membaca tulisannya sendiri.
 UCAP: "Check — did you use past tense? Look at the board if you need."
 → Jeda.
-UCAP: "Add one connector — "then", "and", "because", or "so"."
+UCAP: "Add one connector — 'then', 'and', 'because', or 'so'."
 → Jeda singkat.
 
 AKSI: Circulate — prioritaskan barisan tengah yang belum tersentuh di L9.

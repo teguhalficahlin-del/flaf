@@ -248,7 +248,7 @@ UCAP: "When you tell this story — use the past."
           tipe            : 'instruksi',
           interaction_mode: 'teacher_input',
           teks            : `AKSI: Guru minta siswa A dan siswa B masing-masing berlatih menceritakan kartu mereka secara oral — sendiri dulu, bukan ke pasangan.
-UCAP: "Practice telling your card. Use "then" between sentences. Don't read — tell."
+UCAP: "Practice telling your card. Use 'then' between sentences. Don't read — tell."
 
 → Guru tunjukkan contoh dengan text-anchor:
 UCAP: "Budi went to the market. Then he bought vegetables. Then he met Sari."
@@ -381,7 +381,7 @@ UCAP: "Did you get all six events? Missing anything?"
           interaction_mode: 'writing',
           teks            : `AKSI: Teks cerita lengkap (6 kalimat) tetap di papan.
 UCAP: "Now — write the complete story. In your own words."
-UCAP: "Use past tense. Use "then" between events."
+UCAP: "Use past tense. Use 'then' between events."
 UCAP: "Don't copy word for word — write it your way."
 
 AKSI: Tunjukkan cara memulai (ucap sekali, tidak ditulis):
@@ -422,7 +422,7 @@ Diferensiasi:
 - Sudah bisa: tambah satu kalimat opini atau reaksi personal — contoh: "I think Budi was lucky to have a good friend." atau "I like this story because it is about helping each other."
 
 AKSI: Guru circulate — cek apakah cerita punya awal dan akhir.
-→ Jika connector "then" belum ada: tunjuk jarak antara dua kalimat, bisik "Then?" — tunggu siswa menambahkan.`,
+→ Jika connector 'then' belum ada: tunjuk jarak antara dua kalimat, bisik "Then?" — tunggu siswa menambahkan.`,
           bantuan         : 'Jika siswa sudah menulis semua 6 peristiwa tapi tanpa connector: tunjuk salah satu jarak dan ucap "Add \'then\' here." Tidak perlu menunjukkan semua celah.',
           cue             : 'Diferensiasi "Sudah bisa" mendorong respons personal terhadap cerita — pendapat yang berbeda-beda per siswa.',
           darurat         : null,

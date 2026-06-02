@@ -412,10 +412,10 @@ UCAP: "Two more minutes. Read your sentences. Can you add one more?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote about Monday. What about another day? On [hari lain] I..." — siswa tinggal melanjutkan dari sana.
-- Sudah bisa: tambahkan kalimat dengan "then" — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."
+- Sudah bisa: tambahkan kalimat dengan 'then' — "On [hari] I [kegiatan]. Then I [kegiatan berikutnya]." — atau tambahkan satu kalimat past tense: "Last [hari] I [sesuatu]."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika "then" muncul secara spontan — angguk, tidak perlu komentar.
+→ Jika 'then' muncul secara spontan — angguk, tidak perlu komentar.
 → Jika ada kalimat past tense yang muncul (sempurna maupun tidak sempurna) — angguk, tidak perlu koreksi.`,
           bantuan         : 'Jika siswa sudah selesai tapi hanya menulis 2 kalimat: tanya "What do you do after school? Can you write: Then I...?" — tunggu siswa menulis kalimat tambahan sendiri tanpa dikte.',
           cue             : 'Yang diperiksa di sini bukan kelengkapan grammar — tapi apakah tulisan mencerminkan minggu nyata siswa. Kalimat "On Sunday I help my father at the warung" lebih berharga daripada kalimat sempurna yang tidak bermakna.',

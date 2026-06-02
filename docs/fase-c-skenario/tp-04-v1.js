@@ -408,10 +408,10 @@ UCAP: "Or — can you make one sentence better?"
 
 Diferensiasi:
 - Perlu support: guru dekati dan ucap panduan konkret — "You wrote about your name. Can you add something about your neighborhood? Just one sentence." Jangan dikte isi kalimatnya.
-- Sudah bisa: tambahkan kalimat yang menghubungkan dua topik dengan "and" — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."
+- Sudah bisa: tambahkan kalimat yang menghubungkan dua topik dengan 'and' — contoh: "I like my neighborhood because it is quiet and clean." atau "My [orang] is kind and my home is peaceful."
 
 AKSI: Guru circulate — lihat tulisan siswa tanpa mengoreksi grammar.
-→ Jika "and" muncul spontan dalam konteks baru — angguk.
+→ Jika 'and' muncul spontan dalam konteks baru — angguk.
 → Jika ada siswa yang menulis lebih dari 8 kalimat — tidak perlu dibatasi.`,
           bantuan         : 'Jika siswa menyatakan sudah selesai tapi baru 3 kalimat: tanya "What is one more thing about you — that is not in your writing yet?" Tunggu siswa menjawab lisan, lalu dorong: "Write that."',
           cue             : 'Revisi bukan rewrite. Cukup 1 kalimat tambahan atau 1 perbaikan kecil — jangan buat siswa merasa tulisan mereka salah atau tidak cukup.',

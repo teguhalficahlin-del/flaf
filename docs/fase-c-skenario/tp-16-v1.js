@@ -439,7 +439,7 @@ UCAP: "Two more minutes. Read what you wrote."
 → Jeda — biarkan siswa membaca tulisannya sendiri secara diam.
 UCAP: "Check: Is this YOUR response? Or is it a summary of the text?"
 → Jeda.
-UCAP: "If you have three sentences — add one more. Use "because" or "but"."
+UCAP: "If you have three sentences — add one more. Use 'because' or 'but'."
 UCAP: "If you have fewer than three — finish one more sentence first."
 
 AKSI: Guru circulate — prioritaskan barisan tengah yang belum tersentuh di L8.
