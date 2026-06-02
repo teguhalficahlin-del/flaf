@@ -508,4 +508,3 @@ UCAP: "Good work today. See you next time."`,
 };
 
 export default tp_c03;
-'
