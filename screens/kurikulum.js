@@ -134,7 +134,7 @@ window.kurFilterKelas = function(kelas) {
   const activeStyle  = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;`;
   const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;`;
 
-  [1, 2, 3, 4].forEach(n => {
+  [1, 2, 3, 4, 5, 6].forEach(n => {
     const el = document.getElementById(`kur-filter-${n}`);
     if (el) el.style.cssText = (String(kelas) === String(n)) ? activeStyle : inactiveStyle;
   });
@@ -205,10 +205,14 @@ async function _resolveKurikulumData(kelas) {
     faseKey      = 'B';
     defaultKelas = kelasNum;
     kelasList    = [3, 4];
+  } else if (kelasNum === 5 || kelasNum === 6) {
+    faseKey      = 'C';
+    defaultKelas = kelasNum;
+    kelasList    = [5, 6];
   } else {
     faseKey      = 'ALL';
     defaultKelas = 1;
-    kelasList    = [1, 2, 3, 4];
+    kelasList    = [1, 2, 3, 4, 5, 6];
   }
 
   let fase, tps, meta;
@@ -246,6 +250,8 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
         2: getMeta('A'),
         3: getMeta('B'),
         4: getMeta('B'),
+        5: getMeta('C'),
+        6: getMeta('C'),
       };
     } else {
       _metaMap = null;
@@ -254,7 +260,8 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
     if (kelasUser === 'all') {
       const faseA = getFase('A');
       const faseB = getFase('B');
-      _faseMap = { 1: faseA, 2: faseA, 3: faseB, 4: faseB };
+      const faseC = getFase('C');
+      _faseMap = { 1: faseA, 2: faseA, 3: faseB, 4: faseB, 5: faseC, 6: faseC };
     } else {
       _faseMap = null;
     }
