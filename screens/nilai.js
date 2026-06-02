@@ -1068,16 +1068,19 @@ window.nilaiTambahKelas = function() {
       }
       if (kelas === '3') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-4')?.classList.add('disabled'); nilaiPilihTingkat(3); }
       if (kelas === '4') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-3')?.classList.add('disabled'); nilaiPilihTingkat(4); }
+      if (kelas === '5') { [1,2,3,4,6].forEach(n => document.getElementById('btn-tingkat-'+n)?.classList.add('disabled')); nilaiPilihTingkat(5); }
+      if (kelas === '6') { [1,2,3,4,5].forEach(n => document.getElementById('btn-tingkat-'+n)?.classList.add('disabled')); nilaiPilihTingkat(6); }
     } catch { /* abaikan */ }
   })();
 };
 
 window.nilaiPilihTingkat = function(t) {
   document.getElementById('input-tingkat-rombel').value = t;
-  document.getElementById('btn-tingkat-1').className = `nv-tingkat-btn ${t === 1 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
-  document.getElementById('btn-tingkat-2').className = `nv-tingkat-btn ${t === 2 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
-  document.getElementById('btn-tingkat-3').className = `nv-tingkat-btn ${t === 3 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
-  document.getElementById('btn-tingkat-4').className = `nv-tingkat-btn ${t === 4 ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle'}`;
+  [1, 2, 3, 4, 5, 6].forEach(n => {
+    const btn = document.getElementById('btn-tingkat-' + n);
+    if (btn) btn.className = 'nv-tingkat-btn ' +
+      (t === n ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle');
+  });
 };
 
 window.nilaiSimpanRombel = async function() {
