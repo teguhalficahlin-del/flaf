@@ -95,6 +95,8 @@ async function _render() {
 
 // --- LEVEL 1: DAFTAR ROMBEL --------------------------------------------------
 
+const TP_TOTAL = { 1:9, 2:9, 3:11, 4:11, 5:11, 6:11 };
+
 async function _renderRombel(token) {
   let list = [], rekap = [];
   try {
@@ -115,7 +117,8 @@ async function _renderRombel(token) {
     const r        = rekapMap[k.id] || {};
     const rerata   = r.rerata !== null && r.rerata !== undefined ? r.rerata : '—';
     const peserta  = r.totalSiswa > 0 ? `${r.peserta}/${r.totalSiswa}` : '—';
-    const tpTuntas = `${r.tpTuntas || 0}/9`;
+    const total    = TP_TOTAL[k.tingkat] ?? 9;
+    const tpTuntas = `${r.tpTuntas || 0}/${total}`;
     return `
     <div class="nv-rombel-item">
       <div class="nv-rombel-top">
@@ -161,7 +164,8 @@ async function _renderMenu(token) {
 
   const rerata   = rombelRekap.rerata !== null && rombelRekap.rerata !== undefined ? rombelRekap.rerata : '—';
   const peserta  = rombelRekap.totalSiswa > 0 ? `${rombelRekap.peserta}/${rombelRekap.totalSiswa}` : '—';
-  const tpTuntas = `${rombelRekap.tpTuntas || 0}/9`;
+  const total    = TP_TOTAL[_state.tingkat] ?? 9;
+  const tpTuntas = `${rombelRekap.tpTuntas || 0}/${total}`;
 
   _container.innerHTML = `
 <div class="nv-wrap">
