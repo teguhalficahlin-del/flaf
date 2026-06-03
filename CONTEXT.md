@@ -1681,10 +1681,12 @@ runtime yang benar-benar dipakai app.
 
 ## Update Status Proyek — Juni 2026
 
-- **SW aktif**: `flaf-v109`
-- **Commit terakhir**: `1ff0ae5` — fix(nav): aktifkan tombol Sebelumnya jika onBack tersedia
+- **SW aktif**: `flaf-v112`
+- **Commit terakhir**: `5603fe3` — chore: bump SW ke v112
 - **Tanggal**: 3 Juni 2026
 - **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
+- **Sesi terakhir**: 3 Juni 2026 — TD-12 fix nilai TP range Kelas 5/6,
+  TD-13 visual polish Layar Mengajar (batch 1 & 2 selesai), SW v112
 
 ---
 
@@ -1759,6 +1761,9 @@ runtime yang benar-benar dipakai app.
 | v107 | b2b2555 | scroll kurikulum ke TP Fase B/C dengan id benar |
 | v108 | 5a10b4b | tombol Sebelumnya dari Pembuka kembali ke Presensi |
 | v109 | e22a2e8 | aktifkan tombol Sebelumnya jika onBack tersedia |
+| v110 | dbe8c7d | fix(nilai): tambah TP range Kelas 5 & 6 di getRekapSemua dan getRekapAkhir |
+| v111 | d6a3428 | style(dashboard): batch 1 — hapus emoji mood, opacity durasi, standarisasi Sebelumnya/Lanjut, label Batalkan |
+| v112 | 5603fe3 | style(dashboard): batch 2 — HSIA opacity, materi-desc, vocab-chip, JP text |
 
 ---
 
@@ -1773,24 +1778,28 @@ runtime yang benar-benar dipakai app.
 - Breakpoint persist/resume sudah diimplementasikan tapi belum di-QA end-to-end
 
 ### TD-12: Nilai screen Kelas 5/6 belum lengkap
-- `getRekapSemua()` dan `getRekapAkhir()` di `storage/nilai.js` — hardcode TP range untuk Kelas 3/4
-- Belum mencakup Kelas 5/6 (Fase C) — bug yang sama dengan TD-9 tapi untuk Fase C
-- Verifikasi diperlukan sebelum distribusi ke guru Kelas 5/6
+✅ RESOLVED — commit `dbe8c7d` (3 Juni 2026)
+- Fixed: tambah cabang `tingkat === 5` dan fallback eksplisit `tingkat === 6`
+  di `getRekapSemua()` dan `getRekapAkhir()` di `storage/nilai.js`
+- Ternary 4-cabang → 6-cabang eksplisit: Kelas 5 → `[1..11]`, Kelas 6 → `[12..22]`
 
 ### TD-13: UI sprint Layar Mengajar (dashboard.js) — 12 item
-Belum dikerjakan:
-1. "SESI BERLANGSUNG" color: clay → gold
-2. Remove colored emoji icons dari kendala buttons
-3. Standardize Batalkan button
-4. Raise opacity chevron `›` di ISI PRESENSI/MATERI
-5. Chevron `›` Pembuka/Inti/Penutup/Asesmen → gold
-6. Raise opacity "10 menit" duration text
-7. Raise opacity "Halaman 1/4 · Hadir 0/20"
-8. Strengthen border dan text H S I A buttons
-9. Standardize "Sebelumnya" button = "Lanjut"
-10. Raise opacity "Interaksi Sosial Dasar · 16 JP"
-11. Raise opacity material description text
-12. Increase padding vocabulary chips
+✅ RESOLVED — Batch 1 (commit `d6a3428`) + Batch 2 (commit `1375491`) — 3 Juni 2026
+
+8 item dikerjakan:
+- Item 2: Hapus emoji dari mood buttons (Lancar/Biasa/Berat plain text)
+- Item 3: Label tombol warn banner "← Kembali Isi" → "← Batalkan"
+- Item 6: Raise opacity `.ds-fase-durasi` "10 menit" → `rgba(255,255,255,.75)`
+- Item 8: HSIA non-aktif border `.1`→`.3`, color `.25`→`.55` (render + update)
+- Item 9: `.ds-step-btn--prev:active` disamakan dengan `--next:active`
+- Item 10: `.kur-atp-jp` opacity `.6`→`.75` di `kurikulum.css`
+- Item 11: `.ds-materi-desc` color `.8`→`.85`
+- Item 12: `.ds-vocab-chip` padding `9px 18px`→`10px 16px`
+
+4 item di-skip (tidak perlu dikerjakan):
+- Item 1: "SESI BERLANGSUNG" sudah gold sebelumnya
+- Item 4 & 5: Chevron `›` elemen tidak ada di UI saat ini
+- Item 7: "Halaman 1/4 · Hadir 0/20" sudah cukup terbaca sebelumnya
 
 ---
 
@@ -1801,10 +1810,10 @@ Belum dikerjakan:
 - ✅ Kelas 5-6 di kurikulum dan rombel — SELESAI
 - ✅ Breakpoint runtime Fase C — SELESAI
 - ✅ commit b2b2555 + a2a7430 (scroll kurikulum) — sudah di-push sebagai SW v107
+- ✅ TD-12: fix nilai TP range Kelas 5/6 — SELESAI (3 Juni 2026, SW v110)
+- ✅ TD-13: visual polish Layar Mengajar batch 1 & 2 — SELESAI (3 Juni 2026, SW v111–v112)
 
 ### Pending
 - TD-10: Renderer Kelompok 3 — tahan sampai ada data kelas nyata
 - TD-11: Testing breakpoint visual TP Panen/Capstone Fase C
-- TD-12: nilai screen Kelas 5/6 — verifikasi sebelum distribusi guru Fase C
-- TD-13: UI sprint 12 item Layar Mengajar
 - Keputusan: apakah bridge mode reactivation Kluster D (TP13–15) didokumentasikan di CAS §19 atau direvisi ke OUTPUT siswa
