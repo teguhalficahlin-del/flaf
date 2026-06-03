@@ -18,7 +18,7 @@
  */
 
 import { db }       from '../storage/db.js';
-import { getAllTP } from '../data/index.js';
+import { getAllTP, getFase } from '../data/index.js';
 import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
@@ -32,6 +32,8 @@ const STORE_KV = 'kv';
 let _container      = null;
 let _onNavigateBack = null;
 let _faseData       = null;
+
+const _kelasToFase = k => k <= 2 ? 'A' : k <= 4 ? 'B' : 'C';
 
 let _flow = {
   view      : 'landing',
@@ -375,10 +377,17 @@ function _buildTabMateri(tp) {
     </ul>
     ${cetakBtn}` : '';
 
+  const _fase     = _kelasToFase(tp.kelas || 1);
+  const _faseObj  = getFase(_fase);
+  const _cpTeks   = _faseObj?.cp?.menyimak_berbicara
+                 || _faseObj?.cp?.menulis_mempresentasikan
+                 || '';
+  const _faseLabel = `Tujuan Akhir Fase ${_fase}`;
+
   const cpHTML = `
     <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
-      <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">Tujuan Akhir Fase A</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.85);line-height:1.5;">Peserta didik menggunakan bahasa Inggris sederhana untuk berinteraksi dalam situasi sosial dan kelas.</div>
+      <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">${_faseLabel}</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.85);line-height:1.5;">${_escape(_cpTeks.trim())}</div>
       <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal',{tpNomor:${tp.nomor},kelas:${tp.kelas||1}})" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
     </div>`;
 
