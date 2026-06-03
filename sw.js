@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v106';         // ← bump: tujuan akhir fase dinamis per kelas TP
+const CACHE_VERSION  = 'flaf-v107';         // ← bump: scroll kurikulum ke TP Fase B/C dengan id benar
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
