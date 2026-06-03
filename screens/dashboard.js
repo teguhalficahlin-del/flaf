@@ -316,11 +316,11 @@ async function _buildPilihTPHTML() {
     const sudah = tpSelesaiSet.has(tp.nomor);
     return `
   <div onclick="dashPilihTP('${tp.id}',${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
-    <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(212,174,58,.25)' : 'rgba(212,174,58,.15)'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <span style="font-size:15px;font-weight:700;color:#D4AE3A;">${sudah ? '✓' : tp.nomor}</span>
+    <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(76,175,80,.35)' : 'rgba(212,174,58,.15)'};border:${sudah ? '1px solid rgba(76,175,80,.6)' : 'none'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+      <span style="font-size:15px;font-weight:700;color:${sudah ? '#4CAF50' : '#D4AE3A'};">${sudah ? '✓' : tp.nomor}</span>
     </div>
     <div style="flex:1;min-width:0;">
-      <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(tp.nama)}</div>
+      <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:${sudah ? '#888' : '#fff'};">${_escape(tp.nama)}</div>
       ${sudah ? `<div style="font-size:11px;color:rgba(212,174,58,.6);margin-top:1px;">Sudah diajarkan</div>` : ''}
     </div>
     <div class="ds-list-arrow">›</div>
