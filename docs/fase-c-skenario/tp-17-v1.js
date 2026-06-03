@@ -28,7 +28,7 @@ export const tp_c17 = {
     'Peserta didik dapat merespons pendapat pasangan dengan agree/disagree + alasan menggunakan connector.',
   ],
 
-  vocab: [],
+  vocab: ['opinion', 'think', 'agree', 'disagree', 'prefer', 'because', 'interesting', 'boring'],
 
   persiapan: [
     'Text-anchor di papan (ditulis sebelum kelas masuk, tetap tampil selama sesi): "I think football is fun because it is good for our health. But I also like reading."',

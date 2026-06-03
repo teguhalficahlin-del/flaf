@@ -37,7 +37,7 @@ Teks C (Jadwal) dan Teks D (Notice) ditampilkan di papan untuk seluruh kelas.`,
     'Peserta didik dapat menulis respons terhadap satu teks pilihan dalam tiga kalimat: jenis teks, isi/tujuan, dan opini personal.',
   ],
 
-  vocab: [],
+  vocab: ['poster', 'menu', 'schedule', 'notice', 'announcement', 'price', 'information', 'register'],
 
   persiapan: [
     'TEKS A — POSTER (cetak satu per siswa ganjil): ENGLISH READING COMPETITION / Open for all students — Class 4, 5, and 6 / Date: Saturday, 14 June 2025 / Time: 08.00 – 12.00 / Place: School Hall / No registration fee / Register before 10 June / See Mrs. Ani in the Teacher\'s Room',

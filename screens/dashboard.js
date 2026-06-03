@@ -385,8 +385,10 @@ function _buildTabMateri(tp) {
   return `
     <div class="ds-materi-meta">${_escape(tp.tema)}</div>
     ${persiapanHTML}
+    ${tp.vocab.length > 0 ? `
     <div class="ds-sub-label" style="margin-top:10px;">Kosakata Kunci <span style="font-size:10px;color:rgba(255,255,255,.4);font-weight:400;">(ketuk untuk audio)</span></div>
     <div class="ds-vocab-wrap">${vocabHTML}</div>
+    ` : ''}
     <button onclick="dashToggleDetailMateri(this)"
       style="margin-top:12px;width:100%;background:transparent;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px;color:rgba(255,255,255,.5);font-size:12px;cursor:pointer;font-family:inherit;text-align:center;">
       ▾ Lihat detail materi
