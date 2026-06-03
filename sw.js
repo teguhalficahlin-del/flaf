@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v103';         // ← bump: TP Tuntas dinamis per tingkat kelas
+const CACHE_VERSION  = 'flaf-v104';         // ← bump: badge TP selesai hijau + teks redup
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
