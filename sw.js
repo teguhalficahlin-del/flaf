@@ -327,6 +327,12 @@ const APP_SHELL = [
   './assets/images/printables_fase_b/tp-b11-healthy-habits-worksheet.png',
   './assets/images/printables_fase_b/tp-b11-sleep-early.png',
   './assets/images/printables_fase_b/tp-b11-wash-hands.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-1.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-2.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-3.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-4.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-5.png',
+  './assets/images/printables_fase_b/tp-b11-habit-card-6.png',
 
   // printables images — TP-B12
   './assets/images/printables_fase_b/tp-b12-chef.png',
@@ -388,6 +394,12 @@ const APP_SHELL = [
   './assets/images/printables_fase_b/tp-b18-this-morning.png',
   './assets/images/printables_fase_b/tp-b18-verb-past-tense-card.png',
   './assets/images/printables_fase_b/tp-b18-yesterday.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-1.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-2.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-3.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-4.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-5.png',
+  './assets/images/printables_fase_b/tp-b18-activity-card-6.png',
 
   // printables images — TP-B19
   './assets/images/printables_fase_b/tp-b19-budis-day-text.png',
