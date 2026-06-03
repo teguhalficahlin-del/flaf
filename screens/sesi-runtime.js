@@ -597,7 +597,7 @@ function _renderRunning() {
   const total   = fase?.langkah?.length || 0;
   const idx     = _state.langkahIdx;
   const faseName = fase?.fase || '—';
-  const isFirst  = idx === 0 && _state.faseIdx === 0;
+  const isFirst  = idx === 0 && _state.faseIdx === 0 && !_state.onBack;
   const isLast   = idx === total - 1;
 
   if (!langkah) {
