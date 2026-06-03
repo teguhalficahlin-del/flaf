@@ -215,7 +215,7 @@ function _onScreenEnter(screenId, opts = {}) {
       const _scrollToTP = (nomor, kelas) => {
         if (!nomor) return;
         if (kelas && window.kurFilterKelas) window.kurFilterKelas(kelas);
-        const tpId = `tp-${String(nomor).padStart(2, '0')}`;
+        const tpId = opts?.tpId ?? `tp-${String(nomor).padStart(2, '0')}`;
         const el = document.getElementById(`kur-${tpId}`);
         if (!el) return;
         // Buka accordion jika tertutup
