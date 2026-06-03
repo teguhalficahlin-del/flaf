@@ -1784,14 +1784,20 @@ runtime yang benar-benar dipakai app.
 - Ternary 4-cabang → 6-cabang eksplisit: Kelas 5 → `[1..11]`, Kelas 6 → `[12..22]`
 
 ### TD-PRINT-B: Inkonsistensi printables[] Fase B
+✅ RESOLVED (3 Juni 2026)
 - File: `docs/output-v5-faseb/tp-11-v5.js` dan `tp-18-v5.js`
 - Masalah: Kartu kegiatan (activity/sorting cards) disebutkan detail
   di `persiapan[]` — 6 kartu untuk B11, 6 kartu untuk B18 —
   tapi tidak ada di `printables[]`. Guru tidak bisa cetak via tombol
   Cetak Kartu Persiapan. Hanya B19 yang konsisten (`sequence-cards`
   ada di `printables[]`). Total 12 kartu hilang dari sistem cetak.
-- Fix: tambah 6 entry ke `printables[]` di `tp-11-v5.js` dan
-  6 entry ke `printables[]` di `tp-18-v5.js`, lalu generate PNG-nya.
+- Fix: tambah 12 entry ke `printables[]` B11 & B18, sinkron teks
+  `'I drink milk in the morning.'` → `'I drink water every day.'`
+  (commit `e137d0c`). Tambah 12 PNG ke SW precache (commit `09ad7c0`).
+- Status file PNG: 12 file (`tp-b11-habit-card-1..6.png` dan
+  `tp-b18-activity-card-1..6.png`) sudah di-generate dan tersimpan di
+  `assets/images/printables_fase_b/`. Sudah masuk SW precache di
+  `sw.js` (commit `09ad7c0`).
 
 ### TD-13: UI sprint Layar Mengajar (dashboard.js) — 12 item
 ✅ RESOLVED — Batch 1 (commit `d6a3428`) + Batch 2 (commit `1375491`) — 3 Juni 2026
