@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v110';         // ← bump: tambah TP range Kelas 5 & 6 di getRekapSemua dan getRekapAkhir
+const CACHE_VERSION  = 'flaf-v111';         // ← bump: visual polish batch 1 layar mengajar
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
