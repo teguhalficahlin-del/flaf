@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v108';         // ← bump: tombol Sebelumnya dari Pembuka kembali ke Presensi
+const CACHE_VERSION  = 'flaf-v109';         // ← bump: aktifkan tombol Sebelumnya di langkah pertama jika onBack tersedia
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
