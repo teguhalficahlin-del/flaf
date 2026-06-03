@@ -8,7 +8,7 @@
 - **GitHub**: https://github.com/teguhalficahlin-del/flaf
 - **Deploy**: https://teguhalficahlin-del.github.io/flaf
 
-## Status Terakhir (Mei 2026)
+## Status Terakhir (Juni 2026)
 - Schema v4.3 aktif & stabil — `closure_reinforcement` WAJIB di setiap TP
 - **18 TP sudah migrate + integrated — schema v4.3 selesai** _(known issues: lihat §Technical Debt)_
 - **UI-SKETCH.html sudah di-review dan disetujui — acuan layout runtime**
@@ -36,6 +36,7 @@
 - **Sprint Audit Layar Nilai + Fix nilaiDraft Leak SELESAI ✅ (Mei 2026)** — hapus duplicate export generatePDFRapor, rewrite nilaiDownloadFormatif1 CSV per sesi/mode/perilaku, audit _renderUnduh (subtitle CSV, sumatif 1 tombol, label Indonesia), reset nilaiDraft di mount(), SW v64 (commit `9b31ac1`)
 - **Sprint Refactor Multi-Fase SELESAI ✅ (Mei 2026)** — `_tpRange` → `_TP_RANGE_MAP`, `kelasOk` extend ke kelas 3–6, progress bar dinamis via `getAllTP().length`
 - **Sprint Fix Kurikulum.js Fase B SELESAI ✅ (Mei 2026)** — fase dinamis dari session.kelas, header/CP/ATP reaktif per filter kelas, konten CP & ATP Fase B diperbarui sesuai BSKAP 046/2025 (commit `4bfa872`)
+- **Sprint Printables Fase B SELESAI ✅ (01/06/2026)** — printables[] 22 TP Fase B, modal mode cetak 5 pilihan, PNG 140 file dikompres 275MB→79MB (71%), SW flaf-v93 (commit `b3a031e`)
 - **Fix nilai.js Fase B — integrasi multi-fase SELESAI ✅ (30/05/2026)** — fix mencakup dua layer:
   - `screens/nilai.js` (commit `ee0ad26`): ganti import FASE_A → getAllTP() dari registry, hapus _TP_RANGE_MAP dan _tpRange() hardcode, _tpList() filter by tp.kelas, fix lookup _renderFormatifDetail filter allTP by _state.tingkat sebelum .find() — cegah overlap nomor TP lintas fase
   - `storage/nilai.js` (commit `76e95e4`): getRekapSemua & getRekapAkhir dinamis per tingkat (1–4) + totalTP dinamis via tpRange.length + fix fungsi SASGanjil1/2
@@ -178,16 +179,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-4bfa872  fix(kurikulum): CP & ATP Fase B reaktif per filter kelas + konten CP & ATP Fase B
-bcac49e  fix(kurikulum): fase dinamis dari session.kelas + bump cache v86
-9aa902d  chore(sw): bump cache v85
-d4b93fe  fix(printables): object-fit contain + footer fase dinamis
-367313e  fix: bump cache flaf-v83 → flaf-v84 — refetch dashboard.js patch truncate persiapan
-9b71ee3  feat: truncate+expand teks persiapan panjang di layar Materi & Persiapan
-2e4f242  feat: ringkasan presensi di layar pre-mengajar
-bf79fcb  fix: TP lookup pakai tp.id — cegah ambiguitas cross-fase
-8bd08d1  feat: integrasi Fase B multi-fase registry
-2a4cc2f  revert: kembalikan runtime ke Fase A stabil
+b3a031e  compress: Fase B 140 PNG 275MB→79MB (71%), revert compress-png.js, bump sw flaf-v93
+c279818  feat: add 140 printable PNG assets for Fase B
+d22e592  feat: add printables[] to all 22 Fase B TPs, update sw.js cache to flaf-v91
+378c137  docs: update CONTEXT.md — UI polish dashboard 8 item (5bf94fb)
+5bf94fb  style(dashboard): UI polish — chevron gold, opacity raise, Sebelumnya=Lanjut, vocab chip padding
+986d4ca  fix(sw): bump cache v88 — label diferensiasi + nilai fix
+420fbf9  feat: label diferensiasi di card runtime
+bf7753e  feat: tambah preOpening dan diferensiasi ke TP 15–18 runtime
+4bfa872  fix(kurikulum): CP & ATP Fase B reaktif per filter kelas
+5bf94fb  style(dashboard): UI polish 8 item
 ```
 
 ## Struktur Folder Penting
@@ -206,7 +207,7 @@ FLAF/
 ├── data/
 │   ├── index.js
 │   ├── fase-a.js           ← 18 TP v4.3, field mode[] + printables[] (TP 01-18); import TP01–14 dari docs/output-v5/
-│   └── printables.js       ← generate HTML cetak dari tp.printables[] (PNG via assets/images/printables/)
+│   └── printables.js       ← generatePrintHTML(tp, mode='standar') — 5 mode cetak, fase-aware base path (Fase A/B/C)
 ├── modules/
 │   ├── pdf-generator.js    ← generate PNG rekap nilai per TP & rekap akhir semua TP (canvas HTML5, tanpa library)
 │   └── pdf-handler.js      ← download modul ajar via cache-first (serve dari pdf/, fallback ke network)
@@ -220,7 +221,8 @@ FLAF/
 │   └── presensi.js
 ├── assets/
 │   └── images/
-│       └── printables/     ← 136 PNG (TP 01-18)
+│       ├── printables/         ← 136 PNG (TP 01-18, Fase A)
+│       └── printables_fase_b/  ← 140 PNG (TP B01-B22, Fase B) — dikompres 275MB→79MB
 ├── docs/
 │   ├── fase-3-spec/        ← UI-SKETCH.html ✅ acuan layout runtime
 │   ├── output-v5/          ← tp-01..18-v5.js — generated batch converter (Mei 2026)
@@ -229,7 +231,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v90 (flaf-v90)
+├── sw.js                   ← Service Worker v93 (flaf-v93)
 ├── manifest.json
 ├── app.js
 └── index.html
@@ -237,10 +239,19 @@ FLAF/
 
 ## Aset Printable
 
+**Fase A:**
 - **Lokasi**: `assets/images/printables/`
-- **Pola nama**: `tp{NN}-{descriptor}.png` (contoh: `tp01-salam-pagi.png`, `tp16-cover.png`)
-- **Cakupan**: TP01–18, semua topik lengkap
+- **Pola nama**: `tp{NN}-{descriptor}.png`
+- **Cakupan**: TP01–18, 136 file, ~49 MB
+
+**Fase B:**
+- **Lokasi**: `assets/images/printables_fase_b/`
+- **Pola nama**: `tp-b{NN}-{descriptor}.png`
+- **Cakupan**: TP B01–B22, 140 file, ~79 MB (dikompres dari 275 MB)
+
 - **Referensi**: field `printables[]` di setiap TP → dibaca oleh `data/printables.js`
+- **Generator**: `generatePrintHTML(tp, mode)` — 5 mode: hemat/standar/flash/display/poster
+- **Base path**: dipilih otomatis via `PRINTABLES_BASE_MAP` berdasarkan `tp.fase` atau `tp.id` prefix
 
 ## Modul Ajar (pdf/)
 
@@ -273,6 +284,15 @@ Folder `pdf/` berisi modul ajar yang diunduh guru via `modules/pdf-handler.js` (
 
 ### TD-4: Encoding Artifact
 - String `'2├ù'` (harusnya `2×`) masih ada di TP02 dan TP12 — sisa mojibake dari migrasi.
+
+### TD-8: Footer printables.js hardcoded Fase A/B
+- `data/printables.js` baris 145: `tp.kelas <= 2 ? 'Fase A' : 'Fase B'` — tidak support Fase C.
+- Fix saat Fase C onboard.
+
+### TD-9: Nilai screen bug Fase B (Kelas 3/4)
+- `getRekapSemua()`, `getRekapAkhir()`, `_renderUnduh()` di `storage/nilai.js` + `screens/nilai.js`
+- Fungsi-fungsi ini mungkin belum sepenuhnya correct untuk Kelas 3/4 — belum diverifikasi end-to-end dengan data Fase B.
+- Verifikasi diperlukan sebelum distribusi ke guru Kelas 3/4.
 
 ### TD-5: Komentar Stale di fase-a.js
 ✅ RESOLVED — Dua baris stale dihapus dari header fase-a.js
@@ -1367,7 +1387,8 @@ Pola identik dengan TP 01–05.
 
 ### Catatan penting
 - Field `kluster` dan `jenis` ditambahkan di Fase B (tidak ada di Fase A)
-- Field `pdf_ref`, `media`, `printables` tidak disertakan (belum tersedia untuk Fase B)
+- Field `printables[]` sudah ditambahkan ke semua 22 TP Fase B (01/06/2026) — lihat §Sprint Printables Fase B
+- Field `pdf_ref` dan `media` belum ada di Fase B
 - TP Panen memiliki field `breakpoint { posisi, instruksi }` di root
 - TP Kompleks: 13 langkah, Inti ≥ 45 menit
 - TP Capstone: 13–14 langkah, tidak ada kosakata baru, tidak ada template wajib
@@ -1546,23 +1567,37 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ---
 
-## NEXT TASK — Printable & Worksheet Fase B
+## SELESAI — Sprint Printables Fase B (01/06/2026)
 
-**Status: BELUM dikerjakan — tahan sampai konten worksheet selesai di-author**
+**Commit: `b3a031e`** (sw flaf-v93)
 
-### Konteks
-- UI tombol "Cetak Kartu Persiapan" sudah ada di `_buildTabMateri()` — muncul otomatis jika `tp.printables` terisi
-- Generator HTML ada di `data/printables.js`
-- TP Fase B belum punya field `printables[]` dan `pdf_ref`
+### Yang dikerjakan
 
-### Yang perlu dilakukan
-- Author konten worksheet per TP Fase B (di luar sesi coding)
-- Tambah field `printables[]` dan `pdf_ref` ke masing-masing TP Fase B setelah konten siap
-- Verifikasi tombol muncul dan print dialog terbuka dengan benar
+**1. `data/printables.js` — multi-mode + fase-aware**
+- Signature baru: `generatePrintHTML(tp, mode = 'standar')`
+- `PRINTABLES_BASE_MAP`: routing ke `printables/` (Fase A) atau `printables_fase_b/` (Fase B) via `tp.fase` / `tp.id` prefix
+- `PRINT_MODE_CONFIG`: 5 mode — hemat (4×4), standar (2×4), flash (2×2), display (1×2), poster (1×1)
+- Grid cols, label font-size, dan header sub menyesuaikan mode
 
-### Catatan
-- Tidak ada perubahan UI atau runtime yang dibutuhkan — infrastruktur sudah siap
-- Prioritas setelah Fix Pembatasan Akses Per Guru selesai
+**2. `screens/dashboard.js` — modal pemilihan mode**
+- `dashCetakKartu()` → `_showPrintModal(tp)` (overlay programatik, bukan string HTML)
+- `_showPrintModal(tp)`: 5 tombol mode + SVG grid preview per mode
+- `_doCetak(tp, mode)`: print window handler
+- `window.dashCetakKartu` tetap diexpose
+
+**3. `docs/output-v5-faseb/` — field `printables[]` di 22 TP**
+- Disisipkan setelah `checklist` dan sebelum `energi_map` di semua tp-01 s/d tp-22
+- Total: 140 entri `{ file, label }`
+- Commit: `d22e592`
+
+**4. `assets/images/printables_fase_b/` — 140 PNG**
+- Ditambahkan ke repo dan SW precache (commit `c279818`)
+- Dikompres dengan sharp (compressionLevel: 9, quality: 80): 275 MB → 79 MB (71%)
+
+**5. SW cache: flaf-v91 → flaf-v92 → flaf-v93**
+
+### Tech Debt yang ditinggal
+- Footer `printables.js` baris 145: `tp.kelas <= 2 ? 'Fase A' : 'Fase B'` — hardcoded, tidak support Fase C. Fix saat Fase C.
 
 ---
 
@@ -1632,3 +1667,144 @@ runtime yang benar-benar dipakai app.
 - SW cache bump v90 (3758201)
 * Audit layar nilai — Fix 1/2/3 selesai: tpRange 4-way Fase B di getRekapSemua + getRekapAkhir, soalCards dinamis per tingkat di _renderUnduh (76e95e4, 6caf5ef)
 * UI polish dashboard.js — 8 item: chevron gold, opacity raise (Halaman/Hadir, Tujuan Akhir, list-arrow), Sebelumnya sejajar Lanjut, ds-warn-btn--cancel diperkuat, H S I A border+text, vocab chip padding (5bf94fb)
+
+✅ SPRINT PRINTABLES FASE B SELESAI ✅ (01/06/2026)
+   - data/printables.js: generatePrintHTML(tp, mode='standar') — PRINT_MODE_CONFIG 5 mode, PRINTABLES_BASE_MAP fase-aware
+   - screens/dashboard.js: _showPrintModal(tp) overlay modal + _doCetak(tp, mode) + dashCetakKartu() dipersingkat (baris 402–522)
+   - docs/output-v5-faseb/: printables[] disisipkan di 22 TP (setelah checklist, sebelum energi_map) — 140 entri total (d22e592)
+   - assets/images/printables_fase_b/: 140 PNG ditambahkan + dikompres 275MB→79MB 71% (c279818)
+   - sw.js: 140 path printables_fase_b/ ditambah ke APP_SHELL precache
+   - CACHE_VERSION: flaf-v91 → flaf-v92 → flaf-v93 (b3a031e)
+   - Tech debt: footer hardcoded 'Fase A'/'Fase B' (TD-8), nilai screen Kelas 3/4 belum diverifikasi (TD-9)
+
+---
+
+## Update Status Proyek — Juni 2026
+
+- **SW aktif**: `flaf-v109`
+- **Commit terakhir**: `1ff0ae5` — fix(nav): aktifkan tombol Sebelumnya jika onBack tersedia
+- **Tanggal**: 3 Juni 2026
+- **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
+
+---
+
+## FASE C — Selesai (3 Juni 2026)
+
+### Authoring (selesai, semua approved)
+
+- 22 skenario `.txt` di `docs/fase-c-skenario/`
+- Dokumen sistem authoring di `docs/fase-c-authoring/`:
+  - `FLAF_Fase_C_Curriculum_Authoring_Standard.md`
+  - `FLAF_Fase_C_Quality_Gate_System.md`
+  - `FLAF_Fase_C_Authoring_Briefing.md`
+  - `FLAF_Fase_C_Cross_TP_Audit.md`
+- Audit lintas TP selesai — tidak ada temuan fatal
+- 3 temuan minor (Kluster D bridge mode, TP08 `then` brief, TP09 formulasi) — semua di bawah threshold blocking
+- Revisi pasca-audit: TP13/14/15 L1 reactivation ditambah opsi kalimat dari tulisan OUTPUT siswa
+
+### Schema JS (selesai)
+
+- 22 file `tp-01-v1.js` s/d `tp-22-v1.js` di `docs/fase-c-skenario/`
+- Canonical schema Fase C v1.0 (backward compatible dengan Fase B v5.0)
+- Field baru vs Fase B: `text_anchor`, `connector_aktif`, `recycle_fase_b`, `breakpoints[]`, `flex`, `flex_kondisi`, `blok`, `assessment_overlay`, `interact_contract`, `artifact`, `interaction_mode`, `energy_level`
+
+### Distribusi TP per kelas
+
+| Kelas | Range | Jenis |
+|-------|-------|-------|
+| 5 | TP 01–11 | Biasa ×8, Panen ×2, Kompleks ×1 |
+| 6 | TP 12–22 | Biasa ×3, Kompleks ×4, Panen ×2, Capstone ×2 |
+
+### Vocab Fase C
+
+- 17 dari 22 TP terisi vocab
+- 5 TP kosong by design: C-04, C-08, C-16, C-20 (writing/Panen), C-22 (Capstone — menggunakan 10 vocab meta)
+- Guard `tp.vocab.length > 0` dipasang di `dashboard.js` — label "Kosakata Kunci" tidak tampil jika kosong
+
+### Integrasi PWA (selesai)
+
+| File | Perubahan |
+|------|-----------|
+| `data/fase-c.js` | Aggregator 22 TP — import dari `docs/fase-c-skenario/` |
+| `data/index.js` | Tambah `'C': FASE_C` ke REGISTRY — multi-fase A+B+C aktif |
+| `screens/kurikulum.js` | Kelas 5-6, `_metaMap`, `_faseMap` dinamis |
+| `screens/nilai.js` | Tambah rombel kelas 5-6, `nilaiPilihTingkat` dinamis, TP Tuntas dinamis |
+| `screens/dashboard.js` | Mapping kelas 5-6, badge TP selesai hijau, `cpHTML` tujuan akhir fase dinamis, scroll kurikulum ke TP spesifik via `tp.id`, `onBack` ke Presensi |
+| `screens/sesi-runtime.js` | Renderer Kelompok 1+2: `breakpoints[]` activation/persist/resume, block header INPUT/INTERACT/OUTPUT, assessment panel, `interaction_mode` badge, `onBack` callback |
+
+### Testing (semua passed)
+
+- Test 1: Fase C di kurikulum — 22 TP, kelas 5-6 ✅
+- Test 2: Breakpoint overlay, persist, resume TP20 ✅
+- Test 3: Fase A/B backward compatible ✅
+- Test 4: Daftar TP per kelas semua 6 kelas ✅
+
+### SW Version History — v94 s/d v109
+
+| Versi | Commit | Keterangan |
+|-------|--------|------------|
+| v94 | 1e9e965 | renderer Kelompok 1+2 + 22 TP schema |
+| v95 | fde2fe6 | fix backtick emphasis dalam template literal |
+| v96 | 65d4f2b | fix kutip tunggal di single-quoted string |
+| v97 | 1335ba3 | fix backtick emphasis komprehensif 22 TP |
+| v98 | ee8a2bf | fix orphan quote tp-03-v1.js |
+| v99 | 9a1382b | kurikulum kelas 5-6 |
+| v100 | 2907cb7 | tambah rombel kelas 5-6 di dashboard + nilai |
+| v101 | 6278fae | fix nilaiPilihTingkat kelas 5-6 |
+| v102 | d97cb9d | sederhanakan guard kelas 5-6 |
+| v103 | 593a6fa | TP Tuntas dinamis per kelas |
+| v104 | 48fa46b | badge TP selesai hijau + teks nama redup |
+| v105 | 9b3646b | vocab guard kosong + isi C-17 C-21 |
+| v106 | 5d901f6 | tujuan akhir fase dinamis per kelas TP |
+| v107 | b2b2555 | scroll kurikulum ke TP Fase B/C dengan id benar |
+| v108 | 5a10b4b | tombol Sebelumnya dari Pembuka kembali ke Presensi |
+| v109 | e22a2e8 | aktifkan tombol Sebelumnya jika onBack tersedia |
+
+---
+
+## Technical Debt Tambahan
+
+### TD-10: Renderer Kelompok 3 (analytics layer)
+- `interact_contract` display, `artifact` hints, `energy_level` filtering — ditunda
+- Menunggu data dari kelas nyata sebelum desain UI diputuskan
+
+### TD-11: Testing breakpoint visual semua TP Panen/Capstone
+- TP04, TP08, TP16, TP20, TP21, TP22 belum diverifikasi visual di browser
+- Breakpoint persist/resume sudah diimplementasikan tapi belum di-QA end-to-end
+
+### TD-12: Nilai screen Kelas 5/6 belum lengkap
+- `getRekapSemua()` dan `getRekapAkhir()` di `storage/nilai.js` — hardcode TP range untuk Kelas 3/4
+- Belum mencakup Kelas 5/6 (Fase C) — bug yang sama dengan TD-9 tapi untuk Fase C
+- Verifikasi diperlukan sebelum distribusi ke guru Kelas 5/6
+
+### TD-13: UI sprint Layar Mengajar (dashboard.js) — 12 item
+Belum dikerjakan:
+1. "SESI BERLANGSUNG" color: clay → gold
+2. Remove colored emoji icons dari kendala buttons
+3. Standardize Batalkan button
+4. Raise opacity chevron `›` di ISI PRESENSI/MATERI
+5. Chevron `›` Pembuka/Inti/Penutup/Asesmen → gold
+6. Raise opacity "10 menit" duration text
+7. Raise opacity "Halaman 1/4 · Hadir 0/20"
+8. Strengthen border dan text H S I A buttons
+9. Standardize "Sebelumnya" button = "Lanjut"
+10. Raise opacity "Interaksi Sosial Dasar · 16 JP"
+11. Raise opacity material description text
+12. Increase padding vocabulary chips
+
+---
+
+## Status Pending
+
+### Sudah selesai (diupdate dari NEXT TASK sebelumnya)
+- ✅ Fase C integrasi PWA — SELESAI (3 Juni 2026)
+- ✅ Kelas 5-6 di kurikulum dan rombel — SELESAI
+- ✅ Breakpoint runtime Fase C — SELESAI
+- ✅ commit b2b2555 + a2a7430 (scroll kurikulum) — sudah di-push sebagai SW v107
+
+### Pending
+- TD-10: Renderer Kelompok 3 — tahan sampai ada data kelas nyata
+- TD-11: Testing breakpoint visual TP Panen/Capstone Fase C
+- TD-12: nilai screen Kelas 5/6 — verifikasi sebelum distribusi guru Fase C
+- TD-13: UI sprint 12 item Layar Mengajar
+- Keputusan: apakah bridge mode reactivation Kluster D (TP13–15) didokumentasikan di CAS §19 atau direvisi ke OUTPUT siswa
