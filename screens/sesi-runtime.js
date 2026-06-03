@@ -74,7 +74,7 @@ let _onDone = null;
 
 // ── Public API ────────────────────────────────────────────────
 
-export async function mount(root, tpData, rombel, siswaList, statusMap, onDone) {
+export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, onBack) {
   if (!root || !tpData) {
     console.error('[SR] mount: root atau tpData null');
     return;
@@ -97,6 +97,7 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone) 
     sesiId            : null,
     nilaiDraft        : null,
     bpResumeLangkahId : null,
+    onBack            : onBack ?? null,
   });
 
   // Cek resume
@@ -235,6 +236,9 @@ function _langkahPrev() {
     const faseBefore = _state.tp?.skenario?.[_state.faseIdx - 1];
     const lastIdx = Math.max(0, (faseBefore?.langkah || []).length - 1);
     _transition({ faseIdx: _state.faseIdx - 1, langkahIdx: lastIdx, aktState: 'running' });
+  } else {
+    // faseIdx === 0 && langkahIdx === 0 — kembali ke Presensi di stepper utama
+    if (_state.onBack) _state.onBack();
   }
 }
 

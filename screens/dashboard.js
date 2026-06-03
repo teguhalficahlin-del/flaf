@@ -1004,7 +1004,11 @@ async function _rerenderStep() {
     }
     if (srRoot && !srRoot.dataset.mounted) {
       srRoot.dataset.mounted = '1';
-      srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _flow.statusMap, _onSesiDone);
+      srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _flow.statusMap, _onSesiDone, () => {
+        srUnmount();
+        _skenario.stepIndex = 1;
+        _rerenderStep();
+      });
     }
     return;
   }
