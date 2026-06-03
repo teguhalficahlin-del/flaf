@@ -29,7 +29,7 @@ const TP_B11 = {
   vocab    : ['head', 'eyes', 'hands', 'feet', 'rice', 'milk', 'water', 'apple', 'healthy', 'exercise', 'I eat... because...'],
 
   persiapan: [
-    'Kartu kebiasaan: 6 kartu berisi satu kebiasaan per kartu — disiapkan dan dibagikan SEBELUM kelas dimulai (lihat L7):\n    Kartu 1: "I eat an apple every day."\n    Kartu 2: "I drink milk in the morning."\n    Kartu 3: "I exercise for 30 minutes."\n    Kartu 4: "I sleep at nine o\'clock."\n    Kartu 5: "I brush my teeth twice a day."\n    Kartu 6: "I eat rice and vegetables."',
+    'Kartu kebiasaan: 6 kartu berisi satu kebiasaan per kartu — disiapkan dan dibagikan SEBELUM kelas dimulai (lihat L7):\n    Kartu 1: "I eat an apple every day."\n    Kartu 2: "I drink water every day."\n    Kartu 3: "I exercise for 30 minutes."\n    Kartu 4: "I sleep at nine o\'clock."\n    Kartu 5: "I brush my teeth twice a day."\n    Kartu 6: "I eat rice and vegetables."',
     'Lembar kerja siswa: 1 per siswa — template MY HEALTHY HABITS (lihat L10)',
     'Papan tulis + spidol untuk scaffold di L5 dan L8 — tidak dihapus sampai L10 selesai',
   ],
@@ -54,6 +54,12 @@ const TP_B11 = {
     { file: 'tp-b11-healthy-habits-worksheet.png', label: 'Healthy Habits Worksheet' },
     { file: 'tp-b11-sleep-early.png',              label: 'Sleep Early' },
     { file: 'tp-b11-wash-hands.png',               label: 'Wash Hands' },
+    { file: 'tp-b11-habit-card-1.png', label: 'Habit Card – I eat an apple every day.' },
+    { file: 'tp-b11-habit-card-2.png', label: 'Habit Card – I drink water every day.' },
+    { file: 'tp-b11-habit-card-3.png', label: 'Habit Card – I exercise for 30 minutes.' },
+    { file: 'tp-b11-habit-card-4.png', label: 'Habit Card – I sleep at nine o\'clock.' },
+    { file: 'tp-b11-habit-card-5.png', label: 'Habit Card – I brush my teeth twice a day.' },
+    { file: 'tp-b11-habit-card-6.png', label: 'Habit Card – I eat rice and vegetables.' },
   ],
 
   energi_map: [
@@ -329,7 +335,7 @@ UCAP: "Because it makes your bones strong — what do you drink?"
 
 Kartu berisi:
   Kartu 1: "I eat an apple every day."
-  Kartu 2: "I drink milk in the morning."
+  Kartu 2: "I drink water every day."
   Kartu 3: "I exercise for 30 minutes."
   Kartu 4: "I sleep at nine o'clock."
   Kartu 5: "I brush my teeth twice a day."

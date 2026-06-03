@@ -53,6 +53,12 @@ const TP_B18 = {
     { file: 'tp-b18-this-morning.png',           label: 'This Morning' },
     { file: 'tp-b18-verb-past-tense-card.png',   label: 'Verb Past Tense Card' },
     { file: 'tp-b18-yesterday.png',              label: 'Yesterday' },
+    { file: 'tp-b18-activity-card-1.png', label: 'Activity Card – woke up' },
+    { file: 'tp-b18-activity-card-2.png', label: 'Activity Card – ate breakfast' },
+    { file: 'tp-b18-activity-card-3.png', label: 'Activity Card – went to school' },
+    { file: 'tp-b18-activity-card-4.png', label: 'Activity Card – played football' },
+    { file: 'tp-b18-activity-card-5.png', label: 'Activity Card – ate lunch' },
+    { file: 'tp-b18-activity-card-6.png', label: 'Activity Card – went to sleep' },
   ],
 
   energi_map: [
