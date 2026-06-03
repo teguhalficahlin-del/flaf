@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v104';         // ← bump: badge TP selesai hijau + teks redup
+const CACHE_VERSION  = 'flaf-v105';         // ← bump: vocab C-17 C-21, guard vocab kosong
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
