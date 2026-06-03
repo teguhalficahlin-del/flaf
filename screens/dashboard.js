@@ -695,9 +695,9 @@ function _buildStepSelesai() {
       <div class="ds-sub-label" style="font-size:12px;color:rgba(255,255,255,.55);margin-bottom:6px;">Yang Anda rasakan?</div>
       <div class="ds-kendala-wrap">
         ${[
-          { val: 'lancar', label: '😊 Lancar' },
-          { val: 'biasa',  label: '😐 Biasa'  },
-          { val: 'berat',  label: '😟 Berat'  },
+          { val: 'lancar', label: 'Lancar' },
+          { val: 'biasa',  label: 'Biasa'  },
+          { val: 'berat',  label: 'Berat'  },
         ].map(m => `
         <button onclick="dashPilihMood('${m.val}')"
           id="mood-btn-${m.val}"
@@ -1369,7 +1369,7 @@ window.dashSelesaiSesi = async function() {
           <div class="ds-warn-title">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
           <div class="ds-warn-actions">
             <button onclick="document.getElementById('sesi-warn-banner').remove()"
-              class="ds-warn-btn ds-warn-btn--cancel">← Kembali Isi</button>
+              class="ds-warn-btn ds-warn-btn--cancel">← Batalkan</button>
             <button onclick="dashKonfirmasiSelesai()"
               class="ds-warn-btn ds-warn-btn--ok">Tetap Simpan</button>
           </div>`;

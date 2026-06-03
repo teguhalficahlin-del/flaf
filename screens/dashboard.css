@@ -727,7 +727,7 @@
   color: #D4AE3A;
 }
 
-.ds-step-btn--prev:active { background: rgba(255,255,255,.06); }
+.ds-step-btn--prev:active { background: rgba(212,174,58,.25); }
 
 .ds-step-btn--next {
   background: rgba(212,174,58,.15);
@@ -885,7 +885,7 @@
 
 .ds-fase-durasi {
   font-size: 11px;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.75);
   font-weight: 400;
 }
 
