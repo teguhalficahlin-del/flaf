@@ -341,7 +341,7 @@
   border: 1px solid var(--tema-primary-border);
   color: rgba(212,174,58,.9);
   border-radius: 5px;
-  padding: 9px 18px;
+  padding: 10px 16px;
   font-size: 13px;
   font-weight: 600;
 }
@@ -354,7 +354,7 @@
 }
 .ds-materi-desc {
   font-size: 13px;
-  color: rgba(255,255,255,.8);
+  color: rgba(255,255,255,.85);
   line-height: 1.6;
   margin-bottom: var(--sp-md);
 }

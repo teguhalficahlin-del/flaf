@@ -609,9 +609,9 @@ function _buildStepPresensi() {
       <div class="ds-status-btns">
         ${['H','S','I','A'].map(k => `
         <button onclick="dashSetStatus('${s.id}','${k}')" class="ds-status-btn"
-          style="border-color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.1)'};
+          style="border-color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.3)'};
                  background:${st===k ? PRESENSI_STATUS_CFG[k].dot : 'transparent'};
-                 color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.25)'};">
+                 color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.55)'};">
           ${k}
         </button>`).join('')}
       </div>
@@ -1318,9 +1318,9 @@ window.dashSetStatus = function(siswaId, status) {
       const btn = btns[i];
       if (!btn) return;
       const active       = k === status;
-      btn.style.border   = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.1)'}`;
+      btn.style.border   = `1px solid ${active ? STATUS_CFG[k].color : 'rgba(255,255,255,.3)'}`;
       btn.style.background = active ? STATUS_CFG[k].dot : 'transparent';
-      btn.style.color    = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.25)';
+      btn.style.color    = active ? STATUS_CFG[k].color : 'rgba(255,255,255,.55)';
     });
   }
   // Update count label tanpa re-render penuh

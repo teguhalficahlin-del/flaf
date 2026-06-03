@@ -68,7 +68,7 @@
 .kur-atp-num { width: 28px; height: 28px; font-weight: 700; color: #D4AE3A; text-align: center; font-size: 15px; background: rgba(212,174,58,.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 .kur-atp-nama { font-weight: 600; color: rgba(255,255,255,.85); font-size: 15px; }
 .kur-atp-tema { color: rgba(255,255,255,.6); font-size: 15px; }
-.kur-atp-jp { width: 36px; text-align: right; color: rgba(255,255,255,.6); font-size: 15px; }
+.kur-atp-jp { width: 36px; text-align: right; color: rgba(255,255,255,.75); font-size: 15px; }
 .kur-atp-hint { font-size: 15px; color: rgba(255,255,255,.6); font-style: italic; margin-top: 10px; text-align: center; } 
 
 .kur-tp-list { background: var(--tema-bg-light); }
