@@ -266,7 +266,7 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
       _faseMap = null;
     }
 
-    root.innerHTML = _buildKurikulumHTML(fase, tps, meta, kelasList);
+    root.innerHTML = _buildKurikulumHTML(fase, tps, meta, kelasList, kelasUser);
     _attachEventListeners(root, tps, onDownloadPDF);
     _rendered = true;
 
@@ -303,12 +303,12 @@ export function resetKurikulum() {
 // BUILD HTML
 // ----------------------------------------------------------
 
-function _buildKurikulumHTML(fase, tps, meta, kelasList) {
+function _buildKurikulumHTML(fase, tps, meta, kelasList, sessionKelas) {
   return `
     <div class="kur-wrap">
 
       ${_buildHeaderHTML(meta)}
-      ${_buildTPListHTML(tps, kelasList)}
+      ${_buildTPListHTML(tps, kelasList, sessionKelas)}
       ${_buildATPHTML(tps, meta, fase)}
       ${_buildCPHTML(fase.cp)}
 
@@ -428,13 +428,18 @@ function _buildATPHTML(tps, meta, fase) {
 }
 
 // ── Panel TP List ─────────────────────────────────────────
-function _buildTPListHTML(tps, kelasList) {
+function _buildTPListHTML(tps, kelasList, sessionKelas) {
   const items = tps.map(tp => _buildTPItemHTML(tp)).join('');
   const activeStyle   = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(212,174,58,.4);background:rgba(212,174,58,.15);color:#D4AE3A;font-size:13px;font-weight:700;cursor:pointer;`;
   const inactiveStyle = `flex:1;padding:6px 0;border-radius:8px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);font-size:13px;font-weight:700;cursor:pointer;`;
-  const filterBtns = kelasList.map((k, i) =>
-    `<button onclick="kurFilterKelas(${k})" id="kur-filter-${k}" style="${i === 0 ? activeStyle : inactiveStyle}">Kelas ${k}</button>`
-  ).join('');
+  const filterBtns = kelasList.map((k, i) => {
+    const isDisabled = sessionKelas !== 'all' && k !== parseInt(sessionKelas);
+    const btnStyle = isDisabled
+      ? 'opacity:0.3;pointer-events:none;cursor:default;'
+      : (i === 0 ? activeStyle : inactiveStyle);
+    return `<button ${isDisabled ? '' : `onclick="kurFilterKelas(${k})"`}
+      id="kur-filter-${k}" style="${btnStyle}">Kelas ${k}</button>`;
+  }).join('');
   return `
     <div class="kur-panel kur-panel-tp">
       <div class="kur-panel-head kur-panel-head--static">
