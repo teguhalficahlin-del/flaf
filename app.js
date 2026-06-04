@@ -270,14 +270,20 @@ function _onScreenEnter(screenId, opts = {}) {
   }
 }
 
-function _buildProgressText(tpSelesai, total = 18) {
+function _totalTP(kelas) {
+  if (kelas <= 2) return 18;
+  if (kelas <= 6) return 22;
+  return 18;
+}
+
+function _buildProgressText(tpSelesai, total = 18, fase = 'A') {
   const pct  = Math.round((tpSelesai / total) * 100);
   const sisa = total - tpSelesai;
   if (tpSelesai === 0)   return `0% · Ayo mulai langkah pertama!`;
   if (tpSelesai <= 4)    return `${pct}% · ${tpSelesai} TP selesai — terus semangat!`;
   if (tpSelesai <= 13)   return `${pct}% · ${tpSelesai} TP selesai — ${sisa} TP lagi sampai tuntas`;
   if (tpSelesai < total) return `${pct}% · Hampir tuntas — ${sisa} TP tersisa!`;
-  return `100% · Semua TP Fase A tuntas! 🎉`;
+  return `100% · Semua TP Fase ${fase} tuntas! 🎉`;
 }
 
 async function _populateStartScreen() {
@@ -295,13 +301,15 @@ async function _populateStartScreen() {
     for (const { key, value } of all) {
       if (/^progress_tp_\d+$/.test(key) && value?.status === 'selesai') selesai++;
     }
-    const pct    = Math.round((selesai / 18) * 100);
+    const totalTP = _totalTP(session?.kelas ?? 1);
+    const fase = session?.kelas <= 2 ? 'A' : session?.kelas <= 4 ? 'B' : 'C';
+    const pct    = Math.round((selesai / totalTP) * 100);
     const fillEl = document.getElementById('home-progress-fill');
     const countEl= document.getElementById('home-tp-done');
     const subEl  = document.getElementById('home-progress-sub');
     if (fillEl)  fillEl.style.width  = pct + '%';
     if (countEl) countEl.textContent = selesai;
-    if (subEl)   subEl.textContent   = _buildProgressText(selesai);
+    if (subEl)   subEl.textContent   = _buildProgressText(selesai, totalTP, fase);
   } catch (err) {
     console.warn('[APP] progress bar gagal:', err.message);
   }
@@ -911,10 +919,10 @@ function _onPDFPrecacheDone({ total, failed } = {}) {
   if (btn) { btn.disabled = false; btn.textContent = 'Simpan Semua'; }
 
   const msg = failed > 0
-    ? `⚠ ${total - failed}/18 tersimpan (${failed} gagal)`
+    ? `⚠ ${total - failed}/${total} tersimpan (${failed} gagal)`
     : `✓ Semua ${total} PDF tersimpan offline`;
 
-  if (status) status.textContent = failed > 0 ? `${total - failed}/18 tersimpan` : 'Semua tersimpan ✓';
+  if (status) status.textContent = failed > 0 ? `${total - failed}/${total} tersimpan` : 'Semua tersimpan ✓';
   showToast(msg);
 }
 
