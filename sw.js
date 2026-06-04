@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v113';         // ← bump: Fase C printables activation
+const CACHE_VERSION  = 'flaf-v114';         // ← bump: fix footer fase C pada cetak kartu
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
