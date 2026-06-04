@@ -245,6 +245,7 @@ async function _finalizeActivation(data) {
     issued_at : now,
     expires_at: now + (365 * 24 * 60 * 60 * 1000),
     via       : data.via || 'server',
+    kelas     : data.kelas || 'all',
   });
 
   return {
