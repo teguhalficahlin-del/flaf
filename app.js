@@ -302,6 +302,10 @@ async function _populateStartScreen() {
       if (/^progress_tp_\d+$/.test(key) && value?.status === 'selesai') selesai++;
     }
     const totalTP = _totalTP(session?.kelas ?? 1);
+    // Update deskripsi card Dokumen Kurikulum
+    const tpPerKelas = session?.kelas <= 2 ? 9 : 11;
+    const descEl = document.querySelector('#btn-go-jadwal .home-card-desc');
+    if (descEl) descEl.textContent = `CP, ATP, ${tpPerKelas} TP + modul PDF siap unduh`;
     const fase = session?.kelas <= 2 ? 'A' : session?.kelas <= 4 ? 'B' : 'C';
     const pct    = Math.round((selesai / totalTP) * 100);
     const fillEl = document.getElementById('home-progress-fill');
