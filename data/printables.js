@@ -153,7 +153,7 @@ export function generatePrintHTML(tp, mode = 'standar') {
   </div>
 
   <div class="print-footer">
-    <span>FLAF &mdash; Bahasa Inggris ${tp.kelas <= 2 ? 'Fase A' : 'Fase B'}</span>
+    <span>FLAF &mdash; Bahasa Inggris ${tp.kelas <= 2 ? 'Fase A' : tp.kelas <= 4 ? 'Fase B' : 'Fase C'}</span>
     <span>Dicetak ${new Date().toLocaleDateString('id-ID')}</span>
   </div>
 
