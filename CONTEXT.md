@@ -1601,6 +1601,18 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ---
 
+### BUG-PRINT-C — Fungsi cetak Fase C ✅ CLOSED
+**Commits:** b420664 · 652024f · 5b3369d
+**Root causes:**
+1. 97 file PNG Fase C belum di-commit ke repo (untracked) → fixed: 5b3369d
+2. Footer cetak hardcoded "Fase B" untuk kelas > 2 → fixed: b420664
+   (`data/printables.js` baris 156, ternary diperluas ke Fase C)
+3. SW bump v114 → 652024f
+
+**Status:** Semua Fase C printables berfungsi penuh. Path, precache, footer dinamis.
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
