@@ -1063,17 +1063,20 @@ window.nilaiTambahKelas = function() {
     try {
       const stored  = await db.get('kv', 'session');
       const kelas   = stored?.payload?.kelas || 'all';
-      if (kelas === '1') {
-        document.getElementById('btn-tingkat-2')?.setAttribute('disabled', 'true');
-        document.getElementById('btn-tingkat-2')?.style.setProperty('opacity', '0.3');
-      } else if (kelas === '2') {
-        document.getElementById('btn-tingkat-1')?.setAttribute('disabled', 'true');
-        document.getElementById('btn-tingkat-1')?.style.setProperty('opacity', '0.3');
+      if (kelas !== 'all') {
+        const k = parseInt(kelas);
+        [1,2,3,4,5,6].forEach(n => {
+          if (n !== k) {
+            const btn = document.getElementById(`btn-tingkat-${n}`);
+            if (btn) {
+              btn.setAttribute('disabled', 'true');
+              btn.style.opacity = '0.3';
+              btn.style.pointerEvents = 'none';
+            }
+          }
+        });
+        nilaiPilihTingkat(k);
       }
-      if (kelas === '3') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-4')?.classList.add('disabled'); nilaiPilihTingkat(3); }
-      if (kelas === '4') { document.getElementById('btn-tingkat-1')?.classList.add('disabled'); document.getElementById('btn-tingkat-2')?.classList.add('disabled'); document.getElementById('btn-tingkat-3')?.classList.add('disabled'); nilaiPilihTingkat(4); }
-      if (kelas === '5') { nilaiPilihTingkat(5); }
-      if (kelas === '6') { nilaiPilihTingkat(6); }
     } catch { /* abaikan */ }
   })();
 };
