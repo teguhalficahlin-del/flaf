@@ -151,11 +151,11 @@ function _getTP(id) {
 // --- LEVEL SYSTEM ------------------------------------------------------------
 
 const LEVELS = [
-  { min: 0,  max: 3,        emoji: '🌱', nama: 'Pemula',            gaji: 'TP 1–3 selesai' },
-  { min: 4,  max: 8,        emoji: '📚', nama: 'Fondasi Terbentuk', gaji: 'TP 4–8 selesai' },
-  { min: 9,  max: 13,       emoji: '⭐', nama: 'Kosakata Meluas',   gaji: 'TP 9–13 selesai' },
-  { min: 14, max: 17,       emoji: '🏅', nama: 'Integrasi Aktif',   gaji: 'TP 14–17 selesai' },
-  { min: 18, max: Infinity, emoji: '🏆', nama: 'Fase A Tuntas',     gaji: 'Semua 18 TP selesai' },
+  { min: 0,  max: 3,        emoji: '🌱', nama: 'Pemula',            gaji: 'Baru mulai — 0–3 hari aktif' },
+  { min: 4,  max: 8,        emoji: '📚', nama: 'Fondasi Terbentuk', gaji: '4–8 hari aktif mengajar' },
+  { min: 9,  max: 13,       emoji: '⭐', nama: 'Kosakata Meluas',   gaji: '9–13 hari aktif mengajar' },
+  { min: 14, max: 17,       emoji: '🏅', nama: 'Integrasi Aktif',   gaji: '14–17 hari aktif mengajar' },
+  { min: 18, max: Infinity, emoji: '🏆', nama: 'Pengajar Andal',    gaji: '18+ hari aktif mengajar' },
 ];
 
 function _getLevelInfo(hariAktif) {
