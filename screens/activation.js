@@ -425,6 +425,7 @@ function _attachActivationListeners(container, onSuccess) {
           school   : result.school,
           code     : result.code,
           device_id: result.device_id,
+          kelas    : result.kelas,
         });
       }
     } else {
