@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v120';         // ← bump: LEVELS teks berbasis hari aktif
+const CACHE_VERSION  = 'flaf-v121';         // ← bump: fix label fase, total TP, session kelas on first activation
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
