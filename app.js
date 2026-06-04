@@ -307,12 +307,16 @@ async function _populateStartScreen() {
     const descEl = document.querySelector('#btn-go-jadwal .home-card-desc');
     if (descEl) descEl.textContent = `CP, ATP, ${tpPerKelas} TP + modul PDF siap unduh`;
     const fase = session?.kelas <= 2 ? 'A' : session?.kelas <= 4 ? 'B' : 'C';
-    const pct    = Math.round((selesai / totalTP) * 100);
-    const fillEl = document.getElementById('home-progress-fill');
-    const countEl= document.getElementById('home-tp-done');
-    const subEl  = document.getElementById('home-progress-sub');
+    const pct      = Math.round((selesai / totalTP) * 100);
+    const fillEl   = document.getElementById('home-progress-fill');
+    const countEl  = document.getElementById('home-tp-done');
+    const totalEl  = document.getElementById('home-tp-total');
+    const subEl    = document.getElementById('home-progress-sub');
+    const labelEl  = document.getElementById('home-fase-label');
     if (fillEl)  fillEl.style.width  = pct + '%';
     if (countEl) countEl.textContent = selesai;
+    if (totalEl) totalEl.textContent = ` / ${totalTP} TP`;
+    if (labelEl) labelEl.textContent = `PROGRES FASE ${fase}`;
     if (subEl)   subEl.textContent   = _buildProgressText(selesai, totalTP, fase);
   } catch (err) {
     console.warn('[APP] progress bar gagal:', err.message);
