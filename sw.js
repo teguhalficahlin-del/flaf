@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v112';         // ← bump: visual polish batch 2 layar mengajar
+const CACHE_VERSION  = 'flaf-v113';         // ← bump: Fase C printables activation
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
