@@ -1629,6 +1629,23 @@ fix pembatasan akses per guru selesai (akun per kelas tersedia).
 
 ---
 
+### Fix Pembatasan Akses Per Guru ✅ CLOSED
+**Commits:** 0b0bf2d · 9a19468
+**Root cause:** `_finalizeActivation()` di `screens/activation.js`
+tidak meneruskan field `kelas` dari Supabase ke `_saveSession()` →
+semua guru tersimpan `kelas: 'all'` → guard di `dashboard.js` tidak
+pernah aktif.
+**Fix:** Tambah `kelas: data.kelas || 'all'` di call `_saveSession()`
+(baris 248). Data `kelas` dari Supabase sudah tersedia di scope,
+tinggal diteruskan.
+**Catatan arsitektural:** FLAF menggunakan Model A — kode aktivasi
+per kelas, terikat ke kolom `kelas` di Supabase. Distribusi via
+iklan dengan mekanisme request kode terpisah.
+**Validate:** Pending — belum ada guru aktif di production.
+SW bump v116.
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
