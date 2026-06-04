@@ -47,7 +47,9 @@ export const tp_c13 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c13-book-fair-poster.png', label: 'School Book Fair Poster' },
+  ],
 
   energi_map: [
     'L0 ⚪',

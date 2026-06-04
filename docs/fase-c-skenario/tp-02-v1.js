@@ -46,7 +46,14 @@ export const tp_c02 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c02-tall.png', label: 'Tall' },
+    { file: 'tp-c02-short.png', label: 'Short' },
+    { file: 'tp-c02-long-hair.png', label: 'Long Hair' },
+    { file: 'tp-c02-short-hair.png', label: 'Short Hair' },
+    { file: 'tp-c02-person-card.png', label: 'My Person Card' },
+    { file: 'tp-c02-comparison-table.png', label: 'Comparison Table' },
+  ],
 
   energi_map: [
     'L0 ⚪',

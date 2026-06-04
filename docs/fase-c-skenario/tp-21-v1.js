@@ -60,7 +60,10 @@ Teks C (Jadwal) dan Teks D (Notice) ditampilkan di papan untuk seluruh kelas.`,
     'Closure L14: "Next time — last time. Everything. You will show what you know." — verbatim',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c21-text-a-poster.png', label: 'Competition Poster' },
+    { file: 'tp-c21-text-b-menu.png', label: 'Warung Menu' },
+  ],
 
   energi_map: [
     'L0 ⚪',

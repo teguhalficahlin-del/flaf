@@ -47,7 +47,12 @@ export const tp_c17 = {
     'Closure L11: "Next time — not what you think. What happened. Something you remember." — diucapkan verbatim',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c17-agree.png', label: 'Agree' },
+    { file: 'tp-c17-disagree.png', label: 'Disagree' },
+    { file: 'tp-c17-interesting.png', label: 'Interesting' },
+    { file: 'tp-c17-boring.png', label: 'Boring' },
+  ],
 
   energi_map: [
     'L0 ⚪',

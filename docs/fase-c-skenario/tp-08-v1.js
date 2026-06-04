@@ -48,7 +48,9 @@ export const tp_c08 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L7 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c08-plan-sheet.png', label: 'Writing Plan Sheet' },
+  ],
 
   energi_map: [
     'L0 ⚪',

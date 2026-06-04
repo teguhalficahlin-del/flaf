@@ -49,7 +49,18 @@ export const tp_c10 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c10-rainy.png', label: 'Rainy' },
+    { file: 'tp-c10-hot.png', label: 'Hot' },
+    { file: 'tp-c10-windy.png', label: 'Windy' },
+    { file: 'tp-c10-cloudy.png', label: 'Cloudy' },
+    { file: 'tp-c10-raincoat.png', label: 'Raincoat' },
+    { file: 'tp-c10-umbrella.png', label: 'Umbrella' },
+    { file: 'tp-c10-jacket.png', label: 'Jacket' },
+    { file: 'tp-c10-t-shirt.png', label: 'T-Shirt' },
+    { file: 'tp-c10-weather-card.png', label: 'My Weather Card' },
+    { file: 'tp-c10-partner-card.png', label: "Partner's Weather Card" },
+  ],
 
   energi_map: [
     'L0 ⚪',

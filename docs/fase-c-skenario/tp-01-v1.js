@@ -50,7 +50,10 @@ export const tp_c01 = {
   ],
 
   // ── Printables ────────────────────────────────────────────────────────
-  printables: [],
+  printables: [
+    { file: 'tp-c01-profile-note.png', label: 'My Profile Note' },
+    { file: 'tp-c01-partner-card.png', label: "My Partner's Profile Card" },
+  ],
 
   // ── Energi Map ────────────────────────────────────────────────────────
   energi_map: [

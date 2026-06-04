@@ -65,7 +65,9 @@ Tidak ada model baru di papan setelah L4. Ketiadaan model adalah desain, bukan k
     'L15 closure — lima kalimat verbatim dengan jeda: "Today — you made something." / "Your topic. Your words. Your image." / "Keep it." / "Show it to someone outside this classroom." / "That is the end."',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c22-choice-card.png', label: 'Project Choice Card' },
+  ],
 
   energi_map: [
     'L0 ⚪',

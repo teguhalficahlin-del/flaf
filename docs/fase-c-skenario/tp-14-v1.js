@@ -53,7 +53,15 @@ integrasi tiga skill di L7 (membaca-berbicara-bernalar), inferensi logis dari ga
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L9 atau L10',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c14-juice-step1.png', label: 'Step 1: Get the Oranges' },
+    { file: 'tp-c14-juice-step2.png', label: 'Step 2: Cut in Half' },
+    { file: 'tp-c14-juice-step3.png', label: 'Step 3: Squeeze into Glass' },
+    { file: 'tp-c14-juice-step4.png', label: 'Step 4: Add Sugar' },
+    { file: 'tp-c14-juice-step5.png', label: 'Step 5: Stir and Enjoy' },
+    { file: 'tp-c14-sequence-sheet.png', label: 'Sequence Sheet' },
+    { file: 'tp-c14-juice-procedure.png', label: 'Juice Procedure Text' },
+  ],
 
   energi_map: [
     'L0 ⚪',

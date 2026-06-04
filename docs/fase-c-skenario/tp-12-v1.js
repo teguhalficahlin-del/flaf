@@ -51,7 +51,11 @@ export const tp_c12 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c12-menu-card-a.png', label: 'Menu Card A' },
+    { file: 'tp-c12-menu-card-b.png', label: 'Menu Card B' },
+    { file: 'tp-c12-menu-table.png', label: 'Complete Menu Table' },
+  ],
 
   energi_map: [
     'L0 ⚪',

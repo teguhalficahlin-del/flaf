@@ -47,7 +47,19 @@ export const tp_c07 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c07-rice.png', label: 'Rice' },
+    { file: 'tp-c07-noodles.png', label: 'Noodles' },
+    { file: 'tp-c07-corn.png', label: 'Corn' },
+    { file: 'tp-c07-bread.png', label: 'Bread' },
+    { file: 'tp-c07-vegetables.png', label: 'Vegetables' },
+    { file: 'tp-c07-fish.png', label: 'Fish' },
+    { file: 'tp-c07-chicken.png', label: 'Chicken' },
+    { file: 'tp-c07-spicy.png', label: 'Spicy' },
+    { file: 'tp-c07-sweet.png', label: 'Sweet' },
+    { file: 'tp-c07-food-card.png', label: 'My Food Card' },
+    { file: 'tp-c07-exchange-table.png', label: 'Food Exchange Table' },
+  ],
 
   energi_map: [
     'L0 ⚪',

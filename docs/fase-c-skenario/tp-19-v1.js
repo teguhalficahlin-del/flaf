@@ -52,7 +52,11 @@ Kriteria Kompleks: perubahan register, produksi lebih dari satu kalimat, integra
     'Closure L13: "Next time — everything you know. Your place. Your opinion. Your experience. One piece of writing." — verbatim',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c19-quiet-place.png', label: 'Quiet Place' },
+    { file: 'tp-c19-busy-place.png', label: 'Busy Place' },
+    { file: 'tp-c19-crowded-place.png', label: 'Crowded Place' },
+  ],
 
   energi_map: [
     'L0 ⚪',

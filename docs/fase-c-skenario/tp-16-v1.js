@@ -53,7 +53,9 @@ Guru tidak mendominasi lebih dari 40% layar.`,
     'Guru tidak mendominasi lebih dari 40% layar — L0, L2, L4, L13 dominan = 4 dari 14 layar = 28%',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c16-choice-slip.png', label: 'Choice Slip' },
+  ],
 
   energi_map: [
     'L0 ⚪',

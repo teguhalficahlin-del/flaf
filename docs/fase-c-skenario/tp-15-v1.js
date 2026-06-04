@@ -54,7 +54,10 @@ Kriteria Kompleks: past tense production, reading + writing, integrasi skill di 
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L9 atau L10',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c15-story-card-a.png', label: 'Story Card A' },
+    { file: 'tp-c15-story-card-b.png', label: 'Story Card B' },
+  ],
 
   energi_map: [
     'L0 ⚪',

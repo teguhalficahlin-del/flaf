@@ -53,7 +53,10 @@ Kriteria Kompleks: past tense production dari pengalaman pribadi, outline + writ
     'Closure L13: "Next time — not what happened. What it looks like. A place. Or something you know." — verbatim',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c18-past-tense-ref.png', label: 'Past Tense Reference' },
+    { file: 'tp-c18-fruit.png', label: 'Fruit' },
+  ],
 
   energi_map: [
     'L0 ⚪',

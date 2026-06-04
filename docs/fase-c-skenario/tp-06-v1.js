@@ -47,7 +47,15 @@ export const tp_c06 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c06-reading.png', label: 'Reading' },
+    { file: 'tp-c06-playing-football.png', label: 'Playing Football' },
+    { file: 'tp-c06-cooking.png', label: 'Cooking' },
+    { file: 'tp-c06-watching-tv.png', label: 'Watching TV' },
+    { file: 'tp-c06-helping-home.png', label: 'Helping at Home' },
+    { file: 'tp-c06-hobby-card.png', label: 'My Hobby Card' },
+    { file: 'tp-c06-exchange-table.png', label: 'Hobby Exchange Table' },
+  ],
 
   energi_map: [
     'L0 ⚪',

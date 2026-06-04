@@ -48,7 +48,16 @@ export const tp_c09 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c09-market.png', label: 'Market' },
+    { file: 'tp-c09-mosque.png', label: 'Mosque' },
+    { file: 'tp-c09-park.png', label: 'Park' },
+    { file: 'tp-c09-river.png', label: 'River' },
+    { file: 'tp-c09-rice-field.png', label: 'Rice Field' },
+    { file: 'tp-c09-school.png', label: 'School' },
+    { file: 'tp-c09-town-card.png', label: 'My Town Card' },
+    { file: 'tp-c09-partner-card.png', label: "Partner's Town Card" },
+  ],
 
   energi_map: [
     'L0 ⚪',

@@ -49,7 +49,18 @@ export const tp_c11 = {
     'Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9',
   ],
 
-  printables: [],
+  printables: [
+    { file: 'tp-c11-cat.png', label: 'Cat' },
+    { file: 'tp-c11-chicken.png', label: 'Chicken' },
+    { file: 'tp-c11-goat.png', label: 'Goat' },
+    { file: 'tp-c11-fish.png', label: 'Fish' },
+    { file: 'tp-c11-cow.png', label: 'Cow' },
+    { file: 'tp-c11-bird.png', label: 'Bird' },
+    { file: 'tp-c11-dog.png', label: 'Dog' },
+    { file: 'tp-c11-rabbit.png', label: 'Rabbit' },
+    { file: 'tp-c11-animal-card.png', label: 'My Animal Card' },
+    { file: 'tp-c11-partner-card.png', label: "Partner's Animal Card" },
+  ],
 
   energi_map: [
     'L0 ⚪',
