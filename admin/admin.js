@@ -169,10 +169,11 @@ export async function resetDeviceCount(code, adminId, note = '') {
   return true;
 }
 
-export async function addCode(adminId, note = '') {
+export async function addCode(adminId, note = '', kelas = null) {
   const result = await sbRpc('admin_generate_code', {
     p_year:     new Date().getFullYear(),
     p_admin_id: adminId,
+    p_kelas:    kelas,
   });
 
   await sbPost('admin_actions', {
@@ -194,14 +195,14 @@ export async function addCode(adminId, note = '') {
  * @param {function} onProgress(done, total) — callback progress
  * @returns {Promise<Array<{code, status}>>}
  */
-export async function addCodeBatch(adminId, jumlah, note = '', onProgress = null) {
+export async function addCodeBatch(adminId, jumlah, note = '', kelas = null, onProgress = null) {
   const max    = Math.min(Math.max(1, parseInt(jumlah) || 1), 500);
   const hasil  = [];
   const prefix = `Batch ${new Date().toLocaleDateString('id-ID')}${note ? ' — ' + note : ''}`;
 
   for (let i = 0; i < max; i++) {
     try {
-      const code = await addCode(adminId, prefix);
+      const code = await addCode(adminId, prefix, kelas);
       hasil.push({ code, status: 'ok' });
     } catch (err) {
       hasil.push({ code: '—', status: 'error', error: err.message });
@@ -364,6 +365,18 @@ async function renderDashboard(app, session) {
                 <input class="adm-input" id="adm-add-jumlah" type="number"
                   min="1" max="500" value="10" placeholder="10" />
               </div>
+              <div class="adm-field" style="width:130px;flex-shrink:0">
+                <label class="adm-label">Kelas</label>
+                <select class="adm-input" id="adm-add-kelas">
+                  <option value="">— Semua —</option>
+                  <option value="1">Kelas 1</option>
+                  <option value="2">Kelas 2</option>
+                  <option value="3">Kelas 3</option>
+                  <option value="4">Kelas 4</option>
+                  <option value="5">Kelas 5</option>
+                  <option value="6">Kelas 6</option>
+                </select>
+              </div>
               <div class="adm-field" style="flex:1">
                 <label class="adm-label">Catatan Batch (opsional)</label>
                 <input class="adm-input" id="adm-add-note" type="text"
@@ -512,6 +525,8 @@ function _bindDashboard(app, session, codes) {
   document.getElementById('adm-add-confirm').addEventListener('click', async () => {
     const jumlah  = Math.min(Math.max(1, parseInt(document.getElementById('adm-add-jumlah').value) || 1), 500);
     const note    = document.getElementById('adm-add-note').value.trim();
+    const kelasRaw = document.getElementById('adm-add-kelas').value;
+    const kelas   = kelasRaw ? parseInt(kelasRaw) : null;
     const btn     = document.getElementById('adm-add-confirm');
     const err     = document.getElementById('adm-add-error');
     const prog    = document.getElementById('adm-add-progress');
@@ -530,7 +545,7 @@ function _bindDashboard(app, session, codes) {
 
     let lastBatch = [];
     try {
-      lastBatch = await addCodeBatch(session.id, jumlah, note, (done, total) => {
+      lastBatch = await addCodeBatch(session.id, jumlah, note, kelas, (done, total) => {
         const pct = Math.round((done / total) * 100);
         fill.style.width = pct + '%';
         label.textContent = `${done} / ${total} kode dibuat...`;
