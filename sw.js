@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v116';         // ← bump: fix pembatasan akses kelas per guru
+const CACHE_VERSION  = 'flaf-v117';         // ← bump: fix disable kelas saat tambah rombel
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
