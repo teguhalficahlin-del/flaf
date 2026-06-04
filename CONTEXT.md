@@ -1774,8 +1774,9 @@ runtime yang benar-benar dipakai app.
 - Menunggu data dari kelas nyata sebelum desain UI diputuskan
 
 ### TD-11: Testing breakpoint visual semua TP Panen/Capstone
-- TP04, TP08, TP16, TP20, TP21, TP22 belum diverifikasi visual di browser
-- Breakpoint persist/resume sudah diimplementasikan tapi belum di-QA end-to-end
+✅ RESOLVED (4 Juni 2026)
+- Verified di browser: semua 5 TP lolos 3 checkpoint (overlay, simpan, resume).
+  TP04 ✅ TP08 ✅ TP16 ✅ TP21 ✅ TP22 ✅ — tidak ada bug ditemukan.
 
 ### TD-12: Nilai screen Kelas 5/6 belum lengkap
 ✅ RESOLVED — commit `dbe8c7d` (3 Juni 2026)
@@ -1828,8 +1829,8 @@ runtime yang benar-benar dipakai app.
 - ✅ commit b2b2555 + a2a7430 (scroll kurikulum) — sudah di-push sebagai SW v107
 - ✅ TD-12: fix nilai TP range Kelas 5/6 — SELESAI (3 Juni 2026, SW v110)
 - ✅ TD-13: visual polish Layar Mengajar batch 1 & 2 — SELESAI (3 Juni 2026, SW v111–v112)
+- ✅ TD-11: Testing breakpoint visual TP Panen/Capstone — SELESAI (4 Juni 2026)
 
 ### Pending
 - TD-10: Renderer Kelompok 3 — tahan sampai ada data kelas nyata
-- TD-11: Testing breakpoint visual TP Panen/Capstone Fase C
 - Keputusan: apakah bridge mode reactivation Kluster D (TP13–15) didokumentasikan di CAS §19 atau direvisi ke OUTPUT siswa
