@@ -1646,6 +1646,27 @@ SW bump v116.
 
 ---
 
+### Sprint Uji Coba Per Kelas — Fix UI & Data ✅
+**Commits:** 071dad4 · 9d5cdfc · 18b3e22 · 20e27fa · efb0524 · 4662e2c · 96476f8 · a462520
+
+**Fix yang dilakukan:**
+1. `screens/nilai.js` — disable pilihan kelas lain saat Tambah Rombel
+   sesuai `session.kelas` (sebelumnya parsial & tidak konsisten)
+2. `app.js` — deskripsi card Dokumen Kurikulum dinamis per kelas
+   (Kelas 1–2: "9 TP", Kelas 3–6: "11 TP"; sebelumnya hardcoded "18 TP")
+3. `screens/kurikulum.js` — disable tab kelas lain di screen Kurikulum
+   sesuai `session.kelas` (sebelumnya semua tab aktif)
+4. `screens/dashboard.js` — LEVELS teks diubah dari hardcoded
+   "Fase A Tuntas / Semua 18 TP selesai" menjadi berbasis hari aktif
+   yang berlaku untuk semua fase
+
+**SW bumps:** v117 · v118 · v119 · v120
+
+**Status:** Validate ongoing — uji coba per kelas sedang berlangsung.
+Kelas 1 sudah ditest, Kelas 2–6 pending.
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
