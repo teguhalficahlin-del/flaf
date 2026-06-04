@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v119';         // ← bump: disable tab kelas kurikulum per session
+const CACHE_VERSION  = 'flaf-v120';         // ← bump: LEVELS teks berbasis hari aktif
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
