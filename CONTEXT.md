@@ -1613,6 +1613,22 @@ Dokumen referensi authoring tersimpan di repo — commit `43b5af9`:
 
 ---
 
+### TD-11: app.js progress bar hardcoded 18 ✅ CLOSED (pending full validate)
+**Commits:** 160912c · ce10f38
+**Root cause:** `app.js` hardcoded angka `18` di progress bar home
+screen — guru Fase B/C akan lihat persentase salah (>100%) dan
+teks "Fase A tuntas" yang tidak sesuai.
+**Fix:**
+- Tambah helper `_totalTP(kelas)` → 18 untuk Fase A, 22 untuk Fase B/C
+- `_buildProgressText` diperluas dengan param `fase`
+- Pemanggil diteruskan `totalTP` dan `fase` dari `session.kelas`
+- Fix `/18` hardcoded di pesan error PDF precache → `/${total}`
+- SW bump v115
+**Validate:** Fase A confirmed ✅ — Fase B/C pending sampai
+fix pembatasan akses per guru selesai (akun per kelas tersedia).
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
