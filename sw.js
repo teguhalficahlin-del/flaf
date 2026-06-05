@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v127';         // ← bump: precache Fase B dan Fase C ditambahkan ke APP_SHELL
+const CACHE_VERSION  = 'flaf-v128';         // ← bump: fix key progress TP unik per rombel
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
