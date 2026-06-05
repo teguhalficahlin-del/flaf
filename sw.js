@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v132';         // ← bump: hapus window.db, akses db via import langsung
+const CACHE_VERSION  = 'flaf-v133';         // ← bump: savePenilaian atomic satu transaksi IDB
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
