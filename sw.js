@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v124';         // ← bump: kurikulum header per kelas (Kelas X SD, TP per kelas)
+const CACHE_VERSION  = 'flaf-v125';         // ← bump: fix silent fail selesai sesi + disable double-submit simpan nilai
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
