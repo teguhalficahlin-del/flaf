@@ -1074,6 +1074,10 @@ window.nilaiDownloadRapor = async function(semester) {
     const siswaList = await nilai.getRekapRapor(kelasId, semester);
     const rows = [['No', 'Nama', 'STS', 'SAS', 'Nilai Rapor']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '', s.sas ?? '', s.rapor ?? '']));
+    if (rows.length <= 1) {
+      _nvToast('Belum ada nilai rapor untuk diunduh.');
+      return;
+    }
     _downloadCSV(`nilai-rapor-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download rapor error:', err);
@@ -1283,6 +1287,10 @@ window.nilaiDownloadSAS = async function(semester) {
     const siswaList = await nilai.getRekapSAS(kelasId, semester);
     const rows      = [['No', 'Nama', 'Nilai SAS']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sas ?? '']));
+    if (rows.length <= 1) {
+      _nvToast('Belum ada nilai SAS untuk diunduh.');
+      return;
+    }
     _downloadCSV(`nilai-sas-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download SAS error:', err);
@@ -1298,6 +1306,10 @@ window.nilaiDownloadSTS = async function(semester) {
     const siswaList = await nilai.getRekapSumatif(kelasId, semester);
     const rows      = [['No', 'Nama', 'Nilai STS']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '']));
+    if (rows.length <= 1) {
+      _nvToast('Belum ada nilai STS untuk diunduh.');
+      return;
+    }
     _downloadCSV(`nilai-sts-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download STS error:', err);
