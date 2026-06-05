@@ -19,7 +19,7 @@
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 
-import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY } from '../secrets.js';
+import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, ADMIN_EMAIL } from '../secrets.js';
 
 const MAX_RESETS_PER_MONTH = 3;
 
@@ -115,6 +115,12 @@ export async function exchangeTokenFromHash() {
   if (!res.ok) return null;
 
   const user = await res.json();
+
+  if (user.email !== ADMIN_EMAIL) {
+    renderError(document.getElementById('app'), 'Akses ditolak. Akun ini tidak diizinkan mengakses panel admin.');
+    return null;
+  }
+
   const session = { accessToken, refreshToken, email: user.email, id: user.id };
   saveAdminSession(session);
   history.replaceState(null, '', window.location.pathname);
