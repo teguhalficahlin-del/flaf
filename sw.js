@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v135';         // ← bump: fix urutan hapus kelas dan siswa
+const CACHE_VERSION  = 'flaf-v136';         // ← bump: guard cek isi store sebelum hapus di upgrade IDB
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
