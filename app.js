@@ -271,9 +271,8 @@ function _onScreenEnter(screenId, opts = {}) {
 }
 
 function _totalTP(kelas) {
-  if (kelas <= 2) return 18;
-  if (kelas <= 6) return 22;
-  return 18;
+  if (kelas <= 2) return 9;
+  return 11;
 }
 
 function _buildProgressText(tpSelesai, total = 18, fase = 'A') {
@@ -303,9 +302,8 @@ async function _populateStartScreen() {
     }
     const totalTP = _totalTP(session?.kelas ?? 1);
     // Update deskripsi card Dokumen Kurikulum
-    const tpPerKelas = session?.kelas <= 2 ? 9 : 11;
     const descEl = document.querySelector('#btn-go-jadwal .home-card-desc');
-    if (descEl) descEl.textContent = `CP, ATP, ${tpPerKelas} TP + modul PDF siap unduh`;
+    if (descEl) descEl.textContent = `CP, ATP, ${totalTP} TP + modul PDF siap unduh`;
     const fase = session?.kelas <= 2 ? 'A' : session?.kelas <= 4 ? 'B' : 'C';
     const pct      = Math.round((selesai / totalTP) * 100);
     const fillEl   = document.getElementById('home-progress-fill');
