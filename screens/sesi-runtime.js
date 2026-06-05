@@ -881,7 +881,7 @@ function _renderFallbackOverlay() {
 
 // ─── OVERLAY: Penilaian Siswa ─────────────────────────────────
 
-function _renderPenilaianOverlay() {
+async function _renderPenilaianOverlay() {
   document.querySelector('.sr-overlay')?.remove();
 
   const siswaList = _state.siswaList || [];
@@ -896,6 +896,8 @@ function _renderPenilaianOverlay() {
   let halaman       = 0;
   let openIdx       = 0;         // indeks siswa yang accordion-nya terbuka
 
+  const draftKey = `draft_penilaian_${_state.rombel?.id}_${_state.tp?.id}`;
+
   // Hasil per siswaId — persist selama sesi, tidak reset saat overlay dibuka ulang
   if (!_state.nilaiDraft) _state.nilaiDraft = {};
   for (const s of siswaList) {
@@ -903,6 +905,21 @@ function _renderPenilaianOverlay() {
       _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null, alasan: null };
     }
   }
+
+  // Muat draft tersimpan jika ada (hanya jika sesi baru / draft belum dipakai)
+  const allBlank = Object.values(_state.nilaiDraft).every(h =>
+    h.capaian === null && h.l === null && h.s === null && h.r === null && h.perilaku === null && h.alasan === null
+  );
+  if (allBlank) {
+    try {
+      const savedDraft = await db.get(STORE_KV, draftKey);
+      if (savedDraft && typeof savedDraft === 'object' && Object.keys(savedDraft).length > 0) {
+        _state.nilaiDraft = savedDraft;
+        window.__FLAF__?.showToast('Draft penilaian sebelumnya dimuat kembali.', 4000);
+      }
+    } catch (_) { /* db miss — lanjut normal */ }
+  }
+
   const hasil = _state.nilaiDraft;
 
   const totalHal = Math.ceil(siswaList.length / PAGE_SIZE);
@@ -1089,6 +1106,7 @@ function _renderPenilaianOverlay() {
         const siswaId = btn.dataset.siswa;
         const val     = parseInt(btn.dataset.capaian);
         hasil[siswaId].capaian = hasil[siswaId].capaian === val ? null : val;
+        db.set(STORE_KV, draftKey, hasil);
         _mount();
       });
     });
@@ -1100,12 +1118,14 @@ function _renderPenilaianOverlay() {
         const dim     = input.dataset.dim;
         const raw     = parseInt(input.value);
         hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
+        db.set(STORE_KV, draftKey, hasil);
       });
       input.addEventListener('blur', () => {
         const siswaId = input.dataset.siswa;
         const dim     = input.dataset.dim;
         const raw     = parseInt(input.value);
         hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
+        db.set(STORE_KV, draftKey, hasil);
         _mount();
       });
     });
@@ -1118,6 +1138,7 @@ function _renderPenilaianOverlay() {
         const prev    = hasil[siswaId].perilaku;
         hasil[siswaId].perilaku = prev === p ? null : p;
         if (hasil[siswaId].perilaku !== prev) hasil[siswaId].alasan = null;
+        db.set(STORE_KV, draftKey, hasil);
         _mount();
       });
     });
@@ -1128,6 +1149,7 @@ function _renderPenilaianOverlay() {
         const siswaId = btn.dataset.siswa;
         const a       = btn.dataset.alasan;
         hasil[siswaId].alasan = hasil[siswaId].alasan === a ? null : a;
+        db.set(STORE_KV, draftKey, hasil);
         if (hasil[siswaId].alasan !== null && _sudahDiisi(siswaId)) {
           _autoNext();
         } else {
@@ -1146,6 +1168,7 @@ function _renderPenilaianOverlay() {
 
     // Tutup
     overlay.querySelector('#sr-pn-tutup')?.addEventListener('click', () => {
+      db.remove(STORE_KV, draftKey);
       overlay.remove();
     });
 
@@ -1167,6 +1190,7 @@ function _renderPenilaianOverlay() {
           alasan  : hasil[s.id].alasan,
         }));
         await savePenilaian(kelasId, tpNomor, _state.sesiId, modePenilaian, entries);
+        db.remove(STORE_KV, draftKey);
         overlay.remove();
         if (typeof window._refreshLogSetDinilai === 'function') {
           await window._refreshLogSetDinilai(_state.sesiId);
