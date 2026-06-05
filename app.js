@@ -942,6 +942,14 @@ function _listenToSW() {
         showToast('Beberapa materi belum tersedia offline. Buka app saat online untuk melengkapi.');
         break;
 
+      case 'STORAGE_LOW':
+        showToast('Ruang penyimpanan HP hampir habis. Pertimbangkan untuk hapus file yang tidak diperlukan.');
+        break;
+
+      case 'STORAGE_FULL':
+        showStorageFullToast();
+        break;
+
       default:
         break;
     }
@@ -1123,6 +1131,10 @@ function showToast(message, duration = 3000) {
   _toastTimer = setTimeout(() => toast.classList.remove('toast-visible'), duration);
 }
 
+function showStorageFullToast() {
+  showToast('Penyimpanan HP hampir penuh. Hapus file atau foto yang tidak diperlukan.');
+}
+
 // ─── SW UTILITY ───────────────────────────────────────────────────────────────
 
 function _swRequest(type, payload = {}) {
@@ -1280,6 +1292,7 @@ window.__FLAF__ = {
   softUpdate,
   hardReset,
   showToast,
+  showStorageFullToast,
   precacheAllPDF,
   getPDFCacheStatus,
   clearPDFCache,

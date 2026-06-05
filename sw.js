@@ -634,7 +634,29 @@ const MAX_PDF_VERSIONS = 2;
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_VERSION).then(async cache => {
-      await cache.addAll(SHELL_CRITICAL);
+      // Cek sisa quota sebelum mulai cache
+      try {
+        const estimate  = await navigator.storage.estimate();
+        const freeBytes = estimate.quota - estimate.usage;
+        const THRESHOLD = 50 * 1024 * 1024; // 50MB
+        if (freeBytes < THRESHOLD) {
+          self.clients.matchAll().then(clients => {
+            clients.forEach(c => c.postMessage({ type: 'STORAGE_LOW' }));
+          });
+        }
+      } catch (_) { /* estimate tidak tersedia di semua browser — lanjut */ }
+
+      try {
+        await cache.addAll(SHELL_CRITICAL);
+      } catch (e) {
+        if (e.name === 'QuotaExceededError') {
+          self.clients.matchAll().then(clients => {
+            clients.forEach(c => c.postMessage({ type: 'STORAGE_FULL' }));
+          });
+        }
+        throw e;
+      }
+
       const failed = [];
       for (const url of SHELL_OPTIONAL) {
         try {

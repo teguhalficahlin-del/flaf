@@ -1411,6 +1411,7 @@ async function _doSelesaiSesi() {
       });
     } catch (err) {
       console.warn('[DASHBOARD] presensi.simpan gagal:', err.message);
+      if (err.name === 'QuotaExceededError') window.__FLAF__?.showStorageFullToast();
       presensiOk = false;
     }
   }
@@ -1424,6 +1425,7 @@ async function _doSelesaiSesi() {
     });
   } catch (err) {
     console.warn('[DASHBOARD] jejak.log gagal:', err.message);
+    if (err.name === 'QuotaExceededError') window.__FLAF__?.showStorageFullToast();
     jejakOk = false;
   }
 
@@ -1437,6 +1439,7 @@ async function _doSelesaiSesi() {
       });
     } catch (e) {
       console.warn('[DASHBOARD] progress_tp write gagal:', e.message);
+      if (e.name === 'QuotaExceededError') window.__FLAF__?.showStorageFullToast();
       progressOk = false;
     }
   }

@@ -257,7 +257,15 @@ async function set(store, key, value, softFail) {
       var tx  = _db.transaction(store, 'readwrite');
       var req = tx.objectStore(store).put(value, key);
       req.onsuccess = function() { resolve(true); };
-      req.onerror   = function() { reject(req.error); };
+      req.onerror   = function() {
+        if (req.error?.name === 'QuotaExceededError') {
+          var qErr = new Error('Penyimpanan penuh');
+          qErr.name = 'QuotaExceededError';
+          reject(qErr);
+        } else {
+          reject(req.error);
+        }
+      };
     } catch (err) {
       reject(err);
     }
