@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v126';         // ← bump: fix draft penilaian auto-persist ke IDB
+const CACHE_VERSION  = 'flaf-v127';         // ← bump: precache Fase B dan Fase C ditambahkan ke APP_SHELL
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
