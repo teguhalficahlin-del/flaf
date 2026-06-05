@@ -289,8 +289,13 @@ async function _populateStartScreen() {
   if (!session) return;
 
   const nameEl   = document.getElementById('start-teacher-name');
+  const kelasEl  = document.getElementById('start-teacher-kelas');
   const schoolEl = document.getElementById('start-teacher-school');
-  if (nameEl)   nameEl.textContent   = (session.name   || '—') + ' 👋';
+  if (nameEl)   nameEl.textContent   = session.name   || '—';
+  if (kelasEl) {
+    const k = session.kelas;
+    kelasEl.textContent = (k && k !== 'all') ? `Kelas ${k}` : '';
+  }
   if (schoolEl) schoolEl.textContent = session.school || '';
 
   // Progress bar

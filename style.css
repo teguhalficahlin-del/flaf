@@ -527,8 +527,8 @@ body {
   border-bottom: 1px solid rgba(212,174,58,.12);
 }
 .home-header-left { display: flex; flex-direction: column; gap: 3px; }
-.home-welcome { font-size: 13px; font-weight: 400; color: rgba(255,255,255,.5); letter-spacing: .01em; text-transform: none; }
 .home-name   { font-size: 20px; font-weight: 800; color: #fff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.home-kelas  { font-size: 13px; font-weight: 600; color: rgba(212,174,58,.85); letter-spacing: .02em; }
 .home-school { font-size: 13px; color: rgba(255,255,255,.65); font-weight: 400; }
 
 .home-avatar {
