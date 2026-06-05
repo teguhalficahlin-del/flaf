@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v125';         // ← bump: fix silent fail selesai sesi + disable double-submit simpan nilai
+const CACHE_VERSION  = 'flaf-v126';         // ← bump: fix draft penilaian auto-persist ke IDB
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
