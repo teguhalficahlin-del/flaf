@@ -543,6 +543,41 @@ body {
   filter: drop-shadow(0 0 6px rgba(212,174,58,0.5));
 }
 
+/* ── Welcome Overlay ───────────────────────────────────────── */
+.home-welcome-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(10,10,10,.75);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; transition: opacity .25s ease;
+  pointer-events: none;
+}
+.home-welcome-overlay--visible  { opacity: 1; pointer-events: auto; }
+.home-welcome-overlay--exit     { opacity: 0; pointer-events: none; }
+
+.home-welcome-card {
+  background: #1a1a1a;
+  border: 1.5px solid rgba(212,174,58,.5);
+  border-radius: 18px;
+  padding: 28px 24px 24px;
+  max-width: 340px; width: 100%;
+  display: flex; flex-direction: column; gap: 6px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(212,174,58,.12);
+}
+.home-welcome-label {
+  font-size: 11px; font-weight: 700; color: rgba(212,174,58,.7);
+  letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px;
+}
+.home-welcome-name  { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.2; }
+.home-welcome-kelas { font-size: 14px; font-weight: 600; color: rgba(212,174,58,.9); margin-top: 2px; }
+.home-welcome-school{ font-size: 13px; color: rgba(255,255,255,.6); font-weight: 400; }
+.home-welcome-desc  {
+  font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6;
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid rgba(212,174,58,.15);
+}
+.home-welcome-hint  { font-size: 11px; color: rgba(255,255,255,.3); margin-top: 4px; }
+
 .home-progress-bar-wrap {
   margin: 10px var(--sp-lg) 0;
   background: rgba(212,174,58,.08); border: 1px solid rgba(212,174,58,.2);

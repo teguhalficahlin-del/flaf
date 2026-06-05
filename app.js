@@ -387,6 +387,62 @@ async function _populateStartScreen() {
       exportManager.triggerManualExport();
     });
   }
+
+  _showWelcomeOverlay(session);
+}
+
+// ─── WELCOME OVERLAY ──────────────────────────────────────────────────────────
+
+function _showWelcomeOverlay(sess) {
+  if (!sess?.code) return;
+  const key = `flaf_welcomed_${sess.code}`;
+  if (localStorage.getItem(key)) return;
+  localStorage.setItem(key, '1');
+
+  const k      = sess.kelas;
+  const fase   = (!k || k === 'all') ? null : k <= 2 ? 'A' : k <= 4 ? 'B' : 'C';
+  const tp     = (!k || k === 'all') ? null : k <= 2 ? 9 : 11;
+  const kelasLine = (k && k !== 'all' && fase)
+    ? `Kelas ${k} · Fase ${fase}`
+    : '';
+  const tpLine = tp
+    ? `Siap membantu Anda mengajar Bahasa Inggris dengan ${tp} Tujuan Pembelajaran yang terstruktur.`
+    : 'Siap membantu Anda mengajar Bahasa Inggris.';
+
+  const overlay = document.createElement('div');
+  overlay.id = 'home-welcome-overlay';
+  overlay.className = 'home-welcome-overlay';
+  overlay.innerHTML = `
+    <div class="home-welcome-card">
+      <div class="home-welcome-label">SELAMAT DATANG DI FLAF</div>
+      <div class="home-welcome-name">${_escHTML(sess.name || '—')}</div>
+      ${kelasLine ? `<div class="home-welcome-kelas">${_escHTML(kelasLine)}</div>` : ''}
+      ${sess.school ? `<div class="home-welcome-school">${_escHTML(sess.school)}</div>` : ''}
+      <div class="home-welcome-desc">${_escHTML(tpLine)}</div>
+      <div class="home-welcome-hint">Tutup otomatis dalam 5 detik</div>
+    </div>
+  `;
+
+  overlay.addEventListener('click', () => _closeWelcomeOverlay(overlay));
+  document.body.appendChild(overlay);
+
+  // Fade in
+  requestAnimationFrame(() => overlay.classList.add('home-welcome-overlay--visible'));
+
+  setTimeout(() => _closeWelcomeOverlay(overlay), 5000);
+}
+
+function _closeWelcomeOverlay(overlay) {
+  if (!overlay || !overlay.parentNode) return;
+  overlay.classList.remove('home-welcome-overlay--visible');
+  overlay.classList.add('home-welcome-overlay--exit');
+  setTimeout(() => overlay.parentNode?.removeChild(overlay), 300);
+}
+
+function _escHTML(str) {
+  return String(str || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
 // ─── SCREEN: DASHBOARD ────────────────────────────────────────────────────────
