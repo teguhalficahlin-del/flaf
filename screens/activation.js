@@ -248,6 +248,8 @@ async function _finalizeActivation(data) {
     kelas     : data.kelas || 'all',
   });
 
+  localStorage.setItem('flaf_ever_activated', '1');
+
   return {
     success  : true,
     name     : data.name,

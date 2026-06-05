@@ -650,6 +650,9 @@ async function initApp() {
       btnMulaiText.textContent = 'Membuka…';
       console.log('[APP] navigasi →', session ? 's-start' : 's-activation');
       if (!session) {
+        if (localStorage.getItem('flaf_ever_activated')) {
+          showToast('Data mengajar Anda mungkin hilang karena browser membersihkan penyimpanan. Jika punya file backup, pulihkan setelah aktivasi ulang.', 8000);
+        }
         navigateTo('s-activation');
       } else {
         navigateTo('s-start');
@@ -659,6 +662,9 @@ async function initApp() {
     // Fallback jika elemen tidak ditemukan
     console.log('[APP] navigasi →', session ? 's-start' : 's-activation');
     if (!session) {
+      if (localStorage.getItem('flaf_ever_activated')) {
+        showToast('Data mengajar Anda mungkin hilang karena browser membersihkan penyimpanan. Jika punya file backup, pulihkan setelah aktivasi ulang.', 8000);
+      }
       navigateTo('s-activation');
     } else {
       navigateTo('s-start');
