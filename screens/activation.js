@@ -181,6 +181,10 @@ export async function activate({ name, school, code }) {
     return { success: false, error: 'DB_UNAVAILABLE' };
   }
 
+  if (!navigator.onLine) {
+    return { success: false, error: 'OFFLINE' };
+  }
+
   const deviceId = await _getOrCreateDeviceId();
 
   try {
@@ -301,6 +305,7 @@ const ERROR_MESSAGES = {
   CODE_FULL      : 'Kode ini sudah digunakan di 20 perangkat. Hubungi administrator.',
   SUPABASE_DOWN  : 'Server tidak dapat dihubungi. Silakan coba lagi.',
   DB_UNAVAILABLE : 'Penyimpanan tidak tersedia. Coba buka ulang di mode non-private.',
+  OFFLINE        : 'Tidak ada koneksi internet. Sambungkan ke Wi-Fi atau data seluler, lalu coba lagi.',
   UNKNOWN        : 'Terjadi kesalahan. Coba lagi.',
 };
 

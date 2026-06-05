@@ -128,7 +128,7 @@ export async function renderDashboard(container, opts = {}) {
     container.innerHTML = await _buildLandingHTML(session, kelasList, rekapMap, jejakStreak, jejakSummary);
   } catch (err) {
     console.error('[DASHBOARD] Render gagal:', err.message);
-    container.innerHTML = _buildErrorHTML(err.message);
+    container.innerHTML = _buildErrorHTML('Gagal memuat. Coba muat ulang halaman.');
   }
 }
 
@@ -1379,42 +1379,48 @@ window._refreshLogSetDinilai = async function(sesiId) {
 };
 
 window.dashSelesaiSesi = async function() {
-  _ttsStop();
+  const btn = _container?.querySelector('.ds-step-btn--selesai');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Menyimpan...'; }
+  try {
+    _ttsStop();
 
-  if (_skenario.openSiswaId) {
-    await _autoSaveSiswa(_skenario.openSiswaId);
-  }
-
-  await _loadNilaiCache();
-  const logSet  = await nilai.getSiswaDinilaiFromLog(_flow.rombel?.id, _flow.tp?.nomor);
-  const dinilai = _hitungSiswaDinilai(logSet);
-  const total   = (_flow.siswaList || []).length;
-
-  if (total > 0 && dinilai < total) {
-    const existingWarn = _container?.querySelector('#sesi-warn-banner');
-    if (!existingWarn) {
-      const stepBody = _container?.querySelector('#ds-step-body');
-      if (stepBody) {
-        const warn = document.createElement('div');
-        warn.id = 'sesi-warn-banner';
-        warn.className = 'ds-warn-banner';
-        warn.style.marginBottom = '10px';
-        warn.innerHTML = `
-          <div class="ds-warn-title">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
-          <div class="ds-warn-actions">
-            <button onclick="document.getElementById('sesi-warn-banner').remove()"
-              class="ds-warn-btn ds-warn-btn--cancel">← Batalkan</button>
-            <button onclick="dashKonfirmasiSelesai()"
-              class="ds-warn-btn ds-warn-btn--ok">Tetap Simpan</button>
-          </div>`;
-        stepBody.insertBefore(warn, stepBody.firstChild);
-        warn.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      return;
+    if (_skenario.openSiswaId) {
+      await _autoSaveSiswa(_skenario.openSiswaId);
     }
-  }
 
-  await _doSelesaiSesi();
+    await _loadNilaiCache();
+    const logSet  = await nilai.getSiswaDinilaiFromLog(_flow.rombel?.id, _flow.tp?.nomor);
+    const dinilai = _hitungSiswaDinilai(logSet);
+    const total   = (_flow.siswaList || []).length;
+
+    if (total > 0 && dinilai < total) {
+      const existingWarn = _container?.querySelector('#sesi-warn-banner');
+      if (!existingWarn) {
+        const stepBody = _container?.querySelector('#ds-step-body');
+        if (stepBody) {
+          const warn = document.createElement('div');
+          warn.id = 'sesi-warn-banner';
+          warn.className = 'ds-warn-banner';
+          warn.style.marginBottom = '10px';
+          warn.innerHTML = `
+            <div class="ds-warn-title">⚠ ${dinilai} dari ${total} siswa sudah dinilai</div>
+            <div class="ds-warn-actions">
+              <button onclick="document.getElementById('sesi-warn-banner').remove()"
+                class="ds-warn-btn ds-warn-btn--cancel">← Batalkan</button>
+              <button onclick="dashKonfirmasiSelesai()"
+                class="ds-warn-btn ds-warn-btn--ok">Tetap Simpan</button>
+            </div>`;
+          stepBody.insertBefore(warn, stepBody.firstChild);
+          warn.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        return;
+      }
+    }
+
+    await _doSelesaiSesi();
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '✓ Simpan & Selesai'; }
+  }
 };
 
 window.dashKonfirmasiSelesai = async function() {

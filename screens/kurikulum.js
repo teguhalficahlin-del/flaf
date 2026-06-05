@@ -283,7 +283,7 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
 
   } catch (err) {
     logger.error(SCREEN, '[kurikulum] render gagal', { error: err.message });
-    root.innerHTML = _buildErrorHTML(err.message);
+    root.innerHTML = _buildErrorHTML('Gagal memuat. Coba muat ulang halaman.');
   }
 }
 
