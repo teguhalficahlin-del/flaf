@@ -102,10 +102,40 @@ function init() {
         console.log('[DB] store created: presensi_log');
       }
       if (upgradeDB.objectStoreNames.contains('siswa_per_kelas')) {
+        try {
+          var spkStore   = event.target.transaction.objectStore('siswa_per_kelas');
+          var spkCount   = spkStore.count();
+          spkCount.onsuccess = function() {
+            if (spkCount.result > 0) {
+              console.warn(
+                '[FLAF DB] Store "siswa_per_kelas" dihapus saat upgrade ' +
+                'tapi masih berisi ' + spkCount.result + ' record. ' +
+                'Data ini tidak dapat dipulihkan.'
+              );
+            }
+          };
+        } catch (e) {
+          // Jika count gagal, tetap lanjut hapus
+        }
         upgradeDB.deleteObjectStore('siswa_per_kelas');
         console.log('[DB] store deleted: siswa_per_kelas');
       }
       if (upgradeDB.objectStoreNames.contains('obs_log')) {
+        try {
+          var obsStore  = event.target.transaction.objectStore('obs_log');
+          var obsCount  = obsStore.count();
+          obsCount.onsuccess = function() {
+            if (obsCount.result > 0) {
+              console.warn(
+                '[FLAF DB] Store "obs_log" dihapus saat upgrade ' +
+                'tapi masih berisi ' + obsCount.result + ' record. ' +
+                'Data ini tidak dapat dipulihkan.'
+              );
+            }
+          };
+        } catch (e) {
+          // Jika count gagal, tetap lanjut hapus
+        }
         upgradeDB.deleteObjectStore('obs_log');
         console.log('[DB] store deleted: obs_log');
       }
