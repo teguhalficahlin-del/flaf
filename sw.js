@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v145';         // ← bump: M9 cek versi backup selesai
+const CACHE_VERSION  = 'flaf-v146';         // ← bump: M10 pesan IDB blocked selesai
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
