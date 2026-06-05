@@ -751,15 +751,21 @@ function _bindNavigation() {
   _on('import-file-input', 'change', async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    try {
-      const result = await exportManager.importBackup(file);
-      showToast(`✓ Restore selesai: ${result.merged} record dimerge`);
-      dashboardRendered = false;
-      if (currentScreen === 's-dash') _initDashboard();
-    } catch (err) {
-      showToast(`Import gagal: ${err.message}`);
-    }
     e.target.value = '';
+    _confirmDialog(
+      `Mulai restore backup?\n\nFile: ${file.name}\nData lokal akan di-merge dengan isi file ini. Record yang lebih baru di file akan menimpa data lokal.`,
+      'Mulai Restore',
+      async () => {
+        try {
+          const result = await exportManager.importBackup(file);
+          showToast(`✓ Restore selesai: ${result.merged} record dimerge`);
+          dashboardRendered = false;
+          if (currentScreen === 's-dash') _initDashboard();
+        } catch (err) {
+          showToast(`Import gagal: ${err.message}`);
+        }
+      }
+    );
   });
 
   _on('btn-soft-update', 'click', () => window.__FLAF__?.softUpdate());
@@ -1158,6 +1164,24 @@ function showToast(message, duration = 3000) {
 
 function showStorageFullToast() {
   showToast('Penyimpanan HP hampir penuh. Hapus file atau foto yang tidak diperlukan.');
+}
+
+function _confirmDialog(pesan, labelKonfirmasi, onConfirm) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.6);';
+  overlay.innerHTML = `
+    <div style="background:#1E1E1E;border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px 20px;max-width:340px;width:92%;box-shadow:0 8px 32px rgba(0,0,0,.6);">
+      <div style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.6;margin-bottom:20px;white-space:pre-line;">${pesan}</div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;">
+        <button id="_flaf-confirm-batal" style="padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);font-size:13px;cursor:pointer;font-family:inherit;">Batal</button>
+        <button id="_flaf-confirm-ok" style="padding:8px 16px;border-radius:8px;border:none;background:#4A7C5E;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">${labelKonfirmasi}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+  const close = () => document.body.removeChild(overlay);
+  overlay.querySelector('#_flaf-confirm-batal').addEventListener('click', close);
+  overlay.querySelector('#_flaf-confirm-ok').addEventListener('click', () => { close(); onConfirm(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
 }
 
 // ─── SW UTILITY ───────────────────────────────────────────────────────────────
