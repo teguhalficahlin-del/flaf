@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v141';         // ← bump: M5 empty state informatif STS/SAS/Rapor selesai
+const CACHE_VERSION  = 'flaf-v142';         // ← bump: M6 guard CSV kosong selesai
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
