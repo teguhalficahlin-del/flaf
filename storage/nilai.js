@@ -135,14 +135,14 @@ async function tambahKelas(nama, tingkat) {
 }
 
 async function hapusKelas(kelasId) {
-  const list    = await getKelasList();
-  const newList = list.filter(k => k.id !== kelasId);
-  await db.set(STORE, 'kelas_list', newList);
   const siswaList = await getSiswaList(kelasId);
   for (const s of siswaList) {
     await _hapusNilaiSiswa(kelasId, s.id);
   }
   await db.remove(STORE, `siswa_${kelasId}`);
+  const list    = await getKelasList();
+  const newList = list.filter(k => k.id !== kelasId);
+  await db.set(STORE, 'kelas_list', newList);
 }
 
 // --- SISWA -------------------------------------------------------------------
@@ -187,10 +187,10 @@ async function tambahSiswaBatch(kelasId, namaBatch) {
 }
 
 async function hapusSiswa(kelasId, siswaId) {
+  await _hapusNilaiSiswa(kelasId, siswaId);
   const list    = await getSiswaList(kelasId);
   const newList = list.filter(s => s.id !== siswaId);
   await db.set(STORE, `siswa_${kelasId}`, newList);
-  await _hapusNilaiSiswa(kelasId, siswaId);
 }
 
 // --- NILAI CORE --------------------------------------------------------------
