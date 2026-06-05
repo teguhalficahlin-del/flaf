@@ -588,7 +588,16 @@ async function initApp() {
   //   [DB] init success
   let idbOk = false;
   try {
-    await db.init();
+    await db.init(() => {
+      _updateSplashStatus(
+        'FLAF sedang dibuka di tab lain.\n' +
+        'Tutup tab FLAF yang lain, lalu muat ulang halaman ini.'
+      );
+      showToast(
+        'Ada tab FLAF lain yang terbuka. Tutup tab lain dan muat ulang.',
+        8000
+      );
+    });
     idbOk = true;
     console.log('[APP] IndexedDB siap');
   } catch (err) {
@@ -1311,7 +1320,12 @@ function _wait(ms) {
 
 function _updateSplashStatus(text) {
   const el = document.getElementById('splash-status');
-  if (el) el.textContent = text;
+  if (el) {
+    el.textContent = text;
+    el.style.display = 'block';
+  } else {
+    showToast(text, 8000);
+  }
 }
 
 // ─── PUBLIC API ───────────────────────────────────────────────────────────────

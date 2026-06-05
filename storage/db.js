@@ -47,7 +47,7 @@ let _ready       = false;
  *   [DB] upgrade needed  (hanya saat pertama / upgrade versi)
  *   [DB] init success
  */
-function init() {
+function init(onBlocked) {
   if (_initPromise) return _initPromise;
 
   _initPromise = new Promise(function(resolve, reject) {
@@ -190,6 +190,7 @@ function init() {
 
     req.onblocked = function() {
       console.warn('[DB] init blocked — ada tab lain yang masih pakai versi lama. Tutup tab lain dan reload.');
+      if (typeof onBlocked === 'function') onBlocked();
     };
   });
 
