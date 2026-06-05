@@ -352,3 +352,41 @@
 @media (min-width: 400px) {
   .nv-tp-chip { width: 36px; height: 36px; font-size: 11px; }
 }
+
+/* === Empty State === */
+.nv-empty {
+  padding: 48px 24px;
+  text-align: center;
+}
+.nv-empty-icon {
+  font-size: 40px;
+  margin-bottom: 14px;
+}
+.nv-empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary, rgba(255,255,255,.9));
+  margin-bottom: 8px;
+}
+.nv-empty-desc {
+  font-size: 13px;
+  color: var(--text-secondary, rgba(255,255,255,.5));
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.nv-empty-btn {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.4);
+  background: transparent;
+  color: rgba(255,255,255,.6);
+  -webkit-tap-highlight-color: transparent;
+}
+.nv-empty-btn:active {
+  background: rgba(255,255,255,.1);
+}

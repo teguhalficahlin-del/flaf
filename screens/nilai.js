@@ -57,6 +57,17 @@ function showConfirmDialog(pesan, onConfirm) {
   overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
 }
 
+function _nvEmptySiswa() {
+  return `
+    <div class="nv-empty">
+      <div class="nv-empty-icon">👥</div>
+      <div class="nv-empty-title">Belum ada siswa</div>
+      <div class="nv-empty-desc">Tambahkan siswa ke rombel ini terlebih dahulu.</div>
+      <button class="nv-empty-btn" data-action="kelola-siswa">Kelola Siswa</button>
+    </div>
+  `;
+}
+
 function _escape(str) {
   if (!str) return '';
   return String(str)
@@ -305,9 +316,8 @@ async function _renderSTS(token) {
         opacity:${page >= totalPage - 1 ? '0.3' : '1'};cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};">›</button>
     </div>`;
 
-  const barisHTML = filtered.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : navHTML + pageItems.map(s => {
+  const barisHTML = filtered.length === 0 ? _nvEmptySiswa()
+  : navHTML + pageItems.map(s => {
     const sts = stsMap[s.id];
     const val = sts !== null && sts !== undefined ? sts : '';
     return `
@@ -373,9 +383,8 @@ async function _renderSAS(token) {
       style="width:52px;height:44px;border-radius:10px;border:2px solid #D4AE3A;background:rgba(212,174,58,.1);color:#D4AE3A;font-size:22px;font-weight:700;cursor:${page >= totalPage - 1 ? 'default' : 'pointer'};opacity:${page >= totalPage - 1 ? '0.3' : '1'};">›</button>
   </div>`;
 
-  const barisHTML = filtered.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : navHTML + pageItems.map(s => {
+  const barisHTML = filtered.length === 0 ? _nvEmptySiswa()
+  : navHTML + pageItems.map(s => {
     const sas = sasMap[s.id];
     const val = sas !== null && sas !== undefined ? sas : '';
     return `
@@ -458,9 +467,8 @@ async function _renderRapor(token) {
       opacity:${page >= totalPage - 1 ? '0.3' : '1'};">›</button>
   </div>`;
 
-  const barisHTML = siswaList.length === 0 ? `
-    <div style="padding:32px;text-align:center;font-size:13px;color:rgba(255,255,255,.5);">Belum ada siswa.</div>
-  ` : navHTML + pageItems.map(s => _raporRowHTML(s)).join('');
+  const barisHTML = siswaList.length === 0 ? _nvEmptySiswa()
+  : navHTML + pageItems.map(s => _raporRowHTML(s)).join('');
 
   _container.innerHTML = `
 <div class="nv-wrap">
@@ -1235,6 +1243,9 @@ function _bindNilaiDelegatedEvents(container) {
         break;
       case 'download-formatif':
         window.nilaiDownloadFormatif1(el.dataset.kelasId, el.dataset.kelasNama, Number(el.dataset.nomor), el.dataset.tpNama);
+        break;
+      case 'kelola-siswa':
+        _renderModalKelolaSiswa();
         break;
     }
   });
