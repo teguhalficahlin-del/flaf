@@ -1427,9 +1427,9 @@ async function _doSelesaiSesi() {
     jejakOk = false;
   }
 
-  if (tp?.nomor) {
+  if (tp?.id) {
     try {
-      await db.set('teacher_data', `progress_tp_${tp.nomor}`, {
+      await db.set('teacher_data', `progress_tp_${tp.id}_${rombel?.id}`, {
         status      : 'selesai',
         rombel_id   : rombel?.id   || null,
         rombel_nama : rombel?.nama || null,

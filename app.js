@@ -303,7 +303,7 @@ async function _populateStartScreen() {
     const all = await db.getAll('teacher_data');
     let selesai = 0;
     for (const { key, value } of all) {
-      if (/^progress_tp_\d+$/.test(key) && value?.status === 'selesai') selesai++;
+      if (/^progress_tp_tp-\d+_/.test(key) && value?.status === 'selesai') selesai++;
     }
     const totalTP = _totalTP(session?.kelas ?? 1);
     // Update deskripsi card Dokumen Kurikulum
