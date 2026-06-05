@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v139';         // ← bump: fix UX medium priority — double-submit, error message, offline check
+const CACHE_VERSION  = 'flaf-v140';         // ← bump: M4 alert/confirm native diganti showToast dan dialog FLAF
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
