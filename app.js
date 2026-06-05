@@ -72,8 +72,6 @@ window.onunhandledrejection = function(event) {
   );
 };
 
-window.db = db;
-
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 const SW_PATH       = './sw.js';
