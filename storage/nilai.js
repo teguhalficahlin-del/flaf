@@ -54,7 +54,46 @@
 
 import { db } from './db.js';
 
-const STORE = 'nilai_data';
+const STORE      = 'nilai_data';
+const DB_NAME    = 'flaf_db';
+const DB_VERSION = 10;
+
+/**
+ * Atomic read-modify-write helper.
+ * Membuka satu transaksi IDB: get → updateFn(record) → put.
+ * Tidak ada await di antara get dan put — race-condition-safe.
+ */
+function _atomicUpdate(idbKey, updateFn) {
+  return new Promise(function(resolve, reject) {
+    var openReq = indexedDB.open(DB_NAME, DB_VERSION);
+    openReq.onerror = function() { reject(openReq.error); };
+    openReq.onsuccess = function(event) {
+      var idb = event.target.result;
+      try {
+        var tx       = idb.transaction(STORE, 'readwrite');
+        var objStore = tx.objectStore(STORE);
+        var getReq   = objStore.get(idbKey);
+
+        getReq.onsuccess = function() {
+          try {
+            var updated = updateFn(getReq.result || {});
+            objStore.put(updated, idbKey);
+          } catch (err) {
+            tx.abort();
+            reject(err);
+          }
+        };
+        getReq.onerror = function() { reject(getReq.error); };
+
+        tx.oncomplete = function() { resolve(); };
+        tx.onabort    = function() { reject(tx.error || new Error('Transaksi nilai dibatalkan')); };
+        tx.onerror    = function() { reject(tx.error); };
+      } catch (err) {
+        reject(err);
+      }
+    };
+  });
+}
 
 // --- HELPERS -----------------------------------------------------------------
 
@@ -210,14 +249,12 @@ async function getNilaiKelas(kelasId) {
 // --- NILAI SET ---------------------------------------------------------------
 
 async function setNilai(kelasId, siswaId, tpNomor, nilaiAngka) {
-  const record = await _getNilaiRecord(kelasId, siswaId);
-  const key    = `tp_${tpNomor}`;
-  record[key]  = {
-    ...(record[key] || {}),
-    nilai     : _clampNilai(nilaiAngka),
-    updated_at: new Date().toISOString(),
-  };
-  await db.set(STORE, _nilaiKey(kelasId, siswaId), record);
+  const tpKey = `tp_${tpNomor}`;
+  const clamp = _clampNilai(nilaiAngka);
+  return _atomicUpdate(_nilaiKey(kelasId, siswaId), function(record) {
+    record[tpKey] = { ...(record[tpKey] || {}), nilai: clamp, updated_at: new Date().toISOString() };
+    return record;
+  });
 }
 
 async function setNilaiLSR(kelasId, siswaId, tpNomor, l, s, r) {
@@ -225,29 +262,20 @@ async function setNilaiLSR(kelasId, siswaId, tpNomor, l, s, r) {
   const cs     = _clampNilai(s);
   const cr     = _clampNilai(r);
   const rerata = _hitungRerata(cl, cs, cr);
-  const record = await _getNilaiRecord(kelasId, siswaId);
-  const key    = `tp_${tpNomor}`;
-  record[key]  = {
-    ...(record[key] || {}),
-    nilai_l   : cl,
-    nilai_s   : cs,
-    nilai_r   : cr,
-    nilai     : rerata,
-    updated_at: new Date().toISOString(),
-  };
-  await db.set(STORE, _nilaiKey(kelasId, siswaId), record);
+  const tpKey  = `tp_${tpNomor}`;
+  return _atomicUpdate(_nilaiKey(kelasId, siswaId), function(record) {
+    record[tpKey] = { ...(record[tpKey] || {}), nilai_l: cl, nilai_s: cs, nilai_r: cr, nilai: rerata, updated_at: new Date().toISOString() };
+    return record;
+  });
 }
 
 async function setCatatan(kelasId, siswaId, tpNomor, teks) {
-  const record = await _getNilaiRecord(kelasId, siswaId);
-  const key    = `tp_${tpNomor}`;
-  const bersih = String(teks || '').trim().slice(0, 500);
-  record[key]  = {
-    ...(record[key] || {}),
-    catatan   : bersih || null,
-    updated_at: new Date().toISOString(),
-  };
-  await db.set(STORE, _nilaiKey(kelasId, siswaId), record);
+  const tpKey  = `tp_${tpNomor}`;
+  const bersih = String(teks || '').trim().slice(0, 500) || null;
+  return _atomicUpdate(_nilaiKey(kelasId, siswaId), function(record) {
+    record[tpKey] = { ...(record[tpKey] || {}), catatan: bersih, updated_at: new Date().toISOString() };
+    return record;
+  });
 }
 
 // --- ASESMEN FORMATIF --------------------------------------------------------
@@ -294,29 +322,20 @@ async function setNilaiFormatif(kelasId, siswaId, tpNomor, l, s, r) {
   const cs     = _clampNilai(s);
   const cr     = _clampNilai(r);
   const rerata = _hitungRerata(cl, cs, cr);
-  const record = await _getNilaiRecord(kelasId, siswaId);
-  const key    = `tp_${tpNomor}`;
-  record[key]  = {
-    ...(record[key] || {}),
-    formatif_l : cl,
-    formatif_s : cs,
-    formatif_r : cr,
-    formatif   : rerata,
-    updated_at : new Date().toISOString(),
-  };
-  await db.set(STORE, _nilaiKey(kelasId, siswaId), record);
+  const tpKey  = `tp_${tpNomor}`;
+  return _atomicUpdate(_nilaiKey(kelasId, siswaId), function(record) {
+    record[tpKey] = { ...(record[tpKey] || {}), formatif_l: cl, formatif_s: cs, formatif_r: cr, formatif: rerata, updated_at: new Date().toISOString() };
+    return record;
+  });
 }
 
 async function setCatatanFormatif(kelasId, siswaId, tpNomor, teks) {
-  const record = await _getNilaiRecord(kelasId, siswaId);
-  const key    = `tp_${tpNomor}`;
-  const bersih = String(teks || '').trim().slice(0, 500);
-  record[key]  = {
-    ...(record[key] || {}),
-    formatif_catatan: bersih || null,
-    updated_at      : new Date().toISOString(),
-  };
-  await db.set(STORE, _nilaiKey(kelasId, siswaId), record);
+  const tpKey  = `tp_${tpNomor}`;
+  const bersih = String(teks || '').trim().slice(0, 500) || null;
+  return _atomicUpdate(_nilaiKey(kelasId, siswaId), function(record) {
+    record[tpKey] = { ...(record[tpKey] || {}), formatif_catatan: bersih, updated_at: new Date().toISOString() };
+    return record;
+  });
 }
 
 /**
