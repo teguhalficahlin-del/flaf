@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v137';         // ← bump: tunda skipWaiting jika sesi aktif
+const CACHE_VERSION  = 'flaf-v138';         // ← bump: ganti onclick IDB data dengan data-attribute delegation
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
