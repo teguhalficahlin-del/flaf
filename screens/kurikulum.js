@@ -307,7 +307,7 @@ function _buildKurikulumHTML(fase, tps, meta, kelasList, sessionKelas) {
   return `
     <div class="kur-wrap">
 
-      ${_buildHeaderHTML(meta)}
+      ${_buildHeaderHTML(meta, sessionKelas)}
       ${_buildTPListHTML(tps, kelasList, sessionKelas)}
       ${_buildATPHTML(tps, meta, fase)}
       ${_buildCPHTML(fase.cp)}
@@ -337,14 +337,16 @@ function _kurTtsSpeak(teks, btnEl) {
 }
 
 // ── Header ────────────────────────────────────────────────
-function _buildHeaderHTML(meta) {
-  const totalTP = meta.total_tp;
+function _buildHeaderHTML(meta, sessionKelas) {
+  const k          = parseInt(sessionKelas, 10);
+  const kelasLabel = (!k || sessionKelas === 'all') ? meta.kelas : `Kelas ${k} SD`;
+  const totalTP    = (!k || sessionKelas === 'all') ? meta.total_tp : (k <= 2 ? 9 : 11);
   return `
     <div class="kur-header">
       <div class="kur-header-title">
         <span class="kur-fase-badge">Fase ${_esc(meta.fase)}</span>
         <span class="kur-mapel">Bahasa Inggris</span>
-        <span class="kur-kelas">${_esc(meta.kelas)}</span>
+        <span class="kur-kelas">${_esc(kelasLabel)}</span>
       </div>
       <div class="kur-header-stats">
         <div class="kur-stat">
