@@ -120,6 +120,21 @@ export const exportManager = {
       backupFile : backupResult?.filename || null,
     };
 
+    // Post-merge: union kelas_list — mergeStore tidak bisa merge array,
+    // sehingga rombel dari backup yang id-nya belum ada di lokal ditambahkan di sini.
+    const NILAI_STORE = 'nilai_data';
+    const KELAS_KEY   = 'kelas_list';
+    const backupList  = parsed?.nilai_data?.[KELAS_KEY];
+    if (Array.isArray(backupList) && backupList.length > 0) {
+      const lokalList = (await db.get(NILAI_STORE, KELAS_KEY)) || [];
+      const lokalIds  = new Set(lokalList.map(k => k.id));
+      const tambahan  = backupList.filter(k => k?.id && !lokalIds.has(k.id));
+      if (tambahan.length > 0) {
+        await db.set(NILAI_STORE, KELAS_KEY, [...lokalList, ...tambahan]);
+        result.merged += tambahan.length;
+      }
+    }
+
     if (typeof onSummary === 'function') {
       try { onSummary(result); } catch {}
     }
