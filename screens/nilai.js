@@ -683,40 +683,50 @@ async function _flushSemuaSTS() {
 }
 
 window.nilaiSimpanSAS = async function() {
-  const siswaList = await nilai.getSiswaList(_state.kelasId);
-  let saved = 0, clamped = 0;
-  for (const s of siswaList) {
-    const raw = document.getElementById(`sas-${s.id}`)?.value.trim();
-    if (!raw) continue;
-    const n = parseInt(raw); if (isNaN(n)) continue;
-    const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
-    await nilai.setNilaiSAS(_state.kelasId, s.id, _state.semester, v);
-    saved++;
-  }
-  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
   const btn = document.querySelector('button[onclick="nilaiSimpanSAS()"]');
-  if (btn) {
-    btn.textContent = `✓ Tersimpan (${saved})`;
-    setTimeout(() => { btn.textContent = 'SIMPAN NILAI AS'; }, 2000);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Menyimpan...'; }
+  try {
+    const siswaList = await nilai.getSiswaList(_state.kelasId);
+    let saved = 0, clamped = 0;
+    for (const s of siswaList) {
+      const raw = document.getElementById(`sas-${s.id}`)?.value.trim();
+      if (!raw) continue;
+      const n = parseInt(raw); if (isNaN(n)) continue;
+      const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
+      await nilai.setNilaiSAS(_state.kelasId, s.id, _state.semester, v);
+      saved++;
+    }
+    if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
+    if (btn) {
+      btn.textContent = `✓ Tersimpan (${saved})`;
+      setTimeout(() => { btn.textContent = 'SIMPAN NILAI AS'; }, 2000);
+    }
+  } finally {
+    if (btn) btn.disabled = false;
   }
 };
 
 window.nilaiSimpanSTS = async function() {
-  const siswaList = await nilai.getSiswaList(_state.kelasId);
-  let saved = 0, clamped = 0;
-  for (const s of siswaList) {
-    const raw = document.getElementById(`sts-${s.id}`)?.value.trim();
-    if (!raw) continue;
-    const n = parseInt(raw); if (isNaN(n)) continue;
-    const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
-    await nilai.setNilaiSumatif(_state.kelasId, s.id, _state.semester, v);
-    saved++;
-  }
-  if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
   const btn = document.querySelector('button[onclick="nilaiSimpanSTS()"]');
-  if (btn) {
-    btn.textContent = `✓ Tersimpan (${saved})`;
-    setTimeout(() => { btn.textContent = 'SIMPAN NILAI STS'; }, 2000);
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Menyimpan...'; }
+  try {
+    const siswaList = await nilai.getSiswaList(_state.kelasId);
+    let saved = 0, clamped = 0;
+    for (const s of siswaList) {
+      const raw = document.getElementById(`sts-${s.id}`)?.value.trim();
+      if (!raw) continue;
+      const n = parseInt(raw); if (isNaN(n)) continue;
+      const v = Math.max(0, Math.min(100, n)); if (v !== n) clamped++;
+      await nilai.setNilaiSumatif(_state.kelasId, s.id, _state.semester, v);
+      saved++;
+    }
+    if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
+    if (btn) {
+      btn.textContent = `✓ Tersimpan (${saved})`;
+      setTimeout(() => { btn.textContent = 'SIMPAN NILAI STS'; }, 2000);
+    }
+  } finally {
+    if (btn) btn.disabled = false;
   }
 };
 // --- LEVEL 3: SUB-LAYAR UNDUH & CETAK ----------------------------------------

@@ -1395,6 +1395,10 @@ async function _doSelesaiSesi() {
   const dinilai = _hitungSiswaDinilai(_flow.logSetDinilai);
   const total   = (_flow.siswaList || []).length;
 
+  let presensiOk = true;
+  let jejakOk    = true;
+  let progressOk = true;
+
   if (Object.keys(_flow.statusMap).length > 0) {
     try {
       await presensi.simpan({
@@ -1407,6 +1411,7 @@ async function _doSelesaiSesi() {
       });
     } catch (err) {
       console.warn('[DASHBOARD] presensi.simpan gagal:', err.message);
+      presensiOk = false;
     }
   }
 
@@ -1419,6 +1424,7 @@ async function _doSelesaiSesi() {
     });
   } catch (err) {
     console.warn('[DASHBOARD] jejak.log gagal:', err.message);
+    jejakOk = false;
   }
 
   if (tp?.nomor) {
@@ -1431,6 +1437,7 @@ async function _doSelesaiSesi() {
       });
     } catch (e) {
       console.warn('[DASHBOARD] progress_tp write gagal:', e.message);
+      progressOk = false;
     }
   }
 
@@ -1441,10 +1448,17 @@ async function _doSelesaiSesi() {
   if (window.__FLAF_NAV__) window.__FLAF_NAV__._setJejakDirty?.();
 
   if (window.__FLAF__?.showToast) {
-    window.__FLAF__.showToast(
-      `✓ Sesi selesai · ${_ringkasan.rombel} · TP ${String(_ringkasan.tp).padStart(2,'0')} · ${_ringkasan.hadir}/${_ringkasan.siswa} hadir · ${_ringkasan.dinilai} dinilai`,
-      5000
-    );
+    if (!presensiOk || !jejakOk || !progressOk) {
+      window.__FLAF__.showToast(
+        'Sesi selesai, tapi sebagian data gagal tersimpan. Coba periksa presensi dan jejak mengajar.',
+        6000
+      );
+    } else {
+      window.__FLAF__.showToast(
+        `✓ Sesi selesai · ${_ringkasan.rombel} · TP ${String(_ringkasan.tp).padStart(2,'0')} · ${_ringkasan.hadir}/${_ringkasan.siswa} hadir · ${_ringkasan.dinilai} dinilai`,
+        5000
+      );
+    }
   }
 }
 
