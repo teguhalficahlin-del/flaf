@@ -1667,6 +1667,44 @@ Kelas 1 sudah ditest, Kelas 2–6 pending.
 
 ---
 
+### Sprint Audit Kode Kelas 1–6 ✅ CLOSED (Juni 2026)
+
+Audit kode statis untuk semua 6 kelas menggunakan dokumen audit 89 item
+(15 kategori A–O). Metode: Claude Code membaca kodebase dan menentukan
+status tiap item (✅ OK dari kode / ⚠️ Verifikasi manual / ❌ Bug).
+
+**Hasil per kelas:**
+- Kelas 1: diaudit sesi sebelumnya
+- Kelas 2: 32 OK, 55 verifikasi manual, 0 bug
+- Kelas 3: 33 OK, 55 verifikasi manual, 1 bug (N3 header kelas)
+- Kelas 4: 34 OK, 55 verifikasi manual, 0 bug
+- Kelas 5: 34 OK, 55 verifikasi manual, 0 bug
+- Kelas 6: 34 OK, 55 verifikasi manual, 0 bug
+
+**Bug yang ditemukan dan sudah difix:**
+1. B1 — `index.html:155`: label fase hardcoded → fix: `a7f3e32`
+2. B2/B3 — `index.html:156`: total TP hardcoded → fix: `a7f3e32`
+3. A2 — `app.js:422`: kelas hilang dari session saat aktivasi pertama → fix: `efa36dd`
+4. B2 — `app.js:274`: `_totalTP` mengembalikan per fase bukan per kelas → fix: `09239df`
+5. N3 — `data/fase-b.js:26`: `meta.kelas = '3-4'` inkonsisten →
+   fix: header kurikulum diubah dinamis per session (`4804f3d`)
+
+**Fitur baru yang ditambahkan selama sprint:**
+- Header home screen: "Halo," dihapus, emoji dihapus, baris kelas
+  ditambahkan → commit `da9ffd9`
+- Overlay sambutan sekali pakai saat pertama aktivasi → commit `797a571`
+- Header kurikulum menampilkan kelas dan TP spesifik per session
+  (bukan per fase) → commit `4804f3d`
+
+**SW aktif:** v124. Semua commit sudah di-push ke main.
+
+**Status verifikasi manual:**
+55 item per kelas masih perlu diverifikasi di browser — semua item
+yang membutuhkan interaksi UI, audio, dan download file.
+Uji manual Kelas 2 sudah dimulai (38 item lolos, 19 item pending).
+
+---
+
 ## NEXT TASK — Fix Pembatasan Akses Per Guru (Pre-Onboarding)
 
 **Status: BELUM dikerjakan — tahan sampai sebelum guru pertama onboard**
