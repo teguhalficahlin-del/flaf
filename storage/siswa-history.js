@@ -5,11 +5,15 @@
  *   savePenilaian(kelasId, tpNomor, sesiId, mode, entries) → Promise<void>
  */
 
-import { db } from './db.js';
+const DB_NAME    = 'flaf_db';
+const DB_VERSION = 10;
 
 /**
  * Simpan hasil penilaian proses per siswa per sesi (Fase 12).
  * Dipanggil dari overlay penilaian di sesi-runtime.js saat guru tap Simpan.
+ *
+ * Seluruh batch ditulis dalam SATU transaksi IDB — atomic.
+ * Error di-propagate ke caller tanpa ditangkap di sini.
  *
  * Mode Cepat  : capaian = 85|75|65, l/s/r = null
  * Mode Detail : capaian = null, l/s/r = 0–100
@@ -32,26 +36,44 @@ import { db } from './db.js';
 export async function savePenilaian(kelasId, tpNomor, sesiId, mode, entries) {
   if (!kelasId || !tpNomor || !sesiId || !entries?.length) return;
   const STORE = 'penilaian_log';
-  try {
-    const now = Date.now();
-    for (const entry of entries) {
-      const key = `${kelasId}_${tpNomor}_${sesiId}_${entry.siswaId}`;
-      await db.set(STORE, key, {
-        kelasId,
-        siswaId  : entry.siswaId,
-        tpNomor,
-        sesiId,
-        mode,
-        capaian  : entry.capaian  ?? null,
-        l        : entry.l        ?? null,
-        s        : entry.s        ?? null,
-        r        : entry.r        ?? null,
-        perilaku : entry.perilaku ?? null,
-        alasan   : entry.alasan   ?? null,
-        createdAt: now,
-      });
-    }
-  } catch (e) {
-    console.warn('[SISWA-HISTORY] savePenilaian gagal:', e.message);
-  }
+  const now   = Date.now();
+
+  return new Promise(function(resolve, reject) {
+    var openReq = indexedDB.open(DB_NAME, DB_VERSION);
+
+    openReq.onerror = function() { reject(openReq.error); };
+
+    openReq.onsuccess = function(event) {
+      var idb = event.target.result;
+      try {
+        var tx    = idb.transaction(STORE, 'readwrite');
+        var store = tx.objectStore(STORE);
+
+        for (var i = 0; i < entries.length; i++) {
+          var entry = entries[i];
+          var key   = kelasId + '_' + tpNomor + '_' + sesiId + '_' + entry.siswaId;
+          store.put({
+            kelasId,
+            siswaId  : entry.siswaId,
+            tpNomor,
+            sesiId,
+            mode,
+            capaian  : entry.capaian  ?? null,
+            l        : entry.l        ?? null,
+            s        : entry.s        ?? null,
+            r        : entry.r        ?? null,
+            perilaku : entry.perilaku ?? null,
+            alasan   : entry.alasan   ?? null,
+            createdAt: now,
+          }, key);
+        }
+
+        tx.oncomplete = function() { resolve(); };
+        tx.onabort    = function() { reject(tx.error || new Error('Transaksi penilaian dibatalkan')); };
+        tx.onerror    = function() { reject(tx.error); };
+      } catch (err) {
+        reject(err);
+      }
+    };
+  });
 }

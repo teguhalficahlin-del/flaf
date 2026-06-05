@@ -1198,6 +1198,7 @@ async function _renderPenilaianOverlay() {
       } catch (e) {
         console.error('[SR] savePenilaian gagal:', e);
         if (e.name === 'QuotaExceededError') window.__FLAF__?.showStorageFullToast();
+        window.__FLAF__?.showToast('Penilaian gagal disimpan. Coba ulangi sebelum menutup sesi.', 6000);
         if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
         let errEl = overlay.querySelector('#sr-pn-err');
         if (!errEl) {
