@@ -126,8 +126,8 @@ async function _renderRombel(token) {
           <div class="nv-rombel-name">${_escape(k.nama)}</div>          
         </div>
         <div class="nv-rombel-actions">
-          <button onclick="nilaiPilihRombel('${k.id}','${_escape(k.nama)}',${k.tingkat || 1})" class="nv-btn nv-btn--gold">Buka →</button>
-          <button onclick="nilaiHapusKelas('${k.id}','${_escape(k.nama)}')" class="nv-btn" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.5);">🗑</button>
+          <button data-action="pilih-rombel" data-id="${k.id}" data-nama="${_escape(k.nama)}" data-tingkat="${k.tingkat || 1}" class="nv-btn nv-btn--gold">Buka →</button>
+          <button data-action="hapus-kelas" data-id="${k.id}" data-nama="${_escape(k.nama)}" class="nv-btn" style="border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.5);">🗑</button>
         </div>
       </div>
       <div class="nv-stat-grid nv-stat-grid--2col">
@@ -486,7 +486,7 @@ async function _renderModalKelolaSiswa() {
       ${existing.map(s => `
         <div class="nv-siswa-list-item">
           <div class="nv-siswa-list-name">${s.nomor}. ${_escape(s.nama)}</div>
-          <button onclick="nilaiHapusSiswaModal('${s.id}','${_escape(s.nama)}')" class="nv-siswa-hapus-btn">Hapus</button>
+          <button data-action="hapus-siswa" data-id="${s.id}" data-nama="${_escape(s.nama)}" class="nv-siswa-hapus-btn">Hapus</button>
         </div>
       `).join('')}
     </div>
@@ -510,6 +510,11 @@ async function _renderModalKelolaSiswa() {
       <button onclick="nilaiSimpanSiswaBaru()" class="nv-btn-simpan" style="margin-top:10px;">SIMPAN DAFTAR SISWA</button>
     </div>
   `;
+  modal.addEventListener('click', e => {
+    const el = e.target.closest('[data-action="hapus-siswa"]');
+    if (!el) return;
+    window.nilaiHapusSiswaModal(el.dataset.id, el.dataset.nama);
+  });
   document.body.appendChild(modal);
 }
 
@@ -735,8 +740,14 @@ async function _renderUnduh(token) {
   const tpList = _tpList(_state.tingkat);
   if (token !== _renderToken) return;
 
-  const _tpItemHTML = (tp, onclickFn) => `
-    <div class="nv-tp-item" onclick="${onclickFn}" style="cursor:pointer;">
+  const _tpItemHTML = (tp) => `
+    <div class="nv-tp-item"
+         data-action="download-formatif"
+         data-kelas-id="${_state.kelasId}"
+         data-kelas-nama="${_escape(_state.kelasNama)}"
+         data-nomor="${tp.nomor}"
+         data-tp-nama="${_escape(tp.nama)}"
+         style="cursor:pointer;">
       <div style="flex:1;min-width:0;">
         <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
         <div class="nv-tp-name">${_escape(tp.nama)}</div>
@@ -744,9 +755,7 @@ async function _renderUnduh(token) {
       <div style="color:rgba(212,174,58,.7);font-size:16px;flex-shrink:0;">⬇</div>
     </div>`;
 
-  const formatifHTML = tpList.map(tp =>
-    _tpItemHTML(tp, `nilaiDownloadFormatif1('${_state.kelasId}','${_escape(_state.kelasNama)}',${tp.nomor},'${_escape(tp.nama)}')`
-  )).join('');
+  const formatifHTML = tpList.map(tp => _tpItemHTML(tp)).join('');
 
   _container.innerHTML = `
 <div class="nv-wrap">
@@ -835,7 +844,7 @@ async function _renderUnduh(token) {
 
   <!-- Kehadiran -->
   <div class="nv-card nv-card--inset nv-card--overflow">
-    <div onclick="nilaiDownloadKehadiran('${_state.kelasId}','${_escape(_state.kelasNama)}')" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+    <div data-action="download-kehadiran" data-kelas-id="${_state.kelasId}" data-kelas-nama="${_escape(_state.kelasNama)}" style="cursor:pointer;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
       <div style="flex:1;min-width:0;">
         <div style="font-size:14px;font-weight:700;color:#fff;">Rekap Kehadiran</div>
         <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;">Unduh rekap</div>
@@ -1184,9 +1193,33 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
 
 // --- ENTRY POINT -------------------------------------------------------------
 
+function _bindNilaiDelegatedEvents(container) {
+  if (container.dataset.delegatesBound) return;
+  container.dataset.delegatesBound = '1';
+  container.addEventListener('click', e => {
+    const el = e.target.closest('[data-action]');
+    if (!el) return;
+    switch (el.dataset.action) {
+      case 'pilih-rombel':
+        window.nilaiPilihRombel(el.dataset.id, el.dataset.nama, Number(el.dataset.tingkat));
+        break;
+      case 'hapus-kelas':
+        window.nilaiHapusKelas(el.dataset.id, el.dataset.nama);
+        break;
+      case 'download-kehadiran':
+        window.nilaiDownloadKehadiran(el.dataset.kelasId, el.dataset.kelasNama);
+        break;
+      case 'download-formatif':
+        window.nilaiDownloadFormatif1(el.dataset.kelasId, el.dataset.kelasNama, Number(el.dataset.nomor), el.dataset.tpNama);
+        break;
+    }
+  });
+}
+
 export async function renderNilaiScreen(container) {
   if (!container) return;
   _container = container;
+  _bindNilaiDelegatedEvents(container);
   _state = { view:'rombel', kelasId:null, kelasNama:null, tingkat:1, tpNomor:null, tpNama:null };
   document.getElementById('modal-kelola-siswa')?.remove();
   document.getElementById('modal-tambah-rombel')?.remove();

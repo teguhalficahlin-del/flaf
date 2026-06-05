@@ -79,9 +79,36 @@ function _getFaseData(tp, stepIndex) {
 
 // --- PUBLIC API --------------------------------------------------------------
 
+function _bindDelegatedEvents(container) {
+  if (container.dataset.delegatesBound) return;
+  container.dataset.delegatesBound = '1';
+  container.addEventListener('click', e => {
+    const el = e.target.closest('[data-action]');
+    if (!el) return;
+    switch (el.dataset.action) {
+      case 'pilih-rombel':
+        window.dashPilihRombel(el.dataset.id, el.dataset.nama, Number(el.dataset.tingkat));
+        break;
+      case 'pilih-tp':
+        window.dashPilihTP(el.dataset.id, Number(el.dataset.nomor), el.dataset.nama);
+        break;
+      case 'set-status':
+        window.dashSetStatus(el.dataset.siswaId, el.dataset.status);
+        break;
+      case 'nilai-cepat':
+        window.dashNilaiCepat(el.dataset.siswaId, el.dataset.val);
+        break;
+      case 'toggle-siswa':
+        window.dashToggleSiswa(el.dataset.siswaId);
+        break;
+    }
+  });
+}
+
 export async function renderDashboard(container, opts = {}) {
   if (!container) return;
   _container = container;
+  _bindDelegatedEvents(container);
   if (typeof opts.onNavigateBack === 'function') {
     _onNavigateBack = opts.onNavigateBack;
   }
@@ -272,7 +299,10 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
         ? `<div style="margin-top:4px;font-size:12px;color:${lanjut.nomor ? '#D4AE3A' : 'rgba(255,255,255,.4)'};">${_escape(lanjut.label)}</div>`
         : '';
       return `
-    <div onclick="dashPilihRombel('${k.id}','${k.nama.replace(/'/g, "\\'")}',${k.tingkat || 1})"
+    <div data-action="pilih-rombel"
+         data-id="${k.id}"
+         data-nama="${_escape(k.nama)}"
+         data-tingkat="${k.tingkat || 1}"
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
@@ -317,7 +347,11 @@ async function _buildPilihTPHTML() {
   const tpHTML = tpList.map(tp => {
     const sudah = tpSelesaiSet.has(tp.nomor);
     return `
-  <div onclick="dashPilihTP('${tp.id}',${tp.nomor},'${_escape(tp.nama)}')" class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
+  <div data-action="pilih-tp"
+       data-id="${tp.id}"
+       data-nomor="${tp.nomor}"
+       data-nama="${_escape(tp.nama)}"
+       class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
     <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(76,175,80,.35)' : 'rgba(212,174,58,.15)'};border:${sudah ? '1px solid rgba(76,175,80,.6)' : 'none'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <span style="font-size:15px;font-weight:700;color:${sudah ? '#4CAF50' : '#D4AE3A'};">${sudah ? '✓' : tp.nomor}</span>
     </div>
@@ -608,7 +642,7 @@ function _buildStepPresensi() {
       <div class="ds-siswa-nama">${_escape(s.nama)}</div>
       <div class="ds-status-btns">
         ${['H','S','I','A'].map(k => `
-        <button onclick="dashSetStatus('${s.id}','${k}')" class="ds-status-btn"
+        <button data-action="set-status" data-siswa-id="${s.id}" data-status="${k}" class="ds-status-btn"
           style="border-color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.3)'};
                  background:${st===k ? PRESENSI_STATUS_CFG[k].dot : 'transparent'};
                  color:${st===k ? PRESENSI_STATUS_CFG[k].color : 'rgba(255,255,255,.55)'};">
@@ -851,9 +885,9 @@ function _buildAsesmenPaginated() {
           <div class="ds-siswa-nomor ds-siswa-nomor--sage" style="flex-shrink:0;">${s.nomor}</div>
           <div style="flex:1;font-size:13px;color:rgba(255,255,255,.85);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${_escape(s.nama)}</div>
           <div style="display:flex;gap:6px;flex-shrink:0;">
-            <button onclick="dashNilaiCepat('${s.id}','sudah')" style="${btnStyle('sudah')}">★</button>
-            <button onclick="dashNilaiCepat('${s.id}','perlu')" style="${btnStyle('perlu')}">◐</button>
-            <button onclick="dashNilaiCepat('${s.id}','belum')" style="${btnStyle('belum')}">○</button>
+            <button data-action="nilai-cepat" data-siswa-id="${s.id}" data-val="sudah" style="${btnStyle('sudah')}">★</button>
+            <button data-action="nilai-cepat" data-siswa-id="${s.id}" data-val="perlu" style="${btnStyle('perlu')}">◐</button>
+            <button data-action="nilai-cepat" data-siswa-id="${s.id}" data-val="belum" style="${btnStyle('belum')}">○</button>
           </div>
         </div>
         <input type="text" placeholder="Observasi singkat..." maxlength="100"
@@ -918,7 +952,7 @@ function _buildSiswaCollapseItem(s) {
   const rerataLabel = rerata !== null ? rerata : '—';
 
   const headerHTML = `
-    <div onclick="dashToggleSiswa('${s.id}')" class="ds-siswa-collapse-head">
+    <div data-action="toggle-siswa" data-siswa-id="${s.id}" class="ds-siswa-collapse-head">
       <div class="ds-collapse-chevron" style="transform:${isOpen ? 'rotate(90deg)' : ''};">›</div>
       <div class="ds-siswa-nomor ds-siswa-nomor--sage">${s.nomor}</div>
       <div class="ds-siswa-nama" style="flex:1;min-width:0;">${_escape(s.nama)}</div>
