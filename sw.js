@@ -628,6 +628,9 @@ const FONT_PATTERNS = [
 const PDF_PATTERN = /\/pdf\/.*\.docx$/i;
 const MAX_PDF_VERSIONS = 2;
 
+// Flag: SW baru sudah install selesai tapi menunggu SESSION_ENDED / NO_ACTIVE_SESSION
+let updatePending = false;
+
 // ============================================================
 // INSTALL
 // ============================================================
@@ -673,9 +676,18 @@ self.addEventListener('install', event => {
           }));
         });
       }
+
+      // Tunda skipWaiting jika ada client aktif (update scenario).
+      // Jika tidak ada client (first install), langsung aktivasi.
+      const existingClients = await self.clients.matchAll({ includeUncontrolled: true });
+      if (existingClients.length > 0) {
+        updatePending = true;
+        existingClients.forEach(c => c.postMessage({ type: 'SW_UPDATE_READY' }));
+      } else {
+        self.skipWaiting();
+      }
     })
   );
-  self.skipWaiting();
 });
 
 // ============================================================
@@ -1047,6 +1059,18 @@ self.addEventListener('message', event => {
           broadcastToClients({ type: 'PDF_CACHE_CLEARED', success: deleted });
         })
       );
+      break;
+
+    case 'SESSION_ENDED':
+      if (updatePending) {
+        updatePending = false;
+        self.skipWaiting();
+      }
+      break;
+
+    case 'NO_ACTIVE_SESSION':
+      updatePending = false;
+      self.skipWaiting();
       break;
 
     default:

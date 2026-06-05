@@ -954,6 +954,27 @@ function _listenToSW() {
         showStorageFullToast();
         break;
 
+      case 'SW_UPDATE_READY': {
+        const sesiAktif = document.querySelector('#sr-root[data-mounted="1"]') !== null;
+        if (!sesiAktif) {
+          swReg?.waiting?.postMessage({ type: 'NO_ACTIVE_SESSION' });
+        } else {
+          window.__FLAF__.updatePending = true;
+          showToast('Ada pembaruan app yang akan diterapkan setelah sesi mengajar selesai.', 6000);
+          const observer = new MutationObserver(() => {
+            if (!document.querySelector('#sr-root[data-mounted="1"]')) {
+              observer.disconnect();
+              if (window.__FLAF__.updatePending) {
+                swReg?.waiting?.postMessage({ type: 'SESSION_ENDED' });
+                window.__FLAF__.updatePending = false;
+              }
+            }
+          });
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+        break;
+      }
+
       default:
         break;
     }
@@ -1301,6 +1322,8 @@ window.__FLAF__ = {
   getPDFCacheStatus,
   clearPDFCache,
   triggerExport,
+  sessionActive : false,
+  updatePending : false,
 };
 
 window.__FLAF_NAV__ = {
