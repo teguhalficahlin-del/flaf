@@ -18,6 +18,7 @@ const KEY_EXPORT_FAIL_COUNT            = 'export_fail_count';
 const MAX_EXPORT_FAIL_BEFORE_URGENT    = 2;
 const BACKUP_PREFIX                    = 'FLAF-backup';
 const EXPORT_FORMAT_VERSION            = 1;
+const MIN_SUPPORTED_BACKUP_VERSION     = 2;
 
 const _state = {
   initialized   : false,
@@ -328,6 +329,14 @@ async function _readAndValidateFile(file) {
   }
   if (!parsed.version || typeof parsed.version !== 'number') {
     throw new ExportError('IMPORT_MISSING_VERSION', 'File tidak memiliki field "version".');
+  }
+  if (parsed.version < MIN_SUPPORTED_BACKUP_VERSION) {
+    throw new ExportError(
+      'IMPORT_VERSION_TOO_OLD',
+      `Backup ini dibuat dari versi FLAF yang terlalu lama ` +
+      `(v${parsed.version}). Versi minimum yang didukung adalah ` +
+      `v${MIN_SUPPORTED_BACKUP_VERSION}.`
+    );
   }
   if (!parsed.exported_at) {
     throw new ExportError('IMPORT_MISSING_TIMESTAMP', 'File tidak memiliki field "exported_at".');
