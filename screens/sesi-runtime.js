@@ -886,7 +886,7 @@ async function _renderPenilaianOverlay() {
 
   const siswaList = _state.siswaList || [];
   if (!siswaList.length) {
-    alert('Belum ada siswa di rombel ini.');
+    window.__FLAF__?.showToast('Belum ada siswa di rombel ini.');
     return;
   }
 

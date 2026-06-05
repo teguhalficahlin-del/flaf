@@ -35,6 +35,28 @@ let _renderToken = 0;
 
 // --- HELPERS -----------------------------------------------------------------
 
+function _nvToast(msg, duration = 3500) {
+  window.__FLAF__?.showToast(msg, duration);
+}
+
+function showConfirmDialog(pesan, onConfirm) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);';
+  overlay.innerHTML = `
+    <div style="background:#1E1E1E;border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:24px 20px;max-width:320px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.6);">
+      <div style="font-size:14px;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:20px;">${_escape(pesan)}</div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;">
+        <button id="nv-confirm-batal" style="padding:8px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);font-size:13px;cursor:pointer;font-family:inherit;">Batal</button>
+        <button id="nv-confirm-hapus" style="padding:8px 16px;border-radius:8px;border:none;background:#B05A46;color:#fff;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;">Hapus</button>
+      </div>
+    </div>`;
+  document.body.appendChild(overlay);
+  const close = () => document.body.removeChild(overlay);
+  overlay.querySelector('#nv-confirm-batal').addEventListener('click', close);
+  overlay.querySelector('#nv-confirm-hapus').addEventListener('click', () => { close(); onConfirm(); });
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+}
+
 function _escape(str) {
   if (!str) return '';
   return String(str)
@@ -701,7 +723,7 @@ window.nilaiSimpanSAS = async function() {
       await nilai.setNilaiSAS(_state.kelasId, s.id, _state.semester, v);
       saved++;
     }
-    if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
+    if (clamped > 0) _nvToast(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
     if (btn) {
       btn.textContent = `✓ Tersimpan (${saved})`;
       setTimeout(() => { btn.textContent = 'SIMPAN NILAI AS'; }, 2000);
@@ -725,7 +747,7 @@ window.nilaiSimpanSTS = async function() {
       await nilai.setNilaiSumatif(_state.kelasId, s.id, _state.semester, v);
       saved++;
     }
-    if (clamped > 0) alert(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
+    if (clamped > 0) _nvToast(`${clamped} nilai di luar 0–100 dikoreksi otomatis.`);
     if (btn) {
       btn.textContent = `✓ Tersimpan (${saved})`;
       setTimeout(() => { btn.textContent = 'SIMPAN NILAI STS'; }, 2000);
@@ -992,7 +1014,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
   try {
     const sesiList = await getSesiFormatifTP(kelasId, tpNomor);
     if (!sesiList || sesiList.length === 0) {
-      alert('Belum ada data penilaian untuk TP ini.');
+      _nvToast('Belum ada data penilaian untuk TP ini.');
       return;
     }
     const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
@@ -1031,7 +1053,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
     }
   } catch (err) {
     console.error('[NILAI] download formatif error:', err);
-    alert('Gagal membuat CSV rekap formatif.');
+    _nvToast('Gagal membuat CSV rekap formatif.');
   }
 };
 
@@ -1047,7 +1069,7 @@ window.nilaiDownloadRapor = async function(semester) {
     _downloadCSV(`nilai-rapor-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download rapor error:', err);
-    alert('Gagal membuat CSV nilai rapor.');
+    _nvToast('Gagal membuat CSV nilai rapor.');
   }
 };
 
@@ -1112,30 +1134,32 @@ window.nilaiPilihTingkat = function(t) {
 window.nilaiSimpanRombel = async function() {
   const nama    = document.getElementById('input-nama-rombel')?.value?.trim();
   const tingkat = parseInt(document.getElementById('input-tingkat-rombel')?.value) || 1;
-  if (!nama) { alert('Nama rombel tidak boleh kosong.'); return; }
+  if (!nama) { _nvToast('Nama rombel tidak boleh kosong.'); return; }
   await nilai.tambahKelas(nama, tingkat);
   nilaiTutupModal(); _render();
 };
 
 window.nilaiHapusKelas = function(id, nama) {
-  if (!confirm(`Hapus rombel "${nama}" beserta semua siswa dan nilainya?`)) return;
-  nilai.hapusKelas(id).then(() => _render());
+  showConfirmDialog(`Hapus rombel "${nama}" beserta semua siswa dan nilainya?`, () => {
+    nilai.hapusKelas(id).then(() => _render());
+  });
 };
 
 window.nilaiKelolaSiswa     = function() { _renderModalKelolaSiswa(); };
 
 window.nilaiSimpanSiswaBaru = async function() {
   const textarea = document.getElementById('textarea-siswa-baru');
-  if (!textarea?.value?.trim()) { alert('Masukkan minimal satu nama siswa.'); return; }
+  if (!textarea?.value?.trim()) { _nvToast('Masukkan minimal satu nama siswa.'); return; }
   const count = await nilai.tambahSiswaBatch(_state.kelasId, textarea.value);
   nilaiTutupModal();
-  alert(`${count} siswa berhasil ditambahkan.`);
+  _nvToast(`${count} siswa berhasil ditambahkan.`);
   _render();
 };
 
 window.nilaiHapusSiswaModal = function(id, nama) {
-  if (!confirm(`Hapus siswa "${nama}" beserta semua nilainya?`)) return;
-  nilai.hapusSiswa(_state.kelasId, id).then(() => { nilaiTutupModal(); _renderModalKelolaSiswa(); });
+  showConfirmDialog(`Hapus siswa "${nama}" beserta semua nilainya?`, () => {
+    nilai.hapusSiswa(_state.kelasId, id).then(() => { nilaiTutupModal(); _renderModalKelolaSiswa(); });
+  });
 };
 
 window.nilaiTutupModal = function() {
@@ -1176,7 +1200,7 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
       }
     }
 
-    if (koloms.length === 0) { alert('Belum ada sesi mengajar yang tercatat.'); return; }
+    if (koloms.length === 0) { _nvToast('Belum ada sesi mengajar yang tercatat.'); return; }
 
     const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
     const header   = ['No', 'Nama', ...koloms.map(k => `TP${k.tpNomor} ${k.tanggal}`)];
@@ -1187,7 +1211,7 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
     _downloadCSV(`rekap-kehadiran-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download kehadiran error:', err);
-    alert('Gagal membuat CSV rekap kehadiran.');
+    _nvToast('Gagal membuat CSV rekap kehadiran.');
   }
 };
 
@@ -1251,7 +1275,7 @@ window.nilaiDownloadSAS = async function(semester) {
     _downloadCSV(`nilai-sas-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download SAS error:', err);
-    alert('Gagal membuat CSV nilai SAS.');
+    _nvToast('Gagal membuat CSV nilai SAS.');
   }
 };
 
@@ -1266,7 +1290,7 @@ window.nilaiDownloadSTS = async function(semester) {
     _downloadCSV(`nilai-sts-${semester}-${safeName}.csv`, rows);
   } catch (err) {
     console.error('[NILAI] download STS error:', err);
-    alert('Gagal membuat CSV nilai STS.');
+    _nvToast('Gagal membuat CSV nilai STS.');
   }
 };
 
