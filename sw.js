@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v129';         // ← bump: pisah SHELL_CRITICAL/OPTIONAL, install partial tidak gagal
+const CACHE_VERSION  = 'flaf-v130';         // ← bump: deteksi QuotaExceededError di install dan IDB write
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
