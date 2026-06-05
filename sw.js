@@ -6,7 +6,8 @@
 const CACHE_VERSION  = 'flaf-v128';         // ← bump: fix key progress TP unik per rombel
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
-const APP_SHELL = [
+// Files that MUST be cached — install fails if any of these are missing
+const SHELL_CRITICAL = [
   './',
   './index.html',
   './app.js',
@@ -23,7 +24,6 @@ const APP_SHELL = [
   './screens/sesi-runtime.css',
   './screens/dashboard.css',
   './screens/nilai.css',
-
   // storage
   './storage/db.js',
   './storage/logger.js',
@@ -32,9 +32,19 @@ const APP_SHELL = [
   './storage/nilai.js',
   './storage/presensi.js',
   './storage/siswa-history.js',
-
-  // data
+  // data — router only
   './data/index.js',
+  // modules
+  './modules/pdf-handler.js',
+  './modules/pdf-generator.js',
+  // icons
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+];
+
+// Content files — cached opportunistically; failures do NOT abort install
+const SHELL_OPTIONAL = [
+  // data — fase files
   './data/fase-a.js',
   './data/fase-b.js',
   './data/fase-b-kluster-a.js',
@@ -566,14 +576,6 @@ const APP_SHELL = [
   './assets/images/printables_fase_c/tp-c21-text-b-menu.png',
   './assets/images/printables_fase_c/tp-c22-choice-card.png',
 
-  // modules
-  './modules/pdf-handler.js',
-  './modules/pdf-generator.js',
-
-  // assets
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-
   // secrets.js sengaja TIDAK masuk precache
   // karena berisi credentials Supabase — hanya dimuat saat runtime
 ];
@@ -632,10 +634,22 @@ const MAX_PDF_VERSIONS = 2;
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_VERSION).then(async cache => {
-      await cache.addAll(APP_SHELL);
-      const test = await cache.match('./index.html');
-      if (!test) {
-        console.error('[SW] FATAL: index.html tidak masuk cache');
+      await cache.addAll(SHELL_CRITICAL);
+      const failed = [];
+      for (const url of SHELL_OPTIONAL) {
+        try {
+          await cache.add(url);
+        } catch (e) {
+          failed.push(url);
+        }
+      }
+      if (failed.length > 0) {
+        self.clients.matchAll().then(clients => {
+          clients.forEach(c => c.postMessage({
+            type   : 'CACHE_PARTIAL',
+            failed : failed.length,
+          }));
+        });
       }
     })
   );

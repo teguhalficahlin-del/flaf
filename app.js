@@ -938,6 +938,10 @@ function _listenToSW() {
         _resetBulkPDFUI();
         break;
 
+      case 'CACHE_PARTIAL':
+        showToast('Beberapa materi belum tersedia offline. Buka app saat online untuk melengkapi.');
+        break;
+
       default:
         break;
     }
