@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v122';         // ← bump: _totalTP per kelas (9/11), bukan per fase
+const CACHE_VERSION  = 'flaf-v123';         // ← bump: header nama/kelas/sekolah, overlay sambutan
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 const APP_SHELL = [
