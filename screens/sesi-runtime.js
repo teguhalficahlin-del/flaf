@@ -71,6 +71,7 @@ let _state = {
 
 let _root   = null;
 let _onDone = null;
+let _srTtsBtn = null;   // referensi tombol TTS aktif untuk cleanup
 
 // ── Public API ────────────────────────────────────────────────
 
@@ -205,9 +206,54 @@ function _ttsSpeak(teks, btnEl) {
   window.speechSynthesis.speak(u);
 }
 
-function _ttsStop() {
+function _srTtsExtract(teks) {
+  if (!teks) return [];
+  const matches = [];
+  const re = /"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(teks)) !== null) matches.push(m[1]);
+  return matches;
+}
+
+function _srTtsStop() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   _state.ttsUtterance = null;
+  if (_srTtsBtn) {
+    _srTtsBtn.classList.remove('sr-tts-btn--playing');
+    const icon = _srTtsBtn.querySelector('i');
+    if (icon) icon.className = 'ti ti-volume';
+    const lbl = _srTtsBtn.querySelector('.sr-tts-label');
+    if (lbl) lbl.textContent = 'Putar';
+    _srTtsBtn = null;
+  }
+}
+
+function _srTtsPlay(kalimatArr, btnEl) {
+  if (!('speechSynthesis' in window)) return;
+  _srTtsStop();
+  if (!kalimatArr || !kalimatArr.length) return;
+  _srTtsBtn = btnEl;
+  btnEl.classList.add('sr-tts-btn--playing');
+  const icon = btnEl.querySelector('i');
+  if (icon) icon.className = 'ti ti-player-stop';
+  const lbl = btnEl.querySelector('.sr-tts-label');
+  if (lbl) lbl.textContent = 'Stop';
+  function speakAt(i) {
+    if (i >= kalimatArr.length) { _srTtsStop(); return; }
+    const u   = new SpeechSynthesisUtterance(kalimatArr[i]);
+    u.lang    = 'en-US';
+    u.rate    = 0.85;
+    u.pitch   = 1;
+    u.onend   = () => speakAt(i + 1);
+    u.onerror = () => _srTtsStop();
+    _state.ttsUtterance = u;
+    window.speechSynthesis.speak(u);
+  }
+  speakAt(0);
+}
+
+function _ttsStop() {
+  _srTtsStop();
 }
 
 // ── Navigate langkah ──────────────────────────────────────────
@@ -718,6 +764,15 @@ function _renderRunning() {
       <div class="sr-darurat-teks">${_escape(langkah.darurat)}</div>
     </div>` : '';
 
+  // TTS — ekstrak kalimat Inggris dalam tanda kutip ganda
+  const kalimatArr = _srTtsExtract(langkah.teks);
+  const ttsBtnHTML = kalimatArr.length > 0
+    ? `<button class="sr-tts-btn" id="sr-tts-btn" aria-label="Putar audio Bahasa Inggris">
+         <i class="ti ti-volume" aria-hidden="true"></i>
+         <span class="sr-tts-label">Putar</span>
+       </button>`
+    : '';
+
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-app-header">
@@ -729,6 +784,7 @@ function _renderRunning() {
         ${blockHeaderHTML}
         <div class="sr-tipe-row">
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
+          ${ttsBtnHTML}
         </div>
         ${teksHTML}
         ${bantuanHTML}
@@ -752,9 +808,16 @@ function _renderRunning() {
       </div>
     </div>`;
 
-  _root.querySelector('#sr-tts-btn')?.addEventListener('click', () => {
-    _ttsSpeak(langkah.teks, _root.querySelector('#sr-tts-btn'));
-  });
+  if (kalimatArr.length > 0) {
+    _root.querySelector('#sr-tts-btn')?.addEventListener('click', e => {
+      const btn = e.currentTarget;
+      if (btn.classList.contains('sr-tts-btn--playing')) {
+        _srTtsStop();
+      } else {
+        _srTtsPlay(kalimatArr, btn);
+      }
+    });
+  }
   _root.querySelector('#sr-btn-next').addEventListener('click', () => _langkahNext());
   _root.querySelector('#sr-btn-prev').addEventListener('click', () => _langkahPrev());
   _root.querySelector('#sr-btn-kondisi').addEventListener('click', () => _renderKondisiOverlay());
