@@ -1785,8 +1785,8 @@ runtime yang benar-benar dipakai app.
 
 ## Update Status Proyek — Juni 2026
 
-- **SW aktif**: `flaf-v147`
-- **Commit terakhir**: `6237a2e` — chore: bump SW v147 — M11 sanitasi data backup selesai
+- **SW aktif**: `flaf-v156`
+- **Commit terakhir**: `ea58976` — chore: bump SW v156 — Batch B cleanup TD-27 TD-29 TD-30 TD-31
 - **Tanggal**: 6 Juni 2026
 - **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
 - **Sesi terakhir**: 3 Juni 2026 — TD-12 fix nilai TP range Kelas 5/6,
@@ -1973,36 +1973,62 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 | v146 | d4f10b5 | M10 pesan IDB blocked |
 | v147 | 6237a2e | M11 sanitasi data backup |
 
+### Item Low Priority — Selesai di Sesi 6 Juni 2026
+
+| ID | Item | Commit |
+|----|------|--------|
+| TD-18 | Ganti window.confirm native di hardReset + clearPDFCache | 1ef2879 |
+| TD-16 | Refactor _showIDBUnavailableScreen pakai splash-status | 6f8f1ed |
+| TD-14 | Tambah parameter type ke showToast — success/warning/error/info | 910eb06 |
+| TD-17 | Update manifest + splash badge → Fase A+B+C Kelas 1–6 | 11f6102 |
+| TD-23+24 | autocorrect off + maxlength di input rombel & textarea siswa | 61ac8dd |
+| TD-26 | Guard kelas='all' di label fase progress bar | f888dfb |
+| TD-19 | Hapus dead code sw_pending_update — alur lama sejak Fix 13 | ce625ed |
+| TD-25 | Verified — tidak ada bug, _totalTP() akurat untuk kelas 1–6 | — |
+| TD-20+21+22+32 | Batch A — JSDoc stale, version sinkron, hapus console.log | e513870 |
+| TD-27+29+30+31 | Batch B — hapus log_queue, aria-label, type button, catch warn | 392bd50 |
+| TD-15 | Skip — tunda sampai refactor shared utilities | — |
+| TD-28 | Skip — admin panel, konteks terpisah | — |
+
+### SW Version History — v148 s/d v156
+
+| Versi | Commit | Keterangan |
+|-------|--------|------------|
+| v148 | 49f40f4 | TD-18 confirm native diganti dialog FLAF |
+| v149 | 2806680 | TD-16 IDB unavailable screen fix |
+| v150 | 0adb00b | TD-14 showToast type parameter |
+| v151 | 6d34f9b | TD-17 manifest dan splash badge diupdate |
+| v152 | 292d4de | TD-23 TD-24 autocorrect off input nilai |
+| v153 | 89cf6b7 | TD-26 fix label fase progress bar |
+| v154 | a72178e | TD-19 hapus dead code sw_pending_update |
+| v155 | 0a9a807 | Batch A cleanup TD-20 TD-21 TD-22 TD-32 |
+| v156 | ea58976 | Batch B cleanup TD-27 TD-29 TD-30 TD-31 |
+
 ### Antrian Pekerjaan — Status Terkini
 
 - ✅ Semua item High Priority: selesai (Fix 1A–Fix 15C, SW v125–v139)
 - ✅ Semua item Medium M4–M11: selesai di sesi 6 Juni 2026 (SW v140–v147)
-- ⏳ Tersisa: 25+ item Low priority — belum dikerjakan
+- ✅ Semua item Low TD-14 s/d TD-32: selesai di sesi 6 Juni 2026 (SW v148–v156)
+- ⏳ TD-15: di-skip — tunda sampai ada refactor shared utilities
+- ⏳ TD-28: di-skip — admin panel, konteks terpisah, tidak mempengaruhi guru
+- **Tidak ada item audit PWA yang tersisa**
 
 ---
 
 ## Catatan Hutang Teknis Baru (6 Juni 2026)
 
-### TD-14: showToast belum punya parameter type
-- `showToast(message, duration)` di `app.js` hanya dua parameter
-- Semua notifikasi (sukses, warning, error) tampil identik tanpa warna berbeda
-- **Low item**: tambah parameter `type` opsional (`'success'|'warning'|'error'`) ke
-  `showToast()` di `app.js` dan update CSS `.toast` untuk warna per-type
+### TD-14: showToast parameter type
+✅ RESOLVED — commit `910eb06` (6 Juni 2026)
+- Tambah parameter `type` opsional ke `showToast(message, duration, type)`
+- 4 varian CSS: `.toast--success`, `.toast--warning`, `.toast--error`, `.toast--info`
+- Update pemanggil kunci: backup success, CSV kosong warning, IDB blocked error
 
 ### TD-15: Dua fungsi dialog konfirmasi terpisah
-- `showConfirmDialog(pesan, onConfirm)` didefinisikan di `screens/nilai.js` —
-  top-level function, tidak diekspor, tidak tersedia di luar modul
-- `_confirmDialog(pesan, labelKonfirmasi, onConfirm)` dibuat terpisah di `app.js`
-  karena `showConfirmDialog` tidak bisa diakses dari sana
-- **Low item**: konsolidasikan ke satu implementasi jika ada refactor
-  app.js atau sistem shared utilities di masa depan
+⏳ DITUNDA — menunggu refactor shared utilities
+- `showConfirmDialog` di `nilai.js` dan `_confirmDialog` di `app.js` tetap terpisah
+- Tidak mempengaruhi fungsionalitas — ditunda sampai ada sistem shared utilities
 
 ### TD-16: _showIDBUnavailableScreen() silent fail
-- Fungsi `_showIDBUnavailableScreen()` di `app.js` mencari `.splash-inner` di
-  dalam `#s-splash` — elemen ini **tidak ada** di `index.html`
-- Kondisi `if (inner)` gagal senyap: pesan IDB unavailable tidak pernah tampil
-  melalui jalur ini
-- Saat ini hanya ditangani untuk kondisi `onblocked` (Fix M10) via `#splash-status`
-- **Low item**: tambah elemen `.splash-inner` ke `index.html` atau refactor
-  `_showIDBUnavailableScreen()` untuk pakai `#splash-status` + `showToast()`
-  yang sudah terbukti bekerja
+✅ RESOLVED — commit `6f8f1ed` (6 Juni 2026)
+- Refactor: hapus referensi `.splash-inner` yang tidak ada di HTML
+- Sekarang menggunakan `_updateSplashStatus()` + `showToast()` yang sudah terbukti bekerja
