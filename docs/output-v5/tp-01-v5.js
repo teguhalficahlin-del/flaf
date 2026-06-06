@@ -165,7 +165,7 @@ const TP_01 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." UCAP: "And this one is different — good night. We say it before sleeping." UCAP: "See? Four greetings. One for each time. Let us learn them all!" AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
+          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." UCAP: "And this one is different — good night. We say it before sleeping." UCAP: "See? Four greetings. One for each time. Let us learn them all!" --- AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
           bantuan: null,
           cue    : 'Gerakkan tangan seperti orang tidur saat ucap "good night" — gesture ini menjadi anchor untuk siswa yang belum familiar dengan kata tersebut.',
           darurat: null,
@@ -188,7 +188,7 @@ const TP_01 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Good! Now, let us say it with a chant. Watch me first!" 👂 DEMO — GURU SENDIRI AKSI: Demo chant guru sendiri — satu putaran penuh, sambil duduk: → "Hel-lo hel-lo" → 👏👏👏👏 → "how are you?" → tap knees x3 → "I am fine" → 👏👏👏 → "thank you!" → 🙌`,
+          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Good! Now, let us say it with a chant. Watch me first!" --- 👂 DEMO — GURU SENDIRI AKSI: Demo chant guru sendiri — satu putaran penuh, sambil duduk: → "Hel-lo hel-lo" → 👏👏👏👏 → "how are you?" → tap knees x3 → "I am fine" → 👏👏👏 → "thank you!" → 🙌`,
           bantuan: null,
           cue    : 'Tunjuk telinga + mata sebelum demo — siswa dengar dan lihat dulu, jangan ikut dulu. Demo dilakukan sambil duduk.',
           darurat: null,
@@ -238,7 +238,7 @@ const TP_01 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 3 kartu perpisahan di papan (goodbye / bye / see you). ---\nAKSI: Angguk, tersenyum. Jeda — tunggu respons siswa. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" Goodbye means we are leaving. --- AKSI: Demo Kiki & Momo — perpisahan: → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" --- 👂 LISTEN FIRST AKSI: Turunkan boneka. Tunjuk kartu perpisahan satu per satu. UCAP: "Goodbye! Bye! See you!"`,
+          teks   : `AKSI: Tempel 3 kartu perpisahan di papan (goodbye / bye / see you). ---\nAKSI: Angguk, tersenyum. Jeda — tunggu respons siswa. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" UCAP: "Goodbye means we are leaving." --- AKSI: Demo Kiki & Momo — perpisahan: → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" --- 👂 LISTEN FIRST AKSI: Turunkan boneka. Tunjuk kartu perpisahan satu per satu. UCAP: "Goodbye! Bye! See you!"`,
           bantuan: null,
           cue    : 'Gerakkan tangan seperti melambai pergi saat tanya "And when you leave?" — gesture ini menjadi anchor untuk farewell.',
           darurat: null,
@@ -306,7 +306,7 @@ const TP_01 = {
         // L16 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Pegang Kiki dan Momo. Demo sekali saja: → Kiki: "Goodbye, everyone! See you next time!" → Momo: "Goodbye! See you!" 🗣 TOGETHER AKSI: Turunkan boneka. Lambaikan tangan ke seluruh kelas. UCAP: "See you next time. Goodbye, everyone!"`,
+          teks   : `AKSI: Pegang Kiki dan Momo. Demo sekali saja: → Kiki: "Goodbye, everyone! See you next time!" → Momo: "Goodbye! See you!" --- 🗣 TOGETHER AKSI: Turunkan boneka. Lambaikan tangan ke seluruh kelas. UCAP: "See you next time. Goodbye, everyone!"`,
           bantuan: 'Jika diam: mulai lambai tangan → "Good-bye..." menggantung.',
           cue    : 'Demo boneka hanya sekali — jangan diulang. Langsung pindah ke bersama setelah demo selesai.',
           darurat: null,
