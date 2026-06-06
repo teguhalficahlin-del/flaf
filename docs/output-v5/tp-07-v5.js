@@ -263,6 +263,7 @@ const TP_07 = {
         {
           tipe   : 'instruksi',
           teks   : `UCAP: "Tonight — if you see your family at home, point to them. Say: 'This is my mother. This is my father.' You can also point to a photo or a picture of someone you love."
+AKSI: Tunjuk ke siswa — beri jeda.
 UCAP: "Can you try that?" → Siswa: "Yes!" UCAP: "Excellent! You can talk about your family in English now." UCAP: "Goodbye, everyone! See you next time!" 🗣 TOGETHER: "Goodbye, teacher! See you!" --- AKSI: Kumpulkan semua kartu printable. AKSI: Catat siswa yang: → Belum bisa beda sister/brother → Belum bisa beda grandmother/grandfather → Belum bisa produksi pola "This is my ___"`,
           bantuan: null,
           cue    : null,
