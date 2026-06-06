@@ -165,7 +165,7 @@ const TP_01 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." "And this one is different — good night. We say it before sleeping." "See? Four greetings. One for each time. Let us learn them all!" AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
+          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." UCAP: "And this one is different — good night. We say it before sleeping." UCAP: "See? Four greetings. One for each time. Let us learn them all!" AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
           bantuan: null,
           cue    : 'Gerakkan tangan seperti orang tidur saat ucap "good night" — gesture ini menjadi anchor untuk siswa yang belum familiar dengan kata tersebut.',
           darurat: null,
