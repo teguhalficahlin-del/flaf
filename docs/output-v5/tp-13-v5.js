@@ -169,6 +169,7 @@ AKSI: Jari-jari turun seperti tetes hujan.
 UCAP: "Rainy."
 AKSI: Tiup napas pelan, tangan ayun ke satu arah.
 UCAP: "Windy."
+AKSI: Jeda sebentar.
 UCAP: "One more time."
 AKSI: Ulang sekali.`,
           bantuan: null,
@@ -291,15 +292,19 @@ AKSI: Tempel kembali 6 kartu. Tunjuk papan — Today is ___. The weather is ___.
 UCAP: "Listen. My turn."
 AKSI: Tunjuk kartu sunny, gestur tangan buka ke atas.
 UCAP: "Today is sunny."
+AKSI: Jeda sebentar.
 UCAP: "The weather is sunny."
 AKSI: Tunjuk papan. Jeda 2 detik.
 AKSI: Tunjuk kartu rainy, gestur jari turun.
 UCAP: "Today is rainy."
+AKSI: Jeda sebentar.
 UCAP: "The weather is rainy."
 AKSI: Tunjuk papan. Jeda 2 detik.
 AKSI: Tunjuk kartu cloudy.
 UCAP: "Today is cloudy."
+AKSI: Jeda sebentar.
 UCAP: "The weather is cloudy."
+AKSI: Jeda sebentar.
 UCAP: "One more time."
 AKSI: Ulang tiga pasang kalimat.`,
           bantuan: null,
