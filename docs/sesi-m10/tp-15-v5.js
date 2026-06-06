@@ -1,55 +1,45 @@
 /**
  * =============================================================
  * FLAF — TP 15 (Feelings and Emotions)
- * File: docs/sesi-m10/tp-15-v5.js
+ * File: tp-15-v5.js
  * Format: v5.0
- * Source: docs/skenario/flaf-skenario-tp15-v2.txt
+ * Source: flaf-skenario-tp15-v2.txt
+ * Generated: 2026-05-25
+ * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
+ *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
  */
 
 const TP_15 = {
 
   id       : 'tp-15',
+  pdf_ref  : 'Modul_Ajar_V3_TP15_Feelings_And_Emotions.docx',
   nomor    : 15,
   kelas    : 2,
   nama     : 'Feelings and Emotions',
   tema     : 'Diri Sendiri dan Perasaan',
-  deskripsi: `Peserta didik belajar mengungkapkan perasaan dan emosi dasar dalam
-    bahasa Inggris menggunakan pola "I feel ... because ..." dengan konteks
-    universal yang inklusif. Fokus pada identification dan pattern practice,
-    bukan personal expose.`,
+  deskripsi: '',         // TODO: isi manual
 
   indikator: [
-    'Peserta didik dapat menyebut dan mengenali 7 emosi dasar (happy, sad, angry, scared, tired, excited, bored) dengan lafal yang benar.',
-    'Peserta didik dapat mengungkapkan perasaan menggunakan "I feel ... because ..." dan merespons "How do you feel?" dengan struktur yang tepat.',
-    'Peserta didik dapat merespons scenario universal dengan emosi yang sesuai dalam roleplay berpasangan.',
+    'Peserta didik dapat menyebutkan 7 kata emosi dalam Bahasa Inggris.',
+    'Peserta didik dapat menggunakan frame "I feel ___ because ___."',
+    'Peserta didik dapat merespons cue emosi dengan ekspresi wajah dan gestur.',
   ],
-
-  vocab: ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'bored', 'I feel', 'how do you feel', 'because'],
-
-  persiapan: ['Kartu emosi bergambar 7 emosi'],
-
-  media: [
-    {
-      id                 : 'media-kartu-emosi',
-      nama               : 'Kartu Emosi Bergambar (7 Emosi)',
-      tipe               : 'kartu_cetak',
-      printable          : true,
-      pdf_ref            : 'Modul_Ajar_V3_TP15_Feelings_and_Emotions.docx',
-      pdf_halaman        : 1,
-      reusable_lintas_tp : true,
-      keterangan         : '7 kartu A5 berisi ekspresi wajah anak (happy, sad, angry, scared, tired, excited, bored) — ilustrasi netral & beragam (usia, penampilan, inklusi). Bisa dipakai ulang di TP-TP lain tentang emosi.',
-    },
+  vocab    : ['happy', 'sad', 'angry', 'scared', 'tired', 'excited', 'bored'],
+  persiapan: [
+    'Kartu emosi bergambar 7 kartu (happy, sad, angry, scared, tired, excited, bored)',
+    'Papan tulis: tulis "I feel ___ because ___." sebelum kelas masuk',
+    'Buku/kertas exit ticket disiapkan di bawah meja siswa sebelum kelas masuk',
   ],
-
+  media    : [],         // TODO: isi manual
   printables: [
     { file: 'tp15-happy.png',   label: 'Happy' },
     { file: 'tp15-sad.png',     label: 'Sad' },
     { file: 'tp15-angry.png',   label: 'Angry' },
     { file: 'tp15-scared.png',  label: 'Scared' },
-    { file: 'tp15-bored.png',   label: 'Bored' },
-    { file: 'tp15-excited.png', label: 'Excited' },
     { file: 'tp15-tired.png',   label: 'Tired' },
+    { file: 'tp15-excited.png', label: 'Excited' },
+    { file: 'tp15-bored.png',   label: 'Bored' },
   ],
 
   checklist: [
@@ -77,7 +67,7 @@ const TP_15 = {
     'Scenario dibisikkan ke Siswa A — tidak diucapkan ke kelas',
     'Instruksi partner practice L10 diucapkan dalam chunk pendek — tunjuk papan untuk frame',
     'Role bersih: Partner A = pemberi scenario + penjawab / Partner B = penanya',
-    'Checkpoint L10: Switch → Partner B gives → Partner A asks → Partner A answers',
+    'Checkpoint L10 diucapkan dalam potongan pendek: Switch → Partner B gives → Partner A asks → Partner A answers',
     'Stop signal dilatih sebelum partner practice',
     'Total partner practice L10 tidak melebihi ±3 menit',
     'Saat circulate L10: bergerak membentuk huruf U — tidak berhenti lama di satu pasangan',
@@ -113,7 +103,7 @@ const TP_15 = {
       'L3 Contrast: angry vs scared wajib — anchor gestur tangan lebih kuat dari penjelasan',
       'L5 Contrast: tired vs bored wajib — tired = tangan ke dada / bored = pipi di tangan',
       'L6 TPR: retrieval dari memori tubuh — guru tidak ikut, fokus observasi',
-      'Fase C L5: tired/bored tidak berurutan, excited/happy tidak berurutan',
+      'Fase C: tired/bored tidak berurutan, excited/happy tidak berurutan',
     ],
     autonomy: [
       'Ekspresi wajah harus exaggerated konsisten sepanjang sesi — ini anchor utama',
@@ -125,7 +115,7 @@ const TP_15 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "I'm fine, thank you! Are you ready? Let's start."`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -136,24 +126,24 @@ const TP_15 = {
 
     {
       fase  : 'Pembuka',
-      durasi: 10,
+      durasi: 10,  // TODO: verifikasi
 
       langkah: [
 
-        // L0 — PEMBUKA KELAS · Greeting
+        // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Good morning, everyone! How are you today?" — Tunggu respons kelas. UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
-          bantuan: null,
-          cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
-          darurat: null,
-          energi : '🔵',
-        },
-
-        // L1 — PEMBUKA · Hook Ekspresi Guru
-        {
-          tipe   : 'instruksi',
-          teks   : `Berdiri di tengah kelas — tidak ada kartu. Buat ekspresi HAPPY (senyum lebar, angkat kedua tangan). UCAP: "Look at my face. How do I feel?" — tunggu 2–3 respons bebas, boleh Bahasa Indonesia. Buat ekspresi SAD (muka murung, bahu turun). UCAP: "And now?" — tunggu respons. Buat ekspresi SCARED (mata besar, tangan di pipi). UCAP: "Now?" — tunggu, tidak dikoreksi. UCAP: "These are feelings. Everyone has feelings. Today we learn feelings in English."`,
+          teks   : `AKSI: Guru berdiri di tengah kelas. Tidak ada kartu dulu.
+AKSI: Guru buat ekspresi HAPPY — senyum lebar, angkat kedua tangan.
+UCAP: "Look at my face. How do I feel?"
+AKSI: Tunggu 2–3 respons bebas. Respons boleh Bahasa Indonesia.
+AKSI: Guru buat ekspresi SAD — muka murung, bahu turun.
+UCAP: "And now?"
+AKSI: Tunggu 2–3 respons bebas.
+AKSI: Guru buat ekspresi SCARED — mata besar, tangan di pipi.
+UCAP: "Now?"
+AKSI: Tunggu respons. Tebak-tebakan boleh dan tidak dikoreksi.
+UCAP: "These are feelings. Everyone has feelings. Today we learn feelings in English."`,
           bantuan: null,
           cue    : 'Guru yang berekspresi — bukan meminta siswa berekspresi dulu. Ini aktivasi konteks, bukan tes produksi. Respons bebas siswa diterima tanpa koreksi. Tiga ekspresi cukup — jangan perkenalkan semua 7 di sini.',
           darurat: null,
@@ -165,112 +155,195 @@ const TP_15 = {
 
     {
       fase  : 'Inti',
-      durasi: 30,
+      durasi: 30,  // TODO: verifikasi
 
       langkah: [
 
-        // L2 — INTI · LISTEN FIRST Gelombang 1
+        // L2 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST — Tempel 4 kartu satu per satu: happy → sad → angry → scared. Setiap kartu: tunjuk kartu → buat ekspresi wajah → ucap kata → jeda 1 detik. Setelah 4 kartu terpasang: UCAP: "Listen. My turn." → "Happy." (senyum lebar, tunjuk kartu) → "Sad." (muka murung, bahu turun) → "Angry." (alis turun, bibir tegang, tangan mengepal) → "Scared." (mata besar, tangan di pipi). UCAP: "One more time." → ulang sekali.`,
+          teks   : `👂 LISTEN FIRST
+AKSI: Tempel 4 kartu satu per satu: happy — sad — angry — scared. Setiap kartu: tunjuk kartu → buat ekspresi wajah → ucap kata. Satu detik jeda, lanjut.
+UCAP: "Listen. My turn."
+AKSI: Senyum lebar, tunjuk kartu happy.
+UCAP: "Happy."
+AKSI: Muka murung, bahu turun, tunjuk kartu sad.
+UCAP: "Sad."
+AKSI: Alis turun, bibir tegang, tunjuk kartu angry.
+UCAP: "Angry."
+AKSI: Mata besar, tangan di pipi, tunjuk kartu scared.
+UCAP: "Scared."
+AKSI: Jeda sebentar.
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Ekspresi wajah harus exaggerated dan berbeda jelas — ini anchor utama, bukan kata-katanya. Angry dan scared paling berisiko tertukar — pastikan perbedaan tangan: angry = tangan mengepal / scared = tangan di pipi. Guru belum minta kelas produksi di layar ini.',
           darurat: null,
           energi : '🟡',
         },
 
-        // L3 — INTI · Produksi Bersama G1 + Contrast Drill
+        // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER — UCAP: "Now together. I show — you say." → Buat ekspresi happy: kelas ucap "Happy!" → Sad: "Sad!" → Angry: "Angry!" → Scared: "Scared!" Putaran 2: tunjuk 2 kartu acak — kelas ucap. Contrast drill langsung setelah (15 detik): UCAP: "Watch." → Tunjuk kartu angry — kepal tangan: "Angry — hands tight." → Tunjuk kartu scared — tangan di pipi: "Scared — hands here." UCAP: "Ready? Which one?" → "Hands tight — show me!" (kelas tunjuk kartu angry) → "Hands here — show me!" (kelas tunjuk kartu scared) → ulangi 2 putaran, cepat.`,
+          teks   : `🗣 TOGETHER
+UCAP: "Now together. I show — you say."
+AKSI: Buat ekspresi happy.
+→ Kelas: "Happy!"
+AKSI: Buat ekspresi sad.
+→ Kelas: "Sad!"
+AKSI: Buat ekspresi angry.
+→ Kelas: "Angry!"
+AKSI: Buat ekspresi scared.
+→ Kelas: "Scared!"
+AKSI: Putaran 2 — tunjuk 2 kartu acak. Kelas ucap.
+UCAP: "Watch."
+AKSI: Tunjuk kartu angry, kepal tangan.
+UCAP: "Angry — hands tight."
+AKSI: Tunjuk kartu scared, tangan di pipi.
+UCAP: "Scared — hands here."
+UCAP: "Ready? Which one?"
+UCAP: "Hands tight — show me!"
+AKSI: Kelas tunjuk kartu angry.
+UCAP: "Hands here — show me!"
+AKSI: Kelas tunjuk kartu scared.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: 'Jika kelas tertukar angry/scared: guru berdiri diam, kepal tangan — "Angry." Tangan di pipi — "Scared." Lanjut.',
           cue    : 'Contrast drill angry vs scared wajib — ekspresi paling mirip di gelombang 1. Anchor gestur tangan lebih kuat dari penjelasan apapun. Jangan explain — cukup tunjukkan perbedaan fisik dan lanjut.',
           darurat: null,
           energi : '🟠',
         },
 
-        // L4 — INTI · Reactivation G1 + LISTEN FIRST Gelombang 2
+        // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `Reactivation G1 (15–20 detik): UCAP: "Quick check." → Buat 4 ekspresi gelombang 1 berurutan — kelas ucap. Tidak dikoreksi, tidak diulang, langsung lanjut. 👂 LISTEN FIRST G2 — Tempel 3 kartu berikutnya: tired → excited → bored. Setiap kartu: tunjuk → buat ekspresi → ucap. UCAP: "Listen. My turn." → "Tired." (mata sayu, kepala sedikit turun, tangan ke dada) → "Excited." (mata besar berbinar, kedua tangan terangkat) → "Bored." (muka datar, pipi bertumpu di tangan, mata menerawang). UCAP: "One more time." → ulang sekali.`,
+          teks   : `AKSI — Reactivation (15–20 detik):
+UCAP: "Quick check."
+AKSI: Buat 4 ekspresi gelombang 1 berurutan — kelas ucap. Tidak dikoreksi. Tidak diulang. Langsung lanjut.
+👂 LISTEN FIRST Gelombang 2
+AKSI: Tempel 3 kartu berikutnya: tired — excited — bored. Setiap kartu: tunjuk kartu → buat ekspresi → ucap kata.
+UCAP: "Listen. My turn."
+AKSI: Mata sayu, kepala sedikit turun, tangan ke dada. Tunjuk kartu tired.
+UCAP: "Tired."
+AKSI: Mata besar berbinar, kedua tangan terangkat. Tunjuk kartu excited.
+UCAP: "Excited."
+AKSI: Muka datar, pipi bertumpu di tangan, mata menerawang. Tunjuk kartu bored.
+UCAP: "Bored."
+AKSI: Jeda sebentar.
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Reactivation gelombang 1 wajib — 15–20 detik, tidak dikoreksi. Tired dan bored paling berisiko tertukar — anchor gestur berbeda: tired = tangan ke dada / bored = pipi bertumpu di tangan. Excited harus paling energetik dari semua 7 emosi — anchor kontras alami.',
           darurat: null,
           energi : '🟡',
         },
 
-        // L5 — INTI · Produksi Gabungan 7 Emosi
+        // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER — Fase A (gelombang 2, lambat): UCAP: "Together." → Buat ekspresi tired → excited → bored — kelas ucap, tidak terburu. Fase B (campur 7 kartu, medium): UCAP: "Now — all together." → Tunjuk semua 7 kartu berurutan — kelas ucap. Fase C (4 kartu acak, cepat): UCAP: "Ready? Fast — but clear." → Pilih 4 kartu acak — tunjuk cepat, tahan 1 detik sebelum kartu berikutnya. Jika energi kelas sudah naik liar setelah Fase B: langsung masuk Fase C tanpa ulang.`,
+          teks   : `🗣 TOGETHER
+Fase A — Gelombang 2 saja, lambat:
+UCAP: "Together."
+AKSI: Buat ekspresi tired → excited → bored. Kelas ucap. Lambat, tidak terburu.
+Fase B — Campur 7 kartu, medium:
+UCAP: "Now — all together."
+AKSI: Tunjuk semua 7 kartu berurutan — medium speed. Kelas ucap.
+Fase C — 4 kartu acak, cepat:
+UCAP: "Ready?"
+UCAP: "Fast — but clear."
+AKSI: Pilih 4 kartu acak — tunjuk cepat. Tahan 1 detik sebelum menunjuk kartu berikutnya. Jika energi kelas sudah naik liar setelah Fase B: langsung masuk Fase C tanpa ulang.`,
           bantuan: 'Jika kelas mulai telat: kurangi tempo, ulangi 2 kartu, lanjut.',
           cue    : 'Pisahkan pasangan emosi yang mirip di Fase C — tired/bored tidak berurutan, excited/happy tidak berurutan. Di Fase C guru tidak perlu buat ekspresi penuh — cukup tunjuk kartu, kelas produksi sendiri.',
           darurat: null,
           energi : '🟠',
         },
 
-        // L6 — INTI · TPR "Show Me …"
+        // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `Lepas semua kartu dari papan — simpan. UCAP: "No cards. Just me and you." → "Show me happy!" (kelas buat ekspresi happy) → "Show me sad!" → "Show me angry!" → "Show me scared!" → "Show me tired!" → "Show me excited!" → "Show me bored!" Putaran acak — maksimal 5 cue. UCAP: "My turn to watch. You show me." → Pilih 5 cue acak, pisahkan pasangan emosi mirip (tired/bored dan angry/scared tidak berurutan). Setelah 5 cue: UCAP: "Stop. Good."`,
+          teks   : `AKSI: Guru lepas kartu dari papan — simpan. Siswa tidak pegang apa-apa.
+UCAP: "No cards. Just me and you."
+---
+→ "Show me happy!" → kelas buat ekspresi happy → "Show me sad!" → kelas buat ekspresi sad → "Show me angry!" → kelas buat ekspresi angry → "Show me scared!" → kelas buat ekspresi scared → "Show me tired!" → kelas buat ekspresi tired → "Show me excited!" → kelas buat ekspresi excited → "Show me bored!" → kelas buat ekspresi bored
+---
+AKSI: Putaran acak — maksimal 5 cue. Guru tidak ikut — kelas yang aksi.
+UCAP: "My turn to watch. You show me."
+→ Pilih 5 cue acak. Pisahkan pasangan emosi yang mirip — tired/bored dan angry/scared tidak berurutan. → Setelah 5 cue: langsung stop.
+---
+UCAP: "Stop. Good."`,
           bantuan: 'Jika kelas tertukar tired/bored: guru berdiri diam — gestur tired (tangan ke dada) → gestur bored (pipi di tangan). Lanjut.',
           cue    : 'Layar ini retrieval dari memori tubuh — bukan dari kartu. Guru tidak ikut di putaran acak — guru perlu melihat siapa yang tertukar. Maksimal 5 cue, langsung stop.',
           darurat: null,
           energi : '🔴',
         },
 
-        // L7 — RESET + LISTEN FIRST · Frame "I feel … because …"
+        // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Sit up." [Jeda 3 detik] UCAP: "Now feelings become sentences. Watch." Tempel kembali kartu happy. Tunjuk papan: I feel ___ because ___. UCAP: "Listen. My turn." → Buat ekspresi happy — tunjuk kartu: "I feel happy — because I see my friends." (tunjuk kelas) → Buat ekspresi sad: "I feel sad — because it is raining." (gestur tangan ke atas) → Buat ekspresi scared: "I feel scared — because I see a big dog." (gestur tangan besar). UCAP: "One more time." → ulang tiga kalimat.`,
+          teks   : `AKSI: Tepuk 1 kali, kelas freeze.
+UCAP: "Stop. Hands down. Sit up."
+AKSI: Jeda 3 detik.
+UCAP: "Now feelings become sentences. Watch."
+AKSI: Tempel kembali kartu happy. Tunjuk papan — I feel ___ because ___.
+UCAP: "Listen. My turn."
+AKSI: Buat ekspresi happy, tunjuk kartu.
+UCAP: "I feel happy — because I see my friends."
+AKSI: Tunjuk kelas.
+AKSI: Buat ekspresi sad.
+UCAP: "I feel sad — because it is raining."
+AKSI: Gestur tangan ke atas.
+AKSI: Buat ekspresi scared.
+UCAP: "I feel scared — because I see a big dog."
+AKSI: Gestur tangan besar.
+UCAP: "One more time."
+AKSI: Ulang tiga kalimat.`,
           bantuan: null,
           cue    : '"Now feelings become sentences." — wajib diucapkan untuk reset mode mental kelas dari TPR ke frame kalimat. Gestur dua tangan konsisten sepanjang L7–L10: tangan kiri = feeling / tangan kanan = because. Guru selalu buat ekspresi dulu sebelum ucapkan kalimat. Alasan harus konkret dan universal — bukan personal guru. Guru tidak tanya kelas dulu di layar ini.',
           darurat: null,
           energi : '⚪ → 🟡',
         },
 
-        // L8 — INTI · Produksi Bersama Kalimat Emosi
+        // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER — UCAP: "Together now. Whole sentence." Tunjuk papan: I feel ___ because ___. Giliran 1: Buat ekspresi happy → Guru: "I feel happy because I see my friends." → Kelas ulang penuh. Giliran 2: Buat ekspresi angry → Guru: "I feel angry because…" (tangan kanan buka — tunggu) → Kelas isi alasan → Kelas ulang penuh. Giliran 3: Buat ekspresi excited → Guru: "I feel excited because…" (tunggu) → Kelas isi → Kelas ulang penuh. Giliran 4: Buat ekspresi bored → Guru: "I feel bored because…" (tunggu) → Kelas isi → Kelas ulang penuh.`,
-          bantuan: 'Jika kelas drop "I feel": tunjuk papan — "Whole sentence." (gestur garis panjang tangan) — tunggu 2 detik, lanjut choral.',
+          teks   : `🗣 TOGETHER UCAP: "Together now. Whole sentence." Tunjuk papan: I feel ___ because ___. Pattern setiap giliran: guru model penuh → kelas ulang penuh → baru fill-in. Giliran 1: → Buat ekspresi happy. → Guru: "I feel happy because I see my friends." → Kelas ulang penuh: "I feel happy because I see my friends." Giliran 2: → Buat ekspresi angry. → Guru: "I feel angry because…" [tangan kanan buka — tunggu] → Kelas isi alasan: "…someone took my pencil!" → Kelas ulang penuh: "I feel angry because someone took my pencil." Giliran 3: → Buat ekspresi excited. → Guru: "I feel excited because…" [tangan kanan buka — tunggu] → Kelas isi alasan: "…we play a game!" → Kelas ulang penuh: "I feel excited because we play a game." Giliran 4: → Buat ekspresi bored. → Guru: "I feel bored because…" [tangan kanan buka — tunggu] → Kelas isi alasan: "…the lesson is long." → Kelas ulang penuh: "I feel bored because the lesson is long."`,
+          bantuan: 'Jika kelas drop "I feel": tunjuk papan — "Whole sentence." [gestur garis panjang tangan] — tunggu 2 detik, lanjut choral.',
           cue    : 'Pattern wajib: guru model penuh → kelas ulang penuh → baru fill-in. Jangan balik urutan. Tangan kiri = feeling / tangan kanan = because — konsisten setiap giliran. Jika kelas pecah jadi potongan kata: "Whole sentence." + gestur garis panjang — jangan ulang modeling dari awal.',
           darurat: null,
           energi : '🟠',
         },
 
-        // L9 — INTI · Whole-Class QA Drill + Demo Partner
+        // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `Whole-class QA drill (2 putaran): UCAP: "Now you ask. Ready?" → Guru buat ekspresi excited — berdiri diam → Guru: "Ask me." → Kelas: "How do you feel?" → Guru: "I feel excited because we have English today!" Putaran 2: Guru buat ekspresi tired → Kelas: "How do you feel?" → Guru: "I feel tired because I walked a long way." UCAP: "Good. That's the question. That's the answer." Demo partner sukarela: UCAP: "Watch them." → Bisik scenario ke Siswa A: "You found a toy." → Siswa B: "How do you feel?" → Siswa A: "I feel happy because I found a toy!" → Guru: "Good. Full sentence." Sebelum practice: UCAP: "Partner voice — not shouting. Partner A gives a scenario. Partner B asks: How do you feel? Partner A answers." (tunjuk papan). Latih stop signal — tepuk 1 kali: "stop" — latih 1x. UCAP: "Go."`,
+          teks   : `Whole-class QA drill — sebelum demo partner (2 putaran): UCAP: "Now you ask. Ready?" → Guru buat ekspresi excited — berdiri diam. → Guru: "Ask me." → Kelas bersama: "How do you feel?" → Guru: "I feel excited because we have English today!" → Guru buat ekspresi tired — berdiri diam. → Kelas bersama: "How do you feel?" → Guru: "I feel tired because I walked a long way." UCAP: "Good. That's the question. That's the answer." Demo dengan 1 pasang siswa sukarela: "Watch them." → Guru bisik scenario ke Siswa A: "You found a toy." → Siswa B tanya: "How do you feel?" → Siswa A jawab: "I feel happy because I found a toy!" → Guru: "Good. Full sentence." Sebelum partner practice — ucapkan hal ini: "Partner voice — not shouting." "Partner A gives a scenario." "Partner B asks: How do you feel?" "Partner A answers." [tunjuk papan] Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x sebelum "Go." UCAP: "Go."`,
           bantuan: 'Jika kelas drop frame dan hanya ucap emosi: tunjuk papan — "I feel…" — tunggu 2 detik, tidak hentikan kelas.',
           cue    : 'Role wajib bersih — Partner A = pemberi scenario + penjawab / Partner B = penanya "How do you feel?" Saat switch: kedua role berbalik sepenuhnya. Guru bisik scenario ke Siswa A saat demo — tidak diucapkan ke kelas. QA drill 2 putaran wajib sebelum demo — kelas belum pernah produksi frame pertanyaan secara massal.',
           darurat: null,
           energi : '🟡',
         },
 
-        // L10 — INTI · Partner Practice
+        // L10 — INTI
         {
           tipe   : 'instruksi',
           teks   : `Partner practice — siswa pakai ekspresi wajah masing-masing, tidak ada kartu. UCAP: "Partner A gives scenario. Partner B asks. Partner A answers." (tunjuk papan) "Full sentence. Go." Total ±3 menit maksimal. Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] UCAP: "Switch. Partner B gives scenario. Partner A asks. Partner A answers." [Tepuk 1 kali — lanjut]`,
           bantuan: [
-            'Pasangan diam total: dekati, bisik scenario ke A, tunjuk B — gestur tanya. Jika masih diam: ucap "How do you feel?" ke A, tunggu. Tidak hentikan kelas.',
-            'Frame collapse (B tidak tanya, langsung tebak): dekati, gestur tanya ke B tanpa hentikan kelas.',
-            'Scenario absurd memecah fokus: bisik scenario konkret baru ke pasangan itu — tanpa debat, lanjut.',
+            'Pasangan diam total: dekati, bisik scenario ke Partner A. Tunjuk Partner B — gestur tanya. Jika masih diam: ucap "How do you feel?" ke Partner A, tunggu. Tidak hentikan kelas.',
+            'Frame collapse — Partner B tidak tanya, langsung tebak: dekati, gestur tanya ke Partner B tanpa hentikan kelas.',
+            'Scenario absurd memecah fokus kelas: bisik scenario konkret baru ke pasangan itu — tanpa debat, lanjut.',
           ],
           diferensiasi: {
             sudahBisa   : 'Ciptakan scenario sendiri, ganti emosi setiap putaran.',
             perluSupport: 'Cukup ucap emosi saja — "Happy!" — tanpa "because".',
           },
-          cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Partner B masih pakai "How do you feel?" — frame collapse terjadi diam-diam. Guru tidak koreksi grammar saat jalan. Total ±3 menit — jangan lewati, kelas cepat fatigue.',
+          cue    : 'Saat circulate: bergerak membentuk huruf U — jangan berhenti lama di satu pasangan. Cek apakah Partner B masih pakai "How do you feel?" — frame collapse terjadi diam-diam. Guru tidak koreksi grammar saat jalan. Total ±3 menit — jangan lewati, Fase A cepat fatigue.',
           darurat: 'Jika volume kelas naik terlalu tinggi → tepuk 1 kali, semua duduk diam 3 detik, lanjut partner practice.',
           energi : '🔴',
         },
 
-        // L11 — RESET + RETRIEVAL · Choral Emosi + Kalimat
+        // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here." [Jeda 2 detik] UCAP: "Together — feelings." Putaran 1: tempel kembali 7 kartu — tunjuk berurutan — lambat — kelas ucap nama. Putaran 2: Guru buat ekspresi tired — kelas ucap frame penuh: "I feel tired because I ran a lot!" → Buat ekspresi excited → "I feel excited because we play a game!" Cukup 2 emosi.`,
+          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here." [Jeda 2 detik] "Together — feelings." Putaran 1: tempel kembali 7 kartu — tunjuk berurutan — lambat — kelas ucap nama. Putaran 2: guru buat ekspresi tired — kelas ucap frame penuh: "I feel tired because I ran a lot!" → buat ekspresi excited → "I feel excited because we play a game!" Cukup 2 emosi — tidak semua.`,
           bantuan: null,
           cue    : 'Putaran 2 pakai discourse frame — bukan nama emosi saja. Ini menjaga "I feel ___ because ___." tetap hidup sebelum exit ticket. Tidak perlu semua emosi — 2 contoh cukup.',
           darurat: null,
@@ -282,14 +355,24 @@ const TP_15 = {
 
     {
       fase  : 'Penutup',
-      durasi: 10,
+      durasi: 10,  // TODO: verifikasi
 
       langkah: [
 
-        // L12 — PENUTUP · Exit Ticket
+        // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Take your pencil." — Tunggu sampai semua siswa pegang pensil. Guru buat ekspresi SCARED — berdiri diam di depan kelas, tidak bergerak. UCAP: "Last. Write one sentence." → "I feel ___ because ___." → "Look at my face." (tahan ekspresi scared) [Tunggu 45–60 detik] UCAP: "Show me."`,
+          teks   : `UCAP: "Take your pencil."
+AKSI: Tunggu — pastikan semua siswa sudah pegang pensil sebelum lanjut.
+AKSI: Guru buat ekspresi SCARED — berdiri diam di depan kelas, tidak bergerak.
+UCAP: "Last. Write one sentence."
+AKSI: Jeda sebentar.
+UCAP: "I feel ... because ..."
+AKSI: Jeda sebentar.
+UCAP: "Look at my face."
+AKSI: Tahan ekspresi scared.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."`,
           bantuan: [
             'Terima: kalimat penuh, frasa parsial ("scared, big dog"), atau gambar ekspresi dengan label. Tidak ada koreksi terbuka.',
             'Jika siswa belum selesai saat waktu habis: cukup lingkari kartu emosi yang sesuai + ucapkan alasannya lisan ke guru.',
@@ -299,10 +382,10 @@ const TP_15 = {
           energi : '🟡',
         },
 
-        // L13 — PENUTUP · Closing
+        // L13 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `Retrieval mikro: UCAP: "One more time — show me happy!" → Kelas buat ekspresi happy + ucap "Happy!" UCAP: "Show me excited!" → Kelas buat ekspresi excited + ucap "Excited!" Tunjuk semua 7 kartu cepat — kelas ucap nama bersama. UCAP: "Today — feelings. Happy, sad, angry, scared, tired, excited, bored. And we say: I feel ___ because ___. Well done. See you next time."`,
+          teks   : `AKSI — Retrieval mikro: "One more time — show me happy!" → Kelas buat ekspresi happy + ucap "Happy!" "Show me excited!" → Kelas buat ekspresi excited + ucap "Excited!" AKSI: Tunjuk semua 7 kartu cepat — kelas ucap nama bersama. UCAP: "Today — feelings. Happy, sad, angry, scared, tired, excited, bored. And we say: I feel ___ because ___. Well done. See you next time."`,
           bantuan: null,
           cue    : null,
           darurat: null,
