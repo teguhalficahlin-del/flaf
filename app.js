@@ -682,30 +682,15 @@ async function initApp() {
 // ─── IDB UNAVAILABLE SCREEN ───────────────────────────────────────────────────
 
 function _showIDBUnavailableScreen() {
-  const splash = document.getElementById('s-splash');
-  if (splash) {
-    splash.querySelector('.splash-status') &&
-      (splash.querySelector('.splash-status').textContent = '');
-
-    const inner = splash.querySelector('.splash-inner');
-    if (inner) {
-      inner.innerHTML = `
-        <div style="text-align:center;padding:24px 20px;max-width:320px;margin:0 auto">
-          <div style="font-size:32px;margin-bottom:16px">⚠️</div>
-          <div style="font-size:15px;font-weight:800;color:#fff;margin-bottom:10px">Penyimpanan Tidak Tersedia</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px">
-            Aplikasi tidak bisa menyimpan data karena penyimpanan browser tidak tersedia.<br><br>
-            Kemungkinan penyebab:<br>
-            • Mode penyamaran (private/incognito)<br>
-            • Storage penuh<br>
-            • Kebijakan browser memblokir IndexedDB
-          </div>
-          <div style="font-size:11px;color:rgba(255,255,255,.4)">
-            Tutup mode penyamaran dan buka ulang aplikasi, atau bebaskan ruang penyimpanan.
-          </div>
-        </div>`;
-    }
-  }
+  _updateSplashStatus(
+    '⚠️ Penyimpanan tidak tersedia.\n\n' +
+    'Kemungkinan penyebab:\n' +
+    '• Mode penyamaran (private/incognito)\n' +
+    '• Storage penuh\n' +
+    '• Kebijakan browser memblokir IndexedDB\n\n' +
+    'Tutup mode penyamaran dan buka ulang aplikasi, atau bebaskan ruang penyimpanan.'
+  );
+  showToast('Penyimpanan tidak tersedia. Buka di browser biasa (bukan incognito).', 8000);
 }
 
 // ─── EVENT BINDING ────────────────────────────────────────────────────────────
