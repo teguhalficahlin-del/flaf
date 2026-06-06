@@ -307,9 +307,16 @@ AKSI: Jeda 2 detik. "Quick survey." → "Do you like rice?" → kelas: "Yes, I d
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru pegang 2 kartu — apple dan noodles — tunjuk ke kelas. UCAP: UCAP: "Last. Choose one."
+          teks   : `AKSI: Guru pegang 2 kartu — apple dan noodles — tunjuk ke kelas.
+UCAP: "Last. Choose one."
+AKSI: Jeda sebentar.
 UCAP: "Write one sentence — I like ... or I don't like ...."
-UCAP: "Your choice." [Tunggu 45–60 detik] "Show me." lingkaran di piring dengan jempol naik/turun. Tidak ada koreksi terbuka. siswa sendiri. Tidak diperluas.`,
+AKSI: Jeda sebentar.
+UCAP: "Choose your card. This one or this one. Write your sentence."
+AKSI: Tunjuk kartu apple, lalu tunjuk kartu noodles.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."
+lingkaran di piring dengan jempol naik/turun. Tidak ada koreksi terbuka. siswa sendiri. Tidak diperluas.`,
           bantuan: 'Terima: kalimat penuh, kata saja ("like apple"), atau',
           cue    : 'Exit ticket = 2 pilihan kartu, 1 kalimat, pilihan',
           darurat: null,
