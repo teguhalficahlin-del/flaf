@@ -190,7 +190,7 @@ const TP_04 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kartu 11–20 sudah tertempel. Tunjuk satu per satu. 👂 LISTEN FIRST — CHUNK 1 UCAP: "Eleven. Twelve. Thirteen. Fourteen. Fifteen." "Good listening!" 👂 LISTEN FIRST — CHUNK 2 UCAP: "Sixteen. Seventeen. Eighteen. Nineteen. Twenty." 🗣 TOGETHER — semi-echo SATU PUTARAN saja AKSI: Guru ucap satu angka → jeda → siswa ikut. Satu putaran — lalu langsung full chunk. → "Eleven..." [siswa ikut] → "Twelve..." [siswa ikut] → dst sampai fifteen. → "Sixteen..." [siswa ikut] → dst sampai twenty. 🔁 Ulangi sekali lagi full chunk — tidak perlu cepat.`,
+          teks   : `AKSI: Kartu 11–20 sudah tertempel. Tunjuk satu per satu. 👂 LISTEN FIRST — CHUNK 1 UCAP: "Eleven. Twelve. Thirteen. Fourteen. Fifteen." UCAP: "Good listening!" 👂 LISTEN FIRST — CHUNK 2 UCAP: "Sixteen. Seventeen. Eighteen. Nineteen. Twenty." 🗣 TOGETHER — semi-echo SATU PUTARAN saja AKSI: Guru ucap satu angka → jeda → siswa ikut. Satu putaran — lalu langsung full chunk. → "Eleven..." [siswa ikut] → "Twelve..." [siswa ikut] → dst sampai fifteen. → "Sixteen..." [siswa ikut] → dst sampai twenty. 🔁 Ulangi sekali lagi full chunk — tidak perlu cepat.`,
           bantuan: [
             'Jika siswa diam: ucapkan bersama guru — jangan koreksi individual.',
             'Jika kelas kuat: skip semi-echo, langsung full chunk.',
