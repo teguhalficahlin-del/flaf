@@ -147,7 +147,7 @@ const TP_05 = {
         // L3 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu kiri ke kanan — satu putaran predictable. UCAP: "What colour?" [siswa jawab bersama] AKSI: Setelah satu putaran. UCAP: "Now — surprise cards!" → Tunjuk 3–4 kartu secara acak dan cepat.`,
+          teks   : `AKSI: Tunjuk kartu kiri ke kanan — satu putaran predictable. UCAP: "What colour?" [siswa jawab bersama] AKSI: Setelah satu putaran. UCAP: "Now — surprise cards!" AKSI: Tunjuk 3–4 kartu secara acak dan cepat.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -202,7 +202,7 @@ const TP_05 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Clap twice. → "Sit down. Hands in lap." [Diam 15 detik] UCAP: "Watch me." AKSI: Guru model — bertahap: → "This is my [benda]." [jeda → kelas tirukan] → "It is [warna]." [jeda → kelas tirukan] → "This is my [benda]. It is [warna]." [kelas tirukan bersama] AKSI: Ulangi dengan benda kedua. UCAP: "Open bag slowly." UCAP: "Take one thing." UCAP: "Close the bag." UCAP: "Bag down." AKSI: Guru model sekali lagi: → "This is my [benda]." [ulang] → "It is [warna]." [ulang] → gabung sekali.`,
+          teks   : `AKSI: Clap twice. UCAP: "Sit down." UCAP: "Hands in lap." AKSI: Diam 15 detik. UCAP: "Watch me." AKSI: Guru model — bertahap: → "This is my [benda]." [jeda → kelas tirukan] → "It is [warna]." [jeda → kelas tirukan] → "This is my [benda]. It is [warna]." [kelas tirukan bersama] AKSI: Ulangi dengan benda kedua. UCAP: "Open bag slowly." UCAP: "Take one thing." UCAP: "Close the bag." UCAP: "Bag down." AKSI: Guru model sekali lagi: → "This is my [benda]." [ulang] → "It is [warna]." [ulang] → gabung sekali.`,
           bantuan: null,
           cue    : 'Diam 15 detik dulu setelah cooldown — jangan terburu masuk modeling. Tas ditutup dan diletakkan sebelum tampil — fokus ke speaking.',
           darurat: null,
@@ -212,7 +212,7 @@ const TP_05 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Panggil 4–5 siswa. Maksimal 15 detik per siswa. UCAP: "Face the class." UCAP: "Ready?" AKSI: Jeda kecil — beri anak pemalu 1 detik ekstra untuk stabil. UCAP ke kelas [model volume pelan]: "When your friend finishes — say quietly: 'Good job!'" → Siswa: "This is my [benda]. It is [warna]." [Jika hanya sebut warna: terima — model kalimat penuh.]`,
+          teks   : `AKSI: Panggil 4–5 siswa. Maksimal 15 detik per siswa. UCAP: "Face the class." UCAP: "Ready?" AKSI: Jeda kecil — beri anak pemalu 1 detik ekstra untuk stabil. AKSI: Model volume pelan ke kelas. UCAP: "When your friend finishes — say quietly: 'Good job!'" → Siswa: "This is my [benda]. It is [warna]." [Jika hanya sebut warna: terima — model kalimat penuh.]`,
           bantuan: [
             'Jika diam: bisik "This is my..."',
             'Jika lupa warna: tunjuk kartu di papan.',
@@ -225,7 +225,7 @@ const TP_05 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Turn to your partner." UCAP: "Small voice — like this." AKSI: Guru model volume kecil. UCAP: "Show one thing." UCAP: "Say the colour." UCAP: "Then switch." UCAP: "3… 2… 1… eyes here."`,
+          teks   : `UCAP: "Turn to your partner." UCAP: "Small voice — like this." AKSI: Guru model volume kecil. UCAP: "Show one thing." UCAP: "Say the colour." UCAP: "Then switch." UCAP: "3… 2… 1… eyes here."`,
           bantuan: null,
           diferensiasi: {
             needHelp: 'Satu kata saja "Red!" — boleh lihat kartu di papan.',
@@ -248,7 +248,7 @@ const TP_05 = {
         // L10 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk semua kartu di papan. UCAP: "Look at all these colours!" AKSI: Guru demo: "My favourite colour is [warna]!" UCAP: "Point high — your favourite!" UCAP: "Now say your favourite colour!" → Siswa: "My favourite colour is [warna]!" 🔁 4–5 siswa. Tempo cepat.`,
+          teks   : `AKSI: Tunjuk semua kartu di papan. UCAP: "Look at all these colours!" AKSI: Guru demo. UCAP: "My favourite colour is..." UCAP: "Point high — your favourite!" UCAP: "Now say your favourite colour!" → Siswa: "My favourite colour is [warna]!" 🔁 4–5 siswa. Tempo cepat.`,
           bantuan: 'Jika diam: tunjuk 2 kartu → "This? Or this?"',
           cue    : null,
           darurat: null,
@@ -268,7 +268,7 @@ const TP_05 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Hands down. Quiet voice." UCAP: "Wonderful!" UCAP: "You know your colours." UCAP: "Soft goodbye..." AKSI: Guru ucap pelan sebagai model, siswa ikut. UCAP: "Goodbye, everyone!" UCAP: "See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
+          teks   : `UCAP: "Hands down." UCAP: "Quiet voice." UCAP: "Wonderful!" UCAP: "You know your colours." UCAP: "Soft goodbye..." AKSI: Guru ucap pelan sebagai model, siswa ikut. UCAP: "Goodbye, everyone!" UCAP: "See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
           bantuan: 'Jika diam: lambai tangan → "Good-bye..." menggantung.',
           cue    : 'Ucapkan "Soft goodbye" dulu sebelum chorus — set volume penutup yang tenang.',
           darurat: null,
