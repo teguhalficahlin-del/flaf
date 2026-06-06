@@ -112,7 +112,7 @@ const TP_12 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "I'm fine, thank you! Are you ready? Let's start."`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -149,7 +149,16 @@ const TP_12 = {
         // L2 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me." [Jeda 3 detik — guru berdiri diam] UCAP: "Good. Now — listen." → Guru sentuh kepala sendiri, ucap pelan: "Head." → Sentuh mata: "Eyes." → Sentuh telinga: "Ears." → Sentuh hidung: "Nose." UCAP: "These are body parts. Say it with me — body parts." → Kelas: "Body parts."`,
+          teks   : `AKSI: Tepuk 1 kali, kelas freeze.
+UCAP: "Stop. Hands down. Look at me."
+AKSI: Jeda 3 detik, guru berdiri diam.
+UCAP: "Good. Now — listen."
+AKSI: Sentuh kepala sendiri, ucap pelan.
+AKSI: Sentuh mata.
+AKSI: Sentuh telinga.
+AKSI: Sentuh hidung.
+UCAP: "These are body parts. Say it with me — body parts."
+→ Kelas: "Body parts."`,
           bantuan: null,
           cue    : 'Layar ini menurunkan energi setelah lagu sebelum LISTEN FIRST masuk. Empat kata diucapkan guru saja — kelas belum diminta produksi. Gestur besar dan lambat.',
           darurat: null,
@@ -159,7 +168,19 @@ const TP_12 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST AKSI: Tempel 4 kartu satu per satu: head — eyes — ears — nose Setiap kartu: tunjuk → sentuh bagian tubuh sendiri → ucap kata. Satu detik jeda, lanjut. UCAP setelah 4 kartu terpasang: "Listen. My turn." → "Head." [sentuh kepala] → "Eyes." [tunjuk kedua mata dengan dua jari] → "Ears." [sentuh kedua telinga dengan telapak] → "Nose." [sentuh hidung dengan satu jari] "One more time." → ulang sekali.`,
+          teks   : `👂 LISTEN FIRST
+AKSI: Tempel 4 kartu satu per satu: head — eyes — ears — nose. Setiap kartu: tunjuk → sentuh bagian tubuh sendiri → ucap kata. Satu detik jeda, lanjut.
+UCAP: "Listen. My turn."
+AKSI: Sentuh kepala.
+UCAP: "Head."
+AKSI: Tunjuk kedua mata dengan dua jari.
+UCAP: "Eyes."
+AKSI: Sentuh kedua telinga dengan telapak.
+UCAP: "Ears."
+AKSI: Sentuh hidung dengan satu jari.
+UCAP: "Nose."
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Gestur eyes dan ears harus berbeda jelas — eyes: dua jari tunjuk ke mata / ears: telapak sentuh telinga. Ini anchor contrast drill berikutnya. Guru belum minta kelas produksi di layar ini.',
           darurat: null,
@@ -169,7 +190,19 @@ const TP_12 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say and touch." → Tunjuk head: kelas ucap "Head!" + sentuh kepala → Tunjuk eyes: "Eyes!" + dua jari tunjuk ke mata → Tunjuk ears: "Ears!" + telapak sentuh telinga → Tunjuk nose: "Nose!" + sentuh hidung AKSI: Ulangi sekali lagi, acak 2 kartu. Contrast drill — langsung setelah putaran acak (15 detik): UCAP: "Watch." → Guru tunjuk eyes: "Eyes — I see with these." [dua jari ke mata, buka tangan ke depan] → Guru tunjuk ears: "Ears — I hear with these." [telapak sentuh telinga, gestur tangan melengkung] "Ready? Which one?" → "I hear — touch it!" → kelas sentuh telinga → "I see — touch it!" → kelas sentuh mata → Ulangi 2 putaran, cepat.`,
+          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say and touch." → Tunjuk head: kelas ucap "Head!" + sentuh kepala → Tunjuk eyes: "Eyes!" + dua jari tunjuk ke mata → Tunjuk ears: "Ears!" + telapak sentuh telinga → Tunjuk nose: "Nose!" + sentuh hidung AKSI: Ulangi sekali lagi, acak 2 kartu. Contrast drill — langsung setelah putaran acak (15 detik): UCAP: "Watch."
+AKSI: Tunjuk kartu eyes.
+UCAP: "Eyes — I see with these."
+AKSI: Dua jari ke mata, buka tangan ke depan.
+AKSI: Tunjuk kartu ears.
+UCAP: "Ears — I hear with these."
+AKSI: Telapak sentuh telinga, gestur tangan melengkung.
+UCAP: "Ready? Which one?"
+UCAP: "I hear — touch it!"
+AKSI: Kelas sentuh telinga.
+UCAP: "I see — touch it!"
+AKSI: Kelas sentuh mata.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: 'Jika kelas tertukar eyes/ears: guru tunjuk sendiri dulu — "Watch me. Ears." [sentuh telinga] — lalu ulangi cue.',
           cue    : 'Contrast drill wajib — eyes dan ears adalah pasangan paling rawan konfusi di gelombang 1. Gestur harus konsisten di setiap layar sesudah ini.',
           darurat: null,
@@ -179,7 +212,23 @@ const TP_12 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + sentuh. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 4 kartu berikutnya: mouth — hands — legs — feet Setiap kartu: tunjuk → sentuh/gestur → ucap kata. "Listen. My turn." → "Mouth." [sentuh mulut] → "Hands." [angkat kedua tangan, buka telapak] → "Legs." [tepuk paha dua kali] → "Feet." [tunjuk ke bawah, angkat satu kaki] "One more time." → ulang sekali. Contrast drill — langsung setelah LISTEN FIRST selesai (15 detik): UCAP: "Watch." → "Legs." [tepuk paha] — "Up here." → "Feet." [tunjuk kaki] — "Down here." "Ready?" → "Up here — touch it!" → kelas tepuk paha → "Down here — touch it!" → kelas tunjuk kaki → Ulangi 2 putaran, cepat.`,
+          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + sentuh. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 4 kartu berikutnya: mouth — hands — legs — feet Setiap kartu: tunjuk → sentuh/gestur → ucap kata. "Listen. My turn." → AKSI: Sentuh mulut.
+UCAP: "Mouth." → AKSI: Angkat kedua tangan, buka telapak.
+UCAP: "Hands." → AKSI: Tepuk paha dua kali.
+UCAP: "Legs." → AKSI: Tunjuk ke bawah, angkat satu kaki.
+UCAP: "Feet." "One more time." → ulang sekali. Contrast drill — langsung setelah LISTEN FIRST selesai (15 detik): UCAP: "Watch."
+AKSI: Tepuk paha.
+UCAP: "Legs."
+UCAP: "Up here."
+AKSI: Tunjuk kaki.
+UCAP: "Feet."
+UCAP: "Down here."
+UCAP: "Ready?"
+UCAP: "Up here — touch it!"
+AKSI: Kelas tepuk paha.
+UCAP: "Down here — touch it!"
+AKSI: Kelas tunjuk kaki.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: null,
           cue    : 'Reactivation gelombang 1 wajib — 15–20 detik, tidak dikoreksi. Contrast drill legs/feet wajib dilakukan di sini. Anchor spatial "up here / down here" — pakai kata ini, bukan hanya nama vocab.',
           darurat: null,
@@ -212,7 +261,40 @@ const TP_12 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Sit up." [Jeda 3 detik] UCAP: "Good. Now listen." AKSI: Tempel kembali 4 kartu: eyes — ears — nose — mouth. Tunjuk papan — I use my ___. To ___. "Listen. My turn." → Tunjuk eyes: "I use my eyes —" [jeda 1 detik] "— to see." [dua jari ke mata, buka tangan ke depan] → Tunjuk ears: "I use my ears —" [jeda 1 detik] "— to hear." [sentuh telinga, gestur melengkung] → Tunjuk nose: "I use my nose —" [jeda 1 detik] "— to smell." [sentuh hidung, hirup napas pendek] → Tunjuk mouth: "I use my mouth —" [jeda 1 detik] "— to speak." [sentuh mulut, buka tangan ke depan] → Tunjuk hands: "I use my hands —" [jeda 1 detik] "— to write." [gestur menulis di udara] "One more time." → ulang kelima kalimat.`,
+          teks   : `AKSI: Tepuk 1 kali, kelas freeze.
+UCAP: "Stop. Hands down. Sit up."
+AKSI: Jeda 3 detik.
+UCAP: "Good. Now listen."
+AKSI: Tempel kembali 4 kartu: eyes — ears — nose — mouth.
+AKSI: Tunjuk papan — I use my ___. To ___.
+UCAP: "Listen. My turn."
+AKSI: Tunjuk kartu eyes.
+UCAP: "I use my eyes —"
+AKSI: Jeda 1 detik.
+UCAP: "— to see."
+AKSI: Dua jari ke mata, buka tangan ke depan.
+AKSI: Tunjuk kartu ears.
+UCAP: "I use my ears —"
+AKSI: Jeda 1 detik.
+UCAP: "— to hear."
+AKSI: Sentuh telinga, gestur melengkung.
+AKSI: Tunjuk kartu nose.
+UCAP: "I use my nose —"
+AKSI: Jeda 1 detik.
+UCAP: "— to smell."
+AKSI: Sentuh hidung, hirup napas pendek.
+AKSI: Tunjuk kartu mouth.
+UCAP: "I use my mouth —"
+AKSI: Jeda 1 detik.
+UCAP: "— to speak."
+AKSI: Sentuh mulut, buka tangan ke depan.
+AKSI: Tunjuk kartu hands.
+UCAP: "I use my hands —"
+AKSI: Jeda 1 detik.
+UCAP: "— to write."
+AKSI: Gestur menulis di udara.
+UCAP: "One more time."
+AKSI: Ulang kelima kalimat.`,
           bantuan: null,
           cue    : 'Tunjuk papan setiap kali ucapkan "I use my" dan "to ___." Jeda 1 detik antara "I use my …" dan "to …" — wajib, bantu siswa dengar dua bagian kalimat secara terpisah. Lima contoh termasuk hands — supaya domain fungsi tubuh terasa lebih luas dari sekadar wajah. Ucap natural — jangan diperlambat berlebihan. Guru tidak tanya kelas dulu di layar ini.',
           darurat: null,
@@ -222,7 +304,42 @@ const TP_12 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Together now. Full sentence." Tunjuk papan: I use my ___. To ___. → Guru: "I use my eyes to see." → Kelas ulang penuh: "I use my eyes to see." → Guru: "I use my ears to hear." → Kelas ulang penuh: "I use my ears to hear." [Jeda 2 detik] → Tunjuk kartu nose: "I use my nose…" → Tunggu kelas: "…to smell!" → Tunjuk kartu mouth: "I use my mouth…" → Kelas: "…to speak!" → Tunjuk kartu hands: "I use my hands…" → Kelas: "…to write!" Demo dengan 1 siswa sukarela: "Watch us." → Guru tunjuk kartu eyes ke siswa: "I use my…" → Siswa: "…eyes to see!" → Guru: "Good." Lakukan sekali lagi dengan kartu ears. UCAP: "See? One card — one sentence. That's your job." Sebelum partner practice — ucapkan hal ini: "Partner voice — not shouting." "Partner A holds the card. Partner B makes the sentence." "Listener — repeat the sentence." [demo: siswa volunteer ulang kalimat] [Tunjuk 2 kartu dengan gestur tangan — tidak diucapkan] Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x sebelum "Go." UCAP: "Go."`,
+          teks   : `🗣 TOGETHER
+UCAP: "Together now. Full sentence."
+AKSI: Tunjuk papan: I use my ___. To ___.
+→ Guru: "I use my eyes to see."
+→ Kelas ulang penuh: "I use my eyes to see."
+→ Guru: "I use my ears to hear."
+→ Kelas ulang penuh: "I use my ears to hear."
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk kartu nose.
+UCAP: "I use my nose…"
+→ Tunggu kelas: "…to smell!"
+AKSI: Tunjuk kartu mouth.
+UCAP: "I use my mouth…"
+→ Kelas: "…to speak!"
+AKSI: Tunjuk kartu hands.
+UCAP: "I use my hands…"
+→ Kelas: "…to write!"
+UCAP: "Watch us."
+AKSI: Guru tunjuk kartu eyes ke siswa.
+UCAP: "I use my…"
+→ Siswa: "…eyes to see!"
+UCAP: "Good."
+AKSI: Lakukan sekali lagi dengan kartu ears.
+UCAP: "See? One card — one sentence. That's your job."
+AKSI: Sebelum partner practice — ucapkan hal ini.
+UCAP: "Partner voice — not shouting."
+UCAP: "Partner A holds the card. Partner B makes the sentence."
+UCAP: "Listener — repeat the sentence."
+AKSI: Demo — siswa volunteer ulang kalimat.
+AKSI: Tunjuk 2 kartu dengan gestur tangan, tidak diucapkan.
+AKSI: Latih stop signal.
+UCAP: "When I clap —"
+AKSI: Tepuk 1 kali.
+UCAP: "— stop."
+AKSI: Latih 1x.
+UCAP: "Go."`,
           bantuan: 'Jika kelas drop "I use my" dan hanya sebut nama fungsi: guru tunjuk papan — "I use my…" — tunggu 2 detik, lanjut choral jika tidak ada respons.',
           cue    : 'Choral frame penuh dulu sebelum fill-in. Demo partner wajib — satu siswa sukarela, dua kartu, guru yang pandu. Listener harus punya tugas — ulang kalimat partner. "Two cards each turn" disampaikan lewat gestur — bukan instruksi verbal tambahan.',
           darurat: null,
@@ -232,7 +349,8 @@ const TP_12 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it." "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut]`,
+          teks   : `AKSI: Pasang kartu eyes, ears, nose, mouth, hands di papan — 5 kartu saja. UCAP: "Use these cards. Partner A — pick a card, make a sentence. Partner B — repeat it."
+UCAP: "Clear sentence. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B picks the card now." [Tepuk 1 kali — lanjut]`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to eyes. Say: I use my eyes to see." Tidak hentikan kelas.',
           diferensiasi: {
             needHelp: 'Cukup 2 kartu — eyes dan ears.',
@@ -246,7 +364,8 @@ const TP_12 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here." [Jeda 2 detik] "Together — body parts." Putaran 1: tunjuk 8 kartu berurutan — lambat — kelas ucap nama + gestur. Putaran 2: tunjuk kartu eyes dan ears — kelas ucap dengan frame penuh: "I use my eyes to see!" → lanjut → "I use my ears to hear!" Cukup 2 kartu — tidak semua.`,
+          teks   : `[Tepuk 1 kali — freeze] UCAP: UCAP: "Stop. Look here."
+AKSI: Jeda 2 detik. "Together — body parts." Putaran 1: tunjuk 8 kartu berurutan — lambat — kelas ucap nama + gestur. Putaran 2: tunjuk kartu eyes dan ears — kelas ucap dengan frame penuh: "I use my eyes to see!" → lanjut → "I use my ears to hear!" Cukup 2 kartu — tidak semua.`,
           bantuan: null,
           cue    : 'Putaran 2 pakai discourse frame — bukan nama kartu saja. Ini menjaga "I use my … to …" tetap hidup sebelum exit ticket. Tidak perlu semua 8 kartu — 2 contoh cukup.',
           darurat: null,
@@ -265,7 +384,11 @@ const TP_12 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eyes dan ears. UCAP: "Last. Write two sentences." → "I use my ___. To ___." → "Use these two cards." [tunjuk papan] [Tunggu 45–60 detik] "Show me."`,
+          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eyes dan ears. UCAP: UCAP: "Last. Write two sentences."
+AKSI: Jeda sebentar.
+UCAP: "I use my .... To ...."
+AKSI: Jeda sebentar.
+UCAP: "Use these two cards." [tunjuk papan] [Tunggu 45–60 detik] "Show me."`,
           bantuan: 'Terima: dua kalimat penuh, frasa parsial ("use eyes — see"), atau gambar dengan label. Tidak ada koreksi terbuka.',
           cue    : 'Exit ticket = 2 kartu pasangan contrast (eyes + ears), 2 kalimat, struktur "I use my … to …". Tidak diperluas.',
           darurat: null,
