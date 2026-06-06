@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v174';         // ← bump: TP04 L12 fix
+const CACHE_VERSION  = 'flaf-v175';         // ← bump: TP05 audit fixes
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
