@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v147';         // ← bump: M11 sanitasi data backup selesai
+const CACHE_VERSION  = 'flaf-v148';         // ← bump: TD-18 confirm native diganti dialog FLAF
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
