@@ -133,7 +133,7 @@ const TP_01 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Turunkan boneka. Tunjuk diri sendiri → tunjuk kelas. UCAP: "Good morning, everyone! How are you today?" "I am fine, thank you! Say it with me!" → Siswa: "Good morning, teacher! I am fine, thank you!"`,
+          teks   : `AKSI: Turunkan boneka. Tunjuk diri sendiri → tunjuk kelas. UCAP: "Good morning, everyone! How are you today?" UCAP: "I am fine, thank you! Say it with me!" → Siswa: "Good morning, teacher! I am fine, thank you!"`,
           bantuan: 'Jika diam: condongkan badan, alis naik → ucap "I am fi-ne..." menggantung.',
           cue    : 'No pause — model the answer immediately setelah guru ucap "Say it with me!"',
           darurat: null,
@@ -143,7 +143,7 @@ const TP_01 = {
         // L3 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu waktu. Tunjukkan ke kelas satu per satu — sebut namanya dulu. UCAP: "Look! Morning, afternoon, evening." "Each time has its own greeting!" "This is morning." "This is afternoon." "This is evening." "Now — what time is this?" → Siswa: "Morning!" / "Good morning!" (terima kedua jawaban)`,
+          teks   : `AKSI: Ambil kartu waktu. Tunjukkan ke kelas satu per satu — sebut namanya dulu. UCAP: "Look! Morning, afternoon, evening." UCAP: "Each time has its own greeting!" UCAP: "This is morning." UCAP: "This is afternoon." UCAP: "This is evening." UCAP: "Now — what time is this?" → Siswa: "Morning!" / "Good morning!" (terima kedua jawaban)`,
           bantuan: [
             'Jika diam: "Hmm… morning or afternoon?" — tunjuk 2 kartu bergantian. Tunjuk gambar matahari → "mor-ning..." menggantung.',
             'Jika benar: angkat jempol, angguk.',
