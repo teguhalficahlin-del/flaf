@@ -582,7 +582,6 @@ async function getRekapAkhir(kelasId) {
  * @returns {Promise<{synced: number, failed: number}>}
  */
 async function sync(_deviceId) {
-  console.log('[NILAI] sync — offline-only, tidak ada pengiriman data');
   return { synced: 0, failed: 0 };
 }
 

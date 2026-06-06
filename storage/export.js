@@ -17,7 +17,7 @@ const KEY_EXPORT_PENDING               = 'export_pending';
 const KEY_EXPORT_FAIL_COUNT            = 'export_fail_count';
 const MAX_EXPORT_FAIL_BEFORE_URGENT    = 2;
 const BACKUP_PREFIX                    = 'FLAF-backup';
-const EXPORT_FORMAT_VERSION            = 1;
+const EXPORT_FORMAT_VERSION            = 2;
 const MIN_SUPPORTED_BACKUP_VERSION     = 2;
 
 const _state = {

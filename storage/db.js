@@ -20,10 +20,10 @@
  *   db.exportAll()                   → Promise<object>
  *   db.importMerge(data,onConflict)  → Promise<{merged,kept,conflicts}>
  *
- * Schema (DB_VERSION = 2):
+ * Schema (DB_VERSION = 10):
  *   kv           — session, device_id, nonce_*, data_version, export metadata
  *   log_queue    — log entries (autoIncrement)
- *   teacher_data — progress per TP: progress_tp_N, catatan
+ *   teacher_data — progress per TP: progress_tp_${tp.id}_${rombelId}, catatan
  */
 
 const DB_NAME    = 'flaf_db';

@@ -68,7 +68,6 @@ async function simpan({ kelasId, kelasNama, tpNomor, tpNama, statusMap, siswaLis
   };
 
   await db.set(STORE, id, entry);
-  console.log('[PRESENSI] simpan sesi:', id, '— hadir:', totalH);
   return id;
 }
 
@@ -109,7 +108,6 @@ async function getByTP(kelasId, tpNomor) {
  */
 async function hapus(id) {
   await db.remove(STORE, id);
-  console.log('[PRESENSI] hapus sesi:', id);
 }
 
 // ─── REKAP KEHADIRAN ──────────────────────────────────────────────────────────
