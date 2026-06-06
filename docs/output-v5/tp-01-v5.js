@@ -148,7 +148,7 @@ const TP_01 = {
             'Jika diam: "Hmm… morning or afternoon?" — tunjuk 2 kartu bergantian. Tunjuk gambar matahari → "mor-ning..." menggantung.',
             'Jika benar: angkat jempol, angguk.',
           ],
-          cue    : 'Condongkan badan dan alis naik setelah ucap "Now — what time is this?" — tunggu respons sebelum lanjut.',
+          cue    : 'Condongkan badan dan alis naik setelah ucap "Now — what time is this?" — tunggu respons sebelum lanjut. Letakkan kartu waktu di meja guru setelah selesai digunakan.',
           darurat: null,
           energi : '🟡',
         },
@@ -165,7 +165,7 @@ const TP_01 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." "Now one more — good night!" "See? Four greetings. One for each time. Let us learn them all!" AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
+          teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." "And this one is different — good night. We say it before sleeping." "See? Four greetings. One for each time. Let us learn them all!" AKSI: Demo Kiki & Momo — 4 salam: → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
           bantuan: null,
           cue    : 'Gerakkan tangan seperti orang tidur saat ucap "good night" — gesture ini menjadi anchor untuk siswa yang belum familiar dengan kata tersebut.',
           darurat: null,
@@ -208,7 +208,7 @@ const TP_01 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat tangan — minta siswa diam dan fokus. UCAP: "Hands down. Eyes on me." AKSI: Jelaskan aturan. Peragakan dengan Kiki — gerakkan Kiki berdiri cepat sebagai contoh. UCAP: "Now a game! I show a card — stand up fast. Say it right. Get a point!"`,
+          teks   : `AKSI: Angkat tangan — minta siswa diam dan fokus. UCAP: "Hands down. Eyes on me." --- AKSI: Jelaskan aturan. Peragakan dengan Kiki — angkat Kiki ke atas cepat saat tunjuk kartu, sebagai contoh siswa yang bergerak cepat. UCAP: "Now a game! I show a card — stand up fast. Say it right. Get a point!"`,
           bantuan: null,
           cue    : 'Turunkan tangan perlahan dan tunjuk mata sendiri saat reset — kelas perlu momen hening sebelum game dimulai. Jika kelas cepat tenang, langsung masuk game tanpa reset panjang.',
           darurat: 'Waktu ≤10 menit → lewati game, lanjut ke Layar 11 (Real Life).',
@@ -218,7 +218,7 @@ const TP_01 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat kartu — siswa berlomba ucapkan salam yang tepat. Siapa pertama berdiri dan benar, dapat poin. 🔁 5–6 rounds only.`,
+          teks   : `AKSI: Angkat kartu — siswa berlomba ucapkan salam yang tepat. Siapa pertama berdiri dan benar, dapat poin. 🔁 5–6 rounds only.\n--- AKSI: Angkat jempol. UCAP: "Great job, everyone! Sit down." Lanjut ke Real Life.`,
           bantuan: 'Jika tidak ada yang menjawab: dekatkan kartu → "Good mor-..." menggantung.',
           cue    : null,
           darurat: null,
@@ -228,7 +228,7 @@ const TP_01 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: 🏠 Real Life Connection — minta siswa duduk. UCAP: "Nice! Do you say these greetings at home too?" AKSI: Demo boneka — real life context: → Kiki: "Good morning, Mom!" → Mom: "Good morning, Kiki!" AKSI: Turunkan boneka. Tanya kelas — condongkan badan, alis naik. UCAP: "What do you say to your parents in the morning at home?" → Siswa: "Good morning, Mom! Good morning, Dad!"`,
+          teks   : `AKSI: 🏠 Real Life Connection — minta siswa duduk. UCAP: "Nice! Do you say these greetings at home too?" AKSI: Demo boneka — real life context: → Kiki: "Good morning, Mom!" → Mom: "Good morning, Kiki!" --- AKSI: Turunkan boneka. Tanya kelas — condongkan badan, alis naik. UCAP: "What do you say to your parents in the morning at home?" → Siswa: "Good morning, Mom! Good morning, Dad!"`,
           bantuan: 'Jika diam: "Good mor-ning, Mom..." menggantung → tunjuk siswa bergantian.',
           cue    : 'Tunjuk ke luar jendela — arah rumah — saat membuka konteks Real Life. Cukup 1–2 contoh jika waktu mepet.',
           darurat: null,
@@ -238,7 +238,7 @@ const TP_01 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angguk, tersenyum. Jeda — tunggu respons siswa. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" AKSI: Demo Kiki & Momo — perpisahan: → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" 👂 LISTEN FIRST AKSI: Turunkan boneka. Tunjuk kartu perpisahan satu per satu. UCAP: "Goodbye! Bye! See you!"`,
+          teks   : `AKSI: Tempel 3 kartu perpisahan di papan (goodbye / bye / see you). ---\nAKSI: Angguk, tersenyum. Jeda — tunggu respons siswa. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" Goodbye means we are leaving. --- AKSI: Demo Kiki & Momo — perpisahan: → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" --- 👂 LISTEN FIRST AKSI: Turunkan boneka. Tunjuk kartu perpisahan satu per satu. UCAP: "Goodbye! Bye! See you!"`,
           bantuan: null,
           cue    : 'Gerakkan tangan seperti melambai pergi saat tanya "And when you leave?" — gesture ini menjadi anchor untuk farewell.',
           darurat: null,
@@ -261,7 +261,7 @@ const TP_01 = {
         // L13 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri sinyal perubahan mode. Tunjuk kartu di papan untuk yang butuh bantuan. UCAP: "Now let us practice. If you need help, look at the cards. If you are ready, try without the cards." Diferensiasi: - Need Help: gunakan kartu — guru pegang Kiki, siswa pegang Momo — dialog bersama guru. - Ready: tanpa kartu — buat kalimat sendiri (contoh: "Good evening, Dad!") — praktik berpasangan pakai Kiki & Momo bergantian.`,
+          teks   : `AKSI: Beri sinyal perubahan mode. Tunjuk kartu di papan untuk yang butuh bantuan. UCAP: "Now let us practice. If you need help, look at the cards. If you are ready, try without the cards." Diferensiasi: - Need Help: gunakan kartu — guru pegang Kiki, siswa pegang Momo — dialog bersama guru. - Ready: tanpa kartu — pilih satu greeting dan satu orang (Mom, Dad, Friend, Teacher), lalu buat kalimat. Kiki & Momo digunakan oleh satu pasangan setiap giliran — pasangan lain praktik tanpa boneka. Ganti pasangan setiap ±1 menit saat guru memberi sinyal.\n--- AKSI: Setelah ±3 menit — angkat tangan. UCAP: "Stop. Sit down." Lanjut ke Penutup.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -280,7 +280,7 @@ const TP_01 = {
         // L14 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu waktu. Tunjuk ke kelas. 🔁 3–4 different cards. UCAP: "Remember these? Let us see what you know." UCAP: "What greeting do we use in the morning?" → Siswa (3–4 acak): "Good morning!"`,
+          teks   : `AKSI: Ambil kartu waktu dari meja guru. Tunjuk ke kelas. 🔁 3–4 different cards. UCAP: "Remember these? Let us see what you know." UCAP: "What greeting do we use for [tunjuk kartu]?" → Siswa (3–4 acak): menyebut salam yang tepat.`,
           bantuan: [
             'Jika diam: dekatkan kartu → "Good mor-..." menggantung.',
             'Jika benar: angkat jempol → lanjut siswa berikutnya.',
