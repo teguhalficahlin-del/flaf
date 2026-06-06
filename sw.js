@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v197';         // ← bump: audit tp-16 UCAP token
+const CACHE_VERSION  = 'flaf-v198';         // ← bump: fix L7 tp-16
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
