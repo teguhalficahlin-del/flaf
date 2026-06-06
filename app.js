@@ -595,7 +595,7 @@ async function initApp() {
       );
       showToast(
         'Ada tab FLAF lain yang terbuka. Tutup tab lain dan muat ulang.',
-        8000
+        8000, 'error'
       );
     });
     idbOk = true;
@@ -690,7 +690,7 @@ function _showIDBUnavailableScreen() {
     '• Kebijakan browser memblokir IndexedDB\n\n' +
     'Tutup mode penyamaran dan buka ulang aplikasi, atau bebaskan ruang penyimpanan.'
   );
-  showToast('Penyimpanan tidak tersedia. Buka di browser biasa (bukan incognito).', 8000);
+  showToast('Penyimpanan tidak tersedia. Buka di browser biasa (bukan incognito).', 8000, 'error');
 }
 
 // ─── EVENT BINDING ────────────────────────────────────────────────────────────
@@ -732,7 +732,7 @@ function _bindNavigation() {
   _on('btn-export-now', 'click', async () => {
     try {
       await exportManager.triggerManualExport();
-      showToast('✓ Backup berhasil disimpan');
+      showToast('✓ Backup berhasil disimpan', 3000, 'success');
     } catch (err) {
       showToast('Backup gagal. Coba lagi.');
     }
@@ -752,7 +752,7 @@ function _bindNavigation() {
       async () => {
         try {
           const result = await exportManager.importBackup(file);
-          showToast(`✓ Restore selesai: ${result.merged} record dimerge`);
+          showToast(`✓ Restore selesai: ${result.merged} record dimerge`, 3000, 'success');
           dashboardRendered = false;
           if (currentScreen === 's-dash') _initDashboard();
         } catch (err) {
@@ -772,7 +772,7 @@ function _bindNavigation() {
   _on('btn-manual-export', 'click', async () => {
     try {
       await exportManager.triggerManualExport();
-      showToast('✓ Backup berhasil disimpan');
+      showToast('✓ Backup berhasil disimpan', 3000, 'success');
       document.getElementById('export-reminder')?.setAttribute('hidden', '');
     } catch {
       showToast('Backup gagal. Coba lagi.');
@@ -1147,17 +1147,20 @@ async function _promptInstall() {
 
 let _toastTimer = null;
 
-function showToast(message, duration = 3000) {
+function showToast(message, duration = 3000, type = 'info') {
   const toast = document.getElementById('toast');
   if (!toast) return;
   clearTimeout(_toastTimer);
   toast.textContent = message;
-  toast.classList.add('toast-visible');
-  _toastTimer = setTimeout(() => toast.classList.remove('toast-visible'), duration);
+  toast.className = 'toast toast-visible toast--' + type;
+  _toastTimer = setTimeout(() => {
+    toast.classList.remove('toast-visible');
+    toast.className = 'toast';
+  }, duration);
 }
 
 function showStorageFullToast() {
-  showToast('Penyimpanan HP hampir penuh. Hapus file atau foto yang tidak diperlukan.');
+  showToast('Penyimpanan HP hampir penuh. Hapus file atau foto yang tidak diperlukan.', 3000, 'warning');
 }
 
 function _confirmDialog(pesan, labelKonfirmasi, onConfirm) {
@@ -1335,7 +1338,7 @@ async function triggerExport() {
     }
     // Fallback: download manual biasa
     await exportManager.triggerManualExport();
-    showToast('✓ Backup berhasil disimpan');
+    showToast('✓ Backup berhasil disimpan', 3000, 'success');
   } catch (err) {
     if (err.name !== 'AbortError') showToast('Backup gagal. Coba lagi.');
   }

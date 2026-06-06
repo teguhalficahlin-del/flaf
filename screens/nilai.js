@@ -35,8 +35,8 @@ let _renderToken = 0;
 
 // --- HELPERS -----------------------------------------------------------------
 
-function _nvToast(msg, duration = 3500) {
-  window.__FLAF__?.showToast(msg, duration);
+function _nvToast(msg, duration = 3500, type = 'info') {
+  window.__FLAF__?.showToast(msg, duration, type);
 }
 
 function showConfirmDialog(pesan, onConfirm) {
@@ -1022,7 +1022,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
   try {
     const sesiList = await getSesiFormatifTP(kelasId, tpNomor);
     if (!sesiList || sesiList.length === 0) {
-      _nvToast('Belum ada data penilaian untuk TP ini.');
+      _nvToast('Belum ada data penilaian untuk TP ini.', 3500, 'warning');
       return;
     }
     const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
@@ -1075,7 +1075,7 @@ window.nilaiDownloadRapor = async function(semester) {
     const rows = [['No', 'Nama', 'STS', 'SAS', 'Nilai Rapor']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '', s.sas ?? '', s.rapor ?? '']));
     if (rows.length <= 1) {
-      _nvToast('Belum ada nilai rapor untuk diunduh.');
+      _nvToast('Belum ada nilai rapor untuk diunduh.', 3500, 'warning');
       return;
     }
     _downloadCSV(`nilai-rapor-${semester}-${safeName}.csv`, rows);
@@ -1212,7 +1212,7 @@ window.nilaiDownloadKehadiran = async function(kelasId, kelasNama) {
       }
     }
 
-    if (koloms.length === 0) { _nvToast('Belum ada sesi mengajar yang tercatat.'); return; }
+    if (koloms.length === 0) { _nvToast('Belum ada sesi mengajar yang tercatat.', 3500, 'warning'); return; }
 
     const safeName = kelasNama.replace(/\s+/g, '_').toLowerCase();
     const header   = ['No', 'Nama', ...koloms.map(k => `TP${k.tpNomor} ${k.tanggal}`)];
@@ -1288,7 +1288,7 @@ window.nilaiDownloadSAS = async function(semester) {
     const rows      = [['No', 'Nama', 'Nilai SAS']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sas ?? '']));
     if (rows.length <= 1) {
-      _nvToast('Belum ada nilai SAS untuk diunduh.');
+      _nvToast('Belum ada nilai SAS untuk diunduh.', 3500, 'warning');
       return;
     }
     _downloadCSV(`nilai-sas-${semester}-${safeName}.csv`, rows);
@@ -1307,7 +1307,7 @@ window.nilaiDownloadSTS = async function(semester) {
     const rows      = [['No', 'Nama', 'Nilai STS']];
     siswaList.forEach(s => rows.push([s.nomor, s.nama, s.sts ?? '']));
     if (rows.length <= 1) {
-      _nvToast('Belum ada nilai STS untuk diunduh.');
+      _nvToast('Belum ada nilai STS untuk diunduh.', 3500, 'warning');
       return;
     }
     _downloadCSV(`nilai-sts-${semester}-${safeName}.csv`, rows);

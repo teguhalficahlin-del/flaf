@@ -759,6 +759,10 @@ body {
   box-shadow: 0 4px 16px rgba(0,0,0,.3);
 }
 .toast.toast-visible { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+.toast--info    { background: rgba(30,30,30,.96); }
+.toast--success { background: rgba(37,64,48,.97); border: 1px solid rgba(76,175,80,.3); }
+.toast--warning { background: rgba(56,48,22,.97); border: 1px solid rgba(212,174,58,.35); }
+.toast--error   { background: rgba(60,28,28,.97); border: 1px solid rgba(176,90,70,.4); }
 
 /* =============================================================
    MODAL SETTINGS
