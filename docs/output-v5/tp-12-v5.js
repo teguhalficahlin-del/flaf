@@ -179,6 +179,7 @@ AKSI: Sentuh kedua telinga dengan telapak.
 UCAP: "Ears."
 AKSI: Sentuh hidung dengan satu jari.
 UCAP: "Nose."
+AKSI: Jeda sebentar.
 UCAP: "One more time."
 AKSI: Ulang sekali.`,
           bantuan: null,
@@ -384,11 +385,15 @@ AKSI: Jeda 2 detik. "Together — body parts." Putaran 1: tunjuk 8 kartu berurut
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eyes dan ears. UCAP: UCAP: "Last. Write two sentences."
+          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eyes dan ears.
+UCAP: "Last. Write two sentences."
 AKSI: Jeda sebentar.
 UCAP: "I use my .... To ...."
 AKSI: Jeda sebentar.
-UCAP: "Use these two cards." [tunjuk papan] [Tunggu 45–60 detik] "Show me."`,
+UCAP: "Use these two cards."
+AKSI: Tunjuk papan.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."`,
           bantuan: 'Terima: dua kalimat penuh, frasa parsial ("use eyes — see"), atau gambar dengan label. Tidak ada koreksi terbuka.',
           cue    : 'Exit ticket = 2 kartu pasangan contrast (eyes + ears), 2 kalimat, struktur "I use my … to …". Tidak diperluas.',
           darurat: null,
