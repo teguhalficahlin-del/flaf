@@ -188,7 +188,7 @@ const TP_03 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. Minta semua duduk dan fokus. UCAP: "Hands down. Eyes on me." UCAP: "Stay in your space. Hands to yourself." --- UCAP: "Simon says? Do it!" UCAP: "No Simon says? Freeze!" --- AKSI: Demo aturan — Demo 1: Ucap "Simon says, stand up!" sambil berdiri. UCAP: "Good — Simon says!" AKSI: Demo 2: Ucap "Sit down!" sambil tetap berdiri. UCAP: "Freeze! No Simon says!" AKSI: Demo 3: Ucap "Simon says, listen!" sambil tunjuk telinga. UCAP: "Good!"`,
+          teks   : `AKSI: Tepuk tangan sekali. Minta semua duduk dan fokus. UCAP: "Hands down. Eyes on me." UCAP: "Stay in your space. Hands to yourself." --- UCAP: "Simon says? Do it!" UCAP: "No Simon says? Freeze!" --- AKSI: Demo aturan — Demo 1: Berdiri sambil ucapkan instruksi. UCAP: "Simon says, stand up!" UCAP: "Good — Simon says!" AKSI: Demo 2: Tetap berdiri sambil ucapkan instruksi. UCAP: "Sit down!" UCAP: "Freeze! No Simon says!" AKSI: Demo 3: Tunjuk telinga sambil ucapkan instruksi. UCAP: "Simon says, listen!" UCAP: "Good!"`,
           bantuan: null,
           cue    : 'Turunkan tangan perlahan dan tunjuk mata sendiri saat reset — kelas perlu momen hening sebelum aturan dijelaskan.',
           darurat: 'Waktu ≤10 menit → lewati Simon Says, lanjut ke Layar 9 (Siswa Jadi Pemimpin).',
