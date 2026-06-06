@@ -265,7 +265,7 @@ const TP_02 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. Minta semua perhatikan ke depan. UCAP: "Great practice! Now, who wants to introduce themselves to the class?" UCAP: "Watch first — I will show you." --- AKSI: Guru demo sendiri sekali lagi — singkat dan natural. UCAP: "Hello! My name is [nama guru]. Nice to meet you all!"`,
+          teks   : `AKSI: Tepuk tangan sekali. Minta semua perhatikan ke depan. UCAP: "Great practice! Now, who wants to introduce themselves to the class?" UCAP: "Watch first — I will show you." --- AKSI: Guru demo sendiri sekali lagi — singkat dan natural. UCAP: "Hello! My name is... Nice to meet you all!"`,
           bantuan: null,
           cue    : 'Tunjuk ke kelas setelah demo selesai → ajak tepuk tangan untuk transisi ke sesi tampil.',
           darurat: null,
