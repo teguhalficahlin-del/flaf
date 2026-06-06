@@ -153,7 +153,7 @@ const TP_07 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE — "Hands down. Look." Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan. UCAP: "Brother = boy." AKSI: Tunjuk kartu brother. Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.`,
+          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE UCAP: "Hands down." UCAP: "Look." AKSI: Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan. UCAP: "Brother = boy." AKSI: Tunjuk kartu brother. Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.`,
           bantuan: 'Sister/brother tertukar: "Sister = girl." [tunjuk kartu sister]',
           cue    : 'Micro-freeze 3 detik antara mother/father → sister/brother wajib.',
           darurat: null,
@@ -213,7 +213,7 @@ const TP_07 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. --- AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" --- ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ --- ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down." siswa satunya meniru. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.`,
+          teks   : `AKSI: DISTRIBUSI DULU — dalam diam. UCAP: "Hands still." UCAP: "Wait." AKSI: Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. --- AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" --- ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ --- ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down." siswa satunya meniru. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.`,
           bantuan: 'Pasangan diam: guru pegang kartu, model ke salah satu siswa →',
           cue    : 'Distribusi kartu diam dulu, instruksi belakangan — bukan bersamaan.',
           darurat: null,
