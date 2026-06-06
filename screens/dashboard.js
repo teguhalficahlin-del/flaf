@@ -679,7 +679,7 @@ function _buildStepAsesmen() {
   return `
   <div class="ds-card" style="text-align:center;padding:32px 16px;">
     <div style="font-size:32px;margin-bottom:12px">📋</div>
-    <div style="font-weight:500;margin-bottom:8px">
+    <div style="font-weight:500;margin-bottom:8px;color:rgba(255,255,255,0.9)">
       Penilaian dicatat saat mengajar
     </div>
     <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6">
