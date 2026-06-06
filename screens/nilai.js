@@ -536,7 +536,8 @@ async function _renderModalKelolaSiswa() {
       <div class="ds-section-label" style="margin-bottom:8px;">Tambah Siswa Baru</div>
       <div style="font-size:13px;color:rgba(255,255,255,.55);margin-bottom:8px;">Ketik satu nama per baris.</div>
       <textarea id="textarea-siswa-baru" placeholder="Ahmad Fauzi&#10;Budi Santoso&#10;Citra Dewi&#10;..."
-        class="nv-textarea-siswa"></textarea>
+        class="nv-textarea-siswa"
+        autocorrect="off" autocapitalize="none" spellcheck="false"></textarea>
       <button onclick="nilaiSimpanSiswaBaru()" class="nv-btn-simpan" style="margin-top:10px;">SIMPAN DAFTAR SISWA</button>
     </div>
   `;
@@ -1095,7 +1096,8 @@ window.nilaiTambahKelas = function() {
       <div class="nv-modal-title" style="margin-bottom:16px;">Tambah Rombel</div>
       <div class="ds-section-label" style="margin-bottom:6px;">Nama Rombel</div>
       <input id="input-nama-rombel" type="text" placeholder="contoh: Kelas 1 Abdullah"
-        class="nv-input-rombel">
+        class="nv-input-rombel"
+        autocorrect="off" autocapitalize="none" spellcheck="false" maxlength="50">
       <div class="ds-section-label" style="margin-bottom:8px;">Tingkat Kelas</div>
       <div class="nv-tingkat-grid">
         <button onclick="nilaiPilihTingkat(1)" id="btn-tingkat-1" class="nv-tingkat-btn nv-tingkat-btn--active">Kelas 1<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 9</span></button>
