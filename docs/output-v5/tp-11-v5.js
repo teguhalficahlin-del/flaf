@@ -128,7 +128,17 @@ const TP_11 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu. UCAP: "Before school today — what did you do?" [Tunggu 2–3 respons bebas — boleh Bahasa Indonesia] UCAP: "Me too — listen." → Guru peragakan gerakan sambil ucapkan: "I wake up —" [gestur bangun tidur] "I brush my teeth —" [gestur sikat gigi] "I eat breakfast —" [gestur sendok ke mulut] "Then — I go to school!" [gestur jalan] "That's my morning. Say it with me — wake up!" → Kelas: "Wake up!" [gestur bersama] tunjuk — tidak dipaksa, tidak dikomentari. saat ditanya: guru lanjut monolog + gestur, kelas ikut di akhir.`,
+          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu. UCAP: UCAP: "Before school today — what did you do?"
+AKSI: Tunggu 2–3 respons bebas, boleh Bahasa Indonesia. UCAP: UCAP: "Me too — listen."
+AKSI: Peragakan gerakan.
+UCAP: "I wake up —"
+AKSI: Gestur bangun tidur.
+UCAP: "I brush my teeth —"
+AKSI: Gestur sikat gigi.
+UCAP: "I eat breakfast —"
+AKSI: Gestur sendok ke mulut.
+UCAP: "Then — I go to school!"
+AKSI: Gestur jalan. "That's my morning. Say it with me — wake up!" → Kelas: "Wake up!" [gestur bersama] tunjuk — tidak dipaksa, tidak dikomentari. saat ditanya: guru lanjut monolog + gestur, kelas ikut di akhir.`,
           bantuan: 'Jika ada siswa individual yang diam: guru lanjut tanpa',
           cue    : 'Gestur dulu, kata belakangan. Jika kelas diam total',
           darurat: null,
@@ -147,7 +157,14 @@ const TP_11 = {
         // L2 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST AKSI: Tempel 4 kartu satu per satu: wake up — brush teeth — eat breakfast — go to school Setiap kartu: tunjuk → gestur → ucap frasa. Satu detik jeda, lanjut. UCAP setelah 4 kartu terpasang: "Listen. My turn." → "Wake up." [gestur bangun, tangan tepuk pipi] → "Brush teeth." [gestur sikat gigi] → "Eat breakfast." [gestur nguap + sendok ke mulut — pagi] → "Go to school." [gestur jalan, tangan ayun] "Brush teeth" bukan "brush — teeth." Gestur harus besar dan konsisten. Eat breakfast = gestur nguap dulu, baru makan — anchor pembeda dengan eat dinner.`,
+          teks   : `👂 LISTEN FIRST AKSI: Tempel 4 kartu satu per satu: wake up — brush teeth — eat breakfast — go to school Setiap kartu: tunjuk → gestur → ucap frasa. Satu detik jeda, lanjut. UCAP setelah 4 kartu terpasang: "Listen. My turn." → AKSI: Gestur bangun, tangan tepuk pipi.
+UCAP: "Wake up."
+→ AKSI: Gestur sikat gigi.
+UCAP: "Brush teeth."
+→ AKSI: Gestur nguap + sendok ke mulut (pagi).
+UCAP: "Eat breakfast."
+→ AKSI: Gestur jalan, tangan ayun.
+UCAP: "Go to school." "Brush teeth" bukan "brush — teeth." Gestur harus besar dan konsisten. Eat breakfast = gestur nguap dulu, baru makan — anchor pembeda dengan eat dinner.`,
           bantuan: null,
           cue    : 'Frasa dua kata — ucapkan natural, tidak dipenggal.',
           darurat: null,
@@ -167,7 +184,14 @@ const TP_11 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + gestur. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 4 kartu berikutnya: study — play — eat dinner — sleep Setiap kartu: tunjuk → gestur → ucap frasa. "Study." [gestur buka buku] "Play." [gestur lempar bola] "Eat dinner." [gestur capek + sendok ke mulut — malam] "Sleep." [gestur tangan di pipi, mata tutup] UCAP setelah 4 kartu terpasang: "Listen. My turn." → ulang keempat frasa sekali. Contrast drill — langsung setelah LISTEN FIRST selesai (10 detik): "Morning?" → kelas: "Eat breakfast!" [gestur nguap + makan] "Night?" → kelas: "Eat dinner!" [gestur capek + makan] Ulangi 2 putaran — cepat. baru makan / dinner: capek dulu baru makan. Contrast drill wajib dilakukan di sini — jangan skip.`,
+          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + gestur. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 4 kartu berikutnya: study — play — eat dinner — sleep Setiap kartu: tunjuk → gestur → ucap frasa. AKSI: Gestur buka buku.
+UCAP: "Study."
+AKSI: Gestur lempar bola.
+UCAP: "Play."
+AKSI: Gestur capek + sendok ke mulut (malam).
+UCAP: "Eat dinner."
+AKSI: Gestur tangan di pipi, mata tutup.
+UCAP: "Sleep." UCAP setelah 4 kartu terpasang: "Listen. My turn." → ulang keempat frasa sekali. Contrast drill — langsung setelah LISTEN FIRST selesai (10 detik): "Morning?" → kelas: "Eat breakfast!" [gestur nguap + makan] "Night?" → kelas: "Eat dinner!" [gestur capek + makan] Ulangi 2 putaran — cepat. baru makan / dinner: capek dulu baru makan. Contrast drill wajib dilakukan di sini — jangan skip.`,
           bantuan: null,
           cue    : 'Dua gestur inti harus berbeda — breakfast: nguap dulu',
           darurat: null,
@@ -187,7 +211,8 @@ const TP_11 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me." [Jeda 3 detik — guru berdiri diam] "Sit up. Ready." Layar 7 gagal.`,
+          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me."
+AKSI: Jeda 3 detik, guru berdiri diam. "Sit up. Ready." Layar 7 gagal.`,
           bantuan: null,
           cue    : 'Wajib — jangan skip. Kelas yang belum tenang =',
           darurat: null,
@@ -197,7 +222,13 @@ const TP_11 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST AKSI: Tunjuk papan — First, I ___. Then, I ___. "Listen. My turn." → Tunjuk kartu wake up: "First, I wake up." [gestur bangun] → Tunjuk kartu brush teeth: "Then, I brush my teeth." [gestur sikat gigi] [Jeda 2 detik] → Tunjuk kartu eat breakfast: "First, I eat breakfast." [gestur nguap + makan] → Tunjuk kartu go to school: "Then, I go to school." [gestur jalan] "Listen one more time." — ulangi dua pasang kalimat. Dua pasang contoh — bukan satu. Guru tidak tanya kelas dulu di layar ini.`,
+          teks   : `👂 LISTEN FIRST AKSI: Tunjuk papan — First, I ___. Then, I ___. UCAP: "Listen. My turn."
+AKSI: Tunjuk kartu wake up.
+UCAP: "First, I wake up."
+AKSI: Gestur bangun.
+AKSI: Tunjuk kartu brush teeth.
+UCAP: "Then, I brush my teeth."
+AKSI: Gestur sikat gigi. [Jeda 2 detik] → Tunjuk kartu eat breakfast: "First, I eat breakfast." [gestur nguap + makan] → Tunjuk kartu go to school: "Then, I go to school." [gestur jalan] "Listen one more time." — ulangi dua pasang kalimat. Dua pasang contoh — bukan satu. Guru tidak tanya kelas dulu di layar ini.`,
           bantuan: null,
           cue    : 'Tunjuk papan setiap kali ucapkan "First" dan "Then."',
           darurat: null,
@@ -217,7 +248,19 @@ const TP_11 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Watch me. My morning routine." → Guru tunjuk kartu satu per satu sambil gerak tangan ke kanan tiap langkah: "First, I wake up." [gerak tangan kanan] "Then, I brush my teeth." [gerak tangan kanan] "Then, I eat breakfast." [gerak tangan kanan] "Then, I go to school." [gerak tangan kanan] UCAP: "See? First — then — then — then." [gerak tangan ke kanan 4 langkah] Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. "Tell me your morning. Use the cards. In order." Siswa tunjuk kartu dan cerita. Jika siswa beku: guru bisik — "First, I…" dan tunjuk kartu wake up. Kelas menonton. Sebelum partner practice — ucapkan 4 hal ini: "Partner voice — not shouting." "Partner A tells first. Partner B listens." "Listener — point to the cards." [demo: tunjuk kartu saat partner cerita] "Use 3 cards in order." [gerak tangan ke kanan 3 langkah] UCAP: "Not fast. In order. Go." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x sebelum "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B tells now." [Tepuk 1 kali — lanjut] Say: First, I wake up." Tidak hentikan kelas. Guru tidak koreksi grammar. Acceptance rule berlaku — fragment diterima, model ulang saat lewat.`,
+          teks   : `UCAP: "Watch me. My morning routine."
+AKSI: Tunjuk kartu wake up, gerak tangan ke kanan.
+UCAP: "First, I wake up."
+AKSI: Tunjuk kartu brush teeth, gerak tangan ke kanan.
+UCAP: "Then, I brush my teeth."
+AKSI: Tunjuk kartu eat breakfast, gerak tangan ke kanan.
+UCAP: "Then, I eat breakfast."
+AKSI: Tunjuk kartu go to school, gerak tangan ke kanan.
+UCAP: "Then, I go to school." UCAP: "See? First — then — then — then."
+AKSI: Gerak tangan ke kanan 4 langkah. Demo dengan 1 siswa sukarela: "You, you." — tunjuk satu siswa maju. "Tell me your morning. Use the cards. In order." Siswa tunjuk kartu dan cerita. Jika siswa beku: guru bisik — "First, I…" dan tunjuk kartu wake up. Kelas menonton. Sebelum partner practice — ucapkan 4 hal ini: "Partner voice — not shouting." "Partner A tells first. Partner B listens." "Listener — point to the cards." [demo: tunjuk kartu saat partner cerita] "Use 3 cards in order." [gerak tangan ke kanan 3 langkah] UCAP: "Not fast. In order."
+UCAP: "Go." Latih stop signal: UCAP: "When I clap —"
+AKSI: Tepuk 1 kali.
+UCAP: "— stop." — latih 1x sebelum "Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Partner B tells now." [Tepuk 1 kali — lanjut] Say: First, I wake up." Tidak hentikan kelas. Guru tidak koreksi grammar. Acceptance rule berlaku — fragment diterima, model ulang saat lewat.`,
           bantuan: 'Pasangan diam total: dekati, bisik — "Point to wake up.',
           diferensiasi: {
             needHelp: 'Cukup 2 kartu — "First … Then …".',
@@ -231,7 +274,8 @@ const TP_11 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here." [Jeda 2 detik] "Together — routine." Putaran 1: tunjuk 8 kartu berurutan — lambat — kelas ucap nama + gestur. Putaran 2: tunjuk kartu study dan play — kelas ucap dengan frame penuh: "First, I study!" → lanjut → "Then, I play!" Cukup 2 kartu — tidak semua. Ini menjaga "First/Then" tetap hidup sebelum closing. Tidak perlu semua 8 kartu — 2 contoh cukup.`,
+          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here."
+AKSI: Jeda 2 detik. "Together — routine." Putaran 1: tunjuk 8 kartu berurutan — lambat — kelas ucap nama + gestur. Putaran 2: tunjuk kartu study dan play — kelas ucap dengan frame penuh: "First, I study!" → lanjut → "Then, I play!" Cukup 2 kartu — tidak semua. Ini menjaga "First/Then" tetap hidup sebelum closing. Tidak perlu semua 8 kartu — 2 contoh cukup.`,
           bantuan: null,
           cue    : 'Putaran 2 pakai discourse frame — bukan nama frasa saja.',
           darurat: null,
@@ -260,8 +304,17 @@ const TP_11 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eat breakfast dan go to school. UCAP: "Last. Write two sentences." → "First, I ___. Then, I ___." → "Use these two cards." [tunjuk papan] [Tunggu 45–60 detik] "Show me." breakfast"), atau gambar dengan urutan 1–2. Urutan berbeda dari rutinitas "benar" tetap diterima — target adalah struktur, bukan akurasi rutinitas. Tidak ada koreksi terbuka. "First … Then …". Tidak diperluas.`,
-          bantuan: 'Terima: dua kalimat penuh, frasa saja ("first eat',
+          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — eat breakfast dan go to school.
+UCAP: "Last. Write two sentences."
+AKSI: Jeda sebentar.
+UCAP: "First, I .... Then, I ...."
+AKSI: Jeda sebentar.
+UCAP: "Use these two cards."
+AKSI: Tunjuk papan.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."
+breakfast"), atau gambar dengan urutan 1–2. Urutan berbeda dari rutinitas "benar" tetap diterima — target adalah struktur, bukan akurasi rutinitas. Tidak ada koreksi terbuka. "First … Then …". Tidak diperluas.`,
+          bantuan: 'Terima: dua kalimat penuh, frasa saja ("first eat breakfast"), atau gambar dengan urutan 1–2.',
           cue    : 'Exit ticket = 2 kartu adjacent, 2 kalimat, struktur',
           darurat: null,
           energi : '🟡',
