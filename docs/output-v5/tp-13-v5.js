@@ -111,7 +111,7 @@ const TP_13 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "I'm fine, thank you! Are you ready? Let's start."`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -129,7 +129,17 @@ const TP_13 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu. UCAP: "Before we start — look at me." → Guru berjalan ke arah jendela, berdiri, lihat ke luar sebentar. → Kembali ke tengah. UCAP: "Outside — what do you see?" [Tunggu 2–3 respons bebas — boleh Bahasa Indonesia] → Guru gestur sesuai cuaca nyata hari ini: Jika cerah: "Sunny!" [tangan buka ke atas, wajah ke langit] Jika mendung: "Cloudy!" [tangan melambai pelan di atas kepala] Jika hujan: "Rainy!" [jari-jari turun seperti tetes hujan] UCAP: "That's the weather. Today's weather. Remember that word — weather." → Kelas: "Weather."`,
+          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu.
+UCAP: "Before we start — look at me."
+AKSI: Guru berjalan ke arah jendela, berdiri, lihat ke luar sebentar. Kembali ke tengah.
+UCAP: "Outside — what do you see?"
+AKSI: Tunggu 2–3 respons bebas. Respons boleh Bahasa Indonesia.
+AKSI: Guru lakukan gestur sesuai cuaca nyata hari ini.
+UCAP: "Sunny!"
+UCAP: "Cloudy!"
+UCAP: "Rainy!"
+UCAP: "That's the weather. Today's weather. Remember that word — weather."
+→ Kelas: "Weather."`,
           bantuan: null,
           cue    : 'Guru yang ke jendela — bukan siswa. Ini menjaga kelas tetap di kursi. Respons bebas siswa diterima tanpa koreksi — tujuannya aktivasi, bukan akurasi. Satu kata anchor: "weather" — kelas ucap sekali, cukup.',
           darurat: null,
@@ -148,7 +158,19 @@ const TP_13 = {
         // L2 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST AKSI: Tempel 4 kartu satu per satu: sunny — cloudy — rainy — windy Setiap kartu: tunjuk → gestur → ucap kata. Satu detik jeda, lanjut. UCAP setelah 4 kartu terpasang: "Listen. My turn." → "Sunny." [tangan buka ke atas, wajah ke atas — hangat] → "Cloudy." [tangan melambai pelan di atas kepala — lambat] → "Rainy." [jari-jari turun seperti tetes hujan] → "Windy." [tiup napas pelan, tangan ayun ke satu arah] "One more time." → ulang sekali.`,
+          teks   : `👂 LISTEN FIRST
+AKSI: Tempel 4 kartu satu per satu: sunny — cloudy — rainy — windy. Setiap kartu: tunjuk → gestur → ucap kata. Satu detik jeda, lanjut.
+UCAP: "Listen. My turn."
+AKSI: Gestur tangan buka ke atas, wajah ke atas.
+UCAP: "Sunny."
+AKSI: Tangan melambai pelan di atas kepala.
+UCAP: "Cloudy."
+AKSI: Jari-jari turun seperti tetes hujan.
+UCAP: "Rainy."
+AKSI: Tiup napas pelan, tangan ayun ke satu arah.
+UCAP: "Windy."
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Windy — gestur tiup napas + tangan ayun harus konsisten di setiap layar sesudah ini. Gunakan arah ayun yang sama sepanjang sesi — jangan ganti arah antar layar. Ini satu-satunya anchor fisik untuk kata yang tidak punya referensi benda konkret. Guru belum minta kelas produksi di layar ini.',
           darurat: null,
@@ -158,7 +180,28 @@ const TP_13 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say and do the action." → Tunjuk sunny: kelas ucap "Sunny!" + gestur tangan buka ke atas → Tunjuk cloudy: "Cloudy!" + tangan lambai pelan → Tunjuk rainy: "Rainy!" + jari turun → Tunjuk windy: "Windy!" + tiup + tangan ayun AKSI: Ulangi sekali lagi, acak 2 kartu. Contrast drill — langsung setelah putaran acak (15 detik): UCAP: "Watch." → Guru tunjuk sunny: "Sunny — nice day!" [tangan buka, senyum lebar] → Guru tunjuk rainy: "Rainy — wet day!" [jari turun, wajah berkerut] "Ready? Which one?" → "Wet day — show me!" → kelas gestur rainy → "Nice day — show me!" → kelas gestur sunny → Ulangi 2 putaran, cepat.`,
+          teks   : `🗣 TOGETHER
+UCAP: "Now together. I point — you say and do the action."
+AKSI: Tunjuk sunny.
+→ Kelas: "Sunny!" + gestur tangan buka ke atas.
+AKSI: Tunjuk cloudy.
+→ Kelas: "Cloudy!" + tangan lambai pelan.
+AKSI: Tunjuk rainy.
+→ Kelas: "Rainy!" + jari turun.
+AKSI: Tunjuk windy.
+→ Kelas: "Windy!" + tiup + tangan ayun.
+AKSI: Ulangi sekali lagi, acak 2 kartu.
+UCAP: "Watch."
+AKSI: Tunjuk kartu sunny, tangan buka, senyum lebar.
+UCAP: "Sunny — nice day!"
+AKSI: Tunjuk kartu rainy, jari turun, wajah berkerut.
+UCAP: "Rainy — wet day!"
+UCAP: "Ready? Which one?"
+UCAP: "Wet day — show me!"
+AKSI: Kelas gestur rainy.
+UCAP: "Nice day — show me!"
+AKSI: Kelas gestur sunny.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: 'Jika kelas tertukar sunny/cloudy: guru tunjuk sendiri — "Sunny — bright." [tangan ke atas] / "Cloudy — grey." [tangan lambai] — lanjut.',
           cue    : 'Contrast drill sunny vs rainy — bukan sunny vs cloudy. Sunny dan cloudy terlalu dekat gesturnya untuk jadi pasangan contrast di putaran ini. Rainy punya gestur yang paling berbeda — kontras lebih tajam. Saat circulate, sesekali model ulang windy tanpa menghentikan kelas.',
           darurat: null,
@@ -168,7 +211,29 @@ const TP_13 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + gestur. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 2 kartu: hot — cold Setiap kartu: tunjuk → gestur → ucap kata. "Listen. My turn." → "Hot." [kipas tangan ke wajah, wajah berkeringat] → "Cold." [peluk diri sendiri, bahu naik, menggigil pelan] "One more time." → ulang sekali. Contrast drill — langsung setelah LISTEN FIRST selesai (15 detik): UCAP: "Watch." → "Hot." [kipas tangan] / "Cold." [peluk diri] "Ready?" → "Hot — show me!" → kelas kipas tangan → "Cold — show me!" → kelas peluk diri → Ulangi 2 putaran, cepat.`,
+          teks   : `AKSI — Reactivation (15–20 detik):
+UCAP: "Quick check."
+AKSI: Tunjuk cepat 4 kartu gelombang 1 berurutan — kelas ucap + gestur. Tidak dikoreksi. Tidak diulang. Langsung lanjut.
+👂 LISTEN FIRST Gelombang 2
+AKSI: Tempel 2 kartu: hot — cold. Setiap kartu: tunjuk → gestur → ucap kata.
+UCAP: "Listen. My turn."
+AKSI: Kipas tangan ke wajah, wajah berkeringat.
+UCAP: "Hot."
+AKSI: Peluk diri sendiri, bahu naik, menggigil pelan.
+UCAP: "Cold."
+UCAP: "One more time."
+AKSI: Ulang sekali.
+UCAP: "Watch."
+AKSI: Kipas tangan.
+UCAP: "Hot."
+AKSI: Peluk diri.
+UCAP: "Cold."
+UCAP: "Ready?"
+UCAP: "Hot — show me!"
+AKSI: Kelas kipas tangan.
+UCAP: "Cold — show me!"
+AKSI: Kelas peluk diri.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: null,
           cue    : 'Reactivation gelombang 1 wajib — 15–20 detik, tidak dikoreksi. Contrast drill hot/cold wajib di sini — keduanya pasangan langsung. Hot: kipas ke luar / Cold: peluk ke dalam — arah gestur berlawanan, ini anchor utama.',
           darurat: null,
@@ -178,7 +243,17 @@ const TP_13 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER Fase A — Gelombang 2 saja, lambat: "Together." → Tunjuk hot → cold. → Kelas ucap + gestur. Lambat. Fase B — Campur 6 kartu, medium: "Now — all together." → Tunjuk semua 6 kartu berurutan — medium speed. → Kelas ucap + gestur. Fase C — 4 kartu acak, cepat: "Ready? Fast — but clear." → Pilih 4 kartu acak — tunjuk cepat. → Tahan 1 detik sebelum menunjuk kartu berikutnya.`,
+          teks   : `🗣 TOGETHER
+Fase A — Gelombang 2 saja, lambat:
+UCAP: "Together."
+AKSI: Tunjuk hot → cold. Kelas ucap + gestur. Lambat.
+Fase B — Campur 6 kartu, medium:
+UCAP: "Now — all together."
+AKSI: Tunjuk semua 6 kartu berurutan — medium speed. Kelas ucap + gestur.
+Fase C — 4 kartu acak, cepat:
+UCAP: "Ready?"
+UCAP: "Fast — but clear."
+AKSI: Pilih 4 kartu acak — tunjuk cepat. Tahan 1 detik sebelum menunjuk kartu berikutnya.`,
           bantuan: 'Jika kelas mulai telat atau gestur tidak sinkron: kurangi tempo, ulangi 2 kartu, lanjut.',
           cue    : 'Gestur wajib ikut sepanjang seluruh fase. Jangan letakkan hot dan cold berurutan di Fase C — interference tinggi setelah contrast drill baru selesai.',
           darurat: null,
@@ -188,7 +263,17 @@ const TP_13 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru lepas kartu dari papan — simpan. Siswa tidak pegang apa-apa. UCAP: "No cards. Just me and you." → "Show me sunny!" → kelas gestur sunny → "Show me rainy!" → kelas gestur rainy → "Show me cold!" → kelas peluk diri → "Show me windy!" → kelas tiup + tangan ayun → "Show me hot!" → kelas kipas tangan → "Show me cloudy!" → kelas tangan lambai AKSI: Putaran acak — maksimal 5 cue. Guru tidak ikut gestur — kelas yang aksi. UCAP: "My turn to watch. You do it." → Pilih 5 cue acak. Jangan letakkan hot dan cold berurutan. → Setelah 5 cue: langsung stop. UCAP: "Stop. Good."`,
+          teks   : `AKSI: Guru lepas kartu dari papan — simpan. Siswa tidak pegang apa-apa.
+UCAP: "No cards. Just me and you."
+---
+→ "Show me sunny!" → kelas gestur sunny → "Show me rainy!" → kelas gestur rainy → "Show me cold!" → kelas peluk diri → "Show me windy!" → kelas tiup + tangan ayun → "Show me hot!" → kelas kipas tangan → "Show me cloudy!" → kelas tangan lambai
+---
+AKSI: Putaran acak — maksimal 5 cue. Guru tidak ikut gestur — kelas yang aksi.
+UCAP: "My turn to watch. You do it."
+→ Pilih 5 cue acak. Jangan letakkan hot dan cold berurutan.
+→ Setelah 5 cue: langsung stop.
+---
+UCAP: "Stop. Good."`,
           bantuan: 'Jika kelas tertukar hot/cold: guru berhenti, kipas tangan — "Hot." Peluk diri — "Cold." Lanjut.',
           cue    : 'Kartu sudah dilepas — retrieval dari memori. Guru tidak ikut gestur di putaran acak — guru perlu melihat siapa yang tertukar. Putaran acak maksimal 5 cue, langsung stop — jangan improvisasi lebih lama. Hot dan cold tidak boleh berurutan di putaran acak.',
           darurat: null,
@@ -198,7 +283,25 @@ const TP_13 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Sit up." [Jeda 3 detik] UCAP: "Good. Now listen." AKSI: Tempel kembali 6 kartu. Tunjuk papan — Today is ___. The weather is ___. "Listen. My turn." → Tunjuk kartu sunny: "Today is sunny." [gestur tangan buka ke atas] → "The weather is sunny." [tunjuk papan — The weather is ___] [Jeda 2 detik] → Tunjuk kartu rainy: "Today is rainy." [gestur jari turun] → "The weather is rainy." [tunjuk papan] [Jeda 2 detik] → Tunjuk kartu cloudy: "Today is cloudy." → "The weather is cloudy." "One more time." → ulang tiga pasang kalimat.`,
+          teks   : `AKSI: Tepuk 1 kali, kelas freeze.
+UCAP: "Stop. Hands down. Sit up."
+AKSI: Jeda 3 detik.
+UCAP: "Good. Now listen."
+AKSI: Tempel kembali 6 kartu. Tunjuk papan — Today is ___. The weather is ___.
+UCAP: "Listen. My turn."
+AKSI: Tunjuk kartu sunny, gestur tangan buka ke atas.
+UCAP: "Today is sunny."
+UCAP: "The weather is sunny."
+AKSI: Tunjuk papan. Jeda 2 detik.
+AKSI: Tunjuk kartu rainy, gestur jari turun.
+UCAP: "Today is rainy."
+UCAP: "The weather is rainy."
+AKSI: Tunjuk papan. Jeda 2 detik.
+AKSI: Tunjuk kartu cloudy.
+UCAP: "Today is cloudy."
+UCAP: "The weather is cloudy."
+UCAP: "One more time."
+AKSI: Ulang tiga pasang kalimat.`,
           bantuan: null,
           cue    : 'Tunjuk papan setiap kali ucapkan "Today is" dan "The weather is." Dua struktur selalu berpasangan — tidak dipisah. Tiga contoh pasang kalimat — bukan satu. Jaga tempo ringkas — jangan explain, jangan improv. Guru tidak tanya kelas dulu di layar ini.',
           darurat: null,
@@ -261,7 +364,15 @@ const TP_13 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — rainy dan sunny. UCAP: "Last. Write two sentences." → "When it is ___, I ___." → "Use these two cards." [tunjuk papan] [Tunggu 45–60 detik] "Show me."`,
+          teks   : `AKSI: Guru tunjuk 2 kartu ke kelas — rainy dan sunny.
+UCAP: "Last. Write two sentences."
+AKSI: Jeda sebentar.
+UCAP: "When it is ... I ..."
+AKSI: Jeda sebentar.
+UCAP: "Use these two cards."
+AKSI: Tunjuk papan.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."`,
           bantuan: 'Terima: dua kalimat penuh, frasa parsial ("rainy — umbrella"), atau gambar dengan label. Tidak ada koreksi terbuka.',
           cue    : 'Exit ticket = 2 kartu pasangan contrast (rainy + sunny), 2 kalimat, struktur "When it is …, I …". Tidak diperluas.',
           darurat: null,
