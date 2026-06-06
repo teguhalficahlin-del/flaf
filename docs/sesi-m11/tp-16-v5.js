@@ -243,7 +243,7 @@ const TP_16 = {
         // L7 — RESET + DISTRIBUSI · Kartu Urutan
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Good. Now — cards." Distribusi kartu urutan (1 set per pasang) — guru atau siswa bantu distribusi. Tahan semua instruksi cara pakai sampai semua pasang sudah pegang kartu. Tunggu semua siap. UCAP: "Look at your cards. Four cards." → UCAP: "Raise First!" [cek semua angkat kartu yang benar] → UCAP: "Raise Finally!" [cek]. UCAP: "Good. Now listen — before you practice."`,
+          teks   : `UCAP: "Good. Now — cards." Distribusi kartu urutan (1 set per pasang) — guru atau siswa bantu distribusi. Tahan semua instruksi cara pakai sampai semua pasang sudah pegang kartu. Tunggu semua siap. UCAP: "Look at your cards. Four cards." AKSI: Tunggu siswa pegang semua kartu. → UCAP: "Raise First!" AKSI: Cek semua siswa angkat kartu yang benar. → UCAP: "Raise Finally!" AKSI: Cek semua siswa angkat kartu yang benar. UCAP: "Good. Now listen — before you practice."`,
           bantuan: null,
           cue    : 'Distribusi wajib selesai sebelum instruksi apapun tentang cara pakai kartu. Jangan berikan instruksi sambil distribusi masih berjalan. Cek "First" dan "Finally" setelah distribusi — dua anchor paling penting.',
           darurat: null,
