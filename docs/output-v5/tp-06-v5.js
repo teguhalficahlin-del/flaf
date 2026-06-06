@@ -126,7 +126,7 @@ const TP_06 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunggu semua duduk tenang. UCAP: "Good morning!" "Shapes are everywhere!" AKSI: Tunjuk papan tulis — gerakkan tangan membentuk persegi panjang di udara. UCAP: "Look — the board. Rectangle!" AKSI: Tunjuk jam dinding — gerakkan tangan membentuk lingkaran. UCAP: "The clock. Circle!" AKSI: Tunjuk pintu. UCAP: "The door — what shape?" UCAP: "Show me with your hands!" → Siswa bentuk tangan → guru konfirmasi: "Yes — rectangle!"`,
+          teks   : `AKSI: Tunggu semua duduk tenang. UCAP: "Good morning!" UCAP: "Shapes are everywhere!" AKSI: Tunjuk papan tulis — gerakkan tangan membentuk persegi panjang di udara. UCAP: "Look — the board. Rectangle!" AKSI: Tunjuk jam dinding — gerakkan tangan membentuk lingkaran. UCAP: "The clock. Circle!" AKSI: Tunjuk pintu. UCAP: "The door — what shape?" UCAP: "Show me with your hands!" → Siswa bentuk tangan → guru konfirmasi: "Yes — rectangle!"`,
           bantuan: null,
           cue    : 'Gesture tangan bentuk dilakukan bersamaan dengan menyebut nama — sebelum kartu dikeluarkan. Tunggu siswa bentuk tangan sendiri saat "what shape?" sebelum konfirmasi.',
           darurat: null,
