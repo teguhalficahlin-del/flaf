@@ -190,7 +190,7 @@ const TP_16 = {
         // L2 — INTI · Story Listening
         {
           tipe   : 'instruksi',
-          teks   : `Berdiri di depan kelas, pegang buku cerita menghadap siswa. UCAP: "Listen. My turn to tell the story." → Halaman 1: baca ekspresif, tunjuk gambar Ani. [Berhenti] "What do you think she will find?" [tunggu 2–3 jawab bebas — lanjut tanpa konfirmasi] → Halaman 2: baca, tunjuk gambar kucing. → Halaman 3: baca, gesture Ani memberi makan. → Halaman 4/5: baca, tunjuk ending — kucing menemukan rumah. [Pause 3 detik setelah halaman terakhir] UCAP: "That is the end. Did you like the story?" [Tunggu respons bebas — senyum, lanjut]`,
+          teks   : `Berdiri di depan kelas, pegang buku cerita menghadap siswa. UCAP: "Listen. My turn to tell the story." → Halaman 1: baca ekspresif, tunjuk gambar Ani. [Berhenti] UCAP: "What do you think she will find?" [tunggu 2–3 jawab bebas — lanjut tanpa konfirmasi] → Halaman 2: baca, tunjuk gambar kucing. → Halaman 3: baca, gesture Ani memberi makan. → Halaman 4/5: baca, tunjuk ending — kucing menemukan rumah. [Pause 3 detik setelah halaman terakhir] UCAP: "That is the end. Did you like the story?" [Tunggu respons bebas — senyum, lanjut]`,
           bantuan: 'Jika perhatian kelas mulai turun: percepat transisi halaman — jangan berhenti lebih dari 3 detik per halaman. Skip halaman supporting jika perlu, fokus di 3 halaman utama: opening, climax, ending.',
           cue    : 'Guru pegang buku menghadap kelas — gambar selalu terlihat siswa. Gesture untuk aksi cerita (gesture jalan, gesture terkejut, gesture memberi makan) lebih penting dari intonasi. Satu titik berhenti prediksi saja — antara halaman 1 dan 2. Pause 3 detik setelah halaman terakhir wajib — beri waktu siswa proses sebelum lanjut.',
           darurat: null,
@@ -200,7 +200,7 @@ const TP_16 = {
         // L3 — INTI · Whole-Class Comprehension QA
         {
           tipe   : 'instruksi',
-          teks   : `Pegang buku terbuka di halaman relevant saat tanya. UCAP: "Now — questions." → Tunjuk gambar Ani — minta siswa tunjuk juga: "Point to Ani!" [kelas tunjuk] "Who is the main character?" Kelas: "Ani!" / "The girl!" → Tunjuk gambar kucing: "Point to the cat!" [kelas tunjuk] "What did she find in the park?" Kelas: "A cat!" → Tunjuk halaman ending: "Where did they find the cat's home?" [terima jawaban apapun yang masuk akal] UCAP: "Good. You understand the story."`,
+          teks   : `Pegang buku terbuka di halaman relevant saat tanya. UCAP: "Now — questions." → Tunjuk gambar Ani — minta siswa tunjuk juga: UCAP: "Point to Ani!" [kelas tunjuk] UCAP: "Who is the main character?" Kelas: "Ani!" / "The girl!" → Tunjuk gambar kucing: UCAP: "Point to the cat!" [kelas tunjuk] UCAP: "What did she find in the park?" Kelas: "A cat!" → Tunjuk halaman ending: UCAP: "Where did they find the cat's home?" [terima jawaban apapun yang masuk akal] UCAP: "Good. You understand the story."`,
           bantuan: null,
           cue    : '"Point to ___!" sebelum setiap pertanyaan — micro movement ini membantu perhatian kelas yang sudah tiga layar berturut-turut dalam mode focused. Guru selalu tunjuk halaman relevant sebelum tanya. Terima jawaban Bahasa Indonesia dan campuran. Tiga pertanyaan cukup — tidak lebih.',
           darurat: null,
@@ -210,7 +210,7 @@ const TP_16 = {
         // L4 — INTI · LISTEN FIRST Sequencing Vocab
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST — Simpan buku cerita. Tunjuk papan: First · Then · After that · Finally. UCAP: "Listen. Four magic words." → Tunjuk "First" — tangan kiri posisi paling kiri, gesture jalan: "First." [spatial: paling kiri] → Tunjuk "Then" — tangan geser satu langkah ke kanan, gesture terkejut: "Then." [spatial: satu langkah maju] → Tunjuk "After that" — tangan geser satu langkah lagi ke kanan, gesture memberi makan: "After that." [spatial: dua langkah maju] → Tunjuk "Finally" — tangan geser ke posisi paling kanan, buka lebar: "Finally." [spatial: paling kanan]. UCAP: "One more time." → ulang sekali, lambat.`,
+          teks   : `👂 LISTEN FIRST — Simpan buku cerita. Tunjuk papan: First · Then · After that · Finally. UCAP: "Listen. Four magic words." → Tunjuk "First" — tangan kiri posisi paling kiri, gesture jalan: UCAP: "First." [spatial: paling kiri] → Tunjuk "Then" — tangan geser satu langkah ke kanan, gesture terkejut: UCAP: "Then." [spatial: satu langkah maju] → Tunjuk "After that" — tangan geser satu langkah lagi ke kanan, gesture memberi makan: UCAP: "After that." [spatial: dua langkah maju] → Tunjuk "Finally" — tangan geser ke posisi paling kanan, buka lebar: UCAP: "Finally." [spatial: paling kanan]. UCAP: "One more time." → ulang sekali, lambat.`,
           bantuan: null,
           cue    : 'Gesture dua lapis konsisten sepanjang L4–L11: spatial (posisi tangan kiri ke kanan) + aksi cerita (jalan, terkejut, memberi makan, buka lebar). Dua layer ini harus selalu muncul bersama — spatial saja tidak cukup. "After that" dua kata — ucap pelan, tidak terburu. Guru belum minta kelas produksi di layar ini.',
           darurat: null,
@@ -220,7 +220,7 @@ const TP_16 = {
         // L5 — INTI · Produksi Bersama + Apply ke Cerita
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER — Fase A (produksi vocab, lambat): UCAP: "Together." → Tunjuk papan: "First!" kelas: "First!" → "Then!" kelas: "Then!" → "After that!" kelas: "After that!" → "Finally!" kelas: "Finally!" Ulangi sekali, medium speed. Fase B (apply ke cerita): UCAP: "Now — the story." → Tunjuk "First" + tangan kiri paling kiri + gesture jalan: "First — Ani walked in the park." Kelas ulang full sentence. → Tunjuk "Then" + tangan satu langkah kanan + gesture terkejut: "Then — she found a cat." Kelas ulang. → Tunjuk "After that" + tangan dua langkah kanan + gesture memberi makan: "After that — she helped the cat." Kelas ulang. → Tunjuk "Finally" + tangan paling kanan + buka lebar: "Finally — they found the home!" Kelas ulang.`,
+          teks   : `🗣 TOGETHER — Fase A (produksi vocab, lambat): UCAP: "Together." → Tunjuk papan: UCAP: "First!" kelas: "First!" → UCAP: "Then!" kelas: "Then!" → UCAP: "After that!" kelas: "After that!" → UCAP: "Finally!" kelas: "Finally!" Ulangi sekali, medium speed. Fase B (apply ke cerita): UCAP: "Now — the story." → Tunjuk "First" + tangan kiri paling kiri + gesture jalan: UCAP: "First — Ani walked in the park." Kelas ulang full sentence. → Tunjuk "Then" + tangan satu langkah kanan + gesture terkejut: UCAP: "Then — she found a cat." Kelas ulang. → Tunjuk "After that" + tangan dua langkah kanan + gesture memberi makan: UCAP: "After that — she helped the cat." Kelas ulang. → Tunjuk "Finally" + tangan paling kanan + buka lebar: UCAP: "Finally — they found the home!" Kelas ulang.`,
           bantuan: [
             'Jika kelas drop kata urutan dan hanya ucap aksi: tunjuk papan — ucap kata urutan — tunggu 2 detik, lanjut choral.',
             'Jika kelas mulai melambat di "After that": jangan ulang seluruh rangkaian dari awal — lanjut langsung ke "Finally."',
@@ -233,7 +233,7 @@ const TP_16 = {
         // L6 — INTI · TPR Sequencing
         {
           tipe   : 'instruksi',
-          teks   : `Tutup/hapus papan. UCAP: "No board. Just me and you." Putaran berurutan dulu — kelas produksi dari gesture guru: → Tangan kiri paling kiri + gesture jalan: "What word?" kelas: "First!" → Tangan satu langkah kanan + gesture terkejut: "What word?" kelas: "Then!" → Tangan dua langkah kanan + gesture memberi makan: "What word?" kelas: "After that!" → Tangan paling kanan + buka lebar: "What word?" kelas: "Finally!" Putaran acak — maksimal 4 gesture. Guru tidak ucap kata — kelas yang produksi. UCAP: "Stop. Good." [Tepuk 1 kali — freeze] UCAP: "Sit down. Hands down." [Jeda 3 detik]`,
+          teks   : `Tutup/hapus papan. UCAP: "No board. Just me and you." Putaran berurutan dulu — kelas produksi dari gesture guru: → Tangan kiri paling kiri + gesture jalan: UCAP: "What word?" kelas: "First!" → Tangan satu langkah kanan + gesture terkejut: UCAP: "What word?" kelas: "Then!" → Tangan dua langkah kanan + gesture memberi makan: UCAP: "What word?" kelas: "After that!" → Tangan paling kanan + buka lebar: UCAP: "What word?" kelas: "Finally!" Putaran acak — maksimal 4 gesture. Guru tidak ucap kata — kelas yang produksi. UCAP: "Stop. Good." [Tepuk 1 kali — freeze] UCAP: "Sit down. Hands down." [Jeda 3 detik]`,
           bantuan: 'Jika kelas tertukar "then" dan "after that": tunjuk posisi tangan — "Then — satu langkah." Geser — "After that — dua langkah." Lanjut.',
           cue    : 'Gesture di layar ini harus identik dengan L4 dan L5 — dua lapis, spatial + aksi. Jangan improvisasi gesture baru. Maksimal 4 putaran acak, langsung stop. Guru tidak ucap kata di putaran acak — ini cek retrieval mandiri. Freeze wajib setelah layar ini sebelum distribusi kartu.',
           darurat: null,
@@ -243,7 +243,7 @@ const TP_16 = {
         // L7 — RESET + DISTRIBUSI · Kartu Urutan
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Good. Now — cards." Distribusi kartu urutan (1 set per pasang) — guru atau siswa bantu distribusi. Tahan semua instruksi cara pakai sampai semua pasang sudah pegang kartu. Tunggu semua siap. UCAP: "Look at your cards. Four cards." → "Raise First!" [cek semua angkat kartu yang benar] → "Raise Finally!" [cek]. UCAP: "Good. Now listen — before you practice."`,
+          teks   : `UCAP: "Good. Now — cards." Distribusi kartu urutan (1 set per pasang) — guru atau siswa bantu distribusi. Tahan semua instruksi cara pakai sampai semua pasang sudah pegang kartu. Tunggu semua siap. UCAP: "Look at your cards. Four cards." → UCAP: "Raise First!" [cek semua angkat kartu yang benar] → UCAP: "Raise Finally!" [cek]. UCAP: "Good. Now listen — before you practice."`,
           bantuan: null,
           cue    : 'Distribusi wajib selesai sebelum instruksi apapun tentang cara pakai kartu. Jangan berikan instruksi sambil distribusi masih berjalan. Cek "First" dan "Finally" setelah distribusi — dua anchor paling penting.',
           darurat: null,
@@ -253,7 +253,7 @@ const TP_16 = {
         // L8 — INTI · Demo Partner Retelling
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Watch. I show you first." Pegang set kartu urutan. Pilih 1 siswa sukarela sebagai Listener — siswa ini pegang set kartu mereka sendiri. Demo empat kalimat dengan gesture dua lapis: → Angkat kartu "First" + gesture jalan: "First — Ani walked in the park." Siswa Listener angkat kartu "First" — tahan. → Angkat kartu "Then" + gesture terkejut: "Then — she found a cat." Siswa Listener angkat kartu "Then." → Angkat kartu "After that" + gesture memberi makan: "After that — she helped the cat." Siswa Listener angkat kartu "After that." → Angkat kartu "Finally" + buka lebar: "Finally — they found the home!" Siswa Listener angkat kartu "Finally." UCAP: "Storyteller tells. Listener holds the card. Raise when you hear the word." UCAP: "Partner voice — not shouting." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Partner A tells the story. Partner B holds cards. Go."`,
+          teks   : `UCAP: "Watch. I show you first." Pegang set kartu urutan. Pilih 1 siswa sukarela sebagai Listener — siswa ini pegang set kartu mereka sendiri. Demo empat kalimat dengan gesture dua lapis: → Angkat kartu "First" + gesture jalan: UCAP: "First — Ani walked in the park." Siswa Listener angkat kartu "First" — tahan. → Angkat kartu "Then" + gesture terkejut: UCAP: "Then — she found a cat." Siswa Listener angkat kartu "Then." → Angkat kartu "After that" + gesture memberi makan: UCAP: "After that — she helped the cat." Siswa Listener angkat kartu "After that." → Angkat kartu "Finally" + buka lebar: UCAP: "Finally — they found the home!" Siswa Listener angkat kartu "Finally." UCAP: "Storyteller tells. Listener holds the card. Raise when you hear the word." UCAP: "Partner voice — not shouting." Latih stop signal: "When I clap —" [tepuk 1 kali] "— stop." — latih 1x. UCAP: "Partner A tells the story. Partner B holds cards. Go."`,
           bantuan: null,
           cue    : 'Demo wajib — siswa kelas 1 tidak bisa membayangkan tugas Listener tanpa contoh konkret. Guru demo sebagai Storyteller, siswa sukarela demo sebagai Listener. Gesture dua lapis tetap dipakai di demo — konsisten dengan L4–L6. Ucapkan tugas Listener eksplisit: "Raise when you hear the word." Latih stop signal sebelum "Go."',
           darurat: null,
@@ -292,7 +292,7 @@ const TP_16 = {
         // L11 — RETRIEVAL · Choral Sequencing
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "One more time — together." Buka papan kembali. → "First!" kelas: "First!" → "Then!" kelas: "Then!" → "After that!" kelas: "After that!" → "Finally!" kelas: "Finally!" Guru tunjuk kartu satu per satu acak — kelas ucap nama. Maksimal 5 kartu acak — tahan 1 detik sebelum lanjut. UCAP: "And the story — fast." → Tangan kiri paling kiri + gesture jalan: kelas ucap "First — Ani walked!" → Tangan satu langkah kanan + gesture terkejut: "Then — she found a cat!" → Tangan dua langkah kanan + gesture memberi makan: "After that — she helped!" → Tangan paling kanan + buka lebar: "Finally — they found the home!"`,
+          teks   : `UCAP: "One more time — together." Buka papan kembali. → UCAP: "First!" kelas: "First!" → UCAP: "Then!" kelas: "Then!" → UCAP: "After that!" kelas: "After that!" → UCAP: "Finally!" kelas: "Finally!" Guru tunjuk kartu satu per satu acak — kelas ucap nama. Maksimal 5 kartu acak — tahan 1 detik sebelum lanjut. UCAP: "And the story — fast." → Tangan kiri paling kiri + gesture jalan: kelas ucap "First — Ani walked!" → Tangan satu langkah kanan + gesture terkejut: UCAP: "Then — she found a cat!" → Tangan dua langkah kanan + gesture memberi makan: UCAP: "After that — she helped!" → Tangan paling kanan + buka lebar: UCAP: "Finally — they found the home!"`,
           bantuan: null,
           cue    : 'Gesture dua lapis wajib — identik dengan L4, L5, L6, dan L8. Ini anchor retrieval utama — jika gesture berubah, anchor putus. Di putaran acak kartu: tahan 1 detik sebelum lanjut. Kelas ucap full sentence di retrieval cerita — bukan hanya kata urutan.',
           darurat: null,
@@ -311,7 +311,7 @@ const TP_16 = {
         // L12 — PENUTUP · Exit Ticket
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Take your pencil." [Tunggu — pastikan semua siswa sudah pegang pensil] Tunjuk kartu "Then" — tahan di depan kelas. UCAP: "Write one sentence. Use this word." [tunjuk kartu "Then"] → "Then — ___________." → "Tell me about the story." [Tunggu 45–60 detik] UCAP: "Show me."`,
+          teks   : `UCAP: "Take your pencil." [Tunggu — pastikan semua siswa sudah pegang pensil] Tunjuk kartu "Then" — tahan di depan kelas. UCAP: "Write one sentence. Use this word." [tunjuk kartu "Then"] → UCAP: "Then — ..." → UCAP: "Tell me about the story." [Tunggu 45–60 detik] UCAP: "Show me."`,
           bantuan: [
             'Terima: kalimat penuh ("Then she found a cat"), frasa parsial ("then cat"), atau gambar dengan label kata urutan. Tidak ada koreksi terbuka.',
             'Jika siswa belum selesai saat waktu habis: angkat kartu "Then" + ucapkan lanjutan kalimat lisan ke guru.',
