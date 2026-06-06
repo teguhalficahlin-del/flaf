@@ -120,7 +120,7 @@ const TP_04 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `AKSI: Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you!" UCAP: "Today — we count in English!" UCAP: "Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    teks   : `AKSI: Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. UCAP: "Good morning, everyone! How are you today?" AKSI: Tunggu respons kelas. UCAP: "I'm fine, thank you!" UCAP: "Today — we count in English!" UCAP: "Are you ready?" AKSI: Tunggu respons — berdiri diam jika kelas belum fokus.`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jangan mulai clap and count sebelum kelas tenang. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -289,7 +289,7 @@ const TP_04 = {
         // L13 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan. UCAP: "Great work today!" UCAP: "You can count to twenty in English!" UCAP: "Soft goodbye..." [guru ucap pelan → siswa ikut] UCAP: "Goodbye, everyone!" UCAP: "See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
+          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan. UCAP: "Great work today!" UCAP: "You can count to twenty in English!" UCAP: "Soft goodbye..." AKSI: Guru ucap pelan sebagai model, siswa ikut. UCAP: "Goodbye, everyone!" UCAP: "See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
           bantuan: 'Jika diam: mulai lambai tangan → ucap "Good-bye..." menggantung.',
           cue    : 'Model volume "Soft goodbye" dulu sebelum chorus — cegah eskalasi noise di penutup.',
           darurat: null,
