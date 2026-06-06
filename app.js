@@ -307,7 +307,9 @@ async function _populateStartScreen() {
     // Update deskripsi card Dokumen Kurikulum
     const descEl = document.querySelector('#btn-go-jadwal .home-card-desc');
     if (descEl) descEl.textContent = `CP, ATP, ${totalTP} TP + modul PDF siap unduh`;
-    const fase = session?.kelas <= 2 ? 'A' : session?.kelas <= 4 ? 'B' : 'C';
+    const _k = parseInt(session?.kelas);
+    const fase = (!_k || _k < 1 || _k > 6) ? 'A · B · C'
+               : _k <= 2 ? 'A' : _k <= 4 ? 'B' : 'C';
     const pct      = Math.round((selesai / totalTP) * 100);
     const fillEl   = document.getElementById('home-progress-fill');
     const countEl  = document.getElementById('home-tp-done');
