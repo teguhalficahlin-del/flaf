@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v159';         // ← bump: UCAP collapse + TTS speaker button
+const CACHE_VERSION  = 'flaf-v160';         // ← bump: fix TTS icon visibility
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
