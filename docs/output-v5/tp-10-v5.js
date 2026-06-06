@@ -317,7 +317,7 @@ AKSI: Tunjuk kartu apple, lalu tunjuk kartu noodles.
 AKSI: Tunggu 45–60 detik.
 UCAP: "Show me."
 lingkaran di piring dengan jempol naik/turun. Tidak ada koreksi terbuka. siswa sendiri. Tidak diperluas.`,
-          bantuan: 'Terima: kalimat penuh, kata saja ("like apple"), atau',
+          bantuan: 'Terima: kalimat penuh, kata saja ("like apple"), atau gambar saja.',
           cue    : 'Exit ticket = 2 pilihan kartu, 1 kalimat, pilihan',
           darurat: null,
           energi : '🟡',
