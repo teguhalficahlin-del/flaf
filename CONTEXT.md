@@ -2086,7 +2086,7 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 
 ### Status Audit Skenario Fase A
 
-**SW aktif saat ini:** `flaf-v188`
+**SW aktif saat ini:** `flaf-v196`
 
 | TP | Topik | Status |
 |----|-------|--------|
@@ -2101,9 +2101,13 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 | TP09 | Animals | ✅ Selesai |
 | TP10 | Food and Drinks | ✅ Selesai |
 | TP11 | Daily Routines | ✅ Selesai |
-| TP12–18 | (belum diaudit) | ⏳ Pending |
+| TP12 | Body Parts | ✅ Selesai |
+| TP13 | Weather and Seasons | ✅ Selesai |
+| TP14 | In the Classroom | ✅ Selesai |
+| TP15 | Feelings and Emotions | ✅ Selesai |
+| TP16–18 | (belum diaudit) | ⏳ Pending |
 
-### Keputusan Teknis Audit Skenario (Ditetapkan TP08–TP11)
+### Keputusan Teknis Audit Skenario (Ditetapkan TP08–TP15)
 
 1. **preOpening — format polos**: Field `teks` di `preOpening` tidak boleh menggunakan prefix token `UCAP:`/`AKSI:` — format polos (plain text) saja. Setiap TP perlu dicek dan dibersihkan dalam prompt yang sama saat audit.
 
@@ -2114,6 +2118,16 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 4. **Audit preOpening wajib per TP**: Setiap TP yang diaudit perlu dicek field `teks` preOpening-nya — jika mengandung prefix `UCAP:`/`AKSI:`, bersihkan dalam prompt yang sama sebelum commit.
 
 5. **Bantuan terpotong wajib dilengkapi**: Field `bantuan` yang terpotong (akibat batch converter) perlu dilengkapi manual sebelum commit — jangan commit teks yang terpotong di tengah kalimat.
+
+6. **"Listen. My turn." selalu satu token UCAP**: Tidak dipecah menjadi dua UCAP terpisah — berlaku lintas semua TP tanpa pengecualian.
+
+7. **"Ready? Fast — but clear." adalah dua UCAP terpisah**: `UCAP: "Ready?"` dan `UCAP: "Fast — but clear."` — tidak digabung dalam satu token.
+
+8. **Normalisasi penuh wajib**: Semua ujaran guru wajib `UCAP:`, semua gesture/jeda/ekspresi wajah/penunjukan/narasi wajib `AKSI:` — tidak ada pengecualian di semua TP baru.
+
+9. **Sync ke folder sesi-mN setelah audit**: TP di-serve dari `docs/sesi-mN/` bukan `output-v5/`. Setelah audit `output-v5/`, wajib sync: TP15 → `sesi-m10/`, TP16 → `sesi-m11/`, TP17 → `sesi-m12/`, TP18 → `sesi-m13/`.
+
+10. **AKSI: Jeda sebentar. sebagai pemisah blok UCAP**: Setiap dua UCAP berurutan yang seharusnya tampil sebagai blok kuning terpisah wajib dipisah dengan `AKSI: Jeda sebentar.` — tanpa ini `_collapseUcap()` akan menggabungkannya.
 
 ### SW Version History — v148 s/d v163
 
