@@ -682,7 +682,7 @@ function _buildStepAsesmen() {
     <div style="font-weight:500;margin-bottom:8px">
       Penilaian dicatat saat mengajar
     </div>
-    <div style="font-size:13px;opacity:0.85;line-height:1.6">
+    <div style="font-size:13px;color:rgba(255,255,255,0.85);line-height:1.6">
       Gunakan tombol "Catat penilaian siswa" di layar
       sesi mengajar untuk mencatat nilai proses siswa.
       Hasil penilaian bisa diunduh di menu Nilai → Unduh & Cetak.
