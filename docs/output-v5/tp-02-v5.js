@@ -121,7 +121,7 @@ const TP_02 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Semua duduk. Tulis nama di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone! My name is [nama guru]." "My name is [nama guru]. Nice to meet you!"`,
+          teks   : `AKSI: Semua duduk. Tulis nama di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone! My name is [nama guru]." UCAP: "My name is [nama guru]. Nice to meet you!"`,
           bantuan: null,
           cue    : 'Tunjuk nama di papan saat mengucapkannya.',
           darurat: null,
@@ -131,7 +131,7 @@ const TP_02 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas. UCAP: "What is my name?" "Your name is [nama guru]! Say it with me!" → Siswa: "Your name is [nama guru]!"`,
+          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas. UCAP: "What is my name?" UCAP: "Your name is [nama guru]! Say it with me!" → Siswa: "Your name is [nama guru]!"`,
           bantuan: [
             'Jika diam: tunjuk nama di papan → ucap "Your name is..." menggantung.',
             'Jika jawab Bahasa Indonesia: angguk, ucapkan dalam Inggris pelan → ajak ikut.',
@@ -144,7 +144,7 @@ const TP_02 = {
         // L3 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas bergantian. UCAP: "Now I know your teacher's name. But I don't know your names yet!" "Let us learn how to introduce ourselves!"`,
+          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas bergantian. UCAP: "Now I know your teacher's name. But I don't know your names yet!" UCAP: "Let us learn how to introduce ourselves!"`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -163,7 +163,7 @@ const TP_02 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tulis di papan: My name is ___. Tunjuk papan — ucapkan dulu sendiri, siswa dengarkan. 👂 LISTEN FIRST UCAP: "My name is Budi. My name is Sari. My name is Andi." 🗣 TOGETHER UCAP: "Now you! My name is..." → Siswa: "My name is [nama sendiri]."`,
+          teks   : `AKSI: Tulis di papan: My name is ___. Tunjuk papan — ucapkan dulu sendiri, siswa dengarkan. --- 👂 LISTEN FIRST UCAP: "My name is Budi. My name is Sari. My name is Andi." --- 🗣 TOGETHER UCAP: "Now you! My name is..." → Siswa: "My name is [nama sendiri]."`,
           bantuan: [
             'Jika diam: tunjuk name tag / papan → ucap "My name is..." menggantung → tunjuk siswa.',
             'Jika jawab Bahasa Indonesia: angguk, ucap "My name is..." + nama mereka → ajak ulang.',
@@ -176,7 +176,7 @@ const TP_02 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Bagikan kertas name tag. Bantu yang belum bisa menulis — tidak apa-apa kalau belum rapi. 🔁 Siswa yang sudah selesai: minta mereka trace nama lagi sampai semua siap. UCAP: "Write your name here. My name is ___."`,
+          teks   : `AKSI: Bagikan kertas name tag. Bantu yang belum bisa menulis — tidak apa-apa kalau belum rapi. 🔁 Siswa yang sudah selesai: minta mereka trace nama lagi sampai semua siap. UCAP: "Write your name here. My name is..."`,
           bantuan: 'Jika belum bisa menulis: guru tulis nama di name tag, siswa tempelkan sendiri.',
           cue    : 'Guru keliling dan bantu satu per satu jika perlu. Tunjuk garis kosong di name tag saat ucap instruksi.',
           darurat: null,
@@ -186,7 +186,7 @@ const TP_02 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Semua sudah pasang name tag. Tunjuk name tag sendiri, lalu tunjuk name tag siswa. UCAP: "Great! Now I know your names." "But how old are you? Let us find out!"`,
+          teks   : `AKSI: Semua sudah pasang name tag. Tunjuk name tag sendiri, lalu tunjuk name tag siswa. UCAP: "Great! Now I know your names." UCAP: "But how old are you? Let us find out!"`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -196,7 +196,7 @@ const TP_02 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri. Angkat jari sesuai jumlah usia yang diucapkan. 👂 LISTEN FIRST UCAP: "How old are you?" "I am six years old." [angkat 6 jari — jeda] "I am seven years old." [angkat 7 jari — jeda] 🗣 TOGETHER UCAP: "How old are you?" "I am..." → Siswa: "I am [usia] years old!"`,
+          teks   : `AKSI: Tunjuk diri sendiri. Angkat jari sesuai jumlah usia yang diucapkan. --- 👂 LISTEN FIRST UCAP: "How old are you?" AKSI: Angkat 6 jari — jeda sebentar. UCAP: "I am six years old." AKSI: Angkat 7 jari — jeda sebentar. UCAP: "I am seven years old." --- 🗣 TOGETHER UCAP: "How old are you?" UCAP: "I am..." → Siswa: "I am [usia] years old!"`,
           bantuan: [
             'Jika diam: angkat jari sebanyak usia siswa → ucap "I am..." menggantung → tunggu.',
             'Jika jawab angka saja ("six!"): angguk, ucap "I am six years old!" → ajak ulang.',
@@ -209,7 +209,7 @@ const TP_02 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Pegang Kiki dan Momo — satu di setiap tangan. Demo sekali — tunjukkan bagaimana dua orang bertemu dan berkenalan: → Kiki: "Hello! My name is Kiki. I am six years old." → Momo: "Hi! My name is Momo. I am seven years old." AKSI: Turunkan boneka. Tunjuk papan — pastikan kalimat lengkap tertulis. UCAP: "That is what you will say to your friends. Let us practise!"`,
+          teks   : `AKSI: Pegang Kiki dan Momo — satu di setiap tangan. Demo sekali — tunjukkan bagaimana dua orang bertemu dan berkenalan: → Kiki: "Hello! My name is Kiki. I am six years old." → Momo: "Hi! My name is Momo. I am seven years old." --- AKSI: Turunkan boneka. Tunjuk papan — pastikan kalimat lengkap tertulis. UCAP: "That is what you will say to your friends. Let us practise!"`,
           bantuan: null,
           cue    : 'Demo dilakukan sekali saja — tunjukkan seluruh interaksi dari salam hingga perkenalan lengkap.',
           darurat: null,
@@ -219,7 +219,7 @@ const TP_02 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat tangan — minta siswa tenang dan fokus. UCAP: "Hands down. Eyes on me." AKSI: Jelaskan aturan walk and talk dengan singkat. UCAP: "Stand up. Walk. Find a friend. Say hello and introduce yourself." "Then find another friend. Three friends total!"`,
+          teks   : `AKSI: Angkat tangan — minta siswa tenang dan fokus. UCAP: "Hands down. Eyes on me." AKSI: Jelaskan aturan walk and talk dengan singkat. UCAP: "Stand up. Walk. Find a friend. Say hello and introduce yourself." UCAP: "Then find another friend. Three friends total!"`,
           bantuan: null,
           cue    : 'Turunkan tangan perlahan dan tunjuk mata sendiri saat reset — kelas perlu momen hening sebelum aturan dijelaskan. Clap twice = stop and freeze — praktikkan sekali bersama kelas sebelum mulai.',
           darurat: 'Waktu ≤10 menit → batalkan walk and talk, siswa perkenalkan diri ke teman di sebelah saja, duduk di tempat.',
@@ -229,7 +229,7 @@ const TP_02 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri aba-aba mulai. Pantau kelas — bantu pasangan yang kesulitan. 🔁 2 menit · 3 teman berbeda.`,
+          teks   : `AKSI: Beri aba-aba mulai. Pantau kelas — bantu pasangan yang kesulitan. 🔁 2 menit · 3 teman berbeda. AKSI: Clap twice untuk berhenti. Tunggu seluruh kelas hening, lalu minta semua kembali ke tempat duduk.`,
           bantuan: [
             'Jika siswa diam saat bertemu teman: dekati, bisik "Say: Hello! My name is..."',
             'Jika kelas terlalu ramai: clap twice → "Hands down. Eyes on me." — reset sebentar lalu lanjut.',
@@ -242,7 +242,7 @@ const TP_02 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Minta semua duduk kembali. Beri sinyal perubahan mode. UCAP: "Well done! Now practise with your partner." "If you need help, look at the board. If you are ready, try without looking!"`,
+          teks   : `AKSI: Minta semua duduk kembali. Angkat tangan — tunggu hingga kelas tenang. UCAP: "Well done! Now practise with your partner." UCAP: "If you need help, look at the board. If you are ready, try without looking!"`,
           bantuan: null,
           diferensiasi: {
             needHelp: 'Lihat papan saat berbicara — boleh hanya nama saja dulu, usia bisa belakangan — guru duduk dekat dan bantu.',
@@ -265,7 +265,7 @@ const TP_02 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. Minta semua perhatikan ke depan. UCAP: "Great practice! Now, who wants to introduce themselves to the class?" "Watch first — I will show you." AKSI: Guru demo sendiri sekali lagi — singkat dan natural. UCAP: "Hello! My name is [nama guru]. Nice to meet you all!"`,
+          teks   : `AKSI: Tepuk tangan sekali. Minta semua perhatikan ke depan. UCAP: "Great practice! Now, who wants to introduce themselves to the class?" UCAP: "Watch first — I will show you." --- AKSI: Guru demo sendiri sekali lagi — singkat dan natural. UCAP: "Hello! My name is [nama guru]. Nice to meet you all!"`,
           bantuan: null,
           cue    : 'Tunjuk ke kelas setelah demo selesai → ajak tepuk tangan untuk transisi ke sesi tampil.',
           darurat: null,
@@ -301,7 +301,7 @@ const TP_02 = {
         // L15 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan ke seluruh kelas. UCAP: "Great job, everyone! You can introduce yourselves in English!" "See you next time. Goodbye!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
+          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan ke seluruh kelas. UCAP: "Great job, everyone! You can introduce yourselves in English!" UCAP: "See you next time. Goodbye!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
           bantuan: 'Jika diam: mulai lambai tangan → ucap "Good-bye..." menggantung.',
           cue    : null,
           darurat: null,
@@ -311,7 +311,7 @@ const TP_02 = {
         // L16 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kertas name tag (simpan untuk referensi nama siswa) → Hapus tulisan di papan AKSI: Catat siswa yang: → Diam saat walk and talk — tidak mau / tidak bisa berinteraksi → Hanya bisa sebut nama, belum bisa kalimat lengkap → Perlu bantuan menulis name tag`,
+          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kertas name tag (simpan untuk referensi nama siswa) → Hapus tulisan di papan --- AKSI: Catat siswa yang: → Diam saat walk and talk — tidak mau / tidak bisa berinteraksi → Hanya bisa sebut nama, belum bisa kalimat lengkap → Perlu bantuan menulis name tag`,
           bantuan: null,
           cue    : null,
           darurat: null,
