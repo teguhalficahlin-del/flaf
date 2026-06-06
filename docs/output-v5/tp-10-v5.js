@@ -114,8 +114,7 @@ const TP_10 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: UCAP: "Good morning, everyone! How are you today?"
-AKSI: Tunggu respons kelas. UCAP: "Great! Me too. Are you ready? Let's start." mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "Great! Me too. Are you ready? Let's start." mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya',
     darurat: null,
