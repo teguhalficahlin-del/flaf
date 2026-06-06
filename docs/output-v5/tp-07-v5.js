@@ -134,7 +134,7 @@ const TP_07 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu mother dari meja. Tunjukkan ke kelas. UCAP: "Look. This is my mother." 👂 LISTEN FIRST — Pelan. Jangan minta siswa ulang dulu. AKSI: Ambil kartu father. UCAP: "This is my father." "I love my family!" perlu tekanan intonasi besar. Dua kartu saja di Layar ini — jangan tempel dulu.`,
+          teks   : `AKSI: Ambil kartu mother dari meja. Tunjukkan ke kelas. UCAP: "Look. This is my mother." 👂 LISTEN FIRST — Pelan. Jangan minta siswa ulang dulu. AKSI: Ambil kartu father. UCAP: "This is my father." UCAP: "I love my family!" AKSI: Beri tekanan intonasi besar pada kalimat ini. Dua kartu saja di Layar ini — jangan tempel dulu.`,
           bantuan: null,
           cue    : 'Kalimat terakhir adalah emotional flavour — ucapkan hangat, tidak',
           darurat: null,
@@ -153,7 +153,7 @@ const TP_07 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE — "Hands down. Look." Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan. "Brother = boy." [tunjuk kartu brother] Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.`,
+          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE — "Hands down. Look." Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan. UCAP: "Brother = boy." AKSI: Tunjuk kartu brother. Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.`,
           bantuan: 'Sister/brother tertukar: "Sister = girl." [tunjuk kartu sister]',
           cue    : 'Micro-freeze 3 detik antara mother/father → sister/brother wajib.',
           darurat: null,
@@ -163,7 +163,7 @@ const TP_07 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 2 kartu tambahan: grandmother · grandfather. UCAP: "Listen first — Grandmother." [jeda 2 detik] "Grandfather." 🗣 TOGETHER — Semi-echo suku kata: "Grand— ... mother!" → kelas ikut "Grand— ... father!" → kelas ikut ⚡ MINI DISCRIMINATION CHECK: Tunjuk kartu cepat — "Grandmother?" → tunjuk kartu lain — "Grandfather?" ⚡ Putaran kedua — opsi half-class: Sisi kiri → "Grandmother" Sisi kanan → "Grandfather" Bantu clarity tanpa semua serentak. AKSI: Tunjuk semua 6 kartu acak — kelas sebutkan bersama 2 putaran. jangan skip. Discrimination check wajib sebelum masuk Layar 5.`,
+          teks   : `AKSI: Tempel 2 kartu tambahan: grandmother · grandfather. UCAP: "Listen first — Grandmother." [jeda 2 detik] "Grandfather." 🗣 TOGETHER — Semi-echo suku kata: "Grand— ... mother!" → kelas ikut "Grand— ... father!" → kelas ikut --- ⚡ MINI DISCRIMINATION CHECK: Tunjuk kartu cepat — "Grandmother?" → tunjuk kartu lain — "Grandfather?" ⚡ Putaran kedua — opsi half-class: Sisi kiri → "Grandmother" Sisi kanan → "Grandfather" Bantu clarity tanpa semua serentak. --- AKSI: Tunjuk semua 6 kartu acak — kelas sebutkan bersama 2 putaran. jangan skip. Discrimination check wajib sebelum masuk Layar 5.`,
           bantuan: 'Masih tertukar: ulang semi-echo "Grand—…" sekali lagi sebelum lanjut.',
           cue    : 'Semi-echo "Grand—…" penting untuk grandmother/grandfather —',
           darurat: null,
@@ -173,7 +173,7 @@ const TP_07 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What is this?" → Kelas sebutkan serentak. ⚡ Acak urutan — bukan urutan tempel. AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata dulu → baru tangan ke kartu. → "Wait… look… answer!" UCAP: "Fast!" — percepat 2–3 putaran terakhir. jangan langsung tunjuk kartu.`,
+          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What is this?" → Kelas sebutkan serentak. ⚡ Acak urutan — bukan urutan tempel. --- AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata dulu → baru tangan ke kartu. → "Wait… look… answer!" --- UCAP: "Fast!" — percepat 2–3 putaran terakhir. jangan langsung tunjuk kartu.`,
           bantuan: 'Jika diam: buka label setengah → kelas bantu → tutup lagi → coba ulang.',
           cue    : '"Hands on knees. Eyes ready." sebelum speed round —',
           darurat: null,
@@ -183,7 +183,7 @@ const TP_07 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Okay — hands down. Take a breath." [tarik napas bersama] "Now — we make sentences. Watch me first." ⚡ Micro-reset 15 detik sebelum produksi kalimat.`,
+          teks   : `UCAP: "Okay — hands down. Take a breath." AKSI: Tarik napas bersama. UCAP: "Now — we make sentences. Watch me first." ⚡ Micro-reset 15 detik sebelum produksi kalimat.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -213,7 +213,7 @@ const TP_07 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down." siswa satunya meniru. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.`,
+          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. --- AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" --- ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ --- ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down." siswa satunya meniru. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.`,
           bantuan: 'Pasangan diam: guru pegang kartu, model ke salah satu siswa →',
           cue    : 'Distribusi kartu diam dulu, instruksi belakangan — bukan bersamaan.',
           darurat: null,
@@ -223,7 +223,7 @@ const TP_07 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `Belum bisa → Sebutkan vocab saja. Boleh tunjuk kartu tanpa kalimat. Normal → "This is my mother. This is my father." Tantangan → "This is my mother. She is kind." "This is my brother. He is funny." ⚡ Contoh kalimat tantangan ditempel di SISI papan — bukan tengah. Extension opsional, bukan fokus kelas.`,
+          teks   : `AKSI: Pilih level sesuai kemampuan siswa yang terlihat selama partner practice. Belum bisa → Sebutkan vocab saja. Boleh tunjuk kartu tanpa kalimat. Normal → "This is my mother. This is my father." Tantangan → "This is my mother. She is kind." "This is my brother. He is funny." ⚡ Contoh kalimat tantangan ditempel di SISI papan — bukan tengah. Extension opsional, bukan fokus kelas. AKSI: Setelah semua pasangan selesai — tepuk tangan sekali. UCAP: "Cards down. Eyes here." Lanjut ke Layar 11.`,
           bantuan: null,
           cue    : null,
           darurat: 'Waktu ≤12 menit: skip ke Layar 12.',
@@ -262,7 +262,7 @@ const TP_07 = {
         // L13 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Tonight — if you see your family at home, point to them." "Say: 'This is my mother. This is my father.'" "Boleh juga tunjuk foto, atau gambar siapa saja yang kamu sayangi." UCAP: "Can you try that?" → Siswa: "Yes!" UCAP: "Excellent! You can talk about your family in English now." "Goodbye, everyone! See you next time!" 🗣 TOGETHER: "Goodbye, teacher! See you!" AKSI: Kumpulkan semua kartu printable. AKSI: Catat siswa yang: → Belum bisa beda sister/brother → Belum bisa beda grandmother/grandfather → Belum bisa produksi pola "This is my ___"`,
+          teks   : `UCAP: "Tonight — if you see your family at home, point to them." "Say: 'This is my mother. This is my father.'" "Boleh juga tunjuk foto, atau gambar siapa saja yang kamu sayangi." UCAP: "Can you try that?" → Siswa: "Yes!" UCAP: "Excellent! You can talk about your family in English now." "Goodbye, everyone! See you next time!" 🗣 TOGETHER: "Goodbye, teacher! See you!" --- AKSI: Kumpulkan semua kartu printable. AKSI: Catat siswa yang: → Belum bisa beda sister/brother → Belum bisa beda grandmother/grandfather → Belum bisa produksi pola "This is my ___"`,
           bantuan: null,
           cue    : null,
           darurat: null,
