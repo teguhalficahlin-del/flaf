@@ -231,7 +231,8 @@ const TP_03 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Minta semua duduk. Tepuk tangan dua kali — tunggu hingga kelas tenang. Guru keliling selama partner practice. Prioritas monitoring: → Noise level — jika naik, reset segera → Semua siswa tetap ikut — tidak ada yang diam → Baru diferensiasi level UCAP: "Great! Now practise with your partner." UCAP: "Small voice. Only your partner listens." UCAP: "Partner A gives 3 instructions. STOP. Then Partner B." UCAP: "If you need help, look at the cards. If you are ready, try without cards!" UCAP: "If you finish early — do it again."`,
+          teks   : `AKSI: Minta semua duduk. Tepuk tangan dua kali — tunggu hingga kelas tenang. Guru keliling selama partner practice. Prioritas monitoring: → Noise level — jika naik, reset segera → Semua siswa tetap ikut — tidak ada yang diam → Baru diferensiasi level
+UCAP: "Great! Now practise with your partner." UCAP: "Small voice. Only your partner listens." UCAP: "Partner A gives 3 instructions. STOP. Then Partner B." UCAP: "If you need help, look at the cards. If you are ready, try without cards!" UCAP: "If you finish early — do it again."`,
           bantuan: 'Jika noise pecah: tepuk tangan dua kali → "Hands down. Eyes on me." → reset → lanjut.',
           diferensiasi: {
             needHelp: 'Lihat kartu saat memberi instruksi — cukup 1 instruksi per giliran — guru bantu dengan bisik kata instruksi.',
