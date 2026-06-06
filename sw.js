@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v161';         // ← bump: fix opacity asesmen placeholder
+const CACHE_VERSION  = 'flaf-v162';         // ← bump: fix pemisah --- runtime
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
