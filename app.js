@@ -1254,30 +1254,31 @@ async function hardReset() {
     showToast('Hard Reset tidak bisa dilakukan saat offline.');
     return;
   }
-  const confirmed = window.confirm(
+  _confirmDialog(
     'Hard Reset akan menghapus SEMUA cache aplikasi dan PDF.\n' +
     'Data kemajuan mengajar di IndexedDB TIDAK dihapus.\n\n' +
-    'Lanjutkan?'
-  );
-  if (!confirmed) return;
+    'Lanjutkan?',
+    'Hapus Semua Data',
+    async () => {
+      logger.warn('app', 'hardReset dimulai oleh pengguna');
 
-  logger.warn('app', 'hardReset dimulai oleh pengguna');
-
-  const sw = navigator.serviceWorker?.controller;
-  if (sw) {
-    sw.postMessage({ type: 'HARD_RESET' });
-  } else {
-    try {
-      const cacheNames = await caches.keys();
-      await Promise.all(cacheNames.map(n => caches.delete(n)));
-      const regs = await navigator.serviceWorker.getRegistrations();
-      await Promise.all(regs.map(r => r.unregister()));
-    } catch (err) {
-      logger.error('app', 'hardReset fallback gagal', { err: err.message });
+      const sw = navigator.serviceWorker?.controller;
+      if (sw) {
+        sw.postMessage({ type: 'HARD_RESET' });
+      } else {
+        try {
+          const cacheNames = await caches.keys();
+          await Promise.all(cacheNames.map(n => caches.delete(n)));
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(r => r.unregister()));
+        } catch (err) {
+          logger.error('app', 'hardReset fallback gagal', { err: err.message });
+        }
+        showToast('Reset selesai. Memuat ulang…');
+        setTimeout(() => location.reload(), 1500);
+      }
     }
-    showToast('Reset selesai. Memuat ulang…');
-    setTimeout(() => location.reload(), 1500);
-  }
+  );
 }
 
 // ─── PDF CONTROLS ─────────────────────────────────────────────────────────────
@@ -1295,11 +1296,15 @@ function getPDFCacheStatus() {
 }
 
 function clearPDFCache() {
-  const confirmed = window.confirm('Hapus semua file PDF yang tersimpan offline?');
-  if (!confirmed) return;
-  const sw = navigator.serviceWorker?.controller;
-  if (!sw) return;
-  sw.postMessage({ type: 'CLEAR_PDF_CACHE' });
+  _confirmDialog(
+    'Hapus semua file PDF yang tersimpan offline?',
+    'Hapus Cache',
+    () => {
+      const sw = navigator.serviceWorker?.controller;
+      if (!sw) return;
+      sw.postMessage({ type: 'CLEAR_PDF_CACHE' });
+    }
+  );
 }
 
 // ─── HELPERS ──────────────────────────────────────────────────────────────────
