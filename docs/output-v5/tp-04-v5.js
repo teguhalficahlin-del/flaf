@@ -279,7 +279,7 @@ const TP_04 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri pujian. Tunjuk kartu angka di papan. UCAP: "Well done!" UCAP: "Look at all these numbers." UCAP: "Think first…" [jeda — beri waktu respons individual] UCAP: "Which number is hardest to say?" UCAP: "Point to it!" → Siswa tunjuk satu kartu angka yang terasa paling sulit — cukup menunjuk.`,
+          teks   : `AKSI: Beri pujian. Tunjuk kartu angka di papan. UCAP: "Well done!" UCAP: "Look at all these numbers." UCAP: "Think first…" AKSI: Jeda — beri waktu respons individual. UCAP: "Which number is hardest to say?" UCAP: "Point to it!" → Siswa tunjuk satu kartu angka yang terasa paling sulit — cukup menunjuk.`,
           bantuan: 'Jika siswa bingung: guru tunjuk angka belasan → "Thirteen? Fifteen? Hard?"',
           cue    : null,
           darurat: null,
