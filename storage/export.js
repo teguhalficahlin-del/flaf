@@ -92,6 +92,7 @@ export const exportManager = {
     _assertInitialized();
     const { onConflict = null, onSummary = null } = opts;
     const parsed = await _readAndValidateFile(file);
+    _sanitizeBackup(parsed);
 
     let backupResult;
     try {
@@ -349,6 +350,50 @@ async function _readAndValidateFile(file) {
   if (exportedDate.getTime() > Date.now() + 60_000) {
     throw new ExportError('IMPORT_FUTURE_TIMESTAMP', 'File backup memiliki tanggal di masa depan.');
   }
+
+  return parsed;
+}
+
+function _sanitizeBackup(parsed) {
+  // Sanitasi 1 — kelas_list: coerce tingkat, truncate nama rombel
+  if (Array.isArray(parsed.nilai_data?.['kelas_list'])) {
+    parsed.nilai_data['kelas_list'] = parsed.nilai_data['kelas_list']
+      .filter(k => k && typeof k === 'object' && k.id)
+      .map(k => ({
+        ...k,
+        tingkat : Number(k.tingkat),
+        nama    : typeof k.nama === 'string' ? k.nama.slice(0, 200) : '',
+      }))
+      .filter(k => Number.isFinite(k.tingkat) && k.tingkat >= 1
+                                               && k.tingkat <= 6);
+  }
+
+  // Sanitasi 2 — siswa_*: truncate nama siswa
+  const nilaiData = parsed.nilai_data || {};
+  Object.keys(nilaiData)
+    .filter(k => k.startsWith('siswa_'))
+    .forEach(key => {
+      if (Array.isArray(nilaiData[key])) {
+        nilaiData[key] = nilaiData[key]
+          .filter(s => s && typeof s === 'object' && s.id)
+          .map(s => ({
+            ...s,
+            nama: typeof s.nama === 'string' ? s.nama.slice(0, 200) : '',
+          }));
+      }
+    });
+
+  // Sanitasi 3 — penilaian_log: coerce field numerik ke number|null
+  // penilaian_log adalah flat {key: record} dari db.exportAll()
+  Object.values(parsed.penilaian_log || {}).forEach(record => {
+    if (!record || typeof record !== 'object') return;
+    ['l', 's', 'r', 'capaian'].forEach(field => {
+      if (record[field] !== null && record[field] !== undefined) {
+        const n = Number(record[field]);
+        record[field] = Number.isFinite(n) ? n : null;
+      }
+    });
+  });
 
   return parsed;
 }
