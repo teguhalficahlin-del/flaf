@@ -2084,12 +2084,36 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 - **S6** — `---` digunakan sebagai pemisah visual antar blok instruksi panjang
 - **S7** — Setiap UCAP multi-kalimat: tiap kalimat punya prefix `UCAP:` sendiri
 
-### Status Audit Fase A
+### Status Audit Skenario Fase A
+
+**SW aktif saat ini:** `flaf-v188`
 
 | TP | Topik | Status |
 |----|-------|--------|
 | TP01 | Greetings & Farewells | ✅ Selesai |
-| TP02–18 | (belum diaudit) | ⏳ Pending |
+| TP02 | Classroom Objects | ✅ Selesai |
+| TP03 | Action Verbs | ✅ Selesai |
+| TP04 | Numbers 1–20 | ✅ Selesai |
+| TP05 | Colours | ✅ Selesai |
+| TP06 | School Stationery | ✅ Selesai |
+| TP07 | Family Members | ✅ Selesai |
+| TP08 | Rooms in a House | ✅ Selesai |
+| TP09 | Animals | ✅ Selesai |
+| TP10 | Food and Drinks | ✅ Selesai |
+| TP11 | Daily Routines | ✅ Selesai |
+| TP12–18 | (belum diaudit) | ⏳ Pending |
+
+### Keputusan Teknis Audit Skenario (Ditetapkan TP08–TP11)
+
+1. **preOpening — format polos**: Field `teks` di `preOpening` tidak boleh menggunakan prefix token `UCAP:`/`AKSI:` — format polos (plain text) saja. Setiap TP perlu dicek dan dibersihkan dalam prompt yang sama saat audit.
+
+2. **Pola "When I clap —" / "— stop."**: Dipertahankan sebagai dua fragmen UCAP terpisah dengan `AKSI: Tepuk 1 kali.` di antara keduanya — konsisten sejak TP09.
+
+3. **Tiga atau lebih UCAP berurutan tanpa AKSI**: `_collapseUcap()` akan menggabungkan blok berturutan. Sisipkan `AKSI: Jeda sebentar.` sebagai pemisah di antara UCAP agar tidak collapse.
+
+4. **Audit preOpening wajib per TP**: Setiap TP yang diaudit perlu dicek field `teks` preOpening-nya — jika mengandung prefix `UCAP:`/`AKSI:`, bersihkan dalam prompt yang sama sebelum commit.
+
+5. **Bantuan terpotong wajib dilengkapi**: Field `bantuan` yang terpotong (akibat batch converter) perlu dilengkapi manual sebelum commit — jangan commit teks yang terpotong di tengah kalimat.
 
 ### SW Version History — v148 s/d v163
 
