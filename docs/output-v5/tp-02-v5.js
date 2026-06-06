@@ -121,7 +121,7 @@ const TP_02 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Semua duduk. Tulis nama di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone! My name is [nama guru]." UCAP: "My name is [nama guru]. Nice to meet you!"`,
+          teks   : `AKSI: Semua duduk. Tulis nama guru di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone!" UCAP: "Nice to meet you!"`,
           bantuan: null,
           cue    : 'Tunjuk nama di papan saat mengucapkannya.',
           darurat: null,
