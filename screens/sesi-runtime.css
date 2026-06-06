@@ -407,7 +407,6 @@
   font-weight: 500;
   color: rgba(212,174,58,.8);
   text-transform: uppercase;
-  margin-bottom: 6px;
 }
 .sr-ucap-teks {
   font-size: 17px;
@@ -514,7 +513,6 @@
 .sr-tipe-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
   margin-bottom: 12px;
 }
@@ -603,37 +601,37 @@
   color: #D4AE3A;
 }
 
-/* TTS button per langkah (sr-tts-*) */
-.sr-tts-btn {
+/* UCAP header — label + speaker button sejajar */
+.sr-ucap-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: rgba(212,174,58,.12);
-  border: 0.5px solid rgba(212,174,58,.35);
-  border-radius: 8px;
-  padding: 8px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+/* TTS speaker button di dalam blok UCAP */
+.sr-tts-ucap-btn {
+  background: transparent;
+  border: none;
+  padding: 2px 4px;
   cursor: pointer;
-  min-width: 44px;
-  min-height: 44px;
+  color: #D4AE3A;
+  opacity: 0.7;
+  border-radius: 4px;
+  line-height: 1;
   font-family: inherit;
-  color: #D4AE3A;
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.15s, border-color 0.15s;
-  flex-shrink: 0;
+  transition: opacity 0.12s;
 }
-.sr-tts-btn i {
-  font-size: 18px;
+.sr-tts-ucap-btn:hover {
+  opacity: 1;
+}
+.sr-tts-ucap-btn i {
+  font-size: 16px;
+}
+.sr-tts-ucap-btn.sr-tts-btn--playing {
+  opacity: 1;
   color: #D4AE3A;
-}
-.sr-tts-label {
-  font-size: 10px;
-  color: #D4AE3A;
-  margin-top: 2px;
-}
-.sr-tts-btn--playing {
-  background: rgba(212,174,58,.25);
-  border-color: rgba(212,174,58,.6);
 }
 
 /* Diferensiasi */

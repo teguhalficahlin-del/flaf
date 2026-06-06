@@ -222,8 +222,6 @@ function _srTtsStop() {
     _srTtsBtn.classList.remove('sr-tts-btn--playing');
     const icon = _srTtsBtn.querySelector('i');
     if (icon) icon.className = 'ti ti-volume';
-    const lbl = _srTtsBtn.querySelector('.sr-tts-label');
-    if (lbl) lbl.textContent = 'Putar';
     _srTtsBtn = null;
   }
 }
@@ -236,8 +234,6 @@ function _srTtsPlay(kalimatArr, btnEl) {
   btnEl.classList.add('sr-tts-btn--playing');
   const icon = btnEl.querySelector('i');
   if (icon) icon.className = 'ti ti-player-stop';
-  const lbl = btnEl.querySelector('.sr-tts-label');
-  if (lbl) lbl.textContent = 'Stop';
   function speakAt(i) {
     if (i >= kalimatArr.length) { _srTtsStop(); return; }
     const u   = new SpeechSynthesisUtterance(kalimatArr[i]);
@@ -609,6 +605,19 @@ function _parseTeks(teks) {
   return result;
 }
 
+function _collapseUcap(segments) {
+  const collapsed = [];
+  for (const seg of segments) {
+    const last = collapsed[collapsed.length - 1];
+    if (seg.jenis === 'ucap' && last?.jenis === 'ucap') {
+      last.isi += '\n' + seg.isi;
+    } else {
+      collapsed.push({ ...seg });
+    }
+  }
+  return collapsed;
+}
+
 function _energiPill(energi) {
   if (!energi) return '';
   const map = {
@@ -677,10 +686,26 @@ function _renderRunning() {
   const assessmentHTML = _renderAssessmentPanel(langkah);
 
   // Teks segments
-  const teksHTML = _parseTeks(langkah.teks).map(seg => {
+  const teksHTML = _collapseUcap(_parseTeks(langkah.teks)).map(seg => {
     if (seg.jenis === 'ucap') {
-      return `<div class="sr-ucap-block"><div class="sr-ucap-label">UCAP</div>` +
-        `<div class="sr-ucap-teks">${_escape(seg.isi)}</div></div>`;
+      const kalimatArr = seg.isi.split('\n');
+      const kalimatHTML = kalimatArr
+        .map(k => `<div class="sr-ucap-teks">${_escape(k)}</div>`)
+        .join('');
+      const kalimatData = kalimatArr
+        .map(k => k.replace(/^"|"$/g, '').trim())
+        .join('|||');
+      return `<div class="sr-ucap-block">
+      <div class="sr-ucap-header">
+        <div class="sr-ucap-label">UCAP</div>
+        <button class="sr-tts-ucap-btn"
+          aria-label="Putar ucapan"
+          data-kalimat="${_escape(kalimatData)}">
+          <i class="ti ti-volume" aria-hidden="true"></i>
+        </button>
+      </div>
+      ${kalimatHTML}
+    </div>`;
     }
     const paragraphs = seg.isi.split(/(?=Fase [A-Z]\s*[—–-])/).map(p => p.trim()).filter(Boolean);
     return paragraphs.map(p => {
@@ -764,15 +789,6 @@ function _renderRunning() {
       <div class="sr-darurat-teks">${_escape(langkah.darurat)}</div>
     </div>` : '';
 
-  // TTS — ekstrak kalimat Inggris dalam tanda kutip ganda
-  const kalimatArr = _srTtsExtract(langkah.teks);
-  const ttsBtnHTML = kalimatArr.length > 0
-    ? `<button class="sr-tts-btn" id="sr-tts-btn" aria-label="Putar audio Bahasa Inggris">
-         <i class="ti ti-volume" aria-hidden="true"></i>
-         <span class="sr-tts-label">Putar</span>
-       </button>`
-    : '';
-
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-app-header">
@@ -784,7 +800,6 @@ function _renderRunning() {
         ${blockHeaderHTML}
         <div class="sr-tipe-row">
           <span class="sr-aktivitas-tipe-badge sr-tipe--${info.cls}">${info.label}</span>
-          ${ttsBtnHTML}
         </div>
         ${teksHTML}
         ${bantuanHTML}
@@ -808,16 +823,16 @@ function _renderRunning() {
       </div>
     </div>`;
 
-  if (kalimatArr.length > 0) {
-    _root.querySelector('#sr-tts-btn')?.addEventListener('click', e => {
-      const btn = e.currentTarget;
-      if (btn.classList.contains('sr-tts-btn--playing')) {
+  _root.querySelectorAll('.sr-tts-ucap-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kalimatArr = btn.dataset.kalimat.split('|||');
+      if (_srTtsBtn === btn) {
         _srTtsStop();
       } else {
         _srTtsPlay(kalimatArr, btn);
       }
     });
-  }
+  });
   _root.querySelector('#sr-btn-next').addEventListener('click', () => _langkahNext());
   _root.querySelector('#sr-btn-prev').addEventListener('click', () => _langkahPrev());
   _root.querySelector('#sr-btn-kondisi').addEventListener('click', () => _renderKondisiOverlay());
