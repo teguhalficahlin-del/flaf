@@ -168,7 +168,11 @@ const TP_08 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What room is this?" AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata → tunjuk kartu → kelas jawab. → "Wait… look… answer!" → Kelas sebutkan serentak. 2–3 putaran acak. UCAP: "Fast round — go!" ⚡ Tahan kartu 1 detik penuh sebelum menunjuk kelas. Kelas 1 impulsif sering menjawab dari tebakan visual awal — tahan dulu. ⚡ Sengaja tunjuk bedroom → bathroom → bedroom berurutan dua kali. Discrimination diperkuat saat recall, bukan hanya saat echo. ⚡ Sesekali tunjuk 1 siswa cepat — "What room?" — sampling individual. "Bath-room. Bed-room." → lanjut speed round. jangan langsung tunjuk kartu. Bedroom → bathroom → bedroom = wajib masuk sequence.`,
+          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What room is this?"
+---
+AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata → tunjuk kartu → kelas jawab. → "Wait… look… answer!" → Kelas sebutkan serentak. 2–3 putaran acak. UCAP: "Fast round — go!" ⚡ Tahan kartu 1 detik penuh sebelum menunjuk kelas. Kelas 1 impulsif sering menjawab dari tebakan visual awal — tahan dulu. ⚡ Sengaja tunjuk bedroom → bathroom → bedroom berurutan dua kali. Discrimination diperkuat saat recall, bukan hanya saat echo.
+---
+⚡ Sesekali tunjuk 1 siswa cepat — "What room?" — sampling individual. "Bath-room. Bed-room." → lanjut speed round. jangan langsung tunjuk kartu. Bedroom → bathroom → bedroom = wajib masuk sequence.`,
           bantuan: 'Jika masih tertukar: kembali ke contrast check sebentar →',
           cue    : '"Hands on knees. Eyes ready." sebelum speed round —',
           darurat: null,
@@ -178,7 +182,9 @@ const TP_08 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Good. Hands down. Take a breath." [tarik napas bersama] "Now — what is INSIDE the rooms? Watch." ⚡ Gesture konkret: tunjuk kotak ruangan di kartu denah → lalu tunjuk gambar benda di dalamnya. Visual relation dulu sebelum vocab benda.`,
+          teks   : `UCAP: "Good. Hands down. Take a breath."
+AKSI: Tarik napas bersama.
+UCAP: "Now — what is INSIDE the rooms? Watch." ⚡ Gesture konkret: tunjuk kotak ruangan di kartu denah → lalu tunjuk gambar benda di dalamnya. Visual relation dulu sebelum vocab benda.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -188,7 +194,11 @@ const TP_08 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu bedroom. UCAP: "Bedroom — bed." 🗣 TOGETHER: "Bed!" AKSI: Tunjuk kartu kitchen. UCAP: "Kitchen — table." 🗣 TOGETHER: "Table!" AKSI: Tunjuk kartu living room. UCAP: "Living room — sofa." [gesture duduk santai sekali] 🗣 TOGETHER: "Sofa!" ⚡ Repetisi gesture "sofa/living room" lintas layar membantu retention tanpa aktivitas baru. AKSI: Tunjuk kartu bathroom. UCAP: "Bathroom — shower." [gesture mandi cepat] 🗣 TOGETHER: "Shower." dengan menyebut kata — bukan sesudah. Mini echo sekali saja per benda.`,
+          teks   : `AKSI: Tunjuk kartu bedroom. UCAP: "Bedroom — bed." 🗣 TOGETHER: "Bed!" AKSI: Tunjuk kartu kitchen. UCAP: "Kitchen — table." 🗣 TOGETHER: "Table!" AKSI: Tunjuk kartu living room. UCAP: "Living room — sofa."
+AKSI: Lakukan gesture duduk santai sekali.
+🗣 TOGETHER: "Sofa!" ⚡ Repetisi gesture "sofa/living room" lintas layar membantu retention tanpa aktivitas baru. AKSI: Tunjuk kartu bathroom. UCAP: "Bathroom — shower."
+AKSI: Lakukan gesture mandi cepat.
+🗣 TOGETHER: "Shower." dengan menyebut kata — bukan sesudah. Mini echo sekali saja per benda.`,
           bantuan: null,
           cue    : 'Gesture untuk "sofa" dan "shower" dilakukan bersamaan',
           darurat: null,
@@ -208,7 +218,11 @@ const TP_08 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu living room. Pegang — model sekali: "There is a sofa in the living room." AKSI: Berikan kartu bathroom ke 1 siswa volunteer. UCAP: "Listen first." "Loud enough for your friends." "Say: There is a shower in the bathroom." ⚡ Pilihkan benda secara eksplisit — jangan beri pilihan terbuka. Tujuan demo adalah mekanisme, bukan kreativitas. → Siswa: "There is a shower in the bathroom." ⚡ Saat volunteer bicara — guru tetap gesture: tunjuk benda → tunjuk ruangan. Perhatian kelas ke struktur kalimat, bukan ke siapa yang maju. UCAP: "Two claps for your friend!" ⚡ Tepuk-tepuk — selesai. Langsung lanjut. gesture selama volunteer bicara.`,
+          teks   : `AKSI: Ambil kartu living room. Pegang — model sekali: "There is a sofa in the living room."
+---
+AKSI: Berikan kartu bathroom ke 1 siswa volunteer. UCAP: "Listen first." "Loud enough for your friends." "Say: There is a shower in the bathroom." ⚡ Pilihkan benda secara eksplisit — jangan beri pilihan terbuka. Tujuan demo adalah mekanisme, bukan kreativitas. → Siswa: "There is a shower in the bathroom." ⚡ Saat volunteer bicara — guru tetap gesture: tunjuk benda → tunjuk ruangan. Perhatian kelas ke struktur kalimat, bukan ke siapa yang maju.
+---
+UCAP: "Two claps for your friend!" ⚡ Tepuk-tepuk — selesai. Langsung lanjut. gesture selama volunteer bicara.`,
           bantuan: null,
           cue    : 'Demo tiga langkah: pegang → tunjuk → ucap. Guru tetap',
           darurat: null,
@@ -218,7 +232,11 @@ const TP_08 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2 kartu ruangan acak per pasangan. Tunggu semua kartu sampai. AKSI: Baru instruksi: "Partner A — point to a room. Say: 'There is a ___ in the ___.' Partner B — listen. Then switch." "Two cards each. Go!" "Finished? Do it again — faster! But partner voice." UCAP: "Change voice — robot voice! Slow voice! Tiny voice!" ⚡ Lebih aman daripada tambah task baru atau tukar kartu. ⚡ ACCEPTANCE RULE: pasangan yang hanya bilang "Bed — bedroom!" tetap diterima sementara. Guru model ulang saat lewat tanpa menghentikan flow: Siswa: "Bed — bedroom." Guru: "Yes! There is a bed in the bedroom." → lanjut jalan. ⚡ SCAFFOLD PARSIAL — hanya setelah jeda 2–3 detik atau pasangan benar-benar freeze: Guru: "There is a…" → siswa isi. Jangan terlalu cepat membantu. ⚡ DEMO VOLUME: keras ❌ → pelan ❌ → partner voice ✅ ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." "3… 2… 1… hands down." → tunggu 2–3 detik → siswa isi → guru lanjut jalan. bukan bersamaan. Acceptance rule berlaku — koreksi saat lewat, bukan berhenti.`,
+          teks   : `AKSI: DISTRIBUSI DULU — dalam diam: "Hands still. Wait." Bagikan 2 kartu ruangan acak per pasangan. Tunggu semua kartu sampai.
+---
+AKSI: Baru instruksi: "Partner A — point to a room. Say: 'There is a ___ in the ___.' Partner B — listen. Then switch." "Two cards each. Go!" "Finished? Do it again — faster! But partner voice." UCAP: "Change voice — robot voice! Slow voice! Tiny voice!" ⚡ Lebih aman daripada tambah task baru atau tukar kartu.
+---
+⚡ ACCEPTANCE RULE: pasangan yang hanya bilang "Bed — bedroom!" tetap diterima sementara. Guru model ulang saat lewat tanpa menghentikan flow: Siswa: "Bed — bedroom." Guru: "Yes! There is a bed in the bedroom." → lanjut jalan. ⚡ SCAFFOLD PARSIAL — hanya setelah jeda 2–3 detik atau pasangan benar-benar freeze: Guru: "There is a…" → siswa isi. Jangan terlalu cepat membantu. ⚡ DEMO VOLUME: keras ❌ → pelan ❌ → partner voice ✅ ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." "3… 2… 1… hands down." → tunggu 2–3 detik → siswa isi → guru lanjut jalan. bukan bersamaan. Acceptance rule berlaku — koreksi saat lewat, bukan berhenti.`,
           bantuan: 'Pasangan diam/freeze: guru pegang kartu, ucap "There is a…"',
           cue    : 'Distribusi kartu diam dulu, instruksi belakangan —',
           darurat: 'Waktu ≤12 menit: skip ke Layar 11.',
@@ -228,7 +246,12 @@ const TP_08 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `Belum bisa → Sebutkan nama ruangan saja: "Bedroom. Kitchen." Normal → "There is a bed in the bedroom." Tantangan → "In my bedroom, there is a bed and a lamp." ⚡ Contoh kalimat tantangan di SISI papan — tidak dibacakan keras, tidak dimodelkan full-class. Untuk mayoritas kelas 1 biasa, extension ini bonus murni — tidak perlu merasa harus tersentuh.`,
+          teks   : `AKSI: Pilih level sesuai kemampuan siswa.
+→ Belum bisa: sebutkan nama ruangan saja.
+→ Sebagian besar siswa: gunakan level Normal.
+→ Siswa yang cepat selesai: gunakan level Tantangan.
+Belum bisa → Sebutkan nama ruangan saja: "Bedroom. Kitchen." Normal → "There is a bed in the bedroom." Tantangan → "In my bedroom, there is a bed and a lamp." ⚡ Contoh kalimat tantangan di SISI papan — tidak dibacakan keras, tidak dimodelkan full-class. Untuk mayoritas kelas 1 biasa, extension ini bonus murni — tidak perlu merasa harus tersentuh.
+AKSI: Setelah latihan selesai, ucapkan "Cards down. Eyes here." Lanjut ke Layar 11.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -238,7 +261,11 @@ const TP_08 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Cards down." ⚡ Tunggu 2 detik — baru volunteer mulai. Benda di tangan = distraksi. AKSI: Tunjuk langsung 2–3 siswa: "You, you." — jangan buka sesi tanya siapa mau maju. ⚡ Sesekali pilih siswa medium-confidence, bukan selalu yang paling aktif. UCAP: "Show your card. Tell us one sentence." → Siswa: "There is a bed in the bedroom." momentum tanpa buat siswa tertekan. UCAP: "Thumbs up for your friend!" serentak. ⚡ MICRO-RESET setelah presentasi terakhir: "Hands down. Take a breath. Sit nicely." — 5 detik. Tunjuk langsung — jangan buka sesi tanya.`,
+          teks   : `UCAP: "Cards down." ⚡ Tunggu 2 detik — baru volunteer mulai. Benda di tangan = distraksi.
+---
+AKSI: Tunjuk langsung 2–3 siswa: "You, you." — jangan buka sesi tanya siapa mau maju. ⚡ Sesekali pilih siswa medium-confidence, bukan selalu yang paling aktif. UCAP: "Show your card. Tell us one sentence." → Siswa: "There is a bed in the bedroom." momentum tanpa buat siswa tertekan. UCAP: "Thumbs up for your friend!" serentak.
+---
+⚡ MICRO-RESET setelah presentasi terakhir: "Hands down. Take a breath. Sit nicely." — 5 detik. Tunjuk langsung — jangan buka sesi tanya.`,
           bantuan: [
             'Jika volunteer freeze: guru whisper "There is a…" — jaga',
             'Jika tidak ada yang siap: tunjuk 2 siswa bersama — ucapkan',
@@ -260,7 +287,9 @@ const TP_08 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu ruangan di papan — label tertutup. UCAP: "What room?" → Kelas sebutkan serentak. ⚡ FLEKSIBILITAS RUNTIME: Jika kelas masih segar → 4 kartu retrieval + 1 sentence bebas. Jika kelas lelah → cukup 2 kartu, lanjut teacher-led choral sekali: Guru: "There is a bed…" → kelas: "…in the bedroom." Lalu siswa isi penuh sekali lagi — tetap ada rasa "kami bisa". UCAP: "Good job." ⚡ Senyum. Pause 2 detik. AKSI: Tunjuk 1 kartu saja. UCAP: "One sentence. There is a ___ in the ___. Go!" → Siswa serentak — satu kartu yang sama. Pause 2 detik antara retrieval dan sentence — jangan tergesa.`,
+          teks   : `AKSI: Tunjuk kartu ruangan di papan — label tertutup. UCAP: "What room?" → Kelas sebutkan serentak. ⚡ FLEKSIBILITAS RUNTIME: Jika kelas masih segar → 4 kartu retrieval + 1 sentence bebas. Jika kelas lelah → cukup 2 kartu, lanjut teacher-led choral sekali: Guru: "There is a bed…" → kelas: "…in the bedroom." Lalu siswa isi penuh sekali lagi — tetap ada rasa "kami bisa". UCAP: "Good job." ⚡ Senyum. Pause 2 detik.
+---
+AKSI: Tunjuk 1 kartu saja. UCAP: "One sentence. There is a ___ in the ___. Go!" → Siswa serentak — satu kartu yang sama. Pause 2 detik antara retrieval dan sentence — jangan tergesa.`,
           bantuan: null,
           cue    : 'Satu kartu = output terkontrol. Tidak noisy, tidak pecah.',
           darurat: null,
