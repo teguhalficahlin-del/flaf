@@ -301,7 +301,7 @@ const TP_02 = {
         // L15 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan ke seluruh kelas. UCAP: "Great job, everyone!" UCAP: "You can introduce yourselves in English!" UCAP: "See you next time." UCAP: "Goodbye!" --- 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
+          teks   : `AKSI: Berdiri di depan kelas. Lambaikan tangan ke seluruh kelas. UCAP: "Great job, everyone! You can introduce yourselves in English!" UCAP: "See you next time." UCAP: "Goodbye!" --- 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
           bantuan: 'Jika diam: mulai lambai tangan → ucap "Good-bye..." menggantung.',
           cue    : null,
           darurat: null,
