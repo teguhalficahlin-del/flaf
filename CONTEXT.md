@@ -1785,9 +1785,9 @@ runtime yang benar-benar dipakai app.
 
 ## Update Status Proyek — Juni 2026
 
-- **SW aktif**: `flaf-v112`
-- **Commit terakhir**: `5603fe3` — chore: bump SW ke v112
-- **Tanggal**: 3 Juni 2026
+- **SW aktif**: `flaf-v147`
+- **Commit terakhir**: `6237a2e` — chore: bump SW v147 — M11 sanitasi data backup selesai
+- **Tanggal**: 6 Juni 2026
 - **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
 - **Sesi terakhir**: 3 Juni 2026 — TD-12 fix nilai TP range Kelas 5/6,
   TD-13 visual polish Layar Mengajar (batch 1 & 2 selesai), SW v112
@@ -1938,3 +1938,71 @@ runtime yang benar-benar dipakai app.
 ### Pending
 - TD-10: Renderer Kelompok 3 — tahan sampai ada data kelas nyata
 - Keputusan: apakah bridge mode reactivation Kluster D (TP13–15) didokumentasikan di CAS §19 atau direvisi ke OUTPUT siswa
+
+---
+
+## AUDIT PWA — STATUS FIX (Sesi 6 Juni 2026)
+
+### Item High Priority — Semua Selesai (sesi sebelumnya)
+
+Lihat commit history Fix 1–Fix 15 (v125–v139).
+
+### Item Medium Priority — Selesai di Sesi 6 Juni 2026
+
+| ID  | Deskripsi | Commit |
+|-----|-----------|--------|
+| M4  | Ganti alert/confirm native → showToast + showConfirmDialog | 66a7751 |
+| M5  | Empty state informatif + tombol Kelola Siswa di STS/SAS/Rapor | 62732ef |
+| M6  | Peringatan toast jika CSV kosong sebelum diunduh | dbf8ac8 |
+| M7  | Konfirmasi dialog sebelum import backup dimulai | e474bf8 |
+| M8  | Union merge kelas_list saat restore backup | c463ea3 |
+| M9  | Tolak backup version terlalu lama saat import | 2f4de4c |
+| M10 | Pesan visible ke guru saat IDB blocked (splash-status + toast) | d4f10b5 |
+| M11 | Sanitasi data backup sebelum masuk IDB | 6237a2e |
+
+### SW Version History — v140 s/d v147
+
+| Versi | Commit | Keterangan |
+|-------|--------|------------|
+| v140 | 66a7751 | M4 alert/confirm native diganti showToast dan dialog FLAF |
+| v141 | 62732ef | M5 empty state informatif STS/SAS/Rapor |
+| v142 | dbf8ac8 | M6 guard CSV kosong sebelum unduh |
+| v143 | e474bf8 | M7 konfirmasi import backup |
+| v144 | c463ea3 | M8 union merge kelas_list |
+| v145 | 2f4de4c | M9 cek versi backup terlalu lama |
+| v146 | d4f10b5 | M10 pesan IDB blocked |
+| v147 | 6237a2e | M11 sanitasi data backup |
+
+### Antrian Pekerjaan — Status Terkini
+
+- ✅ Semua item High Priority: selesai (Fix 1A–Fix 15C, SW v125–v139)
+- ✅ Semua item Medium M4–M11: selesai di sesi 6 Juni 2026 (SW v140–v147)
+- ⏳ Tersisa: 25+ item Low priority — belum dikerjakan
+
+---
+
+## Catatan Hutang Teknis Baru (6 Juni 2026)
+
+### TD-14: showToast belum punya parameter type
+- `showToast(message, duration)` di `app.js` hanya dua parameter
+- Semua notifikasi (sukses, warning, error) tampil identik tanpa warna berbeda
+- **Low item**: tambah parameter `type` opsional (`'success'|'warning'|'error'`) ke
+  `showToast()` di `app.js` dan update CSS `.toast` untuk warna per-type
+
+### TD-15: Dua fungsi dialog konfirmasi terpisah
+- `showConfirmDialog(pesan, onConfirm)` didefinisikan di `screens/nilai.js` —
+  top-level function, tidak diekspor, tidak tersedia di luar modul
+- `_confirmDialog(pesan, labelKonfirmasi, onConfirm)` dibuat terpisah di `app.js`
+  karena `showConfirmDialog` tidak bisa diakses dari sana
+- **Low item**: konsolidasikan ke satu implementasi jika ada refactor
+  app.js atau sistem shared utilities di masa depan
+
+### TD-16: _showIDBUnavailableScreen() silent fail
+- Fungsi `_showIDBUnavailableScreen()` di `app.js` mencari `.splash-inner` di
+  dalam `#s-splash` — elemen ini **tidak ada** di `index.html`
+- Kondisi `if (inner)` gagal senyap: pesan IDB unavailable tidak pernah tampil
+  melalui jalur ini
+- Saat ini hanya ditangani untuk kondisi `onblocked` (Fix M10) via `#splash-status`
+- **Low item**: tambah elemen `.splash-inner` ke `index.html` atau refactor
+  `_showIDBUnavailableScreen()` untuk pakai `#splash-status` + `showToast()`
+  yang sudah terbukti bekerja
