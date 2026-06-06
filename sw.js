@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v152';         // ← bump: TD-23 TD-24 autocorrect off input nilai
+const CACHE_VERSION  = 'flaf-v153';         // ← bump: TD-26 fix label fase progress bar
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
