@@ -20,16 +20,15 @@
  *   db.exportAll()                   → Promise<object>
  *   db.importMerge(data,onConflict)  → Promise<{merged,kept,conflicts}>
  *
- * Schema (DB_VERSION = 10):
+ * Schema (DB_VERSION = 11):
  *   kv           — session, device_id, nonce_*, data_version, export metadata
- *   log_queue    — log entries (autoIncrement)
  *   teacher_data — progress per TP: progress_tp_${tp.id}_${rombelId}, catatan
  */
 
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 10;
+const DB_VERSION = 11;
 
-const VALID_STORES = new Set(['kv', 'log_queue', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'penilaian_log']);
+const VALID_STORES = new Set(['kv', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'penilaian_log']);
 
 let _db          = null;
 let _initPromise = null;
@@ -81,9 +80,9 @@ function init(onBlocked) {
         upgradeDB.createObjectStore('kv');
         console.log('[DB] store created: kv');
       }
-      if (!upgradeDB.objectStoreNames.contains('log_queue')) {
-        upgradeDB.createObjectStore('log_queue', { autoIncrement: true });
-        console.log('[DB] store created: log_queue');
+      if (upgradeDB.objectStoreNames.contains('log_queue')) {
+        upgradeDB.deleteObjectStore('log_queue');
+        console.log('[DB] store deleted: log_queue (vestigial)');
       }
       if (!upgradeDB.objectStoreNames.contains('teacher_data')) {
         upgradeDB.createObjectStore('teacher_data');

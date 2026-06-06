@@ -247,7 +247,7 @@ async function _nextFase() {
   if (nextFaseIdx < (_state.tp?.skenario?.length || 0)) {
     _transition({ aktState: 'entering', faseIdx: nextFaseIdx, langkahIdx: 0 });
   } else {
-    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
+    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch (e) { console.warn('[RESUME] gagal hapus resume key:', e); }
     _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null });
   }
 }
@@ -788,7 +788,7 @@ function _renderSelesai() {
     </div>`;
 
   _root.querySelector('#sr-btn-closure')?.addEventListener('click', async () => {
-    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
+    try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch (e) { console.warn('[RESUME] gagal hapus resume key:', e); }
     _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null });
   });
   _root.querySelector('#sr-btn-next-fase')?.addEventListener('click', () => {
