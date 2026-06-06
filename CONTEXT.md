@@ -1785,8 +1785,8 @@ runtime yang benar-benar dipakai app.
 
 ## Update Status Proyek — Juni 2026
 
-- **SW aktif**: `flaf-v156`
-- **Commit terakhir**: `ea58976` — chore: bump SW v156 — Batch B cleanup TD-27 TD-29 TD-30 TD-31
+- **SW aktif**: `flaf-v163`
+- **Commit terakhir**: `7c662e5` — fix(dashboard): title card asesmen tambah color:rgba(255,255,255,0.9)
 - **Tanggal**: 6 Juni 2026
 - **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
 - **Sesi terakhir**: 3 Juni 2026 — TD-12 fix nilai TP range Kelas 5/6,
@@ -2032,3 +2032,82 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 ✅ RESOLVED — commit `6f8f1ed` (6 Juni 2026)
 - Refactor: hapus referensi `.splash-inner` yang tidak ada di HTML
 - Sekarang menggunakan `_updateSplashStatus()` + `showToast()` yang sudah terbukti bekerja
+
+---
+
+## Sesi 6 Juni 2026 — Audit Skenario + Fitur Runtime
+
+### Fitur Baru
+
+| Fitur | File | Keterangan |
+|-------|------|------------|
+| TTS button pindah ke sebelah label UCAP | sesi-runtime.js / css | Tombol 🔊 direlokasi dari pojok kanan atas card ke dalam `.sr-ucap-header` (flex row bersama label UCAP) |
+| UCAP collapse berurutan | sesi-runtime.js | `_collapseUcap()` — segmen ucap berturutan digabung menjadi satu blok, `isi` dipisah `\n` |
+| Pemisah visual `---` | sesi-runtime.js / css | `_expandPemisah()` — string `---` di segmen biasa diubah menjadi `<div class="sr-pemisah">` (height 12px) |
+| Icon TTS → emoji | sesi-runtime.js | Ganti `<i class="ti ti-volume">` (Tabler Icons tidak dimuat) dengan `<span aria-hidden>🔊</span>` / `⏹` |
+
+### Fix Runtime & UI
+
+| SW | Commit | Deskripsi |
+|----|--------|-----------|
+| v157 | 8b2fe49 | fix(dashboard): opacity:0.6 → opacity:0.85 di _buildStepAsesmen |
+| v158 | 6b9c028 | feat(runtime): UCAP collapse + TTS button relokasi ke ucap-header |
+| v159 | f8f8b26 | fix(runtime): TTS icon ti-volume → emoji 🔊/⏹ (Tabler Icons tidak dimuat) |
+| v160 | b63efb9 | fix(tp-01): L14 pisah AKSI tunjuk dari UCAP "What greeting..." |
+| v161 | e0ac9e8 | fix(dashboard): deskripsi asesmen opacity:0.85 → color:rgba(255,255,255,0.85) |
+| v162 | 75e030a | feat(runtime): _expandPemisah() — render --- sebagai pemisah visual |
+| v163 | 7c662e5 | fix(dashboard): title card asesmen tambah color:rgba(255,255,255,0.9) |
+
+### Audit Skenario TP01 — Selesai
+
+| Langkah | Tipe | Status | Catatan |
+|---------|------|--------|---------|
+| L1 | Instruksi | ✅ | Pembuka kelas, teks lengkap |
+| L2 | Instruksi | ✅ | Intro vocab greetings |
+| L3–L6 | Instruksi | ✅ | Core drills, flash cards |
+| L7 | Instruksi | ✅ | Pair practice |
+| L8 | Instruksi | ✅ | Class survey |
+| L9 | Instruksi | ✅ | Diferensiasi (needHelp/ready) |
+| L10 | Instruksi | ✅ | Penutup drill |
+| L11 | Instruksi | ✅ | Reflection |
+| L12 | Instruksi | ✅ | Vocab recap |
+| L13 | Instruksi | ✅ | Goodbye song |
+| L14 | Instruksi | ✅ | Fix: AKSI tunjuk dipisah dari UCAP "What greeting..." |
+
+### 7 Standar Penerimaan Skenario FLAF
+
+- **S1** — Setiap langkah punya tipe valid (instruksi/diferensiasi/asesmen)
+- **S2** — Teks langkah menggunakan UCAP: prefix untuk setiap kalimat yang diucapkan guru
+- **S3** — Frasa AKSI dan UCAP tidak tercampur dalam satu token teks
+- **S4** — Diferensiasi ada di field `diferensiasi: { needHelp, ready }` — bukan di teks
+- **S5** — `preOpening` ada di root TP, bukan di langkah[0]
+- **S6** — `---` digunakan sebagai pemisah visual antar blok instruksi panjang
+- **S7** — Setiap UCAP multi-kalimat: tiap kalimat punya prefix `UCAP:` sendiri
+
+### Status Audit Fase A
+
+| TP | Topik | Status |
+|----|-------|--------|
+| TP01 | Greetings & Farewells | ✅ Selesai |
+| TP02–18 | (belum diaudit) | ⏳ Pending |
+
+### SW Version History — v148 s/d v163
+
+| Versi | Commit | Keterangan |
+|-------|--------|------------|
+| v148 | 49f40f4 | TD-18 confirm native diganti dialog FLAF |
+| v149 | 2806680 | TD-16 IDB unavailable screen fix |
+| v150 | 0adb00b | TD-14 showToast type parameter |
+| v151 | 6d34f9b | TD-17 manifest dan splash badge diupdate |
+| v152 | 292d4de | TD-23 TD-24 autocorrect off input nilai |
+| v153 | 89cf6b7 | TD-26 fix label fase progress bar |
+| v154 | a72178e | TD-19 hapus dead code sw_pending_update |
+| v155 | 0a9a807 | Batch A cleanup TD-20 TD-21 TD-22 TD-32 |
+| v156 | ea58976 | Batch B cleanup TD-27 TD-29 TD-30 TD-31 |
+| v157 | 8b2fe49 | fix opacity asesmen placeholder |
+| v158 | 6b9c028 | feat UCAP collapse + TTS relokasi |
+| v159 | f8f8b26 | fix TTS icon → emoji |
+| v160 | b63efb9 | fix tp-01 L14 pisah AKSI tunjuk |
+| v161 | e0ac9e8 | fix asesmen deskripsi color |
+| v162 | 75e030a | feat pemisah --- runtime |
+| v163 | 7c662e5 | fix title color asesmen |
