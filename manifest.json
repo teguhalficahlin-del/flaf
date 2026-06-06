@@ -1,7 +1,7 @@
 {
-  "name": "FLAF — Bahasa Inggris SD Fase A",
+  "name": "FLAF — Bahasa Inggris SD",
   "short_name": "FLAF",
-  "description": "Platform panduan mengajar Bahasa Inggris untuk guru SD Kelas 1 & 2",
+  "description": "Platform panduan mengajar Bahasa Inggris untuk guru SD Kelas 1–6",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
