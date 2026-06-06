@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v154';         // ← bump: TD-19 hapus dead code sw_pending_update
+const CACHE_VERSION  = 'flaf-v155';         // ← bump: Batch A cleanup TD-20 TD-21 TD-22 TD-32
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
