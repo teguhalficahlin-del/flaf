@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v155';         // ← bump: Batch A cleanup TD-20 TD-21 TD-22 TD-32
+const CACHE_VERSION  = 'flaf-v156';         // ← bump: Batch B cleanup TD-27 TD-29 TD-30 TD-31
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
