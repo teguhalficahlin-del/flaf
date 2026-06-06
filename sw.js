@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v148';         // ← bump: TD-18 confirm native diganti dialog FLAF
+const CACHE_VERSION  = 'flaf-v149';         // ← bump: TD-16 IDB unavailable screen fix
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
