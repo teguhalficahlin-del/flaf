@@ -618,6 +618,20 @@ function _collapseUcap(segments) {
   return collapsed;
 }
 
+function _expandPemisah(segments) {
+  const result = [];
+  for (const seg of segments) {
+    if (seg.jenis !== 'biasa') { result.push(seg); continue; }
+    const parts = seg.isi.split(/\s*---\s*/);
+    parts.forEach((part, i) => {
+      if (i > 0) result.push({ jenis: 'pemisah' });
+      const trimmed = part.trim();
+      if (trimmed) result.push({ jenis: 'biasa', isi: trimmed });
+    });
+  }
+  return result;
+}
+
 function _energiPill(energi) {
   if (!energi) return '';
   const map = {
@@ -686,7 +700,10 @@ function _renderRunning() {
   const assessmentHTML = _renderAssessmentPanel(langkah);
 
   // Teks segments
-  const teksHTML = _collapseUcap(_parseTeks(langkah.teks)).map(seg => {
+  const teksHTML = _expandPemisah(_collapseUcap(_parseTeks(langkah.teks))).map(seg => {
+    if (seg.jenis === 'pemisah') {
+      return '<div class="sr-pemisah"></div>';
+    }
     if (seg.jenis === 'ucap') {
       const kalimatArr = seg.isi.split('\n');
       const kalimatHTML = kalimatArr
