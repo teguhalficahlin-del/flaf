@@ -119,7 +119,7 @@ const TP_14 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "I'm fine, thank you! Are you ready? Let's start."`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -137,7 +137,17 @@ const TP_14 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu. UCAP: "Look around. What do you see?" [Tunggu 2–3 respons bebas — boleh Bahasa Indonesia] → Guru tunjuk meja sendiri: "I see — a book." [angkat buku] → Tunjuk meja siswa terdekat: "I see — a pencil." [tunjuk pensil] → Tunjuk sudut kelas: "I see — a bag." [tunjuk tas] UCAP: "These are classroom things. Say it with me — classroom." → Kelas: "Classroom."`,
+          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu dulu.
+UCAP: "Look around. What do you see?"
+AKSI: Tunggu 2–3 respons bebas. Respons boleh Bahasa Indonesia.
+AKSI: Tunjuk meja sendiri, angkat buku.
+UCAP: "I see — a book."
+AKSI: Tunjuk meja siswa terdekat, tunjuk pensil.
+UCAP: "I see — a pencil."
+AKSI: Tunjuk sudut kelas, tunjuk tas.
+UCAP: "I see — a bag."
+UCAP: "These are classroom things. Say it with me — classroom."
+→ Kelas: "Classroom."`,
           bantuan: null,
           cue    : 'Guru yang menunjuk dan menyebut — bukan meminta siswa tebak. Ini aktivasi konteks, bukan tes produksi. Respons bebas siswa diterima tanpa koreksi. Satu kata anchor: "classroom" — kelas ucap sekali, cukup.',
           darurat: null,
@@ -156,7 +166,18 @@ const TP_14 = {
         // L2 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST AKSI: Tempel 3 kartu satu per satu: book — pen — pencil Setiap kartu: tunjuk kartu → tunjuk benda nyata di kelas → ucap kata. Satu detik jeda, lanjut. UCAP setelah 3 kartu terpasang: "Listen. My turn." → "Book." [angkat buku, tunjuk kartu] → "Pen." [tunjuk pena, gestur menulis mengalir] → "Pencil." [tunjuk pensil, gestur menulis ujung runcing menekan] "One more time." → ulang sekali.`,
+          teks   : `👂 LISTEN FIRST
+AKSI: Tempel 3 kartu satu per satu: book — pen — pencil. Setiap kartu: tunjuk kartu → tunjuk benda nyata di kelas → ucap kata. Satu detik jeda, lanjut.
+UCAP: "Listen. My turn."
+AKSI: Angkat buku, tunjuk kartu.
+UCAP: "Book."
+AKSI: Tunjuk pena, gestur menulis mengalir.
+UCAP: "Pen."
+AKSI: Tunjuk pensil, gestur menulis ujung runcing menekan.
+UCAP: "Pencil."
+AKSI: Jeda sebentar.
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Pen dan pencil — gestur harus berbeda. Pen: gestur menulis mengalir, tangan bebas. Pencil: gestur menulis dengan ujung runcing, tangan sedikit menekan. Ini anchor contrast drill berikutnya. Guru belum minta kelas produksi di layar ini.',
           darurat: null,
@@ -166,7 +187,26 @@ const TP_14 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say." → Tunjuk book: kelas ucap "Book!" → Tunjuk pen: "Pen!" + gestur menulis mengalir → Tunjuk pencil: "Pencil!" + gestur ujung runcing menekan AKSI: Ulangi sekali lagi, acak 2 kartu. Contrast drill — langsung setelah putaran acak (15 detik): UCAP: "Watch." → Guru tunjuk pen: "Pen — ink." [gestur menulis mengalir] → Guru tunjuk pencil: "Pencil — wood." [gestur ujung runcing, tunjuk ujung pensil nyata] "Ready? Which one?" → "Ink — show me!" → kelas tunjuk kartu pen → "Wood — show me!" → kelas tunjuk kartu pencil → Ulangi 2 putaran, cepat.`,
+          teks   : `🗣 TOGETHER
+UCAP: "Now together. I point — you say."
+AKSI: Tunjuk book.
+→ Kelas: "Book!"
+AKSI: Tunjuk pen.
+→ Kelas: "Pen!" + gestur menulis mengalir.
+AKSI: Tunjuk pencil.
+→ Kelas: "Pencil!" + gestur ujung runcing menekan.
+AKSI: Ulangi sekali lagi, acak 2 kartu.
+UCAP: "Watch."
+AKSI: Tunjuk kartu pen, gestur menulis mengalir.
+UCAP: "Pen — ink."
+AKSI: Tunjuk kartu pencil, gestur ujung runcing, tunjuk ujung pensil nyata.
+UCAP: "Pencil — wood."
+UCAP: "Ready? Which one?"
+UCAP: "Ink — show me!"
+AKSI: Kelas tunjuk kartu pen.
+UCAP: "Wood — show me!"
+AKSI: Kelas tunjuk kartu pencil.
+AKSI: Ulangi 2 putaran, cepat.`,
           bantuan: 'Jika kelas tertukar pen/pencil: guru tunjuk pensil nyata — "Pencil — longer word, longer thing." — lanjut.',
           cue    : 'Contrast drill pen vs pencil wajib — bunyi dan fungsi paling mirip di gelombang 1. Anchor "ink" vs "wood" lebih kuat dari penjelasan apapun. Jangan explain arti ink/wood — cukup jadi anchor contrast. Guru tidak perlu explain lebih lanjut.',
           darurat: null,
@@ -176,7 +216,20 @@ const TP_14 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI — Reactivation (15–20 detik): "Quick check." → Tunjuk cepat 3 kartu gelombang 1 berurutan — kelas ucap. → Tidak dikoreksi. Tidak diulang. Langsung lanjut. 👂 LISTEN FIRST Gelombang 2 AKSI: Tempel 3 kartu berikutnya: eraser — ruler — bag Setiap kartu: tunjuk kartu → tunjuk benda nyata → ucap kata. "Listen. My turn." → "Eraser." [ambil penghapus, gestur menghapus kiri-kanan di udara] → "Ruler." [ambil penggaris, gestur mengukur garis lurus] → "Bag." [tunjuk tas guru, gestur angkat tali tas di bahu] "One more time." → ulang sekali.`,
+          teks   : `AKSI — Reactivation (15–20 detik):
+UCAP: "Quick check."
+AKSI: Tunjuk cepat 3 kartu gelombang 1 berurutan — kelas ucap. Tidak dikoreksi. Tidak diulang. Langsung lanjut.
+👂 LISTEN FIRST Gelombang 2
+AKSI: Tempel 3 kartu berikutnya: eraser — ruler — bag. Setiap kartu: tunjuk kartu → tunjuk benda nyata → ucap kata.
+UCAP: "Listen. My turn."
+AKSI: Ambil penghapus, gestur menghapus kiri-kanan di udara.
+UCAP: "Eraser."
+AKSI: Ambil penggaris, gestur mengukur garis lurus.
+UCAP: "Ruler."
+AKSI: Tunjuk tas guru, gestur angkat tali tas di bahu.
+UCAP: "Bag."
+UCAP: "One more time."
+AKSI: Ulang sekali.`,
           bantuan: null,
           cue    : 'Reactivation gelombang 1 wajib — 15–20 detik, tidak dikoreksi. Eraser — gestur menghapus harus besar dan jelas: tangan bergerak kiri-kanan di udara. Ini anchor terkuat untuk kata yang bunyinya asing bagi siswa Indonesia.',
           darurat: null,
@@ -186,7 +239,17 @@ const TP_14 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER Fase A — Gelombang 2 saja, lambat: "Together." → Tunjuk eraser → ruler → bag. → Kelas ucap. Lambat, tidak terburu. Fase B — Campur 6 kartu, medium: "Now — all together." → Tunjuk semua 6 kartu berurutan — medium speed. → Kelas ucap. Fase C — 4 kartu acak, cepat: "Ready? Fast — but clear." → Pilih 4 kartu acak — tunjuk cepat. → Tahan 1 detik sebelum menunjuk kartu berikutnya.`,
+          teks   : `🗣 TOGETHER
+Fase A — Gelombang 2 saja, lambat:
+UCAP: "Together."
+AKSI: Tunjuk eraser → ruler → bag. Kelas ucap. Lambat, tidak terburu.
+Fase B — Campur 6 kartu, medium:
+UCAP: "Now — all together."
+AKSI: Tunjuk semua 6 kartu berurutan — medium speed. Kelas ucap.
+Fase C — 4 kartu acak, cepat:
+UCAP: "Ready?"
+UCAP: "Fast — but clear."
+AKSI: Pilih 4 kartu acak — tunjuk cepat. Tahan 1 detik sebelum menunjuk kartu berikutnya.`,
           bantuan: 'Jika kelas mulai telat: kurangi tempo, ulangi 2 kartu, lanjut.',
           cue    : 'Jangan letakkan pen dan pencil berurutan di Fase C — interference masih tinggi setelah contrast drill baru selesai. Guru tidak perlu gestur penuh di Fase C — cukup tunjuk kartu, kelas produksi sendiri.',
           darurat: null,
@@ -196,7 +259,17 @@ const TP_14 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru lepas kartu dari papan — simpan. Siswa tidak pegang apa-apa. UCAP: "No cards. Just me and you." → "Show me book!" → kelas angkat buku masing-masing → "Show me pencil!" → kelas angkat pensil → "Show me eraser!" → kelas angkat penghapus → "Show me bag!" → kelas tunjuk tas → "Show me ruler!" → kelas angkat penggaris → "Show me pen!" → kelas angkat pena AKSI: Putaran acak — maksimal 5 cue. Guru tidak ikut — kelas yang aksi. UCAP: "My turn to watch. You do it." → Pilih 5 cue acak. Jangan letakkan pen dan pencil berurutan. → Setelah 5 cue: langsung stop. UCAP: "Stop. Good."`,
+          teks   : `AKSI: Guru lepas kartu dari papan — simpan. Siswa tidak pegang apa-apa.
+UCAP: "No cards. Just me and you."
+---
+→ "Show me book!" → kelas angkat buku masing-masing → "Show me pencil!" → kelas angkat pensil → "Show me eraser!" → kelas angkat penghapus → "Show me bag!" → kelas tunjuk tas → "Show me ruler!" → kelas angkat penggaris → "Show me pen!" → kelas angkat pena
+---
+AKSI: Putaran acak — maksimal 5 cue. Guru tidak ikut — kelas yang aksi.
+UCAP: "My turn to watch. You do it."
+→ Pilih 5 cue acak. Jangan letakkan pen dan pencil berurutan.
+→ Setelah 5 cue: langsung stop.
+---
+UCAP: "Stop. Good."`,
           bantuan: 'Jika kelas tertukar pen/pencil: guru berdiri diam, tunjuk pensil nyata — "Pencil." Tunjuk pena — "Pen." Lanjut.',
           cue    : 'Layar ini retrieval dari benda nyata di meja siswa — bukan dari kartu. Guru tidak ikut di putaran acak — guru perlu melihat siapa yang tertukar. Maksimal 5 cue, langsung stop. Pen dan pencil tidak boleh berurutan.',
           darurat: null,
@@ -206,7 +279,26 @@ const TP_14 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Sit up." [Jeda 3 detik] UCAP: "Good. Now watch." AKSI: Tempel kembali kartu book. Ambil buku nyata. Tunjuk papan — The ___ is ___ the ___. "Listen. My turn." → Taruh buku di atas meja: "On." [tunjuk kartu book] "On the table." [gestur tangan datar di atas] → Taruh buku di dalam tas guru: "In." [tunjuk kartu bag] "In the bag." [gestur tangan masuk ke dalam] → Taruh buku di bawah kursi guru: "Under." [tunjuk kartu] "Under the chair." [gestur tangan ke bawah] "One more time." → ulang tiga demonstrasi.`,
+          teks   : `AKSI: Tepuk 1 kali, kelas freeze.
+UCAP: "Stop. Hands down. Sit up."
+AKSI: Jeda 3 detik.
+UCAP: "Good. Now watch."
+AKSI: Tempel kembali kartu book. Ambil buku nyata. Tunjuk papan — The ___ is ___ the ___.
+UCAP: "Listen. My turn."
+AKSI: Taruh buku di atas meja. Tunjuk kartu book.
+UCAP: "On."
+AKSI: Gestur tangan datar di atas.
+UCAP: "On the table."
+AKSI: Taruh buku di dalam tas guru. Tunjuk kartu bag.
+UCAP: "In."
+AKSI: Gestur tangan masuk ke dalam.
+UCAP: "In the bag."
+AKSI: Taruh buku di bawah kursi guru. Tunjuk kartu.
+UCAP: "Under."
+AKSI: Gestur tangan ke bawah.
+UCAP: "Under the chair."
+UCAP: "One more time."
+AKSI: Ulang tiga demonstrasi.`,
           bantuan: null,
           cue    : 'Demonstrasi fisik wajib — bukan hanya ucapkan kata. Setiap preposisi harus punya gestur tangan yang berbeda dan konsisten: on = tangan datar di atas / in = tangan masuk ke dalam / under = tangan ke bawah. Semua modeling posisi harus terlihat dari belakang kelas — gunakan benda besar dan posisi yang jelas. Guru tidak tanya kelas dulu di layar ini.',
           darurat: null,
@@ -269,7 +361,15 @@ const TP_14 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru taruh buku di atas penghapus di meja guru — diam, tidak bergerak. UCAP: "Last. Write one sentence." → "The ___ is ___ the ___." → "Look at this." [tunjuk posisi benda] [Tunggu 45–60 detik] "Show me."`,
+          teks   : `AKSI: Guru taruh buku di atas penghapus di meja guru — diam, tidak bergerak.
+UCAP: "Last. Write one sentence."
+AKSI: Jeda sebentar.
+UCAP: "The ... is ... the ..."
+AKSI: Jeda sebentar.
+UCAP: "Look at this."
+AKSI: Tunjuk posisi benda.
+AKSI: Tunggu 45–60 detik.
+UCAP: "Show me."`,
           bantuan: 'Terima: kalimat penuh, frasa parsial ("book on eraser"), atau gambar dengan label posisi. Tidak ada koreksi terbuka.',
           cue    : 'Exit ticket = satu posisi tetap yang guru tunjukkan, satu kalimat, struktur "The ___ is ___ the ___." Guru tidak ganti posisi benda selama siswa menulis. Tidak diperluas.',
           darurat: null,
