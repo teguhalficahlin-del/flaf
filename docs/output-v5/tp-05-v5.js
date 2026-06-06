@@ -106,7 +106,7 @@ const TP_05 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `AKSI: Berdiri di depan kelas. Kartu warna disimpan di meja — belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a very colourful day! Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
+    teks   : `AKSI: Berdiri di depan kelas. Kartu warna disimpan di meja — belum ditunjukkan. Tunggu semua duduk tenang. UCAP: "Good morning, everyone! How are you today?" AKSI: Tunggu respons kelas. UCAP: "I'm fine, thank you!" UCAP: "Today is a very colourful day!" UCAP: "Are you ready?" AKSI: Tunggu respons — berdiri diam jika kelas belum fokus.`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Kartu warna belum boleh ditunjukkan di sini — simpan kejutan untuk Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -124,7 +124,7 @@ const TP_05 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunggu semua duduk tenang. UCAP: "Good morning!" "Colourful day today!" AKSI: Ambil satu kartu warna. Tunjuk ke kelas. UCAP: "Look first." [jeda 3 detik] "What colour is this?" [Beri 2 detik. Lanjut.] "Red! This is red." AKSI: Tunjuk kartu kedua. UCAP: "And this one?" [jeda] "Blue! This is blue."`,
+          teks   : `AKSI: Tunggu semua duduk tenang. UCAP: "Good morning!" UCAP: "Colourful day today!" AKSI: Ambil satu kartu warna. Tunjuk ke kelas. UCAP: "Look first." AKSI: Jeda 3 detik. UCAP: "What colour is this?" AKSI: Beri 2 detik. Lanjut. UCAP: "Red!" UCAP: "This is red." AKSI: Tunjuk kartu kedua. UCAP: "And this one?" AKSI: Jeda. UCAP: "Blue!" UCAP: "This is blue."`,
           bantuan: null,
           cue    : 'Jeda 3 detik setelah tunjuk kartu pertama — beri siswa waktu observasi sebelum tanya. Jangan langsung ucap warnanya.',
           darurat: null,
@@ -134,7 +134,7 @@ const TP_05 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `👂 LISTEN FIRST — GELOMBANG 1 UCAP: "Red. Blue. Green. Yellow." 🗣 TOGETHER → Siswa: "Red! Blue! Green! Yellow!" UCAP: "Good! Now four more colours." 👂 LISTEN FIRST — GELOMBANG 2 UCAP: "Orange. Purple. Black. White." 🗣 TOGETHER → Siswa: "Orange! Purple! Black! White!" 🗣 FULL 8 UCAP: "All together!" → Siswa: "Red! Blue! Green! Yellow! Orange! Purple! Black! White!" 🔁 Putaran kedua — whisper voice.`,
+          teks   : `👂 LISTEN FIRST — GELOMBANG 1 UCAP: "Red. Blue. Green. Yellow." 🗣 TOGETHER → Siswa: "Red! Blue! Green! Yellow!" UCAP: "Good!" UCAP: "Now four more colours." 👂 LISTEN FIRST — GELOMBANG 2 UCAP: "Orange. Purple. Black. White." 🗣 TOGETHER → Siswa: "Orange! Purple! Black! White!" 🗣 FULL 8 UCAP: "All together!" → Siswa: "Red! Blue! Green! Yellow! Orange! Purple! Black! White!" 🔁 Putaran kedua — whisper voice.`,
           bantuan: [
             'Jika diam: tunjuk kartu + ucap "Red..." menggantung.',
             'Jika pelan: dekatkan tangan ke telinga.',
@@ -147,7 +147,7 @@ const TP_05 = {
         // L3 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu kiri ke kanan — satu putaran predictable. UCAP: "What colour?" [siswa jawab bersama] AKSI: Setelah satu putaran: "Now — surprise cards!" → Tunjuk 3–4 kartu secara acak dan cepat.`,
+          teks   : `AKSI: Tunjuk kartu kiri ke kanan — satu putaran predictable. UCAP: "What colour?" [siswa jawab bersama] AKSI: Setelah satu putaran. UCAP: "Now — surprise cards!" → Tunjuk 3–4 kartu secara acak dan cepat.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -179,7 +179,7 @@ const TP_05 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. → "Hands down. Eyes on me." → "Walk, don't run. Only touch near you." AKSI: Demo stop signal — clap twice: → Guru clap twice → kembali ke tempat → freeze → tunjuk lantai dekat tempat duduk. → "Come back… freeze!" UCAP: "Clap twice — come back and freeze." AKSI: Demo full: → "Watch. Touch → come back → freeze." → "Ready?"`,
+          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Hands down." UCAP: "Eyes on me." UCAP: "Walk, don't run. Only touch near you." AKSI: Demo stop signal. UCAP: "Come back… freeze!" UCAP: "Clap twice — come back and freeze." AKSI: Demo urutan menyentuh lalu kembali. UCAP: "Watch." UCAP: "Touch, come back, freeze." UCAP: "Ready?"`,
           bantuan: null,
           cue    : '"Come back" dulu, baru "freeze" — urutan ini penting. Tunjuk lantai = sinyal kembali ke tempat. Pilih benda yang benar-benar dekat untuk demo — model jarak pendek.',
           darurat: 'Waktu ≤10 menit → lewati sentuh warna, lanjut ke Layar 7.',
@@ -202,7 +202,7 @@ const TP_05 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Clap twice. → "Sit down. Hands in lap." [Diam 15 detik] UCAP: "Watch me." AKSI: Guru model — bertahap: → "This is my [benda]." [jeda → kelas tirukan] → "It is [warna]." [jeda → kelas tirukan] → "This is my [benda]. It is [warna]." [kelas tirukan bersama] AKSI: Ulangi dengan benda kedua. UCAP: "Open bag slowly." "Take one thing." "Close the bag." "Bag down." AKSI: Guru model sekali lagi: → "This is my [benda]." [ulang] → "It is [warna]." [ulang] → gabung sekali.`,
+          teks   : `AKSI: Clap twice. → "Sit down. Hands in lap." [Diam 15 detik] UCAP: "Watch me." AKSI: Guru model — bertahap: → "This is my [benda]." [jeda → kelas tirukan] → "It is [warna]." [jeda → kelas tirukan] → "This is my [benda]. It is [warna]." [kelas tirukan bersama] AKSI: Ulangi dengan benda kedua. UCAP: "Open bag slowly." UCAP: "Take one thing." UCAP: "Close the bag." UCAP: "Bag down." AKSI: Guru model sekali lagi: → "This is my [benda]." [ulang] → "It is [warna]." [ulang] → gabung sekali.`,
           bantuan: null,
           cue    : 'Diam 15 detik dulu setelah cooldown — jangan terburu masuk modeling. Tas ditutup dan diletakkan sebelum tampil — fokus ke speaking.',
           darurat: null,
@@ -212,7 +212,7 @@ const TP_05 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Panggil 4–5 siswa. Maksimal 15 detik per siswa. UCAP: "Face the class." "Ready?" [jeda kecil — beri anak pemalu 1 detik ekstra untuk stabil] UCAP ke kelas [model volume pelan]: "When your friend finishes — say quietly: 'Good job!'" → Siswa: "This is my [benda]. It is [warna]." [Jika hanya sebut warna: terima — model kalimat penuh.]`,
+          teks   : `AKSI: Panggil 4–5 siswa. Maksimal 15 detik per siswa. UCAP: "Face the class." UCAP: "Ready?" AKSI: Jeda kecil — beri anak pemalu 1 detik ekstra untuk stabil. UCAP ke kelas [model volume pelan]: "When your friend finishes — say quietly: 'Good job!'" → Siswa: "This is my [benda]. It is [warna]." [Jika hanya sebut warna: terima — model kalimat penuh.]`,
           bantuan: [
             'Jika diam: bisik "This is my..."',
             'Jika lupa warna: tunjuk kartu di papan.',
@@ -225,7 +225,7 @@ const TP_05 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Turn to your partner." UCAP: "Small voice — like this." [guru model volume kecil] "Show one thing. Say the colour. Then switch." "3… 2… 1… eyes here."`,
+          teks   : `AKSI: "Turn to your partner." UCAP: "Small voice — like this." AKSI: Guru model volume kecil. UCAP: "Show one thing." UCAP: "Say the colour." UCAP: "Then switch." UCAP: "3… 2… 1… eyes here."`,
           bantuan: null,
           diferensiasi: {
             needHelp: 'Satu kata saja "Red!" — boleh lihat kartu di papan.',
@@ -248,7 +248,7 @@ const TP_05 = {
         // L10 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk semua kartu di papan. UCAP: "Look at all these colours!" AKSI: Guru demo: "My favourite colour is [warna]!" UCAP: "Point high — your favourite!" "Now say your favourite colour!" → Siswa: "My favourite colour is [warna]!" 🔁 4–5 siswa. Tempo cepat.`,
+          teks   : `AKSI: Tunjuk semua kartu di papan. UCAP: "Look at all these colours!" AKSI: Guru demo: "My favourite colour is [warna]!" UCAP: "Point high — your favourite!" UCAP: "Now say your favourite colour!" → Siswa: "My favourite colour is [warna]!" 🔁 4–5 siswa. Tempo cepat.`,
           bantuan: 'Jika diam: tunjuk 2 kartu → "This? Or this?"',
           cue    : null,
           darurat: null,
@@ -258,7 +258,7 @@ const TP_05 = {
         // L11 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Now — a song!" AKSI: Gesture pelangi dengan kedua tangan: "Rainbow colours!" [Jika ada kartu pink: tempel sebentar — jika tidak ada: skip] UCAP: "Listen first." AKSI: Guru nyanyi: "Red and yellow and pink and green, orange and purple and blue. I can sing a rainbow, sing a rainbow, sing a rainbow too!" UCAP: "Together — just the colours!"`,
+          teks   : `UCAP: "Now — a song!" AKSI: Gesture pelangi dengan kedua tangan. UCAP: "Rainbow colours!" AKSI: Jika ada kartu pink: tempel sebentar — jika tidak ada: skip. UCAP: "Listen first." AKSI: Guru nyanyi: "Red and yellow and pink and green, orange and purple and blue. I can sing a rainbow, sing a rainbow, sing a rainbow too!" UCAP: "Together — just the colours!"`,
           bantuan: null,
           cue    : 'Gesture besar santai — tidak harus tunjuk semua kartu presisi. Lagu penutup = shared emotional ending, bukan akurasi drill.',
           darurat: null,
@@ -268,7 +268,7 @@ const TP_05 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: "Hands down. Quiet voice." UCAP: "Wonderful! You know your colours." "Soft goodbye..." [guru ucap pelan → siswa ikut] "Goodbye, everyone! See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
+          teks   : `AKSI: "Hands down. Quiet voice." UCAP: "Wonderful!" UCAP: "You know your colours." UCAP: "Soft goodbye..." AKSI: Guru ucap pelan sebagai model, siswa ikut. UCAP: "Goodbye, everyone!" UCAP: "See you next time!" 🗣 TOGETHER → Siswa: "Goodbye, teacher! See you!"`,
           bantuan: 'Jika diam: lambai tangan → "Good-bye..." menggantung.',
           cue    : 'Ucapkan "Soft goodbye" dulu sebelum chorus — set volume penutup yang tenang.',
           darurat: null,
