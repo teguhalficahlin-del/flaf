@@ -220,8 +220,8 @@ function _srTtsStop() {
   _state.ttsUtterance = null;
   if (_srTtsBtn) {
     _srTtsBtn.classList.remove('sr-tts-btn--playing');
-    const icon = _srTtsBtn.querySelector('i');
-    if (icon) icon.className = 'ti ti-volume';
+    const iconEl = _srTtsBtn.querySelector('span[aria-hidden]');
+    if (iconEl) iconEl.innerHTML = '🔊';
     _srTtsBtn = null;
   }
 }
@@ -232,8 +232,8 @@ function _srTtsPlay(kalimatArr, btnEl) {
   if (!kalimatArr || !kalimatArr.length) return;
   _srTtsBtn = btnEl;
   btnEl.classList.add('sr-tts-btn--playing');
-  const icon = btnEl.querySelector('i');
-  if (icon) icon.className = 'ti ti-player-stop';
+  const iconEl = btnEl.querySelector('span[aria-hidden]');
+  if (iconEl) iconEl.innerHTML = '⏹';
   function speakAt(i) {
     if (i >= kalimatArr.length) { _srTtsStop(); return; }
     const u   = new SpeechSynthesisUtterance(kalimatArr[i]);
@@ -701,7 +701,7 @@ function _renderRunning() {
         <button class="sr-tts-ucap-btn"
           aria-label="Putar ucapan"
           data-kalimat="${_escape(kalimatData)}">
-          <i class="ti ti-volume" aria-hidden="true"></i>
+          <span aria-hidden="true">🔊</span>
         </button>
       </div>
       ${kalimatHTML}

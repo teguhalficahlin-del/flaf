@@ -622,11 +622,16 @@
   font-family: inherit;
   -webkit-tap-highlight-color: transparent;
   transition: opacity 0.12s;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sr-tts-ucap-btn:hover {
   opacity: 1;
 }
-.sr-tts-ucap-btn i {
+.sr-tts-ucap-btn span {
   font-size: 16px;
 }
 .sr-tts-ucap-btn.sr-tts-btn--playing {
