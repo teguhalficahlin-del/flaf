@@ -297,6 +297,7 @@ AKSI: Taruh buku di bawah kursi guru. Tunjuk kartu.
 UCAP: "Under."
 AKSI: Gestur tangan ke bawah.
 UCAP: "Under the chair."
+AKSI: Jeda sebentar.
 UCAP: "One more time."
 AKSI: Ulang tiga demonstrasi.`,
           bantuan: null,
