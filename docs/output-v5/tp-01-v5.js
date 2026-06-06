@@ -280,7 +280,7 @@ const TP_01 = {
         // L14 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu waktu dari meja guru. Tunjuk ke kelas. 🔁 3–4 different cards. UCAP: "Remember these? Let us see what you know." UCAP: "What greeting do we use for [tunjuk kartu]?" → Siswa (3–4 acak): menyebut salam yang tepat.`,
+          teks   : `AKSI: Ambil kartu waktu dari meja guru. Tunjuk ke kelas. 🔁 3–4 different cards. UCAP: "Remember these? Let us see what you know." AKSI: Tunjuk satu kartu waktu ke kelas. UCAP: "What greeting do we use for this?" → Siswa (3–4 acak): menyebut salam yang tepat.`,
           bantuan: [
             'Jika diam: dekatkan kartu → "Good mor-..." menggantung.',
             'Jika benar: angkat jempol → lanjut siswa berikutnya.',
