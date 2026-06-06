@@ -789,10 +789,6 @@ function _renderSelesai() {
 
   _root.querySelector('#sr-btn-closure')?.addEventListener('click', async () => {
     try { await db.remove(STORE_KV, RESUME_STORE_KEY); } catch {}
-    if (sessionStorage.getItem('sw_pending_update') === '1') {
-      sessionStorage.removeItem('sw_pending_update');
-      setTimeout(() => location.reload(), 1500);
-    }
     _onDone({ tp: _state.tp, rombel: _state.rombel, sesiId: _state.sesiId || null });
   });
   _root.querySelector('#sr-btn-next-fase')?.addEventListener('click', () => {
