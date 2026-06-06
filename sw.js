@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v150';         // ← bump: TD-14 showToast type parameter
+const CACHE_VERSION  = 'flaf-v151';         // ← bump: TD-17 manifest dan splash badge diupdate
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
