@@ -123,7 +123,7 @@ const TP_01 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Semua duduk. Pegang Kiki dan Momo — satu di setiap tangan. AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan dialog berikut. → Kiki: "Good morning, Momo! How are you today?" → Momo: "Good morning, Kiki! I am fine, thank you!"`,
+          teks   : `AKSI: Minta semua siswa duduk. UCAP: "Sit down, please." AKSI: Pegang Kiki dan Momo — satu di setiap tangan. AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan dialog berikut. → Kiki: "Good morning, Momo! How are you today?" → Momo: "Good morning, Kiki! I am fine, thank you!"`,
           bantuan: null,
           cue    : 'Keep it short — one quick demo only. Jangan ulang demo boneka lebih dari sekali.',
           darurat: null,
