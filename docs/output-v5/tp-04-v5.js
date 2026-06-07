@@ -120,7 +120,7 @@ const TP_04 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `AKSI: Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. UCAP: "Good morning, everyone! How are you today?" AKSI: Tunggu respons kelas. UCAP: "I'm fine, thank you!" UCAP: "Today — we count in English!" UCAP: "Are you ready?" AKSI: Tunggu respons — berdiri diam jika kelas belum fokus.`,
+    teks   : `Berdiri di depan kelas. Benda hitung sudah siap di meja guru dalam jangkauan tangan. Tunggu semua duduk tenang sebelum mulai. "Good morning, everyone! How are you today?" Tunggu respons kelas. "I'm fine, thank you!" "Today — we count in English!" "Are you ready?" Tunggu respons — berdiri diam jika kelas belum fokus.`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Jangan mulai clap and count sebelum kelas tenang. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
@@ -138,7 +138,7 @@ const TP_04 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di depan kelas. Tunggu semua duduk tenang. UCAP: "Good morning, everyone!" UCAP: "Today we are going to count!" AKSI: Tunjuk jari satu per satu ke udara. → "One... two... three..." → Berhenti di tiga. Tunjuk ke kelas: "You continue! What comes next?" → Jeda 2 detik → lanjut modeling tanpa tunggu: UCAP: "Four!" UCAP: "Five!" UCAP: "Let us count together!" AKSI: Angkat tangan sebagai aba-aba. UCAP: "Ready to clap?" AKSI: Guru hitung sendiri satu putaran penuh dengan tepukan. → "One!" 👏 "Two!" 👏 "Three!" 👏 ... "Ten!" 👏 UCAP: "Now together!" UCAP: "Slow first… ready?" → Siswa: "One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!" AKSI: Setelah putaran pelan stabil: "Now faster!"`,
+          teks   : `AKSI: Berdiri di depan kelas. AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk tenang. --- UCAP: "Good morning, everyone!" UCAP: "Today we are going to count!" AKSI: Tunjuk jari satu per satu ke udara. → "One... two... three..." → Berhenti di tiga. AKSI: Tunjuk ke kelas. UCAP: "You continue! What comes next?" → Jeda 2 detik → lanjut modeling tanpa tunggu: UCAP: "Four!" UCAP: "Five!" UCAP: "Let us count together!" AKSI: Angkat tangan sebagai aba-aba. UCAP: "Ready to clap?" AKSI: Guru hitung sendiri satu putaran penuh dengan tepukan. → "One!" 👏 "Two!" 👏 "Three!" 👏 ... "Ten!" 👏 UCAP: "Now together!" UCAP: "Slow first… ready?" → Siswa: "One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!" AKSI: Setelah putaran pelan stabil. UCAP: "Now faster!"`,
           bantuan: 'Jika siswa tidak ikut: perlambat, tunjuk jari satu per satu → ajak ikut pelan.',
           cue    : 'Langsung tunjuk jari tanpa penjelasan — gerakan mengundang keterlibatan naluriah. Beri 2 detik setelah "What comes next?" — jangan tunggu terlalu lama, keep the energy moving. Angkat tangan sebagai micro-transition fisik sebelum clap and count.',
           darurat: null,
@@ -167,7 +167,7 @@ const TP_04 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel kartu 1–10 di papan satu per satu sambil ucapkan. 👂 LISTEN FIRST UCAP: "One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten." 🗣 TOGETHER UCAP: "Now say it with me!" [tunjuk kartu satu per satu] → Siswa: "One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!" AKSI: Putaran kedua — whisper voice: "Whisper voice!" → Siswa ucap semua angka dengan suara bisik.`,
+          teks   : `AKSI: Tempel kartu 1–10 di papan satu per satu sambil ucapkan. AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. UCAP: "One. Two. Three. Four. Five. Six. Seven. Eight. Nine. Ten." AKSI: Ajak seluruh kelas mengucapkan bersama. UCAP: "Now say it with me!" [tunjuk kartu satu per satu] → Siswa: "One! Two! Three! Four! Five! Six! Seven! Eight! Nine! Ten!" AKSI: Putaran kedua — whisper voice: "Whisper voice!" → Siswa ucap semua angka dengan suara bisik.`,
           bantuan: [
             'Jika siswa diam: tunjuk kartu + ucap "One..." menggantung → tunggu siswa lanjutkan.',
             'Jika suara pelan: dekatkan tangan ke telinga, angguk semangat.',
@@ -180,7 +180,7 @@ const TP_04 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu 10 di papan. UCAP: "Ten!" UCAP: "Good." UCAP: "Now what comes after ten?" UCAP: "These numbers sound different." UCAP: "Just listen first — no need to repeat yet." AKSI: Mulai tempel kartu 11–20 satu per satu.`,
+          teks   : `AKSI: Angkat kartu "10" setinggi dada, hadapkan ke kelas — minta kelas mengucapkan. UCAP: "Ten!" UCAP: "Good." UCAP: "Now what comes after ten?" UCAP: "These numbers sound different." UCAP: "Just listen first — no need to repeat yet." AKSI: Mulai tempel kartu 11–20 satu per satu.`,
           bantuan: null,
           cue    : '"Just listen first" menurunkan tekanan performa sebelum bagian tersulit.',
           darurat: null,
@@ -190,7 +190,7 @@ const TP_04 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kartu 11–20 sudah tertempel. Tunjuk satu per satu. 👂 LISTEN FIRST — CHUNK 1 UCAP: "Eleven. Twelve. Thirteen. Fourteen. Fifteen." UCAP: "Good listening!" 👂 LISTEN FIRST — CHUNK 2 UCAP: "Sixteen. Seventeen. Eighteen. Nineteen. Twenty." 🗣 TOGETHER — semi-echo SATU PUTARAN saja AKSI: Guru ucap satu angka → jeda → siswa ikut. Satu putaran — lalu langsung full chunk. → "Eleven..." [siswa ikut] → "Twelve..." [siswa ikut] → dst sampai fifteen. → "Sixteen..." [siswa ikut] → dst sampai twenty. 🔁 Ulangi sekali lagi full chunk — tidak perlu cepat.`,
+          teks   : `AKSI: Angkat kartu 11–20 satu per satu setinggi dada, hadapkan ke kelas — minta kelas memperhatikan. AKSI: Minta siswa mendengarkan Chunk 1 terlebih dahulu tanpa mengikuti. UCAP: "Eleven. Twelve. Thirteen. Fourteen. Fifteen." UCAP: "Good listening!" AKSI: Minta siswa mendengarkan Chunk 2 terlebih dahulu tanpa mengikuti. UCAP: "Sixteen. Seventeen. Eighteen. Nineteen. Twenty." AKSI: Semi-echo satu putaran — ucap satu angka, jeda, siswa ikut. → "Eleven..." [siswa ikut] → "Twelve..." [siswa ikut] → dst sampai fifteen. → "Sixteen..." [siswa ikut] → dst sampai twenty. AKSI: Ulangi sekali lagi full chunk — tidak perlu cepat.`,
           bantuan: [
             'Jika siswa diam: ucapkan bersama guru — jangan koreksi individual.',
             'Jika kelas kuat: skip semi-echo, langsung full chunk.',
@@ -203,7 +203,7 @@ const TP_04 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Hands down." UCAP: "Eyes on the board." UCAP: "Now a game!" UCAP: "I point to a number — you say it!" UCAP: "Hands up if you know!" UCAP: "First hand up, say it!" AKSI: Demo aturan: → Guru sengaja teriak tanpa angkat tangan → "Oh nooo~" → Model benar: angkat tangan diam → ucap angka. → "Like this — hand up first, then say it."`,
+          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Hands down." UCAP: "Eyes on the board." UCAP: "Now a game!" UCAP: "I point to a number — you say it!" UCAP: "Hands up if you know!" UCAP: "First hand up, say it!" AKSI: Peragakan aturan yang salah — teriak langsung tanpa angkat tangan. UCAP: "Oh nooo~" AKSI: Angkat tangan diam, lalu ucap angka sebagai contoh yang benar. UCAP: "Like this — hand up first, then say it."`,
           bantuan: null,
           cue    : null,
           darurat: 'Waktu ≤10 menit → lewati permainan, lanjut ke Layar 8 (Hitung Benda Nyata).',
@@ -213,7 +213,7 @@ const TP_04 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk kartu angka secara acak. 🔁 6–8 angka saja — berhenti saat energi masih tinggi. UCAP untuk angka 1–10: "What number? Fast!" UCAP untuk angka 11–20: "Look carefully… what number?" AKSI: Selipkan 1–2 ronde whole class response: "Everyone together — what number?" → Individual: angkat tangan → ucapkan angka. → Whole class: semua ucapkan bersama.`,
+          teks   : `AKSI: Angkat kartu angka secara acak setinggi dada, hadapkan ke kelas — minta siswa menyebutkan angkanya. AKSI: Lakukan 6–8 angka saja — berhenti saat energi masih tinggi. UCAP: "What number? Fast!" UCAP: "Look carefully… what number?" AKSI: Minta seluruh kelas menjawab bersama — lakukan 1–2 kali. UCAP: "Everyone together — what number?" → Individual: angkat tangan → ucapkan angka. → Whole class: semua ucapkan bersama.`,
           bantuan: [
             'Jika tidak ada yang menjawab: ucap suku kata pertama "Thir-..." → tunggu.',
             'Jika chaos: "Freeze. Hands down. Eyes here." → reset → lanjut.',
@@ -259,7 +259,7 @@ const TP_04 = {
         // L10 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Minta semua berdiri. UCAP: "Everyone stand up!" AKSI: Tentukan kelompok dengan penunjukan fisik: → Guru berjalan ke area kiri → sentuh → "Group 1 — here." → Guru ke tengah → sentuh → "Group 2 — here." → Guru ke kanan → sentuh → "Group 3 — here." [Lanjut subdivisi jika kelas besar] UCAP: "I count down from ten. When I call your group — sit down!" AKSI: Demo: → "Watch. Group 1 — ten!" [kelompok 1 duduk] → "Good — like that. Everyone stand again!"`,
+          teks   : `AKSI: Angkat telapak tangan menghadap atas. UCAP: "Everyone, stand up!" AKSI: Tunggu sampai semua berdiri. AKSI: Tentukan kelompok dengan penunjukan fisik: → Guru berjalan ke area kiri → sentuh → "Group 1 — here." → Guru ke tengah → sentuh → "Group 2 — here." → Guru ke kanan → sentuh → "Group 3 — here." [Lanjut subdivisi jika kelas besar] UCAP: "I count down from ten. When I call your group — sit down!" AKSI: Demo: → "Watch. Group 1 — ten!" [kelompok 1 duduk] → "Good — like that. Everyone stand again!"`,
           bantuan: null,
           cue    : 'Tentukan kelompok sebelum mulai — penunjukan fisik jauh lebih jelas dari label verbal saja untuk kelas 1.',
           darurat: null,
@@ -269,7 +269,7 @@ const TP_04 = {
         // L11 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Semua berdiri. Guru mulai hitung mundur. 🔁 Kelompok kecil per angka — ritme tetap jalan sampai "One!" UCAP: "Ten!" [Group 1 duduk] "Nine!" [Group 2 duduk] "Eight!" [Group 3 duduk] [terus dengan subdivisi sampai...] "One!" [semua duduk] "Blast off!" 🚀 [semua angkat tangan sambil tetap duduk]`,
+          teks   : `AKSI: Angkat telapak tangan menghadap atas. UCAP: "Stand up, everyone." AKSI: Tunggu sampai semua siswa berdiri. AKSI: Mulai hitung mundur. AKSI: Kelompok kecil per angka — ritme tetap jalan sampai "One!" UCAP: "Ten!" [Group 1 duduk] "Nine!" [Group 2 duduk] "Eight!" [Group 3 duduk] [terus dengan subdivisi sampai...] "One!" [semua duduk] "Blast off!" 🚀 [semua angkat tangan sambil tetap duduk]`,
           bantuan: null,
           cue    : 'Siswa tetap duduk saat "Blast off!" — cegah re-escalation sebelum refleksi. Jaga ritme cepat — jangan tunggu kesempurnaan.',
           darurat: null,
@@ -299,7 +299,7 @@ const TP_04 = {
         // L14 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kartu angka 1–20 → Simpan benda yang dipakai untuk menghitung AKSI: Catat siswa yang: → Kesulitan angka 11–19 — fonologi belasan perlu lebih banyak exposure → Tidak bisa menjawab "How many?" — perlu latihan konteks nyata → Tidak ikut clap and count — perlu observasi partisipasi`,
+          teks   : `AKSI: Kumpulkan kartu angka 1–20. AKSI: Simpan benda yang dipakai untuk menghitung. AKSI: Catat siswa yang: - kesulitan angka 11–19, - tidak bisa menjawab "How many?", - atau tidak ikut clap and count.`,
           bantuan: null,
           cue    : null,
           darurat: null,
