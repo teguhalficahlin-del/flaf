@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v199';         // ← bump: bersihkan preOpening tp-16
+const CACHE_VERSION  = 'flaf-v200';         // ← bump: pindah serve TP16–18 ke output-v5
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
