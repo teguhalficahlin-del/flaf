@@ -96,7 +96,7 @@ const TP_03 = {
       'L9 siswa jadi pemimpin — guru pegang kendali verbal, siswa hanya tunjuk kartu',
     ],
     autonomy: [
-      'Jika kelas sangat responsif di L3–L5, boleh langsung lompat ke Simon Says',
+      'Jika kelas sudah melakukan semua 6 gerakan dengan benar di Putaran 2 (L5), boleh langsung lanjut ke Simon Says',
       'Jika kelas antusias di L9, tambah satu putaran sebelum diferensiasi',
       'Jika waktu terbatas, L8 cukup 2 contoh saja',
       'Jika kelas cepat tenang di L11, langsung mulai review tanpa tunggu hitungan selesai',
@@ -105,7 +105,7 @@ const TP_03 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `Berdiri di depan kelas. Pastikan semua siswa sudah duduk dan buku ada di atas meja sebelum mulai. Ucapkan "Good morning, everyone! How are you today?", tunggu respons kelas, lalu ucapkan "I'm fine, thank you!", "Today we learn classroom instructions.", dan "Are you ready?". Jika kelas belum fokus, berdiri diam.`,
+    teks   : `AKSI: Berdiri di depan kelas — cek semua siswa sudah duduk dan buku ada di atas meja. UCAP: "Good morning, everyone! How are you today?" AKSI: Tunggu respons kelas. UCAP: "I'm fine, thank you!" UCAP: "Today we learn classroom instructions." UCAP: "Are you ready?" AKSI: Jika kelas belum merespons: berdiri diam — ulangi "Are you ready?" sekali.`,
     bantuan: null,
     cue    : 'Layar ini pendek dan wajib. Fungsinya mengunci perhatian sebelum aktivitas TPR dimulai. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam. Jangan mulai Layar 1 sebelum kelas benar-benar tenang.',
     darurat: null,
@@ -152,7 +152,7 @@ const TP_03 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Books on the table." AKSI: Lanjut jika mayoritas sudah siap — jangan tunggu semua sempurna. AKSI: Angkat kartu instruksi setinggi dada, hadapkan ke kelas — lakukan gerakan dulu sebelum ucapkan kata. UCAP: "Listen." AKSI: Tunjuk telinga. UCAP: "Look." AKSI: Tunjuk mata. UCAP: "Write." AKSI: Gerak menulis di udara. AKSI: Ulangi 3 kartu ini sekali lagi dengan tempo sedikit lebih cepat. → Siswa melakukan gerakan — tidak perlu mengucapkan kata.`,
+          teks   : `UCAP: "Books on the table." AKSI: Lanjut jika lebih dari separuh siswa sudah siap — jangan tunggu semua sempurna. AKSI: Angkat kartu instruksi setinggi dada, hadapkan ke kelas — lakukan gerakan dulu sebelum ucapkan kata. UCAP: "Listen." AKSI: Tunjuk telinga. UCAP: "Look." AKSI: Tunjuk mata. UCAP: "Write." AKSI: Gerak menulis di udara. AKSI: Ulangi 3 kartu ini sekali lagi dengan tempo sedikit lebih cepat. → Siswa melakukan gerakan — tidak perlu mengucapkan kata.`,
           bantuan: [
             'Jika siswa tidak ikut: dekati, tunjuk kartu + lakukan gerakan perlahan → ajak ikut.',
             'Jika siswa menulis di meja: tunjuk udara → "In the air! Like this."',
@@ -178,7 +178,7 @@ const TP_03 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel semua 6 kartu di papan. AKSI: Angkat kartu satu per satu setinggi dada, hadapkan ke kelas — minta siswa melakukan gerakan. UCAP: "Listen and do! Ready?" --- AKSI: Putaran 1 — pelan. UCAP: "Listen... Look... Write... Open your book... Close your book... Draw!" --- AKSI: Putaran 2 — cepat. UCAP: "Listen! Look! Write! Open! Close! Draw!" --- AKSI: Putaran 3 — bisik. Bisikkan instruksi satu per satu — siswa tetap lakukan gerakan. UCAP: "Ready? Fast — not loud." --- AKSI: Putaran 4 — super cepat, 4 instruksi saja. UCAP: "Listen! Open! Draw! Close!" → Siswa melakukan gerakan serentak.`,
+          teks   : `AKSI: Tempel semua 6 kartu di papan. AKSI: Angkat kartu satu per satu setinggi dada, hadapkan ke kelas — minta siswa melakukan gerakan. UCAP: "Listen and do! Ready?" --- AKSI: Putaran 1 — pelan. UCAP: "Listen... Look... Write... Open your book... Close your book... Draw!" --- AKSI: Putaran 2 — cepat. UCAP: "Listen! Look! Write! Open! Close! Draw!" --- AKSI: Putaran 3 — bisik. Bisikkan instruksi satu per satu — siswa tetap lakukan gerakan. UCAP: "Ready? Fast, not loud." --- AKSI: Putaran 4 — super cepat, 4 instruksi saja. UCAP: "Listen! Open! Draw! Close!" → Siswa melakukan gerakan serentak.`,
           bantuan: 'Jika siswa salah gerakan: lakukan ulang perlahan + tunjuk kartu — jangan koreksi verbal, cukup tunjukkan gerakan yang benar.',
           cue    : 'Putaran bisik adalah cue shift mode sebelum putaran super cepat. Batasi Putaran 4 hanya 4 instruksi — jaga success momentum, hindari cognitive fatigue.',
           darurat: null,
@@ -198,7 +198,7 @@ const TP_03 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Mulai permainan. Campur instruksi dengan dan tanpa "Simon says". AKSI: Lakukan 8–10 instruksi dengan tempo cepat dan mengejutkan. Contoh urutan: → "Simon says, stand up!" → "Simon says, listen!" → "Sit down!" [jebakan] → "Simon says, open your book!" → "Write!" [jebakan] → "Simon says, close your book!" Konsekuensi jika salah: "Oops — hands on head." [lanjut segera — jangan sorot siswa yang salah] --- AKSI: Setelah 8–10 instruksi — tepuk tangan sekali. UCAP: "Great job!" AKSI: Jeda sebentar. UCAP: "Sit down." AKSI: Tunggu sampai semua siswa duduk. AKSI: Lanjut ke aktivitas Two Steps.`,
+          teks   : `AKSI: Mulai permainan. Campur instruksi dengan dan tanpa "Simon says". AKSI: Lakukan 8–10 instruksi dengan tempo cepat dan mengejutkan. Contoh urutan: → "Simon says, stand up!" → "Simon says, listen!" → "Sit down!" [jebakan] → "Simon says, open your book!" → "Write!" [jebakan] → "Simon says, close your book!" Konsekuensi jika salah: "Oops — hands on head." [lanjut segera — jangan sorot siswa yang salah] --- AKSI: Setelah 8–10 instruksi — tepuk tangan sekali. UCAP: "Great job!" AKSI: Jeda 2 detik. UCAP: "Sit down." AKSI: Tunggu sampai semua siswa duduk. AKSI: Lanjut ke Layar 8.`,
           bantuan: [
             'Jika kelas selalu bergerak tanpa filter: perlambat → ucapkan "Simon says?" dengan jeda panjang sebelum instruksi tanpa "Simon says".',
             'Jika kelas terlalu ramai: tepuk tangan dua kali → "Hands down. Eyes on me."',
@@ -211,7 +211,7 @@ const TP_03 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Tenangkan kelas sebentar — siswa masih energi tinggi dari Simon Says. UCAP: "Sit nicely." UCAP: "Eyes here." UCAP: "Now listen carefully." AKSI: Angkat dua jari sebagai penanda "dua langkah". UCAP: "Now — two steps!" UCAP: "Listen carefully." --- AKSI: Pola bertahap — ucapkan langkah pertama, jeda, langkah kedua, ulangi gabung. UCAP: "Open your book..." AKSI: Tunggu siswa buka buku. UCAP: "...and look." AKSI: Tunjuk mata. UCAP: "Open your book and look." --- UCAP: "Listen..." AKSI: Tunjuk telinga. UCAP: "...and write." AKSI: Gerak menulis di udara. UCAP: "Listen and write." --- UCAP: "Open your book..." AKSI: Buka buku. UCAP: "...and write." AKSI: Gerak menulis di udara. UCAP: "Open your book and write." → Siswa melakukan dua gerakan berurutan.`,
+          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. UCAP: "Sit nicely." UCAP: "Eyes here." AKSI: Angkat telapak tangan menghadap bawah — tunggu sampai kelas hening 3 detik. AKSI: Angkat dua jari sebagai penanda "dua langkah". UCAP: "Now — two steps!" UCAP: "Listen carefully." --- AKSI: Pola bertahap — ucapkan langkah pertama, jeda, langkah kedua, ulangi gabung. UCAP: "Open your book..." AKSI: Tunggu siswa buka buku. UCAP: "...and look." AKSI: Tunjuk mata. UCAP: "Open your book and look." --- UCAP: "Listen..." AKSI: Tunjuk telinga. UCAP: "...and write." AKSI: Gerak menulis di udara. UCAP: "Listen and write." --- UCAP: "Open your book..." AKSI: Buka buku. UCAP: "...and write." AKSI: Gerak menulis di udara. UCAP: "Open your book and write." → Siswa melakukan dua gerakan berurutan.`,
           bantuan: 'Jika siswa hanya lakukan satu gerakan: ucapkan instruksi kedua lagi dengan penekanan → "AND... write!"',
           cue    : 'Saat modeling "write" — tetap di udara, bukan di buku. Kelas 1 sangat literal.',
           darurat: null,
@@ -221,7 +221,7 @@ const TP_03 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil satu kartu instruksi. AKSI: Angkat kartu setinggi dada, hadapkan ke kelas — minta kelas melakukan gerakan. AKSI: Ulangi sekali. UCAP: "Now YOU are the teacher!" UCAP: "Watch me first." --- AKSI: Panggil satu siswa sukarela maju. AKSI: Berikan kartu instruksi ke tangan siswa. AKSI: Hadapkan siswa ke kelas. UCAP: "Show the card to the class!" --- AKSI: Ucapkan instruksi sesuai kartu yang ditunjuk siswa — langsung, tanpa menunggu. → Kelas melakukan gerakan. AKSI: Panggil 2–3 siswa bergantian — maksimal 15–20 detik per siswa.`,
+          teks   : `AKSI: Ambil satu kartu instruksi. AKSI: Angkat kartu setinggi dada, hadapkan ke kelas — minta kelas melakukan gerakan. AKSI: Ulangi — angkat kartu + minta kelas lakukan gerakan sekali lagi. UCAP: "Now YOU are the teacher!" UCAP: "Watch me first." --- AKSI: Panggil satu siswa sukarela maju. AKSI: Berikan kartu instruksi ke tangan siswa. AKSI: Hadapkan siswa ke kelas. UCAP: "Show the card to the class!" --- AKSI: Ucapkan instruksi sesuai kartu yang ditunjuk siswa — langsung, tanpa menunggu. → Kelas melakukan gerakan. AKSI: Panggil 2–3 siswa bergantian — maksimal 15–20 detik per siswa.`,
           bantuan: 'Jika siswa maju diam: bisik nama instruksi → beri waktu 5 detik → guru ucapkan sendiri sambil siswa tetap tunjuk kartu.',
           cue    : 'Siswa cukup TUNJUK kartu — guru yang ucapkan instruksi segera. Jangan ada jeda sosial antara tunjuk kartu dan instruksi guru.',
           darurat: null,
@@ -231,7 +231,7 @@ const TP_03 = {
         // L10 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Tepuk tangan dua kali. AKSI: Tunggu sampai kelas tenang. UCAP: "Great!" AKSI: Jeda sebentar. UCAP: "Now practise with your partner. Small voice. Only your partner listens. Partner A gives 3 instructions. STOP. Then Partner B. If you need help, look at the cards. If you are ready, try without cards! If you finish early — do it again." AKSI: Keliling selama partner practice — prioritaskan: kebisingan (jika naik, tepuk tangan sekali dan bisik "small voice"), semua siswa ikut, baru diferensiasi level.`,
+          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Tepuk tangan dua kali. AKSI: Tunggu sampai kelas tenang. UCAP: "Great!" AKSI: Jeda sebentar. UCAP: "Now practise with your partner. Small voice." AKSI: Tunggu sampai kelas paham — tunjuk teman sebelah sebagai model. UCAP: "Partner A — three instructions. Stop. Then Partner B." AKSI: Arahkan tangan bergantian kiri-kanan sebagai model giliran. UCAP: "Need help? Look at the cards. Ready? No cards!" AKSI: Keliling selama partner practice — prioritaskan: kebisingan (jika naik, tepuk tangan sekali dan bisik "small voice"), semua siswa ikut, baru diferensiasi level.`,
           bantuan: 'Jika noise pecah: tepuk tangan dua kali → "Hands down. Eyes on me." → reset → lanjut.',
           diferensiasi: {
             needHelp: 'Lihat kartu saat memberi instruksi — cukup 1 instruksi per giliran — guru bantu dengan bisik kata instruksi.',
