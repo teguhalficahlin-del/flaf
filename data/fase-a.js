@@ -11,7 +11,7 @@
  * =============================================================
  */
 
-import TP_01 from '../docs/output-v5/tp-01-v5.js';
+import TP_01 from '../docs/output-v5/tp-01-v6.js';
 import TP_02 from '../docs/output-v5/tp-02-v5.js';
 import TP_03 from '../docs/output-v5/tp-03-v5.js';
 import TP_04 from '../docs/output-v5/tp-04-v5.js';

@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v208';         // ← bump: hotfix tp-01 gesture/UCAP L13
+const CACHE_VERSION  = 'flaf-v209';         // ← bump: serve tp-01-v6
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
@@ -57,7 +57,7 @@ const SHELL_OPTIONAL = [
   './data/printables.js',
 
   // docs/output-v5 — TP01–14 (kelas 1 & 2)
-  './docs/output-v5/tp-01-v5.js',
+  './docs/output-v5/tp-01-v6.js',
   './docs/output-v5/tp-02-v5.js',
   './docs/output-v5/tp-03-v5.js',
   './docs/output-v5/tp-04-v5.js',
