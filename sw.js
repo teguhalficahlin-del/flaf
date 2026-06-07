@@ -74,9 +74,9 @@ const SHELL_OPTIONAL = [
 
   // docs/sesi-m* — TP15–18 (kelas 2 lanjut)
   './docs/sesi-m10/tp-15-v5.js',
-  './docs/sesi-m11/tp-16-v5.js',
-  './docs/sesi-m12/tp-17-v5.js',
-  './docs/sesi-m13/tp-18-v5.js',
+  './docs/output-v5/tp-16-v5.js',
+  './docs/output-v5/tp-17-v5.js',
+  './docs/output-v5/tp-18-v5.js',
 
   // docs/output-v5-faseb — TP01–22 (Fase B)
   './docs/output-v5-faseb/tp-01-v5.js',

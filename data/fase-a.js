@@ -26,9 +26,9 @@ import TP_12 from '../docs/output-v5/tp-12-v5.js';
 import TP_13 from '../docs/output-v5/tp-13-v5.js';
 import TP_14 from '../docs/output-v5/tp-14-v5.js';
 import TP_15 from '../docs/sesi-m10/tp-15-v5.js';
-import TP_16 from '../docs/sesi-m11/tp-16-v5.js';
-import TP_17 from '../docs/sesi-m12/tp-17-v5.js';
-import TP_18 from '../docs/sesi-m13/tp-18-v5.js';
+import TP_16 from '../docs/output-v5/tp-16-v5.js';
+import TP_17 from '../docs/output-v5/tp-17-v5.js';
+import TP_18 from '../docs/output-v5/tp-18-v5.js';
 
 const FASE_A = {
 
