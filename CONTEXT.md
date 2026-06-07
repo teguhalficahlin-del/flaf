@@ -1786,8 +1786,8 @@ runtime yang benar-benar dipakai app.
 ## Update Status Proyek — Juni 2026
 
 - **SW aktif**: `flaf-v163`
-- **Commit terakhir**: `7c662e5` — fix(dashboard): title card asesmen tambah color:rgba(255,255,255,0.9)
-- **Tanggal**: 6 Juni 2026
+- **Commit terakhir**: `59da906` — chore: bump SW setelah audit fase-a-tp04
+- **Tanggal**: 7 Juni 2026
 - **Fase C**: SELESAI ✅ — integrasi penuh ke PWA
 - **Sesi terakhir**: 3 Juni 2026 — TD-12 fix nilai TP range Kelas 5/6,
   TD-13 visual polish Layar Mengajar (batch 1 & 2 selesai), SW v112
@@ -2086,26 +2086,15 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 
 ### Status Audit Skenario Fase A
 
-**SW aktif saat ini:** `flaf-v196`
+**SW aktif saat ini:** `flaf-v206`
 
-| TP | Topik | Status |
-|----|-------|--------|
-| TP01 | Greetings & Farewells | ✅ Selesai |
-| TP02 | Classroom Objects | ✅ Selesai |
-| TP03 | Action Verbs | ✅ Selesai |
-| TP04 | Numbers 1–20 | ✅ Selesai |
-| TP05 | Colours | ✅ Selesai |
-| TP06 | School Stationery | ✅ Selesai |
-| TP07 | Family Members | ✅ Selesai |
-| TP08 | Rooms in a House | ✅ Selesai |
-| TP09 | Animals | ✅ Selesai |
-| TP10 | Food and Drinks | ✅ Selesai |
-| TP11 | Daily Routines | ✅ Selesai |
-| TP12 | Body Parts | ✅ Selesai |
-| TP13 | Weather and Seasons | ✅ Selesai |
-| TP14 | In the Classroom | ✅ Selesai |
-| TP15 | Feelings and Emotions | ✅ Selesai |
-| TP16–18 | (belum diaudit) | ⏳ Pending |
+| TP | Topik | Status | Commit | SW |
+|----|-------|--------|--------|----|
+| TP01 | Greetings & Farewells | ✅ Re-audit selesai | `92c6144` | `flaf-v203` |
+| TP02 | Classroom Objects | ✅ Re-audit selesai | `c7d7a89` | `flaf-v204` |
+| TP03 | Action Verbs | ✅ Re-audit selesai | `06dc400` | `flaf-v205` |
+| TP04 | Numbers 1–20 | ✅ Re-audit selesai | `22a9f27` | `flaf-v206` |
+| TP05–TP18 | (belum re-audit) | ⏳ Pending | — | — |
 
 ### Keputusan Teknis Audit Skenario (Ditetapkan TP08–TP15)
 
