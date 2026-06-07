@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v201';         // ← bump: audit fase-a-tp01
+const CACHE_VERSION  = 'flaf-v202';         // ← bump: audit fase-a-tp01 fix L1
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
