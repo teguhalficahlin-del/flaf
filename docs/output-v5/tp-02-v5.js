@@ -290,7 +290,7 @@ const TP_02 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Beri pujian. Tunjuk name tag beberapa siswa secara acak. UCAP: "Excellent! Now — tell me one friend's name you learned today." → Siswa: sebut satu nama teman yang baru dikenal.`,
           bantuan: [
-            'Jika diam: tunjuk name tag teman di sebelah → ucap "My friend's name is..." menggantung.',
+            'Jika diam: tunjuk name tag teman di sebelah → ucap "My friend\'s name is..." menggantung.',
             'Jika jawab Bahasa Indonesia: angguk, ucap dalam Inggris → ajak ulang pelan.',
           ],
           cue    : 'Tunjuk satu siswa, lalu gestur tangan mengajak seluruh kelas saat ucap pertanyaan.',
