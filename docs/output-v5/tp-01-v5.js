@@ -107,7 +107,7 @@ const TP_01 = {
     tipe   : 'instruksi',
     teks   : `Berdiri di pintu. Pegang Kiki di tangan kiri. Sambut siswa satu per satu saat masuk sambil mengucapkan "Good morning! Come in, come in!"`,
     bantuan: null,
-    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai — saat siswa masuk satu per satu. Boneka Kiki wajib ada di tangan. Lambaikan Kiki ke setiap siswa yang masuk. Layar ini pendek dan tidak boleh dilewati karena menjadi anchor emosi pertama siswa.',
+    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai — saat siswa masuk satu per satu. Boneka Kiki wajib ada di tangan. Lambaikan Kiki ke setiap siswa yang masuk. Jangan lewati layar ini.',
     darurat: null,
     energi : '⚪',
   },
@@ -125,7 +125,7 @@ const TP_01 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, please." AKSI: Tunggu sampai semua siswa duduk. AKSI: Pegang Kiki dan Momo — satu di setiap tangan. AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan dialog berikut. → Kiki: "Good morning, Momo! How are you today?" → Momo: "Good morning, Kiki! I am fine, thank you!"`,
           bantuan: null,
-          cue    : 'Keep it short — one quick demo only. Jangan ulang demo boneka lebih dari sekali.',
+          cue    : 'Satu demo saja — jangan ulang demo boneka lebih dari sekali.',
           darurat: null,
           energi : '🔴',
         },
@@ -135,7 +135,7 @@ const TP_01 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Turunkan boneka. Tunjuk diri sendiri → tunjuk kelas. UCAP: "Good morning, everyone! How are you today?" UCAP: "I am fine, thank you! Say it with me!" → Siswa: "Good morning, teacher! I am fine, thank you!"`,
           bantuan: 'Jika diam: condongkan badan, alis naik → ucap "I am fi-ne..." menggantung.',
-          cue    : 'No pause — model the answer immediately setelah guru ucap "Say it with me!"',
+          cue    : 'Jangan jeda — langsung berikan contoh jawaban setelah ucap "Say it with me!"',
           darurat: null,
           energi : '🟡',
         },
@@ -145,7 +145,7 @@ const TP_01 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Ambil kartu waktu. Angkat kartu setinggi dada, hadapkan ke kelas satu per satu — sebut namanya dulu. UCAP: "Look! Morning, afternoon, evening." UCAP: "Each time has its own greeting!" UCAP: "This is morning." UCAP: "This is afternoon." UCAP: "This is evening." UCAP: "Now — what time is this?" → Siswa: "Morning!" / "Good morning!" (terima kedua jawaban)`,
           bantuan: [
-            'Jika diam: "Hmm… morning or afternoon?" — tunjuk 2 kartu bergantian. Tunjuk gambar matahari → "mor-ning..." menggantung.',
+            'Jika diam: "Hmm... morning or afternoon?" — tunjuk 2 kartu bergantian. Tunjuk gambar matahari → "mor-ning..." menggantung.',
             'Jika benar: angkat jempol, angguk.',
           ],
           cue    : 'Condongkan badan dan alis naik setelah ucap "Now — what time is this?" — tunggu respons sebelum lanjut. Letakkan kartu waktu di meja guru setelah selesai digunakan.',
@@ -167,7 +167,7 @@ const TP_01 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Tempel 4 kartu salam di papan satu per satu. UCAP: "We know morning, afternoon, and evening." UCAP: "And this one is different — good night. We say it before sleeping." UCAP: "See? Four greetings. One for each time. Let us learn them all!" --- AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan empat dialog salam berikut. → Kiki: "Good morning, Momo!" / Momo: "Good morning, Kiki!" → Kiki: "Good afternoon, Momo!" / Momo: "Good afternoon, Kiki!" → Kiki: "Good evening, Momo!" / Momo: "Good evening, Kiki!" → Kiki: "Good night, Momo!" / Momo: "Good night, Kiki!"`,
           bantuan: null,
-          cue    : 'Gerakkan tangan seperti orang tidur saat ucap "good night" — gesture ini menjadi anchor untuk siswa yang belum familiar dengan kata tersebut.',
+          cue    : 'Gerakkan tangan seperti orang tidur saat ucap "good night" — gerakan ini membantu siswa yang belum mengenal kata tersebut.',
           darurat: null,
           energi : '🟡',
         },
@@ -188,7 +188,7 @@ const TP_01 = {
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Good! Now, let us say it with a chant. Watch me first!" --- AKSI: Peragakan chant satu putaran penuh sambil duduk. → "Hel-lo hel-lo" → 👏👏👏👏 → "how are you?" → tap knees x3 → "I am fine" → 👏👏👏 → "thank you!" → 🙌`,
+          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Good! Now, let us say it with a chant. Watch me first!" --- AKSI: Peragakan chant satu putaran penuh sambil duduk. → "Hel-lo hel-lo" → 👏👏👏👏 → "how are you?" → ketuk lutut x3 → "I am fine" → 👏👏👏 → "thank you!" → 🙌`,
           bantuan: null,
           cue    : 'Tunjuk telinga + mata sebelum demo — siswa dengar dan lihat dulu, jangan ikut dulu. Demo dilakukan sambil duduk.',
           darurat: null,
@@ -199,7 +199,7 @@ const TP_01 = {
         {
           tipe   : 'instruksi',
           teks   : `AKSI: Ajak seluruh kelas mengucapkan bersama. AKSI: Dua putaran — putaran kedua lebih cepat. UCAP: "Now together!" → Siswa: "Hello hello, how are you? I am fine, thank you!"`,
-          bantuan: 'Jika tidak ikut: perlambat tempo → tunjuk lutut saat bagian tap knees.',
+          bantuan: 'Jika tidak ikut: perlambat tempo → tunjuk lutut saat siswa seharusnya mengetuk.',
           cue    : 'Fast but controlled — pertahankan siswa tetap duduk selama chant. Berhenti saat energi masih tinggi.',
           darurat: null,
           energi : '🔴',
@@ -238,9 +238,9 @@ const TP_01 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 3 kartu perpisahan di papan (goodbye / bye / see you). ---\nAKSI: Angguk, tersenyum. Jeda — tunggu respons siswa. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" UCAP: "Goodbye means we are leaving." --- AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan dialog perpisahan berikut. → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. AKSI: Turunkan boneka. Angkat kartu perpisahan setinggi dada, hadapkan ke kelas — minta kelas mengucapkan. UCAP: "Goodbye! Bye! See you!"`,
+          teks   : `AKSI: Tempel 3 kartu perpisahan di papan (goodbye / bye / see you). ---\nAKSI: Angguk, tersenyum. Jeda sejenak. UCAP: "And when you leave? What do you say then?" AKSI: Sambut jawaban siswa. Tunjuk kartu perpisahan di papan. UCAP: "Yes! We can say goodbye. Look at these!" UCAP: "Goodbye means we are leaving." --- AKSI: Gerakkan Kiki dan Momo saling menghadap lalu peragakan dialog perpisahan berikut. → Kiki: "Goodbye, Momo! See you!" → Momo: "Goodbye, Kiki! Bye!" --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. AKSI: Turunkan boneka. Angkat kartu perpisahan setinggi dada, hadapkan ke kelas — minta kelas mengucapkan. UCAP: "Goodbye! Bye! See you!"`,
           bantuan: null,
-          cue    : 'Gerakkan tangan seperti melambai pergi saat tanya "And when you leave?" — gesture ini menjadi anchor untuk farewell.',
+          cue    : 'Gerakkan tangan seperti melambai pergi saat tanya "And when you leave?" — gerakan ini membantu siswa mengenali salam perpisahan.',
           darurat: null,
           energi : '🟡',
         },
@@ -261,7 +261,7 @@ const TP_01 = {
         // L13 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri sinyal perubahan mode. Tunjuk kartu di papan untuk yang butuh bantuan. UCAP: "Now let us practice. If you need help, look at the cards. If you are ready, try without the cards." AKSI: Bagi aktivitas menjadi dua kelompok berikut: - Need Help: gunakan kartu — guru pegang Kiki, siswa pegang Momo — dialog bersama guru. - Ready: tanpa kartu — pilih satu greeting dan satu orang (Mom, Dad, Friend, Teacher), lalu buat kalimat. Kiki & Momo digunakan oleh satu pasangan setiap giliran — pasangan lain praktik tanpa boneka. Ganti pasangan setiap ±1 menit saat guru memberi sinyal.\n--- AKSI: Setelah ±3 menit — angkat tangan. UCAP: "Stop. Sit down." AKSI: Tunggu sampai semua siswa duduk. AKSI: Lanjut ke kegiatan penutup.`,
+          teks   : `AKSI: Beri sinyal perubahan mode. Tunjuk kartu di papan untuk yang butuh bantuan. UCAP: "Now let us practice. If you need help, look at the cards. If you are ready, try without the cards." AKSI: Bagi aktivitas menjadi dua kelompok berikut: - Need Help: gunakan kartu — guru pegang Kiki, siswa pegang Momo — dialog bersama guru. - Ready: tanpa kartu — pilih satu salam dan satu orang (Mom, Dad, Friend, Teacher), lalu buat kalimat. Kiki & Momo digunakan oleh satu pasangan setiap giliran — pasangan lain praktik tanpa boneka. Ganti pasangan setiap ±1 menit saat guru memberi sinyal.\n--- AKSI: Setelah ±3 menit — angkat tangan. UCAP: "Stop. Sit down." AKSI: Tunggu sampai semua siswa duduk. AKSI: Lanjut ke kegiatan penutup.`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -293,7 +293,7 @@ const TP_01 = {
         // L15 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Beri pujian singkat. Demo jawaban dengan Kiki: → Kiki: "I like good morning!" UCAP: "Very good! Now tell me — which greeting do you like best?" → Siswa: sebut satu salam favorit.`,
+          teks   : `AKSI: Ambil Kiki. Beri pujian singkat. Peragakan: → Kiki: "I like good morning!" UCAP: "Very good! Now tell me — which greeting do you like best?" → Siswa: sebut satu salam favorit.`,
           bantuan: [
             'Jika diam: tunjuk kartu satu per satu — siswa boleh menunjuk kartu.',
             'Jika jawab Bahasa Indonesia: tunjuk kartu → bantu ucapkan dalam Inggris.',
@@ -316,7 +316,7 @@ const TP_01 = {
         // L17 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kartu waktu + kartu salam → Simpan Kiki dan Momo\nAKSI: Catat siswa yang: → Diam sepanjang sesi → Salah greeting berulang → Butuh kartu terus`,
+          teks   : `AKSI: Kumpulkan dan simpan semua material: → Kumpulkan kartu waktu + kartu salam → Simpan Kiki dan Momo\nAKSI: Catat siswa yang: → Diam sepanjang sesi → Salah pilih salam berkali-kali → Butuh kartu terus`,
           bantuan: null,
           cue    : null,
           darurat: null,

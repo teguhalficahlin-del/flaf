@@ -1,10 +1,11 @@
 /**
  * =============================================================
  * FLAF — TP 2 (Introducing Myself)
- * File: tp-02-v5.js
+ * File: tp-02-v6.js
  * Format: v5.0
- * Source: flaf-skenario-tp02-v2.txt
- * Generated: 2026-05-25
+ * Source: tp-02-v5.js
+ * Basis revisi: audit-output-1-tp02.md (8 temuan: 1 Mayor, 5 Sedang, 2 Minor)
+ * Edited: 2026-06-07
  * TODO: kelas / deskripsi / indikator / vocab / persiapan / media / printables
  *        tidak dapat diparsing dari txt — isi manual sebelum digunakan.
  * =============================================================
@@ -43,13 +44,14 @@ const TP_02 = {
     'Tidak memakai boneka di Layar 0 — fokus pada kontak mata dan senyum hangat',
     'Tulis nama guru di papan sambil berbicara — pelan dan jelas (Layar 1)',
     'Tunjuk nama di papan saat mengucapkannya (Layar 1)',
+    'Ganti "[nama Anda]" di UCAP Layar 1, 2, 12 dengan nama Anda yang sebenarnya',
     'Tunggu 2 detik setelah "What is my name?" sebelum modeling (Layar 2)',
-    'Tunjuk satu siswa lalu gerakkan tangan mengajak seluruh kelas saat "My name is..." (Layar 4)',
+    'Tunjuk satu siswa lalu gerakkan tangan mengajak seluruh kelas saat "My name is." (Layar 4)',
     'Guru keliling dan bantu satu per satu saat name tag (Layar 5)',
     'Tunjuk garis kosong di name tag saat ucap instruksi (Layar 5)',
     'Siswa yang sudah selesai diminta trace nama sambil tunggu teman (Layar 5)',
     'Angkat jari sesuai angka usia saat setiap contoh "I am ... years old" (Layar 7)',
-    'Tunjuk siswa dan tunggu saat ucap "I am..." — beri waktu melengkapi (Layar 7)',
+    'Tunjuk siswa dan tunggu saat ucap "I am." — beri waktu melengkapi (Layar 7)',
     'Demo walk and talk dengan boneka dilakukan sekali saja (Layar 8)',
     'Reset kelas dengan tangan naik sebelum jelaskan aturan walk and talk (Layar 9)',
     'Clap twice dipraktikkan bersama kelas sebelum mulai walk and talk (Layar 9)',
@@ -105,7 +107,7 @@ const TP_02 = {
     tipe   : 'instruksi',
     teks   : `Berdiri di depan kelas. Sambut siswa saat masuk dengan senyum dan anggukan sambil mengucapkan "Good morning! Come in, come in!"`,
     bantuan: null,
-    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai. Berbeda dari TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum hangat. Jangan lewati.',
+    cue    : 'Layar ini dilakukan sebelum kelas resmi dimulai. Berbeda dari TP 01 — tidak memakai boneka. Fokus pada kontak mata dan senyum hangat. Jangan skip.',
     darurat: null,
     energi : '⚪',
   },
@@ -121,9 +123,9 @@ const TP_02 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Tulis nama guru di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone!" UCAP: "My name is..." UCAP: "Nice to meet you!"`,
+          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Tulis nama guru di papan sambil berbicara — pelan dan jelas. UCAP: "Hello, everyone!" UCAP: "My name is [nama Anda]." UCAP: "Nice to meet you!"`,
           bantuan: null,
-          cue    : 'Tunjuk nama di papan saat mengucapkannya.',
+          cue    : 'Tunjuk nama di papan saat mengucapkannya. Ganti "[nama Anda]" dengan nama Anda.',
           darurat: null,
           energi : '🔵',
         },
@@ -131,12 +133,12 @@ const TP_02 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas. UCAP: "What is my name?" UCAP: "Your name is...!" UCAP: "Say it with me!" → Siswa: "Your name is...!"`,
+          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas. UCAP: "What is my name?" UCAP: "Your name is [nama Anda]!" UCAP: "Say it with me!" → Siswa: "Your name is [nama Anda]!"`,
           bantuan: [
             'Jika diam: tunjuk nama di papan → ucap "Your name is..." menggantung.',
             'Jika jawab Bahasa Indonesia: angguk, ucapkan dalam Inggris pelan → ajak ikut.',
           ],
-          cue    : 'Tunggu 2 detik setelah tanya "What is my name?" — beri siswa kesempatan menjawab sebelum guru memberikan contoh.',
+          cue    : 'Tunggu 2 detik setelah tanya "What is my name?" — beri siswa kesempatan recall sebelum modeling.',
           darurat: null,
           energi : '🟡',
         },
@@ -144,7 +146,7 @@ const TP_02 = {
         // L3 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas bergantian. UCAP: "Now I know your teacher's name." UCAP: "But I don't know your names yet!" UCAP: "Let us learn how to introduce ourselves!"`,
+          teks   : `AKSI: Tunjuk diri sendiri, lalu tunjuk kelas bergantian. UCAP: "Now you know my name!" UCAP: "But I don't know your names yet!" UCAP: "Let us learn how to introduce ourselves!"`,
           bantuan: null,
           cue    : null,
           darurat: null,
@@ -163,12 +165,12 @@ const TP_02 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tulis di papan: My name is ___. Tunjuk papan — ucapkan dulu sendiri, siswa dengarkan. --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. UCAP: "My name is Budi. My name is Sari. My name is Andi." --- AKSI: Ajak seluruh kelas mengucapkan bersama. UCAP: "Now you! My name is..." → Siswa: "My name is [nama sendiri]."`,
+          teks   : `AKSI: Tulis di papan: My name is ___. Tunjuk papan. --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. UCAP: "My name is Budi. My name is Sari. My name is Andi." --- AKSI: Ajak seluruh kelas mengucapkan bersama. UCAP: "Now you! My name is." → Siswa: "My name is [nama sendiri]."`,
           bantuan: [
             'Jika diam: tunjuk name tag / papan → ucap "My name is..." menggantung → tunjuk siswa.',
             'Jika jawab Bahasa Indonesia: angguk, ucap "My name is..." + nama mereka → ajak ulang.',
           ],
-          cue    : 'Tunjuk satu siswa dulu, lalu gerakkan tangan mengajak seluruh kelas saat ucap "My name is..."',
+          cue    : 'Tunjuk satu siswa dulu, lalu gerakkan tangan mengajak seluruh kelas saat ucap "My name is." — tunggu siswa melengkapi dengan nama mereka.',
           darurat: null,
           energi : '🟡',
         },
@@ -176,7 +178,7 @@ const TP_02 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Bagikan kertas name tag. Bantu yang belum bisa menulis — tidak apa-apa kalau belum rapi. AKSI: Minta siswa yang sudah selesai menebalkan nama mereka lagi sampai semua siswa selesai. UCAP: "Write your name here. My name is..."`,
+          teks   : `AKSI: Bagikan kertas name tag. Bantu yang belum bisa menulis — tidak apa-apa kalau belum rapi. AKSI: Minta siswa yang sudah selesai trace nama lagi sampai semua siap. UCAP: "Write your name here. My name is."`,
           bantuan: 'Jika belum bisa menulis: guru tulis nama di name tag, siswa tempelkan sendiri.',
           cue    : 'Guru keliling dan bantu satu per satu jika perlu. Tunjuk garis kosong di name tag saat ucap instruksi.',
           darurat: null,
@@ -196,12 +198,12 @@ const TP_02 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tunjuk diri sendiri. Angkat jari sesuai jumlah usia yang diucapkan. --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. UCAP: "How old are you?" AKSI: Angkat 6 jari — jeda sebentar. UCAP: "I am six years old." AKSI: Angkat 7 jari — jeda sebentar. UCAP: "I am seven years old." --- AKSI: Ajak seluruh kelas mengucapkan bersama. UCAP: "How old are you?" UCAP: "I am..." → Siswa: "I am [usia] years old!"`,
+          teks   : `AKSI: Tunjuk diri sendiri. Angkat jari sesuai jumlah usia yang diucapkan. --- AKSI: Minta siswa mendengarkan terlebih dahulu tanpa mengikuti. UCAP: "How old are you?" AKSI: Angkat 6 jari — jeda sebentar. UCAP: "I am six years old." AKSI: Angkat 7 jari — jeda sebentar. UCAP: "I am seven years old." --- AKSI: Ajak seluruh kelas mengucapkan bersama. UCAP: "How old are you?" UCAP: "I am." → Siswa: "I am [usia] years old!"`,
           bantuan: [
             'Jika diam: angkat jari sebanyak usia siswa → ucap "I am..." menggantung → tunggu.',
             'Jika jawab angka saja ("six!"): angguk, ucap "I am six years old!" → ajak ulang.',
           ],
-          cue    : 'Angkat jari sesuai angka usia saat setiap contoh — gerakan ini membantu siswa memahami angka yang diucapkan. Tunjuk siswa dan tunggu saat ucap "I am..." — beri waktu melengkapi.',
+          cue    : 'Angkat jari sesuai angka usia saat setiap contoh — gesture ini anchor utama. Tunjuk siswa dan tunggu saat ucap "I am." — beri waktu melengkapi.',
           darurat: null,
           energi : '🟠',
         },
@@ -219,9 +221,9 @@ const TP_02 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat tangan — minta siswa tenang dan fokus. UCAP: "Hands down. Eyes on me." --- AKSI: Jelaskan aturan walk and talk dengan singkat. UCAP: "Stand up." UCAP: "Walk." UCAP: "Find a friend." UCAP: "Say hello and introduce yourself." UCAP: "Then find another friend." UCAP: "Three friends total!"`,
+          teks   : `AKSI: Angkat tangan — minta siswa tenang dan fokus. UCAP: "Hands down. Eyes on me." --- AKSI: Jelaskan aturan walk and talk dengan singkat. UCAP: "Stand up." UCAP: "Walk." UCAP: "Find a friend." UCAP: "Say hello and introduce yourself." UCAP: "Then find another friend." UCAP: "Three friends total!" AKSI: Praktikkan clap twice bersama kelas — tepuk dua kali, freeze, diam.`,
           bantuan: null,
-          cue    : 'Turunkan tangan perlahan dan tunjuk mata sendiri saat menenangkan kelas — kelas perlu momen hening sebelum aturan dijelaskan. Clap twice = berhenti berbicara, berhenti bergerak, lihat guru — praktikkan sekali bersama kelas sebelum mulai.',
+          cue    : 'Turunkan tangan perlahan dan tunjuk mata sendiri saat reset — kelas perlu momen hening sebelum aturan dijelaskan.',
           darurat: 'Waktu ≤10 menit → batalkan walk and talk, siswa perkenalkan diri ke teman di sebelah saja, duduk di tempat.',
           energi : '🟡',
         },
@@ -234,7 +236,7 @@ const TP_02 = {
             'Jika siswa diam saat bertemu teman: dekati, bisik "Say: Hello! My name is..."',
             'Jika kelas terlalu ramai: clap twice → "Hands down. Eyes on me." — reset sebentar lalu lanjut.',
           ],
-          cue    : 'Gunakan dua tepukan tangan untuk menghentikan kegiatan saat waktu habis — sinyal ini wajib dipraktikkan di Layar 9 sebelum walk and talk dimulai.',
+          cue    : 'Clap twice untuk berhenti saat waktu habis — signal ini wajib dipraktikkan di Layar 9 sebelum walk and talk dimulai.',
           darurat: null,
           energi : '🟡',
         },
@@ -242,7 +244,7 @@ const TP_02 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Angkat tangan. AKSI: Tepuk 1 kali — berdiri diam. AKSI: Tunggu sampai kelas diam minimal 3 detik. UCAP: "Well done!" AKSI: Jeda sebentar. UCAP: "Now practise with your partner. If you need help, look at the board. If you are ready, try without looking!"`,
+          teks   : `AKSI: Angkat telapak tangan menghadap bawah. UCAP: "Sit down, everyone." AKSI: Tunggu sampai semua siswa duduk. AKSI: Angkat tangan — tunggu sampai kelas diam minimal 3 detik. UCAP: "Well done!" AKSI: Jeda sebentar. AKSI: Tunjuk papan — ke siswa yang butuh bantuan. UCAP: "Look at the board. Say it together." AKSI: Palingkan dari papan — ke siswa yang siap. UCAP: "Ready? No looking. Try alone."`,
           bantuan: null,
           diferensiasi: {
             needHelp: 'Lihat papan saat berbicara — boleh hanya nama saja dulu, usia bisa belakangan — guru duduk dekat dan bantu.',
@@ -265,7 +267,7 @@ const TP_02 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Look here." AKSI: Tunggu sampai semua siswa menghadap ke depan. UCAP: "Great practice!" AKSI: Jeda sebentar. UCAP: "Now, who wants to introduce themselves to the class? Watch first — I will show you." --- AKSI: Demo sekali lagi secara singkat dan natural. UCAP: "Hello! My name is... Nice to meet you all!"`,
+          teks   : `AKSI: Tepuk tangan sekali. UCAP: "Look here." AKSI: Tunggu sampai semua siswa menghadap ke depan. UCAP: "Great practice!" AKSI: Jeda sebentar. UCAP: "Now, who wants to introduce themselves to the class? Watch first — I will show you." --- AKSI: Demo sekali lagi secara singkat dan natural. UCAP: "Hello! My name is [nama Anda]. Nice to meet you all!"`,
           bantuan: null,
           cue    : 'Tunjuk ke kelas setelah demo selesai → ajak tepuk tangan untuk transisi ke sesi tampil.',
           darurat: null,
@@ -278,9 +280,9 @@ const TP_02 = {
           teks   : `AKSI: Panggil 2–3 siswa sukarela. Beri tepuk semangat sebelum mulai. AKSI: Batasi sesi tampil untuk 2–3 siswa saja. UCAP: "Come to the front! Introduce yourself!" → Siswa: "Hello! My name is ... I am ... years old. Nice to meet you!"`,
           bantuan: [
             'Jika diam di depan: bisik "Say: Hello! My name is..." pelan — beri waktu.',
-            'Jika hanya bilang nama: angguk, ucap "My name is [nama siswa]!" bersama kelas → beri tepuk tangan.',
+            'Jika hanya bilang nama: angguk, ucap "My name is [nama siswa]!" bersama kelas → beri applause.',
           ],
-          cue    : 'Batasi setiap giliran agar singkat — jaga tempo penutup. Jika tidak ada yang mau maju, tunjuk 2 siswa serentak.',
+          cue    : 'Jaga tempo — setiap giliran singkat. Jika tidak ada volunteer, tunjuk 2 siswa serentak.',
           darurat: null,
           energi : '🟡',
         },
@@ -290,7 +292,7 @@ const TP_02 = {
           tipe   : 'instruksi',
           teks   : `AKSI: Beri pujian. Tunjuk name tag beberapa siswa secara acak. UCAP: "Excellent! Now — tell me one friend's name you learned today." → Siswa: sebut satu nama teman yang baru dikenal.`,
           bantuan: [
-            'Jika diam: tunjuk name tag teman di sebelah → ucap "My friend's name is..." menggantung.',
+            'Jika diam: tunjuk name tag teman di sebelah → ucap "His name is..." menggantung.',
             'Jika jawab Bahasa Indonesia: angguk, ucap dalam Inggris → ajak ulang pelan.',
           ],
           cue    : 'Tunjuk satu siswa, lalu gestur tangan mengajak seluruh kelas saat ucap pertanyaan.',

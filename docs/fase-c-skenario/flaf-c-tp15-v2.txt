@@ -1,0 +1,383 @@
+TP 15 — READING: SHORT STORY
+Fase: C
+Tema: Membaca Dunia
+Kelas: 6
+Kluster: D
+Jenis: Kompleks
+Total layar: 13 (termasuk Layar 0)
+Text-anchor: "Last Sunday, Budi went to the market. He bought vegetables."
+Recycle Fase B: Yesterday I... / Last week I... → Last Sunday, Budi... (TP05 Fase B) · He has... / She has... → He bought / She helped (TP02 Fase B) · They live / They eat → They walked / They were (TP09 Fase B)
+Connector aktif: then · and — tersedia untuk produksi bebas dalam narasi; tidak ada connector baru
+Fitur linguistik fokus: past tense production (pertama kalinya di Fase C) — bukan grammar lesson; muncul karena konteks cerita; satu noticing singkat diperbolehkan
+Kosakata pendukung: market, vegetables, carry, walk, happy, together — kontekstual; tidak diajarkan sebagai vocab list
+Mode Kluster D: Membaca & Memirsa dominan · Menyimak sebagai entry point · Menulis sebagai respons teks
+
+Kriteria Kompleks yang terpenuhi (minimal 2 dari 7):
+✓ Ada perubahan bentuk (past tense) yang harus diproduksi siswa
+✓ Ada aktivitas reading dan writing dalam satu alur sesi yang sama
+✓ Ada integrasi dua skill atau lebih dalam satu blok (L7: membaca kartu + berbicara + mendengarkan)
+✓ Ada inferensi sederhana — siswa menyimpulkan konteks dari separuh cerita yang tidak mereka baca
+
+PERSIAPAN MEDIA:
+- Story Card A (satu per siswa versi A): kartu tercetak atau ditulis tangan berisi tiga kalimat — "Last Sunday, Budi went to the market. He bought vegetables. Then he met his friend, Sari." Dipegang siswa selama INTERACT; tidak diperlihatkan ke pasangan.
+- Story Card B (satu per siswa versi B): kartu terpisah berisi tiga kalimat akhir — "She helped him carry the vegetables. They walked home together. They were happy." Dipegang siswa selama INTERACT; tidak diperlihatkan ke pasangan.
+- Teks cerita lengkap di papan (6 kalimat): ditulis atau ditampilkan setelah L7 selesai — tepat sebelum L8 atau L9. Ditampilkan sebagai verifikasi + scaffold OUTPUT:
+    "1. Last Sunday, Budi went to the market.
+     2. He bought vegetables.
+     3. Then he met his friend, Sari.
+     4. She helped him carry the vegetables.
+     5. They walked home together.
+     6. They were happy."
+- Text-anchor di papan (dua kalimat pertama): "Last Sunday, Budi went to the market. He bought vegetables." — tampil dari L2. Tetap tampil sebagai bagian dari teks lengkap saat OUTPUT.
+- Catatan distribusi: Card A ke setengah kelas (misal: barisan kiri atau nomor ganjil), Card B ke setengah lainnya. Distribusi bergantian penting — pastikan setiap pasangan terdiri dari satu siswa A dan satu siswa B.
+
+════════════════════════════════════════════════════════════════
+LAYAR 0 — PRE-OPENING · Kelas Siap
+⚪ Reset
+[CORE]
+
+Guru berdiri di depan kelas. Text-anchor sudah tampil di papan.
+
+AKSI: Tunggu kelas kondusif tanpa berbicara.
+UCAP: "Good morning, everyone."
+→ Tunggu respons. Jika tidak ada: angkat tangan — tunggu siswa ikut.
+UCAP: "Today — a story."
+→ Tidak perlu diterjemahkan. Lanjut ke L1.
+
+Budget: ~2 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 1 — PEMBUKA · Reactivation: Kluster D
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas tanpa menunjukkan teks baru.
+UCAP: "Last time you read instructions."
+→ Jeda.
+UCAP: "One sentence. Who remembers?"
+→ Tunggu SATU siswa menyebut kalimat dari TP14 —
+  dari text-anchor: "First, get the oranges." atau "Then cut them in half."
+  atau dari tulisan sendiri: "First, get the oranges. Then squeeze them."
+→ Guru angguk dan terima.
+UCAP: "Good. Today — we read something different."
+UCAP: "A story."
+→ Lanjut ke L2.
+
+⚡ Cue kritis: Satu respons sudah cukup — jangan tunggu lebih dari 20 detik. Bridge ke cerita lebih penting dari kedalaman reactivation.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 2 — PEMBUKA · Perkenalan Text-anchor: Awal Cerita
+🟡 Focused
+[CORE]
+
+AKSI: Guru menunjuk text-anchor di papan.
+UCAP: "Look at the board. This is the beginning of a story."
+→ Baca text-anchor perlahan, tunjuk setiap kalimat.
+👂 LISTEN FIRST — siswa mendengarkan dan membaca papan.
+
+"Last Sunday, Budi went to the market." [tunjuk kalimat 1]
+"He bought vegetables." [tunjuk kalimat 2]
+
+UCAP: "Budi. Last Sunday. The market. Vegetables."
+UCAP: "That is the beginning. But what happened next?"
+→ Jeda. Biarkan siswa penasaran — tidak langsung dijawab.
+
+⚡ Cue kritis: "What happened next?" adalah pertanyaan yang sengaja tidak dijawab di layar ini. Rasa ingin tahu ini yang akan mendorong INTERACT di L7 — siswa A ingin tahu akhir cerita, siswa B ingin tahu konteks awal.
+
+BANTUAN ▸ Jika siswa spontan menjawab "what happened next" secara spontan: angguk dan ucap "Good guess. Let's find out." Tidak perlu mengonfirmasi atau mengoreksi.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 3 — INTI · Story Cards: Baca Setengah Cerita
+🟡 Focused
+[CORE]
+
+AKSI: Bagikan Story Cards — Card A ke setengah kelas, Card B ke setengah lainnya. Pastikan setiap pasangan terdiri dari satu siswa A dan satu siswa B.
+UCAP: "You have a card. Read your card — only your card. Don't show it to your partner yet."
+UCAP: "Two minutes. Read it. Understand it."
+→ Siswa membaca kartu mereka secara individual. Guru diam.
+
+AKSI: Setelah 2 menit, tunjuk 2 siswa A dan 2 siswa B secara terpisah.
+UCAP (ke siswa A): "Card A — what happened? In one sentence."
+→ Siswa A: "Budi went to the market." atau serupa.
+UCAP (ke siswa B): "Card B — what happened? In one sentence."
+→ Siswa B: "Sari helped Budi." atau serupa.
+→ Guru angguk — tidak mengoreksi, tidak menyambung cerita.
+
+⚡ Cue kritis: Siswa A hanya tahu kalimat 1–3. Siswa B hanya tahu kalimat 4–6. Jangan tunjukkan atau bacakan konten dari kartu yang bukan milik mereka di layar ini — gap harus dipertahankan sampai L7.
+
+BANTUAN ▸ Jika siswa tidak mengerti kartu mereka setelah 2 menit: dekati dan baca kalimat pertama kartu bersama mereka ("Last Sunday, Budi went to the market."). Tidak perlu menerjemahkan seluruh kartu.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 4 — INTI · Past Tense: Satu Noticing
+🟡 Focused
+[CORE]
+
+AKSI: Guru menunjuk text-anchor di papan.
+UCAP: "Look at these words."
+→ Tunjuk "went": UCAP: "Went — that is 'go' in the past."
+→ Jeda singkat.
+→ Tunjuk "bought": UCAP: "Bought — that is 'buy' in the past."
+→ Jeda.
+UCAP: "This story happened last Sunday. So everything is in the past."
+→ Tunjuk seluruh text-anchor sebagai contoh.
+UCAP: "When you tell this story — use the past."
+
+→ Tidak ada tabel, tidak ada drill, tidak ada penjelasan lebih panjang.
+
+⚡ Cue kritis: Dua noticing. Dua kalimat. Stop. Past tense muncul karena konteks cerita — bukan karena diajarkan. Jika siswa bertanya tentang past tense irregular lainnya ("met? helped? were?"): jawab sekali saja dan lanjut — "Met is 'meet' in the past. Helped is 'help' in the past." Tidak ada elaborasi.
+
+BANTUAN ▸ Jika siswa kebingungan "apa artinya past": ucap dalam bahasa Indonesia jika perlu — "Bentuk lampau — artinya sudah terjadi, kemarin atau dulu." Satu kalimat, lanjut.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 5 — INTI · Latihan: Ceritakan Kartumu
+🟡 Focused
+[CORE]
+
+AKSI: Guru minta siswa A dan siswa B masing-masing berlatih menceritakan kartu mereka secara oral — sendiri dulu, bukan ke pasangan.
+UCAP: "Practice telling your card. Use 'then' between sentences. Don't read — tell."
+
+→ Guru tunjukkan contoh dengan text-anchor:
+UCAP: "Budi went to the market. Then he bought vegetables. Then he met Sari."
+→ Ini untuk siswa A (dari Card A). Siswa B tidak tahu ini secara detail.
+
+AKSI: Beri waktu 1–2 menit siswa berbisik mempraktikkan kalimat dari kartu mereka.
+→ Guru circulate dan dengarkan — perhatikan apakah past tense dipakai.
+
+UCAP: "Ready? You will tell your partner in a moment."
+
+⚡ Cue kritis: Latihan ini mempersiapkan siswa untuk L7 — mereka harus bisa menceritakan kartunya TANPA menunjukkannya. "Don't read — tell" adalah persiapan untuk instruksi "Don't show your card" di L7.
+
+BANTUAN ▸ Jika siswa kesulitan tidak membaca: ucap "Glance at your card, then look up and say it." Perbolehkan referensi ke kartu tapi dorong untuk melihat ke atas saat berbicara.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 6 — INTI · Chain Practice: Estafet Cerita
+🟡 Focused
+[FLEX — lewati jika kelas sudah lancar menceritakan kartu di L5]
+
+AKSI: Guru pilih 3 siswa A dan 3 siswa B bergantian.
+→ Siswa A1 menceritakan kalimat 1 dari kartunya.
+→ Siswa A2 melanjutkan kalimat 2.
+→ Siswa A3 melanjutkan kalimat 3.
+→ Berhenti di sini — siswa B tidak menceritakan kartunya di layar ini.
+UCAP: "Good. That is Card A. Now — Card B. Different students."
+→ Pilih 3 siswa B, estafet 3 kalimat kartu B.
+
+⚡ Cue kritis: Setiap kelompok hanya menceritakan kartunya sendiri — tidak ada yang mendengar seluruh cerita dari satu kelompok tertentu. Siswa A mendengar estafet A (yang sudah mereka tahu) dan estafet B (yang belum mereka tahu sepenuhnya).
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ INTERACT ══
+════════════════════════════════════════════════════════════════
+LAYAR 7 — INTI · INFO GAP: A Punya Awal, B Punya Akhir
+🟡 Focused
+[CORE]
+
+AKSI: Siswa sudah dalam pasangan A-B. Setiap siswa memegang kartunya sendiri.
+UCAP: "Now — tell your partner your half of the story."
+UCAP: "But — don't show your card. Tell your partner."
+→ Tekankan: "Don't show — tell."
+
+AKSI: Demonstrasi — maksimal 90 detik.
+👂 LISTEN FIRST — kelas perhatikan.
+Guru pegang Card A (tunjukkan ke kelas, TIDAK ke satu siswa A):
+UCAP: "I have Card A. I will tell — not show."
+UCAP (ke satu siswa B di depan): "Listen. Budi went to the market last Sunday. He bought vegetables. Then he met his friend, Sari. — Now: what is on YOUR card?"
+→ Siswa B menjawab dari kartunya.
+→ Guru: "Now I know the full story."
+UCAP: "Now — your turn. Tell your partner. Ask your partner. Take notes if you want."
+
+AKSI: Siswa bekerja berpasangan.
+→ Siswa A menceritakan Card A ke B. Siswa B mendengarkan dan boleh bertanya: "Who is Budi? What did he buy?"
+→ Siswa B menceritakan Card B ke A. Siswa A mendengarkan dan boleh bertanya: "What did Sari do? How did it end?"
+→ Siswa boleh mencatat fakta dari cerita pasangan di kertas kecil.
+→ Waktu total: 6–7 menit.
+
+AKSI: Guru circulate — pastikan tidak ada siswa yang menunjukkan kartu ke pasangan.
+
+⚡ Cue kritis: "Don't show your card — tell your partner" adalah instruksi yang membedakan INTERACT ini dari sekadar bertukar kartu. Informasi hanya berpindah melalui bahasa lisan — ini yang membuat past tense production terjadi di INTERACT, bukan hanya di OUTPUT.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Prioritaskan siswa yang belum pernah dinilai di TP ini.
+
+BANTUAN ▸ Jika siswa tidak tahu harus bertanya apa: ucap "Ask: Who is in the story? What did they do? How did it end?" — pertanyaan umum yang memancing respons.
+
+BANTUAN ▸ Jika siswa memperlihatkan kartu: tepuk bahu, ucap "Don't show — tell. Put the card face down while you talk." Tunggu siswa mengikuti.
+
+⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas.
+2. Demo ulang: guru bicara dari Card A tanpa menunjukkan kartu — satu kalimat saja.
+3. Sederhanakan: "Just say the first sentence on your card. Then stop. Let your partner ask."
+4. Restart — batasi 60 detik per arah.
+
+Budget: ~7 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 8 — INTI · Story Check: Seberapa Lengkap?
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 10 menit sebelum OUTPUT]
+
+AKSI: Setelah INTERACT selesai, guru tampilkan cerita lengkap di papan (6 kalimat).
+UCAP: "Here is the complete story. Compare with what your partner told you."
+→ Siswa membaca cerita lengkap. Waktu: 1–2 menit.
+
+UCAP: "Did you get all six events? Missing anything?"
+→ Terima 2–3 respons spontan dari kelas — "I missed sentence 4." atau "I knew all of them."
+
+⚡ Cue kritis: Verifikasi ini bukan tentang benar/salah — ini tentang kelengkapan. Siswa yang "melewatkan" satu detail tidak gagal; pair work mereka tetap bermakna karena ada produksi bahasa yang genuine. Teks lengkap di papan adalah scaffold untuk OUTPUT berikutnya.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ OUTPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 9 — INTI · Tulis Cerita Lengkap
+🔵 Calm
+[CORE]
+
+AKSI: Teks cerita lengkap (6 kalimat) tetap di papan — siswa perlu teks untuk akurasi.
+UCAP: "Now — write the complete story. In your own words."
+UCAP: "Use past tense. Use 'then' between events."
+UCAP: "Don't copy word for word — write it your way."
+
+AKSI: Tunjukkan cara memulai (ucap sekali, tidak ditulis):
+UCAP: "Last Sunday, Budi..." — stop. Siswa lanjutkan sendiri.
+
+AKSI: Siswa menulis secara individual.
+→ Teks di papan boleh dirujuk untuk akurasi — tapi output harus dalam kalimat sendiri.
+→ Waktu: 8–10 menit.
+→ Beri waktu start 2–3 menit sebelum circulate.
+→ Prioritaskan barisan belakang.
+→ Perhatikan: apakah past tense dipakai? Jika siswa menulis "Budi go to the market": dekati, bisik "Past — went." Satu kata, satu detik. Tinggalkan.
+
+⚡ Cue kritis: Teks cerita lengkap tetap di papan — siswa butuh referensi untuk akurasi past tense dan detail cerita. Ini konsisten dengan Kluster D. Yang dilarang: menyalin enam kalimat persis. Yang diinginkan: narasi yang sama dalam kalimat siswa sendiri.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Bergerak ke barisan belakang terlebih dahulu.
+
+BANTUAN ▸ Jika siswa freeze: tunjuk kalimat 1 di papan, ucap "Start here — 'Last Sunday, Budi...'" Tunggu siswa menulis satu kalimat. Tinggalkan.
+
+⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 2 kalimat:
+Ucap: "Three events — that is enough. Budi went. He met Sari. The end." Turunkan target.
+
+Budget: ~10 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 10 — INTI · Check & Extend
+🔵 Calm
+[CORE]
+
+AKSI: Setelah 8 menit, guru memberi sinyal.
+UCAP: "Two more minutes. Read your story. Does it have a beginning and an end?"
+
+Diferensiasi:
+- Perlu support: guru dekati, tunjuk kalimat terakhir cerita di papan ("They were happy."), tanya "Did you write the ending? Add this." — tunggu siswa menulis satu kalimat penutup.
+- Sudah bisa: tambah satu kalimat opini atau reaksi personal — contoh: "I think Budi was lucky to have a good friend." atau "I like this story because it is about helping each other." Kalimat ini menggunakan `because` dari Kluster B — sambungan lintas kluster yang natural.
+
+AKSI: Guru circulate — cek apakah cerita punya awal dan akhir.
+→ Jika connector `then` belum ada: tunjuk jarak antara dua kalimat, bisik "Then?" — tunggu siswa menambahkan.
+
+⚡ Cue kritis: Diferensiasi "Sudah bisa" mendorong respons personal terhadap cerita — pendapat yang berbeda-beda per siswa. "I like this story because..." adalah ekspresi yang tidak bisa sama untuk semua orang.
+
+BANTUAN ▸ Jika siswa sudah menulis semua 6 peristiwa tapi tanpa connector: tunjuk salah satu jarak dan ucap "Add 'then' here." Tidak perlu menunjukkan semua celah — cukup satu contoh, siswa akan tahu cara melanjutkan.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 11 — PENUTUP · Share Satu Kalimat
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit]
+
+AKSI: Guru minta 2–3 siswa sukarela membacakan SATU kalimat dari cerita mereka.
+UCAP: "Who wants to share? One sentence from your story. From your seat is fine."
+→ Terima siapapun yang mau.
+
+AKSI: Setelah setiap siswa berbagi:
+UCAP: "Is this from the beginning or the end?"
+→ Siswa lain menebak: "Beginning." / "End." — resonansi natural.
+
+⚡ Cue kritis: Pertanyaan "Beginning or end?" membuat kelas tetap terhubung dengan struktur cerita — bukan sekadar mendengarkan kalimat.
+
+BANTUAN ▸ Jika tidak ada yang mau sukarela: tunjuk 1–2 siswa yang tadi aktif di INTERACT — mereka sudah berlatih menceritakan dan lebih siap.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 12 — PENUTUP · Closure
+🔵 Calm
+[CORE]
+
+AKSI: Guru berdiri di depan kelas.
+UCAP: "Today you read a story. In English."
+→ Jeda.
+UCAP: "You read half. Your partner told you the rest."
+→ Jeda.
+UCAP: "Then you wrote the whole story. In the past."
+→ Jeda.
+UCAP: "Keep it."
+
+AKSI: Tunjuk tulisan siswa di atas meja mereka.
+UCAP: "Next time — we write. Not instructions. Not a story."
+→ Jeda singkat.
+UCAP: "Your own response. About what you read."
+→ Preview TP16 Panen yang natural — tanpa menyebut kata "Panen."
+
+UCAP: "Good work today. See you next time."
+
+⚡ Cue kritis: "You read half. Your partner told you the rest." — kalimat ini merangkum pencapaian spesifik TP15: rekonstruksi narasi melalui komunikasi, bukan membaca sendirian. "Then you wrote the whole story. In the past." — validasi bahwa past tense dipakai secara fungsional, bukan karena aturan.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+✅ CHECKLIST SELESAI TP 15
+════════════════════════════════════════════════════════════════
+[ ] L1 menggunakan pola Kluster D: "Last time you read instructions. One sentence. Who remembers?" → satu kalimat dari TP14 → "Today — a story."
+[ ] Distribusi kartu: Card A ke setengah kelas, Card B ke setengah lainnya — setiap pasangan terdiri dari satu siswa A dan satu siswa B
+[ ] Past tense noticing di L4: MAKSIMAL dua kata ("went" dan "bought") — tidak ada tabel, tidak ada drill
+[ ] Demo L7: guru berbicara DARI kartu, tidak MENUNJUKKAN kartu — "Don't show — tell" diucapkan eksplisit
+[ ] Story Card tidak diperlihatkan ke pasangan selama L7 — informasi hanya ditransfer secara verbal
+[ ] Teks cerita lengkap (6 kalimat) ditampilkan di papan sebelum atau saat OUTPUT (L8/L9) — konsisten Kluster D
+[ ] Output siswa menggunakan past tense minimal sekali — kalimat sendiri, bukan menyalin verbatim
+[ ] Preview L12: "Next time — we write. Not instructions. Not a story. Your own response. About what you read." — tanpa kata "Panen"
+[ ] Guru sudah mendekati minimal 2–3 siswa barisan belakang di L9 atau L10
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 → L6 🟡 → L7 🟡 → L8 🟡 → L9 🔵 → L10 🔵 → L11 🟡 → L12 🔵
+
+Blok Inti:
+INPUT: L3–L6 · INTERACT: L7–L8 · OUTPUT: L9–L10
+
+Budget waktu total:
+Tanpa FLEX (L6, L8, L11): 2+4+4+5+4+4+7+10+5+5 = 50 menit — aman untuk kelas berat
+Dengan semua FLEX: 2+4+4+5+4+4+3+7+4+10+5+4+5 = 61 menit — aman untuk kelas normal
+
+Catatan Kompleks:
+TP15 adalah TP Kompleks kedua di Kluster D. Kriteria kompleks: past tense production, reading + writing, integrasi skill di L7, inferensi konteks dari separuh cerita. Pacing mirip TP14 — jaga L7 INTERACT sebagai layar yang tidak bisa dipotong.
+
+Risiko pacing:
+· L3: Distribusi kartu harus bergantian A-B — jika dua siswa A berpasangan, INTERACT collapse. Cek distribusi sebelum L3 dimulai.
+· L4: Risiko terbesar di TP15 adalah past tense noticing yang "merayap" menjadi grammar lesson. Dua kata noticing, dua kalimat — stop. Jika ada pertanyaan lanjut dari siswa: jawab satu kata dan lanjut.
+· L7: "Don't show your card" harus diucapkan sebelum pair work dimulai dan diperkuat jika terlihat ada siswa yang menunjukkan kartu. Gap hilang jika kartu ditukar.
+· L9: Teks cerita lengkap di papan bisa menjadi "teks yang disalin." BANTUAN dan cue kritis mengunci ini — tetap monitor saat circulate.
+
+Teacher autonomy:
+· Nama "Budi" dan "Sari" boleh diganti dengan nama yang lebih relevan untuk kelas — tapi pertahankan nama Indonesia untuk inklusivitas.
+· Topik cerita (pasar, sayuran) boleh disesuaikan dengan konteks lokal yang lebih relevan — selama cerita tetap 6 kalimat dengan struktur awal + akhir yang memungkinkan info gap.
+· Jika kartu fisik tidak bisa disiapkan: tulis kalimat 1–3 di papan kiri dan kalimat 4–6 di papan kanan (atau gunakan dua warna kapur). Setengah kelas "bertanggung jawab" atas papan kiri, setengah lainnya atas papan kanan. Tutup bagian yang bukan milik kelompok masing-masing saat INTERACT — ini cara alternatif jika tidak ada kartu.
+· Boleh memperpanjang L7 sampai 9 menit jika pair exchange terasa hidup — kurangi L8 atau L6 sebagai kompensasi.

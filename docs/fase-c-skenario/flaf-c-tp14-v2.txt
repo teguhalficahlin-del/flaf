@@ -1,0 +1,391 @@
+TP 14 — READING: INSTRUCTIONS AND STEPS
+Fase: C
+Tema: Membaca Dunia
+Kelas: 6
+Kluster: D
+Jenis: Kompleks
+Total layar: 13 (termasuk Layar 0)
+Text-anchor: "First, get the oranges. Then cut them in half. Next, squeeze the oranges into a glass. After that, add sugar. Finally, stir and enjoy."
+Recycle Fase B: I usually... / first, then, after that (TP06 Fase B) · When it..., I... → When [condition], [action] (TP10 Fase B)
+Connector aktif: then (fokus produksi di TP14 — exposure sejak TP05) · when (fokus produksi di TP14 — exposure sejak TP10); `then` dominan di text-anchor dan model guru; `when` muncul sekali di model guru sebagai opsi alternatif
+Kosakata pendukung: squeeze, pour, stir, half, glass, sugar — kontekstual; tidak diajarkan sebagai vocab list
+Mode Kluster D: Membaca & Memirsa dominan · Menyimak sebagai entry point · Menulis sebagai respons teks
+
+Kriteria Kompleks yang terpenuhi (minimal 2 dari 7):
+✓ Ada sequencing multi-step yang harus diikuti siswa
+✓ Ada aktivitas reading dan writing dalam satu alur sesi yang sama
+✓ Ada integrasi dua skill atau lebih dalam satu blok (membaca + berbicara + bernalar dalam L7)
+✓ Ada inferensi sederhana — siswa menyimpulkan urutan yang logis dari deskripsi gambar, bukan hanya mengulang teks
+
+PERSIAPAN MEDIA:
+- Teks prosedur di papan (+ cetak satu per siswa jika memungkinkan): langkah 1–5 dengan nomor, teks lengkap. Tetap tampil saat OUTPUT. Teks: "1. First, get the oranges. 2. Then cut them in half. 3. Next, squeeze the oranges into a glass. 4. After that, add sugar. 5. Finally, stir and enjoy."
+- Image Cards Set A (satu set per siswa versi A): 5 kartu gambar dalam urutan acak 3–1–5–2–4. Kartu 1 = gambar Step 3 (memeras jeruk); Kartu 2 = gambar Step 1 (mengambil jeruk); Kartu 3 = gambar Step 5 (mengaduk dan menikmati); Kartu 4 = gambar Step 2 (memotong jeruk); Kartu 5 = gambar Step 4 (menambah gula). Gambar boleh berupa sketsa sederhana di kartu indeks. Label langkah (1–5) ditulis di bagian belakang kartu — tidak terlihat oleh siswa, digunakan guru untuk memeriksa.
+- Image Cards Set B (satu set per siswa versi B): 5 kartu gambar yang sama dalam urutan acak berbeda 2–4–1–5–3. Kartu 1 = gambar Step 2 (memotong jeruk); Kartu 2 = gambar Step 4 (menambah gula); Kartu 3 = gambar Step 1 (mengambil jeruk); Kartu 4 = gambar Step 5 (mengaduk dan menikmati); Kartu 5 = gambar Step 3 (memeras jeruk).
+- Sequence Sheet (satu per siswa): selembar kertas dengan 5 kotak bernomor — Step 1: ___ · Step 2: ___ · Step 3: ___ · Step 4: ___ · Step 5: ___ . Diisi bersama pasangan di L7. Siswa A dan B mengisi Sequence Sheet yang sama setelah mendiskusikan urutan.
+- Catatan: Set A dan Set B harus dibagikan secara bergantian (A ke siswa ganjil, B ke siswa genap — atau setengah kelas A, setengah B). Urutan acak yang berbeda adalah inti dari information gap. Pastikan siswa tidak saling memperlihatkan kartu mereka sebelum pair work dimulai.
+
+════════════════════════════════════════════════════════════════
+LAYAR 0 — PRE-OPENING · Kelas Siap
+⚪ Reset
+[CORE]
+
+Guru berdiri di depan kelas. Teks prosedur sudah tampil di papan.
+
+AKSI: Tunggu kelas kondusif tanpa berbicara.
+UCAP: "Good morning, everyone."
+→ Tunggu respons. Jika tidak ada: angkat tangan — tunggu siswa ikut.
+UCAP: "Today — instructions. How to make something."
+→ Tidak perlu diterjemahkan. Lanjut ke L1.
+
+Budget: ~2 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 1 — PEMBUKA · Reactivation: Kluster D
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas tanpa menunjukkan teks baru.
+UCAP: "Last time you read an announcement."
+→ Jeda.
+UCAP: "One sentence. Who remembers?"
+→ Tunggu SATU siswa menyebut kalimat dari TP13 —
+  dari text-anchor: "School Book Fair is on Thursday."
+  atau dari tulisan sendiri: "I think it is interesting because I like books."
+→ Guru angguk dan terima.
+UCAP: "Good. Today — we read something different."
+UCAP: "Instructions. How to make something."
+→ Lanjut ke L2.
+
+⚡ Cue kritis: Satu respons sudah cukup — jangan tunggu lebih dari 20 detik. Bridge ke teks prosedur lebih penting dari kedalaman reactivation.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 2 — PEMBUKA · Perkenalan Context + Text-anchor
+🟡 Focused
+[CORE]
+
+AKSI: Guru menunjuk teks prosedur di papan.
+UCAP: "Look at the board. This is a procedure — how to make orange juice."
+UCAP: "Five steps. Let's read them."
+→ Baca teks perlahan, tunjuk setiap kalimat.
+👂 LISTEN FIRST — siswa mendengarkan dan membaca papan.
+
+"First, get the oranges." [tunjuk langkah 1]
+"Then cut them in half." [tunjuk langkah 2]
+"Next, squeeze the oranges into a glass." [tunjuk langkah 3]
+"After that, add sugar." [tunjuk langkah 4]
+"Finally, stir and enjoy." [tunjuk langkah 5]
+
+UCAP: "Each step tells you what to do. And in what order."
+
+⚡ Cue kritis: Di layar ini siswa hanya mendengarkan dan membaca. Jangan bertanya atau minta respons dulu. Teks perlu diserap dulu secara utuh sebelum diekstraksi per langkah di L3.
+
+BANTUAN ▸ Jika siswa tidak memperhatikan saat dibacakan: ketuk papan sebelum setiap langkah — "Step one. Read."
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 3 — INTI · Membaca Prosedur Bersama
+🟡 Focused
+[CORE]
+
+AKSI: Guru bertanya langsung, siswa menemukan jawaban dari teks di papan.
+UCAP: "What is Step 1?" → siswa: "Get the oranges."
+UCAP: "What do you do after that? Step 2?" → siswa: "Cut them in half."
+UCAP: "Step 3?" → siswa: "Squeeze the oranges."
+UCAP: "Step 4?" → siswa: "Add sugar."
+UCAP: "And the last step?" → siswa: "Stir and enjoy."
+
+AKSI: Setelah semua langkah diekstraksi:
+🗣 TOGETHER — guru dan siswa baca teks bersama.
+UCAP: "Read with me. All five steps."
+→ Baca bersama 1×. Tunjuk setiap kalimat saat dibaca.
+
+⚡ Cue kritis: Setiap jawaban harus ditemukan dari teks, bukan dari ingatan. Jika siswa menjawab tanpa melihat papan: ucap "Show me where in the text."
+
+BANTUAN ▸ Jika siswa tidak bisa menemukan langkah tertentu: tunjuk kalimat yang relevan dan ucap "Read this." Tunggu siswa menemukan jawabannya sendiri.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 4 — INTI · Model Guru: then Dominan + when Sekali
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas. Teks masih di papan tapi guru tidak melihatnya.
+UCAP: "Now — I will describe the steps. Listen to how I connect them."
+
+UCAP: "First, get the oranges."
+UCAP: "Then cut them in half."
+UCAP: "Then squeeze the oranges."
+UCAP: "Then add sugar."
+UCAP: "Then stir and enjoy."
+
+→ Jeda singkat.
+
+UCAP: "Then, then, then — that is how steps connect. Each step follows the next."
+
+→ Jeda singkat. Satu contoh `when` sebagai opsi:
+UCAP: "Or — 'When the glass is full, stop pouring.'"
+UCAP: "When — for a condition. But for steps, 'then' is easier."
+→ Ucapkan sekali. Tidak lebih.
+
+⚡ Cue kritis: `then` muncul empat kali di model guru — satu per transisi antar langkah. `when` muncul SATU KALI sebagai opsi alternatif, bukan alternatif setara. Siswa harus keluar dari layar ini dengan rasa bahwa `then` adalah pilihan default untuk menulis prosedur.
+
+BANTUAN ▸ Jika siswa tidak mengikuti kecepatan model guru: perlambat antara setiap kalimat — beri jeda 2 detik setelah setiap "Then..." agar siswa bisa mengikuti.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 5 — INTI · Latihan Oral: Chained Steps
+🟡 Focused
+[CORE]
+
+AKSI: Guru tutup atau sembunyikan teks di papan sementara.
+UCAP: "Now — without the text. Tell me the steps. Use 'then'."
+
+UCAP: "Step 1: get the oranges. Then — what?"
+→ Tunjuk satu siswa: jawab dengan "Then cut them."
+UCAP: "Then — what next?"
+→ Tunjuk siswa lain: "Then squeeze the oranges."
+→ Lanjutkan sampai semua 5 langkah terucapkan oleh siswa berbeda.
+
+AKSI: Lakukan satu putaran penuh dari Step 1 ke Step 5 dengan 5 siswa berbeda.
+→ Jika ada yang lupa: cukup ucap "Look at the board" dan tampilkan teks kembali sebentar.
+
+⚡ Cue kritis: Ini latihan oral sebelum INTERACT — siswa harus bisa mendeskripsikan setiap langkah secara verbal sebelum mereka diminta mendeskripsikan gambar ke pasangan. Jika ada langkah yang sangat sulit diingat (biasanya Step 3 atau 4): ucap langkah itu bersama 1×.
+
+BANTUAN ▸ Jika siswa tidak bisa melanjutkan chain: ucap kata pertama dari langkah tersebut — "Squeeze..." — tunggu siswa melanjutkan.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 6 — INTI · Speed Drill: then
+🟡 Focused
+[FLEX — lewati jika kelas sudah lancar menggunakan then di L4–L5]
+
+AKSI: Tampilkan kembali teks di papan. Guru tunjuk satu langkah secara acak.
+UCAP: "Read the step. Add 'then' at the beginning. Fast."
+→ Contoh: guru tunjuk langkah 3 → siswa: "Then squeeze the oranges into a glass."
+
+AKSI: Lakukan 4–5 langkah secara acak, cepat. Tidak ada koreksi.
+
+⚡ Cue kritis: Ini membiasakan `then` di awal kalimat instruksi sebelum siswa menulis sendiri. Cepat — tidak lebih dari 3 menit.
+
+BANTUAN ▸ Jika siswa lambat merespons: guru ucap "Then..." dan tunggu siswa melanjutkan sisa kalimat dari teks.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ INTERACT ══
+════════════════════════════════════════════════════════════════
+LAYAR 7 — INTI · Shuffled Images: Rekonstruksi Urutan
+🟡 Focused
+[CORE]
+
+AKSI: Bagikan Image Cards — Set A ke setengah kelas (bergantian), Set B ke setengah lainnya. Bagikan juga Sequence Sheet satu per siswa.
+UCAP: "You have 5 image cards. They are NOT in the right order."
+UCAP: "Your partner has the same 5 images — but in a DIFFERENT wrong order."
+
+AKSI: Demonstrasi — maksimal 2 menit.
+👂 LISTEN FIRST — kelas perhatikan.
+
+Guru pegang Set A (urutan 3–1–5–2–4) dan tunjukkan ke kelas:
+UCAP: "My first card — someone is squeezing oranges."
+→ Tunjuk Set B kartu 1 (step 2 — cutting) ke satu siswa di depan:
+UCAP: "What is YOUR first card?"
+→ Siswa: "Cutting oranges."
+UCAP: "Different starting point. That is the gap."
+UCAP: "Together — figure out the correct order. Fill in the Sequence Sheet."
+UCAP: "Describe your cards. Use: 'My first card shows... My second card shows...'"
+
+AKSI: Siswa bekerja berpasangan.
+→ Masing-masing mendeskripsikan kartu mereka ke pasangan.
+→ Bersama-sama mengisi Sequence Sheet: Step 1 = ___, Step 2 = ___, dst.
+→ Image Cards tidak diperlihatkan ke pasangan — deskripsikan secara verbal.
+→ Waktu: 7–8 menit.
+
+AKSI: Guru circulate — prioritaskan barisan belakang. Dengarkan deskripsi verbal: apakah siswa benar-benar mendeskripsikan gambar atau hanya diam?
+
+⚡ Cue kritis: Urutan acak Set A dan Set B secara sengaja berbeda — ini bukan kebetulan. Demo harus menunjukkan perbedaan ini secara konkret ("my first card... your first card... different"). Tanpa ini, siswa tidak memahami WHY mereka harus berkomunikasi.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Prioritaskan siswa yang belum pernah dinilai di TP ini.
+
+BANTUAN ▸ Jika siswa tidak tahu bagaimana mendeskripsikan gambar: ucap "Say what you see. 'My first card shows someone [action].'" — tunggu siswa meniru pola ini.
+
+BANTUAN ▸ Jika satu siswa mendominasi dan mengisi semua kotak: hentikan sebentar, ucap "Does your partner agree? Ask them." Pastikan keduanya berkontribusi.
+
+⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas.
+2. Demo ulang: tunjuk kartu pertama Set A, deskripsikan satu gambar. Tunjuk kartu pertama Set B, deskripsikan satu gambar. Tunjukkan bahwa dua kartu menunjukkan aksi berbeda.
+3. Sederhanakan: "Just say: my first card shows [action]. Then ask: what is your first card?"
+4. Restart — batasi 60 detik per arah.
+
+Budget: ~8 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 8 — INTI · Verifikasi: Sequence Sheet vs Teks
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 10 menit sebelum OUTPUT]
+
+AKSI: Tampilkan kembali teks prosedur di papan jika sudah disembunyikan.
+UCAP: "Now — read the text. Check your Sequence Sheet."
+UCAP: "Is your order the same? If not — talk to your partner first. Why is this step before that?"
+→ Siswa membandingkan Sequence Sheet dengan teks. Waktu: 2–3 menit.
+
+AKSI: Jika ada pair yang urutannya salah:
+UCAP: "Look at Step 1 in the text. Does it match what you wrote in Step 1?"
+→ Jangan ucapkan "yang benar itu..." — biarkan siswa melihat sendiri dari teks.
+→ Jika pair masih tidak sepakat: ucap "Read the text slowly. What is the first action?"
+
+⚡ Cue kritis: Teks adalah alat verifikasi, BUKAN jawaban yang disalin. Jika siswa langsung menyalin urutan dari teks tanpa diskusi: tutup teks dengan tangan dan ucap "Tell me WHY this step is first. Then check." Tujuan verifikasi adalah memperkuat pemahaman logis, bukan mengoreksi jawaban.
+
+BANTUAN ▸ Jika siswa tidak bisa menjelaskan mengapa satu langkah sebelum langkah lain: ucap "Can you cut an orange before you get it?" — pertanyaan ini mendorong logika kausal tanpa memberi jawaban.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ OUTPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 9 — INTI · Tulis Langkah-Langkahnya
+🔵 Calm
+[CORE]
+
+AKSI: Teks prosedur tetap tampil di papan — siswa perlu teks sebagai referensi.
+UCAP: "Now — write the steps. In your own words."
+UCAP: "Use 'then' between each step. You can also use 'when' if it feels right."
+
+AKSI: Tunjukkan cara memulai (ucap sekali, tidak ditulis):
+UCAP: "First, get the oranges. Then..." — stop. Siswa lanjutkan sendiri.
+→ Siswa menulis 4–5 kalimat dengan `then` menghubungkan langkah-langkah.
+→ Teks prosedur boleh dirujuk untuk akurasi — tapi output harus dalam kalimat sendiri, bukan menyalin verbatim.
+
+AKSI: Siswa menulis secara individual.
+→ Waktu: 8–10 menit.
+→ Beri waktu start 2–3 menit sebelum circulate.
+→ Prioritaskan barisan belakang.
+→ Perhatikan: apakah `then` muncul di tulisan siswa? Jika tidak ada satu pun: tunjuk baris kedua teks prosedur dan ucap bisik "Use 'then' here." Tunggu siswa menulis.
+
+⚡ Cue kritis: Output di sini adalah parafrase prosedur — siswa menulis ulang langkah-langkah dengan kata-kata sendiri dan menghubungkannya dengan `then`. Ini bukan menyalin teks; setiap kalimat harus diproses ulang oleh siswa. Perbedaan kecil dalam diksi dari teks asli sudah cukup bukti produksi mandiri.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Bergerak ke barisan belakang terlebih dahulu.
+
+BANTUAN ▸ Jika siswa freeze: tunjuk Sequence Sheet siswa di Step 1 dan ucap "Write this step first: First, [action]." Tunggu satu kalimat. Tinggalkan.
+
+⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 2 kalimat:
+Ucap: "Three steps — that is enough. Step 1, then Step 2, then Step 3." Turunkan target.
+
+Budget: ~10 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 10 — INTI · Check & Extend
+🔵 Calm
+[CORE]
+
+AKSI: Setelah 8 menit, guru memberi sinyal.
+UCAP: "Two more minutes. Read your steps. Is the order correct? Did you use 'then'?"
+
+Diferensiasi:
+- Perlu support: guru dekati, tunjuk Sequence Sheet siswa, ucap "Write this step — 'Then [action].'" Tunggu satu kalimat tambahan tanpa dikte kata per kata.
+- Sudah bisa: tambah kalimat dengan `when` — contoh: "When the juice is ready, you can drink it." atau tambah kalimat opini: "I like this juice because it is sweet and fresh."
+
+AKSI: Guru circulate — cek kehadiran `then` di tulisan, bukan grammar.
+→ Jika `when` muncul spontan — angguk.
+→ Jika tidak muncul — tidak dipaksakan.
+
+⚡ Cue kritis: Diferensiasi "Sudah bisa" mengacu pada konteks setelah prosedur selesai — opini personal yang berbeda-beda per siswa, bukan kelengkapan grammar.
+
+BANTUAN ▸ Jika siswa sudah menulis semua 5 langkah tapi belum ada connector: tunjuk jarak antara dua kalimat dan ucap "What word connects these? Then?" — tunggu siswa menambahkan `then` sendiri.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 11 — PENUTUP · Share Satu Langkah
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit]
+
+AKSI: Guru minta 2–3 siswa sukarela membacakan SATU kalimat dari tulisan mereka.
+UCAP: "Who wants to share? One step — just one sentence. From your seat is fine."
+→ Terima siapapun. Tidak perlu berdiri.
+
+AKSI: Setelah setiap siswa berbagi, guru bertanya ke kelas:
+UCAP: "What connector did they use? 'Then' or 'when'?"
+→ Tangan naik — resonansi natural yang fokus pada connector.
+
+⚡ Cue kritis: Pertanyaan "Then or when?" membuat kelas memperhatikan connector secara aktif — bukan sebagai grammar lesson, tapi sebagai pengamatan dari kalimat nyata.
+
+BANTUAN ▸ Jika tidak ada yang mau sukarela: tunjuk siswa yang Sequence Sheet-nya terlihat sudah terisi lengkap di L7 — mereka lebih percaya diri dengan materinya.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 12 — PENUTUP · Closure
+🔵 Calm
+[CORE]
+
+AKSI: Guru berdiri di depan kelas.
+UCAP: "Today you read instructions. Step by step."
+→ Jeda.
+UCAP: "First. Then. Next. After that. Finally."
+→ Jeda.
+UCAP: "And you put the steps back in the right order."
+→ Jeda.
+UCAP: "Keep it."
+
+AKSI: Tunjuk tulisan siswa di atas meja mereka.
+UCAP: "Next time — we read a story."
+→ Jeda singkat.
+UCAP: "What happened. Who was there."
+→ Preview TP15 yang natural — shifts dari instruksi ke narasi.
+
+UCAP: "Good work today. See you next time."
+
+⚡ Cue kritis: "And you put the steps back in the right order." — kalimat ini merangkum pencapaian spesifik TP14 yang tidak ada di TP lain: rekonstruksi logis dari informasi yang tidak berurutan. Ini adalah keterampilan nyata yang berbeda dari sekadar membaca.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+✅ CHECKLIST SELESAI TP 14
+════════════════════════════════════════════════════════════════
+[ ] L1 menggunakan pola Kluster D: "Last time you read an announcement. One sentence. Who remembers?" → satu kalimat dari TP13 → "Today — instructions."
+[ ] `then` muncul empat kali di model guru L4 — satu per transisi; `when` muncul SATU KALI sebagai opsi
+[ ] Set A (urutan 3–1–5–2–4) dan Set B (urutan 2–4–1–5–3) berbeda — dibagikan bergantian ke siswa A dan B
+[ ] Demo L7 menunjukkan secara konkret bahwa kartu A dan B berbeda urutannya — "my first card... your first card... different"
+[ ] Image Cards tidak diperlihatkan ke pasangan selama pair work — dideskripsikan secara verbal
+[ ] Verifikasi L8: Sequence Sheet dicek terhadap teks dengan diskusi logis dulu, bukan langsung disalin
+[ ] Teks prosedur tetap tampil saat OUTPUT (L9) — konsisten Kluster D
+[ ] Output siswa menggunakan `then` minimal sekali — bukan menyalin verbatim dari teks
+[ ] Guru sudah mendekati minimal 2–3 siswa barisan belakang di L9 atau L10
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 → L6 🟡 → L7 🟡 → L8 🟡 → L9 🔵 → L10 🔵 → L11 🟡 → L12 🔵
+
+Blok Inti:
+INPUT: L3–L6 · INTERACT: L7–L8 · OUTPUT: L9–L10
+
+Budget waktu total:
+Tanpa FLEX (L6, L8, L11): 2+4+4+5+4+4+8+10+5+5 = 51 menit — aman untuk kelas berat
+Dengan semua FLEX: 2+4+4+5+4+4+3+8+4+10+5+4+5 = 62 menit — aman untuk kelas normal
+
+Catatan Kompleks:
+TP14 adalah TP Kompleks pertama di Kluster D. Empat kriteria Kompleks terpenuhi: sequencing multi-step, reading + writing satu sesi, integrasi tiga skill di L7 (membaca-berbicara-bernalar), inferensi logis dari gambar. Pacing lebih padat dari TP Biasa — jaga FLEX bisa dilepas kapan saja.
+
+Risiko pacing:
+· L7 adalah inti skenario — JANGAN dipotong. Jika ada tekanan waktu: potong L6 atau L8 dulu sebelum mempertimbangkan L7.
+· L7 membutuhkan image cards yang sudah disiapkan dengan benar (Set A ≠ Set B). Jika kartu belum siap: sederhanakan dengan guru menulis urutan acak di papan untuk masing-masing set — bukan kartu fisik tapi daftar angka: "Set A: 3-1-5-2-4" dan "Set B: 2-4-1-5-3" — siswa menggunakan teks untuk menemukan langkah sesuai nomor.
+· L8 (verifikasi): Risiko utama adalah siswa menyalin langsung dari teks tanpa diskusi. Jika terlihat, intervensi dengan pertanyaan "WHY?" sebelum membuka teks.
+
+Teacher autonomy:
+· Topik prosedur boleh diganti dengan yang lebih relevan (cara membuat teh, cara mencuci tangan, cara menanam biji) — selama 5 langkah berurutan dan ada gambar yang bisa diacak.
+· Demo di L7 boleh menggunakan dua siswa di depan kelas (guru sebagai fasilitator, siswa sebagai peserta demo) jika lebih mudah dari guru memegang dua set kartu sendiri.
+· Jika gambar tidak bisa disiapkan, ganti dengan deskripsi teks saja (kartu bertuliskan aksi tanpa gambar) — information gap tetap valid karena urutan kartu berbeda.
+· Boleh memperpanjang L7 sampai 10 menit jika diskusi rekonstruksi terasa produktif — kurangi L8 sebagai kompensasi.

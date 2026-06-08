@@ -1,0 +1,428 @@
+TP 19 — DESCRIBING A PLACE OR THING
+Fase: C
+Tema: Memproduksi untuk Orang Lain
+Kelas: 6
+Kluster: E
+Jenis: Kompleks
+Total layar: 14 (termasuk Layar 0)
+Text-anchor: "The library is quiet. It has many books. I go there every week because I love reading."
+Recycle Fase B: She/He has... (TP02) — "It has many books" · I like... because... (TP06/13) — "because I love reading" · There is / There are... (TP03) — available dalam produksi siswa · next to / across from (TP03) — location language available dalam deskripsi tempat
+Connector aktif: because — ada di anchor, fokus produksi · and · but · so — semua aktif dari TP17; tidak ada connector baru
+Fitur register: deskripsi (present tense) — berbeda dari narasi TP18 (past tense); orientasi register satu kalimat di L3; siswa yang masih dalam mode narasi mendapat nudge bisikan
+
+Kriteria Kompleks yang terpenuhi (minimal 2 dari 7):
+✓ Ada perubahan pendekatan produksi — shift register dari narasi (TP18) ke deskripsi (TP19)
+✓ Ada produksi bahasa lebih dari satu kalimat utuh per siswa (draft 2–3 + writing 4+ kalimat)
+✓ Ada integrasi dua skill atau lebih dalam satu blok (L7: berbicara + mendengarkan + merespons)
+✓ Ada inferensi sederhana — B menyimpulkan kualitas tempat A untuk merespons secara relevan
+
+Kosakata pendukung: quiet, busy, clean, crowded, simple, owner, comfortable, peaceful — kontekstual; tidak diajarkan sebagai vocab baru
+
+PERSIAPAN MEDIA:
+- Text-anchor di papan (ditulis sebelum kelas masuk, tetap tampil selama sesi):
+    "The library is quiet. It has many books. I go there every week because I love reading."
+- Papan cukup untuk anchor dan empat kata topik jika diperlukan — tidak ada media tambahan.
+- Catatan: TP19 tidak menggunakan kartu atau kertas distribusi khusus. Draft awal di L6 ditulis di kertas biasa atau buku tulis siswa.
+
+════════════════════════════════════════════════════════════════
+LAYAR 0 — PRE-OPENING · Kelas Siap
+⚪ Reset
+[CORE]
+
+Guru berdiri di depan kelas. Text-anchor sudah tampil di papan.
+
+AKSI: Tunggu kelas kondusif tanpa berbicara.
+UCAP: "Good morning, everyone."
+→ Tunggu respons. Jika tidak ada: angkat tangan — tunggu siswa ikut.
+UCAP: "Today — a place. Your place."
+→ Tunjuk text-anchor di papan. Tidak perlu diterjemahkan. Lanjut ke L1.
+
+Budget: ~2 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 1 — PEMBUKA · Reactivation: Dari Tulisan TP18
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas tanpa menunjukkan teks baru.
+UCAP: "Last time — you told a story. Something that happened."
+→ Jeda.
+UCAP: "Who remembers one sentence?"
+→ Tunggu SATU siswa menyebut kalimat dari tulisan TP18 — contoh: "Last week I went to the market with my mother." atau "I also saw my friend there." atau versi kalimat siswa sendiri.
+→ Guru angguk dan terima.
+UCAP: "Today — not what happened."
+→ Jeda.
+UCAP: "What it looks like."
+→ Tunjuk text-anchor di papan.
+→ Lanjut ke L2.
+
+⚡ Cue kritis: Reactivation mengaktifkan past tense narrative dari TP18 — lalu bridge ke "what it looks like" yang mempersiapkan present tense descriptive. Satu kalimat sudah cukup. Jangan minta siswa lain jika satu sudah merespons.
+
+BANTUAN ▸ Jika tidak ada yang merespons dalam 10 detik: ucap "Last time you wrote 'Last week I...' — who remembers one word after that?" Tunggu satu kata. Terima, angguk, lanjut.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 2 — PEMBUKA · Perkenalan Text-anchor
+🟡 Focused
+[CORE]
+
+AKSI: Guru tunjuk text-anchor di papan.
+UCAP: "Listen. This is a description."
+👂 LISTEN FIRST — siswa mendengarkan dan membaca papan.
+Baca perlahan: "The library is quiet. It has many books. I go there every week because I love reading."
+→ Baca sekali lagi, lebih perlahan, tunjuk setiap kalimat.
+
+UCAP: "What is the library like?"
+→ Tunggu: "Quiet."
+UCAP: "What does it have?"
+→ Tunggu: "Many books."
+UCAP: "Why does she go there?"
+→ Tunggu: "Because she loves reading."
+→ Guru angguk.
+
+UCAP: "Three things: what it is like, what it has, why I go there."
+→ Tunjuk tiga jari. Tidak ada label. Lanjut ke L3.
+
+⚡ Cue kritis: Tiga pertanyaan mengakses tiga ELEMEN deskripsi sebelum guru memberi nama eksplisit di L3. Siswa sudah melihat struktur dari dalam anchor sebelum struktur itu disebutkan — ini membuat L3 terasa seperti konfirmasi, bukan instruksi baru.
+
+BANTUAN ▸ Jika siswa tidak bisa menjawab "What is the library like?": tunjuk kata "quiet" di anchor. Ucap "This word — quiet. The library is...?" Tunggu satu kata.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 3 — INTI · Analisis Struktur Deskripsi + Register
+🟡 Focused
+[CORE]
+
+AKSI: Guru tunjuk anchor di papan.
+UCAP: "This is a description — what it is like NOW. Not a story about the past."
+→ Satu kalimat. Tidak lebih.
+
+UCAP: "A description has three parts."
+→ Tunjuk kalimat 1 di anchor: "The library is quiet."
+UCAP: "One: what it is like."
+→ Tunjuk kalimat 2: "It has many books."
+UCAP: "Two: what it has."
+→ Tunjuk kalimat 3: "I go there every week because I love reading."
+UCAP: "Three: my connection — why I go there."
+→ Tunjuk kata "because" di kalimat 3.
+UCAP: "Because — the reason."
+
+UCAP: "Think of a place YOU know. One place. What is it like?"
+→ Tunggu 2–3 siswa merespons spontan — masing-masing satu kalimat tentang tempat mereka.
+→ Guru angguk. Jika present tense: angguk lebih kuat. Jika past tense: angguk lalu bisik "Now — present. 'It is...'"
+→ Tidak ada evaluasi panjang.
+
+⚡ Cue kritis: "This is a description — what it is like NOW. Not a story about the past." adalah satu kalimat orientasi register yang diucapkan SEBELUM analisis tiga elemen — bukan penjelasan grammar, tapi penunjuk arah. Siswa yang masih dalam mode TP18 akan menangkap perbedaan ini sebelum mereka mulai menulis.
+
+BANTUAN ▸ Jika siswa tidak bisa menyebut satu kalimat tentang tempat mereka: ucap "Name one place — one word. Then: 'It is...'" Tunggu dua kata. Terima, lanjut.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 4 — INTI · Demo Deskripsi Guru
+🟡 Focused
+[CORE]
+
+AKSI: Guru tunjuk anchor di papan.
+UCAP: "Watch me. I describe a different place."
+→ Guru tidak menulis apapun. Demo lisan sepenuhnya.
+
+👂 LISTEN FIRST — siswa mendengarkan.
+UCAP (perlahan, natural, bukan membaca):
+"I know a small warung near my house."
+→ Jeda.
+"It is simple. But the food is always delicious."
+→ Jeda.
+"The owner is kind. She always remembers what I like."
+→ Jeda.
+"I go there every morning because it makes me feel at home."
+→ Jeda.
+
+UCAP: "What is it like? What does it have? Why I go there."
+→ Tunjuk tiga jari secara berurutan — tidak ada label grammar.
+
+UCAP: "Now — think. What is YOUR place? One minute."
+→ Jeda 60 detik. Biarkan siswa berpikir diam-diam.
+→ Lanjut ke L5 atau langsung ke L6 jika kelas sudah aktif.
+
+⚡ Cue kritis: Demo menggunakan warung — bukan library (sudah di anchor), bukan market (sudah di TP12 dan TP15). Ini menunjukkan bahwa "tempat" bisa sangat personal dan tidak harus formal atau akademis. "But the food is always delicious" menanam `but` secara natural dalam deskripsi. "It makes me feel at home" menunjukkan koneksi personal yang lebih dalam dari alasan fungsional.
+
+BANTUAN ▸ Jika siswa langsung bertanya "Boleh tempat yang jauh?": jawab "Yes — any place you know well." Satu kalimat, lanjut.
+BANTUAN ▸ Jika siswa bertanya "Boleh describe sesuatu, bukan tempat?": jawab "Yes — a thing you know well. Describe it the same way." Satu kalimat, lanjut.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 5 — INTI · Micro-output: Nama Tempat + Satu Kalimat
+🟡 Focused
+[FLEX — lewati jika kelas sudah spontan menyebut tempat mereka di L3 atau L4]
+
+UCAP: "Your place — tell me the name. And one sentence: what is it like?"
+→ Tunggu 3–4 siswa merespons — masing-masing nama tempat + satu kalimat deskripsi.
+→ Jika present tense: angguk. Jika past tense: tunjuk anchor, bisik "Present — 'It is...'" Satu kata, lanjut.
+→ Tidak ada evaluasi panjang.
+
+UCAP: "Good. Now — write your description."
+→ Lanjut ke L6.
+
+⚡ Cue kritis: Verbalisasi singkat sebelum menulis membantu siswa yang punya konsep tapi belum punya kata. Jika kelas sudah aktif menyebut tempat di L3–L4, lewati layar ini.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 6 — INTI · Draft Awal: 2–3 Kalimat Deskripsi
+🔵 Calm
+[CORE]
+
+UCAP: "Now — choose your place. Write a short description."
+UCAP: "Two to three sentences."
+→ Tunjuk tiga jari sambil menyebut:
+"What it is like. What it has. Why you go there."
+UCAP: "Don't talk yet. Write first."
+→ Siswa menulis. Waktu: 3–4 menit.
+→ Guru diam. Tidak circulate dulu.
+
+AKSI: Circulate diam-diam setelah 2 menit.
+→ Perhatikan tiga hal:
+   1. Register — narasi atau deskripsi? Jika siswa menulis "Last week I went to...": bisik "Describe — what is it like? 'The [place] is...'" Satu kalimat, tinggalkan.
+   2. Hanya daftar adjective tanpa koneksi personal: biarkan di draft ini — L10 akan address.
+   3. Memilih library dan meniru anchor verbatim: bisik "What's different about YOUR library? Change one detail." Satu kalimat, tinggalkan.
+
+⚡ Cue kritis: Draft ini adalah fondasi INTERACT L7 — paralel dengan Choice Slip di TP16 dan Outline di TP18. "Don't talk yet. Write first." mencegah siswa mengikuti pilihan pasangan sebelum berkomitmen sendiri. Nudge register di sini adalah "Describe — what is it like? 'The [place] is...'" — ini tentang REGISTER, bukan tentang tense (berbeda dari nudge past tense di TP18).
+
+BANTUAN ▸ Jika siswa tidak bisa memilih tempat: ucap "Where do you go often? Or where do you feel comfortable? Write that place." Satu kalimat, tinggalkan.
+BANTUAN ▸ Jika siswa tidak bisa menulis dua kalimat: ucap "Write one: 'The [place] is...'" Tunggu satu kalimat. Tinggalkan.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INTERACT ══
+════════════════════════════════════════════════════════════════
+LAYAR 7 — INTI · CHOICE GAP: A Describe, B Responds
+🟡 Focused
+[CORE]
+
+AKSI: Demo — maksimal 45 detik.
+👂 LISTEN FIRST — kelas perhatikan.
+Guru bicara ke satu siswa di depan (guru jadi A):
+UCAP: "I will read my description. You listen — then respond."
+UCAP (ke siswa): "The warung near my house is small and simple. But the food is always delicious. I go there because it makes me feel at home."
+→ Guru ke siswa: "What do you think? Would you like a place like that? Or do you prefer something different?"
+→ Siswa merespons dari perspektif sendiri: "I agree..." atau "I prefer a bigger place because..."
+→ Guru (ke kelas): "She listened — then gave her own opinion. That is choice gap."
+UCAP: "Now — with your partner."
+
+AKSI: Siswa bekerja berpasangan.
+UCAP: "A — read your draft. Describe your place."
+UCAP: "B — listen. Then respond: do you agree with A's place, or do you prefer something different? Say why."
+→ A membacakan draft. B mendengarkan → merespons dengan posisi sendiri.
+→ Lalu peran berganti.
+→ Total: 5–6 menit (2–3 menit per arah).
+
+AKSI: Guru circulate dan dengarkan.
+→ Perhatikan: apakah B merespons dengan konten yang relevan terhadap deskripsi A? ("I also like quiet places" setelah A deskripsikan tempat tenang = relevan.)
+→ Jika B hanya berkata "nice" tanpa elaborasi: bisik ke B: "Why? Because..." Tunggu satu kalimat.
+→ Jika present tense belum muncul di A: catat untuk L9 — tidak intervensi di sini.
+
+⚡ Cue kritis: Gap ini nyata karena B tidak tahu tempat mana yang dipilih A dan kualitas apa yang dianggap penting sampai mendengar. Bahkan jika keduanya memilih jenis tempat yang sama, kualitas yang mereka anggap paling penting bisa berbeda — dan perbedaan ini menghasilkan pertukaran yang bermakna. Respons B yang relevan membuktikan B mendengarkan.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Prioritaskan siswa yang belum pernah dinilai di TP ini.
+
+BANTUAN ▸ Jika B tidak tahu cara merespons: bisik "Say: 'I agree because...' or 'I prefer [different kind] because...'" Dua opsi konkret, tinggalkan.
+BANTUAN ▸ Jika pair hanya berkata "nice" tanpa elaborasi: ucap "Say more — WHY? Do you agree?" Satu pertanyaan, tunggu satu kalimat.
+
+⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas.
+2. Demo ulang: guru membaca satu kalimat draft sendiri. Satu siswa merespons "I agree/I prefer..." — satu kata, lalu satu kalimat.
+3. Sederhanakan: "A: read your first sentence. B: say agree or disagree. Then why."
+4. Restart — batasi 2 menit per arah.
+
+Budget: ~6 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 8 — INTI · Sharing Kelas: Dua Deskripsi
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 15 menit sebelum akhir sesi]
+
+AKSI: Setelah pair sharing selesai.
+UCAP: "Who wants to share? Read your draft — two sentences. From your seat."
+→ Terima 2 siswa sukarela. Masing-masing baca dua kalimat dari draft.
+→ Setelah setiap draft: UCAP "What kind of place is this?" → kelas merespons satu kata (quiet/busy/big/small, dll.).
+→ Tidak ada evaluasi dari guru.
+
+UCAP: "Different places. Now — write more."
+→ Transisi langsung ke OUTPUT.
+
+⚡ Cue kritis: L8 berfungsi sebagai transisi energi dari 🟡 (INTERACT) ke 🔵 (OUTPUT) — sambil juga memvalidasi keragaman pilihan tempat. "Different places. Now — write more." adalah bridge yang konkret ke OUTPUT.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ OUTPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 9 — INTI · Individual Writing: Deskripsi Lengkap
+🔵 Calm
+[CORE]
+
+AKSI: Text-anchor tetap di papan.
+UCAP: "Now — write your full description. More sentences."
+UCAP: "Start from your draft. Add more."
+→ Jeda.
+UCAP: "Four sentences minimum. Use because."
+→ Tunjuk kata "because" di anchor.
+UCAP: "Use but or so if you can."
+→ Siswa menulis secara individual. Waktu: 8 menit.
+→ Beri waktu 3 menit start sebelum circulate.
+
+AKSI: Circulate setelah 3 menit.
+→ Mulai dari barisan belakang.
+→ Perhatikan tiga hal:
+   1. Register — narasi atau deskripsi? Jika masih "Last week I went...": bisik "Describe — present. 'The [place] is...'" Satu kalimat. Tinggalkan.
+   2. Koneksi personal — apakah ada "I go there because..." atau hanya daftar kualitas? Jika hanya daftar: catat untuk L10.
+   3. Siswa yang memilih library dan meniru anchor verbatim: bisik "What's different about YOUR library? Change one detail — your words." Satu kalimat. Tinggalkan.
+
+⚡ Cue kritis: Anchor tetap di papan sebagai model struktur — bukan template yang disalin. Siswa yang menyalin persis perlu nudge satu kalimat: "Your library — your words. Change one thing." Siswa yang menulis tentang tempat sendiri dengan kata sendiri tidak perlu intervensi apapun, bahkan jika grammar tidak sempurna.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Bergerak ke barisan belakang terlebih dahulu.
+
+BANTUAN ▸ Jika siswa freeze: tunjuk draft L6 mereka, ucap "Start from here — write sentence one again." Tunggu satu kalimat. Tinggalkan.
+BANTUAN ▸ Jika siswa menulis tentang sesuatu (bukan tempat) dan tidak yakin boleh: ucap "Yes — describe it the same way: what it is like, what it has, why you like it." Satu kalimat, lanjut.
+
+⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:
+Ucap: "Three sentences — enough. What it is like. What it has. Why you like it. Write those three." Turunkan target, jangan stop writing.
+
+Budget: ~8 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 10 — INTI · Revisi + Connector Check
+🔵 Calm
+[CORE]
+
+AKSI: Guru memberi sinyal untuk berhenti menulis.
+UCAP: "Two more minutes. Read your description."
+→ Jeda — biarkan siswa membaca tulisannya sendiri.
+UCAP: "Did you use because? Try to add but or so."
+→ Jeda singkat.
+UCAP: "And — add your connection. Why YOU go there. Or why YOU like it."
+
+AKSI: Circulate — prioritaskan barisan tengah yang belum tersentuh di L9.
+→ Siswa yang masih dalam narasi: nudge register terakhir — "Describe, present tense: 'It is...'"
+
+Diferensiasi:
+- Perlu support: tunjuk kalimat terakhir deskripsi siswa, ucap "Why do you like it? Add: 'because...'" — tunggu siswa menulis satu kalimat. Tinggalkan.
+- Sudah bisa: bisik "Add a contrast — 'But sometimes it is...' or 'But I wish it had...'" Kontras membuat deskripsi lebih hidup dan tidak terasa seperti promosi satu arah.
+
+⚡ Cue kritis: "Add your connection — why YOU go there / why YOU like it" adalah instruksi paling penting di L10. Deskripsi yang hanya berisi fakta valid tapi tidak personal. Koneksi personal ("I go there because I feel calm there") adalah yang membuat output berbeda secara meaningful antar siswa.
+
+BANTUAN ▸ Jika siswa tidak bisa menambah `but`: ucap "Is there one thing that is NOT perfect about the place? Write that with 'but'." Satu instruksi konkret, tinggalkan.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 11 — INTI · Peer Quick Read
+🔵 Calm
+[FLEX — lewati jika waktu tersisa < 8 menit]
+
+AKSI: Siswa bertukar kertas dengan pasangan.
+UCAP: "Read your partner's description. One minute. Silent."
+→ Siswa membaca tulisan pasangan. Waktu: 1 menit.
+
+UCAP: "Tell your partner: 'Would you like to visit this place? Why?'"
+→ Masing-masing menjawab satu kalimat ke pasangan. Lalu berganti.
+→ Waktu: 30 detik per arah.
+
+⚡ Cue kritis: "Would you like to visit this place?" adalah pertanyaan yang lebih natural dari "Did you like the description?" — ini juga mengaktifkan kembali opinion-giving dari TP17 dalam konteks deskripsi.
+
+BANTUAN ▸ Jika siswa tidak tahu harus bilang apa: ucap "Say: 'I want to visit because...' or 'I prefer a different place because...'" Dua opsi, tinggalkan.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 12 — PENUTUP · Share Satu Kalimat
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit]
+
+AKSI: Siswa duduk di tempat masing-masing dengan tulisan di tangan.
+UCAP: "Who wants to share? One sentence from your description. From your seat."
+→ Terima 2–3 sukarela. Masing-masing baca satu kalimat.
+→ Setelah setiap kalimat: UCAP "What kind of place is that?" → kelas merespons satu kata.
+→ Tidak ada evaluasi dari guru.
+
+BANTUAN ▸ Jika tidak ada yang sukarela: tunjuk 1–2 siswa yang tadi aktif di INTERACT. Ucap: "[Nama], can you share one sentence?"
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 13 — PENUTUP · Closure
+🔵 Calm
+[CORE]
+
+AKSI: Guru berdiri di depan kelas.
+UCAP: "Today — you described a place."
+→ Jeda.
+UCAP: "You said what it is like. What it has. Why you go there."
+→ Jeda.
+UCAP: "In English. Your words."
+→ Jeda.
+UCAP: "Keep your writing."
+→ Jeda singkat.
+UCAP: "Next time — everything you know."
+→ Jeda.
+UCAP: "Your place. Your opinion. Your experience."
+→ Jeda.
+UCAP: "One piece of writing."
+→ Jeda — biarkan siswa bertanya-tanya.
+UCAP: "Good work today. See you next time."
+
+⚡ Cue kritis: "Your place. Your opinion. Your experience." — tiga elemen merujuk ke TP19 (place/description), TP17 (opinion), TP18 (experience) secara tersirat dan natural. Siswa yang terhubung akan merasakan ini; yang tidak pun akan merasa preview TP20 Panen sebagai sesuatu yang mengundang daripada menakutkan.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+✅ CHECKLIST SELESAI TP 19
+════════════════════════════════════════════════════════════════
+[ ] L1 reactivation: "Last time — you told a story. Something that happened. Who remembers one sentence?" — satu kalimat dari tulisan TP18; "Today — not what happened. What it looks like." diucapkan setelah respons
+[ ] L3 orientasi register: "This is a description — what it is like NOW. Not a story about the past." — diucapkan SATU KALI sebelum analisis tiga elemen; tidak diulang atau dielaborasi
+[ ] Tiga elemen deskripsi di L3: (1) what it is like, (2) what it has, (3) my connection/why I go there — ditunjukkan dari anchor
+[ ] L4 demo: menggunakan warung (atau tempat personal serupa) — BUKAN library, BUKAN market; demo lisan only, tidak ditulis di papan
+[ ] L6 draft awal: "Don't talk yet. Write first." diucapkan eksplisit; siswa menulis 2–3 kalimat sebelum INTERACT L7
+[ ] Nudge register di L6 jika narasi: bisik "Describe — what is it like? 'The [place] is...'" — BUKAN koreksi tense, tapi koreksi REGISTER
+[ ] L7 demo: guru membaca dari deskripsi (bukan improvisasi), siswa B merespons dengan posisi sendiri — bukan "nice" saja
+[ ] L7: kedua arah dicakup dalam satu layar (A→B, lalu B→A) sebelum waktu habis
+[ ] L9 circulate: dimulai setelah 3 menit — barisan belakang diprioritaskan; siswa yang menyalin anchor verbatim mendapat nudge "Change one detail — your words"
+[ ] Closure L13: "Next time — everything you know. Your place. Your opinion. Your experience. One piece of writing." — verbatim, tidak ditambah penjelasan
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 → L6 🔵 → L7 🟡 → L8 🟡 → L9 🔵 → L10 🔵 → L11 🔵 → L12 🟡 → L13 🔵
+
+Blok Inti:
+INPUT: L3–L6 · INTERACT: L7–L8 · OUTPUT: L9–L11
+
+Budget waktu total:
+Tanpa FLEX (L5, L8, L11, L12): 2+3+4+5+4+4+6+8+4+5 = 45 menit — aman untuk kelas berat
+Dengan semua FLEX: 2+3+4+5+4+3+4+6+3+8+4+3+3+5 = 57 menit — aman untuk kelas normal
+
+Catatan Kompleks:
+TP19 adalah TP Kompleks kedua di Kluster E. Pergeseran kritis dari TP18: di TP18, siswa bercerita tentang sesuatu yang TERJADI (past tense, narasi). Di TP19, siswa mendeskripsikan sesuatu yang ADA (present tense, deskripsi). Register berbeda — bukan hanya tense berbeda. Siswa yang masih dalam mode narasi TP18 perlu orientasi register satu kalimat (L3) dan nudge bisikan di L6/L9 — bukan grammar lesson.
+
+Risiko pacing:
+· L3: Risiko orientasi register berkembang menjadi penjelasan grammar "past vs present tense." Instruksi: satu kalimat ("This is a description — what it is like NOW. Not a story about the past."), lanjut. Tidak diulang.
+· L6: Risiko dua hal: (1) siswa masih menulis narasi — nudge register: "Describe — what is it like? 'The [place] is...'" (2) siswa menyalin anchor verbatim — nudge personal: "Change one detail — your words." Kedua nudge berbeda dan tidak boleh tertukar.
+· L7: Risiko B merespons "nice" tanpa elaborasi — sinyal B tidak mendengarkan. BANTUAN sudah disiapkan, tapi DARURAT juga perlu siap.
+· L9: Risiko siswa menyalin anchor. Kata kunci circulate: "Your words. Your place." Bukan koreksi grammar.
+
+Teacher autonomy:
+· Demo guru di L4 boleh menggunakan tempat selain warung — yang penting bukan library (sudah di anchor) dan bukan market (sudah di TP12/TP15). Pilih tempat yang benar-benar personal dan konkret: masjid kampung, lapangan desa, bengkel, sawah, kantin sekolah, taman kecil.
+· Siswa yang ingin mendeskripsikan BENDA (bukan tempat) boleh — selama tiga elemen terpenuhi: what it is like, what it has/does, why they like it.
+· Guru boleh memperpanjang L7 sampai 8 menit jika pair exchange terasa hidup — kompensasi dengan L8 yang dilewati.
+· Jika ada siswa yang memilih tempat yang sama dengan gurunya di L4 (warung): valid — tapi dorong untuk menemukan detail personal yang berbeda dari demo.

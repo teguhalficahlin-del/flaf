@@ -1,0 +1,388 @@
+TP 12 — READING A MENU
+Fase: C
+Tema: Membaca Dunia
+Kelas: 6
+Kluster: D
+Jenis: Biasa
+Total layar: 12 (termasuk Layar 0)
+Text-anchor: (gambar menu) + "This is nasi goreng. It costs Rp 15.000. It is spicy."
+Recycle Fase B: is [adjective] (TP02, TP09 Fase C) · I like... (TP13 Fase B) · There is / There are... (TP03 Fase B — muncul jika siswa mendeskripsikan menu lebih lanjut)
+Connector aktif: — (tidak ada connector baru; semua yang sudah aktif tersedia jika muncul natural; jangan dorong connector apapun)
+Kosakata pendukung: menu, price, costs, spicy, sweet, savory, crispy, cold, order — kontekstual; tidak diajarkan sebagai vocab list
+Mode Kluster D: Membaca & Memirsa dominan · Menyimak sebagai entry point · Menulis sebagai respons teks
+
+PERSIAPAN MEDIA:
+- Menu Card A (satu per siswa versi A): kartu tercetak atau ditulis tangan dengan tiga item —
+    1. Nasi Goreng — Rp 15.000 — spicy
+    2. Mie Goreng — Rp 12.000 — not spicy
+    3. Ayam Goreng — Rp 18.000 — crispy
+  Dibagikan hanya ke siswa versi A. Siswa B tidak boleh melihat kartu ini sebelum pair work selesai.
+- Menu Card B (satu per siswa versi B): kartu tercetak atau ditulis tangan dengan tiga item berbeda —
+    4. Nasi Uduk — Rp 12.000 — savory
+    5. Bakso — Rp 10.000 — spicy
+    6. Es Teh — Rp 5.000 — sweet and cold
+  Dibagikan hanya ke siswa versi B. Siswa A tidak boleh melihat kartu ini sebelum pair work selesai.
+- Complete Menu Table (satu per siswa): tabel enam baris dengan kolom No · Food / Drink · Price · What is it like? — semua baris kosong. Dibagikan bersamaan dengan Menu Card di awal L6.
+- Tampilan text-anchor di papan: "This is nasi goreng. It costs Rp 15.000. It is spicy." Tetap tampil dari L2 sampai akhir L7. Hapus atau tutup sebelum L8 dimulai.
+- Catatan persiapan: Menu Card A berisi item 1–3; Card B berisi item 4–6. Penomoran ini dipertahankan di Complete Menu Table sehingga siswa A mengisi baris 1–3 dari kartu sendiri dan bertanya untuk baris 4–6, sedangkan siswa B sebaliknya.
+
+════════════════════════════════════════════════════════════════
+LAYAR 0 — PRE-OPENING · Kelas Siap
+⚪ Reset
+[CORE]
+
+Guru berdiri di depan kelas. Papan sudah bertuliskan text-anchor.
+
+AKSI: Tunggu kelas kondusif tanpa berbicara.
+UCAP: "Good morning, everyone."
+→ Tunggu respons. Jika tidak ada: angkat tangan — tunggu siswa ikut menjawab.
+UCAP: "Today — we read."
+→ Tidak perlu diterjemahkan. Lanjut ke L1.
+
+Budget: ~2 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 1 — PEMBUKA · Reactivation + Mode Membaca
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas tanpa menunjukkan teks apapun.
+UCAP: "Last time — you wrote about an animal."
+→ Jeda.
+UCAP: "One sentence. Who remembers?"
+→ Tunggu SATU siswa menyebut kalimat dari tulisan TP11 mereka sendiri.
+→ Guru angguk dan terima apapun yang muncul.
+UCAP: "Good. Today — we don't write first. We read first."
+→ Lanjut ke L2.
+
+⚡ Cue kritis: Satu respons sudah cukup — jangan tunggu lebih dari 20 detik. Bridge ke mode membaca lebih penting dari kedalaman reactivation di sini.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 2 — PEMBUKA · Perkenalan Text-anchor: Ini Menu
+🟡 Focused
+[CORE]
+
+AKSI: Guru menunjuk text-anchor di papan.
+UCAP: "Look at the board. This is one item from a menu."
+→ Baca text-anchor perlahan, tunjuk setiap kalimat.
+👂 LISTEN FIRST — siswa mendengarkan dan membaca papan.
+
+"This is nasi goreng." [tunjuk kalimat 1]
+"It costs Rp 15.000." [tunjuk kalimat 2]
+"It is spicy." [tunjuk kalimat 3]
+
+UCAP: "Three things. The name. The price. What it is like."
+UCAP: "That is how a menu works."
+
+⚡ Cue kritis: "The name. The price. What it is like." — tiga kategori ini adalah kerangka kerja membaca menu. Guru menyebutnya secara eksplisit di sini karena siswa belum pernah membaca menu dalam Bahasa Inggris sebelumnya. Ini bukan grammar lesson — ini navigasi teks.
+
+BANTUAN ▸ Jika siswa tidak memperhatikan papan: ketuk papan dua kali sebelum membaca kalimat berikutnya — tidak perlu menunggu seluruh kelas diam sempurna.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 3 — INTI · Model Guru + Dua Pola Fungsional Baru
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas. Text-anchor masih di papan.
+UCAP: "Now — I will read two items from a menu. Listen."
+
+Item pertama (dari text-anchor):
+UCAP: "This is nasi goreng."
+UCAP: "It costs Rp 15.000."
+UCAP: "It is spicy."
+
+→ Jeda singkat.
+
+Item kedua (item baru):
+UCAP: "This is es teh."
+UCAP: "It costs Rp 5.000."
+UCAP: "It is sweet and cold."
+
+→ Jeda singkat.
+
+UCAP: "'This is...' — the name."
+UCAP: "'It costs...' — the price."
+UCAP: "'It is...' — what it is like."
+→ Tiga pola, tiga kalimat pendek. Tidak lebih dari ini.
+
+AKSI: Kembali ke text-anchor.
+🗣 TOGETHER — guru dan siswa baca text-anchor bersama.
+UCAP: "Read with me. Ready?"
+→ Baca bersama 1×. Cukup.
+
+⚡ Cue kritis: Dua pola fungsional baru — "This is..." dan "It costs..." — dimodelkan masing-masing dua kali: sekali pada item pertama, sekali pada item kedua. Ini cukup. Jangan tambahkan item ketiga atau penjelasan tambahan.
+
+BANTUAN ▸ Jika siswa tidak ikut membaca bersama: tunjuk kalimat demi kalimat sambil membaca — siswa biasanya ikut setelah kalimat pertama.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 4 — INTI · Membaca Menu Bersama
+🟡 Focused
+[CORE]
+
+AKSI: Guru menulis atau menampilkan tiga item sample di papan (bukan dari Menu Card A atau B):
+   Soto Ayam — Rp 13.000 — warm and savory
+   Jus Jeruk — Rp 8.000 — sweet and fresh
+   Nasi Putih — Rp 5.000 — plain
+
+UCAP: "Look at these items. I will ask questions. Find the answer in the menu — read, don't guess."
+UCAP: "What is the first item?" → siswa: "Soto Ayam."
+UCAP: "How much is it?" → siswa: "Rp 13.000."
+UCAP: "What is it like?" → siswa: "Warm and savory."
+
+AKSI: Lanjutkan dengan item kedua dan ketiga — guru tanya, siswa jawab dari papan.
+→ Ini guided reading practice: siswa membaca untuk menjawab, bukan mengingat atau menebak.
+
+UCAP: "Good. Now you know how to read a menu."
+→ Hapus sample menu dari papan setelah L4 selesai. Text-anchor Rina tetap di papan.
+
+⚡ Cue kritis: Sample menu di L4 berbeda dari Menu Card A dan B — ini mencegah preview konten kartu sebelum INTERACT. Siswa berlatih membaca menu SEBELUM menerima kartu yang sebenarnya.
+
+BANTUAN ▸ Jika siswa menjawab dari ingatan (bukan dari papan): ucap "Find it on the board — read it." Arahkan siswa untuk melihat papan, bukan menerka.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 5 — INTI · Drill Membaca Harga
+🟡 Focused
+[FLEX — lewati jika kelas sudah membaca harga dengan lancar di L4]
+
+AKSI: Guru menampilkan kembali sample menu dari L4 (atau menu baru yang singkat).
+→ Tunjuk item secara acak. Siswa membaca harga dari papan.
+
+UCAP: "What is the price of soto ayam?"
+→ Siswa membaca: "Rp 13.000." (dari papan)
+UCAP: "Which is cheaper — jus jeruk or soto ayam?"
+→ Siswa membandingkan harga dari papan.
+UCAP: "How much do you need for both jus jeruk and nasi putih?"
+→ Siswa menghitung: "Rp 13.000."
+
+AKSI: Lakukan 3–4 pertanyaan. Siswa selalu membaca dari papan — bukan dari ingatan.
+
+⚡ Cue kritis: Ini drill membaca dan membandingkan harga — bukan oral call-and-response dari hafalan. Perbedaan ini penting: di Kluster D, respons siswa bergantung pada teks, bukan ingatan.
+
+BANTUAN ▸ Jika siswa menebak harga tanpa membaca: tunjuk papan dan ucap "Find it here first." Tunggu siswa membaca sebelum menjawab.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+══ INTERACT ══
+════════════════════════════════════════════════════════════════
+LAYAR 6 — INTI · Complete Menu Table: Information Gap
+🟡 Focused
+[CORE]
+
+AKSI: Bagikan Menu Card A dan B — setengah kelas mendapat A, setengah mendapat B. Bagikan juga Complete Menu Table (satu per siswa, semua baris kosong).
+UCAP: "Don't show your card to your partner. Keep it to yourself."
+
+AKSI: Demonstrasi — maksimal 2 menit.
+👂 LISTEN FIRST — kelas perhatikan dulu.
+
+Guru pegang Card A (atau tunjukkan di papan mini):
+UCAP: "I have Card A — three items."
+→ Isi baris 1–3 di Complete Menu Table (tulis di papan).
+→ Tunjuk baris 4–6 yang masih kosong.
+UCAP: "These three — you cannot fill without asking."
+→ Tunjuk satu siswa (yang punya Card B): "What is item 4? How much? What is it like?"
+→ Siswa menjawab dari Card B → guru isi baris 4.
+UCAP: "Now your turn."
+
+AKSI: Siswa bekerja berpasangan — A dengan B yang berdekatan.
+→ Siswa A isi baris 1–3 dari Card A. Lalu tanya B untuk baris 4–6.
+→ Siswa B isi baris 4–6 dari Card B. Lalu tanya A untuk baris 1–3.
+→ Menu Card masing-masing tetap di tangan sendiri — tidak diperlihatkan ke pasangan.
+→ Pertanyaan: "What is item ___? How much is it? What is it like?"
+→ Setelah tabel terisi: "Which item is the cheapest? Which is the most expensive?"
+→ Waktu total: 5–6 menit.
+
+AKSI: Guru circulate — cek apakah siswa benar-benar bertanya atau menebak.
+
+⚡ Cue kritis: "These three — you cannot fill without asking." — kalimat ini harus diucapkan saat menunjuk baris kosong secara konkret. Ini adalah momen yang membuat gap terasa nyata, bukan hanya aturan. Tanpa demo ini, beberapa siswa akan menebak atau diam.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Prioritaskan siswa yang belum pernah dinilai di TP ini.
+
+BANTUAN ▸ Jika siswa tidak tahu pertanyaan apa yang diucapkan: tunjuk baris 4 yang kosong di tabel mereka dan ucap "Ask: What is item 4?" — tunggu siswa meniru pertanyaan itu ke pasangannya.
+
+BANTUAN ▸ Jika siswa memperlihatkan kartu ke pasangan: tutup kartu dengan tangan, ucap "Don't show — ask." Ulangi instruksi sekali saja.
+
+⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas.
+2. Demo ulang: tunjuk baris 4 yang kosong di tabel, ucap "Ask: What is item 4?"
+3. Sederhanakan: cukup tanya satu item saja — nama dan harga.
+4. Restart — batasi 60 detik.
+
+Budget: ~7 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 7 — INTI · Mini-Share: Termurah dan Termahal
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 12 menit]
+
+AKSI: Setelah pair work selesai, guru bertanya ke kelas.
+UCAP: "Who found the cheapest item? What is it? How much?"
+→ Tunggu 1–2 siswa menjawab dari tabel mereka.
+UCAP: "Who found the most expensive? What is it?"
+→ Tunggu 1–2 siswa menjawab.
+
+AKSI: Guru tidak mengoreksi grammar. Angguk dan lanjut.
+UCAP (opsional): "Would you order the most expensive? Why or why not?"
+→ Ini membuka ruang natural untuk `because` dari Kluster B — jangan paksa.
+
+⚡ Cue kritis: Pertanyaan "cheapest / most expensive" hanya bisa dijawab setelah tabel terisi lengkap — ini memverifikasi bahwa pair work selesai dengan benar. Siswa yang tidak bisa menjawab belum menyelesaikan tabelnya.
+
+BANTUAN ▸ Jika siswa tidak bisa menjawab: ucap "Look at the Price column in your table. Which number is the smallest?" — bantu siswa membaca tabel mereka sendiri.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ OUTPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 8 — INTI · Write Your Order
+🔵 Calm
+[CORE]
+
+AKSI: Hapus atau tutup text-anchor dari papan. Complete Menu Table siswa tetap di meja mereka.
+UCAP: "Now — you have Rp 20.000."
+UCAP: "Look at your complete menu. Choose what you want to order."
+UCAP: "Write two or three sentences."
+
+AKSI: Tunjuk cara memulai:
+UCAP: "For example: 'I order nasi goreng. It costs Rp 15.000. It is spicy.'"
+→ Ucapkan sekali. Tidak ditulis di papan.
+UCAP: "Now you choose — your order, from your menu."
+
+AKSI: Siswa menulis secara individual.
+→ Complete Menu Table boleh dilihat dan digunakan sebagai referensi.
+→ Waktu: 8–10 menit. Guru tidak mendiktekan pilihan.
+→ Beri waktu start 2 menit sebelum circulate.
+→ Prioritaskan barisan belakang.
+→ Perhatikan: apakah total harga pesanan siswa masih di bawah Rp 20.000? Jika ada yang melebihi: tunjuk tabel, tanya "Is this more than Rp 20.000? Check the prices." Tidak koreksi — bantu baca tabel.
+
+⚡ Cue kritis: Output bergantung pada makna — siswa membaca harga dari tabel dan membuat keputusan berdasarkan budget. Setiap siswa berpotensi menghasilkan output berbeda karena pilihan makanan dan kombinasi harga berbeda-beda. Ini output yang merespons teks, bukan template yang diisi.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Bergerak ke barisan belakang terlebih dahulu.
+
+BANTUAN ▸ Jika siswa freeze: tunjuk tabel mereka di kolom Price dan ucap "Choose one item. Write: I order [name]. It costs..." Tunggu satu kalimat. Tinggalkan.
+
+⚠ DARURAT — waktu ≤ 5 menit dan sebagian besar siswa baru menulis 1 kalimat:
+Ucap: "Two sentences — one item is enough for today." Turunkan target.
+
+Budget: ~10 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 9 — INTI · Check & Extend
+🔵 Calm
+[CORE]
+
+AKSI: Setelah 8 menit, guru memberi sinyal tanpa menghentikan siswa yang masih menulis.
+UCAP: "Two more minutes. Read your order. Does it make sense? Is it under Rp 20.000?"
+
+Diferensiasi:
+- Perlu support: guru dekati, cek tabel siswa bersama-sama, tunjuk satu item yang belum ditulis — "Can you add this? It costs only Rp ___." Tunggu siswa menulis satu kalimat tambahan.
+- Sudah bisa: tambah kalimat alasan menggunakan connector dari Kluster B — contoh: "I order mie goreng because it is not spicy." atau "I choose es teh because it is sweet and cheap."
+
+AKSI: Guru circulate — cek total harga siswa, bukan grammar.
+→ Jika connector muncul spontan — angguk, tidak perlu komentar.
+
+⚡ Cue kritis: Diferensiasi "Sudah bisa" mengacu pada preferensi personal siswa terhadap makanan yang mereka pilih — ini informasi yang berbeda-beda per siswa dan tidak bisa ditebak.
+
+BANTUAN ▸ Jika siswa bertanya "boleh pesan lebih dari dua?": ucap "Yes — if the total is still under Rp 20.000." Arahkan siswa untuk menjumlahkan harga dari tabel.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 10 — PENUTUP · Sharing Pesanan
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit]
+
+AKSI: Guru minta 2–3 siswa sukarela membacakan pesanan mereka.
+UCAP: "Who wants to share? What did you order? From your seat is fine."
+→ Terima siapapun yang mau.
+
+AKSI: Setelah setiap siswa berbagi, guru bertanya ke kelas:
+UCAP: "Did anyone order the same thing?"
+→ Tangan naik — resonansi natural berdasarkan pilihan makanan.
+
+⚡ Cue kritis: Sharing pesanan di sini berbeda dari sharing di TP sebelumnya — siswa bukan menceritakan pengalaman personal, tapi melaporkan keputusan yang dibuat berdasarkan teks. Ini adalah mode baru: bahasa untuk merespons informasi tertulis.
+
+BANTUAN ▸ Jika tidak ada yang mau sukarela: guru tanya langsung satu siswa — "What did you order? Nasi goreng or mie goreng?" — pertanyaan pilihan lebih mudah dijawab dari pertanyaan terbuka.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 11 — PENUTUP · Closure
+🔵 Calm
+[CORE]
+
+AKSI: Guru berdiri di depan kelas.
+UCAP: "Today you read a menu. In English."
+→ Jeda.
+UCAP: "The name. The price. What it is like."
+→ Jeda.
+UCAP: "And you made a choice. Based on what you read."
+→ Jeda.
+UCAP: "Keep it."
+
+AKSI: Tunjuk tulisan pesanan siswa dan Complete Menu Table di atas meja mereka.
+UCAP: "Next time — we read something different."
+→ Jeda singkat.
+UCAP: "Not food. A school announcement."
+→ Preview TP13 yang natural — shifts dari menu (harga makanan) ke pengumuman (informasi sekolah).
+
+UCAP: "Good work today. See you next time."
+
+⚡ Cue kritis: "And you made a choice. Based on what you read." — kalimat ini penting. Ia merangkum mode Kluster D: siswa tidak memproduksi dari pengalaman, mereka merespons dari teks. Ini adalah pencapaian nyata yang berbeda dari 11 TP sebelumnya.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+✅ CHECKLIST SELESAI TP 12
+════════════════════════════════════════════════════════════════
+[ ] Reactivation L1 adalah bridge mode membaca — tidak ada pertanyaan recall; tiga kalimat saja: "Last time animals. Today — we read first."
+[ ] Dua pola fungsional baru ("This is..." dan "It costs...") dimodelkan dua kali di L3 — dua item berbeda
+[ ] L4 menggunakan sample menu berbeda dari Card A dan B — tidak ada preview konten kartu sebelum L6
+[ ] Menu Card A dan B dibagikan terpisah di L6 — siswa tidak melihat kartu pasangan sebelum pair work selesai
+[ ] Demo L6 menunjukkan baris 4–6 yang kosong secara konkret: "These three — you cannot fill without asking."
+[ ] Complete Menu Table terisi lengkap 6 baris sebelum OUTPUT dimulai
+[ ] OUTPUT menggunakan framing "You have Rp 20.000. What do you order?" — BUKAN "What can you afford?"
+[ ] Output siswa adalah respons terhadap teks menu — berbeda-beda berdasarkan pilihan dan kombinasi harga
+[ ] Text-anchor diturunkan sebelum OUTPUT (L8) — Complete Menu Table tetap sebagai scaffold
+[ ] Guru sudah mendekati minimal 2–3 siswa barisan belakang di L8 atau L9
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 → L6 🟡 → L7 🟡 → L8 🔵 → L9 🔵 → L10 🟡 → L11 🔵
+
+Blok Inti:
+INPUT: L3–L5 · INTERACT: L6–L7 · OUTPUT: L8–L9
+
+Budget waktu total:
+Tanpa FLEX (L5, L7, L10): 2+4+4+5+5+7+10+5+5 = 47 menit — aman untuk kelas berat
+Dengan semua FLEX: 2+4+4+5+5+4+7+3+10+5+4+5 = 58 menit — aman untuk kelas normal
+
+Catatan energi Kluster D:
+Tidak ada 🟠 di seluruh TP12. Ini bukan kelemahan — ini desain yang tepat untuk TP membaca. Mode Kluster D membutuhkan fokus terpusat (🟡) dan ketenangan individual (🔵), bukan energi aktif. Kelas yang tenang saat membaca adalah kelas yang sedang bekerja.
+
+Risiko pacing:
+· L4: Sample menu di papan harus dihapus setelah L4 selesai — sebelum distribusi Menu Card di L6. Jika tidak dihapus, siswa akan terus merujuk ke sample menu, bukan bertanya ke pasangan.
+· L6: Urutan pengisian Complete Menu Table sangat penting. Jika siswa A tidak mengisi baris 1–3 dari kartunya sendiri sebelum bertanya ke B, tabel mereka akan kacau. Pastikan langkah "isi baris sendiri dulu" terjadi sebelum pair work dimulai.
+· L8: Siswa yang tidak menyelesaikan Complete Menu Table di L6 tidak akan bisa menulis pesanan di L8 (tidak tahu semua pilihan yang ada). Jika ada siswa dengan tabel tidak lengkap saat L8 dimulai: ijinkan mereka bertanya ke pasangan selama 1 menit tambahan sebelum menulis.
+
+Teacher autonomy:
+· Harga di Menu Card A dan B boleh disesuaikan dengan konteks harga makanan di daerah setempat — yang penting total budget Rp 20.000 masih memungkinkan kombinasi yang beragam.
+· Nama makanan di kartu boleh diganti dengan makanan lokal yang lebih dikenal siswa — selama format (nama · harga · deskripsi) konsisten.
+· Budget "Rp 20.000" boleh dinaikkan jika harga makanan lokal lebih tinggi — yang penting budget membuat siswa harus memilih, bukan bisa memesan segalanya.
+· Boleh skip L10 (sharing pesanan) jika kelas terlihat puas setelah menulis — tidak semua pesanan perlu dibagikan ke kelas.
+· Untuk kelas yang sudah familiar dengan menu Bahasa Inggris: L4 (Reading Practice bersama) boleh dipersingkat menjadi 2–3 pertanyaan saja jika kelas terbukti sudah bisa membaca harga di L3.

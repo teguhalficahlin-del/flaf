@@ -1,0 +1,641 @@
+TP 22 — MY WORLD PROJECT
+Fase: C
+Tema: Capstone
+Kelas: 6
+Kluster: — (Capstone lintas kluster)
+Jenis: Capstone
+Total layar: 16 (termasuk Layar 0)
+Text-anchor: — (TP Capstone — tidak ada text-anchor; model produksi dicontohkan guru di L4)
+Recycle Fase B: semua pola TP01–20 tersedia dalam produksi siswa; tidak ada yang diajarkan ulang — I think... because... (TP17/TP06) · There is / There are... (TP03/TP09) · Yesterday I... / Last week I... (TP18/TP20) · She/He has... / I have... (TP02) · I like... because... (TP06/TP13) · first, then, after that (TP05/TP14) · It is... / They are... (TP11/TP19) — pola yang muncul ditentukan oleh pilihan topik siswa, bukan oleh instruksi guru
+Connector aktif: semua connector TP01–20 tersedia; because paling natural dalam penjelasan lisan ("I chose this topic because...") dan teks opinion; and, but, so hadir sesuai jenis teks yang dipilih siswa; tidak ada connector baru
+Kosakata pendukung: opinion · story · description · combination · topic · visual · project · register · informal · formal
+
+PERSIAPAN MEDIA:
+- Choice Card: cetak atau tulis satu per siswa sebelum kelas. Isi empat bagian:
+  Baris 1: "My topic: ___________________________"
+  Baris 2: "Register:  □ informal   □ formal"
+  Baris 3: "Visual:  □ drawing  □ diagram  □ map  □ photo description"
+  Garis pemisah horizontal
+  Baris 4: "My first sentence: _______________________________ / _______________________________"
+  Dibagikan di L6 — jangan sebelumnya.
+
+- Poster mini demo guru (disiapkan sebelum kelas, dibawa masuk oleh guru):
+  Satu lembar kertas (A5 atau A4 dilipat). Gambar tangan warung kecil (persegi panjang sederhana
+  + tulisan "Warung Pak Hendra") — gambar sedikit tidak sempurna, tidak perlu rapi.
+  Di bawah atau samping gambar, tulisan tangan tiga kalimat:
+  "I think Warung Pak Hendra is the best warung near my school."
+  "Last week I went there with my friends and we had mie ayam."
+  "It is small but the food is always delicious."
+  PENTING: gambar harus terlihat dibuat tangan — bukan dicetak. Ketidaksempurnaan gambar
+  adalah bagian dari demo. Setelah L4 selesai, poster di-SET ASIDE dan TIDAK ditampilkan
+  lagi selama produksi.
+
+- Papan tulis sebelum kelas dimulai: tulis di sisi kiri papan —
+  "Opinion · Story · Description · Combination"
+  Biarkan sepanjang hari. Jangan hapus sampai kelas selesai.
+  Rubrik 4 kriteria ditulis di pojok papan saat L5 — juga biarkan sampai akhir.
+  TIDAK ADA kalimat contoh di papan selama produksi (L9 sampai selesai).
+
+════════════════════════════════════════════════════════════════
+LAYAR 0 — PRE-OPENING · Kelas Siap
+⚪ Reset
+[CORE]
+
+Guru berdiri di depan kelas. Papan sudah bertuliskan
+"Opinion · Story · Description · Combination" di sisi kiri.
+Choice Card belum dibagikan.
+
+AKSI: Tunggu kelas kondusif tanpa berbicara.
+UCAP: "Good morning, everyone."
+→ Tunggu respons. Jika tidak ada: angkat tangan — tunggu siswa ikut.
+UCAP: "Today is the last day."
+→ Jeda panjang. Biarkan kalimat ini landing. Tidak perlu diterjemahkan.
+→ Lanjut ke L1.
+
+Budget: ~2 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 1 — PEMBUKA · Reactivation: Dari Tulisan TP21
+🟡 Focused
+[CORE]
+
+AKSI: Guru berdiri di depan kelas. Tidak menunjukkan apapun.
+UCAP: "Last time — you read texts from the real world."
+→ Jeda.
+UCAP: "Who remembers one sentence from their response?"
+→ Tunggu SATU siswa menyebut kalimat dari tulisan TP21 —
+  contoh: "I think the poster wants students to join the competition."
+  atau "The notice says the library is closed."
+  atau "I think the menu is useful because it shows the prices."
+→ Guru angguk dan terima. Satu siswa sudah cukup.
+→ Jeda.
+UCAP: "Today — last time."
+→ Jeda.
+UCAP: "You don't read someone else's text."
+→ Jeda.
+UCAP: "You create your own."
+→ Lanjut ke L2.
+
+⚡ Cue kritis: Reactivation mengaktifkan kalimat produksi dari TP21 OUTPUT — bisa berupa
+respons terhadap poster, menu, jadwal, atau notice. Satu kalimat sudah cukup.
+"You don't read someone else's text. You create your own." adalah turning point:
+siswa bukan lagi pembaca teks milik orang lain — mereka menjadi penulis teks
+untuk dunia nyata. Ini harus dirasakan sebagai pergeseran, bukan sekadar transisi.
+
+BANTUAN ▸ Jika tidak ada yang merespons dalam 10 detik: ucap "Last time you wrote
+about a real text — who remembers one word from what you wrote?"
+Tunggu satu kata. Terima, angguk, lanjut.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 2 — PEMBUKA · "My World Project"
+🟡 Focused
+[FLEX — lewati jika kelas sudah responsif di L1 dan waktu tersisa < 55 menit]
+
+UCAP: "This is My World Project."
+→ Tulis di tengah papan: "MY WORLD PROJECT"
+UCAP: "One project. Your topic. Your words. Your image."
+→ Jeda.
+UCAP: "By the end — you have something real."
+→ Tunjuk sisi kiri papan: "Opinion · Story · Description · Combination"
+UCAP: "Four types. You choose."
+→ Jeda singkat.
+UCAP: "Let me show you first."
+→ Lanjut ke L3.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ INPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 3 — INTI · Orientasi: Empat Jenis Teks
+🟡 Focused
+[CORE]
+
+UCAP: "Four types of text. Look at the board."
+→ Tunjuk: "Opinion · Story · Description · Combination"
+UCAP: "Opinion — what YOU think. 'I think... because...'"
+UCAP: "Story — what happened. 'Last week I...'"
+UCAP: "Description — what something looks like or is. 'It is... There is...'"
+UCAP: "Combination — two or more types together."
+→ Jeda.
+UCAP: "One type is best for your topic. You will choose."
+→ Tunjuk papan sekali lagi.
+UCAP: "These stay on the board all day."
+→ Lanjut ke L4.
+
+⚡ Cue kritis: Empat jenis teks diperkenalkan secara minimal — satu kalimat pembuka per tipe.
+Tidak ada drill, tidak ada pertanyaan kelas. Siswa yang sudah menulis TP17 (opinion),
+TP18 (story), TP19 (description) sudah familiar dengan semua ini — L3 hanya memberi
+label eksplisit agar bisa digunakan sebagai referensi di Choice Card.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 4 — INTI · Demo Guru: Poster Mini Warung Pak Hendra
+🟡 Focused
+[CORE]
+
+AKSI: Guru mengambil poster mini warung Pak Hendra yang sudah disiapkan.
+Tunjukkan ke kelas.
+👂 LISTEN FIRST — kelas perhatikan, belum menulis apapun.
+
+UCAP: "This is my project."
+→ Tunjukkan poster ke kelas. Minta siswa melihat, bukan menyalin.
+UCAP: "I chose Warung Pak Hendra. Near my school."
+→ Tunjuk gambar tangan di poster.
+UCAP: "This is my drawing. Not perfect — that's okay."
+→ Jeda singkat. Biarkan siswa melihat bahwa gambar tidak sempurna.
+→ Tunjuk teks di poster. Baca tiga kalimat secara perlahan:
+
+UCAP: "I think Warung Pak Hendra is the best warung near my school."
+→ Jeda.
+UCAP: "Last week I went there with my friends and we had mie ayam."
+→ Jeda.
+UCAP: "It is small but the food is always delicious."
+→ Jeda.
+
+UCAP: "Three sentences."
+→ Tunjuk kalimat satu per satu:
+UCAP: "Opinion. Story. Description."
+→ Tunjuk label "Combination" di papan.
+UCAP: "That is Combination."
+→ Jeda.
+UCAP: "One image. Three sentences. Your topic. That is the project."
+
+AKSI: Set aside poster. TIDAK ditampilkan lagi selama produksi berlangsung.
+
+⚡ Cue kritis: Demo ini adalah SATU-SATUNYA model sebelum produksi. Siswa melihat secara
+konkret: (1) gambar tidak perlu sempurna — cukup relevan; (2) tiga kalimat sudah cukup;
+(3) bisa kombinasi tipe; (4) topik adalah sesuatu dekat kehidupan guru.
+Setelah poster di-set aside — JANGAN tampilkan lagi saat produksi berlangsung.
+Jika siswa menunjuk poster dan meminta contoh: "Your topic is different — use your own words."
+
+BANTUAN ▸ Jika siswa bertanya "Harus tiga kalimat?": ucap "Minimum three. More is fine."
+Satu kalimat, lanjut.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 5 — INTI · Rubrik 4 Kriteria
+🟡 Focused
+[CORE]
+
+AKSI: Guru menulis rubrik di pojok papan — biarkan sampai akhir sesi.
+Tulis persis begini (empat baris terpisah, BUKAN tabel, BUKAN kolom skor):
+
+  "1. Text: is there a communicative text?"
+  "2. Content: is it about your own topic?"
+  "3. Visual: does the image support the text?"
+  "4. Oral: can you explain your project in 2-3 sentences?"
+
+UCAP: "These are the four things I will check."
+→ Tunjuk rubrik.
+UCAP: "One: you have a text. Not a title — a TEXT."
+UCAP: "Two: it is YOUR topic. Not the warung. Not any example."
+UCAP: "Three: your image matches your words."
+UCAP: "Four: you can explain your project to me."
+→ Jeda.
+UCAP: "I will come to each of you and ask: 'Tell me about your project.'"
+→ Jeda.
+UCAP: "These stay on the board. Check when you finish."
+→ Lanjut ke L6.
+
+⚡ Cue kritis: Kriteria ke-4 (penjelasan lisan) disampaikan sekarang — bukan di akhir
+sebagai kejutan. Siswa tahu sejak awal bahwa guru akan mendatangi mereka.
+Framing yang benar: "Kalau kamu bisa menjelaskan proyekmu, itu berarti proyeknya
+benar-benar milikmu." Jangan framing sebagai ujian atau penilaian formal.
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+══ INTERACT ══
+════════════════════════════════════════════════════════════════
+LAYAR 6 — INTI · Choice Card: Rencanakan Proyekmu
+🔵 Calm
+[CORE]
+
+AKSI: Bagikan Choice Card — satu per siswa.
+
+UCAP: "Fill in your card. Four things."
+→ Tunjuk keempat bagian di kartu sambil menjelaskan:
+UCAP: "One — your topic. Choose something you know well. Your life, your place, your experience."
+UCAP: "Two — register. Informal: like talking to a friend. Formal: like a notice or announcement."
+UCAP: "Three — visual. What image will you make?"
+UCAP: "Four — your first sentence. Write it now."
+→ Jeda.
+UCAP: "Five minutes. Silent. Think first — then write."
+→ Siswa mengisi Choice Card. Waktu: 5 menit.
+
+AKSI: Guru circulate pelan-pelan.
+→ Perhatikan siswa yang blank lebih dari 2 menit — ini prioritas BANTUAN.
+→ Jangan membaca kartu siswa kecuali diminta — beri ruang berpikir.
+→ Jangan koreksi pilihan topik yang "tidak umum" — topik unik adalah nilai.
+
+⚡ Cue kritis: "Choose something you know well." adalah instruksi terpenting di L6.
+Topik abstrak ("the world", "happiness") akan menghasilkan teks yang tidak genuine
+karena siswa tidak punya pengalaman konkret yang bisa ditulis.
+Jika ada siswa memilih topik abstrak setelah 2 menit: bisik
+"Something you can see or touch in your life." Satu kalimat, tinggalkan.
+
+BANTUAN ▸ Jika siswa tidak bisa memilih topik setelah 2 menit: bisik
+"What did you write about in TP17, 18, or 19? Start from there — or choose something different."
+Tinggalkan setelah satu kalimat.
+BANTUAN ▸ Jika siswa tidak bisa menulis kalimat pertama: bisik
+"Look at the board — Opinion? Story? Description? Start with that type."
+Tunjuk papan, tinggalkan.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 7 — INTI · Share Choice Card dengan Pasangan
+🟡 Focused
+[CORE]
+
+Demo — maksimal 45 detik:
+👂 LISTEN FIRST — kelas perhatikan.
+Guru membaca keempat elemen Choice Card demo ke satu siswa (verbal):
+UCAP: "My topic: Warung Pak Hendra."
+UCAP: "Register: informal."
+UCAP: "Visual: hand drawing."
+UCAP: "First sentence: 'I think Warung Pak Hendra is the best warung near my school.'"
+→ Guru ke siswa: "What type of text is that?"
+→ Siswa: "Opinion!" (atau "Combination!")
+→ Guru: "Yes. What will my visual look like?"
+→ Siswa: "A warung!"
+→ Guru ke kelas: "You heard four things. You can predict the project."
+UCAP: "Now — share your card with your partner. Read all four. Partner asks ONE question."
+
+AKSI: Siswa bekerja berpasangan.
+UCAP: "A reads all four elements — B listens, then asks ONE question."
+UCAP: "A answers. Then swap."
+→ Total: 4–5 menit (2 menit per arah).
+
+Jenis pertanyaan yang valid dari pasangan:
+- "Why did you choose that topic?"
+- "Why formal — not informal?"
+- "Why a map? Is your topic about a place?"
+- "Is your first sentence opinion or description?"
+
+AKSI: Guru circulate.
+→ Perhatikan apakah B benar-benar mendengarkan sebelum bertanya.
+→ Perhatikan apakah A menjawab dengan alasan, atau hanya mengangguk.
+→ Jika B tidak bertanya sama sekali: bisik "Ask A one question about the card." Satu kalimat, tinggalkan.
+→ Jika A tidak bisa menjawab pertanyaan B: anggap ini sinyal bahwa topik perlu diperkuat di L9.
+
+⚡ Cue kritis: Gap genuine di L7 adalah CHOICE GAP: setiap Choice Card berbeda karena
+kombinasi empat elemen bersifat personal. Pasangan tidak bisa bertanya dengan bermakna
+tanpa mendengar keempat elemen lebih dulu — dan A tidak bisa menjawab tanpa mendengar
+pertanyaan B. Validitas INTERACT: B harus mengajukan pertanyaan yang hanya bisa ditanyakan
+setelah mendengar keempat elemen. "Is it about a warung?" = tidak valid (tebak-tebakan).
+"Why informal for that topic?" = valid (berdasarkan yang didengar).
+
+⚠ DARURAT — pair diam > 90 detik:
+1. Hentikan seluruh kelas.
+2. Demo ulang dengan satu pasangan di depan — guru jadi partner satu siswa:
+   guru membaca keempat elemen kartunya, minta siswa bertanya satu pertanyaan.
+3. Sederhanakan: "Cukup tanya satu hal: 'Why did you choose that topic?'"
+4. Restart — batasi 90 detik per arah.
+
+Budget: ~6 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 8 — INTI · Micro-output: Kalimat Pertama Lisan
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit sebelum BREAKPOINT atau kelas sudah antusias]
+
+UCAP: "Before we write — say your first sentence. To your partner. Now."
+→ A ucap kalimat pertama dari Choice Card ke B. B dengarkan.
+→ B ucap kalimat pertamanya ke A.
+→ Tidak ada evaluasi. Tidak ada koreksi. Total: ~1 menit.
+UCAP: "Good. Keep that sentence. Start from there."
+→ Transisi ke BREAKPOINT.
+
+⚡ Cue kritis: L8 adalah warm-up mulut sebelum tangan menulis. Siswa yang mendengar
+kalimat mereka sendiri diucapkan akan lebih mudah memulai tulisan di L9.
+Ini bukan checking — tidak ada umpan balik guru terhadap kalimat yang terdengar
+kurang sempurna secara grammar. Biarkan mengalir.
+
+Budget: ~3 menit
+
+════ BREAKPOINT ALAMI ════
+Stop here. Save your project.
+Next time we start from Layar 9 — finishing your project.
+
+════════════════════════════════════════════════════════════════
+══ OUTPUT ══
+════════════════════════════════════════════════════════════════
+LAYAR 9 — INTI · Produksi TEKS
+🔵 Calm
+[CORE]
+
+UCAP: "Now — write."
+→ Tunjuk papan: "Opinion · Story · Description · Combination" dan rubrik di pojok.
+UCAP: "Look at your Choice Card. Start from your first sentence."
+UCAP: "Write minimum three sentences. In English."
+UCAP: "No model on the board. Use what you know."
+→ Jeda.
+UCAP: "Eight minutes. Start."
+→ Siswa mulai menulis. Waktu: 8 menit.
+→ Beri 3 menit sebelum circulate.
+
+AKSI: Circulate setelah 3 menit. Pertanyaan guru saat mendekati:
+→ "What are you writing about?"
+→ Dengarkan. Tidak mengoreksi. Respons guru yang valid: angguk, atau "Good — keep going."
+→ Jika teks tidak koheren dengan topik di Choice Card: bisik
+  "Does this sentence fit your topic? Read it again." Satu kalimat, tinggalkan.
+→ Jika siswa menulis kalimat demo guru secara verbatim ("I think Warung Pak Hendra..."):
+  bisik "Your topic is different. Cross that and start from your own topic." Tinggalkan.
+→ Jika siswa menulis dalam Bahasa Indonesia: bisik
+  "In English — use what you know. First sentence first." Tinggalkan.
+
+⚡ Cue kritis: Tidak ada kalimat model di papan. Yang ada hanya: rubrik + empat jenis teks.
+Ini disengaja. Jika siswa meminta contoh kalimat: "Look at what you wrote in TP17, 18, or 19."
+Bukan ke demo guru — bukan ke contoh baru. Kalimat dari tulisan siswa sendiri adalah model
+paling kuat karena sudah terbukti bisa mereka produksi.
+
+BANTUAN ▸ Jika siswa freeze: ucap "Start with your first sentence from the card. Copy it —
+then write one more thing about your topic." Satu kalimat, tinggalkan.
+BANTUAN ▸ Jika siswa minta contoh kalimat: ucap "Look at what you wrote in TP17, 18, or 19."
+Tidak memberi contoh baru. Tinggalkan.
+
+⚠ DARURAT — waktu ≤ 3 menit dan sebagian besar siswa baru menulis 1 kalimat:
+Ucap: "Two sentences — enough for now. We continue next."
+Turunkan target. L10 (visual) tetap jalan.
+
+Budget: ~8 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 10 — INTI · Produksi VISUAL
+🔵 Calm
+[CORE]
+
+UCAP: "Now — your image."
+→ Tunjuk Choice Card siswa: "What visual did you choose? Make it now."
+UCAP: "Simple is fine — one image that matches your text."
+UCAP: "Your image must match your text. That's the only rule."
+→ Jeda.
+UCAP: "Five minutes."
+→ Siswa mulai menggambar, membuat diagram, membuat notasi peta,
+  atau menulis deskripsi visual. Waktu: 5 menit.
+
+AKSI: Guru circulate. Pertanyaan guru saat mendekati:
+→ "Does your visual match your text?"
+→ Biarkan siswa menjawab lisan. Tidak menilai kualitas gambar.
+→ Jika visual tidak relevan dengan teks: bisik
+  "What does your text say? Your image should show that — not something else."
+  Satu kalimat, tinggalkan.
+→ Jika siswa ingin membuat visual yang terlalu kompleks dan memakan waktu: bisik
+  "Simple is enough — just one image that matches." Tinggalkan.
+
+⚡ Cue kritis: Tolak ukur visual yang valid: jika seseorang melihat gambar tanpa membaca
+teks, apakah mereka bisa menebak topiknya? Jika ya — visual sudah cukup.
+Guru tidak perlu mengomentari kualitas artistik, proporsi, atau estetika.
+Satu-satunya yang diperiksa: relevansi terhadap teks.
+
+BANTUAN ▸ Jika siswa tidak tahu harus menggambar apa: ucap
+"Your text is about [topic]. Draw one thing from that topic." Satu kalimat, tinggalkan.
+BANTUAN ▸ Jika siswa memilih "photo description" di Choice Card tapi tidak punya foto: ucap
+"Describe it in words — what does it look like? Write: 'This is a photo of...'" Tinggalkan.
+
+⚠ DARURAT — waktu ≤ 1 menit dan siswa belum mulai visual:
+Ucap: "Draw one shape — just one thing that shows your topic."
+Turunkan target ke satu objek sederhana.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 11 — INTI · Circulate + Rubrik Check
+🟡 Focused
+[CORE]
+
+UCAP: "Look at the rubric. Check your own work."
+→ Tunjuk pojok papan: empat kriteria.
+UCAP: "One: is there a text — not just a title?"
+UCAP: "Two: is it YOUR topic — your words?"
+UCAP: "Three: does your image match your text?"
+→ Jeda 30 detik — siswa check sendiri diam-diam.
+UCAP: "If something is missing — fix it now. Two minutes."
+→ Siswa melengkapi jika ada yang kurang.
+
+AKSI: Guru circulate — bergerak ke barisan yang belum tersentuh di L9–L10.
+→ Lihat teks: minimal 3 kalimat? Relevan dengan topik di Choice Card?
+→ Lihat visual: ada gambar atau notasi yang terhubung dengan teks?
+→ Untuk siswa yang teksnya masih 1–2 kalimat: bisik
+  "One more sentence — what else about your topic?" Tinggalkan.
+→ Untuk siswa yang teksnya banyak tapi visual belum ada: bisik
+  "Quick drawing — just one thing." Tinggalkan.
+
+Diferensiasi:
+- Perlu support: tunjuk kalimat terakhir siswa, bisik "Good. Now — what do YOU think
+  about this topic? Write: 'I think... because...'" Tinggalkan.
+- Sudah bisa: bisik "Can you add one more sentence — something personal?
+  What does this topic mean to you?" Tinggalkan.
+
+⚡ Cue kritis: L11 adalah verifikasi sebelum sampling lisan. Siswa yang masih punya teks
+1–2 kalimat perlu dorongan ringan di sini agar guru tidak menemukan proyek terlalu tipis
+di L12. Tapi ini bukan revisi paksa — teks 3 kalimat yang koheren sudah valid.
+Jangan mendorong penambahan kalimat hanya untuk menambah volume.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Prioritaskan siswa yang belum pernah dinilai di TP ini.
+
+Budget: ~5 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 12 — PENUTUP · Sampling Lisan
+🟡 Focused
+[CORE]
+
+UCAP: "Now — I will come to you."
+→ Jeda.
+UCAP: "Keep working while I walk around."
+→ Siswa yang belum selesai melanjutkan proyek.
+→ Siswa yang sudah selesai membaca kembali tulisan mereka.
+
+AKSI: Guru mendekati 5–8 siswa secara individual —
+TIDAK memanggil ke depan kelas.
+→ Urutan: mulai dari barisan belakang atau tengah.
+→ Prioritaskan: siswa yang jarang aktif di INTERACT · siswa yang teksnya tampak
+  "terlalu rapi" (risiko salinan) · siswa yang belum pernah diobservasi di TP ini.
+→ Untuk setiap siswa yang didekati — ucap pelan:
+UCAP: "Tell me about your project — what is it about and why did you choose this topic?"
+→ Dengarkan. Maksimal 30 detik per siswa.
+→ Jika siswa bisa menjelaskan dengan 2–3 kalimat: angguk, ucap "Thank you."
+  Lanjut ke siswa berikutnya.
+
+⚠ DARURAT — siswa tidak bisa menjelaskan dalam 30 detik:
+Ucap: "Thank you — keep working." Lanjut ke siswa berikutnya.
+JANGAN menunggu lebih dari 30 detik.
+JANGAN mengoreksi. JANGAN membantu. JANGAN menjelaskan.
+Ketidakmampuan menjelaskan adalah DATA untuk guru — bukan momen koreksi publik.
+Catat siswa ini untuk evaluasi setelah kelas.
+
+Panduan distribusi sampling:
+→ Jika MAYORITAS dari 5–8 sampel tidak bisa menjelaskan: hentikan sesi.
+  Ucap: "Three more minutes — read your project. Prepare 2–3 sentences to explain it."
+  Beri waktu. Lalu restart sampling.
+→ Jika mayoritas BISA menjelaskan: lanjut ke L13.
+
+⚡ Cue kritis: Sampling lisan adalah verifikasi kriteria ke-4 rubrik. Siswa yang bisa
+menjelaskan membuktikan proyek itu milik mereka. Siswa yang tidak bisa — proyeknya
+mungkin disalin atau tidak dipahami. 30 detik sudah cukup untuk sinyal ini.
+Yang dicari: apakah siswa bisa menghubungkan topik dengan satu alasan?
+"I chose this because I know it well." sudah valid.
+
+⚡ Ini waktu yang tepat untuk buka overlay penilaian formatif.
+   Bergerak ke barisan yang belum tersentuh di L11.
+
+Budget: ~6 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 13 — PENUTUP · Gallery Walk
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 8 menit]
+
+AKSI: Siswa menaruh proyek di meja masing-masing —
+teks dan visual menghadap ke atas.
+UCAP: "Walk around. Read two projects — not your partner's."
+UCAP: "One minute per project. Silent."
+→ Siswa berjalan membaca proyek teman. Waktu: 3–4 menit total.
+UCAP: "Back to your seat."
+
+AKSI: Guru pilih 1–2 proyek yang menarik secara topik —
+bukan yang paling rapi secara grammar.
+UCAP: "I noticed [paraphrase topik siswa — tanpa menyebut nama]. Something I had not thought of."
+→ Satu kalimat. Guru tidak membandingkan. Stop.
+
+⚡ Cue kritis: Gallery walk bukan kompetisi. Guru tidak memilih "proyek terbaik" —
+guru memilih topik yang unik atau unexpected. Ini memperkuat pesan bahwa variasi
+adalah nilai, bukan uniformity kualitas. Jangan komentari grammar atau visual
+apapun di depan kelas.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 14 — PENUTUP · Share Satu Kalimat
+🟡 Focused
+[FLEX — lewati jika waktu tersisa < 5 menit]
+
+UCAP: "Who wants to share? One sentence from your project. From your seat."
+→ Terima 2–3 sukarela. Masing-masing baca satu kalimat.
+→ Setelah setiap kalimat: UCAP "Opinion? Story? Description?"
+→ Kelas menebak spontan. Tidak ada jawaban benar/salah —
+  tipe teks bisa tumpang tindih.
+
+BANTUAN ▸ Jika tidak ada sukarela: tunjuk 1–2 siswa yang tadi aktif di INTERACT
+atau yang baru saja disampling. Ucap: "[Nama], can you share one sentence?"
+
+Budget: ~3 menit
+
+════════════════════════════════════════════════════════════════
+LAYAR 15 — PENUTUP · Closure
+🔵 Calm
+[CORE]
+
+AKSI: Guru berdiri di depan kelas. Kelas kondusif.
+UCAP: "Today — you made something."
+→ Jeda.
+UCAP: "Your topic. Your words. Your image."
+→ Jeda.
+UCAP: "Keep it."
+→ Jeda.
+UCAP: "Show it to someone outside this classroom."
+→ Jeda.
+UCAP: "That is the end."
+
+⚡ Cue kritis: Lima kalimat ini adalah finale Fase C — bukan penutup kelas biasa.
+Ucapkan dengan tenang dan lambat — bukan dramatis, bukan berteriak.
+Ini pernyataan faktual. "Show it to someone outside this classroom." adalah instruksi nyata,
+bukan kiasan: siswa membawa proyek pulang dan menunjukkan ke orang tua, kakak, atau tetangga.
+"That is the end." bukan kesimpulan pelajaran — ini pernyataan bahwa Fase C selesai.
+Jeda di antara setiap kalimat adalah bagian dari instruksi ini — jangan dipercepat.
+
+Budget: ~4 menit
+
+════════════════════════════════════════════════════════════════
+✅ CHECKLIST SELESAI TP 22
+════════════════════════════════════════════════════════════════
+[ ] L1 reactivation: "Last time — you read texts from the real world. Who remembers
+    one sentence from their response?" — satu kalimat dari tulisan TP21;
+    "Today — last time. You don't read someone else's text. You create your own."
+    diucapkan setelah respons
+[ ] L4 demo: poster mini warung Pak Hendra ditunjukkan, tiga kalimat dibacakan
+    (opinion + story + description), gambar tangan dikomentari "Not perfect — that's okay"
+    — setelah demo selesai, poster di-SET ASIDE dan tidak ditampilkan lagi
+[ ] L5 rubrik: empat baris ditulis di pojok papan sebelum L6, dibiarkan sampai akhir sesi
+    — BUKAN tabel, BUKAN kolom skor
+[ ] L5: kriteria ke-4 disampaikan secara eksplisit sebelum produksi dimulai:
+    "I will come to each of you and ask: 'Tell me about your project.'"
+[ ] L6: Choice Card dibagikan di L6 — tidak sebelumnya
+[ ] L7 demo: guru membacakan KEEMPAT elemen Choice Card (topik + register + visual
+    + kalimat pertama) sebelum pair work dimulai
+[ ] L7 INTERACT: setiap siswa mendengar keempat elemen pasangan dan mengajukan
+    minimal SATU pertanyaan yang berdasarkan apa yang didengar
+[ ] Tidak ada kalimat model baru di papan setelah L4 — papan hanya menampilkan
+    rubrik dan "Opinion · Story · Description · Combination"
+[ ] Jika siswa minta contoh selama L9–L11: jawaban guru adalah
+    "Look at what you wrote in TP17, 18, or 19" — BUKAN memberi contoh baru
+[ ] BREAKPOINT ALAMI: "Stop here. Save your project. Next time we start from Layar 9 —
+    finishing your project." — dioperasikan jika sesi tidak cukup
+[ ] L12 sampling: guru MENDEKATI siswa individual, TIDAK memanggil ke depan
+    — 5–8 siswa, maksimal 30 detik per siswa
+[ ] L12 pertanyaan sampling — verbatim: "Tell me about your project — what is it about
+    and why did you choose this topic?"
+[ ] L12 DARURAT: siswa tidak bisa menjawab dalam 30 detik → "Thank you — keep working."
+    — TIDAK menunggu, TIDAK mengoreksi, TIDAK membantu
+[ ] L15 closure — lima kalimat verbatim, dengan jeda di antara setiap kalimat:
+    "Today — you made something." / "Your topic. Your words. Your image." /
+    "Keep it." / "Show it to someone outside this classroom." / "That is the end."
+
+════════════════════════════════════════════════════════════════
+CATATAN RUNTIME GURU
+════════════════════════════════════════════════════════════════
+
+Energi kelas:
+L0 ⚪ → L1 🟡 → L2 🟡 → L3 🟡 → L4 🟡 → L5 🟡 → L6 🔵 → L7 🟡 → L8 🟡 → L9 🔵 → L10 🔵 → L11 🟡 → L12 🟡 → L13 🟡 → L14 🟡 → L15 🔵
+
+Blok Inti:
+INPUT: L3–L5 · INTERACT: L6–L8 · OUTPUT: L9–L11
+
+Budget waktu total:
+Tanpa FLEX (L2, L8, L13, L14): 2+4+4+4+3+5+6+8+5+5+6+4 = 56 menit — aman untuk kelas berat
+Dengan semua FLEX: 2+4+3+4+4+3+5+6+3+8+5+5+6+4+3+4 = 69 menit — di bawah 70 menit kalender
+
+Catatan Capstone TP22:
+TP22 adalah TP terakhir Fase C — dan satu-satunya TP di mana siswa memproduksi sesuatu
+yang tidak bertumpu pada text-anchor guru. Model satu-satunya adalah demo guru di L4.
+Ini disengaja: jika ada model di papan atau model kedua yang ditawarkan selama produksi,
+siswa akan secara natural menggunakannya sebagai template dan kehilangan genuine choice.
+Ketiadaan model adalah desain, bukan kelalaian.
+
+Tantangan terbesar TP22 bukan produksi teks — siswa sudah biasa menulis di TP17–20.
+Tantangan terbesar adalah TOPIK. Siswa yang topiknya tidak personal akan menghasilkan
+teks yang generik dan tidak bisa dijelaskan secara lisan. Jika sampling L12 menunjukkan
+banyak siswa tidak bisa menjawab "why did you choose this topic?" — itu hampir selalu
+bukan masalah bahasa, tapi masalah topik yang tidak genuine.
+
+Risiko pacing:
+· L4: risiko demo terlalu panjang karena guru menjelaskan kalimat per kalimat.
+  Demo maksimal 4 menit — tunjuk, baca, label, set aside. Bukan analisis.
+· L6: risiko siswa menghabiskan terlalu lama untuk memilih topik.
+  Setelah 3 menit tanpa progres: BANTUAN aktif.
+· L7: risiko B tidak bertanya tapi hanya berkata "bagus."
+  Circulate aktif di 2 menit pertama pair work.
+· L9: risiko siswa menyalin kalimat demo guru ("I think Warung Pak Hendra...").
+  Cek saat circulate — jika ditemukan: bisik langsung, tinggalkan.
+· L12: risiko guru menghabiskan terlalu lama pada satu siswa yang tidak bisa menjawab.
+  Protokol 30 detik adalah batas keras — bukan target minimum.
+
+Teacher autonomy:
+· Demo L4 boleh diganti dengan contoh proyek yang lebih relevan secara lokal —
+  selama strukturnya sama: satu gambar tangan sederhana + tiga kalimat kombinasi tipe teks.
+  Warung Pak Hendra bukan wajib — yang wajib adalah: topik personal guru,
+  gambar tidak sempurna, tiga kalimat yang merepresentasikan kombinasi tipe teks.
+· Choice Card boleh diisi digital jika sekolah punya akses — format empat elemen tidak berubah.
+· Jika waktu L6 terasa kurang: naikkan budget menjadi 7 menit dan potong L8 (FLEX).
+· Guru boleh memilih urutan circulate yang berbeda — selama barisan belakang tetap
+  diprioritaskan di L12 (karena secara statistis lebih jarang diobservasi di sesi manapun).
+· Gallery walk L13 boleh diganti dengan "pass your project to the next person, they read
+  and pass back" jika ruang kelas tidak memungkinkan siswa berjalan.
