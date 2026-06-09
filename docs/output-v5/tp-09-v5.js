@@ -107,9 +107,9 @@ const TP_09 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start." perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    teks   : `UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] UCAP: "I'm fine, thank you! Are you ready? Let's start."`,
     bantuan: null,
-    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya mengunci',
+    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
     energi : '🔵',
   },
@@ -125,9 +125,9 @@ const TP_09 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu. Tidak ada papan. UCAP: "Listen. What animal is this?" → Tiru suara: Meow! RESPONS SISWA: Tebak bebas — boleh Bahasa Indonesia. UCAP: "Yes — cat! Listen — Woof!" RESPONS SISWA: "Dog!" UCAP: "One more —" [brek-brek-brek] RESPONS SISWA: Tebak bebas. UCAP: "Frog! Today — animals. Let's go." sendiri dan lanjut.`,
+          teks   : `AKSI: Guru berdiri tengah kelas. Tidak ada kartu. Tidak ada papan. UCAP: "Listen. What animal is this?" → Tiru suara: Meow! RESPONS SISWA: Tebak bebas — boleh Bahasa Indonesia. UCAP: "Yes — cat! Listen — Woof!" RESPONS SISWA: "Dog!" UCAP: "One more —" [brek-brek-brek] RESPONS SISWA: Tebak bebas. UCAP: "Frog! Today — animals. Let's go."`,
           bantuan: null,
-          cue    : 'Jangan buka kartu dulu. Jika kelas diam total, guru jawab',
+          cue    : 'Jangan buka kartu dulu. Jika kelas diam total, guru jawab sendiri dan lanjut.',
           darurat: null,
           energi : '🔴',
         },
@@ -147,10 +147,9 @@ const TP_09 = {
           teks   : `👂 LISTEN FIRST AKSI: Tempel 5 kartu satu per satu: cat — dog — bird — fish — rabbit Setiap kartu: tunjuk → suara → nama. Satu detik jeda, lanjut. UCAP setelah 5 kartu terpasang: "Listen. My turn." → "Cat — meow." → "Dog — woof." → "Bird — tweet tweet." → UCAP: "Fish —"
 AKSI: Lakukan gestur sirip dengan dua tangan besar.
 → UCAP: "Rabbit —"
-AKSI: Lakukan gestur telinga panjang.
-kata lain selain nama hewan.`,
+AKSI: Lakukan gestur telinga panjang.`,
           bantuan: null,
-          cue    : 'Satu tangan tunjuk kartu, satu tangan gestur. Tidak ada',
+          cue    : 'Satu tangan tunjuk kartu, satu tangan gestur. Tidak ada kata lain selain nama hewan.',
           darurat: null,
           energi : '🟡',
         },
@@ -162,9 +161,9 @@ kata lain selain nama hewan.`,
 AKSI: Guru angkat bahu, tersenyum, lalu lanjutkan.
 → Tunjuk rabbit: UCAP: "Rabbit —"
 AKSI: Lakukan gestur telinga.
-AKSI: Ulangi urutan sekali lagi, acak 2 kartu. ulangi kartu itu sekali. Jangan buka diskusi "ikan bunyinya apa."`,
-          bantuan: 'Jika kelas hanya sebagian ikut: "Everybody. Together." —',
-          cue    : 'Momen fish — angkat bahu, senyum, langsung lanjut.',
+AKSI: Ulangi urutan sekali lagi, acak 2 kartu.`,
+          bantuan: 'Jika kelas hanya sebagian ikut: "Everybody. Together." — ulangi kartu itu sekali.',
+          cue    : 'Momen fish — angkat bahu, senyum, langsung lanjut. Jangan buka diskusi "ikan bunyinya apa."',
           darurat: null,
           energi : '🟠',
         },
@@ -181,9 +180,9 @@ AKSI: Lakukan gestur garuk-garuk.
 UCAP: "Snake — ssss."
 AKSI: Lakukan gestur tangan melengkung.
 UCAP: "Frog — brek brek."
-AKSI: Lakukan gestur lompat. UCAP setelah 5 kartu terpasang: "Listen. My turn." → Ulang kelima nama + suara sekali. terpisah. Jangan lanjut sebelum guru sendiri sudah ucapkan 2x.`,
+AKSI: Lakukan gestur lompat. UCAP setelah 5 kartu terpasang: "Listen. My turn." → Ulang kelima nama + suara sekali.`,
           bantuan: null,
-          cue    : 'Elephant paling berat — ucapkan dua kali, suku kata',
+          cue    : 'Elephant paling berat — ucapkan dua kali, suku kata terpisah. Jangan lanjut sebelum guru sendiri sudah ucapkan 2x.',
           darurat: null,
           energi : '🟡',
         },
@@ -191,9 +190,9 @@ AKSI: Lakukan gestur lompat. UCAP setelah 5 kartu terpasang: "Listen. My turn." 
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER Fase A — Gelombang 2 saja, lambat: "Together." → Tunjuk elephant → lion → monkey → snake → frog. → Kelas ucap nama + suara. Lambat, tidak terburu. Fase B — Campur 10 kartu, medium: "Now — names only." → Tunjuk semua 10 kartu berurutan — medium speed. → Kelas ucap nama saja. Tidak perlu suara. Fase C — 5 kartu acak, cepat: "Ready? Fast." → Pilih 5 kartu acak — tunjuk cepat. → Tahan 1 detik sebelum menunjuk kartu berikutnya. kartu itu, ulangi 2x, lanjut. Energi naik = akurasi turun.`,
-          bantuan: 'Jika kelas lambat di elephant/rabbit: kurangi kecepatan di',
-          cue    : 'Stop setelah 5 kartu — jangan perpanjang speed round.',
+          teks   : `🗣 TOGETHER Fase A — Gelombang 2 saja, lambat: "Together." → Tunjuk elephant → lion → monkey → snake → frog. → Kelas ucap nama + suara. Lambat, tidak terburu. Fase B — Campur 10 kartu, medium: "Now — names only." → Tunjuk semua 10 kartu berurutan — medium speed. → Kelas ucap nama saja. Tidak perlu suara. Fase C — 5 kartu acak, cepat: "Ready? Fast." → Pilih 5 kartu acak — tunjuk cepat. → Tahan 1 detik sebelum menunjuk kartu berikutnya.`,
+          bantuan: 'Jika kelas lambat di elephant/rabbit: kurangi kecepatan di kartu itu, ulangi 2x, lanjut.',
+          cue    : 'Stop setelah 5 kartu — jangan perpanjang speed round. Energi naik = akurasi turun.',
           darurat: null,
           energi : '🟠',
         },
@@ -201,9 +200,9 @@ AKSI: Lakukan gestur lompat. UCAP setelah 5 kartu terpasang: "Listen. My turn." 
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me." [Jeda 3 detik — guru berdiri diam] "Sit up. Ready." = Layar 7 gagal.`,
+          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me." [Jeda 3 detik — guru berdiri diam] "Sit up. Ready."`,
           bantuan: null,
-          cue    : 'Reset ini wajib — jangan skip. Kelas yang belum tenang',
+          cue    : 'Reset ini wajib — jangan skip. Kelas yang belum tenang = Layar 7 gagal.',
           darurat: null,
           energi : '⚪',
         },
@@ -216,9 +215,9 @@ AKSI: Lakukan gestur tangan mengepak.
 → Tunjuk kartu lion: UCAP: "A lion can roar."
 AKSI: Tangan ke mulut, buka lebar.
 → Tunjuk kartu frog: UCAP: "A frog can jump."
-AKSI: Lakukan gestur lompat. "Listen one more time." — ulangi ketiga kalimat. hewan, bukan semua 10.`,
+AKSI: Lakukan gestur lompat. "Listen one more time." — ulangi ketiga kalimat.`,
           bantuan: null,
-          cue    : 'Tiga contoh dulu — guru tidak tanya kelas. Hanya 3',
+          cue    : 'Tiga contoh dulu — guru tidak tanya kelas. Hanya 3 hewan, bukan semua 10.',
           darurat: null,
           energi : '🟡',
         },
@@ -226,9 +225,9 @@ AKSI: Lakukan gestur lompat. "Listen one more time." — ulangi ketiga kalimat. 
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Together now." AKSI: Tunjuk papan: A ___ can ___. → Tunjuk kartu bird: "A bird can…" → Tunggu kelas: "…fly!" → Tunjuk kartu lion: "A lion can…" → Kelas: "…roar!" AKSI: Untuk sisa kartu — guru model, kelas ikut choral: → "A cat can meow. Say it." → kelas ulang. → "A monkey can climb. Say it." → kelas ulang. → "A snake can hiss. Say it." → kelas ulang. "Repeat after me." after me — bukan produksi mandiri.`,
-          bantuan: 'Jika kelas diam di produksi mandiri: kembali ke choral —',
-          cue    : 'Production target hanya bird dan lion. Sisanya repeat',
+          teks   : `🗣 TOGETHER UCAP: "Together now." AKSI: Tunjuk papan: A ___ can ___. → Tunjuk kartu bird: "A bird can…" → Tunggu kelas: "…fly!" → Tunjuk kartu lion: "A lion can…" → Kelas: "…roar!" AKSI: Untuk sisa kartu — guru model, kelas ikut choral: → "A cat can meow. Say it." → kelas ulang. → "A monkey can climb. Say it." → kelas ulang. → "A snake can hiss. Say it." → kelas ulang.`,
+          bantuan: 'Jika kelas diam di produksi mandiri: kembali ke choral — "Repeat after me."',
+          cue    : 'Production target hanya bird dan lion. Sisanya repeat after me — bukan produksi mandiri.',
           darurat: null,
           energi : '🟠',
         },
@@ -241,9 +240,9 @@ AKSI: Lakukan gestur belalai besar-besar.
 → Tunjuk kartu rabbit: UCAP: "A rabbit has long ears."
 AKSI: Lakukan gestur telinga panjang.
 → Tunjuk kartu fish: UCAP: "A fish has fins."
-AKSI: Lakukan gestur sirip dengan dua tangan besar. "Listen one more time." — ulangi ketiga kalimat. "Together. An elephant has…" → Kelas: "…a long nose!" "A rabbit has…" → Kelas: "…long ears!" tidak perlu jelaskan grammar. Gestur harus dibesar-besarkan — terutama fins dan long nose.`,
+AKSI: Lakukan gestur sirip dengan dua tangan besar. "Listen one more time." — ulangi ketiga kalimat. "Together. An elephant has…" → Kelas: "…a long nose!" "A rabbit has…" → Kelas: "…long ears!"`,
           bantuan: null,
-          cue    : '"An elephant" — bukan "A elephant." Ucapkan natural,',
+          cue    : '"An elephant" — bukan "A elephant." Ucapkan natural, tidak perlu jelaskan grammar. Gestur harus dibesar-besarkan — terutama fins dan long nose.',
           darurat: null,
           energi : '🟡',
         },
@@ -262,13 +261,13 @@ DISTRIBUSI: Bagikan 1 kartu per pasangan — sekarang. Guru tidak bicara instruk
 AKSI: Tepuk 1 kali.
 UCAP: "— stop." — latih 1x. UCAP: "Go." Checkpoint tengah (±90 detik): AKSI: Tepuk 1 kali (freeze).
 UCAP: "Switch. Partner B now."
-AKSI: Tepuk 1 kali (lanjut). Tidak hentikan kelas. Catat, model ulang saat lewat. Acceptance rule berlaku.`,
-          bantuan: 'Pasangan diam total: dekati, bisik — "It can jump. Say that."',
+AKSI: Tepuk 1 kali (lanjut).`,
+          bantuan: 'Pasangan diam total: dekati, bisik — "It can jump. Say that." Tidak hentikan kelas.',
           diferensiasi: {
             needHelp: 'Sebut nama + suara saja.',
             ready   : 'Buat 3 clue per hewan.',
           },
-          cue    : 'Guru tidak koreksi kalimat saat practice berlangsung.',
+          cue    : 'Guru tidak koreksi kalimat saat practice berlangsung. Catat, model ulang saat lewat. Acceptance rule berlaku.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — langsung speed round, lewati partner practice.',
           energi : '🔴',
         },
@@ -276,9 +275,9 @@ AKSI: Tepuk 1 kali (lanjut). Tidak hentikan kelas. Catat, model ulang saat lewat
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Cards down. Look here." [Jeda 2 detik] "Last round — fast." AKSI: Putaran 1: tunjuk 10 kartu berurutan — lambat — kelas sebut nama saja. Putaran 2: tunjuk 5 kartu acak — cepat — tahan 1 detik sebelum kartu berikutnya. ulangi 2x, lanjut.`,
+          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Cards down. Look here." [Jeda 2 detik] "Last round — fast." AKSI: Putaran 1: tunjuk 10 kartu berurutan — lambat — kelas sebut nama saja. Putaran 2: tunjuk 5 kartu acak — cepat — tahan 1 detik sebelum kartu berikutnya.`,
           bantuan: null,
-          cue    : 'Tidak ada koreksi di sini. Jika 1 kartu banyak salah —',
+          cue    : 'Tidak ada koreksi di sini. Jika 1 kartu banyak salah — ulangi 2x, lanjut.',
           darurat: null,
           energi : '⚪ → 🟡',
         },
@@ -297,8 +296,8 @@ AKSI: Tepuk 1 kali (lanjut). Tidak hentikan kelas. Catat, model ulang saat lewat
           tipe   : 'instruksi',
           teks   : `AKSI: Guru ambil 1 kartu — jangan ditunjuk ke kelas. UCAP: "Last. Listen — what animal?" → "It can roar. It has four legs. What is it?" → Kelas: "Lion!" UCAP: "Write the name. Or draw if you forget."
 AKSI: Tunggu 30 detik.
-UCAP: "Show me." Tidak ada koreksi terbuka.`,
-          bantuan: 'Terima: tulisan "lion", huruf awal "l", atau gambar singa.',
+UCAP: "Show me."`,
+          bantuan: 'Terima: tulisan "lion", huruf awal "l", atau gambar singa. Tidak ada koreksi terbuka.',
           cue    : 'Exit ticket = 1 kartu, 1 output, 30 detik. Tidak diperluas.',
           darurat: null,
           energi : '🟡',

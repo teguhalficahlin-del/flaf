@@ -106,9 +106,9 @@ const TP_07 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu disimpan di meja. Tunggu semua siswa duduk dan tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a special day. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus] Jangan tergesa masuk ke Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.`,
+    teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Kartu disimpan di meja. Tunggu semua siswa duduk dan tenang — buat kontak mata sebelum bicara. UCAP: "Good morning, everyone! How are you today?" [Tunggu respons kelas] "I'm fine, thank you! Today is a special day. Are you ready?" [Tunggu respons — berdiri diam jika kelas belum fokus]`,
     bantuan: null,
-    cue    : 'Tone calm dijaga dari sini — TP 07 bertumpu pada koneksi personal.',
+    cue    : 'Tone calm dijaga dari sini — TP 07 bertumpu pada koneksi personal. Jangan tergesa masuk ke Layar 1. Jika kelas belum fokus: ulangi "Are you ready?" sambil berdiri diam.',
     darurat: null,
     energi : '🔵',
   },
@@ -124,9 +124,9 @@ const TP_07 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Fokus ke kontak mata dan energi kelas. UCAP: "Today — we talk about FAMILY. Who is at home with you?" [Beberapa siswa akan spontan menjawab: "Mother!" / "Grandmother!" / "My sister!"] → Terima semua jawaban. Angguk dan lanjut. "That's okay — we will learn together." jawaban valid. Tujuan: membuka koneksi, bukan memeriksa struktur keluarga.`,
-          bantuan: 'Jika ada siswa yang diam atau ekspresi tidak nyaman: jangan paksa.',
-          cue    : 'Jangan tunggu jawaban serentak. Pertanyaan ini terbuka — setiap',
+          teks   : `AKSI: Berdiri di tengah kelas. Tangan kosong. Fokus ke kontak mata dan energi kelas. UCAP: "Today — we talk about FAMILY. Who is at home with you?" [Beberapa siswa akan spontan menjawab: "Mother!" / "Grandmother!" / "My sister!"] → Terima semua jawaban. Angguk dan lanjut.`,
+          bantuan: 'Jika ada siswa yang diam atau ekspresi tidak nyaman: jangan paksa. "That\'s okay — we will learn together."',
+          cue    : 'Jangan tunggu jawaban serentak. Pertanyaan ini terbuka — setiap jawaban valid. Tujuan: membuka koneksi, bukan memeriksa struktur keluarga.',
           darurat: null,
           energi : '🔵',
         },
@@ -134,9 +134,9 @@ const TP_07 = {
         // L2 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu mother dari meja. Tunjukkan ke kelas. UCAP: "Look. This is my mother." 👂 LISTEN FIRST — Pelan. Jangan minta siswa ulang dulu. AKSI: Ambil kartu father. UCAP: "This is my father." UCAP: "I love my family!" AKSI: Beri tekanan intonasi besar pada kalimat ini. Dua kartu saja di Layar ini — jangan tempel dulu.`,
+          teks   : `AKSI: Ambil kartu mother dari meja. Tunjukkan ke kelas. UCAP: "Look. This is my mother." 👂 LISTEN FIRST — Pelan. Jangan minta siswa ulang dulu. AKSI: Ambil kartu father. UCAP: "This is my father." UCAP: "I love my family!"`,
           bantuan: null,
-          cue    : 'Kalimat terakhir adalah emotional flavour — ucapkan hangat, tidak',
+          cue    : 'Kalimat terakhir adalah emotional flavour — ucapkan hangat, tidak perlu tekanan intonasi besar. Dua kartu saja di Layar ini — jangan tempel dulu.',
           darurat: null,
           energi : '🔵',
         },
@@ -153,9 +153,9 @@ const TP_07 = {
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE UCAP: "Hands down." UCAP: "Look." AKSI: Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan. UCAP: "Brother = boy." AKSI: Tunjuk kartu brother. Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.`,
-          bantuan: 'Sister/brother tertukar: "Sister = girl." [tunjuk kartu sister]',
-          cue    : 'Micro-freeze 3 detik antara mother/father → sister/brother wajib.',
+          teks   : `AKSI: Tempel 4 kartu di papan: mother · father · sister · brother. 👂 LISTEN FIRST — Ucapkan semua 4 dulu sebelum kelas meniru: UCAP: "Mother. Father." ⚡ MICRO-FREEZE UCAP: "Hands down." UCAP: "Look." AKSI: Jeda 3 detik. Baru lanjut. UCAP: "Sister. Brother." UCAP: "Ready? Together — Mother!" 🗣 TOGETHER — Kelas echo satu per satu. Tunjuk kartu saat mengucapkan.`,
+          bantuan: 'Sister/brother tertukar: "Sister = girl." [tunjuk kartu sister] "Brother = boy." [tunjuk kartu brother]',
+          cue    : 'Micro-freeze 3 detik antara mother/father → sister/brother wajib. Jangan minta echo serentak sebelum kelas mendengar semua 4 kata.',
           darurat: null,
           energi : '🟡',
         },
@@ -163,9 +163,9 @@ const TP_07 = {
         // L4 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel 2 kartu tambahan: grandmother · grandfather. UCAP: "Listen first — Grandmother." [jeda 2 detik] "Grandfather." 🗣 TOGETHER — Semi-echo suku kata: "Grand— ... mother!" → kelas ikut "Grand— ... father!" → kelas ikut --- ⚡ MINI DISCRIMINATION CHECK: Tunjuk kartu cepat — "Grandmother?" → tunjuk kartu lain — "Grandfather?" ⚡ Putaran kedua — opsi half-class: Sisi kiri → "Grandmother" Sisi kanan → "Grandfather" Bantu clarity tanpa semua serentak. --- AKSI: Tunjuk semua 6 kartu acak — kelas sebutkan bersama 2 putaran. jangan skip. Discrimination check wajib sebelum masuk Layar 5.`,
+          teks   : `AKSI: Tempel 2 kartu tambahan: grandmother · grandfather. UCAP: "Listen first — Grandmother." [jeda 2 detik] "Grandfather." 🗣 TOGETHER — Semi-echo suku kata: "Grand— ... mother!" → kelas ikut "Grand— ... father!" → kelas ikut --- ⚡ MINI DISCRIMINATION CHECK: Tunjuk kartu cepat — "Grandmother?" → tunjuk kartu lain — "Grandfather?" ⚡ Putaran kedua — opsi half-class: Sisi kiri → "Grandmother" Sisi kanan → "Grandfather" Bantu clarity tanpa semua serentak. --- AKSI: Tunjuk semua 6 kartu acak — kelas sebutkan bersama 2 putaran.`,
           bantuan: 'Masih tertukar: ulang semi-echo "Grand—…" sekali lagi sebelum lanjut.',
-          cue    : 'Semi-echo "Grand—…" penting untuk grandmother/grandfather —',
+          cue    : 'Semi-echo "Grand—…" penting untuk grandmother/grandfather — jangan skip. Discrimination check wajib sebelum masuk Layar 5.',
           darurat: null,
           energi : '🟡',
         },
@@ -173,9 +173,9 @@ const TP_07 = {
         // L5 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What is this?" → Kelas sebutkan serentak. ⚡ Acak urutan — bukan urutan tempel. --- AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata dulu → baru tangan ke kartu. → "Wait… look… answer!" --- UCAP: "Fast!" — percepat 2–3 putaran terakhir. jangan langsung tunjuk kartu.`,
+          teks   : `AKSI: Tutup label kartu. Tunjuk gambar saja. UCAP: "What is this?" → Kelas sebutkan serentak. ⚡ Acak urutan — bukan urutan tempel. --- AKSI: Sebelum speed round: → "Hands on knees." → "Eyes ready." Gesture: tunjuk mata dulu → baru tangan ke kartu. → "Wait… look… answer!" --- UCAP: "Fast!" — percepat 2–3 putaran terakhir.`,
           bantuan: 'Jika diam: buka label setengah → kelas bantu → tutup lagi → coba ulang.',
-          cue    : '"Hands on knees. Eyes ready." sebelum speed round —',
+          cue    : '"Hands on knees. Eyes ready." sebelum speed round — jangan langsung tunjuk kartu.',
           darurat: null,
           energi : '🟠',
         },
@@ -193,9 +193,9 @@ const TP_07 = {
         // L7 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu mother. UCAP: "Mother." → Siswa: "Mother." UCAP: "This is my mother." 🗣 TOGETHER: "This is my mother." AKSI: Ganti kartu father. UCAP: "Father." → Siswa: "Father." UCAP: "This is my father." 🗣 TOGETHER: "This is my father." bangun bertahap agar kelas merasakan strukturnya.`,
+          teks   : `AKSI: Ambil kartu mother. UCAP: "Mother." → Siswa: "Mother." UCAP: "This is my mother." 🗣 TOGETHER: "This is my mother." AKSI: Ganti kartu father. UCAP: "Father." → Siswa: "Father." UCAP: "This is my father." 🗣 TOGETHER: "This is my father."`,
           bantuan: null,
-          cue    : 'Vocab dulu → baru kalimat. Jangan langsung model kalimat penuh —',
+          cue    : 'Vocab dulu → baru kalimat. Jangan langsung model kalimat penuh — bangun bertahap agar kelas merasakan strukturnya.',
           darurat: null,
           energi : '🟡',
         },
@@ -203,9 +203,9 @@ const TP_07 = {
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Ambil kartu grandfather. Pegang — model sekali: "This is my grandfather." AKSI: Berikan kartu ke 1 siswa volunteer. UCAP: "Hold. Show. Say it." → Siswa: "This is my grandfather." UCAP: "Two claps for your friend!" ⚡ Tepuk-tepuk — selesai. Langsung lanjut. perpanjang demo — kelas perlu segera pegang kartu sendiri.`,
+          teks   : `AKSI: Ambil kartu grandfather. Pegang — model sekali: "This is my grandfather." AKSI: Berikan kartu ke 1 siswa volunteer. UCAP: "Hold. Show. Say it." → Siswa: "This is my grandfather." UCAP: "Two claps for your friend!" ⚡ Tepuk-tepuk — selesai. Langsung lanjut.`,
           bantuan: null,
-          cue    : 'Demo hanya tiga langkah: pegang → tunjuk → ucap. Jangan',
+          cue    : 'Demo hanya tiga langkah: pegang → tunjuk → ucap. Jangan perpanjang demo — kelas perlu segera pegang kartu sendiri.',
           darurat: null,
           energi : '🟡',
         },
@@ -213,9 +213,9 @@ const TP_07 = {
         // L9 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: DISTRIBUSI DULU — dalam diam. UCAP: "Hands still." UCAP: "Wait." AKSI: Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. --- AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" --- ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ --- ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down." siswa satunya meniru. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.`,
-          bantuan: 'Pasangan diam: guru pegang kartu, model ke salah satu siswa →',
-          cue    : 'Distribusi kartu diam dulu, instruksi belakangan — bukan bersamaan.',
+          teks   : `AKSI: DISTRIBUSI DULU — dalam diam. UCAP: "Hands still." UCAP: "Wait." AKSI: Bagikan 2–3 kartu printable acak per pasangan (bukan full set). Tunggu semua kartu sampai. --- AKSI: Baru instruksi: "Partner A — pick one card. Show. Say: 'This is my ___.' Partner B — listen. Then switch." "Three cards each. Go!" "Finished? Do it again — faster!" --- ⚡ DEMO VOLUME: Guru demo terlalu keras ❌ → terlalu pelan ❌ → partner voice ✅ --- ⚡ Guru jalan keliling. Koreksi hanya jika vocab salah total. ⚡ STOPPING SIGNAL: Tepuk 1 kali → "Freeze. Eyes here." Baru: "3… 2… 1… hands down."`,
+          bantuan: 'Pasangan diam: guru pegang kartu, model ke salah satu siswa → siswa satunya meniru.',
+          cue    : 'Distribusi kartu diam dulu, instruksi belakangan — bukan bersamaan. Semua siswa pakai kartu printable dari guru — tidak perlu bawa foto dari rumah.',
           darurat: null,
           energi : '🟠',
         },
@@ -233,8 +233,8 @@ const TP_07 = {
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `UCAP: "Cards down. Eyes here." AKSI: Panggil 2–3 siswa volunteer maju. Pegang kartu pilihan mereka. UCAP: "Show the card. Tell us: This is my ___." → Siswa: "This is my mother. This is my sister." UCAP: "Everyone — thumbs up for your friend!" presentasi serentak. ⚡ MICRO-RESET setelah presentasi terakhir: "Hands down. Take a breath. Sit nicely." 5 detik — sebelum masuk exit ticket.`,
-          bantuan: 'Jika tidak ada yang mau maju: tunjuk dua siswa bersama —',
+          teks   : `UCAP: "Cards down. Eyes here." AKSI: Panggil 2–3 siswa volunteer maju. Pegang kartu pilihan mereka. UCAP: "Show the card. Tell us: This is my ___." → Siswa: "This is my mother. This is my sister." UCAP: "Everyone — thumbs up for your friend!" ⚡ MICRO-RESET setelah presentasi terakhir: "Hands down. Take a breath. Sit nicely." 5 detik — sebelum masuk exit ticket.`,
+          bantuan: 'Jika tidak ada yang mau maju: tunjuk dua siswa bersama — presentasi serentak.',
           cue    : '"Cards down." sebelum volunteer maju — kartu di tangan = distraksi.',
           darurat: null,
           energi : '🔴',
@@ -252,9 +252,9 @@ const TP_07 = {
         // L12 — PENUTUP
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Tempel kembali semua 6 kartu di papan. Tutup label. UCAP: "Last check — I point, you say. Ready?" AKSI: Tunjuk acak 6 kartu — kelas sebutkan serentak. UCAP: "Good." ⚡ Pause 2 detik. AKSI: Tunjuk 1 kartu saja. UCAP: "One sentence. This is my ___. Go!" → Siswa serentak — satu kartu yang sama. Pause 2 detik antara retrieval dan sentence — jangan tergesa.`,
+          teks   : `AKSI: Tempel kembali semua 6 kartu di papan. Tutup label. UCAP: "Last check — I point, you say. Ready?" AKSI: Tunjuk acak 6 kartu — kelas sebutkan serentak. UCAP: "Good." ⚡ Pause 2 detik. AKSI: Tunjuk 1 kartu saja. UCAP: "One sentence. This is my ___. Go!" → Siswa serentak — satu kartu yang sama.`,
           bantuan: null,
-          cue    : 'Satu kartu = output terkontrol. Tidak noisy, tidak pecah.',
+          cue    : 'Satu kartu = output terkontrol. Tidak noisy, tidak pecah. Pause 2 detik antara retrieval dan sentence — jangan tergesa.',
           darurat: null,
           energi : '🟡',
         },

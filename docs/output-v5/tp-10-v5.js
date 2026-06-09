@@ -114,9 +114,9 @@ const TP_10 = {
 
   preOpening: {
     tipe   : 'instruksi',
-    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "Great! Me too. Are you ready? Let's start." mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.`,
+    teks   : `"Good morning, everyone! How are you today?" Tunggu respons kelas. "Great! Me too. Are you ready? Let's start."`,
     bantuan: null,
-    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya',
+    cue    : 'Layar ini pendek dan wajib. Jangan skip. Fungsinya mengunci perhatian kelas sebelum masuk sesi. Jika kelas belum fokus: ulangi "Are you ready?" sekali lagi sambil berdiri diam.',
     darurat: null,
     energi : '🔵',
   },
@@ -132,11 +132,11 @@ const TP_10 = {
         // L1 — PEMBUKA
         {
           tipe   : 'instruksi',
-          teks   : `AKSI: Guru berdiri tengah kelas. UCAP: UCAP: "Are you hungry?"
+          teks   : `AKSI: Guru berdiri tengah kelas. UCAP: "Are you hungry?"
 AKSI: Tunggu respons bebas. "What did you eat for breakfast today?" [Tunggu 2–3 respons bebas — boleh Bahasa Indonesia] UCAP: "Me too — listen. This morning I ate…" → Tunjuk diri sendiri: UCAP: "Rice!"
-UCAP: "I like rice." [ekspresi senang, jempol naik] "I like rice — say it." → kelas ulang sekali. tunjuk — tidak dipaksa, tidak dikomentari. Jika kelas diam total saat ditanya sarapan: guru jawab sendiri 2x dengan makanan berbeda, lanjut.`,
-          bantuan: 'Jika ada siswa individual yang diam: guru lanjut tanpa',
-          cue    : 'Guru tidak koreksi apapun di sini. Ini warm-up.',
+UCAP: "I like rice." [ekspresi senang, jempol naik] "I like rice — say it." → kelas ulang sekali.`,
+          bantuan: 'Jika ada siswa individual yang diam: guru lanjut tanpa tunjuk — tidak dipaksa, tidak dikomentari.',
+          cue    : 'Guru tidak koreksi apapun di sini. Ini warm-up. Jika kelas diam total saat ditanya sarapan: guru jawab sendiri 2x dengan makanan berbeda, lanjut.',
           darurat: null,
           energi : '🟠',
         },
@@ -162,9 +162,9 @@ UCAP: "Egg."
 → AKSI: Gestur gigit apel.
 UCAP: "Apple."
 → AKSI: Gestur kupas pisang.
-UCAP: "Banana." ada kata lain selain nama makanan.`,
+UCAP: "Banana."`,
           bantuan: null,
-          cue    : 'Satu tangan tunjuk kartu, satu tangan gestur. Tidak',
+          cue    : 'Satu tangan tunjuk kartu, satu tangan gestur. Tidak ada kata lain selain nama makanan.',
           darurat: null,
           energi : '🟡',
         },
@@ -172,10 +172,10 @@ UCAP: "Banana." ada kata lain selain nama makanan.`,
         // L3 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say the name." → Tunjuk rice → bread → egg → apple → banana. → Kelas ucap nama bersama. AKSI: Ulangi sekali lagi, acak 2 kartu. UCAP: UCAP: "Now — with feeling."
-UCAP: "I like…" → Tunjuk apple: kelas ucap "I like apple!" [ekspresi senang] → Tunjuk banana: kelas ucap "I like banana!" ulangi kartu itu sekali. "With feeling" = ekspresi wajah, bukan volume keras.`,
-          bantuan: 'Jika kelas hanya sebagian ikut: "Everybody. Together." —',
-          cue    : 'Guru demo ekspresi senang dulu sebelum kelas ikut.',
+          teks   : `🗣 TOGETHER UCAP: "Now together. I point — you say the name." → Tunjuk rice → bread → egg → apple → banana. → Kelas ucap nama bersama. AKSI: Ulangi sekali lagi, acak 2 kartu. UCAP: "Now — with feeling."
+UCAP: "I like…" → Tunjuk apple: kelas ucap "I like apple!" [ekspresi senang] → Tunjuk banana: kelas ucap "I like banana!"`,
+          bantuan: 'Jika kelas hanya sebagian ikut: "Everybody. Together." — ulangi kartu itu sekali.',
+          cue    : 'Guru demo ekspresi senang dulu sebelum kelas ikut. "With feeling" = ekspresi wajah, bukan volume keras.',
           darurat: null,
           energi : '🟠',
         },
@@ -192,9 +192,9 @@ UCAP: "Juice."
 AKSI: Gestur makan mie dengan sumpit.
 UCAP: "Noodles."
 AKSI: Gestur gigit ayam.
-UCAP: "Chicken." UCAP setelah 5 kartu terpasang: "Listen. My turn." → ulang kelima nama sekali. Noodles." Juice — pastikan bunyi /dʒuːs/, bukan "jus".`,
+UCAP: "Chicken." UCAP setelah 5 kartu terpasang: "Listen. My turn." → ulang kelima nama sekali.`,
           bantuan: null,
-          cue    : 'Noodles — ucapkan 2x jika terasa asing: "Noo-dles.',
+          cue    : 'Noodles — ucapkan 2x jika terasa asing: "Noo-dles. Noodles." Juice — pastikan bunyi /dʒuːs/, bukan "jus".',
           darurat: null,
           energi : '🟡',
         },
@@ -203,7 +203,7 @@ UCAP: "Chicken." UCAP setelah 5 kartu terpasang: "Listen. My turn." → ulang ke
         {
           tipe   : 'instruksi',
           teks   : `🗣 TOGETHER Fase A — Gelombang 2 saja, lambat: "Together." → Tunjuk milk → water → juice → noodles → chicken. → Kelas ucap nama. Lambat, tidak terburu. Fase B — Campur 10 kartu, medium: "Now — names only." → Tunjuk semua 10 kartu berurutan — medium speed. → Kelas ucap nama saja. Fase C — 5 kartu acak, cepat: "Ready? Fast." → Pilih 5 kartu acak — tunjuk cepat. → Tahan 1 detik sebelum menunjuk kartu berikutnya. ulangi 2x, lanjut.`,
-          bantuan: 'Jika kelas lambat di noodles/juice: kurangi kecepatan,',
+          bantuan: 'Jika kelas lambat di noodles/juice: kurangi kecepatan, ulangi 2x, lanjut.',
           cue    : 'Stop setelah 5 kartu — jangan perpanjang speed round.',
           darurat: null,
           energi : '🟠',
@@ -212,10 +212,10 @@ UCAP: "Chicken." UCAP setelah 5 kartu terpasang: "Listen. My turn." → ulang ke
         // L6 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: UCAP: "Stop. Hands down. Look at me."
-AKSI: Jeda 3 detik, guru berdiri diam. "Sit up. Ready." Layar 7 gagal.`,
+          teks   : `[Tepuk 1 kali — kelas freeze] UCAP: "Stop. Hands down. Look at me."
+AKSI: Jeda 3 detik, guru berdiri diam. "Sit up. Ready."`,
           bantuan: null,
-          cue    : 'Wajib — jangan skip. Kelas yang belum tenang =',
+          cue    : 'Wajib — jangan skip. Kelas yang belum tenang = Layar 7 gagal.',
           darurat: null,
           energi : '⚪',
         },
@@ -229,9 +229,9 @@ UCAP: "I like rice."
 AKSI: Tunjuk kartu egg, ekspresi senang.
 UCAP: "I like egg."
 AKSI: Tunjuk kartu juice, geleng kepala, ekspresi tidak suka.
-UCAP: "I don't like juice." "Listen one more time." — ulangi ketiga kalimat. ekspresi suka dan tidak suka. Tiga contoh dulu, baru kelas produksi.`,
+UCAP: "I don't like juice." "Listen one more time." — ulangi ketiga kalimat.`,
           bantuan: null,
-          cue    : 'Ekspresi wajah adalah kunci — guru harus melebih-lebihkan',
+          cue    : 'Ekspresi wajah adalah kunci — guru harus melebih-lebihkan ekspresi suka dan tidak suka. Tiga contoh dulu, baru kelas produksi.',
           darurat: null,
           energi : '🟡',
         },
@@ -239,9 +239,9 @@ UCAP: "I don't like juice." "Listen one more time." — ulangi ketiga kalimat. e
         // L8 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `🗣 TOGETHER UCAP: "Together now." → Tunjuk kartu chicken: "I like…" → kelas: "…chicken!" [ekspresi senang] → Tunjuk kartu banana: "I like…" → kelas: "…banana!" → Tunjuk kartu water: "I don't like…" → kelas: "…water!" [ekspresi tidak suka] → Tunjuk kartu bread: "I don't like…" → kelas: "…bread!" UCAP: "Your turn. Pick one." → Tunjuk kartu acak: "I like…? Or I don't like…?" → Kelas pilih sendiri dan ucapkan. kartu sekaligus — "This one or this one?" — kelas pilih. "I don't like" sendiri untuk 1 kartu. Itu cukup untuk layar ini.`,
-          bantuan: 'Jika kelas diam saat diminta pilih sendiri: guru tunjuk dua',
-          cue    : 'Production target: kelas bisa pilih "I like" atau',
+          teks   : `🗣 TOGETHER UCAP: "Together now." → Tunjuk kartu chicken: "I like…" → kelas: "…chicken!" [ekspresi senang] → Tunjuk kartu banana: "I like…" → kelas: "…banana!" → Tunjuk kartu water: "I don't like…" → kelas: "…water!" [ekspresi tidak suka] → Tunjuk kartu bread: "I don't like…" → kelas: "…bread!" UCAP: "Your turn. Pick one." → Tunjuk kartu acak: "I like…? Or I don't like…?" → Kelas pilih sendiri dan ucapkan.`,
+          bantuan: 'Jika kelas diam saat diminta pilih sendiri: guru tunjuk dua kartu sekaligus — "This one or this one?" — kelas pilih.',
+          cue    : 'Production target: kelas bisa pilih "I like" atau "I don\'t like" sendiri untuk 1 kartu. Itu cukup untuk layar ini.',
           darurat: null,
           energi : '🟠',
         },
@@ -257,9 +257,9 @@ UCAP: "Do you like rice?"
 AKSI: Lanjut.
 UCAP: "Do you like banana?"
 AKSI: Kelas ulang bersama.
-UCAP: "Do you like banana?" UCAP: "Now — answer only." → Guru: "Yes, I do!" [jempol naik — badan condong kanan] → Kelas ulang: "Yes, I do!" → Guru: "No, I don't." [geleng — badan condong kanan] → Kelas ulang: "No, I don't." UCAP: "Now — together. Full dialog." → Guru [badan kiri]: "Do you like rice?" → Guru [badan kanan]: "Yes, I do!" → Guru [badan kiri]: "Do you like water?" → Guru [badan kanan]: "No, I don't." → Guru [badan kiri]: "Do you like noodles?" → Guru [badan kanan]: "Yes, I do!" UCAP: "I ask — you answer." → "Do you like rice?" → kelas: "Yes, I do!" → "Do you like water?" → kelas: "No, I don't." dialog → whole-class drill. Jangan lompat. Marker tubuh kiri/kanan harus konsisten sepanjang layar ini.`,
+UCAP: "Do you like banana?" UCAP: "Now — answer only." → Guru: "Yes, I do!" [jempol naik — badan condong kanan] → Kelas ulang: "Yes, I do!" → Guru: "No, I don't." [geleng — badan condong kanan] → Kelas ulang: "No, I don't." UCAP: "Now — together. Full dialog." → Guru [badan kiri]: "Do you like rice?" → Guru [badan kanan]: "Yes, I do!" → Guru [badan kiri]: "Do you like water?" → Guru [badan kanan]: "No, I don't." → Guru [badan kiri]: "Do you like noodles?" → Guru [badan kanan]: "Yes, I do!" UCAP: "I ask — you answer." → "Do you like rice?" → kelas: "Yes, I do!" → "Do you like water?" → kelas: "No, I don't."`,
           bantuan: null,
-          cue    : 'Urutan wajib: question only → answer only → full',
+          cue    : 'Urutan wajib: question only → answer only → full dialog → whole-class drill. Jangan lompat. Marker tubuh kiri/kanan harus konsisten sepanjang layar ini.',
           darurat: null,
           energi : '🟡',
         },
@@ -272,13 +272,13 @@ AKSI: Demo dengan 1 siswa sukarela.
 UCAP: "You, you."
 AKSI: Tunjuk satu siswa maju. Guru [badan kiri]: "Do you like rice?" Siswa: "Yes, I do!" / "No, I don't." Guru: "Do you like banana?" Siswa jawab. "Good. Switch." Siswa [badan kiri]: "Do you like chicken?" Guru jawab. UCAP ke kelas: "That's the game. Ask — answer — switch." Sebelum distribusi — ucapkan 3 hal ini: UCAP: "Partner voice — not shouting."
 AKSI: Tunjuk simbol A/B di papan. "A asks first. B answers." UCAP: "Use these 5 cards only."
-AKSI: Tunjuk rice, banana, milk, noodles, chicken. DISTRIBUSI piring kosong: Bagikan sekarang — 1 per siswa. Guru tidak bicara instruksi baru saat distribusi. UCAP: UCAP: "Circle the foods you like. Quick — no coloring."
+AKSI: Tunjuk rice, banana, milk, noodles, chicken. DISTRIBUSI piring kosong: Bagikan sekarang — 1 per siswa. Guru tidak bicara instruksi baru saat distribusi. UCAP: "Circle the foods you like. Quick — no coloring."
 UCAP: "5… 4… 3… 2… 1."
 AKSI: Guru tetap di depan. Latih stop signal: UCAP: "When I clap —"
 AKSI: Tepuk 1 kali.
-UCAP: "— stop." — latih 1x. UCAP: "Now — ask your partner. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Other partner asks now." [Tepuk 1 kali — lanjut] rice?" Tidak hentikan kelas. rule berlaku. Piring kosong adalah bahan bicara — bukan aktivitas utama.`,
-          bantuan: 'Pasangan diam total: dekati, bisik — "Ask: Do you like',
-          cue    : 'Guru tidak koreksi grammar saat practice. Acceptance',
+UCAP: "— stop." — latih 1x. UCAP: "Now — ask your partner. Go." Checkpoint tengah (±90 detik): [Tepuk 1 kali — freeze] "Switch. Other partner asks now." [Tepuk 1 kali — lanjut]`,
+          bantuan: 'Pasangan diam total: dekati, bisik — "Ask: Do you like rice?" Tidak hentikan kelas.',
+          cue    : 'Guru tidak koreksi grammar saat practice. Acceptance rule berlaku. Piring kosong adalah bahan bicara — bukan aktivitas utama.',
           darurat: 'Waktu ≤10 menit: skip ke Layar 11 — lewati demo dan partner practice, langsung survei oral.',
           energi : '🔴',
         },
@@ -286,10 +286,10 @@ UCAP: "— stop." — latih 1x. UCAP: "Now — ask your partner. Go." Checkpoint
         // L11 — INTI
         {
           tipe   : 'instruksi',
-          teks   : `[Tepuk 1 kali — freeze] UCAP: UCAP: "Stop. Look here."
-AKSI: Jeda 2 detik. "Quick survey." → "Do you like rice?" → kelas: "Yes, I do!" [angkat tangan] atau "No, I don't." → "Do you like banana?" → kelas respon. → "Do you like water?" → kelas respon. UCAP: "Wow, many people like rice! Interesting." "many!" atau "only a few!" Fokus tetap di produksi oral, bukan numerasi.`,
+          teks   : `[Tepuk 1 kali — freeze] UCAP: "Stop. Look here."
+AKSI: Jeda 2 detik. "Quick survey." → "Do you like rice?" → kelas: "Yes, I do!" [angkat tangan] atau "No, I don't." → "Do you like banana?" → kelas respon. → "Do you like water?" → kelas respon. UCAP: "Wow, many people like rice! Interesting."`,
           bantuan: null,
-          cue    : 'Survei maksimal 3 item. Tidak dihitung detail — cukup',
+          cue    : 'Survei maksimal 3 item. Tidak dihitung detail — cukup "many!" atau "only a few!" Fokus tetap di produksi oral, bukan numerasi.',
           darurat: null,
           energi : '⚪ → 🟡',
         },
@@ -314,10 +314,9 @@ AKSI: Jeda sebentar.
 UCAP: "Choose your card. This one or this one. Write your sentence."
 AKSI: Tunjuk kartu apple, lalu tunjuk kartu noodles.
 AKSI: Tunggu 45–60 detik.
-UCAP: "Show me."
-lingkaran di piring dengan jempol naik/turun. Tidak ada koreksi terbuka. siswa sendiri. Tidak diperluas.`,
-          bantuan: 'Terima: kalimat penuh, kata saja ("like apple"), atau gambar saja.',
-          cue    : 'Exit ticket = 2 pilihan kartu, 1 kalimat, pilihan',
+UCAP: "Show me."`,
+          bantuan: 'Terima: kalimat penuh, kata saja ("like apple"), atau lingkaran di piring dengan jempol naik/turun. Tidak ada koreksi terbuka.',
+          cue    : 'Exit ticket = 2 pilihan kartu, 1 kalimat, pilihan siswa sendiri. Tidak diperluas.',
           darurat: null,
           energi : '🟡',
         },
