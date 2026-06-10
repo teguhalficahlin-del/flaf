@@ -1,5 +1,34 @@
 # FLAF — Context Sesi Baru
 
+## STATUS
+- Canonical TP Fase A selesai: TP-01 sampai TP-18 (18 file) — FINAL · Document Freeze
+- **Canonical TP Fase B selesai: TP-01 sampai TP-22 (22 file) — FINAL · Document Freeze**
+  - Lokasi: `docs/canonical/skenario-fase-b/`
+  - Pipeline tiap TP: (1) generasi Claude Code dari skenario sumber →
+    (2) pemeriksaan logical jump & ambiguitas (Claude chat) →
+    (3) review ChatGPT (Dokumen 9) → (4) semua temuan valid diperbaiki
+- Semua file Fase A telah diaudit: logical jump, kata ambigu, field UCAP
+
+### Patch global yang sudah diterapkan di semua file Fase B
+- `gesture` → `gestur` (semua file)
+- `UCAP: "In English?"` → `UCAP: "How do we say it in English?"`
+- `Berkeliling pelan` → `Pantau [kegiatan spesifik] semua siswa.`
+- `Berkeliling melihat hasil tulisan` → `Pantau hasil tulisan semua siswa.`
+- Catatan Penting tidak boleh berisi penjelasan pedagogis atau kata instruksi
+  aktif (ajarkan, perlakukan, perkenalkan, sebutkan, dst.)
+- Hanya satu field BANTUAN per layar
+- Format Catatan Penting L0 konsisten: hanya satu kalimat constraint
+
+### Patch retroaktif Fase A
+- Catatan Penting berisi kata instruksi aktif sudah diperbaiki di
+  TP-04, TP-12, TP-18 (Fase A)
+
+## NEXT TASK
+- Keputusan arsitektur yang masih terbuka: konversi canonical Fase B ke
+  format JS (in-place rewrite atau file baru), atau lanjut ke canonical Fase C
+
+---
+
 ## Identitas Project
 - **Nama**: FLAF (Functional Language Accumulation Framework)
 - **Deskripsi**: PWA offline-first untuk guru Bahasa Inggris SD Kelas 1 & 2
