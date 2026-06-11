@@ -206,8 +206,10 @@ AKSI: Tunggu jawaban siswa.
 UCAP: "Now your turn."
 AKSI: Minta siswa duduk berpasangan.
 AKSI: Minta siswa meletakkan My Routine Card tertutup menghadap bawah di meja.
-AKSI: Minta siswa A bertanya ke siswa B lalu mengisi kolom My Partner's Week.
-AKSI: Minta siswa B bertanya ke siswa A lalu mengisi kolom My Partner's Week.
+AKSI: Minta siswa A bertanya ke siswa B.
+AKSI: Minta siswa A mengisi kolom My Partner's Week berdasarkan jawaban siswa B.
+AKSI: Minta siswa B bertanya ke siswa A.
+AKSI: Minta siswa B mengisi kolom My Partner's Week berdasarkan jawaban siswa A.
 UCAP: "Is your week similar or different?"
 AKSI: Beri waktu lima sampai enam menit untuk dua arah.
 AKSI: Pantau kerja berpasangan semua siswa, prioritaskan barisan belakang dan pojok kelas.

@@ -212,8 +212,10 @@ AKSI: Tunggu jawaban siswa.
 UCAP: "Now your turn. Ask your partner, fill in the card."
 AKSI: Minta siswa duduk berpasangan.
 AKSI: Minta siswa meletakkan My Profile Note tertutup menghadap bawah di meja.
-AKSI: Minta siswa A bertanya ke siswa B lalu mengisi kartu untuk B.
-AKSI: Minta siswa B bertanya ke siswa A lalu mengisi kartu untuk A.
+AKSI: Minta siswa A bertanya ke siswa B.
+AKSI: Minta siswa A mengisi kartu untuk B berdasarkan jawaban siswa B.
+AKSI: Minta siswa B bertanya ke siswa A.
+AKSI: Minta siswa B mengisi kartu untuk A berdasarkan jawaban siswa A.
 AKSI: Beri waktu lima sampai enam menit untuk dua arah.
 AKSI: Pantau kerja berpasangan semua siswa, prioritaskan barisan belakang dan pojok kelas.
 AKSI: Buka overlay penilaian formatif.

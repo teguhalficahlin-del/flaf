@@ -205,8 +205,10 @@ AKSI: Tunggu jawaban siswa.
 UCAP: "Now your turn. Ask your partner, fill in the card."
 AKSI: Minta siswa duduk berpasangan.
 AKSI: Minta siswa meletakkan My Weather Card tertutup menghadap bawah di meja.
-AKSI: Minta siswa A bertanya ke siswa B lalu mengisi Partner's Weather Card.
-AKSI: Minta siswa B bertanya ke siswa A lalu mengisi Partner's Weather Card.
+AKSI: Minta siswa A bertanya ke siswa B.
+AKSI: Minta siswa A mengisi Partner's Weather Card berdasarkan jawaban siswa B.
+AKSI: Minta siswa B bertanya ke siswa A.
+AKSI: Minta siswa B mengisi Partner's Weather Card berdasarkan jawaban siswa A.
 UCAP: "Do we do the same thing in the same weather?"
 AKSI: Beri waktu lima sampai enam menit untuk dua arah.
 AKSI: Pantau kerja berpasangan semua siswa, prioritaskan barisan belakang.
