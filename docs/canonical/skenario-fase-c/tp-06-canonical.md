@@ -75,7 +75,7 @@ AKSI: Berdiri di depan kelas.
 UCAP: "Last time, your week. Your routines."
 AKSI: Jeda 2 detik.
 UCAP: "Who remembers one sentence about what they do every day?"
-AKSI: Tunggu dua sampai tiga siswa menyebut kalimat dari tulisan atau text-anchor TP-05.
+AKSI: Tunggu dua sampai tiga siswa menyebut kalimat dari tulisan rutinitas yang mereka buat di TP-05.
 
 UCAP: "Good. Those are your routines, things you do every week."
 AKSI: Jeda 1 detik.

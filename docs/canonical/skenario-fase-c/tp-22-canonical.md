@@ -217,7 +217,7 @@ UCAP: "Five minutes. Silent. Think first, then write."
 
 AKSI: Minta siswa mengisi Choice Card secara individual.
 AKSI: Beri waktu lima menit.
-AKSI: Untuk siswa yang memilih topik abstrak, bisikkan "Something you can see or touch in your life.", lalu tinggalkan.
+AKSI: Untuk siswa yang menulis topik satu kata umum seperti "life", "world", "happiness", atau "everything", bisikkan "Something you can see or touch in your life.", lalu tinggalkan.
 
 BANTUAN: Jika siswa tidak bisa memilih topik setelah dua menit: bisikkan "What did you write about in TP17, 18, or 19? Start from there, or choose something different.", lalu tinggalkan.
 
