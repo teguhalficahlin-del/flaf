@@ -475,9 +475,8 @@ AKSI: Hentikan pair dialogue setelah empat menit.
 AKSI: Saat berkeliling, bergerak membentuk huruf U.
 AKSI: Periksa apakah Partner B mengangkat kartu setelah mendengar nama hobi.
 
-AKSI: Untuk siswa yang sudah bisa, ajak mengganti kartu setiap giliran dan menciptakan alasan sendiri selain "fun" dan "interesting".
-AKSI: Untuk siswa yang butuh bantuan, cukup menyebut nama hobi tanpa "because".
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan izinkan menyebut nama hobi saja tanpa "because".
+AKSI: Untuk siswa yang sudah bisa, minta mereka mengganti kartu setiap giliran dan menciptakan alasan sendiri selain "fun" dan "interesting".
 
 BANTUAN:
 - Jika pasangan diam total: dekati, tunjuk kartu di tangan Partner A, bisikkan "I like...", tunggu Partner A lanjut, tanpa menghentikan kelas.

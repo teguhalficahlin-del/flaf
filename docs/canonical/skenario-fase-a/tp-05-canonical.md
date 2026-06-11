@@ -319,10 +319,8 @@ UCAP: "Then switch."
 UCAP: "Three, two, one."
 UCAP: "Eyes here."
 
-AKSI: Untuk siswa yang butuh bantuan, izinkan mereka menjawab satu kata saja seperti "Red!" sambil melihat kartu di papan tulis.
-AKSI: Untuk siswa yang sudah bisa, ajak mereka mengucapkan kalimat penuh seperti "This is my pencil. It is yellow."
-AKSI: Untuk siswa yang sudah bisa, ajak mereka bertanya kepada pasangan "What colour?".
-AKSI: Untuk siswa yang sangat lancar, ajak mereka mencoba kalimat "My bag is blue and green.".
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan tunjuk kartu warna di papan tulis, izinkan menjawab satu kata.
+AKSI: Untuk siswa yang sudah bisa, minta mereka mengucapkan kalimat penuh dan bertanya "What colour?" kepada pasangan.
 
 BANTUAN: —
 

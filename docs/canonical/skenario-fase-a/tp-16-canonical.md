@@ -404,9 +404,8 @@ UCAP: "Partner A holds cards."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
 AKSI: Saat berkeliling, bergerak membentuk huruf U dan jangan berhenti lebih dari 10 detik di satu pasangan.
-AKSI: Untuk siswa yang sudah bisa, ajak bercerita tanpa melihat buku dengan kartu sebagai scaffold.
-AKSI: Untuk siswa yang butuh bantuan, izinkan melihat buku sebentar jika lupa.
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan izinkan melihat buku sebentar jika lupa urutan cerita.
+AKSI: Untuk siswa yang sudah bisa, minta mereka bercerita tanpa melihat buku dengan kartu sebagai scaffold.
 
 BANTUAN:
 - Jika pasangan diam total: dekati, tunjuk kartu "First" di tangan mereka, bisikkan "First, Ani walked...", tunggu Partner A lanjut, tanpa menghentikan kelas.

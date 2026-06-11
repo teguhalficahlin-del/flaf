@@ -372,11 +372,8 @@ UCAP: "Now let's practice."
 UCAP: "If you need help, look at the cards."
 UCAP: "If you are ready, try without the cards."
 
-AKSI: Untuk siswa yang butuh bantuan, pegang Kiki.
-AKSI: Ajak siswa memegang Momo.
-AKSI: Ajak siswa berdialog salam bersama menggunakan kartu.
-AKSI: Untuk siswa yang sudah bisa mengucapkan salam tanpa melihat kartu, ajak mereka membuat kalimat salam sendiri tanpa kartu.
-AKSI: Ajak mereka berlatih berpasangan dengan Kiki dan Momo bergantian.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan ajak berdialog salam sambil melihat kartu.
+AKSI: Untuk siswa yang sudah bisa, minta mereka membuat dialog salam sendiri tanpa melihat kartu.
 
 BANTUAN: —
 

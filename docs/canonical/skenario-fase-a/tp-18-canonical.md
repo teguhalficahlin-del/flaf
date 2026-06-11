@@ -344,7 +344,7 @@ Darurat: —
 | 3 | Determinisme Field | LULUS |
 | 4 | UCAP Ramah TTS | LULUS |
 | 5 | Whole Class | LULUS |
-| 6 | Diferensiasi di Akhir | LULUS |
+| 6 | Diferensiasi di Akhir | N/A |
 | 7 | Catatan Penting Hanya Constraint | LULUS |
 | 8 | Human Readable | LULUS |
 | 9 | Machine Readable | LULUS |

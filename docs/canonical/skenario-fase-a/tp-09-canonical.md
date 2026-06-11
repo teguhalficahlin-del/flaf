@@ -407,14 +407,12 @@ UCAP: "Switch."
 UCAP: "Partner B now."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
-AKSI: Untuk siswa yang butuh bantuan, izinkan menyebut nama dan suara hewan saja.
-AKSI: Untuk siswa yang sudah bisa, ajak memberi satu clue per hewan.
-AKSI: Untuk siswa yang sudah lancar, ajak memberi tiga clue per hewan.
-AKSI: Tempel contoh clue diferensiasi di sisi papan tulis.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan izinkan menyebut nama dan suara hewan saja.
+AKSI: Untuk siswa yang sudah bisa, minta mereka memberi satu sampai dua clue untuk setiap hewan.
 
 BANTUAN: Jika pasangan diam total: dekati, bisikkan "It can jump. Say that.", tanpa menghentikan kelas.
 
-Catatan Penting: Jangan koreksi kalimat siswa saat latihan berlangsung. Contoh clue pada sesi diferensiasi tidak dibacakan untuk seluruh kelas. Clue = petunjuk/ciri.
+Catatan Penting: Jangan koreksi kalimat siswa saat latihan berlangsung. Clue = petunjuk/ciri.
 
 Darurat: Jika waktu ≤10 menit → lewati partner practice, langsung ke Layar 11.
 

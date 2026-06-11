@@ -438,10 +438,8 @@ UCAP: "Partner B hides now."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
 AKSI: Saat berkeliling, sesekali modelkan ulang gestur preposisi tanpa menghentikan kelas.
-AKSI: Untuk siswa yang sudah bisa, ajak memakai tiga preposisi berbeda dan mengganti benda setiap putaran.
-AKSI: Untuk siswa yang butuh bantuan, cukup satu preposisi yaitu on.
-AKSI: Jika siswa sudah lancar dengan on, lanjutkan ke in.
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan batasi latihan pada satu preposisi "on".
+AKSI: Untuk siswa yang sudah bisa, minta mereka memakai preposisi berbeda dan mengganti benda setiap putaran.
 
 BANTUAN: Jika pasangan diam total: dekati, bisikkan "Hide your eraser. Now ask: Where is the eraser?", tanpa menghentikan kelas.
 

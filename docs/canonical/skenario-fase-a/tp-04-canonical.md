@@ -335,12 +335,8 @@ UCAP: "Partner A counts first."
 UCAP: "Partner B listens."
 UCAP: "Then switch."
 
-AKSI: Untuk siswa yang butuh bantuan, batasi hitungan pada angka 1–10.
-AKSI: Untuk siswa yang butuh bantuan, ajak mereka menghitung benda di meja sendiri.
-AKSI: Untuk siswa yang butuh bantuan, tunjuk dan hitung bersama mereka.
-AKSI: Untuk siswa yang sudah bisa, ajak mereka menghitung sampai angka 11–20.
-AKSI: Untuk siswa yang sudah bisa, ajak mereka menghitung benda di atas meja.
-AKSI: Untuk siswa yang sudah bisa, modelkan kalimat "There are [n] [benda]" jika mereka siap mengikuti.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan hitung benda di meja bersama-sama, batasi pada angka 1–10.
+AKSI: Untuk siswa yang sudah bisa, minta mereka menghitung benda sampai angka 11–20 dengan kalimat "There are [n] [benda]".
 
 BANTUAN: —
 

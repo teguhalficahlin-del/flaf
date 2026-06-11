@@ -336,11 +336,8 @@ UCAP: "Switch."
 UCAP: "Three, two, one."
 UCAP: "Eyes here."
 
-AKSI: Untuk siswa yang butuh bantuan, izinkan mereka menjawab satu kata saja seperti "Circle!" sambil melihat kartu di papan tulis.
-AKSI: Untuk siswa yang butuh bantuan, bantu dengan bentuk tangan.
-AKSI: Untuk siswa yang sudah bisa, ajak mereka mengucapkan kalimat penuh seperti "This is my eraser. It is a rectangle."
-AKSI: Untuk siswa yang sudah bisa, ajak mereka menambahkan warna seperti "My red eraser is a rectangle."
-AKSI: Untuk siswa yang sudah bisa, ajak mereka bertanya kepada pasangan "What shape is it?".
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan tunjuk kartu bentuk di papan tulis, izinkan menjawab satu kata.
+AKSI: Untuk siswa yang sudah bisa, minta mereka mengucapkan kalimat penuh dan bertanya "What shape is it?" kepada pasangan.
 
 BANTUAN: —
 

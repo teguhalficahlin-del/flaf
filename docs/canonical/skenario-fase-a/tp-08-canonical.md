@@ -366,14 +366,12 @@ Darurat: Jika waktu ≤12 menit → langsung ke Layar 11.
 
 ## LAYAR 10 — INTI · DIFERENSIASI
 
-AKSI: Untuk siswa yang butuh bantuan, ajak mereka menyebutkan nama ruangan saja seperti "Bedroom. Kitchen."
-AKSI: Untuk siswa yang sudah bisa, ajak mereka mengucapkan "There is a bed in the bedroom."
-AKSI: Untuk siswa yang sudah lancar, ajak mereka menambahkan warna pada bendanya seperti "There is a blue sofa in the living room."
-AKSI: Tempel contoh kalimat untuk siswa yang sudah lancar di sisi papan tulis.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan tunjuk kartu ruangan, izinkan menyebut nama ruangan saja.
+AKSI: Untuk siswa yang sudah bisa, minta mereka mengucapkan kalimat penuh "There is a bed in the bedroom.".
 
 BANTUAN: —
 
-Catatan Penting: Contoh kalimat untuk siswa yang sudah lancar tidak dibacakan keras dan tidak dimodelkan untuk seluruh kelas.
+Catatan Penting: Diferensiasi dilakukan setelah semua siswa mengikuti latihan berpasangan.
 
 Darurat: —
 

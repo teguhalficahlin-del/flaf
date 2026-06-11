@@ -382,9 +382,8 @@ UCAP: "Switch."
 UCAP: "Partner B tells now."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
-AKSI: Untuk siswa yang sudah bisa, ajak menceritakan lima sampai enam kartu dengan "then" berulang.
-AKSI: Untuk siswa yang butuh bantuan, cukup dua kartu dengan pola "First ... Then ...".
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan batasi cerita pada dua kartu dengan pola "First ... Then ...".
+AKSI: Untuk siswa yang sudah bisa, minta mereka menceritakan lima sampai enam kartu dengan "then" berulang.
 
 BANTUAN: Jika pasangan diam total: dekati, bisikkan "Point to wake up. Say: First, I wake up.", tanpa menghentikan kelas.
 

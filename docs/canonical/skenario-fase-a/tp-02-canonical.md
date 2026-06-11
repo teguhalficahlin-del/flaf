@@ -297,11 +297,8 @@ UCAP: "Now practise with your partner."
 UCAP: "If you need help, look at the board."
 UCAP: "If you are ready, try without looking!"
 
-AKSI: Untuk siswa yang butuh bantuan, ajak mereka melihat papan tulis saat berbicara.
-AKSI: Untuk siswa yang butuh bantuan, izinkan mereka menyebut nama dulu dan usia menyusul.
-AKSI: Untuk siswa yang butuh bantuan, duduk di dekat mereka dan bantu.
-AKSI: Untuk siswa yang sudah bisa berbicara tanpa melihat papan tulis, ajak mereka berbicara dengan kalimat lengkap.
-AKSI: Untuk siswa yang sudah lancar, ajak mereka menambahkan kalimat "And you? What is your name?".
+AKSI: Untuk siswa yang butuh bantuan, duduk di dekat pasangan mereka dan tunjuk papan tulis saat mereka menyebut nama dan usia.
+AKSI: Untuk siswa yang sudah bisa, minta mereka berbicara tanpa melihat papan tulis dan menambah pertanyaan balik "And you?".
 
 BANTUAN: —
 

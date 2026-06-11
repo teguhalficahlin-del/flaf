@@ -374,12 +374,8 @@ UCAP: "If you are ready, try without cards!"
 UCAP: "If you finish early, do it again."
 
 AKSI: Pantau latihan berpasangan semua siswa.
-AKSI: Untuk siswa yang butuh bantuan, ajak mereka melihat kartu saat memberi instruksi.
-AKSI: Untuk siswa yang butuh bantuan, batasi satu instruksi per giliran.
-AKSI: Untuk siswa yang butuh bantuan, bisikkan kata instruksi.
-AKSI: Untuk siswa yang sudah siap, ajak mereka memberi tiga instruksi tanpa kartu.
-AKSI: Untuk siswa yang sudah lancar, ajak mereka mencoba instruksi dua langkah "Open your book and write!".
-AKSI: Untuk siswa yang sangat lancar, ajak mereka menambahkan "Simon says".
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan tunjuk kartu instruksi sambil membisikkan satu kata instruksi.
+AKSI: Untuk siswa yang sudah bisa, minta mereka memberi tiga instruksi kepada pasangan tanpa melihat kartu.
 
 BANTUAN: Jika noise pecah: tepuk tangan dua kali, ucapkan "Hands down.", ucapkan "Eyes on me.", lalu lanjutkan.
 

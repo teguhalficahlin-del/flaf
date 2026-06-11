@@ -473,9 +473,8 @@ UCAP: "Partner B picks the card now."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
 AKSI: Saat berkeliling, sesekali modelkan kalimat "I use my nose to smell."
-AKSI: Untuk siswa yang sudah bisa, ajak memakai kedelapan kartu dan menambah legs dan feet.
-AKSI: Untuk siswa yang butuh bantuan, cukup dua kartu yaitu eyes dan ears.
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan batasi latihan pada dua kartu yaitu eyes dan ears.
+AKSI: Untuk siswa yang sudah bisa, minta mereka memakai kedelapan kartu dan menambah legs dan feet.
 
 BANTUAN: Jika pasangan diam total: dekati, bisikkan "Point to eyes. Say: I use my eyes to see.", tanpa menghentikan kelas.
 

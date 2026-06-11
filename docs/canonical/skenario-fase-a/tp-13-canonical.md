@@ -474,9 +474,8 @@ UCAP: "Partner B picks the card now."
 AKSI: Tepuk tangan sekali untuk melanjutkan.
 
 AKSI: Saat berkeliling, sesekali modelkan kalimat "When it is cold, I wear a jacket."
-AKSI: Untuk siswa yang sudah bisa, ajak memakai keenam kartu dan membuat tiga kalimat berbeda.
-AKSI: Untuk siswa yang butuh bantuan, cukup dua kartu yaitu rainy dan sunny.
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan batasi latihan pada dua kartu yaitu rainy dan sunny.
+AKSI: Untuk siswa yang sudah bisa, minta mereka memakai keenam kartu dan membuat tiga kalimat berbeda.
 
 BANTUAN: Jika pasangan diam total: dekati, bisikkan "Point to rainy. Say: When it is rainy, I use an umbrella.", tanpa menghentikan kelas.
 

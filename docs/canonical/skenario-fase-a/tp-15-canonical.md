@@ -438,9 +438,8 @@ AKSI: Saat berkeliling, bergerak membentuk huruf U.
 AKSI: Periksa apakah Partner B masih bertanya "How do you feel?".
 AKSI: Hentikan partner practice setelah tiga menit.
 
-AKSI: Untuk siswa yang sudah bisa, ajak menciptakan skenario sendiri dan mengganti emosi setiap putaran.
-AKSI: Untuk siswa yang butuh bantuan, cukup menyebut nama emosi tanpa "because".
-AKSI: Tempel contoh diferensiasi di sisi papan tulis tanpa membacakannya.
+AKSI: Untuk siswa yang butuh bantuan, dekati mereka dan izinkan menyebut nama emosi saja tanpa "because".
+AKSI: Untuk siswa yang sudah bisa, minta mereka menciptakan skenario sendiri dan mengganti emosi setiap putaran.
 
 BANTUAN:
 - Jika pasangan diam total: dekati, bisikkan skenario kepada Partner A, lalu beri gestur bertanya kepada Partner B, tanpa menghentikan kelas.
