@@ -460,9 +460,9 @@ Nama file mengikuti konvensi:
 | Fase C | `tp-XX-canonical-fase-c.js` | `tp-18-canonical-fase-c.js` |
 
 Semua file output disimpan di folder:
-- Fase A: `docs/output-v5-fasea/`
-- Fase B: `docs/output-v5-faseb/`
-- Fase C: `docs/output-v5-fasec/`
+- Fase A: `docs/output-canonical-fase-a/`
+- Fase B: `docs/output-canonical-fase-b/`
+- Fase C: `docs/output-canonical-fase-c/`
 
 ---
 
