@@ -501,4 +501,5 @@ File JS dinyatakan siap apabila:
 | Ditambah | `diferensiasi` di langkah untuk semua fase (A B C) — Fase A diseragamkan via commit `ea8b194` |
 | Ditambah | `id` dan `blok` di langkah untuk Fase C |
 | Ditambah | Seksi 6 khusus aturan Fase C |
+| Ditambah | Konvensi naming file: `tp-XX-canonical-fase-[a/b/c].js` |
 | Diklarifikasi | `indikator` dan `vocab` bersumber dari dokumen kurikulum (file JS aktif per fase), bukan dari canonical skenario |
