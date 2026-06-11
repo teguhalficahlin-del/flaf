@@ -229,7 +229,7 @@ Sama dengan Fase B, dengan tambahan field `id` dan `blok`:
 | teks | string | A B C | ✅ | Teks instruksi guru |
 | bantuan | null \| string \| string[] | A B C | ✅ | null jika tidak ada; array jika lebih dari satu |
 | cue | null \| string | A B C | ✅ | null jika tidak ada |
-| darurat | null \| string | A B C | ✅ | null jika tidak ada |
+| darurat | null \| string \| string[] | A B C | ✅ | null jika tidak ada; array jika lebih dari satu kondisi |
 | diferensiasi | null \| object | A B C | ✅ | null jika tidak ada; format: `{ perluSupport, sudahBisa }` |
 | blok | null \| string | C | ✅ | null jika tidak ada; `'INPUT'` \| `'INTERACT'` \| `'OUTPUT'` |
 
@@ -323,15 +323,37 @@ bantuan: [
 ],
 ```
 
+## 5.4b Darurat array
+
+Gunakan array string jika darurat lebih dari satu kondisi:
+
+```js
+darurat: [
+  'Jika waktu tersisa kurang dari 18 menit → lewati layar ini.',
+  'Jika kelas gaduh → ucapkan "Freeze.", langsung ke Layar 8.',
+],
+```
+
 ## 5.5 Kondisi FLEX (Fase B dan C)
 
-Layar yang bisa dilewati ditulis kondisinya di field `cue`:
+Kondisi FLEX mengikuti field canonical asalnya:
+
+- Jika di canonical ditulis di **Catatan Penting** → masuk ke field `cue`
+- Jika di canonical ditulis di **Darurat** → masuk ke field `darurat`
+
+Tidak ada field boolean terpisah untuk FLEX.
+
+Contoh FLEX di `cue` (dari Catatan Penting canonical Fase C):
 
 ```js
 cue: 'Layar ini FLEX — lewati jika waktu tersisa kurang dari 18 menit.',
 ```
 
-Tidak ada field boolean terpisah untuk FLEX.
+Contoh FLEX di `darurat` (dari Darurat canonical Fase B):
+
+```js
+darurat: 'Jika Layar 5 melewati 7 menit → hentikan, langsung ke Layar 6.',
+```
 
 ## 5.6 Diferensiasi (Semua Fase)
 
@@ -503,3 +525,5 @@ File JS dinyatakan siap apabila:
 | Ditambah | Seksi 6 khusus aturan Fase C |
 | Ditambah | Konvensi naming file: `tp-XX-canonical-fase-[a/b/c].js` |
 | Diklarifikasi | `indikator` dan `vocab` bersumber dari dokumen kurikulum (file JS aktif per fase), bukan dari canonical skenario |
+| Dikoreksi | `darurat` diizinkan sebagai array (`null \| string \| string[]`) — konsisten dengan `bantuan` |
+| Dikoreksi | Seksi 5.5: kondisi FLEX mengikuti field canonical asalnya (Catatan Penting → `cue`, Darurat → `darurat`) |
