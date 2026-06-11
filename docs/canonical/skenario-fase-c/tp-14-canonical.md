@@ -274,8 +274,8 @@ AKSI: Biarkan teks prosedur tetap tampil di papan tulis.
 UCAP: "Now, write the steps. In your own words."
 UCAP: "Use then between each step. You can also use when if it feels right."
 
-UCAP: "Listen. First, get the oranges. Then..."
-AKSI: Beri waktu siswa melanjutkan sendiri.
+UCAP: "Listen."
+AKSI: Ucapkan "First, get the oranges. Then" agar siswa melanjutkan sendiri.
 
 AKSI: Minta siswa menulis secara individual.
 AKSI: Beri waktu delapan sampai sepuluh menit.

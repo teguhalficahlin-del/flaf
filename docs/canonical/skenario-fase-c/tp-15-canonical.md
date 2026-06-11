@@ -154,7 +154,7 @@ UCAP: "When you tell this story, use the past."
 
 BANTUAN: Jika siswa kebingungan apa arti past: beri penjelasan singkat bahwa past adalah bentuk lampau, sudah terjadi kemarin atau dulu, satu kalimat lalu lanjut.
 
-Catatan Penting: Dua noticing, dua kata. Tidak ada tabel, tidak ada drill. Past tense muncul karena konteks cerita, bukan karena diajarkan.
+Catatan Penting: Dua noticing, dua kata, tidak ada tabel atau drill. Past tense muncul dari konteks cerita, bukan dari aturan.
 
 Darurat: —
 
@@ -259,8 +259,8 @@ UCAP: "Now, write the complete story. In your own words."
 UCAP: "Use past tense. Use then between events."
 UCAP: "Don't copy word for word. Write it your way."
 
-UCAP: "Listen. Last Sunday, Budi..."
-AKSI: Beri waktu siswa melanjutkan sendiri.
+UCAP: "Listen."
+AKSI: Ucapkan "Last Sunday, Budi" agar siswa melanjutkan sendiri.
 
 AKSI: Minta siswa menulis secara individual.
 AKSI: Beri waktu delapan sampai sepuluh menit.
