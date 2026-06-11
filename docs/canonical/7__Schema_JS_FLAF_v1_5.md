@@ -428,7 +428,9 @@ breakpoints: [
 
 ---
 
-# 8. EXPORT
+# 8. EXPORT DAN NAMING
+
+## 8.1 Export
 
 Setiap file JS wajib diakhiri dengan:
 
@@ -436,10 +438,30 @@ Setiap file JS wajib diakhiri dengan:
 export default TP_XX;
 ```
 
+## 8.2 Nama Konstanta
+
 Nama konstanta mengikuti konvensi per fase:
-- Fase A: `TP_XX` (contoh: `TP_01`)
-- Fase B: `TP_BXX` (contoh: `TP_B10`)
-- Fase C: `TP_CXX` (contoh: `TP_C17`)
+
+| Fase | Format | Contoh |
+|------|--------|--------|
+| Fase A | `TP_XX` | `TP_01` |
+| Fase B | `TP_BXX` | `TP_B10` |
+| Fase C | `TP_CXX` | `TP_C17` |
+
+## 8.3 Nama File
+
+Nama file mengikuti konvensi:
+
+| Fase | Format | Contoh |
+|------|--------|--------|
+| Fase A | `tp-XX-canonical-fase-a.js` | `tp-01-canonical-fase-a.js` |
+| Fase B | `tp-XX-canonical-fase-b.js` | `tp-07-canonical-fase-b.js` |
+| Fase C | `tp-XX-canonical-fase-c.js` | `tp-18-canonical-fase-c.js` |
+
+Semua file output disimpan di folder:
+- Fase A: `docs/output-v5-fasea/`
+- Fase B: `docs/output-v5-faseb/`
+- Fase C: `docs/output-v5-fasec/`
 
 ---
 
@@ -478,4 +500,4 @@ File JS dinyatakan siap apabila:
 | Ditambah | `diferensiasi` di langkah untuk semua fase (A B C) — Fase A diseragamkan via commit `ea8b194` |
 | Ditambah | `id` dan `blok` di langkah untuk Fase C |
 | Ditambah | Seksi 6 khusus aturan Fase C |
-| Ditambah | Seksi 10 log perubahan |
+| Ditambah | Konvensi naming file: `tp-XX-canonical-fase-[a/b/c].js` |
