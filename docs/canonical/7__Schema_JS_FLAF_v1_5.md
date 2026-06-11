@@ -24,7 +24,6 @@ const TP_XX = {
   kelas     : X,
   nama      : '...',
   tema      : '...',
-  deskripsi : '...',
 
   // KURIKULUM
   indikator : [ '...', '...' ],
@@ -32,6 +31,7 @@ const TP_XX = {
   persiapan : [ '...', '...' ],
   media     : [ '...', '...' ],
   printables: [ { file: '...', label: '...' } ],
+  ringkasan : [ { layar: 0, judul: '...', tujuan: '...' } ],
 
   // PRE-OPENING
   preOpening: {
@@ -183,7 +183,6 @@ Sama dengan Fase B, dengan tambahan field `id` dan `blok`:
 | kelas | number | A B C | ✅ | Kelas target (1–6) |
 | nama | string | A B C | ✅ | Nama TP |
 | tema | string | A B C | ✅ | Tema pembelajaran |
-| deskripsi | string | A B C | ✅ | Deskripsi singkat TP (boleh kosong `''`) |
 | kluster | string | B C | ✅ | Kode kluster (A–E) |
 | jenis | string | B C | ✅ | `'Biasa'` \| `'Kompleks'` \| `'Capstone'` \| `'Panen'` |
 | text_anchor | string | C | ✅ | Kalimat anchor yang ditulis di papan sebelum kelas |
@@ -200,6 +199,7 @@ Sama dengan Fase B, dengan tambahan field `id` dan `blok`:
 | persiapan | string[] | ✅ | Daftar persiapan fisik sebelum kelas |
 | media | string[] | ✅ | Media digital (boleh kosong `[]`) |
 | printables | object[] | ✅ | Format: `{ file, label }` (boleh kosong `[]`) |
+| ringkasan | object[] | ✅ | Format: `{ layar, judul, tujuan }` — dari tabel Ringkasan Sesi canonical |
 
 ## 3.3 PRE-OPENING — Semua Fase
 
@@ -341,9 +341,20 @@ diferensiasi: {
 },
 ```
 
----
+## 5.7 Ringkasan Sesi
 
-# 6. ATURAN KHUSUS FASE C
+Ambil langsung dari tabel Ringkasan Sesi di canonical:
+
+```js
+ringkasan: [
+  { layar: 0, judul: 'Pre-Opening · Door Greeting',    tujuan: 'Guru menyambut siswa satu per satu di pintu.' },
+  { layar: 1, judul: 'Pembuka · Demo Boneka',           tujuan: 'Guru memperagakan dialog salam dengan boneka.' },
+  // dst — satu objek per layar, urutan sesuai canonical
+],
+```
+
+Field ini digunakan oleh dashboard untuk menampilkan overlay Ringkasan Sesi
+di Step 0 Materi. Implementasi UI overlay ada di dashboard.js (backlog).
 
 ## 6.1 Field `id` di langkah
 
@@ -409,8 +420,8 @@ breakpoints: [
 ❌ Menggunakan token pedagogis selain 4 token kanonik.
 
 ❌ Menulis field `energi`, `energi_map`, `checklist`, `catatan`, `interaction_mode`,
-   `energy_level`, `assessment_overlay`, `interact_contract`, `artifact`, atau `pdf_ref`
-   — field-field ini tidak diakui dalam skema v1.5.
+   `energy_level`, `assessment_overlay`, `interact_contract`, `artifact`, `pdf_ref`,
+   atau `deskripsi` — field-field ini tidak diakui dalam skema v1.5.
 
 ❌ Menulis field `flex` atau `flex_kondisi` sebagai field terpisah — kondisi FLEX
    ditulis di dalam field `cue`.
@@ -460,7 +471,8 @@ File JS dinyatakan siap apabila:
 | Dihapus | `interaction_mode` dan `energy_level` — tidak ada di canonical |
 | Dihapus | `assessment_overlay`, `interact_contract`, `artifact` — tidak ada di canonical |
 | Dihapus | `flex` dan `flex_kondisi` sebagai field — kondisi FLEX masuk ke `cue` |
-| Dikoreksi | `media` tetap `string[]` — object[] hanya ada di Fase A lama, tidak di canonical |
+| Dihapus | `deskripsi` — tidak ada di canonical, tidak pernah tampil di layar guru |
+| Ditambah | `ringkasan` di kurikulum — dari tabel Ringkasan Sesi canonical, untuk overlay dashboard (backlog) |
 | Ditambah | `kluster` dan `jenis` untuk Fase B dan C |
 | Ditambah | `text_anchor`, `connector_aktif`, `recycle_fase_b`, `breakpoints` untuk Fase C |
 | Ditambah | `diferensiasi` di langkah untuk semua fase (A B C) — Fase A diseragamkan via commit `ea8b194` |
