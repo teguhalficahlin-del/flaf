@@ -139,6 +139,8 @@ UCAP: "Now one more, good night!"
 UCAP: "See? Four greetings, one for each time."
 UCAP: "Let's learn them all!"
 
+AKSI: Pegang Kiki di tangan kiri.
+AKSI: Pegang Momo di tangan kanan.
 AKSI: Peragakan dialog Kiki dan Momo dengan empat salam.
 
 UCAP: "Good morning, Momo!"
@@ -242,7 +244,7 @@ AKSI: Tunggu sampai semua siswa diam dan menatap guru.
 UCAP: "Hands down."
 UCAP: "Eyes on me."
 
-AKSI: Jelaskan aturan game.
+AKSI: Pegang Kiki.
 AKSI: Gerakkan Kiki berdiri sebagai contoh.
 
 UCAP: "Now a game!"

@@ -339,7 +339,8 @@ UCAP: "Watch me first!"
 AKSI: Tunjukkan kartu instruksi ke semua siswa.
 AKSI: Ulangi demo tunjukkan kartu sekali lagi.
 
-AKSI: Ajak satu siswa sukarela maju ke depan.
+AKSI: Tanyakan siapa yang mau maju ke depan.
+AKSI: Tunjuk satu siswa yang mengangkat tangan.
 AKSI: Berikan kartu instruksi ke tangan siswa sebagai prop.
 UCAP: "Show the card to the class!"
 
@@ -372,7 +373,7 @@ UCAP: "If you need help, look at the cards."
 UCAP: "If you are ready, try without cards!"
 UCAP: "If you finish early, do it again."
 
-AKSI: Keliling kelas selama latihan berpasangan.
+AKSI: Pantau latihan berpasangan semua siswa.
 AKSI: Untuk siswa yang butuh bantuan, ajak mereka melihat kartu saat memberi instruksi.
 AKSI: Untuk siswa yang butuh bantuan, batasi satu instruksi per giliran.
 AKSI: Untuk siswa yang butuh bantuan, bisikkan kata instruksi.

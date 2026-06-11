@@ -344,7 +344,8 @@ Darurat: Jika waktu ≤12 menit → langsung ke Layar 12.
 UCAP: "Cards down."
 UCAP: "Eyes on me."
 
-AKSI: Ajak 2–3 siswa sukarela maju ke depan.
+AKSI: Tanyakan siapa yang mau maju ke depan.
+AKSI: Tunjuk 2–3 siswa yang mengangkat tangan.
 AKSI: Ajak setiap siswa memegang kartu pilihannya.
 UCAP: "Show the card."
 AKSI: Ucapkan "This is my..." agar siswa melengkapi kalimat.

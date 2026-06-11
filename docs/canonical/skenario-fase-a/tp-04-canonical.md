@@ -339,7 +339,7 @@ AKSI: Untuk siswa yang butuh bantuan, batasi hitungan pada angka 1–10.
 AKSI: Untuk siswa yang butuh bantuan, ajak mereka menghitung benda di meja sendiri.
 AKSI: Untuk siswa yang butuh bantuan, tunjuk dan hitung bersama mereka.
 AKSI: Untuk siswa yang sudah bisa, ajak mereka menghitung sampai angka 11–20.
-AKSI: Untuk siswa yang sudah bisa, ajak mereka menghitung benda di sekitar kursi.
+AKSI: Untuk siswa yang sudah bisa, ajak mereka menghitung benda di atas meja.
 AKSI: Untuk siswa yang sudah bisa, modelkan kalimat "There are [n] [benda]" jika mereka siap mengikuti.
 
 BANTUAN: —

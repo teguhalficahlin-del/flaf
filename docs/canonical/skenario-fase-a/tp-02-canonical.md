@@ -251,7 +251,6 @@ UCAP: "Hands down."
 UCAP: "Eyes on me."
 
 AKSI: Tunjuk mata sendiri.
-AKSI: Jelaskan aturan walk and talk.
 
 UCAP: "Stand up."
 UCAP: "Walk."
@@ -341,7 +340,8 @@ Darurat: —
 
 ## LAYAR 13 — PENUTUP · TAMPIL DI DEPAN
 
-AKSI: Ajak 2–3 siswa sukarela maju ke depan.
+AKSI: Tanyakan siapa yang mau maju ke depan.
+AKSI: Tunjuk 2–3 siswa yang mengangkat tangan.
 AKSI: Ajak semua siswa bertepuk tangan sebelum siswa mulai.
 
 🔁 2–3 siswa saja.
