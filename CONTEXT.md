@@ -1,13 +1,34 @@
 # FLAF — Context Sesi Baru
 
 ## STATUS
-- Canonical TP Fase A selesai: TP-01 sampai TP-18 (18 file) — FINAL · Document Freeze
-- **Canonical TP Fase B selesai: TP-01 sampai TP-22 (22 file) — FINAL · Document Freeze**
-  - Lokasi: `docs/canonical/skenario-fase-b/`
+- **Fase A (TP-01–18): FINAL · Document Freeze — selesai**
+- **Fase B (TP-01–22): FINAL · Document Freeze — selesai**
+- **Fase C (TP-01–22): FINAL · Document Freeze — selesai**
+- **Konversi JS: belum dimulai (semua fase masih dalam format Canonical markdown)**
+  - Lokasi Fase A: `docs/canonical/skenario-fase-a/` · Fase B: `docs/canonical/skenario-fase-b/` · Fase C: `docs/canonical/skenario-fase-c/`
   - Pipeline tiap TP: (1) generasi Claude Code dari skenario sumber →
     (2) pemeriksaan logical jump & ambiguitas (Claude chat) →
     (3) review ChatGPT (Dokumen 9) → (4) semua temuan valid diperbaiki
 - Semua file Fase A telah diaudit: logical jump, kata ambigu, field UCAP
+
+## KEPUTUSAN ARSITEKTUR TERBUKA
+- Konversi Canonical markdown ke JS belum dilakukan untuk Fase A, B, maupun C.
+- Keputusan skema JS yang akan digunakan (de-facto v5 vs Dokumen 7 v1.4 formal)
+  sedang dibuka kembali. Perlu perbandingan konkret antara dua skema sebelum
+  konversi dimulai.
+
+## PRESEDEN BARU FASE C (dari pipeline review batch TP-12–22)
+1. Pola "bertanya lalu mengisi" di blok INTERACT wajib dipecah menjadi dua
+   baris AKSI terpisah — ini berlaku sejak TP-01 Fase C dan sudah diterapkan
+   di semua 22 TP Fase C.
+2. Kondisi BANTUAN tidak boleh menggunakan istilah evaluatif tanpa definisi
+   operasional (contoh: "topik abstrak" → harus diganti dengan deskripsi
+   konkret yang observable).
+3. Frasa reactivation di Layar 1 wajib menyebut nama output spesifik dari
+   TP sebelumnya — bukan hanya "tulisan mereka" atau "tulisan di TP-XX",
+   tapi "tulisan [nama aktivitas output] yang mereka buat di TP-XX".
+4. AKSI dan Catatan Penting tidak boleh berkonflik — jika Catatan Penting
+   membatasi sumber, AKSI harus mencerminkan batasan yang sama.
 
 ### Patch global yang sudah diterapkan di semua file Fase B
 - `gesture` → `gestur` (semua file)
@@ -24,8 +45,11 @@
   TP-04, TP-12, TP-18 (Fase A)
 
 ## NEXT TASK
-- Keputusan arsitektur yang masih terbuka: konversi canonical Fase B ke
-  format JS (in-place rewrite atau file baru), atau lanjut ke canonical Fase C
+1. Buka keputusan arsitektur skema JS: bandingkan de-facto v5 dengan
+   Dokumen 7 v1.4 formal, resolusi divergensi 1.935 instance
+2. Setelah skema diputuskan: konversi Canonical markdown ke JS
+   untuk Fase A (18 TP), Fase B (22 TP), Fase C (22 TP)
+3. Layar Mengajar UI Sprint — 12 item dashboard.js (tertunda)
 
 ---
 
