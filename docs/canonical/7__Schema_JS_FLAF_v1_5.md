@@ -6,8 +6,9 @@ Dokumen ini merupakan spesifikasi resmi struktur file JavaScript Teaching Prompt
 
 Setiap file JS yang dihasilkan dari Canonical TP wajib mengikuti schema ini tanpa pengecualian.
 
-**Prinsip dasar:** Canonical TP adalah satu-satunya sumber kebenaran. Field yang tidak ada
-di Canonical TP tidak masuk ke skema JS dan tidak ditampilkan di layar runtime.
+**Prinsip dasar:** Canonical TP adalah satu-satunya sumber kebenaran untuk konten skenario.
+Field `indikator` dan `vocab` bersumber dari dokumen kurikulum (file JS aktif per fase),
+bukan dari canonical skenario.
 
 ---
 
@@ -194,9 +195,9 @@ Sama dengan Fase B, dengan tambahan field `id` dan `blok`:
 
 | Field | Tipe | Wajib | Keterangan |
 |-------|------|-------|------------|
-| indikator | string[] | ✅ | Minimal 1 item |
-| vocab | string[] | ✅ | Daftar kosakata target |
-| persiapan | string[] | ✅ | Daftar persiapan fisik sebelum kelas |
+| indikator | string[] | ✅ | Dari dokumen kurikulum — bukan dari canonical skenario. Fase A: `docs/output-v5/tp-NN-v5.js` · Fase B: `docs/output-v5-faseb/tp-NN-v5.js` · Fase C: `docs/fase-c-skenario/tp-NN-v1.js` |
+| vocab | string[] | ✅ | Dari dokumen kurikulum — bukan dari canonical skenario. Sumber sama dengan `indikator`. |
+| persiapan | string[] | ✅ | Dari bagian Persiapan Media canonical |
 | media | string[] | ✅ | Media digital (boleh kosong `[]`) |
 | printables | object[] | ✅ | Format: `{ file, label }` (boleh kosong `[]`) |
 | ringkasan | object[] | ✅ | Format: `{ layar, judul, tujuan }` — dari tabel Ringkasan Sesi canonical |
@@ -500,4 +501,4 @@ File JS dinyatakan siap apabila:
 | Ditambah | `diferensiasi` di langkah untuk semua fase (A B C) — Fase A diseragamkan via commit `ea8b194` |
 | Ditambah | `id` dan `blok` di langkah untuk Fase C |
 | Ditambah | Seksi 6 khusus aturan Fase C |
-| Ditambah | Konvensi naming file: `tp-XX-canonical-fase-[a/b/c].js` |
+| Diklarifikasi | `indikator` dan `vocab` bersumber dari dokumen kurikulum (file JS aktif per fase), bukan dari canonical skenario |
