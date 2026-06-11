@@ -166,8 +166,7 @@ UCAP: "Think about your Indonesia. Your job, your food, your celebration."
 
 AKSI: Pantau pengisian Planning Sheet semua siswa.
 
-AKSI: Untuk siswa yang butuh bantuan, tanyakan "Siapa satu orang yang bekerja keras di lingkunganmu?", tunggu jawaban lisan.
-AKSI: Tanyakan lanjut "Makanan apa yang paling kamu suka?", lalu arahkan tangan mereka ke kertas.
+AKSI: Untuk siswa yang butuh bantuan, tanyakan "Siapa satu orang yang bekerja keras di lingkunganmu?", tunggu jawaban lisan, lalu arahkan tangan mereka ke kertas.
 AKSI: Untuk siswa yang sudah bisa, setelah tiga bagian terisi, minta tambah satu catatan, "One more thing about Indonesia I want to say: ___.".
 
 BANTUAN: Jika siswa duduk diam tidak menulis apa pun setelah satu menit: dekati, tunjuk baris pertama, ucapkan "Who helps people in your neighborhood? A doctor? A farmer? A teacher?", setelah mereka menyebut satu arahkan "Write that job here.".

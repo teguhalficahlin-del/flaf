@@ -406,7 +406,7 @@ AKSI: Tunjuk huruf di papan tulis satu per satu.
 AKSI: Tunggu respons semua siswa.
 
 AKSI: Untuk siswa yang butuh bantuan, minta menyalin ejaan "library" dari papan tulis.
-AKSI: Untuk siswa yang sudah lancar, minta mengeja "canteen" tanpa melihat papan tulis.
+AKSI: Untuk siswa yang sudah bisa, minta mengeja "canteen" tanpa melihat papan tulis.
 
 BANTUAN: Jika siswa yang diminta membaca menolak atau malu: jangan paksa, ucapkan "That's okay. Maybe next time.", lalu tunjuk siswa lain.
 

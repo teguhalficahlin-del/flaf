@@ -179,8 +179,7 @@ UCAP: "Just key words, not full sentences yet."
 
 AKSI: Pantau pengisian Planning Sheet semua siswa.
 
-AKSI: Untuk siswa yang butuh bantuan, tanyakan "Hari apa kamu paling suka?", tunggu jawaban lisan.
-AKSI: Tanyakan lanjut "Biasanya kamu ngapain hari itu?", lalu arahkan tangan mereka ke kertas.
+AKSI: Untuk siswa yang butuh bantuan, tanyakan "Hari apa kamu paling suka?", tunggu jawaban lisan, lalu arahkan tangan mereka ke kertas.
 AKSI: Untuk siswa yang sudah bisa, setelah lima baris terisi, minta tambah satu kolom perasaan dengan satu kata Inggris, seperti happy, tired, atau excited.
 
 BANTUAN:
