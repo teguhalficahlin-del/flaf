@@ -433,7 +433,7 @@ Darurat:
 
 ## LAYAR 9 — INTI · BERKELILING DAN REVIEW TULISAN
 
-AKSI: Berkeliling melihat hasil tulisan siswa.
+AKSI: Pantau hasil tulisan semua siswa.
 AKSI: Pilih dua hasil tulisan siswa — satu menggunakan "next to", satu menggunakan "across from" atau tempat di luar market dan mosque.
 AKSI: Panggil dua siswa yang sudah dipilih ke depan.
 

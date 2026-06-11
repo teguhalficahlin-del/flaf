@@ -322,7 +322,7 @@ UCAP: "And one more: what do we do when we want to answer?"
 AKSI: Tunggu pasangan saling menjawab.
 
 AKSI: Beri waktu tiga menit untuk latihan berpasangan.
-AKSI: Berkeliling membentuk huruf U.
+AKSI: Pantau latihan berpasangan semua siswa.
 AKSI: Dengarkan tanpa menyela kecuali ada kekeliruan konsep besar.
 
 AKSI: Untuk siswa yang butuh bantuan, pasangkan dengan siswa yang lebih percaya diri dan terima jawaban satu kata.
@@ -378,7 +378,7 @@ Darurat:
 
 ## LAYAR 9 — INTI · BERKELILING DAN REVIEW TULISAN
 
-AKSI: Berkeliling melihat hasil tulisan siswa.
+AKSI: Pantau hasil tulisan semua siswa.
 AKSI: Pilih dua sampai tiga hasil tulisan siswa.
 AKSI: Panggil dua siswa yang sudah dipilih ke depan.
 

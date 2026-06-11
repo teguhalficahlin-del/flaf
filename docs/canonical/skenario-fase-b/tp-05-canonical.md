@@ -406,7 +406,7 @@ Darurat: Jika waktu tersisa 8 menit atau kurang saat layar dimulai → minta sis
 
 ## LAYAR 9 — INTI · BERKELILING DAN REVIEW TULISAN
 
-AKSI: Berkeliling melihat hasil tulisan siswa.
+AKSI: Pantau hasil tulisan semua siswa.
 AKSI: Pilih dua hasil tulisan siswa — satu menggunakan "o'clock", satu menggunakan "half past" atau menambah rutinitas ekstra.
 AKSI: Panggil dua siswa yang sudah dipilih ke depan.
 

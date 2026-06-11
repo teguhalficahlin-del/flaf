@@ -181,7 +181,7 @@ UCAP: "Fill in Part A. Just words, not sentences yet."
 UCAP: "You have four minutes."
 UCAP: "Think. Choose. Write key words."
 
-AKSI: Berkeliling pelan di antara meja siswa.
+AKSI: Pantau pengisian Planning Sheet semua siswa.
 
 AKSI: Untuk siswa yang butuh bantuan, tanyakan "Who is one person you know well?" dan "What place is near your house?", lalu biarkan mereka mengisi sendiri.
 AKSI: Untuk siswa yang sudah bisa, jika selesai sebelum empat menit, minta tambah satu detail lagi di Planning Sheet.
@@ -200,7 +200,7 @@ AKSI: Tunjukkan teks contoh paragraf yang sudah disiapkan ke semua siswa.
 
 UCAP: "Listen. I will read my paragraph."
 
-AKSI: Baca seluruh teks contoh dengan pelan dan jelas.
+AKSI: Baca seluruh teks contoh ke semua siswa.
 
 UCAP: "This is my mother."
 UCAP: "She has black hair."
@@ -275,7 +275,7 @@ AKSI: Tulis "6. Your closing sentence." di papan tulis.
 UCAP: "The words on the board help you. But your sentences, your ideas."
 
 AKSI: Mundur dari depan kelas.
-AKSI: Berkeliling pelan di antara meja siswa.
+AKSI: Pantau penulisan semua siswa.
 AKSI: Buka overlay penilaian formatif.
 
 AKSI: Untuk siswa yang butuh bantuan, izinkan menyalin struktur dari papan tulis dan mengisi nama, kata sifat, dan nama tempat dari Planning Sheet.

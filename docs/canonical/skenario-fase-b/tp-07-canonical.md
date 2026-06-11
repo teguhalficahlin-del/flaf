@@ -252,7 +252,7 @@ AKSI: Jeda 2 detik.
 UCAP: "Now, months. There are twelve months in a year."
 UCAP: "Listen. I will say them once."
 
-AKSI: Ucapkan dua belas bulan dengan ritme pelan dan jelas.
+AKSI: Ucapkan dua belas bulan satu per satu dengan tempo lambat.
 UCAP: "January, February, March, April."
 UCAP: "May, June, July, August."
 UCAP: "September, October, November, December."
