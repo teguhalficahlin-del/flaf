@@ -408,23 +408,35 @@ blok yang sama menggunakan `blok: null`:
 
 ## 6.3 Field `breakpoints`
 
-Array objek yang mendefinisikan titik jeda antar sesi. Boleh kosong `[]` jika
-tidak ada breakpoint:
+Array objek yang mendefinisikan titik jeda antar sesi.
+
+**Wajib terisi** untuk TP yang punya blok `## ════ BREAKPOINT ALAMI ════` di canonical.
+**Kosong `[]`** untuk TP yang tidak punya Breakpoint Alami.
+
+6 TP Fase C yang wajib terisi breakpoints:
+
+| TP | after_langkah_id | resume_at | Catatan |
+|----|-----------------|-----------|---------|
+| tp-04 | `'l8'` | `'l9'` | |
+| tp-08 | `'l8'` | `'l9'` | |
+| tp-16 | `'l8'` | `'l9'` | |
+| tp-20 | `'l7'` | `'l9'` | Lewati l8 yang FLEX |
+| tp-21 | `'l6'` | `'l7'` | |
+| tp-22 | `'l8'` | `'l9'` | |
+
+Format objek breakpoint:
 
 ```js
 breakpoints: [
   {
     id              : 'bp-1',
-    after_langkah_id: 'l6',
-    resume_at       : 'l7',
-    text            : 'Sesi pertama selesai sampai di sini.',
-    ui: {
-      primary_action  : 'Simpan & keluar',
-      secondary_action: 'Lanjut mengajar',
-    },
+    after_langkah_id: 'l8',   // id langkah setelah breakpoint
+    resume_at       : 'l9',   // id langkah untuk memulai sesi berikutnya
   },
 ],
 ```
+
+TP lain Fase C (16 TP): `breakpoints: []`
 
 ---
 
@@ -527,3 +539,4 @@ File JS dinyatakan siap apabila:
 | Diklarifikasi | `indikator` dan `vocab` bersumber dari dokumen kurikulum (file JS aktif per fase), bukan dari canonical skenario |
 | Dikoreksi | `darurat` diizinkan sebagai array (`null \| string \| string[]`) — konsisten dengan `bantuan` |
 | Dikoreksi | Seksi 5.5: kondisi FLEX mengikuti field canonical asalnya (Catatan Penting → `cue`, Darurat → `darurat`) |
+| Dikoreksi | Seksi 6.3: `breakpoints` wajib terisi untuk 6 TP Fase C yang punya Breakpoint Alami; peta lengkap ditambahkan |
