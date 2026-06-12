@@ -1,12 +1,12 @@
-// ============================================================
-// FLAF — Service Worker Produksi
+﻿// ============================================================
+// FLAF â€” Service Worker Produksi
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v219';         // ← bump: refleksiGuru render di modul ajar B7
+const CACHE_VERSION  = 'flaf-v220';         // â† bump: refleksiGuru render di modul ajar B7
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
-// Files that MUST be cached — install fails if any of these are missing
+// Files that MUST be cached â€” install fails if any of these are missing
 const SHELL_CRITICAL = [
   './',
   './index.html',
@@ -32,7 +32,7 @@ const SHELL_CRITICAL = [
   './storage/nilai.js',
   './storage/presensi.js',
   './storage/siswa-history.js',
-  // data — router only
+  // data â€” router only
   './data/index.js',
   // modules
   './modules/pdf-handler.js',
@@ -42,9 +42,9 @@ const SHELL_CRITICAL = [
   './icons/icon-512.png',
 ];
 
-// Content files — cached opportunistically; failures do NOT abort install
+// Content files â€” cached opportunistically; failures do NOT abort install
 const SHELL_OPTIONAL = [
-  // data — fase files
+  // data â€” fase files
   './data/fase-a.js',
   './data/fase-b.js',
   './data/fase-b-kluster-a.js',
@@ -56,7 +56,7 @@ const SHELL_OPTIONAL = [
   './data/fase-c.js',
   './data/printables.js',
 
-  // docs/output-v5 — TP01–14 (kelas 1 & 2)
+  // docs/output-v5 â€” TP01â€“14 (kelas 1 & 2)
   './docs/output-v5/tp-01-v6.js',
   './docs/output-v5/tp-02-v5.js',
   './docs/output-v5/tp-03-v5.js',
@@ -72,13 +72,13 @@ const SHELL_OPTIONAL = [
   './docs/output-v5/tp-13-v5.js',
   './docs/output-v5/tp-14-v5.js',
 
-  // docs/sesi-m* — TP15–18 (kelas 2 lanjut)
+  // docs/sesi-m* â€” TP15â€“18 (kelas 2 lanjut)
   './docs/sesi-m10/tp-15-v5.js',
   './docs/output-v5/tp-16-v5.js',
   './docs/output-v5/tp-17-v5.js',
   './docs/output-v5/tp-18-v5.js',
 
-  // docs/output-v5-faseb — TP01–22 (Fase B)
+  // docs/output-v5-faseb â€” TP01â€“22 (Fase B)
   './docs/output-v5-faseb/tp-01-v5.js',
   './docs/output-v5-faseb/tp-02-v5.js',
   './docs/output-v5-faseb/tp-03-v5.js',
@@ -102,7 +102,7 @@ const SHELL_OPTIONAL = [
   './docs/output-v5-faseb/tp-21-v5.js',
   './docs/output-v5-faseb/tp-22-v5.js',
 
-  // docs/fase-c-skenario — TP01–22 (Fase C)
+  // docs/fase-c-skenario â€” TP01â€“22 (Fase C)
   './docs/fase-c-skenario/tp-01-v1.js',
   './docs/fase-c-skenario/tp-02-v1.js',
   './docs/fase-c-skenario/tp-03-v1.js',
@@ -126,7 +126,7 @@ const SHELL_OPTIONAL = [
   './docs/fase-c-skenario/tp-21-v1.js',
   './docs/fase-c-skenario/tp-22-v1.js',
 
-  // printables images — TP01
+  // printables images â€” TP01
   './assets/images/printables/tp01-good-morning.png',
   './assets/images/printables/tp01-good-afternoon.png',
   './assets/images/printables/tp01-good-evening.png',
@@ -135,18 +135,18 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp01-afternoon.png',
   './assets/images/printables/tp01-evening.png',
   './assets/images/printables/tp01-night.png',
-  // printables images — TP02
+  // printables images â€” TP02
   './assets/images/printables/tp02-name-tag.png',
   './assets/images/printables/tp02-introduce-boy.png',
   './assets/images/printables/tp02-introduce-girl.png',
-  // printables images — TP03
+  // printables images â€” TP03
   './assets/images/printables/tp03-listen.png',
   './assets/images/printables/tp03-look.png',
   './assets/images/printables/tp03-write.png',
   './assets/images/printables/tp03-open-book.png',
   './assets/images/printables/tp03-close-book.png',
   './assets/images/printables/tp03-draw.png',
-  // printables images — TP04
+  // printables images â€” TP04
   './assets/images/printables/tp04-num-01.png',
   './assets/images/printables/tp04-num-02.png',
   './assets/images/printables/tp04-num-03.png',
@@ -167,7 +167,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp04-num-18.png',
   './assets/images/printables/tp04-num-19.png',
   './assets/images/printables/tp04-num-20.png',
-  // printables images — TP05
+  // printables images â€” TP05
   './assets/images/printables/tp05-red.png',
   './assets/images/printables/tp05-blue.png',
   './assets/images/printables/tp05-green.png',
@@ -177,28 +177,28 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp05-black.png',
   './assets/images/printables/tp05-white.png',
   './assets/images/printables/tp05-pink.png',
-  // printables images — TP06
+  // printables images â€” TP06
   './assets/images/printables/tp06-circle.png',
   './assets/images/printables/tp06-square.png',
   './assets/images/printables/tp06-triangle.png',
   './assets/images/printables/tp06-rectangle.png',
   './assets/images/printables/tp06-star.png',
   './assets/images/printables/tp06-heart.png',
-  // printables images — TP07
+  // printables images â€” TP07
   './assets/images/printables/tp07-mother.png',
   './assets/images/printables/tp07-father.png',
   './assets/images/printables/tp07-sister.png',
   './assets/images/printables/tp07-brother.png',
   './assets/images/printables/tp07-grandmother.png',
   './assets/images/printables/tp07-grandfather.png',
-  // printables images — TP08
+  // printables images â€” TP08
   './assets/images/printables/tp08-bedroom.png',
   './assets/images/printables/tp08-kitchen.png',
   './assets/images/printables/tp08-bathroom.png',
   './assets/images/printables/tp08-living-room.png',
   './assets/images/printables/tp08-garage.png',
   './assets/images/printables/tp08-floor-plan.png',
-  // printables images — TP09
+  // printables images â€” TP09
   './assets/images/printables/tp09-cat.png',
   './assets/images/printables/tp09-dog.png',
   './assets/images/printables/tp09-bird.png',
@@ -209,7 +209,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp09-monkey.png',
   './assets/images/printables/tp09-snake.png',
   './assets/images/printables/tp09-frog.png',
-  // printables images — TP10
+  // printables images â€” TP10
   './assets/images/printables/tp10-rice.png',
   './assets/images/printables/tp10-bread.png',
   './assets/images/printables/tp10-egg.png',
@@ -221,7 +221,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp10-noodles.png',
   './assets/images/printables/tp10-chicken.png',
   './assets/images/printables/tp10-plate-worksheet.png',
-  // printables images — TP11
+  // printables images â€” TP11
   './assets/images/printables/tp11-wake-up.png',
   './assets/images/printables/tp11-brush-teeth.png',
   './assets/images/printables/tp11-eat-breakfast.png',
@@ -230,7 +230,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp11-play.png',
   './assets/images/printables/tp11-eat-dinner.png',
   './assets/images/printables/tp11-sleep.png',
-  // printables images — TP12
+  // printables images â€” TP12
   './assets/images/printables/tp12-head.png',
   './assets/images/printables/tp12-eyes.png',
   './assets/images/printables/tp12-ears.png',
@@ -239,21 +239,21 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp12-hands.png',
   './assets/images/printables/tp12-legs.png',
   './assets/images/printables/tp12-feet.png',
-  // printables images — TP13
+  // printables images â€” TP13
   './assets/images/printables/tp13-sunny.png',
   './assets/images/printables/tp13-cloudy.png',
   './assets/images/printables/tp13-rainy.png',
   './assets/images/printables/tp13-windy.png',
   './assets/images/printables/tp13-hot.png',
   './assets/images/printables/tp13-cold.png',
-  // printables images — TP14
+  // printables images â€” TP14
   './assets/images/printables/tp14-book.png',
   './assets/images/printables/tp14-pen.png',
   './assets/images/printables/tp14-pencil.png',
   './assets/images/printables/tp14-eraser.png',
   './assets/images/printables/tp14-ruler.png',
   './assets/images/printables/tp14-bag.png',
-  // printables images — TP15
+  // printables images â€” TP15
   './assets/images/printables/tp15-happy.png',
   './assets/images/printables/tp15-sad.png',
   './assets/images/printables/tp15-angry.png',
@@ -261,14 +261,14 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp15-bored.png',
   './assets/images/printables/tp15-excited.png',
   './assets/images/printables/tp15-tired.png',
-  // printables images — TP16
+  // printables images â€” TP16
   './assets/images/printables/tp16-cover.png',
   './assets/images/printables/tp16-page-01.png',
   './assets/images/printables/tp16-page-02.png',
   './assets/images/printables/tp16-page-03.png',
   './assets/images/printables/tp16-page-04.png',
   './assets/images/printables/tp16-sequence-cards.png',
-  // printables images — TP17
+  // printables images â€” TP17
   './assets/images/printables/tp17-cooking.png',
   './assets/images/printables/tp17-cycling.png',
   './assets/images/printables/tp17-dancing.png',
@@ -277,11 +277,11 @@ const SHELL_OPTIONAL = [
   './assets/images/printables/tp17-reading.png',
   './assets/images/printables/tp17-singing.png',
   './assets/images/printables/tp17-swimming.png',
-  // printables images — TP18
+  // printables images â€” TP18
   './assets/images/printables/tp18-poster-template.png',
   './assets/images/printables/tp18-reference-card.png',
 
-  // printables images — TP-B01
+  // printables images â€” TP-B01
   './assets/images/printables_fase_b/tp-b01-canteen.png',
   './assets/images/printables_fase_b/tp-b01-classroom.png',
   './assets/images/printables_fase_b/tp-b01-gate.png',
@@ -292,7 +292,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b01-school-map-worksheet.png',
   './assets/images/printables_fase_b/tp-b01-toilet.png',
 
-  // printables images — TP-B02
+  // printables images â€” TP-B02
   './assets/images/printables_fase_b/tp-b02-curly.png',
   './assets/images/printables_fase_b/tp-b02-describe-me-worksheet.png',
   './assets/images/printables_fase_b/tp-b02-funny.png',
@@ -304,7 +304,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b02-straight.png',
   './assets/images/printables_fase_b/tp-b02-tall.png',
 
-  // printables images — TP-B03
+  // printables images â€” TP-B03
   './assets/images/printables_fase_b/tp-b03-bank.png',
   './assets/images/printables_fase_b/tp-b03-behind.png',
   './assets/images/printables_fase_b/tp-b03-hospital.png',
@@ -315,11 +315,11 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b03-next-to.png',
   './assets/images/printables_fase_b/tp-b03-park.png',
 
-  // printables images — TP-B04
+  // printables images â€” TP-B04
   './assets/images/printables_fase_b/tp-b04-sentence-frame-card.png',
   './assets/images/printables_fase_b/tp-b04-writing-worksheet.png',
 
-  // printables images — TP-B05
+  // printables images â€” TP-B05
   './assets/images/printables_fase_b/tp-b05-clock-worksheet.png',
   './assets/images/printables_fase_b/tp-b05-draw-the-clock-worksheet.png',
   './assets/images/printables_fase_b/tp-b05-half-past.png',
@@ -328,7 +328,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b05-quarter-to.png',
   './assets/images/printables_fase_b/tp-b05-time-reference-card.png',
 
-  // printables images — TP-B06
+  // printables images â€” TP-B06
   './assets/images/printables_fase_b/tp-b06-go-to-school.png',
   './assets/images/printables_fase_b/tp-b06-have-breakfast.png',
   './assets/images/printables_fase_b/tp-b06-have-lunch.png',
@@ -338,7 +338,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b06-study.png',
   './assets/images/printables_fase_b/tp-b06-wake-up.png',
 
-  // printables images — TP-B07
+  // printables images â€” TP-B07
   './assets/images/printables_fase_b/tp-b07-calendar-worksheet.png',
   './assets/images/printables_fase_b/tp-b07-friday.png',
   './assets/images/printables_fase_b/tp-b07-monday.png',
@@ -349,11 +349,11 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b07-tuesday.png',
   './assets/images/printables_fase_b/tp-b07-wednesday.png',
 
-  // printables images — TP-B08
+  // printables images â€” TP-B08
   './assets/images/printables_fase_b/tp-b08-weekly-schedule-worksheet.png',
   './assets/images/printables_fase_b/tp-b08-writing-guide-card.png',
 
-  // printables images — TP-B09
+  // printables images â€” TP-B09
   './assets/images/printables_fase_b/tp-b09-bird.png',
   './assets/images/printables_fase_b/tp-b09-butterfly.png',
   './assets/images/printables_fase_b/tp-b09-cat.png',
@@ -365,7 +365,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b09-leaf.png',
   './assets/images/printables_fase_b/tp-b09-tree.png',
 
-  // printables images — TP-B10
+  // printables images â€” TP-B10
   './assets/images/printables_fase_b/tp-b10-cloudy.png',
   './assets/images/printables_fase_b/tp-b10-hat.png',
   './assets/images/printables_fase_b/tp-b10-jacket.png',
@@ -378,7 +378,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b10-weather-outfit-worksheet.png',
   './assets/images/printables_fase_b/tp-b10-windy.png',
 
-  // printables images — TP-B11
+  // printables images â€” TP-B11
   './assets/images/printables_fase_b/tp-b11-brush-teeth.png',
   './assets/images/printables_fase_b/tp-b11-drink-water.png',
   './assets/images/printables_fase_b/tp-b11-eat-vegetables.png',
@@ -393,7 +393,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b11-habit-card-5.png',
   './assets/images/printables_fase_b/tp-b11-habit-card-6.png',
 
-  // printables images — TP-B12
+  // printables images â€” TP-B12
   './assets/images/printables_fase_b/tp-b12-chef.png',
   './assets/images/printables_fase_b/tp-b12-doctor.png',
   './assets/images/printables_fase_b/tp-b12-driver.png',
@@ -404,7 +404,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b12-police.png',
   './assets/images/printables_fase_b/tp-b12-teacher.png',
 
-  // printables images — TP-B13
+  // printables images â€” TP-B13
   './assets/images/printables_fase_b/tp-b13-gado-gado.png',
   './assets/images/printables_fase_b/tp-b13-my-favorite-food-worksheet.png',
   './assets/images/printables_fase_b/tp-b13-nasi-goreng.png',
@@ -413,7 +413,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b13-soto.png',
   './assets/images/printables_fase_b/tp-b13-tempeh.png',
 
-  // printables images — TP-B14
+  // printables images â€” TP-B14
   './assets/images/printables_fase_b/tp-b14-birthday.png',
   './assets/images/printables_fase_b/tp-b14-christmas.png',
   './assets/images/printables_fase_b/tp-b14-eid.png',
@@ -421,12 +421,12 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b14-my-celebration-worksheet.png',
   './assets/images/printables_fase_b/tp-b14-nyepi.png',
 
-  // printables images — TP-B15
+  // printables images â€” TP-B15
   './assets/images/printables_fase_b/tp-b15-indonesia-poster-template.png',
   './assets/images/printables_fase_b/tp-b15-my-country-worksheet.png',
   './assets/images/printables_fase_b/tp-b15-sentence-starter-card.png',
 
-  // printables images — TP-B16
+  // printables images â€” TP-B16
   './assets/images/printables_fase_b/tp-b16-badminton.png',
   './assets/images/printables_fase_b/tp-b16-cycling.png',
   './assets/images/printables_fase_b/tp-b16-football.png',
@@ -435,7 +435,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b16-sports-survey-worksheet.png',
   './assets/images/printables_fase_b/tp-b16-swimming.png',
 
-  // printables images — TP-B17
+  // printables images â€” TP-B17
   './assets/images/printables_fase_b/tp-b17-crossroad.png',
   './assets/images/printables_fase_b/tp-b17-direction-phrase-card.png',
   './assets/images/printables_fase_b/tp-b17-directions-map-worksheet.png',
@@ -445,7 +445,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b17-turn-left.png',
   './assets/images/printables_fase_b/tp-b17-turn-right.png',
 
-  // printables images — TP-B18
+  // printables images â€” TP-B18
   './assets/images/printables_fase_b/tp-b18-ago.png',
   './assets/images/printables_fase_b/tp-b18-last-month.png',
   './assets/images/printables_fase_b/tp-b18-last-week.png',
@@ -460,24 +460,24 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_b/tp-b18-activity-card-5.png',
   './assets/images/printables_fase_b/tp-b18-activity-card-6.png',
 
-  // printables images — TP-B19
+  // printables images â€” TP-B19
   './assets/images/printables_fase_b/tp-b19-budis-day-text.png',
   './assets/images/printables_fase_b/tp-b19-reading-comprehension-worksheet.png',
   './assets/images/printables_fase_b/tp-b19-sequence-cards.png',
 
-  // printables images — TP-B20
+  // printables images â€” TP-B20
   './assets/images/printables_fase_b/tp-b20-my-story-worksheet.png',
   './assets/images/printables_fase_b/tp-b20-story-frame-card.png',
 
-  // printables images — TP-B21
+  // printables images â€” TP-B21
   './assets/images/printables_fase_b/tp-b21-budis-week-table.png',
   './assets/images/printables_fase_b/tp-b21-stay-healthy-poster.png',
 
-  // printables images — TP-B22
+  // printables images â€” TP-B22
   './assets/images/printables_fase_b/tp-b22-planning-guide-card.png',
   './assets/images/printables_fase_b/tp-b22-project-poster-template.png',
 
-  // printables images — Fase C
+  // printables images â€” Fase C
   './assets/images/printables_fase_c/tp-c01-profile-note.png',
   './assets/images/printables_fase_c/tp-c01-partner-card.png',
   './assets/images/printables_fase_c/tp-c02-tall.png',
@@ -577,7 +577,7 @@ const SHELL_OPTIONAL = [
   './assets/images/printables_fase_c/tp-c22-choice-card.png',
 
   // secrets.js sengaja TIDAK masuk precache
-  // karena berisi credentials Supabase — hanya dimuat saat runtime
+  // karena berisi credentials Supabase â€” hanya dimuat saat runtime
 ];
 
 const PDF_MANIFEST = [
@@ -610,12 +610,12 @@ const PDF_MANIFEST = [
 ];
 
 // Network-only: Supabase + CDN eksternal (jsPDF, dll)
-// CDN di-exclude agar tidak cache-miss error saat offline —
+// CDN di-exclude agar tidak cache-miss error saat offline â€”
 // jsPDF hanya dipakai saat aktif download, bukan fungsi inti offline
 const NETWORK_ONLY_PATTERNS = [
   /supabase\.co/,
   /\.supabase\./,
-  /cdnjs\.cloudflare\.com/,   // ← jsPDF CDN
+  /cdnjs\.cloudflare\.com/,   // â† jsPDF CDN
   /cdn\.jsdelivr\.net/,       // CDN lain yang mungkin dipakai
   /unpkg\.com/,
 ];
@@ -647,7 +647,7 @@ self.addEventListener('install', event => {
             clients.forEach(c => c.postMessage({ type: 'STORAGE_LOW' }));
           });
         }
-      } catch (_) { /* estimate tidak tersedia di semua browser — lanjut */ }
+      } catch (_) { /* estimate tidak tersedia di semua browser â€” lanjut */ }
 
       try {
         await cache.addAll(SHELL_CRITICAL);
@@ -707,7 +707,7 @@ self.addEventListener('activate', event => {
 });
 
 // ============================================================
-// FETCH — Routing
+// FETCH â€” Routing
 // ============================================================
 self.addEventListener('fetch', event => {
   const { request } = event;
@@ -796,7 +796,7 @@ async function cacheFirst(request, cacheName = CACHE_VERSION) {
     }
     return response;
   } catch {
-    return new Response('Offline — resource tidak tersedia', { status: 503 });
+    return new Response('Offline â€” resource tidak tersedia', { status: 503 });
   }
 }
 
@@ -825,7 +825,7 @@ async function cacheFirstAppShell(request) {
       const fallback = await caches.match('/index.html');
       if (fallback) return fallback;
     }
-    return new Response('Offline — app tidak tersedia', { status: 503 });
+    return new Response('Offline â€” app tidak tersedia', { status: 503 });
   }
 }
 
@@ -965,7 +965,7 @@ async function handleHardReset() {
 }
 
 // ============================================================
-// NAVIGATION — Cache-first (bukan network-first)
+// NAVIGATION â€” Cache-first (bukan network-first)
 // Untuk guru di lapangan dengan koneksi tidak stabil
 // ============================================================
 async function handleNavigationRequest(request) {
@@ -981,7 +981,7 @@ async function handleNavigationRequest(request) {
     return cachedPage;
   }
 
-  // Tidak ada di cache — coba network
+  // Tidak ada di cache â€” coba network
   try {
     const response = await fetch(request);
     if (response && response.ok) {
@@ -1118,3 +1118,4 @@ async function getCacheStats() {
     return { error: err.message };
   }
 }
+
