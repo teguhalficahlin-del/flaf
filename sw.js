@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v216';         // ← bump: guard tp.deskripsi di kurikulum
+const CACHE_VERSION  = 'flaf-v217';         // ← bump: restore printables[] di file canonical
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
