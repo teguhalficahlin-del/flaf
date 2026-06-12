@@ -553,7 +553,7 @@ function _renderEntering() {
   const preOpHTML = preOp ? `
     <div class="sr-preopening-card">
       <div class="sr-preopening-label">Sebelum memulai</div>
-      <div class="sr-preopening-teks">${_escape(preOp.teks)}</div>
+      <div class="sr-preopening-teks">${_renderTeksBlok(preOp.teks)}</div>
       ${preOp.cue ? `<div class="sr-cue-block" style="margin-top:10px">
         <div class="sr-cue-label">⚡ Panduan guru</div>
         <div class="sr-cue-teks">${_escape(preOp.cue)}</div>
@@ -660,47 +660,8 @@ function _energiPill(energi) {
 //   Data quality tiers (canonical vs legacy) ada di fase-a.js — bukan di sini.
 //   Lihat: CONTEXT.md §Schema Tier Policy
 
-function _renderRunning() {
-  const fase    = _currentFase();
-  const langkah = _currentLangkah();
-  const total   = fase?.langkah?.length || 0;
-  const idx     = _state.langkahIdx;
-  const faseName = fase?.fase || '—';
-  const isFirst  = idx === 0 && _state.faseIdx === 0 && !_state.onBack;
-  const isLast   = idx === total - 1;
-
-  if (!langkah) {
-    console.warn('[SR] langkah null — faseIdx:', _state.faseIdx, 'langkahIdx:', _state.langkahIdx, 'fase:', fase?.fase ?? 'null');
-    _transition({ aktState: 'selesai' });
-    return;
-  }
-
-  const tipe = langkah.tipe || 'instruksi';
-
-  const TIPE_INFO = {
-    audio        : { label: 'Ucapkan ke siswa', cls: 'au' },
-    respons_siswa: { label: 'Respons siswa',    cls: 'rs' },
-    instruksi    : { label: 'Instruksi',         cls: 'in' },
-  };
-  const info = TIPE_INFO[tipe] || TIPE_INFO.instruksi;
-
-  // Energi pill (header)
-  const energiPillHTML = _energiPill(langkah.energi);
-
-  // Interaction mode badge (Fase C — guard: langkah.interaction_mode)
-  const modeBadgeHTML = _interactionModeBadge(langkah.interaction_mode);
-
-  // Block header (Fase C — guard: langkah.blok)
-  const prevLangkah     = _getPrevLangkah();
-  const prevBlok        = prevLangkah?.blok || null;
-  const blockHeaderHTML = (langkah.blok && langkah.blok !== prevBlok)
-    ? _renderBlockHeader(langkah.blok) : '';
-
-  // Assessment panel (Fase C — guard: langkah.assessment_overlay)
-  const assessmentHTML = _renderAssessmentPanel(langkah);
-
-  // Teks segments
-  const teksHTML = _expandPemisah(_collapseUcap(_parseTeks(langkah.teks))).map(seg => {
+function _renderTeksBlok(teks) {
+  return _expandPemisah(_collapseUcap(_parseTeks(teks))).map(seg => {
     if (seg.jenis === 'pemisah') {
       return '<div class="sr-pemisah"></div>';
     }
@@ -743,6 +704,49 @@ function _renderRunning() {
       }).join('');
     }).join('');
   }).join('');
+}
+
+function _renderRunning() {
+  const fase    = _currentFase();
+  const langkah = _currentLangkah();
+  const total   = fase?.langkah?.length || 0;
+  const idx     = _state.langkahIdx;
+  const faseName = fase?.fase || '—';
+  const isFirst  = idx === 0 && _state.faseIdx === 0 && !_state.onBack;
+  const isLast   = idx === total - 1;
+
+  if (!langkah) {
+    console.warn('[SR] langkah null — faseIdx:', _state.faseIdx, 'langkahIdx:', _state.langkahIdx, 'fase:', fase?.fase ?? 'null');
+    _transition({ aktState: 'selesai' });
+    return;
+  }
+
+  const tipe = langkah.tipe || 'instruksi';
+
+  const TIPE_INFO = {
+    audio        : { label: 'Ucapkan ke siswa', cls: 'au' },
+    respons_siswa: { label: 'Respons siswa',    cls: 'rs' },
+    instruksi    : { label: 'Instruksi',         cls: 'in' },
+  };
+  const info = TIPE_INFO[tipe] || TIPE_INFO.instruksi;
+
+  // Energi pill (header)
+  const energiPillHTML = _energiPill(langkah.energi);
+
+  // Interaction mode badge (Fase C — guard: langkah.interaction_mode)
+  const modeBadgeHTML = _interactionModeBadge(langkah.interaction_mode);
+
+  // Block header (Fase C — guard: langkah.blok)
+  const prevLangkah     = _getPrevLangkah();
+  const prevBlok        = prevLangkah?.blok || null;
+  const blockHeaderHTML = (langkah.blok && langkah.blok !== prevBlok)
+    ? _renderBlockHeader(langkah.blok) : '';
+
+  // Assessment panel (Fase C — guard: langkah.assessment_overlay)
+  const assessmentHTML = _renderAssessmentPanel(langkah);
+
+  // Teks segments
+  const teksHTML = _renderTeksBlok(langkah.teks);
 
   // Panduan guru
   const cueHTML = langkah.cue ? `
