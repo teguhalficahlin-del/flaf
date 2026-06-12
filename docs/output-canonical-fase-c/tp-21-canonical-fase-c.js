@@ -32,7 +32,10 @@ const TP_C21 = {
     'Catatan distribusi: siswa ganjil mendapat Teks A, siswa genap mendapat Teks B. Setiap pasangan INTERACT terdiri dari satu siswa ganjil dan satu siswa genap.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c21-text-a-poster.png', label: 'Competition Poster' },
+    { file: 'tp-c21-text-b-menu.png', label: 'Warung Menu' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-20', tujuan: 'Guru mengaktifkan kembali tulisan bebas siswa TP-20.' },

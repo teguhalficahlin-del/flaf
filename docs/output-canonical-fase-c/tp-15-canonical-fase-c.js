@@ -31,7 +31,10 @@ const TP_C15 = {
     'Catatan distribusi: Card A ke setengah kelas, Card B ke setengah lainnya. Setiap pasangan terdiri dari satu siswa A dan satu siswa B.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c15-story-card-a.png', label: 'Story Card A' },
+    { file: 'tp-c15-story-card-b.png', label: 'Story Card B' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Kluster D', tujuan: 'Guru menjembatani membaca prosedur TP-14 ke cerita.' },

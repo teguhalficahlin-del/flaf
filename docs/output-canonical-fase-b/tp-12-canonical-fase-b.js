@@ -24,7 +24,17 @@ const TP_B12 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b12-chef.png',                      label: 'Chef' },
+    { file: 'tp-b12-doctor.png',                    label: 'Doctor' },
+    { file: 'tp-b12-driver.png',                    label: 'Driver' },
+    { file: 'tp-b12-farmer.png',                    label: 'Farmer' },
+    { file: 'tp-b12-firefighter.png',               label: 'Firefighter' },
+    { file: 'tp-b12-job-description-worksheet.png', label: 'Job Description Worksheet' },
+    { file: 'tp-b12-nurse.png',                     label: 'Nurse' },
+    { file: 'tp-b12-police.png',                    label: 'Police' },
+    { file: 'tp-b12-teacher.png',                   label: 'Teacher' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-11 dan Chant Profesi', tujuan: 'Guru menghubungkan TP-11 dan menyalakan energi lewat chant profesi.' },

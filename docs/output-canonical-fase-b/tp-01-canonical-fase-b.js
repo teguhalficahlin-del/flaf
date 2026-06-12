@@ -24,7 +24,17 @@ const TP_B01 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b01-canteen.png',              label: 'Canteen' },
+    { file: 'tp-b01-classroom.png',            label: 'Classroom' },
+    { file: 'tp-b01-gate.png',                 label: 'Gate' },
+    { file: 'tp-b01-hall.png',                 label: 'Hall' },
+    { file: 'tp-b01-library.png',              label: 'Library' },
+    { file: 'tp-b01-office.png',               label: 'Office' },
+    { file: 'tp-b01-playground.png',           label: 'Playground' },
+    { file: 'tp-b01-school-map-worksheet.png', label: 'School Map Worksheet' },
+    { file: 'tp-b01-toilet.png',               label: 'Toilet' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',          tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Chant Reactivation',                 tujuan: 'Guru menyalakan energi lewat chant kosakata Fase A.' },

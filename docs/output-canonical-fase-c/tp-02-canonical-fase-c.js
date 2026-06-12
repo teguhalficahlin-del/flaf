@@ -30,7 +30,14 @@ const TP_C02 = {
     'Papan tulis dan spidol untuk menulis baris isian dan jawaban demo tabel di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c02-tall.png', label: 'Tall' },
+    { file: 'tp-c02-short.png', label: 'Short' },
+    { file: 'tp-c02-long-hair.png', label: 'Long Hair' },
+    { file: 'tp-c02-short-hair.png', label: 'Short Hair' },
+    { file: 'tp-c02-person-card.png', label: 'My Person Card' },
+    { file: 'tp-c02-comparison-table.png', label: 'Comparison Table' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Profil TP-01', tujuan: 'Guru mengaktifkan kembali pola kalimat profil dari TP-01.' },

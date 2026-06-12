@@ -23,7 +23,11 @@ const TP_B19 = {
     'Papan tulis dan spidol untuk menulis judul, kontras "I went - He went", "my - his", "friends = teman", dan baris demo di Layar 3, Layar 7, dan Layar 10.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b19-budis-day-text.png',                  label: 'Budis Day Text' },
+    { file: 'tp-b19-reading-comprehension-worksheet.png', label: 'Reading Comprehension Worksheet' },
+    { file: 'tp-b19-sequence-cards.png',                  label: 'Sequence Cards' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-18 dan Chant Cerita', tujuan: 'Guru menghubungkan TP-18 dan menyalakan energi lewat chant cerita.' },

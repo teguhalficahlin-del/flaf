@@ -23,7 +23,16 @@ const TP_B17 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b17-crossroad.png',                label: 'Crossroad' },
+    { file: 'tp-b17-direction-phrase-card.png',    label: 'Direction Phrase Card' },
+    { file: 'tp-b17-directions-map-worksheet.png', label: 'Directions Map Worksheet' },
+    { file: 'tp-b17-go-straight.png',              label: 'Go Straight' },
+    { file: 'tp-b17-stop.png',                     label: 'Stop' },
+    { file: 'tp-b17-traffic-light.png',            label: 'Traffic Light' },
+    { file: 'tp-b17-turn-left.png',                label: 'Turn Left' },
+    { file: 'tp-b17-turn-right.png',               label: 'Turn Right' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-16 dan Chant Arah', tujuan: 'Guru menghubungkan TP-16 dan menyalakan energi lewat chant arah.' },

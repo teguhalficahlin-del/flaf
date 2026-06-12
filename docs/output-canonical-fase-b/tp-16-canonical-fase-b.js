@@ -25,7 +25,15 @@ const TP_B16 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b16-badminton.png',               label: 'Badminton' },
+    { file: 'tp-b16-cycling.png',                 label: 'Cycling' },
+    { file: 'tp-b16-football.png',                label: 'Football' },
+    { file: 'tp-b16-martial-arts.png',            label: 'Martial Arts' },
+    { file: 'tp-b16-running.png',                 label: 'Running' },
+    { file: 'tp-b16-sports-survey-worksheet.png', label: 'Sports Survey Worksheet' },
+    { file: 'tp-b16-swimming.png',                label: 'Swimming' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-15 dan Chant Olahraga', tujuan: 'Guru menghubungkan TP-15 dan menyalakan energi lewat chant olahraga.' },

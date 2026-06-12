@@ -30,7 +30,15 @@ const TP_C14 = {
     'Papan tulis dan spidol untuk menampilkan dan menutup teks prosedur di Layar 5 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c14-juice-step1.png', label: 'Step 1: Get the Oranges' },
+    { file: 'tp-c14-juice-step2.png', label: 'Step 2: Cut in Half' },
+    { file: 'tp-c14-juice-step3.png', label: 'Step 3: Squeeze into Glass' },
+    { file: 'tp-c14-juice-step4.png', label: 'Step 4: Add Sugar' },
+    { file: 'tp-c14-juice-step5.png', label: 'Step 5: Stir and Enjoy' },
+    { file: 'tp-c14-sequence-sheet.png', label: 'Sequence Sheet' },
+    { file: 'tp-c14-juice-procedure.png', label: 'Juice Procedure Text' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Kluster D', tujuan: 'Guru menjembatani membaca pengumuman TP-13 ke teks prosedur.' },

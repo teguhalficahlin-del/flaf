@@ -24,7 +24,16 @@ const TP_B06 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b06-go-to-school.png',       label: 'Go To School' },
+    { file: 'tp-b06-have-breakfast.png',     label: 'Have Breakfast' },
+    { file: 'tp-b06-have-lunch.png',         label: 'Have Lunch' },
+    { file: 'tp-b06-play.png',               label: 'Play' },
+    { file: 'tp-b06-schedule-worksheet.png', label: 'Schedule Worksheet' },
+    { file: 'tp-b06-sleep.png',              label: 'Sleep' },
+    { file: 'tp-b06-study.png',              label: 'Study' },
+    { file: 'tp-b06-wake-up.png',            label: 'Wake Up' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',                  tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-05 dan Chant Rutinitas',          tujuan: 'Guru menghubungkan TP-05 dan menyalakan energi lewat chant rutinitas.' },

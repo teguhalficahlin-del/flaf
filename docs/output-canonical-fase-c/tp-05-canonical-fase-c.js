@@ -30,7 +30,16 @@ const TP_C05 = {
     'Papan tulis dan spidol untuk menulis baris isian, daftar kata kerja, dan jawaban demo tabel di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c05-go-to-school.png', label: 'Go to School' },
+    { file: 'tp-c05-cook.png', label: 'Cook' },
+    { file: 'tp-c05-play-outside.png', label: 'Play Outside' },
+    { file: 'tp-c05-study.png', label: 'Study' },
+    { file: 'tp-c05-wake-up.png', label: 'Wake Up' },
+    { file: 'tp-c05-help-at-home.png', label: 'Help at Home' },
+    { file: 'tp-c05-routine-card.png', label: 'My Routine Card' },
+    { file: 'tp-c05-comparison-table.png', label: 'My Week Comparison Table' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-04', tujuan: 'Guru mengaktifkan kembali kalimat dari tulisan This Is Me.' },

@@ -21,7 +21,14 @@ const TP_06 = {
     'Benda dari dalam tas masing-masing siswa, untuk cari bentuk di Layar 8.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp06-circle.png',    label: 'Circle' },
+    { file: 'tp06-heart.png',     label: 'Heart' },
+    { file: 'tp06-rectangle.png', label: 'Rectangle' },
+    { file: 'tp06-square.png',    label: 'Square' },
+    { file: 'tp06-star.png',      label: 'Star' },
+    { file: 'tp06-triangle.png',  label: 'Triangle' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',           tujuan: 'Guru mengunci perhatian siswa sebelum aktivitas dimulai.' },
     { layar:  1, judul: 'Pembuka · Bentuk di Sekitar Kelas',     tujuan: 'Guru menunjukkan bentuk pada benda di kelas.' },

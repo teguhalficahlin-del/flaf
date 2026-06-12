@@ -30,7 +30,9 @@ const TP_C13 = {
     'Papan tulis dan spidol untuk menulis label kategori dan pilihan demo di Layar 3 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c13-book-fair-poster.png', label: 'School Book Fair Poster' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Bridge Membaca', tujuan: 'Guru menjembatani membaca menu TP-12 ke membaca pengumuman.' },

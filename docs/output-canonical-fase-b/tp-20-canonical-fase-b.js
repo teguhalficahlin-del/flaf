@@ -24,7 +24,10 @@ const TP_B20 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b20-my-story-worksheet.png',  label: 'My Story Worksheet' },
+    { file: 'tp-b20-story-frame-card.png',    label: 'Story Frame Card' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Reconnect Chant Gabungan Kluster E', tujuan: 'Guru menyalakan energi lewat chant gabungan empat TP.' },

@@ -22,7 +22,17 @@ const TP_05 = {
     'Benda dari dalam tas masing-masing siswa, untuk show and tell.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp05-black.png',  label: 'Black' },
+    { file: 'tp05-blue.png',   label: 'Blue' },
+    { file: 'tp05-green.png',  label: 'Green' },
+    { file: 'tp05-orange.png', label: 'Orange' },
+    { file: 'tp05-pink.png',   label: 'Pink' },
+    { file: 'tp05-purple.png', label: 'Purple' },
+    { file: 'tp05-red.png',    label: 'Red' },
+    { file: 'tp05-white.png',  label: 'White' },
+    { file: 'tp05-yellow.png', label: 'Yellow' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                  tujuan: 'Guru mengunci perhatian siswa sebelum aktivitas dimulai.' },
     { layar:  1, judul: 'Pembuka · Warna Pertama',                      tujuan: 'Guru memperkenalkan dua warna pertama dengan kartu.' },

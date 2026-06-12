@@ -21,7 +21,16 @@ const TP_12 = {
     'Tidak ada material siswa di meja sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp12-ears.png',  label: 'Ears' },
+    { file: 'tp12-eyes.png',  label: 'Eyes' },
+    { file: 'tp12-feet.png',  label: 'Feet' },
+    { file: 'tp12-hands.png', label: 'Hands' },
+    { file: 'tp12-head.png',  label: 'Head' },
+    { file: 'tp12-legs.png',  label: 'Legs' },
+    { file: 'tp12-mouth.png', label: 'Mouth' },
+    { file: 'tp12-nose.png',  label: 'Nose' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                                  tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Lagu',                                          tujuan: 'Guru membangkitkan energi lewat lagu bagian tubuh.' },

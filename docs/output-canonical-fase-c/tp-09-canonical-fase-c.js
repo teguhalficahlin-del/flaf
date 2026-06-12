@@ -31,7 +31,16 @@ const TP_C09 = {
     'Papan tulis dan spidol untuk menulis daftar kata sifat dan jawaban demo kartu di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c09-market.png', label: 'Market' },
+    { file: 'tp-c09-mosque.png', label: 'Mosque' },
+    { file: 'tp-c09-park.png', label: 'Park' },
+    { file: 'tp-c09-river.png', label: 'River' },
+    { file: 'tp-c09-rice-field.png', label: 'Rice Field' },
+    { file: 'tp-c09-school.png', label: 'School' },
+    { file: 'tp-c09-town-card.png', label: 'My Town Card' },
+    { file: 'tp-c09-partner-card.png', label: "Partner's Town Card" },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-08', tujuan: 'Guru mengaktifkan kembali tulisan minggu dari TP-08.' },

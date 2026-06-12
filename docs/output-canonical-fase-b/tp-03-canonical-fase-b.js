@@ -23,7 +23,17 @@ const TP_B03 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b03-bank.png',                        label: 'Bank' },
+    { file: 'tp-b03-behind.png',                      label: 'Behind' },
+    { file: 'tp-b03-hospital.png',                    label: 'Hospital' },
+    { file: 'tp-b03-in-front-of.png',                 label: 'In Front Of' },
+    { file: 'tp-b03-market.png',                      label: 'Market' },
+    { file: 'tp-b03-mosque.png',                      label: 'Mosque' },
+    { file: 'tp-b03-neighborhood-map-worksheet.png',  label: 'Neighborhood Map Worksheet' },
+    { file: 'tp-b03-next-to.png',                     label: 'Next To' },
+    { file: 'tp-b03-park.png',                        label: 'Park' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',                  tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-02 dan Chant Lingkungan',         tujuan: 'Guru menghubungkan pelajaran lalu dan menyalakan energi lewat chant kosakata lingkungan.' },

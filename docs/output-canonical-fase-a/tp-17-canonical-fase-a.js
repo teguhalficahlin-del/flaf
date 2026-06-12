@@ -23,7 +23,16 @@ const TP_17 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp17-cooking.png',          label: 'Cooking' },
+    { file: 'tp17-cycling.png',          label: 'Cycling' },
+    { file: 'tp17-dancing.png',          label: 'Dancing' },
+    { file: 'tp17-drawing.png',          label: 'Drawing' },
+    { file: 'tp17-playing-football.png', label: 'Playing Football' },
+    { file: 'tp17-reading.png',          label: 'Reading' },
+    { file: 'tp17-singing.png',          label: 'Singing' },
+    { file: 'tp17-swimming.png',         label: 'Swimming' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                                 tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Guru Model Hobi',                              tujuan: 'Guru memancing minat lewat peragaan hobinya sendiri.' },

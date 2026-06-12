@@ -22,7 +22,16 @@ const TP_01 = {
     'Dua boneka tangan: Kiki dan Momo (wajib).',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp01-afternoon.png',      label: 'Afternoon' },
+    { file: 'tp01-evening.png',        label: 'Evening' },
+    { file: 'tp01-good-afternoon.png', label: 'Good Afternoon' },
+    { file: 'tp01-good-evening.png',   label: 'Good Evening' },
+    { file: 'tp01-good-morning.png',   label: 'Good Morning' },
+    { file: 'tp01-good-night.png',     label: 'Good Night' },
+    { file: 'tp01-morning.png',        label: 'Morning' },
+    { file: 'tp01-night.png',          label: 'Night' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Door Greeting', tujuan: 'Guru menyambut siswa satu per satu di pintu dengan boneka Kiki.' },
     { layar:  1, judul: 'Pembuka · Demo Boneka',       tujuan: 'Guru memperagakan dialog salam pagi dengan Kiki dan Momo.' },

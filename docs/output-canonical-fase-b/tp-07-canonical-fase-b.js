@@ -26,7 +26,17 @@ const TP_B07 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b07-calendar-worksheet.png',    label: 'Calendar Worksheet' },
+    { file: 'tp-b07-friday.png',                label: 'Friday' },
+    { file: 'tp-b07-monday.png',                label: 'Monday' },
+    { file: 'tp-b07-months-reference-card.png', label: 'Months Reference Card' },
+    { file: 'tp-b07-saturday.png',              label: 'Saturday' },
+    { file: 'tp-b07-sunday.png',                label: 'Sunday' },
+    { file: 'tp-b07-thursday.png',              label: 'Thursday' },
+    { file: 'tp-b07-tuesday.png',               label: 'Tuesday' },
+    { file: 'tp-b07-wednesday.png',             label: 'Wednesday' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',                       tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-06 dan Chant Hari',                    tujuan: 'Guru menghubungkan TP-06 dan memperkenalkan tujuh hari lewat chant.' },

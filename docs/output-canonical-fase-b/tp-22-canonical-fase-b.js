@@ -23,7 +23,10 @@ const TP_B22 = {
     'Pensil warna atau spidol untuk siswa yang menggambar, di meja guru.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b22-planning-guide-card.png',      label: 'Planning Guide Card' },
+    { file: 'tp-b22-project-poster-template.png',  label: 'Project Poster Template' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Reconnect Semua Panen Fase B', tujuan: 'Guru membangkitkan memori semua Panen Fase B lewat chant.' },

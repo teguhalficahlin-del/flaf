@@ -25,7 +25,10 @@ const TP_B04 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b04-sentence-frame-card.png',  label: 'Sentence Frame Card' },
+    { file: 'tp-b04-writing-worksheet.png',    label: 'Writing Worksheet' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',              tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Chant Gabungan Kluster A',               tujuan: 'Guru menyalakan energi lewat chant gabungan tiga TP.' },

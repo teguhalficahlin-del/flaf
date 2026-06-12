@@ -21,7 +21,14 @@ const TP_03 = {
     'Buku siswa sudah berada di atas meja sebelum kelas mulai (cek sebelum Layar 0).',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp03-close-book.png', label: 'Close Book' },
+    { file: 'tp03-draw.png',       label: 'Draw' },
+    { file: 'tp03-listen.png',     label: 'Listen' },
+    { file: 'tp03-look.png',       label: 'Look' },
+    { file: 'tp03-open-book.png',  label: 'Open Book' },
+    { file: 'tp03-write.png',      label: 'Write' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',          tujuan: 'Guru mengunci perhatian siswa sebelum aktivitas dimulai.' },
     { layar:  1, judul: 'Pembuka · Stand Up Sit Down',          tujuan: 'Guru memimpin gerakan stand up dan sit down tanpa penjelasan.' },

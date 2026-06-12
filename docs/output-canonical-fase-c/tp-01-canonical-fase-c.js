@@ -29,7 +29,10 @@ const TP_C01 = {
     'Papan tulis dan spidol untuk menulis baris isian profil dan jawaban demo kartu di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c01-profile-note.png', label: 'My Profile Note' },
+    { file: 'tp-c01-partner-card.png', label: "My Partner's Profile Card" },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Warm-Up Who Are You', tujuan: 'Guru memancing siswa masuk ke mode berbahasa Inggris.' },

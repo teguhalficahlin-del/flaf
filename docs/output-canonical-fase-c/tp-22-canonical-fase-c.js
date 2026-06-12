@@ -29,7 +29,9 @@ const TP_C22 = {
     'Papan tulis dan spidol. Tidak ada kalimat contoh di papan tulis selama produksi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c22-choice-card.png', label: 'Project Choice Card' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi terakhir.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-21', tujuan: 'Guru menjembatani membaca teks dunia nyata ke memproduksi teks sendiri.' },

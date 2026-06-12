@@ -24,7 +24,10 @@ const TP_B08 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b08-weekly-schedule-worksheet.png', label: 'Weekly Schedule Worksheet' },
+    { file: 'tp-b08-writing-guide-card.png',        label: 'Writing Guide Card' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',                          tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Reconnect Chant Gabungan Kluster B',                 tujuan: 'Guru menyalakan energi lewat chant gabungan tiga TP.' },

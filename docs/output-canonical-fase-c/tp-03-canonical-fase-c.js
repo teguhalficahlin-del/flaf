@@ -30,7 +30,16 @@ const TP_C03 = {
     'Papan tulis dan spidol untuk menulis baris isian, daftar kata sifat, dan jawaban demo tabel di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c03-mosque.png', label: 'Mosque' },
+    { file: 'tp-c03-market.png', label: 'Market' },
+    { file: 'tp-c03-school.png', label: 'School' },
+    { file: 'tp-c03-garden.png', label: 'Garden' },
+    { file: 'tp-c03-rice-field.png', label: 'Rice Field' },
+    { file: 'tp-c03-river.png', label: 'River' },
+    { file: 'tp-c03-neighborhood-card.png', label: 'My Neighborhood Card' },
+    { file: 'tp-c03-comparison-table.png', label: 'Comparison Table' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Deskripsi TP-02', tujuan: 'Guru mengaktifkan kembali pola deskripsi dari TP-02.' },

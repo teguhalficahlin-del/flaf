@@ -22,7 +22,15 @@ const TP_15 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp15-happy.png',   label: 'Happy' },
+    { file: 'tp15-sad.png',     label: 'Sad' },
+    { file: 'tp15-angry.png',   label: 'Angry' },
+    { file: 'tp15-scared.png',  label: 'Scared' },
+    { file: 'tp15-tired.png',   label: 'Tired' },
+    { file: 'tp15-excited.png', label: 'Excited' },
+    { file: 'tp15-bored.png',   label: 'Bored' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                              tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Ekspresi Guru',                             tujuan: 'Guru memancing minat lewat ekspresi wajahnya sendiri.' },

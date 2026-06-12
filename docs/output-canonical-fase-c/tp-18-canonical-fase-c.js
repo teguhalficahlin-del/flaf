@@ -30,7 +30,10 @@ const TP_C18 = {
     'Papan tulis dan spidol untuk text-anchor dan lima pasangan past tense.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c18-past-tense-ref.png', label: 'Past Tense Reference' },
+    { file: 'tp-c18-fruit.png', label: 'Fruit' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-17', tujuan: 'Guru menjembatani opini TP-17 ke pengalaman masa lalu.' },

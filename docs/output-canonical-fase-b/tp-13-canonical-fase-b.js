@@ -24,7 +24,15 @@ const TP_B13 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b13-gado-gado.png',                   label: 'Gado Gado' },
+    { file: 'tp-b13-my-favorite-food-worksheet.png',  label: 'My Favorite Food Worksheet' },
+    { file: 'tp-b13-nasi-goreng.png',                 label: 'Nasi Goreng' },
+    { file: 'tp-b13-rendang.png',                     label: 'Rendang' },
+    { file: 'tp-b13-sate.png',                        label: 'Sate' },
+    { file: 'tp-b13-soto.png',                        label: 'Soto' },
+    { file: 'tp-b13-tempeh.png',                      label: 'Tempeh' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-12 dan Chant Makanan', tujuan: 'Guru menghubungkan TP-12 dan menyalakan energi lewat chant makanan.' },

@@ -21,7 +21,14 @@ const TP_13 = {
     'Tidak ada material siswa di meja sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp13-cloudy.png', label: 'Cloudy' },
+    { file: 'tp13-cold.png',   label: 'Cold' },
+    { file: 'tp13-hot.png',    label: 'Hot' },
+    { file: 'tp13-rainy.png',  label: 'Rainy' },
+    { file: 'tp13-sunny.png',  label: 'Sunny' },
+    { file: 'tp13-windy.png',  label: 'Windy' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                                       tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Cuaca Hari Ini',                                     tujuan: 'Guru memancing minat lewat cuaca nyata di luar kelas.' },

@@ -29,7 +29,11 @@ const TP_C19 = {
     'Kertas biasa atau buku tulis siswa untuk draft awal di Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c19-quiet-place.png', label: 'Quiet Place' },
+    { file: 'tp-c19-busy-place.png', label: 'Busy Place' },
+    { file: 'tp-c19-crowded-place.png', label: 'Crowded Place' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-18', tujuan: 'Guru menjembatani narasi TP-18 ke deskripsi tempat.' },

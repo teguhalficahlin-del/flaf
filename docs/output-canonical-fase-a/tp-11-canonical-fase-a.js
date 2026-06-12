@@ -21,7 +21,16 @@ const TP_11 = {
     'Tidak ada material siswa di meja sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp11-brush-teeth.png',   label: 'Brush Teeth' },
+    { file: 'tp11-eat-breakfast.png', label: 'Eat Breakfast' },
+    { file: 'tp11-eat-dinner.png',    label: 'Eat Dinner' },
+    { file: 'tp11-go-to-school.png',  label: 'Go To School' },
+    { file: 'tp11-play.png',          label: 'Play' },
+    { file: 'tp11-sleep.png',         label: 'Sleep' },
+    { file: 'tp11-study.png',         label: 'Study' },
+    { file: 'tp11-wake-up.png',       label: 'Wake Up' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                          tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Rutinitas Pagi',                        tujuan: 'Guru memancing minat lewat peragaan rutinitas pagi.' },

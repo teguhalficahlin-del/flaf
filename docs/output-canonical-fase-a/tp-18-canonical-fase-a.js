@@ -24,7 +24,10 @@ const TP_18 = {
     'Timer 10 menit di meja guru.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp18-poster-template.png', label: 'Poster Template' },
+    { file: 'tp18-reference-card.png',  label: 'Reference Card' },
+  ],
   ringkasan : [
     { layar: 0, judul: 'Pre-Opening · Pembuka Kelas',          tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar: 1, judul: 'Pembuka · Set Tone Perayaan',          tujuan: 'Guru membangun suasana perayaan penutup Fase A.' },

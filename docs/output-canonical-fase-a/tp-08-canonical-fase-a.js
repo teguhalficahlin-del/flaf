@@ -21,7 +21,14 @@ const TP_08 = {
     'Kartu denah dan kartu ruangan disimpan di meja guru, belum ditempel saat kelas masuk.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp08-bathroom.png',   label: 'Bathroom' },
+    { file: 'tp08-bedroom.png',    label: 'Bedroom' },
+    { file: 'tp08-floor-plan.png', label: 'Floor Plan' },
+    { file: 'tp08-garage.png',     label: 'Garage' },
+    { file: 'tp08-kitchen.png',    label: 'Kitchen' },
+    { file: 'tp08-living-room.png',label: 'Living Room' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',         tujuan: 'Guru mengunci perhatian siswa dengan tenang sebelum aktivitas dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi Awal',              tujuan: 'Guru membuka koneksi tentang ruangan di rumah.' },

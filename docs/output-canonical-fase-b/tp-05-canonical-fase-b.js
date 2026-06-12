@@ -24,7 +24,15 @@ const TP_B05 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b05-clock-worksheet.png',          label: 'Clock Worksheet' },
+    { file: 'tp-b05-draw-the-clock-worksheet.png', label: 'Draw The Clock Worksheet' },
+    { file: 'tp-b05-half-past.png',                label: 'Half Past' },
+    { file: 'tp-b05-oclock.png',                   label: 'Oclock' },
+    { file: 'tp-b05-quarter-past.png',             label: 'Quarter Past' },
+    { file: 'tp-b05-quarter-to.png',               label: 'Quarter To' },
+    { file: 'tp-b05-time-reference-card.png',      label: 'Time Reference Card' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi',                  tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-04 dan Number Chant',             tujuan: 'Guru menghubungkan paragraf TP-04 dan menyalakan energi lewat number chant.' },

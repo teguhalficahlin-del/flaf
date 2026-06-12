@@ -23,7 +23,11 @@ const TP_B15 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b15-indonesia-poster-template.png', label: 'Indonesia Poster Template' },
+    { file: 'tp-b15-my-country-worksheet.png',      label: 'My Country Worksheet' },
+    { file: 'tp-b15-sentence-starter-card.png',     label: 'Sentence Starter Card' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Reconnect Chant Gabungan Kluster D', tujuan: 'Guru menyalakan energi lewat chant gabungan tiga TP.' },

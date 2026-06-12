@@ -20,7 +20,14 @@ const TP_07 = {
     'Semua kartu disimpan di meja guru, belum ditempel saat kelas masuk.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp07-brother.png',     label: 'Brother' },
+    { file: 'tp07-father.png',      label: 'Father' },
+    { file: 'tp07-grandfather.png', label: 'Grandfather' },
+    { file: 'tp07-grandmother.png', label: 'Grandmother' },
+    { file: 'tp07-mother.png',      label: 'Mother' },
+    { file: 'tp07-sister.png',      label: 'Sister' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',     tujuan: 'Guru mengunci perhatian siswa dengan tenang sebelum aktivitas dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi Awal',          tujuan: 'Guru membuka koneksi personal tentang keluarga.' },

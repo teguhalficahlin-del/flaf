@@ -29,7 +29,12 @@ const TP_C17 = {
     'Papan tulis dan spidol untuk text-anchor dan empat kata topik. Tidak perlu media cetak atau kartu.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c17-agree.png', label: 'Agree' },
+    { file: 'tp-c17-disagree.png', label: 'Disagree' },
+    { file: 'tp-c17-interesting.png', label: 'Interesting' },
+    { file: 'tp-c17-boring.png', label: 'Boring' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-16', tujuan: 'Guru mengaktifkan pola I think because dari tulisan TP-16.' },

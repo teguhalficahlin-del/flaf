@@ -32,7 +32,11 @@ const TP_C12 = {
     'Papan tulis dan spidol untuk menulis sample menu dan jawaban demo tabel di Layar 4 dan Layar 6.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c12-menu-card-a.png', label: 'Menu Card A' },
+    { file: 'tp-c12-menu-card-b.png', label: 'Menu Card B' },
+    { file: 'tp-c12-menu-table.png', label: 'Complete Menu Table' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-11', tujuan: 'Guru menjembatani tulisan hewan TP-11 ke mode membaca.' },

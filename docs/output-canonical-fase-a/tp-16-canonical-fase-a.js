@@ -22,7 +22,14 @@ const TP_16 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp16-cover.png',          label: 'Story Cover' },
+    { file: 'tp16-page-01.png',        label: 'Page 1' },
+    { file: 'tp16-page-02.png',        label: 'Page 2' },
+    { file: 'tp16-page-03.png',        label: 'Page 3' },
+    { file: 'tp16-page-04.png',        label: 'Page 4' },
+    { file: 'tp16-sequence-cards.png', label: 'Sequence Cards' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                 tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Prediksi',                     tujuan: 'Guru memancing antisipasi lewat sampul cerita.' },

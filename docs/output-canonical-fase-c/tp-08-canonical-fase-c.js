@@ -30,7 +30,9 @@ const TP_C08 = {
     'Brief tiga baris di papan tulis, ditulis sebelum sesi dimulai: "Write about your week." pada baris pertama, "What you do. What you like. What you eat." pada baris kedua, "Use: and, then, because, but" pada baris ketiga. Tetap tampil dari Layar 2 sampai akhir sesi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c08-plan-sheet.png', label: 'Writing Plan Sheet' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka hari menulis.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-07', tujuan: 'Guru mengaktifkan kembali pola because dan but dari TP-07.' },

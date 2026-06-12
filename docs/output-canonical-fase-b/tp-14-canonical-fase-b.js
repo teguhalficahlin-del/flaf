@@ -23,7 +23,14 @@ const TP_B14 = {
     'Tidak ada material lain di meja siswa sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b14-birthday.png',                  label: 'Birthday' },
+    { file: 'tp-b14-christmas.png',                 label: 'Christmas' },
+    { file: 'tp-b14-eid.png',                       label: 'Eid' },
+    { file: 'tp-b14-graduation.png',                label: 'Graduation' },
+    { file: 'tp-b14-my-celebration-worksheet.png',  label: 'My Celebration Worksheet' },
+    { file: 'tp-b14-nyepi.png',                     label: 'Nyepi' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Koneksi TP-13 dan Chant Perayaan', tujuan: 'Guru menghubungkan TP-13 dan menyalakan energi lewat chant perayaan.' },

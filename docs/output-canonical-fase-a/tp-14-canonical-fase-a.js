@@ -23,7 +23,14 @@ const TP_14 = {
     'Tidak ada material siswa di meja sampai instruksi distribusi.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp14-bag.png',    label: 'Bag' },
+    { file: 'tp14-book.png',   label: 'Book' },
+    { file: 'tp14-eraser.png', label: 'Eraser' },
+    { file: 'tp14-pen.png',    label: 'Pen' },
+    { file: 'tp14-pencil.png', label: 'Pencil' },
+    { file: 'tp14-ruler.png',  label: 'Ruler' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Pembuka Kelas',                              tujuan: 'Guru mengunci perhatian siswa sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Hook Benda di Kelas',                            tujuan: 'Guru memancing minat lewat benda di sekitar kelas.' },

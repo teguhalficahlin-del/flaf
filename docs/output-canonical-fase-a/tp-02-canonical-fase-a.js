@@ -21,7 +21,11 @@ const TP_02 = {
     'Dua boneka tangan: Kiki dan Momo (wajib).',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp02-introduce-boy.png',  label: 'Introduce Boy' },
+    { file: 'tp02-introduce-girl.png', label: 'Introduce Girl' },
+    { file: 'tp02-name-tag.png',       label: 'Name Tag' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Door Greeting',           tujuan: 'Guru menyambut siswa di depan kelas tanpa boneka.' },
     { layar:  1, judul: 'Pembuka · Guru Memperkenalkan Diri',    tujuan: 'Guru memperkenalkan namanya dan menuliskannya di papan tulis.' },

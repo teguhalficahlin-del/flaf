@@ -23,7 +23,10 @@ const TP_B21 = {
     'Pensil warna atau spidol untuk siswa yang membuat poster, di meja guru.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-b21-budis-week-table.png',    label: 'Budis Week Table' },
+    { file: 'tp-b21-stay-healthy-poster.png', label: 'Stay Healthy Poster' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Settling dan Transisi', tujuan: 'Guru mengunci perhatian dan menenangkan kelas sebelum sesi dimulai.' },
     { layar:  1, judul: 'Pembuka · Reconnect Seluruh Perjalanan Fase B', tujuan: 'Guru membangkitkan memori seluruh perjalanan Fase B lewat chant.' },

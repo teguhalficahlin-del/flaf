@@ -32,7 +32,9 @@ const TP_C16 = {
     'Kertas tulis siswa atau buku tulis yang dipakai di TP-12 sampai TP-15, untuk continuity Kluster D.',
   ],
   media     : [],
-  printables: [],
+  printables: [
+    { file: 'tp-c16-choice-slip.png', label: 'Choice Slip' },
+  ],
   ringkasan : [
     { layar:  0, judul: 'Pre-Opening · Kelas Siap', tujuan: 'Guru menenangkan kelas dan membuka sesi dalam Bahasa Inggris.' },
     { layar:  1, judul: 'Pembuka · Reactivation Tulisan TP-15', tujuan: 'Guru mengaktifkan kembali tulisan cerita siswa TP-15.' },
