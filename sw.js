@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v215';         // ← bump: pre-opening render refactor (_renderTeksBlok)
+const CACHE_VERSION  = 'flaf-v216';         // ← bump: guard tp.deskripsi di kurikulum
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached — install fails if any of these are missing
