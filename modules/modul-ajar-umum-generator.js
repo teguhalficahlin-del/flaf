@@ -23,9 +23,9 @@
  * =============================================================
  */
 
-import { BERMAKNA_PEMANTIK_FASE_A } from '../modules/modul-bermakna-pemantik-fase-a.js';
-import { BERMAKNA_PEMANTIK_FASE_B } from '../modules/modul-bermakna-pemantik-fase-b.js';
-import { BERMAKNA_PEMANTIK_FASE_C } from '../modules/modul-bermakna-pemantik-fase-c.js';
+import { BERMAKNA_PEMANTIK_FASE_A } from './modul-bermakna-pemantik-fase-a.js';
+import { BERMAKNA_PEMANTIK_FASE_B } from './modul-bermakna-pemantik-fase-b.js';
+import { BERMAKNA_PEMANTIK_FASE_C } from './modul-bermakna-pemantik-fase-c.js';
 
 // ═══════════════════════════════════════════════════════════
 // 1. TEMPLATE STATIS — SARANA & PRASARANA (identik semua fase)
