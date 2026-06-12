@@ -31,6 +31,8 @@
 import { getFase, getAllTP, getMeta } from '../data/index.js';
 import { db } from '../storage/db.js';
 import { logger } from '../storage/logger.js';
+import { getTP } from '../data/index.js';
+import { printModulAjar } from '../modules/modul-ajar-umum-generator.js';
 
 let _metaMap = null;
 // { 1: metaFaseA, 2: metaFaseA, 3: metaFaseB, 4: metaFaseB }
@@ -512,14 +514,12 @@ function _buildTPItemHTML(tp) {
 
         <div class="kur-pdf-wrap">
           <button
-            class="kur-pdf-btn${pdfFilename ? '' : ' kur-pdf-btn--unavailable'}"
-            data-pdf="${_esc(pdfFilename || '')}"
+            class="kur-pdf-btn"
             data-tp-id="${_esc(tp.id)}"
             aria-label="Unduh modul ajar ${_esc(tp.nama)}"
-            ${pdfFilename ? '' : 'disabled'}
           >
             <span class="kur-pdf-icon">📄</span>
-            <span class="kur-pdf-label">Download Modul Ajar — ${_esc(tp.nama)}</span>
+            <span class="kur-pdf-label">⬇ Unduh Modul Ajar — ${_esc(tp.nama)}</span>
           </button>
         </div>
 
@@ -591,26 +591,10 @@ function _attachEventListeners(root, tps, onDownloadPDF) {
   root.querySelectorAll('.kur-pdf-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
-      const tpId    = btn.dataset.tpId;
-      const pdfFile = btn.dataset.pdf;
-
-      if (typeof onDownloadPDF === 'function') {
-        // Tandai loading
-        _setPDFBtnState(btn, 'loading');
-        logger.info(SCREEN, '[kurikulum] unduh PDF diminta', { tpId, pdfFile });
-
-        onDownloadPDF(tpId, pdfFile)
-          .then(() => _setPDFBtnState(btn, 'success'))
-          .catch(err => {
-            logger.warn(SCREEN, '[kurikulum] unduh PDF gagal', { tpId, error: err.message });
-            _setPDFBtnState(btn, 'error');
-          });
-
-      } else {
-        // Fallback: tidak ada handler — beri tahu user
-        _setPDFBtnState(btn, 'unavailable');
-        logger.warn(SCREEN, '[kurikulum] onDownloadPDF tidak tersedia', { tpId });
-      }
+      const tpId = btn.dataset.tpId;
+      const tp   = getTP(tpId);
+      if (!tp) return;
+      printModulAjar(tp);
     });
   });
 
