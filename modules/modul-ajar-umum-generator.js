@@ -23,6 +23,10 @@
  * =============================================================
  */
 
+import { BERMAKNA_PEMANTIK_FASE_A } from '../modules/modul-bermakna-pemantik-fase-a.js';
+import { BERMAKNA_PEMANTIK_FASE_B } from '../modules/modul-bermakna-pemantik-fase-b.js';
+import { BERMAKNA_PEMANTIK_FASE_C } from '../modules/modul-bermakna-pemantik-fase-c.js';
+
 // ═══════════════════════════════════════════════════════════
 // 1. TEMPLATE STATIS — SARANA & PRASARANA (identik semua fase)
 // ═══════════════════════════════════════════════════════════
@@ -58,14 +62,6 @@ const FASE_TEMPLATE = {
       { dimensi: 'Kreatif',                   deskripsi: 'Siswa mencoba berbagai cara mengucapkan dan menggunakan ungkapan bahasa Inggris melalui permainan dan aktivitas terbimbing.' },
     ],
     saranaPrasarana: SARANA_PRASARANA,
-    pemahamanBermakna:
-      'Bahasa Inggris adalah alat komunikasi sederhana yang dapat digunakan untuk menyapa, memperkenalkan diri, ' +
-      'dan berinteraksi dengan orang lain dalam kehidupan sehari-hari.',
-    pertanyaanPemantik: [
-      'Bagaimana cara kita menyapa orang lain dalam bahasa Inggris?',
-      'Kata atau ungkapan bahasa Inggris apa yang sudah kamu kenal?',
-      'Kapan kita menggunakan ungkapan tersebut?',
-    ],
   },
 
   B: {
@@ -81,14 +77,6 @@ const FASE_TEMPLATE = {
       { dimensi: 'Kreatif',                   deskripsi: 'Siswa menghasilkan ungkapan, kalimat, atau teks sederhana menggunakan kosakata dan struktur yang telah dipelajari.' },
     ],
     saranaPrasarana: SARANA_PRASARANA,
-    pemahamanBermakna:
-      'Bahasa Inggris dapat digunakan untuk mendeskripsikan, menyampaikan informasi, dan berinteraksi secara ' +
-      'tertulis maupun lisan dalam berbagai situasi kehidupan sehari-hari.',
-    pertanyaanPemantik: [
-      'Bagaimana kita mendeskripsikan orang, benda, atau situasi dalam bahasa Inggris?',
-      'Ungkapan bahasa Inggris apa yang tepat untuk situasi ini?',
-      'Bagaimana cara menuliskannya dengan benar?',
-    ],
   },
 
   C: {
@@ -104,14 +92,6 @@ const FASE_TEMPLATE = {
       { dimensi: 'Kreatif',                   deskripsi: 'Siswa menghasilkan teks dan berbagai karya komunikatif sederhana secara orisinal sesuai konteks dan tujuan pembelajaran.' },
     ],
     saranaPrasarana: SARANA_PRASARANA,
-    pemahamanBermakna:
-      'Bahasa Inggris dapat digunakan untuk menyampaikan pendapat, menceritakan pengalaman, dan berkomunikasi ' +
-      'secara bermakna dalam konteks yang lebih luas dan beragam.',
-    pertanyaanPemantik: [
-      'Bagaimana kita menyampaikan pendapat dalam bahasa Inggris?',
-      'Bagaimana cara menceritakan pengalaman secara runtut dan jelas?',
-      'Ungkapan atau teks apa yang paling sesuai untuk konteks ini?',
-    ],
   },
 
 };
@@ -287,6 +267,12 @@ export function generateModulHTML(tp) {
   const ft   = FASE_TEMPLATE[fase] || FASE_TEMPLATE.A;
   const g    = GLOBAL_TEMPLATE;
 
+  // Pemahaman bermakna & pertanyaan pemantik — per-TP, dari modul data fase
+  const lookup = fase === 'A' ? BERMAKNA_PEMANTIK_FASE_A :
+                 fase === 'B' ? BERMAKNA_PEMANTIK_FASE_B :
+                                BERMAKNA_PEMANTIK_FASE_C;
+  const bpData = lookup[tp.id] || { pemahamanBermakna: '', pertanyaanPemantik: [] };
+
   const totalDurasi = (tp.skenario || []).reduce((s, f) => s + (Number(f.durasi) || 0), 0);
 
   // ── Profil Pelajar Pancasila ──
@@ -405,10 +391,10 @@ export function generateModulHTML(tp) {
   ${indikatorHTML}
 
   <div class="sub-title">B2. Pemahaman Bermakna</div>
-  <p>${_esc(ft.pemahamanBermakna)}</p>
+  <p>${_esc(bpData.pemahamanBermakna)}</p>
 
   <div class="sub-title">B3. Pertanyaan Pemantik</div>
-  ${_liList(ft.pertanyaanPemantik)}
+  ${_liList(bpData.pertanyaanPemantik)}
 
   <div class="sub-title">B4. Kegiatan Pembelajaran</div>
   ${_buildKegiatan(tp)}
