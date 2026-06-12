@@ -254,6 +254,22 @@ function _liList(arr) {
   return '<ul>' + arr.map(x => `<li>${_esc(x)}</li>`).join('') + '</ul>';
 }
 
+// ── B7: refleksi guru per-TP (tabel 2 kolom) ──
+// Kolom 1: pertanyaan refleksi spesifik TP; Kolom 2: kosong, diisi guru setelah sesi.
+// Fallback ke daftar generik bila refleksiGuru kosong/tidak tersedia.
+function _buildRefleksiGuru(refleksiArr, fallbackArr) {
+  if (!Array.isArray(refleksiArr) || refleksiArr.length === 0) {
+    return _liList(fallbackArr);
+  }
+  const rows = refleksiArr.map(q =>
+    `<tr><td>${_esc(q)}</td><td></td></tr>`
+  ).join('');
+  return `<table class="tbl">
+    <thead><tr><th style="width:55%">Pertanyaan Refleksi</th><th>Catatan Guru (diisi setelah sesi)</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
 // ═══════════════════════════════════════════════════════════
 // 3. FUNGSI UTAMA — generateModulHTML(tp)
 // ═══════════════════════════════════════════════════════════
@@ -414,7 +430,7 @@ export function generateModulHTML(tp) {
   <p><strong>Remedial:</strong> ${_esc(g.pengayaanRemedial.remedial)}</p>
 
   <div class="sub-title">B7. Refleksi Guru</div>
-  ${_liList(g.refleksiGuru)}
+  ${_buildRefleksiGuru(bpData.refleksiGuru, g.refleksiGuru)}
 
   <!-- ══ C. LAMPIRAN ══ -->
   <div class="sec-title">C. LAMPIRAN</div>
