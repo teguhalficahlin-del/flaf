@@ -2191,3 +2191,46 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 | v161 | e0ac9e8 | fix asesmen deskripsi color |
 | v162 | 75e030a | feat pemisah --- runtime |
 | v163 | 7c662e5 | fix title color asesmen |
+
+---
+
+## Sprint: Konversi Canonical → JS (Juni 2026)
+
+### Keputusan Arsitektur
+- Skema JS resmi: Dokumen 7 v1.5 (commit 4e88df9, diupdate
+  bertahap hingga be0f777)
+- Prinsip: canonical TP = satu-satunya sumber kebenaran untuk
+  konten skenario; indikator+vocab dari dokumen kurikulum
+- Field dihapus dari skema: pdf_ref, energi, energi_map,
+  checklist, catatan, interaction_mode, energy_level,
+  assessment_overlay, interact_contract, artifact, deskripsi,
+  flex, flex_kondisi, mode_kluster
+- Field ditambah: ringkasan (overlay dashboard, backlog),
+  diferensiasi semua fase, breakpoints Fase C
+
+### Penyeragaman Diferensiasi Canonical
+- Semua 62 canonical diseragamkan: 2 level (butuh bantuan /
+  sudah bisa), 1 AKSI per level, urutan baku
+- Fase A: 17 file direvisi (commit ea8b194, 7becf4e)
+- Fase B: 3 penyimpangan diperbaiki (commit 6f28973)
+- Fase C: sudah seragam sejak awal
+
+### Konversi JS Selesai
+- Fase A (18 TP): commit 1698a4f, 7becf4e, [commit tp-14–18]
+- Fase B (22 TP): commit 566f67c (tp-01–05), 455eeaf (tp-06–10),
+  e3a29ae (tp-11–15), 86bff67 (tp-16–22)
+- Fase C (22 TP): commit c2131e2 (tp-01–05), 735c365 (tp-06–10),
+  8eb8fe7 (tp-11–15), c78b572 (tp-16–22)
+
+### Folder Output
+- Fase A: docs/output-canonical-fase-a/ (18 file)
+- Fase B: docs/output-canonical-fase-b/ (22 file)
+- Fase C: docs/output-canonical-fase-c/ (22 file)
+- Naming: tp-NN-canonical-fase-[a/b/c].js
+- Reorganisasi folder: commit 7bd9e5f
+
+### Next Step
+- Update data/fase-a.js, fase-b.js, fase-c.js → arahkan
+  import ke file canonical baru
+- Uji browser setelah swap import
+- Update CONTEXT.md setelah swap selesai
