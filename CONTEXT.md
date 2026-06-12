@@ -2229,8 +2229,62 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
 - Naming: tp-NN-canonical-fase-[a/b/c].js
 - Reorganisasi folder: commit 7bd9e5f
 
+---
+
+## Sprint: Swap Aggregator + Fitur Modul Ajar (12 Juni 2026)
+
+### Swap Import Aggregator ke Canonical
+- data/fase-a.js: 18 import → output-canonical-fase-a/
+- data/fase-b.js: hapus lapisan kluster, 22 import langsung → output-canonical-fase-b/
+- data/fase-c.js: named → default import → output-canonical-fase-c/
+- meta.total_kluster dihapus dari fase-b.js (field stale)
+- Commit: b161c7d | SW: v213 → v214 (6fed8d2)
+- Uji browser: 62 TP termuat, runtime TP-B01 Layar 0–11 verified identik dengan canonical JS dan MD
+
+### Fix Regresi Pasca-Swap
+- Pre-Opening render: ekstrak _renderTeksBlok() dari _renderRunning(),
+  terapkan ke _renderEntering() → AKSI/UCAP tampil terstruktur
+  Commit: 1b3783e | SW: v214 → v215 (0754d26)
+- kurikulum.js: guard tp.deskripsi?.trim() || '' di _buildTPItemHTML
+  (field dihapus di skema canonical v1.5)
+  Commit: f03d255 | SW: v215 → v216 (1917cd2)
+
+### Restore printables[] di Canonical
+- Salin printables[] dari file lama ke 60 file canonical
+  (Fase A 18, Fase B 22, Fase C 20 — 2 TP Panen Fase C kosong di sumber)
+- Total 385 entri {file, label} dipindahkan
+- Tombol cetak kartu persiapan kembali muncul di layar Materi
+- Commit: a4ff30e | SW: v216 → v217 (b706a8c)
+
+### Kompresi PNG Printables
+- Fase C: 97 PNG, 186.23 MB → 54.40 MB (−70.8%)
+- Fase B: 12 outlier PNG (habit-card, activity-card),
+  23.48 MB → 6.77 MB (−71.1%)
+- Tool: sharp compressionLevel:9 quality:80
+- Total hemat: ~148.5 MB | Direktori: A ~48MB, B ~85.8MB, C ~54.4MB
+- Commit: 969e3c7
+
+### Fitur Modul Ajar On-Demand
+- modules/modul-ajar-umum-generator.js: generate HTML modul ajar
+  lengkap dari data canonical + template statis per fase
+  (A1–C5 sesuai struktur Kurikulum Merdeka), trigger window.print()
+  Commit: cd20bee (awalnya modul-ajar-generator.js, rename di 21bd1e0)
+- modules/modul-bermakna-pemantik-fase-{a,b,c}.js: 62 entri
+  pemahamanBermakna + pertanyaanPemantik unik per TP
+  (disusun ChatGPT, direview Claude chat)
+  Commit: 21bd1e0
+- fix: relative ./ imports di generator
+  Commit: 305560b
+- kurikulum.js: tombol "⬇ Unduh Modul Ajar" terhubung ke
+  getTP(tpId) → printModulAjar(tp), selalu enabled
+  Commit: 1c1022a | SW: v217 → v218 (b6c1f1b)
+
+### SW Version Tracker
+- v213 → v218 (6 bump dalam sesi ini)
+- SW aktif: flaf-v218
+
 ### Next Step
-- Update data/fase-a.js, fase-b.js, fase-c.js → arahkan
-  import ke file canonical baru
-- Uji browser setelah swap import
-- Update CONTEXT.md setelah swap selesai
+- Cleanup dead code di kurikulum.js:
+  pdfFilename, _setPDFBtnState, param onDownloadPDF, import downloadPDF di app.js
+- Review visual output modul ajar (layout, tipografi, halaman)
+- Pertimbangkan LKPD per TP jika konten tersedia
