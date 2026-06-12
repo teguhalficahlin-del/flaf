@@ -5,19 +5,35 @@
  * =============================================================
  * Terakhir direvisi: Mei 2026 — Schema v5.0
  *
- * Semua TP dimuat dari 6 file kluster terpisah.
- * tujuan_pembelajaran di-spread dari setiap kluster.
- * Tidak ada definisi inline TP di file ini.
+ * 22 TP dimuat langsung dari docs/output-canonical-fase-b/.
+ * Tidak lagi melalui file kluster — tujuan_pembelajaran
+ * adalah array flat 22 TP. Tidak ada definisi inline TP di file ini.
  *
  * =============================================================
  */
 
-import FASE_B_KLUSTER_A from './fase-b-kluster-a.js';
-import FASE_B_KLUSTER_B from './fase-b-kluster-b.js';
-import FASE_B_KLUSTER_C from './fase-b-kluster-c.js';
-import FASE_B_KLUSTER_D from './fase-b-kluster-d.js';
-import FASE_B_KLUSTER_E from './fase-b-kluster-e.js';
-import FASE_B_CAPSTONE  from './fase-b-capstone.js';
+import TP_B01 from '../docs/output-canonical-fase-b/tp-01-canonical-fase-b.js';
+import TP_B02 from '../docs/output-canonical-fase-b/tp-02-canonical-fase-b.js';
+import TP_B03 from '../docs/output-canonical-fase-b/tp-03-canonical-fase-b.js';
+import TP_B04 from '../docs/output-canonical-fase-b/tp-04-canonical-fase-b.js';
+import TP_B05 from '../docs/output-canonical-fase-b/tp-05-canonical-fase-b.js';
+import TP_B06 from '../docs/output-canonical-fase-b/tp-06-canonical-fase-b.js';
+import TP_B07 from '../docs/output-canonical-fase-b/tp-07-canonical-fase-b.js';
+import TP_B08 from '../docs/output-canonical-fase-b/tp-08-canonical-fase-b.js';
+import TP_B09 from '../docs/output-canonical-fase-b/tp-09-canonical-fase-b.js';
+import TP_B10 from '../docs/output-canonical-fase-b/tp-10-canonical-fase-b.js';
+import TP_B11 from '../docs/output-canonical-fase-b/tp-11-canonical-fase-b.js';
+import TP_B12 from '../docs/output-canonical-fase-b/tp-12-canonical-fase-b.js';
+import TP_B13 from '../docs/output-canonical-fase-b/tp-13-canonical-fase-b.js';
+import TP_B14 from '../docs/output-canonical-fase-b/tp-14-canonical-fase-b.js';
+import TP_B15 from '../docs/output-canonical-fase-b/tp-15-canonical-fase-b.js';
+import TP_B16 from '../docs/output-canonical-fase-b/tp-16-canonical-fase-b.js';
+import TP_B17 from '../docs/output-canonical-fase-b/tp-17-canonical-fase-b.js';
+import TP_B18 from '../docs/output-canonical-fase-b/tp-18-canonical-fase-b.js';
+import TP_B19 from '../docs/output-canonical-fase-b/tp-19-canonical-fase-b.js';
+import TP_B20 from '../docs/output-canonical-fase-b/tp-20-canonical-fase-b.js';
+import TP_B21 from '../docs/output-canonical-fase-b/tp-21-canonical-fase-b.js';
+import TP_B22 from '../docs/output-canonical-fase-b/tp-22-canonical-fase-b.js';
 
 const FASE_B = {
 
@@ -27,7 +43,6 @@ const FASE_B = {
     mata_pelajaran: 'Bahasa Inggris',
     data_version  : 'v5.0',
     total_tp      : 22,
-    total_kluster : 6,
   },
 
   cp: {
@@ -64,12 +79,11 @@ const FASE_B = {
   },
 
   tujuan_pembelajaran: [
-    ...FASE_B_KLUSTER_A.tujuan_pembelajaran,
-    ...FASE_B_KLUSTER_B.tujuan_pembelajaran,
-    ...FASE_B_KLUSTER_C.tujuan_pembelajaran,
-    ...FASE_B_KLUSTER_D.tujuan_pembelajaran,
-    ...FASE_B_KLUSTER_E.tujuan_pembelajaran,
-    ...FASE_B_CAPSTONE.tujuan_pembelajaran,
+    TP_B01, TP_B02, TP_B03, TP_B04, TP_B05,
+    TP_B06, TP_B07, TP_B08, TP_B09, TP_B10,
+    TP_B11, TP_B12, TP_B13, TP_B14, TP_B15,
+    TP_B16, TP_B17, TP_B18, TP_B19, TP_B20,
+    TP_B21, TP_B22,
   ],
 
 };

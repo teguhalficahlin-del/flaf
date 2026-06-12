@@ -11,24 +11,24 @@
  * =============================================================
  */
 
-import TP_01 from '../docs/output-v5/tp-01-v6.js';
-import TP_02 from '../docs/output-v5/tp-02-v5.js';
-import TP_03 from '../docs/output-v5/tp-03-v5.js';
-import TP_04 from '../docs/output-v5/tp-04-v5.js';
-import TP_05 from '../docs/output-v5/tp-05-v5.js';
-import TP_06 from '../docs/output-v5/tp-06-v5.js';
-import TP_07 from '../docs/output-v5/tp-07-v5.js';
-import TP_08 from '../docs/output-v5/tp-08-v5.js';
-import TP_09 from '../docs/output-v5/tp-09-v5.js';
-import TP_10 from '../docs/output-v5/tp-10-v5.js';
-import TP_11 from '../docs/output-v5/tp-11-v5.js';
-import TP_12 from '../docs/output-v5/tp-12-v5.js';
-import TP_13 from '../docs/output-v5/tp-13-v5.js';
-import TP_14 from '../docs/output-v5/tp-14-v5.js';
-import TP_15 from '../docs/sesi-m10/tp-15-v5.js';
-import TP_16 from '../docs/output-v5/tp-16-v5.js';
-import TP_17 from '../docs/output-v5/tp-17-v5.js';
-import TP_18 from '../docs/output-v5/tp-18-v5.js';
+import TP_01 from '../docs/output-canonical-fase-a/tp-01-canonical-fase-a.js';
+import TP_02 from '../docs/output-canonical-fase-a/tp-02-canonical-fase-a.js';
+import TP_03 from '../docs/output-canonical-fase-a/tp-03-canonical-fase-a.js';
+import TP_04 from '../docs/output-canonical-fase-a/tp-04-canonical-fase-a.js';
+import TP_05 from '../docs/output-canonical-fase-a/tp-05-canonical-fase-a.js';
+import TP_06 from '../docs/output-canonical-fase-a/tp-06-canonical-fase-a.js';
+import TP_07 from '../docs/output-canonical-fase-a/tp-07-canonical-fase-a.js';
+import TP_08 from '../docs/output-canonical-fase-a/tp-08-canonical-fase-a.js';
+import TP_09 from '../docs/output-canonical-fase-a/tp-09-canonical-fase-a.js';
+import TP_10 from '../docs/output-canonical-fase-a/tp-10-canonical-fase-a.js';
+import TP_11 from '../docs/output-canonical-fase-a/tp-11-canonical-fase-a.js';
+import TP_12 from '../docs/output-canonical-fase-a/tp-12-canonical-fase-a.js';
+import TP_13 from '../docs/output-canonical-fase-a/tp-13-canonical-fase-a.js';
+import TP_14 from '../docs/output-canonical-fase-a/tp-14-canonical-fase-a.js';
+import TP_15 from '../docs/output-canonical-fase-a/tp-15-canonical-fase-a.js';
+import TP_16 from '../docs/output-canonical-fase-a/tp-16-canonical-fase-a.js';
+import TP_17 from '../docs/output-canonical-fase-a/tp-17-canonical-fase-a.js';
+import TP_18 from '../docs/output-canonical-fase-a/tp-18-canonical-fase-a.js';
 
 const FASE_A = {
 

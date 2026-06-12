@@ -16,28 +16,28 @@
  * =============================================================
  */
 
-import { tp_c01 } from '../docs/fase-c-skenario/tp-01-v1.js';
-import { tp_c02 } from '../docs/fase-c-skenario/tp-02-v1.js';
-import { tp_c03 } from '../docs/fase-c-skenario/tp-03-v1.js';
-import { tp_c04 } from '../docs/fase-c-skenario/tp-04-v1.js';
-import { tp_c05 } from '../docs/fase-c-skenario/tp-05-v1.js';
-import { tp_c06 } from '../docs/fase-c-skenario/tp-06-v1.js';
-import { tp_c07 } from '../docs/fase-c-skenario/tp-07-v1.js';
-import { tp_c08 } from '../docs/fase-c-skenario/tp-08-v1.js';
-import { tp_c09 } from '../docs/fase-c-skenario/tp-09-v1.js';
-import { tp_c10 } from '../docs/fase-c-skenario/tp-10-v1.js';
-import { tp_c11 } from '../docs/fase-c-skenario/tp-11-v1.js';
-import { tp_c12 } from '../docs/fase-c-skenario/tp-12-v1.js';
-import { tp_c13 } from '../docs/fase-c-skenario/tp-13-v1.js';
-import { tp_c14 } from '../docs/fase-c-skenario/tp-14-v1.js';
-import { tp_c15 } from '../docs/fase-c-skenario/tp-15-v1.js';
-import { tp_c16 } from '../docs/fase-c-skenario/tp-16-v1.js';
-import { tp_c17 } from '../docs/fase-c-skenario/tp-17-v1.js';
-import { tp_c18 } from '../docs/fase-c-skenario/tp-18-v1.js';
-import { tp_c19 } from '../docs/fase-c-skenario/tp-19-v1.js';
-import { tp_c20 } from '../docs/fase-c-skenario/tp-20-v1.js';
-import { tp_c21 } from '../docs/fase-c-skenario/tp-21-v1.js';
-import { tp_c22 } from '../docs/fase-c-skenario/tp-22-v1.js';
+import TP_C01 from '../docs/output-canonical-fase-c/tp-01-canonical-fase-c.js';
+import TP_C02 from '../docs/output-canonical-fase-c/tp-02-canonical-fase-c.js';
+import TP_C03 from '../docs/output-canonical-fase-c/tp-03-canonical-fase-c.js';
+import TP_C04 from '../docs/output-canonical-fase-c/tp-04-canonical-fase-c.js';
+import TP_C05 from '../docs/output-canonical-fase-c/tp-05-canonical-fase-c.js';
+import TP_C06 from '../docs/output-canonical-fase-c/tp-06-canonical-fase-c.js';
+import TP_C07 from '../docs/output-canonical-fase-c/tp-07-canonical-fase-c.js';
+import TP_C08 from '../docs/output-canonical-fase-c/tp-08-canonical-fase-c.js';
+import TP_C09 from '../docs/output-canonical-fase-c/tp-09-canonical-fase-c.js';
+import TP_C10 from '../docs/output-canonical-fase-c/tp-10-canonical-fase-c.js';
+import TP_C11 from '../docs/output-canonical-fase-c/tp-11-canonical-fase-c.js';
+import TP_C12 from '../docs/output-canonical-fase-c/tp-12-canonical-fase-c.js';
+import TP_C13 from '../docs/output-canonical-fase-c/tp-13-canonical-fase-c.js';
+import TP_C14 from '../docs/output-canonical-fase-c/tp-14-canonical-fase-c.js';
+import TP_C15 from '../docs/output-canonical-fase-c/tp-15-canonical-fase-c.js';
+import TP_C16 from '../docs/output-canonical-fase-c/tp-16-canonical-fase-c.js';
+import TP_C17 from '../docs/output-canonical-fase-c/tp-17-canonical-fase-c.js';
+import TP_C18 from '../docs/output-canonical-fase-c/tp-18-canonical-fase-c.js';
+import TP_C19 from '../docs/output-canonical-fase-c/tp-19-canonical-fase-c.js';
+import TP_C20 from '../docs/output-canonical-fase-c/tp-20-canonical-fase-c.js';
+import TP_C21 from '../docs/output-canonical-fase-c/tp-21-canonical-fase-c.js';
+import TP_C22 from '../docs/output-canonical-fase-c/tp-22-canonical-fase-c.js';
 
 const FASE_C = {
 
@@ -82,11 +82,11 @@ const FASE_C = {
   },
 
   tujuan_pembelajaran: [
-    tp_c01, tp_c02, tp_c03, tp_c04, tp_c05,
-    tp_c06, tp_c07, tp_c08, tp_c09, tp_c10,
-    tp_c11, tp_c12, tp_c13, tp_c14, tp_c15,
-    tp_c16, tp_c17, tp_c18, tp_c19, tp_c20,
-    tp_c21, tp_c22,
+    TP_C01, TP_C02, TP_C03, TP_C04, TP_C05,
+    TP_C06, TP_C07, TP_C08, TP_C09, TP_C10,
+    TP_C11, TP_C12, TP_C13, TP_C14, TP_C15,
+    TP_C16, TP_C17, TP_C18, TP_C19, TP_C20,
+    TP_C21, TP_C22,
   ],
 
 };
