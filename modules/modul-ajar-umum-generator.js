@@ -26,6 +26,7 @@
 import { BERMAKNA_PEMANTIK_FASE_A } from './modul-bermakna-pemantik-fase-a.js';
 import { BERMAKNA_PEMANTIK_FASE_B } from './modul-bermakna-pemantik-fase-b.js';
 import { BERMAKNA_PEMANTIK_FASE_C } from './modul-bermakna-pemantik-fase-c.js';
+import NARASI_FASE_A from './modul-narasi-fase-a.js';
 
 // ═══════════════════════════════════════════════════════════
 // 1. TEMPLATE STATIS — SARANA & PRASARANA (identik semua fase)
@@ -229,6 +230,42 @@ function _buildKegiatan(tp) {
   return html || '<p><em>Tidak ada skenario kegiatan.</em></p>';
 }
 
+// ── B4 (narasi): render string narasiKegiatan → HTML ──
+// Blok dipisah baris kosong. Baris diawali "- " menjadi item <ul>;
+// baris lain digabung menjadi paragraf <p>.
+function _buildNarasi(teks) {
+  const blocks = String(teks).split(/\n\s*\n/);
+  let html = '';
+
+  blocks.forEach(block => {
+    const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+    if (lines.length === 0) return;
+
+    let i = 0;
+    while (i < lines.length) {
+      if (lines[i].startsWith('- ')) {
+        // kumpulkan item bullet berurutan
+        const items = [];
+        while (i < lines.length && lines[i].startsWith('- ')) {
+          items.push(lines[i].slice(2).trim());
+          i += 1;
+        }
+        html += '<ul>' + items.map(it => `<li>${_esc(it)}</li>`).join('') + '</ul>';
+      } else {
+        // kumpulkan baris teks berurutan menjadi satu paragraf
+        const para = [];
+        while (i < lines.length && !lines[i].startsWith('- ')) {
+          para.push(lines[i]);
+          i += 1;
+        }
+        html += `<p>${_esc(para.join(' '))}</p>`;
+      }
+    }
+  });
+
+  return html || '<p><em>Tidak ada narasi kegiatan.</em></p>';
+}
+
 // ── C2: glosarium dari tp.vocab[] (tabel 2 kolom) ──
 function _buildGlosarium(tp) {
   const vocab = Array.isArray(tp.vocab) ? tp.vocab : [];
@@ -288,6 +325,10 @@ export function generateModulHTML(tp) {
                  fase === 'B' ? BERMAKNA_PEMANTIK_FASE_B :
                                 BERMAKNA_PEMANTIK_FASE_C;
   const bpData = lookup[tp.id] || { pemahamanBermakna: '', pertanyaanPemantik: [] };
+
+  // Narasi kegiatan per-TP (Fase A tersedia; Fase B/C fallback ke AKSI/UCAP)
+  const NARASI_MAP = { A: NARASI_FASE_A };
+  const narasiData = NARASI_MAP[fase]?.[tp.id]?.narasiKegiatan || null;
 
   const totalDurasi = (tp.skenario || []).reduce((s, f) => s + (Number(f.durasi) || 0), 0);
 
@@ -413,7 +454,7 @@ export function generateModulHTML(tp) {
   ${_liList(bpData.pertanyaanPemantik)}
 
   <div class="sub-title">B4. Kegiatan Pembelajaran</div>
-  ${_buildKegiatan(tp)}
+  ${narasiData ? _buildNarasi(narasiData) : _buildKegiatan(tp)}
 
   <div class="sub-title">B5. Asesmen</div>
   <ul>
