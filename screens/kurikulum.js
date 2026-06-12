@@ -498,7 +498,7 @@ function _buildTPItemHTML(tp) {
           <span class="kur-tp-tema-val">${_esc(tp.tema)}</span>
         </div>
 
-        <p class="kur-tp-desc">${_esc(tp.deskripsi.trim())}</p>
+        <p class="kur-tp-desc">${_esc(tp.deskripsi?.trim() || '')}</p>
 
         <div class="kur-ind-wrap">
           <div class="kur-ind-title">Indikator Pencapaian</div>
