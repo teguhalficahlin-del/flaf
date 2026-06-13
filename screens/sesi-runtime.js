@@ -64,7 +64,6 @@ let _state = {
   langkahIdx     : 0,
   aktState          : 'preview',
   fallbackKondisi   : null,
-  ttsUtterance      : null,
   sesiId            : null,   // id unik per sesi — dibuat saat mulai, dipakai penilaian_log
   bpResumeLangkahId : null,   // langkahId dari breakpoint resume (Fase C)
 };
@@ -94,7 +93,6 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, 
     langkahIdx     : 0,
     aktState          : 'preview',
     fallbackKondisi   : null,
-    ttsUtterance      : null,
     sesiId            : null,
     nilaiDraft        : null,
     bpResumeLangkahId : null,
@@ -190,34 +188,8 @@ function _now() {
   });
 }
 
-function _ttsSpeak(teks, btnEl) {
-  if (!('speechSynthesis' in window)) return;
-  _ttsStop();
-  const u   = new SpeechSynthesisUtterance(teks);
-  u.lang    = 'en-US';
-  u.rate    = 0.9;
-  u.pitch   = 1.1;
-  if (btnEl) btnEl.classList.add('sr-audio-btn--playing');
-  u.onend = u.onerror = () => {
-    if (btnEl) btnEl.classList.remove('sr-audio-btn--playing');
-    _state.ttsUtterance = null;
-  };
-  _state.ttsUtterance = u;
-  window.speechSynthesis.speak(u);
-}
-
-function _srTtsExtract(teks) {
-  if (!teks) return [];
-  const matches = [];
-  const re = /"([^"]+)"/g;
-  let m;
-  while ((m = re.exec(teks)) !== null) matches.push(m[1]);
-  return matches;
-}
-
 function _srTtsStop() {
   if ('speechSynthesis' in window) window.speechSynthesis.cancel();
-  _state.ttsUtterance = null;
   if (_srTtsBtn) {
     _srTtsBtn.classList.remove('sr-tts-btn--playing');
     const iconEl = _srTtsBtn.querySelector('span[aria-hidden]');
@@ -226,25 +198,53 @@ function _srTtsStop() {
   }
 }
 
-function _srTtsPlay(kalimatArr, btnEl) {
-  if (!('speechSynthesis' in window)) return;
-  _srTtsStop();
-  if (!kalimatArr || !kalimatArr.length) return;
-  _srTtsBtn = btnEl;
-  btnEl.classList.add('sr-tts-btn--playing');
-  const iconEl = btnEl.querySelector('span[aria-hidden]');
-  if (iconEl) iconEl.innerHTML = '⏹';
-  function speakAt(i) {
-    if (i >= kalimatArr.length) { _srTtsStop(); return; }
-    const u   = new SpeechSynthesisUtterance(kalimatArr[i]);
-    u.lang    = 'en-US';
-    u.rate    = 0.85;
-    u.pitch   = 1;
-    u.onend   = () => speakAt(i + 1);
-    u.onerror = () => _srTtsStop();
-    _state.ttsUtterance = u;
-    window.speechSynthesis.speak(u);
+function _srTtsShowError(btnEl, pesan) {
+  if (btnEl) {
+    const orig = btnEl.textContent;
+    btnEl.textContent = pesan;
+    btnEl.classList.add('error');
+    setTimeout(() => {
+      btnEl.textContent = orig;
+      btnEl.classList.remove('error');
+    }, 3000);
   }
+}
+
+function _srTtsPlay(kalimatArr, btnEl) {
+  if (!window.speechSynthesis) {
+    _srTtsShowError(btnEl, 'TTS tidak didukung browser ini.');
+    return;
+  }
+
+  const voices = window.speechSynthesis.getVoices();
+  const enVoice = voices.find(v => v.lang.startsWith('en'));
+  if (voices.length > 0 && !enVoice) {
+    _srTtsShowError(btnEl, 'Suara bahasa Inggris tidak tersedia di perangkat ini.');
+    return;
+  }
+
+  _state.ttsPlaying = true;
+  _srTtsBtn = btnEl;
+  if (btnEl) {
+    btnEl.classList.add('sr-tts-btn--playing');
+    const iconEl = btnEl.querySelector('span[aria-hidden]');
+    if (iconEl) iconEl.innerHTML = '⏹';
+  }
+
+  const speakAt = i => {
+    if (i >= kalimatArr.length || !_state.ttsPlaying) {
+      _srTtsStop();
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(kalimatArr[i]);
+    u.lang  = 'en-US';
+    u.rate  = 0.85;
+    u.pitch = 1;
+    if (enVoice) u.voice = enVoice;
+    u.onend   = () => speakAt(i + 1);
+    u.onerror = () => { _srTtsStop(); _srTtsShowError(btnEl, 'TTS gagal. Coba lagi.'); };
+    window.speechSynthesis.speak(u);
+  };
   speakAt(0);
 }
 

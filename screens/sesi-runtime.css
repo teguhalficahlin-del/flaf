@@ -643,6 +643,10 @@
   opacity: 1;
   color: #D4AE3A;
 }
+.sr-tts-ucap-btn.error {
+  color: var(--color-text-danger, #e05);
+  opacity: 0.85;
+}
 
 /* Diferensiasi */
 .sr-dif-wrap {
