@@ -17,6 +17,3 @@ export const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
 export const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
 
 export const ADMIN_EMAIL = 'admin@yourdomain.com';
-
-// Emergency bypass — dipegang Admin saja, tidak pernah didistribusikan
-export const EMERGENCY_BYPASS_CODE = 'FLAF-BYPASS-XXXX-XXXX';
