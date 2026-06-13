@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v223';         // â† bump: refleksiGuru render di modul ajar B7
+const CACHE_VERSION  = 'flaf-v224';         // â† bump: TTS voice check + error UI + dead code removed
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
