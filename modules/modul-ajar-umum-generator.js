@@ -28,6 +28,7 @@ import { BERMAKNA_PEMANTIK_FASE_B } from './modul-bermakna-pemantik-fase-b.js';
 import { BERMAKNA_PEMANTIK_FASE_C } from './modul-bermakna-pemantik-fase-c.js';
 import NARASI_FASE_A from './modul-narasi-fase-a.js';
 import NARASI_FASE_B from './modul-narasi-fase-b.js';
+import NARASI_FASE_C from './modul-narasi-fase-c.js';
 
 // ═══════════════════════════════════════════════════════════
 // 1. TEMPLATE STATIS — SARANA & PRASARANA (identik semua fase)
@@ -328,7 +329,7 @@ export function generateModulHTML(tp) {
   const bpData = lookup[tp.id] || { pemahamanBermakna: '', pertanyaanPemantik: [] };
 
   // Narasi kegiatan per-TP (Fase A tersedia; Fase B/C fallback ke AKSI/UCAP)
-  const NARASI_MAP = { A: NARASI_FASE_A, B: NARASI_FASE_B };
+  const NARASI_MAP = { A: NARASI_FASE_A, B: NARASI_FASE_B, C: NARASI_FASE_C };
   const narasiData = NARASI_MAP[fase]?.[tp.id]?.narasiKegiatan || null;
 
   const totalDurasi = (tp.skenario || []).reduce((s, f) => s + (Number(f.durasi) || 0), 0);
