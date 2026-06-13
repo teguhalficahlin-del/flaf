@@ -484,7 +484,7 @@ function _codeRow(c) {
         ${c.is_flagged ? '<span class="adm-flag">⚠ Sering direset</span>' : ''}
       </td>
       <td><span class="adm-status ${isActive ? 'adm-s-active' : 'adm-s-unused'}">${isActive ? 'Aktif' : 'Belum dipakai'}</span></td>
-      <td class="adm-mono adm-center">${c.device_count ?? 0} / 2</td>
+      <td class="adm-mono adm-center">${c.device_count ?? 0} / 20</td>
       <td class="adm-mono adm-center ${resetWarn ? 'adm-warn' : ''}">${c.resets_this_month}×</td>
       <td class="adm-date">${c.used_at ? _fmtDate(c.used_at) : '—'}</td>
       <td>
