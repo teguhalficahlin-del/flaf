@@ -616,6 +616,8 @@ async function prefetchFase(fase) {
       // prefetch gagal — tidak masalah, akan lazy-cache saat diakses
     }
   }
+
+  broadcastToClients({ type: 'PREFETCH_FASE_DONE', fase });
 }
 
 // ============================================================

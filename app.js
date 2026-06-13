@@ -958,6 +958,13 @@ function _listenToSW() {
         showStorageFullToast();
         break;
 
+      case 'PREFETCH_FASE_DONE': {
+        const label = { a: 'Fase A (Kelas 1–2)', b: 'Fase B (Kelas 3–4)', c: 'Fase C (Kelas 5–6)' };
+        const namaFase = label[event.data.fase] || `Fase ${event.data.fase}`;
+        showToast(`Materi ${namaFase} siap digunakan offline.`, 4000, 'info');
+        break;
+      }
+
       case 'SW_UPDATE_READY': {
         const sesiAktif = document.querySelector('#sr-root[data-mounted="1"]') !== null;
         if (!sesiAktif) {
