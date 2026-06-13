@@ -2288,3 +2288,48 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
   pdfFilename, _setPDFBtnState, param onDownloadPDF, import downloadPDF di app.js
 - Review visual output modul ajar (layout, tipografi, halaman)
 - Pertimbangkan LKPD per TP jika konten tersedia
+
+---
+
+## Sprint: Narasi Kegiatan Pembelajaran — Semua Fase (12–13 Juni 2026)
+
+### Arsitektur Narasi
+- File narasi terpisah per fase di modules/:
+  modul-narasi-fase-a.js, modul-narasi-fase-b.js,
+  modul-narasi-fase-c.js
+- Generator membaca narasiData dari NARASI_MAP per fase+id,
+  render di B4 menggantikan AKSI/UCAP canonical
+- Fallback ke render canonical jika narasiData null
+
+### Standar Konversi
+- Checklist 43 kriteria (8 section A–H) di
+  docs/canonical/daftar-ceklis-narasi.md
+- Pipeline tiga-AI: Claude Code konversi → validasi mandiri
+  43/43 → review ChatGPT (laporkan hanya jika ada ❌)
+- Scope narasi: murni teks kegiatan, dimulai dari AKSI
+  pertama pre-opening, tanpa header/metadata/indikator
+
+### Hasil Konversi
+- Fase A: 18 TP, lulus 43/43, commit e6a6fcd
+- Fase B: 22 TP, lulus 43/43 (4 revisi minor: nama media
+  hilang di tp-b18/19/20/21), commit 3070af7
+- Fase C: 22 TP, lulus 43/43, commit 62c70cd
+- Total: 62 TP, semua lulus
+
+### Implementasi Generator
+- Fase A: commit a774590 | SW v219→v220 (49c99b7)
+- Fase B: commit c855dfa | SW v220→v221
+- Fase C: commit 32a3521 | SW v221→v222 (e27f067)
+
+### SW Version Tracker
+- SW aktif: flaf-v222
+
+### Next Step (Belum Dikerjakan)
+- B5 Asesmen: saat ini generik (GLOBAL_TEMPLATE) — perlu
+  dibuat spesifik per TP berdasarkan indikator canonical
+- B6 Rubrik: saat ini generik (GLOBAL_TEMPLATE) — perlu
+  dibuat spesifik per TP, koheren dengan B5
+- Kedua field akan disimpan sebagai field baru di
+  modules/modul-bermakna-pemantik-fase-{a,b,c}.js
+- Setelah B5/B6 selesai: update generator untuk render
+  keduanya dari data per-TP
