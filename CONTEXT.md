@@ -2411,3 +2411,70 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 - Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar
 - Soal STS/SAS Fase B dan C (lihat catatan terpisah di atas)
 - Cleanup dead code kurikulum.js (dari sprint Modul Ajar)
+
+---
+
+## Sprint: Lazy Cache + Prefetch Per Fase + TTS Hardening + secrets.js Fix (13 Juni 2026)
+
+### Fix secrets.js — App Gagal Load di GitHub Pages
+- Akar masalah: static import secrets.js di top-level activation.js
+  menyebabkan seluruh module graph gagal saat file tidak ada di GitHub Pages
+- Solusi: static import → dynamic import via loader memoized _secrets()
+  Cache hasil import pertama, dipanggil via await _secrets() di setiap helper
+- activation.js: _signSession, _supabaseSelect, _supabaseRpc pakai _secrets()
+- admin.js: serviceHeaders (jadi async), sbGet, sbPost, sbRpc,
+  sendMagicLink, exchangeTokenFromHash pakai _secrets()
+- _verifySession diberi try-catch — jika secrets.js tidak ada,
+  return false (bukan throw), warning hilang dari console
+- Commit: d63d2ec, 2e115d8
+
+### TTS Hardening — screens/sesi-runtime.js
+- Hapus dead code: _ttsSpeak dan _srTtsExtract (tidak pernah dipanggil)
+- _srTtsPlay diperbarui:
+  - Voice availability check: cek getVoices() sebelum speak
+  - Jika browser tidak support TTS → error UI via _srTtsShowError
+  - Jika tidak ada voice EN → error UI dengan pesan spesifik
+  - Gunakan enVoice jika tersedia (u.voice = enVoice)
+  - Konsisten dengan _srTtsStop: pakai _srTtsBtn + sr-tts-btn--playing
+  - Ganti ikon via span[aria-hidden], bukan textContent
+- Tambah fungsi _srTtsShowError: tampilkan pesan error di tombol 3 detik
+- Tambah CSS .sr-tts-ucap-btn.error di sesi-runtime.css
+- Hapus _state.ttsUtterance (redundant sejak refactor)
+- Commit: 635f97d
+
+### Overlay Mode Cepat — 3 Label → 2 Label
+- opsiCapaian: Lancar/Berkembang/Perlu dampingi → Sudah Bisa/Perlu Bantuan
+- val: 85 (Sudah Bisa), 65 (Perlu Bantuan) — val 75 dihapus
+- screens/nilai.js: fungsi _labelCapaian ditambahkan
+  85/75 → 'Sudah Bisa', 65 → 'Perlu Bantuan'
+- Layar nilai dan card formatif: angka mentah → label bermakna
+- Commit: 8076d58 (bagian dari sprint B5/B6)
+
+### Lazy Cache PNG Printables + Skenario TP
+- 447 entri dihapus dari SHELL_OPTIONAL di sw.js:
+  437 PNG printables (Fase A/B/C) + semua skenario TP JS (62 file)
+- SHELL_OPTIONAL tersisa: 10 entri data/*.js saja
+- Aset ter-cache on-demand via cacheFirstAppShell saat pertama diakses
+- Estimasi install pertama turun ~188MB
+
+### Prefetch Per Fase Setelah Aktivasi
+- SW: case PREFETCH_FASE di message handler yang sudah ada
+  Fungsi prefetchFase(fase) — loop cache skenario TP fase a/b/c
+  Setelah selesai: broadcastToClients({ type: 'PREFETCH_FASE_DONE', fase })
+- app.js: _onActivationSuccess kirim postMessage PREFETCH_FASE
+  Mapping: kelas 1–2 → 'a', kelas 3–4 → 'b', kelas 5–6 → 'c', 'all' → ketiganya
+- app.js: _listenToSW menangani PREFETCH_FASE_DONE dengan showToast
+  "Materi Fase X siap digunakan offline." (4 detik)
+- Commit: d72da19, c9b84f4
+
+### SW Version Tracker
+- v224 → v225
+- SW aktif: flaf-v225
+
+### Next Step (Belum Dikerjakan)
+- Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar
+- Smoke test lazy cache: verifikasi PNG dan skenario TP ter-cache
+  on-demand saat pertama diakses
+- Soal STS/SAS Fase B dan C belum dibuat
+- Cleanup dead code kurikulum.js (pdfFilename, _setPDFBtnState,
+  param onDownloadPDF, import downloadPDF di app.js)
