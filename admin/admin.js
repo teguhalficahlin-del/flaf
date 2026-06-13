@@ -19,13 +19,20 @@
 
 // ─── CONFIG ───────────────────────────────────────────────────────────────────
 
-import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_KEY, ADMIN_EMAIL } from '../secrets.js';
-
 const MAX_RESETS_PER_MONTH = 3;
+
+// ─── SECRETS (lazy-loaded, cached) ────────────────────────────────────────────
+
+let _secretsCache = null;
+async function _secrets() {
+  if (!_secretsCache) _secretsCache = await import('../secrets.js');
+  return _secretsCache;
+}
 
 // ─── SUPABASE HELPERS ─────────────────────────────────────────────────────────
 
-function serviceHeaders() {
+async function serviceHeaders() {
+  const { SUPABASE_SERVICE_KEY } = await _secrets();
   return {
     'apikey':        SUPABASE_SERVICE_KEY,
     'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
@@ -35,17 +42,19 @@ function serviceHeaders() {
 }
 
 async function sbGet(path, params = {}) {
+  const { SUPABASE_URL } = await _secrets();
   const url = new URL(`${SUPABASE_URL}/rest/v1/${path}`);
   Object.entries(params).forEach(([k, v]) => url.searchParams.set(k, v));
-  const res = await fetch(url, { headers: serviceHeaders() });
+  const res = await fetch(url, { headers: await serviceHeaders() });
   if (!res.ok) throw new Error(`GET ${path} → ${res.status}: ${await res.text()}`);
   return res.json();
 }
 
 async function sbPost(path, body) {
+  const { SUPABASE_URL } = await _secrets();
   const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
     method:  'POST',
-    headers: serviceHeaders(),
+    headers: await serviceHeaders(),
     body:    JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`POST ${path} → ${res.status}: ${await res.text()}`);
@@ -53,9 +62,10 @@ async function sbPost(path, body) {
 }
 
 async function sbRpc(fn, body = {}) {
+  const { SUPABASE_URL } = await _secrets();
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
     method:  'POST',
-    headers: serviceHeaders(),
+    headers: await serviceHeaders(),
     body:    JSON.stringify(body),
   });
   if (!res.ok) throw new Error(`RPC ${fn} → ${res.status}: ${await res.text()}`);
@@ -91,6 +101,7 @@ export function clearAdminSession() {
 }
 
 export async function sendMagicLink(email) {
+  const { SUPABASE_URL, SUPABASE_ANON_KEY } = await _secrets();
   const res = await fetch(`${SUPABASE_URL}/auth/v1/otp`, {
     method:  'POST',
     headers: { 'apikey': SUPABASE_ANON_KEY, 'Content-Type': 'application/json' },
@@ -104,6 +115,7 @@ export async function sendMagicLink(email) {
 }
 
 export async function exchangeTokenFromHash() {
+  const { SUPABASE_URL, SUPABASE_ANON_KEY, ADMIN_EMAIL } = await _secrets();
   const hash = new URLSearchParams(window.location.hash.slice(1));
   const accessToken  = hash.get('access_token');
   const refreshToken = hash.get('refresh_token');

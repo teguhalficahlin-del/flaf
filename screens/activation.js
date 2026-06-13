@@ -10,13 +10,20 @@
  * Session fields (standar): name, school, code, device_id, issued_at, expires_at
  */
 
-import { db }                                        from '../storage/db.js';
-import { SUPABASE_URL, SUPABASE_ANON_KEY, SECRET_SALT } from '../secrets.js';
+import { db } from '../storage/db.js';
 
 const CODE_REGEX  = /^FLAF-2026-[A-Z0-9]{4}$/;
 const MAX_DEVICES = 20;
 const KEY_SESSION   = 'session';
 const KEY_DEVICE_ID = 'device_id';
+
+// ─── SECRETS (lazy-loaded, cached) ────────────────────────────────────────────
+
+let _secretsCache = null;
+async function _secrets() {
+  if (!_secretsCache) _secretsCache = await import('../secrets.js');
+  return _secretsCache;
+}
 
 // ─── CRYPTO ──────────────────────────────────────────────────────────────────
 
@@ -36,6 +43,7 @@ async function _hmacSHA256(message, key) {
 }
 
 async function _signSession(payload) {
+  const { SECRET_SALT } = await _secrets();
   const data = `${payload.name}|${payload.school}|${payload.code}|${payload.device_id}|${payload.issued_at}`;
   return _hmacSHA256(data, SECRET_SALT);
 }
@@ -268,6 +276,7 @@ async function _finalizeActivation(data) {
 // ─── SUPABASE CLIENT ─────────────────────────────────────────────────────────
 
 async function _supabaseSelect(table, filters = {}) {
+  const { SUPABASE_URL, SUPABASE_ANON_KEY } = await _secrets();
   const params = new URLSearchParams();
   Object.entries(filters).forEach(([k, v]) => params.set(k, `eq.${v}`));
 
@@ -283,6 +292,7 @@ async function _supabaseSelect(table, filters = {}) {
 }
 
 async function _supabaseRpc(fn, body = {}) {
+  const { SUPABASE_URL, SUPABASE_ANON_KEY } = await _secrets();
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
     method : 'POST',
     headers: {
