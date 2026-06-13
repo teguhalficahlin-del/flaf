@@ -49,8 +49,12 @@ async function _signSession(payload) {
 }
 
 async function _verifySession(payload, signature) {
-  const expected = await _signSession(payload);
-  return expected === signature;
+  try {
+    const expected = await _signSession(payload);
+    return expected === signature;
+  } catch {
+    return false;
+  }
 }
 
 // ─── DEVICE ID ───────────────────────────────────────────────────────────────
