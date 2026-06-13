@@ -2333,3 +2333,24 @@ Lihat commit history Fix 1–Fix 15 (v125–v139).
   modules/modul-bermakna-pemantik-fase-{a,b,c}.js
 - Setelah B5/B6 selesai: update generator untuk render
   keduanya dari data per-TP
+
+---
+
+## Catatan: Soal STS/SAS Fase B dan C (Belum Dikerjakan)
+
+### Temuan Audit (13 Juni 2026)
+Card "Soal" di Unduh & Cetak (screens/nilai.js) saat ini
+hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
+(Fase B & C) tidak menampilkan card soal sama sekali.
+
+### Yang Belum Dikerjakan
+- File soal STS/SAS Fase B (Kelas 3 & 4) belum dibuat
+- File soal STS/SAS Fase C (Kelas 5 & 6) belum dibuat
+- Kode nilai.js perlu diparametrisasi untuk Fase B & C
+- Dua fungsi dead code (nilaiDownloadSoalSTS &
+  nilaiDownloadSoalSTS2) dengan path keliru perlu dibersihkan
+
+### Urutan Pengerjaan (ketika siap)
+1. Buat file soal Fase B & C, simpan ke folder pdf/
+2. Update nilai.js: parametrisasi path + tambah card soal
+3. Bersihkan dead code
