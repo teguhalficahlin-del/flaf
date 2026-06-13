@@ -1073,9 +1073,8 @@ async function _renderPenilaianOverlay() {
     let isiHTML = '';
     if (modePenilaian === 'cepat') {
       const opsiCapaian = [
-        { val: 85, sym: '★', label: 'Lancar'         },
-        { val: 75, sym: '◐', label: 'Berkembang'     },
-        { val: 65, sym: '○', label: 'Perlu dampingi' },
+        { label: 'Sudah Bisa',    val: 85, sym: '★' },
+        { label: 'Perlu Bantuan', val: 65, sym: '○' },
       ];
       isiHTML = `
         <div class="sr-pn-capaian-row">

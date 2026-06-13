@@ -16,6 +16,12 @@ import { jejak }    from '../storage/jejak.js';
 import { presensi } from '../storage/presensi.js';
 import { generatePDFRekap, generatePDFRekap2, generatePDFRapor } from '../modules/pdf-generator.js';
 
+function _labelCapaian(val) {
+  if (val === 85 || val === 75) return 'Sudah Bisa';
+  if (val === 65) return 'Perlu Bantuan';
+  return '—';
+}
+
 // --- STATE -------------------------------------------------------------------
 
 let _state = {
@@ -1050,7 +1056,7 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
         for (const s of sesi.siswa) {
           rows.push([
             s.nomor, s.nama,
-            s.capaian ?? '',
+            _labelCapaian(s.capaian),
             _labelPerilaku[s.perilaku] ?? '',
             _labelAlasan[s.alasan]     ?? '',
           ]);
@@ -1353,7 +1359,7 @@ async function _renderFormatifDetail(token) {
       <div style="padding:8px 14px;">
         ${sesi.siswa.map(s => {
           const nilaiTeks = sesi.mode === 'cepat'
-            ? (s.capaian !== null ? `${s.capaian}` : '—')
+            ? _labelCapaian(s.capaian)
             : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
           const _lp = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
           const _la = {

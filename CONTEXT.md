@@ -2354,3 +2354,60 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 1. Buat file soal Fase B & C, simpan ke folder pdf/
 2. Update nilai.js: parametrisasi path + tambah card soal
 3. Bersihkan dead code
+
+---
+
+## Sprint: B5 Asesmen Rubrik + B6 Pengayaan Remedial + Revisi Overlay Mode Cepat (13 Juni 2026)
+
+### Arsitektur B5 dan B6
+- Data B5 dan B6 disimpan sebagai field baru di file yang sudah ada:
+  modules/modul-bermakna-pemantik-fase-{a,b,c}.js
+- Field baru: asesmenRubrik dan pengayaanRemedial per tp.id
+- Generator membaca dari field baru, menggantikan GLOBAL_TEMPLATE generik
+- Pola sama dengan refleksiGuru yang sudah ada
+
+### Standar Konten
+- Prompt ChatGPT disiapkan Claude chat — format teks, bukan JS
+- Prinsip: spesifik, konkret, unik per TP (menyebut aktivitas dan
+  media nyata dari skenario canonical)
+- asesmenRubrik: fokus (indikator observable) + instrumen (momen
+  observasi nyata) + rubrik 4 level BB/MB/BSH/BSB
+- Field observasi di rubrik: jembatan eksplisit antara dokumen admin
+  (4 level Kurikulum Merdeka) dan realitas kelas (2 level canonical:
+  Sudah Bisa / Perlu Bantuan)
+- pengayaanRemedial: pengayaan 2 item (mandiri vs sosial),
+  remedial 2 item (scaffold fisik vs scaffold verbal dari skenario)
+- Sumber data: docs/canonical/asesmen-rubrik-fase-{a,b,c}.md
+  (dihasilkan ChatGPT, di-push ke repo sebelum eksekusi)
+
+### Hasil Eksekusi
+- Fase A: 18 TP diupdate, commit 5c9090e (docs) + eksekusi Claude Code
+- Fase B: 22 TP diupdate, commit 2f65b31 (docs) + eksekusi Claude Code
+- Fase C: 22 TP diupdate, commit ace2fb8 (docs) + eksekusi Claude Code
+- Total: 62 TP, 5 field lengkap per TP, sintaks valid semua fase
+
+### Update Generator
+- modules/modul-ajar-umum-generator.js:
+  _buildRubrik diganti — kolom lama (aspek/sb/b/pb) →
+  kolom baru (Level / Observasi Kelas / Deskripsi)
+- B5 membaca dari bpData.asesmenRubrik (bukan g.asesmen)
+- B6 membaca dari bpData.pengayaanRemedial (bukan g.pengayaanRemedial)
+- Tidak ada sisa referensi GLOBAL_TEMPLATE di B5 dan B6
+
+### Revisi Overlay Mode Cepat
+- screens/sesi-runtime.js: opsiCapaian 3 item → 2 item
+  Sudah Bisa (val:85, ★) / Perlu Bantuan (val:65, ○)
+  Label lama Lancar/Berkembang/Perlu dampingi dihapus
+- screens/nilai.js: fungsi _labelCapaian ditambahkan
+  85 → 'Sudah Bisa', 75 → 'Sudah Bisa' (data historis),
+  65 → 'Perlu Bantuan'
+- Layar nilai dan card formatif: angka mentah diganti label bermakna
+- Mode Detail (L/S/R) tidak diubah
+
+### SW Version Tracker
+- SW aktif: flaf-v222 (tidak ada bump — perubahan JS/data saja)
+
+### Next Step (Belum Dikerjakan)
+- Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar
+- Soal STS/SAS Fase B dan C (lihat catatan terpisah di atas)
+- Cleanup dead code kurikulum.js (dari sprint Modul Ajar)

@@ -280,11 +280,14 @@ function _buildGlosarium(tp) {
 }
 
 function _buildRubrik(rubrik) {
+  if (!Array.isArray(rubrik) || rubrik.length === 0) {
+    return '<p><em>Rubrik tidak tersedia.</em></p>';
+  }
   const rows = rubrik.map(r =>
-    `<tr><td><strong>${_esc(r.aspek)}</strong></td><td>${_esc(r.sb)}</td><td>${_esc(r.b)}</td><td>${_esc(r.pb)}</td></tr>`
+    `<tr><td><strong>${_esc(r.level)}</strong></td><td>${_esc(r.observasi)}</td><td>${_esc(r.deskripsi)}</td></tr>`
   ).join('');
   return `<table class="tbl">
-    <thead><tr><th>Aspek</th><th>Sangat Baik (4)</th><th>Baik (3)</th><th>Perlu Bimbingan (1–2)</th></tr></thead>
+    <thead><tr><th>Level</th><th>Observasi Kelas</th><th>Deskripsi</th></tr></thead>
     <tbody>${rows}</tbody>
   </table>`;
 }
@@ -459,18 +462,16 @@ export function generateModulHTML(tp) {
   ${narasiData ? _buildNarasi(narasiData) : _buildKegiatan(tp)}
 
   <div class="sub-title">B5. Asesmen</div>
-  <ul>
-    <li><strong>Jenis:</strong> ${_esc(g.asesmen.jenis)}</li>
-    <li><strong>Instrumen:</strong> ${_esc(g.asesmen.instrumen)}</li>
-    <li><strong>Waktu:</strong> ${_esc(g.asesmen.waktu)}</li>
-    <li><strong>Pencatatan:</strong> ${_esc(g.asesmen.pencatatan)}</li>
-  </ul>
+  <p><strong>Fokus:</strong> ${_esc(bpData.asesmenRubrik ? bpData.asesmenRubrik.fokus : '')}</p>
+  <p><strong>Instrumen:</strong> ${_esc(bpData.asesmenRubrik ? bpData.asesmenRubrik.instrumen : '')}</p>
   <p class="sub-title">Rubrik Penilaian</p>
-  ${_buildRubrik(g.asesmen.rubrik)}
+  ${_buildRubrik(bpData.asesmenRubrik ? bpData.asesmenRubrik.rubrik : [])}
 
   <div class="sub-title">B6. Pengayaan &amp; Remedial</div>
-  <p><strong>Pengayaan:</strong> ${_esc(g.pengayaanRemedial.pengayaan)}</p>
-  <p><strong>Remedial:</strong> ${_esc(g.pengayaanRemedial.remedial)}</p>
+  <p><strong>Pengayaan:</strong></p>
+  ${_liList(bpData.pengayaanRemedial ? bpData.pengayaanRemedial.pengayaan : [])}
+  <p><strong>Remedial:</strong></p>
+  ${_liList(bpData.pengayaanRemedial ? bpData.pengayaanRemedial.remedial : [])}
 
   <div class="sub-title">B7. Refleksi Guru</div>
   ${_buildRefleksiGuru(bpData.refleksiGuru, g.refleksiGuru)}
