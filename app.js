@@ -541,6 +541,16 @@ async function _onActivationSuccess(teacherData) {
   exportManager.init({ getTeacherName: () => session?.name });
   logger.info('app', 'aktivasi berhasil', { name: teacherData.name });
 
+  // Prefetch skenario TP fase yang relevan di background
+  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+    const kelas = parseInt(teacherData.kelas);
+    const fase = kelas <= 2 ? 'a' : kelas <= 4 ? 'b' : 'c';
+    const fasePrefetch = isNaN(kelas) ? ['a', 'b', 'c'] : [fase];
+    fasePrefetch.forEach(f => {
+      navigator.serviceWorker.controller.postMessage({ type: 'PREFETCH_FASE', fase: f });
+    });
+  }
+
   navigateTo('s-start');
 
   // Pre-cache PDF di background jika online — tanpa notifikasi

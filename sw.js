@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v224';         // â† bump: TTS voice check + error UI + dead code removed
+const CACHE_VERSION  = 'flaf-v225';         // â† bump: lazy cache printables + skenario TP, prefetch per fase
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
@@ -62,526 +62,6 @@ const SHELL_OPTIONAL = [
   './data/fase-b-capstone.js',
   './data/fase-c.js',
   './data/printables.js',
-
-  // docs/output-v5 â€” TP01â€“14 (kelas 1 & 2)
-  './docs/output-v5/tp-01-v6.js',
-  './docs/output-v5/tp-02-v5.js',
-  './docs/output-v5/tp-03-v5.js',
-  './docs/output-v5/tp-04-v5.js',
-  './docs/output-v5/tp-05-v5.js',
-  './docs/output-v5/tp-06-v5.js',
-  './docs/output-v5/tp-07-v5.js',
-  './docs/output-v5/tp-08-v5.js',
-  './docs/output-v5/tp-09-v5.js',
-  './docs/output-v5/tp-10-v5.js',
-  './docs/output-v5/tp-11-v5.js',
-  './docs/output-v5/tp-12-v5.js',
-  './docs/output-v5/tp-13-v5.js',
-  './docs/output-v5/tp-14-v5.js',
-
-  // docs/sesi-m* â€” TP15â€“18 (kelas 2 lanjut)
-  './docs/sesi-m10/tp-15-v5.js',
-  './docs/output-v5/tp-16-v5.js',
-  './docs/output-v5/tp-17-v5.js',
-  './docs/output-v5/tp-18-v5.js',
-
-  // docs/output-v5-faseb â€” TP01â€“22 (Fase B)
-  './docs/output-v5-faseb/tp-01-v5.js',
-  './docs/output-v5-faseb/tp-02-v5.js',
-  './docs/output-v5-faseb/tp-03-v5.js',
-  './docs/output-v5-faseb/tp-04-v5.js',
-  './docs/output-v5-faseb/tp-05-v5.js',
-  './docs/output-v5-faseb/tp-06-v5.js',
-  './docs/output-v5-faseb/tp-07-v5.js',
-  './docs/output-v5-faseb/tp-08-v5.js',
-  './docs/output-v5-faseb/tp-09-v5.js',
-  './docs/output-v5-faseb/tp-10-v5.js',
-  './docs/output-v5-faseb/tp-11-v5.js',
-  './docs/output-v5-faseb/tp-12-v5.js',
-  './docs/output-v5-faseb/tp-13-v5.js',
-  './docs/output-v5-faseb/tp-14-v5.js',
-  './docs/output-v5-faseb/tp-15-v5.js',
-  './docs/output-v5-faseb/tp-16-v5.js',
-  './docs/output-v5-faseb/tp-17-v5.js',
-  './docs/output-v5-faseb/tp-18-v5.js',
-  './docs/output-v5-faseb/tp-19-v5.js',
-  './docs/output-v5-faseb/tp-20-v5.js',
-  './docs/output-v5-faseb/tp-21-v5.js',
-  './docs/output-v5-faseb/tp-22-v5.js',
-
-  // docs/fase-c-skenario â€” TP01â€“22 (Fase C)
-  './docs/fase-c-skenario/tp-01-v1.js',
-  './docs/fase-c-skenario/tp-02-v1.js',
-  './docs/fase-c-skenario/tp-03-v1.js',
-  './docs/fase-c-skenario/tp-04-v1.js',
-  './docs/fase-c-skenario/tp-05-v1.js',
-  './docs/fase-c-skenario/tp-06-v1.js',
-  './docs/fase-c-skenario/tp-07-v1.js',
-  './docs/fase-c-skenario/tp-08-v1.js',
-  './docs/fase-c-skenario/tp-09-v1.js',
-  './docs/fase-c-skenario/tp-10-v1.js',
-  './docs/fase-c-skenario/tp-11-v1.js',
-  './docs/fase-c-skenario/tp-12-v1.js',
-  './docs/fase-c-skenario/tp-13-v1.js',
-  './docs/fase-c-skenario/tp-14-v1.js',
-  './docs/fase-c-skenario/tp-15-v1.js',
-  './docs/fase-c-skenario/tp-16-v1.js',
-  './docs/fase-c-skenario/tp-17-v1.js',
-  './docs/fase-c-skenario/tp-18-v1.js',
-  './docs/fase-c-skenario/tp-19-v1.js',
-  './docs/fase-c-skenario/tp-20-v1.js',
-  './docs/fase-c-skenario/tp-21-v1.js',
-  './docs/fase-c-skenario/tp-22-v1.js',
-
-  // printables images â€” TP01
-  './assets/images/printables/tp01-good-morning.png',
-  './assets/images/printables/tp01-good-afternoon.png',
-  './assets/images/printables/tp01-good-evening.png',
-  './assets/images/printables/tp01-good-night.png',
-  './assets/images/printables/tp01-morning.png',
-  './assets/images/printables/tp01-afternoon.png',
-  './assets/images/printables/tp01-evening.png',
-  './assets/images/printables/tp01-night.png',
-  // printables images â€” TP02
-  './assets/images/printables/tp02-name-tag.png',
-  './assets/images/printables/tp02-introduce-boy.png',
-  './assets/images/printables/tp02-introduce-girl.png',
-  // printables images â€” TP03
-  './assets/images/printables/tp03-listen.png',
-  './assets/images/printables/tp03-look.png',
-  './assets/images/printables/tp03-write.png',
-  './assets/images/printables/tp03-open-book.png',
-  './assets/images/printables/tp03-close-book.png',
-  './assets/images/printables/tp03-draw.png',
-  // printables images â€” TP04
-  './assets/images/printables/tp04-num-01.png',
-  './assets/images/printables/tp04-num-02.png',
-  './assets/images/printables/tp04-num-03.png',
-  './assets/images/printables/tp04-num-04.png',
-  './assets/images/printables/tp04-num-05.png',
-  './assets/images/printables/tp04-num-06.png',
-  './assets/images/printables/tp04-num-07.png',
-  './assets/images/printables/tp04-num-08.png',
-  './assets/images/printables/tp04-num-09.png',
-  './assets/images/printables/tp04-num-10.png',
-  './assets/images/printables/tp04-num-11.png',
-  './assets/images/printables/tp04-num-12.png',
-  './assets/images/printables/tp04-num-13.png',
-  './assets/images/printables/tp04-num-14.png',
-  './assets/images/printables/tp04-num-15.png',
-  './assets/images/printables/tp04-num-16.png',
-  './assets/images/printables/tp04-num-17.png',
-  './assets/images/printables/tp04-num-18.png',
-  './assets/images/printables/tp04-num-19.png',
-  './assets/images/printables/tp04-num-20.png',
-  // printables images â€” TP05
-  './assets/images/printables/tp05-red.png',
-  './assets/images/printables/tp05-blue.png',
-  './assets/images/printables/tp05-green.png',
-  './assets/images/printables/tp05-yellow.png',
-  './assets/images/printables/tp05-orange.png',
-  './assets/images/printables/tp05-purple.png',
-  './assets/images/printables/tp05-black.png',
-  './assets/images/printables/tp05-white.png',
-  './assets/images/printables/tp05-pink.png',
-  // printables images â€” TP06
-  './assets/images/printables/tp06-circle.png',
-  './assets/images/printables/tp06-square.png',
-  './assets/images/printables/tp06-triangle.png',
-  './assets/images/printables/tp06-rectangle.png',
-  './assets/images/printables/tp06-star.png',
-  './assets/images/printables/tp06-heart.png',
-  // printables images â€” TP07
-  './assets/images/printables/tp07-mother.png',
-  './assets/images/printables/tp07-father.png',
-  './assets/images/printables/tp07-sister.png',
-  './assets/images/printables/tp07-brother.png',
-  './assets/images/printables/tp07-grandmother.png',
-  './assets/images/printables/tp07-grandfather.png',
-  // printables images â€” TP08
-  './assets/images/printables/tp08-bedroom.png',
-  './assets/images/printables/tp08-kitchen.png',
-  './assets/images/printables/tp08-bathroom.png',
-  './assets/images/printables/tp08-living-room.png',
-  './assets/images/printables/tp08-garage.png',
-  './assets/images/printables/tp08-floor-plan.png',
-  // printables images â€” TP09
-  './assets/images/printables/tp09-cat.png',
-  './assets/images/printables/tp09-dog.png',
-  './assets/images/printables/tp09-bird.png',
-  './assets/images/printables/tp09-fish.png',
-  './assets/images/printables/tp09-rabbit.png',
-  './assets/images/printables/tp09-elephant.png',
-  './assets/images/printables/tp09-lion.png',
-  './assets/images/printables/tp09-monkey.png',
-  './assets/images/printables/tp09-snake.png',
-  './assets/images/printables/tp09-frog.png',
-  // printables images â€” TP10
-  './assets/images/printables/tp10-rice.png',
-  './assets/images/printables/tp10-bread.png',
-  './assets/images/printables/tp10-egg.png',
-  './assets/images/printables/tp10-apple.png',
-  './assets/images/printables/tp10-banana.png',
-  './assets/images/printables/tp10-milk.png',
-  './assets/images/printables/tp10-water.png',
-  './assets/images/printables/tp10-juice.png',
-  './assets/images/printables/tp10-noodles.png',
-  './assets/images/printables/tp10-chicken.png',
-  './assets/images/printables/tp10-plate-worksheet.png',
-  // printables images â€” TP11
-  './assets/images/printables/tp11-wake-up.png',
-  './assets/images/printables/tp11-brush-teeth.png',
-  './assets/images/printables/tp11-eat-breakfast.png',
-  './assets/images/printables/tp11-go-to-school.png',
-  './assets/images/printables/tp11-study.png',
-  './assets/images/printables/tp11-play.png',
-  './assets/images/printables/tp11-eat-dinner.png',
-  './assets/images/printables/tp11-sleep.png',
-  // printables images â€” TP12
-  './assets/images/printables/tp12-head.png',
-  './assets/images/printables/tp12-eyes.png',
-  './assets/images/printables/tp12-ears.png',
-  './assets/images/printables/tp12-nose.png',
-  './assets/images/printables/tp12-mouth.png',
-  './assets/images/printables/tp12-hands.png',
-  './assets/images/printables/tp12-legs.png',
-  './assets/images/printables/tp12-feet.png',
-  // printables images â€” TP13
-  './assets/images/printables/tp13-sunny.png',
-  './assets/images/printables/tp13-cloudy.png',
-  './assets/images/printables/tp13-rainy.png',
-  './assets/images/printables/tp13-windy.png',
-  './assets/images/printables/tp13-hot.png',
-  './assets/images/printables/tp13-cold.png',
-  // printables images â€” TP14
-  './assets/images/printables/tp14-book.png',
-  './assets/images/printables/tp14-pen.png',
-  './assets/images/printables/tp14-pencil.png',
-  './assets/images/printables/tp14-eraser.png',
-  './assets/images/printables/tp14-ruler.png',
-  './assets/images/printables/tp14-bag.png',
-  // printables images â€” TP15
-  './assets/images/printables/tp15-happy.png',
-  './assets/images/printables/tp15-sad.png',
-  './assets/images/printables/tp15-angry.png',
-  './assets/images/printables/tp15-scared.png',
-  './assets/images/printables/tp15-bored.png',
-  './assets/images/printables/tp15-excited.png',
-  './assets/images/printables/tp15-tired.png',
-  // printables images â€” TP16
-  './assets/images/printables/tp16-cover.png',
-  './assets/images/printables/tp16-page-01.png',
-  './assets/images/printables/tp16-page-02.png',
-  './assets/images/printables/tp16-page-03.png',
-  './assets/images/printables/tp16-page-04.png',
-  './assets/images/printables/tp16-sequence-cards.png',
-  // printables images â€” TP17
-  './assets/images/printables/tp17-cooking.png',
-  './assets/images/printables/tp17-cycling.png',
-  './assets/images/printables/tp17-dancing.png',
-  './assets/images/printables/tp17-drawing.png',
-  './assets/images/printables/tp17-playing-football.png',
-  './assets/images/printables/tp17-reading.png',
-  './assets/images/printables/tp17-singing.png',
-  './assets/images/printables/tp17-swimming.png',
-  // printables images â€” TP18
-  './assets/images/printables/tp18-poster-template.png',
-  './assets/images/printables/tp18-reference-card.png',
-
-  // printables images â€” TP-B01
-  './assets/images/printables_fase_b/tp-b01-canteen.png',
-  './assets/images/printables_fase_b/tp-b01-classroom.png',
-  './assets/images/printables_fase_b/tp-b01-gate.png',
-  './assets/images/printables_fase_b/tp-b01-hall.png',
-  './assets/images/printables_fase_b/tp-b01-library.png',
-  './assets/images/printables_fase_b/tp-b01-office.png',
-  './assets/images/printables_fase_b/tp-b01-playground.png',
-  './assets/images/printables_fase_b/tp-b01-school-map-worksheet.png',
-  './assets/images/printables_fase_b/tp-b01-toilet.png',
-
-  // printables images â€” TP-B02
-  './assets/images/printables_fase_b/tp-b02-curly.png',
-  './assets/images/printables_fase_b/tp-b02-describe-me-worksheet.png',
-  './assets/images/printables_fase_b/tp-b02-funny.png',
-  './assets/images/printables_fase_b/tp-b02-kind.png',
-  './assets/images/printables_fase_b/tp-b02-long-hair.png',
-  './assets/images/printables_fase_b/tp-b02-short-hair.png',
-  './assets/images/printables_fase_b/tp-b02-short.png',
-  './assets/images/printables_fase_b/tp-b02-smart.png',
-  './assets/images/printables_fase_b/tp-b02-straight.png',
-  './assets/images/printables_fase_b/tp-b02-tall.png',
-
-  // printables images â€” TP-B03
-  './assets/images/printables_fase_b/tp-b03-bank.png',
-  './assets/images/printables_fase_b/tp-b03-behind.png',
-  './assets/images/printables_fase_b/tp-b03-hospital.png',
-  './assets/images/printables_fase_b/tp-b03-in-front-of.png',
-  './assets/images/printables_fase_b/tp-b03-market.png',
-  './assets/images/printables_fase_b/tp-b03-mosque.png',
-  './assets/images/printables_fase_b/tp-b03-neighborhood-map-worksheet.png',
-  './assets/images/printables_fase_b/tp-b03-next-to.png',
-  './assets/images/printables_fase_b/tp-b03-park.png',
-
-  // printables images â€” TP-B04
-  './assets/images/printables_fase_b/tp-b04-sentence-frame-card.png',
-  './assets/images/printables_fase_b/tp-b04-writing-worksheet.png',
-
-  // printables images â€” TP-B05
-  './assets/images/printables_fase_b/tp-b05-clock-worksheet.png',
-  './assets/images/printables_fase_b/tp-b05-draw-the-clock-worksheet.png',
-  './assets/images/printables_fase_b/tp-b05-half-past.png',
-  './assets/images/printables_fase_b/tp-b05-oclock.png',
-  './assets/images/printables_fase_b/tp-b05-quarter-past.png',
-  './assets/images/printables_fase_b/tp-b05-quarter-to.png',
-  './assets/images/printables_fase_b/tp-b05-time-reference-card.png',
-
-  // printables images â€” TP-B06
-  './assets/images/printables_fase_b/tp-b06-go-to-school.png',
-  './assets/images/printables_fase_b/tp-b06-have-breakfast.png',
-  './assets/images/printables_fase_b/tp-b06-have-lunch.png',
-  './assets/images/printables_fase_b/tp-b06-play.png',
-  './assets/images/printables_fase_b/tp-b06-schedule-worksheet.png',
-  './assets/images/printables_fase_b/tp-b06-sleep.png',
-  './assets/images/printables_fase_b/tp-b06-study.png',
-  './assets/images/printables_fase_b/tp-b06-wake-up.png',
-
-  // printables images â€” TP-B07
-  './assets/images/printables_fase_b/tp-b07-calendar-worksheet.png',
-  './assets/images/printables_fase_b/tp-b07-friday.png',
-  './assets/images/printables_fase_b/tp-b07-monday.png',
-  './assets/images/printables_fase_b/tp-b07-months-reference-card.png',
-  './assets/images/printables_fase_b/tp-b07-saturday.png',
-  './assets/images/printables_fase_b/tp-b07-sunday.png',
-  './assets/images/printables_fase_b/tp-b07-thursday.png',
-  './assets/images/printables_fase_b/tp-b07-tuesday.png',
-  './assets/images/printables_fase_b/tp-b07-wednesday.png',
-
-  // printables images â€” TP-B08
-  './assets/images/printables_fase_b/tp-b08-weekly-schedule-worksheet.png',
-  './assets/images/printables_fase_b/tp-b08-writing-guide-card.png',
-
-  // printables images â€” TP-B09
-  './assets/images/printables_fase_b/tp-b09-bird.png',
-  './assets/images/printables_fase_b/tp-b09-butterfly.png',
-  './assets/images/printables_fase_b/tp-b09-cat.png',
-  './assets/images/printables_fase_b/tp-b09-dog.png',
-  './assets/images/printables_fase_b/tp-b09-fish.png',
-  './assets/images/printables_fase_b/tp-b09-flower.png',
-  './assets/images/printables_fase_b/tp-b09-grass.png',
-  './assets/images/printables_fase_b/tp-b09-habitat-worksheet.png',
-  './assets/images/printables_fase_b/tp-b09-leaf.png',
-  './assets/images/printables_fase_b/tp-b09-tree.png',
-
-  // printables images â€” TP-B10
-  './assets/images/printables_fase_b/tp-b10-cloudy.png',
-  './assets/images/printables_fase_b/tp-b10-hat.png',
-  './assets/images/printables_fase_b/tp-b10-jacket.png',
-  './assets/images/printables_fase_b/tp-b10-raincoat.png',
-  './assets/images/printables_fase_b/tp-b10-rainy.png',
-  './assets/images/printables_fase_b/tp-b10-sandals.png',
-  './assets/images/printables_fase_b/tp-b10-shorts.png',
-  './assets/images/printables_fase_b/tp-b10-sunny.png',
-  './assets/images/printables_fase_b/tp-b10-umbrella.png',
-  './assets/images/printables_fase_b/tp-b10-weather-outfit-worksheet.png',
-  './assets/images/printables_fase_b/tp-b10-windy.png',
-
-  // printables images â€” TP-B11
-  './assets/images/printables_fase_b/tp-b11-brush-teeth.png',
-  './assets/images/printables_fase_b/tp-b11-drink-water.png',
-  './assets/images/printables_fase_b/tp-b11-eat-vegetables.png',
-  './assets/images/printables_fase_b/tp-b11-exercise.png',
-  './assets/images/printables_fase_b/tp-b11-healthy-habits-worksheet.png',
-  './assets/images/printables_fase_b/tp-b11-sleep-early.png',
-  './assets/images/printables_fase_b/tp-b11-wash-hands.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-1.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-2.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-3.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-4.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-5.png',
-  './assets/images/printables_fase_b/tp-b11-habit-card-6.png',
-
-  // printables images â€” TP-B12
-  './assets/images/printables_fase_b/tp-b12-chef.png',
-  './assets/images/printables_fase_b/tp-b12-doctor.png',
-  './assets/images/printables_fase_b/tp-b12-driver.png',
-  './assets/images/printables_fase_b/tp-b12-farmer.png',
-  './assets/images/printables_fase_b/tp-b12-firefighter.png',
-  './assets/images/printables_fase_b/tp-b12-job-description-worksheet.png',
-  './assets/images/printables_fase_b/tp-b12-nurse.png',
-  './assets/images/printables_fase_b/tp-b12-police.png',
-  './assets/images/printables_fase_b/tp-b12-teacher.png',
-
-  // printables images â€” TP-B13
-  './assets/images/printables_fase_b/tp-b13-gado-gado.png',
-  './assets/images/printables_fase_b/tp-b13-my-favorite-food-worksheet.png',
-  './assets/images/printables_fase_b/tp-b13-nasi-goreng.png',
-  './assets/images/printables_fase_b/tp-b13-rendang.png',
-  './assets/images/printables_fase_b/tp-b13-sate.png',
-  './assets/images/printables_fase_b/tp-b13-soto.png',
-  './assets/images/printables_fase_b/tp-b13-tempeh.png',
-
-  // printables images â€” TP-B14
-  './assets/images/printables_fase_b/tp-b14-birthday.png',
-  './assets/images/printables_fase_b/tp-b14-christmas.png',
-  './assets/images/printables_fase_b/tp-b14-eid.png',
-  './assets/images/printables_fase_b/tp-b14-graduation.png',
-  './assets/images/printables_fase_b/tp-b14-my-celebration-worksheet.png',
-  './assets/images/printables_fase_b/tp-b14-nyepi.png',
-
-  // printables images â€” TP-B15
-  './assets/images/printables_fase_b/tp-b15-indonesia-poster-template.png',
-  './assets/images/printables_fase_b/tp-b15-my-country-worksheet.png',
-  './assets/images/printables_fase_b/tp-b15-sentence-starter-card.png',
-
-  // printables images â€” TP-B16
-  './assets/images/printables_fase_b/tp-b16-badminton.png',
-  './assets/images/printables_fase_b/tp-b16-cycling.png',
-  './assets/images/printables_fase_b/tp-b16-football.png',
-  './assets/images/printables_fase_b/tp-b16-martial-arts.png',
-  './assets/images/printables_fase_b/tp-b16-running.png',
-  './assets/images/printables_fase_b/tp-b16-sports-survey-worksheet.png',
-  './assets/images/printables_fase_b/tp-b16-swimming.png',
-
-  // printables images â€” TP-B17
-  './assets/images/printables_fase_b/tp-b17-crossroad.png',
-  './assets/images/printables_fase_b/tp-b17-direction-phrase-card.png',
-  './assets/images/printables_fase_b/tp-b17-directions-map-worksheet.png',
-  './assets/images/printables_fase_b/tp-b17-go-straight.png',
-  './assets/images/printables_fase_b/tp-b17-stop.png',
-  './assets/images/printables_fase_b/tp-b17-traffic-light.png',
-  './assets/images/printables_fase_b/tp-b17-turn-left.png',
-  './assets/images/printables_fase_b/tp-b17-turn-right.png',
-
-  // printables images â€” TP-B18
-  './assets/images/printables_fase_b/tp-b18-ago.png',
-  './assets/images/printables_fase_b/tp-b18-last-month.png',
-  './assets/images/printables_fase_b/tp-b18-last-week.png',
-  './assets/images/printables_fase_b/tp-b18-past-event-worksheet.png',
-  './assets/images/printables_fase_b/tp-b18-this-morning.png',
-  './assets/images/printables_fase_b/tp-b18-verb-past-tense-card.png',
-  './assets/images/printables_fase_b/tp-b18-yesterday.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-1.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-2.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-3.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-4.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-5.png',
-  './assets/images/printables_fase_b/tp-b18-activity-card-6.png',
-
-  // printables images â€” TP-B19
-  './assets/images/printables_fase_b/tp-b19-budis-day-text.png',
-  './assets/images/printables_fase_b/tp-b19-reading-comprehension-worksheet.png',
-  './assets/images/printables_fase_b/tp-b19-sequence-cards.png',
-
-  // printables images â€” TP-B20
-  './assets/images/printables_fase_b/tp-b20-my-story-worksheet.png',
-  './assets/images/printables_fase_b/tp-b20-story-frame-card.png',
-
-  // printables images â€” TP-B21
-  './assets/images/printables_fase_b/tp-b21-budis-week-table.png',
-  './assets/images/printables_fase_b/tp-b21-stay-healthy-poster.png',
-
-  // printables images â€” TP-B22
-  './assets/images/printables_fase_b/tp-b22-planning-guide-card.png',
-  './assets/images/printables_fase_b/tp-b22-project-poster-template.png',
-
-  // printables images â€” Fase C
-  './assets/images/printables_fase_c/tp-c01-profile-note.png',
-  './assets/images/printables_fase_c/tp-c01-partner-card.png',
-  './assets/images/printables_fase_c/tp-c02-tall.png',
-  './assets/images/printables_fase_c/tp-c02-short.png',
-  './assets/images/printables_fase_c/tp-c02-long-hair.png',
-  './assets/images/printables_fase_c/tp-c02-short-hair.png',
-  './assets/images/printables_fase_c/tp-c02-person-card.png',
-  './assets/images/printables_fase_c/tp-c02-comparison-table.png',
-  './assets/images/printables_fase_c/tp-c03-mosque.png',
-  './assets/images/printables_fase_c/tp-c03-market.png',
-  './assets/images/printables_fase_c/tp-c03-school.png',
-  './assets/images/printables_fase_c/tp-c03-garden.png',
-  './assets/images/printables_fase_c/tp-c03-rice-field.png',
-  './assets/images/printables_fase_c/tp-c03-river.png',
-  './assets/images/printables_fase_c/tp-c03-neighborhood-card.png',
-  './assets/images/printables_fase_c/tp-c03-comparison-table.png',
-  './assets/images/printables_fase_c/tp-c05-go-to-school.png',
-  './assets/images/printables_fase_c/tp-c05-cook.png',
-  './assets/images/printables_fase_c/tp-c05-play-outside.png',
-  './assets/images/printables_fase_c/tp-c05-study.png',
-  './assets/images/printables_fase_c/tp-c05-wake-up.png',
-  './assets/images/printables_fase_c/tp-c05-help-at-home.png',
-  './assets/images/printables_fase_c/tp-c05-routine-card.png',
-  './assets/images/printables_fase_c/tp-c05-comparison-table.png',
-  './assets/images/printables_fase_c/tp-c06-reading.png',
-  './assets/images/printables_fase_c/tp-c06-playing-football.png',
-  './assets/images/printables_fase_c/tp-c06-cooking.png',
-  './assets/images/printables_fase_c/tp-c06-watching-tv.png',
-  './assets/images/printables_fase_c/tp-c06-helping-home.png',
-  './assets/images/printables_fase_c/tp-c06-hobby-card.png',
-  './assets/images/printables_fase_c/tp-c06-exchange-table.png',
-  './assets/images/printables_fase_c/tp-c07-rice.png',
-  './assets/images/printables_fase_c/tp-c07-noodles.png',
-  './assets/images/printables_fase_c/tp-c07-corn.png',
-  './assets/images/printables_fase_c/tp-c07-bread.png',
-  './assets/images/printables_fase_c/tp-c07-vegetables.png',
-  './assets/images/printables_fase_c/tp-c07-fish.png',
-  './assets/images/printables_fase_c/tp-c07-chicken.png',
-  './assets/images/printables_fase_c/tp-c07-spicy.png',
-  './assets/images/printables_fase_c/tp-c07-sweet.png',
-  './assets/images/printables_fase_c/tp-c07-food-card.png',
-  './assets/images/printables_fase_c/tp-c07-exchange-table.png',
-  './assets/images/printables_fase_c/tp-c08-plan-sheet.png',
-  './assets/images/printables_fase_c/tp-c09-market.png',
-  './assets/images/printables_fase_c/tp-c09-mosque.png',
-  './assets/images/printables_fase_c/tp-c09-park.png',
-  './assets/images/printables_fase_c/tp-c09-river.png',
-  './assets/images/printables_fase_c/tp-c09-rice-field.png',
-  './assets/images/printables_fase_c/tp-c09-school.png',
-  './assets/images/printables_fase_c/tp-c09-town-card.png',
-  './assets/images/printables_fase_c/tp-c09-partner-card.png',
-  './assets/images/printables_fase_c/tp-c10-rainy.png',
-  './assets/images/printables_fase_c/tp-c10-hot.png',
-  './assets/images/printables_fase_c/tp-c10-windy.png',
-  './assets/images/printables_fase_c/tp-c10-cloudy.png',
-  './assets/images/printables_fase_c/tp-c10-raincoat.png',
-  './assets/images/printables_fase_c/tp-c10-umbrella.png',
-  './assets/images/printables_fase_c/tp-c10-jacket.png',
-  './assets/images/printables_fase_c/tp-c10-t-shirt.png',
-  './assets/images/printables_fase_c/tp-c10-weather-card.png',
-  './assets/images/printables_fase_c/tp-c10-partner-card.png',
-  './assets/images/printables_fase_c/tp-c11-cat.png',
-  './assets/images/printables_fase_c/tp-c11-chicken.png',
-  './assets/images/printables_fase_c/tp-c11-goat.png',
-  './assets/images/printables_fase_c/tp-c11-fish.png',
-  './assets/images/printables_fase_c/tp-c11-cow.png',
-  './assets/images/printables_fase_c/tp-c11-bird.png',
-  './assets/images/printables_fase_c/tp-c11-dog.png',
-  './assets/images/printables_fase_c/tp-c11-rabbit.png',
-  './assets/images/printables_fase_c/tp-c11-animal-card.png',
-  './assets/images/printables_fase_c/tp-c11-partner-card.png',
-  './assets/images/printables_fase_c/tp-c12-menu-card-a.png',
-  './assets/images/printables_fase_c/tp-c12-menu-card-b.png',
-  './assets/images/printables_fase_c/tp-c12-menu-table.png',
-  './assets/images/printables_fase_c/tp-c13-book-fair-poster.png',
-  './assets/images/printables_fase_c/tp-c14-juice-step1.png',
-  './assets/images/printables_fase_c/tp-c14-juice-step2.png',
-  './assets/images/printables_fase_c/tp-c14-juice-step3.png',
-  './assets/images/printables_fase_c/tp-c14-juice-step4.png',
-  './assets/images/printables_fase_c/tp-c14-juice-step5.png',
-  './assets/images/printables_fase_c/tp-c14-sequence-sheet.png',
-  './assets/images/printables_fase_c/tp-c14-juice-procedure.png',
-  './assets/images/printables_fase_c/tp-c15-story-card-a.png',
-  './assets/images/printables_fase_c/tp-c15-story-card-b.png',
-  './assets/images/printables_fase_c/tp-c16-choice-slip.png',
-  './assets/images/printables_fase_c/tp-c17-agree.png',
-  './assets/images/printables_fase_c/tp-c17-disagree.png',
-  './assets/images/printables_fase_c/tp-c17-interesting.png',
-  './assets/images/printables_fase_c/tp-c17-boring.png',
-  './assets/images/printables_fase_c/tp-c18-past-tense-ref.png',
-  './assets/images/printables_fase_c/tp-c18-fruit.png',
-  './assets/images/printables_fase_c/tp-c19-quiet-place.png',
-  './assets/images/printables_fase_c/tp-c19-busy-place.png',
-  './assets/images/printables_fase_c/tp-c19-crowded-place.png',
-  './assets/images/printables_fase_c/tp-c21-text-a-poster.png',
-  './assets/images/printables_fase_c/tp-c21-text-b-menu.png',
-  './assets/images/printables_fase_c/tp-c22-choice-card.png',
 
   // secrets.js sengaja TIDAK masuk precache
   // karena berisi credentials Supabase â€” hanya dimuat saat runtime
@@ -1080,10 +560,63 @@ self.addEventListener('message', event => {
       self.skipWaiting();
       break;
 
+    case 'PREFETCH_FASE':
+      event.waitUntil(prefetchFase(event.data.fase));
+      break;
+
     default:
       console.warn(`[SW] Message tidak dikenal: ${type}`);
   }
 });
+
+// ============================================================
+// PREFETCH SKENARIO TP PER FASE
+// ============================================================
+async function prefetchFase(fase) {
+  const maps = {
+    a: [
+      './docs/output-v5/tp-01-v6.js',
+      './docs/output-v5/tp-02-v5.js',
+      './docs/output-v5/tp-03-v5.js',
+      './docs/output-v5/tp-04-v5.js',
+      './docs/output-v5/tp-05-v5.js',
+      './docs/output-v5/tp-06-v5.js',
+      './docs/output-v5/tp-07-v5.js',
+      './docs/output-v5/tp-08-v5.js',
+      './docs/output-v5/tp-09-v5.js',
+      './docs/output-v5/tp-10-v5.js',
+      './docs/output-v5/tp-11-v5.js',
+      './docs/output-v5/tp-12-v5.js',
+      './docs/output-v5/tp-13-v5.js',
+      './docs/output-v5/tp-14-v5.js',
+      './docs/sesi-m10/tp-15-v5.js',
+      './docs/output-v5/tp-16-v5.js',
+      './docs/output-v5/tp-17-v5.js',
+      './docs/output-v5/tp-18-v5.js',
+    ],
+    b: Array.from({ length: 22 }, (_, i) =>
+      `./docs/output-v5-faseb/tp-${String(i + 1).padStart(2, '0')}-v5.js`
+    ),
+    c: Array.from({ length: 22 }, (_, i) =>
+      `./docs/fase-c-skenario/tp-${String(i + 1).padStart(2, '0')}-v1.js`
+    ),
+  };
+
+  const files = maps[fase] || [];
+  if (files.length === 0) return;
+
+  const cache = await caches.open(CACHE_VERSION);
+  for (const path of files) {
+    try {
+      const cached = await cache.match(path);
+      if (cached) continue;
+      const res = await fetch(path);
+      if (res.ok) await cache.put(path, res);
+    } catch {
+      // prefetch gagal — tidak masalah, akan lazy-cache saat diakses
+    }
+  }
+}
 
 // ============================================================
 // HELPER: Broadcast ke semua client
