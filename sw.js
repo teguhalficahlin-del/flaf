@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v222';         // â† bump: refleksiGuru render di modul ajar B7
+const CACHE_VERSION  = 'flaf-v223';         // â† bump: refleksiGuru render di modul ajar B7
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
@@ -37,6 +37,13 @@ const SHELL_CRITICAL = [
   // modules
   './modules/pdf-handler.js',
   './modules/pdf-generator.js',
+  './modules/modul-ajar-umum-generator.js',
+  './modules/modul-bermakna-pemantik-fase-a.js',
+  './modules/modul-bermakna-pemantik-fase-b.js',
+  './modules/modul-bermakna-pemantik-fase-c.js',
+  './modules/modul-narasi-fase-a.js',
+  './modules/modul-narasi-fase-b.js',
+  './modules/modul-narasi-fase-c.js',
   // icons
   './icons/icon-192.png',
   './icons/icon-512.png',
