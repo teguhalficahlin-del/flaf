@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v221';         // â† bump: refleksiGuru render di modul ajar B7
+const CACHE_VERSION  = 'flaf-v222';         // â† bump: refleksiGuru render di modul ajar B7
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
@@ -1118,5 +1118,6 @@ async function getCacheStats() {
     return { error: err.message };
   }
 }
+
 
 
