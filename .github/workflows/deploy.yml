@@ -33,6 +33,18 @@ jobs:
           export const ADMIN_EMAIL = '${{ secrets.ADMIN_EMAIL }}';
           EOF
 
+      - name: Verify secrets.js
+        run: |
+          echo "--- Lokasi file ---"
+          pwd
+          ls -la secrets.js
+          echo "--- Jumlah baris (harus 4) ---"
+          wc -l < secrets.js
+          echo "--- Jumlah export (harus 4) ---"
+          grep -c "^export const" secrets.js
+          echo "--- Cek nilai kosong (harus tidak ada output) ---"
+          grep -n "= '';" secrets.js || echo "OK: tidak ada nilai kosong"
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
