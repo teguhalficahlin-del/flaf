@@ -1,9 +1,9 @@
-﻿// ============================================================
+// ============================================================
 // FLAF â€” Service Worker Produksi
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v225';         // â† bump: lazy cache printables + skenario TP, prefetch per fase
+const CACHE_VERSION  = 'flaf-v226';         // bump: Fase D SMP (sesi-runtime-smp, fase-d aggregators, prefetch kelas-7/8/9)
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
@@ -20,6 +20,7 @@ const SHELL_CRITICAL = [
   './screens/jejak.js',
   './screens/nilai.js',
   './screens/sesi-runtime.js',
+  './screens/sesi-runtime-smp.js',
   './screens/kurikulum.css',
   './screens/sesi-runtime.css',
   './screens/dashboard.css',
@@ -61,6 +62,10 @@ const SHELL_OPTIONAL = [
   './data/fase-b-kluster-e.js',
   './data/fase-b-capstone.js',
   './data/fase-c.js',
+  './data/fase-d.js',
+  './data/fase-d-kelas-7.js',
+  './data/fase-d-kelas-8.js',
+  './data/fase-d-kelas-9.js',
   './data/printables.js',
 
   // secrets.js sengaja TIDAK masuk precache
@@ -600,6 +605,11 @@ async function prefetchFase(fase) {
     c: Array.from({ length: 22 }, (_, i) =>
       `./docs/fase-c-skenario/tp-${String(i + 1).padStart(2, '0')}-v1.js`
     ),
+    d: [
+      ...Array.from({length: 24}, (_, i) => `./docs/canonical/fase-d/kelas-7/tp-`+String(i+1).padStart(2,'0')+`.js`),
+      ...Array.from({length: 24}, (_, i) => `./docs/canonical/fase-d/kelas-8/tp-`+String(i+1).padStart(2,'0')+`.js`),
+      ...Array.from({length: 18}, (_, i) => `./docs/canonical/fase-d/kelas-9/tp-`+String(i+1).padStart(2,'0')+`.js`),
+    ],
   };
 
   const files = maps[fase] || [];
