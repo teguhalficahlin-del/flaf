@@ -27,6 +27,7 @@
 import FASE_A from './fase-a.js';
 import FASE_B from './fase-b.js';
 import FASE_C from './fase-c.js';
+import FASE_D from './fase-d.js';
 
 // ----------------------------------------------------------
 // REGISTRY FASE
@@ -38,6 +39,14 @@ const REGISTRY = {
   'A': FASE_A,
   'B': FASE_B,
   'C': FASE_C,
+};
+
+// ----------------------------------------------------------
+// REGISTRY SMP — schema berbeda dari SD (metadata.grade, runtime[])
+// Zero breaking change: REGISTRY di atas tidak diubah.
+// ----------------------------------------------------------
+const REGISTRY_SMP = {
+  'D': FASE_D,
 };
 
 // ----------------------------------------------------------
@@ -63,10 +72,24 @@ for (const [key, fase] of Object.entries(REGISTRY)) {
  *
  * @returns {Array}
  */
-export function getAllTP() {
+export function getAllTP_SD() {
   return Object.values(REGISTRY)
     .flatMap(f => f.tujuan_pembelajaran)
     .sort((a, b) => a.kelas - b.kelas || a.nomor - b.nomor);
+}
+
+export function getAllTP_SMP() {
+  return Object.values(REGISTRY_SMP)
+    .flatMap(f => f.tujuan_pembelajaran)
+    .sort((a, b) =>
+      (a.metadata.grade - b.metadata.grade) ||
+      (a.metadata.tp_id).localeCompare(b.metadata.tp_id)
+    );
+}
+
+// Legacy alias — tetap mengembalikan SD saja agar tidak breaking
+export function getAllTP() {
+  return getAllTP_SD();
 }
 
 /**
@@ -139,9 +162,13 @@ export function getFaseAktif() {
 // ----------------------------------------------------------
 // DEFAULT EXPORT
 // ----------------------------------------------------------
+export { REGISTRY_SMP };
+
 export default {
   getFase,
   getAllTP,
+  getAllTP_SD,
+  getAllTP_SMP,
   getTP,
   getMeta,
   getFaseList,
