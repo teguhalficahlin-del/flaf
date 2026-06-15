@@ -18,11 +18,12 @@
  */
 
 import { db }       from '../storage/db.js';
-import { getAllTP, getFase } from '../data/index.js';
+import { getAllTP, getAllTP_SMP, getFase } from '../data/index.js';
 import { jejak }    from '../storage/jejak.js';
 import { nilai }    from '../storage/nilai.js';
 import { presensi } from '../storage/presensi.js';
 import { mount as srMount, unmount as srUnmount } from './sesi-runtime.js';
+import { mount as srSMPMount, unmount as srSMPUnmount } from './sesi-runtime-smp.js';
 import { generatePrintHTML } from '../data/printables.js';
 
 const STORE_KV = 'kv';
@@ -90,7 +91,7 @@ function _bindDelegatedEvents(container) {
         window.dashPilihRombel(el.dataset.id, el.dataset.nama, Number(el.dataset.tingkat));
         break;
       case 'pilih-tp':
-        window.dashPilihTP(el.dataset.id, Number(el.dataset.nomor), el.dataset.nama);
+        window.dashPilihTP(el.dataset.id, el.dataset.nomor, el.dataset.nama, el.dataset.jenjang || 'SD');
         break;
       case 'set-status':
         window.dashSetStatus(el.dataset.siswaId, el.dataset.status);
@@ -156,11 +157,13 @@ async function _loadSession() {
 async function _loadFaseData() {
   if (_faseData) return _faseData;
   try {
-    const tps = getAllTP();
-    if (!Array.isArray(tps) || tps.length === 0) {
+    const tpsSD  = getAllTP();
+    const tpsSMP = getAllTP_SMP();
+    const allTps = [...tpsSD, ...tpsSMP];
+    if (!Array.isArray(allTps) || allTps.length === 0) {
       throw new Error('Struktur data fase tidak valid');
     }
-    return { tujuan_pembelajaran: tps };
+    return { tujuan_pembelajaran: allTps };
   } catch (err) {
     console.warn('[DASHBOARD] Gagal load fase data:', err.message);
     return { tujuan_pembelajaran: [] };
@@ -168,11 +171,29 @@ async function _loadFaseData() {
 }
 
 function _tpList(tingkat) {
-  return (_faseData?.tujuan_pembelajaran || []).filter(tp => tp.kelas === tingkat);
+  return (_faseData?.tujuan_pembelajaran || []).filter(tp =>
+    tp.kelas === tingkat ||
+    tp.metadata?.grade === tingkat
+  );
+}
+
+function _tpNomor(tp) {
+  return tp.nomor ?? tp.metadata?.pattern_id ?? '—';
+}
+function _tpNama(tp) {
+  return tp.nama ?? tp.metadata?.title ?? '(tanpa judul)';
+}
+function _tpJenjang(tp) {
+  return (tp.metadata?.grade >= 7) ? 'SMP' : 'SD';
+}
+function _tpId(tp) {
+  return tp.id ?? tp.metadata?.tp_id ?? '';
 }
 
 function _getTP(id) {
-  return (_faseData?.tujuan_pembelajaran || []).find(t => t.id === id) || null;
+  return (_faseData?.tujuan_pembelajaran || []).find(t =>
+    t.id === id || t.metadata?.tp_id === id
+  ) || null;
 }
 
 // --- LEVEL SYSTEM ------------------------------------------------------------
@@ -345,18 +366,23 @@ async function _buildPilihTPHTML() {
   } catch { /* abaikan error */ }
 
   const tpHTML = tpList.map(tp => {
-    const sudah = tpSelesaiSet.has(tp.nomor);
+    const sudah  = tpSelesaiSet.has(tp.nomor);
+    const nomor  = _tpNomor(tp);
+    const nama   = _tpNama(tp);
+    const id     = _tpId(tp);
+    const jenjang = _tpJenjang(tp);
     return `
   <div data-action="pilih-tp"
-       data-id="${tp.id}"
-       data-nomor="${tp.nomor}"
-       data-nama="${_escape(tp.nama)}"
+       data-id="${_escape(id)}"
+       data-nomor="${_escape(String(nomor))}"
+       data-nama="${_escape(nama)}"
+       data-jenjang="${jenjang}"
        class="ds-list-item" style="${sudah ? 'opacity:.65;' : ''}">
     <div style="width:28px;height:28px;border-radius:50%;background:${sudah ? 'rgba(76,175,80,.35)' : 'rgba(212,174,58,.15)'};border:${sudah ? '1px solid rgba(76,175,80,.6)' : 'none'};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-      <span style="font-size:15px;font-weight:700;color:${sudah ? '#4CAF50' : '#D4AE3A'};">${sudah ? '✓' : tp.nomor}</span>
+      <span style="font-size:15px;font-weight:700;color:${sudah ? '#4CAF50' : '#D4AE3A'};">${sudah ? '✓' : _escape(String(nomor))}</span>
     </div>
     <div style="flex:1;min-width:0;">
-      <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:${sudah ? '#888' : '#fff'};">${_escape(tp.nama)}</div>
+      <div class="ds-list-item-name" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:${sudah ? '#888' : '#fff'};">${_escape(nama)}</div>
       ${sudah ? `<div style="font-size:11px;color:rgba(212,174,58,.6);margin-top:1px;">Sudah diajarkan</div>` : ''}
     </div>
     <div class="ds-list-arrow">›</div>
@@ -1038,11 +1064,20 @@ async function _rerenderStep() {
     }
     if (srRoot && !srRoot.dataset.mounted) {
       srRoot.dataset.mounted = '1';
-      srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _flow.statusMap, _onSesiDone, () => {
-        srUnmount();
-        _skenario.stepIndex = 1;
-        _rerenderStep();
-      });
+      const isSMP = tpData?.metadata?.grade >= 7;
+      if (isSMP) {
+        srSMPMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _flow.statusMap, _onSesiDone, () => {
+          srSMPUnmount();
+          _skenario.stepIndex = 1;
+          _rerenderStep();
+        });
+      } else {
+        srMount(srRoot, tpData, _flow.rombel, _flow.siswaList, _flow.statusMap, _onSesiDone, () => {
+          srUnmount();
+          _skenario.stepIndex = 1;
+          _rerenderStep();
+        });
+      }
     }
     return;
   }
@@ -1727,8 +1762,8 @@ window.dashKePilihTP = async function() {
   if (_container) _container.innerHTML = await _buildPilihTPHTML();
 };
 
-window.dashPilihTP = async function(id, nomor, nama) {
-  _flow.tp         = { id, nomor, nama };
+window.dashPilihTP = async function(id, nomor, nama, jenjang = 'SD') {
+  _flow.tp         = { id, nomor, nama, jenjang };
   _flow.view       = 'sesi';
   _flow.nilaiCache = null;
   _skenario        = {
