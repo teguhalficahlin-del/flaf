@@ -2478,3 +2478,35 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 - Soal STS/SAS Fase B dan C belum dibuat
 - Cleanup dead code kurikulum.js (pdfFilename, _setPDFBtnState,
   param onDownloadPDF, import downloadPDF di app.js)
+
+
+---
+
+## Sprint C — Fase D Integrasi PWA (Selesai 2026-06-16)
+
+### Fase D — Status Konten
+- 66/66 TP FINAL (Kelas 7: 24, Kelas 8: 24, Kelas 9: 18)
+- Review independen: LOLOS semua
+- Validator: tools/validate-fase-d.js (Sprint B, commits e7c1a41→51c477f→88e3883)
+
+### Fase D — Integrasi PWA
+| Commit | Isi |
+|---|---|
+| 421b240 | 73 file canonical + validator → docs/canonical/fase-d/ |
+| b50309f | REGISTRY_SMP, aggregators (fase-d-kelas-7/8/9.js, fase-d.js), getAllTP_SD/SMP |
+| 8a6db92 | sesi-runtime-smp.js (479 baris, 7 step-type MVP penuh) + dashboard routing SMP/SD |
+| ab70b53 | SW precache flaf-v226 — prefetchFase d (66 TP) |
+
+### Arsitektur Keputusan (FINAL — jangan dipertanyakan ulang)
+- REGISTRY_SD (Fase A–C) dan REGISTRY_SMP (Fase D+) terpisah di data/index.js
+- getAllTP() = alias ke getAllTP_SD() — zero breaking change untuk Fase A–C
+- sesi-runtime.js (SD) tidak disentuh — Fase D pakai sesi-runtime-smp.js terpisah
+- Aggregator Fase D: per-kelas (fase-d-kelas-7/8/9.js) lalu merge di fase-d.js
+- SW Cache: flaf-v226, prefetchFase 'd' = 66 file via Array.from (runtime-generated)
+- _tpList() filter: tp.kelas === tingkat || tp.metadata?.grade === tingkat
+- dashPilihTP() menerima jenjang param; routing isSMP via metadata.grade >= 7
+
+### Pending Items Sprint C
+1. tp_id format inconsistency: metadata.tp_id = "docs/fase-d/..." (path string) bukan ID pendek — standardisasi sebelum fitur search/filter by ID
+2. Test manual di browser — belum ada live test Sprint C
+3. package.json missing "type": "module" — tech debt pre-existing
