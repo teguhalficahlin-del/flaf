@@ -91,7 +91,7 @@ function _nilaiColor(n) {
 function _tpList(tingkat) {
   const all = getAllTP();
   if (tingkat === 'all') return all;
-  return all.filter(tp => tp.kelas === tingkat);
+  return all.filter(tp => tp.kelas === tingkat || tp.metadata?.grade === tingkat);
 }
 
 function _statBox(label, value, color) {
@@ -134,7 +134,7 @@ async function _render() {
 
 // --- LEVEL 1: DAFTAR ROMBEL --------------------------------------------------
 
-const TP_TOTAL = { 1:9, 2:9, 3:11, 4:11, 5:11, 6:11 };
+const TP_TOTAL = { 1:9, 2:9, 3:11, 4:11, 5:11, 6:11, 7:24, 8:24, 9:18 };
 
 async function _renderRombel(token) {
   let list = [], rekap = [];
@@ -1112,6 +1112,9 @@ window.nilaiTambahKelas = function() {
         <button onclick="nilaiPilihTingkat(4)" id="btn-tingkat-4" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 4<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 12 – 22</span></button>
         <button onclick="nilaiPilihTingkat(5)" id="btn-tingkat-5" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 5<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 1 – 11</span></button>
         <button onclick="nilaiPilihTingkat(6)" id="btn-tingkat-6" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 6<br><span style="font-size:12px;font-weight:400;opacity:.7;">TP 12 – 22</span></button>
+        <button onclick="nilaiPilihTingkat(7)" id="btn-tingkat-7" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 7<br><span class="nv-tingkat-sub">TP 1 – 24</span></button>
+        <button onclick="nilaiPilihTingkat(8)" id="btn-tingkat-8" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 8<br><span class="nv-tingkat-sub">TP 1 – 24</span></button>
+        <button onclick="nilaiPilihTingkat(9)" id="btn-tingkat-9" class="nv-tingkat-btn nv-tingkat-btn--idle">Kelas 9<br><span class="nv-tingkat-sub">TP 1 – 18</span></button>
       </div>
       <input type="hidden" id="input-tingkat-rombel" value="1">
       <button onclick="nilaiSimpanRombel()" class="nv-btn-simpan">SIMPAN ROMBEL</button>
@@ -1126,7 +1129,7 @@ window.nilaiTambahKelas = function() {
       const kelas   = stored?.payload?.kelas || 'all';
       if (kelas !== 'all') {
         const k = parseInt(kelas);
-        [1,2,3,4,5,6].forEach(n => {
+        [1,2,3,4,5,6,7,8,9].forEach(n => {
           if (n !== k) {
             const btn = document.getElementById(`btn-tingkat-${n}`);
             if (btn) {
