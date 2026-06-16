@@ -637,6 +637,35 @@ function _buildStepMateri(tp) {
   </div>`;
 }
 
+function _buildAlatBantu(r) {
+  const visuals = (r?.visual_cues || []).map(v =>
+    `<div class="ds-alatbantu-item">
+      <span class="ds-alatbantu-icon">🖼</span>
+      <span class="ds-alatbantu-teks">${_escape(v.description_id || v.description || '')}</span>
+    </div>`
+  ).join('');
+
+  const gestures = (r?.gesture_cues || []).map(g =>
+    `<div class="ds-alatbantu-item">
+      <span class="ds-alatbantu-icon">🤝</span>
+      <span class="ds-alatbantu-teks">${_escape(g.description_id || g.description || '')}</span>
+    </div>`
+  ).join('');
+
+  if (!visuals && !gestures) return '';
+
+  return `
+    <div class="ds-sub-label" style="margin:12px 0 6px;">Siapkan Sebelum Kelas</div>
+    ${visuals ? `
+      <div class="ds-alatbantu-group-label">Media Belajar</div>
+      <div class="ds-alatbantu-wrap">${visuals}</div>
+    ` : ''}
+    ${gestures ? `
+      <div class="ds-alatbantu-group-label" style="margin-top:8px;">Gestur Guru</div>
+      <div class="ds-alatbantu-wrap">${gestures}</div>
+    ` : ''}`;
+}
+
 function _buildTabMateriSMP(tp) {
   const m = tp.metadata;
   const r = tp.resources;
@@ -656,10 +685,11 @@ function _buildTabMateriSMP(tp) {
   <div class="ds-card ds-card--overflow" style="padding:14px 16px;">
     <div class="ds-section-label" style="margin-bottom:10px;">Materi & Persiapan</div>
     <div class="ds-materi-meta">${_escape(m?.genre ?? '')} · ${_escape(m?.topic ?? '')}</div>
-    <div class="ds-materi-desc" style="margin:8px 0 12px;">${_escape(m?.context ?? '')}</div>
+    <div class="ds-materi-desc" style="margin:8px 0 12px;">${_escape(m?.context_id ?? m?.context ?? '')}</div>
     ${modelHTML ? `
       <div class="ds-sub-label" style="margin-bottom:6px;">Kalimat Model</div>
       ${modelHTML}` : ''}
+    ${_buildAlatBantu(r)}
     ${vocabHTML ? `
       <div class="ds-sub-label" style="margin:12px 0 6px;">Kosakata Aktif</div>
       <div class="ds-vocab-wrap">${vocabHTML}</div>` : ''}
