@@ -282,8 +282,8 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
     try {
       const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
       const range = (_faseData?.tujuan_pembelajaran || [])
-        .filter(tp => tp.kelas === k.tingkat)
-        .map(tp => tp.nomor);
+        .filter(tp => tp.kelas === k.tingkat || tp.metadata?.grade === k.tingkat)
+        .map(tp => tp.nomor ?? tp.metadata?.tp_id);
       const selesaiDiRange = range.filter(n => selesaiSet.has(n));
       if (selesaiDiRange.length === 0) {
         tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
@@ -327,7 +327,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
          class="ds-list-item">
       <div>
         <div class="ds-list-item-name">${_escape(k.nama)}</div>
-        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22', 5:'1–11', 6:'12–22' }[k.tingkat] ?? '1–9'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
+        <div class="ds-list-item-sub">TP ${{ 1:'1–9', 2:'10–18', 3:'1–11', 4:'12–22', 5:'1–11', 6:'12–22', 7:'1–24', 8:'1–24', 9:'1–18' }[k.tingkat] ?? '—'} · ${rekapMap[k.id]?.totalSiswa ?? 0} siswa</div>
         ${lanjutHTML}
       </div>
       <div class="ds-list-arrow">›</div>
@@ -448,7 +448,7 @@ function _buildTabMateri(tp) {
     <div style="margin-top:10px;padding:8px 10px;background:rgba(212,174,58,.06);border-radius:8px;border-left:2px solid rgba(212,174,58,.3);">
       <div style="font-size:11px;color:rgba(212,174,58,.6);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;">${_faseLabel}</div>
       <div style="font-size:12px;color:rgba(255,255,255,.85);line-height:1.5;">${_escape(_cpTeks.trim())}</div>
-      <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal',{tpNomor:${tp.nomor},kelas:${tp.kelas||1},tpId:'${tp.id}'})" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
+      <button onclick="window.__FLAF_NAV__?.navigateTo('s-jadwal',{tpNomor:${tp.nomor ?? tp.metadata?.tp_id ?? '—'},kelas:${tp.kelas ?? tp.metadata?.grade ?? 7},tpId:'${tp.id ?? tp.metadata?.tp_id ?? ''}'})" style="margin-top:6px;background:transparent;border:none;color:rgba(212,174,58,.7);font-size:12px;cursor:pointer;padding:0;font-family:inherit;">Lihat Kurikulum lengkap →</button>
     </div>`;
 
   return `
