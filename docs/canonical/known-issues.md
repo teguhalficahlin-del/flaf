@@ -5,7 +5,9 @@
 
 ---
 
-## 1. Penilaian formatif SD gagal simpan (VersionError)
+## 1. Penilaian formatif SD gagal simpan (VersionError) — RESOLVED
+
+**Status:** RESOLVED via hotfix terpisah (di luar Sprint C Fase D). Detail di bagian "Resolusi" di akhir entry ini.
 
 **Ditemukan:** Sprint C Fase D, Tahap 5 (HARDEN/VALIDATE) — saat menjalankan regression test nyata untuk overlay penilaian SD, bukan dari membaca kode.
 
@@ -44,4 +46,24 @@ Namun pesan ini menyarankan **retry**, padahal bug ini struktural/permanen (buka
 **Usulan perbaikan (belum dieksekusi):**
 `storage/siswa-history.js` seharusnya tidak hardcode `DB_VERSION` sendiri. Sumber kebenaran versi harus satu — diekspor dari `storage/db.js` (misal `export const DB_VERSION` ditambahkan di sana) dan diimpor oleh `siswa-history.js`, atau (lebih baik secara arsitektur) `savePenilaian()` direfaktor untuk memakai koneksi/wrapper `db` dari `storage/db.js` langsung (seperti yang dilakukan `storage/penilaian-smp.js` yang baru ditambahkan Sprint C) alih-alih membuka koneksi `indexedDB.open()` sendiri. Ini mencegah drift versi berulang di masa depan.
 
-**Status:** belum diperbaiki — menunggu keputusan apakah ini dikerjakan sebagai hotfix terpisah dari Sprint C Fase D.
+**Cakupan bug ternyata lebih luas — `storage/nilai.js` juga terdampak:**
+Saat investigasi hotfix, ditemukan `storage/nilai.js` punya pola persis sama: helper `_atomicUpdate()` (dipakai oleh `setNilai`, `setNilaiLSR`, `setCatatan`, `setNilaiFormatif`, `setCatatanFormatif`) membuka koneksi `indexedDB.open(DB_NAME, DB_VERSION)` sendiri dengan `DB_VERSION = 10` hardcode lokal — terpisah dari `db.js`. Fungsi-fungsi lain di `nilai.js` (kelas, siswa, SAS, dll) sudah memakai wrapper `db.js` dan tidak terdampak.
+
+**Bukti (observasi langsung, Playwright, kondisi DB sudah versi 12):**
+```
+setNilaiError: "The requested version (10) is less than the existing version (12)."
+```
+Berarti setiap kali guru mengisi **nilai sumatif/formatif L/S/R atau catatan** (bukan hanya penilaian proses per sesi SD), gagal total di setiap instalasi yang sudah pernah upgrade ke DB versi ≥11 — bug aktif yang sama severity-nya (TINGGI) dengan #1, hanya belum terlihat di Tahap 5 karena Tahap 5 tidak menguji jalur `setNilai`/`setNilaiLSR`.
+
+**Resolusi (hotfix, divalidasi Playwright real, bukan asumsi):**
+1. `storage/db.js` — `DB_VERSION` (sebelumnya variabel lokal tak terekspor) ditambahkan ke named export, jadi satu sumber kebenaran untuk semua modul.
+2. `storage/siswa-history.js` — hapus hardcode `DB_VERSION = 10`, import dari `db.js`. Ditambahkan `await db.init()` di awal `savePenilaian()` SEBELUM `indexedDB.open()` lokal dipanggil — ini mencegah race condition baru yang terungkap saat investigasi (lihat di bawah).
+3. `storage/nilai.js` — hapus hardcode `DB_VERSION = 10` di `_atomicUpdate()`, import dari `db.js`. Ditambahkan `await db.init()` di awal `_atomicUpdate()` dengan alasan sama.
+
+**Race condition yang ditemukan & diselesaikan dalam proses yang sama:**
+Menyamakan `DB_VERSION` persis di semua modul (tanpa gating) ternyata membuka risiko baru: pada fresh install, jika modul yang TIDAK punya `onupgradeneeded` handler (`siswa-history.js`/`nilai.js`) memenangkan race membuka koneksi IndexedDB pertama, browser memilih request itu sebagai pemilik event upgrade satu-satunya — dan karena modul itu tidak punya logic pembuatan store, DB jadi permanen stuck di versi tinggi dengan nol object store (dibuktikan: `NotFoundError: One of the specified object stores was not found`). Solusinya: `await db.init()` di awal kedua titik (`siswa-history.js` line ~43, `nilai.js` `_atomicUpdate`) — karena `db.init()` mengembalikan promise singleton (`_initPromise`) yang sama untuk semua caller, siapa pun yang memanggilnya lebih dulu menang membuka koneksi resmi (lengkap dengan `onupgradeneeded`), dan modul lain menunggu promise itu selesai sebelum membuka koneksi mereka sendiri — yang pada titik itu DB sudah lengkap semua store-nya.
+
+Divalidasi dengan 5 variasi urutan race pada fresh install (`hist`/`nilai`/`db` dalam berbagai kombinasi) — semua 7 store selalu terbentuk, nol error.
+
+**Follow-up yang TIDAK dieksekusi (dicatat untuk sprint lain):**
+Migrasi penuh `siswa-history.js` dan `nilai.js`'s `_atomicUpdate()` ke wrapper `db.js` (pola yang sudah dipakai `penilaian-smp.js`) — menghilangkan kebutuhan modul-modul ini membuka koneksi `indexedDB.open()` sendiri sama sekali. Ini akan menutup kemungkinan drift versi/pola berbahaya serupa muncul lagi di masa depan, tapi merupakan refactor lebih besar (perlu mendesain ulang pola atomic read-modify-write `_atomicUpdate` agar tetap atomic lewat wrapper) — di luar scope hotfix minimal ini.
