@@ -52,18 +52,19 @@
  * Kompatibilitas mundur: semua field opsional, data lama tetap valid.
  */
 
-import { db } from './db.js';
+import { db, DB_VERSION } from './db.js';
 
 const STORE      = 'nilai_data';
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 10;
 
 /**
  * Atomic read-modify-write helper.
  * Membuka satu transaksi IDB: get → updateFn(record) → put.
  * Tidak ada await di antara get dan put — race-condition-safe.
  */
-function _atomicUpdate(idbKey, updateFn) {
+async function _atomicUpdate(idbKey, updateFn) {
+  await db.init();
+
   return new Promise(function(resolve, reject) {
     var openReq = indexedDB.open(DB_NAME, DB_VERSION);
     openReq.onerror = function() { reject(openReq.error); };

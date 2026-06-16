@@ -470,4 +470,4 @@ export const db = {
 
 // Named exports — agar logger.js yang import { get, set, remove, isAvailable }
 // tetap bisa resolve tanpa perubahan
-export { init, get, set, remove, getAll, isReady, isAvailable, exportAll, importMerge };
+export { init, get, set, remove, getAll, isReady, isAvailable, exportAll, importMerge, DB_VERSION };

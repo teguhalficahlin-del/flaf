@@ -5,8 +5,9 @@
  *   savePenilaian(kelasId, tpNomor, sesiId, mode, entries) → Promise<void>
  */
 
+import { db, DB_VERSION } from './db.js';
+
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 10;
 
 /**
  * Simpan hasil penilaian proses per siswa per sesi (Fase 12).
@@ -37,6 +38,8 @@ export async function savePenilaian(kelasId, tpNomor, sesiId, mode, entries) {
   if (!kelasId || !tpNomor || !sesiId || !entries?.length) return;
   const STORE = 'penilaian_log';
   const now   = Date.now();
+
+  await db.init();
 
   return new Promise(function(resolve, reject) {
     var openReq = indexedDB.open(DB_NAME, DB_VERSION);
