@@ -21,12 +21,11 @@
 import { db } from '../storage/db.js';
 
 // ── Konstanta: Kondisi Darurat Kelas ───────────────────────────
-// Reuse 1:1 dari sesi-runtime.js (SD) — overlay-nya generik, tidak
-// baca field skema TP, jadi tidak perlu field baru di Fase D.
-// CATATAN: register bahasa beberapa saran (mis. "ajak tepuk pendek",
-// "Beri jempol untuk yang berani") condong ke gaya kelas SD/anak kecil.
-// Tidak diubah di sini sesuai instruksi — perlu konfirmasi terpisah
-// apakah perlu varian bahasa yang lebih sesuai usia SMP.
+// Struktur (array/key/logic overlay) sama dengan sesi-runtime.js (SD),
+// tapi konstanta ini didefinisikan terpisah di sini — bukan import dari
+// SD. Teks FALLBACK_GENERIC sudah disesuaikan ke register SMP (Kelas 7-9):
+// netral-suportif, langsung, tanpa framing childish/playful ala SD
+// ("tepuk pendek", "jempol untuk yang berani").
 const KONDISI_LIST = [
   { id: 'kelas_ribut',  label: 'Ribut, susah fokus'        },
   { id: 'energi_turun', label: 'Energi mulai turun'         },
@@ -36,9 +35,9 @@ const KONDISI_LIST = [
 ];
 
 const FALLBACK_GENERIC = {
-  kelas_ribut  : 'Tangan di pinggang, tunggu sunyi. Ulangi instruksi setelah hening.',
-  energi_turun : 'Berdiri, ajak tepuk pendek. Lanjut langkah yang lebih bergerak.',
-  siswa_pasif  : 'Mulai dari baris depan. Beri jempol untuk yang berani.',
+  kelas_ribut  : 'Hentikan sejenak, tunggu kelas tenang, lalu ulangi instruksi dengan suara tegas.',
+  energi_turun : 'Beri waktu sebentar untuk gerak ringan, lalu lanjut ke langkah yang lebih aktif.',
+  siswa_pasif  : 'Mulai dari siswa yang duduk di depan. Beri apresiasi singkat untuk yang berani mencoba.',
   waktu_mepet  : 'Skip langkah yang tersisa. Langsung ke Penutup sekarang.',
 };
 
