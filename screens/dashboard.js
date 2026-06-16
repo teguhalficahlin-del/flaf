@@ -178,7 +178,12 @@ function _tpList(tingkat) {
 }
 
 function _tpNomor(tp) {
-  return tp.nomor ?? tp.metadata?.pattern_id ?? '—';
+  if (tp.nomor != null) return tp.nomor;
+  if (tp.metadata?.pattern_id) {
+    const m = tp.metadata.pattern_id.match(/(\d+)$/);
+    return m ? parseInt(m[1], 10) : tp.metadata.pattern_id;
+  }
+  return '—';
 }
 function _tpNama(tp) {
   return tp.nama ?? tp.metadata?.title ?? '(tanpa judul)';

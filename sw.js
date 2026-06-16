@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v229';         // bump: dual-schema lanjut-TP label Fase D
+const CACHE_VERSION  = 'flaf-v230';         // bump: _tpNomor ekstrak angka dari pattern_id
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
