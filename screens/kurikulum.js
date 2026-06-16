@@ -28,7 +28,7 @@
  * =============================================================
  */
 
-import { getFase, getAllTP, getMeta } from '../data/index.js';
+import { getFase, getAllTP, getMeta, getAllTP_SMP } from '../data/index.js';
 import { db } from '../storage/db.js';
 import { logger } from '../storage/logger.js';
 import { getTP } from '../data/index.js';
@@ -211,6 +211,13 @@ async function _resolveKurikulumData(kelas) {
     faseKey      = 'C';
     defaultKelas = kelasNum;
     kelasList    = [5, 6];
+  } else if (kelasNum === 7 || kelasNum === 8 || kelasNum === 9) {
+    // Fase D (SMP) — schema beda total dari A/B/C (metadata.grade, runtime[]),
+    // tidak punya meta/cp seperti fase SD. Tidak boleh masuk fallback 'ALL'
+    // SD karena akan menampilkan kurikulum kelas yang salah ke guru SMP.
+    faseKey      = 'D';
+    defaultKelas = kelasNum;
+    kelasList    = [7, 8, 9];
   } else {
     faseKey      = 'ALL';
     defaultKelas = 1;
@@ -222,6 +229,10 @@ async function _resolveKurikulumData(kelas) {
     fase = getFase('A');
     tps  = getAllTP();
     meta = getMeta('A');
+  } else if (faseKey === 'D') {
+    fase = null;
+    tps  = getAllTP_SMP().filter(tp => kelasList.includes(tp.metadata?.grade));
+    meta = null;
   } else {
     fase = getFase(faseKey);
     tps  = getAllTP().filter(tp => kelasList.includes(tp.kelas));
@@ -244,7 +255,22 @@ export async function renderKurikulum({ onDownloadPDF, defaultKelas = 1 } = {}) 
 
   try {
     const kelasUser = await _getSessionKelas();
-    const { fase, tps, meta, defaultKelas, kelasList } = await _resolveKurikulumData(kelasUser);
+    const { faseKey, fase, tps, meta, defaultKelas, kelasList } = await _resolveKurikulumData(kelasUser);
+
+    // Fase D (SMP, Kelas 7-9) — schema TP-nya (metadata/resources/runtime[])
+    // tidak kompatibel dengan render pipeline panel CP/ATP/TP di bawah ini
+    // (yang dibangun untuk schema SD: tp.vocab, tp.indikator, fase.cp, dst).
+    // Tampilkan placeholder aman daripada memaksa render dan crash/salah data.
+    if (faseKey === 'D') {
+      _metaMap = null;
+      _faseMap = null;
+      root.innerHTML = _buildFaseDPlaceholderHTML(tps.length);
+      _rendered = true;
+      logger.info(SCREEN, '[kurikulum] render Fase D — placeholder (panel detail belum didukung)', {
+        kelasUser, totalTP: tps.length,
+      });
+      return;
+    }
 
     if (kelasUser === 'all') {
       _metaMap = {
@@ -523,6 +549,23 @@ function _buildTPItemHTML(tp) {
           </button>
         </div>
 
+      </div>
+    </div>
+  `;
+}
+
+// ── Placeholder Fase D (SMP) ─────────────────────────────
+// Panel CP/ATP/TP detail di screen ini dibangun untuk schema SD.
+// Fase D (metadata/resources/runtime[]) belum punya panel setara di sini —
+// lihat tab "Materi" SMP di layar sesi untuk detail TP.
+function _buildFaseDPlaceholderHTML(totalTP) {
+  return `
+    <div class="kur-wrap">
+      <div class="kur-panel" style="padding:24px 16px;text-align:center;">
+        <div style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;">
+          Kurikulum Fase D (SMP) — ${totalTP} TP terdaftar.<br>
+          Detail materi per TP dapat dilihat di tab <strong>Materi</strong> saat sesi berjalan.
+        </div>
       </div>
     </div>
   `;
