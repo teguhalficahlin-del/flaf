@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v232';         // bump: sesi-runtime-smp.css Fase D
+const CACHE_VERSION  = 'flaf-v233';         // bump: Sprint C + hotfix DB_VERSION — tambah penilaian-smp.js + sesi-runtime-smp.css ke precache
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
@@ -25,6 +25,7 @@ const SHELL_CRITICAL = [
   './screens/sesi-runtime.css',
   './screens/dashboard.css',
   './screens/nilai.css',
+  './sesi-runtime-smp.css',
   // storage
   './storage/db.js',
   './storage/logger.js',
@@ -33,6 +34,7 @@ const SHELL_CRITICAL = [
   './storage/nilai.js',
   './storage/presensi.js',
   './storage/siswa-history.js',
+  './storage/penilaian-smp.js',
   // data â€” router only
   './data/index.js',
   // modules
