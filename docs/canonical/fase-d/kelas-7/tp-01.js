@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Personal Identity",
     context: "Students meet new classmates on the first day of school.",
+    context_id: "Siswa bertemu teman-teman baru di hari pertama sekolah.",
     communicative_goal: "share basic personal information",
+    communicative_goal_id: "berbagi informasi pribadi dasar",
     vocabulary_domain: ["name", "age", "hobbies", "abilities"],
     input_anchor: "picture cards",
     output_anchor: "pair conversation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Hello, everyone! Welcome to our class." },
+      { type: "AKSI", text: "Tunggu semua siswa duduk dan tenang sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "Look at this name tag card — what information can you see on it?" },
+      { type: "AKSI", text: "Tunjukkan kartu bergambar papan nama 'Dito, 12 tahun' ke seluruh kelas." },
+      { type: "UCAP", text: "Today is your first day here. Who would like to share their name with the class?" },
+    ],
 
     active_vocabulary: [
       "years old", "like", "can", "can't",
@@ -37,15 +49,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A name tag picture card showing a name and an age, e.g. 'Dito, 12 years old'.", asset_id: null },
-      { id: "visual_2", description: "Picture cards showing hobby icons: a comic book and a badminton racket.", asset_id: null },
-      { id: "visual_3", description: "Picture cards showing ability icons: a bicycle (can) and a swimming pool with a cross mark (can't).", asset_id: null }
+      { id: "visual_1", description: "A name tag picture card showing a name and an age, e.g. 'Dito, 12 years old'.", description_id: "Kartu bergambar papan nama yang menunjukkan nama dan usia, contohnya 'Dito, 12 tahun'.", asset_id: null },
+      { id: "visual_2", description: "Picture cards showing hobby icons: a comic book and a badminton racket.", description_id: "Kartu bergambar yang menunjukkan ikon hobi: buku komik dan raket bulu tangkis.", asset_id: null },
+      { id: "visual_3", description: "Picture cards showing ability icons: a bicycle (can) and a swimming pool with a cross mark (can't).", description_id: "Kartu bergambar yang menunjukkan ikon kemampuan: sepeda (can) dan kolam renang dengan tanda silang (can't).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher taps their own chest while saying 'I am...' and holds up fingers to show age while saying 'I am ... years old.'" },
-      { id: "gesture_2", description: "Teacher mimes flipping pages of a book and swinging a badminton racket while saying 'I like...'" },
-      { id: "gesture_3", description: "Teacher mimes pedaling a bicycle for 'I can...' and shakes their head with crossed arms for 'I can't...'" }
+      { id: "gesture_1", description: "Teacher taps their own chest while saying 'I am...' and holds up fingers to show age while saying 'I am ... years old.'", description_id: "Guru menepuk dadanya sendiri sambil mengucapkan 'I am...' dan mengangkat jari untuk menunjukkan usia sambil mengucapkan 'I am ... years old.'" },
+      { id: "gesture_2", description: "Teacher mimes flipping pages of a book and swinging a badminton racket while saying 'I like...'", description_id: "Guru memperagakan membalik halaman buku dan mengayunkan raket bulu tangkis sambil mengucapkan 'I like...'" },
+      { id: "gesture_3", description: "Teacher mimes pedaling a bicycle for 'I can...' and shakes their head with crossed arms for 'I can't...'", description_id: "Guru memperagakan mengayuh sepeda untuk 'I can...' dan menggelengkan kepala sambil menyilangkan tangan untuk 'I can't...'" }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Class Charity Project",
     context: "Students discuss different ideas for a class charity activity and negotiate a shared plan.",
+    context_id: "Siswa mendiskusikan berbagai ide untuk kegiatan bakti sosial kelas dan menegosiasikan rencana bersama.",
     communicative_goal: "propose, modify, and negotiate ideas collaboratively",
+    communicative_goal_id: "mengusulkan, mengubah, dan menegosiasikan ide secara kolaboratif",
     vocabulary_domain: ["charity", "fundraising", "community", "planning"],
     input_anchor: "planning board",
     output_anchor: "group negotiation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. I need your full attention today." },
+      { type: "AKSI", text: "Tanya kelas apakah sudah siap berdiskusi." },
+      // HOOK
+      { type: "UCAP", text: "Imagine your class wants to do something good for the community. What idea comes to mind?" },
+      { type: "AKSI", text: "Tampilkan papan rencana dengan ide bakti sosial di kertas tempel: jualan buku, jajanan, poster." },
+      { type: "UCAP", text: "Look at this planning board. Which of these charity ideas do you think is best?" },
+    ],
 
     active_vocabulary: [
       "How about",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A planning board with class charity ideas (book sale, snack sale, posters) on sticky notes.", asset_id: null },
-      { id: "visual_2", description: "Negotiation cards: 'How about ...?', 'We could ...', 'That's a good idea, but ...'.", asset_id: null },
-      { id: "visual_3", description: "Charity and community icons: a fundraising jar, helpers, and posters.", asset_id: null }
+      { id: "visual_1", description: "A planning board with class charity ideas (book sale, snack sale, posters) on sticky notes.", description_id: "Papan rencana dengan ide bakti sosial kelas (jualan buku, jualan jajanan, poster) di kertas tempel.", asset_id: null },
+      { id: "visual_2", description: "Negotiation cards: 'How about ...?', 'We could ...', 'That's a good idea, but ...'.", description_id: "Kartu negosiasi: 'How about ...?', 'We could ...', 'That's a good idea, but ...'.", asset_id: null },
+      { id: "visual_3", description: "Charity and community icons: a fundraising jar, helpers, and posters.", description_id: "Ikon bakti sosial dan komunitas: toples penggalangan dana, relawan, dan poster.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher opens a hand in an offering gesture while saying 'How about ...?' / 'We could ...' to suggest an idea." },
-      { id: "gesture_2", description: "Teacher nods (good idea), then raises one finger (but) while saying 'That's a good idea, but ...'." },
-      { id: "gesture_3", description: "Teacher gestures to the whole group and the board to show collaborative planning." }
+      { id: "gesture_1", description: "Teacher opens a hand in an offering gesture while saying 'How about ...?' / 'We could ...' to suggest an idea.", description_id: "Guru membuka tangan dalam gestur menawarkan sambil mengucapkan 'How about ...?' / 'We could ...' untuk mengusulkan ide." },
+      { id: "gesture_2", description: "Teacher nods (good idea), then raises one finger (but) while saying 'That's a good idea, but ...'.", description_id: "Guru mengangguk (ide bagus), lalu mengangkat satu jari (tetapi) sambil mengucapkan 'That's a good idea, but ...'." },
+      { id: "gesture_3", description: "Teacher gestures to the whole group and the board to show collaborative planning.", description_id: "Guru memberi gestur ke seluruh kelompok dan papan untuk menunjukkan perencanaan kolaboratif." }
     ]
   },
 

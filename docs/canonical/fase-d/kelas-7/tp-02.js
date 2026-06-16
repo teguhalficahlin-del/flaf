@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "School Clubs",
     context: "Students ask classmates about interests before joining clubs.",
+    context_id: "Siswa bertanya kepada teman sekelas tentang minat mereka sebelum bergabung dengan klub.",
     communicative_goal: "ask and answer simple preference questions",
+    communicative_goal_id: "bertanya dan menjawab pertanyaan sederhana tentang preferensi",
     vocabulary_domain: ["clubs", "sports", "music", "arts"],
     input_anchor: "club posters",
     output_anchor: "class survey",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, everyone! Please take your seats." },
+      { type: "AKSI", text: "Pastikan semua siswa sudah duduk dan perhatian ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Look at these posters on the board — what clubs do you see?" },
+      { type: "AKSI", text: "Arahkan perhatian siswa ke poster Klub Musik, Klub Seni, dan Klub Olahraga." },
+      { type: "UCAP", text: "Which club would you like to join this semester? Raise your hand!" },
+    ],
 
     active_vocabulary: [
       "like", "play",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Club posters on a board, e.g. a Music Club poster (microphone icon), an Art Club poster (paintbrush icon), and a Sports Club poster (badminton racket icon).", asset_id: null },
-      { id: "visual_2", description: "Picture cards showing club activities: a person singing, a hand drawing, a badminton racket and shuttlecock, a chess board.", asset_id: null },
-      { id: "visual_3", description: "Two answer cards: a green card with a thumbs-up for 'Yes', and a red card with a thumbs-down for 'No'.", asset_id: null }
+      { id: "visual_1", description: "Club posters on a board, e.g. a Music Club poster (microphone icon), an Art Club poster (paintbrush icon), and a Sports Club poster (badminton racket icon).", description_id: "Poster klub di papan, misalnya poster Klub Musik (ikon mikrofon), poster Klub Seni (ikon kuas), dan poster Klub Olahraga (ikon raket bulu tangkis).", asset_id: null },
+      { id: "visual_2", description: "Picture cards showing club activities: a person singing, a hand drawing, a badminton racket and shuttlecock, a chess board.", description_id: "Kartu bergambar yang menunjukkan kegiatan klub: seseorang bernyanyi, tangan menggambar, raket dan kok bulu tangkis, papan catur.", asset_id: null },
+      { id: "visual_3", description: "Two answer cards: a green card with a thumbs-up for 'Yes', and a red card with a thumbs-down for 'No'.", description_id: "Dua kartu jawaban: kartu hijau dengan jempol ke atas untuk 'Yes', dan kartu merah dengan jempol ke bawah untuk 'No'.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher opens one palm toward a student and raises eyebrows while asking 'Do you like...?' / 'Can you play...?' to show it is a question." },
-      { id: "gesture_2", description: "Teacher mimes the activity while asking 'Can you play...?' -- swinging a racket for badminton, moving a chess piece for chess." },
-      { id: "gesture_3", description: "Teacher nods with a thumbs-up for 'Yes, I do. / Yes, I can.' and shakes their head with a thumbs-down for 'No, I don't. / No, I can't.'" }
+      { id: "gesture_1", description: "Teacher opens one palm toward a student and raises eyebrows while asking 'Do you like...?' / 'Can you play...?' to show it is a question.", description_id: "Guru membuka satu telapak tangan ke arah siswa dan mengangkat alis sambil bertanya 'Do you like...?' / 'Can you play...?' untuk menunjukkan bahwa itu pertanyaan." },
+      { id: "gesture_2", description: "Teacher mimes the activity while asking 'Can you play...?' -- swinging a racket for badminton, moving a chess piece for chess.", description_id: "Guru memperagakan kegiatannya sambil bertanya 'Can you play...?' -- mengayunkan raket untuk bulu tangkis, menggerakkan bidak untuk catur." },
+      { id: "gesture_3", description: "Teacher nods with a thumbs-up for 'Yes, I do. / Yes, I can.' and shakes their head with a thumbs-down for 'No, I don't. / No, I can't.'", description_id: "Guru mengangguk dengan jempol ke atas untuk 'Yes, I do. / Yes, I can.' dan menggelengkan kepala dengan jempol ke bawah untuk 'No, I don't. / No, I can't.'" }
     ]
   },
 

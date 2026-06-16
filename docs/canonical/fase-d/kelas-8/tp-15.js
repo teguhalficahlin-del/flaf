@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Homework Policy",
     context: "Students compare different opinions about homework and respond with their own position.",
+    context_id: "Siswa membandingkan berbagai pendapat tentang pekerjaan rumah dan menanggapinya dengan posisi mereka sendiri.",
     communicative_goal: "acknowledge another viewpoint before presenting a different opinion",
+    communicative_goal_id: "mengakui sudut pandang lain sebelum menyampaikan pendapat yang berbeda",
     vocabulary_domain: ["homework", "study", "time", "learning"],
     input_anchor: "opinion cards",
     output_anchor: "paired mini debate",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Alright, class. We are going to hear two sides of an argument today." },
+      { type: "AKSI", text: "Pastikan setiap siswa sudah duduk dan siap." },
+      // HOOK
+      { type: "UCAP", text: "Some students say homework is a waste of time. Others say it is essential. What do you think?" },
+      { type: "AKSI", text: "Tampilkan kartu pendapat dua sisi debat PR: 'homework is unnecessary' versus 'homework helps learning'." },
+      { type: "UCAP", text: "Look at these two views. Which one sounds more familiar to you?" },
+    ],
 
     active_vocabulary: [
       "Some people think",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Opinion cards with two sides of the homework debate: 'homework is unnecessary' versus 'homework helps learning'.", asset_id: null },
-      { id: "visual_2", description: "A response frame: 'Some people think ___. However, I think ___ because ___.'", asset_id: null },
-      { id: "visual_3", description: "Icons: a homework book, a clock (time), a brain (learning), a study desk.", asset_id: null }
+      { id: "visual_1", description: "Opinion cards with two sides of the homework debate: 'homework is unnecessary' versus 'homework helps learning'.", description_id: "Kartu pendapat dengan dua sisi debat pekerjaan rumah: 'homework is unnecessary' versus 'homework helps learning'.", asset_id: null },
+      { id: "visual_2", description: "A response frame: 'Some people think ___. However, I think ___ because ___.'", description_id: "Kerangka respons: 'Some people think ___. However, I think ___ because ___.'", asset_id: null },
+      { id: "visual_3", description: "Icons: a homework book, a clock (time), a brain (learning), a study desk.", description_id: "Ikon: buku pekerjaan rumah, jam (waktu), otak (belajar), meja belajar.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher gestures to one side (out there, general) while saying 'Some people think ...'." },
-      { id: "gesture_2", description: "Teacher raises a hand to mark a turn while saying 'However,' then points to self for 'I think ...'." },
-      { id: "gesture_3", description: "Teacher opens a hand for the reason while saying 'because ...'." }
+      { id: "gesture_1", description: "Teacher gestures to one side (out there, general) while saying 'Some people think ...'.", description_id: "Guru memberi gestur ke satu sisi (di luar sana, umum) sambil mengucapkan 'Some people think ...'." },
+      { id: "gesture_2", description: "Teacher raises a hand to mark a turn while saying 'However,' then points to self for 'I think ...'.", description_id: "Guru mengangkat tangan untuk menandai perubahan sambil mengucapkan 'However,' lalu menunjuk ke diri sendiri untuk 'I think ...'." },
+      { id: "gesture_3", description: "Teacher opens a hand for the reason while saying 'because ...'.", description_id: "Guru membuka tangan untuk alasannya sambil mengucapkan 'because ...'." }
     ]
   },
 

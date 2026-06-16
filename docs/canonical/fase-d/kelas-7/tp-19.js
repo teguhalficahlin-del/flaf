@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Library Membership",
     context: "Students complete and exchange simple membership forms before borrowing books.",
+    context_id: "Siswa mengisi dan menukar formulir keanggotaan sederhana sebelum meminjam buku.",
     communicative_goal: "fill in and understand basic personal information forms",
+    communicative_goal_id: "mengisi dan memahami formulir informasi pribadi dasar",
     vocabulary_domain: ["name", "address", "class", "membership"],
     input_anchor: "membership form",
     output_anchor: "completed form",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! I have some paperwork for us today — in English." },
+      { type: "AKSI", text: "Bagi setiap siswa formulir kosong atau gambar formulir sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever filled in a form before — maybe for a library, a competition, or a school event?" },
+      { type: "AKSI", text: "Tampilkan formulir keanggotaan perpustakaan kosong dengan kolom berlabel: Name, Class, Address." },
+      { type: "UCAP", text: "Look at this membership form. What information do you need to fill in?" },
+    ],
 
     active_vocabulary: [
       "Name:",
@@ -40,15 +52,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A blank library membership form with labeled fields: Name, Class, Number, Address, Membership, Favorite Club.", asset_id: null },
-      { id: "visual_2", description: "A sample completed form showing the 'Label: value' format for each field.", asset_id: null },
-      { id: "visual_3", description: "A library borrowing context: a membership card and a stack of books at the desk.", asset_id: null }
+      { id: "visual_1", description: "A blank library membership form with labeled fields: Name, Class, Number, Address, Membership, Favorite Club.", description_id: "Formulir keanggotaan perpustakaan kosong dengan kolom berlabel: Name, Class, Number, Address, Membership, Favorite Club.", asset_id: null },
+      { id: "visual_2", description: "A sample completed form showing the 'Label: value' format for each field.", description_id: "Contoh formulir terisi yang menunjukkan format 'Label: value' untuk setiap kolom.", asset_id: null },
+      { id: "visual_3", description: "A library borrowing context: a membership card and a stack of books at the desk.", description_id: "Konteks peminjaman perpustakaan: kartu anggota dan tumpukan buku di meja.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to each form label in turn while reading 'Name: ... Class: ... Number: ...'." },
-      { id: "gesture_2", description: "Teacher mimes writing the value in the blank space after a label." },
-      { id: "gesture_3", description: "Teacher points to the field that carries schedule information ('Visit Time: Monday, 3 p.m.')." }
+      { id: "gesture_1", description: "Teacher points to each form label in turn while reading 'Name: ... Class: ... Number: ...'.", description_id: "Guru menunjuk setiap label formulir secara bergantian sambil membaca 'Name: ... Class: ... Number: ...'." },
+      { id: "gesture_2", description: "Teacher mimes writing the value in the blank space after a label.", description_id: "Guru memperagakan menulis nilai di ruang kosong setelah sebuah label." },
+      { id: "gesture_3", description: "Teacher points to the field that carries schedule information ('Visit Time: Monday, 3 p.m.').", description_id: "Guru menunjuk kolom yang membawa informasi jadwal ('Visit Time: Monday, 3 p.m.')." }
     ]
   },
 

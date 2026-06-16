@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Healthy School Canteen",
     context: "Students express a position about improving the school canteen and support it with a simple example.",
+    context_id: "Siswa menyampaikan posisi tentang perbaikan kantin sekolah dan mendukungnya dengan contoh sederhana.",
     communicative_goal: "state a position with a reason and one supporting example",
+    communicative_goal_id: "menyatakan posisi dengan satu alasan dan satu contoh pendukung",
     vocabulary_domain: ["canteen", "healthy food", "students", "choices"],
     input_anchor: "photo comparison",
     output_anchor: "opinion card",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today you will take a position on something important." },
+      { type: "AKSI", text: "Kondisikan kelas untuk diskusi yang lebih formal dari biasanya." },
+      // HOOK
+      { type: "UCAP", text: "Remember the canteen? We discussed ideas for it earlier. Now — what do YOU believe should change?" },
+      { type: "AKSI", text: "Tampilkan perbandingan foto dua pilihan kantin: jajanan bergula versus buah segar dan makanan sehat." },
+      { type: "UCAP", text: "Look at these two canteen options. Which one do you believe the school should offer more of — and why?" },
+    ],
 
     active_vocabulary: [
       "I believe",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A photo comparison of two canteen options: sugary snacks versus fresh fruit and healthy meals.", asset_id: null },
-      { id: "visual_2", description: "An opinion card: 'I believe ___ because ___. For example, ___.'", asset_id: null },
-      { id: "visual_3", description: "Icons: a fruit basket, healthy meal choices, students with energy in class.", asset_id: null }
+      { id: "visual_1", description: "A photo comparison of two canteen options: sugary snacks versus fresh fruit and healthy meals.", description_id: "Perbandingan foto dua pilihan kantin: jajanan bergula versus buah segar dan makanan sehat.", asset_id: null },
+      { id: "visual_2", description: "An opinion card: 'I believe ___ because ___. For example, ___.'", description_id: "Kartu pendapat: 'I believe ___ because ___. For example, ___.'", asset_id: null },
+      { id: "visual_3", description: "Icons: a fruit basket, healthy meal choices, students with energy in class.", description_id: "Ikon: keranjang buah, pilihan makanan sehat, siswa berenergi di kelas.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher places a hand firmly on the chest while saying 'I believe ...' to show a position." },
-      { id: "gesture_2", description: "Teacher opens a hand for the reason while saying 'because ...'." },
-      { id: "gesture_3", description: "Teacher holds up one finger to introduce a concrete case while saying 'For example, ...'." }
+      { id: "gesture_1", description: "Teacher places a hand firmly on the chest while saying 'I believe ...' to show a position.", description_id: "Guru meletakkan tangan dengan mantap di dada sambil mengucapkan 'I believe ...' untuk menunjukkan suatu posisi." },
+      { id: "gesture_2", description: "Teacher opens a hand for the reason while saying 'because ...'.", description_id: "Guru membuka tangan untuk alasannya sambil mengucapkan 'because ...'." },
+      { id: "gesture_3", description: "Teacher holds up one finger to introduce a concrete case while saying 'For example, ...'.", description_id: "Guru mengangkat satu jari untuk memperkenalkan contoh konkret sambil mengucapkan 'For example, ...'." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Personal Saving Habits",
     context: "Students explore how everyday financial choices lead to different outcomes through simple conditional relationships.",
+    context_id: "Siswa menjelajahi bagaimana pilihan keuangan sehari-hari mengarah pada hasil yang berbeda melalui hubungan kondisional sederhana.",
     communicative_goal: "connect conditions with logical results using if...so... patterns",
+    communicative_goal_id: "menghubungkan kondisi dengan hasil logis menggunakan pola if...so...",
     vocabulary_domain: ["money", "saving", "goal", "budget"],
     input_anchor: "scenario cards",
     output_anchor: "condition-result chart",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, class. Let's think about money today." },
+      { type: "AKSI", text: "Pastikan kelas siap untuk diskusi bertopik praktis." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever saved up money to buy something? How did it feel when you finally could?" },
+      { type: "AKSI", text: "Tampilkan kartu skenario keuangan: menabung, mengikuti anggaran, memboroskan uang, mencapai tujuan." },
+      { type: "UCAP", text: "Look at these money scenarios. Which one do you think leads to the best result?" },
+    ],
 
     active_vocabulary: [
       "If",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Scenario cards showing money choices: saving each week, following a budget, wasting money, reaching a goal.", asset_id: null },
-      { id: "visual_2", description: "Condition-result cards: 'If [condition], [result] so [consequence]' with arrows.", asset_id: null },
-      { id: "visual_3", description: "Icons: a coin jar (savings), a budget list, a goal flag, an empty wallet.", asset_id: null }
+      { id: "visual_1", description: "Scenario cards showing money choices: saving each week, following a budget, wasting money, reaching a goal.", description_id: "Kartu skenario yang menunjukkan pilihan keuangan: menabung setiap minggu, mengikuti anggaran, memboroskan uang, mencapai tujuan.", asset_id: null },
+      { id: "visual_2", description: "Condition-result cards: 'If [condition], [result] so [consequence]' with arrows.", description_id: "Kartu kondisi-hasil: 'If [condition], [result] so [consequence]' dengan tanda panah.", asset_id: null },
+      { id: "visual_3", description: "Icons: a coin jar (savings), a budget list, a goal flag, an empty wallet.", description_id: "Ikon: toples koin (tabungan), daftar anggaran, bendera tujuan, dompet kosong.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher marks a condition with one hand ('If ...'), then shows the result with the other." },
-      { id: "gesture_2", description: "Teacher moves the result hand forward to a consequence while saying 'so ...'." },
-      { id: "gesture_3", description: "Teacher points to a generic 'a person' figure (not themselves) to keep the subject general." }
+      { id: "gesture_1", description: "Teacher marks a condition with one hand ('If ...'), then shows the result with the other.", description_id: "Guru menandai suatu kondisi dengan satu tangan ('If ...'), lalu menunjukkan hasilnya dengan tangan lain." },
+      { id: "gesture_2", description: "Teacher moves the result hand forward to a consequence while saying 'so ...'.", description_id: "Guru menggerakkan tangan hasil ke depan ke arah konsekuensinya sambil mengucapkan 'so ...'." },
+      { id: "gesture_3", description: "Teacher points to a generic 'a person' figure (not themselves) to keep the subject general.", description_id: "Guru menunjuk tokoh 'seseorang' yang umum (bukan dirinya sendiri) untuk menjaga subjek tetap umum." }
     ]
   },
 

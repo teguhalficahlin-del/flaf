@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Sports Equipment",
     context: "Students examine everyday sports equipment and explain how different features support their functions.",
+    context_id: "Siswa mengamati peralatan olahraga sehari-hari dan menjelaskan bagaimana berbagai ciri mendukung fungsinya.",
     communicative_goal: "connect physical features with practical functions",
+    communicative_goal_id: "menghubungkan ciri fisik dengan fungsi praktis",
     vocabulary_domain: ["ball", "helmet", "racket", "protection"],
     input_anchor: "real objects",
     output_anchor: "feature-function presentation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Before we start, clear your desks." },
+      { type: "AKSI", text: "Pastikan siswa siap dan tidak ada gangguan di meja." },
+      // HOOK
+      { type: "UCAP", text: "Can you name one piece of sports equipment you use regularly? What is it made for?" },
+      { type: "AKSI", text: "Tampilkan benda atau foto olahraga: bola, helm, raket — dengan ciri-ciri utamanya terlihat jelas." },
+      { type: "UCAP", text: "Look at these objects. What features help each one do its job?" },
+    ],
 
     active_vocabulary: [
       "which",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Real sports objects or photos: a ball, a helmet, a racket, with their key features visible.", asset_id: null },
-      { id: "visual_2", description: "Feature-function cards: 'It has ___ which ___' and 'It can ___ to ___'.", asset_id: null },
-      { id: "visual_3", description: "Icons showing functions: a shell protecting a head, a racket hitting a ball, a ball rolling.", asset_id: null }
+      { id: "visual_1", description: "Real sports objects or photos: a ball, a helmet, a racket, with their key features visible.", description_id: "Benda atau foto olahraga nyata: bola, helm, raket, dengan ciri-ciri utamanya terlihat jelas.", asset_id: null },
+      { id: "visual_2", description: "Feature-function cards: 'It has ___ which ___' and 'It can ___ to ___'.", description_id: "Kartu ciri-fungsi: 'It has ___ which ___' dan 'It can ___ to ___'.", asset_id: null },
+      { id: "visual_3", description: "Icons showing functions: a shell protecting a head, a racket hitting a ball, a ball rolling.", description_id: "Ikon yang menunjukkan fungsi: cangkang melindungi kepala, raket memukul bola, bola menggelinding.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to a feature on the object while saying 'It has ... which ...'." },
-      { id: "gesture_2", description: "Teacher mimes the action (hitting, protecting) while saying 'It can ... to ...'." },
-      { id: "gesture_3", description: "Teacher links a feature to its function by joining two hands while saying 'which' / 'to'." }
+      { id: "gesture_1", description: "Teacher points to a feature on the object while saying 'It has ... which ...'.", description_id: "Guru menunjuk ciri pada benda sambil mengucapkan 'It has ... which ...'." },
+      { id: "gesture_2", description: "Teacher mimes the action (hitting, protecting) while saying 'It can ... to ...'.", description_id: "Guru memperagakan tindakannya (memukul, melindungi) sambil mengucapkan 'It can ... to ...'." },
+      { id: "gesture_3", description: "Teacher links a feature to its function by joining two hands while saying 'which' / 'to'.", description_id: "Guru menghubungkan ciri dengan fungsinya dengan menyatukan kedua tangan sambil mengucapkan 'which' / 'to'." }
     ]
   },
 

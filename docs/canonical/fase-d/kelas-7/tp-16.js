@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Community Clean-Up Day",
     context: "Students recount a real community service activity and reflect on what they learned from working together.",
+    context_id: "Siswa menceritakan ulang kegiatan bakti sosial nyata dan merefleksikan apa yang mereka pelajari dari bekerja sama.",
     communicative_goal: "close a recount by expressing personal learning and social value",
+    communicative_goal_id: "menutup cerita ulang dengan menyampaikan pembelajaran pribadi dan nilai sosial",
     vocabulary_domain: ["community", "teamwork", "cleanliness", "responsibility"],
     input_anchor: "community activity photos",
     output_anchor: "reflection circle",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! I have a topic close to our community today." },
+      { type: "AKSI", text: "Tunggu kelas siap dan perhatian penuh ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever helped clean up a public space — a park, a street, or your neighborhood?" },
+      { type: "AKSI", text: "Tampilkan foto komunitas membersihkan taman bersama, mengumpulkan sampah, dan taman bersih di akhir." },
+      { type: "UCAP", text: "Look at what these students did together. What do you think they learned from it?" },
+    ],
 
     active_vocabulary: [
       "At the end,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Community activity photos: students and neighbors cleaning a park together, collecting trash into bags, and the clean park at the end.", asset_id: null },
-      { id: "visual_2", description: "Closing-word cards: 'After that,' (a next-event arrow), 'At the end,' (a finish flag), 'I learned' (a lightbulb).", asset_id: null },
-      { id: "visual_3", description: "Theme icons: joined hands (team), a clean park (cleanliness), a community group, and a helping hand (responsibility).", asset_id: null }
+      { id: "visual_1", description: "Community activity photos: students and neighbors cleaning a park together, collecting trash into bags, and the clean park at the end.", description_id: "Foto kegiatan komunitas: siswa dan warga membersihkan taman bersama, mengumpulkan sampah ke dalam karung, dan taman yang bersih di akhir.", asset_id: null },
+      { id: "visual_2", description: "Closing-word cards: 'After that,' (a next-event arrow), 'At the end,' (a finish flag), 'I learned' (a lightbulb).", description_id: "Kartu kata penutup: 'After that,' (tanda panah peristiwa berikutnya), 'At the end,' (bendera finish), 'I learned' (lampu bohlam).", asset_id: null },
+      { id: "visual_3", description: "Theme icons: joined hands (team), a clean park (cleanliness), a community group, and a helping hand (responsibility).", description_id: "Ikon tema: tangan bergandengan (kerja sama), taman bersih (kebersihan), kelompok komunitas, dan tangan menolong (tanggung jawab).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher gestures onward with one hand while saying 'After that, ...' to show the next event." },
-      { id: "gesture_2", description: "Teacher brings both hands together to a close while saying 'At the end, ...'." },
-      { id: "gesture_3", description: "Teacher taps their temple while saying 'I learned ...' to show a short, concrete realization." }
+      { id: "gesture_1", description: "Teacher gestures onward with one hand while saying 'After that, ...' to show the next event.", description_id: "Guru memberi gestur ke depan dengan satu tangan sambil mengucapkan 'After that, ...' untuk menunjukkan peristiwa berikutnya." },
+      { id: "gesture_2", description: "Teacher brings both hands together to a close while saying 'At the end, ...'.", description_id: "Guru menyatukan kedua tangan sebagai penutup sambil mengucapkan 'At the end, ...'." },
+      { id: "gesture_3", description: "Teacher taps their temple while saying 'I learned ...' to show a short, concrete realization.", description_id: "Guru menepuk pelipisnya sambil mengucapkan 'I learned ...' untuk menunjukkan kesadaran yang singkat dan konkret." }
     ]
   },
 

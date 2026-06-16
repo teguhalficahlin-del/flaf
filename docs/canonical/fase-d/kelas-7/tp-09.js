@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Morning Routine",
     context: "Students arrange and describe simple daily activities before going to school.",
+    context_id: "Siswa menyusun dan mendeskripsikan kegiatan harian sederhana sebelum berangkat sekolah.",
     communicative_goal: "sequence actions using first, then, and finally",
+    communicative_goal_id: "mengurutkan kegiatan menggunakan first, then, dan finally",
     vocabulary_domain: ["wake up", "breakfast", "school", "daily routine"],
     input_anchor: "picture sequence",
     output_anchor: "ordered oral retelling",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Rise and shine, everyone! Let's start our morning." },
+      { type: "AKSI", text: "Sapa siswa dengan semangat dan cek kesiapan kelas." },
+      // HOOK
+      { type: "UCAP", text: "What do you do first when you wake up in the morning?" },
+      { type: "AKSI", text: "Tampilkan urutan gambar bernomor (1-2-3): anak bangun, sarapan, dan berjalan ke sekolah." },
+      { type: "UCAP", text: "Look at this picture sequence. Does this morning routine look familiar to you?" },
+    ],
 
     active_vocabulary: [
       "First,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A numbered picture sequence (1-2-3) of a morning routine: a child waking up, eating breakfast, and walking to school.", asset_id: null },
-      { id: "visual_2", description: "Order-word cards with arrows: 'First,', 'Then,', 'Finally,' showing the sequence direction.", asset_id: null },
-      { id: "visual_3", description: "Action icons: an alarm clock (wake up early), a breakfast plate, and a school bag.", asset_id: null }
+      { id: "visual_1", description: "A numbered picture sequence (1-2-3) of a morning routine: a child waking up, eating breakfast, and walking to school.", description_id: "Urutan gambar bernomor (1-2-3) dari rutinitas pagi: anak bangun, sarapan, dan berjalan ke sekolah.", asset_id: null },
+      { id: "visual_2", description: "Order-word cards with arrows: 'First,', 'Then,', 'Finally,' showing the sequence direction.", description_id: "Kartu kata urutan dengan tanda panah: 'First,', 'Then,', 'Finally,' yang menunjukkan arah urutan.", asset_id: null },
+      { id: "visual_3", description: "Action icons: an alarm clock (wake up early), a breakfast plate, and a school bag.", description_id: "Ikon tindakan: jam alarm (bangun pagi), piring sarapan, dan tas sekolah.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds up one finger for 'First,', two fingers for 'Then,', and three fingers for 'Finally,' to show the order." },
-      { id: "gesture_2", description: "Teacher mimes each action (stretching awake, eating, walking) while saying the imperative verb." },
-      { id: "gesture_3", description: "Teacher nods with a thumbs-up while saying the short response 'That's true! / I agree.'" }
+      { id: "gesture_1", description: "Teacher holds up one finger for 'First,', two fingers for 'Then,', and three fingers for 'Finally,' to show the order.", description_id: "Guru mengangkat satu jari untuk 'First,', dua jari untuk 'Then,', dan tiga jari untuk 'Finally,' untuk menunjukkan urutannya." },
+      { id: "gesture_2", description: "Teacher mimes each action (stretching awake, eating, walking) while saying the imperative verb.", description_id: "Guru memperagakan setiap tindakan (menggeliat bangun, makan, berjalan) sambil mengucapkan kata kerja imperatifnya." },
+      { id: "gesture_3", description: "Teacher nods with a thumbs-up while saying the short response 'That's true! / I agree.'", description_id: "Guru mengangguk dengan jempol ke atas sambil mengucapkan respons singkat 'That's true! / I agree.'" }
     ]
   },
 

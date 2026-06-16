@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Student Physical Activity at School",
     context: "Students identify and articulate a problem about low student physical activity during the school day, explaining why it happens and what it leads to.",
+    context_id: "Siswa mengidentifikasi dan merumuskan masalah rendahnya aktivitas fisik siswa selama hari sekolah, menjelaskan mengapa hal itu terjadi dan apa akibatnya.",
     communicative_goal: "articulate a problem by naming it, explaining its cause, and describing its consequence",
+    communicative_goal_id: "merumuskan masalah dengan menyebutkannya, menjelaskan sebabnya, dan mendeskripsikan akibatnya",
     vocabulary_domain: ["student wellbeing", "physical activity", "school routine", "healthy habits"],
     input_anchor: "evidence-based conclusion",
     output_anchor: "problem statement",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. We shift focus today to identifying a real problem." },
+      { type: "AKSI", text: "Minta siswa menyiapkan kesimpulan berbasis bukti dari sesi sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "Based on what we analyzed, what is one clear problem about student physical activity during the school day?" },
+      { type: "AKSI", text: "Tampilkan kartu identifikasi masalah: jadwal sekolah mingguan dengan waktu gerak sangat sedikit disorot." },
+      { type: "UCAP", text: "Look at this school schedule. What problem does this visual reveal about students' daily routines?" },
+    ],
 
     active_vocabulary: [
       "The problem is",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A 'problem identification' card showing a weekly school schedule with very little movement time highlighted -- most blocks are seated lessons.", asset_id: null },
-      { id: "visual_2", description: "A problem-statement frame with three labelled slots: 'The problem is...' (name the problem) / 'because...' (explain the cause) / 'As a result,...' (describe the consequence).", asset_id: null },
-      { id: "visual_3", description: "Icons: a student sitting at a desk with a drooping posture (student wellbeing), an activity figure (physical activity), a school timetable (school routine), and a habits loop showing a gap (healthy habits not forming).", asset_id: null }
+      { id: "visual_1", description: "A 'problem identification' card showing a weekly school schedule with very little movement time highlighted -- most blocks are seated lessons.", description_id: "Kartu 'identifikasi masalah' yang menunjukkan jadwal sekolah mingguan dengan waktu gerak yang sangat sedikit disorot -- sebagian besar blok adalah pelajaran duduk.", asset_id: null },
+      { id: "visual_2", description: "A problem-statement frame with three labelled slots: 'The problem is...' (name the problem) / 'because...' (explain the cause) / 'As a result,...' (describe the consequence).", description_id: "Kerangka pernyataan masalah dengan tiga slot berlabel: 'The problem is...' (menyebutkan masalahnya) / 'because...' (menjelaskan sebabnya) / 'As a result,...' (mendeskripsikan akibatnya).", asset_id: null },
+      { id: "visual_3", description: "Icons: a student sitting at a desk with a drooping posture (student wellbeing), an activity figure (physical activity), a school timetable (school routine), and a habits loop showing a gap (healthy habits not forming).", description_id: "Ikon: siswa duduk di meja dengan postur membungkuk (kesejahteraan siswa), figur beraktivitas (aktivitas fisik), jadwal sekolah (rutinitas sekolah), dan lingkaran kebiasaan yang menunjukkan celah (kebiasaan sehat yang tidak terbentuk).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to a problem card on the board while saying 'The problem is...' -- to signal naming a specific, identifiable problem, not a vague complaint." },
-      { id: "gesture_2", description: "Teacher traces an arrow from the problem card to a cause card while saying 'because...' -- to signal showing the reason behind the problem." },
-      { id: "gesture_3", description: "Teacher sweeps a hand outward while saying 'As a result,...' -- to signal showing the impact or consequence that follows from the problem and its cause." }
+      { id: "gesture_1", description: "Teacher points to a problem card on the board while saying 'The problem is...' -- to signal naming a specific, identifiable problem, not a vague complaint.", description_id: "Guru menunjuk kartu masalah di papan sambil mengucapkan 'The problem is...' -- untuk menandai menyebutkan masalah yang spesifik dan dapat diidentifikasi, bukan keluhan yang kabur." },
+      { id: "gesture_2", description: "Teacher traces an arrow from the problem card to a cause card while saying 'because...' -- to signal showing the reason behind the problem.", description_id: "Guru menyusuri tanda panah dari kartu masalah ke kartu sebab sambil mengucapkan 'because...' -- untuk menandai menunjukkan alasan di balik masalahnya." },
+      { id: "gesture_3", description: "Teacher sweeps a hand outward while saying 'As a result,...' -- to signal showing the impact or consequence that follows from the problem and its cause.", description_id: "Guru menyapukan tangan ke luar sambil mengucapkan 'As a result,...' -- untuk menandai menunjukkan dampak atau akibat yang muncul dari masalah dan sebabnya." }
     ]
   },
 

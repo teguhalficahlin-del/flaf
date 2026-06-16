@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Old Storage Room Documents",
     context: "Students compare an old letter from a former principal (Source A) and a photograph with captions (Source B) discovered in the school storage room, and identify the shared understanding that emerges from both.",
+    context_id: "Siswa membandingkan surat lama dari kepala sekolah terdahulu (Sumber A) dan foto berketerangan (Sumber B) yang ditemukan di gudang sekolah, lalu mengidentifikasi pemahaman bersama yang muncul dari keduanya.",
     communicative_goal: "combine information from two different sources into one coherent understanding",
+    communicative_goal_id: "memadukan informasi dari dua sumber berbeda menjadi satu pemahaman yang koheren",
     vocabulary_domain: ["historical documents", "school history", "photographs", "evidence"],
     input_anchor: "source documents",
     output_anchor: "information synthesis",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today we work with two historical sources from the storage room." },
+      { type: "AKSI", text: "Pastikan siswa sudah menyiapkan catatan dari sesi sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "You have seen a handwritten letter and a black-and-white photograph from the old storage room. What do they each tell you?" },
+      { type: "AKSI", text: "Tampilkan dua dokumen sumber berdampingan: surat tulisan tangan lama dengan stempel sekolah, dan foto hitam-putih berketerangan." },
+      { type: "UCAP", text: "Look at both source documents. What shared understanding can you draw from them together?" },
+    ],
 
     active_vocabulary: [
       "Source A says",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Two source documents displayed side by side: Source A -- an old handwritten letter with a school seal and formal headings; Source B -- a black-and-white photograph with typed captions below.", asset_id: null },
-      { id: "visual_2", description: "A synthesis frame with three labelled slots: 'Source A says...' / 'Source B says...' / 'Together, they show...' -- with an arrow flowing from the two sources down into the synthesis.", asset_id: null },
-      { id: "visual_3", description: "Icons: an old letter (historical documents), a black-and-white photograph (photographs), a school building timeline (school history), and a magnifying glass (evidence).", asset_id: null }
+      { id: "visual_1", description: "Two source documents displayed side by side: Source A -- an old handwritten letter with a school seal and formal headings; Source B -- a black-and-white photograph with typed captions below.", description_id: "Dua dokumen sumber ditampilkan berdampingan: Sumber A -- surat tulisan tangan lama dengan stempel sekolah dan judul formal; Sumber B -- foto hitam-putih dengan keterangan yang diketik di bawahnya.", asset_id: null },
+      { id: "visual_2", description: "A synthesis frame with three labelled slots: 'Source A says...' / 'Source B says...' / 'Together, they show...' -- with an arrow flowing from the two sources down into the synthesis.", description_id: "Kerangka sintesis dengan tiga slot berlabel: 'Source A says...' / 'Source B says...' / 'Together, they show...' -- dengan tanda panah mengalir dari kedua sumber turun ke sintesisnya.", asset_id: null },
+      { id: "visual_3", description: "Icons: an old letter (historical documents), a black-and-white photograph (photographs), a school building timeline (school history), and a magnifying glass (evidence).", description_id: "Ikon: surat lama (dokumen historis), foto hitam-putih (foto-foto), garis waktu gedung sekolah (sejarah sekolah), dan kaca pembesar (bukti).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points left while saying 'Source A says...' -- to signal reading from one source." },
-      { id: "gesture_2", description: "Teacher points right while saying 'Source B says...' -- to signal reading from the second source." },
-      { id: "gesture_3", description: "Teacher brings both hands slowly together while saying 'Together, they show...' -- to signal the synthesis move combining both sources into one understanding." }
+      { id: "gesture_1", description: "Teacher points left while saying 'Source A says...' -- to signal reading from one source.", description_id: "Guru menunjuk ke kiri sambil mengucapkan 'Source A says...' -- untuk menandai membaca dari satu sumber." },
+      { id: "gesture_2", description: "Teacher points right while saying 'Source B says...' -- to signal reading from the second source.", description_id: "Guru menunjuk ke kanan sambil mengucapkan 'Source B says...' -- untuk menandai membaca dari sumber kedua." },
+      { id: "gesture_3", description: "Teacher brings both hands slowly together while saying 'Together, they show...' -- to signal the synthesis move combining both sources into one understanding.", description_id: "Guru menyatukan kedua tangan perlahan sambil mengucapkan 'Together, they show...' -- untuk menandai gerakan sintesis yang memadukan kedua sumber menjadi satu pemahaman." }
     ]
   },
 

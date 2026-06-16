@@ -31,3 +31,6 @@ npm-debug.log*
 # === Dokumen kerja & media lokal ===
 Dokumen AI/
 media fase b/
+
+# Nested repo — bukan bagian dari project ini
+FLAF SMP/

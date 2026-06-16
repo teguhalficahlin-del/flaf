@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "The Old Storage Room Mystery",
     context: "Students bring the story to life by creating conversations as friends decide whether to open the mysterious room.",
+    context_id: "Siswa menghidupkan cerita dengan membuat percakapan saat teman-teman memutuskan apakah akan membuka ruangan misterius itu.",
     communicative_goal: "express character responses and advance the story through dialogue",
+    communicative_goal_id: "menyampaikan tanggapan tokoh dan mengembangkan cerita melalui dialog",
     vocabulary_domain: ["friends", "voice", "question", "decision"],
     input_anchor: "dialogue comic",
     output_anchor: "role play",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. We are going to bring our story to life today." },
+      { type: "AKSI", text: "Persiapkan suasana kelas seperti sesi storytelling." },
+      // HOOK
+      { type: "UCAP", text: "Dito found a key. Wulan heard a strange sound. What do you think they said to each other?" },
+      { type: "AKSI", text: "Tampilkan strip komik dialog: Dito dan Wulan berdiri di luar pintu gudang, dengan balon kata dan kotak narator." },
+      { type: "UCAP", text: "Look at this comic strip. Can you read what they are saying to each other?" },
+    ],
 
     active_vocabulary: [
       "said",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A dialogue comic strip showing Dito and Wulan standing outside the storage room door, with speech bubbles and a third-person narrator box below each panel.", asset_id: null },
-      { id: "visual_2", description: "A dialogue prose frame: '\"___\" said [name]. / \"___,\" replied [name]. / [Name] decided to ___.' -- showing third-person narrative structure, not a drama script.", asset_id: null },
-      { id: "visual_3", description: "Reporting verb cards: said, replied, whispered, asked -- with arrows pointing into quotation marks to show the said/replied pattern.", asset_id: null }
+      { id: "visual_1", description: "A dialogue comic strip showing Dito and Wulan standing outside the storage room door, with speech bubbles and a third-person narrator box below each panel.", description_id: "Strip komik dialog yang menunjukkan Dito dan Wulan berdiri di luar pintu gudang, dengan balon kata dan kotak narator orang ketiga di bawah setiap panel.", asset_id: null },
+      { id: "visual_2", description: "A dialogue prose frame: '\"___\" said [name]. / \"___,\" replied [name]. / [Name] decided to ___.' -- showing third-person narrative structure, not a drama script.", description_id: "Kerangka prosa dialog: '\"___\" said [name]. / \"___,\" replied [name]. / [Name] decided to ___.' -- menunjukkan struktur naratif orang ketiga, bukan skrip drama.", asset_id: null },
+      { id: "visual_3", description: "Reporting verb cards: said, replied, whispered, asked -- with arrows pointing into quotation marks to show the said/replied pattern.", description_id: "Kartu kata kerja pelapor: said, replied, whispered, asked -- dengan tanda panah menunjuk ke tanda kutip untuk menunjukkan pola said/replied.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher raises two fingers to form quotation marks in the air before reading each dialogue line." },
-      { id: "gesture_2", description: "Teacher alternates pointing left and right to represent two speakers (said / replied)." },
-      { id: "gesture_3", description: "Teacher makes a decisive forward-pointing gesture while saying 'decided to ...'." }
+      { id: "gesture_1", description: "Teacher raises two fingers to form quotation marks in the air before reading each dialogue line.", description_id: "Guru mengangkat dua jari membentuk tanda kutip di udara sebelum membaca setiap baris dialog." },
+      { id: "gesture_2", description: "Teacher alternates pointing left and right to represent two speakers (said / replied).", description_id: "Guru bergantian menunjuk kiri dan kanan untuk mewakili dua pembicara (said / replied)." },
+      { id: "gesture_3", description: "Teacher makes a decisive forward-pointing gesture while saying 'decided to ...'.", description_id: "Guru membuat gestur menunjuk ke depan yang tegas sambil mengucapkan 'decided to ...'." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Using a School Learning Application",
     context: "Students create simple guided instructions to help new users access assignments and submit their work.",
+    context_id: "Siswa membuat petunjuk terbimbing sederhana untuk membantu pengguna baru mengakses tugas dan mengumpulkan pekerjaan mereka.",
     communicative_goal: "write clear guided instructions with ordered actions and reminders",
+    communicative_goal_id: "menulis petunjuk terbimbing yang jelas dengan langkah-langkah berurutan dan pengingat",
     vocabulary_domain: ["application", "login", "assignment", "submit"],
     input_anchor: "app interface cards",
     output_anchor: "instruction guide",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Alright, class. Today we help someone navigate a new app." },
+      { type: "AKSI", text: "Pastikan kelas sudah siap dan perangkat tersedia jika diperlukan." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever had to explain to someone how to use an app? What did you say first?" },
+      { type: "AKSI", text: "Tampilkan kartu antarmuka aplikasi: layar login, daftar tugas, halaman tugas, konfirmasi pengiriman." },
+      { type: "UCAP", text: "Look at these app screens. What is the correct order to use this learning app?" },
+    ],
 
     active_vocabulary: [
       "Step 1:",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "App interface cards showing four screens in sequence: login screen, assignment list, assignment page, and submit confirmation.", asset_id: null },
-      { id: "visual_2", description: "A guided instruction frame with four labeled slots: 'Step 1: ___' / 'Before ___, ___.' / 'After ___, ___.' / 'Remember to ___.'", asset_id: null },
-      { id: "visual_3", description: "Icons: a login screen, a checklist (assignment), a send/submit button, a save icon -- matching vocabulary_domain items.", asset_id: null }
+      { id: "visual_1", description: "App interface cards showing four screens in sequence: login screen, assignment list, assignment page, and submit confirmation.", description_id: "Kartu antarmuka aplikasi yang menunjukkan empat layar berurutan: layar login, daftar tugas, halaman tugas, dan konfirmasi pengiriman.", asset_id: null },
+      { id: "visual_2", description: "A guided instruction frame with four labeled slots: 'Step 1: ___' / 'Before ___, ___.' / 'After ___, ___.' / 'Remember to ___.'", description_id: "Kerangka instruksi terbimbing dengan empat slot berlabel: 'Step 1: ___' / 'Before ___, ___.' / 'After ___, ___.' / 'Remember to ___.'", asset_id: null },
+      { id: "visual_3", description: "Icons: a login screen, a checklist (assignment), a send/submit button, a save icon -- matching vocabulary_domain items.", description_id: "Ikon: layar login, daftar centang (tugas), tombol kirim/submit, ikon simpan -- sesuai item vocabulary_domain.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher raises one finger while saying 'Step 1:' -- to signal a numbered, ordered action." },
-      { id: "gesture_2", description: "Teacher holds a hand up before the action while saying 'Before ...' -- to signal a prior check." },
-      { id: "gesture_3", description: "Teacher moves a hand forward to the result while saying 'After ...' -- to signal a completed action leading to the next step." }
+      { id: "gesture_1", description: "Teacher raises one finger while saying 'Step 1:' -- to signal a numbered, ordered action.", description_id: "Guru mengangkat satu jari sambil mengucapkan 'Step 1:' -- untuk menandai tindakan bernomor dan berurutan." },
+      { id: "gesture_2", description: "Teacher holds a hand up before the action while saying 'Before ...' -- to signal a prior check.", description_id: "Guru mengangkat tangan sebelum tindakannya sambil mengucapkan 'Before ...' -- untuk menandai pengecekan sebelumnya." },
+      { id: "gesture_3", description: "Teacher moves a hand forward to the result while saying 'After ...' -- to signal a completed action leading to the next step.", description_id: "Guru menggerakkan tangan ke depan ke arah hasilnya sambil mengucapkan 'After ...' -- untuk menandai tindakan yang selesai mengarah ke langkah berikutnya." }
     ]
   },
 

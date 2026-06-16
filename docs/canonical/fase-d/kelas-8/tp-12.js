@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Trees and Air Quality",
     context: "Students connect information about trees and air quality to explain how an environmental system works and why it benefits people.",
+    context_id: "Siswa menghubungkan informasi tentang pohon dan kualitas udara untuk menjelaskan cara kerja sistem lingkungan dan manfaatnya bagi manusia.",
     communicative_goal: "integrate process, cause, and result into a coherent system explanation",
+    communicative_goal_id: "mengintegrasikan proses, sebab, dan hasil menjadi penjelasan sistem yang koheren",
     vocabulary_domain: ["trees", "carbon dioxide", "oxygen", "air quality"],
     input_anchor: "environment infographic",
     output_anchor: "system explanation poster",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome, class. Today we connect two things you already know." },
+      { type: "AKSI", text: "Minta siswa mengingat sebentar apa yang sudah dipelajari tentang pohon." },
+      // HOOK
+      { type: "UCAP", text: "You have learned about city trees. Now — what do trees actually do for the air we breathe?" },
+      { type: "AKSI", text: "Tampilkan infografis lingkungan: pohon menyerap karbon dioksida dan melepaskan oksigen." },
+      { type: "UCAP", text: "Look at this environment infographic. What process can you see happening here?" },
+    ],
 
     active_vocabulary: [
       "This process",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "An environment infographic showing trees absorbing carbon dioxide and releasing oxygen, with cleaner air around a city.", asset_id: null },
-      { id: "visual_2", description: "System cards: 'This process ... because ...' linked by an arrow to 'As a result, ...'.", asset_id: null },
-      { id: "visual_3", description: "Icons: a tree, a carbon dioxide molecule, an oxygen molecule, a clean-air city skyline.", asset_id: null }
+      { id: "visual_1", description: "An environment infographic showing trees absorbing carbon dioxide and releasing oxygen, with cleaner air around a city.", description_id: "Infografis lingkungan yang menunjukkan pohon menyerap karbon dioksida dan melepaskan oksigen, dengan udara yang lebih bersih di sekitar kota.", asset_id: null },
+      { id: "visual_2", description: "System cards: 'This process ... because ...' linked by an arrow to 'As a result, ...'.", description_id: "Kartu sistem: 'This process ... because ...' dihubungkan tanda panah ke 'As a result, ...'.", asset_id: null },
+      { id: "visual_3", description: "Icons: a tree, a carbon dioxide molecule, an oxygen molecule, a clean-air city skyline.", description_id: "Ikon: pohon, molekul karbon dioksida, molekul oksigen, siluet kota berudara bersih.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher traces the whole cycle on the infographic while saying 'This process ...'." },
-      { id: "gesture_2", description: "Teacher points back to the cause while saying 'because ...'." },
-      { id: "gesture_3", description: "Teacher moves a hand forward to the outcome while saying 'As a result, ...'." }
+      { id: "gesture_1", description: "Teacher traces the whole cycle on the infographic while saying 'This process ...'.", description_id: "Guru menyusuri seluruh siklus pada infografis sambil mengucapkan 'This process ...'." },
+      { id: "gesture_2", description: "Teacher points back to the cause while saying 'because ...'.", description_id: "Guru menunjuk kembali ke sebabnya sambil mengucapkan 'because ...'." },
+      { id: "gesture_3", description: "Teacher moves a hand forward to the outcome while saying 'As a result, ...'.", description_id: "Guru menggerakkan tangan ke depan ke arah hasilnya sambil mengucapkan 'As a result, ...'." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Community Recycling Program",
     context: "Students evaluate a community recycling proposal and construct a complete supported argument with claim, reason, example, and recommendation.",
+    context_id: "Siswa mengevaluasi usulan daur ulang komunitas dan menyusun argumen lengkap yang didukung klaim, alasan, contoh, dan rekomendasi.",
     communicative_goal: "present a complete position supported by organized reasons, examples, and a recommendation",
+    communicative_goal_id: "menyampaikan posisi lengkap yang didukung alasan terstruktur, contoh, dan rekomendasi",
     vocabulary_domain: ["recycling", "community", "environment", "responsibility"],
     input_anchor: "recycling scenario cards",
     output_anchor: "argument presentation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Please take your seats and prepare to think critically today." },
+      { type: "AKSI", text: "Tunggu kelas kondusif dengan nada formal." },
+      // HOOK
+      { type: "UCAP", text: "Consider this: our community produces a large amount of waste every week. What should be done about it?" },
+      { type: "AKSI", text: "Tampilkan skenario daur ulang: siswa memilah sampah ke tempat sampah berkode warna dekat gerbang sekolah." },
+      { type: "UCAP", text: "Look at this recycling scenario. What argument would you make for or against a school recycling program?" },
+    ],
 
     active_vocabulary: [
       "I believe",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A community recycling scenario: students sorting waste into colour-coded bins near the school gate, with a banner showing a recycling symbol and 'Our Environment Matters'.", asset_id: null },
-      { id: "visual_2", description: "An argument structure frame with four labelled slots: 'I believe ___ because ___.' / 'One reason is ___. For example, ___.' / 'Therefore, I recommend ___.'", asset_id: null },
-      { id: "visual_3", description: "Icons: a recycling symbol, a community group circle, a leaf (environment), and a pledge ribbon (responsibility).", asset_id: null }
+      { id: "visual_1", description: "A community recycling scenario: students sorting waste into colour-coded bins near the school gate, with a banner showing a recycling symbol and 'Our Environment Matters'.", description_id: "Skenario daur ulang komunitas: siswa memilah sampah ke tempat sampah berkode warna dekat gerbang sekolah, dengan spanduk bertuliskan simbol daur ulang dan 'Our Environment Matters'.", asset_id: null },
+      { id: "visual_2", description: "An argument structure frame with four labelled slots: 'I believe ___ because ___.' / 'One reason is ___. For example, ___.' / 'Therefore, I recommend ___.'", description_id: "Kerangka struktur argumen dengan empat slot berlabel: 'I believe ___ because ___.' / 'One reason is ___. For example, ___.' / 'Therefore, I recommend ___.'", asset_id: null },
+      { id: "visual_3", description: "Icons: a recycling symbol, a community group circle, a leaf (environment), and a pledge ribbon (responsibility).", description_id: "Ikon: simbol daur ulang, lingkaran kelompok komunitas, daun (lingkungan), dan pita ikrar (tanggung jawab).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to own chest while saying 'I believe ...' -- to signal a personal position being staked." },
-      { id: "gesture_2", description: "Teacher raises one finger while saying 'One reason is ...' -- to signal organized, numbered support for the claim." },
-      { id: "gesture_3", description: "Teacher opens a hand toward the audience while saying 'Therefore, I recommend ...' -- to signal a conclusion and call to shared action." }
+      { id: "gesture_1", description: "Teacher points to own chest while saying 'I believe ...' -- to signal a personal position being staked.", description_id: "Guru menunjuk dadanya sendiri sambil mengucapkan 'I believe ...' -- untuk menandai posisi pribadi yang dinyatakan." },
+      { id: "gesture_2", description: "Teacher raises one finger while saying 'One reason is ...' -- to signal organized, numbered support for the claim.", description_id: "Guru mengangkat satu jari sambil mengucapkan 'One reason is ...' -- untuk menandai dukungan yang terorganisir dan bernomor bagi klaimnya." },
+      { id: "gesture_3", description: "Teacher opens a hand toward the audience while saying 'Therefore, I recommend ...' -- to signal a conclusion and call to shared action.", description_id: "Guru membuka tangan ke arah audiens sambil mengucapkan 'Therefore, I recommend ...' -- untuk menandai kesimpulan dan ajakan tindakan bersama." }
     ]
   },
 

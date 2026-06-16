@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Effective Study Habits",
     context: "Students discuss simple goals and choose appropriate tools or actions to study better.",
+    context_id: "Siswa mendiskusikan tujuan sederhana dan memilih alat atau tindakan yang sesuai untuk belajar lebih baik.",
     communicative_goal: "connect goals with appropriate actions or tools",
+    communicative_goal_id: "menghubungkan tujuan dengan tindakan atau alat yang sesuai",
     vocabulary_domain: ["study", "dictionary", "notes", "practice"],
     input_anchor: "study scenario cards",
     output_anchor: "goal-action matching dialogue",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, everyone! I hope you studied last night." },
+      { type: "AKSI", text: "Tanya siswa apakah ada yang memiliki pertanyaan sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "What do you do when you want to remember something important from class?" },
+      { type: "AKSI", text: "Tampilkan kartu skenario belajar: belajar kata baru, mengingat pelajaran, belajar untuk ujian." },
+      { type: "UCAP", text: "Look at these study goals. Which one do you need the most help with?" },
+    ],
 
     active_vocabulary: [
       "If you want to",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Study scenario cards showing goals: learning new words, remembering a lesson, and studying for a test.", asset_id: null },
-      { id: "visual_2", description: "Tool and action icons: a dictionary, a notebook (notes), and a student practicing (repeating/writing).", asset_id: null },
-      { id: "visual_3", description: "Goal-to-action arrow cards matching 'If you want to [goal]' with 'use [tool] / [action]'.", asset_id: null }
+      { id: "visual_1", description: "Study scenario cards showing goals: learning new words, remembering a lesson, and studying for a test.", description_id: "Kartu skenario belajar yang menunjukkan tujuan: mempelajari kata baru, mengingat pelajaran, dan belajar untuk ujian.", asset_id: null },
+      { id: "visual_2", description: "Tool and action icons: a dictionary, a notebook (notes), and a student practicing (repeating/writing).", description_id: "Ikon alat dan tindakan: kamus, buku catatan (catatan), dan siswa berlatih (mengulang/menulis).", asset_id: null },
+      { id: "visual_3", description: "Goal-to-action arrow cards matching 'If you want to [goal]' with 'use [tool] / [action]'.", description_id: "Kartu panah tujuan-ke-tindakan yang memasangkan 'If you want to [goal]' dengan 'use [tool] / [action]'.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points ahead ('the goal') while saying 'If you want to ...', then gestures to a tool while saying 'use ...'." },
-      { id: "gesture_2", description: "Teacher mimes using the tool (opening a dictionary, writing notes) while saying 'Use ... to ...'." },
-      { id: "gesture_3", description: "Teacher links the two hands together to show the goal and the action belong as one pair." }
+      { id: "gesture_1", description: "Teacher points ahead ('the goal') while saying 'If you want to ...', then gestures to a tool while saying 'use ...'.", description_id: "Guru menunjuk ke depan ('tujuan') sambil mengucapkan 'If you want to ...', lalu mengarahkan ke alat sambil mengucapkan 'use ...'." },
+      { id: "gesture_2", description: "Teacher mimes using the tool (opening a dictionary, writing notes) while saying 'Use ... to ...'.", description_id: "Guru memperagakan penggunaan alatnya (membuka kamus, menulis catatan) sambil mengucapkan 'Use ... to ...'." },
+      { id: "gesture_3", description: "Teacher links the two hands together to show the goal and the action belong as one pair.", description_id: "Guru menyatukan kedua tangan untuk menunjukkan bahwa tujuan dan tindakan adalah satu pasangan." }
     ]
   },
 

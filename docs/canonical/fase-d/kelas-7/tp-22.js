@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Lost Firefly",
     context: "The little firefly loses its way when the forest becomes dark and suddenly cannot find its friends.",
+    context_id: "Kunang-kunang kecil itu tersesat ketika hutan menjadi gelap dan tiba-tiba tidak bisa menemukan teman-temannya.",
     communicative_goal: "develop a simple conflict using sequence and contrast",
+    communicative_goal_id: "mengembangkan konflik sederhana menggunakan urutan dan kontras",
     vocabulary_domain: ["night", "forest", "lost", "light"],
     input_anchor: "story sequence cards",
     output_anchor: "story continuation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome back! Our story continues today." },
+      { type: "AKSI", text: "Recap singkat cerita sebelumnya bersama kelas dalam 1-2 kalimat." },
+      // HOOK
+      { type: "UCAP", text: "Do you remember the little firefly? What was it dreaming of?" },
+      { type: "AKSI", text: "Tunjukkan urutan gambar cerita: kunang-kunang terbang ke hutan, hutan menjadi gelap, kunang-kunang sendirian." },
+      { type: "UCAP", text: "Look at what happened next. What went wrong for the little firefly?" },
+    ],
 
     active_vocabulary: [
       "One day,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Story sequence cards: the firefly flying into the forest, the forest turning dark, and the firefly alone, unable to find its friends.", asset_id: null },
-      { id: "visual_2", description: "Conflict cards: 'One day ... but ...' (a bright hope turning to a dark forest) and a 'Suddenly!' surprise burst.", asset_id: null },
-      { id: "visual_3", description: "A dark night forest scene with one small lost light.", asset_id: null }
+      { id: "visual_1", description: "Story sequence cards: the firefly flying into the forest, the forest turning dark, and the firefly alone, unable to find its friends.", description_id: "Urutan gambar cerita: kunang-kunang terbang masuk hutan, hutan menjadi gelap, dan kunang-kunang sendirian, tidak dapat menemukan teman-temannya.", asset_id: null },
+      { id: "visual_2", description: "Conflict cards: 'One day ... but ...' (a bright hope turning to a dark forest) and a 'Suddenly!' surprise burst.", description_id: "Kartu konflik: 'One day ... but ...' (harapan cerah berubah menjadi hutan gelap) dan letupan kejutan 'Suddenly!'", asset_id: null },
+      { id: "visual_3", description: "A dark night forest scene with one small lost light.", description_id: "Pemandangan hutan malam yang gelap dengan satu cahaya kecil yang tersesat.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher gestures forward, then flips the palm over while saying 'but' to show the turn to a problem." },
-      { id: "gesture_2", description: "Teacher opens both hands quickly in a surprise motion while saying 'Suddenly, ...'." },
-      { id: "gesture_3", description: "Teacher mimes looking around, lost, with a dimming light, while saying 'lost in the dark'." }
+      { id: "gesture_1", description: "Teacher gestures forward, then flips the palm over while saying 'but' to show the turn to a problem.", description_id: "Guru memberi gestur ke depan, lalu membalik telapak tangan sambil mengucapkan 'but' untuk menunjukkan perubahan menjadi masalah." },
+      { id: "gesture_2", description: "Teacher opens both hands quickly in a surprise motion while saying 'Suddenly, ...'.", description_id: "Guru membuka kedua tangan dengan cepat dalam gerakan kejutan sambil mengucapkan 'Suddenly, ...'." },
+      { id: "gesture_3", description: "Teacher mimes looking around, lost, with a dimming light, while saying 'lost in the dark'.", description_id: "Guru memperagakan melihat sekeliling, tersesat, dengan cahaya yang meredup, sambil mengucapkan 'lost in the dark'." }
     ]
   },
 

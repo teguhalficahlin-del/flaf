@@ -6,7 +6,7 @@ import { pathToFileURL } from 'url';
 
 // ─── Config ────────────────────────────────────────────────────────────────
 
-const FASE_D_DIR = path.resolve('docs/fase-d');
+const FASE_D_DIR = path.resolve('docs/canonical/fase-d');
 
 const GRADE_CONFIG = [
   { kelas: 'kelas-7', count: 24 },

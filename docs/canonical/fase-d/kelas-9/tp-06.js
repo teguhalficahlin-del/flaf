@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Class Charity Project",
     context: "Students review a class charity project by describing it, evaluating its strengths and limitations, and concluding with a recommendation.",
+    context_id: "Siswa mengulas proyek bakti sosial kelas dengan mendeskripsikannya, mengevaluasi kelebihan dan kekurangannya, serta menutup dengan rekomendasi.",
     communicative_goal: "produce a complete review integrating description, evaluation, balanced judgment, and recommendation",
+    communicative_goal_id: "membuat ulasan lengkap yang memadukan deskripsi, evaluasi, penilaian berimbang, dan rekomendasi",
     vocabulary_domain: ["charity", "community service", "participation", "evaluation"],
     input_anchor: "project summary cards",
     output_anchor: "complete project review",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome back. We are ready for a complete review today." },
+      { type: "AKSI", text: "Pastikan siswa memiliki catatan dari proyek bakti sosial sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "Think of the class charity project you know about. How would you describe it — and would you recommend it?" },
+      { type: "AKSI", text: "Tampilkan kartu ringkasan proyek: pengumpulan buku, bersih-bersih sekolah, bank makanan — dengan deskripsi dan jumlah partisipan." },
+      { type: "UCAP", text: "Look at these project summaries. Which one could you give a full, balanced review?" },
+    ],
 
     active_vocabulary: [
       "It is",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Project summary cards showing three charity project options: a book collection drive, a school clean-up day, and a community food bank contribution -- each with a brief description and participation numbers.", asset_id: null },
-      { id: "visual_2", description: "A complete review structure frame with six labelled slots: DESCRIBE (It is...) / CLAIM (I believe... because...) / STRENGTH (One strength is...) / LIMITATION (However,...) / RECOMMENDATION (Therefore, I recommend...).", asset_id: null },
-      { id: "visual_3", description: "Icons: a charity box, a community service group, a participation checklist, and an evaluation rubric star -- matching vocabulary_domain items.", asset_id: null }
+      { id: "visual_1", description: "Project summary cards showing three charity project options: a book collection drive, a school clean-up day, and a community food bank contribution -- each with a brief description and participation numbers.", description_id: "Kartu ringkasan proyek yang menunjukkan tiga pilihan proyek bakti sosial: pengumpulan buku, hari bersih-bersih sekolah, dan kontribusi ke bank makanan komunitas -- masing-masing dengan deskripsi singkat dan jumlah partisipan.", asset_id: null },
+      { id: "visual_2", description: "A complete review structure frame with six labelled slots: DESCRIBE (It is...) / CLAIM (I believe... because...) / STRENGTH (One strength is...) / LIMITATION (However,...) / RECOMMENDATION (Therefore, I recommend...).", description_id: "Kerangka struktur ulasan lengkap dengan enam slot berlabel: DESCRIBE (It is...) / CLAIM (I believe... because...) / STRENGTH (One strength is...) / LIMITATION (However,...) / RECOMMENDATION (Therefore, I recommend...).", asset_id: null },
+      { id: "visual_3", description: "Icons: a charity box, a community service group, a participation checklist, and an evaluation rubric star -- matching vocabulary_domain items.", description_id: "Ikon: kotak donasi, kelompok bakti sosial, daftar centang partisipasi, dan bintang rubrik evaluasi -- sesuai item vocabulary_domain.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to the project card while saying 'It is ...' -- to signal opening with description before evaluation begins." },
-      { id: "gesture_2", description: "Teacher alternates one hand up (strength) and one hand tilted (however/limitation) to show the balance move in the middle of the review." },
-      { id: "gesture_3", description: "Teacher brings both hands forward together while saying 'Therefore, I recommend ...' -- to signal that the recommendation follows from the full evaluation, not just from one side." }
+      { id: "gesture_1", description: "Teacher points to the project card while saying 'It is ...' -- to signal opening with description before evaluation begins.", description_id: "Guru menunjuk kartu proyek sambil mengucapkan 'It is ...' -- untuk menandai pembukaan dengan deskripsi sebelum evaluasi dimulai." },
+      { id: "gesture_2", description: "Teacher alternates one hand up (strength) and one hand tilted (however/limitation) to show the balance move in the middle of the review.", description_id: "Guru bergantian mengangkat satu tangan (kelebihan) dan memiringkan tangan lain (however/kekurangan) untuk menunjukkan gerakan penyeimbang di tengah ulasan." },
+      { id: "gesture_3", description: "Teacher brings both hands forward together while saying 'Therefore, I recommend ...' -- to signal that the recommendation follows from the full evaluation, not just from one side.", description_id: "Guru menyatukan kedua tangan ke depan sambil mengucapkan 'Therefore, I recommend ...' -- untuk menandai bahwa rekomendasi muncul dari evaluasi penuh, bukan hanya dari satu sisi." }
     ]
   },
 

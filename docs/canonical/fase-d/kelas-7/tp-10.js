@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Simple Cooking",
     context: "Students guide a friend through preparing a simple snack using short action commands.",
+    context_id: "Siswa membimbing seorang teman menyiapkan jajanan sederhana menggunakan perintah tindakan singkat.",
     communicative_goal: "give action instructions with object and place/time information",
+    communicative_goal_id: "memberikan instruksi tindakan dengan informasi objek serta tempat/waktu",
     vocabulary_domain: ["kitchen", "ingredients", "utensils", "actions"],
     input_anchor: "recipe picture cards",
     output_anchor: "pair instruction game",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! Let's get cooking — well, almost." },
+      { type: "AKSI", text: "Pastikan meja bersih dan siswa siap memulai." },
+      // HOOK
+      { type: "UCAP", text: "Has anyone ever helped make a snack at home? What did you do?" },
+      { type: "AKSI", text: "Tunjukkan kartu bergambar resep sandwich: roti, mentega, piring, dan pisau." },
+      { type: "UCAP", text: "Look at these recipe cards. What do you think we are going to make today?" },
+    ],
 
     active_vocabulary: [
       "Put",
@@ -45,15 +57,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Recipe picture cards showing the steps to make a simple snack (a sandwich): bread, butter, a plate, and a knife.", asset_id: null },
-      { id: "visual_2", description: "Action icons with arrows to objects: put, spread, cut, wash.", asset_id: null },
-      { id: "visual_3", description: "Place and time cards: 'on the plate', 'in the kitchen', 'before lunch'.", asset_id: null }
+      { id: "visual_1", description: "Recipe picture cards showing the steps to make a simple snack (a sandwich): bread, butter, a plate, and a knife.", description_id: "Kartu bergambar resep yang menunjukkan langkah membuat jajanan sederhana (sandwich): roti, mentega, piring, dan pisau.", asset_id: null },
+      { id: "visual_2", description: "Action icons with arrows to objects: put, spread, cut, wash.", description_id: "Ikon tindakan dengan tanda panah ke benda: put, spread, cut, wash.", asset_id: null },
+      { id: "visual_3", description: "Place and time cards: 'on the plate', 'in the kitchen', 'before lunch'.", description_id: "Kartu tempat dan waktu: 'on the plate', 'in the kitchen', 'before lunch'.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher mimes the action (putting, spreading, cutting) while saying the imperative verb." },
-      { id: "gesture_2", description: "Teacher points to the place (the plate, the kitchen) while saying the place expression." },
-      { id: "gesture_3", description: "Teacher taps a clock or points to a time card while saying the time expression ('before lunch')." }
+      { id: "gesture_1", description: "Teacher mimes the action (putting, spreading, cutting) while saying the imperative verb.", description_id: "Guru memperagakan tindakannya (meletakkan, mengoleskan, memotong) sambil mengucapkan kata kerja imperatifnya." },
+      { id: "gesture_2", description: "Teacher points to the place (the plate, the kitchen) while saying the place expression.", description_id: "Guru menunjuk tempatnya (piring, dapur) sambil mengucapkan ungkapan tempatnya." },
+      { id: "gesture_3", description: "Teacher taps a clock or points to a time card while saying the time expression ('before lunch').", description_id: "Guru menepuk jam atau menunjuk kartu waktu sambil mengucapkan ungkapan waktunya ('before lunch')." }
     ]
   },
 

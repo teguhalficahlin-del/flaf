@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Healthy School Environment",
     context: "Students draw an integrated evidence-based conclusion about what multiple sources together suggest about creating a healthy school environment, covering air quality, green spaces, and physical activity.",
+    context_id: "Siswa menarik kesimpulan terpadu berbasis bukti tentang apa yang disarankan beberapa sumber secara bersama-sama mengenai penciptaan lingkungan sekolah yang sehat, meliputi kualitas udara, ruang hijau, dan aktivitas fisik.",
     communicative_goal: "draw an evidence-based conclusion by explicitly citing multiple sources and showing what they collectively suggest",
+    communicative_goal_id: "menarik kesimpulan berbasis bukti dengan mengutip beberapa sumber secara eksplisit dan menunjukkan apa yang disarankan secara kolektif",
     vocabulary_domain: ["air quality", "physical activity", "healthy habits", "evidence-based conclusions"],
     input_anchor: "multiple source syntheses",
     output_anchor: "evidence-based conclusion",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome. Today we draw evidence-based conclusions from multiple sources." },
+      { type: "AKSI", text: "Kondisikan kelas untuk sesi sintesis yang memerlukan konsentrasi tinggi." },
+      // HOOK
+      { type: "UCAP", text: "You have read about air quality, physical activity, and green spaces. What do all three suggest together?" },
+      { type: "AKSI", text: "Tampilkan kumpulan tiga kartu sumber tersusun segitiga, semua menunjuk ke tanda panah pusat 'Based on these sources...'." },
+      { type: "UCAP", text: "Look at these three source cards. What conclusion can you draw from all of them combined?" },
+    ],
 
     active_vocabulary: [
       "Based on these sources,",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A cluster of three source cards arranged in a triangle: Source A (air quality report), Source B (physical activity study), Source C (green spaces and wellbeing data) -- all pointing into a central 'Based on these sources...' arrow.", asset_id: null },
-      { id: "visual_2", description: "A three-step evidence-conclusion frame: Step 1 'Based on these sources,...' (cite multiple sources) → Step 2 'This suggests...' (inference) → Step 3 'Therefore,...' (evidence-based conclusion).", asset_id: null },
-      { id: "visual_3", description: "A progression diagram showing cluster escalation: TP-10 ('Together, they show...' = two sources) → TP-11 ('Both sources... Therefore,...' = comparison) → TP-12 ('Based on these sources... This suggests... Therefore,...' = multiple sources, inference, conclusion).", asset_id: null }
+      { id: "visual_1", description: "A cluster of three source cards arranged in a triangle: Source A (air quality report), Source B (physical activity study), Source C (green spaces and wellbeing data) -- all pointing into a central 'Based on these sources...' arrow.", description_id: "Kumpulan tiga kartu sumber tersusun segitiga: Sumber A (laporan kualitas udara), Sumber B (studi aktivitas fisik), Sumber C (data ruang hijau dan kesejahteraan) -- semuanya menunjuk ke tanda panah pusat 'Based on these sources...'.", asset_id: null },
+      { id: "visual_2", description: "A three-step evidence-conclusion frame: Step 1 'Based on these sources,...' (cite multiple sources) → Step 2 'This suggests...' (inference) → Step 3 'Therefore,...' (evidence-based conclusion).", description_id: "Kerangka kesimpulan-bukti tiga langkah: Langkah 1 'Based on these sources,...' (mengutip beberapa sumber) → Langkah 2 'This suggests...' (inferensi) → Langkah 3 'Therefore,...' (kesimpulan berbasis bukti).", asset_id: null },
+      { id: "visual_3", description: "A progression diagram showing cluster escalation: TP-10 ('Together, they show...' = two sources) → TP-11 ('Both sources... Therefore,...' = comparison) → TP-12 ('Based on these sources... This suggests... Therefore,...' = multiple sources, inference, conclusion).", description_id: "Diagram perkembangan menunjukkan eskalasi kelompok: TP-10 ('Together, they show...' = dua sumber) → TP-11 ('Both sources... Therefore,...' = perbandingan) → TP-12 ('Based on these sources... This suggests... Therefore,...' = banyak sumber, inferensi, kesimpulan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher sweeps an open hand across all three source cards while saying 'Based on these sources,...' -- to signal drawing from multiple sources simultaneously, not just one." },
-      { id: "gesture_2", description: "Teacher taps temple while saying 'This suggests...' -- to signal that an inference is being drawn from the evidence, not stated directly in any one source." },
-      { id: "gesture_3", description: "Teacher brings both hands slowly to a point while saying 'Therefore,...' -- to signal the final conclusion drawn from all evidence combined." }
+      { id: "gesture_1", description: "Teacher sweeps an open hand across all three source cards while saying 'Based on these sources,...' -- to signal drawing from multiple sources simultaneously, not just one.", description_id: "Guru menyapukan tangan terbuka melintasi ketiga kartu sumber sambil mengucapkan 'Based on these sources,...' -- untuk menandai mengambil dari beberapa sumber secara bersamaan, bukan hanya satu." },
+      { id: "gesture_2", description: "Teacher taps temple while saying 'This suggests...' -- to signal that an inference is being drawn from the evidence, not stated directly in any one source.", description_id: "Guru menepuk pelipis sambil mengucapkan 'This suggests...' -- untuk menandai bahwa sebuah inferensi sedang ditarik dari bukti, bukan dinyatakan langsung di salah satu sumber." },
+      { id: "gesture_3", description: "Teacher brings both hands slowly to a point while saying 'Therefore,...' -- to signal the final conclusion drawn from all evidence combined.", description_id: "Guru menyatukan kedua tangan perlahan ke satu titik sambil mengucapkan 'Therefore,...' -- untuk menandai kesimpulan akhir yang ditarik dari semua bukti yang dipadukan." }
     ]
   },
 

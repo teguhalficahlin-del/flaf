@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Creating an Active School Culture",
     context: "Students evaluate a proposed solution to low student physical activity, explaining how the solution works, why it succeeds, and what long-term benefits it produces.",
+    context_id: "Siswa mengevaluasi usulan solusi untuk rendahnya aktivitas fisik siswa, menjelaskan cara kerja solusi tersebut, mengapa solusi itu berhasil, dan manfaat jangka panjang apa yang dihasilkannya.",
     communicative_goal: "evaluate a solution by combining problem identification, solution proposal, causal reasoning, consequence, and evidence-based conclusion into one integrated discourse",
+    communicative_goal_id: "mengevaluasi solusi dengan memadukan identifikasi masalah, usulan solusi, penalaran kausal, akibat, dan kesimpulan berbasis bukti menjadi satu wacana terpadu",
     vocabulary_domain: ["school improvement", "healthy lifestyle", "student participation", "long-term benefits"],
     input_anchor: "solution proposal",
     output_anchor: "integrated problem-solution evaluation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome. Today we evaluate the solution we proposed last session." },
+      { type: "AKSI", text: "Kondisikan kelas untuk sesi evaluasi terstruktur." },
+      // HOOK
+      { type: "UCAP", text: "We proposed an active break program. Does it actually work — and how do we know?" },
+      { type: "AKSI", text: "Tampilkan peta evaluasi masalah-solusi lengkap: 5 kotak terhubung oleh tanda panah." },
+      { type: "UCAP", text: "Look at this evaluation map. What does a complete problem-solution evaluation need to include?" },
+    ],
 
     active_vocabulary: [
       "The problem is",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A complete problem-solution evaluation map showing five connected boxes: 'The problem is...' → 'To solve it,...' → 'This solution works because...' → 'As a result,...' → 'Therefore,...' -- each connected by arrows showing the logical flow.", asset_id: null },
-      { id: "visual_2", description: "A five-component frame with labelled slots: 'The problem is...' (problem recap) / 'To solve it,...' (solution) / 'This solution works because...' (causal evaluation) / 'As a result,...' (consequence) / 'Therefore,...' (evidence-based conclusion).", asset_id: null },
-      { id: "visual_3", description: "A cluster progression diagram: TP-13 (problem identification card) → TP-14 (solution proposal card) → TP-15 (full integrated evaluation card) -- showing that TP-15 combines both into a single coherent discourse.", asset_id: null }
+      { id: "visual_1", description: "A complete problem-solution evaluation map showing five connected boxes: 'The problem is...' → 'To solve it,...' → 'This solution works because...' → 'As a result,...' → 'Therefore,...' -- each connected by arrows showing the logical flow.", description_id: "Peta evaluasi masalah-solusi lengkap yang menunjukkan lima kotak terhubung: 'The problem is...' → 'To solve it,...' → 'This solution works because...' → 'As a result,...' → 'Therefore,...' -- masing-masing dihubungkan tanda panah menunjukkan alur logisnya.", asset_id: null },
+      { id: "visual_2", description: "A five-component frame with labelled slots: 'The problem is...' (problem recap) / 'To solve it,...' (solution) / 'This solution works because...' (causal evaluation) / 'As a result,...' (consequence) / 'Therefore,...' (evidence-based conclusion).", description_id: "Kerangka lima komponen dengan slot berlabel: 'The problem is...' (ringkasan masalah) / 'To solve it,...' (solusi) / 'This solution works because...' (evaluasi kausal) / 'As a result,...' (konsekuensi) / 'Therefore,...' (kesimpulan berbasis bukti).", asset_id: null },
+      { id: "visual_3", description: "A cluster progression diagram: TP-13 (problem identification card) → TP-14 (solution proposal card) → TP-15 (full integrated evaluation card) -- showing that TP-15 combines both into a single coherent discourse.", description_id: "Diagram perkembangan kelompok: TP-13 (kartu identifikasi masalah) → TP-14 (kartu usulan solusi) → TP-15 (kartu evaluasi terpadu lengkap) -- menunjukkan bahwa TP-15 memadukan keduanya menjadi satu wacana yang koheren.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to the problem box and then the solution box on the map while moving from 'The problem is...' to 'To solve it,...' -- to show the problem-solution link clearly." },
-      { id: "gesture_2", description: "Teacher taps a causal arrow while saying 'This solution works because...' -- to signal evaluating WHY the solution is effective, not just what the solution is." },
-      { id: "gesture_3", description: "Teacher brings both hands forward while saying 'Therefore,...' -- to signal that the final conclusion draws on all five components as an integrated whole, not just the last point." }
+      { id: "gesture_1", description: "Teacher points to the problem box and then the solution box on the map while moving from 'The problem is...' to 'To solve it,...' -- to show the problem-solution link clearly.", description_id: "Guru menunjuk kotak masalah lalu kotak solusi di peta sambil berpindah dari 'The problem is...' ke 'To solve it,...' -- untuk menunjukkan keterkaitan masalah-solusi secara jelas." },
+      { id: "gesture_2", description: "Teacher taps a causal arrow while saying 'This solution works because...' -- to signal evaluating WHY the solution is effective, not just what the solution is.", description_id: "Guru menepuk tanda panah kausal sambil mengucapkan 'This solution works because...' -- untuk menandai mengevaluasi MENGAPA solusinya efektif, bukan hanya apa solusinya." },
+      { id: "gesture_3", description: "Teacher brings both hands forward while saying 'Therefore,...' -- to signal that the final conclusion draws on all five components as an integrated whole, not just the last point.", description_id: "Guru menyatukan kedua tangan ke depan sambil mengucapkan 'Therefore,...' -- untuk menandai bahwa kesimpulan akhir mengacu pada kelima komponen sebagai satu kesatuan terpadu, bukan hanya poin terakhir." }
     ]
   },
 

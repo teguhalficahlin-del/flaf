@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Pets",
     context: "Students introduce and describe their favorite pet or an animal from picture cards.",
+    context_id: "Siswa memperkenalkan dan mendeskripsikan hewan peliharaan favorit mereka atau hewan dari kartu bergambar.",
     communicative_goal: "describe basic characteristics using simple adjectives and noun phrases",
+    communicative_goal_id: "mendeskripsikan ciri-ciri dasar menggunakan kata sifat dan frasa benda sederhana",
     vocabulary_domain: ["animals", "colors", "size", "appearance"],
     input_anchor: "animal picture cards",
     output_anchor: "show and tell",
@@ -22,6 +24,17 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, class! Find your seat and get ready." },
+      { type: "AKSI", text: "Tunggu kelas tenang, sapa beberapa siswa dengan nada hangat." },
+      // HOOK
+      { type: "UCAP", text: "Quick question — does anyone here have a pet at home?" },
+      { type: "AKSI", text: "Biarkan beberapa siswa menjawab bebas. Respons singkat: 'Oh, a cat! Nice.'" },
+      { type: "AKSI", text: "Tunjukkan kartu bergambar hewan peliharaan (kelinci, kucing, anjing, ikan) kepada kelas." },
+      { type: "UCAP", text: "Look at these animals. Can you tell me something about them?" },
+    ],
 
     active_vocabulary: [
       "It is",
@@ -45,15 +58,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Animal picture cards showing different pets (a rabbit, a cat, a dog, a fish) with clear colors and sizes, for describing 'It is ...'.", asset_id: null },
-      { id: "visual_2", description: "Feature icons for 'It has ...': long ears, short ears, soft fur, a long tail, big eyes.", asset_id: null },
-      { id: "visual_3", description: "Appearance cards for 'It looks ...': a friendly-looking animal, a cute animal, a sleepy animal.", asset_id: null }
+      { id: "visual_1", description: "Animal picture cards showing different pets (a rabbit, a cat, a dog, a fish) with clear colors and sizes, for describing 'It is ...'.", description_id: "Kartu bergambar hewan yang menunjukkan berbagai hewan peliharaan (kelinci, kucing, anjing, ikan) dengan warna dan ukuran yang jelas, untuk mendeskripsikan 'It is ...'.", asset_id: null },
+      { id: "visual_2", description: "Feature icons for 'It has ...': long ears, short ears, soft fur, a long tail, big eyes.", description_id: "Ikon ciri-ciri untuk 'It has ...': telinga panjang, telinga pendek, bulu lembut, ekor panjang, mata besar.", asset_id: null },
+      { id: "visual_3", description: "Appearance cards for 'It looks ...': a friendly-looking animal, a cute animal, a sleepy animal.", description_id: "Kartu penampilan untuk 'It looks ...': hewan yang terlihat ramah, hewan yang lucu, hewan yang mengantuk.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds up a picture card and points to the whole animal while saying 'It is ...'." },
-      { id: "gesture_2", description: "Teacher points to specific features (the ears, the fur) on the card while saying 'It has ...'." },
-      { id: "gesture_3", description: "Teacher frames their own face with both hands and mimics the animal's expression while saying 'It looks ...'." }
+      { id: "gesture_1", description: "Teacher holds up a picture card and points to the whole animal while saying 'It is ...'.", description_id: "Guru mengangkat kartu bergambar dan menunjuk ke seluruh tubuh hewan sambil mengucapkan 'It is ...'." },
+      { id: "gesture_2", description: "Teacher points to specific features (the ears, the fur) on the card while saying 'It has ...'.", description_id: "Guru menunjuk ciri-ciri tertentu (telinga, bulu) pada kartu sambil mengucapkan 'It has ...'." },
+      { id: "gesture_3", description: "Teacher frames their own face with both hands and mimics the animal's expression while saying 'It looks ...'.", description_id: "Guru membingkai wajahnya dengan kedua tangan dan menirukan ekspresi hewan tersebut sambil mengucapkan 'It looks ...'." }
     ]
   },
 

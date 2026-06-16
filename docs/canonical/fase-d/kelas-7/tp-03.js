@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Weekend Activities",
     context: "Friends plan an activity after school or on the weekend.",
+    context_id: "Teman-teman merencanakan kegiatan setelah sekolah atau di akhir pekan.",
     communicative_goal: "invite, accept, and refuse politely",
+    communicative_goal_id: "mengundang, menerima, dan menolak dengan sopan",
     vocabulary_domain: ["park", "library", "cycling", "games"],
     input_anchor: "activity pictures",
     output_anchor: "role play",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! Let's get the day started." },
+      { type: "AKSI", text: "Sapa beberapa siswa dan cek apakah mereka sudah siap." },
+      // HOOK
+      { type: "UCAP", text: "Quick question — what do you like to do on weekends?" },
+      { type: "AKSI", text: "Tampilkan gambar kegiatan akhir pekan: bersepeda, taman, perpustakaan, permainan papan." },
+      { type: "UCAP", text: "Imagine a friend invites you to go cycling after school. What would you say?" },
+    ],
 
     active_vocabulary: [
       "Let's",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Activity pictures showing four weekend options: a bicycle on a path (cycling), a park with trees, a library with bookshelves, and a board game.", asset_id: null },
-      { id: "visual_2", description: "Two response faces: a smiling face nodding with a thumbs-up (accept = 'Sure!'), and an apologetic face with one hand raised (decline = 'Sorry, I can't.').", asset_id: null },
-      { id: "visual_3", description: "A small time card showing 'after school' (a clock at the end of the day) and 'this weekend' (a calendar with Saturday and Sunday marked).", asset_id: null }
+      { id: "visual_1", description: "Activity pictures showing four weekend options: a bicycle on a path (cycling), a park with trees, a library with bookshelves, and a board game.", description_id: "Gambar kegiatan yang menunjukkan empat pilihan akhir pekan: sepeda di jalur (bersepeda), taman dengan pepohonan, perpustakaan dengan rak buku, dan permainan papan.", asset_id: null },
+      { id: "visual_2", description: "Two response faces: a smiling face nodding with a thumbs-up (accept = 'Sure!'), and an apologetic face with one hand raised (decline = 'Sorry, I can't.').", description_id: "Dua wajah respons: wajah tersenyum sambil mengangguk dengan jempol ke atas (menerima = 'Sure!'), dan wajah meminta maaf dengan satu tangan terangkat (menolak = 'Sorry, I can't.').", asset_id: null },
+      { id: "visual_3", description: "A small time card showing 'after school' (a clock at the end of the day) and 'this weekend' (a calendar with Saturday and Sunday marked).", description_id: "Kartu waktu kecil yang menunjukkan 'after school' (jam di akhir hari) dan 'this weekend' (kalender dengan Sabtu dan Minggu ditandai).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher beckons with an open hand toward themselves and a partner while saying 'Let's...' / 'Shall we...?' to show an invitation." },
-      { id: "gesture_2", description: "Teacher gives an enthusiastic thumbs-up and nods while saying 'Sure!'" },
-      { id: "gesture_3", description: "Teacher places one hand on their chest with an apologetic shrug while saying 'Sorry, I can't.'" }
+      { id: "gesture_1", description: "Teacher beckons with an open hand toward themselves and a partner while saying 'Let's...' / 'Shall we...?' to show an invitation.", description_id: "Guru melambaikan tangan terbuka ke arah dirinya dan seorang teman sambil mengucapkan 'Let's...' / 'Shall we...?' untuk menunjukkan undangan." },
+      { id: "gesture_2", description: "Teacher gives an enthusiastic thumbs-up and nods while saying 'Sure!'", description_id: "Guru memberi jempol ke atas dengan antusias dan mengangguk sambil mengucapkan 'Sure!'" },
+      { id: "gesture_3", description: "Teacher places one hand on their chest with an apologetic shrug while saying 'Sorry, I can't.'", description_id: "Guru meletakkan satu tangan di dada dengan bahasa tubuh meminta maaf sambil mengucapkan 'Sorry, I can't.'" }
     ]
   },
 

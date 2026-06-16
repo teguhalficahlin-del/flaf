@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Community Book Swap",
     context: "Students organize information from a reading event into a clear public information layout containing title, key details, contact, action, and additional notes.",
+    context_id: "Siswa menyusun informasi dari acara membaca menjadi tata letak informasi publik yang jelas, berisi judul, detail penting, kontak, ajakan bertindak, dan catatan tambahan.",
     communicative_goal: "organize multiple pieces of public information into one coherent text",
+    communicative_goal_id: "menyusun berbagai informasi publik menjadi satu teks yang koheren",
     vocabulary_domain: ["books", "library", "exchange", "community"],
     input_anchor: "event information cards",
     output_anchor: "information board",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. We are wrapping up Kelas 8 with something practical." },
+      { type: "AKSI", text: "Berikan orientasi singkat bahwa ini adalah sesi penutup untuk Kelas 8." },
+      // HOOK
+      { type: "UCAP", text: "Think about school events you know — festivals, book swaps, fairs. How is that information usually organized?" },
+      { type: "AKSI", text: "Tampilkan kartu informasi acara terpisah: nama acara, kapan dan di mana, apa yang harus dibawa, catatan untuk semua." },
+      { type: "UCAP", text: "Look at these information cards. How would you put them together into one clear announcement?" },
+    ],
 
     active_vocabulary: [
       "books",
@@ -38,16 +50,16 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Event information cards: separate cards showing (1) event name, (2) when and where, (3) what to do or bring, (4) a note for everyone -- ready to be arranged into one flyer.", asset_id: null },
-      { id: "visual_2", description: "A flyer layout template with four labeled sections separated by '|': Title | Key Information | Contact/Action | Additional Note.", asset_id: null },
-      { id: "visual_3", description: "The transformation diagram: the Club Festival promotional post from TP-47 ('Join us ... / Don\\'t miss ... / You can ... because ...') condensed into a flyer layout ('After-School Club Festival | This Friday ... | Sign up ... | Try ...').", asset_id: null }
+      { id: "visual_1", description: "Event information cards: separate cards showing (1) event name, (2) when and where, (3) what to do or bring, (4) a note for everyone -- ready to be arranged into one flyer.", description_id: "Kartu informasi acara: kartu-kartu terpisah yang menunjukkan (1) nama acara, (2) kapan dan di mana, (3) apa yang harus dilakukan atau dibawa, (4) catatan untuk semua orang -- siap disusun menjadi satu pamflet.", asset_id: null },
+      { id: "visual_2", description: "A flyer layout template with four labeled sections separated by '|': Title | Key Information | Contact/Action | Additional Note.", description_id: "Templat tata letak pamflet dengan empat bagian berlabel dipisahkan oleh '|': Title | Key Information | Contact/Action | Additional Note.", asset_id: null },
+      { id: "visual_3", description: "The transformation diagram: the Club Festival promotional post from TP-47 ('Join us ... / Don\\'t miss ... / You can ... because ...') condensed into a flyer layout ('After-School Club Festival | This Friday ... | Sign up ... | Try ...').", description_id: "Diagram transformasi: unggahan promosi Club Festival dari TP-47 ('Join us ... / Don't miss ... / You can ... because ...') dipadatkan menjadi tata letak pamflet ('After-School Club Festival | This Friday ... | Sign up ... | Try ...').", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher draws four boxes in the air connected by vertical lines while explaining the flyer structure: Title | Key Info | Action | Note." },
-      { id: "gesture_2", description: "Teacher moves a hand horizontally from left to right while reading each section of a flyer, pausing at each '|' separator." },
-      { id: "gesture_3", description: "Teacher holds up four fingers and counts each section while presenting: 'Title -- one. When and where -- two. What to do -- three. Extra note -- four.'" },
-      { id: "gesture_4", description: "When reading each model flyer aloud, point to or color-code each of the four parts separately on the board -- Title / Key Info / Action / Note -- so students see FOUR SEPARATE BLOCKS, not one long sentence; this is the biggest representational shift in this TP (from sentence-connector pattern to layout structure)." }
+      { id: "gesture_1", description: "Teacher draws four boxes in the air connected by vertical lines while explaining the flyer structure: Title | Key Info | Action | Note.", description_id: "Guru menggambar empat kotak di udara terhubung garis vertikal sambil menjelaskan struktur pamflet: Title | Key Info | Action | Note." },
+      { id: "gesture_2", description: "Teacher moves a hand horizontally from left to right while reading each section of a flyer, pausing at each '|' separator.", description_id: "Guru menggerakkan tangan horizontal dari kiri ke kanan sambil membaca setiap bagian pamflet, berhenti sejenak di setiap pemisah '|'." },
+      { id: "gesture_3", description: "Teacher holds up four fingers and counts each section while presenting: 'Title -- one. When and where -- two. What to do -- three. Extra note -- four.'", description_id: "Guru mengangkat empat jari dan menghitung setiap bagian sambil mempresentasikan: 'Title -- one. When and where -- two. What to do -- three. Extra note -- four.'" },
+      { id: "gesture_4", description: "When reading each model flyer aloud, point to or color-code each of the four parts separately on the board -- Title / Key Info / Action / Note -- so students see FOUR SEPARATE BLOCKS, not one long sentence; this is the biggest representational shift in this TP (from sentence-connector pattern to layout structure).", description_id: "Saat membaca setiap pamflet model dengan suara nyaring, tunjuk atau beri kode warna pada setiap dari empat bagian secara terpisah di papan tulis -- Title / Key Info / Action / Note -- sehingga siswa melihat EMPAT BLOK TERPISAH, bukan satu kalimat panjang; ini adalah perubahan representasional terbesar di TP ini (dari pola penghubung kalimat ke struktur tata letak)." }
     ]
   },
 

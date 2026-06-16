@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Green Spaces and Physical Activity",
     context: "Students compare two sources -- one about the benefits of green spaces (Source A) and one about the benefits of physical activity (Source B) -- and draw a conclusion that uses both.",
+    context_id: "Siswa membandingkan dua sumber — satu tentang manfaat ruang hijau (Sumber A) dan satu tentang manfaat aktivitas fisik (Sumber B) — lalu menarik kesimpulan yang menggunakan keduanya.",
     communicative_goal: "compare two sources explicitly, identify what they agree and disagree on, and draw a conclusion from the comparison",
+    communicative_goal_id: "membandingkan dua sumber secara eksplisit, mengidentifikasi kesamaan dan perbedaannya, serta menarik kesimpulan dari perbandingan tersebut",
     vocabulary_domain: ["green spaces", "physical activity", "public health", "comparison"],
     input_anchor: "two source documents",
     output_anchor: "source comparison",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. We are comparing two sources today — carefully." },
+      { type: "AKSI", text: "Minta siswa mempersiapkan kedua dokumen sumber sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "Consider two topics: green spaces and physical activity. Are they related, or completely separate?" },
+      { type: "AKSI", text: "Tampilkan dua dokumen sumber berdampingan: laporan ruang hijau perkotaan dan laporan kesehatan aktivitas fisik." },
+      { type: "UCAP", text: "Look at both sources. What do they agree on — and where do their focuses differ?" },
+    ],
 
     active_vocabulary: [
       "Both sources",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Two source documents side by side: Source A -- a report about urban green spaces with data about air quality and mood; Source B -- a health report about physical activity with data about exercise frequency and student concentration.", asset_id: null },
-      { id: "visual_2", description: "A comparison frame with four labelled slots: 'Both sources...' (agreement) / 'However, Source A...' (what A focuses on) / 'while Source B...' (what B focuses on) / 'Therefore,...' (conclusion from the comparison).", asset_id: null },
-      { id: "visual_3", description: "Icons: a tree in a park (green spaces), a student running (physical activity), a heart with a healthy pulse (public health), and weighing scales (comparison).", asset_id: null }
+      { id: "visual_1", description: "Two source documents side by side: Source A -- a report about urban green spaces with data about air quality and mood; Source B -- a health report about physical activity with data about exercise frequency and student concentration.", description_id: "Dua dokumen sumber berdampingan: Sumber A -- laporan tentang ruang hijau perkotaan dengan data kualitas udara dan suasana hati; Sumber B -- laporan kesehatan tentang aktivitas fisik dengan data frekuensi olahraga dan konsentrasi siswa.", asset_id: null },
+      { id: "visual_2", description: "A comparison frame with four labelled slots: 'Both sources...' (agreement) / 'However, Source A...' (what A focuses on) / 'while Source B...' (what B focuses on) / 'Therefore,...' (conclusion from the comparison).", description_id: "Kerangka perbandingan dengan empat slot berlabel: 'Both sources...' (kesepakatan) / 'However, Source A...' (fokus A) / 'while Source B...' (fokus B) / 'Therefore,...' (kesimpulan dari perbandingan).", asset_id: null },
+      { id: "visual_3", description: "Icons: a tree in a park (green spaces), a student running (physical activity), a heart with a healthy pulse (public health), and weighing scales (comparison).", description_id: "Ikon: pohon di taman (ruang hijau), siswa berlari (aktivitas fisik), hati dengan detak sehat (kesehatan masyarakat), dan timbangan (perbandingan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher places both hands flat while saying 'Both sources...' -- to signal that both sources agree on the same point." },
-      { id: "gesture_2", description: "Teacher tilts one hand up for Source A and the other hand up in a different direction for Source B while saying 'However, Source A... while Source B...' -- to show they are looking at the same issue from different angles." },
-      { id: "gesture_3", description: "Teacher brings hands forward together while saying 'Therefore,...' -- to signal that the conclusion comes from combining the full comparison, not just one source." }
+      { id: "gesture_1", description: "Teacher places both hands flat while saying 'Both sources...' -- to signal that both sources agree on the same point.", description_id: "Guru meletakkan kedua tangan rata sambil mengucapkan 'Both sources...' -- untuk menandai bahwa kedua sumber sepakat pada poin yang sama." },
+      { id: "gesture_2", description: "Teacher tilts one hand up for Source A and the other hand up in a different direction for Source B while saying 'However, Source A... while Source B...' -- to show they are looking at the same issue from different angles.", description_id: "Guru memiringkan satu tangan ke atas untuk Sumber A dan tangan lain ke arah berbeda untuk Sumber B sambil mengucapkan 'However, Source A... while Source B...' -- untuk menunjukkan keduanya melihat isu yang sama dari sudut berbeda." },
+      { id: "gesture_3", description: "Teacher brings hands forward together while saying 'Therefore,...' -- to signal that the conclusion comes from combining the full comparison, not just one source.", description_id: "Guru menyatukan kedua tangan ke depan sambil mengucapkan 'Therefore,...' -- untuk menandai bahwa kesimpulan muncul dari memadukan keseluruhan perbandingan, bukan hanya satu sumber." }
     ]
   },
 

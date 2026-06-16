@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Homework Policy",
     context: "Students evaluate the school homework policy by identifying a strength and a limitation, maintaining a balanced evaluative stance.",
+    context_id: "Siswa mengevaluasi kebijakan pekerjaan rumah sekolah dengan mengidentifikasi satu kelebihan dan satu kekurangan, mempertahankan sikap evaluatif yang berimbang.",
     communicative_goal: "evaluate strengths and limitations while maintaining a balanced judgment",
+    communicative_goal_id: "mengevaluasi kelebihan dan kekurangan sambil mempertahankan penilaian yang berimbang",
     vocabulary_domain: ["homework", "study habits", "time management", "school rules"],
     input_anchor: "policy summary cards",
     output_anchor: "balanced review",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today we evaluate something that affects all of us." },
+      { type: "AKSI", text: "Minta siswa mempersiapkan diri untuk berpikir secara seimbang, bukan hanya memihak satu sisi." },
+      // HOOK
+      { type: "UCAP", text: "Think honestly: is the homework policy at this school working well? What is one strength and one problem?" },
+      { type: "AKSI", text: "Tampilkan kartu ringkasan kebijakan PR: berapa banyak mata pelajaran, perkiraan waktu, dan aturan sekolah." },
+      { type: "UCAP", text: "Look at this policy summary. What do you think are its strengths and limitations?" },
+    ],
 
     active_vocabulary: [
       "I believe",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Policy summary cards showing the school homework policy: how many subjects assign homework per day, approximate time expected, and the school rule about completion.", asset_id: null },
-      { id: "visual_2", description: "A balanced review frame with two clearly labelled sides: STRENGTH ('One strength is ...') and LIMITATION ('However, ...'), connected by a scale icon showing balance.", asset_id: null },
-      { id: "visual_3", description: "Icons: a homework notebook, a study timetable (study habits), a clock (time management), and a school rulebook (school rules).", asset_id: null }
+      { id: "visual_1", description: "Policy summary cards showing the school homework policy: how many subjects assign homework per day, approximate time expected, and the school rule about completion.", description_id: "Kartu ringkasan kebijakan yang menunjukkan kebijakan pekerjaan rumah sekolah: berapa banyak mata pelajaran yang memberi pekerjaan rumah per hari, perkiraan waktu yang diharapkan, dan aturan sekolah tentang penyelesaiannya.", asset_id: null },
+      { id: "visual_2", description: "A balanced review frame with two clearly labelled sides: STRENGTH ('One strength is ...') and LIMITATION ('However, ...'), connected by a scale icon showing balance.", description_id: "Kerangka ulasan berimbang dengan dua sisi berlabel jelas: STRENGTH ('One strength is ...') dan LIMITATION ('However, ...'), dihubungkan dengan ikon timbangan yang menunjukkan keseimbangan.", asset_id: null },
+      { id: "visual_3", description: "Icons: a homework notebook, a study timetable (study habits), a clock (time management), and a school rulebook (school rules).", description_id: "Ikon: buku catatan pekerjaan rumah, jadwal belajar (kebiasaan belajar), jam (manajemen waktu), dan buku peraturan sekolah (aturan sekolah).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher raises one hand while saying 'One strength is ...' -- to signal a positive finding in the evaluation." },
-      { id: "gesture_2", description: "Teacher slowly tilts the hand to the other side while saying 'However, ...' -- to signal a balancing move toward a limitation, not a rebuttal." },
-      { id: "gesture_3", description: "Teacher holds both hands flat and level while summing up -- to signal that both sides are given equal weight, not one winning." }
+      { id: "gesture_1", description: "Teacher raises one hand while saying 'One strength is ...' -- to signal a positive finding in the evaluation.", description_id: "Guru mengangkat satu tangan sambil mengucapkan 'One strength is ...' -- untuk menandai temuan positif dalam evaluasi." },
+      { id: "gesture_2", description: "Teacher slowly tilts the hand to the other side while saying 'However, ...' -- to signal a balancing move toward a limitation, not a rebuttal.", description_id: "Guru perlahan memiringkan tangan ke sisi lain sambil mengucapkan 'However, ...' -- untuk menandai gerakan penyeimbang ke arah kekurangan, bukan sanggahan." },
+      { id: "gesture_3", description: "Teacher holds both hands flat and level while summing up -- to signal that both sides are given equal weight, not one winning.", description_id: "Guru memegang kedua tangan rata dan setara sambil menyimpulkan -- untuk menandai bahwa kedua sisi diberi bobot yang sama, bukan salah satu yang menang." }
     ]
   },
 

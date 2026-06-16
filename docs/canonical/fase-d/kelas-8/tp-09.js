@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Exercise and Heart Rate",
     context: "Students observe simple activity data and explain why the heart beats faster during physical exercise.",
+    context_id: "Siswa mengamati data aktivitas sederhana dan menjelaskan mengapa jantung berdetak lebih cepat saat berolahraga.",
     communicative_goal: "explain natural cause-and-effect relationships using when...because... patterns",
+    communicative_goal_id: "menjelaskan hubungan sebab-akibat alami menggunakan pola when...because...",
     vocabulary_domain: ["exercise", "heart", "oxygen", "body"],
     input_anchor: "activity infographic",
     output_anchor: "cause-effect explanation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Eyes on the board in a moment." },
+      { type: "AKSI", text: "Tunggu kelas benar-benar diam sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "You know your heart beats faster when you exercise. But do you know WHY?" },
+      { type: "AKSI", text: "Tampilkan infografis: detak jantung naik saat olahraga dan turun saat istirahat, dengan tanda panah sebab-akibat." },
+      { type: "UCAP", text: "Look at this activity infographic. What causes the heart rate to go up — and then back down?" },
+    ],
 
     active_vocabulary: [
       "When",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "An activity infographic showing heart rate rising during exercise and falling during rest, with arrows for cause and effect.", asset_id: null },
-      { id: "visual_2", description: "Cause-effect cards: 'When [condition], [result] happens because [reason]'.", asset_id: null },
-      { id: "visual_3", description: "Icons: a running person, a beating heart, lungs taking in oxygen, a resting person.", asset_id: null }
+      { id: "visual_1", description: "An activity infographic showing heart rate rising during exercise and falling during rest, with arrows for cause and effect.", description_id: "Infografis kegiatan yang menunjukkan detak jantung naik saat olahraga dan turun saat istirahat, dengan tanda panah untuk sebab dan akibat.", asset_id: null },
+      { id: "visual_2", description: "Cause-effect cards: 'When [condition], [result] happens because [reason]'.", description_id: "Kartu sebab-akibat: 'When [condition], [result] happens because [reason]'.", asset_id: null },
+      { id: "visual_3", description: "Icons: a running person, a beating heart, lungs taking in oxygen, a resting person.", description_id: "Ikon: orang berlari, jantung berdetak, paru-paru menghirup oksigen, orang istirahat.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher marks a condition with one hand ('When ...'), then the result with the other, to show the link." },
-      { id: "gesture_2", description: "Teacher points back to the reason while saying 'because ...'." },
-      { id: "gesture_3", description: "Teacher traces the infographic arrow from condition to result to reason." }
+      { id: "gesture_1", description: "Teacher marks a condition with one hand ('When ...'), then the result with the other, to show the link.", description_id: "Guru menandai suatu kondisi dengan satu tangan ('When ...'), lalu hasilnya dengan tangan lain, untuk menunjukkan kaitannya." },
+      { id: "gesture_2", description: "Teacher points back to the reason while saying 'because ...'.", description_id: "Guru menunjuk kembali ke alasannya sambil mengucapkan 'because ...'." },
+      { id: "gesture_3", description: "Teacher traces the infographic arrow from condition to result to reason.", description_id: "Guru menyusuri tanda panah infografis dari kondisi ke hasil ke alasan." }
     ]
   },
 

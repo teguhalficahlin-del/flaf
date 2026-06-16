@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Online Shopping Process",
     context: "Students explain the sequence of buying an item through an online marketplace from choosing a product to receiving it.",
+    context_id: "Siswa menjelaskan urutan membeli barang melalui marketplace online, dari memilih produk hingga menerimanya.",
     communicative_goal: "describe a multi-step process using clear sequencing language",
+    communicative_goal_id: "mendeskripsikan proses bertahap menggunakan bahasa pengurutan yang jelas",
     vocabulary_domain: ["online store", "payment", "delivery", "order"],
     input_anchor: "process diagram",
     output_anchor: "process explanation",
@@ -22,6 +24,17 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Alright everyone, let's get started." },
+      { type: "AKSI", text: "Pastikan siswa sudah siap dan fokus ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Raise your hand — who has ordered something online before?" },
+      { type: "AKSI", text: "Tunggu respons, lalu tanya lanjut: 'From which app? What did you order?'" },
+      { type: "AKSI", text: "Tampilkan diagram proses belanja online di papan atau layar." },
+      { type: "UCAP", text: "You clicked, paid, and the package arrived — but what actually happened in between?" },
+    ],
 
     active_vocabulary: [
       "First,",
@@ -42,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A process diagram of online shopping: search -> cart and payment -> processing and packing -> delivery.", asset_id: null },
-      { id: "visual_2", description: "Sequence cards: 'First, ...', 'Next, ...', 'Then, ...', 'Finally, ...' along an arrow.", asset_id: null },
-      { id: "visual_3", description: "Icons: an online store page, a payment method, a packed box, a delivery to an address.", asset_id: null }
+      { id: "visual_1", description: "A process diagram of online shopping: search -> cart and payment -> processing and packing -> delivery.", description_id: "Diagram proses belanja online: cari -> keranjang dan pembayaran -> proses dan pengepakan -> pengiriman.", asset_id: null },
+      { id: "visual_2", description: "Sequence cards: 'First, ...', 'Next, ...', 'Then, ...', 'Finally, ...' along an arrow.", description_id: "Kartu urutan: 'First, ...', 'Next, ...', 'Then, ...', 'Finally, ...' di sepanjang tanda panah.", asset_id: null },
+      { id: "visual_3", description: "Icons: an online store page, a payment method, a packed box, a delivery to an address.", description_id: "Ikon: halaman toko online, metode pembayaran, kotak yang sudah dikemas, pengiriman ke alamat.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher counts the stages on the diagram (one, two, three, four) while saying 'First, ... Next, ... Then, ... Finally, ...'." },
-      { id: "gesture_2", description: "Teacher points to a generic 'customer' figure on the diagram (not themselves) to show an impersonal subject." },
-      { id: "gesture_3", description: "Teacher draws a repeating loop in the air to show this is how the process usually works, every time." }
+      { id: "gesture_1", description: "Teacher counts the stages on the diagram (one, two, three, four) while saying 'First, ... Next, ... Then, ... Finally, ...'.", description_id: "Guru menghitung tahapan di diagram (satu, dua, tiga, empat) sambil mengucapkan 'First, ... Next, ... Then, ... Finally, ...'." },
+      { id: "gesture_2", description: "Teacher points to a generic 'customer' figure on the diagram (not themselves) to show an impersonal subject.", description_id: "Guru menunjuk tokoh 'pelanggan' yang umum di diagram (bukan dirinya sendiri) untuk menunjukkan subjek yang tidak personal." },
+      { id: "gesture_3", description: "Teacher draws a repeating loop in the air to show this is how the process usually works, every time.", description_id: "Guru menggambar lingkaran berulang di udara untuk menunjukkan bahwa proses ini biasanya berjalan seperti ini, setiap kali." }
     ]
   },
 

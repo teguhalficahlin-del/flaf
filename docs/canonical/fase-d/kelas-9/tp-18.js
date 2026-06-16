@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Three Years of Learning, Growing, and Communicating",
     context: "Students look back on their English learning journey from Acquire (Grade 7) through Expand (Grade 8) to Integrate (Grade 9), reflecting on projects, discoveries, collaboration, and personal growth while articulating their readiness for senior high school.",
+    context_id: "Siswa menengok kembali perjalanan belajar Bahasa Inggris mereka dari Acquire (Kelas 7) melalui Expand (Kelas 8) hingga Integrate (Kelas 9), merefleksikan proyek, penemuan, kolaborasi, dan pertumbuhan pribadi sambil merumuskan kesiapan mereka memasuki SMA.",
     communicative_goal: "integrate past learning, present identity, and future goals into a coherent personal reflection that marks the end of a learning journey and the beginning of the next",
+    communicative_goal_id: "memadukan pembelajaran masa lalu, identitas saat ini, dan tujuan masa depan menjadi refleksi pribadi yang koheren, yang menandai akhir satu perjalanan belajar dan awal perjalanan berikutnya",
     vocabulary_domain: ["growth", "experience", "future goals", "lifelong learning"],
     input_anchor: "challenge reflection",
     output_anchor: "integrated personal reflection",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome to our final session together in Kelas 9. Please take a moment to prepare." },
+      { type: "AKSI", text: "Berikan waktu reflektif sebelum memulai sesi penutup Fase D." },
+      // HOOK
+      { type: "UCAP", text: "Three years of English learning — from Kelas 7 to today. What has changed most about how you communicate?" },
+      { type: "AKSI", text: "Tampilkan garis waktu perjalanan tiga tahun: K7 Acquire → K8 Expand → K9 Integrate → Fase E." },
+      { type: "UCAP", text: "Look at this learning journey timeline. Where do you see yourself growing the most?" },
+    ],
 
     active_vocabulary: [
       "Looking back,",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A three-year journey timeline with key milestones: Kelas 7 Acquire (first self-introduction, animal description, recount) → Kelas 8 Expand (narrative arc, email, presentation opening, exposition) → Kelas 9 Integrate (argumentation, review, presentation, synthesis, problem-solution, reflection) → Fase E (arrow pointing forward, open horizon).", asset_id: null },
-      { id: "visual_2", description: "A five-component frame with labelled slots: 'Looking back,...' (retrospection) / 'I have learned...' (integrated learning) / 'In the future, I will...' (forward orientation) / 'because...' (personal reason) / 'I am ready to...' (readiness statement).", asset_id: null },
-      { id: "visual_3", description: "Icons: a rearview mirror over a road behind (looking back / growth), an open book with light rays (experience and learning), a road pointing forward toward a horizon (future goals), and a continuous learning spiral (lifelong learning).", asset_id: null }
+      { id: "visual_1", description: "A three-year journey timeline with key milestones: Kelas 7 Acquire (first self-introduction, animal description, recount) → Kelas 8 Expand (narrative arc, email, presentation opening, exposition) → Kelas 9 Integrate (argumentation, review, presentation, synthesis, problem-solution, reflection) → Fase E (arrow pointing forward, open horizon).", description_id: "Garis waktu perjalanan tiga tahun dengan tonggak utama: Kelas 7 Acquire (perkenalan diri pertama, deskripsi hewan, cerita ulang) → Kelas 8 Expand (alur naratif, email, pembuka presentasi, eksposisi) → Kelas 9 Integrate (argumentasi, ulasan, presentasi, sintesis, masalah-solusi, refleksi) → Fase E (tanda panah menunjuk ke depan, horizon terbuka).", asset_id: null },
+      { id: "visual_2", description: "A five-component frame with labelled slots: 'Looking back,...' (retrospection) / 'I have learned...' (integrated learning) / 'In the future, I will...' (forward orientation) / 'because...' (personal reason) / 'I am ready to...' (readiness statement).", description_id: "Kerangka lima komponen dengan slot berlabel: 'Looking back,...' (retrospeksi) / 'I have learned...' (pembelajaran terpadu) / 'In the future, I will...' (orientasi ke depan) / 'because...' (alasan pribadi) / 'I am ready to...' (pernyataan kesiapan).", asset_id: null },
+      { id: "visual_3", description: "Icons: a rearview mirror over a road behind (looking back / growth), an open book with light rays (experience and learning), a road pointing forward toward a horizon (future goals), and a continuous learning spiral (lifelong learning).", description_id: "Ikon: kaca spion di atas jalan di belakang (menengok ke belakang / pertumbuhan), buku terbuka dengan sinar cahaya (pengalaman dan pembelajaran), jalan menunjuk ke depan ke arah horizon (tujuan masa depan), dan spiral pembelajaran berkelanjutan (pembelajaran sepanjang hayat).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher gestures backward over one shoulder while saying 'Looking back,...' -- to signal genuine retrospection that takes in the whole journey, not nostalgia and not a summary of events." },
-      { id: "gesture_2", description: "Teacher places hand on chest and then sweeps it outward while saying 'I have learned...' -- to signal that this learning is owned personally and accumulated, not a single moment." },
-      { id: "gesture_3", description: "Teacher stands tall and extends both hands forward and open while saying 'I am ready to...' -- to signal genuine readiness and confidence: the culminating gesture of the entire Fase D arc, the moment of stepping forward." }
+      { id: "gesture_1", description: "Teacher gestures backward over one shoulder while saying 'Looking back,...' -- to signal genuine retrospection that takes in the whole journey, not nostalgia and not a summary of events.", description_id: "Guru memberi gestur ke belakang melewati bahu sambil mengucapkan 'Looking back,...' -- untuk menandai retrospeksi sejati yang merangkum seluruh perjalanan, bukan nostalgia dan bukan ringkasan peristiwa." },
+      { id: "gesture_2", description: "Teacher places hand on chest and then sweeps it outward while saying 'I have learned...' -- to signal that this learning is owned personally and accumulated, not a single moment.", description_id: "Guru meletakkan tangan di dada lalu menyapukannya ke luar sambil mengucapkan 'I have learned...' -- untuk menandai bahwa pembelajaran ini dimiliki secara pribadi dan terakumulasi, bukan satu momen tunggal." },
+      { id: "gesture_3", description: "Teacher stands tall and extends both hands forward and open while saying 'I am ready to...' -- to signal genuine readiness and confidence: the culminating gesture of the entire Fase D arc, the moment of stepping forward.", description_id: "Guru berdiri tegak dan merentangkan kedua tangan ke depan dan terbuka sambil mengucapkan 'I am ready to...' -- untuk menandai kesiapan dan kepercayaan diri yang sejati: gestur puncak dari seluruh alur Fase D, momen melangkah ke depan." }
     ]
   },
 

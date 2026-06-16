@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Insects Around Us",
     context: "Students observe pictures of common insects and describe their characteristics and simple functions.",
+    context_id: "Siswa mengamati gambar serangga umum dan mendeskripsikan ciri-ciri serta fungsi sederhananya.",
     communicative_goal: "connect characteristics with simple functions using for/to expressions",
+    communicative_goal_id: "menghubungkan ciri-ciri dengan fungsi sederhana menggunakan ungkapan for/to",
     vocabulary_domain: ["insects", "body parts", "habitats", "functions"],
     input_anchor: "nature photo cards",
     output_anchor: "mini description card",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! Eyes up front, please." },
+      { type: "AKSI", text: "Tunggu kelas tenang dan perhatian terfokus ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Can you name any small animals that live near flowers or in gardens?" },
+      { type: "AKSI", text: "Tunjukkan kartu foto alam serangga: semut, lebah, kupu-kupu, kepik di habitatnya." },
+      { type: "UCAP", text: "Look at these insects. Do you know what they are good for?" },
+    ],
 
     active_vocabulary: [
       "It is",
@@ -45,15 +57,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Nature photo cards of common insects in their habitats: an ant in the garden, a bee on a flower, a butterfly on a leaf, a ladybug on a plant.", asset_id: null },
-      { id: "visual_2", description: "Body-part icons (legs, wings, antennae) and habitat icons (garden, flower, leaf) for describing the insects.", asset_id: null },
-      { id: "visual_3", description: "Function cards: an ant carrying food, a bee making honey, showing 'helpful for ... / important to ...'.", asset_id: null }
+      { id: "visual_1", description: "Nature photo cards of common insects in their habitats: an ant in the garden, a bee on a flower, a butterfly on a leaf, a ladybug on a plant.", description_id: "Kartu foto alam serangga umum di habitatnya: semut di taman, lebah di bunga, kupu-kupu di daun, kepik di tanaman.", asset_id: null },
+      { id: "visual_2", description: "Body-part icons (legs, wings, antennae) and habitat icons (garden, flower, leaf) for describing the insects.", description_id: "Ikon bagian tubuh (kaki, sayap, antena) dan ikon habitat (taman, bunga, daun) untuk mendeskripsikan serangga.", asset_id: null },
+      { id: "visual_3", description: "Function cards: an ant carrying food, a bee making honey, showing 'helpful for ... / important to ...'.", description_id: "Kartu fungsi: semut membawa makanan, lebah membuat madu, menunjukkan 'helpful for ... / important to ...'.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to an insect photo while saying the adjective in 'It is ...'." },
-      { id: "gesture_2", description: "Teacher mimes the function (walking fingers for carrying food, a circling hand for making honey) while saying 'for ... / to ...'." },
-      { id: "gesture_3", description: "Teacher points to a body part on the card while saying 'It has ...' as support before the function." }
+      { id: "gesture_1", description: "Teacher points to an insect photo while saying the adjective in 'It is ...'.", description_id: "Guru menunjuk foto serangga sambil mengucapkan kata sifat dalam 'It is ...'." },
+      { id: "gesture_2", description: "Teacher mimes the function (walking fingers for carrying food, a circling hand for making honey) while saying 'for ... / to ...'.", description_id: "Guru memperagakan fungsinya (jari berjalan untuk membawa makanan, tangan berputar untuk membuat madu) sambil mengucapkan 'for ... / to ...'." },
+      { id: "gesture_3", description: "Teacher points to a body part on the card while saying 'It has ...' as support before the function.", description_id: "Guru menunjuk bagian tubuh pada kartu sambil mengucapkan 'It has ...' sebagai pendukung sebelum fungsinya." }
     ]
   },
 

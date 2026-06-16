@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "The Old Storage Room Discovery",
     context: "Students close a formal presentation about the storage room discovery, reinforce the main message, and respond to audience questions.",
+    context_id: "Siswa menutup presentasi formal tentang penemuan gudang, menegaskan kembali pesan utama, dan menjawab pertanyaan audiens.",
     communicative_goal: "conclude a presentation, reinforce the main message, and interact with the audience through question-and-answer exchange",
+    communicative_goal_id: "menutup presentasi, menegaskan kembali pesan utama, dan berinteraksi dengan audiens melalui sesi tanya jawab",
     vocabulary_domain: ["concluding expressions", "question handling", "school heritage", "discussion"],
     input_anchor: "organized presentation body",
     output_anchor: "full presentation with Q&A",
@@ -22,6 +24,17 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome back, everyone. Let's bring all our focus to the front." },
+      { type: "AKSI", text: "Tunggu kelas kondusif sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "You have opened your presentation. You have presented your main points. Now — what is left?" },
+      { type: "AKSI", text: "Beri jeda singkat, biarkan siswa menjawab." },
+      { type: "AKSI", text: "Tampilkan kerangka urutan penutup: SUMMARY / RECOMMENDATION / THANK YOU / INVITE QUESTIONS / RESPOND." },
+      { type: "UCAP", text: "And after the closing — the audience gets to ask you questions. Are you prepared to respond?" },
+    ],
 
     active_vocabulary: [
       "In conclusion,",
@@ -41,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A closing sequence frame with five labelled slots: SUMMARY ('In conclusion,...') / RECOMMENDATION ('Therefore,...') / THANK YOU ('Thank you for listening.') / INVITE QUESTIONS ('Do you have any questions?') / RESPOND ('That\\'s an interesting question...')", asset_id: null },
-      { id: "visual_2", description: "A parallel closing comparison: email closing ('See you soon, Dito and Wulan') next to presentation closing ('Thank you for listening. Do you have any questions?') -- same functional move, different register.", asset_id: null },
-      { id: "visual_3", description: "A Q&A simulation setup: one student at the front, others with question cards -- showing the formal Q&A exchange as part of a presentation, not a casual class discussion.", asset_id: null }
+      { id: "visual_1", description: "A closing sequence frame with five labelled slots: SUMMARY ('In conclusion,...') / RECOMMENDATION ('Therefore,...') / THANK YOU ('Thank you for listening.') / INVITE QUESTIONS ('Do you have any questions?') / RESPOND ('That\\'s an interesting question...')", description_id: "Kerangka urutan penutup dengan lima slot berlabel: SUMMARY ('In conclusion,...') / RECOMMENDATION ('Therefore,...') / THANK YOU ('Thank you for listening.') / INVITE QUESTIONS ('Do you have any questions?') / RESPOND ('That's an interesting question...')", asset_id: null },
+      { id: "visual_2", description: "A parallel closing comparison: email closing ('See you soon, Dito and Wulan') next to presentation closing ('Thank you for listening. Do you have any questions?') -- same functional move, different register.", description_id: "Perbandingan penutup paralel: penutup email ('See you soon, Dito and Wulan') di sebelah penutup presentasi ('Thank you for listening. Do you have any questions?') -- gerakan fungsional yang sama, register yang berbeda.", asset_id: null },
+      { id: "visual_3", description: "A Q&A simulation setup: one student at the front, others with question cards -- showing the formal Q&A exchange as part of a presentation, not a casual class discussion.", description_id: "Setup simulasi tanya jawab: satu siswa di depan, yang lain memegang kartu pertanyaan -- menunjukkan sesi tanya jawab formal sebagai bagian dari presentasi, bukan diskusi kelas yang santai.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher brings hands slowly together while saying 'In conclusion,...' -- to signal drawing all threads together at the end of the presentation." },
-      { id: "gesture_2", description: "Teacher bows slightly while saying 'Thank you for listening.' -- to model the formal close of a presentation addressed to the whole audience." },
-      { id: "gesture_3", description: "Teacher tilts head and nods attentively while saying 'That\\'s an interesting question' -- to model the formal Q&A response opener: acknowledge before answering, not 'Yes, you\\'re right' or a direct rebuttal." }
+      { id: "gesture_1", description: "Teacher brings hands slowly together while saying 'In conclusion,...' -- to signal drawing all threads together at the end of the presentation.", description_id: "Guru menyatukan kedua tangan perlahan sambil mengucapkan 'In conclusion,...' -- untuk menandai menyatukan semua alur di akhir presentasi." },
+      { id: "gesture_2", description: "Teacher bows slightly while saying 'Thank you for listening.' -- to model the formal close of a presentation addressed to the whole audience.", description_id: "Guru membungkuk sedikit sambil mengucapkan 'Thank you for listening.' -- untuk mencontohkan penutup formal presentasi yang ditujukan ke seluruh audiens." },
+      { id: "gesture_3", description: "Teacher tilts head and nods attentively while saying 'That\\'s an interesting question' -- to model the formal Q&A response opener: acknowledge before answering, not 'Yes, you\\'re right' or a direct rebuttal.", description_id: "Guru memiringkan kepala dan mengangguk penuh perhatian sambil mengucapkan 'That's an interesting question' -- untuk mencontohkan pembuka respons tanya jawab formal: mengakui sebelum menjawab, bukan 'Yes, you're right' atau sanggahan langsung." }
     ]
   },
 

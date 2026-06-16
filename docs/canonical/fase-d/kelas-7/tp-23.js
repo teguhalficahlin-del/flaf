@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "The Lost Firefly",
     context: "Other small animals work together to help the firefly return home before sunrise.",
+    context_id: "Hewan-hewan kecil lainnya bekerja sama membantu kunang-kunang itu pulang sebelum matahari terbit.",
     communicative_goal: "connect events to build a simple resolution",
+    communicative_goal_id: "menghubungkan peristiwa untuk membangun penyelesaian sederhana",
     vocabulary_domain: ["help", "rabbit", "bird", "home"],
     input_anchor: "story board",
     output_anchor: "group storytelling",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! Are you ready to find out how the story ends?" },
+      { type: "AKSI", text: "Tanya kelas apakah mereka ingat masalah yang dialami kunang-kunang." },
+      // HOOK
+      { type: "UCAP", text: "The little firefly was lost in the dark forest. Who do you think could help it?" },
+      { type: "AKSI", text: "Tampilkan papan cerita penyelesaian: kelinci dan burung menemukan kunang-kunang, menunjukkan jalan, kunang-kunang tiba di rumah." },
+      { type: "UCAP", text: "Look at this story board. Who helped the little firefly get home?" },
+    ],
 
     active_vocabulary: [
       "So,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A story board of the resolution: a rabbit and a bird finding the lost firefly, the rabbit showing the way, the bird flying ahead, and the firefly reaching home at dawn.", asset_id: null },
-      { id: "visual_2", description: "Resolution connector cards: 'So,' (problem leads to help), 'Then, ... and ...' (two helping actions), 'Finally,' (home).", asset_id: null },
-      { id: "visual_3", description: "The characters helping together: rabbit, bird, and firefly heading home before sunrise.", asset_id: null }
+      { id: "visual_1", description: "A story board of the resolution: a rabbit and a bird finding the lost firefly, the rabbit showing the way, the bird flying ahead, and the firefly reaching home at dawn.", description_id: "Papan cerita penyelesaian: kelinci dan burung menemukan kunang-kunang yang tersesat, kelinci menunjukkan jalan, burung terbang di depan, dan kunang-kunang tiba di rumah saat subuh.", asset_id: null },
+      { id: "visual_2", description: "Resolution connector cards: 'So,' (problem leads to help), 'Then, ... and ...' (two helping actions), 'Finally,' (home).", description_id: "Kartu penghubung penyelesaian: 'So,' (masalah mengarah ke bantuan), 'Then, ... and ...' (dua tindakan menolong), 'Finally,' (rumah).", asset_id: null },
+      { id: "visual_3", description: "The characters helping together: rabbit, bird, and firefly heading home before sunrise.", description_id: "Para tokoh saling membantu: kelinci, burung, dan kunang-kunang menuju rumah sebelum matahari terbit.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher leads one hand into the other (a 'this led to that' motion) while saying 'So, ...'." },
-      { id: "gesture_2", description: "Teacher shows two linked helping actions (rabbit showing the way, bird flying) while saying 'Then, ... and ...'." },
-      { id: "gesture_3", description: "Teacher brings both hands to a resolved close while saying 'Finally, ...' (home)." }
+      { id: "gesture_1", description: "Teacher leads one hand into the other (a 'this led to that' motion) while saying 'So, ...'.", description_id: "Guru mengarahkan satu tangan ke tangan lainnya (gerakan 'ini menyebabkan itu') sambil mengucapkan 'So, ...'." },
+      { id: "gesture_2", description: "Teacher shows two linked helping actions (rabbit showing the way, bird flying) while saying 'Then, ... and ...'.", description_id: "Guru menunjukkan dua tindakan menolong yang terhubung (kelinci menunjukkan jalan, burung terbang) sambil mengucapkan 'Then, ... and ...'." },
+      { id: "gesture_3", description: "Teacher brings both hands to a resolved close while saying 'Finally, ...' (home).", description_id: "Guru menyatukan kedua tangan sebagai penutup yang terselesaikan sambil mengucapkan 'Finally, ...' (rumah)." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Old Storage Room Discovery",
     context: "Students open a formal presentation about the old storage room discovery, greeting the audience, introducing themselves, and stating the presentation purpose.",
+    context_id: "Siswa membuka presentasi formal tentang penemuan gudang tua, menyapa audiens, memperkenalkan diri, dan menyatakan tujuan presentasi.",
     communicative_goal: "open a presentation by greeting the audience, introducing the speaker, and establishing a clear presentation purpose",
+    communicative_goal_id: "membuka presentasi dengan menyapa audiens, memperkenalkan pembicara, dan menetapkan tujuan presentasi yang jelas",
     vocabulary_domain: ["presentation expressions", "school facilities", "historical objects", "discovery"],
     input_anchor: "presentation scenario",
     output_anchor: "presentation opening",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, and welcome. Please stand by your presentations today." },
+      { type: "AKSI", text: "Posisikan ruangan untuk sesi presentasi formal jika memungkinkan." },
+      // HOOK
+      { type: "UCAP", text: "You have investigated the old storage room. Today you present that discovery formally. Are you ready?" },
+      { type: "AKSI", text: "Tampilkan setup skenario: Dito dan Wulan berdiri di depan kelas, layar di belakang, menghadap audiens dan guru." },
+      { type: "UCAP", text: "Look at this presentation setup. What should a formal presentation opening include?" },
+    ],
 
     active_vocabulary: [
       "Good morning,",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A presentation scenario setup: two students (Dito and Wulan) standing at the front of a classroom with a screen behind them, facing an audience of classmates and a teacher.", asset_id: null },
-      { id: "visual_2", description: "A presentation opening frame with four labelled slots: GREET ('Good morning,...') / INTRODUCE ('My name is...') / TOPIC ('Today I would like to present...') / PURPOSE ('The purpose of this presentation is...').", asset_id: null },
-      { id: "visual_3", description: "A side-by-side comparison of register: an email opening ('Hi everyone, I\\'m writing to share...') next to a presentation opening ('Good morning. My name is... The purpose of this presentation is...') -- showing the same communicative move in two different registers.", asset_id: null }
+      { id: "visual_1", description: "A presentation scenario setup: two students (Dito and Wulan) standing at the front of a classroom with a screen behind them, facing an audience of classmates and a teacher.", description_id: "Setup skenario presentasi: dua siswa (Dito dan Wulan) berdiri di depan kelas dengan layar di belakang mereka, menghadap audiens teman sekelas dan seorang guru.", asset_id: null },
+      { id: "visual_2", description: "A presentation opening frame with four labelled slots: GREET ('Good morning,...') / INTRODUCE ('My name is...') / TOPIC ('Today I would like to present...') / PURPOSE ('The purpose of this presentation is...').", description_id: "Kerangka pembuka presentasi dengan empat slot berlabel: GREET ('Good morning,...') / INTRODUCE ('My name is...') / TOPIC ('Today I would like to present...') / PURPOSE ('The purpose of this presentation is...').", asset_id: null },
+      { id: "visual_3", description: "A side-by-side comparison of register: an email opening ('Hi everyone, I\\'m writing to share...') next to a presentation opening ('Good morning. My name is... The purpose of this presentation is...') -- showing the same communicative move in two different registers.", description_id: "Perbandingan berdampingan register: pembuka email ('Hi everyone, I'm writing to share...') di sebelah pembuka presentasi ('Good morning. My name is... The purpose of this presentation is...') -- menunjukkan gerakan komunikatif yang sama dalam dua register berbeda.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher nods to the audience while saying 'Good morning, everyone.' -- to model addressing the whole room, not just one person." },
-      { id: "gesture_2", description: "Teacher places a hand on chest while saying 'My name is ...' -- to signal formal self-introduction to an audience, not a casual personal greeting." },
-      { id: "gesture_3", description: "Teacher holds an open hand forward while saying 'The purpose of this presentation is ...' -- to signal stating a clear purpose for the audience, equivalent to 'I\\'m writing to ...' in an email but now spoken formally." }
+      { id: "gesture_1", description: "Teacher nods to the audience while saying 'Good morning, everyone.' -- to model addressing the whole room, not just one person.", description_id: "Guru mengangguk ke audiens sambil mengucapkan 'Good morning, everyone.' -- untuk mencontohkan menyapa seluruh ruangan, bukan hanya satu orang." },
+      { id: "gesture_2", description: "Teacher places a hand on chest while saying 'My name is ...' -- to signal formal self-introduction to an audience, not a casual personal greeting.", description_id: "Guru meletakkan tangan di dada sambil mengucapkan 'My name is ...' -- untuk menandai perkenalan diri formal kepada audiens, bukan sapaan pribadi yang santai." },
+      { id: "gesture_3", description: "Teacher holds an open hand forward while saying 'The purpose of this presentation is ...' -- to signal stating a clear purpose for the audience, equivalent to 'I\\'m writing to ...' in an email but now spoken formally.", description_id: "Guru membuka satu telapak tangan ke depan sambil mengucapkan 'The purpose of this presentation is ...' -- untuk menandai pernyataan tujuan yang jelas bagi audiens, setara dengan 'I'm writing to ...' di email tetapi kini diucapkan secara formal." }
     ]
   },
 

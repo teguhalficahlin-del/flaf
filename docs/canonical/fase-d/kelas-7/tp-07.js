@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Neighborhood Park",
     context: "Students explore a simple map or picture and describe what exists in the park.",
+    context_id: "Siswa menjelajahi peta atau gambar sederhana dan mendeskripsikan apa yang ada di taman.",
     communicative_goal: "describe locations using there is/there are expressions",
+    communicative_goal_id: "mendeskripsikan lokasi menggunakan ungkapan there is/there are",
     vocabulary_domain: ["park", "trees", "playground", "facilities"],
     input_anchor: "park map",
     output_anchor: "map description",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Hello, everyone! Great to see you all here." },
+      { type: "AKSI", text: "Minta siswa menyimpan benda-benda di meja agar fokus." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever been to a park? What did you see there?" },
+      { type: "AKSI", text: "Tampilkan peta taman sederhana dengan area bermain, pohon, kolam, bangku, dan toilet." },
+      { type: "UCAP", text: "Look at this park map. What can you find in this park?" },
+    ],
 
     active_vocabulary: [
       "There is",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A simple park map showing a playground, several trees, a pond, benches, and toilets, each marked with a small labeled icon.", asset_id: null },
-      { id: "visual_2", description: "Place-expression cards with arrows: 'in the park', 'near the playground', 'next to the pond'.", asset_id: null },
-      { id: "visual_3", description: "A one-versus-many card: one bench (for 'There is') and three benches (for 'There are').", asset_id: null }
+      { id: "visual_1", description: "A simple park map showing a playground, several trees, a pond, benches, and toilets, each marked with a small labeled icon.", description_id: "Peta taman sederhana yang menunjukkan area bermain, beberapa pohon, kolam, bangku, dan toilet, masing-masing ditandai dengan ikon kecil berlabel.", asset_id: null },
+      { id: "visual_2", description: "Place-expression cards with arrows: 'in the park', 'near the playground', 'next to the pond'.", description_id: "Kartu ungkapan tempat dengan tanda panah: 'in the park', 'near the playground', 'next to the pond'.", asset_id: null },
+      { id: "visual_3", description: "A one-versus-many card: one bench (for 'There is') and three benches (for 'There are').", description_id: "Kartu satu-versus-banyak: satu bangku (untuk 'There is') dan tiga bangku (untuk 'There are').", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to a single item on the map with one finger while saying 'There is ...'." },
-      { id: "gesture_2", description: "Teacher sweeps an open hand across several items on the map while saying 'There are ...'." },
-      { id: "gesture_3", description: "Teacher taps the location on the map while saying the place expression ('in the park', 'near the playground')." }
+      { id: "gesture_1", description: "Teacher points to a single item on the map with one finger while saying 'There is ...'.", description_id: "Guru menunjuk satu benda di peta dengan satu jari sambil mengucapkan 'There is ...'." },
+      { id: "gesture_2", description: "Teacher sweeps an open hand across several items on the map while saying 'There are ...'.", description_id: "Guru menyapukan tangan terbuka melintasi beberapa benda di peta sambil mengucapkan 'There are ...'." },
+      { id: "gesture_3", description: "Teacher taps the location on the map while saying the place expression ('in the park', 'near the playground').", description_id: "Guru menepuk lokasi di peta sambil mengucapkan ungkapan tempatnya ('in the park', 'near the playground')." }
     ]
   },
 

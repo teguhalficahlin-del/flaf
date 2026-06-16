@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Safe Internet Use",
     context: "Students create simple digital safety reminders for friends.",
+    context_id: "Siswa membuat pengingat keamanan digital sederhana untuk teman-teman.",
     communicative_goal: "give rules, warnings, and helpful tips",
+    communicative_goal_id: "memberikan aturan, peringatan, dan tips yang bermanfaat",
     vocabulary_domain: ["password", "account", "privacy", "internet"],
     input_anchor: "digital poster",
     output_anchor: "class safety poster",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Hello, class! Settle down and listen up." },
+      { type: "AKSI", text: "Tunggu seluruh siswa fokus sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "Quick check — do you have a password on your phone or tablet?" },
+      { type: "AKSI", text: "Tampilkan poster keamanan digital dengan ikon: gembok, kartu profil, perisai, dan globe wifi." },
+      { type: "UCAP", text: "Look at this digital safety poster. What things should we protect online?" },
+    ],
 
     active_vocabulary: [
       "Don't",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A digital safety poster with icons: a padlock (password), a profile card (account), a shield (privacy), and a globe with wifi (internet).", asset_id: null },
-      { id: "visual_2", description: "Rule cards: a crossed circle for 'Don't', a warning sign for 'Be careful', and a checkmark for 'Always'.", asset_id: null },
-      { id: "visual_3", description: "Scenario icons: sharing a password (crossed out), logging out of an account, choosing a strong password.", asset_id: null }
+      { id: "visual_1", description: "A digital safety poster with icons: a padlock (password), a profile card (account), a shield (privacy), and a globe with wifi (internet).", description_id: "Poster keamanan digital dengan ikon: gembok (kata sandi), kartu profil (akun), perisai (privasi), dan globe dengan wifi (internet).", asset_id: null },
+      { id: "visual_2", description: "Rule cards: a crossed circle for 'Don't', a warning sign for 'Be careful', and a checkmark for 'Always'.", description_id: "Kartu aturan: lingkaran disilang untuk 'Don't', tanda peringatan untuk 'Be careful', dan tanda centang untuk 'Always'.", asset_id: null },
+      { id: "visual_3", description: "Scenario icons: sharing a password (crossed out), logging out of an account, choosing a strong password.", description_id: "Ikon skenario: membagikan kata sandi (disilang), keluar dari akun, memilih kata sandi yang kuat.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher crosses both hands in an X while saying 'Don't ...'." },
-      { id: "gesture_2", description: "Teacher holds up an open palm in a cautious 'stop and check' gesture while saying 'Be careful ...'." },
-      { id: "gesture_3", description: "Teacher makes a firm repeated nod (a checkmark in the air) while saying 'Always ...'." }
+      { id: "gesture_1", description: "Teacher crosses both hands in an X while saying 'Don't ...'.", description_id: "Guru menyilangkan kedua tangan membentuk X sambil mengucapkan 'Don't ...'." },
+      { id: "gesture_2", description: "Teacher holds up an open palm in a cautious 'stop and check' gesture while saying 'Be careful ...'.", description_id: "Guru mengangkat telapak tangan terbuka dengan gestur hati-hati 'berhenti dan periksa' sambil mengucapkan 'Be careful ...'." },
+      { id: "gesture_3", description: "Teacher makes a firm repeated nod (a checkmark in the air) while saying 'Always ...'.", description_id: "Guru mengangguk tegas berulang (tanda centang di udara) sambil mengucapkan 'Always ...'." }
     ]
   },
 

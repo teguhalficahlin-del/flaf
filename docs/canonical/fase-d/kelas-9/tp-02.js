@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Homework Policy",
     context: "Students acknowledge an alternative view about homework policy and defend their own supported position with reasons and examples.",
+    context_id: "Siswa mengakui pandangan alternatif tentang kebijakan pekerjaan rumah dan mempertahankan posisi mereka sendiri dengan alasan dan contoh.",
     communicative_goal: "acknowledge an alternative position while defending a supported personal stance",
+    communicative_goal_id: "mengakui posisi alternatif sambil mempertahankan pendirian pribadi yang didukung alasan",
     vocabulary_domain: ["homework", "learning", "time", "balance"],
     input_anchor: "opinion cards",
     output_anchor: "position defence",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome, class. Today requires careful reasoning, so let us begin calmly." },
+      { type: "AKSI", text: "Kondisikan kelas untuk sesi yang lebih terstruktur dari biasanya." },
+      // HOOK
+      { type: "UCAP", text: "Some students argue that homework wastes their time. Do you agree — or is there another way to see it?" },
+      { type: "AKSI", text: "Tampilkan dua siswa dengan balon kata berlawanan: 'I think homework wastes our time.' vs 'I think homework helps our learning.'" },
+      { type: "UCAP", text: "Look at these two viewpoints. Before defending your own, can you state the other side fairly?" },
+    ],
 
     active_vocabulary: [
       "Some people think",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Two students with opposing speech bubbles: 'I think homework wastes our time.' (left) and 'I think homework helps our learning.' (right) -- showing the acknowledge-counter setup.", asset_id: null },
-      { id: "visual_2", description: "An argument frame split into two columns: 'Some people think ...' (left, greyed) and 'However, I believe ... because ...' (right, highlighted), then 'One reason is ... For example, ...' below both.", asset_id: null },
-      { id: "visual_3", description: "Icons: a homework notebook, an open book (learning), a clock (time), and a balance scale (balance).", asset_id: null }
+      { id: "visual_1", description: "Two students with opposing speech bubbles: 'I think homework wastes our time.' (left) and 'I think homework helps our learning.' (right) -- showing the acknowledge-counter setup.", description_id: "Dua siswa dengan balon kata yang berlawanan: 'I think homework wastes our time.' (kiri) dan 'I think homework helps our learning.' (kanan) -- menunjukkan setup mengakui-lalu-menyanggah.", asset_id: null },
+      { id: "visual_2", description: "An argument frame split into two columns: 'Some people think ...' (left, greyed) and 'However, I believe ... because ...' (right, highlighted), then 'One reason is ... For example, ...' below both.", description_id: "Kerangka argumen terbagi dua kolom: 'Some people think ...' (kiri, abu-abu) dan 'However, I believe ... because ...' (kanan, disorot), lalu 'One reason is ... For example, ...' di bawah keduanya.", asset_id: null },
+      { id: "visual_3", description: "Icons: a homework notebook, an open book (learning), a clock (time), and a balance scale (balance).", description_id: "Ikon: buku catatan pekerjaan rumah, buku terbuka (belajar), jam (waktu), dan timbangan (keseimbangan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher nods respectfully while saying 'Some people think ...' -- to model acknowledging the other view without dismissing it." },
-      { id: "gesture_2", description: "Teacher turns slightly and raises a flat hand while saying 'However, I believe ...' -- to signal a counter-position without aggression." },
-      { id: "gesture_3", description: "Teacher raises one finger for 'One reason is ...' and gestures forward while saying 'For example, ...' -- to signal organized support following the counter." }
+      { id: "gesture_1", description: "Teacher nods respectfully while saying 'Some people think ...' -- to model acknowledging the other view without dismissing it.", description_id: "Guru mengangguk dengan hormat sambil mengucapkan 'Some people think ...' -- untuk mencontohkan mengakui pandangan lain tanpa mengabaikannya." },
+      { id: "gesture_2", description: "Teacher turns slightly and raises a flat hand while saying 'However, I believe ...' -- to signal a counter-position without aggression.", description_id: "Guru berbalik sedikit dan mengangkat telapak tangan rata sambil mengucapkan 'However, I believe ...' -- untuk menandai posisi tandingan tanpa nada agresif." },
+      { id: "gesture_3", description: "Teacher raises one finger for 'One reason is ...' and gestures forward while saying 'For example, ...' -- to signal organized support following the counter.", description_id: "Guru mengangkat satu jari untuk 'One reason is ...' dan memberi gestur ke depan sambil mengucapkan 'For example, ...' -- untuk menandai dukungan terorganisir setelah sanggahan." }
     ]
   },
 

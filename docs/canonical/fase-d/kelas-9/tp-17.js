@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Overcoming the Fear of Speaking and Presenting",
     context: "Students reflect on personal challenges they experienced while presenting ideas, discussing discoveries, and communicating in English throughout their learning journey, focusing on the strategies they used to grow.",
+    context_id: "Siswa merefleksikan tantangan pribadi yang mereka alami saat menyampaikan ide, mendiskusikan penemuan, dan berkomunikasi dalam Bahasa Inggris selama perjalanan belajar mereka, dengan fokus pada strategi yang mereka gunakan untuk berkembang.",
     communicative_goal: "reflect on a personal challenge, name the strategy used to overcome it, and articulate what can now be done as a result",
+    communicative_goal_id: "merefleksikan tantangan pribadi, menyebutkan strategi yang digunakan untuk mengatasinya, dan merumuskan apa yang kini bisa dilakukan sebagai hasilnya",
     vocabulary_domain: ["confidence", "presentation", "perseverance", "communication"],
     input_anchor: "personal learning reflection",
     output_anchor: "challenge reflection",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. This session is personal — we reflect on challenges we faced." },
+      { type: "AKSI", text: "Ciptakan suasana reflektif dan aman untuk berbagi pengalaman pribadi." },
+      // HOOK
+      { type: "UCAP", text: "Think of a moment when communicating in English felt really hard for you. What was that like?" },
+      { type: "AKSI", text: "Tampilkan kartu 'dulu dan sekarang': siswa dengan tangan gemetar vs siswa berdiri tegak berbicara dengan percaya diri." },
+      { type: "UCAP", text: "Look at these two images. Which one feels more like you NOW compared to when you started?" },
+    ],
 
     active_vocabulary: [
       "At first,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A 'then and now' card in two columns: 'At first' -- a student with hands shaking, words trailing off, eyes down; 'Now I can' -- the same student standing tall, speaking clearly to an attentive group.", asset_id: null },
-      { id: "visual_2", description: "A challenge-reflection frame with four labelled slots: 'At first,...' (the starting difficulty) / 'However,...' (the turning point) / 'I overcame it by...' (the strategy) / 'Now I can...' (the result of the growth).", asset_id: null },
-      { id: "visual_3", description: "A journey arc timeline showing key communication moments in the course -- a class discussion (Kelas 7), a narrative presentation (Kelas 8), a formal presentation with Q&A (Kelas 9) -- with a growth arrow connecting them.", asset_id: null }
+      { id: "visual_1", description: "A 'then and now' card in two columns: 'At first' -- a student with hands shaking, words trailing off, eyes down; 'Now I can' -- the same student standing tall, speaking clearly to an attentive group.", description_id: "Kartu 'dulu dan sekarang' dalam dua kolom: 'At first' -- seorang siswa dengan tangan gemetar, kata-kata terputus, mata menunduk; 'Now I can' -- siswa yang sama berdiri tegak, berbicara jelas ke kelompok yang penuh perhatian.", asset_id: null },
+      { id: "visual_2", description: "A challenge-reflection frame with four labelled slots: 'At first,...' (the starting difficulty) / 'However,...' (the turning point) / 'I overcame it by...' (the strategy) / 'Now I can...' (the result of the growth).", description_id: "Kerangka refleksi tantangan dengan empat slot berlabel: 'At first,...' (kesulitan awal) / 'However,...' (titik balik) / 'I overcame it by...' (strategi) / 'Now I can...' (hasil dari pertumbuhannya).", asset_id: null },
+      { id: "visual_3", description: "A journey arc timeline showing key communication moments in the course -- a class discussion (Kelas 7), a narrative presentation (Kelas 8), a formal presentation with Q&A (Kelas 9) -- with a growth arrow connecting them.", description_id: "Garis waktu alur perjalanan yang menunjukkan momen komunikasi penting selama kursus -- diskusi kelas (Kelas 7), presentasi naratif (Kelas 8), presentasi formal dengan tanya jawab (Kelas 9) -- dengan tanda panah pertumbuhan menghubungkannya.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds palm down at a low level while saying 'At first,...' -- to signal the starting point or difficulty, not a complaint but an honest acknowledgment." },
-      { id: "gesture_2", description: "Teacher raises palm and redirects it forward while saying 'However,...' -- to signal the moment of change or the decision to try differently." },
-      { id: "gesture_3", description: "Teacher makes a stepping/climbing motion forward while saying 'I overcame it by...' -- to signal gradual, strategic progress; then opens both hands confidently while saying 'Now I can...' to signal genuine growth and capability." }
+      { id: "gesture_1", description: "Teacher holds palm down at a low level while saying 'At first,...' -- to signal the starting point or difficulty, not a complaint but an honest acknowledgment.", description_id: "Guru memegang telapak tangan menghadap bawah di level rendah sambil mengucapkan 'At first,...' -- untuk menandai titik awal atau kesulitan, bukan keluhan melainkan pengakuan yang jujur." },
+      { id: "gesture_2", description: "Teacher raises palm and redirects it forward while saying 'However,...' -- to signal the moment of change or the decision to try differently.", description_id: "Guru mengangkat telapak tangan dan mengarahkannya ke depan sambil mengucapkan 'However,...' -- untuk menandai momen perubahan atau keputusan untuk mencoba dengan cara berbeda." },
+      { id: "gesture_3", description: "Teacher makes a stepping/climbing motion forward while saying 'I overcame it by...' -- to signal gradual, strategic progress; then opens both hands confidently while saying 'Now I can...' to signal genuine growth and capability.", description_id: "Guru membuat gerakan melangkah/mendaki ke depan sambil mengucapkan 'I overcame it by...' -- untuk menandai kemajuan yang bertahap dan strategis; lalu membuka kedua tangan dengan percaya diri sambil mengucapkan 'Now I can...' untuk menandai pertumbuhan dan kemampuan yang sejati." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Teamwork in After-School Clubs and Projects",
     context: "Students construct a full argumentative performance that integrates a claim, two reasons, a counter-argument, an example, and a recommendation.",
+    context_id: "Siswa menyusun argumen lengkap yang memadukan klaim, dua alasan, argumen tandingan, contoh, dan rekomendasi.",
     communicative_goal: "construct an integrated argumentative performance combining claim, multiple reasons, counter-argument, evidence, and recommendation",
+    communicative_goal_id: "menyusun argumen terpadu yang menggabungkan klaim, beberapa alasan, argumen tandingan, bukti, dan rekomendasi",
     vocabulary_domain: ["teamwork", "clubs", "projects", "cooperation"],
     input_anchor: "teamwork scenario cards",
     output_anchor: "full argument performance",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. This session, we put everything together." },
+      { type: "AKSI", text: "Informasikan siswa bahwa ini akan menjadi sesi argumentasi terlengkap." },
+      // HOOK
+      { type: "UCAP", text: "Think about a team project you worked on. What made the teamwork successful — or difficult?" },
+      { type: "AKSI", text: "Tampilkan sekelompok empat siswa bekerja sama pada proyek, masing-masing memegang bahan berbeda, spanduk klub terlihat." },
+      { type: "UCAP", text: "Look at this teamwork scene. Can you build a complete argument for why teamwork improves school projects?" },
+    ],
 
     active_vocabulary: [
       "I believe",
@@ -46,15 +58,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A group of four students working together on a school project, each holding a different material -- showing clear roles and active cooperation, with a club banner visible in the background.", asset_id: null },
-      { id: "visual_2", description: "A full argument map with six labelled nodes connected by arrows: 'I believe ... because ...' → 'One reason is ...' + 'Another reason is ...' → 'Some people think ... However, ...' → 'For example, ...' → 'Therefore, I recommend ...'", asset_id: null },
-      { id: "visual_3", description: "Icons: two hands cooperating (teamwork/cooperation), a club banner, project materials on a table, and a recommendation badge -- matching vocabulary_domain items.", asset_id: null }
+      { id: "visual_1", description: "A group of four students working together on a school project, each holding a different material -- showing clear roles and active cooperation, with a club banner visible in the background.", description_id: "Sekelompok empat siswa bekerja sama pada proyek sekolah, masing-masing memegang bahan yang berbeda -- menunjukkan peran yang jelas dan kerja sama aktif, dengan spanduk klub terlihat di latar belakang.", asset_id: null },
+      { id: "visual_2", description: "A full argument map with six labelled nodes connected by arrows: 'I believe ... because ...' → 'One reason is ...' + 'Another reason is ...' → 'Some people think ... However, ...' → 'For example, ...' → 'Therefore, I recommend ...'", description_id: "Peta argumen lengkap dengan enam simpul berlabel yang dihubungkan tanda panah: 'I believe ... because ...' → 'One reason is ...' + 'Another reason is ...' → 'Some people think ... However, ...' → 'For example, ...' → 'Therefore, I recommend ...'", asset_id: null },
+      { id: "visual_3", description: "Icons: two hands cooperating (teamwork/cooperation), a club banner, project materials on a table, and a recommendation badge -- matching vocabulary_domain items.", description_id: "Ikon: dua tangan bekerja sama (kerja tim/kerja sama), spanduk klub, bahan proyek di atas meja, dan lencana rekomendasi -- sesuai item vocabulary_domain.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to own chest for 'I believe ...' then raises two fingers in sequence for 'One reason is ... / Another reason is ...' -- to signal a claim followed by dual support." },
-      { id: "gesture_2", description: "Teacher nods for 'Some people think ...' then turns with a calm counter-gesture for 'However, ...' -- to model the acknowledge-then-counter move embedded within the argument." },
-      { id: "gesture_3", description: "Teacher brings all fingers together slowly while saying 'Therefore, I recommend ...' -- to signal integration of all six components into one conclusion." }
+      { id: "gesture_1", description: "Teacher points to own chest for 'I believe ...' then raises two fingers in sequence for 'One reason is ... / Another reason is ...' -- to signal a claim followed by dual support.", description_id: "Guru menunjuk dadanya sendiri untuk 'I believe ...' lalu mengangkat dua jari secara berurutan untuk 'One reason is ... / Another reason is ...' -- untuk menandai klaim yang diikuti dukungan ganda." },
+      { id: "gesture_2", description: "Teacher nods for 'Some people think ...' then turns with a calm counter-gesture for 'However, ...' -- to model the acknowledge-then-counter move embedded within the argument.", description_id: "Guru mengangguk untuk 'Some people think ...' lalu berbalik dengan gestur tandingan yang tenang untuk 'However, ...' -- untuk mencontohkan gerakan mengakui-lalu-menyanggah yang tertanam dalam argumen." },
+      { id: "gesture_3", description: "Teacher brings all fingers together slowly while saying 'Therefore, I recommend ...' -- to signal integration of all six components into one conclusion.", description_id: "Guru menyatukan semua jari secara perlahan sambil mengucapkan 'Therefore, I recommend ...' -- untuk menandai integrasi keenam komponen menjadi satu kesimpulan." }
     ]
   },
 

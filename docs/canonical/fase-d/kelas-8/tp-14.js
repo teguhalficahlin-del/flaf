@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "After-School Clubs",
     context: "Students give multiple reasons for joining an extracurricular club.",
+    context_id: "Siswa memberikan beberapa alasan untuk bergabung dengan klub ekstrakurikuler.",
     communicative_goal: "support one position using more than one reason",
+    communicative_goal_id: "mendukung satu posisi menggunakan lebih dari satu alasan",
     vocabulary_domain: ["clubs", "skills", "friends", "experience"],
     input_anchor: "student profiles",
     output_anchor: "reason map",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning, class. I want you thinking critically today." },
+      { type: "AKSI", text: "Cek apakah semua siswa membawa catatan dari sesi sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "Think about a school club you are in — or would like to join. Why is it worth your time?" },
+      { type: "AKSI", text: "Tampilkan profil siswa dengan berbagai alasan bergabung klub: belajar keterampilan, mencari teman, mendapatkan pengalaman." },
+      { type: "UCAP", text: "Look at these student profiles. What reasons do they give — and can you add your own?" },
+    ],
 
     active_vocabulary: [
       "One reason is",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Student profiles showing different reasons for joining clubs: learning skills, making friends, gaining experience.", asset_id: null },
-      { id: "visual_2", description: "A reason map: one position in the center with branches 'One reason is that ...' and 'Another reason is that ...'.", asset_id: null },
-      { id: "visual_3", description: "Icons: a skill badge, a group of friends, an experience certificate, a club sign.", asset_id: null }
+      { id: "visual_1", description: "Student profiles showing different reasons for joining clubs: learning skills, making friends, gaining experience.", description_id: "Profil siswa yang menunjukkan berbagai alasan bergabung dengan klub: belajar keterampilan, mencari teman, mendapatkan pengalaman.", asset_id: null },
+      { id: "visual_2", description: "A reason map: one position in the center with branches 'One reason is that ...' and 'Another reason is that ...'.", description_id: "Peta alasan: satu posisi di tengah dengan cabang 'One reason is that ...' dan 'Another reason is that ...'.", asset_id: null },
+      { id: "visual_3", description: "Icons: a skill badge, a group of friends, an experience certificate, a club sign.", description_id: "Ikon: lencana keterampilan, sekelompok teman, sertifikat pengalaman, tanda klub.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds up one finger while saying 'One reason is that ...'." },
-      { id: "gesture_2", description: "Teacher holds up a second finger while saying 'Another reason is that ...'." },
-      { id: "gesture_3", description: "Teacher draws both reasons back to one central position to show they support the same claim." }
+      { id: "gesture_1", description: "Teacher holds up one finger while saying 'One reason is that ...'.", description_id: "Guru mengangkat satu jari sambil mengucapkan 'One reason is that ...'." },
+      { id: "gesture_2", description: "Teacher holds up a second finger while saying 'Another reason is that ...'.", description_id: "Guru mengangkat jari kedua sambil mengucapkan 'Another reason is that ...'." },
+      { id: "gesture_3", description: "Teacher draws both reasons back to one central position to show they support the same claim.", description_id: "Guru menggambar kembali kedua alasan ke satu posisi pusat untuk menunjukkan keduanya mendukung klaim yang sama." }
     ]
   },
 

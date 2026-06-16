@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Library Visit",
     context: "Students describe how they felt after a real visit to a library or reading corner.",
+    context_id: "Siswa mendeskripsikan perasaan mereka setelah mengunjungi perpustakaan atau pojok baca.",
     communicative_goal: "express personal responses to a past experience with simple reasons",
+    communicative_goal_id: "menyampaikan tanggapan pribadi terhadap pengalaman masa lalu dengan alasan sederhana",
     vocabulary_domain: ["books", "reading", "library", "feelings"],
     input_anchor: "experience photos",
     output_anchor: "experience sharing",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Hello, friends! Ready to share some experiences today?" },
+      { type: "AKSI", text: "Kondisikan kelas dengan tenang sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "Has anyone visited the school library or a reading corner recently? How did it feel?" },
+      { type: "AKSI", text: "Tampilkan foto pengalaman perpustakaan: mencari buku, membaca di meja, pojok baca tenang." },
+      { type: "UCAP", text: "Look at these library photos. What feeling do you get when you see them?" },
+    ],
 
     active_vocabulary: [
       "It was",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Experience photos of a library visit: a student finding a book, reading at a table, and a quiet reading corner.", asset_id: null },
-      { id: "visual_2", description: "Feeling cards: a happy face (fun), a calm face (quiet), and an excited face (exciting).", asset_id: null },
-      { id: "visual_3", description: "A sentence-frame card linking a feeling face to an event picture: 'It was [feeling] because [what happened].'", asset_id: null }
+      { id: "visual_1", description: "Experience photos of a library visit: a student finding a book, reading at a table, and a quiet reading corner.", description_id: "Foto pengalaman kunjungan perpustakaan: siswa mencari buku, membaca di meja, dan pojok baca yang tenang.", asset_id: null },
+      { id: "visual_2", description: "Feeling cards: a happy face (fun), a calm face (quiet), and an excited face (exciting).", description_id: "Kartu perasaan: wajah senang (fun), wajah tenang (quiet), dan wajah antusias (exciting).", asset_id: null },
+      { id: "visual_3", description: "A sentence-frame card linking a feeling face to an event picture: 'It was [feeling] because [what happened].'", description_id: "Kartu kerangka kalimat yang menghubungkan wajah perasaan dengan gambar peristiwa: 'It was [feeling] because [what happened].'", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher places a hand on their chest showing a feeling while saying 'It was [adjective] ...'." },
-      { id: "gesture_2", description: "Teacher opens a hand toward an event picture while saying 'because [event] ...'." },
-      { id: "gesture_3", description: "Teacher mimes finding and reading a book (the past actions) before giving the feeling." }
+      { id: "gesture_1", description: "Teacher places a hand on their chest showing a feeling while saying 'It was [adjective] ...'.", description_id: "Guru meletakkan tangan di dada menunjukkan perasaan sambil mengucapkan 'It was [adjective] ...'." },
+      { id: "gesture_2", description: "Teacher opens a hand toward an event picture while saying 'because [event] ...'.", description_id: "Guru membuka tangan ke arah gambar peristiwa sambil mengucapkan 'because [event] ...'." },
+      { id: "gesture_3", description: "Teacher mimes finding and reading a book (the past actions) before giving the feeling.", description_id: "Guru memperagakan mencari dan membaca buku (tindakan lampau) sebelum menyampaikan perasaannya." }
     ]
   },
 

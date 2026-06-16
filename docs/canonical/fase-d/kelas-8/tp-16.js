@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Class Charity Project",
     context: "Students evaluate several community service ideas and recommend one with supporting reasons.",
+    context_id: "Siswa mengevaluasi beberapa ide bakti sosial dan merekomendasikan salah satunya dengan alasan pendukung.",
     communicative_goal: "make a recommendation based on reasons and shared benefits",
+    communicative_goal_id: "membuat rekomendasi berdasarkan alasan dan manfaat bersama",
     vocabulary_domain: ["charity", "community", "volunteers", "donation"],
     input_anchor: "project proposal cards",
     output_anchor: "recommendation presentation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Let's close a chapter today — with a recommendation." },
+      { type: "AKSI", text: "Minta siswa mengingat sesi negosiasi proyek bakti sosial sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "We discussed several charity project ideas before. Have you decided which one you recommend?" },
+      { type: "AKSI", text: "Tampilkan kartu usulan proyek: jualan buku, jualan jajanan, cuci mobil, penggalangan donasi." },
+      { type: "UCAP", text: "Look at these project proposals again. Which one would you recommend — and can you say why?" },
+    ],
 
     active_vocabulary: [
       "Therefore,",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Project proposal cards for a class charity: a book sale, a snack sale, a car wash, a donation drive.", asset_id: null },
-      { id: "visual_2", description: "A recommendation frame: 'Therefore, I recommend ___ because ___.'", asset_id: null },
-      { id: "visual_3", description: "Icons: a stack of books, a community group, volunteers, a donation box.", asset_id: null }
+      { id: "visual_1", description: "Project proposal cards for a class charity: a book sale, a snack sale, a car wash, a donation drive.", description_id: "Kartu usulan proyek untuk bakti sosial kelas: jualan buku, jualan jajanan, cuci mobil, penggalangan donasi.", asset_id: null },
+      { id: "visual_2", description: "A recommendation frame: 'Therefore, I recommend ___ because ___.'", description_id: "Kerangka rekomendasi: 'Therefore, I recommend ___ because ___.'", asset_id: null },
+      { id: "visual_3", description: "Icons: a stack of books, a community group, volunteers, a donation box.", description_id: "Ikon: tumpukan buku, kelompok komunitas, relawan, kotak donasi.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher draws the hands together to a conclusion while saying 'Therefore, ...'." },
-      { id: "gesture_2", description: "Teacher points forward to the chosen option while saying 'I recommend ...'." },
-      { id: "gesture_3", description: "Teacher opens a hand for the supporting reason while saying 'because ...'." }
+      { id: "gesture_1", description: "Teacher draws the hands together to a conclusion while saying 'Therefore, ...'.", description_id: "Guru menyatukan kedua tangan sebagai kesimpulan sambil mengucapkan 'Therefore, ...'." },
+      { id: "gesture_2", description: "Teacher points forward to the chosen option while saying 'I recommend ...'.", description_id: "Guru menunjuk ke depan ke arah opsi yang dipilih sambil mengucapkan 'I recommend ...'." },
+      { id: "gesture_3", description: "Teacher opens a hand for the supporting reason while saying 'because ...'.", description_id: "Guru membuka tangan untuk alasan pendukungnya sambil mengucapkan 'because ...'." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "After-School Club Festival",
     context: "Students create promotional posts inviting friends to visit and join different school clubs during a festival.",
+    context_id: "Siswa membuat unggahan promosi yang mengundang teman-teman mengunjungi dan bergabung dengan berbagai klub sekolah saat festival.",
     communicative_goal: "produce persuasive public communication for a school event",
+    communicative_goal_id: "membuat komunikasi publik yang persuasif untuk acara sekolah",
     vocabulary_domain: ["club", "festival", "activities", "members"],
     input_anchor: "event poster samples",
     output_anchor: "promotional post",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, everyone. We have a festival to promote today." },
+      { type: "AKSI", text: "Bangun semangat dan antusias di awal sesi." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever seen a poster that made you really want to join an event? What made it effective?" },
+      { type: "AKSI", text: "Tampilkan contoh poster festival klub: warna-warni dengan nama klub, frasa undangan, dan ikon kegiatan." },
+      { type: "UCAP", text: "Look at these event posters. What makes them inviting? What would YOU add?" },
+    ],
 
     active_vocabulary: [
       "Join us",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Event poster samples for an After-School Club Festival: colorful posters with club names, invitation phrases, and illustrative icons for music, art, sports, and drama.", asset_id: null },
-      { id: "visual_2", description: "A promotional post frame with three labeled slots: 'Join us ...' / 'Don\\'t miss ...' / 'You can ... because ...'", asset_id: null },
-      { id: "visual_3", description: "Icons: a group of club members together, a festival banner, activity icons (guitar, paintbrush, ball, book), a speech bubble with an exclamation mark.", asset_id: null }
+      { id: "visual_1", description: "Event poster samples for an After-School Club Festival: colorful posters with club names, invitation phrases, and illustrative icons for music, art, sports, and drama.", description_id: "Contoh poster acara untuk Festival Klub Sepulang Sekolah: poster berwarna-warni dengan nama klub, frasa undangan, dan ikon ilustratif untuk musik, seni, olahraga, dan drama.", asset_id: null },
+      { id: "visual_2", description: "A promotional post frame with three labeled slots: 'Join us ...' / 'Don\\'t miss ...' / 'You can ... because ...'", description_id: "Kerangka unggahan promosi dengan tiga slot berlabel: 'Join us ...' / 'Don't miss ...' / 'You can ... because ...'", asset_id: null },
+      { id: "visual_3", description: "Icons: a group of club members together, a festival banner, activity icons (guitar, paintbrush, ball, book), a speech bubble with an exclamation mark.", description_id: "Ikon: sekelompok anggota klub bersama, spanduk festival, ikon kegiatan (gitar, kuas, bola, buku), balon bicara dengan tanda seru.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher opens arms wide in a welcoming gesture while saying 'Join us ...' -- to signal a public invitation to everyone." },
-      { id: "gesture_2", description: "Teacher wags a finger urgently while saying 'Don\\'t miss ...' -- to signal excitement and urgency." },
-      { id: "gesture_3", description: "Teacher points to an imaginary audience while saying 'You can ...' and then opens a hand for the reason while saying 'because ...'." }
+      { id: "gesture_1", description: "Teacher opens arms wide in a welcoming gesture while saying 'Join us ...' -- to signal a public invitation to everyone.", description_id: "Guru membuka kedua lengan lebar-lebar dengan gestur menyambut sambil mengucapkan 'Join us ...' -- untuk menandai undangan publik untuk semua orang." },
+      { id: "gesture_2", description: "Teacher wags a finger urgently while saying 'Don\\'t miss ...' -- to signal excitement and urgency.", description_id: "Guru menggoyangkan jari dengan urgensi sambil mengucapkan 'Don't miss ...' -- untuk menandai kegembiraan dan urgensi." },
+      { id: "gesture_3", description: "Teacher points to an imaginary audience while saying 'You can ...' and then opens a hand for the reason while saying 'because ...'.", description_id: "Guru menunjuk ke khayalan audiens sambil mengucapkan 'You can ...' lalu membuka tangan untuk alasannya sambil mengucapkan 'because ...'." }
     ]
   },
 

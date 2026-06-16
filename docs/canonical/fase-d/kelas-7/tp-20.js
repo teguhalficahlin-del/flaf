@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Mysterious School Notices",
     context: "Students observe warning signs and public notices placed near an old unused room and imagine why they exist.",
+    context_id: "Siswa mengamati tanda peringatan dan pengumuman publik di dekat ruangan tua yang tidak terpakai dan membayangkan alasan keberadaannya.",
     communicative_goal: "interpret public notices and infer simple contextual meaning",
+    communicative_goal_id: "menafsirkan pengumuman publik dan menyimpulkan makna kontekstual sederhana",
     vocabulary_domain: ["notice", "warning", "door", "secret"],
     input_anchor: "notice and sign cards",
     output_anchor: "notice interpretation",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning! I have something mysterious to show you today." },
+      { type: "AKSI", text: "Buat suasana penasaran — berbicara perlahan dan dengan nada misterius." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever noticed old signs or warning notices around this school?" },
+      { type: "AKSI", text: "Tampilkan kartu pengumuman dan tanda dekat gudang tua: 'Keep Out', 'No Entry', 'Notice:', pintu tertutup." },
+      { type: "UCAP", text: "Look at these signs near an old storage room. What do you think is behind that door?" },
+    ],
 
     active_vocabulary: [
       "Notice:",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Notice and sign cards near an old storage room: 'Keep Out', 'No Entry', a 'Notice:' sign, and a mysterious closed door.", asset_id: null },
-      { id: "visual_2", description: "Sign-format cards showing the four notice types: 'Notice: ...', 'No ...', 'Keep ...', 'Use ...'.", asset_id: null },
-      { id: "visual_3", description: "A scene of the old, unused storage room with a closed door and a warning sign, as a motivating hook.", asset_id: null }
+      { id: "visual_1", description: "Notice and sign cards near an old storage room: 'Keep Out', 'No Entry', a 'Notice:' sign, and a mysterious closed door.", description_id: "Kartu pengumuman dan tanda dekat gudang tua: 'Keep Out', 'No Entry', tanda 'Notice:', dan pintu tertutup yang misterius.", asset_id: null },
+      { id: "visual_2", description: "Sign-format cards showing the four notice types: 'Notice: ...', 'No ...', 'Keep ...', 'Use ...'.", description_id: "Kartu format tanda yang menunjukkan empat jenis pengumuman: 'Notice: ...', 'No ...', 'Keep ...', 'Use ...'.", asset_id: null },
+      { id: "visual_3", description: "A scene of the old, unused storage room with a closed door and a warning sign, as a motivating hook.", description_id: "Pemandangan gudang tua yang tidak terpakai dengan pintu tertutup dan tanda peringatan, sebagai pemicu motivasi.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points firmly to a posted sign while reading 'Notice: ...' / 'Warning: ...'." },
-      { id: "gesture_2", description: "Teacher makes an X / stop gesture while reading 'No ...'." },
-      { id: "gesture_3", description: "Teacher points to the correct door while reading 'Keep ...' / 'Use ...'." }
+      { id: "gesture_1", description: "Teacher points firmly to a posted sign while reading 'Notice: ...' / 'Warning: ...'.", description_id: "Guru menunjuk tegas ke tanda yang terpasang sambil membaca 'Notice: ...' / 'Warning: ...'." },
+      { id: "gesture_2", description: "Teacher makes an X / stop gesture while reading 'No ...'.", description_id: "Guru membuat gestur X / berhenti sambil membaca 'No ...'." },
+      { id: "gesture_3", description: "Teacher points to the correct door while reading 'Keep ...' / 'Use ...'.", description_id: "Guru menunjuk pintu yang benar sambil membaca 'Keep ...' / 'Use ...'." }
     ]
   },
 

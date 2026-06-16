@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Class Group Messages",
     context: "Students write short polite messages for a class chat about borrowing or returning school items.",
+    context_id: "Siswa menulis pesan singkat yang sopan untuk grup chat kelas tentang meminjam atau mengembalikan barang sekolah.",
     communicative_goal: "use polite requests and reminders in everyday messages",
+    communicative_goal_id: "menggunakan permintaan dan pengingat yang sopan dalam pesan sehari-hari",
     vocabulary_domain: ["chat", "friends", "books", "stationery"],
     input_anchor: "chat screenshot cards",
     output_anchor: "mini chat messages",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning, everyone! Check your phones quickly — then put them away." },
+      { type: "AKSI", text: "Tunggu kelas siap untuk memulai pelajaran." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever sent a message to a class group chat? What did you write?" },
+      { type: "AKSI", text: "Tampilkan kartu tangkapan layar grup chat kelas dengan pesan-pesan sopan singkat." },
+      { type: "UCAP", text: "Look at these chat messages. What makes them polite?" },
+    ],
 
     active_vocabulary: [
       "Please",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Chat screenshot cards showing a class group chat with short polite messages about borrowing and returning books and stationery.", asset_id: null },
-      { id: "visual_2", description: "A politeness card showing a blunt rule ('Don't lose my book') next to the polite version ('Please don't lose my book') to show how 'Please' softens an imperative.", asset_id: null },
-      { id: "visual_3", description: "Item icons for things friends borrow and return: a book, a pencil case, a pen.", asset_id: null }
+      { id: "visual_1", description: "Chat screenshot cards showing a class group chat with short polite messages about borrowing and returning books and stationery.", description_id: "Kartu tangkapan layar obrolan yang menunjukkan grup chat kelas dengan pesan-pesan sopan singkat tentang meminjam dan mengembalikan buku serta alat tulis.", asset_id: null },
+      { id: "visual_2", description: "A politeness card showing a blunt rule ('Don't lose my book') next to the polite version ('Please don't lose my book') to show how 'Please' softens an imperative.", description_id: "Kartu kesopanan yang menunjukkan aturan blak-blakan ('Don't lose my book') di sebelah versi sopannya ('Please don't lose my book') untuk menunjukkan bagaimana 'Please' memperhalus kalimat perintah.", asset_id: null },
+      { id: "visual_3", description: "Item icons for things friends borrow and return: a book, a pencil case, a pen.", description_id: "Ikon barang yang dipinjam dan dikembalikan teman: buku, kotak pensil, pulpen.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds out an open, friendly hand while saying 'Please ...' to show a polite request." },
-      { id: "gesture_2", description: "Teacher makes a gentle 'no' gesture with one hand while saying 'Please don't ...' for a polite reminder." },
-      { id: "gesture_3", description: "Teacher mimes typing a message on a phone while saying the chat message." }
+      { id: "gesture_1", description: "Teacher holds out an open, friendly hand while saying 'Please ...' to show a polite request.", description_id: "Guru mengulurkan tangan terbuka yang ramah sambil mengucapkan 'Please ...' untuk menunjukkan permintaan sopan." },
+      { id: "gesture_2", description: "Teacher makes a gentle 'no' gesture with one hand while saying 'Please don't ...' for a polite reminder.", description_id: "Guru membuat gestur 'tidak' lembut dengan satu tangan sambil mengucapkan 'Please don't ...' untuk pengingat sopan." },
+      { id: "gesture_3", description: "Teacher mimes typing a message on a phone while saying the chat message.", description_id: "Guru memperagakan mengetik pesan di ponsel sambil mengucapkan pesan chat-nya." }
     ]
   },
 

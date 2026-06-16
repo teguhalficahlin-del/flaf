@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Family Picnic",
     context: "Students share a real family outing that happened last weekend.",
+    context_id: "Siswa menceritakan kegiatan keluarga nyata yang terjadi pada akhir pekan lalu.",
     communicative_goal: "introduce a past experience using simple time expressions",
+    communicative_goal_id: "memperkenalkan pengalaman masa lalu menggunakan ungkapan waktu sederhana",
     vocabulary_domain: ["family", "park", "weekend", "activities"],
     input_anchor: "photo sequence",
     output_anchor: "pair storytelling",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning! How was your weekend, everyone?" },
+      { type: "AKSI", text: "Biarkan satu atau dua siswa menjawab singkat sebelum melanjutkan." },
+      // HOOK
+      { type: "UCAP", text: "Has your family ever gone somewhere together last weekend? Where did you go?" },
+      { type: "AKSI", text: "Tampilkan urutan foto piknik keluarga: tiba di taman, makan piknik di atas tikar, bermain." },
+      { type: "UCAP", text: "Look at these family photos. What happened here, do you think?" },
+    ],
 
     active_vocabulary: [
       "Yesterday,",
@@ -45,15 +57,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A photo sequence of a family picnic last weekend: the family arriving at the park, eating a picnic on a mat, and playing games.", asset_id: null },
-      { id: "visual_2", description: "Time-expression cards with a calendar pointing to past days: 'Yesterday,', 'Last weekend', 'Last Sunday'.", asset_id: null },
-      { id: "visual_3", description: "Past-action icons labeled with -ed: visited (footprints to a park), played (a ball), cooked (a pot of food).", asset_id: null }
+      { id: "visual_1", description: "A photo sequence of a family picnic last weekend: the family arriving at the park, eating a picnic on a mat, and playing games.", description_id: "Urutan foto piknik keluarga akhir pekan lalu: keluarga tiba di taman, makan piknik di atas tikar, dan bermain.", asset_id: null },
+      { id: "visual_2", description: "Time-expression cards with a calendar pointing to past days: 'Yesterday,', 'Last weekend', 'Last Sunday'.", description_id: "Kartu ungkapan waktu dengan kalender menunjuk hari-hari lampau: 'Yesterday,', 'Last weekend', 'Last Sunday'.", asset_id: null },
+      { id: "visual_3", description: "Past-action icons labeled with -ed: visited (footprints to a park), played (a ball), cooked (a pot of food).", description_id: "Ikon tindakan lampau berlabel -ed: visited (jejak kaki ke taman), played (bola), cooked (panci berisi makanan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points back over one shoulder (a 'past / before now' gesture) while saying 'Yesterday, ... / Last weekend, ...'." },
-      { id: "gesture_2", description: "Teacher mimes the past action (walking, playing, cooking) while saying the past-tense verb." },
-      { id: "gesture_3", description: "Teacher shows order with fingers for the short narrative recap 'First, ... Then, ...' (telling what happened, not giving orders)." }
+      { id: "gesture_1", description: "Teacher points back over one shoulder (a 'past / before now' gesture) while saying 'Yesterday, ... / Last weekend, ...'.", description_id: "Guru menunjuk ke belakang melewati bahu (gestur 'masa lalu / sebelum sekarang') sambil mengucapkan 'Yesterday, ... / Last weekend, ...'." },
+      { id: "gesture_2", description: "Teacher mimes the past action (walking, playing, cooking) while saying the past-tense verb.", description_id: "Guru memperagakan tindakan lampaunya (berjalan, bermain, memasak) sambil mengucapkan kata kerja bentuk lampaunya." },
+      { id: "gesture_3", description: "Teacher shows order with fingers for the short narrative recap 'First, ... Then, ...' (telling what happened, not giving orders).", description_id: "Guru menunjukkan urutan dengan jari untuk rangkuman cerita singkat 'First, ... Then, ...' (menceritakan apa yang terjadi, bukan memberi perintah)." }
     ]
   },
 

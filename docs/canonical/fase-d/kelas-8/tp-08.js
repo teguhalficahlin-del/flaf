@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Exercise and Heart Rate",
     context: "Students observe simple data and pictures showing how the body responds during physical activity and discuss factual relationships.",
+    context_id: "Siswa mengamati data dan gambar sederhana yang menunjukkan respons tubuh selama aktivitas fisik serta mendiskusikan hubungan faktualnya.",
     communicative_goal: "connect observable facts with simple causes and effects",
+    communicative_goal_id: "menghubungkan fakta yang teramati dengan sebab dan akibat sederhana",
     vocabulary_domain: ["exercise", "heart", "body", "energy"],
     input_anchor: "data chart",
     output_anchor: "fact explanation card",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Alright, class. Let's get into science mode today." },
+      { type: "AKSI", text: "Kondisikan kelas agar siap mengamati data." },
+      // HOOK
+      { type: "UCAP", text: "What happens to your heart when you run or do exercise? Can you feel it?" },
+      { type: "AKSI", text: "Tampilkan grafik data sederhana: detak jantung sebelum dan selama olahraga (istirahat vs aktif)." },
+      { type: "UCAP", text: "Look at this chart. What do you notice about heart rate during exercise versus at rest?" },
+    ],
 
     active_vocabulary: [
       "This happens because",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A simple data chart showing heart rate before and during exercise (resting vs active).", asset_id: null },
-      { id: "visual_2", description: "Fact-to-reason cards: a fact picture linked by an arrow to 'This happens because ...' / 'This helps ... to ...'.", asset_id: null },
-      { id: "visual_3", description: "Body icons: a heart beating, lungs breathing, muscles using energy during exercise.", asset_id: null }
+      { id: "visual_1", description: "A simple data chart showing heart rate before and during exercise (resting vs active).", description_id: "Grafik data sederhana yang menunjukkan detak jantung sebelum dan selama olahraga (istirahat vs aktif).", asset_id: null },
+      { id: "visual_2", description: "Fact-to-reason cards: a fact picture linked by an arrow to 'This happens because ...' / 'This helps ... to ...'.", description_id: "Kartu fakta-ke-alasan: gambar fakta dihubungkan dengan tanda panah ke 'This happens because ...' / 'This helps ... to ...'.", asset_id: null },
+      { id: "visual_3", description: "Body icons: a heart beating, lungs breathing, muscles using energy during exercise.", description_id: "Ikon tubuh: jantung berdetak, paru-paru bernapas, otot menggunakan energi selama olahraga.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher states a fact, then points back to its cause while saying 'This happens because ...'." },
-      { id: "gesture_2", description: "Teacher shows one thing leading to a helpful result while saying 'This helps ... to ...'." },
-      { id: "gesture_3", description: "Teacher taps the data chart to anchor each fact before giving the reason or effect." }
+      { id: "gesture_1", description: "Teacher states a fact, then points back to its cause while saying 'This happens because ...'.", description_id: "Guru menyatakan suatu fakta, lalu menunjuk kembali ke sebabnya sambil mengucapkan 'This happens because ...'." },
+      { id: "gesture_2", description: "Teacher shows one thing leading to a helpful result while saying 'This helps ... to ...'.", description_id: "Guru menunjukkan satu hal yang mengarah ke hasil yang bermanfaat sambil mengucapkan 'This helps ... to ...'." },
+      { id: "gesture_3", description: "Teacher taps the data chart to anchor each fact before giving the reason or effect.", description_id: "Guru menepuk grafik data untuk menjangkarkan setiap fakta sebelum memberikan alasan atau dampaknya." }
     ]
   },
 

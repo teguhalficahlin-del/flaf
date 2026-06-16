@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Writing a Digital Message about a School Discovery",
     context: "After finding old letters in the storage room, students write an email or message to share the discovery with teachers and classmates.",
+    context_id: "Setelah menemukan surat-surat lama di gudang, siswa menulis email atau pesan untuk membagikan penemuan itu kepada guru dan teman sekelas.",
     communicative_goal: "write a structured digital message with subject, greeting, purpose, and closing",
+    communicative_goal_id: "menulis pesan digital terstruktur dengan subjek, salam, tujuan, dan penutup",
     vocabulary_domain: ["email", "discovery", "school", "message"],
     input_anchor: "story reflection and message draft",
     output_anchor: "digital message",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Dito and Wulan have something to share with the school." },
+      { type: "AKSI", text: "Kondisikan kelas dengan nada semi-formal sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "If you found something incredible at school, how would you tell other people about it?" },
+      { type: "AKSI", text: "Tampilkan templat pesan digital di layar dengan empat bagian berlabel: Subject, Hi, body, closing." },
+      { type: "UCAP", text: "Look at this message template. What are the four parts of a well-structured email?" },
+    ],
 
     active_vocabulary: [
       "Subject:",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A digital message template on a screen, four labeled sections highlighted: Subject line, greeting (Hi ...), body (I'm writing to ...), and closing (See you soon,).", asset_id: null },
-      { id: "visual_2", description: "A split screen: on the left, the story reflection from TP-44 ('The story shows that a small discovery ...'); on the right, the opening of the email being drafted -- showing content flowing from narrative to message.", asset_id: null },
-      { id: "visual_3", description: "The complete model email displayed on a school computer screen: Subject / Hi everyone, / I'm writing to ... / See you soon, Dito and Wulan.", asset_id: null }
+      { id: "visual_1", description: "A digital message template on a screen, four labeled sections highlighted: Subject line, greeting (Hi ...), body (I'm writing to ...), and closing (See you soon,).", description_id: "Templat pesan digital di layar, empat bagian berlabel disorot: baris subjek, salam (Hi ...), isi (I'm writing to ...), dan penutup (See you soon,).", asset_id: null },
+      { id: "visual_2", description: "A split screen: on the left, the story reflection from TP-44 ('The story shows that a small discovery ...'); on the right, the opening of the email being drafted -- showing content flowing from narrative to message.", description_id: "Layar terbagi: di kiri, refleksi cerita dari TP-44 ('The story shows that a small discovery ...'); di kanan, pembuka email yang sedang disusun -- menunjukkan konten mengalir dari narasi ke pesan.", asset_id: null },
+      { id: "visual_3", description: "The complete model email displayed on a school computer screen: Subject / Hi everyone, / I'm writing to ... / See you soon, Dito and Wulan.", description_id: "Email model lengkap ditampilkan di layar komputer sekolah: Subject / Hi everyone, / I'm writing to ... / See you soon, Dito and Wulan.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher types an imaginary subject line in the air while saying 'Subject: ...'." },
-      { id: "gesture_2", description: "Teacher waves a greeting to the class while saying 'Hi everyone,'." },
-      { id: "gesture_3", description: "Teacher points forward purposefully while saying 'I\\'m writing to ...' -- to signal a stated purpose." }
+      { id: "gesture_1", description: "Teacher types an imaginary subject line in the air while saying 'Subject: ...'.", description_id: "Guru mengetik baris subjek khayalan di udara sambil mengucapkan 'Subject: ...'." },
+      { id: "gesture_2", description: "Teacher waves a greeting to the class while saying 'Hi everyone,'.", description_id: "Guru melambaikan salam ke kelas sambil mengucapkan 'Hi everyone,'." },
+      { id: "gesture_3", description: "Teacher points forward purposefully while saying 'I\\'m writing to ...' -- to signal a stated purpose.", description_id: "Guru menunjuk ke depan dengan penuh tujuan sambil mengucapkan 'I'm writing to ...' -- untuk menandai tujuan yang dinyatakan." }
     ]
   },
 

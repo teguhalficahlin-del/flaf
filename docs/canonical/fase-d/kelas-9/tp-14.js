@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Active Break Program",
     context: "Students propose a concrete solution to the problem of low student physical activity at school, explaining how it works and why it will help.",
+    context_id: "Siswa mengusulkan solusi konkret untuk masalah rendahnya aktivitas fisik siswa di sekolah, menjelaskan cara kerjanya dan mengapa solusi itu akan membantu.",
     communicative_goal: "propose a solution by naming the action, showing its conditional logic, and explaining the benefit",
+    communicative_goal_id: "mengusulkan solusi dengan menyebutkan tindakannya, menunjukkan logika kondisionalnya, dan menjelaskan manfaatnya",
     vocabulary_domain: ["daily routines", "healthy habits", "school programs", "action plans"],
     input_anchor: "problem statement",
     output_anchor: "solution proposal",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. The problem has been identified. Now we propose a solution." },
+      { type: "AKSI", text: "Minta siswa membuka pernyataan masalah yang ditulis sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "If you were in charge, what would you do to get students moving more during the school day?" },
+      { type: "AKSI", text: "Tampilkan kartu jadwal sekolah usulan: slot istirahat aktif 5 menit disorot hijau di antara setiap dua pelajaran." },
+      { type: "UCAP", text: "Look at this proposed timetable. Could this active break program solve the problem we identified?" },
+    ],
 
     active_vocabulary: [
       "To solve this problem,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A proposed school timetable card showing five-minute active break slots inserted between every two lessons -- highlighted in green alongside the existing lesson blocks.", asset_id: null },
-      { id: "visual_2", description: "A solution-proposal frame with four labelled slots: 'To solve this problem,...' (name the solution) / 'If..., so...' (conditional logic and result) / 'This will help...' (benefit for students).", asset_id: null },
-      { id: "visual_3", description: "Icons: a daily schedule with active breaks marked (daily routines), a student stretching with a smile (healthy habits), a school event poster (school programs), and a checklist with action items (action plans).", asset_id: null }
+      { id: "visual_1", description: "A proposed school timetable card showing five-minute active break slots inserted between every two lessons -- highlighted in green alongside the existing lesson blocks.", description_id: "Kartu jadwal sekolah usulan yang menunjukkan slot istirahat aktif lima menit disisipkan di antara setiap dua pelajaran -- disorot hijau di samping blok pelajaran yang sudah ada.", asset_id: null },
+      { id: "visual_2", description: "A solution-proposal frame with four labelled slots: 'To solve this problem,...' (name the solution) / 'If..., so...' (conditional logic and result) / 'This will help...' (benefit for students).", description_id: "Kerangka usulan solusi dengan empat slot berlabel: 'To solve this problem,...' (menyebutkan solusinya) / 'If..., so...' (logika kondisional dan hasilnya) / 'This will help...' (manfaat bagi siswa).", asset_id: null },
+      { id: "visual_3", description: "Icons: a daily schedule with active breaks marked (daily routines), a student stretching with a smile (healthy habits), a school event poster (school programs), and a checklist with action items (action plans).", description_id: "Ikon: jadwal harian dengan istirahat aktif ditandai (rutinitas harian), siswa melakukan stretching dengan senyum (kebiasaan sehat), poster acara sekolah (program sekolah), dan daftar centang dengan butir tindakan (rencana tindakan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points forward purposefully while saying 'To solve this problem,...' -- to signal proposing a specific, actionable solution, not a general wish." },
-      { id: "gesture_2", description: "Teacher shows one raised finger (IF) then sweeps hand to a consequence (SO) while saying 'If..., so...' -- to signal conditional logic: the solution works IF the condition is met, with a specific result." },
-      { id: "gesture_3", description: "Teacher opens both hands toward the students while saying 'This will help...' -- to signal that the benefit of the solution is directed specifically at the students in the room." }
+      { id: "gesture_1", description: "Teacher points forward purposefully while saying 'To solve this problem,...' -- to signal proposing a specific, actionable solution, not a general wish.", description_id: "Guru menunjuk ke depan dengan penuh tujuan sambil mengucapkan 'To solve this problem,...' -- untuk menandai mengusulkan solusi yang spesifik dan dapat ditindaklanjuti, bukan harapan umum." },
+      { id: "gesture_2", description: "Teacher shows one raised finger (IF) then sweeps hand to a consequence (SO) while saying 'If..., so...' -- to signal conditional logic: the solution works IF the condition is met, with a specific result.", description_id: "Guru menunjukkan satu jari terangkat (IF) lalu menyapukan tangan ke konsekuensinya (SO) sambil mengucapkan 'If..., so...' -- untuk menandai logika kondisional: solusi bekerja JIKA kondisinya terpenuhi, dengan hasil yang spesifik." },
+      { id: "gesture_3", description: "Teacher opens both hands toward the students while saying 'This will help...' -- to signal that the benefit of the solution is directed specifically at the students in the room.", description_id: "Guru membuka kedua tangan ke arah siswa sambil mengucapkan 'This will help...' -- untuk menandai bahwa manfaat solusinya ditujukan khusus kepada siswa di ruangan itu." }
     ]
   },
 

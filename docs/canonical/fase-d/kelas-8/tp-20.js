@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "The Old Storage Room Mystery",
     context: "Students discover that the room contains old letters and school memories, then decide to write a message to share their discovery with others.",
+    context_id: "Siswa menemukan bahwa ruangan itu berisi surat-surat lama dan kenangan sekolah, lalu memutuskan untuk menulis pesan guna membagikan penemuan mereka kepada orang lain.",
     communicative_goal: "resolve a narrative, express its message, and create a natural transition to written communication",
+    communicative_goal_id: "menyelesaikan cerita, menyampaikan pesannya, dan membuat transisi alami ke komunikasi tulis",
     vocabulary_domain: ["letters", "memories", "message", "discovery"],
     input_anchor: "ending storyboard",
     output_anchor: "story reflection and message draft",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today we find out what was inside the storage room." },
+      { type: "AKSI", text: "Minta siswa mengingat peristiwa terakhir dari sesi sebelumnya." },
+      // HOOK
+      { type: "UCAP", text: "Dito turned the key. The door opened. What do you think they found inside?" },
+      { type: "AKSI", text: "Tampilkan papan cerita penutup: 4 panel — Dito memutar kunci, pintu terbuka, benda lama, siswa tersenyum." },
+      { type: "UCAP", text: "Look at this ending storyboard. What does the discovery mean for the whole school?" },
+    ],
 
     active_vocabulary: [
       "In the end,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "An ending storyboard: four panels showing (1) Dito turning the key, (2) the door opening to reveal old letters and photographs, (3) the room displayed as a small museum, (4) students smiling at the memories.", asset_id: null },
-      { id: "visual_2", description: "Resolution frames: 'In the end, ___ because ___.' / 'From that day on, ___.' / 'The story shows that ___.' with fill-in lines.", asset_id: null },
-      { id: "visual_3", description: "Icons: old letters tied with ribbon, school photographs, a glowing light bulb (for 'The story shows ...'), and a small museum display.", asset_id: null }
+      { id: "visual_1", description: "An ending storyboard: four panels showing (1) Dito turning the key, (2) the door opening to reveal old letters and photographs, (3) the room displayed as a small museum, (4) students smiling at the memories.", description_id: "Papan cerita penutup: empat panel menunjukkan (1) Dito memutar kunci, (2) pintu terbuka memperlihatkan surat dan foto lama, (3) ruangan ditampilkan sebagai museum kecil, (4) siswa tersenyum menatap kenangan.", asset_id: null },
+      { id: "visual_2", description: "Resolution frames: 'In the end, ___ because ___.' / 'From that day on, ___.' / 'The story shows that ___.' with fill-in lines.", description_id: "Kerangka penyelesaian: 'In the end, ___ because ___.' / 'From that day on, ___.' / 'The story shows that ___.' dengan baris isian.", asset_id: null },
+      { id: "visual_3", description: "Icons: old letters tied with ribbon, school photographs, a glowing light bulb (for 'The story shows ...'), and a small museum display.", description_id: "Ikon: surat-surat lama diikat pita, foto-foto sekolah, lampu bohlam menyala (untuk 'The story shows ...'), dan tampilan museum kecil.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher brings hands together to signal a conclusion while saying 'In the end, ...'." },
-      { id: "gesture_2", description: "Teacher sweeps a hand forward across time while saying 'From that day on, ...'." },
-      { id: "gesture_3", description: "Teacher taps the side of the head while saying 'The story shows ...' -- to signal a theme or insight about the whole story." }
+      { id: "gesture_1", description: "Teacher brings hands together to signal a conclusion while saying 'In the end, ...'.", description_id: "Guru menyatukan kedua tangan untuk menandai kesimpulan sambil mengucapkan 'In the end, ...'." },
+      { id: "gesture_2", description: "Teacher sweeps a hand forward across time while saying 'From that day on, ...'.", description_id: "Guru menyapukan tangan ke depan melintasi waktu sambil mengucapkan 'From that day on, ...'." },
+      { id: "gesture_3", description: "Teacher taps the side of the head while saying 'The story shows ...' -- to signal a theme or insight about the whole story.", description_id: "Guru menepuk sisi kepala sambil mengucapkan 'The story shows ...' -- untuk menandai tema atau wawasan tentang keseluruhan cerita." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Healthy Canteen Menu",
     context: "Students sample or observe healthy dishes from the school canteen and give a simple evaluative response combining description and opinion.",
+    context_id: "Siswa mencicipi atau mengamati hidangan sehat dari kantin sekolah dan memberikan tanggapan evaluatif sederhana yang menggabungkan deskripsi dan opini.",
     communicative_goal: "describe an object or experience and give an initial evaluative response",
+    communicative_goal_id: "mendeskripsikan suatu objek atau pengalaman dan memberikan tanggapan evaluatif awal",
     vocabulary_domain: ["healthy food", "school canteen", "nutrition", "taste and price"],
     input_anchor: "canteen menu cards",
     output_anchor: "simple review",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. We begin today with something from the school canteen." },
+      { type: "AKSI", text: "Kondisikan kelas agar siap memberikan penilaian evaluatif." },
+      // HOOK
+      { type: "UCAP", text: "When you eat at the canteen, do you think about the food's nutrition and value? What matters most to you?" },
+      { type: "AKSI", text: "Tampilkan kartu menu kantin: sup sayur, ikan bakar, nasi campur, salad buah — dengan harga dan bahan." },
+      { type: "UCAP", text: "Look at these menu cards. If you were going to review one dish, what would you say about it?" },
+    ],
 
     active_vocabulary: [
       "It is",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Canteen menu cards showing four healthy dishes with name, price, and a short ingredient list: vegetable soup, grilled fish, mixed rice, and a fruit salad.", asset_id: null },
-      { id: "visual_2", description: "A simple review frame: 'It is ___ and ___.' / 'I think ___ because ___.' with two labelled slots: DESCRIBE and EVALUATE.", asset_id: null },
-      { id: "visual_3", description: "Icons: a healthy food bowl, a school building (canteen context), a nutrition label, a flavour star (taste), and a price tag.", asset_id: null }
+      { id: "visual_1", description: "Canteen menu cards showing four healthy dishes with name, price, and a short ingredient list: vegetable soup, grilled fish, mixed rice, and a fruit salad.", description_id: "Kartu menu kantin yang menunjukkan empat hidangan sehat dengan nama, harga, dan daftar bahan singkat: sup sayur, ikan bakar, nasi campur, dan salad buah.", asset_id: null },
+      { id: "visual_2", description: "A simple review frame: 'It is ___ and ___.' / 'I think ___ because ___.' with two labelled slots: DESCRIBE and EVALUATE.", description_id: "Kerangka ulasan sederhana: 'It is ___ and ___.' / 'I think ___ because ___.' dengan dua slot berlabel: DESCRIBE dan EVALUATE.", asset_id: null },
+      { id: "visual_3", description: "Icons: a healthy food bowl, a school building (canteen context), a nutrition label, a flavour star (taste), and a price tag.", description_id: "Ikon: mangkuk makanan sehat, gedung sekolah (konteks kantin), label nutrisi, bintang rasa (rasa), dan label harga.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to the menu card while saying 'It is ...' -- to signal describing what is in front of you." },
-      { id: "gesture_2", description: "Teacher links two fingers together while saying '... and ...' -- to signal combining two descriptive details." },
-      { id: "gesture_3", description: "Teacher points to own chest while saying 'I think ...' -- to signal shifting from description to personal evaluation." }
+      { id: "gesture_1", description: "Teacher points to the menu card while saying 'It is ...' -- to signal describing what is in front of you.", description_id: "Guru menunjuk kartu menu sambil mengucapkan 'It is ...' -- untuk menandai mendeskripsikan apa yang ada di depan kita." },
+      { id: "gesture_2", description: "Teacher links two fingers together while saying '... and ...' -- to signal combining two descriptive details.", description_id: "Guru mengaitkan dua jari sambil mengucapkan '... and ...' -- untuk menandai menggabungkan dua detail deskriptif." },
+      { id: "gesture_3", description: "Teacher points to own chest while saying 'I think ...' -- to signal shifting from description to personal evaluation.", description_id: "Guru menunjuk dadanya sendiri sambil mengucapkan 'I think ...' -- untuk menandai pergeseran dari deskripsi ke evaluasi pribadi." }
     ]
   },
 

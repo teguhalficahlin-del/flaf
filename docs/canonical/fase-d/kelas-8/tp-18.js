@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Old Storage Room Mystery",
     context: "Students continue the story as unexpected sounds and a hidden key create new problems for the characters.",
+    context_id: "Siswa melanjutkan cerita saat suara tak terduga dan kunci tersembunyi menimbulkan masalah baru bagi para tokoh.",
     communicative_goal: "develop a narrative conflict through connected events and unexpected changes",
+    communicative_goal_id: "mengembangkan konflik cerita melalui peristiwa yang berkaitan dan perubahan tak terduga",
     vocabulary_domain: ["key", "door", "footsteps", "flashlight"],
     input_anchor: "story sequence cards",
     output_anchor: "conflict retelling",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome back. The story continues — and things are about to change." },
+      { type: "AKSI", text: "Minta siswa mengingat tokoh dan latar yang sudah diperkenalkan." },
+      // HOOK
+      { type: "UCAP", text: "Last time, Dito found out about the old storage room. What do you think he did next?" },
+      { type: "AKSI", text: "Tampilkan kartu urutan cerita: tokoh mendengarkan di pintu, pintu terbuka dalam kegelapan, senter menemukan kunci di lantai." },
+      { type: "UCAP", text: "Look at these story cards. What unexpected things happened when he got closer to the door?" },
+    ],
 
     active_vocabulary: [
       "Suddenly,",
@@ -40,15 +52,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Story sequence cards showing three conflict moments: (1) a character listening at a door with wide eyes, (2) a door opening unexpectedly in darkness, (3) a flashlight beam landing on an old key on a dusty floor.", asset_id: null },
-      { id: "visual_2", description: "A connector strip: 'Suddenly, ___ so ___, but ___.' with three color-coded slots (orange / green / red) and arrows showing one integrated sentence.", asset_id: null },
-      { id: "visual_3", description: "Icons for vocabulary: an old key, a creaking door, footstep marks, a flashlight beam.", asset_id: null }
+      { id: "visual_1", description: "Story sequence cards showing three conflict moments: (1) a character listening at a door with wide eyes, (2) a door opening unexpectedly in darkness, (3) a flashlight beam landing on an old key on a dusty floor.", description_id: "Kartu urutan cerita yang menunjukkan tiga momen konflik: (1) seorang tokoh mendengarkan di pintu dengan mata terbelalak, (2) pintu terbuka tak terduga dalam kegelapan, (3) sorot senter jatuh pada kunci tua di lantai berdebu.", asset_id: null },
+      { id: "visual_2", description: "A connector strip: 'Suddenly, ___ so ___, but ___.' with three color-coded slots (orange / green / red) and arrows showing one integrated sentence.", description_id: "Potongan penghubung: 'Suddenly, ___ so ___, but ___.' dengan tiga slot berkode warna (oranye / hijau / merah) dan tanda panah menunjukkan satu kalimat terpadu.", asset_id: null },
+      { id: "visual_3", description: "Icons for vocabulary: an old key, a creaking door, footstep marks, a flashlight beam.", description_id: "Ikon kosakata: kunci tua, pintu berderak, jejak langkah kaki, sorot senter.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher makes a sudden open-palm gesture while saying 'Suddenly,' -- to signal an unexpected event." },
-      { id: "gesture_2", description: "Teacher moves a hand forward for the consequence while saying 'so ...'." },
-      { id: "gesture_3", description: "Teacher raises a flat hand as a stop signal while saying 'but ...' -- to mark the complication." }
+      { id: "gesture_1", description: "Teacher makes a sudden open-palm gesture while saying 'Suddenly,' -- to signal an unexpected event.", description_id: "Guru membuat gestur telapak terbuka tiba-tiba sambil mengucapkan 'Suddenly,' -- untuk menandai peristiwa tak terduga." },
+      { id: "gesture_2", description: "Teacher moves a hand forward for the consequence while saying 'so ...'.", description_id: "Guru menggerakkan tangan ke depan untuk konsekuensinya sambil mengucapkan 'so ...'." },
+      { id: "gesture_3", description: "Teacher raises a flat hand as a stop signal while saying 'but ...' -- to mark the complication.", description_id: "Guru mengangkat telapak tangan rata sebagai tanda berhenti sambil mengucapkan 'but ...' -- untuk menandai komplikasinya." }
     ]
   },
 

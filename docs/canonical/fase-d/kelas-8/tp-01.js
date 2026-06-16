@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Phone-Free Break Time",
     context: "Students discuss whether break time should be used without mobile phones and respond to different opinions.",
+    context_id: "Siswa mendiskusikan apakah waktu istirahat sebaiknya digunakan tanpa ponsel dan menanggapi pendapat yang berbeda.",
     communicative_goal: "exchange and respond to opinions with reasons and contrasting ideas",
+    communicative_goal_id: "bertukar dan menanggapi pendapat dengan alasan serta gagasan yang berlawanan",
     vocabulary_domain: ["phones", "break time", "friends", "communication"],
     input_anchor: "discussion cards",
     output_anchor: "paired opinion exchange",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, class. Please take your seats." },
+      { type: "AKSI", text: "Pastikan semua siswa duduk dan perhatian ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Quick show of hands — who uses their phone during school break time?" },
+      { type: "AKSI", text: "Tampilkan kartu diskusi: 'No phones at break time' versus 'Phones allowed at break time'." },
+      { type: "UCAP", text: "The school is thinking about a phone-free break. What do you think about that idea?" },
+    ],
 
     active_vocabulary: [
       "I think",
@@ -43,15 +55,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Discussion cards with two contrasting statements: 'No phones at break time' and 'Phones allowed at break time', to trigger opinions.", asset_id: null },
-      { id: "visual_2", description: "An opinion-frame card: 'I think ___ because ___, but ___. What do you think?'", asset_id: null },
-      { id: "visual_3", description: "Icons for the topic: a mobile phone, friends talking face to face, a break-time clock, and chat bubbles (communication).", asset_id: null }
+      { id: "visual_1", description: "Discussion cards with two contrasting statements: 'No phones at break time' and 'Phones allowed at break time', to trigger opinions.", description_id: "Kartu diskusi dengan dua pernyataan yang berlawanan: 'No phones at break time' dan 'Phones allowed at break time', untuk memicu pendapat.", asset_id: null },
+      { id: "visual_2", description: "An opinion-frame card: 'I think ___ because ___, but ___. What do you think?'", description_id: "Kartu kerangka pendapat: 'I think ___ because ___, but ___. What do you think?'", asset_id: null },
+      { id: "visual_3", description: "Icons for the topic: a mobile phone, friends talking face to face, a break-time clock, and chat bubbles (communication).", description_id: "Ikon untuk topiknya: ponsel, teman-teman mengobrol langsung, jam waktu istirahat, dan balon chat (komunikasi).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher taps the temple for 'I think', opens a hand for 'because', then tips the hand to the other side for 'but' to show a balanced caveat." },
-      { id: "gesture_2", description: "Teacher opens both hands toward a partner while asking 'What do you think?' to invite an opinion." },
-      { id: "gesture_3", description: "Teacher nods for 'I agree' and shakes the head for 'I don't think so' to show response forms." }
+      { id: "gesture_1", description: "Teacher taps the temple for 'I think', opens a hand for 'because', then tips the hand to the other side for 'but' to show a balanced caveat.", description_id: "Guru menepuk pelipis untuk 'I think', membuka tangan untuk 'because', lalu memiringkan tangan ke sisi lain untuk 'but' untuk menunjukkan catatan penyeimbang." },
+      { id: "gesture_2", description: "Teacher opens both hands toward a partner while asking 'What do you think?' to invite an opinion.", description_id: "Guru membuka kedua tangan ke arah teman sambil bertanya 'What do you think?' untuk mengundang pendapat." },
+      { id: "gesture_3", description: "Teacher nods for 'I agree' and shakes the head for 'I don't think so' to show response forms.", description_id: "Guru mengangguk untuk 'I agree' dan menggeleng untuk 'I don't think so' untuk menunjukkan bentuk responsnya." }
     ]
   },
 

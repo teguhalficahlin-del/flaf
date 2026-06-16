@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Old Storage Room Mystery",
     context: "Students enter the story of an old locked storage room that everyone at school believes hides a forgotten secret.",
+    context_id: "Siswa memasuki cerita tentang gudang tua terkunci yang dipercaya seluruh warga sekolah menyimpan rahasia yang terlupakan.",
     communicative_goal: "build a richer story world with characters, setting, and shared beliefs",
+    communicative_goal_id: "membangun dunia cerita yang lebih kaya dengan tokoh, latar, dan keyakinan bersama",
     vocabulary_domain: ["storage room", "school", "secret", "old objects"],
     input_anchor: "story illustration",
     output_anchor: "story opening",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today we begin a new story — one that starts at school." },
+      { type: "AKSI", text: "Bangun suasana naratif dengan nada yang sedikit misterius." },
+      // HOOK
+      { type: "UCAP", text: "Is there any part of this school building that you have never entered — or that feels mysterious?" },
+      { type: "AKSI", text: "Tampilkan ilustrasi gedung sekolah dengan gudang tua misterius di belakang, pintunya sedikit terbuka di antara tanaman liar." },
+      { type: "UCAP", text: "Look at this school illustration. What do you notice behind the main building?" },
+    ],
 
     active_vocabulary: [
       "Once,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A story illustration showing a school building with a mysterious old storage room visible at the back, door slightly ajar behind overgrown plants.", asset_id: null },
-      { id: "visual_2", description: "A close-up of a wooden door with a handwritten sign: 'Notice: Keep this door locked.' and dusty old objects barely visible through a gap.", asset_id: null },
-      { id: "visual_3", description: "Story frames: 'Once, there was ... who ...' linked by an arrow to 'Everyone believed ...' -- showing character introduction leading to shared belief.", asset_id: null }
+      { id: "visual_1", description: "A story illustration showing a school building with a mysterious old storage room visible at the back, door slightly ajar behind overgrown plants.", description_id: "Ilustrasi cerita yang menunjukkan gedung sekolah dengan gudang tua misterius terlihat di belakang, pintunya sedikit terbuka di antara tanaman yang tumbuh liar.", asset_id: null },
+      { id: "visual_2", description: "A close-up of a wooden door with a handwritten sign: 'Notice: Keep this door locked.' and dusty old objects barely visible through a gap.", description_id: "Foto close-up pintu kayu dengan tanda tulisan tangan: 'Notice: Keep this door locked.' dan benda-benda tua berdebu yang samar terlihat melalui celah.", asset_id: null },
+      { id: "visual_3", description: "Story frames: 'Once, there was ... who ...' linked by an arrow to 'Everyone believed ...' -- showing character introduction leading to shared belief.", description_id: "Kerangka cerita: 'Once, there was ... who ...' dihubungkan tanda panah ke 'Everyone believed ...' -- menunjukkan perkenalan tokoh yang mengarah ke keyakinan bersama.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher sweeps a hand slowly to open the scene while saying 'Once, there was ...' -- as if turning the page of a storybook." },
-      { id: "gesture_2", description: "Teacher points outward to indicate location while saying 'Behind the school, there was ...'." },
-      { id: "gesture_3", description: "Teacher opens arms wide to represent the whole community while saying 'Everyone believed ...'." }
+      { id: "gesture_1", description: "Teacher sweeps a hand slowly to open the scene while saying 'Once, there was ...' -- as if turning the page of a storybook.", description_id: "Guru menyapukan tangan pelan untuk membuka pemandangan sambil mengucapkan 'Once, there was ...' -- seolah membalik halaman buku cerita." },
+      { id: "gesture_2", description: "Teacher points outward to indicate location while saying 'Behind the school, there was ...'.", description_id: "Guru menunjuk ke luar untuk menandai lokasi sambil mengucapkan 'Behind the school, there was ...'." },
+      { id: "gesture_3", description: "Teacher opens arms wide to represent the whole community while saying 'Everyone believed ...'.", description_id: "Guru membuka kedua lengan lebar-lebar mewakili seluruh komunitas sambil mengucapkan 'Everyone believed ...'." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Old Storage Room Discovery",
     context: "Students organize the main points of their presentation about the storage room discovery using explicit sequence markers and an evidence-based concluding move.",
+    context_id: "Siswa menyusun poin-poin utama presentasi mereka tentang penemuan gudang menggunakan penanda urutan yang jelas dan penutup berbasis bukti.",
     communicative_goal: "organize information, arguments, or reviews into a coherent spoken presentation with explicit transitions",
+    communicative_goal_id: "menyusun informasi, argumen, atau ulasan menjadi presentasi lisan yang koheren dengan transisi yang jelas",
     vocabulary_domain: ["sequence markers", "historical documents", "school history", "evidence"],
     input_anchor: "discovery notes",
     output_anchor: "organized presentation body",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Please have your discovery notes ready on your desk." },
+      { type: "AKSI", text: "Berikan waktu sebentar bagi siswa menyiapkan catatan penemuan mereka." },
+      // HOOK
+      { type: "UCAP", text: "You have opened your presentation. Now — what are the main points you want to share about the storage room?" },
+      { type: "AKSI", text: "Tampilkan empat kartu catatan penemuan berlabel First / Next / Another point / Finally." },
+      { type: "UCAP", text: "Look at these discovery notes. How can you organize them into clear presentation points?" },
+    ],
 
     active_vocabulary: [
       "First,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Discovery notes: four cards summarizing what Dito and Wulan found -- old letters, photographs, documents with names, and the condition of the objects -- each labelled with a sequence marker (First / Next / Another point / Finally).", asset_id: null },
-      { id: "visual_2", description: "A presentation body organizer: four slots with colour-coded sequence markers (First / Next / Another point is / Finally) and a fifth slot labelled 'Based on this,' for the concluding move.", asset_id: null },
-      { id: "visual_3", description: "A visual contrast: a process-explanation flow chart (PAT-8-10 style, e.g. 'First, water evaporates...') next to a presentation-body organizer (PAT-9-08 style, 'First, we found...Another point is...Based on this,...') -- showing same markers, different function.", asset_id: null }
+      { id: "visual_1", description: "Discovery notes: four cards summarizing what Dito and Wulan found -- old letters, photographs, documents with names, and the condition of the objects -- each labelled with a sequence marker (First / Next / Another point / Finally).", description_id: "Catatan penemuan: empat kartu merangkum apa yang ditemukan Dito dan Wulan -- surat lama, foto, dokumen berisi nama, dan kondisi benda-benda itu -- masing-masing berlabel penanda urutan (First / Next / Another point / Finally).", asset_id: null },
+      { id: "visual_2", description: "A presentation body organizer: four slots with colour-coded sequence markers (First / Next / Another point is / Finally) and a fifth slot labelled 'Based on this,' for the concluding move.", description_id: "Pengatur isi presentasi: empat slot dengan penanda urutan berkode warna (First / Next / Another point is / Finally) dan slot kelima berlabel 'Based on this,' untuk gerakan penutup.", asset_id: null },
+      { id: "visual_3", description: "A visual contrast: a process-explanation flow chart (PAT-8-10 style, e.g. 'First, water evaporates...') next to a presentation-body organizer (PAT-9-08 style, 'First, we found...Another point is...Based on this,...') -- showing same markers, different function.", description_id: "Kontras visual: diagram alur penjelasan proses (gaya PAT-8-10, misalnya 'First, water evaporates...') di sebelah pengatur isi presentasi (gaya PAT-9-08, 'First, we found...Another point is...Based on this,...') -- menunjukkan penanda yang sama, fungsi yang berbeda.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher raises one finger for 'First,' then moves to two for 'Next,' then gestures sideways for 'Another point is' -- to show that 'Another point' is a new dimension, not just the next step in a sequence." },
-      { id: "gesture_2", description: "Teacher raises a final open hand while saying 'Finally,' -- to signal the last point before the concluding move." },
-      { id: "gesture_3", description: "Teacher brings both hands together from separate sides while saying 'Based on this,' -- to signal drawing a conclusion from all the evidence gathered, not just the last point." }
+      { id: "gesture_1", description: "Teacher raises one finger for 'First,' then moves to two for 'Next,' then gestures sideways for 'Another point is' -- to show that 'Another point' is a new dimension, not just the next step in a sequence.", description_id: "Guru mengangkat satu jari untuk 'First,' lalu pindah ke dua untuk 'Next,' lalu memberi gestur ke samping untuk 'Another point is' -- untuk menunjukkan bahwa 'Another point' adalah dimensi baru, bukan sekadar langkah berikutnya dalam urutan." },
+      { id: "gesture_2", description: "Teacher raises a final open hand while saying 'Finally,' -- to signal the last point before the concluding move.", description_id: "Guru mengangkat telapak tangan terbuka terakhir sambil mengucapkan 'Finally,' -- untuk menandai poin terakhir sebelum gerakan penutup." },
+      { id: "gesture_3", description: "Teacher brings both hands together from separate sides while saying 'Based on this,' -- to signal drawing a conclusion from all the evidence gathered, not just the last point.", description_id: "Guru menyatukan kedua tangan dari sisi yang berbeda sambil mengucapkan 'Based on this,' -- untuk menandai penarikan kesimpulan dari semua bukti yang dikumpulkan, bukan hanya poin terakhir." }
     ]
   },
 

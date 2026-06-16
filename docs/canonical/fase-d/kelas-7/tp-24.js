@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "The Lost Firefly",
     context: "Students discuss the ending of the story and the lesson about helping others and asking for help.",
+    context_id: "Siswa mendiskusikan akhir cerita dan pelajaran tentang menolong orang lain serta meminta bantuan.",
     communicative_goal: "close a narrative by expressing the lesson learned and preparing personal responses",
+    communicative_goal_id: "menutup cerita dengan menyampaikan pelajaran yang dipetik dan menyiapkan tanggapan pribadi",
     vocabulary_domain: ["kindness", "friendship", "help", "choices"],
     input_anchor: "ending illustration",
     output_anchor: "story reflection discussion",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning, class! Today we close our firefly story together." },
+      { type: "AKSI", text: "Beri siswa waktu sebentar untuk mengingat kembali isi cerita." },
+      // HOOK
+      { type: "UCAP", text: "What do you think happened in the end for the firefly and its new friends?" },
+      { type: "AKSI", text: "Tampilkan ilustrasi penutup: kunang-kunang berkumpul kembali dengan kelinci, burung, dan kunang-kunang lain yang bersinar." },
+      { type: "UCAP", text: "Look at this ending illustration. What did the firefly learn from its journey?" },
+    ],
 
     active_vocabulary: [
       "In the end,",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "An ending illustration: the firefly happily reunited with the rabbit, the bird, and other glowing fireflies (friends) at home at dawn.", asset_id: null },
-      { id: "visual_2", description: "Closing cards: 'In the end, ...', 'The firefly learned ...', 'Everyone felt ... because ...'.", asset_id: null },
-      { id: "visual_3", description: "Theme icons: joined hands (kindness/help), glowing friends together (friendship), and a signpost with two paths (choices).", asset_id: null }
+      { id: "visual_1", description: "An ending illustration: the firefly happily reunited with the rabbit, the bird, and other glowing fireflies (friends) at home at dawn.", description_id: "Ilustrasi penutup: kunang-kunang bahagia berkumpul kembali dengan kelinci, burung, dan kunang-kunang lain yang bersinar (teman-teman) di rumah saat subuh.", asset_id: null },
+      { id: "visual_2", description: "Closing cards: 'In the end, ...', 'The firefly learned ...', 'Everyone felt ... because ...'.", description_id: "Kartu penutup: 'In the end, ...', 'The firefly learned ...', 'Everyone felt ... because ...'.", asset_id: null },
+      { id: "visual_3", description: "Theme icons: joined hands (kindness/help), glowing friends together (friendship), and a signpost with two paths (choices).", description_id: "Ikon tema: tangan bergandengan (kebaikan/tolong-menolong), teman-teman yang bersinar bersama (persahabatan), dan tanda penunjuk dengan dua jalur (pilihan).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher brings both hands to a warm, final close while saying 'In the end, ...'." },
-      { id: "gesture_2", description: "Teacher taps the temple, then the heart, while saying 'The firefly learned ...'." },
-      { id: "gesture_3", description: "Teacher gestures around the whole group while saying 'Everyone felt ... because ...'." }
+      { id: "gesture_1", description: "Teacher brings both hands to a warm, final close while saying 'In the end, ...'.", description_id: "Guru menyatukan kedua tangan sebagai penutup hangat dan final sambil mengucapkan 'In the end, ...'." },
+      { id: "gesture_2", description: "Teacher taps the temple, then the heart, while saying 'The firefly learned ...'.", description_id: "Guru menepuk pelipis, lalu dada, sambil mengucapkan 'The firefly learned ...'." },
+      { id: "gesture_3", description: "Teacher gestures around the whole group while saying 'Everyone felt ... because ...'.", description_id: "Guru memberi gestur ke seluruh kelompok sambil mengucapkan 'Everyone felt ... because ...'." }
     ]
   },
 

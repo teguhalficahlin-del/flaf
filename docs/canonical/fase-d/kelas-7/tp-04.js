@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "School Environment",
     context: "Students discuss ideas for keeping the classroom clean.",
+    context_id: "Siswa mendiskusikan ide-ide untuk menjaga kebersihan kelas.",
     communicative_goal: "express and respond to simple opinions with reasons",
+    communicative_goal_id: "menyampaikan dan menanggapi pendapat sederhana dengan alasan",
     vocabulary_domain: ["clean", "recycle", "teamwork", "rules"],
     input_anchor: "classroom photo",
     output_anchor: "small-group discussion",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning, class! Find your seat quickly." },
+      { type: "AKSI", text: "Tunggu sebentar hingga kelas kondusif." },
+      // HOOK
+      { type: "UCAP", text: "Take a look at this photo — which side of the classroom looks better to you?" },
+      { type: "AKSI", text: "Tunjukkan foto kelas yang dibagi dua: satu sisi kotor, satu sisi bersih dan rapi." },
+      { type: "UCAP", text: "What do you think we should do to keep our classroom clean?" },
+    ],
 
     active_vocabulary: [
       "I think",
@@ -44,15 +56,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A classroom photo split in two: one side untidy (litter on the floor, messy desks) and one side clean and tidy, to spark a discussion about keeping the classroom clean.", asset_id: null },
-      { id: "visual_2", description: "Topic icons for the discussion: a broom (clean), a recycling bin with paper (recycle), several hands joined together (teamwork), and a class-rules poster (rules).", asset_id: null },
-      { id: "visual_3", description: "Response cards: a nodding face for 'I agree. / That's true.' and a face shaking its head for 'I don't think so.'", asset_id: null }
+      { id: "visual_1", description: "A classroom photo split in two: one side untidy (litter on the floor, messy desks) and one side clean and tidy, to spark a discussion about keeping the classroom clean.", description_id: "Foto kelas yang dibagi dua: satu sisi tidak rapi (sampah di lantai, meja berantakan) dan satu sisi bersih dan rapi, untuk memicu diskusi tentang menjaga kebersihan kelas.", asset_id: null },
+      { id: "visual_2", description: "Topic icons for the discussion: a broom (clean), a recycling bin with paper (recycle), several hands joined together (teamwork), and a class-rules poster (rules).", description_id: "Ikon topik untuk diskusi: sapu (bersih), tempat sampah daur ulang berisi kertas (daur ulang), beberapa tangan bergandengan (kerja sama), dan poster peraturan kelas (peraturan).", asset_id: null },
+      { id: "visual_3", description: "Response cards: a nodding face for 'I agree. / That's true.' and a face shaking its head for 'I don't think so.'", description_id: "Kartu respons: wajah mengangguk untuk 'I agree. / That's true.' dan wajah menggeleng untuk 'I don't think so.'", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher taps their temple while saying 'I think...', then opens a hand forward while saying 'because...' to link the opinion to its reason." },
-      { id: "gesture_2", description: "Teacher nods firmly with a thumbs-up while saying 'I agree. / That's true.'" },
-      { id: "gesture_3", description: "Teacher waves a hand gently from side to side and shakes their head while saying 'I don't think so.'" }
+      { id: "gesture_1", description: "Teacher taps their temple while saying 'I think...', then opens a hand forward while saying 'because...' to link the opinion to its reason.", description_id: "Guru menepuk pelipisnya sambil mengucapkan 'I think...', lalu membuka tangan ke depan sambil mengucapkan 'because...' untuk menghubungkan pendapat dengan alasannya." },
+      { id: "gesture_2", description: "Teacher nods firmly with a thumbs-up while saying 'I agree. / That's true.'", description_id: "Guru mengangguk mantap dengan jempol ke atas sambil mengucapkan 'I agree. / That's true.'" },
+      { id: "gesture_3", description: "Teacher waves a hand gently from side to side and shakes their head while saying 'I don't think so.'", description_id: "Guru melambaikan tangan pelan dari sisi ke sisi dan menggelengkan kepala sambil mengucapkan 'I don't think so.'" }
     ]
   },
 

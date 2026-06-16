@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "School Club Schedule",
     context: "Students read and create simple schedules for different extracurricular activities.",
+    context_id: "Siswa membaca dan membuat jadwal sederhana untuk berbagai kegiatan ekstrakurikuler.",
     communicative_goal: "share event information using time, date, and place expressions",
+    communicative_goal_id: "membagikan informasi acara menggunakan ungkapan waktu, tanggal, dan tempat",
     vocabulary_domain: ["calendar", "club", "time", "location"],
     input_anchor: "event calendar",
     output_anchor: "schedule card",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Hello, class! Let's check the clock — are we ready to begin?" },
+      { type: "AKSI", text: "Pastikan siswa duduk dan fokus ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Do you know when your school clubs meet? Which day and what time?" },
+      { type: "AKSI", text: "Tampilkan kalender acara atau kisi-kisi jadwal klub dengan hari, waktu, dan ruangan." },
+      { type: "UCAP", text: "Look at this club schedule. What information can you find here?" },
+    ],
 
     active_vocabulary: [
       "Monday",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "An event calendar / timetable grid showing club activities with day, time, and room for each entry.", asset_id: null },
-      { id: "visual_2", description: "Schedule fragment cards in 'Day, Time + Event + Place' format (short labels, not full sentences).", asset_id: null },
-      { id: "visual_3", description: "Icons for the three chunks: a clock (time, a.m./p.m.), a calendar page (date), and a room/hall/field sign (location).", asset_id: null }
+      { id: "visual_1", description: "An event calendar / timetable grid showing club activities with day, time, and room for each entry.", description_id: "Kalender acara / kisi-kisi jadwal yang menunjukkan kegiatan klub dengan hari, waktu, dan ruangan untuk setiap entri.", asset_id: null },
+      { id: "visual_2", description: "Schedule fragment cards in 'Day, Time + Event + Place' format (short labels, not full sentences).", description_id: "Kartu potongan jadwal dalam format 'Day, Time + Event + Place' (label singkat, bukan kalimat lengkap).", asset_id: null },
+      { id: "visual_3", description: "Icons for the three chunks: a clock (time, a.m./p.m.), a calendar page (date), and a room/hall/field sign (location).", description_id: "Ikon untuk tiga bagian: jam (waktu, a.m./p.m.), halaman kalender (tanggal), dan tanda ruangan/aula/lapangan (lokasi).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to a day and time on the calendar while reading the time/date chunk." },
-      { id: "gesture_2", description: "Teacher points to the event name, then to the place, showing the two remaining chunks." },
-      { id: "gesture_3", description: "Teacher taps each chunk in turn (time, event, place) to show the schedule fragment format, not a full sentence." }
+      { id: "gesture_1", description: "Teacher points to a day and time on the calendar while reading the time/date chunk.", description_id: "Guru menunjuk hari dan waktu di kalender sambil membaca bagian waktu/tanggalnya." },
+      { id: "gesture_2", description: "Teacher points to the event name, then to the place, showing the two remaining chunks.", description_id: "Guru menunjuk nama acara, lalu ke tempatnya, menunjukkan dua bagian yang tersisa." },
+      { id: "gesture_3", description: "Teacher taps each chunk in turn (time, event, place) to show the schedule fragment format, not a full sentence.", description_id: "Guru menepuk setiap bagian secara bergantian (waktu, acara, tempat) untuk menunjukkan format potongan jadwal, bukan kalimat lengkap." }
     ]
   },
 

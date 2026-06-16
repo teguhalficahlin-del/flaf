@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Learning from Creating Positive Change",
     context: "Students reflect on their experience of analyzing evidence, identifying a school problem, and proposing solutions to improve student wellbeing, constructing personal meaning from the learning process.",
+    context_id: "Siswa merefleksikan pengalaman mereka menganalisis bukti, mengidentifikasi masalah sekolah, dan mengusulkan solusi untuk meningkatkan kesejahteraan siswa, serta membangun makna pribadi dari proses belajar tersebut.",
     communicative_goal: "reflect on learning experiences and construct personal meaning from them",
+    communicative_goal_id: "merefleksikan pengalaman belajar dan membangun makna pribadi darinya",
     vocabulary_domain: ["reflection", "learning process", "evidence", "personal growth"],
     input_anchor: "integrated problem-solution evaluation",
     output_anchor: "personal learning reflection",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Today we turn inward — to reflect on our own learning." },
+      { type: "AKSI", text: "Berikan waktu tenang sejenak sebelum memulai refleksi." },
+      // HOOK
+      { type: "UCAP", text: "Think back to when we analyzed evidence, identified a problem, and proposed a solution. What did you actually learn?" },
+      { type: "AKSI", text: "Tampilkan kartu alur refleksi: 'Learning process' → 'Key moment' → 'What I realized'." },
+      { type: "UCAP", text: "Look at this reflection arc. Where did you experience the biggest shift in your thinking?" },
+    ],
 
     active_vocabulary: [
       "I learned",
@@ -41,15 +53,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A reflection arc card with three connected stages: 'Learning process' (what we did across Cluster 4 and 5) → 'Key moment' (when something became clear or difficult) → 'What I realized' (the personal meaning that emerged).", asset_id: null },
-      { id: "visual_2", description: "A reflection frame with three labelled slots: 'I learned...' (state the learning) / 'because...' (explain why it matters) / 'From this experience, I realized...' (a new personal insight, not a summary of events).", asset_id: null },
-      { id: "visual_3", description: "Icons: a journal with an open page (reflection), a magnifying glass over layered source documents (evidence and learning process), and a figure with an upward arrow (personal growth).", asset_id: null }
+      { id: "visual_1", description: "A reflection arc card with three connected stages: 'Learning process' (what we did across Cluster 4 and 5) → 'Key moment' (when something became clear or difficult) → 'What I realized' (the personal meaning that emerged).", description_id: "Kartu alur refleksi dengan tiga tahap terhubung: 'Learning process' (apa yang kita lakukan sepanjang Cluster 4 dan 5) → 'Key moment' (saat sesuatu menjadi jelas atau sulit) → 'What I realized' (makna pribadi yang muncul).", asset_id: null },
+      { id: "visual_2", description: "A reflection frame with three labelled slots: 'I learned...' (state the learning) / 'because...' (explain why it matters) / 'From this experience, I realized...' (a new personal insight, not a summary of events).", description_id: "Kerangka refleksi dengan tiga slot berlabel: 'I learned...' (menyatakan pembelajarannya) / 'because...' (menjelaskan mengapa itu penting) / 'From this experience, I realized...' (wawasan pribadi baru, bukan ringkasan peristiwa).", asset_id: null },
+      { id: "visual_3", description: "Icons: a journal with an open page (reflection), a magnifying glass over layered source documents (evidence and learning process), and a figure with an upward arrow (personal growth).", description_id: "Ikon: jurnal dengan halaman terbuka (refleksi), kaca pembesar di atas dokumen sumber berlapis (bukti dan proses belajar), dan figur dengan tanda panah ke atas (pertumbuhan pribadi).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher places a hand on chest while saying 'I learned...' -- to signal taking personal ownership of the learning, not describing what happened from the outside." },
-      { id: "gesture_2", description: "Teacher traces a causal arrow between two cards while saying 'because...' -- to signal that the reason must explain WHY it mattered personally, not just what happened next." },
-      { id: "gesture_3", description: "Teacher opens an open hand outward while saying 'From this experience, I realized...' -- to signal a moment of genuine new insight, distinct from the first 'I learned...' and not a repetition of events." }
+      { id: "gesture_1", description: "Teacher places a hand on chest while saying 'I learned...' -- to signal taking personal ownership of the learning, not describing what happened from the outside.", description_id: "Guru meletakkan tangan di dada sambil mengucapkan 'I learned...' -- untuk menandai mengambil kepemilikan pribadi atas pembelajarannya, bukan mendeskripsikan apa yang terjadi dari luar." },
+      { id: "gesture_2", description: "Teacher traces a causal arrow between two cards while saying 'because...' -- to signal that the reason must explain WHY it mattered personally, not just what happened next.", description_id: "Guru menyusuri tanda panah kausal di antara dua kartu sambil mengucapkan 'because...' -- untuk menandai bahwa alasannya harus menjelaskan MENGAPA itu penting secara pribadi, bukan hanya apa yang terjadi selanjutnya." },
+      { id: "gesture_3", description: "Teacher opens an open hand outward while saying 'From this experience, I realized...' -- to signal a moment of genuine new insight, distinct from the first 'I learned...' and not a repetition of events.", description_id: "Guru membuka satu telapak tangan ke luar sambil mengucapkan 'From this experience, I realized...' -- untuk menandai momen wawasan baru yang sejati, berbeda dari 'I learned...' yang pertama dan bukan pengulangan peristiwa." }
     ]
   },
 

@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Butterflies Around Us",
     context: "Students observe photographs of butterflies and classify them as insects while describing their common characteristics.",
+    context_id: "Siswa mengamati foto kupu-kupu dan mengklasifikasikannya sebagai serangga sambil mendeskripsikan ciri-ciri umumnya.",
     communicative_goal: "classify living things using kind, use, and usual characteristics",
+    communicative_goal_id: "mengklasifikasikan makhluk hidup berdasarkan jenis, kegunaan, dan ciri umum",
     vocabulary_domain: ["butterflies", "insects", "wings", "habitat"],
     input_anchor: "nature photo cards",
     output_anchor: "classification card",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning. Let's begin today with something from nature." },
+      { type: "AKSI", text: "Minta siswa menyimpan buku lain dan fokus ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever seen a butterfly up close? How would you describe it?" },
+      { type: "AKSI", text: "Tampilkan kartu foto alam berbagai kupu-kupu, ditambah serangga lain (lebah, semut)." },
+      { type: "UCAP", text: "Look at these nature photos. What do all these creatures have in common?" },
+    ],
 
     active_vocabulary: [
       "is a kind of",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Nature photo cards of different butterflies, plus other insects (bees, ants) for the category 'insect'.", asset_id: null },
-      { id: "visual_2", description: "A classification card with three slots: 'is a kind of ___', 'is used for ___', 'usually ___'.", asset_id: null },
-      { id: "visual_3", description: "Habitat icons: a garden and a forest where butterflies usually live.", asset_id: null }
+      { id: "visual_1", description: "Nature photo cards of different butterflies, plus other insects (bees, ants) for the category 'insect'.", description_id: "Kartu foto alam berbagai kupu-kupu, ditambah serangga lain (lebah, semut) untuk kategori 'serangga'.", asset_id: null },
+      { id: "visual_2", description: "A classification card with three slots: 'is a kind of ___', 'is used for ___', 'usually ___'.", description_id: "Kartu klasifikasi dengan tiga slot: 'is a kind of ___', 'is used for ___', 'usually ___'.", asset_id: null },
+      { id: "visual_3", description: "Habitat icons: a garden and a forest where butterflies usually live.", description_id: "Ikon habitat: taman dan hutan tempat kupu-kupu biasanya hidup.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher points to one butterfly photo, then sweeps to a group of insects, to show classifying into a category ('is a kind of')." },
-      { id: "gesture_2", description: "Teacher mimes the use of a feature (wings flapping for flying) while saying 'is used for ...'." },
-      { id: "gesture_3", description: "Teacher makes a wide, general sweep while saying 'It usually ...' to show a typical characteristic." }
+      { id: "gesture_1", description: "Teacher points to one butterfly photo, then sweeps to a group of insects, to show classifying into a category ('is a kind of').", description_id: "Guru menunjuk satu foto kupu-kupu, lalu menyapu ke sekelompok serangga, untuk menunjukkan pengklasifikasian ke dalam kategori ('is a kind of')." },
+      { id: "gesture_2", description: "Teacher mimes the use of a feature (wings flapping for flying) while saying 'is used for ...'.", description_id: "Guru memperagakan penggunaan suatu ciri (sayap mengepak untuk terbang) sambil mengucapkan 'is used for ...'." },
+      { id: "gesture_3", description: "Teacher makes a wide, general sweep while saying 'It usually ...' to show a typical characteristic.", description_id: "Guru membuat gerakan menyapu yang luas dan umum sambil mengucapkan 'It usually ...' untuk menunjukkan ciri khas." }
     ]
   },
 

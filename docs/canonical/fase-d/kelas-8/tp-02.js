@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "After-School Activities",
     context: "Students compare different activities and explain which one they prefer and why.",
+    context_id: "Siswa membandingkan berbagai kegiatan dan menjelaskan mana yang lebih mereka sukai serta alasannya.",
     communicative_goal: "express preferences and compare alternatives with reasons",
+    communicative_goal_id: "menyampaikan preferensi dan membandingkan pilihan dengan alasan",
     vocabulary_domain: ["sports", "music", "coding", "volunteering"],
     input_anchor: "activity cards",
     output_anchor: "preference interview",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good afternoon, everyone. Let's settle down." },
+      { type: "AKSI", text: "Tunggu kelas kondusif sebelum memulai." },
+      // HOOK
+      { type: "UCAP", text: "After school, what activity do you usually prefer — sports, music, or something else?" },
+      { type: "AKSI", text: "Tampilkan kartu kegiatan setelah sekolah: berolahraga, bermusik, coding, menjadi relawan." },
+      { type: "UCAP", text: "Look at these four options. Which would you rather do — and why?" },
+    ],
 
     active_vocabulary: [
       "I prefer",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Activity cards for after-school choices: playing sports, making music, coding, and volunteering.", asset_id: null },
-      { id: "visual_2", description: "A preference-frame card: 'I prefer ___ because ___' and 'I'd rather ___ than ___'.", asset_id: null },
-      { id: "visual_3", description: "A two-choice scale (this vs that) with a heart on the personally preferred option.", asset_id: null }
+      { id: "visual_1", description: "Activity cards for after-school choices: playing sports, making music, coding, and volunteering.", description_id: "Kartu kegiatan untuk pilihan setelah sekolah: berolahraga, bermusik, coding, dan menjadi relawan.", asset_id: null },
+      { id: "visual_2", description: "A preference-frame card: 'I prefer ___ because ___' and 'I'd rather ___ than ___'.", description_id: "Kartu kerangka preferensi: 'I prefer ___ because ___' dan 'I'd rather ___ than ___'.", asset_id: null },
+      { id: "visual_3", description: "A two-choice scale (this vs that) with a heart on the personally preferred option.", description_id: "Skala dua pilihan (ini vs itu) dengan hati pada opsi yang lebih disukai secara pribadi.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher places a hand on the chest, then points to a preferred card, while saying 'I prefer ... because ...'." },
-      { id: "gesture_2", description: "Teacher weighs two hands and tips toward one side while saying 'I'd rather ... than ...'." },
-      { id: "gesture_3", description: "Teacher opens both hands toward a partner while asking 'What do you think?'" }
+      { id: "gesture_1", description: "Teacher places a hand on the chest, then points to a preferred card, while saying 'I prefer ... because ...'.", description_id: "Guru meletakkan tangan di dada, lalu menunjuk kartu yang disukai, sambil mengucapkan 'I prefer ... because ...'." },
+      { id: "gesture_2", description: "Teacher weighs two hands and tips toward one side while saying 'I'd rather ... than ...'.", description_id: "Guru menimbang kedua tangan dan memiringkannya ke satu sisi sambil mengucapkan 'I'd rather ... than ...'." },
+      { id: "gesture_3", description: "Teacher opens both hands toward a partner while asking 'What do you think?'", description_id: "Guru membuka kedua tangan ke arah teman sambil bertanya 'What do you think?'" }
     ]
   },
 

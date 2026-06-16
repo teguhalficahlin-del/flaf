@@ -253,6 +253,12 @@ function _difHTML(dif) {
 
 // ── SCREEN: PREVIEW ───────────────────────────────────────────
 
+const COMPLEXITY_HINT = {
+  Acquire:   'Pola baru — siswa butuh modeling penuh',
+  Expand:    'Variasi — siswa sudah kenal pola dasar',
+  Integrate: 'Lintas konteks — siswa produksi mandiri',
+};
+
 function _renderPreview() {
   const tp      = _state.tp;
   const meta    = tp.metadata || {};
@@ -260,6 +266,20 @@ function _renderPreview() {
   const runtime = tp.runtime   || [];
   const rombel  = _state.rombel;
   const jumlah  = _state.siswaList.length;
+  const statusMap   = _state.statusMap || {};
+  const hasPresensi = Object.keys(statusMap).length > 0;
+  const hadir       = hasPresensi
+    ? Object.values(statusMap).filter(v => v === 'H').length
+    : jumlah;
+  const tidakHadir  = jumlah - hadir;
+
+  const presensiLabel = jumlah === 0
+    ? 'Belum ada siswa'
+    : !hasPresensi
+      ? `${jumlah} siswa terdaftar`
+      : tidakHadir === 0
+        ? `${jumlah}/${jumlah} hadir`
+        : `${hadir} hadir · ${tidakHadir} tidak hadir`;
   const total   = _totalDurasi(runtime);
 
   const vocabHTML = (res.active_vocabulary || [])
@@ -274,19 +294,26 @@ function _renderPreview() {
 
         <div class="smp-preview-meta-row">
           <span class="smp-meta-chip">${_escape(meta.genre || '')}</span>
-          <span class="smp-meta-chip">${_escape(meta.complexity_level || '')}</span>
           <span class="smp-meta-chip">~${total} menit</span>
           <span class="smp-meta-chip">${runtime.length} langkah</span>
         </div>
 
         <div class="smp-preview-section">
+          <div class="smp-section-label">Tingkat Kesulitan</div>
+          <div class="smp-section-body">
+            ${_escape(meta.complexity_level || '—')} —
+            ${_escape(COMPLEXITY_HINT[meta.complexity_level] || '')}
+          </div>
+        </div>
+
+        <div class="smp-preview-section">
           <div class="smp-section-label">Tujuan komunikatif</div>
-          <div class="smp-section-body">${_escape(meta.communicative_goal || '—')}</div>
+          <div class="smp-section-body">${_escape(meta.communicative_goal_id || meta.communicative_goal || '—')}</div>
         </div>
 
         <div class="smp-preview-section">
           <div class="smp-section-label">Konteks</div>
-          <div class="smp-section-body">${_escape(meta.context || '—')}</div>
+          <div class="smp-section-body">${_escape(meta.context_id || meta.context || '—')}</div>
         </div>
 
         ${vocabHTML ? `
@@ -297,7 +324,7 @@ function _renderPreview() {
 
         <div class="smp-preview-section">
           <div class="smp-section-label">Siswa</div>
-          <div class="smp-section-body">${jumlah > 0 ? jumlah + ' terdaftar' : 'Belum ada siswa'}</div>
+          <div class="smp-section-body">${presensiLabel}</div>
         </div>
       </div>
 
@@ -318,17 +345,59 @@ function _renderPreview() {
 // ── SCREEN: ENTERING ──────────────────────────────────────────
 
 function _renderEntering() {
-  const meta = _state.tp?.metadata || {};
+  const meta  = _state.tp?.metadata  || {};
+  const setup = _state.tp?.resources?.classroom_setup;
+
+  let contentHTML;
+
+  if (!setup || setup.length === 0) {
+    contentHTML = `<div class="smp-entering-note">Pastikan semua siswa siap dan perhatian terpusat.</div>`;
+  } else {
+    // Detect boundary: first UCAP with "?" starts HOOK
+    const hookStart = setup.findIndex(item => item.type === 'UCAP' && item.text.includes('?'));
+    const hasSections = hookStart !== -1;
+
+    const settling = hasSections ? setup.slice(0, hookStart) : setup;
+    const hook     = hasSections ? setup.slice(hookStart)    : [];
+
+    const renderItems = items => items.map(item => {
+      if (item.type === 'UCAP') {
+        return `<div class="entering-ucap"><span class="entering-icon">🗣</span><span>${_escape(item.text)}</span></div>`;
+      }
+      return `<div class="entering-aksi"><span class="entering-icon">⚡</span><span>${_escape(item.text)}</span></div>`;
+    }).join('');
+
+    if (hasSections) {
+      contentHTML = `
+        <div class="entering-section">
+          <div class="smp-section-label">Settling</div>
+          <div class="entering-section-sep"></div>
+          ${renderItems(settling)}
+        </div>
+        <div class="entering-section">
+          <div class="smp-section-label">Hook</div>
+          <div class="entering-section-sep"></div>
+          ${renderItems(hook)}
+        </div>`;
+    } else {
+      contentHTML = `<div class="entering-section">${renderItems(settling)}</div>`;
+    }
+  }
 
   _root.innerHTML = `
     <div class="sr-app">
-      <div class="sr-body sr-body--center">
-        <div class="sr-fase-label">SIAPKAN KELAS</div>
-        <div class="sr-fase-judul">${_escape(meta.title || '—')}</div>
-        <div class="sr-fase-meta">Kelas ${_escape(meta.grade)} · ${_escape(meta.topic || '')}</div>
-        <div class="smp-entering-note">Pastikan semua siswa siap dan perhatian terpusat.</div>
+      <div class="sr-body">
+        <div class="entering-header">
+          <div class="sr-fase-label">SIAPKAN KELAS</div>
+          <div class="sr-fase-judul">${_escape(meta.title || '—')}</div>
+          <div class="sr-fase-meta">Kelas ${_escape(meta.grade)} · ${_escape(meta.topic || '')}</div>
+        </div>
+        <div class="entering-content">
+          ${contentHTML}
+        </div>
       </div>
       <div class="sr-footer">
+        <button class="sr-btn-secondary" id="smp-btn-back-entering">← Kembali</button>
         <button class="sr-btn-primary" id="smp-btn-lanjut">Lanjut →</button>
       </div>
     </div>`;
@@ -336,9 +405,27 @@ function _renderEntering() {
   _root.querySelector('#smp-btn-lanjut').addEventListener('click', () => {
     _transition({ aktState: 'running', stepIndex: 0 });
   });
+  _root.querySelector('#smp-btn-back-entering').addEventListener('click', () => {
+    _transition({ aktState: 'preview' });
+  });
 }
 
 // ── SCREEN: RUNNING ───────────────────────────────────────────
+
+function _buildStepMap(runtime, currentIndex) {
+  return runtime.map((step, i) => {
+    let stateClass = '';
+    if (i < currentIndex)      stateClass = 'smp-step--done';
+    else if (i === currentIndex) stateClass = 'smp-step--active';
+    else                         stateClass = 'smp-step--upcoming';
+
+    const sep = i < runtime.length - 1
+      ? '<span class="smp-step-sep">→</span>'
+      : '';
+
+    return `<span class="smp-step-item ${stateClass}">${_escape(step.type || '')}</span>${sep}`;
+  }).join('');
+}
 
 function _renderRunning() {
   const tp      = _state.tp;
@@ -369,9 +456,13 @@ function _renderRunning() {
         ${bodyHTML}
       </div>
 
+      <div class="smp-stepmap">
+        ${_buildStepMap(runtime, _state.stepIndex)}
+      </div>
+
       <div class="sr-footer smp-run-footer">
         <div class="sr-btn-row">
-          <button class="sr-btn-secondary" id="smp-btn-prev" ${isFirst ? 'disabled' : ''}>← Sebelumnya</button>
+          <button class="sr-btn-secondary" id="smp-btn-prev">← Sebelumnya</button>
           <button class="sr-btn-primary"   id="smp-btn-next">${isLast ? 'Selesai ✓' : 'Lanjut →'}</button>
         </div>
         <button class="sr-btn-kondisi" id="smp-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
@@ -391,7 +482,11 @@ function _renderRunning() {
     });
   });
   _root.querySelector('#smp-btn-prev').addEventListener('click', () => {
-    if (!isFirst) _transition({ stepIndex: idx - 1 });
+    if (isFirst) {
+      _transition({ aktState: 'entering' });
+    } else {
+      _transition({ stepIndex: idx - 1 });
+    }
   });
   _root.querySelector('#smp-btn-next').addEventListener('click', () => {
     if (isLast) {
@@ -435,25 +530,38 @@ function _renderModel(step, res) {
     .map(s => _ttsSentenceHTML(s.text))
     .join('');
 
-  const visuals = (step.visual_refs || [])
+  const visualList  = (step.visual_refs || [])
     .map(id => _lookupById(res.visual_cues, id))
-    .filter(Boolean)
-    .map(v => `<li class="smp-cue-item smp-cue--visual">📸 ${_escape(v.description)}</li>`)
-    .join('');
+    .filter(Boolean);
 
-  const gestures = (step.gesture_refs || [])
+  const gestureList = (step.gesture_refs || [])
     .map(id => _lookupById(res.gesture_cues, id))
-    .filter(Boolean)
-    .map(g => `<li class="smp-cue-item smp-cue--gesture">🤲 ${_escape(g.description)}</li>`)
-    .join('');
+    .filter(Boolean);
+
+  const maxLen = Math.max(visualList.length, gestureList.length);
+  let scenarioHTML = '';
+  for (let i = 0; i < maxLen; i++) {
+    const v = visualList[i];
+    const g = gestureList[i];
+    if (v) scenarioHTML += `
+      <div class="smp-skenario-item">
+        <span class="smp-skenario-icon">🖼</span>
+        <span class="smp-skenario-teks">${_escape(v.description_id || v.description || '')}</span>
+      </div>`;
+    if (g) scenarioHTML += `
+      <div class="smp-skenario-item">
+        <span class="smp-skenario-icon">🤝</span>
+        <span class="smp-skenario-teks">${_escape(g.description_id || g.description || '')}</span>
+      </div>`;
+  }
 
   return `
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${sentences ? `<div class="smp-model-block">${sentences}</div>` : ''}
-    ${(visuals || gestures) ? `
+    ${scenarioHTML ? `
       <div class="smp-cue-block">
-        <div class="smp-section-label">Alat bantu</div>
-        <ul class="smp-cue-list">${visuals}${gestures}</ul>
+        <div class="smp-section-label">Skenario Ajar</div>
+        <div class="smp-skenario-wrap">${scenarioHTML}</div>
       </div>` : ''}`;
 }
 

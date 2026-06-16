@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "The Lost Firefly",
     context: "Students meet a small firefly who lives near a quiet pond and dreams of finding bright friends.",
+    context_id: "Siswa berkenalan dengan seekor kunang-kunang kecil yang tinggal di dekat kolam yang tenang dan bermimpi menemukan teman-teman yang bersinar.",
     communicative_goal: "introduce characters and setting in a simple story world",
+    communicative_goal_id: "memperkenalkan tokoh dan latar dalam dunia cerita sederhana",
     vocabulary_domain: ["animals", "forest", "pond", "friends"],
     input_anchor: "story picture cards",
     output_anchor: "story opening",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, storytellers! Get comfortable — we have a story to enter today." },
+      { type: "AKSI", text: "Minta siswa duduk nyaman dan siap mendengarkan." },
+      // HOOK
+      { type: "UCAP", text: "Have you ever seen a firefly glow in the dark? What was it like?" },
+      { type: "AKSI", text: "Tunjukkan kartu bergambar cerita: kunang-kunang kecil bersinar di dekat kolam yang tenang di hutan malam hari." },
+      { type: "UCAP", text: "Look at this picture. What do you think the little firefly is thinking?" },
+    ],
 
     active_vocabulary: [
       "Once there was",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Story picture cards: a small glowing firefly near a calm pond in a little forest at night.", asset_id: null },
-      { id: "visual_2", description: "A character card: the tiny, bright firefly with a thought bubble showing it dreaming of other glowing fireflies (bright friends).", asset_id: null },
-      { id: "visual_3", description: "A setting card: the quiet pond with the little forest around it.", asset_id: null }
+      { id: "visual_1", description: "Story picture cards: a small glowing firefly near a calm pond in a little forest at night.", description_id: "Kartu bergambar cerita: kunang-kunang kecil yang bersinar di dekat kolam yang tenang di hutan kecil pada malam hari.", asset_id: null },
+      { id: "visual_2", description: "A character card: the tiny, bright firefly with a thought bubble showing it dreaming of other glowing fireflies (bright friends).", description_id: "Kartu tokoh: kunang-kunang kecil yang bersinar dengan balon pikiran menunjukkan ia bermimpi tentang kunang-kunang lain yang bersinar (teman-teman yang bersinar).", asset_id: null },
+      { id: "visual_3", description: "A setting card: the quiet pond with the little forest around it.", description_id: "Kartu latar: kolam yang tenang dengan hutan kecil di sekitarnya.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher opens both hands like opening a storybook while saying 'Once there was ... / There was ...'." },
-      { id: "gesture_2", description: "Teacher makes a small twinkling motion with the fingers while describing the tiny, bright firefly." },
-      { id: "gesture_3", description: "Teacher places a hand near the temple (dreaming) while saying 'dreamed of finding bright friends'." }
+      { id: "gesture_1", description: "Teacher opens both hands like opening a storybook while saying 'Once there was ... / There was ...'.", description_id: "Guru membuka kedua tangan seperti membuka buku cerita sambil mengucapkan 'Once there was ... / There was ...'." },
+      { id: "gesture_2", description: "Teacher makes a small twinkling motion with the fingers while describing the tiny, bright firefly.", description_id: "Guru membuat gerakan berkilau kecil dengan jari-jari sambil mendeskripsikan kunang-kunang kecil yang bersinar." },
+      { id: "gesture_3", description: "Teacher places a hand near the temple (dreaming) while saying 'dreamed of finding bright friends'.", description_id: "Guru meletakkan tangan dekat pelipis (bermimpi) sambil mengucapkan 'dreamed of finding bright friends'." }
     ]
   },
 

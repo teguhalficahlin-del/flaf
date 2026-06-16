@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "School Sports Day",
     context: "Students retell a sequence of real activities during a school sports event.",
+    context_id: "Siswa menceritakan kembali urutan kegiatan nyata selama acara olahraga sekolah.",
     communicative_goal: "connect past actions into a simple chronological recount",
+    communicative_goal_id: "menghubungkan tindakan masa lalu menjadi cerita ulang kronologis sederhana",
     vocabulary_domain: ["sports", "games", "friends", "competition"],
     input_anchor: "event photo cards",
     output_anchor: "timeline retelling",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Morning, class! I heard there was a sports event recently." },
+      { type: "AKSI", text: "Tanya kelas siapa yang mengikuti atau menonton hari olahraga." },
+      // HOOK
+      { type: "UCAP", text: "Can you remember the last sports day at school? What did you do?" },
+      { type: "AKSI", text: "Tunjukkan kartu foto dari hari olahraga: lomba lari, lompat, sepak bola, penonton bersorak." },
+      { type: "UCAP", text: "Look at these sports day photos. What activities can you see?" },
+    ],
 
     active_vocabulary: [
       "and",
@@ -45,15 +57,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Event photo cards from a school sports day: a running race, a jumping event, a football game, and a cheering crowd.", asset_id: null },
-      { id: "visual_2", description: "Connector cards joining two action icons: 'and' (run + jump) and 'and then' (cheer + clap).", asset_id: null },
-      { id: "visual_3", description: "Past-action icons: ran, jumped, played, won, cheered.", asset_id: null }
+      { id: "visual_1", description: "Event photo cards from a school sports day: a running race, a jumping event, a football game, and a cheering crowd.", description_id: "Kartu foto acara dari hari olahraga sekolah: lomba lari, lompat, pertandingan sepak bola, dan penonton bersorak.", asset_id: null },
+      { id: "visual_2", description: "Connector cards joining two action icons: 'and' (run + jump) and 'and then' (cheer + clap).", description_id: "Kartu penghubung yang menggabungkan dua ikon tindakan: 'and' (lari + lompat) dan 'and then' (sorak + tepuk tangan).", asset_id: null },
+      { id: "visual_3", description: "Past-action icons: ran, jumped, played, won, cheered.", description_id: "Ikon tindakan lampau: ran, jumped, played, won, cheered.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher links two hands together while saying 'and / and then' to show two actions joined in one sentence." },
-      { id: "gesture_2", description: "Teacher mimes the two past actions one after the other (running, then jumping)." },
-      { id: "gesture_3", description: "Teacher points back over one shoulder while giving the past time-expression opener." }
+      { id: "gesture_1", description: "Teacher links two hands together while saying 'and / and then' to show two actions joined in one sentence.", description_id: "Guru menyatukan dua tangan sambil mengucapkan 'and / and then' untuk menunjukkan dua tindakan yang digabung dalam satu kalimat." },
+      { id: "gesture_2", description: "Teacher mimes the two past actions one after the other (running, then jumping).", description_id: "Guru memperagakan dua tindakan lampau secara berurutan (berlari, lalu melompat)." },
+      { id: "gesture_3", description: "Teacher points back over one shoulder while giving the past time-expression opener.", description_id: "Guru menunjuk ke belakang melewati bahu sambil memberikan ungkapan pembuka waktu lampau." }
     ]
   },
 

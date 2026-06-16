@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "Healthy Snacks",
     context: "Students describe different snacks using connected adjectives.",
+    context_id: "Siswa mendeskripsikan berbagai jajanan menggunakan kata sifat yang dihubungkan.",
     communicative_goal: "combine descriptive features with and/but",
+    communicative_goal_id: "menggabungkan ciri-ciri deskriptif menggunakan and/but",
     vocabulary_domain: ["food", "taste", "texture", "health"],
     input_anchor: "food photos",
     output_anchor: "pair description",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Good morning, friends! Are you ready to learn today?" },
+      { type: "AKSI", text: "Atur kelas agar siswa fokus ke depan." },
+      // HOOK
+      { type: "UCAP", text: "Look at these snacks — an apple, a banana, carrot sticks, and yogurt." },
+      { type: "AKSI", text: "Tunjukkan foto jajanan sehat: apel, pisang, stik wortel, dan yogurt." },
+      { type: "UCAP", text: "What words can you use to describe them? Sweet? Crunchy? Fresh?" },
+    ],
 
     active_vocabulary: [
       "It is",
@@ -46,15 +58,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Food photos of healthy snacks: an apple, a banana, carrot sticks, and a cup of yogurt, all looking fresh.", asset_id: null },
-      { id: "visual_2", description: "Taste and texture icons: a sugar cube (sweet), a cracker (crunchy), a leaf (healthy/fresh), a smiling mouth (tasty).", asset_id: null },
-      { id: "visual_3", description: "Connector cards: an 'and' card joining two matching adjectives (sweet + crunchy), and a 'but' card joining two contrasting adjectives (healthy + small).", asset_id: null }
+      { id: "visual_1", description: "Food photos of healthy snacks: an apple, a banana, carrot sticks, and a cup of yogurt, all looking fresh.", description_id: "Foto makanan jajanan sehat: apel, pisang, stik wortel, dan segelas yogurt, semuanya terlihat segar.", asset_id: null },
+      { id: "visual_2", description: "Taste and texture icons: a sugar cube (sweet), a cracker (crunchy), a leaf (healthy/fresh), a smiling mouth (tasty).", description_id: "Ikon rasa dan tekstur: kubus gula (manis), biskuit kering (renyah), daun (sehat/segar), mulut tersenyum (lezat).", asset_id: null },
+      { id: "visual_3", description: "Connector cards: an 'and' card joining two matching adjectives (sweet + crunchy), and a 'but' card joining two contrasting adjectives (healthy + small).", description_id: "Kartu penghubung: kartu 'and' yang menggabungkan dua kata sifat yang serasi (manis + renyah), dan kartu 'but' yang menggabungkan dua kata sifat yang kontras (sehat + kecil).", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher holds up a food photo and points to it while saying 'It is ...'." },
-      { id: "gesture_2", description: "Teacher links the fingers of both hands together while saying 'and' to join two matching features." },
-      { id: "gesture_3", description: "Teacher tips one hand up and the other down (a small contrast gesture) while saying 'but' to join two contrasting features." }
+      { id: "gesture_1", description: "Teacher holds up a food photo and points to it while saying 'It is ...'.", description_id: "Guru mengangkat foto makanan dan menunjuknya sambil mengucapkan 'It is ...'." },
+      { id: "gesture_2", description: "Teacher links the fingers of both hands together while saying 'and' to join two matching features.", description_id: "Guru mengaitkan jari kedua tangan sambil mengucapkan 'and' untuk menggabungkan dua ciri yang serasi." },
+      { id: "gesture_3", description: "Teacher tips one hand up and the other down (a small contrast gesture) while saying 'but' to join two contrasting features.", description_id: "Guru memiringkan satu tangan ke atas dan tangan lainnya ke bawah (gestur kontras kecil) sambil mengucapkan 'but' untuk menggabungkan dua ciri yang kontras." }
     ]
   },
 

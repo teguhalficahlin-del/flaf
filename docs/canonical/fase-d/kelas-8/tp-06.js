@@ -10,7 +10,9 @@ export default {
     cluster: "A",
     topic: "City Trees",
     context: "Students compare several common trees found in parks and streets and identify their shared characteristics.",
+    context_id: "Siswa membandingkan beberapa pohon umum yang ditemukan di taman dan jalan serta mengidentifikasi ciri-ciri yang sama.",
     communicative_goal: "describe general characteristics using most, some, and usually",
+    communicative_goal_id: "mendeskripsikan ciri-ciri umum menggunakan most, some, dan usually",
     vocabulary_domain: ["trees", "leaves", "shade", "parks"],
     input_anchor: "comparison chart",
     output_anchor: "group report",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Welcome back, class. Shall we begin?" },
+      { type: "AKSI", text: "Periksa kesiapan kelas secara singkat." },
+      // HOOK
+      { type: "UCAP", text: "When you walk to school, do you pass any trees? What do they look like?" },
+      { type: "AKSI", text: "Tampilkan tabel perbandingan pohon kota: maple, beringin, palem — dengan kolom daun, keteduhan, tempat tumbuh." },
+      { type: "UCAP", text: "Look at this comparison chart. What do most of these city trees have in common?" },
+    ],
 
     active_vocabulary: [
       "Most",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "A comparison chart of several common city trees (maple, banyan, palm) with columns for leaves, shade, and where they grow.", asset_id: null },
-      { id: "visual_2", description: "Generalization cards: 'Most ___', 'Some ___', 'They usually ___'.", asset_id: null },
-      { id: "visual_3", description: "Icons: green leaves, a shady tree in a park, sun and water for what trees usually need.", asset_id: null }
+      { id: "visual_1", description: "A comparison chart of several common city trees (maple, banyan, palm) with columns for leaves, shade, and where they grow.", description_id: "Tabel perbandingan beberapa pohon kota umum (maple, beringin, palem) dengan kolom untuk daun, keteduhan, dan tempat tumbuhnya.", asset_id: null },
+      { id: "visual_2", description: "Generalization cards: 'Most ___', 'Some ___', 'They usually ___'.", description_id: "Kartu generalisasi: 'Most ___', 'Some ___', 'They usually ___'.", asset_id: null },
+      { id: "visual_3", description: "Icons: green leaves, a shady tree in a park, sun and water for what trees usually need.", description_id: "Ikon: daun hijau, pohon rindang di taman, matahari dan air untuk kebutuhan umum pohon.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher sweeps a hand across many trees while saying 'Most ...' to show a large group." },
-      { id: "gesture_2", description: "Teacher points to a smaller part of the group while saying 'Some ...'." },
-      { id: "gesture_3", description: "Teacher makes a steady, general gesture while saying 'They usually ...' for a shared characteristic." }
+      { id: "gesture_1", description: "Teacher sweeps a hand across many trees while saying 'Most ...' to show a large group.", description_id: "Guru menyapukan tangan melintasi banyak pohon sambil mengucapkan 'Most ...' untuk menunjukkan kelompok besar." },
+      { id: "gesture_2", description: "Teacher points to a smaller part of the group while saying 'Some ...'.", description_id: "Guru menunjuk bagian yang lebih kecil dari kelompok sambil mengucapkan 'Some ...'." },
+      { id: "gesture_3", description: "Teacher makes a steady, general gesture while saying 'They usually ...' for a shared characteristic.", description_id: "Guru membuat gestur umum yang stabil sambil mengucapkan 'They usually ...' untuk ciri yang sama." }
     ]
   },
 

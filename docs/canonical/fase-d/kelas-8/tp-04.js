@@ -10,7 +10,9 @@ export default {
     cluster: "B",
     topic: "Healthy School Canteen",
     context: "Students evaluate several canteen improvement ideas and work toward a shared recommendation for healthier food choices.",
+    context_id: "Siswa mengevaluasi beberapa ide perbaikan kantin dan menyusun rekomendasi bersama untuk pilihan makanan yang lebih sehat.",
     communicative_goal: "build agreement and formulate shared decisions supported by reasons",
+    communicative_goal_id: "membangun kesepakatan dan merumuskan keputusan bersama yang didukung alasan",
     vocabulary_domain: ["canteen", "healthy food", "choices", "school policy"],
     input_anchor: "proposal cards",
     output_anchor: "consensus discussion",
@@ -22,6 +24,16 @@ export default {
   },
 
   resources: {
+
+    classroom_setup: [
+      // SETTLING
+      { type: "UCAP", text: "Let's get started, class. Focus, please." },
+      { type: "AKSI", text: "Kondisikan kelas agar siap berdiskusi secara serius." },
+      // HOOK
+      { type: "UCAP", text: "Think about our school canteen — is the food healthy enough for you?" },
+      { type: "AKSI", text: "Tampilkan kartu usulan perbaikan kantin: lebih banyak buah, hari salad, kurangi minuman bergula." },
+      { type: "UCAP", text: "Look at these canteen improvement ideas. Which one would you agree to start with?" },
+    ],
 
     active_vocabulary: [
       "I agree that",
@@ -42,15 +54,15 @@ export default {
     ],
 
     visual_cues: [
-      { id: "visual_1", description: "Proposal cards for canteen improvements: more fruit, a salad day, fewer sugary drinks, a new policy.", asset_id: null },
-      { id: "visual_2", description: "A decision-frame card: 'I agree that ___ because ___' and 'Maybe we should ___ so ___'.", asset_id: null },
-      { id: "visual_3", description: "Healthy canteen icons: fruit, a salad, healthy food choices, and a school-policy poster.", asset_id: null }
+      { id: "visual_1", description: "Proposal cards for canteen improvements: more fruit, a salad day, fewer sugary drinks, a new policy.", description_id: "Kartu usulan perbaikan kantin: lebih banyak buah, hari salad, kurangi minuman bergula, kebijakan baru.", asset_id: null },
+      { id: "visual_2", description: "A decision-frame card: 'I agree that ___ because ___' and 'Maybe we should ___ so ___'.", description_id: "Kartu kerangka keputusan: 'I agree that ___ because ___' dan 'Maybe we should ___ so ___'.", asset_id: null },
+      { id: "visual_3", description: "Healthy canteen icons: fruit, a salad, healthy food choices, and a school-policy poster.", description_id: "Ikon kantin sehat: buah, salad, pilihan makanan sehat, dan poster kebijakan sekolah.", asset_id: null }
     ],
 
     gesture_cues: [
-      { id: "gesture_1", description: "Teacher nods firmly for 'I agree that ...', then opens a hand for 'because ...'." },
-      { id: "gesture_2", description: "Teacher tilts a hand (maybe), then points forward to a goal, while saying 'Maybe we should ... so ...'." },
-      { id: "gesture_3", description: "Teacher draws both hands together to show the group reaching a shared decision." }
+      { id: "gesture_1", description: "Teacher nods firmly for 'I agree that ...', then opens a hand for 'because ...'.", description_id: "Guru mengangguk mantap untuk 'I agree that ...', lalu membuka tangan untuk 'because ...'." },
+      { id: "gesture_2", description: "Teacher tilts a hand (maybe), then points forward to a goal, while saying 'Maybe we should ... so ...'.", description_id: "Guru memiringkan tangan (mungkin), lalu menunjuk ke depan ke arah tujuan, sambil mengucapkan 'Maybe we should ... so ...'." },
+      { id: "gesture_3", description: "Teacher draws both hands together to show the group reaching a shared decision.", description_id: "Guru menyatukan kedua tangan untuk menunjukkan kelompok mencapai keputusan bersama." }
     ]
   },
 
