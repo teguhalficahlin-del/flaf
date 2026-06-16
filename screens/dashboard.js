@@ -281,19 +281,29 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
   for (const k of kelasList) {
     try {
       const selesaiSet = await jejak.getTPSelesaiPerRombel(k.nama);
-      const range = (_faseData?.tujuan_pembelajaran || [])
-        .filter(tp => tp.kelas === k.tingkat || tp.metadata?.grade === k.tingkat)
-        .map(tp => tp.nomor ?? tp.metadata?.tp_id);
-      const selesaiDiRange = range.filter(n => selesaiSet.has(n));
-      if (selesaiDiRange.length === 0) {
-        tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
+      const isSMP = k.tingkat >= 7;
+      const tpDiKelas = (_faseData?.tujuan_pembelajaran || [])
+        .filter(tp => tp.kelas === k.tingkat || tp.metadata?.grade === k.tingkat);
+
+      if (isSMP) {
+        // SMP: gunakan index urut (0-based), bukan nomor integer
+        const first = tpDiKelas[0];
+        const firstLabel = first?.metadata?.short_title ?? first?.metadata?.tp_id ?? '—';
+        tpSelesaiPerRombel[k.id] = { nomor: first?.metadata?.tp_id ?? null, label: `Mulai TP ${firstLabel}` };
       } else {
-        const maks = Math.max(...selesaiDiRange);
-        const next = range.find(n => n > maks);
-        if (next) {
-          tpSelesaiPerRombel[k.id] = { nomor: next, label: `Lanjut → TP ${String(next).padStart(2,'0')}` };
+        // SD: schema lama — nomor integer
+        const range = tpDiKelas.map(tp => tp.nomor);
+        const selesaiDiRange = range.filter(n => selesaiSet.has(n));
+        if (selesaiDiRange.length === 0) {
+          tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
         } else {
-          tpSelesaiPerRombel[k.id] = { nomor: null, label: 'Semua TP selesai ✓' };
+          const maks = Math.max(...selesaiDiRange);
+          const next = range.find(n => n > maks);
+          if (next) {
+            tpSelesaiPerRombel[k.id] = { nomor: next, label: `Lanjut → TP ${String(next).padStart(2,'0')}` };
+          } else {
+            tpSelesaiPerRombel[k.id] = { nomor: null, label: 'Semua TP selesai ✓' };
+          }
         }
       }
     } catch {
