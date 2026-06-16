@@ -628,10 +628,41 @@ window.dashTogglePersiapan = function(btn) {
 
 function _buildStepMateri(tp) {
   if (!tp) return `<div class="ds-step-empty">Data materi tidak tersedia.</div>`;
+  const isSMP = tp.metadata?.grade >= 7;
+  if (isSMP) return _buildTabMateriSMP(tp);
   return `
   <div class="ds-card ds-card--overflow" style="padding:14px 16px;">
     <div class="ds-section-label" style="margin-bottom:10px;">Materi & Persiapan</div>
     ${_buildTabMateri(tp)}
+  </div>`;
+}
+
+function _buildTabMateriSMP(tp) {
+  const m = tp.metadata;
+  const r = tp.resources;
+
+  const vocabHTML = (r?.active_vocabulary || [])
+    .map(v => `<span class="ds-vocab-chip" onclick="dashTTS(-1,'${_escapeTTS(v)}')"
+      style="cursor:pointer;">▶ ${_escape(v)}</span>`).join('');
+
+  const modelHTML = (r?.model_sentences || [])
+    .map((s, i) => `
+      <div class="ds-indikator-item">
+        <div class="ds-siswa-nomor ds-siswa-nomor--sage">${i+1}</div>
+        <div class="ds-indikator-teks">${_escape(s.text)}</div>
+      </div>`).join('');
+
+  return `
+  <div class="ds-card ds-card--overflow" style="padding:14px 16px;">
+    <div class="ds-section-label" style="margin-bottom:10px;">Materi & Persiapan</div>
+    <div class="ds-materi-meta">${_escape(m?.genre ?? '')} · ${_escape(m?.topic ?? '')}</div>
+    <div class="ds-materi-desc" style="margin:8px 0 12px;">${_escape(m?.context ?? '')}</div>
+    ${modelHTML ? `
+      <div class="ds-sub-label" style="margin-bottom:6px;">Kalimat Model</div>
+      ${modelHTML}` : ''}
+    ${vocabHTML ? `
+      <div class="ds-sub-label" style="margin:12px 0 6px;">Kosakata Aktif</div>
+      <div class="ds-vocab-wrap">${vocabHTML}</div>` : ''}
   </div>`;
 }
 
