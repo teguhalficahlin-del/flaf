@@ -45,11 +45,9 @@
   TP-04, TP-12, TP-18 (Fase A)
 
 ## NEXT TASK
-1. Buka keputusan arsitektur skema JS: bandingkan de-facto v5 dengan
-   Dokumen 7 v1.4 formal, resolusi divergensi 1.935 instance
-2. Setelah skema diputuskan: konversi Canonical markdown ke JS
-   untuk Fase A (18 TP), Fase B (22 TP), Fase C (22 TP)
-3. Layar Mengajar UI Sprint — 12 item dashboard.js (tertunda)
+1. Implementasi overlay penilaian untuk Fase D di `sesi-runtime-smp.js`
+2. Sprint A Blok 7 — offline test Fase D
+3. Setelah Sprint A tuntas → Fase D production-ready
 
 ---
 
@@ -2407,10 +2405,10 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 ### SW Version Tracker
 - SW aktif: flaf-v222 (tidak ada bump — perubahan JS/data saja)
 
-### Next Step (Belum Dikerjakan)
-- Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar
-- Soal STS/SAS Fase B dan C (lihat catatan terpisah di atas)
-- Cleanup dead code kurikulum.js (dari sprint Modul Ajar)
+### Next Step
+- Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar (tertunda)
+- Soal STS/SAS Fase B dan C (tertunda)
+- Cleanup dead code kurikulum.js (tertunda)
 
 ---
 
@@ -2471,13 +2469,10 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 - v224 → v225
 - SW aktif: flaf-v225
 
-### Next Step (Belum Dikerjakan)
-- Smoke test browser: verifikasi B5 dan B6 tampil benar di modul ajar
-- Smoke test lazy cache: verifikasi PNG dan skenario TP ter-cache
-  on-demand saat pertama diakses
-- Soal STS/SAS Fase B dan C belum dibuat
-- Cleanup dead code kurikulum.js (pdfFilename, _setPDFBtnState,
-  param onDownloadPDF, import downloadPDF di app.js)
+### Next Step
+- Smoke test browser: B5/B6 modul ajar, lazy cache (tertunda)
+- Soal STS/SAS Fase B dan C (tertunda)
+- Cleanup dead code kurikulum.js (tertunda)
 
 
 ---
@@ -2508,5 +2503,104 @@ hanya tersedia untuk Kelas 1 & 2 (Fase A). Kelas 3-6
 
 ### Pending Items Sprint C
 1. tp_id format inconsistency: metadata.tp_id = "docs/fase-d/..." (path string) bukan ID pendek — standardisasi sebelum fitur search/filter by ID
-2. Test manual di browser — belum ada live test Sprint C
+2. ~~Test manual di browser — belum ada live test Sprint C~~ → dikerjakan di Sprint A (lihat bawah)
 3. package.json missing "type": "module" — tech debt pre-existing
+
+---
+
+## Sprint: UI Polish Layar Mengajar (16 Juni 2026)
+
+### Commit
+- c47d3fd — 10 item visual polish dashboard.js + sesi-runtime.css
+
+### Yang Dikerjakan
+- SESI BERLANGSUNG → gold
+- Batalkan button → gold secondary
+- ds-page-btn → gold secondary
+- ds-materi-meta opacity .6
+- ds-materi-desc opacity .65
+- Halaman/Hadir span opacity .6
+- H S I A buttons: border/color strengthened
+- sesi-runtime.css: sr-fase-meta opacity .4 → .65
+
+### SW Version Tracker
+- Tidak ada bump (JS/CSS only)
+
+---
+
+## Sprint D — Integrasi Fase D Lanjutan (16 Juni 2026)
+
+### Commits
+| Hash | Isi |
+|---|---|
+| 3d6840f | dashboard.js: dual-schema filter Fase D |
+| 44f7699 | dashboard.js: _tpNomor dual-schema |
+| 7f2f1b6 | nilai.js: nilaiPilihTingkat loop Kelas 7–9 |
+| afcc3f6 | nilai.js: form rombel Kelas 7–9 |
+| 0dcaeaa | dashboard.js: dual-schema lanjut-TP label |
+| 5c40328 | dashboard.js: _tpNomor ekstrak angka dari pattern_id |
+| f90ba80 | dashboard.js: _buildTabMateriSMP Fase D |
+| 43b5a82 | sesi-runtime-smp.css: 322 baris, 37 class + 13 modifier |
+
+### Yang Dikerjakan
+- `dashboard.js`: dual-schema filter, `_tpNomor`, `_buildTabMateriSMP`, dual-schema lanjut-TP label
+- `nilai.js`: form rombel Kelas 7–9, TP_TOTAL SMP, `_tpList` dual-schema, `nilaiPilihTingkat` loop
+- `sesi-runtime-smp.css`: dibuat dari nol (322 baris, 37 class + 13 modifier)
+- SW: v226 → v232
+
+### SW Version Tracker
+- SW aktif: flaf-v232
+
+---
+
+## Sprint A — Test End-to-End Fase D (16 Juni 2026, sebagian selesai)
+
+### Status per Blok
+| Blok | Deskripsi | Status |
+|---|---|---|
+| Blok 1 | Rombel — Kelas 7/8/9 ditambah, muncul di landing | ✅ |
+| Blok 2 | Daftar TP — 24/18 TP muncul, nomor bersih, judul terbaca | ✅ |
+| Blok 3 | Preview & Mulai — preview tampil, mulai sesi tidak crash | ✅ |
+| Blok 4 | Runtime — 7 langkah navigasi mulus, semua type badge tampil, layar selesai muncul | ✅ |
+| Blok 5 | Presensi — H/S/I/A berfungsi, rekap hadir benar | ✅ |
+| Blok 6 | Nilai — overlay penilaian belum ada di sesi-runtime-smp.js | ⏳ |
+| Blok 7 | Offline — belum ditest | ⏳ |
+
+### Next Step
+1. Implementasi overlay penilaian Fase D di `sesi-runtime-smp.js`
+2. Blok 7 — offline test
+3. Setelah Blok 7 selesai → Fase D production-ready
+
+**Catatan susulan:** Tabel Blok 6 di atas sudah outdated — Overlay Penilaian
+Fase D (Observasi Formatif, kualitatif tanpa skor) sudah diimplementasikan
+dan divalidasi. Lihat section "Sprint C — Paritas Fitur SMP + Hotfix
+DB_VERSION" di bawah untuk status terbaru.
+
+---
+
+## Sprint C — Paritas Fitur SMP + Hotfix DB_VERSION (16 Juni 2026)
+
+### Sprint C — Integrasi PWA Fase D: SELESAI
+Detail lengkap di [docs/canonical/HANDOFF_SPRINT_C_FASE_D.md](docs/canonical/HANDOFF_SPRINT_C_FASE_D.md).
+- `kurikulum.js`: routing Kelas 7-9 ke **placeholder Fase D** (bukan fallback SD `'ALL'` yang salah) — `data/fase-d.js` tidak punya `meta`/`cp` setara SD, placeholder dipilih untuk menghindari crash/data salah.
+- 3 fitur paritas SMP ditambahkan ke `sesi-runtime-smp.js`:
+  - **TTS** — baca `resources.model_sentences[]` via `sentence_refs[]` (bukan parser regex `UCAP:` ala SD)
+  - **Kondisi Darurat** — overlay generik direuse, register bahasa netral-suportif (bukan childish ala SD)
+  - **Overlay Penilaian → Observasi Formatif** — kualitatif murni (tags + catatan), tanpa skor/huruf/skala, disimpan di store terpisah `penilaian_log_smp` (`DB_VERSION` 11→12), konsisten constraint `check_without_score: true` (rule A7)
+- Commit range: `cbc1390` → `316aee5` → `66e8cdd` → `c1c9143` → `ae52da9` → `9e86c9f`
+
+### Hotfix DB_VERSION SD: SELESAI
+Detail lengkap di [docs/canonical/known-issues.md](docs/canonical/known-issues.md) (entry #1, status RESOLVED).
+- Root cause: `storage/siswa-history.js` dan `storage/nilai.js` (helper `_atomicUpdate`) hardcode `DB_VERSION` lokal sendiri, terpisah dari `storage/db.js` — menyebabkan `VersionError` permanen di setiap instalasi yang sudah upgrade ke DB versi ≥11. Bug nyata di `nilai.js` (setNilai/setNilaiLSR/setCatatan/setNilaiFormatif/setCatatanFormatif) ditemukan saat investigasi — dibuktikan via Playwright, bukan asumsi pola kode.
+- Fix: `DB_VERSION` jadi satu sumber kebenaran (diekspor dari `db.js`), kedua modul `await db.init()` sebelum membuka koneksi lokal sendiri — ini juga menutup race condition baru pada fresh install yang ditemukan saat investigasi (DB bisa stuck di versi tinggi tanpa object store).
+- Commit: `19d2e0e` (fix kode), `d93e41d` (docs known-issues.md)
+- Divalidasi Playwright: DB existing v12, 5 variasi urutan race fresh install, regression SMP — semua PASS.
+
+### Backlog Terbuka (belum dipilih)
+1. Desain kurikulum Fase D yang proper — bangun `meta`/`cp` setara SD untuk `data/fase-d.js` agar placeholder di `kurikulum.js` bisa digantikan render penuh.
+2. Migrasi wrapper `db.js` penuh untuk `siswa-history.js` + `nilai.js` (follow-up prioritas rendah dari hotfix DB_VERSION) — hilangkan `indexedDB.open()` mandiri di kedua modul.
+3. Sprint A — validasi lapangan 3-5 TP sampel.
+4. Sprint D — persiapan Fase E (Pattern Registry K10+).
+
+### Open Question Operasional (BELUM diputuskan)
+Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode bug `DB_VERSION` aktif (sebelum hotfix). Perlu keputusan Romo: apakah perlu komunikasi ke guru untuk pengisian ulang data yang mungkin hilang. **Belum diambil keputusan — jangan asumsikan jawabannya di sesi berikutnya.**

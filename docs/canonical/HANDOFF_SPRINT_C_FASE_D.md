@@ -66,7 +66,46 @@ Item 7 dan 8 FAIL karena bug independen yang sudah ada sebelum Sprint C, bukan r
 
 ## Backlog Sprint Berikutnya (pilih salah satu)
 
-1. **Hotfix DB_VERSION SD** (independen, severity TINGGI) — `storage/siswa-history.js` hardcode `DB_VERSION=10` vs `storage/db.js` yang sudah 12. Lihat [known-issues.md](known-issues.md) untuk detail dan usulan perbaikan.
+1. ~~**Hotfix DB_VERSION SD**~~ — RESOLVED, lihat section "Update — Hotfix DB_VERSION SD" di bawah.
 2. **Desain kurikulum Fase D yang proper** — bangun `meta`/`cp` setara SD untuk `data/fase-d.js` agar placeholder di `kurikulum.js` bisa digantikan render penuh (panel CP/ATP/TP-detail).
-3. **Sprint A** (dari handoff Fase D awal) — validasi lapangan 3-5 TP sampel.
-4. **Sprint D** (dari handoff Fase D awal) — persiapan Fase E (Pattern Registry K10+).
+3. **Migrasi wrapper db.js penuh** untuk `siswa-history.js` + `nilai.js` — follow-up prioritas rendah dari hotfix DB_VERSION, lihat detail di bawah.
+4. **Sprint A** (dari handoff Fase D awal) — validasi lapangan 3-5 TP sampel.
+5. **Sprint D** (dari handoff Fase D awal) — persiapan Fase E (Pattern Registry K10+).
+
+---
+
+## Update — Hotfix DB_VERSION SD (16 Juni 2026)
+
+### Status
+Known-issue #1 di [known-issues.md](known-issues.md) — **RESOLVED**.
+
+### Root Cause
+`storage/siswa-history.js` (`savePenilaian`) dan `storage/nilai.js` (helper `_atomicUpdate`, dipakai oleh `setNilai`/`setNilaiLSR`/`setCatatan`/`setNilaiFormatif`/`setCatatanFormatif`) masing-masing hardcode `DB_VERSION` lokal sendiri dan membuka koneksi `indexedDB.open()` terpisah dari `storage/db.js`. Saat versi lokal lebih rendah dari versi DB yang sudah ada di browser, `indexedDB.open()` gagal dengan `VersionError` permanen — bukan transient.
+
+### Temuan Tambahan — `nilai.js` Juga Terdampak
+Investigasi awal hanya menemukan `siswa-history.js`. Saat digali lebih jauh, `storage/nilai.js` punya pola identik di `_atomicUpdate()`. Dibuktikan via Playwright (bukan asumsi pola kode) — kondisi DB sudah versi 12:
+```
+setNilaiError: "The requested version (10) is less than the existing version (12)."
+```
+Artinya bug ini bukan hanya menggagalkan penilaian proses per sesi SD (`penilaian_log`), tapi juga **nilai sumatif/formatif L/S/R dan catatan** (`nilai_data`) — severity sama-sama TINGGI, hanya belum terlihat di Tahap 5 Sprint C karena Tahap 5 tidak menguji jalur `setNilai`/`setNilaiLSR`.
+
+### Race Condition Baru yang Ditemukan & Diselesaikan
+Menyamakan `DB_VERSION` persis di semua modul (tanpa gating) membuka risiko baru: pada fresh install, jika modul tanpa `onupgradeneeded` handler memenangkan race membuka koneksi IndexedDB pertama, DB bisa stuck permanen di versi tinggi dengan nol object store (dibuktikan: `NotFoundError`). Diselesaikan dengan `await db.init()` di awal kedua titik (`siswa-history.js`, `nilai.js`) — memanfaatkan `_initPromise` singleton yang sudah ada di `db.js`, sehingga semua modul menunggu satu koneksi resmi yang sama sebelum membuka koneksi lokal mereka.
+
+### Commit
+| SHA | Pesan |
+|---|---|
+| `19d2e0e` | fix: VersionError penilaian SD — satu sumber DB_VERSION + gating db.init() |
+| `d93e41d` | docs: known-issues.md — tandai bug VersionError SD RESOLVED |
+
+### Validasi (Playwright, bukan baca kode)
+- DB existing versi 12: `savePenilaian` + `setNilai` + `setNilaiLSR` — PASS, nol error.
+- Fresh install, 5 variasi urutan race (`db`/`hist`/`nilai`): PASS, semua 7 store selalu terbentuk lengkap.
+- Regression observasi formatif SMP (`penilaian_log_smp`): PASS, tidak terpengaruh.
+- Jalur lain `nilai.js` (tambahKelas → tambahSiswa → getRekapTP): PASS.
+
+### Follow-up Tidak Dieksekusi
+Migrasi penuh `siswa-history.js` dan `nilai.js`'s `_atomicUpdate()` ke wrapper `db.js` (pola `penilaian-smp.js`) — menghilangkan kebutuhan modul-modul ini membuka `indexedDB.open()` sendiri sama sekali. Refactor lebih besar, di luar scope hotfix minimal. Dicatat sebagai backlog terpisah.
+
+### Open Question Operasional (BELUM diputuskan)
+Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode bug aktif (sebelum hotfix). Perlu keputusan Romo: apakah perlu komunikasi ke guru untuk pengisian ulang data. **Belum diputuskan.**
