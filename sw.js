@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v231';         // bump: _buildTabMateriSMP Fase D
+const CACHE_VERSION  = 'flaf-v232';         // bump: sesi-runtime-smp.css Fase D
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing

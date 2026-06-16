@@ -1,0 +1,320 @@
+/* =============================================================
+   FLAF — SESI RUNTIME SMP (Fase D) Styles
+   File: sesi-runtime-smp.css
+   ============================================================= */
+
+/* ── Preview Screen ─────────────────────────────────────────── */
+
+.smp-preview-kelas {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 4px;
+}
+
+.smp-preview-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.smp-meta-chip {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: rgba(212,174,58,.15);
+  color: #D4AE3A;
+  border: 1px solid rgba(212,174,58,.3);
+}
+
+.smp-preview-section {
+  margin: 12px 0;
+}
+
+.smp-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  margin-bottom: 6px;
+}
+
+.smp-section-body {
+  font-size: 14px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.5;
+}
+
+/* ── Vocab ──────────────────────────────────────────────────── */
+
+.smp-vocab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.smp-vocab-chip {
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.07);
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.15);
+  cursor: pointer;
+}
+
+/* ── Entering Screen ────────────────────────────────────────── */
+
+.smp-entering-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  margin-top: 12px;
+  line-height: 1.5;
+}
+
+/* ── Running Screen — Header ────────────────────────────────── */
+
+.smp-run-header {
+  padding: 12px 16px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.smp-run-counter {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 2px;
+}
+
+.smp-run-durasi {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+}
+
+/* ── Type Badge ─────────────────────────────────────────────── */
+
+.smp-type-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.7);
+}
+
+.smp-type--model    { background: rgba(99,179,237,.2);  color: #63B3ED; }
+.smp-type--repeat   { background: rgba(154,205,50,.2);  color: #9ACD32; }
+.smp-type--change   { background: rgba(237,137,54,.2);  color: #ED8935; }
+.smp-type--interact { background: rgba(183,148,244,.2); color: #B794F4; }
+.smp-type--share    { background: rgba(246,173,85,.2);  color: #F6AD55; }
+.smp-type--check    { background: rgba(72,187,120,.2);  color: #48BB78; }
+.smp-type--boost    { background: rgba(212,174,58,.2);  color: #D4AE3A; }
+
+/* ── Step Content ───────────────────────────────────────────── */
+
+.smp-step-objective {
+  font-size: 14px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+.smp-mode-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.5);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* ── Model Block ────────────────────────────────────────────── */
+
+.smp-model-block {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+
+.smp-model-sentence {
+  font-size: 15px;
+  color: rgba(255,255,255,.9);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Observe List ───────────────────────────────────────────── */
+
+.smp-observe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.smp-observe-item {
+  font-size: 13px;
+  color: rgba(255,255,255,.75);
+  padding: 6px 10px;
+  background: rgba(255,255,255,.04);
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+/* ── Cue Block ──────────────────────────────────────────────── */
+
+.smp-cue-block {
+  margin-top: 10px;
+}
+
+.smp-cue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.smp-cue-item {
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+  padding: 4px 8px;
+  border-left: 2px solid rgba(255,255,255,.15);
+}
+
+.smp-cue--gesture { border-color: rgba(183,148,244,.4); color: rgba(183,148,244,.8); }
+.smp-cue--visual  { border-color: rgba(99,179,237,.4);  color: rgba(99,179,237,.8);  }
+
+/* ── Change Targets ─────────────────────────────────────────── */
+
+.smp-change-targets {
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* ── Prompt ─────────────────────────────────────────────────── */
+
+.smp-prompt-text {
+  font-size: 15px;
+  color: rgba(255,255,255,.9);
+  line-height: 1.6;
+  padding: 10px 0;
+}
+
+/* ── Differentiation ────────────────────────────────────────── */
+
+.smp-dif-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.smp-dif-card {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04);
+}
+
+.smp-dif--easy      { border-color: rgba(99,179,237,.3);  background: rgba(99,179,237,.07);  }
+.smp-dif--standard  { border-color: rgba(255,255,255,.12); background: rgba(255,255,255,.04); }
+.smp-dif--challenge { border-color: rgba(212,174,58,.3);  background: rgba(212,174,58,.07);  }
+
+.smp-dif-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  margin-bottom: 4px;
+}
+
+.smp-dif-task {
+  font-size: 13px;
+  color: rgba(255,255,255,.8);
+  line-height: 1.45;
+}
+
+/* ── Action Panel ───────────────────────────────────────────── */
+
+.smp-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.smp-action-panel {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255,255,255,.1);
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+}
+
+.smp-action--ready  { border-color: rgba(72,187,120,.3);  background: rgba(72,187,120,.07);  }
+.smp-action--model  { border-color: rgba(237,137,54,.3);  background: rgba(237,137,54,.07);  }
+.smp-action--repeat { border-color: rgba(99,179,237,.3);  background: rgba(99,179,237,.07);  }
+
+.smp-action-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 3px;
+}
+
+.smp-action-text {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  line-height: 1.4;
+}
+
+/* ── Boost ──────────────────────────────────────────────────── */
+
+.smp-boost-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D4AE3A;
+  margin-bottom: 8px;
+}
+
+.smp-boost-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.smp-boost-item {
+  font-size: 13px;
+  color: rgba(255,255,255,.75);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.smp-boost--trigger { background: rgba(212,174,58,.1);  border-left: 2px solid #D4AE3A; }
+.smp-boost--action  { background: rgba(255,255,255,.04); border-left: 2px solid rgba(255,255,255,.2); }
+
+/* ── Selesai Screen ─────────────────────────────────────────── */
+
+.smp-selesai-note {
+  font-size: 13px;
+  color: rgba(255,255,255,.55);
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ── Run Footer ─────────────────────────────────────────────── */
+
+.smp-run-footer {
+  padding: 10px 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
