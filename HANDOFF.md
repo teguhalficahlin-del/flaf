@@ -1,9 +1,57 @@
-# HANDOFF — Sprint C Fase D (Integrasi sesi-runtime + Kurikulum)
+# HANDOFF — FLAF Fase D
+SW aktif: flaf-v247
+Terakhir diupdate: 17 Juni 2026
+
+---
 
 ## Status
-Sprint C selesai dengan **1 known-issue independen** (lihat [known-issues.md](known-issues.md)). Known-issue tersebut **pre-existing**, terverifikasi via git history sudah ada sebelum Sprint C dimulai — bukan regresi dari pekerjaan sprint ini.
+- Fase D: 66/66 TP LOLOS review independen (ChatGPT)
+- Kelas 7: 24/24 | Kelas 8: 24/24 | Kelas 9: 18/18
 
-## Ringkasan Kerja
+## Sprint B — Test Suite Otomatis (SELESAI)
+- tools/validate-fase-d.js — validator VR-1, VR-2, struktur
+  7-step, constraint schema, dangling refs, enum, durasi
+- Hasil: 66/66 LOLOS, 0 error, 0 warning
+- Commits: e7c1a41 → 51c477f → 88e3883
+
+## Preseden Desain (FINAL — jangan dipertanyakan ulang)
+- Reaktivasi prerequisite = kapasitas struktural, bukan konten
+- BOOST TP-18 lebih kaya dari biasanya — disengaja, tidak melanggar schema
+- PAT-8-24 dihilangkan dari prerequisite_patterns TP-12 (final)
+
+## Sprint C — Integrasi PWA (SELESAI)
+Commit: 47e1520, ab95149 — SW: v246 → v247
+
+**classroom_setup[] — 66 TP Fase D**
+- Field baru di resources{} setiap TP
+- Struktur: SETTLING (2–3 item) + HOOK (3–4 item)
+- UCAP: Bahasa Inggris, memancing respons siswa
+- AKSI: Bahasa Indonesia/Inggris
+- Nada: K7 hangat · K8 semi-formal · K9 formal
+- Tidak ada duplikasi UCAP antar TP
+- Validasi: 66/66 LOLOS
+
+**Layar SIAPKAN KELAS (_renderEntering())**
+- Render classroom_setup[] dari data TP yang sudah loaded
+- Deteksi section SETTLING/HOOK via UCAP pertama dengan "?"
+- UCAP: bubble italic, ikon 🗣
+- AKSI: plain text redup, ikon ⚡
+- Fallback ke teks statis jika field tidak ada
+
+**Dashboard tab Materi**
+- Section "Siapkan Sebelum Kelas" via _buildAlatBantu()
+- "Media Belajar" (🖼) dari visual_cues[]
+- "Gestur Guru" (🤝) dari gesture_cues[]
+
+**Keputusan desain sesi ini:**
+- classroom_setup[] = SETTLING + HOOK saja
+  (TRANSISI KE MODEL dihapus — mendahului langkah kelas)
+- Reference mode dipilih untuk SIAPKAN KELAS
+  (semua item sekaligus, scroll — bukan per item tap)
+
+---
+
+## Ringkasan Kerja Sprint C — Integrasi sesi-runtime + Kurikulum
 
 **Tahap 1 — Analisis pra-integrasi (read-only):**
 Audit registry (`data/index.js`), renderer groups SD vs SMP, struktur data Fase D, gap analysis field, dan kelas mapping. Tidak ada perubahan kode.
@@ -26,7 +74,7 @@ Teks `FALLBACK_GENERIC` di overlay Kondisi Darurat SMP direvisi dari register ch
 **Tahap 5 — HARDEN/VALIDATE (uji nyata via Playwright, bukan baca kode):**
 Semua item dijalankan di browser sungguhan (server statis + Chromium headless). 1 bug nyata ditemukan dan diperbaiki di tempat (chip tag observasi tampil blok vertikal, bukan wrap — `.sr-opsi` base class tidak ter-override). 1 bug pre-existing independen ditemukan dan **tidak diperbaiki** (lihat known-issues.md), sesuai instruksi untuk tidak auto-fix tanpa lapor.
 
-## Commit Log (Tahap 1-5)
+## Commit Log Sprint C (Tahap 1–5)
 
 | SHA | Pesan |
 |---|---|
@@ -36,8 +84,8 @@ Semua item dijalankan di browser sungguhan (server statis + Chromium headless). 
 | `66e8cdd` | feat: paritas fitur TTS, kondisi darurat, observasi formatif di sesi-runtime-smp.js |
 | `c1c9143` | fix: register bahasa overlay Kondisi Darurat SMP — netral, bukan childish ala SD |
 | `ae52da9` | fix: chip tag observasi formatif SMP tampil wrap, bukan blok vertikal |
-
-(Commit dokumen Tahap 6 — known-issues.md + handoff ini — menyusul setelah tabel ini, lihat commit log repo.)
+| `47e1520` | feat(fase-d): add classroom_setup[] to 66 TPs + render in _renderEntering() |
+| `ab95149` | feat(dashboard): add Siapkan Sebelum Kelas section to tab Materi |
 
 ## Hasil Tes Final (Tahap 5)
 
@@ -64,20 +112,12 @@ Item 7 dan 8 FAIL karena bug independen yang sudah ada sebelum Sprint C, bukan r
 
 - **Discrepancy tombol "Lihat Kurikulum lengkap" di `dashboard.js:466`**: tombol ini ada di `_buildTabMateri()` (tab Materi SD), tapi **tidak ada** di `_buildTabMateriSMP()` (tab Materi SMP, baris ~640). Artinya untuk TP Fase D, tidak ada jalur dashboard → kurikulum langsung. Risiko nyata bagi guru SMP justru datang dari tab nav "Dokumen Kurikulum" (bottom nav) yang langsung baca `session.kelas` — ini sudah ditangani di Tahap 3 (item 3 test). Tapi perlu diverifikasi ulang: apakah memang disengaja tidak ada tombol tap-through untuk SMP, atau ini gap yang perlu diisi di sprint berikutnya.
 
-## Backlog Sprint Berikutnya (pilih salah satu)
-
-1. ~~**Hotfix DB_VERSION SD**~~ — RESOLVED, lihat section "Update — Hotfix DB_VERSION SD" di bawah.
-2. **Desain kurikulum Fase D yang proper** — bangun `meta`/`cp` setara SD untuk `data/fase-d.js` agar placeholder di `kurikulum.js` bisa digantikan render penuh (panel CP/ATP/TP-detail).
-3. **Migrasi wrapper db.js penuh** untuk `siswa-history.js` + `nilai.js` — follow-up prioritas rendah dari hotfix DB_VERSION, lihat detail di bawah.
-4. **Sprint A** (dari handoff Fase D awal) — validasi lapangan 3-5 TP sampel.
-5. **Sprint D** (dari handoff Fase D awal) — persiapan Fase E (Pattern Registry K10+).
-
 ---
 
 ## Update — Hotfix DB_VERSION SD (16 Juni 2026)
 
 ### Status
-Known-issue #1 di [known-issues.md](known-issues.md) — **RESOLVED**.
+Known-issue #1 di [known-issues.md](docs/canonical/known-issues.md) — **RESOLVED**.
 
 ### Root Cause
 `storage/siswa-history.js` (`savePenilaian`) dan `storage/nilai.js` (helper `_atomicUpdate`, dipakai oleh `setNilai`/`setNilaiLSR`/`setCatatan`/`setNilaiFormatif`/`setCatatanFormatif`) masing-masing hardcode `DB_VERSION` lokal sendiri dan membuka koneksi `indexedDB.open()` terpisah dari `storage/db.js`. Saat versi lokal lebih rendah dari versi DB yang sudah ada di browser, `indexedDB.open()` gagal dengan `VersionError` permanen — bukan transient.
@@ -109,3 +149,25 @@ Migrasi penuh `siswa-history.js` dan `nilai.js`'s `_atomicUpdate()` ke wrapper `
 
 ### Open Question Operasional (BELUM diputuskan)
 Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode bug aktif (sebelum hotfix). Perlu keputusan Romo: apakah perlu komunikasi ke guru untuk pengisian ulang data. **Belum diputuskan.**
+
+---
+
+## Keputusan Mengapa (jangan dipertanyakan ulang)
+
+| Keputusan | Mengapa |
+|-----------|---------|
+| classroom_setup[] hanya SETTLING + HOOK | Blok TRANSISI KE MODEL mendahului langkah kelas — siswa melihat media sebelum MODEL dimulai, efek atensi hilang |
+| Reference mode untuk SIAPKAN KELAS | Guru berdiri di depan kelas butuh scan cepat, bukan tap per item — tangan harus bebas |
+| Deteksi boundary SETTLING/HOOK via "?" | Komentar JS tidak terbaca di runtime — UCAP pertama dengan "?" selalu menjadi awal HOOK berdasarkan spec authoring |
+| UCAP wajib Bahasa Inggris di classroom_setup[] | Guru harus memodelkan bahasa target sejak sebelum sesi dimulai |
+| AKSI boleh Bahasa Indonesia | Instruksi fisik lebih efektif dalam bahasa guru untuk eksekusi cepat di kelas |
+| Tidak ada duplikasi UCAP antar 66 TP | Guru yang mengajar banyak kelas akan merasakan repetisi — variasi menjaga engagement |
+
+---
+
+## Backlog Sprint Berikutnya (pilih salah satu)
+
+1. **Desain kurikulum Fase D yang proper** — bangun `meta`/`cp` setara SD untuk `data/fase-d.js` agar placeholder di `kurikulum.js` bisa digantikan render penuh (panel CP/ATP/TP-detail).
+2. **Migrasi wrapper db.js penuh** untuk `siswa-history.js` + `nilai.js` — follow-up prioritas rendah dari hotfix DB_VERSION, hilangkan `indexedDB.open()` mandiri di kedua modul.
+3. **Sprint A** — validasi lapangan 3-5 TP sampel.
+4. **Sprint D** — persiapan Fase E (Pattern Registry K10+).
