@@ -341,7 +341,7 @@ function _kurTtsSpeak(teks, btnEl) {
 // ── Header ────────────────────────────────────────────────
 function _buildHeaderHTML(meta, sessionKelas) {
   const k          = parseInt(sessionKelas, 10);
-  const kelasLabel = (!k || sessionKelas === 'all') ? meta.kelas : `Kelas ${k} SD`;
+  const kelasLabel = (!k || sessionKelas === 'all') ? meta.kelas : `Kelas ${k} ${k >= 7 ? 'SMP' : 'SD'}`;
   const totalTP    = (!k || sessionKelas === 'all') ? meta.total_tp : (k <= 2 ? 9 : 11);
   return `
     <div class="kur-header">
