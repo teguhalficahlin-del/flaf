@@ -20,15 +20,17 @@
  *   db.exportAll()                   → Promise<object>
  *   db.importMerge(data,onConflict)  → Promise<{merged,kept,conflicts}>
  *
- * Schema (DB_VERSION = 11):
- *   kv           — session, device_id, nonce_*, data_version, export metadata
- *   teacher_data — progress per TP: progress_tp_${tp.id}_${rombelId}, catatan
+ * Schema (DB_VERSION = 12):
+ *   kv               — session, device_id, nonce_*, data_version, export metadata
+ *   teacher_data     — progress per TP: progress_tp_${tp.id}_${rombelId}, catatan
+ *   penilaian_log    — penilaian formatif SD (skor 85/75/65 atau L/S/R) — JANGAN dicampur dengan SMP
+ *   penilaian_log_smp — observasi formatif Fase D/SMP, kualitatif murni (tags + catatan, tanpa skor)
  */
 
 const DB_NAME    = 'flaf_db';
-const DB_VERSION = 11;
+const DB_VERSION = 12;
 
-const VALID_STORES = new Set(['kv', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'penilaian_log']);
+const VALID_STORES = new Set(['kv', 'teacher_data', 'teaching_log', 'nilai_data', 'presensi_log', 'penilaian_log', 'penilaian_log_smp']);
 
 let _db          = null;
 let _initPromise = null;
@@ -141,6 +143,10 @@ function init(onBlocked) {
       if (!upgradeDB.objectStoreNames.contains('penilaian_log')) {
         upgradeDB.createObjectStore('penilaian_log');
         console.log('[DB] store created: penilaian_log');
+      }
+      if (!upgradeDB.objectStoreNames.contains('penilaian_log_smp')) {
+        upgradeDB.createObjectStore('penilaian_log_smp');
+        console.log('[DB] store created: penilaian_log_smp');
       }
     };
 
@@ -381,6 +387,7 @@ async function exportAll() {
     teaching_log   : await _toObj('teaching_log'),
     presensi_log   : await _toObj('presensi_log'),
     penilaian_log  : await _toObj('penilaian_log'),
+    penilaian_log_smp: await _toObj('penilaian_log_smp'),
   };
 }
 
@@ -442,6 +449,7 @@ async function importMerge(parsed, onConflict) {
   await mergeStore('teaching_log',  parsed.teaching_log);
   await mergeStore('presensi_log',  parsed.presensi_log);
   await mergeStore('penilaian_log', parsed.penilaian_log);
+  await mergeStore('penilaian_log_smp', parsed.penilaian_log_smp);
 
   return { merged: merged, kept: kept, conflicts: conflicts };
 }

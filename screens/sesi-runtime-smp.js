@@ -18,6 +18,37 @@
  * =============================================================
  */
 
+import { db } from '../storage/db.js';
+
+// ── Konstanta: Kondisi Darurat Kelas ───────────────────────────
+// Reuse 1:1 dari sesi-runtime.js (SD) — overlay-nya generik, tidak
+// baca field skema TP, jadi tidak perlu field baru di Fase D.
+// CATATAN: register bahasa beberapa saran (mis. "ajak tepuk pendek",
+// "Beri jempol untuk yang berani") condong ke gaya kelas SD/anak kecil.
+// Tidak diubah di sini sesuai instruksi — perlu konfirmasi terpisah
+// apakah perlu varian bahasa yang lebih sesuai usia SMP.
+const KONDISI_LIST = [
+  { id: 'kelas_ribut',  label: 'Ribut, susah fokus'        },
+  { id: 'energi_turun', label: 'Energi mulai turun'         },
+  { id: 'siswa_pasif',  label: 'Banyak yang takut bicara'   },
+  { id: 'waktu_mepet',  label: 'Waktu mepet (sisa singkat)' },
+  { id: 'lancar',       label: 'Tidak, semua lancar ✓'      },
+];
+
+const FALLBACK_GENERIC = {
+  kelas_ribut  : 'Tangan di pinggang, tunggu sunyi. Ulangi instruksi setelah hening.',
+  energi_turun : 'Berdiri, ajak tepuk pendek. Lanjut langkah yang lebih bergerak.',
+  siswa_pasif  : 'Mulai dari baris depan. Beri jempol untuk yang berani.',
+  waktu_mepet  : 'Skip langkah yang tersisa. Langsung ke Penutup sekarang.',
+};
+
+const KONDISI_NICE = {
+  kelas_ribut  : 'Ribut, susah fokus',
+  energi_turun : 'Energi mulai turun',
+  siswa_pasif  : 'Banyak yang takut bicara',
+  waktu_mepet  : 'Waktu mepet',
+};
+
 // ── State ─────────────────────────────────────────────────────
 
 let _state = {
@@ -28,11 +59,13 @@ let _state = {
   stepIndex : 0,
   aktState  : 'preview',
   sesiId    : null,
+  ttsPlaying: false,
 };
 
 let _root   = null;
 let _onDone = null;
 let _onBack = null;
+let _smpTtsBtn = null;
 
 // ── Public API ────────────────────────────────────────────────
 
@@ -136,6 +169,69 @@ function _typeCls(type) {
     BOOST   : 'smp-type--boost',
   };
   return map[type] || '';
+}
+
+// ── TTS (reuse engine SD: voice availability check, sequential speak) ──
+
+function _smpTtsStop() {
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+  _state.ttsPlaying = false;
+  if (_smpTtsBtn) {
+    _smpTtsBtn.classList.remove('sr-tts-btn--playing');
+    const iconEl = _smpTtsBtn.querySelector('span[aria-hidden]');
+    if (iconEl) iconEl.innerHTML = '🔊';
+    _smpTtsBtn = null;
+  }
+}
+
+function _smpTtsShowError(btnEl, pesan) {
+  if (btnEl) {
+    const orig = btnEl.textContent;
+    btnEl.textContent = pesan;
+    btnEl.classList.add('error');
+    setTimeout(() => {
+      btnEl.textContent = orig;
+      btnEl.classList.remove('error');
+    }, 3000);
+  }
+}
+
+function _smpTtsPlay(kalimatArr, btnEl) {
+  if (!window.speechSynthesis) {
+    _smpTtsShowError(btnEl, 'TTS tidak didukung browser ini.');
+    return;
+  }
+
+  const voices = window.speechSynthesis.getVoices();
+  const enVoice = voices.find(v => v.lang.startsWith('en'));
+  if (voices.length > 0 && !enVoice) {
+    _smpTtsShowError(btnEl, 'Suara bahasa Inggris tidak tersedia di perangkat ini.');
+    return;
+  }
+
+  _state.ttsPlaying = true;
+  _smpTtsBtn = btnEl;
+  if (btnEl) {
+    btnEl.classList.add('sr-tts-btn--playing');
+    const iconEl = btnEl.querySelector('span[aria-hidden]');
+    if (iconEl) iconEl.innerHTML = '⏹';
+  }
+
+  const speakAt = i => {
+    if (i >= kalimatArr.length || !_state.ttsPlaying) {
+      _smpTtsStop();
+      return;
+    }
+    const u = new SpeechSynthesisUtterance(kalimatArr[i]);
+    u.lang  = 'en-US';
+    u.rate  = 0.85;
+    u.pitch = 1;
+    if (enVoice) u.voice = enVoice;
+    u.onend   = () => speakAt(i + 1);
+    u.onerror = () => { _smpTtsStop(); _smpTtsShowError(btnEl, 'TTS gagal. Coba lagi.'); };
+    window.speechSynthesis.speak(u);
+  };
+  speakAt(0);
 }
 
 function _difHTML(dif) {
@@ -275,11 +371,26 @@ function _renderRunning() {
       </div>
 
       <div class="sr-footer smp-run-footer">
-        <button class="sr-btn-secondary" id="smp-btn-prev" ${isFirst ? 'disabled' : ''}>← Sebelumnya</button>
-        <button class="sr-btn-primary"   id="smp-btn-next">${isLast ? 'Selesai ✓' : 'Lanjut →'}</button>
+        <div class="sr-btn-row">
+          <button class="sr-btn-secondary" id="smp-btn-prev" ${isFirst ? 'disabled' : ''}>← Sebelumnya</button>
+          <button class="sr-btn-primary"   id="smp-btn-next">${isLast ? 'Selesai ✓' : 'Lanjut →'}</button>
+        </div>
+        <button class="sr-btn-kondisi" id="smp-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
+        ${step.type === 'CHECK' ? `
+        <button class="sr-btn-penilaian" id="smp-btn-penilaian">📋 Observasi Formatif</button>` : ''}
       </div>
     </div>`;
 
+  _root.querySelectorAll('.smp-tts-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kalimat = [btn.dataset.kalimat];
+      if (_smpTtsBtn === btn) {
+        _smpTtsStop();
+      } else {
+        _smpTtsPlay(kalimat, btn);
+      }
+    });
+  });
   _root.querySelector('#smp-btn-prev').addEventListener('click', () => {
     if (!isFirst) _transition({ stepIndex: idx - 1 });
   });
@@ -290,6 +401,8 @@ function _renderRunning() {
       _transition({ stepIndex: idx + 1 });
     }
   });
+  _root.querySelector('#smp-btn-kondisi').addEventListener('click', () => _renderKondisiOverlay());
+  _root.querySelector('#smp-btn-penilaian')?.addEventListener('click', () => _renderObservasiOverlay(step));
 }
 
 function _renderStep(step, res) {
@@ -306,11 +419,21 @@ function _renderStep(step, res) {
   }
 }
 
+function _ttsSentenceHTML(text) {
+  return `
+    <div class="smp-model-sentence">
+      <span>"${_escape(text)}"</span>
+      <button class="sr-tts-ucap-btn smp-tts-btn" data-kalimat="${_escape(text)}" aria-label="Putar kalimat">
+        <span aria-hidden="true">🔊</span>
+      </button>
+    </div>`;
+}
+
 function _renderModel(step, res) {
   const sentences = (step.sentence_refs || [])
     .map(id => _lookupById(res.model_sentences, id))
     .filter(Boolean)
-    .map(s => `<div class="smp-model-sentence">"${_escape(s.text)}"</div>`)
+    .map(s => _ttsSentenceHTML(s.text))
     .join('');
 
   const visuals = (step.visual_refs || [])
@@ -339,7 +462,7 @@ function _renderRepeat(step, res) {
   const sentences = (step.sentence_refs || [])
     .map(id => _lookupById(res.model_sentences, id))
     .filter(Boolean)
-    .map(s => `<div class="smp-model-sentence">"${_escape(s.text)}"</div>`)
+    .map(s => _ttsSentenceHTML(s.text))
     .join('');
 
   const modeLabel = {
@@ -483,6 +606,197 @@ function _renderSelesai() {
 
   _root.querySelector('#smp-btn-tutup').addEventListener('click', () => {
     _transition({ aktState: 'closure' });
+  });
+}
+
+// ── OVERLAY: Kondisi kelas tahap 1 (reuse generik dari SD) ─────
+
+function _renderKondisiOverlay() {
+  document.querySelector('.sr-overlay')?.remove();
+
+  const opsiHTML = KONDISI_LIST.map(k =>
+    `<button class="sr-opsi" data-kondisi="${k.id}">${_escape(k.label)}</button>`
+  ).join('');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'sr-overlay';
+  overlay.innerHTML = `
+    <div class="sr-overlay-content">
+      <h2 class="sr-overlay-title">Kondisi kelas sekarang?</h2>
+      ${opsiHTML}
+      <button class="sr-btn-secondary" id="smp-btn-kondisi-batal" style="margin-top:12px;">Batal</button>
+    </div>`;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelectorAll('[data-kondisi]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kondisi = btn.dataset.kondisi;
+      overlay.remove();
+      if (kondisi === 'lancar') return;
+      _renderFallbackOverlay(kondisi);
+    });
+  });
+
+  overlay.querySelector('#smp-btn-kondisi-batal').addEventListener('click', () => overlay.remove());
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+}
+
+// ── OVERLAY: Fallback detail tahap 2 ────────────────────────
+
+function _renderFallbackOverlay(kondisi) {
+  document.querySelector('.sr-overlay')?.remove();
+
+  const instruksi    = FALLBACK_GENERIC[kondisi] || 'Lanjut sesuai feeling Anda di kelas.';
+  const judulKondisi = KONDISI_NICE[kondisi] || kondisi;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'sr-overlay';
+  overlay.innerHTML = `
+    <div class="sr-overlay-content">
+      <h2 class="sr-overlay-title">${_escape(judulKondisi)}?</h2>
+      <div class="sr-fallback-box">
+        <strong>Coba ini:</strong><br>${_escape(instruksi)}
+      </div>
+      <button class="sr-opsi" id="smp-btn-sudah-coba">Sudah coba, kembali ke kelas</button>
+    </div>`;
+
+  document.body.appendChild(overlay);
+
+  overlay.querySelector('#smp-btn-sudah-coba').addEventListener('click', () => overlay.remove());
+  overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
+}
+
+// ── OVERLAY: Observasi Formatif — KUALITATIF MURNI, TANPA SKOR ─
+// Berbeda total dari overlay penilaian SD: tidak ada angka/huruf/skala
+// apa pun di sini, menegakkan constraint Fase D check_without_score
+// juga di sisi runtime (bukan cuma validator data).
+// Disimpan ke store terpisah 'penilaian_log_smp' — TIDAK menyentuh
+// store 'penilaian_log' milik SD (lihat storage/penilaian-smp.js).
+
+const OBSERVE_TAGS = ['Aktif', 'Butuh dorongan', 'Belum siap', 'Perlu model ulang', 'Perlu repeat'];
+
+async function _renderObservasiOverlay(step) {
+  document.querySelector('.sr-overlay')?.remove();
+
+  const siswaList = _state.siswaList || [];
+  if (!siswaList.length) {
+    window.__FLAF__?.showToast?.('Belum ada siswa di rombel ini.');
+    return;
+  }
+
+  const draftKey = `draft_observasi_smp_${_state.rombel?.id}_${_state.tp?.metadata?.pattern_id}`;
+  if (!_state.observasiDraft) _state.observasiDraft = {};
+  for (const s of siswaList) {
+    if (!_state.observasiDraft[s.id]) {
+      _state.observasiDraft[s.id] = { tags: [], catatan: '' };
+    }
+  }
+
+  const allBlank = Object.values(_state.observasiDraft).every(h => h.tags.length === 0 && !h.catatan);
+  if (allBlank) {
+    try {
+      const saved = await db.get('kv', draftKey);
+      if (saved && typeof saved === 'object' && Object.keys(saved).length > 0) {
+        _state.observasiDraft = saved;
+      }
+    } catch (_) { /* db miss — lanjut normal */ }
+  }
+
+  const hasil = _state.observasiDraft;
+  let openIdx = 0;
+
+  function _siswaRowHTML(s, i) {
+    const h = hasil[s.id];
+    const tagsHTML = OBSERVE_TAGS.map(tag => `
+      <button class="sr-opsi smp-obs-tag ${h.tags.includes(tag) ? 'smp-obs-tag--active' : ''}"
+        data-siswa="${s.id}" data-tag="${_escape(tag)}">${_escape(tag)}</button>
+    `).join('');
+
+    return `
+      <div class="smp-obs-row">
+        <button class="smp-obs-head" data-toggle-idx="${i}">
+          <span>${_escape(s.nama)}</span>
+          <span>${h.tags.length > 0 || h.catatan ? '✓' : ''}</span>
+        </button>
+        ${openIdx === i ? `
+        <div class="smp-obs-body">
+          <div class="smp-obs-tags">${tagsHTML}</div>
+          <textarea class="smp-obs-catatan" data-siswa="${s.id}"
+            placeholder="Catatan tindak lanjut (opsional)">${_escape(h.catatan)}</textarea>
+        </div>` : ''}
+      </div>`;
+  }
+
+  function _draw() {
+    const overlay = document.querySelector('.sr-overlay');
+    if (!overlay) return;
+    const list = overlay.querySelector('#smp-obs-list');
+    if (list) list.innerHTML = siswaList.map((s, i) => _siswaRowHTML(s, i)).join('');
+    _bindRows(overlay);
+  }
+
+  function _bindRows(overlay) {
+    overlay.querySelectorAll('[data-toggle-idx]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.toggleIdx, 10);
+        openIdx = openIdx === i ? -1 : i;
+        _draw();
+      });
+    });
+    overlay.querySelectorAll('[data-siswa][data-tag]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const h = hasil[btn.dataset.siswa];
+        const tag = btn.dataset.tag;
+        const i = h.tags.indexOf(tag);
+        if (i >= 0) h.tags.splice(i, 1); else h.tags.push(tag);
+        db.set('kv', draftKey, hasil).catch(() => {});
+        _draw();
+      });
+    });
+    overlay.querySelectorAll('.smp-obs-catatan').forEach(ta => {
+      ta.addEventListener('input', () => {
+        hasil[ta.dataset.siswa].catatan = ta.value;
+        db.set('kv', draftKey, hasil).catch(() => {});
+      });
+    });
+  }
+
+  const overlay = document.createElement('div');
+  overlay.className = 'sr-overlay';
+  overlay.innerHTML = `
+    <div class="sr-overlay-content sr-overlay-content--wide">
+      <h2 class="sr-overlay-title">Observasi Formatif</h2>
+      <div class="smp-obs-hint">Catatan kualitatif — tidak ada skor/nilai.</div>
+      <div id="smp-obs-list">${siswaList.map((s, i) => _siswaRowHTML(s, i)).join('')}</div>
+      <div class="sr-btn-row" style="margin-top:14px;">
+        <button class="sr-btn-secondary" id="smp-obs-batal">Tutup</button>
+        <button class="sr-btn-primary" id="smp-obs-simpan">Simpan</button>
+      </div>
+    </div>`;
+
+  document.body.appendChild(overlay);
+  _bindRows(overlay);
+
+  overlay.querySelector('#smp-obs-batal').addEventListener('click', () => overlay.remove());
+  overlay.querySelector('#smp-obs-simpan').addEventListener('click', async () => {
+    try {
+      const { saveObservasiSMP } = await import('../storage/penilaian-smp.js');
+      const entries = siswaList.map(s => ({
+        siswaId : s.id,
+        tags    : hasil[s.id].tags,
+        catatan : hasil[s.id].catatan || null,
+      }));
+      await saveObservasiSMP(
+        _state.rombel?.id, _state.tp?.metadata?.pattern_id, _state.sesiId, step?.id, entries
+      );
+      await db.remove('kv', draftKey).catch(() => {});
+      window.__FLAF__?.showToast?.('Observasi tersimpan.');
+      overlay.remove();
+    } catch (e) {
+      console.error('[SRS] saveObservasiSMP gagal:', e);
+      window.__FLAF__?.showToast?.('Gagal menyimpan observasi.');
+    }
   });
 }
 
