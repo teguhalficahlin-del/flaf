@@ -1147,7 +1147,7 @@ window.nilaiTambahKelas = function() {
 
 window.nilaiPilihTingkat = function(t) {
   document.getElementById('input-tingkat-rombel').value = t;
-  [1, 2, 3, 4, 5, 6].forEach(n => {
+  [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach(n => {
     const btn = document.getElementById('btn-tingkat-' + n);
     if (btn) btn.className = 'nv-tingkat-btn ' +
       (t === n ? 'nv-tingkat-btn--active' : 'nv-tingkat-btn--idle');
