@@ -1985,8 +1985,22 @@ runtime yang benar-benar dipakai app.
 - ✅ TD-12: fix nilai TP range Kelas 5/6 — SELESAI (3 Juni 2026, SW v110)
 - ✅ TD-13: visual polish Layar Mengajar batch 1 & 2 — SELESAI (3 Juni 2026, SW v111–v112)
 - ✅ TD-11: Testing breakpoint visual TP Panen/Capstone — SELESAI (4 Juni 2026)
+- ✅ classroom_setup[] ditambahkan ke semua 66 TP Fase D
+  (SETTLING + HOOK, 5–7 item per TP, 66/66 validated)
+  Commit: 47e1520
+- ✅ _renderEntering() di sesi-runtime-smp.js diperbarui:
+  render classroom_setup[] dengan deteksi section otomatis,
+  fallback ke teks statis jika field tidak ada
+  Commit: 47e1520
+- ✅ Dashboard tab Materi: section "Siapkan Sebelum Kelas"
+  ditambahkan via _buildAlatBantu() — Media Belajar + Gestur Guru
+  Fix: context → context_id
+  Commit: ab95149
+- ✅ SW bumped: v246 → v247
 
 ### Pending
+- [DONE sesi ini] classroom_setup[] + _renderEntering()
+  + dashboard alatbantu — selesai, commit 47e1520 + ab95149
 - TD-10: Renderer Kelompok 3 — tahan sampai ada data kelas nyata
 - Keputusan: apakah bridge mode reactivation Kluster D (TP13–15) didokumentasikan di CAS §19 atau direvisi ke OUTPUT siswa
 
