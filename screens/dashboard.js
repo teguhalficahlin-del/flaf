@@ -873,9 +873,8 @@ function _buildSesiHTML() {
 
   <div class="ds-step-nav" id="ds-step-nav">
     <button
-      onclick="dashStepPrev()"
-      class="ds-step-btn ds-step-btn--prev"
-      ${isFirst ? 'disabled' : ''}>
+      onclick="${isFirst ? 'dashKePilihTP()' : 'dashStepPrev()'}"
+      class="ds-step-btn ds-step-btn--prev">
       ← Sebelumnya
     </button>
     ${isLast
@@ -1148,8 +1147,7 @@ async function _rerenderStep() {
 
   if (nav) {
     nav.innerHTML = `
-      <button onclick="dashStepPrev()" class="ds-step-btn ds-step-btn--prev"
-        ${isFirst ? 'disabled' : ''}>← Sebelumnya</button>
+      <button onclick="${isFirst ? 'dashKePilihTP()' : 'dashStepPrev()'}" class="ds-step-btn ds-step-btn--prev">← Sebelumnya</button>
       ${isLast
         ? `<button onclick="dashSelesaiSesi()" class="ds-step-btn ds-step-btn--selesai">✓ Simpan & Selesai</button>`
         : `<button onclick="dashStepNext()" class="ds-step-btn ds-step-btn--next">Lanjut →</button>`
