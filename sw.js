@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v247';         // bump: tambah classroom_setup[] ke 66 TP Fase D
+const CACHE_VERSION  = 'flaf-v248';         // bump: board_suggestion field + renderer + validator
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
