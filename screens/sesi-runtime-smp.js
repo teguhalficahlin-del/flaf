@@ -534,13 +534,11 @@ function _ttsSentenceHTML(text) {
 }
 
 function _renderModel(step, res) {
-  const sentences = (step.sentence_refs || [])
+  const sentenceList = (step.sentence_refs || [])
     .map(id => _lookupById(res.model_sentences, id))
-    .filter(Boolean)
-    .map(s => _ttsSentenceHTML(s.text))
-    .join('');
+    .filter(Boolean);
 
-  const visualList  = (step.visual_refs || [])
+  const visualList = (step.visual_refs || [])
     .map(id => _lookupById(res.visual_cues, id))
     .filter(Boolean);
 
@@ -548,20 +546,20 @@ function _renderModel(step, res) {
     .map(id => _lookupById(res.gesture_cues, id))
     .filter(Boolean);
 
-  const maxLen = Math.max(visualList.length, gestureList.length);
-  let scenarioHTML = '';
+  const maxLen = Math.max(sentenceList.length, visualList.length, gestureList.length);
+  let pairsHTML = '';
   for (let i = 0; i < maxLen; i++) {
+    const s = sentenceList[i];
     const v = visualList[i];
     const g = gestureList[i];
-    if (v) scenarioHTML += `
-      <div class="smp-skenario-item">
-        <span class="smp-skenario-icon">🖼</span>
-        <span class="smp-skenario-teks">${_escape(v.description_id || v.description || '')}</span>
-      </div>`;
-    if (g) scenarioHTML += `
-      <div class="smp-skenario-item">
-        <span class="smp-skenario-icon">🤝</span>
-        <span class="smp-skenario-teks">${_escape(g.description_id || g.description || '')}</span>
+    pairsHTML += `
+      <div class="smp-model-pair">
+        ${v ? `<div class="smp-model-visual">🖼 <span>${_escape(v.description_id || v.description || '')}</span></div>` : ''}
+        ${g ? `<div class="smp-model-gesture">🤝 <span>${_escape(g.description_id || g.description || '')}</span></div>` : ''}
+        ${s ? `<div class="smp-model-sentence">
+          🗣 <span class="smp-sentence-text">${_escape(s.text)}</span>
+          <button class="smp-tts-btn" data-kalimat="${_escape(s.text)}" aria-label="Putar kalimat">🔊</button>
+        </div>` : ''}
       </div>`;
   }
 
@@ -572,12 +570,7 @@ function _renderModel(step, res) {
       💡 Opsional: tulis kalimat-kalimat ini di papan tulis.
     </p>` : ''}
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
-    ${sentences ? `<div class="smp-model-block">${sentences}</div>` : ''}
-    ${scenarioHTML ? `
-      <div class="smp-cue-block">
-        <div class="smp-section-label">Skenario Ajar</div>
-        <div class="smp-skenario-wrap">${scenarioHTML}</div>
-      </div>` : ''}`;
+    ${pairsHTML ? `<div class="smp-model-pairs">${pairsHTML}</div>` : ''}`;
 }
 
 function _renderRepeat(step, res) {

@@ -199,29 +199,54 @@
   margin-bottom: 10px;
 }
 
-/* ── Model Block ────────────────────────────────────────────── */
+/* ── Model Paired Layout (Opsi D) ───────────────────────────── */
 
-.smp-model-block {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
+.smp-model-pairs {
+  margin-top: 0.5rem;
+}
+
+.smp-model-pair {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle, rgba(255,255,255,0.08));
+}
+
+.smp-model-pair:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.smp-model-visual,
+.smp-model-gesture {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
 }
 
 .smp-model-sentence {
-  font-size: 15px;
-  color: rgba(255,255,255,.9);
-  line-height: 1.6;
-  font-style: italic;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.smp-sentence-text {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-primary, rgba(255,255,255,.9));
 }
 
 .smp-tts-btn {
   flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 /* ── Observasi Formatif (kualitatif, tanpa skor) ──────────────── */
