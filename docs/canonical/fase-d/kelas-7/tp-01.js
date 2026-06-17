@@ -68,6 +68,7 @@ export default {
       type: "MODEL",
       duration: 5,
       objective: "Observe the teacher demonstrate how to introduce yourself using name, age, hobbies, and abilities.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"]

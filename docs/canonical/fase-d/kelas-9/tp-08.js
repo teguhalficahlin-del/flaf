@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher organize presentation points with 'First,...Next,...Another point is...Finally,...Based on this,...' -- explicit transitions plus an evidence-based conclusion, not a step-by-step process explanation or a narrative chronology.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

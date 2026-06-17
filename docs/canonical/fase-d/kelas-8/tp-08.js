@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher connect an observed fact to a simple reason or effect with 'This happens because ...' and 'This helps ... to ...', after stating a feature.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

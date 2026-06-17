@@ -75,6 +75,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher describe what exists in a park using 'There is ...' for one thing and 'There are ...' for more than one, each with a place expression.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

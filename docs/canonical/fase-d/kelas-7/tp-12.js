@@ -74,6 +74,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher connect a study goal with a helpful tool or action using 'If you want to ..., Verb ...' and 'Use ... to ...', supported by a simple procedure and rule.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

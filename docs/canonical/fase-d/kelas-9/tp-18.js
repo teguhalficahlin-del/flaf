@@ -74,6 +74,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher integrate five components into a coherent looking-forward reflection: 'Looking back,...' (retrospection) + 'I have learned...' (accumulated learning) + 'In the future, I will...' (forward orientation) + 'because...' (personal reason) + 'I am ready to...' (readiness statement) -- not a timeline of events, not a narrative ending, and not an argumentative recommendation.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

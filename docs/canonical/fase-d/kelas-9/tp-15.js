@@ -74,6 +74,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher integrate all five components: 'The problem is...' (problem recap) + 'To solve it,...' (solution) + 'This solution works because...' (causal evaluation) + 'As a result,...' (consequence) + 'Therefore,...' (evidence-based conclusion) -- an integrated evaluation, not a problem statement alone, not a solution proposal alone, and not an argumentative recommendation.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

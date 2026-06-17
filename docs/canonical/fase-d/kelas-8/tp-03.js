@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher propose ideas for a charity plan with 'How about ...?' and 'We could ...', and respond to an idea with 'That's a good idea, but ...', turning a preference into a proposal.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

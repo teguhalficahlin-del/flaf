@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher write one complete digital message with all four parts: Subject, Hi, I'm writing to, See you soon -- using the story discovery as the content.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

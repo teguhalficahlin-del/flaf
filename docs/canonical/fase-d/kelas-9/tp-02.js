@@ -75,6 +75,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher acknowledge a different opinion and then defend a supported position: 'Some people think ... However, I believe ... because ...' / 'One reason is ...' / 'For example, ...' / 'Therefore, ...' -- an acknowledge-then-defend move, not a dismissal or an aggressive rebuttal.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

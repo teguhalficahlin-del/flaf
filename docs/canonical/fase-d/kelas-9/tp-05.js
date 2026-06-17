@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher give a balanced evaluation of the homework policy: 'I believe ... because ...' (evaluative claim) + 'One strength is ...' (positive) + 'However, ...' (limitation) -- not a persuasive argument defending homework, and not a neutral factual report.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

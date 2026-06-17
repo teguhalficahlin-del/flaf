@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher propose a solution using four components: 'To solve this problem,...' (name the solution) + 'If...,... so...' (conditional logic with consequence) + 'This will help...' (benefit) -- not a general wish, not a recommendation without conditional logic, and not a narrative description of a program.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher produce a persuasive public post with 'Join us ...', 'Don't miss ...', and 'You can ... because ...' -- broadcast language for a wide audience, not a personal invitation or a numbered instruction.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

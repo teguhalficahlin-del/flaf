@@ -70,6 +70,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher organize public event information into a four-part flyer layout: Title | Key Information | Contact/Action | Additional Note -- a structural format, not a sentence-connector pattern.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3", "gesture_4"],

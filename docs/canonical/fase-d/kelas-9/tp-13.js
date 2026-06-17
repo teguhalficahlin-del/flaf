@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher identify a problem using three steps: 'The problem is...' (name the problem) + 'because...' (explain the cause) + 'As a result,...' (describe the consequence) -- not a general complaint, not an argumentative claim, and not a factual report without cause and consequence.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

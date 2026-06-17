@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher draw an evidence-based conclusion using three steps: 'Based on these sources,...' (cite multiple sources) + 'This suggests...' (inference from the evidence) + 'Therefore,...' (conclusion) -- not a single-source report, not a presentation closing, and not a list of facts without an inference.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

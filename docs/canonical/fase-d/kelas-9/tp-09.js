@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher close a presentation and handle audience questions: 'In conclusion,...' (summary) + 'Therefore,...' (recommendation) + 'Thank you for listening.' + 'Do you have any questions?' + 'That\\'s an interesting question...' (Q&A response) -- a formal presentation close, not an argumentative conclusion or a casual sign-off.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

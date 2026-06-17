@@ -76,6 +76,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher give clear cooking instructions with 'Verb + object + place/time', after a short description of an ingredient and within a simple sequence.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

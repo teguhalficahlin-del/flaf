@@ -74,6 +74,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher describe a canteen dish and then give an evaluative response: 'It is ... and ...' (description) + 'I think ... because ...' (evaluation) -- a simple review, not a full argument and not a neutral report.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

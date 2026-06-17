@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher combine information from two sources into one coherent synthesis: 'Source A says...' (first source), 'Source B says...' (second source), 'Together, they show...' (synthesis) -- not a summary of one source and not a factual listing without integration.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

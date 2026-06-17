@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher open a formal presentation with all four components: greet ('Good morning,...'), introduce ('My name is...'), announce the topic ('Today I would like to present...'), and state the purpose ('The purpose of this presentation is...') -- formal register, not a casual greeting or an email opening.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

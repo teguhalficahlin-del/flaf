@@ -73,6 +73,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher reflect on a personal communication challenge using four steps: 'At first,...' (name the difficulty) + 'However,...' (the turning point) + 'I overcame it by...' (the strategy used) + 'Now I can...' (the capability gained) -- a personal growth reflection, not a problem-solution proposal, not a narrative conflict, and not a process explanation.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],

@@ -72,6 +72,7 @@ export default {
       type: "MODEL",
       duration: 6,
       objective: "Observe the teacher construct a personal learning reflection using three steps: 'I learned...' (state what was learned) + 'because...' (explain why it is meaningful) + 'From this experience, I realized...' (a new personal insight) -- not a recount of events ('First we did... then we did...'), not a narrative resolution, and not an argumentative conclusion.",
+      board_suggestion: "optional",
       sentence_refs: ["model_1", "model_2", "model_3", "model_4"],
       visual_refs: ["visual_1", "visual_2", "visual_3"],
       gesture_refs: ["gesture_1", "gesture_2", "gesture_3"],
