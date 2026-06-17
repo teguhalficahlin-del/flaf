@@ -167,6 +167,21 @@
 
 /* ── Step Content ───────────────────────────────────────────── */
 
+.smp-step-description {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.smp-board-suggestion {
+  font-size: 0.8rem;
+  color: var(--color-accent, #c9a84c);
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-left: 2px solid var(--color-accent, #c9a84c);
+}
+
 .smp-step-objective {
   font-size: 14px;
   color: rgba(255,255,255,.85);

@@ -170,6 +170,16 @@ function _typeCls(type) {
   return map[type] || '';
 }
 
+const STEP_DESCRIPTION = {
+  MODEL   : 'Guru demonstrasi — siswa menyimak.',
+  REPEAT  : 'Guru memandu — siswa menirukan bersama.',
+  CHANGE  : 'Siswa mengubah kalimat sesuai informasi diri mereka.',
+  INTERACT: 'Siswa berlatih berpasangan.',
+  SHARE   : 'Siswa berbagi hasil latihan.',
+  CHECK   : 'Guru mengamati — tentukan langkah berikutnya.',
+  BOOST   : 'Tantangan untuk siswa yang sudah siap.',
+};
+
 // ── TTS (reuse engine SD: voice availability check, sequential speak) ──
 
 function _smpTtsStop() {
@@ -556,6 +566,11 @@ function _renderModel(step, res) {
   }
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
+    ${step.board_suggestion === 'optional' ? `
+    <p class="smp-board-suggestion">
+      💡 Opsional: tulis kalimat-kalimat ini di papan tulis.
+    </p>` : ''}
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${sentences ? `<div class="smp-model-block">${sentences}</div>` : ''}
     ${scenarioHTML ? `
@@ -579,6 +594,7 @@ function _renderRepeat(step, res) {
   }[step.repeat_mode] || _escape(step.repeat_mode || '');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${modeLabel ? `<div class="smp-mode-badge">Mode: ${modeLabel}</div>` : ''}
     ${sentences ? `<div class="smp-model-block">${sentences}</div>` : ''}`;
@@ -590,6 +606,7 @@ function _renderChange(step) {
     .join('');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${step.prompt ? `
       <div class="smp-cue-block">
@@ -608,6 +625,7 @@ function _renderInteract(step) {
   }[step.interaction_mode] || _escape(step.interaction_mode || '');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${modeLabel ? `<div class="smp-mode-badge">Mode: ${modeLabel}</div>` : ''}
     ${step.task ? `
@@ -626,6 +644,7 @@ function _renderShare(step) {
   }[step.share_mode] || _escape(step.share_mode || '');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     <div class="smp-step-objective">${_escape(step.objective || '')}</div>
     ${modeLabel ? `<div class="smp-mode-badge">Mode: ${modeLabel}</div>` : ''}
     ${step.task ? `
@@ -656,6 +675,7 @@ function _renderCheck(step) {
     .join('');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     ${step.objective ? `<div class="smp-step-objective">${_escape(step.objective)}</div>` : ''}
     ${observeHTML ? `
       <div class="smp-cue-block">
@@ -675,6 +695,7 @@ function _renderBoost(step) {
     .join('');
 
   return `
+    <p class="smp-step-description">${STEP_DESCRIPTION[step.type] || ''}</p>
     <div class="smp-boost-header">BOOST — Aktivitas Pengayaan</div>
     ${triggers ? `
       <div class="smp-cue-block">
