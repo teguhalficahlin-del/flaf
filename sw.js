@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v248';         // bump: board_suggestion field + renderer + validator
+const CACHE_VERSION  = 'flaf-v249';         // bump: MODEL paired layout (Opsi D)
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
