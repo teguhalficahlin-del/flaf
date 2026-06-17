@@ -248,6 +248,18 @@ function checkVR1(tp, errors) {
   }
 }
 
+function checkBoardSuggestion(tp, errors) {
+  const VALID_BOARD_SUGGESTION = ['optional'];
+  for (const step of (tp.runtime || [])) {
+    if (step.board_suggestion === undefined) continue;
+    if (step.type !== 'MODEL') {
+      errors.push(`[BS] board_suggestion tidak boleh ada di step type ${step.type} (${step.id})`);
+    } else if (!VALID_BOARD_SUGGESTION.includes(step.board_suggestion)) {
+      errors.push(`[BS] board_suggestion nilai tidak valid di step ${step.id}: "${step.board_suggestion}" — harus "optional"`);
+    }
+  }
+}
+
 function checkVR2(tp, errors) {
   const patternId = tp.metadata?.pattern_id;
   if (!patternId) return;
@@ -318,6 +330,7 @@ async function main() {
       totalDuration = checkE5(tp, errors);
       checkVR1(tp, errors);
       checkVR2(tp, errors);
+      checkBoardSuggestion(tp, errors);
       stepCount = Array.isArray(tp.runtime) ? tp.runtime.length : 0;
     }
 
