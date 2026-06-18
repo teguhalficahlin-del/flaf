@@ -1069,22 +1069,15 @@ const L2_LABEL_SMP = {
   diam:                 'Diam',
 };
 
-const L3_FALLBACK_SMP = {
-  sudah_bisa: ['Menjawab sendiri', 'Konsisten di semua aktivitas'],
-  perlu_bantuan: [
-    'Perlu dipancing dulu',
-    'Ikut bersama, diam sendiri',
-    'Butuh visual / kartu',
-    'Tidak merespons',
-  ],
+const L3_TAGS_SMP = {
+  tanpa_buku:          ['Lancar tanpa bantuan', 'Inisiatif sendiri', 'Konsisten sejak awal'],
+  dengan_buku:         ['Sesekali lihat catatan', 'Perlu pengingat', 'Hampir mandiri'],
+  mencoba_belum_tepat: ['Mau mencoba', 'Pola belum stabil', 'Perlu contoh ulang'],
+  diam:                ['Tidak merespons', 'Terlihat bingung', 'Perlu didekati guru'],
 };
 
-function _getObserveTags(tpData, l1Value) {
-  const runtime = tpData?.runtime || [];
-  const checkStep = runtime.find(s => s.type === 'CHECK');
-  const obs = checkStep?.observe;
-  if (Array.isArray(obs) && obs.length > 0) return obs;
-  return L3_FALLBACK_SMP[l1Value] || [];
+function _getObserveTags(l2Value) {
+  return L3_TAGS_SMP[l2Value] ?? [];
 }
 
 async function _renderObservasiOverlay(step) {
@@ -1162,7 +1155,7 @@ async function _renderObservasiOverlay(step) {
     const l2Opts = h.capaian ? l2Map[h.capaian] : [];
 
     // Level 3
-    const alasanOpts = h.perilaku ? _getObserveTags(_state.tp, h.capaian) : null;
+    const alasanOpts = h.perilaku ? _getObserveTags(h.perilaku) : null;
     const alasanArr  = Array.isArray(h.alasan) ? h.alasan : [];
 
     isiHTML = `
