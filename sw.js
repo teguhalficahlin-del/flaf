@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v254';         // bump: observasi formatif Fase D L1/L2/L3 + L3 generik per L2
+const CACHE_VERSION  = 'flaf-v255';         // bump: diferensiasi_baru sudah_bisa/perlu_bantuan accordion (SMP)
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
