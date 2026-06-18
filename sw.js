@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v251';         // bump: skenario renderer — parallel runtime[], 7 step functions
+const CACHE_VERSION  = 'flaf-v252';         // bump: fix ucap TTS + determinisme transisi 66 TP Fase D
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
