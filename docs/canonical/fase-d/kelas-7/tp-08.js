@@ -257,7 +257,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Use: It is blank for blank. Or: It is blank to blank. Do not add because."
+          "teks": "Say, It is blank for blank. Or say, It is blank to blank. Do not add because."
         },
         {
           "tipe": "AKSI",

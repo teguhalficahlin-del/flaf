@@ -273,7 +273,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Use: After that, blank. At the end, blank. And: I learned blank. Keep I learned short. One thing. Not a long message."
+          "teks": "Say, After that, blank. At the end, blank. Then say, I learned blank. Keep I learned short. One thing. Not a long message."
         },
         {
           "tipe": "AKSI",

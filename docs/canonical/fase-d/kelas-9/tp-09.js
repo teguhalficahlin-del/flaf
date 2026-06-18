@@ -578,7 +578,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Now prepare a second Q&A response using I'm not completely sure, but I believe for a question you find harder to answer."
+          "teks": "Now prepare a second question and answer response using I'm not completely sure, but I believe for a question you find harder to answer."
         },
         {
           "tipe": "AKSI",

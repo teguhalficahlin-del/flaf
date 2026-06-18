@@ -78,7 +78,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Class: 7A. Number: 12."
+          "teks": "Class 7A. Number 12."
         },
         {
           "tipe": "AKSI",
@@ -90,7 +90,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Address: Jalan Melati No. 5."
+          "teks": "Address, Jalan Melati Number 5."
         },
         {
           "tipe": "AKSI",
@@ -102,7 +102,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Membership: New Member. Favorite Club: Science Club."
+          "teks": "Membership, New Member. Favorite Club, Science Club."
         },
         {
           "tipe": "AKSI",
@@ -169,7 +169,7 @@ const skenario = {
             },
             {
               "tipe": "UCAP",
-              "teks": "Class: 7A. Number: 12."
+              "teks": "Class 7A. Number 12."
             },
             {
               "tipe": "AKSI",
@@ -261,7 +261,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Fill in your own form. Write Label: then your value. Name: then your name. Class: then your class."
+          "teks": "Fill in your own form. Write the label, then your value. Write your name. Write your class."
         },
         {
           "tipe": "UCAP",
@@ -391,7 +391,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Take turns. Present a completed form to the new group by reading its fields: Label: value."
+          "teks": "Take turns. Present a completed form to the new group by reading each field and its value."
         },
         {
           "tipe": "AKSI",
@@ -558,7 +558,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "One more field. Same format: Label: value. Now you try. Add one more field to your form. Just one."
+          "teks": "One more field. Same format, label then value. Now you try. Add one more field to your form. Just one."
         },
         {
           "tipe": "AKSI",

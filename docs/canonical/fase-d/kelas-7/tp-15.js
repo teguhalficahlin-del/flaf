@@ -524,7 +524,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Because blank. A real event. Not: because reading is good. Now try: It was blank because blank."
+          "teks": "Good. Because blank. A real event. Not because reading is good. Now try, It was blank because blank."
         },
         {
           "tipe": "AKSI",

@@ -277,7 +277,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Write a full evaluation using all five components. Draw on your problem statement from TP-13 and your solution from TP-14."
+          "teks": "Write a full evaluation using all five components. Draw on your problem statement from lesson thirteen and your solution from lesson fourteen."
         },
         {
           "tipe": "UCAP",

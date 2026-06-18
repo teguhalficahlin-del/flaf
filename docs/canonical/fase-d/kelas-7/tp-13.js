@@ -520,7 +520,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now: visited. Not visit. Past. Say: Last weekend, I visited blank."
+          "teks": "Good. Now, visited. Not visit. Past. Say this, Last weekend, I visited blank."
         },
         {
           "tipe": "AKSI",

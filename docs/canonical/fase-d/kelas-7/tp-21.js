@@ -260,7 +260,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Use: Once there was blank near blank. Then: There was blank around blank. Use past tense: there was, it was. Not: There is. Not: I am."
+          "teks": "Say this, Once there was blank near blank. Then say, There was blank around blank. Use past tense, there was, it was. Not there is. Not I am."
         },
         {
           "tipe": "AKSI",
