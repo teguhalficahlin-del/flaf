@@ -402,19 +402,104 @@ Commit log:
 
 Validasi: 6/6 item PASS via browser (screenshot dikonfirmasi Romo)
 
-**Desain Observasi Formatif Fase D (belum diimplementasi)**
-Keputusan yang sudah final:
-- Diferensiasi: 2 jalur — Perlu Support / Sudah Bisa
-- Observasi Level 1: Sudah Bisa / Perlu Bantuan
-- Observasi Level 2:
-    Sudah Bisa → Tanpa buku/catatan / Dengan buku/catatan
-    Perlu Bantuan → Mencoba, belum tepat / Diam
-- Observasi Level 3: tag spesifik per TP (diturunkan dari observe[] dan objective)
+**Desain Observasi Formatif Fase D (DIIMPLEMENTASI)**
+- Overlay lama (flat tags + textarea) di-replace dengan hierarki L1/L2/L3
+- L1: Sudah Bisa (★) / Perlu Bantuan (○)
+- L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
+      Mencoba belum tepat (60·MB) / Diam (45·BB)
+- L3: dinamis dari observe[] step CHECK via runtime.find(),
+  fallback ke L3_FALLBACK_SMP jika CHECK tidak ada
 - Mapping ke rubrik: L1+L2 → BSB/BSH/MB/BB, L3 → kolom Deskripsi
-- Output: data observasi runtime → rubrik modul ajar resmi
+- savePenilaianSMP() atomic batch ke penilaian_log_smp
+- Tombol selalu visible di semua step, bukan hanya CHECK
 - Hubungan dengan BOOST: diputus — observasi murni faktual
 
+---
+
+## Sprint Observasi Formatif Fase D (19 Juni 2026)
+
+### Status
+SW aktif: flaf-v253 (tidak ada bump — perubahan JS/CSS saja, tidak ada
+perubahan SW logic)
+
+### Pekerjaan Sprint Ini
+
+**Replace overlay observasi lama → hierarki L1/L2/L3**
+- `_renderObservasiOverlay()` lama: flat tags hardcode + textarea
+- Diganti dengan hierarki 3 level identik Fase A-C:
+  L1: Sudah Bisa (★) / Perlu Bantuan (○)
+  L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
+       Mencoba belum tepat (60·MB) / Diam (45·BB)
+  L3: dinamis dari observe[] step CHECK via runtime.find()
+      fallback ke L3_FALLBACK_SMP jika CHECK tidak ada
+- Chip nilai `90 · BSB` dll tampil di accordion header per siswa
+- Draft auto-save ke store kv, key: draft_penilaian_smp_{rombelId}_{tpId}
+- Simpan final ke penilaian_log_smp via savePenilaianSMP() atomic batch
+- Filter: hanya siswa yang sudah minimal L2 (perilaku !== null) disimpan
+
+**savePenilaianSMP() — storage/penilaian-smp.js**
+- Fungsi baru, atomic batch, gating db.init() sebelum buka koneksi lokal
+- Record schema:
+  { kelasId, siswaId, tpNomor, sesiId, mode: 'observasi_smp',
+    capaian, perilaku, nilai, predikat, alasan: string[], catatan,
+    createdAt }
+- Terisolasi total dari penilaian_log SD
+
+**Tombol entry: selalu visible di semua step**
+- Tombol #smp-btn-penilaian di-render tanpa kondisi step
+- observe[] selalu dibaca dari step CHECK via runtime.find(),
+  bukan dari step yang sedang aktif — konteks L3 selalu benar
+
+**Cleanup dead CSS**
+- 9 class dihapus dari sesi-runtime-smp.css:
+  8× smp-obs-* (overlay lama) + 1× sr-overlay-content--wide
+  Semua dikonfirmasi orphan via grep sebelum dihapus
+
+### Temuan Arsitektur Penting
+- Footer _renderRunning() (tombol prev/next/kondisi/penilaian) adalah
+  milik _renderRunning(), bukan renderer skenario — footer selalu ada
+  di semua step tanpa kondisi tambahan
+- observe[] ada di step CHECK di file canonical fase-d,
+  tersedia di runtime via import chain (data/fase-d-kelas-*.js
+  re-export dari docs/canonical/fase-d/)
+- ES module cache + static server cache: jika perubahan JS tidak
+  terlihat di browser, wajib hard reload + restart server sebelum
+  debug lebih jauh
+
+### Commit Log
+
+| SHA | Pesan |
+|---|---|
+| 123e23b | feat(observasi-smp): hierarki L1/L2/L3 + savePenilaianSMP |
+| 16dde04 | fix(observasi-smp): tombol selalu visible di semua step |
+| f602597 | chore(css): hapus dead CSS overlay observasi lama smp-obs-* |
+
+### Hasil Test Final
+
+| # | Item | Hasil |
+|---|------|-------|
+| T1 | Tombol visible di step MODEL | PASS |
+| T2 | Overlay + L3 dari observe[] saat dibuka dari step non-CHECK | PASS |
+| T3 | L3 identik saat dibuka dari step CHECK | PASS |
+| T4 | Semua tombol footer tetap ada | PASS |
+| T5 | Chip 90·BSB / reset cascade L1→L2→L3 | PASS |
+| T6 | Draft restore dalam sesi | PASS |
+| T7 | Record penilaian_log_smp — field lengkap, filter valid | PASS |
+| T8 | Viewport 320px — tidak overflow, tap target OK | PASS |
+| T9 | Regresi SD: penilaian_log SD terisolasi | PASS |
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+- observe[] dibaca dari step CHECK via runtime.find(), bukan step aktif
+- Tombol selalu visible — tidak pakai kondisi step apapun
+- nilai 90/75/60/45 ada di UI dan record meskipun TP schema punya
+  check_without_score: true — constraint itu untuk penilaian sumatif,
+  bukan observasi formatif runtime
+- penilaian_log_smp terisolasi total dari penilaian_log SD
+
 ### Sprint Berikutnya
-1. Implementasi observasi Fase D (diferensiasi + overlay + export rubrik)
-2. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
-3. VR-S18 parser fix — backlog
+1. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
+2. Desain kurikulum Fase D proper — meta/cp untuk placeholder kurikulum.js
+3. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
+4. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
+   skenario stabil di lapangan (Sprint E)
+5. Sprint A — validasi lapangan 3-5 TP sampel (prioritas tinggi)
