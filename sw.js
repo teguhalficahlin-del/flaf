@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v250';         // bump: tighten model pair spacing + sentence alignment
+const CACHE_VERSION  = 'flaf-v251';         // bump: skenario renderer — parallel runtime[], 7 step functions
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing
