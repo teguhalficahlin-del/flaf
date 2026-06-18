@@ -513,7 +513,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: var(--color-surface, #1e1e2e);
+  background: #1a1a2e;
   border-bottom: 2px solid var(--color-accent, #D4AE3A);
   margin-bottom: 12px;
 }
@@ -550,7 +550,7 @@
   border-left: 3px solid #4caf50;
 }
 .sk-cue {
-  background: var(--color-surface, #1e1e2e);
+  background: #1a1a2e;
   opacity: 0.8;
 }
 .sk-cue-sisa {
@@ -598,7 +598,7 @@
 }
 .sk-bantuan summary {
   padding: 10px 12px;
-  background: var(--color-surface, #1e1e2e);
+  background: #1a1a2e;
   cursor: pointer;
   font-size: 13px;
   color: rgba(255,255,255,.7);
@@ -632,7 +632,7 @@
   font-size: 13px;
   line-height: 1.6;
   color: var(--color-text, #e0e0e0);
-  background: var(--color-surface-2, #252535);
+  background: #252535;
 }
 .sk-dif-wrap {
   margin: 12px;
@@ -646,7 +646,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   color: rgba(255,255,255,.6);
-  background: var(--color-surface, #1e1e2e);
+  background: #1a1a2e;
   text-transform: uppercase;
 }
 .sk-dif-tabel {
@@ -700,7 +700,7 @@
   min-height: 44px;
 }
 .sk-btn-prev {
-  background: var(--color-surface-2, #252535);
+  background: #252535;
   color: var(--color-text, #e0e0e0);
 }
 .sk-btn-next {
