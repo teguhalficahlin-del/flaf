@@ -481,7 +481,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Your I like sentence. Without looking at your book."
+          "teks": "Say your \"I like\" sentence. Without looking at your book."
         },
         {
           "tipe": "AKSI",
