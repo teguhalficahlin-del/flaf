@@ -51,14 +51,17 @@ const KONDISI_NICE = {
 // ── State ─────────────────────────────────────────────────────
 
 let _state = {
-  tp        : null,
-  rombel    : null,
-  siswaList : [],
-  statusMap : {},
-  stepIndex : 0,
-  aktState  : 'preview',
-  sesiId    : null,
-  ttsPlaying: false,
+  tp                 : null,
+  rombel             : null,
+  siswaList          : [],
+  statusMap          : {},
+  stepIndex          : 0,
+  aktState           : 'preview',
+  sesiId             : null,
+  ttsPlaying         : false,
+  skenarioMode       : false,
+  repeatKalimatIndex : 0,
+  checkJalur         : null,
 };
 
 let _root   = null;
@@ -102,6 +105,10 @@ export { mount as srSMPMount, unmount as srSMPUnmount };
 // ── Transition ────────────────────────────────────────────────
 
 function _transition(patch) {
+  if ('stepIndex' in patch && patch.stepIndex !== _state.stepIndex) {
+    _state.repeatKalimatIndex = 0;
+    _state.checkJalur         = null;
+  }
   Object.assign(_state, patch);
   _render();
 }
@@ -510,6 +517,9 @@ function _renderRunning() {
 }
 
 function _renderStep(step, res) {
+  const sk = _state.tp?.skenario;
+  if (sk) return _renderStepSkenario(step, sk);
+
   switch (step.type) {
     case 'MODEL'   : return _renderModel(step, res);
     case 'REPEAT'  : return _renderRepeat(step, res);
@@ -700,6 +710,259 @@ function _renderBoost(step) {
         <div class="smp-section-label">Langkah guru</div>
         <ul class="smp-boost-list">${actions}</ul>
       </div>` : ''}`;
+}
+
+// ── SKENARIO RENDERER ─────────────────────────────────────────
+
+function _renderStepSkenario(step, sk) {
+  const langkah = sk.langkah;
+  switch (step.type) {
+    case 'MODEL'   : return _renderSkenarioModel(langkah.model, sk);
+    case 'REPEAT'  : return _renderSkenarioRepeat(langkah.repeat, sk);
+    case 'CHANGE'  : return _renderSkenarioChange(langkah.change);
+    case 'INTERACT': return _renderSkenarioInteract(langkah.interact);
+    case 'SHARE'   : return _renderSkenarioShare(langkah.share);
+    case 'CHECK'   : return _renderSkenarioCheck(langkah.check);
+    case 'BOOST'   : return _renderSkenarioBoost(langkah.boost);
+    default:
+      return `<div class="smp-teks-biasa">Langkah tidak dikenal: ${_escape(step.type)}</div>`;
+  }
+}
+
+// ── Helper: render instruksi[] ─────────────────────────────────
+
+function _renderInstruksiList(instruksi) {
+  if (!Array.isArray(instruksi) || instruksi.length === 0) return '';
+  return instruksi.map(item => {
+    if (!item || !item.tipe) return '';
+    const teks = _escape(item.teks || '');
+    switch (item.tipe) {
+      case 'AKSI':
+        return `<div class="sk-instruksi sk-aksi">
+          <span class="sk-ikon">⚡</span>
+          <span class="sk-teks">${teks}</span>
+        </div>`;
+      case 'UCAP':
+        return `<div class="sk-instruksi sk-ucap">
+          <span class="sk-ikon">🗣</span>
+          <span class="sk-teks sk-ucap-teks">${teks}</span>
+          <button class="smp-tts-btn sk-tts" data-kalimat="${_escape(item.teks || '')}"
+                  aria-label="Dengarkan">🔊</button>
+        </div>`;
+      case 'bantuan':
+        return `<details class="sk-bantuan">
+          <summary><span class="sk-ikon">💡</span> Bantuan</summary>
+          <div class="sk-bantuan-isi">${teks}</div>
+        </details>`;
+      case 'darurat':
+        return `<details class="sk-darurat">
+          <summary><span class="sk-ikon">🚨</span> Darurat</summary>
+          <div class="sk-darurat-isi">${teks}</div>
+        </details>`;
+      case 'cue':
+        return `<div class="sk-instruksi sk-cue">
+          <span class="sk-ikon">📌</span>
+          <span class="sk-teks">${teks}</span>
+        </div>`;
+      default:
+        return `<div class="sk-instruksi sk-aksi">
+          <span class="sk-ikon">•</span>
+          <span class="sk-teks">${teks}</span>
+        </div>`;
+    }
+  }).join('');
+}
+
+// ── Helper: render diferensiasi ────────────────────────────────
+
+function _renderDiferensiasi(dif) {
+  if (!dif) return '';
+  return `<div class="sk-dif-wrap">
+    <div class="sk-dif-label">Diferensiasi</div>
+    <table class="sk-dif-tabel">
+      <tr>
+        <td class="sk-dif-level sk-mudah">Mudah</td>
+        <td class="sk-dif-tugas">${_escape(dif.mudah || '')}</td>
+      </tr>
+      <tr>
+        <td class="sk-dif-level sk-standar">Standar</td>
+        <td class="sk-dif-tugas">${_escape(dif.standar || '')}</td>
+      </tr>
+      <tr>
+        <td class="sk-dif-level sk-tantangan">Tantangan</td>
+        <td class="sk-dif-tugas">${_escape(dif.tantangan || '')}</td>
+      </tr>
+    </table>
+  </div>`;
+}
+
+// ── Helper: header langkah ─────────────────────────────────────
+
+function _renderLangkahHeader(nama, durasi) {
+  return `<div class="sk-langkah-header">
+    <span class="sk-langkah-nama">${_escape(nama)}</span>
+    <span class="sk-langkah-durasi">${_escape(String(durasi ?? ''))} menit</span>
+  </div>`;
+}
+
+// ── Skenario render: MODEL ─────────────────────────────────────
+
+function _renderSkenarioModel(model, sk) {
+  return _renderLangkahHeader('MODEL', model.durasi_menit)
+    + (model.intro ? `<div class="sk-intro">${_escape(model.intro)}</div>` : '')
+    + _renderInstruksiList(model.instruksi);
+}
+
+// ── Skenario render: REPEAT ────────────────────────────────────
+
+function _renderSkenarioRepeat(repeat, sk) {
+  const idx     = _state.repeatKalimatIndex;
+  const kalimat = repeat.kalimat || [];
+  const total   = kalimat.length;
+  const current = kalimat[idx];
+
+  if (!current) return _renderLangkahHeader('REPEAT', repeat.durasi_menit);
+
+  const isLast  = idx === total - 1;
+
+  const navPrev = idx > 0
+    ? `<button class="sk-btn sk-btn-prev" onclick="_skenarioRepeatNav(-1)">◀ Sebelumnya</button>`
+    : '';
+  const navNext = !isLast
+    ? `<button class="sk-btn sk-btn-next" onclick="_skenarioRepeatNav(1)">Berikutnya ▶</button>`
+    : '';
+
+  const penutupHTML = isLast
+    ? _renderInstruksiList(repeat.instruksi_penutup || [])
+    : '';
+
+  return _renderLangkahHeader('REPEAT', repeat.durasi_menit)
+    + (repeat.intro ? `<div class="sk-intro">${_escape(repeat.intro)}</div>` : '')
+    + `<div class="sk-repeat-nav">
+        <span class="sk-repeat-counter">${_escape(current.label)} dari ${total}</span>
+      </div>`
+    + _renderInstruksiList(current.instruksi)
+    + penutupHTML
+    + `<div class="sk-repeat-tombol">${navPrev}${navNext}</div>`;
+}
+
+function _skenarioRepeatNav(delta) {
+  const repeat = _state.tp?.skenario?.langkah?.repeat;
+  if (!repeat) return;
+  const total = (repeat.kalimat || []).length;
+  const next  = _state.repeatKalimatIndex + delta;
+  if (next < 0 || next >= total) return;
+  _state.repeatKalimatIndex = next;
+  _render();
+}
+
+// ── Skenario render: CHANGE ────────────────────────────────────
+
+function _renderSkenarioChange(change) {
+  return _renderLangkahHeader('CHANGE', change.durasi_menit)
+    + (change.intro ? `<div class="sk-intro">${_escape(change.intro)}</div>` : '')
+    + _renderInstruksiList(change.instruksi)
+    + _renderDiferensiasi(change.diferensiasi);
+}
+
+// ── Skenario render: INTERACT ──────────────────────────────────
+
+function _renderSkenarioInteract(interact) {
+  return _renderLangkahHeader('INTERACT', interact.durasi_menit)
+    + (interact.intro ? `<div class="sk-intro">${_escape(interact.intro)}</div>` : '')
+    + _renderInstruksiList(interact.instruksi)
+    + _renderDiferensiasi(interact.diferensiasi);
+}
+
+// ── Skenario render: SHARE ─────────────────────────────────────
+
+function _renderSkenarioShare(share) {
+  return _renderLangkahHeader('SHARE', share.durasi_menit)
+    + (share.intro ? `<div class="sk-intro">${_escape(share.intro)}</div>` : '')
+    + _renderInstruksiList(share.instruksi)
+    + _renderDiferensiasi(share.diferensiasi);
+}
+
+// ── Skenario render: CHECK ─────────────────────────────────────
+
+function _renderSkenarioCheck(check) {
+  const jalur  = _state.checkJalur;
+  const header = _renderLangkahHeader('CHECK', check.durasi_menit);
+  const intro  = check.intro ? `<div class="sk-intro">${_escape(check.intro)}</div>` : '';
+  const instruksi = _renderInstruksiList(check.instruksi);
+
+  if (jalur === null || jalur === undefined) {
+    return header + intro + instruksi
+      + `<div class="sk-check-pilih">
+          <div class="sk-check-label">Pilih jalur:</div>
+          <div class="sk-check-tombol">
+            <button class="sk-btn sk-btn-lancar"
+                    onclick="_skenarioCheckJalur('lancar')">✓ Mayoritas Lancar</button>
+            <button class="sk-btn sk-btn-belum"
+                    onclick="_skenarioCheckJalur('belum')">✗ Masih Ragu</button>
+          </div>
+        </div>`;
+  }
+
+  if (jalur === 'lancar') {
+    const runtime  = _state.tp?.runtime || [];
+    const idx      = _state.stepIndex;
+    const isLast   = idx >= runtime.length - 1;
+    const lanjutBtn = isLast
+      ? `<button class="sk-btn sk-btn-next" onclick="_endSesi()">Selesai ✓</button>`
+      : `<button class="sk-btn sk-btn-next" onclick="_nextStep()">Lanjut ke BOOST →</button>`;
+    return header + intro + instruksi
+      + _renderInstruksiList(check.jalur_lancar)
+      + `<div class="sk-repeat-tombol">${lanjutBtn}</div>`;
+  }
+
+  if (jalur === 'belum') {
+    return header + intro + instruksi
+      + _renderInstruksiList(check.jalur_belum_lancar)
+      + `<div class="sk-repeat-tombol">
+          <button class="sk-btn sk-btn-belum" onclick="_endSesi()">Selesai</button>
+        </div>`;
+  }
+
+  return header + intro + instruksi;
+}
+
+function _skenarioCheckJalur(jalur) {
+  _state.checkJalur = jalur;
+  _render();
+}
+
+function _nextStep() {
+  const runtime = _state.tp?.runtime || [];
+  const next    = _state.stepIndex + 1;
+  if (next < runtime.length) {
+    _transition({ stepIndex: next });
+  } else {
+    _transition({ aktState: 'selesai' });
+  }
+}
+
+function _endSesi() {
+  _transition({ aktState: 'selesai' });
+}
+
+// ── Skenario render: BOOST ─────────────────────────────────────
+
+function _renderSkenarioBoost(boost) {
+  return _renderLangkahHeader('BOOST', boost.durasi_menit)
+    + (boost.intro ? `<div class="sk-intro">${_escape(boost.intro)}</div>` : '')
+    + `<div class="sk-boost-section">
+        <div class="sk-boost-label">Untuk siswa yang masih kesulitan</div>
+        ${_renderInstruksiList(boost.untuk_kesulitan)}
+      </div>`
+    + `<div class="sk-boost-section">
+        <div class="sk-boost-label">Untuk siswa yang sudah lancar</div>
+        ${_renderInstruksiList(boost.untuk_lancar)}
+      </div>`
+    + (boost.cue_sisa ? `<div class="sk-instruksi sk-cue">
+        <span class="sk-ikon">📌</span>
+        <span class="sk-teks">${_escape(boost.cue_sisa)}</span>
+      </div>` : '');
 }
 
 // ── SCREEN: SELESAI ───────────────────────────────────────────
@@ -937,3 +1200,10 @@ function _renderClosure() {
     if (_onDone) _onDone({ sesiId: _state.sesiId });
   }, 800);
 }
+
+// Expose skenario navigation callbacks ke window scope
+// Diperlukan karena onclick= inline tidak bisa akses ES module scope
+window._skenarioRepeatNav  = _skenarioRepeatNav;
+window._skenarioCheckJalur = _skenarioCheckJalur;
+window._nextStep           = _nextStep;
+window._endSesi            = _endSesi;

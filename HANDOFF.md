@@ -171,3 +171,96 @@ Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode bug aktif (s
 2. **Migrasi wrapper db.js penuh** untuk `siswa-history.js` + `nilai.js` — follow-up prioritas rendah dari hotfix DB_VERSION, hilangkan `indexedDB.open()` mandiri di kedua modul.
 3. **Sprint A** — validasi lapangan 3-5 TP sampel.
 4. **Sprint D** — persiapan Fase E (Pattern Registry K10+).
+
+---
+
+## Sprint Skenario Ajar Fase D (17 Juni 2026)
+
+### Keputusan Arsitektur
+Seluruh TP Fase D akan dirombak dengan skenario ajar baru
+dalam format AKSI/UCAP per langkah — menggantikan runtime[]
+yang ada sekarang. Ini adalah perombakan total, bukan tambahan
+field. Renderer PWA akan dibangun ulang setelah semua skenario
+selesai dan divalidasi.
+
+### Format Skenario
+- Setiap instruksi ditulis sebagai AKSI atau UCAP per baris
+- AKSI: instruksi fisik guru — boleh campur BI dan Inggris
+- UCAP: kalimat guru — wajib Bahasa Inggris, ramah TTS,
+  tanpa simbol atau kode apapun
+- Urutan langkah wajib: PERSIAPAN → SIAPKAN KELAS → MODEL →
+  REPEAT → CHANGE → INTERACT → SHARE → CHECK → BOOST
+- CHECK adalah langkah terminal — dua jalur eksplisit
+- BOOST hanya jika CHECK mayoritas lancar, satu fokus,
+  maksimal tiga siswa
+
+### Anchor Kualitas
+- TP 7-01 adalah skenario acuan untuk semua TP
+- File: docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt
+- Divalidasi ChatGPT — 9.9/10, semua aspek LOLOS
+- Checklist lolos: 28 item (F-01 s/d F-07, S-01 s/d S-10,
+  K-01 s/d K-05, C-01 s/d C-05, P-01 s/d P-03)
+
+### Progress Skenario
+
+**Kelas 7 — SELESAI**
+- Generate: Claude Code — 24/24 file tersimpan
+- Review: ChatGPT — satu TP per sesi, checklist 28 item
+- Revisi: Claude Code — 15 file diperbarui, 8 file LOLOS langsung
+- File lokasi: docs/canonical/skenario-fase-d-kelas 7/
+- File format: skenario-7-XX.txt
+- Status: semua 24 file final, siap digunakan
+
+**Kelas 8 — BELUM DIMULAI**
+- 24 TP menunggu
+- File lokasi target: docs/canonical/skenario-fase-d-kelas 8/
+- File format: skenario-8-XX.txt
+
+**Kelas 9 — BELUM DIMULAI**
+- 18 TP menunggu
+- File lokasi target: docs/canonical/skenario-fase-d-kelas 9/
+- File format: skenario-9-XX.txt
+
+### Temuan Penting dari Kelas 7
+Item paling sering bermasalah: K-01 + C-01
+— MODEL memperkenalkan pola di luar target TP
+— Muncul di 13 dari 15 file yang direvisi
+— Perlu penekanan ekstra di prompt generate Kelas 8 dan 9
+
+### Alur Kerja per Kelas
+1. Generate — Claude Code baca data TP + skenario-7-01.txt
+   sebagai acuan, tulis dan simpan semua skenario
+2. Review — ChatGPT, satu TP per sesi, checklist 28 item,
+   simpan semua hasil review dalam satu file txt
+   dengan penanda ## Review TP X-XX
+3. Revisi — Claude Code baca file review, parse verdict,
+   perbaiki file yang PERLU REVISI
+4. Lanjut ke kelas berikutnya
+
+### Prompt Generate (untuk Kelas 8 dan 9)
+Sama dengan Kelas 7 dengan dua penyesuaian:
+1. Nada bahasa: K8 semi-formal, K9 formal
+2. Tambahkan catatan khusus di prompt:
+
+PERHATIAN KHUSUS — K-01 + C-01:
+Di langkah MODEL, guru hanya boleh mengucapkan kalimat
+yang ada di model_sentences[] data TP.
+Jangan tambahkan kalimat contoh lain di luar model_sentences[].
+Jangan perkenalkan pola bahasa yang bukan target TP ini.
+
+### File Referensi Penting
+- Skenario acuan: docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt
+- Data TP Kelas 7: docs/canonical/fase-d/kelas-7/
+- Data TP Kelas 8: docs/canonical/fase-d/kelas-8/
+- Data TP Kelas 9: docs/canonical/fase-d/kelas-9/
+- Review Kelas 7: docs/canonical/## Review TP kelas 7.txt
+
+### SW Aktif
+flaf-v250 (tidak ada perubahan kode di sprint ini —
+semua pekerjaan adalah konten skenario, bukan PWA)
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+- Format AKSI/UCAP adalah final — tidak kembali ke runtime[]
+- skenario-7-01.txt adalah anchor kualitas — tidak diubah
+- Renderer PWA dibangun ulang setelah semua 66 skenario selesai
+- Review dilakukan ChatGPT satu TP per sesi — bukan batch
