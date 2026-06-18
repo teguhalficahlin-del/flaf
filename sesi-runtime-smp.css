@@ -559,44 +559,60 @@
   color: var(--color-text, #e0e0e0);
   background: #252535;
 }
-.sk-dif-wrap {
-  margin: 12px;
-  border: 1px solid rgba(255,255,255,.15);
+.sk-dif-header {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #D4AE3A;
+  margin: 8px 12px 2px;
+}
+
+.sk-dif-sudah-bisa,
+.sk-dif-perlu-bantuan {
+  margin: 4px 12px;
   border-radius: 6px;
   overflow: hidden;
 }
-.sk-dif-label {
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,.6);
+
+.sk-dif-sudah-bisa summary {
+  padding: 10px 12px;
+  background: #1a2a1a;
+  cursor: pointer;
+  font-size: 13px;
+  color: #a5d6a7;
+  list-style: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.sk-dif-sudah-bisa summary::marker { display: none; }
+.sk-dif-sudah-bisa summary::-webkit-details-marker { display: none; }
+
+.sk-dif-perlu-bantuan summary {
+  padding: 10px 12px;
   background: #1a1a2e;
-  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  list-style: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
 }
-.sk-dif-tabel {
-  width: 100%;
-  border-collapse: collapse;
-}
-.sk-dif-tabel tr {
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-.sk-dif-level {
-  width: 80px;
-  padding: 8px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  vertical-align: top;
-}
-.sk-mudah     { color: #81c784; }
-.sk-standar   { color: #D4AE3A; }
-.sk-tantangan { color: #ef9a9a; }
-.sk-dif-tugas {
-  padding: 8px 12px;
-  font-size: 12px;
-  line-height: 1.5;
+.sk-dif-perlu-bantuan summary::marker { display: none; }
+.sk-dif-perlu-bantuan summary::-webkit-details-marker { display: none; }
+
+.sk-dif-isi {
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.6;
   color: var(--color-text, #e0e0e0);
-  vertical-align: top;
+  background: #252535;
 }
 .sk-repeat-nav {
   display: flex;
