@@ -312,6 +312,10 @@
         "mudah": "Gunakan templat dan lengkapi semua empat bagian. Boleh lihat email model.",
         "standar": "Tulis email lengkap (semua empat bagian) tanpa melihat model.",
         "tantangan": "Tulis email lengkap dan tambahkan satu kalimat lagi di bagian isi tentang apa yang dapat dilakukan siswa lain dengan penemuan itu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis email lengkap dan tambahkan satu kalimat lagi di bagian isi tentang apa yang dapat dilakukan siswa lain dengan penemuan itu.",
+        "perlu_bantuan": "Gunakan templat dan lengkapi semua empat bagian. Boleh lihat email model."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Baca emailmu ke pasangan. Pasangan tunjuk setiap bagian dari keempat bagian.",
         "standar": "Baca email tanpa templat. Pasangan periksa semua empat bagian ada.",
         "tantangan": "Baca email dan pasangan tanya satu pertanyaan tentang penemuan dalam pesanmu — kamu jawab dalam satu kalimat."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Baca email dan pasangan tanya satu pertanyaan tentang penemuan dalam pesanmu — kamu jawab dalam satu kalimat.",
+        "perlu_bantuan": "Baca emailmu ke pasangan. Pasangan tunjuk setiap bagian dari keempat bagian."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Baca emailmu ke kelompok.",
         "standar": "Presentasikan emailmu tanpa membaca.",
         "tantangan": "Presentasikan emailmu, lalu jawab satu pertanyaan dari kelompok tentang penemuan atau tujuan pesanmu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan emailmu, lalu jawab satu pertanyaan dari kelompok tentang penemuan atau tujuan pesanmu.",
+        "perlu_bantuan": "Baca emailmu ke kelompok."
       }
     },
     "check": {

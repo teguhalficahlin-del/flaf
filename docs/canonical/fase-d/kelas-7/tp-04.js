@@ -365,6 +365,10 @@ const skenario = {
         "mudah": "Lengkapi satu pendapat: I think blank because blank. Gunakan alasan pendek dari ikon, misalnya because everyone helps. Lalu pilih satu kartu respons untuk menanggapi teman.",
         "standar": "Tulis satu pendapat: I think blank because blank. Dan tulis dua respons berbeda yang bisa kamu gunakan untuk menanggapi teman: I agree, That's true, atau I don't think so.",
         "tantangan": "Tulis dua pendapat dengan alasan. Mulai satu dengan ajakan Let's terlebih dahulu, misalnya: Let's keep our classroom clean! I think that's a good idea because I like a clean classroom. Masukkan I like di salah satu alasan. Siapkan satu respons setuju dan satu I don't think so."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua pendapat dengan alasan. Mulai satu dengan ajakan Let's terlebih dahulu, misalnya: Let's keep our classroom clean! I think that's a good idea because I like a clean classroom. Masukkan I like di salah satu alasan. Siapkan satu respons setuju dan satu I don't think so.",
+        "perlu_bantuan": "Lengkapi satu pendapat: I think blank because blank. Gunakan alasan pendek dari ikon, misalnya because everyone helps. Lalu pilih satu kartu respons untuk menanggapi teman."
       }
     },
     "interact": {
@@ -420,6 +424,10 @@ const skenario = {
         "mudah": "Ucapkan pendapatmu dari buku catatan ke kelompok — boleh membaca. Lalu gunakan kartu respons untuk menanggapi satu teman.",
         "standar": "Sampaikan pendapatmu tanpa membaca, lalu tanggapi minimal dua teman dengan respons yang berbeda.",
         "tantangan": "Mulai dengan ajakan Let's, lalu sampaikan pendapat dengan alasan yang mengandung I like. Gunakan juga Can you help? Yes, I can. dalam diskusi tentang teamwork. Tanggapi teman lain, termasuk satu I don't think so."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan ajakan Let's, lalu sampaikan pendapat dengan alasan yang mengandung I like. Gunakan juga Can you help? Yes, I can. dalam diskusi tentang teamwork. Tanggapi teman lain, termasuk satu I don't think so.",
+        "perlu_bantuan": "Ucapkan pendapatmu dari buku catatan ke kelompok — boleh membaca. Lalu gunakan kartu respons untuk menanggapi satu teman."
       }
     },
     "share": {
@@ -475,6 +483,10 @@ const skenario = {
         "mudah": "Sampaikan pendapat I think blank because blank ke kelompok baru — boleh membaca. Tanggapi satu teman dengan kartu respons.",
         "standar": "Sampaikan pendapat tanpa membaca, dan tanggapi minimal dua teman dengan respons yang berbeda.",
         "tantangan": "Sampaikan pendapat dengan ajakan Let's di depan dan alasan yang mengandung I like, lalu tanggapi teman lain termasuk satu I don't think so."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan pendapat dengan ajakan Let's di depan dan alasan yang mengandung I like, lalu tanggapi teman lain termasuk satu I don't think so.",
+        "perlu_bantuan": "Sampaikan pendapat I think blank because blank ke kelompok baru — boleh membaca. Tanggapi satu teman dengan kartu respons."
       }
     },
     "check": {

@@ -312,6 +312,10 @@
         "mudah": "Gunakan profil siswa dan lengkapi: \"One reason is that ___. Another reason is that ___.\"",
         "standar": "Tulis dua alasan paralel untuk bergabung dengan klub (\"One reason is that ... Another reason is that ...\").",
         "tantangan": "Mulai dengan posisimu (\"I believe joining a club is useful because ...\"), lalu berikan dua alasan dengan \"One reason is that ... Another reason is that ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan posisimu (\"I believe joining a club is useful because ...\"), lalu berikan dua alasan dengan \"One reason is that ... Another reason is that ...\"",
+        "perlu_bantuan": "Gunakan profil siswa dan lengkapi: \"One reason is that ___. Another reason is that ___.\""
       }
     },
     "interact": {
@@ -367,6 +371,10 @@
         "mudah": "Tambahkan satu alasan ke peta kelompok (\"One reason is that ___\"). Boleh membaca.",
         "standar": "Tambahkan dua alasan tanpa membaca, keduanya mendukung posisi yang sama.",
         "tantangan": "Nyatakan posisi, lalu tambahkan dua alasan, dan pastikan semua alasan kelompok mendukung klaim yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Nyatakan posisi, lalu tambahkan dua alasan, dan pastikan semua alasan kelompok mendukung klaim yang sama.",
+        "perlu_bantuan": "Tambahkan satu alasan ke peta kelompok (\"One reason is that ___\"). Boleh membaca."
       }
     },
     "share": {
@@ -426,6 +434,10 @@
         "mudah": "Presentasikan dua alasan ke kelompok baru. Boleh membaca.",
         "standar": "Presentasikan posisi dan dua alasan tanpa membaca.",
         "tantangan": "Presentasikan posisi dan alasan-alasanmu, lalu jawab satu pertanyaan tentang satu alasan dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan posisi dan alasan-alasanmu, lalu jawab satu pertanyaan tentang satu alasan dari kelompok.",
+        "perlu_bantuan": "Presentasikan dua alasan ke kelompok baru. Boleh membaca."
       }
     },
     "check": {

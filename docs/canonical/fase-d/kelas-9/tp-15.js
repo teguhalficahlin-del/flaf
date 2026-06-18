@@ -320,6 +320,10 @@
         "mudah": "Gunakan kerangka lima komponen dan isi setiap slot menggunakan pernyataan masalah dari TP-13 dan usulan solusi dari TP-14.",
         "standar": "Tulis evaluasi terpadu sendiri tanpa membaca kerangka, menggabungkan kerja dari TP-13 dan TP-14. Gunakan kosakata: school improvement, healthy lifestyle, student participation, atau long-term benefits.",
         "tantangan": "Tulis evaluasi dan buat This solution works because mengutip bukti dari sumber-sumber di TP-12 (Information Synthesis) untuk membenarkan solusi — koneksi lintas kluster."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis evaluasi dan buat This solution works because mengutip bukti dari sumber-sumber di TP-12 (Information Synthesis) untuk membenarkan solusi — koneksi lintas kluster.",
+        "perlu_bantuan": "Gunakan kerangka lima komponen dan isi setiap slot menggunakan pernyataan masalah dari TP-13 dan usulan solusi dari TP-14."
       }
     },
     "interact": {
@@ -379,6 +383,10 @@
         "mudah": "Baca evaluasi dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya: The problem is, To solve it, works because, As a result, Therefore.",
         "standar": "Bagikan evaluasi tanpa membaca. Kelompok memeriksa apakah kelima komponen benar-benar berbeda.",
         "tantangan": "Bagikan evaluasi dan kelompok bertanya: \"Why is this solution better than just doing one more lesson of physical education?\" — kamu jawab dengan bukti."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan evaluasi dan kelompok bertanya: \"Why is this solution better than just doing one more lesson of physical education?\" — kamu jawab dengan bukti.",
+        "perlu_bantuan": "Baca evaluasi dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya: The problem is, To solve it, works because, As a result, Therefore."
       }
     },
     "share": {
@@ -438,6 +446,10 @@
         "mudah": "Presentasikan evaluasi ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan evaluasi tanpa membaca.",
         "tantangan": "Presentasikan evaluasi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What long-term benefits would this solution bring to the school beyond the students currently enrolled?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan evaluasi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What long-term benefits would this solution bring to the school beyond the students currently enrolled?\"",
+        "perlu_bantuan": "Presentasikan evaluasi ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

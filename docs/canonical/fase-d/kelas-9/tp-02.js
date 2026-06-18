@@ -340,6 +340,10 @@
         "mudah": "Gunakan pola di papan tulis dan isi kelima slot. Boleh melihat kartu dua pendapat untuk referensi. Tulis: Some people think lalu satu pendapat tentang PR. However, I believe lalu posisi sendiri karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh. Therefore lalu kesimpulan.",
         "standar": "Tulis argumen acknowledge-defend sendiri tanpa membaca pola. Gunakan kosakata: homework, learning, time, atau balance.",
         "tantangan": "Tulis argumen lengkap dan gunakan sudut topik yang berbeda — misalnya PR akhir pekan versus PR hari sekolah — untuk menunjukkan pola yang sama tetap berlaku."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis argumen lengkap dan gunakan sudut topik yang berbeda — misalnya PR akhir pekan versus PR hari sekolah — untuk menunjukkan pola yang sama tetap berlaku.",
+        "perlu_bantuan": "Gunakan pola di papan tulis dan isi kelima slot. Boleh melihat kartu dua pendapat untuk referensi. Tulis: Some people think lalu satu pendapat tentang PR. However, I believe lalu posisi sendiri karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh. Therefore lalu kesimpulan."
       }
     },
     "interact": {
@@ -411,6 +415,10 @@
         "mudah": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa kelima komponen: acknowledge, counter, reason, example, conclusion.",
         "standar": "Sampaikan argumen tanpa membaca buku. Pasangan memeriksa semua lima komponen dan nada — apakah terdengar acknowledge-then-defend, bukan rebuttal agresif?",
         "tantangan": "Sampaikan argumen, lalu pasangan bertanya: \"Can you give another reason?\" Tambahkan satu kalimat alasan kedua sebagai respons."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen, lalu pasangan bertanya: \"Can you give another reason?\" Tambahkan satu kalimat alasan kedua sebagai respons.",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa kelima komponen: acknowledge, counter, reason, example, conclusion."
       }
     },
     "share": {
@@ -478,6 +486,10 @@
         "mudah": "Baca argumen dari buku catatan ke kelompok.",
         "standar": "Sampaikan argumen tanpa membaca buku.",
         "tantangan": "Sampaikan argumen tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you say to someone who still disagrees?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you say to someone who still disagrees?\"",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke kelompok."
       }
     },
     "check": {

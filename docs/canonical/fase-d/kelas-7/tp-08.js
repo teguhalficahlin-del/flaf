@@ -296,6 +296,10 @@
         "mudah": "Pilih satu kartu serangga dan lengkapi satu kalimat: It is blank for blank. Atau: It is blank to blank. Gunakan kata dari ikon di papan tulis.",
         "standar": "Tulis dua kalimat tentang seranggamu — satu It is blank for blank dan satu It is blank to blank.",
         "tantangan": "Tulis rangkaian pendek: There is a blank in the blank. It is blank and blank. It is useful/helpful for blank. Atau: It is important to blank. Pertahankan kalimat fungsi sebagai bagian utama baru."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis rangkaian pendek: There is a blank in the blank. It is blank and blank. It is useful/helpful for blank. Atau: It is important to blank. Pertahankan kalimat fungsi sebagai bagian utama baru.",
+        "perlu_bantuan": "Pilih satu kartu serangga dan lengkapi satu kalimat: It is blank for blank. Atau: It is blank to blank. Gunakan kata dari ikon di papan tulis."
       }
     },
     "interact": {
@@ -359,6 +363,10 @@
         "mudah": "Deskripsikan seranggamu menggunakan kalimat fungsi dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan serangganya.",
         "standar": "Deskripsikan seranggamu tanpa membaca, menggunakan satu kalimat for dan satu kalimat to. Pasangan melakukan hal yang sama.",
         "tantangan": "Berikan rangkaian pendek: keberadaan, deskripsi, lalu fungsi. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan rangkaian pendek: keberadaan, deskripsi, lalu fungsi. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Deskripsikan seranggamu menggunakan kalimat fungsi dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan serangganya."
       }
     },
     "share": {
@@ -430,6 +438,10 @@
         "mudah": "Buat kartu dengan satu kalimat fungsi dan baca ke kelompok. Boleh menyertakan gambar kecil.",
         "standar": "Buat kartu dengan dua atau tiga kalimat tentang seranggamu, akhiri dengan kalimat fungsi, dan baca ke kelompok.",
         "tantangan": "Buat kartu dengan rangkaian pendek (keberadaan, deskripsi, fungsi) dan presentasikan ke kelompok, lalu tunjuk kalimat fungsi di kartu temanmu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Buat kartu dengan rangkaian pendek (keberadaan, deskripsi, fungsi) dan presentasikan ke kelompok, lalu tunjuk kalimat fungsi di kartu temanmu.",
+        "perlu_bantuan": "Buat kartu dengan satu kalimat fungsi dan baca ke kelompok. Boleh menyertakan gambar kecil."
       }
     },
     "check": {

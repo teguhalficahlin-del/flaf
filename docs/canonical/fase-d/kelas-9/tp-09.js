@@ -316,6 +316,10 @@
         "mudah": "Gunakan kerangka urutan penutup lima slot dan isi setiap slot. Boleh menggunakan catatan penemuan untuk isi ringkasan.",
         "standar": "Tulis penutup dan respons tanya jawab sendiri tanpa membaca kerangka. Gunakan kosakata: heritage atau discussion.",
         "tantangan": "Tulis penutup dan respons tanya jawab, lalu siapkan respons kedua untuk pertanyaan berbeda yang lebih sulit dijawab."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis penutup dan respons tanya jawab, lalu siapkan respons kedua untuk pertanyaan berbeda yang lebih sulit dijawab.",
+        "perlu_bantuan": "Gunakan kerangka urutan penutup lima slot dan isi setiap slot. Boleh menggunakan catatan penemuan untuk isi ringkasan."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Sampaikan penutup menggunakan catatan. Pasangan mengajukan satu pertanyaan sederhana (\"What did you find in the room?\") dan kamu merespons.",
         "standar": "Sampaikan penutup tanpa catatan. Pasangan mengajukan pertanyaan berbeda dari kartu catatan penemuan dan kamu merespons.",
         "tantangan": "Sampaikan penutup dan pasangan mengajukan pertanyaan tak terduga. Kamu merespons dengan \"That's an interesting question\" dan memberikan jawaban yang dipikirkan, meski perlu jeda sebentar."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan penutup dan pasangan mengajukan pertanyaan tak terduga. Kamu merespons dengan \"That's an interesting question\" dan memberikan jawaban yang dipikirkan, meski perlu jeda sebentar.",
+        "perlu_bantuan": "Sampaikan penutup menggunakan catatan. Pasangan mengajukan satu pertanyaan sederhana (\"What did you find in the room?\") dan kamu merespons."
       }
     },
     "share": {
@@ -454,6 +462,10 @@
         "mudah": "Sampaikan hanya bagian penutup ke kelompok dan jawab satu pertanyaan dari kelompok.",
         "standar": "Sampaikan presentasi singkat penuh — pembuka, satu poin isi, penutup — dan jawab satu pertanyaan tanpa membaca.",
         "tantangan": "Sampaikan presentasi singkat penuh, lalu jawab dua pertanyaan berbeda dari kelompok, termasuk satu pertanyaan tak terduga."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan presentasi singkat penuh, lalu jawab dua pertanyaan berbeda dari kelompok, termasuk satu pertanyaan tak terduga.",
+        "perlu_bantuan": "Sampaikan hanya bagian penutup ke kelompok dan jawab satu pertanyaan dari kelompok."
       }
     },
     "check": {

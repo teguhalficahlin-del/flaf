@@ -312,6 +312,10 @@
         "mudah": "Gunakan kartu pendapat dan lengkapi: \"Some people think ___. However, I think ___ because ___.\"",
         "standar": "Tulis pengakuan-dan-posisi sendiri tentang PR (\"Some people think ... However, I think ... because ...\").",
         "tantangan": "Bangun sudut pandang lain dengan alasannya terlebih dahulu (\"One reason is that ...\"), lalu tanggapi dengan \"However, I think ... because ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bangun sudut pandang lain dengan alasannya terlebih dahulu (\"One reason is that ...\"), lalu tanggapi dengan \"However, I think ... because ...\"",
+        "perlu_bantuan": "Gunakan kartu pendapat dan lengkapi: \"Some people think ___. However, I think ___ because ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Akui pandangan lain dan sampaikan posisimu (boleh membaca). Pasangan lakukan hal yang sama dengan sisi lain.",
         "standar": "Akui dan tanggapi tanpa membaca; keduanya menyampaikan posisi dengan alasan.",
         "tantangan": "Akui pandangan lain beserta alasannya, lalu sampaikan posisimu dengan alasan; pasangan menanggapi dengan cara yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Akui pandangan lain beserta alasannya, lalu sampaikan posisimu dengan alasan; pasangan menanggapi dengan cara yang sama.",
+        "perlu_bantuan": "Akui pandangan lain dan sampaikan posisimu (boleh membaca). Pasangan lakukan hal yang sama dengan sisi lain."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan pengakuan dan posisimu ke kelompok. Boleh membaca.",
         "standar": "Presentasikan pengakuan dan posisi tanpa membaca.",
         "tantangan": "Presentasikan pengakuan dan posisimu, lalu jawab satu pertanyaan tentang alasanmu dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan pengakuan dan posisimu, lalu jawab satu pertanyaan tentang alasanmu dari kelompok.",
+        "perlu_bantuan": "Presentasikan pengakuan dan posisimu ke kelompok. Boleh membaca."
       }
     },
     "check": {

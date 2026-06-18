@@ -328,6 +328,10 @@
         "mudah": "Pilih dua kartu aksi dan gabungkan: We blank and blank. Gunakan kata kerja lampau.",
         "standar": "Tulis dua kalimat — masing-masing menggabungkan dua tindakan lampau dengan and atau and then di bawah satu subjek.",
         "tantangan": "Awali dengan ungkapan waktu lampau: Last Friday, we had Sports Day. Lalu tulis dua kalimat tindakan terhubung."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan ungkapan waktu lampau: Last Friday, we had Sports Day. Lalu tulis dua kalimat tindakan terhubung.",
+        "perlu_bantuan": "Pilih dua kartu aksi dan gabungkan: We blank and blank. Gunakan kata kerja lampau."
       }
     },
     "interact": {
@@ -395,6 +399,10 @@
         "mudah": "Ceritakan satu kalimat tindakan terhubung dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons.",
         "standar": "Ceritakan dua atau tiga kalimat tindakan terhubung tanpa membaca. Pasangan melakukan hal yang sama.",
         "tantangan": "Awali dengan ungkapan waktu lampau, lalu ceritakan beberapa kalimat tindakan terhubung berurutan. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan ungkapan waktu lampau, lalu ceritakan beberapa kalimat tindakan terhubung berurutan. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Ceritakan satu kalimat tindakan terhubung dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons."
       }
     },
     "share": {
@@ -454,6 +462,10 @@
         "mudah": "Ceritakan dua kalimat tindakan terhubung ke kelompok baru — boleh membaca.",
         "standar": "Ceritakan kalimat tindakan terhubung ke kelompok baru tanpa membaca.",
         "tantangan": "Awali dengan ungkapan waktu lampau dan ceritakan beberapa kalimat terhubung, lalu dengarkan dan urutkan satu kalimat milik teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan ungkapan waktu lampau dan ceritakan beberapa kalimat terhubung, lalu dengarkan dan urutkan satu kalimat milik teman.",
+        "perlu_bantuan": "Ceritakan dua kalimat tindakan terhubung ke kelompok baru — boleh membaca."
       }
     },
     "check": {

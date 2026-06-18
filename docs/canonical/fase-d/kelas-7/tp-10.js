@@ -316,6 +316,10 @@
         "mudah": "Pilih satu kartu resep dan lengkapi satu instruksi: blank the blank on/in the blank.",
         "standar": "Tulis dua instruksi, masing-masing dengan kata kerja aksi, objek, dan tempat atau waktu: Put the bread on the plate. Cut the bread before serving.",
         "tantangan": "Tulis tiga langkah resep singkat dengan First, Then, Finally — setiap langkah adalah instruksi Verb + objek + tempat/waktu — dan tambahkan satu deskripsi: The blank is blank and blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga langkah resep singkat dengan First, Then, Finally — setiap langkah adalah instruksi Verb + objek + tempat/waktu — dan tambahkan satu deskripsi: The blank is blank and blank.",
+        "perlu_bantuan": "Pilih satu kartu resep dan lengkapi satu instruksi: blank the blank on/in the blank."
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Berikan satu instruksi. Pasangan tunjuk kartu resep yang tepat. Lalu tukar.",
         "standar": "Berikan tiga instruksi berurutan: First, Then, Finally. Pasangan peragakan setiap instruksi berurutan. Lalu tukar.",
         "tantangan": "Berikan resep mini lengkap — urutan instruksi ditambah satu deskripsi. Pasangan mengikuti dan menunjuk setiap kartu. Lalu tukar."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan resep mini lengkap — urutan instruksi ditambah satu deskripsi. Pasangan mengikuti dan menunjuk setiap kartu. Lalu tukar.",
+        "perlu_bantuan": "Berikan satu instruksi. Pasangan tunjuk kartu resep yang tepat. Lalu tukar."
       }
     },
     "share": {
@@ -442,6 +450,10 @@
         "mudah": "Berikan dua instruksi. Kelompok tunjuk kartu yang sesuai. Boleh membaca.",
         "standar": "Berikan tiga langkah resep: First, Then, Finally. Kelompok peragakan. Tanpa membaca.",
         "tantangan": "Berikan resep mini lengkap dengan satu deskripsi, dan periksa bahwa kelompok mengikuti setiap langkah dengan benar."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan resep mini lengkap dengan satu deskripsi, dan periksa bahwa kelompok mengikuti setiap langkah dengan benar.",
+        "perlu_bantuan": "Berikan dua instruksi. Kelompok tunjuk kartu yang sesuai. Boleh membaca."
       }
     },
     "check": {

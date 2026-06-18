@@ -312,6 +312,10 @@
         "mudah": "Lengkapi satu kalimat: \"When ___, ___ because ___.\"",
         "standar": "Tulis dua pola sebab-akibat tentang olahraga dan tubuh (\"When ... , ... because ...\").",
         "tantangan": "Rekap fakta spesifik (\"During exercise, the heart beats faster.\"), lalu generalisasikan menjadi pola \"When ... , ... because ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Rekap fakta spesifik (\"During exercise, the heart beats faster.\"), lalu generalisasikan menjadi pola \"When ... , ... because ...\"",
+        "perlu_bantuan": "Lengkapi satu kalimat: \"When ___, ___ because ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Jelaskan satu pola \"When ... , ... because ...\" (boleh membaca); pasangan temukan alasannya. Lalu tukar peran.",
         "standar": "Jelaskan dua pola tanpa membaca; pasangan periksa apakah setiap kalimat punya kondisi, hasil, dan alasan. Lalu tukar peran.",
         "tantangan": "Rekap fakta, lalu generalisasikan menjadi pola; pasangan jelaskan pola yang berbeda. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Rekap fakta, lalu generalisasikan menjadi pola; pasangan jelaskan pola yang berbeda. Lalu tukar peran.",
+        "perlu_bantuan": "Jelaskan satu pola \"When ... , ... because ...\" (boleh membaca); pasangan temukan alasannya. Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan satu pola \"When ... , ... because ...\" ke kelompok. Boleh membaca.",
         "standar": "Presentasikan dua pola sebab-akibat tanpa membaca.",
         "tantangan": "Presentasikan polamu dan jawab satu pertanyaan \"why does this happen?\" dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan polamu dan jawab satu pertanyaan \"why does this happen?\" dari kelompok.",
+        "perlu_bantuan": "Presentasikan satu pola \"When ... , ... because ...\" ke kelompok. Boleh membaca."
       }
     },
     "check": {

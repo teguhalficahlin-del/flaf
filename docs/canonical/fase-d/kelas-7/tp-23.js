@@ -352,6 +352,10 @@ const skenario = {
         "mudah": "Lengkapi dua kalimat: So, the ___ helped the firefly. Finally, the firefly ___.",
         "standar": "Tulis penyelesaian lengkap: So, ... Then, ... and ... Finally, ... dalam past tense dengan karakter yang membantu.",
         "tantangan": "Mulai dengan recap masalah: The firefly was lost in the dark forest. Lalu tulis penyelesaian lengkap milikmu sendiri."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan recap masalah: The firefly was lost in the dark forest. Lalu tulis penyelesaian lengkap milikmu sendiri.",
+        "perlu_bantuan": "Lengkapi dua kalimat: So, the ___ helped the firefly. Finally, the firefly ___."
       }
     },
     "interact": {
@@ -423,6 +427,10 @@ const skenario = {
         "mudah": "Tambahkan satu kalimat penyelesaian ke cerita kelompok. Boleh membaca dari buku catatan. Contoh: So, the rabbit helped the firefly.",
         "standar": "Tambahkan dua kalimat penyelesaian yang saling terhubung tanpa membaca — sehingga masalah terselesaikan.",
         "tantangan": "Recap masalah dulu, lalu bangun penyelesaian lengkap bersama kelompok — pastikan setiap bagian merespons masalah dari sesi sebelumnya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Recap masalah dulu, lalu bangun penyelesaian lengkap bersama kelompok — pastikan setiap bagian merespons masalah dari sesi sebelumnya.",
+        "perlu_bantuan": "Tambahkan satu kalimat penyelesaian ke cerita kelompok. Boleh membaca dari buku catatan. Contoh: So, the rabbit helped the firefly."
       }
     },
     "share": {
@@ -486,6 +494,10 @@ const skenario = {
         "mudah": "Ucapkan dua kalimat penyelesaian ke kelompok baru. Boleh membaca dari buku catatan.",
         "standar": "Ucapkan penyelesaian lengkap tanpa membaca — sehingga peristiwa terhubung dan masalah terselesaikan.",
         "tantangan": "Ucapkan masalah dan penyelesaian lengkap, lalu periksa apakah penyelesaian satu teman benar-benar menjawab masalah."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan masalah dan penyelesaian lengkap, lalu periksa apakah penyelesaian satu teman benar-benar menjawab masalah.",
+        "perlu_bantuan": "Ucapkan dua kalimat penyelesaian ke kelompok baru. Boleh membaca dari buku catatan."
       }
     },
     "check": {

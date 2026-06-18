@@ -292,6 +292,10 @@
         "mudah": "Pilih satu foto jajanan dan lengkapi satu kalimat: It is blank and blank. Gunakan dua kata sifat dari ikon di papan tulis.",
         "standar": "Tulis dua kalimat tentang jajanan — satu menggunakan and dan satu menggunakan but: It is blank and blank. It is blank but blank.",
         "tantangan": "Tulis dua kalimat gabungan, dan tambahkan satu baris ringkasan sebelumnya: It is a blank. It looks blank. Pertahankan kalimat gabungan It is blank and/but blank sebagai bagian utama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua kalimat gabungan, dan tambahkan satu baris ringkasan sebelumnya: It is a blank. It looks blank. Pertahankan kalimat gabungan It is blank and/but blank sebagai bagian utama.",
+        "perlu_bantuan": "Pilih satu foto jajanan dan lengkapi satu kalimat: It is blank and blank. Gunakan dua kata sifat dari ikon di papan tulis."
       }
     },
     "interact": {
@@ -359,6 +363,10 @@
         "mudah": "Deskripsikan jajananmu menggunakan satu kalimat gabungan dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan jajanannya.",
         "standar": "Deskripsikan jajananmu tanpa membaca, menggunakan satu kalimat and dan satu kalimat but. Pasangan melakukan hal yang sama.",
         "tantangan": "Mulai dengan ringkasan terlebih dahulu: It is a blank. It looks blank. Lalu berikan dua kalimat gabungan. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan ringkasan terlebih dahulu: It is a blank. It looks blank. Lalu berikan dua kalimat gabungan. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Deskripsikan jajananmu menggunakan satu kalimat gabungan dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan jajanannya."
       }
     },
     "share": {
@@ -422,6 +430,10 @@
         "mudah": "Angkat foto jajananmu dan ucapkan satu kalimat gabungan ke kelompok baru — boleh membaca.",
         "standar": "Angkat foto dan deskripsikan tanpa membaca, menggunakan satu kalimat and dan satu kalimat but.",
         "tantangan": "Angkat foto, tambahkan ringkasan terlebih dahulu, lalu berikan dua kalimat gabungan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Angkat foto, tambahkan ringkasan terlebih dahulu, lalu berikan dua kalimat gabungan.",
+        "perlu_bantuan": "Angkat foto jajananmu dan ucapkan satu kalimat gabungan ke kelompok baru — boleh membaca."
       }
     },
     "check": {

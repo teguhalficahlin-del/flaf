@@ -312,6 +312,10 @@
         "mudah": "Gunakan kerangka instruksi dan lengkapi setiap slot. Boleh lihat kartu antarmuka.",
         "standar": "Tulis semua empat petunjuk terbimbing tanpa membaca.",
         "tantangan": "Tulis semua empat petunjuk terbimbing dan tambahkan \"Step 2:\" untuk tindakan bernomor kedua dalam panduan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis semua empat petunjuk terbimbing dan tambahkan \"Step 2:\" untuk tindakan bernomor kedua dalam panduan.",
+        "perlu_bantuan": "Gunakan kerangka instruksi dan lengkapi setiap slot. Boleh lihat kartu antarmuka."
       }
     },
     "interact": {
@@ -371,6 +375,10 @@
         "mudah": "Baca panduan pasanganmu dan tandai setiap penanda (Step 1, Before, After, Remember to).",
         "standar": "Baca panduan pasangan, periksa semua empat penanda, dan katakan mana yang paling jelas.",
         "tantangan": "Baca panduan pasangan dan tanya: \"What happens if I forget the step before submitting?\" — pasangan jawab dengan satu instruksi lagi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Baca panduan pasangan dan tanya: \"What happens if I forget the step before submitting?\" — pasangan jawab dengan satu instruksi lagi.",
+        "perlu_bantuan": "Baca panduan pasanganmu dan tandai setiap penanda (Step 1, Before, After, Remember to)."
       }
     },
     "share": {
@@ -430,6 +438,10 @@
         "mudah": "Baca panduan instruksimu ke kelompok.",
         "standar": "Presentasikan panduan instruksimu tanpa membaca.",
         "tantangan": "Presentasikan panduan instruksimu, lalu jawab satu pertanyaan dari kelompok tentang salah satu langkah spesifik."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan panduan instruksimu, lalu jawab satu pertanyaan dari kelompok tentang salah satu langkah spesifik.",
+        "perlu_bantuan": "Baca panduan instruksimu ke kelompok."
       }
     },
     "check": {

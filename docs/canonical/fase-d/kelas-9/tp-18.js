@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka lima slot. Untuk Looking back, pikirkan SATU hal yang mengejutkanmu tentang perjalanan belajarmu. Untuk I am ready to, pikirkan SATU hal yang ingin kamu coba di SMA.",
         "standar": "Tulis refleksi looking-forward sendiri tanpa membaca kerangka. Manfaatkan refleksimu dari TP-16 dan TP-17 sebagai bahan.",
         "tantangan": "Tulis refleksi dan buat I am ready to mengatakan sesuatu yang melampaui pelajaran Bahasa Inggris — cara berpikir atau berkomunikasi yang akan berguna di mata pelajaran apapun, bahasa apapun, situasi apapun."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis refleksi dan buat I am ready to mengatakan sesuatu yang melampaui pelajaran Bahasa Inggris — cara berpikir atau berkomunikasi yang akan berguna di mata pelajaran apapun, bahasa apapun, situasi apapun.",
+        "perlu_bantuan": "Gunakan kerangka lima slot. Untuk Looking back, pikirkan SATU hal yang mengejutkanmu tentang perjalanan belajarmu. Untuk I am ready to, pikirkan SATU hal yang ingin kamu coba di SMA."
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Baca refleksimu ke kelompok. Kelompok mendengarkan dan menyebut bagian mana yang terasa paling personal dan genuine.",
         "standar": "Bagikan refleksimu tanpa membaca. Kelompok memeriksa apakah kelima komponen berbeda dan apakah I am ready to terasa seperti kesimpulan yang nyata.",
         "tantangan": "Bagikan refleksimu dan kelompok bertanya: \"What is the single most important thing you are taking from Kelas 9 into Fase E?\" — kamu jawab dalam satu atau dua kalimat yang belum ada dalam refleksi tertulismu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan refleksimu dan kelompok bertanya: \"What is the single most important thing you are taking from Kelas 9 into Fase E?\" — kamu jawab dalam satu atau dua kalimat yang belum ada dalam refleksi tertulismu.",
+        "perlu_bantuan": "Baca refleksimu ke kelompok. Kelompok mendengarkan dan menyebut bagian mana yang terasa paling personal dan genuine."
       }
     },
     "share": {
@@ -450,6 +458,10 @@
         "mudah": "Sampaikan refleksimu ke kelompok baru menggunakan catatan.",
         "standar": "Sampaikan refleksimu tanpa membaca.",
         "tantangan": "Sampaikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"If you could go back to your first day of Grade 7, what would you tell yourself about this journey?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"If you could go back to your first day of Grade 7, what would you tell yourself about this journey?\"",
+        "perlu_bantuan": "Sampaikan refleksimu ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

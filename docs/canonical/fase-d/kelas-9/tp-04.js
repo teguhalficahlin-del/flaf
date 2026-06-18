@@ -336,6 +336,10 @@
         "mudah": "Gunakan kerangka review di papan tulis dan isi slot DESCRIBE dan EVALUATE. Boleh melihat kartu menu untuk detail hidangan. Tulis: It is lalu dua ciri hidangan dihubungkan dengan and. I think lalu evaluasi karena satu alasan.",
         "standar": "Tulis review sederhana tentang satu hidangan kantin tanpa membaca kerangka. Gunakan kosakata: canteen, healthy, nutrition, taste, atau price.",
         "tantangan": "Tulis review sederhana lalu tambah satu kalimat evaluatif lagi dengan fitur berbeda — misalnya harga atau ukuran porsi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis review sederhana lalu tambah satu kalimat evaluatif lagi dengan fitur berbeda — misalnya harga atau ukuran porsi.",
+        "perlu_bantuan": "Gunakan kerangka review di papan tulis dan isi slot DESCRIBE dan EVALUATE. Boleh melihat kartu menu untuk detail hidangan. Tulis: It is lalu dua ciri hidangan dihubungkan dengan and. I think lalu evaluasi karena satu alasan."
       }
     },
     "interact": {
@@ -407,6 +411,10 @@
         "mudah": "Baca review dari buku catatan ke pasangan. Pasangan menunjuk bagian DESCRIBE dan bagian EVALUATE dalam teks kamu.",
         "standar": "Sampaikan review tanpa membaca buku. Pasangan memeriksa kedua komponen: deskripsi dan evaluasi.",
         "tantangan": "Sampaikan review, lalu pasangan bertanya: \"What would you change about this dish?\" Tambahkan satu kalimat evaluatif sebagai respons."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review, lalu pasangan bertanya: \"What would you change about this dish?\" Tambahkan satu kalimat evaluatif sebagai respons.",
+        "perlu_bantuan": "Baca review dari buku catatan ke pasangan. Pasangan menunjuk bagian DESCRIBE dan bagian EVALUATE dalam teks kamu."
       }
     },
     "share": {
@@ -474,6 +482,10 @@
         "mudah": "Baca review dari buku catatan ke kelompok.",
         "standar": "Sampaikan review tanpa membaca buku.",
         "tantangan": "Sampaikan review tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What is the main strength of that dish?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What is the main strength of that dish?\"",
+        "perlu_bantuan": "Baca review dari buku catatan ke kelompok."
       }
     },
     "check": {

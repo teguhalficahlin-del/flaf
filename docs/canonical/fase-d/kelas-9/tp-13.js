@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka tiga slot di papan tulis dan isi setiap slot menggunakan kartu jadwal sekolah dan catatan dari TP-12.",
         "standar": "Tulis pernyataan masalah sendiri tanpa membaca kerangka. Gunakan kosakata: student wellbeing, physical activity, school routine, atau healthy habits.",
         "tantangan": "Tulis pernyataan masalah dan buat As a result mendeskripsikan konsekuensi jangka panjang bagi kesejahteraan siswa, bukan hanya perasaan sesaat."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis pernyataan masalah dan buat As a result mendeskripsikan konsekuensi jangka panjang bagi kesejahteraan siswa, bukan hanya perasaan sesaat.",
+        "perlu_bantuan": "Gunakan kerangka tiga slot di papan tulis dan isi setiap slot menggunakan kartu jadwal sekolah dan catatan dari TP-12."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca pernyataan masalah dari buku catatan ke pasangan. Pasangan menunjuk ketiga komponen dalam teksmu.",
         "standar": "Bagikan pernyataan masalah tanpa membaca. Pasangan memeriksa ketiga komponen dan apakah akibat cukup spesifik.",
         "tantangan": "Bagikan pernyataan masalah dan pasangan bertanya: \"Who is most affected by this consequence?\" — kamu jelaskan dampaknya pada kesejahteraan siswa secara spesifik."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan pernyataan masalah dan pasangan bertanya: \"Who is most affected by this consequence?\" — kamu jelaskan dampaknya pada kesejahteraan siswa secara spesifik.",
+        "perlu_bantuan": "Baca pernyataan masalah dari buku catatan ke pasangan. Pasangan menunjuk ketiga komponen dalam teksmu."
       }
     },
     "share": {
@@ -458,6 +466,10 @@
         "mudah": "Presentasikan pernyataan masalah ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan pernyataan masalah tanpa membaca.",
         "tantangan": "Presentasikan pernyataan masalah tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What evidence from the sources in our previous lessons supports your problem statement?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan pernyataan masalah tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What evidence from the sources in our previous lessons supports your problem statement?\"",
+        "perlu_bantuan": "Presentasikan pernyataan masalah ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

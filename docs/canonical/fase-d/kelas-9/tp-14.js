@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka solusi empat slot dan isi setiap slot berdasarkan kartu jadwal istirahat aktif.",
         "standar": "Tulis usulan solusi sendiri tanpa membaca kerangka. Gunakan kosakata: daily routines, healthy habits, school programs, atau action plans.",
         "tantangan": "Tulis usulan dan buat If..., so menunjukkan rantai dua konsekuensi: manfaat langsung dan dampak jangka panjang pada kebiasaan sehat atau rutinitas harian."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis usulan dan buat If..., so menunjukkan rantai dua konsekuensi: manfaat langsung dan dampak jangka panjang pada kebiasaan sehat atau rutinitas harian.",
+        "perlu_bantuan": "Gunakan kerangka solusi empat slot dan isi setiap slot berdasarkan kartu jadwal istirahat aktif."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca usulan solusi dari buku catatan ke pasangan. Pasangan menunjuk \"To solve\", \"If\", \"so\", dan \"This will help\" dalam teksmu.",
         "standar": "Bagikan usulan solusi tanpa membaca. Pasangan memeriksa keempat komponen dan apakah logika IF-SO masuk akal.",
         "tantangan": "Bagikan usulan solusi dan pasangan bertanya: \"What would happen if the school only did the solution for one week?\" — kamu jelaskan mengapa solusinya harus menjadi bagian dari rutinitas harian secara konsisten."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan usulan solusi dan pasangan bertanya: \"What would happen if the school only did the solution for one week?\" — kamu jelaskan mengapa solusinya harus menjadi bagian dari rutinitas harian secara konsisten.",
+        "perlu_bantuan": "Baca usulan solusi dari buku catatan ke pasangan. Pasangan menunjuk \"To solve\", \"If\", \"so\", dan \"This will help\" dalam teksmu."
       }
     },
     "share": {
@@ -458,6 +466,10 @@
         "mudah": "Presentasikan usulan solusi ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan usulan solusi tanpa membaca.",
         "tantangan": "Presentasikan usulan solusi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"How would you turn this into a realistic school action plan?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan usulan solusi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"How would you turn this into a realistic school action plan?\"",
+        "perlu_bantuan": "Presentasikan usulan solusi ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

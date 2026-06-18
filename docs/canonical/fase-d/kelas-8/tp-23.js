@@ -271,6 +271,10 @@
         "mudah": "Gunakan kerangka unggahan dan lengkapi setiap slot. Boleh lihat poster contoh.",
         "standar": "Tulis semua tiga kalimat promosi tanpa membaca.",
         "tantangan": "Tulis semua tiga kalimat promosi dan tambahkan satu kalimat lagi yang menyebutkan aktivitas klub spesifik agar undangan lebih persuasif."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis semua tiga kalimat promosi dan tambahkan satu kalimat lagi yang menyebutkan aktivitas klub spesifik agar undangan lebih persuasif.",
+        "perlu_bantuan": "Gunakan kerangka unggahan dan lengkapi setiap slot. Boleh lihat poster contoh."
       }
     },
     "interact": {
@@ -326,6 +330,10 @@
         "mudah": "Baca unggahan promosimu ke kelompok. Anggota lain tunjuk \"Join us\", \"Don't miss\", dan \"because\" dalam unggahanmu.",
         "standar": "Baca unggahan tanpa membaca, dan kelompok periksa ketiga elemen ada.",
         "tantangan": "Baca unggahan dan kelompok tanya \"Why should we join this club?\" — kamu jawab dengan satu alasan lagi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Baca unggahan dan kelompok tanya \"Why should we join this club?\" — kamu jawab dengan satu alasan lagi.",
+        "perlu_bantuan": "Baca unggahan promosimu ke kelompok. Anggota lain tunjuk \"Join us\", \"Don't miss\", dan \"because\" dalam unggahanmu."
       }
     },
     "share": {
@@ -385,6 +393,10 @@
         "mudah": "Baca unggahan promosimu ke kelompok baru.",
         "standar": "Presentasikan unggahanmu tanpa membaca.",
         "tantangan": "Presentasikan unggahanmu, lalu jawab satu pertanyaan dari kelompok: \"What club activities can we try?\" atau \"Why should we come?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan unggahanmu, lalu jawab satu pertanyaan dari kelompok: \"What club activities can we try?\" atau \"Why should we come?\"",
+        "perlu_bantuan": "Baca unggahan promosimu ke kelompok baru."
       }
     },
     "check": {

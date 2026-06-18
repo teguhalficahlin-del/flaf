@@ -312,6 +312,10 @@
         "mudah": "Gunakan kerangka dialog dan isi: \"\\\"___\\\" said ___. \\\"___,\\\" replied ___. ___ decided to ___.\" Boleh lihat strip komik.",
         "standar": "Tulis pertukaran dialog (said / replied) dan akhiri dengan \"[Name] decided to ...\" tanpa membaca.",
         "tantangan": "Tulis tiga baris dialog menggunakan said, replied, dan satu kata kerja pelapor lain (misalnya whispered), lalu tambahkan \"[Name] decided to ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga baris dialog menggunakan said, replied, dan satu kata kerja pelapor lain (misalnya whispered), lalu tambahkan \"[Name] decided to ...\"",
+        "perlu_bantuan": "Gunakan kerangka dialog dan isi: \"\\\"___\\\" said ___. \\\"___,\\\" replied ___. ___ decided to ___.\" Boleh lihat strip komik."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Role play dialog dengan pasangan menggunakan kerangka. Pasangan periksa \"said\" dan \"replied\" ada.",
         "standar": "Role play lalu baca versi prosa dengan lantang. Pasangan periksa said, replied, dan decided to.",
         "tantangan": "Role play, baca versi prosa, lalu tambahkan satu baris dengan kata kerja pelapor baru. Pasangan tanya \"What did the character decide?\" dan kamu jawab."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Role play, baca versi prosa, lalu tambahkan satu baris dengan kata kerja pelapor baru. Pasangan tanya \"What did the character decide?\" dan kamu jawab.",
+        "perlu_bantuan": "Role play dialog dengan pasangan menggunakan kerangka. Pasangan periksa \"said\" dan \"replied\" ada."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Baca prosa dialog ke kelompok menggunakan kerangka.",
         "standar": "Lakukan role play lalu baca versi prosa tanpa kerangka.",
         "tantangan": "Lakukan role play dan baca versi prosa, lalu jawab satu pertanyaan dari kelompok: \"What did the character decide?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Lakukan role play dan baca versi prosa, lalu jawab satu pertanyaan dari kelompok: \"What did the character decide?\"",
+        "perlu_bantuan": "Baca prosa dialog ke kelompok menggunakan kerangka."
       }
     },
     "check": {

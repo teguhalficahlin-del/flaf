@@ -296,6 +296,10 @@
         "mudah": "Cocokkan satu kartu tujuan dengan satu alat dan lengkapi: If you want to blank, use blank.",
         "standar": "Tulis dua pasangan tujuan-tindakan: satu If you want to blank, blank dan satu Use blank to blank.",
         "tantangan": "Tulis satu pasangan tujuan-tindakan, lalu dukung dengan prosedur singkat: First, blank. Then, blank. Tambahkan satu instruksi: Put blank. Dan satu aturan: Always blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis satu pasangan tujuan-tindakan, lalu dukung dengan prosedur singkat: First, blank. Then, blank. Tambahkan satu instruksi: Put blank. Dan satu aturan: Always blank.",
+        "perlu_bantuan": "Cocokkan satu kartu tujuan dengan satu alat dan lengkapi: If you want to blank, use blank."
       }
     },
     "interact": {
@@ -363,6 +367,10 @@
         "mudah": "Sebutkan satu tujuan. Pasangan jawab dengan alat: use a dictionary. Lalu tukar.",
         "standar": "Bergantian mencocokkan tujuan dan tindakan tanpa membaca — minimal dua pasang masing-masing, menggunakan kedua pola If you want to dan Use blank to.",
         "tantangan": "Setelah mencocokkan tujuan dan tindakan, tambahkan prosedur singkat atau aturan pada jawabanmu: First, blank. Then, blank. Atau: Always blank. Lalu tukar."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Setelah mencocokkan tujuan dan tindakan, tambahkan prosedur singkat atau aturan pada jawabanmu: First, blank. Then, blank. Atau: Always blank. Lalu tukar.",
+        "perlu_bantuan": "Sebutkan satu tujuan. Pasangan jawab dengan alat: use a dictionary. Lalu tukar."
       }
     },
     "share": {
@@ -426,6 +434,10 @@
         "mudah": "Tampilkan satu pasangan tujuan-tindakan ke kelompok baru — boleh membaca.",
         "standar": "Tampilkan dua pasangan tujuan-tindakan tanpa membaca, menggunakan kedua pola.",
         "tantangan": "Tampilkan pasangan tujuan-tindakan dan tambahkan prosedur singkat atau aturan pada satu jawaban, lalu dengarkan dan tanggapi pasangan teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tampilkan pasangan tujuan-tindakan dan tambahkan prosedur singkat atau aturan pada satu jawaban, lalu dengarkan dan tanggapi pasangan teman.",
+        "perlu_bantuan": "Tampilkan satu pasangan tujuan-tindakan ke kelompok baru — boleh membaca."
       }
     },
     "check": {

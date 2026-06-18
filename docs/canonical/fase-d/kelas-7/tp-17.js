@@ -308,6 +308,10 @@
         "mudah": "Pilih satu ikon barang dan lengkapi satu pesan: Please blank my blank. Atau: Please don't blank my blank.",
         "standar": "Tulis dua pesan — satu Please blank sebagai permintaan dan satu Please don't blank sebagai pengingat.",
         "tantangan": "Ambil satu peraturan blak-blakan: Don't lose my pen. Tulis ulang secara sopan: Please don't lose my pen. Lalu tambahkan satu permintaan Please blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ambil satu peraturan blak-blakan: Don't lose my pen. Tulis ulang secara sopan: Please don't lose my pen. Lalu tambahkan satu permintaan Please blank.",
+        "perlu_bantuan": "Pilih satu ikon barang dan lengkapi satu pesan: Please blank my blank. Atau: Please don't blank my blank."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Kirimkan satu pesan dari buku catatan ke pasangan — boleh membaca. Pasangan membalas dengan pesan sopan.",
         "standar": "Tukarkan dua pesan masing-masing tanpa membaca — satu permintaan dan satu pengingat.",
         "tantangan": "Kirimkan pengingat dan permintaan sopan, dan balas pesan pasangan secara sopan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Kirimkan pengingat dan permintaan sopan, dan balas pesan pasangan secara sopan.",
+        "perlu_bantuan": "Kirimkan satu pesan dari buku catatan ke pasangan — boleh membaca. Pasangan membalas dengan pesan sopan."
       }
     },
     "share": {
@@ -446,6 +454,10 @@
         "mudah": "Tulis satu kartu pesan sopan dan baca ke kelompok — boleh menyalin dari CHANGE.",
         "standar": "Tulis dua kartu pesan (permintaan dan pengingat) dan tukarkan dengan kelompok.",
         "tantangan": "Tulis pesan untuk dua situasi, tukarkan, dan balas satu pesan teman secara sopan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis pesan untuk dua situasi, tukarkan, dan balas satu pesan teman secara sopan.",
+        "perlu_bantuan": "Tulis satu kartu pesan sopan dan baca ke kelompok — boleh menyalin dari CHANGE."
       }
     },
     "check": {

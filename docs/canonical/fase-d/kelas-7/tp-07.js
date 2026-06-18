@@ -329,6 +329,10 @@
         "mudah": "Pilih satu benda di peta dan lengkapi: There is blank in the park. Atau: There are blank in the park.",
         "standar": "Tulis dua kalimat — satu There is untuk satu benda dan satu There are untuk lebih dari satu benda — masing-masing dengan ungkapan tempat.",
         "tantangan": "Tulis dua kalimat keberadaan, lalu tambahkan deskripsi singkat untuk satu benda: There is a pond in the park. It is clean and quiet."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua kalimat keberadaan, lalu tambahkan deskripsi singkat untuk satu benda: There is a pond in the park. It is clean and quiet.",
+        "perlu_bantuan": "Pilih satu benda di peta dan lengkapi: There is blank in the park. Atau: There are blank in the park."
       }
     },
     "interact": {
@@ -396,6 +400,10 @@
         "mudah": "Deskripsikan dua benda menggunakan kalimat dari buku catatan — boleh membaca. Pasangan menunjuk setiap benda di peta.",
         "standar": "Deskripsikan minimal tiga benda tanpa membaca, menggunakan baik There is maupun There are dengan ungkapan tempat.",
         "tantangan": "Deskripsikan beberapa benda di peta, dan untuk satu benda tambahkan deskripsi singkat: There is a pond in the park. It is clean and quiet. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Deskripsikan beberapa benda di peta, dan untuk satu benda tambahkan deskripsi singkat: There is a pond in the park. It is clean and quiet. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Deskripsikan dua benda menggunakan kalimat dari buku catatan — boleh membaca. Pasangan menunjuk setiap benda di peta."
       }
     },
     "share": {
@@ -455,6 +463,10 @@
         "mudah": "Tunjuk peta dan ucapkan dua kalimat keberadaan ke kelompok baru — boleh membaca.",
         "standar": "Tunjuk peta dan deskripsikan minimal tiga benda tanpa membaca, menggunakan baik There is maupun There are.",
         "tantangan": "Tunjuk peta, deskripsikan beberapa benda, dan tambahkan deskripsi singkat untuk satu benda."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tunjuk peta, deskripsikan beberapa benda, dan tambahkan deskripsi singkat untuk satu benda.",
+        "perlu_bantuan": "Tunjuk peta dan ucapkan dua kalimat keberadaan ke kelompok baru — boleh membaca."
       }
     },
     "check": {

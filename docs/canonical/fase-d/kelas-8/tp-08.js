@@ -312,6 +312,10 @@
         "mudah": "Nyatakan satu fakta dan lengkapi: \"This happens because ___.\" atau \"This helps ___ to ___.\"",
         "standar": "Tulis dua hubungan fakta: satu dengan \"This happens because ...\" dan satu dengan \"This helps ... to ...\"",
         "tantangan": "Mulai dengan ciri (\"The heart has ... which ...\"), lalu hubungkan satu fakta ke alasan dan satu ke efeknya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan ciri (\"The heart has ... which ...\"), lalu hubungkan satu fakta ke alasan dan satu ke efeknya.",
+        "perlu_bantuan": "Nyatakan satu fakta dan lengkapi: \"This happens because ___.\" atau \"This helps ___ to ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Nyatakan satu fakta dan hubungkan (boleh membaca); pasangan periksa apakah hubungan masuk akal. Lalu tukar peran.",
         "standar": "Hubungkan dua fakta tanpa membaca, satu dengan \"because\" dan satu dengan \"helps ... to\". Lalu tukar peran.",
         "tantangan": "Beri ciri, lalu hubungkan satu fakta ke alasan dan satu ke efek; pasangan tambahkan satu fakta terhubung lagi. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Beri ciri, lalu hubungkan satu fakta ke alasan dan satu ke efek; pasangan tambahkan satu fakta terhubung lagi. Lalu tukar peran.",
+        "perlu_bantuan": "Nyatakan satu fakta dan hubungkan (boleh membaca); pasangan periksa apakah hubungan masuk akal. Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan satu hubungan fakta ke kelompok. Boleh membaca.",
         "standar": "Presentasikan dua hubungan fakta (because dan helps ... to) tanpa membaca.",
         "tantangan": "Presentasikan ciri dan dua fakta terhubung, lalu jawab satu pertanyaan tentang fakta tersebut."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan ciri dan dua fakta terhubung, lalu jawab satu pertanyaan tentang fakta tersebut.",
+        "perlu_bantuan": "Presentasikan satu hubungan fakta ke kelompok. Boleh membaca."
       }
     },
     "check": {

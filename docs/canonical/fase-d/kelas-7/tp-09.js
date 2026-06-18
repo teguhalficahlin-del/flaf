@@ -304,6 +304,10 @@
         "mudah": "Urutkan tiga kartu gambar dan lengkapi: First, blank. Then, blank. Finally, blank.",
         "standar": "Tulis tiga langkah rutinitas pagi sendiri menggunakan First, Then, Finally dengan kata kerja present tense.",
         "tantangan": "Tulis tiga langkah rutinitas, dan tambahkan satu baris lead-in dan motivasi sebelumnya: I like my morning routine. It is important to have a good start. Pertahankan tiga langkah sebagai bagian utama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga langkah rutinitas, dan tambahkan satu baris lead-in dan motivasi sebelumnya: I like my morning routine. It is important to have a good start. Pertahankan tiga langkah sebagai bagian utama.",
+        "perlu_bantuan": "Urutkan tiga kartu gambar dan lengkapi: First, blank. Then, blank. Finally, blank."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Ceritakan rutinitasmu menggunakan tiga kalimat dari buku catatan — boleh membaca. Pasangan merespons dengan That's true. Atau I agree.",
         "standar": "Ceritakan rutinitasmu tanpa membaca. Pasangan merespons, lalu bercerita tentang rutinitasnya sendiri.",
         "tantangan": "Tambahkan lead-in dan motivasi terlebih dahulu, lalu ceritakan tiga langkah. Pasangan merespons dan bercerita tentang rutinitasnya sendiri."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tambahkan lead-in dan motivasi terlebih dahulu, lalu ceritakan tiga langkah. Pasangan merespons dan bercerita tentang rutinitasnya sendiri.",
+        "perlu_bantuan": "Ceritakan rutinitasmu menggunakan tiga kalimat dari buku catatan — boleh membaca. Pasangan merespons dengan That's true. Atau I agree."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Ceritakan tiga langkah rutinitasmu ke kelompok baru — boleh membaca.",
         "standar": "Ceritakan rutinitasmu ke kelompok baru tanpa membaca.",
         "tantangan": "Ceritakan rutinitas dengan lead-in dan motivasi, lalu dengarkan dan tanggapi rutinitas satu teman dengan That's true. Atau I agree."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ceritakan rutinitas dengan lead-in dan motivasi, lalu dengarkan dan tanggapi rutinitas satu teman dengan That's true. Atau I agree.",
+        "perlu_bantuan": "Ceritakan tiga langkah rutinitasmu ke kelompok baru — boleh membaca."
       }
     },
     "check": {

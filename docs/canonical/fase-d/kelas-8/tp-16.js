@@ -312,6 +312,10 @@
         "mudah": "Gunakan kartu usulan dan lengkapi: \"Therefore, I recommend ___ because ___.\"",
         "standar": "Tulis rekomendasimu dengan satu alasan pendukung (\"Therefore, I recommend ... because ...\").",
         "tantangan": "Pertimbangkan pilihan-pilihan yang ada (\"Some people think ... However, I think ...\"), lalu simpulkan dengan \"Therefore, I recommend ... because ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Pertimbangkan pilihan-pilihan yang ada (\"Some people think ... However, I think ...\"), lalu simpulkan dengan \"Therefore, I recommend ... because ...\"",
+        "perlu_bantuan": "Gunakan kartu usulan dan lengkapi: \"Therefore, I recommend ___ because ___.\""
       }
     },
     "interact": {
@@ -367,6 +371,10 @@
         "mudah": "Rekomendasikan satu opsi dengan alasan (\"Therefore, I recommend ... because ...\"). Boleh membaca.",
         "standar": "Pertimbangkan dua opsi, lalu rekomendasikan satu dengan alasan, tanpa membaca.",
         "tantangan": "Akui opsi lain (\"Some people think ... However, ...\"), lalu simpulkan dengan \"Therefore, I recommend ... because ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Akui opsi lain (\"Some people think ... However, ...\"), lalu simpulkan dengan \"Therefore, I recommend ... because ...\"",
+        "perlu_bantuan": "Rekomendasikan satu opsi dengan alasan (\"Therefore, I recommend ... because ...\"). Boleh membaca."
       }
     },
     "share": {
@@ -426,6 +434,10 @@
         "mudah": "Presentasikan rekomendasimu dengan satu alasan. Boleh membaca.",
         "standar": "Presentasikan rekomendasimu dengan alasan tanpa membaca.",
         "tantangan": "Presentasikan rekomendasimu, lalu jawab satu pertanyaan tentang alasanmu dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan rekomendasimu, lalu jawab satu pertanyaan tentang alasanmu dari kelompok.",
+        "perlu_bantuan": "Presentasikan rekomendasimu dengan satu alasan. Boleh membaca."
       }
     },
     "check": {

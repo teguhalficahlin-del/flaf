@@ -271,6 +271,10 @@
         "mudah": "Gunakan potongan penghubung dan lengkapi: \"Suddenly, ___ so ___, but ___.\" Boleh lihat kartu urutan cerita.",
         "standar": "Tulis kalimat konflikmu sendiri: \"Suddenly, ... so ..., but ...\" tanpa membaca.",
         "tantangan": "Tulis dua kalimat konflik — masing-masing dengan \"Suddenly ... so ... but ...\" — dengan reaksi tokoh yang berbeda di setiap kalimat."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua kalimat konflik — masing-masing dengan \"Suddenly ... so ... but ...\" — dengan reaksi tokoh yang berbeda di setiap kalimat.",
+        "perlu_bantuan": "Gunakan potongan penghubung dan lengkapi: \"Suddenly, ___ so ___, but ___.\" Boleh lihat kartu urutan cerita."
       }
     },
     "interact": {
@@ -334,6 +338,10 @@
         "mudah": "Baca kalimatmu ke pasangan. Pasangan tunjuk \"so\" dan \"but\" dalam kalimatmu.",
         "standar": "Bagikan kalimatmu tanpa membaca. Pasangan periksa ketiga konektor ada.",
         "tantangan": "Bagikan dua kalimat konflik dan pasangan tanya \"What happened after the complication?\" — kamu jawab dengan satu kalimat lagi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan dua kalimat konflik dan pasangan tanya \"What happened after the complication?\" — kamu jawab dengan satu kalimat lagi.",
+        "perlu_bantuan": "Baca kalimatmu ke pasangan. Pasangan tunjuk \"so\" dan \"but\" dalam kalimatmu."
       }
     },
     "share": {
@@ -393,6 +401,10 @@
         "mudah": "Baca kalimat konflikmu ke kelompok.",
         "standar": "Presentasikan kalimat konflikmu tanpa membaca.",
         "tantangan": "Presentasikan kalimat konflikmu, lalu jawab satu pertanyaan dari kelompok tentang komplikasinya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan kalimat konflikmu, lalu jawab satu pertanyaan dari kelompok tentang komplikasinya.",
+        "perlu_bantuan": "Baca kalimat konflikmu ke kelompok."
       }
     },
     "check": {

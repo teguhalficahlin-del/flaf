@@ -340,6 +340,10 @@
         "mudah": "Gunakan peta argumen di papan tulis dan isi setiap simpul secara berurutan. Boleh melihat kartu skenario untuk referensi. Pastikan ada klaim, dua alasan, acknowledge, counter, contoh, dan rekomendasi.",
         "standar": "Tulis argumen enam komponen sendiri tanpa membaca peta. Gunakan kosakata: teamwork, clubs, projects, atau cooperation.",
         "tantangan": "Tulis argumen enam komponen dan buat contoh yang spesifik — peristiwa sekolah atau hasil proyek nyata, bukan pernyataan umum tentang kerja sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis argumen enam komponen dan buat contoh yang spesifik — peristiwa sekolah atau hasil proyek nyata, bukan pernyataan umum tentang kerja sama.",
+        "perlu_bantuan": "Gunakan peta argumen di papan tulis dan isi setiap simpul secara berurutan. Boleh melihat kartu skenario untuk referensi. Pastikan ada klaim, dua alasan, acknowledge, counter, contoh, dan rekomendasi."
       }
     },
     "interact": {
@@ -411,6 +415,10 @@
         "mudah": "Baca argumen dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya.",
         "standar": "Sampaikan argumen tanpa membaca. Kelompok memeriksa semua enam komponen.",
         "tantangan": "Sampaikan argumen tanpa membaca, lalu kelompok bertanya: \"What would you say to someone who still thinks group work is unfair?\" Tambahkan satu respons."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen tanpa membaca, lalu kelompok bertanya: \"What would you say to someone who still thinks group work is unfair?\" Tambahkan satu respons.",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya."
       }
     },
     "share": {
@@ -470,6 +478,10 @@
         "mudah": "Baca argumen dari buku catatan ke kelompok baru.",
         "standar": "Sampaikan argumen tanpa membaca buku.",
         "tantangan": "Sampaikan argumen tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Can you give another example of teamwork in clubs?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Can you give another example of teamwork in clubs?\"",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke kelompok baru."
       }
     },
     "check": {

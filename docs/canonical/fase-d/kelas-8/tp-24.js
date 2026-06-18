@@ -329,6 +329,10 @@
         "mudah": "Susun kartu informasi yang diberikan ke dalam templat empat bagian. Boleh lihat pamflet model.",
         "standar": "Tulis pamflet Community Book Swap sendiri dengan semua empat bagian tanpa membaca.",
         "tantangan": "Tulis pamflet untuk Community Book Swap dan satu acara sekolah berbeda — tunjukkan format empat bagian yang sama untuk keduanya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis pamflet untuk Community Book Swap dan satu acara sekolah berbeda — tunjukkan format empat bagian yang sama untuk keduanya.",
+        "perlu_bantuan": "Susun kartu informasi yang diberikan ke dalam templat empat bagian. Boleh lihat pamflet model."
       }
     },
     "interact": {
@@ -384,6 +388,10 @@
         "mudah": "Lihat satu pamflet dalam kelompokmu dan tunjuk setiap empat bagian.",
         "standar": "Periksa semua pamflet dalam kelompok dan katakan bagian mana yang paling jelas di setiap pamflet.",
         "tantangan": "Periksa semua pamflet dan katakan kepada setiap penulis: \"Your clearest section is ___ because ___. You could improve ___ by ___.\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Periksa semua pamflet dan katakan kepada setiap penulis: \"Your clearest section is ___ because ___. You could improve ___ by ___.\"",
+        "perlu_bantuan": "Lihat satu pamflet dalam kelompokmu dan tunjuk setiap empat bagian."
       }
     },
     "share": {
@@ -443,6 +451,10 @@
         "mudah": "Baca pamfletmu bagian demi bagian ke kelompok baru.",
         "standar": "Presentasikan pamfletmu tanpa membaca dan kelompok periksa semua empat bagian ada.",
         "tantangan": "Presentasikan pamfletmu, lalu jawab satu pertanyaan dari kelompok tentang detail penting (misalnya \"What do we need to bring?\" atau \"Where exactly is this?\")."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan pamfletmu, lalu jawab satu pertanyaan dari kelompok tentang detail penting (misalnya \"What do we need to bring?\" atau \"Where exactly is this?\").",
+        "perlu_bantuan": "Baca pamfletmu bagian demi bagian ke kelompok baru."
       }
     },
     "check": {

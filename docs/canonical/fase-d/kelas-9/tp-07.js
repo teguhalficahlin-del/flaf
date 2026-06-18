@@ -328,6 +328,10 @@
         "mudah": "Gunakan kerangka pembuka empat slot di papan tulis dan isi setiap slot. Boleh melihat kartu setup skenario untuk referensi. Pastikan ada: greet, introduce, topic, purpose.",
         "standar": "Tulis pembuka presentasi sendiri tanpa membaca kerangka. Gunakan kosakata: discovery, historical objects, atau school.",
         "tantangan": "Tulis empat komponen pembuka lalu variasikan pernyataan purpose — buat spesifik untuk satu aspek penemuan, misalnya: \"The purpose of this presentation is to show why these historical objects should be displayed in our school.\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis empat komponen pembuka lalu variasikan pernyataan purpose — buat spesifik untuk satu aspek penemuan, misalnya: \"The purpose of this presentation is to show why these historical objects should be displayed in our school.\"",
+        "perlu_bantuan": "Gunakan kerangka pembuka empat slot di papan tulis dan isi setiap slot. Boleh melihat kartu setup skenario untuk referensi. Pastikan ada: greet, introduce, topic, purpose."
       }
     },
     "interact": {
@@ -399,6 +403,10 @@
         "mudah": "Baca pembuka dari buku catatan ke pasangan. Pasangan mencentang setiap komponen: greet, introduce, topic, purpose.",
         "standar": "Sampaikan pembuka tanpa membaca buku. Pasangan memeriksa keempat komponen dan register formal.",
         "tantangan": "Sampaikan pembuka, lalu pasangan bertanya: \"What exactly will you cover in this presentation?\" — kamu memberi satu kalimat tambahan yang mempreview isi presentasi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan pembuka, lalu pasangan bertanya: \"What exactly will you cover in this presentation?\" — kamu memberi satu kalimat tambahan yang mempreview isi presentasi.",
+        "perlu_bantuan": "Baca pembuka dari buku catatan ke pasangan. Pasangan mencentang setiap komponen: greet, introduce, topic, purpose."
       }
     },
     "share": {
@@ -466,6 +474,10 @@
         "mudah": "Baca pembuka dari buku catatan ke kelompok.",
         "standar": "Sampaikan pembuka tanpa membaca buku.",
         "tantangan": "Sampaikan pembuka tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What is the main thing you want us to understand from your presentation?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan pembuka tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What is the main thing you want us to understand from your presentation?\"",
+        "perlu_bantuan": "Baca pembuka dari buku catatan ke kelompok."
       }
     },
     "check": {

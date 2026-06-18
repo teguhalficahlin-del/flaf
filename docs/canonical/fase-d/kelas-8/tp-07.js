@@ -312,6 +312,10 @@
         "mudah": "Pilih satu benda dan lengkapi: \"It has ___ which ___.\" atau \"It can ___ to ___.\"",
         "standar": "Tulis dua kalimat ciri-fungsi tentang benda pilihanmu: satu dengan \"which\" dan satu dengan \"can ... to\".",
         "tantangan": "Mulai dengan pernyataan umum (\"Most helmets have ...\"), lalu hubungkan ciri dengan fungsinya menggunakan \"which\" dan \"can ... to\"."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan pernyataan umum (\"Most helmets have ...\"), lalu hubungkan ciri dengan fungsinya menggunakan \"which\" dan \"can ... to\".",
+        "perlu_bantuan": "Pilih satu benda dan lengkapi: \"It has ___ which ___.\" atau \"It can ___ to ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Jelaskan satu ciri-fungsi benda pilihanmu (boleh membaca); pasangan menunjuk cirinya di foto. Lalu tukar peran.",
         "standar": "Jelaskan dua ciri-fungsi tanpa membaca; pasangan periksa apakah setiap kalimat menghubungkan ciri dengan fungsi. Lalu tukar peran.",
         "tantangan": "Beri pernyataan umum, lalu dua kalimat ciri-fungsi; pasangan tambahkan satu ciri lagi. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Beri pernyataan umum, lalu dua kalimat ciri-fungsi; pasangan tambahkan satu ciri lagi. Lalu tukar peran.",
+        "perlu_bantuan": "Jelaskan satu ciri-fungsi benda pilihanmu (boleh membaca); pasangan menunjuk cirinya di foto. Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan satu kalimat ciri-fungsi ke kelompok. Boleh membaca.",
         "standar": "Presentasikan dua kalimat ciri-fungsi tanpa membaca.",
         "tantangan": "Presentasikan pernyataan umum dan dua kalimat ciri-fungsi, lalu jawab satu pertanyaan tentang benda pilihanmu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan pernyataan umum dan dua kalimat ciri-fungsi, lalu jawab satu pertanyaan tentang benda pilihanmu.",
+        "perlu_bantuan": "Presentasikan satu kalimat ciri-fungsi ke kelompok. Boleh membaca."
       }
     },
     "check": {

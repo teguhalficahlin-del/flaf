@@ -316,6 +316,10 @@
         "mudah": "Pilih satu kartu foto dan lengkapi: \"A ___ is a kind of ___. It usually ___.\"",
         "standar": "Tulis tiga kalimat klasifikasi tentang hewanmu: satu \"is a kind of\", satu \"is used for\", satu \"usually\".",
         "tantangan": "Mulai dengan satu deskripsi spesifik (\"It is small and colorful.\"), lalu tulis tiga kalimat klasifikasi umum."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan satu deskripsi spesifik (\"It is small and colorful.\"), lalu tulis tiga kalimat klasifikasi umum.",
+        "perlu_bantuan": "Pilih satu kartu foto dan lengkapi: \"A ___ is a kind of ___. It usually ___.\""
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Baca dua kalimat klasifikasi ke pasangan; pasangan sebutkan kategorinya. Lalu tukar peran.",
         "standar": "Baca tiga kalimat klasifikasi tanpa membaca kata per kata; pasangan periksa ketiga slot. Lalu tukar peran.",
         "tantangan": "Berikan deskripsi spesifik dulu, lalu klasifikasi; pasangan tambahkan satu ciri umum lagi. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan deskripsi spesifik dulu, lalu klasifikasi; pasangan tambahkan satu ciri umum lagi. Lalu tukar peran.",
+        "perlu_bantuan": "Baca dua kalimat klasifikasi ke pasangan; pasangan sebutkan kategorinya. Lalu tukar peran."
       }
     },
     "share": {
@@ -442,6 +450,10 @@
         "mudah": "Presentasikan dua kalimat klasifikasi ke kelompok. Boleh membaca.",
         "standar": "Presentasikan tiga kalimat klasifikasi lengkap tanpa membaca.",
         "tantangan": "Presentasikan klasifikasi, lalu jawab satu pertanyaan tentang kategorinya dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan klasifikasi, lalu jawab satu pertanyaan tentang kategorinya dari kelompok.",
+        "perlu_bantuan": "Presentasikan dua kalimat klasifikasi ke kelompok. Boleh membaca."
       }
     },
     "check": {

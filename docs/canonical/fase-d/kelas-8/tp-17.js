@@ -312,6 +312,10 @@
         "mudah": "Gunakan kerangka cerita dan lengkapi: \"Once, there was ___ who ___. Everyone believed ___.\" Boleh gunakan ilustrasi.",
         "standar": "Tulis pembuka ceritamu sendiri: \"Once, there was ... who ...\" dan \"Everyone believed ...\" tanpa membaca.",
         "tantangan": "Tulis dua kalimat latar (satu untuk lokasi di sekolah, satu untuk benda tua di dalamnya) lalu \"Everyone believed ...\" untuk membangun dunia cerita yang lebih penuh."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua kalimat latar (satu untuk lokasi di sekolah, satu untuk benda tua di dalamnya) lalu \"Everyone believed ...\" untuk membangun dunia cerita yang lebih penuh.",
+        "perlu_bantuan": "Gunakan kerangka cerita dan lengkapi: \"Once, there was ___ who ___. Everyone believed ___.\" Boleh gunakan ilustrasi."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Baca pembuka ceritamu ke pasangan. Pasangan tunjuk tokoh dan keyakinan bersama.",
         "standar": "Bagikan pembuka cerita tanpa membaca; pasangan periksa ada tokoh, latar, dan keyakinan.",
         "tantangan": "Bagikan pembuka cerita dan tambahkan satu detail tentang benda tua; pasangan tanya \"What exactly did everyone believe?\" dan kamu jawab."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan pembuka cerita dan tambahkan satu detail tentang benda tua; pasangan tanya \"What exactly did everyone believe?\" dan kamu jawab.",
+        "perlu_bantuan": "Baca pembuka ceritamu ke pasangan. Pasangan tunjuk tokoh dan keyakinan bersama."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Baca pembuka ceritamu ke kelompok.",
         "standar": "Presentasikan pembuka cerita tanpa membaca.",
         "tantangan": "Presentasikan pembuka cerita, lalu jawab satu pertanyaan dari kelompok tentang latar atau keyakinan bersama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan pembuka cerita, lalu jawab satu pertanyaan dari kelompok tentang latar atau keyakinan bersama.",
+        "perlu_bantuan": "Baca pembuka ceritamu ke kelompok."
       }
     },
     "check": {

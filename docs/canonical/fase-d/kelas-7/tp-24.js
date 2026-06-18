@@ -352,6 +352,10 @@ const skenario = {
         "mudah": "Lengkapi tiga kalimat: In the end, the firefly ___. The firefly learned ___. Everyone felt ___ because ___.",
         "standar": "Tulis tiga kalimat penutup (In the end / The firefly learned / Everyone felt because) dalam orang ketiga dan past tense.",
         "tantangan": "Mulai dengan recap penyelesaian: The rabbit and the bird helped the firefly get home. Lalu tulis tiga kalimat penutup, lalu tambahkan respons pribadi singkat: I think that is a good lesson. Atau: I agree!"
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan recap penyelesaian: The rabbit and the bird helped the firefly get home. Lalu tulis tiga kalimat penutup, lalu tambahkan respons pribadi singkat: I think that is a good lesson. Atau: I agree!",
+        "perlu_bantuan": "Lengkapi tiga kalimat: In the end, the firefly ___. The firefly learned ___. Everyone felt ___ because ___."
       }
     },
     "interact": {
@@ -423,6 +427,10 @@ const skenario = {
         "mudah": "Ucapkan penutupmu ke lingkaran sampai The firefly learned. Boleh membaca dari buku catatan.",
         "standar": "Ucapkan ketiga kalimat penutup tanpa membaca, lalu dengarkan teman-teman.",
         "tantangan": "Ucapkan penutup lengkap, tambahkan respons pribadi singkat tentang pelajaran, lalu merespons kalimat satu teman dengan That is true atau I agree."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan penutup lengkap, tambahkan respons pribadi singkat tentang pelajaran, lalu merespons kalimat satu teman dengan That is true atau I agree.",
+        "perlu_bantuan": "Ucapkan penutupmu ke lingkaran sampai The firefly learned. Boleh membaca dari buku catatan."
       }
     },
     "share": {
@@ -486,6 +494,10 @@ const skenario = {
         "mudah": "Ucapkan kalimat penutup ke lingkaran baru. Boleh membaca dari buku catatan.",
         "standar": "Ucapkan penutup lengkap tanpa membaca, dalam orang ketiga.",
         "tantangan": "Ucapkan penutup lengkap dan respons pribadi singkat, lalu merespons satu kalimat teman dengan That is true atau I agree."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan penutup lengkap dan respons pribadi singkat, lalu merespons satu kalimat teman dengan That is true atau I agree.",
+        "perlu_bantuan": "Ucapkan kalimat penutup ke lingkaran baru. Boleh membaca dari buku catatan."
       }
     },
     "check": {

@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka refleksi tiga slot. Untuk I learned, pikirkan satu momen dari dua kluster terakhir ketika sesuatu menjadi jelas bagimu.",
         "standar": "Tulis refleksimu sendiri tanpa membaca kerangka. Pastikan because menjelaskan MENGAPA kamu merasa itu bermakna, bukan hanya APA yang terjadi.",
         "tantangan": "Tulis refleksi dan buat From this experience, I realized mengatakan sesuatu yang melampaui I learned — wawasan lebih dalam tentang dirimu sebagai pelajar, bukan hanya tentang topiknya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis refleksi dan buat From this experience, I realized mengatakan sesuatu yang melampaui I learned — wawasan lebih dalam tentang dirimu sebagai pelajar, bukan hanya tentang topiknya.",
+        "perlu_bantuan": "Gunakan kerangka refleksi tiga slot. Untuk I learned, pikirkan satu momen dari dua kluster terakhir ketika sesuatu menjadi jelas bagimu."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca refleksimu ke pasangan. Pasangan menunjuk \"I learned\", \"because\", dan \"I realized\" dalam teksmu dan menyebut satu hal yang ditemukan menarik.",
         "standar": "Bagikan refleksimu tanpa membaca. Pasangan memeriksa apakah ketiga langkah berbeda dan apakah because bersifat personal, bukan hanya deskriptif.",
         "tantangan": "Bagikan refleksimu dan pasangan bertanya: \"What would you do differently now, knowing what you realized?\" — kamu jawab dengan satu perubahan spesifik."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan refleksimu dan pasangan bertanya: \"What would you do differently now, knowing what you realized?\" — kamu jawab dengan satu perubahan spesifik.",
+        "perlu_bantuan": "Baca refleksimu ke pasangan. Pasangan menunjuk \"I learned\", \"because\", dan \"I realized\" dalam teksmu dan menyebut satu hal yang ditemukan menarik."
       }
     },
     "share": {
@@ -458,6 +466,10 @@
         "mudah": "Bagikan refleksimu ke kelompok baru menggunakan catatan.",
         "standar": "Bagikan refleksimu tanpa membaca.",
         "tantangan": "Bagikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Is what you realized specific to this project, or does it apply to how you learn in general?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Is what you realized specific to this project, or does it apply to how you learn in general?\"",
+        "perlu_bantuan": "Bagikan refleksimu ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

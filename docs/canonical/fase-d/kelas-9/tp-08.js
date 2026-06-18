@@ -324,6 +324,10 @@
         "mudah": "Gunakan kartu pengatur isi presentasi lima slot dan isi setiap slot menggunakan kartu catatan penemuan. Boleh membaca catatan. Pastikan ada kelima penanda dalam urutan yang benar.",
         "standar": "Tulis isi presentasi empat poin sendiri dengan kesimpulan Based on this tanpa membaca kerangka. Gunakan kosakata: historical documents, school history, atau evidence.",
         "tantangan": "Tulis isi presentasi dan buat Another point is benar-benar sudut yang berbeda dari urutan — misalnya signifikansi penemuan, bukan sekadar benda lain yang ditemukan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis isi presentasi dan buat Another point is benar-benar sudut yang berbeda dari urutan — misalnya signifikansi penemuan, bukan sekadar benda lain yang ditemukan.",
+        "perlu_bantuan": "Gunakan kartu pengatur isi presentasi lima slot dan isi setiap slot menggunakan kartu catatan penemuan. Boleh membaca catatan. Pastikan ada kelima penanda dalam urutan yang benar."
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Baca isi presentasi dari buku catatan ke kelompok. Kelompok mencentang setiap penanda saat mendengarnya: First, Next, Another point is, Finally, Based on this.",
         "standar": "Sampaikan isi presentasi tanpa membaca. Kelompok memeriksa kelima penanda.",
         "tantangan": "Sampaikan isi presentasi, lalu kelompok bertanya: \"What does your evidence — Based on this — actually support?\" Jelaskan hubungannya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan isi presentasi, lalu kelompok bertanya: \"What does your evidence — Based on this — actually support?\" Jelaskan hubungannya.",
+        "perlu_bantuan": "Baca isi presentasi dari buku catatan ke kelompok. Kelompok mencentang setiap penanda saat mendengarnya: First, Next, Another point is, Finally, Based on this."
       }
     },
     "share": {
@@ -442,6 +450,10 @@
         "mudah": "Sampaikan isi presentasi ke kelompok baru menggunakan catatan.",
         "standar": "Sampaikan isi presentasi tanpa membaca.",
         "tantangan": "Sampaikan isi presentasi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What conclusion does your evidence support?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan isi presentasi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What conclusion does your evidence support?\"",
+        "perlu_bantuan": "Sampaikan isi presentasi ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka empat slot. Untuk At first, pikirkan SATU momen dari pelajaran ketika sesuatu terasa sulit — diskusi, presentasi, atau pertanyaan yang harus dijawab.",
         "standar": "Tulis refleksi tantangan sendiri tanpa membaca kerangka. Pastikan I overcame it by menyebutkan strategi yang spesifik, bukan hanya \"I tried harder.\"",
         "tantangan": "Tulis refleksi dan buat Now I can mendeskripsikan kemampuan yang benar-benar baru — sesuatu yang tidak bisa kamu lakukan di awal Kelas 7, 8, atau 9 — dan hubungkan dengan strategi spesifik yang kamu gunakan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis refleksi dan buat Now I can mendeskripsikan kemampuan yang benar-benar baru — sesuatu yang tidak bisa kamu lakukan di awal Kelas 7, 8, atau 9 — dan hubungkan dengan strategi spesifik yang kamu gunakan.",
+        "perlu_bantuan": "Gunakan kerangka empat slot. Untuk At first, pikirkan SATU momen dari pelajaran ketika sesuatu terasa sulit — diskusi, presentasi, atau pertanyaan yang harus dijawab."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca refleksimu ke pasangan. Pasangan menunjuk keempat langkah dalam teksmu dan menyebut bagian yang terasa paling nyata.",
         "standar": "Bagikan refleksimu tanpa membaca. Pasangan memeriksa apakah strategi spesifik dan apakah pertumbuhan dalam Now I can genuinely.",
         "tantangan": "Bagikan refleksimu dan pasangan bertanya: \"Would you use this strategy again in senior high school?\" — kamu jelaskan bagaimana ketekunan dalam komunikasi akan bertransfer ke konteks baru."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan refleksimu dan pasangan bertanya: \"Would you use this strategy again in senior high school?\" — kamu jelaskan bagaimana ketekunan dalam komunikasi akan bertransfer ke konteks baru.",
+        "perlu_bantuan": "Baca refleksimu ke pasangan. Pasangan menunjuk keempat langkah dalam teksmu dan menyebut bagian yang terasa paling nyata."
       }
     },
     "share": {
@@ -458,6 +466,10 @@
         "mudah": "Bagikan refleksimu ke kelompok baru menggunakan catatan.",
         "standar": "Bagikan refleksimu tanpa membaca.",
         "tantangan": "Bagikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What advice would you give to a younger student who is facing the same challenge you described at first?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What advice would you give to a younger student who is facing the same challenge you described at first?\"",
+        "perlu_bantuan": "Bagikan refleksimu ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

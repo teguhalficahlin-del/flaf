@@ -332,6 +332,10 @@
         "mudah": "Gunakan kerangka review lima slot di papan tulis dan isi setiap slot secara berurutan. Boleh melihat kartu ringkasan proyek untuk referensi. Pastikan ada deskripsi, klaim, kelebihan, kekurangan, dan rekomendasi.",
         "standar": "Tulis review lengkap sendiri tanpa membaca kerangka. Gunakan kosakata: charity, community service, participation, atau evaluation.",
         "tantangan": "Tulis review lengkap lalu tambah satu kelebihan atau kekurangan kedua untuk membuat evaluasi lebih menyeluruh sebelum rekomendasi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis review lengkap lalu tambah satu kelebihan atau kekurangan kedua untuk membuat evaluasi lebih menyeluruh sebelum rekomendasi.",
+        "perlu_bantuan": "Gunakan kerangka review lima slot di papan tulis dan isi setiap slot secara berurutan. Boleh melihat kartu ringkasan proyek untuk referensi. Pastikan ada deskripsi, klaim, kelebihan, kekurangan, dan rekomendasi."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca review dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya: deskripsi, klaim, kelebihan, kekurangan, rekomendasi.",
         "standar": "Sampaikan review tanpa membaca. Kelompok memeriksa kelima komponen.",
         "tantangan": "Sampaikan review, lalu kelompok bertanya: \"Does your recommendation follow logically from your evaluation?\" Jelaskan hubungannya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review, lalu kelompok bertanya: \"Does your recommendation follow logically from your evaluation?\" Jelaskan hubungannya.",
+        "perlu_bantuan": "Baca review dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya: deskripsi, klaim, kelebihan, kekurangan, rekomendasi."
       }
     },
     "share": {
@@ -450,6 +458,10 @@
         "mudah": "Baca review dari buku catatan ke kelompok baru.",
         "standar": "Sampaikan review tanpa membaca buku.",
         "tantangan": "Sampaikan review tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Why does your recommendation follow from the limitation you identified?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Why does your recommendation follow from the limitation you identified?\"",
+        "perlu_bantuan": "Baca review dari buku catatan ke kelompok baru."
       }
     },
     "check": {

@@ -316,6 +316,10 @@
         "mudah": "Gunakan kartu diskusi dan lengkapi: \"I think ___ because ___, but ___. What do you think?\" — pilih salah satu sisi kartu sebagai pendapat.",
         "standar": "Tulis pendapat sendiri tentang phone-free break time menggunakan pola \"I think ... because ..., but .... What do you think?\"",
         "tantangan": "Tulis pendapat seimbang, lalu tulis juga satu kalimat respons yang bisa diberikan kepada teman — misalnya \"I agree, but I think ... because ...\" atau \"I don't think so. I think ... because ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis pendapat seimbang, lalu tulis juga satu kalimat respons yang bisa diberikan kepada teman — misalnya \"I agree, but I think ... because ...\" atau \"I don't think so. I think ... because ...\"",
+        "perlu_bantuan": "Gunakan kartu diskusi dan lengkapi: \"I think ___ because ___, but ___. What do you think?\" — pilih salah satu sisi kartu sebagai pendapat."
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Baca pendapat dari buku catatan ke pasangan, lalu tanya \"What do you think?\" Dengarkan pasangan menjawab dengan \"I agree.\" atau \"I don't think so.\" dan satu alasan.",
         "standar": "Tukar pendapat tanpa membaca buku. Respons dengan \"I agree, but I think ...\" atau \"I don't think so. I think ...\", lalu balik bertanya.",
         "tantangan": "Lanjutkan pertukaran selama dua putaran. Setiap kali, tambahkan caveat \"but ...\" dan undang pasangan dengan \"What do you think?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Lanjutkan pertukaran selama dua putaran. Setiap kali, tambahkan caveat \"but ...\" dan undang pasangan dengan \"What do you think?\"",
+        "perlu_bantuan": "Baca pendapat dari buku catatan ke pasangan, lalu tanya \"What do you think?\" Dengarkan pasangan menjawab dengan \"I agree.\" atau \"I don't think so.\" dan satu alasan."
       }
     },
     "share": {
@@ -450,6 +458,10 @@
         "mudah": "Baca pendapat dari buku catatan ke kelompok, lalu tanya \"What do you think?\" Dengarkan satu teman merespons.",
         "standar": "Tukar pendapat tanpa membaca buku, merespons dengan \"I agree, but ...\" atau \"I don't think so. I think ...\"",
         "tantangan": "Pimpin satu pertukaran pendek: sampaikan pendapat seimbang, undang dua teman, dan respons masing-masing dengan bentuk pendapat sebelum menyatakan ulang pendapat sendiri."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Pimpin satu pertukaran pendek: sampaikan pendapat seimbang, undang dua teman, dan respons masing-masing dengan bentuk pendapat sebelum menyatakan ulang pendapat sendiri.",
+        "perlu_bantuan": "Baca pendapat dari buku catatan ke kelompok, lalu tanya \"What do you think?\" Dengarkan satu teman merespons."
       }
     },
     "check": {

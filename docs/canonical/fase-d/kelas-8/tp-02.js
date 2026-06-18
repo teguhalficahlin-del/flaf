@@ -312,6 +312,10 @@
         "mudah": "Pilih dua kartu kegiatan dan lengkapi satu kalimat: \"I prefer ___ because ___.\" atau \"I'd rather ___ than ___.\"",
         "standar": "Tulis satu kalimat \"I prefer ... because ...\" dan satu kalimat \"I'd rather ... than ...\" tentang kegiatan setelah sekolah.",
         "tantangan": "Mulai dengan lead-in seimbang (\"I think both are fun, but ...\"), lalu nyatakan preferensi dengan alasan dan satu kalimat \"I'd rather ... than ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan lead-in seimbang (\"I think both are fun, but ...\"), lalu nyatakan preferensi dengan alasan dan satu kalimat \"I'd rather ... than ...\"",
+        "perlu_bantuan": "Pilih dua kartu kegiatan dan lengkapi satu kalimat: \"I prefer ___ because ___.\" atau \"I'd rather ___ than ___.\""
       }
     },
     "interact": {
@@ -379,6 +383,10 @@
         "mudah": "Tanyakan satu pertanyaan preferensi; pasangan jawab dengan \"I prefer ... because ...\". Lalu tukar peran.",
         "standar": "Wawancarai pasangan tentang dua kegiatan tanpa membaca buku; pasangan gunakan \"I prefer ... because ...\" dan \"I'd rather ... than ...\". Lalu tukar peran.",
         "tantangan": "Wawancarai pasangan, dan setelah setiap jawaban berikan preferensi sendiri dengan lead-in seimbang (\"I think both are fun, but I'd rather ...\"). Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Wawancarai pasangan, dan setelah setiap jawaban berikan preferensi sendiri dengan lead-in seimbang (\"I think both are fun, but I'd rather ...\"). Lalu tukar peran.",
+        "perlu_bantuan": "Tanyakan satu pertanyaan preferensi; pasangan jawab dengan \"I prefer ... because ...\". Lalu tukar peran."
       }
     },
     "share": {
@@ -446,6 +454,10 @@
         "mudah": "Bagikan satu preferensi ke kelompok dan tanya \"What do you think?\"",
         "standar": "Bagikan dua preferensi (satu \"I prefer ...\", satu \"I'd rather ... than ...\") tanpa membaca buku.",
         "tantangan": "Bagikan preferensi dengan lead-in seimbang, lalu undang dan respons preferensi dua teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan preferensi dengan lead-in seimbang, lalu undang dan respons preferensi dua teman.",
+        "perlu_bantuan": "Bagikan satu preferensi ke kelompok dan tanya \"What do you think?\""
       }
     },
     "check": {

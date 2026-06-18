@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka tiga langkah dan isi setiap slot. Boleh menggunakan catatan sintesis dari TP-10 dan TP-11 sebagai referensi.",
         "standar": "Tulis kesimpulan tiga langkah sendiri tanpa membaca kerangka. Gunakan kosakata: air quality, physical activity, healthy habits, atau evidence-based conclusions.",
         "tantangan": "Tulis kesimpulan dan buat This suggests berisi inferensi yang melampaui apa yang dinyatakan oleh sumber mana pun secara terpisah — sesuatu yang hanya terlihat ketika dibaca bersama-sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis kesimpulan dan buat This suggests berisi inferensi yang melampaui apa yang dinyatakan oleh sumber mana pun secara terpisah — sesuatu yang hanya terlihat ketika dibaca bersama-sama.",
+        "perlu_bantuan": "Gunakan kerangka tiga langkah dan isi setiap slot. Boleh menggunakan catatan sintesis dari TP-10 dan TP-11 sebagai referensi."
       }
     },
     "interact": {
@@ -383,6 +387,10 @@
         "mudah": "Baca kesimpulan tiga langkah dari buku catatan ke kelompok. Kelompok mencentang setiap langkah saat mendengarnya: Based on these sources, This suggests, Therefore.",
         "standar": "Bagikan kesimpulan tanpa membaca. Kelompok memeriksa apakah ketiga langkah benar-benar berbeda.",
         "tantangan": "Bagikan kesimpulan dan kelompok bertanya: \"Is your inference in This suggests actually in the sources, or did you add it?\" — kamu jelaskan reasoning-mu."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan kesimpulan dan kelompok bertanya: \"Is your inference in This suggests actually in the sources, or did you add it?\" — kamu jelaskan reasoning-mu.",
+        "perlu_bantuan": "Baca kesimpulan tiga langkah dari buku catatan ke kelompok. Kelompok mencentang setiap langkah saat mendengarnya: Based on these sources, This suggests, Therefore."
       }
     },
     "share": {
@@ -442,6 +450,10 @@
         "mudah": "Presentasikan kesimpulan tiga langkah ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan kesimpulan tanpa membaca.",
         "tantangan": "Presentasikan kesimpulan tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you need to know to be more confident in your Therefore conclusion?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan kesimpulan tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you need to know to be more confident in your Therefore conclusion?\"",
+        "perlu_bantuan": "Presentasikan kesimpulan tiga langkah ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

@@ -312,6 +312,10 @@
         "mudah": "Gunakan salah satu kartu skenario dan lengkapi: \"If ___, ___ so ___.\"",
         "standar": "Tulis dua kalimat kondisi-hasil tentang pilihan keuangan (\"If ... , ... so ...\").",
         "tantangan": "Mulai dengan satu tahap proses (\"First, a person earns money. Next, they save some.\"), lalu bingkai ulang menjadi \"If ... , ... so ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan satu tahap proses (\"First, a person earns money. Next, they save some.\"), lalu bingkai ulang menjadi \"If ... , ... so ...\"",
+        "perlu_bantuan": "Gunakan salah satu kartu skenario dan lengkapi: \"If ___, ___ so ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Jelaskan satu kondisi-hasil (boleh membaca); pasangan temukan konsekuensinya. Lalu tukar peran.",
         "standar": "Jelaskan dua rantai kondisi-hasil tanpa membaca; pasangan periksa apakah setiap kalimat punya hasil dan konsekuensi. Lalu tukar peran.",
         "tantangan": "Bingkai ulang satu tahap proses menjadi \"If ... , ... so ...\"; pasangan jelaskan skenario yang berbeda. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bingkai ulang satu tahap proses menjadi \"If ... , ... so ...\"; pasangan jelaskan skenario yang berbeda. Lalu tukar peran.",
+        "perlu_bantuan": "Jelaskan satu kondisi-hasil (boleh membaca); pasangan temukan konsekuensinya. Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan satu kondisi-hasil ke kelompok. Boleh membaca.",
         "standar": "Presentasikan dua rantai kondisi-hasil tanpa membaca.",
         "tantangan": "Presentasikan rantai kondisi-hasilmu, lalu jawab satu pertanyaan tentang konsekuensinya dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan rantai kondisi-hasilmu, lalu jawab satu pertanyaan tentang konsekuensinya dari kelompok.",
+        "perlu_bantuan": "Presentasikan satu kondisi-hasil ke kelompok. Boleh membaca."
       }
     },
     "check": {

@@ -312,6 +312,10 @@
         "mudah": "Gunakan infografis dan lengkapi: \"This process ___ because ___. As a result, ___.\"",
         "standar": "Tulis penjelasan sistem: \"This process ... because ... As a result, ...\"",
         "tantangan": "Mulai dengan generalisasi (\"Most trees ... They usually ...\"), lalu jelaskan sistemnya dengan \"This process ... because ... As a result, ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan generalisasi (\"Most trees ... They usually ...\"), lalu jelaskan sistemnya dengan \"This process ... because ... As a result, ...\"",
+        "perlu_bantuan": "Gunakan infografis dan lengkapi: \"This process ___ because ___. As a result, ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Jelaskan satu kalimat sistem (boleh membaca); pasangan temukan hasilnya. Lalu tukar peran.",
         "standar": "Jelaskan sistem tanpa membaca; pasangan periksa ada proses + sebab + hasil. Lalu tukar peran.",
         "tantangan": "Mulai dengan generalisasi, lalu jelaskan sistem lengkap; pasangan jelaskan sistem yang berbeda. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan generalisasi, lalu jelaskan sistem lengkap; pasangan jelaskan sistem yang berbeda. Lalu tukar peran.",
+        "perlu_bantuan": "Jelaskan satu kalimat sistem (boleh membaca); pasangan temukan hasilnya. Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan satu kalimat sistem ke kelompok. Boleh membaca.",
         "standar": "Presentasikan penjelasan sistem lengkap tanpa membaca.",
         "tantangan": "Presentasikan penjelasan sistemmu, lalu jawab satu pertanyaan tentang hasilnya dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan penjelasan sistemmu, lalu jawab satu pertanyaan tentang hasilnya dari kelompok.",
+        "perlu_bantuan": "Presentasikan satu kalimat sistem ke kelompok. Boleh membaca."
       }
     },
     "check": {

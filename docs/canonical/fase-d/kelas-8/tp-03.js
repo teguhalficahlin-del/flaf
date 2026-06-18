@@ -316,6 +316,10 @@
         "mudah": "Pilih satu ide dari papan rencana dan lengkapi satu kalimat: \"How about ___?\" atau \"We could ___.\"",
         "standar": "Tulis dua saran (satu \"How about ...?\", satu \"We could ...\") dan satu respons \"That's a good idea, but ...\"",
         "tantangan": "Ubah preferensi pribadi menjadi usulan (\"I'd rather do X than Y. How about X?\"), lalu respons terhadap satu ide teman dengan \"That's a good idea, but ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ubah preferensi pribadi menjadi usulan (\"I'd rather do X than Y. How about X?\"), lalu respons terhadap satu ide teman dengan \"That's a good idea, but ...\"",
+        "perlu_bantuan": "Pilih satu ide dari papan rencana dan lengkapi satu kalimat: \"How about ___?\" atau \"We could ___.\""
       }
     },
     "interact": {
@@ -379,6 +383,10 @@
         "mudah": "Buat satu saran ke kelompok (\"How about ...?\" atau \"We could ...\"); satu teman respons dengan \"That's a good idea, but ...\"",
         "standar": "Sarankan dan respons tanpa membaca buku sehingga kelompok memperbaiki rencana dengan setidaknya dua ide.",
         "tantangan": "Ubah preferensi jadi usulan, respons ide teman dengan \"That's a good idea, but ...\", dan bantu bentuk satu rencana bersama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ubah preferensi jadi usulan, respons ide teman dengan \"That's a good idea, but ...\", dan bantu bentuk satu rencana bersama.",
+        "perlu_bantuan": "Buat satu saran ke kelompok (\"How about ...?\" atau \"We could ...\"); satu teman respons dengan \"That's a good idea, but ...\""
       }
     },
     "share": {
@@ -438,6 +446,10 @@
         "mudah": "Buat satu saran ke kelompok baru; satu teman respons dengan \"That's a good idea, but ...\"",
         "standar": "Sarankan dan respons tanpa membaca buku untuk membentuk rencana bersama kelompok baru.",
         "tantangan": "Pimpin negosiasi singkat: buat usulan, respons dua ide dengan caveat, dan sarankan satu rencana yang lebih baik."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Pimpin negosiasi singkat: buat usulan, respons dua ide dengan caveat, dan sarankan satu rencana yang lebih baik.",
+        "perlu_bantuan": "Buat satu saran ke kelompok baru; satu teman respons dengan \"That's a good idea, but ...\""
       }
     },
     "check": {

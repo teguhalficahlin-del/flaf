@@ -304,6 +304,10 @@ const skenario = {
         "mudah": "Pilih satu ikon tanda dan lengkapi satu notice: No blank. Atau: Keep blank. Atau: Use blank.",
         "standar": "Tulis dua notices dengan jenis yang berbeda untuk gudang tua.",
         "tantangan": "Tulis tiga notices (Notice: blank, No blank, Keep blank atau Use blank), dan tambahkan satu kolom formulir netral: Choice: Storage Room."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga notices (Notice: blank, No blank, Keep blank atau Use blank), dan tambahkan satu kolom formulir netral: Choice: Storage Room.",
+        "perlu_bantuan": "Pilih satu ikon tanda dan lengkapi satu notice: No blank. Atau: Keep blank. Atau: Use blank."
       }
     },
     "interact": {
@@ -359,6 +363,10 @@ const skenario = {
         "mudah": "Bacakan satu kartu notice dan tunjuk apa maknanya. Lalu salin atau lengkapi satu notice sendiri.",
         "standar": "Cocokkan dua atau tiga kartu notice dengan maknanya, lalu tulis dua notices sendiri.",
         "tantangan": "Cocokkan semua kartu notice dengan maknanya, lalu tulis tiga notices dan satu kolom formulir netral."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Cocokkan semua kartu notice dengan maknanya, lalu tulis tiga notices dan satu kolom formulir netral.",
+        "perlu_bantuan": "Bacakan satu kartu notice dan tunjuk apa maknanya. Lalu salin atau lengkapi satu notice sendiri."
       }
     },
     "share": {
@@ -406,6 +414,10 @@ const skenario = {
         "mudah": "Tempelkan satu notice dan baca dua notices kelompok lain — tunjuk apa yang dimaksud setiap notice.",
         "standar": "Tempelkan dua notices dan baca beberapa lainnya — cocokkan setiap notice dengan maknanya.",
         "tantangan": "Tempelkan set notices, baca notices kelompok lain, dan temukan satu notice yang cocok dengan setiap makna di dinding."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tempelkan set notices, baca notices kelompok lain, dan temukan satu notice yang cocok dengan setiap makna di dinding.",
+        "perlu_bantuan": "Tempelkan satu notice dan baca dua notices kelompok lain — tunjuk apa yang dimaksud setiap notice."
       }
     },
     "check": {

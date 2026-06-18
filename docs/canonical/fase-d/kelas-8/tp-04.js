@@ -316,6 +316,10 @@
         "mudah": "Lengkapi satu kalimat: \"I agree that ___ because ___.\" atau \"Maybe we should ___ so ___.\"",
         "standar": "Tulis satu kalimat \"I agree that ... because ...\" dan satu kalimat \"Maybe we should ... so ...\" tentang kantin.",
         "tantangan": "Ambil satu saran dari sebelumnya (\"We could ...\") dan ubah menjadi keputusan bersama (\"I agree that ... because ...\") plus tindak lanjut (\"Maybe we should ... so ...\")."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ambil satu saran dari sebelumnya (\"We could ...\") dan ubah menjadi keputusan bersama (\"I agree that ... because ...\") plus tindak lanjut (\"Maybe we should ... so ...\").",
+        "perlu_bantuan": "Lengkapi satu kalimat: \"I agree that ___ because ___.\" atau \"Maybe we should ___ so ___.\""
       }
     },
     "interact": {
@@ -379,6 +383,10 @@
         "mudah": "Setujui satu usulan (\"I agree that ... because ...\") dan tambah satu tindak lanjut (\"Maybe we should ... so ...\"). Boleh membaca.",
         "standar": "Setujui dan usulkan tanpa membaca buku sehingga kelompok mencapai satu keputusan bersama.",
         "tantangan": "Ubah saran teman menjadi keputusan bersama dengan alasan, lalu usulkan tindak lanjut dengan \"so\"."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ubah saran teman menjadi keputusan bersama dengan alasan, lalu usulkan tindak lanjut dengan \"so\".",
+        "perlu_bantuan": "Setujui satu usulan (\"I agree that ... because ...\") dan tambah satu tindak lanjut (\"Maybe we should ... so ...\"). Boleh membaca."
       }
     },
     "share": {
@@ -438,6 +446,10 @@
         "mudah": "Presentasikan keputusan bersama dalam satu kalimat (\"I agree that ... because ...\"). Boleh membaca.",
         "standar": "Presentasikan keputusan bersama dan satu tindak lanjut tanpa membaca.",
         "tantangan": "Presentasikan keputusan dan tindak lanjut, lalu setujui juga satu keputusan kelompok lain (\"I agree that ... because ...\")."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan keputusan dan tindak lanjut, lalu setujui juga satu keputusan kelompok lain (\"I agree that ... because ...\").",
+        "perlu_bantuan": "Presentasikan keputusan bersama dalam satu kalimat (\"I agree that ... because ...\"). Boleh membaca."
       }
     },
     "check": {

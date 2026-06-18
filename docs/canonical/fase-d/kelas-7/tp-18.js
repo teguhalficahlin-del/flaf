@@ -312,6 +312,10 @@
         "mudah": "Lengkapi satu entri jadwal: blank Day, blank a.m./p.m. blank Club in blank.",
         "standar": "Tulis dua entri jadwal dalam format potongan (hari atau tanggal, waktu, acara, tempat).",
         "tantangan": "Buat kartu jadwal kecil dengan dua atau tiga entri, dan tambahkan satu pengingat sopan: Please arrive on time."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Buat kartu jadwal kecil dengan dua atau tiga entri, dan tambahkan satu pengingat sopan: Please arrive on time.",
+        "perlu_bantuan": "Lengkapi satu entri jadwal: blank Day, blank a.m./p.m. blank Club in blank."
       }
     },
     "interact": {
@@ -379,6 +383,10 @@
         "mudah": "Bacakan satu entri jadwal. Pasangan tunjuk hari, waktu, dan tempat di kalender. Lalu tukar.",
         "standar": "Bacakan dua entri tanpa membaca kata per kata. Pasangan catat waktu dan tempat setiap entri. Lalu tukar.",
         "tantangan": "Bacakan seluruh kartu jadwal. Pasangan periksa setiap entri memiliki tiga bagian. Lalu tukar."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bacakan seluruh kartu jadwal. Pasangan periksa setiap entri memiliki tiga bagian. Lalu tukar.",
+        "perlu_bantuan": "Bacakan satu entri jadwal. Pasangan tunjuk hari, waktu, dan tempat di kalender. Lalu tukar."
       }
     },
     "share": {
@@ -438,6 +446,10 @@
         "mudah": "Presentasikan satu atau dua entri jadwal ke kelompok baru — boleh membaca.",
         "standar": "Presentasikan kartu jadwal (dua atau tiga entri) tanpa membaca kata per kata.",
         "tantangan": "Presentasikan kartu jadwal dengan pengingat sopan, dan periksa satu kartu teman memiliki ketiga bagian di setiap entri."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan kartu jadwal dengan pengingat sopan, dan periksa satu kartu teman memiliki ketiga bagian di setiap entri.",
+        "perlu_bantuan": "Presentasikan satu atau dua entri jadwal ke kelompok baru — boleh membaca."
       }
     },
     "check": {

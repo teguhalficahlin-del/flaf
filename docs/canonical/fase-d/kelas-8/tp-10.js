@@ -312,6 +312,10 @@
         "mudah": "Urutkan langkah-langkah di diagram: \"First, ___. Next, ___. Finally, ___.\" (gunakan the customer atau the order).",
         "standar": "Jelaskan prosesnya dalam empat tahap (\"First, ... Next, ... Then, ... Finally, ...\"), present tense, subjek generik.",
         "tantangan": "Mulai dengan jembatan kausal (\"When a customer orders online, the order goes through several steps because ...\"), lalu jelaskan prosesnya secara lengkap dalam tahapan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan jembatan kausal (\"When a customer orders online, the order goes through several steps because ...\"), lalu jelaskan prosesnya secara lengkap dalam tahapan.",
+        "perlu_bantuan": "Urutkan langkah-langkah di diagram: \"First, ___. Next, ___. Finally, ___.\" (gunakan the customer atau the order)."
       }
     },
     "interact": {
@@ -367,6 +371,10 @@
         "mudah": "Tambahkan satu tahap ke penjelasan kelompok (boleh membaca), gunakan the customer atau the order.",
         "standar": "Tambahkan dua tahap tanpa membaca, dengan present tense dan subjek generik.",
         "tantangan": "Berikan jembatan kausal, lalu jelaskan proses lengkap; kelompok periksa apakah tidak ada tahap yang menggunakan \"I\" atau past tense."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan jembatan kausal, lalu jelaskan proses lengkap; kelompok periksa apakah tidak ada tahap yang menggunakan \"I\" atau past tense.",
+        "perlu_bantuan": "Tambahkan satu tahap ke penjelasan kelompok (boleh membaca), gunakan the customer atau the order."
       }
     },
     "share": {
@@ -426,6 +434,10 @@
         "mudah": "Presentasikan tiga tahap proses ke kelompok baru. Boleh membaca.",
         "standar": "Presentasikan keempat tahap proses secara lengkap tanpa membaca.",
         "tantangan": "Presentasikan prosesnya dan jawab satu pertanyaan tentang satu tahap, dengan tetap menggunakan present tense dan subjek generik."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan prosesnya dan jawab satu pertanyaan tentang satu tahap, dengan tetap menggunakan present tense dan subjek generik.",
+        "perlu_bantuan": "Presentasikan tiga tahap proses ke kelompok baru. Boleh membaca."
       }
     },
     "check": {

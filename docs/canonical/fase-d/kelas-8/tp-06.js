@@ -316,6 +316,10 @@
         "mudah": "Gunakan tabel perbandingan dan lengkapi: \"Most trees ___.\" dan \"Some trees ___.\"",
         "standar": "Tulis tiga kalimat umum: satu \"Most ...\", satu \"Some ...\", dan satu \"They usually ...\"",
         "tantangan": "Mulai dengan klasifikasi satu pohon (\"A ___ is a kind of tree.\"), lalu generalisasikan dengan \"Most ... / Some ... / They usually ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan klasifikasi satu pohon (\"A ___ is a kind of tree.\"), lalu generalisasikan dengan \"Most ... / Some ... / They usually ...\"",
+        "perlu_bantuan": "Gunakan tabel perbandingan dan lengkapi: \"Most trees ___.\" dan \"Some trees ___.\""
       }
     },
     "interact": {
@@ -371,6 +375,10 @@
         "mudah": "Tambahkan satu kalimat umum ke laporan kelompok (\"Most trees ___.\" Boleh membaca.",
         "standar": "Tambahkan dua kalimat umum (satu \"Most/Some\", satu \"They usually\") tanpa membaca.",
         "tantangan": "Klasifikasikan satu pohon, lalu tambahkan dua generalisasi, dan pastikan laporan kelompok menggunakan subjek plural dan umum."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Klasifikasikan satu pohon, lalu tambahkan dua generalisasi, dan pastikan laporan kelompok menggunakan subjek plural dan umum.",
+        "perlu_bantuan": "Tambahkan satu kalimat umum ke laporan kelompok (\"Most trees ___.\" Boleh membaca."
       }
     },
     "share": {
@@ -430,6 +438,10 @@
         "mudah": "Presentasikan dua kalimat umum ke kelompok baru. Boleh membaca.",
         "standar": "Presentasikan tiga kalimat umum (Most / Some / They usually) tanpa membaca.",
         "tantangan": "Presentasikan generalisasi, lalu jawab satu pertanyaan tentang ciri pohon dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan generalisasi, lalu jawab satu pertanyaan tentang ciri pohon dari kelompok.",
+        "perlu_bantuan": "Presentasikan dua kalimat umum ke kelompok baru. Boleh membaca."
       }
     },
     "check": {

@@ -336,6 +336,10 @@
         "mudah": "Gunakan kerangka review berimbang di papan tulis dan isi setiap slot. Boleh melihat kartu ringkasan kebijakan untuk referensi. Tulis: I believe lalu penilaian keseluruhan karena satu alasan. One strength is lalu satu kelebihan. However lalu satu kekurangan.",
         "standar": "Tulis review berimbang sendiri tanpa membaca kerangka. Gunakan kosakata: homework, study habits, time management, atau school rules.",
         "tantangan": "Tulis review berimbang lalu tambah satu kelebihan atau kekurangan kedua untuk membuat evaluasi lebih lengkap sebelum kesimpulan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis review berimbang lalu tambah satu kelebihan atau kekurangan kedua untuk membuat evaluasi lebih lengkap sebelum kesimpulan.",
+        "perlu_bantuan": "Gunakan kerangka review berimbang di papan tulis dan isi setiap slot. Boleh melihat kartu ringkasan kebijakan untuk referensi. Tulis: I believe lalu penilaian keseluruhan karena satu alasan. One strength is lalu satu kelebihan. However lalu satu kekurangan."
       }
     },
     "interact": {
@@ -411,6 +415,10 @@
         "mudah": "Baca review dari buku catatan ke pasangan. Pasangan mengelilingi One strength is dan However dalam teks kamu.",
         "standar": "Sampaikan review tanpa membaca. Pasangan memeriksa ketiga komponen dan apakah nada terasa berimbang.",
         "tantangan": "Sampaikan review, lalu pasangan bertanya: \"Is this a balanced review or does it lean more to one side?\" Diskusikan bersama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review, lalu pasangan bertanya: \"Is this a balanced review or does it lean more to one side?\" Diskusikan bersama.",
+        "perlu_bantuan": "Baca review dari buku catatan ke pasangan. Pasangan mengelilingi One strength is dan However dalam teks kamu."
       }
     },
     "share": {
@@ -478,6 +486,10 @@
         "mudah": "Baca review berimbang dari buku catatan ke kelompok.",
         "standar": "Sampaikan review berimbang tanpa membaca buku.",
         "tantangan": "Sampaikan review berimbang tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Do you think the strength outweighs the limitation?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan review berimbang tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Do you think the strength outweighs the limitation?\"",
+        "perlu_bantuan": "Baca review berimbang dari buku catatan ke kelompok."
       }
     },
     "check": {

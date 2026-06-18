@@ -299,6 +299,10 @@
         "mudah": "Pilih satu kartu tokoh dan satu kartu tempat, lalu lengkapi: Once there was a blank near a blank.",
         "standar": "Tulis dua kalimat pembuka cerita: Once there was blank near blank. There was blank around blank.",
         "tantangan": "Tulis pembuka, tambahkan satu deskripsi tokoh bentuk lampau: It was blank and blank. Dan tambahkan mimpi tokoh: It dreamed of blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis pembuka, tambahkan satu deskripsi tokoh bentuk lampau: It was blank and blank. Dan tambahkan mimpi tokoh: It dreamed of blank.",
+        "perlu_bantuan": "Pilih satu kartu tokoh dan satu kartu tempat, lalu lengkapi: Once there was a blank near a blank."
       }
     },
     "interact": {
@@ -366,6 +370,10 @@
         "mudah": "Ceritakan satu kalimat pembuka dari buku catatan — boleh membaca. Pasangan mendengarkan dan menyebutkan tokoh atau tempatnya.",
         "standar": "Ceritakan dua kalimat pembuka tanpa membaca. Pasangan melakukan hal yang sama.",
         "tantangan": "Ceritakan pembuka dengan deskripsi dan mimpi tokoh. Pasangan melakukan hal yang sama, lalu menyebutkan nama tokoh dan tempat milik partner."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ceritakan pembuka dengan deskripsi dan mimpi tokoh. Pasangan melakukan hal yang sama, lalu menyebutkan nama tokoh dan tempat milik partner.",
+        "perlu_bantuan": "Ceritakan satu kalimat pembuka dari buku catatan — boleh membaca. Pasangan mendengarkan dan menyebutkan tokoh atau tempatnya."
       }
     },
     "share": {
@@ -425,6 +433,10 @@
         "mudah": "Ceritakan satu kalimat pembuka ke kelompok baru — boleh membaca.",
         "standar": "Ceritakan dua kalimat pembuka ke kelompok baru tanpa membaca.",
         "tantangan": "Ceritakan pembuka dengan deskripsi dan mimpi, lalu dengarkan dan ingat tokoh setiap teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ceritakan pembuka dengan deskripsi dan mimpi, lalu dengarkan dan ingat tokoh setiap teman.",
+        "perlu_bantuan": "Ceritakan satu kalimat pembuka ke kelompok baru — boleh membaca."
       }
     },
     "check": {

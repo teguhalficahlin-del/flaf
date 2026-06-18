@@ -296,6 +296,10 @@ const skenario = {
         "mudah": "Pilih satu ikon keamanan dan lengkapi satu aturan: Don't blank. Atau: Be blank. Atau: Always blank.",
         "standar": "Tulis tiga aturan — satu Don't, satu Be, dan satu Always — tentang keamanan online.",
         "tantangan": "Tulis tiga aturan, dan pasangkan satu aturan dengan satu instruksi biasa: Put your password in a safe place. Don't share it with anyone."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga aturan, dan pasangkan satu aturan dengan satu instruksi biasa: Put your password in a safe place. Don't share it with anyone.",
+        "perlu_bantuan": "Pilih satu ikon keamanan dan lengkapi satu aturan: Don't blank. Atau: Be blank. Atau: Always blank."
       }
     },
     "interact": {
@@ -347,6 +351,10 @@ const skenario = {
         "mudah": "Ucapkan satu aturan ke kelompok. Yang lain merespons dengan kartu respons: That's true. Atau I agree.",
         "standar": "Ucapkan dua aturan dengan tipe berbeda tanpa membaca, dan tanggapi aturan teman.",
         "tantangan": "Berikan satu aturan yang dipasangkan dengan instruksi biasa, tanggapi aturan teman, dan bantu pilih aturan terbaik untuk poster."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Berikan satu aturan yang dipasangkan dengan instruksi biasa, tanggapi aturan teman, dan bantu pilih aturan terbaik untuk poster.",
+        "perlu_bantuan": "Ucapkan satu aturan ke kelompok. Yang lain merespons dengan kartu respons: That's true. Atau I agree."
       }
     },
     "share": {
@@ -410,6 +418,10 @@ const skenario = {
         "mudah": "Presentasikan dua aturan untuk poster — boleh membaca.",
         "standar": "Presentasikan tiga aturan dengan tipe berbeda tanpa membaca.",
         "tantangan": "Presentasikan aturan-aturan, tanggapi aturan teman dengan That's true. Atau I agree, dan usulkan aturan mana yang paling cocok untuk poster."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan aturan-aturan, tanggapi aturan teman dengan That's true. Atau I agree, dan usulkan aturan mana yang paling cocok untuk poster.",
+        "perlu_bantuan": "Presentasikan dua aturan untuk poster — boleh membaca."
       }
     },
     "check": {

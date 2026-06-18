@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka perbandingan empat slot dan isi setiap slot menggunakan kedua dokumen sumber.",
         "standar": "Tulis perbandingan sumber sendiri tanpa membaca kerangka. Gunakan kosakata: green spaces, physical activity, public health, atau comparison.",
         "tantangan": "Tulis perbandingan dan buat Therefore menjelaskan mengapa perbedaan fokus antara kedua sumber justru memperkuat kesimpulan, bukan melemahkannya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis perbandingan dan buat Therefore menjelaskan mengapa perbedaan fokus antara kedua sumber justru memperkuat kesimpulan, bukan melemahkannya.",
+        "perlu_bantuan": "Gunakan kerangka perbandingan empat slot dan isi setiap slot menggunakan kedua dokumen sumber."
       }
     },
     "interact": {
@@ -391,6 +395,10 @@
         "mudah": "Baca perbandinganmu ke pasangan. Pasangan menunjuk \"Both\", \"However\", \"while\", dan \"Therefore\" dalam teksmu.",
         "standar": "Bagikan perbandinganmu tanpa membaca. Pasangan memeriksa keempat komponen dan apakah Therefore menambahkan kesimpulan baru.",
         "tantangan": "Bagikan perbandinganmu dan pasangan bertanya: \"Would you reach the same conclusion if you only read one source?\" — kamu jelaskan mengapa keduanya diperlukan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan perbandinganmu dan pasangan bertanya: \"Would you reach the same conclusion if you only read one source?\" — kamu jelaskan mengapa keduanya diperlukan.",
+        "perlu_bantuan": "Baca perbandinganmu ke pasangan. Pasangan menunjuk \"Both\", \"However\", \"while\", dan \"Therefore\" dalam teksmu."
       }
     },
     "share": {
@@ -458,6 +466,10 @@
         "mudah": "Presentasikan perbandinganmu ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan perbandinganmu tanpa membaca.",
         "tantangan": "Presentasikan perbandinganmu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would we lose if we only read one source instead of both?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan perbandinganmu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would we lose if we only read one source instead of both?\"",
+        "perlu_bantuan": "Presentasikan perbandinganmu ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

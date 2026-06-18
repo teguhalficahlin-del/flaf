@@ -324,6 +324,10 @@
         "mudah": "Gunakan kerangka sintesis tiga slot dan isi setiap slot menggunakan informasi dari kedua dokumen sumber.",
         "standar": "Tulis sintesis tiga bagian sendiri tanpa membaca kerangka. Gunakan kosakata: historical documents, school history, photographs, atau evidence.",
         "tantangan": "Tulis sintesis dan buat Together, they show benar-benar wawasan baru yang tidak dinyatakan oleh salah satu sumber secara terpisah."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis sintesis dan buat Together, they show benar-benar wawasan baru yang tidak dinyatakan oleh salah satu sumber secara terpisah.",
+        "perlu_bantuan": "Gunakan kerangka sintesis tiga slot dan isi setiap slot menggunakan informasi dari kedua dokumen sumber."
       }
     },
     "interact": {
@@ -395,6 +399,10 @@
         "mudah": "Baca sintesismu ke pasangan. Pasangan menunjuk \"Source A says\", \"Source B says\", dan \"Together\" dalam teksmu.",
         "standar": "Bagikan sintesismu tanpa membaca. Pasangan memeriksa ketiga komponen dan apakah sintesis menambahkan sesuatu yang baru.",
         "tantangan": "Bagikan sintesismu dan pasangan bertanya: \"Could you have said this from just one source?\" — kamu jelaskan mengapa kedua sumber diperlukan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan sintesismu dan pasangan bertanya: \"Could you have said this from just one source?\" — kamu jelaskan mengapa kedua sumber diperlukan.",
+        "perlu_bantuan": "Baca sintesismu ke pasangan. Pasangan menunjuk \"Source A says\", \"Source B says\", dan \"Together\" dalam teksmu."
       }
     },
     "share": {
@@ -462,6 +470,10 @@
         "mudah": "Presentasikan sintesismu ke kelompok baru menggunakan catatan.",
         "standar": "Presentasikan sintesismu tanpa membaca.",
         "tantangan": "Presentasikan sintesismu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would we still not know if we only had one source?\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan sintesismu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would we still not know if we only had one source?\"",
+        "perlu_bantuan": "Presentasikan sintesismu ke kelompok baru menggunakan catatan."
       }
     },
     "check": {

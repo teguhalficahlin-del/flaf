@@ -311,6 +311,10 @@
         "mudah": "Jika belum bisa menulis informasi sendiri — pilih contoh dari kartu bergambar di papan tulis sebagai latihan. Tulis: I am, lalu nama. I am, lalu usia, years old. I like, lalu hobi. I can, lalu kemampuan. Jika mampu, lanjutkan dengan but I cannot, lalu kemampuan.",
         "standar": "Tulis empat kalimat dengan informasi diri sendiri mengikuti pola di papan tulis.",
         "tantangan": "Tulis empat kalimat, lalu tambah satu detail ekstra di setiap kalimat. Contoh: I like reading comics every weekend. Atau: I can ride a bicycle very well."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis empat kalimat, lalu tambah satu detail ekstra di setiap kalimat. Contoh: I like reading comics every weekend. Atau: I can ride a bicycle very well.",
+        "perlu_bantuan": "Jika belum bisa menulis informasi sendiri — pilih contoh dari kartu bergambar di papan tulis sebagai latihan. Tulis: I am, lalu nama. I am, lalu usia, years old. I like, lalu hobi. I can, lalu kemampuan. Jika mampu, lanjutkan dengan but I cannot, lalu kemampuan."
       }
     },
     "interact": {
@@ -382,6 +386,10 @@
         "mudah": "Baca kalimat dari buku catatan ke pasangan. Dengarkan pasangan membaca miliknya.",
         "standar": "Ucapkan kalimat tanpa membaca buku. Dengarkan pasangan — ingat satu fakta tentang mereka: nama, usia, hobi, atau kemampuan.",
         "tantangan": "Ucapkan kalimat tanpa membaca, lalu tambahkan satu detail ekstra secara spontan. Minta pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan kalimat tanpa membaca, lalu tambahkan satu detail ekstra secara spontan. Minta pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Baca kalimat dari buku catatan ke pasangan. Dengarkan pasangan membaca miliknya."
       }
     },
     "share": {
@@ -449,6 +457,10 @@
         "mudah": "Baca kalimat dari buku catatan ke kelompok.",
         "standar": "Ucapkan kalimat tanpa membaca buku.",
         "tantangan": "Ucapkan kalimat tanpa membaca, lalu setelah semua anggota selesai — sebutkan satu fakta tentang setiap orang: nama, usia, hobi, atau kemampuan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan kalimat tanpa membaca, lalu setelah semua anggota selesai — sebutkan satu fakta tentang setiap orang: nama, usia, hobi, atau kemampuan.",
+        "perlu_bantuan": "Baca kalimat dari buku catatan ke kelompok."
       }
     },
     "check": {

@@ -368,6 +368,10 @@
         "mudah": "Lengkapi satu kalimat konflik: One day, the firefly ___, but ___.",
         "standar": "Tulis dua kalimat: One day, (kejadian), but (masalah). Suddenly, (kejadian tak terduga). Gunakan past tense.",
         "tantangan": "Mulai dengan recap: There was a small firefly near a quiet pond. Lalu tulis kalimat One day but dan Suddenly milikmu sendiri."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan recap: There was a small firefly near a quiet pond. Lalu tulis kalimat One day but dan Suddenly milikmu sendiri.",
+        "perlu_bantuan": "Lengkapi satu kalimat konflik: One day, the firefly ___, but ___."
       }
     },
     "interact": {
@@ -439,6 +443,10 @@
         "mudah": "Ucapkan satu kalimat konflik dari buku catatan ke pasangan. Dengarkan kalimat konflik pasangan. Boleh membaca.",
         "standar": "Ucapkan dua kalimat konflik tanpa membaca. Pasangan melakukan hal yang sama dan menyebutkan apa masalah yang terjadi.",
         "tantangan": "Recap pembuka singkat, lalu ceritakan konflik. Pasangan melakukan hal yang sama dan menyebutkan apa kejadian tak terduganya."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Recap pembuka singkat, lalu ceritakan konflik. Pasangan melakukan hal yang sama dan menyebutkan apa kejadian tak terduganya.",
+        "perlu_bantuan": "Ucapkan satu kalimat konflik dari buku catatan ke pasangan. Dengarkan kalimat konflik pasangan. Boleh membaca."
       }
     },
     "share": {
@@ -506,6 +514,10 @@
         "mudah": "Ucapkan kalimat konflik ke kelompok. Boleh membaca dari buku catatan.",
         "standar": "Ucapkan pembuka singkat dan kalimat konflik tanpa membaca.",
         "tantangan": "Ucapkan pembuka dan konflik, lalu setelah semua selesai — sebutkan apa kejadian tak terduga dalam cerita satu teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ucapkan pembuka dan konflik, lalu setelah semua selesai — sebutkan apa kejadian tak terduga dalam cerita satu teman.",
+        "perlu_bantuan": "Ucapkan kalimat konflik ke kelompok. Boleh membaca dari buku catatan."
       }
     },
     "check": {

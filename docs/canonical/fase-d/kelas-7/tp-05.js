@@ -292,6 +292,10 @@
         "mudah": "Pilih satu kartu hewan dan lengkapi tiga kalimat: It is blank. It has blank. It looks blank. Gunakan kata dari ikon di papan tulis.",
         "standar": "Tulis tiga kalimat deskripsi tentang hewanmu: satu It is, satu It has, dan satu It looks.",
         "tantangan": "Tulis tiga kalimat deskripsi, dan tambahkan satu kalimat lead-in sebelumnya: I have a pet. I like my pet. Pertahankan tiga kalimat deskripsi It is, It has, It looks sebagai bagian utama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga kalimat deskripsi, dan tambahkan satu kalimat lead-in sebelumnya: I have a pet. I like my pet. Pertahankan tiga kalimat deskripsi It is, It has, It looks sebagai bagian utama.",
+        "perlu_bantuan": "Pilih satu kartu hewan dan lengkapi tiga kalimat: It is blank. It has blank. It looks blank. Gunakan kata dari ikon di papan tulis."
       }
     },
     "interact": {
@@ -359,6 +363,10 @@
         "mudah": "Deskripsikan hewanmu menggunakan tiga kalimat dari buku catatan — boleh membaca. Pasangan merespons dengan kartu respons: I agree. Atau: That's true.",
         "standar": "Deskripsikan hewanmu tanpa membaca buku. Pasangan merespons dengan: I think it looks blank because it has blank.",
         "tantangan": "Mulai dengan lead-in terlebih dahulu, lalu deskripsikan. Pasangan memberi pendapat dengan alasan, dan kamu merespons dengan That's true."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan lead-in terlebih dahulu, lalu deskripsikan. Pasangan memberi pendapat dengan alasan, dan kamu merespons dengan That's true.",
+        "perlu_bantuan": "Deskripsikan hewanmu menggunakan tiga kalimat dari buku catatan — boleh membaca. Pasangan merespons dengan kartu respons: I agree. Atau: That's true."
       }
     },
     "share": {
@@ -422,6 +430,10 @@
         "mudah": "Angkat kartumu dan ucapkan tiga kalimat deskripsi ke kelompok — boleh membaca.",
         "standar": "Angkat kartumu dan deskripsikan hewan tanpa membaca.",
         "tantangan": "Angkat kartumu dan deskripsikan hewan, lalu tanggapi deskripsi satu teman dengan I think it looks blank because blank. Atau: That's true."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Angkat kartumu dan deskripsikan hewan, lalu tanggapi deskripsi satu teman dengan I think it looks blank because blank. Atau: That's true.",
+        "perlu_bantuan": "Angkat kartumu dan ucapkan tiga kalimat deskripsi ke kelompok — boleh membaca."
       }
     },
     "check": {

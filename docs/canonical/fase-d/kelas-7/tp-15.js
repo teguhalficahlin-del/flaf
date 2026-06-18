@@ -300,6 +300,10 @@
         "mudah": "Pilih satu kartu perasaan dan lengkapi: It was blank because blank (sesuatu yang terjadi).",
         "standar": "Tulis dua tanggapan perasaan tentang pengalamanmu di perpustakaan — masing-masing It was blank because blank dengan peristiwa konkret.",
         "tantangan": "Awali dengan rangkuman tindakan terhubung: I found a book and read it. Lalu tulis tanggapan perasaanmu: It was blank because blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan rangkuman tindakan terhubung: I found a book and read it. Lalu tulis tanggapan perasaanmu: It was blank because blank.",
+        "perlu_bantuan": "Pilih satu kartu perasaan dan lengkapi: It was blank because blank (sesuatu yang terjadi)."
       }
     },
     "interact": {
@@ -367,6 +371,10 @@
         "mudah": "Bagikan satu kalimat It was blank because blank dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons.",
         "standar": "Bagikan dua tanggapan perasaan tanpa membaca. Dengarkan dan ingat perasaan serta peristiwa milik pasangan.",
         "tantangan": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaanmu. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaanmu. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Bagikan satu kalimat It was blank because blank dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons."
       }
     },
     "share": {
@@ -426,6 +434,10 @@
         "mudah": "Bagikan satu tanggapan perasaan ke kelompok baru — boleh membaca.",
         "standar": "Bagikan dua tanggapan perasaan tanpa membaca.",
         "tantangan": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaan, dan tanggapi satu pengalaman teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaan, dan tanggapi satu pengalaman teman.",
+        "perlu_bantuan": "Bagikan satu tanggapan perasaan ke kelompok baru — boleh membaca."
       }
     },
     "check": {

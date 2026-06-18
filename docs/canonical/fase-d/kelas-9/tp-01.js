@@ -340,6 +340,10 @@
         "mudah": "Gunakan kartu kerangka di papan tulis dan isi keempat slot. Boleh melihat kartu skenario untuk referensi. Tulis: I believe lalu posisi tentang daur ulang karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh konkret. Therefore, I recommend lalu satu rekomendasi.",
         "standar": "Tulis argumen empat komponen sendiri tanpa membaca kerangka. Gunakan kosakata: recycling, community, environment, atau responsibility.",
         "tantangan": "Tulis argumen empat komponen dan gunakan alasan yang berbeda dari contoh model — bukan recycling reduces plastic waste. Gunakan alasan lain yang didukung satu contoh spesifik dan berbeda."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis argumen empat komponen dan gunakan alasan yang berbeda dari contoh model — bukan recycling reduces plastic waste. Gunakan alasan lain yang didukung satu contoh spesifik dan berbeda.",
+        "perlu_bantuan": "Gunakan kartu kerangka di papan tulis dan isi keempat slot. Boleh melihat kartu skenario untuk referensi. Tulis: I believe lalu posisi tentang daur ulang karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh konkret. Therefore, I recommend lalu satu rekomendasi."
       }
     },
     "interact": {
@@ -411,6 +415,10 @@
         "mudah": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa apakah ada keempat komponen: klaim, alasan, contoh, rekomendasi.",
         "standar": "Sampaikan argumen tanpa membaca buku. Pasangan memeriksa keempat komponen dan memberi tahu mana yang paling meyakinkan.",
         "tantangan": "Sampaikan argumen tanpa membaca, lalu pasangan bertanya: \"Why do you recommend that specifically?\" Tambahkan satu kalimat untuk memperkuat rekomendasi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen tanpa membaca, lalu pasangan bertanya: \"Why do you recommend that specifically?\" Tambahkan satu kalimat untuk memperkuat rekomendasi.",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa apakah ada keempat komponen: klaim, alasan, contoh, rekomendasi."
       }
     },
     "share": {
@@ -478,6 +486,10 @@
         "mudah": "Baca argumen dari buku catatan ke kelompok.",
         "standar": "Sampaikan argumen tanpa membaca buku.",
         "tantangan": "Sampaikan argumen tanpa membaca, lalu setelah semua anggota selesai — sebutkan satu komponen dari argumen teman yang paling meyakinkan dan jelaskan mengapa."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Sampaikan argumen tanpa membaca, lalu setelah semua anggota selesai — sebutkan satu komponen dari argumen teman yang paling meyakinkan dan jelaskan mengapa.",
+        "perlu_bantuan": "Baca argumen dari buku catatan ke kelompok."
       }
     },
     "check": {

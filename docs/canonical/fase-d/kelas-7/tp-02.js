@@ -369,6 +369,10 @@ const skenario = {
         "mudah": "Pilih satu kegiatan dari poster dan tulis satu pertanyaan beserta jawabannya: Do you like singing? Yes, I do. Atau: Can you play chess? No, I can't.",
         "standar": "Tulis dua pertanyaan beserta jawabannya — satu pertanyaan Do you like dan satu pertanyaan Can you play. Pastikan jawaban pendeknya sesuai: do atau don't untuk Do you, can atau can't untuk Can you.",
         "tantangan": "Tulis tiga pertanyaan beserta jawabannya, campurkan Do you like dan Can you play. Untuk satu kegiatan olahraga, tulis keduanya: Do you like badminton? Can you play badminton?"
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis tiga pertanyaan beserta jawabannya, campurkan Do you like dan Can you play. Untuk satu kegiatan olahraga, tulis keduanya: Do you like badminton? Can you play badminton?",
+        "perlu_bantuan": "Pilih satu kegiatan dari poster dan tulis satu pertanyaan beserta jawabannya: Do you like singing? Yes, I do. Atau: Can you play chess? No, I can't."
       }
     },
     "interact": {
@@ -440,6 +444,10 @@ const skenario = {
         "mudah": "Tanya dua teman menggunakan satu pertanyaan Do you like dari buku catatan. Beri tanda di lembar tally untuk setiap jawaban. Boleh membaca pertanyaan dari buku.",
         "standar": "Tanya tiga teman dengan kedua pertanyaanmu tanpa membaca buku. Beri tanda di lembar tally untuk setiap jawaban.",
         "tantangan": "Tanya empat teman. Setelah teman menjawab, tambahkan informasimu sendiri: I like chess too. I can play chess. Lalu beri tanda di lembar tally."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tanya empat teman. Setelah teman menjawab, tambahkan informasimu sendiri: I like chess too. I can play chess. Lalu beri tanda di lembar tally.",
+        "perlu_bantuan": "Tanya dua teman menggunakan satu pertanyaan Do you like dari buku catatan. Beri tanda di lembar tally untuk setiap jawaban. Boleh membaca pertanyaan dari buku."
       }
     },
     "share": {
@@ -519,6 +527,10 @@ const skenario = {
         "mudah": "Tulis dan baca satu kalimat laporan: blank friends like blank. Misalnya: Two friends like drawing.",
         "standar": "Tulis dua kalimat laporan — satu dengan like dan satu dengan can play. Baca keduanya ke kelompok.",
         "tantangan": "Tulis kalimat laporan untuk setiap pertanyaan yang kamu tanyakan, gunakan blank friends like atau most friends can play. Baca laporan lengkapmu ke kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis kalimat laporan untuk setiap pertanyaan yang kamu tanyakan, gunakan blank friends like atau most friends can play. Baca laporan lengkapmu ke kelompok.",
+        "perlu_bantuan": "Tulis dan baca satu kalimat laporan: blank friends like blank. Misalnya: Two friends like drawing."
       }
     },
     "check": {

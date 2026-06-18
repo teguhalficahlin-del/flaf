@@ -304,6 +304,10 @@
         "mudah": "Lengkapi tiga kolom: Name: blank, Class: blank, Number: blank.",
         "standar": "Lengkapi seluruh formulir: Name, Class, Number, Address, Membership, Favorite Club.",
         "tantangan": "Lengkapi seluruh formulir dan tambahkan satu kalimat pendapat: My favorite club is blank because blank."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Lengkapi seluruh formulir dan tambahkan satu kalimat pendapat: My favorite club is blank because blank.",
+        "perlu_bantuan": "Lengkapi tiga kolom: Name: blank, Class: blank, Number: blank."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Bacakan tiga kolom formulir pasangan dengan keras: Name: blank, Class: blank, Number: blank.",
         "standar": "Bacakan semua kolom formulir pasangan dengan keras, lalu sebutkan satu fakta dari formulir tersebut — misalnya klub favorit pasangan.",
         "tantangan": "Bacakan seluruh formulir pasangan, dan periksa tidak ada kolom yang kosong."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bacakan seluruh formulir pasangan, dan periksa tidak ada kolom yang kosong.",
+        "perlu_bantuan": "Bacakan tiga kolom formulir pasangan dengan keras: Name: blank, Class: blank, Number: blank."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Bacakan tiga kolom formulir terisi ke kelompok baru.",
         "standar": "Bacakan semua kolom formulir terisi ke kelompok.",
         "tantangan": "Bacakan seluruh formulir, dan jawab satu pertanyaan dari kelompok tentang salah satu kolom."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bacakan seluruh formulir, dan jawab satu pertanyaan dari kelompok tentang salah satu kolom.",
+        "perlu_bantuan": "Bacakan tiga kolom formulir terisi ke kelompok baru."
       }
     },
     "check": {

@@ -312,6 +312,10 @@
         "mudah": "Gunakan kerangka dan lengkapi: \"In the end, ___ because ___. From that day on, ___. The story shows that ___.\" Boleh gunakan papan cerita.",
         "standar": "Tulis ketiga kalimat penyelesaian tanpa membaca.",
         "tantangan": "Tulis ketiga kalimat penyelesaian dan tambahkan satu kalimat tentang pesan yang ingin dibagikan oleh para tokoh kepada orang lain."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis ketiga kalimat penyelesaian dan tambahkan satu kalimat tentang pesan yang ingin dibagikan oleh para tokoh kepada orang lain.",
+        "perlu_bantuan": "Gunakan kerangka dan lengkapi: \"In the end, ___ because ___. From that day on, ___. The story shows that ___.\" Boleh gunakan papan cerita."
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Baca penyelesaianmu ke pasangan. Pasangan tunjuk \"In the end\", \"From that day on\", dan \"The story shows\" dalam teksmu.",
         "standar": "Bagikan penyelesaianmu tanpa membaca. Pasangan periksa ketiga bagian ada.",
         "tantangan": "Bagikan penyelesaianmu dan pasangan tanya \"What message did the characters want to share?\" — kamu jawab dalam satu kalimat lagi."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan penyelesaianmu dan pasangan tanya \"What message did the characters want to share?\" — kamu jawab dalam satu kalimat lagi.",
+        "perlu_bantuan": "Baca penyelesaianmu ke pasangan. Pasangan tunjuk \"In the end\", \"From that day on\", dan \"The story shows\" dalam teksmu."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Baca penyelesaian ceritamu ke kelompok.",
         "standar": "Presentasikan penyelesaian ceritamu tanpa membaca.",
         "tantangan": "Presentasikan penyelesaian ceritamu, lalu jawab satu pertanyaan dari kelompok tentang tema atau perubahan yang bertahan."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan penyelesaian ceritamu, lalu jawab satu pertanyaan dari kelompok tentang tema atau perubahan yang bertahan.",
+        "perlu_bantuan": "Baca penyelesaian ceritamu ke kelompok."
       }
     },
     "check": {

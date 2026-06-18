@@ -296,6 +296,10 @@
         "mudah": "Pilih satu foto dan lengkapi: Last weekend, I blank (visited, played, cooked) blank.",
         "standar": "Tulis dua kalimat tentang outing nyata di masa lalu — masing-masing diawali ungkapan waktu dan menggunakan kata kerja lampau.",
         "tantangan": "Tulis dua kalimat ungkapan waktu, lalu tambahkan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pertahankan dua kalimat utama sebagai bagian utama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua kalimat ungkapan waktu, lalu tambahkan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pertahankan dua kalimat utama sebagai bagian utama.",
+        "perlu_bantuan": "Pilih satu foto dan lengkapi: Last weekend, I blank (visited, played, cooked) blank."
       }
     },
     "interact": {
@@ -363,6 +367,10 @@
         "mudah": "Ceritakan satu kalimat outing masa lalu dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons.",
         "standar": "Ceritakan dua kalimat outing masa lalu tanpa membaca. Dengarkan dan ingat satu hal yang dilakukan pasangan.",
         "tantangan": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pasangan melakukan hal yang sama."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pasangan melakukan hal yang sama.",
+        "perlu_bantuan": "Ceritakan satu kalimat outing masa lalu dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons."
       }
     },
     "share": {
@@ -422,6 +430,10 @@
         "mudah": "Ceritakan satu atau dua kalimat outing masa lalu ke kelompok baru — boleh membaca.",
         "standar": "Ceritakan outing masa lalumu ke kelompok baru tanpa membaca.",
         "tantangan": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau, lalu dengarkan dan ingat satu hal yang dilakukan setiap teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau, lalu dengarkan dan ingat satu hal yang dilakukan setiap teman.",
+        "perlu_bantuan": "Ceritakan satu atau dua kalimat outing masa lalu ke kelompok baru — boleh membaca."
       }
     },
     "check": {

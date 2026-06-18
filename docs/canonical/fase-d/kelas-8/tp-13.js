@@ -312,6 +312,10 @@
         "mudah": "Gunakan perbandingan foto dan lengkapi: \"I believe ___ because ___. For example, ___.\"",
         "standar": "Tulis posisimu sendiri dengan satu alasan dan satu contoh (\"I believe ... because ... For example, ...\").",
         "tantangan": "Mulai dengan mengingat kembali kesepakatan kelompok (\"I agree that the canteen should ...\"), lalu nyatakan posisimu sendiri dengan alasan dan \"For example, ...\""
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai dengan mengingat kembali kesepakatan kelompok (\"I agree that the canteen should ...\"), lalu nyatakan posisimu sendiri dengan alasan dan \"For example, ...\"",
+        "perlu_bantuan": "Gunakan perbandingan foto dan lengkapi: \"I believe ___ because ___. For example, ___.\""
       }
     },
     "interact": {
@@ -375,6 +379,10 @@
         "mudah": "Presentasikan posisi dan alasan (boleh membaca); pasangan periksa apakah ada \"For example, ...\" Lalu tukar peran.",
         "standar": "Presentasikan posisi lengkap dengan contoh tanpa membaca; pasangan sebutkan contohnya. Lalu tukar peran.",
         "tantangan": "Ingat kembali kesepakatan kelompok, lalu nyatakan posisi dengan alasan dan contoh; pasangan lakukan hal yang sama. Lalu tukar peran."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Ingat kembali kesepakatan kelompok, lalu nyatakan posisi dengan alasan dan contoh; pasangan lakukan hal yang sama. Lalu tukar peran.",
+        "perlu_bantuan": "Presentasikan posisi dan alasan (boleh membaca); pasangan periksa apakah ada \"For example, ...\" Lalu tukar peran."
       }
     },
     "share": {
@@ -434,6 +442,10 @@
         "mudah": "Presentasikan posisi dan alasanmu ke kelompok. Boleh membaca.",
         "standar": "Presentasikan posisi lengkap dengan contoh tanpa membaca.",
         "tantangan": "Presentasikan posisimu, lalu jawab satu pertanyaan tentang alasan atau contohmu dari kelompok."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Presentasikan posisimu, lalu jawab satu pertanyaan tentang alasan atau contohmu dari kelompok.",
+        "perlu_bantuan": "Presentasikan posisi dan alasanmu ke kelompok. Boleh membaca."
       }
     },
     "check": {

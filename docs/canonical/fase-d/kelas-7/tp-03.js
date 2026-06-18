@@ -353,6 +353,10 @@
         "mudah": "Pilih satu kegiatan dan tulis satu undangan beserta satu respons: Let's blank. Sure. Atau: Shall we go to the blank? Sorry, I can't.",
         "standar": "Tulis dua pertukaran pendek — satu yang diterima dengan Sure dan satu yang ditolak dengan Sorry, I can't. Gunakan Let's di satu pertukaran dan Shall we di pertukaran lainnya.",
         "tantangan": "Tulis dua pertukaran. Mulai setiap pertukaran dengan pertanyaan Do you like terlebih dahulu sebelum mengundang, seperti: Do you like cycling? Yes, I do. Let's go cycling this weekend! Setelah undangan diterima, tambahkan satu kalimat I like. Sertakan satu yang diterima dan satu yang ditolak."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tulis dua pertukaran. Mulai setiap pertukaran dengan pertanyaan Do you like terlebih dahulu sebelum mengundang, seperti: Do you like cycling? Yes, I do. Let's go cycling this weekend! Setelah undangan diterima, tambahkan satu kalimat I like. Sertakan satu yang diterima dan satu yang ditolak.",
+        "perlu_bantuan": "Pilih satu kegiatan dan tulis satu undangan beserta satu respons: Let's blank. Sure. Atau: Shall we go to the blank? Sorry, I can't."
       }
     },
     "interact": {
@@ -424,6 +428,10 @@
         "mudah": "Gunakan pertukaran dari buku catatan sebagai naskah. Partner A mengundang, Partner B merespons, lalu tukar. Boleh membaca dari buku.",
         "standar": "Role play tanpa membaca buku. Lakukan minimal dua pertukaran masing-masing, sehingga kedua partner pernah mendapat Sure dan Sorry, I can't.",
         "tantangan": "Mulai setiap role play dengan pertanyaan Do you like terlebih dahulu, lalu undang. Setelah undangan diterima, tambahkan I like. Tukar peran dan pastikan satu pertukaran ditolak dengan Sorry, I can't."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Mulai setiap role play dengan pertanyaan Do you like terlebih dahulu, lalu undang. Setelah undangan diterima, tambahkan I like. Tukar peran dan pastikan satu pertukaran ditolak dengan Sorry, I can't.",
+        "perlu_bantuan": "Gunakan pertukaran dari buku catatan sebagai naskah. Partner A mengundang, Partner B merespons, lalu tukar. Boleh membaca dari buku."
       }
     },
     "share": {
@@ -487,6 +495,10 @@
         "mudah": "Tampilkan role play dari langkah INTERACT ke kelompok baru. Boleh membaca naskah.",
         "standar": "Tampilkan role play ke kelompok baru tanpa membaca.",
         "tantangan": "Tampilkan role play, lalu lakukan satu pertukaran tambahan dengan kegiatan berbeda di depan kelompok baru — sertakan satu yang diterima dan satu yang ditolak."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tampilkan role play, lalu lakukan satu pertukaran tambahan dengan kegiatan berbeda di depan kelompok baru — sertakan satu yang diterima dan satu yang ditolak.",
+        "perlu_bantuan": "Tampilkan role play dari langkah INTERACT ke kelompok baru. Boleh membaca naskah."
       }
     },
     "check": {

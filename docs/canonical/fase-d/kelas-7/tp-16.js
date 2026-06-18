@@ -312,6 +312,10 @@ const skenario = {
         "mudah": "Lengkapi tiga kalimat penutup: After that, blank. At the end, blank. I learned blank. Jaga setiap kalimat tetap singkat.",
         "standar": "Tulis dua kalimat penutup (After that dan At the end) dan satu I learned yang singkat dan konkret.",
         "tantangan": "Awali dengan tanggapan perasaan: It was tiring because we worked hard. Lalu tulis penutup dan satu I learned singkat."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Awali dengan tanggapan perasaan: It was tiring because we worked hard. Lalu tulis penutup dan satu I learned singkat.",
+        "perlu_bantuan": "Lengkapi tiga kalimat penutup: After that, blank. At the end, blank. I learned blank. Jaga setiap kalimat tetap singkat."
       }
     },
     "interact": {
@@ -363,6 +367,10 @@ const skenario = {
         "mudah": "Bagikan penutupmu dari buku catatan ke lingkaran — boleh membaca — akhiri dengan satu I learned singkat.",
         "standar": "Bagikan penutupmu tanpa membaca, akhiri dengan I learned singkat. Dengarkan pembelajaran setiap teman.",
         "tantangan": "Tambahkan tanggapan perasaan terlebih dahulu, lalu penutup dan I learned. Dengarkan dan ingat satu pembelajaran milik teman."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Tambahkan tanggapan perasaan terlebih dahulu, lalu penutup dan I learned. Dengarkan dan ingat satu pembelajaran milik teman.",
+        "perlu_bantuan": "Bagikan penutupmu dari buku catatan ke lingkaran — boleh membaca — akhiri dengan satu I learned singkat."
       }
     },
     "share": {
@@ -422,6 +430,10 @@ const skenario = {
         "mudah": "Bagikan dua kalimat penutup dan satu I learned singkat ke lingkaran baru — boleh membaca.",
         "standar": "Bagikan penutupmu tanpa membaca.",
         "tantangan": "Bagikan tanggapan perasaan, penutup, dan I learned, lalu tanggapi satu pembelajaran teman dengan That's true. Atau I agree."
+      },
+      "diferensiasi_baru": {
+        "sudah_bisa": "Bagikan tanggapan perasaan, penutup, dan I learned, lalu tanggapi satu pembelajaran teman dengan That's true. Atau I agree.",
+        "perlu_bantuan": "Bagikan dua kalimat penutup dan satu I learned singkat ke lingkaran baru — boleh membaca."
       }
     },
     "check": {
