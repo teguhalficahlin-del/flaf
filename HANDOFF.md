@@ -264,3 +264,93 @@ semua pekerjaan adalah konten skenario, bukan PWA)
 - skenario-7-01.txt adalah anchor kualitas — tidak diubah
 - Renderer PWA dibangun ulang setelah semua 66 skenario selesai
 - Review dilakukan ChatGPT satu TP per sesi — bukan batch
+
+---
+
+## Sprint Renderer Skenario Fase D (18 Juni 2026)
+
+### Status
+SW aktif: flaf-v251
+
+### Pekerjaan Sprint Ini
+Konversi 66 skenario .txt ke field skenario{} di TP .js,
+dan build renderer PWA paralel di sesi-runtime-smp.js.
+
+### Tahap 1 — Generate & Review Skenario Kelas 8 dan 9
+- Kelas 8: 24/24 skenario LOLOS review ChatGPT langsung
+  (tanpa revisi) — prompt K-01+C-01 terbukti efektif
+- Kelas 9: 18/18 skenario direvisi sistematis —
+  pola gagal: F-07 (darurat), K-01+C-01 (UCAP MODEL),
+  F-03 (em-dash) di seluruh 18 TP
+- Total skenario final: 66/66 (K7+K8+K9)
+
+### Tahap 2 — Konversi .txt ke skenario{}
+- Jalur arsitektur dipilih: Jalur B (inject ke TP .js,
+  bukan parse .txt di runtime)
+- tools/convert-skenario-fase-d.js — konverter Node.js
+- tools/fix-emdash-ucap.js — fix TTS safety (122 baris)
+- tools/validate-skenario-fase-d.js — validator VR-S1–S17
+- Hasil: 66/66 TP .js punya skenario{}, VR-S1–S17 LOLOS
+- Anomali ditangani: label REPEAT variant
+  (Kalimat/Pertukaran/Instruksi/Bagian/Flyer)
+  — fix via regex generik /^\*\*\w+ \d+/
+
+### Schema skenario{} (final)
+persiapan: { papan_tulis, kartu, instruksi[] }
+siapkan_kelas: { settling[], hook[] }
+langkah: {
+  model:   { durasi_menit, intro, instruksi[] }
+  repeat:  { durasi_menit, intro, kalimat[], instruksi_penutup[] }
+  change:  { durasi_menit, intro, instruksi[], diferensiasi{} }
+  interact:{ durasi_menit, intro, instruksi[], diferensiasi{} }
+  share:   { durasi_menit, intro, instruksi[], diferensiasi{} }
+  check:   { durasi_menit, intro, instruksi[],
+             jalur_lancar[], jalur_belum_lancar[] }
+  boost:   { durasi_menit, intro, untuk_kesulitan[],
+             untuk_lancar[], cue_sisa }
+}
+Instruksi = { tipe: AKSI|UCAP|bantuan|darurat|cue, teks }
+
+### Tahap 3 — Renderer PWA
+- screens/sesi-runtime-smp.js — +227 baris
+- sesi-runtime-smp.css — +223 baris
+- Arsitektur paralel: gate di _renderStep() —
+  jika skenario{} ada → renderer baru,
+  jika tidak → runtime[] lama (fallback tetap berjalan)
+- State baru: skenarioMode, repeatKalimatIndex, checkJalur
+- REPEAT: navigasi per kalimat dengan counter
+- CHECK: dua jalur eksplisit (Lancar → BOOST, Ragu → remedial)
+- Bantuan/darurat: collapsed default via <details>
+- TTS: tombol 🔊 per UCAP via smp-tts-btn yang sudah ada
+- Window exposure: _skenarioRepeatNav, _skenarioCheckJalur,
+  _nextStep, _endSesi — diperlukan karena ES module scope
+- Test Playwright: 7/7 PASS, 0 console error
+
+### Commit Log Sprint Ini
+| SHA | Pesan |
+|---|---|
+| d11fbd4 | feat(skenario): add 66 teaching scenario txt files |
+| 422668f | feat(fase-d): inject skenario{} field into 66 TP js files |
+| 5bf62d2 | feat(renderer): add skenario renderer to sesi-runtime-smp |
+| f8c6765 | chore(sw): bump to flaf-v251 |
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+- Jalur B (inject ke .js) dipilih atas Jalur A (parse .txt
+  di runtime) — konsisten dengan arsitektur offline-first FLAF
+- Renderer paralel, bukan replace — runtime[] lama tetap ada
+  sebagai fallback sampai renderer baru stabil di lapangan
+- Bantuan/darurat collapsed default — guru di depan kelas
+  butuh layar fokus, bukan semua teks sekaligus
+- REPEAT per kalimat — guru butuh pause antar kalimat,
+  konsisten dengan TTS per kalimat yang sudah ada
+- onclick= inline + window exposure — konsisten dengan
+  pola yang sudah ada di runtime SMP (addEventListener
+  untuk interaksi kompleks, onclick untuk navigasi sederhana)
+
+### Backlog Sprint Berikutnya
+1. Sprint A — validasi lapangan 3-5 TP sampel (prioritas)
+2. Desain kurikulum Fase D proper — meta/cp untuk
+   placeholder di kurikulum.js
+3. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
+4. Hapus runtime[] lama dari sesi-runtime-smp.js setelah
+   renderer baru stabil di lapangan (Sprint E)
