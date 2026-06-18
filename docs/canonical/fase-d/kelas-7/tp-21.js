@@ -1,3 +1,570 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Once there was (character) near (place).\nThere was (setting) around (place).",
+    "kartu": "Siapkan kartu latar — kolam yang tenang dengan hutan kecil di sekitarnya.",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas dengan nada hangat dan penuh cerita."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning, storytellers! Get comfortable, we have a story to enter today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa duduk nyaman dan siap mendengarkan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever seen a firefly glow in the dark? What was it like?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunjukkan kartu bergambar cerita — kunang-kunang bersinar di dekat kolam malam hari."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this picture. What do you think the little firefly is thinking?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk balon pikiran di kartu tokoh dan tanya \"What does the firefly want?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kartu di tempat terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we open a story about this little firefly."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Buka kedua tangan seperti membuka buku cerita."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Once there was a small firefly near a quiet pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu tokoh kunang-kunang — lalu tunjuk kartu latar kolam."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka kedua tangan seperti membuka buku cerita."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There was a little forest around the pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu latar hutan di sekitar kolam."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gerakan berkilau kecil dengan jari-jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was tiny and bright."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu tokoh."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan dekat pelipis — gestur bermimpi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The firefly dreamed of finding bright friends."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk balon pikiran di kartu tokoh."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat pembuka cerita — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buka kedua tangan seperti membuka buku cerita — tunjuk kartu tokoh dan kartu latar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Once there was a small firefly near a quiet pond."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buka kedua tangan — tunjuk kartu latar hutan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "There was a little forest around the pond."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan dekat pelipis — tunjuk balon pikiran."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "The firefly dreamed of finding bright friends."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own story opening."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — buka kedua tangan dan minta siswa baca bersama: Once there was a blank near a blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pembuka cerita mereka sendiri dengan mengganti tokoh dan latar. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu tokoh dan kartu latar di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own story opening. Choose a character and a place."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use: Once there was blank near blank. Then: There was blank around blank. Use past tense: there was, it was. Not: There is. Not: I am."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menggunakan present tense (There is) atau perkenalan diri (I am), dan ingatkan: \"Story. Past tense. Once there was blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu hewan apa yang ingin dipilih — tunjuk kartu tokoh di papan tulis dan minta siswa pilih satu: a small rabbit, a tiny bird, a little frog."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, buka kedua tangan, dan ucapkan \"Once there was a blank. An animal. Near a blank. A place.\" Tunggu siswa menjawab dan bantu tulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kartu tokoh dan satu kartu tempat, lalu lengkapi: Once there was a blank near a blank.",
+        "standar": "Tulis dua kalimat pembuka cerita: Once there was blank near blank. There was blank around blank.",
+        "tantangan": "Tulis pembuka, tambahkan satu deskripsi tokoh bentuk lampau: It was blank and blank. Dan tambahkan mimpi tokoh: It dreamed of blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A menceritakan pembuka ceritanya ke Siswa B: Once there was a small firefly near a quiet pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan menyebutkan tokoh dan tempat yang diingat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B menceritakan pembuka ceritanya ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Take turns. Tell your story opening to your partner. Your partner listens and remembers the character and place. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bercerita dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa menggunakan Once there was atau There was dalam past tense."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — buka kedua tangan ke arah pasangan dan ucapkan \"Once there was a blank. What is your character?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menggunakan There is atau I am — ingatkan dengan gestur buka buku cerita: \"Story. Past tense. Once there was blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa tambahkan deskripsi tokoh atau mimpi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan satu kalimat pembuka dari buku catatan — boleh membaca. Pasangan mendengarkan dan menyebutkan tokoh atau tempatnya.",
+        "standar": "Ceritakan dua kalimat pembuka tanpa membaca. Pasangan melakukan hal yang sama.",
+        "tantangan": "Ceritakan pembuka dengan deskripsi dan mimpi tokoh. Pasangan melakukan hal yang sama, lalu menyebutkan nama tokoh dan tempat milik partner."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Tell your story opening to the new group. Once there was blank. There was blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok bercerita."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah past tense digunakan secara konsisten."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — buka kedua tangan ke arahnya dan minta siswa mulai dengan \"Once there was a blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menggunakan present tense — tunjuk pola di papan tulis dan ucapkan \"Past tense. Once there was. It was.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan satu kalimat pembuka ke kelompok baru — boleh membaca.",
+        "standar": "Ceritakan dua kalimat pembuka ke kelompok baru tanpa membaca.",
+        "tantangan": "Ceritakan pembuka dengan deskripsi dan mimpi, lalu dengarkan dan ingat tokoh setiap teman."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open a story for me. Once there was blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat pembuka."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan Once there was atau There was dalam past tense? Apakah ada tokoh dan latar?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your second sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menceritakan pembuka cerita dengan lancar tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu tokoh dan kartu latar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka kedua tangan — ucapkan dua kalimat pembuka sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka kedua tangan perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Once there was a small firefly near a quiet pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka kedua tangan lagi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There was a little forest around the pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan Once there was dan There was sebagai pembuka cerita past tense."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Long ago, there was a small firefly near a quiet pond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Long ago adds time to the opening. Now you try. Give me one opening with Long ago. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Long ago, there was blank.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua kalimat pembuka cerita tanpa membaca, atau menambahkan satu deskripsi tokoh bentuk lampau di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +740,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

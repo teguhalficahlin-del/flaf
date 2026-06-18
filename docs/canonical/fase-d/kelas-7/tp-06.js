@@ -1,3 +1,571 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "It is (adjective) and (adjective).\nIt is (adjective) but (adjective).",
+    "kartu": "Siapkan dua kartu penghubung — kartu and yang menggabungkan dua kata sifat serasi, dan kartu but yang menggabungkan dua kata sifat kontras.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan empat foto jajanan sehat di meja guru — apel, pisang, stik wortel, dan segelas yogurt — semuanya terlihat segar."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon rasa dan tekstur — kubus gula untuk sweet, biskuit kering untuk crunchy, daun untuk healthy atau fresh, mulut tersenyum untuk tasty."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning, friends! Are you ready to learn today?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Atur kelas agar siswa fokus ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "AKSI",
+        "teks": "Tunjukkan keempat foto jajanan satu per satu kepada kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these snacks. An apple, a banana, carrot sticks, and yogurt."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "What words can you use to describe them? Sweet? Crunchy? Fresh?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab. Jika tidak ada yang merespons dalam lima detik — tunjuk foto apel dan gigit perlahan sambil berkata \"Mmm, is it sweet?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan foto di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today let us learn how to describe snacks with two words in one sentence."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat foto apel — kaitkan jari kedua tangan bersama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is sweet and crunchy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon gula dan ikon biskuit secara bergantian."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Miring satu tangan ke atas dan tangan lainnya ke bawah — gesture kontras kecil."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is healthy but sour."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon daun, lalu tunjuk jari kelingking sebagai isyarat \"kecil\"."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan foto apel. Angkat foto pisang — kaitkan jari kedua tangan bersama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is fresh and tasty."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua foto dan ikon."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Foto dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat foto apel — kaitkan jari kedua tangan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is sweet and crunchy."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tetap pegang foto apel — miring satu tangan ke atas dan tangan lainnya ke bawah."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is healthy but sour."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat foto pisang — kaitkan jari kedua tangan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is fresh and tasty."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua foto."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write about your own snack."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan minta siswa membaca bersama sekali lagi: It is blank and blank. It is blank but blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa memilih satu foto jajanan dan menulis kalimat deskripsi dengan menggabungkan dua kata sifat. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel keempat foto jajanan di papan tulis di sebelah pola. Tempel juga ikon rasa dan tekstur, serta kartu penghubung and dan but."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Choose a snack photo. Write sentences about it using and or but."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use and for matching features, like sweet and crunchy. Use but for contrasting features, like healthy but small."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung memilih and atau but — tunjuk kartu penghubung di papan tulis dan tanya \"Do the two words match, or are they different?\" Bantu siswa memutuskan."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk foto apel dan ikon gula, dan ucapkan \"It is sweet and blank.\" Tunggu siswa melengkapi dan menulis, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu foto jajanan dan lengkapi satu kalimat: It is blank and blank. Gunakan dua kata sifat dari ikon di papan tulis.",
+        "standar": "Tulis dua kalimat tentang jajanan — satu menggunakan and dan satu menggunakan but: It is blank and blank. It is blank but blank.",
+        "tantangan": "Tulis dua kalimat gabungan, dan tambahkan satu baris ringkasan sebelumnya: It is a blank. It looks blank. Pertahankan kalimat gabungan It is blank and/but blank sebagai bagian utama."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A memegang foto jajanannya dan membacakan kalimat gabungannya ke Siswa B."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan memperhatikan kata sifat mana yang digabungkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendeskripsikan jajanannya ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa menggunakan and dan but dengan tepat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk foto jajanan siswa dan minta siswa ucapkan \"It is\" diikuti satu kata sifat pertama."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan deskripsinya sekali lagi tanpa melihat buku."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Deskripsikan jajananmu menggunakan satu kalimat gabungan dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan jajanannya.",
+        "standar": "Deskripsikan jajananmu tanpa membaca, menggunakan satu kalimat and dan satu kalimat but. Pasangan melakukan hal yang sama.",
+        "tantangan": "Mulai dengan ringkasan terlebih dahulu: It is a blank. It looks blank. Lalu berikan dua kalimat gabungan. Pasangan melakukan hal yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Hold up your snack photo and describe it to the new group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is blank and blank. Or: It is blank but blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah siswa menggunakan and dan but dengan benar."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk foto jajanannya dan minta siswa ucapkan \"It is\" diikuti satu kata sifat saja untuk memulai."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak membedakan and dan but — tunjuk kartu penghubung di papan tulis dan minta siswa periksa apakah dua kata sifatnya cocok atau kontras."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Angkat foto jajananmu dan ucapkan satu kalimat gabungan ke kelompok baru — boleh membaca.",
+        "standar": "Angkat foto dan deskripsikan tanpa membaca, menggunakan satu kalimat and dan satu kalimat but.",
+        "tantangan": "Angkat foto, tambahkan ringkasan terlebih dahulu, lalu berikan dua kalimat gabungan."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto pisang di papan tulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe this banana. Use and or but. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat gabungan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggabungkan dua kata sifat dalam satu kalimat It is?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your but sentence. About any snack."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan but untuk menghubungkan dua sifat yang kontras?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali foto apel."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua kalimat gabungan sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat foto apel — kaitkan jari kedua tangan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. It is sweet and crunchy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Miring satu tangan ke atas dan tangan lainnya ke bawah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now: It is healthy but small."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan perbedaan gesture and dan but."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is fresh, sweet, and crunchy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Three words in one sentence, using and. Just one sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different snack.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang kalimat gabungan tanpa melihat buku, atau menulis deskripsi jajanan kedua di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -177,5 +745,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

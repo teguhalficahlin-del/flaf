@@ -1,3 +1,603 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "I learned ___.\nbecause ___.\nFrom this experience, I realized ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu alur refleksi tiga tahap (Learning process → Key moment → What I realized), kartu kerangka refleksi tiga slot berlabel (I learned / because / From this experience, I realized), dan kartu ikon (jurnal dengan halaman terbuka, kaca pembesar di atas dokumen sumber berlapis, figur dengan tanda panah ke atas).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Berikan waktu tenang sejenak sebelum memulai refleksi."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Today we turn inward, to reflect on our own learning."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Think back to when we analyzed evidence, identified a problem, and proposed a solution. What did you actually learn?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu alur refleksi — tunjuk tiga tahap secara berurutan: Learning process, Key moment, What I realized."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this reflection arc. Where did you experience the biggest shift in your thinking?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to reflect on a learning experience and construct personal meaning from it."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu kerangka refleksi — letakkan tangan di dada."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned that finding evidence is not always straightforward because different sources do not always say the same thing, and deciding which to trust takes careful thinking."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Susuri tanda panah kausal di antara dua kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned that the learning process takes patience because each step, including analyzing, evaluating, and presenting, builds on the one before, and skipping a step makes the next one harder."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — buka satu telapak tangan ke luar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "From this experience, I realized that personal growth often happens when something is difficult at first but becomes clearer through practice and honest reflection."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu — letakkan tangan di dada, susuri panah, buka telapak tangan ke luar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned that combining evidence from different sources helps me understand a problem more deeply because no single source tells the complete story. From this experience, I realized that my learning process has changed. I now think more carefully before drawing conclusions, and this kind of personal growth was something I did not expect."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan di depan badan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka refleksi — letakkan tangan di dada."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I learned that finding evidence is not always straightforward because different sources do not always say the same thing, and deciding which to trust takes careful thinking."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Susuri tanda panah kausal di antara dua kartu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I learned that the learning process takes patience because each step, including analyzing, evaluating, and presenting, builds on the one before, and skipping a step makes the next one harder."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu kerangka — buka satu telapak tangan ke luar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "From this experience, I realized that personal growth often happens when something is difficult at first but becomes clearer through practice and honest reflection."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada, susuri panah, buka telapak tangan ke luar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I learned that combining evidence from different sources helps me understand a problem more deeply because no single source tells the complete story. From this experience, I realized that my learning process has changed. I now think more carefully before drawing conclusions, and this kind of personal growth was something I did not expect."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own personal learning reflection."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu alur refleksi dan bedakan: \"I learned = what I understood. Because = why it matters to ME personally. I realized = something new I now see.\" Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis refleksi pembelajaran personal mereka sendiri tentang pengalaman menganalisis bukti, mengidentifikasi masalah, dan mengusulkan solusi. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Think about your experience in the last two clusters. Write what you learned, why it matters to you, and what you realized."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I realized must add something new, not a repetition of I learned."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menceritakan peristiwa (\"First we read sources, then we identified problems\") bukan merefleksikan makna, atau yang menggunakan I realized sebagai pengulangan I learned."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membedakan refleksi dari recount peristiwa — tunjuk kartu alur refleksi dan minta siswa bertanya: \"What did I UNDERSTAND — not what happened, but what changed in how I think?\" Jawaban itu adalah kalimat I learned."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk slot I learned di kerangka, dan minta siswa ucapkan \"I learned that\" lalu satu hal spesifik yang dipahami. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka refleksi tiga slot. Untuk I learned, pikirkan satu momen dari dua kluster terakhir ketika sesuatu menjadi jelas bagimu.",
+        "standar": "Tulis refleksimu sendiri tanpa membaca kerangka. Pastikan because menjelaskan MENGAPA kamu merasa itu bermakna, bukan hanya APA yang terjadi.",
+        "tantangan": "Tulis refleksi dan buat From this experience, I realized mengatakan sesuatu yang melampaui I learned — wawasan lebih dalam tentang dirimu sebagai pelajar, bukan hanya tentang topiknya."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan refleksinya ke Siswa B. Siswa B mendengarkan dan memeriksa: apakah because adalah alasan personal, bukan sekadar cerita apa yang terjadi? apakah I realized menambahkan sesuatu yang baru melampaui I learned?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B melakukan hal yang sama ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your turn. After your partner shares, give one piece of genuine feedback. Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — pastikan sebagian besar pasangan sudah menghasilkan perbedaan nyata antara I learned dan I realized."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk pola pertama di papan tulis dan minta siswa ucapkan \"I learned that\" lalu satu hal."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan refleksinya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas menulis refleksi. Tunjuk pola I learned, because, From this experience I realized di papan tulis, minta seluruh kelas mengucapkan ketiga komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca refleksimu ke pasangan. Pasangan menunjuk \"I learned\", \"because\", dan \"I realized\" dalam teksmu dan menyebut satu hal yang ditemukan menarik.",
+        "standar": "Bagikan refleksimu tanpa membaca. Pasangan memeriksa apakah ketiga langkah berbeda dan apakah because bersifat personal, bukan hanya deskriptif.",
+        "tantangan": "Bagikan refleksimu dan pasangan bertanya: \"What would you do differently now, knowing what you realized?\" — kamu jawab dengan satu perubahan spesifik."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns sharing your reflection. After each person, one group member says which realization surprised them most."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"I learned that\" lalu satu hal. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan refleksinya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bagikan refleksimu ke kelompok baru menggunakan catatan.",
+        "standar": "Bagikan refleksimu tanpa membaca.",
+        "tantangan": "Bagikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Is what you realized specific to this project, or does it apply to how you learn in general?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your I learned sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyatakan sesuatu yang dipahami, atau menceritakan apa yang terjadi?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your From this experience, I realized sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah I realized menambahkan wawasan baru melampaui I learned, atau sekadar pengulangan?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu alur refleksi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan antara \"what happened\" (event) dan \"what I understood\" (learning) dan \"what I now see differently\" (realization)."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat From this experience, I realized dari model kalimat 3 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan antara peristiwa dan makna menggunakan kartu alur refleksi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned that, this is WHAT I understood, not what happened. Because, this is WHY it matters to ME personally. I realized, this is something new I see about myself or learning that I did not see before. These are three different moves."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan satu refleksi lagi tentang pengalaman belajar berbeda — misalnya pertama kali presentasi di depan kelompok — menggunakan pola tiga langkah yang sama. Minta siswa mengikuti."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat From this experience, I realized dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding a forward-looking sentence. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "What I will carry with me from this experience is the habit of asking for evidence before I accept an argument, because I now understand that personal growth starts with careful thinking."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add What I will carry with me from this experience is after your own I realized sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That turns your reflection into an intention — the beginning of forward-looking reflection.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka ucapkan refleksi lengkap mereka tanpa melihat buku, atau perkuat kalimat because dengan satu alasan personal yang lebih spesifik tentang mengapa pengalaman itu bermakna."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +772,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

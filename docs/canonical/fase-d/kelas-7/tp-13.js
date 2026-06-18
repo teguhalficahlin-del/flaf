@@ -1,3 +1,567 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Yesterday, (past event).\nLast (weekend / Sunday), (past event).",
+    "kartu": "Siapkan kartu ungkapan waktu dengan kalender menunjuk hari lampau — Yesterday, Last weekend, Last Sunday.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan urutan foto piknik keluarga di meja guru — keluarga tiba di taman, makan piknik di atas tikar, bermain bersama."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon tindakan lampau berlabel -ed — visited dengan jejak kaki ke taman, played dengan bola, cooked dengan panci berisi makanan."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas dengan nada hangat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning! How was your weekend, everyone?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Biarkan satu atau dua siswa menjawab singkat sebelum melanjutkan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Has your family ever gone somewhere together last weekend? Where did you go?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan urutan foto piknik keluarga satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these family photos. What happened here, do you think?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk foto keluarga tiba di taman dan tanya \"Where is this family going?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan foto tetap terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to talk about something that already happened."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke belakang melewati bahu — gestur masa lalu. Tunjuk kartu Last weekend."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Last weekend, my family visited the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon visited dengan jejak kaki ke taman."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke belakang melewati bahu. Tunjuk kartu Yesterday."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Yesterday, we played games and enjoyed a picnic."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan bermain dengan bola — lalu peragakan makan piknik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke belakang melewati bahu. Tunjuk kartu Last Sunday."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Last Sunday, my family cooked food together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan memasak."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ke belakang melewati bahu — tunjuk kartu Last weekend."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Last weekend, my family visited the park."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ke belakang melewati bahu — tunjuk kartu Yesterday. Peragakan bermain."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Yesterday, we played games and enjoyed a picnic."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ke belakang melewati bahu — tunjuk kartu Last Sunday. Peragakan memasak."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Last Sunday, my family cooked food together."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write about your own outing."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu ungkapan waktu dan ikon tindakan lampau. Minta siswa baca bersama: Yesterday, blank. Last weekend, blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis kalimat pengalaman masa lalu mereka sendiri dengan mengganti ungkapan waktu dan peristiwa. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu ungkapan waktu dan ikon tindakan lampau di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write about your own past outing. Use a time expression: Yesterday, or Last weekend, or Last Sunday."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use past-tense verbs: visited, played, enjoyed, cooked, walked. Do not use present tense. Do not say will."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis present tense seperti visit atau play, dan ingatkan gestur tunjuk ke belakang: \"Past tense. Visited. Played.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu outing mana yang ingin diceritakan — tunjuk foto piknik dan tanya \"Where did you go last weekend? Or last Sunday?\" Tunggu siswa menyebutkan tempat, lalu bantu dengan \"So: Last weekend, I visited blank.\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ke belakang melewati bahu, dan ucapkan \"Last weekend, I blank. Did you go to the park? Or somewhere else?\" Tunggu siswa menjawab dan bantu tulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu foto dan lengkapi: Last weekend, I blank (visited, played, cooked) blank.",
+        "standar": "Tulis dua kalimat tentang outing nyata di masa lalu — masing-masing diawali ungkapan waktu dan menggunakan kata kerja lampau.",
+        "tantangan": "Tulis dua kalimat ungkapan waktu, lalu tambahkan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pertahankan dua kalimat utama sebagai bagian utama."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A menceritakan outing masa lalunya ke Siswa B: Last weekend, I visited blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan menyebutkan satu hal yang diingat dari cerita Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B bercerita tentang outing masa lalunya ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Take turns. Tell your past outing to your partner. Your partner listens and remembers one thing. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bercerita dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa menggunakan ungkapan waktu dan kata kerja lampau."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk ke belakang melewati bahu ke arah pasangan tersebut dan ucapkan \"Last weekend, I blank. What did you do?\" Tunggu siswa menjawab."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan menggunakan present tense — tunjuk ikon tindakan lampau berlabel -ed dan ucapkan \"Past tense. Visited. Played.\" Tunggu siswa mengulang dalam bentuk lampau."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa tambahkan rangkuman singkat First, we blank. Then, we blank."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan satu kalimat outing masa lalu dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons.",
+        "standar": "Ceritakan dua kalimat outing masa lalu tanpa membaca. Dengarkan dan ingat satu hal yang dilakukan pasangan.",
+        "tantangan": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau: First, we walked blank. Then, we had blank. Pasangan melakukan hal yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Tell your group about your past outing. Yesterday, blank. Or: Last weekend, blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah ungkapan waktu dan kata kerja lampau digunakan secara konsisten."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk kartu ungkapan waktu dan minta siswa mulai dengan \"Last weekend, I blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menggunakan present tense saat bercerita ke kelompok — tunjuk ke belakang melewati bahu dan ucapkan \"Past. Visited, played, cooked.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan satu atau dua kalimat outing masa lalu ke kelompok baru — boleh membaca.",
+        "standar": "Ceritakan outing masa lalumu ke kelompok baru tanpa membaca.",
+        "tantangan": "Ceritakan outing dengan rangkuman cerita singkat bentuk lampau, lalu dengarkan dan ingat satu hal yang dilakukan setiap teman."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Tell me about your family outing. Start with Yesterday or Last weekend. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan ungkapan waktu dan kata kerja lampau (-ed)?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menceritakan outing masa lalu dengan lancar tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu ungkapan waktu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua kalimat masa lalu sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke belakang melewati bahu — tunjuk kartu Last weekend."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Last weekend, my family visited the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon visited."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now: visited. Not visit. Past. Say: Last weekend, I visited blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba dan melengkapi."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Last weekend, we went to the beach."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Went is past for go. Now you try. Give me one sentence with went. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Keep the time expression. Last weekend, we went blank.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang kalimat outing masa lalu tanpa membaca, atau menulis satu kalimat tambahan tentang kegiatan lain yang dilakukan saat outing yang sama."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -176,5 +740,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,587 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Based on these sources, ___.\nThis suggests ___.\nTherefore, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kumpulan tiga kartu sumber tersusun segitiga (Sumber A: laporan kualitas udara; Sumber B: studi aktivitas fisik; Sumber C: data ruang hijau dan kesejahteraan — semuanya menunjuk ke tanda panah pusat \"Based on these sources...\"), kartu kerangka kesimpulan-bukti tiga langkah (Step 1: Based on these sources / Step 2: This suggests / Step 3: Therefore), dan kartu diagram perkembangan kluster (TP-10: Together, they show; TP-11: Both sources / Therefore; TP-12: Based on these sources / This suggests / Therefore).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Kondisikan kelas untuk sesi sintesis yang memerlukan konsentrasi tinggi."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome. Today we draw evidence-based conclusions from multiple sources."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "You have read about air quality, physical activity, and green spaces. What do all three suggest together?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kumpulan tiga kartu sumber tersusun segitiga — tunjuk setiap kartu satu per satu lalu tunjuk tanda panah pusat yang mengarah ke \"Based on these sources...\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati ketiga kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these three source cards. What conclusion can you draw from all of them combined?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to draw a three-step evidence-based conclusion from multiple sources."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil ketiga kartu sumber — sapukan tangan terbuka melintasi ketiga kartu sekaligus."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Based on these sources, schools with better air quality and access to green outdoor spaces tend to support student wellbeing more effectively."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu sumber — tepuk pelipis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This suggests that regular physical activity and a healthy school environment work together to build healthy habits in students over time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu kerangka tiga langkah — satukan kedua tangan perlahan ke satu titik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, any plan to improve the school environment should include evidence-based measures targeting both air quality and daily physical activity."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — tampilkan semua kartu. Sapukan tangan terbuka, tepuk pelipis, satukan ke satu titik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Based on these sources about trees, exercise, and student wellbeing, this suggests that green spaces and active routines support each other in building healthy habits. Therefore, evidence-based conclusions about school health must consider the environment and daily physical activity together, not separately."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan di depan badan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat ketiga kartu sumber — sapukan tangan terbuka melintasi ketiga kartu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Based on these sources, schools with better air quality and access to green outdoor spaces tend to support student wellbeing more effectively."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu sumber — tepuk pelipis."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "This suggests that regular physical activity and a healthy school environment work together to build healthy habits in students over time."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka tiga langkah — satukan kedua tangan perlahan ke satu titik."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, any plan to improve the school environment should include evidence-based measures targeting both air quality and daily physical activity."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan semua kartu — sapukan tangan terbuka, tepuk pelipis, satukan ke satu titik."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Based on these sources about trees, exercise, and student wellbeing, this suggests that green spaces and active routines support each other in building healthy habits. Therefore, evidence-based conclusions about school health must consider the environment and daily physical activity together, not separately."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own evidence-based conclusion."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kerangka tiga langkah dan bedakan: \"Based on these sources = apa yang ada di data. This suggests = apa yang diimplikasikan data. Therefore = apa yang mengikuti dari implikasi itu.\" Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa membaca sintesis dari TP-10 dan TP-11 lalu menulis kesimpulan tiga langkah mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Read your source syntheses from before. Then write: what the sources collectively show, what they imply, and your evidence-based conclusion."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This suggests must say something the sources imply but do not state directly, not a repetition of what you already wrote in Based on these sources."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menggunakan This suggests sebagai pengulangan dari Based on these sources, atau yang melewati inferensi dan langsung ke Therefore."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membedakan inferensi dari kutipan sumber — tunjuk kartu diagram perkembangan kluster dan tanya: \"What do these sources together IMPLY — something they do not say directly?\" Jawaban itu adalah kalimat This suggests."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ketiga kartu sumber di papan tulis, dan minta siswa ucapkan \"Based on these sources,\" lalu satu hal yang ketiganya tunjukkan. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka tiga langkah dan isi setiap slot. Boleh menggunakan catatan sintesis dari TP-10 dan TP-11 sebagai referensi.",
+        "standar": "Tulis kesimpulan tiga langkah sendiri tanpa membaca kerangka. Gunakan kosakata: air quality, physical activity, healthy habits, atau evidence-based conclusions.",
+        "tantangan": "Tulis kesimpulan dan buat This suggests berisi inferensi yang melampaui apa yang dinyatakan oleh sumber mana pun secara terpisah — sesuatu yang hanya terlihat ketika dibaca bersama-sama."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Langkah ini menggunakan kelompok kecil tiga atau empat orang. Guru menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tiga atau empat siswa yang duduk berdekatan sebagai satu kelompok — lanjutkan hingga semua siswa tergabung."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns sharing your three-step conclusion in your group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After each turn, the group checks: Does Based on these sources cite more than one source? Does This suggests say something not directly in any source? Does Therefore follow logically?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — prioritaskan kelompok yang tampak kesulitan membedakan inferensi dari kutipan sumber."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now form a new group with students from other groups."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam lebih dari sepuluh detik — tunjuk buku catatannya dan minta ucapkan \"Based on these sources,\" lalu satu hal yang sumber-sumber tunjukkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa sampaikan kesimpulannya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas menulis individual. Tunjuk pola Based on these sources, This suggests, Therefore di papan tulis, minta seluruh kelas mengucapkan ketiga komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca kesimpulan tiga langkah dari buku catatan ke kelompok. Kelompok mencentang setiap langkah saat mendengarnya: Based on these sources, This suggests, Therefore.",
+        "standar": "Bagikan kesimpulan tanpa membaca. Kelompok memeriksa apakah ketiga langkah benar-benar berbeda.",
+        "tantangan": "Bagikan kesimpulan dan kelompok bertanya: \"Is your inference in This suggests actually in the sources, or did you add it?\" — kamu jelaskan reasoning-mu."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap siswa bergabung ke kelompok baru yang berbeda dari kelompok INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk komposisi kelompok baru — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your evidence-based conclusion. Others listen for all three steps."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"Based on these sources,\" lalu satu detail. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa sampaikan kesimpulannya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan kesimpulan tiga langkah ke kelompok baru menggunakan catatan.",
+        "standar": "Presentasikan kesimpulan tanpa membaca.",
+        "tantangan": "Presentasikan kesimpulan tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you need to know to be more confident in your Therefore conclusion?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your Based on these sources sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa mengutip lebih dari satu sumber, atau hanya menyebutkan satu?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your This suggests sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah This suggests berisi inferensi yang melampaui kutipan sumber, atau sekadar pengulangan dari Based on these sources?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka tiga langkah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan ketiga langkah: \"Based on these sources = I am reading multiple sources. This suggests = I am adding something they do not say directly. Therefore = this is my conclusion.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat This suggests dari model kalimat 2 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan tiga langkah perlahan dengan contoh sederhana — tiga kartu tentang makan, tidur, dan olahraga — lalu buat inferensi dan kesimpulan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Based on these sources = I am reading multiple sources. This suggests = I am adding something they do not say directly. Therefore = this is my conclusion from combining both."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa mengikuti ketiga langkah dengan topik yang sama sebelum kembali ke topik mereka sendiri."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat Based on these sources dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try opening with an alternative phrase. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "What all these sources share is a concern for the daily school environment. This suggests that healthy habits cannot be built through one change alone. Therefore, schools need a coordinated approach that addresses both air quality and physical activity together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now rewrite your Based on these sources using What all these sources share is instead."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That expands your repertoire of evidence-based opening moves.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka sampaikan kesimpulan tiga langkah mereka sekali lagi tanpa melihat buku, atau perkuat inferensi This suggests dengan satu detail spesifik yang tidak disebutkan secara langsung di salah satu sumber."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +756,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,587 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "How about ___?\nWe could ___.\nThat's a good idea, but ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — papan rencana dengan ide bakti sosial di kertas tempel (jualan buku, jualan jajanan, poster), kartu negosiasi (\"How about ...?\" / \"We could ...\" / \"That's a good idea, but ...\"), dan kartu ikon bakti sosial (toples penggalangan dana, relawan, poster).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. I need your full attention today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tanya kelas apakah sudah siap berdiskusi — tunggu respons singkat sebelum melanjutkan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Imagine your class wants to do something good for the community. What idea comes to mind?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan papan rencana dengan ide bakti sosial di kertas tempel — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this planning board. Which of these charity ideas do you think is best?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to suggest ideas and respond to them as a team."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu negosiasi — buka tangan dalam gestur menawarkan sambil tunjuk papan rencana."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I'd rather do a book sale than a car wash. How about a book sale for charity?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu — angkat kartu ikon bakti sosial. Kembali buka tangan dalam gestur menawarkan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "We could sell snacks for fundraising."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu negosiasi kembali — angguk (ide bagus), lalu angkat satu jari (tetapi)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That's a good idea, but we need more helpers."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka tangan dalam gestur menawarkan, lalu beri gestur ke seluruh kelompok dan papan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "How about asking the community to join? We could plan it together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu negosiasi — peragakan gesture buka tangan menawarkan, tunjuk papan rencana."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I'd rather do a book sale than a car wash. How about a book sale for charity?"
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu ikon — peragakan gesture buka tangan menawarkan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "We could sell snacks for fundraising."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu negosiasi — peragakan gesture angguk lalu angkat satu jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "That's a good idea, but we need more helpers."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan gesture buka tangan menawarkan, lalu gestur ke seluruh kelompok dan papan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "How about asking the community to join? We could plan it together."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Write your own suggestions."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa mengganti ide dengan saran sendiri untuk proyek bakti sosial. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan papan rencana dan kartu negosiasi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these patterns. Write your own charity project suggestions."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep it open and collaborative, a suggestion, not a command."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu ide apa yang akan ditulis — tunjuk papan rencana di papan tulis dan minta siswa pilih salah satu kertas tempel sebagai ide awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ide pertama di papan rencana, dan minta siswa ucapkan \"How about a book sale?\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu ide dari papan rencana dan lengkapi satu kalimat: \"How about ___?\" atau \"We could ___.\"",
+        "standar": "Tulis dua saran (satu \"How about ...?\", satu \"We could ...\") dan satu respons \"That's a good idea, but ...\"",
+        "tantangan": "Ubah preferensi pribadi menjadi usulan (\"I'd rather do X than Y. How about X?\"), lalu respons terhadap satu ide teman dengan \"That's a good idea, but ...\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Bentuk kelompok tiga atau empat orang. Guru menentukan kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dalam kelompok yang sama — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Demonstrasikan bersama satu siswa: satu orang menyarankan (\"How about ...?\"), yang lain merespons (\"That's a good idea, but ...\"), lalu menyarankan ide lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, take turns suggesting and responding. Work together to improve the plan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these phrases, How about, We could, and That's a good idea, but."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk negosiasi kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah setiap anggota sudah menyarankan setidaknya satu ide."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now each group will join a new group to share their plan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam lebih dari sepuluh detik — tunjuk salah satu kertas tempel di papan rencana dan tanya \"How about this one?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika anggota kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum melanjutkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa mendominasi seluruh saran — tunjuk siswa lain dan minta mereka menyarankan ide berikutnya."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Buat satu saran ke kelompok (\"How about ...?\" atau \"We could ...\"); satu teman respons dengan \"That's a good idea, but ...\"",
+        "standar": "Sarankan dan respons tanpa membaca buku sehingga kelompok memperbaiki rencana dengan setidaknya dua ide.",
+        "tantangan": "Ubah preferensi jadi usulan, respons ide teman dengan \"That's a good idea, but ...\", dan bantu bentuk satu rencana bersama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap kelompok bergabung dengan satu kelompok lain — membentuk kelompok baru empat orang dari kelompok yang berbeda.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kelompok mana bergabung dengan kelompok mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns suggesting and responding in your new group. Negotiate a charity plan together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk negosiasi kelompok baru."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"How about...\" lalu nama salah satu ide dari papan rencana."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa sarankan ide lain dengan \"We could ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Buat satu saran ke kelompok baru; satu teman respons dengan \"That's a good idea, but ...\"",
+        "standar": "Sarankan dan respons tanpa membaca buku untuk membentuk rencana bersama kelompok baru.",
+        "tantangan": "Pimpin negosiasi singkat: buat usulan, respons dua ide dengan caveat, dan sarankan satu rencana yang lebih baik."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me one suggestion for the charity project. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan saran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan \"How about ...?\" atau \"We could ...\" sebagai saran terbuka, bukan perintah?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now respond to that idea. Use the phrase on the board."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa merespons dengan \"That's a good idea, but ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa dapat merespons dengan caveat yang wajar, atau hanya mengatakan \"yes\" atau \"no\"?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu negosiasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan ketiga sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu negosiasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. How about a book sale for charity?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try with a different idea. How about..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kertas tempel lain di papan rencana — tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa dapat membuat saran sendiri tanpa membaca."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. That's a good idea, but how about a snack sale instead?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Respond to an idea with a counter-suggestion."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sarankan satu ide — tunggu siswa merespons dengan \"That's a good idea, but how about ...?\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That is how you keep negotiating.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan satu saran dan satu respons tanpa melihat buku, atau menambah satu ide ke rencana di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +756,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

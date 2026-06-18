@@ -1,3 +1,611 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Good morning, ___.\nMy name is ___.\nToday I would like to present ___.\nThe purpose of this presentation is ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu setup skenario presentasi (dua siswa berdiri di depan kelas dengan layar di belakang, menghadap audiens), kartu kerangka pembuka presentasi empat slot (GREET, INTRODUCE, TOPIC, PURPOSE), dan kartu perbandingan register (pembuka email \"Hi everyone, I'm writing to share...\" di sebelah pembuka presentasi \"Good morning. My name is... The purpose of this presentation is...\").",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Posisikan ruangan untuk sesi presentasi formal jika memungkinkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning, and welcome. Please stand by your presentations today."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "You have investigated the old storage room. Today you present that discovery formally. Are you ready?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu setup skenario presentasi — tunjuk posisi Dito dan Wulan di depan, layar di belakang, audiens di depan mereka."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this presentation setup. What should a formal presentation opening include?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how a formal presentation opening sounds, greet, introduce, announce the topic, and state the purpose."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu setup skenario presentasi — angguk ke arah audiens sambil berbicara."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good morning, everyone. My name is Dito, and I am a student at this school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu setup — ambil kartu kerangka pembuka empat slot."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Today I would like to present our discovery in the old storage room behind the school building."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu kerangka — buka satu telapak tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The purpose of this presentation is to share the historical objects we found and explain why they matter to our school community."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — tampilkan ketiga kartu sekaligus."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk ke arah audiens, lalu letakkan tangan di dada, lalu buka telapak tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good morning. My name is Wulan. Today I would like to present something extraordinary we discovered at school. The purpose of this presentation is to show how a simple discovery can reveal a part of our school's history that many people have forgotten."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk ke seluruh kelas dan angkat kedua tangan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu setup skenario presentasi — angguk ke arah audiens."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Good morning, everyone. My name is Dito, and I am a student at this school."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu setup — angkat kartu kerangka pembuka empat slot."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Today I would like to present our discovery in the old storage room behind the school building."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka — buka satu telapak tangan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "The purpose of this presentation is to share the historical objects we found and explain why they matter to our school community."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan ketiga kartu sekaligus — angguk ke arah audiens, letakkan tangan di dada, buka telapak tangan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Good morning. My name is Wulan. Today I would like to present something extraordinary we discovered at school. The purpose of this presentation is to show how a simple discovery can reveal a part of our school's history that many people have forgotten."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own presentation opening."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tampilkan kartu perbandingan register dan tunjuk perbedaan antara pembuka email dan pembuka presentasi. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pembuka presentasi formal mereka sendiri tentang penemuan gudang tua. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write a formal presentation opening with all four components. Greet, introduce, announce the topic, then state the purpose."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep the register formal. Not an email, not a casual chat, a presentation to an audience."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menggunakan register kasual (\"Hey\", \"Hi, I want to tell you\") atau yang melewati salah satu dari empat komponen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membuka dengan formal — tunjuk kartu perbandingan register di papan tulis dan tunjuk kolom presentasi. Minta siswa mulai dengan \"Good morning,\" bukan \"Hey\" atau \"Hi.\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk slot GREET di kerangka, dan minta siswa ucapkan \"Good morning,\" saja dulu. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka pembuka empat slot di papan tulis dan isi setiap slot. Boleh melihat kartu setup skenario untuk referensi. Pastikan ada: greet, introduce, topic, purpose.",
+        "standar": "Tulis pembuka presentasi sendiri tanpa membaca kerangka. Gunakan kosakata: discovery, historical objects, atau school.",
+        "tantangan": "Tulis empat komponen pembuka lalu variasikan pernyataan purpose — buat spesifik untuk satu aspek penemuan, misalnya: \"The purpose of this presentation is to show why these historical objects should be displayed in our school.\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A berdiri dan menyampaikan pembuka presentasinya ke Siswa B sebagai audiens. Siswa B mendengarkan dan memeriksa: ada sapaan formal? ada perkenalan diri? ada topik? ada purpose?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B melakukan hal yang sama ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Stand up when you present. Address your partner as the audience. Your turn now."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After your partner presents, give one piece of feedback: does it sound like a presentation or a casual chat?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan dan pastikan sebagian besar siswa sudah berdiri saat menyampaikan pembuka mereka."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara dengan register kasual (\"Hey everyone, today I'm going to talk about...\") — tunjuk kartu perbandingan register di papan tulis dan ucapkan \"Presentation register. Try again.\" Tunggu siswa mengulang sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk pola pertama di papan tulis dan minta siswa ucapkan \"Good morning,\" saja dulu sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa sampaikan pembuka sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas pasangan atau kelompok. Tunjuk pola pembuka presentasi di papan tulis, minta seluruh kelas mengucapkan empat komponen pembuka secara bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca pembuka dari buku catatan ke pasangan. Pasangan mencentang setiap komponen: greet, introduce, topic, purpose.",
+        "standar": "Sampaikan pembuka tanpa membaca buku. Pasangan memeriksa keempat komponen dan register formal.",
+        "tantangan": "Sampaikan pembuka, lalu pasangan bertanya: \"What exactly will you cover in this presentation?\" — kamu memberi satu kalimat tambahan yang mempreview isi presentasi."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first. Stand up when you present."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One person delivers the presentation opening. The others listen and check all four components."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"Good morning,\" saja dulu sebagai pembuka. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa sampaikan pembuka sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca pembuka dari buku catatan ke kelompok.",
+        "standar": "Sampaikan pembuka tanpa membaca buku.",
+        "tantangan": "Sampaikan pembuka tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What is the main thing you want us to understand from your presentation?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Greet the audience and introduce yourself. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat sapa dan perkenalan diri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan register formal (\"Good morning\" / \"My name is\") atau register kasual?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your purpose statement. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa mengucapkan \"The purpose of this presentation is...\" atau langsung menyebut isi konten?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu perbandingan register."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom presentasi di kartu perbandingan — ucapkan \"Good morning, everyone.\" sambil angguk ke audiens — beri isyarat ke siswa — tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjutkan slot per slot hingga keempat komponen selesai."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tampilkan kartu perbandingan register di dekat siswa — tunjuk kolom presentasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This is the email version. This is the presentation version. Same purpose, different register."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu topik sekolah berbeda — misalnya proyek sains sekolah — dan modelkan satu pembuka presentasi baru menggunakan keempat komponen. Minta siswa mengikuti slot per slot."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat The purpose of this presentation is dalam pembuka siswa di buku catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding a roadmap sentence after your purpose statement. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In this presentation, I will cover three main points: the discovery we made, the historical objects we found, and our recommendation for the school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add one roadmap sentence of your own after your purpose statement."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That bridges your opening to the body of your presentation.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka sampaikan seluruh pembuka presentasi mereka sekali lagi tanpa melihat buku, atau variasikan kalimat purpose mereka dengan aspek penemuan yang lebih spesifik."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +780,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

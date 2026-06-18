@@ -1,3 +1,591 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "A ___ is a kind of ___.\nIts ___ is used for ___.\nIt usually ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu foto alam berbagai kupu-kupu (ditambah lebah dan semut untuk kategori serangga), kartu klasifikasi dengan tiga slot (\"is a kind of ___\" / \"is used for ___\" / \"usually ___\"), dan kartu ikon habitat (taman dan hutan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Let's begin today with something from nature."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa menyimpan buku lain dan fokus ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever seen a butterfly up close? How would you describe it?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu foto alam berbagai kupu-kupu, ditambah lebah dan semut — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these nature photos. What do all these creatures have in common?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to classify a living thing clearly, by its category, its use, and its usual characteristics."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu kartu foto kupu-kupu — tunjuk foto tersebut."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is small and colorful. It is helpful for the garden."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu foto — angkat kartu klasifikasi. Tunjuk satu foto kupu-kupu, lalu sapukan tangan ke sekelompok foto serangga lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "A butterfly is a kind of insect. It usually has colorful wings."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu ikon habitat — peragakan gesture sayap mengepak untuk \"flying\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Its wings are used for flying."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu ikon taman dan hutan — peragakan gesture menyapu luas dan umum."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It usually lives in gardens and forests."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu kartu foto kupu-kupu — tunjuk foto tersebut."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is small and colorful. It is helpful for the garden."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk satu foto kupu-kupu, lalu sapukan tangan ke sekelompok foto serangga lain."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "A butterfly is a kind of insect. It usually has colorful wings."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu ikon habitat — peragakan gesture sayap mengepak."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Its wings are used for flying."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kartu ikon taman dan hutan — peragakan gesture menyapu luas dan umum."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It usually lives in gardens and forests."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Classify your own living thing."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa mengganti kategori, fungsi, dan ciri umum dengan hewan pilihan sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan kartu foto alam dan kartu klasifikasi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. Classify a butterfly or another animal from the cards."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep it factual, no \"I think,\" no personal story, and no \"I have a pet.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu hewan mana yang akan diklasifikasikan — tunjuk kartu foto di papan tulis dan minta siswa pilih salah satu gambar."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu foto kupu-kupu, dan minta siswa ucapkan \"A butterfly is a kind of insect.\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kartu foto dan lengkapi: \"A ___ is a kind of ___. It usually ___.\"",
+        "standar": "Tulis tiga kalimat klasifikasi tentang hewanmu: satu \"is a kind of\", satu \"is used for\", satu \"usually\".",
+        "tantangan": "Mulai dengan satu deskripsi spesifik (\"It is small and colorful.\"), lalu tulis tiga kalimat klasifikasi umum."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan klasifikasi hewannya ke Siswa B."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B memeriksa — apakah ada kategori, fungsi, dan ciri umum? Lalu tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Your turn now. Read your classification to your partner."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your partner checks, is there a category, a use, and a usual characteristic? Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu foto dan minta siswa ucapkan \"A ___ is a kind of ...\" lalu nama kategori hewan tersebut."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan klasifikasinya sekali lagi tanpa melihat buku."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca dua kalimat klasifikasi ke pasangan; pasangan sebutkan kategorinya. Lalu tukar peran.",
+        "standar": "Baca tiga kalimat klasifikasi tanpa membaca kata per kata; pasangan periksa ketiga slot. Lalu tukar peran.",
+        "tantangan": "Berikan deskripsi spesifik dulu, lalu klasifikasi; pasangan tambahkan satu ciri umum lagi. Lalu tukar peran."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your classification card. The group listens and checks all three slots."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, angkat kartu foto salah satu hewan, dan minta ucapkan \"This is a kind of ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambah satu ciri umum lagi yang belum disebutkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan dua kalimat klasifikasi ke kelompok. Boleh membaca.",
+        "standar": "Presentasikan tiga kalimat klasifikasi lengkap tanpa membaca.",
+        "tantangan": "Presentasikan klasifikasi, lalu jawab satu pertanyaan tentang kategorinya dari kelompok."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "What did you classify? Tell me the category."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat \"is a kind of\"."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyebut kategori yang tepat dan faktual, bukan opini atau cerita pribadi?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Say your \"usually\" sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan \"usually\" sebagai ciri umum kategori, bukan tentang satu hewan spesifik?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu klasifikasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu klasifikasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. A butterfly is a kind of insect."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try with your animal. Say the name, then is a kind of."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu foto hewan pilihan siswa — tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjutkan frasa per frasa untuk \"is used for\" dan \"usually\" sampai siswa siap bicara lengkap."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. A butterfly is a kind of insect, like bees and ants."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add an example of another member of the same category."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambah contoh anggota kategori."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That makes your classification richer.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan ketiga kalimat klasifikasi tanpa melihat buku, atau menulis klasifikasi untuk hewan kedua di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +761,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

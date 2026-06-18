@@ -1,3 +1,559 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Don't (action).\nBe (adjective).\nAlways (action).",
+    "kartu": "Siapkan tiga kartu aturan — lingkaran disilang untuk Don't, tanda peringatan untuk Be careful, dan tanda centang untuk Always.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon skenario — membagikan password disilang, keluar dari akun, memilih password yang kuat."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Hello, class! Settle down and listen up."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu seluruh siswa fokus sebelum memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Quick check. Do you have a password on your phone or tablet?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab singkat dengan ya atau tidak."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan poster keamanan digital — tunjuk setiap ikon."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this digital safety poster. What things should we protect online?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menyebutkan sesuatu dari poster. Jika tidak ada yang menjawab dalam lima detik — tunjuk ikon gembok dan tanya \"What is this for?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan poster tetap terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to give safety rules in English."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Silangkan kedua tangan membentuk X."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Don't share your password with anyone."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu lingkaran disilang dan ikon gembok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat telapak tangan terbuka dengan gesture hati-hati."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Be careful with your account on the internet."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu tanda peringatan dan ikon kartu profil."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk tegas berulang — buat tanda centang di udara."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Always protect your privacy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu tanda centang dan ikon perisai."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu aturan — siswa menirukan bersama. Satu putaran per aturan. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Aturan 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Silangkan kedua tangan membentuk X."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Don't share your password with anyone."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Aturan 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat telapak tangan terbuka dengan gesture hati-hati."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Be careful with your account on the internet."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Aturan 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angguk tegas dan buat tanda centang di udara."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Always protect your privacy."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own safety rules."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk tiga kartu aturan di papan tulis dan minta siswa cocokkan gesture dengan kartu sebelum melanjutkan."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis aturan keamanan online sendiri menggunakan tiga pola. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel poster keamanan digital dan kartu aturan di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own online safety rules. Use the three patterns."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Don't blank for a prohibition. Be blank for a warning. Always blank for a tip. Keep each rule short. Do not add because."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menambahkan because setelah aturan — ingatkan: \"Keep it short. No because.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now sit in groups of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu konten aturan yang ingin ditulis — tunjuk ikon di poster keamanan digital dan minta siswa pilih salah satu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, silangkan kedua tangan, dan ucapkan \"Don't blank your password. Share? Or lose?\" Tunggu siswa memilih dan menulis satu aturan, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu ikon keamanan dan lengkapi satu aturan: Don't blank. Atau: Be blank. Atau: Always blank.",
+        "standar": "Tulis tiga aturan — satu Don't, satu Be, dan satu Always — tentang keamanan online.",
+        "tantangan": "Tulis tiga aturan, dan pasangkan satu aturan dengan satu instruksi biasa: Put your password in a safe place. Don't share it with anyone."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Siswa duduk dalam kelompok tiga atau empat orang — guru yang menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tentukan komposisi kelompok — tunjuk secara eksplisit siapa bergabung dengan siapa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, take turns giving a safety rule. Don't blank. Be blank. Or Always blank."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After each rule, the others respond with That's true. Or I agree. Then write down the rules your group likes best."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk diskusi kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah aturan berdiri mandiri tanpa penjelasan panjang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Stay in your group for now."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam dan tidak ada yang memulai — tunjuk ikon gembok di poster dan minta satu siswa ucapkan \"Don't share your password.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menambahkan penjelasan panjang setelah aturan — ingatkan: \"Keep it short. Just the rule.\""
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ucapkan satu aturan ke kelompok. Yang lain merespons dengan kartu respons: That's true. Atau I agree.",
+        "standar": "Ucapkan dua aturan dengan tipe berbeda tanpa membaca, dan tanggapi aturan teman.",
+        "tantangan": "Berikan satu aturan yang dipasangkan dengan instruksi biasa, tanggapi aturan teman, dan bantu pilih aturan terbaik untuk poster."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Siswa bergabung dengan kelompok baru — bukan kelompok dari langkah INTERACT — dan mempresentasikan aturan-aturan mereka.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dengan kelompok mana untuk membentuk kelompok baru."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Form a new group of four with classmates from other groups."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your safety rules. Don't blank. Be blank. Always blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah aturan singkat dan berdiri mandiri."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk ikon di poster dan minta siswa ucapkan satu aturan berdasarkan ikon tersebut."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari yang lain — minta siswa dengarkan aturan teman dan pilih yang terbaik untuk poster."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan dua aturan untuk poster — boleh membaca.",
+        "standar": "Presentasikan tiga aturan dengan tipe berbeda tanpa membaca.",
+        "tantangan": "Presentasikan aturan-aturan, tanggapi aturan teman dengan That's true. Atau I agree, dan usulkan aturan mana yang paling cocok untuk poster."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon gembok di poster."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me a safety rule about passwords. Don't, Be, or Always. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan aturan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah aturan berdiri sendiri tanpa penjelasan atau because?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your Always rule. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan Always dengan kata kerja yang tepat?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali tiga kartu aturan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan tiga aturan sekali lagi — beri isyarat tangan ke arah siswa setiap aturan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Silangkan kedua tangan membentuk X perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Don't share your password."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat telapak tangan terbuka."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Be careful with your account."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan kata kunci Don't dan Be di awal setiap aturan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Never give your password to a stranger."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Give me one strong prohibition using Never. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try about your account.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang tiga aturan tanpa membaca, atau menulis satu aturan tambahan untuk topik keamanan yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -175,5 +731,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

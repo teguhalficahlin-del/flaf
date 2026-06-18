@@ -1,3 +1,591 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "First, (action).\nThen, (action).\nFinally, (action).",
+    "kartu": "Siapkan tiga kartu kata urutan dengan tanda panah — First, Then, Finally.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan urutan gambar bernomor (1-2-3) dari rutinitas pagi — anak bangun, sarapan, dan berjalan ke sekolah."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan tiga ikon tindakan — jam alarm untuk wake up early, piring sarapan untuk eat breakfast, dan tas sekolah untuk go to school."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas dengan semangat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Rise and shine, everyone! Let's start our morning."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Sapa siswa dengan semangat dan cek kesiapan kelas."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "What do you do first when you wake up in the morning?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab singkat."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tempel urutan gambar bernomor di papan tulis."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this picture sequence. Does this morning routine look familiar to you?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa merespons. Jika tidak ada yang menjawab dalam lima detik — tunjuk gambar nomor satu dan tanya \"What is he doing here?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan gambar tetap terpasang di papan tulis."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to talk about our morning routine in order."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari — tunjuk gambar nomor satu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan menggeliat bangun."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First, wake up early."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat dua jari — tunjuk gambar nomor dua."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan makan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Then, eat breakfast."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tiga jari — tunjuk gambar nomor tiga."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan berjalan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Finally, go to school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Gambar dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu jari — tunjuk gambar nomor satu dan peragakan menggeliat bangun."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "First, wake up early."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat dua jari — tunjuk gambar nomor dua dan peragakan makan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Then, eat breakfast."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat tiga jari — tunjuk gambar nomor tiga dan peragakan berjalan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Finally, go to school."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own morning routine."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — minta siswa sortir tiga kartu kata urutan First, Then, Finally secara berurutan di meja masing-masing, lalu ulangi REPEAT sekali lagi."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menyusun tiga langkah rutinitas pagi mereka sendiri menggunakan pola dari papan tulis. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu ikon tindakan di papan tulis di sebelah pola. Tempel juga tiga kartu kata urutan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own morning routine. Three steps, in order."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use First, Then, Finally. Use action words like wake up, brush your teeth, eat breakfast, get dressed, go to school."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use present tense, not woke up, not ate. Say wake up, eat, go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menggunakan bentuk lampau seperti woke up atau ate — ingatkan dengan gesture angkat tangan dan ucapkan \"Present tense.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu kata kerja untuk kegiatan yang ingin ditulis — tunjuk ikon tindakan di papan tulis dan minta siswa pilih salah satu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, angkat satu jari, dan ucapkan \"First, blank. Wake up early?\" Tunggu siswa mengulang dan menulis satu langkah, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Urutkan tiga kartu gambar dan lengkapi: First, blank. Then, blank. Finally, blank.",
+        "standar": "Tulis tiga langkah rutinitas pagi sendiri menggunakan First, Then, Finally dengan kata kerja present tense.",
+        "tantangan": "Tulis tiga langkah rutinitas, dan tambahkan satu baris lead-in dan motivasi sebelumnya: I like my morning routine. It is important to have a good start. Pertahankan tiga langkah sebagai bagian utama."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A menceritakan rutinitas paginya kepada Siswa B dengan First, Then, Finally."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B merespons dengan That's true. Atau I agree."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B menceritakan rutinitas paginya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Tell your morning routine to your partner. Your partner responds, then shares theirs. Work with the person next to you."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you are in a group of three, take turns. A, then B, then C."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan perhatikan apakah kata kerja present tense digunakan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — angkat satu jari ke arah pasangan tersebut dan ucapkan \"First, blank. What do you do first in the morning?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ceritakan rutinitasnya sekali lagi tanpa melihat buku."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan rutinitasmu menggunakan tiga kalimat dari buku catatan — boleh membaca. Pasangan merespons dengan That's true. Atau I agree.",
+        "standar": "Ceritakan rutinitasmu tanpa membaca. Pasangan merespons, lalu bercerita tentang rutinitasnya sendiri.",
+        "tantangan": "Tambahkan lead-in dan motivasi terlebih dahulu, lalu ceritakan tiga langkah. Pasangan merespons dan bercerita tentang rutinitasnya sendiri."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Tell your morning routine to the new group using First, Then, Finally."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah kata urutan First, Then, Finally digunakan secara konsisten."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — angkat satu jari ke arah siswa tersebut dan minta mereka ucapkan \"First, blank.\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai berbagi jauh lebih cepat dari yang lain — minta siswa dengarkan dan coba ingat satu langkah rutinitas setiap teman."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ceritakan tiga langkah rutinitasmu ke kelompok baru — boleh membaca.",
+        "standar": "Ceritakan rutinitasmu ke kelompok baru tanpa membaca.",
+        "tantangan": "Ceritakan rutinitas dengan lead-in dan motivasi, lalu dengarkan dan tanggapi rutinitas satu teman dengan That's true. Atau I agree."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Tell me your three morning steps. First, Then, Finally. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan tiga langkah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan kata urutan dengan benar? Apakah kata kerja dalam present tense?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Say your Finally sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa mengucapkan langkah terakhir dengan lancar?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tiga kartu kata urutan berurutan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan tiga langkah sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. First, wake up early."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat dua jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Then, eat breakfast."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tiga jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Finally, go to school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan kata urutan di awal setiap kalimat."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First, wake up. Then, eat breakfast. Next, pack your bag. Finally, go to school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add one more step using Next. Just once."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different routine.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang tiga langkah rutinitas pagi tanpa melihat buku, atau menulis satu langkah tambahan di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +761,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,603 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Both sources ___.\nHowever, Source A ___ while Source B ___.\nTherefore, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — dua dokumen sumber berdampingan (Sumber A: laporan ruang hijau perkotaan dengan data kualitas udara dan suasana hati; Sumber B: laporan kesehatan aktivitas fisik dengan data frekuensi olahraga dan konsentrasi siswa), kartu kerangka perbandingan empat slot (Both sources / However, Source A / while Source B / Therefore), dan kartu ikon (pohon di taman, siswa berlari, hati dengan detak sehat, timbangan perbandingan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa mempersiapkan kedua dokumen sumber sebelum memulai."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. We are comparing two sources today, carefully."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Consider two topics: green spaces and physical activity. Are they related, or completely separate?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan dua dokumen sumber berdampingan — Sumber A di sebelah kiri (laporan ruang hijau) dan Sumber B di sebelah kanan (laporan aktivitas fisik)."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati kedua kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at both sources. What do they agree on, and where do their focuses differ?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to compare two sources and draw a conclusion from that comparison."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kedua kartu sumber — letakkan kedua tangan rata."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Both sources suggest that green spaces and physical activity are closely connected to better public health."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Miringkan tangan kiri ke atas untuk Sumber A, lalu miringkan tangan kanan ke arah berbeda untuk Sumber B."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "However, Source A focuses on how trees and parks improve air quality in urban environments, while Source B focuses on how regular exercise directly improves heart rate, energy levels, and concentration."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu sumber — angkat kartu kerangka perbandingan, satukan kedua tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, a comparison of both sources shows that improving public health requires both access to green spaces and regular physical activity, they support each other."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — tampilkan semua kartu. Letakkan kedua tangan rata, miringkan bergantian, satukan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Both sources agree that outdoor environments support better student health. However, Source A emphasizes the benefits of clean air from green spaces, while Source B emphasizes the direct physical benefits of movement and exercise. Therefore, the comparison suggests that schools should provide both green spaces and structured time for physical activity in their daily routine."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan di depan badan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kedua kartu sumber — letakkan kedua tangan rata."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Both sources suggest that green spaces and physical activity are closely connected to better public health."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Miringkan tangan kiri ke atas untuk Sumber A, lalu miringkan tangan kanan ke arah berbeda untuk Sumber B."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "However, Source A focuses on how trees and parks improve air quality in urban environments, while Source B focuses on how regular exercise directly improves heart rate, energy levels, and concentration."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka perbandingan — satukan kedua tangan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, a comparison of both sources shows that improving public health requires both access to green spaces and regular physical activity, they support each other."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan semua kartu — letakkan kedua tangan rata, miringkan bergantian, satukan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Both sources agree that outdoor environments support better student health. However, Source A emphasizes the benefits of clean air from green spaces, while Source B emphasizes the direct physical benefits of movement and exercise. Therefore, the comparison suggests that schools should provide both green spaces and structured time for physical activity in their daily routine."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own source comparison."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kerangka dan sebutkan fungsi setiap komponen: \"Both = agreement. However/while = different focus. Therefore = conclusion from the comparison.\" Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa membaca kedua dokumen sumber lalu menulis perbandingan empat komponen mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Read Source A and Source B. Write what both agree on, how their focus differs, and your conclusion from the comparison."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore must come from the comparison of BOTH sources, not from one source alone, not a list of differences without any conclusion."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menulis daftar persamaan-perbedaan tanpa kesimpulan, atau yang hanya menulis dari satu sumber."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membuat kesimpulan dari perbandingan — tunjuk slot Therefore di kerangka dan minta siswa bertanya pada diri sendiri: \"What does this difference in focus tell us?\" Jawaban itu adalah kalimat Therefore."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kedua kartu sumber di papan tulis, dan minta siswa ucapkan \"Both sources...\" lalu satu poin yang keduanya sepakati. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka perbandingan empat slot dan isi setiap slot menggunakan kedua dokumen sumber.",
+        "standar": "Tulis perbandingan sumber sendiri tanpa membaca kerangka. Gunakan kosakata: green spaces, physical activity, public health, atau comparison.",
+        "tantangan": "Tulis perbandingan dan buat Therefore menjelaskan mengapa perbedaan fokus antara kedua sumber justru memperkuat kesimpulan, bukan melemahkannya."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan perbandingannya ke Siswa B. Siswa B mendengarkan dan memeriksa: ada poin kesamaan? ada perbedaan fokus yang jelas antara A dan B? apakah Therefore menarik kesimpulan dari perbandingan?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B melakukan hal yang sama ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your turn. After your partner shares, ask: Would you reach the same conclusion if you only read one source?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — pastikan sebagian besar pasangan sudah menghasilkan kesimpulan Therefore yang nyata dari perbandingan, bukan sekadar ringkasan satu sumber."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kedua kartu sumber di papan tulis dan minta siswa ucapkan \"Both sources\" lalu satu poin kesamaan sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan perbandingannya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas perbandingan individual. Tunjuk pola Both sources, However, Therefore di papan tulis, minta seluruh kelas mengucapkan seluruh pola bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca perbandinganmu ke pasangan. Pasangan menunjuk \"Both\", \"However\", \"while\", dan \"Therefore\" dalam teksmu.",
+        "standar": "Bagikan perbandinganmu tanpa membaca. Pasangan memeriksa keempat komponen dan apakah Therefore menambahkan kesimpulan baru.",
+        "tantangan": "Bagikan perbandinganmu dan pasangan bertanya: \"Would you reach the same conclusion if you only read one source?\" — kamu jelaskan mengapa keduanya diperlukan."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your comparison. Others listen for all four components: Both sources, However, while, Therefore."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"Both sources\" lalu satu poin kesamaan. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan perbandingannya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan perbandinganmu ke kelompok baru menggunakan catatan.",
+        "standar": "Presentasikan perbandinganmu tanpa membaca.",
+        "tantangan": "Presentasikan perbandinganmu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would we lose if we only read one source instead of both?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "What do both sources agree on? One sentence starting with Both sources."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa mengidentifikasi poin kesamaan nyata, atau sekadar menyebut topik umum?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Therefore sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menarik kesimpulan dari perbandingan, atau hanya merangkum satu sumber terakhir yang disebutkan?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka perbandingan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk slot Therefore di kerangka dan ucapkan: \"Therefore must come from comparing BOTH sources — not a summary of one.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat Therefore dari model kalimat 3 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sebutkan fungsi setiap komponen perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Both sources = what they agree on. However and while = where they differ in focus. Therefore = what this difference tells us together, not a summary of one source, a conclusion about both."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan satu perbandingan lagi menggunakan sumber berbeda — misalnya dua artikel tentang nutrisi vs. olahraga di sekolah — menggunakan pola empat komponen yang sama. Minta siswa mengikuti."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat Therefore dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding a significance sentence after your conclusion. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, schools should invest in both green spaces and physical activity programs. This is significant because public health research shows neither alone is enough, students need both."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add This is significant because after your own Therefore sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That upgrades your conclusion to an evaluative insight.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka ucapkan perbandingan lengkap mereka tanpa melihat buku, atau memperkuat kalimat Therefore dengan satu alasan spesifik mengapa kedua sumber diperlukan bersama-sama."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +774,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

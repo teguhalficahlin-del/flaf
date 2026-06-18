@@ -1,3 +1,592 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "[Title] | [Key Information] | [Contact/Action] | [Additional Note]",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu informasi acara terpisah yang menunjukkan empat informasi terpisah (nama acara, kapan dan di mana, apa yang harus dilakukan atau dibawa, catatan untuk semua orang — siap disusun menjadi satu pamflet), templat tata letak pamflet dengan empat bagian berlabel dipisahkan oleh \"|\" (Title | Key Information | Contact/Action | Additional Note), dan diagram transformasi yang menunjukkan unggahan promosi TP sebelumnya dikondensasi menjadi tata letak pamflet.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan empat warna spidol berbeda untuk color-coding empat bagian pamflet di papan tulis selama MODEL."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. We are wrapping up Kelas 8 with something practical."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Berikan orientasi singkat bahwa ini adalah sesi penutup untuk Kelas 8."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Think about school events you know, festivals, book swaps, fairs. How is that information usually organized?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu informasi acara terpisah — tunjukkan satu per satu ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these information cards. How would you put them together into one clear announcement?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to organize all this into one clear information flyer, four parts, separated by a line."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun. Setiap flyer model dibaca per-bagian dengan jeda di setiap pemisah \"|\". Beri kode warna empat bagian di papan tulis saat membaca setiap flyer.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Gambar empat kotak di udara terhubung garis vertikal sambil menjelaskan struktur pamflet — tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk atau beri kode warna setiap bagian di papan tulis satu per satu — Title dengan warna pertama, Key Information dengan warna kedua, Contact/Action dengan warna ketiga, Additional Note dengan warna keempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Gerakkan tangan horizontal dari kiri ke kanan sambil membaca flyer pertama — berhenti sejenak di setiap pemisah \"|\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After-School Club Festival | This Friday, 3 p.m., School Hall | Sign up at the club table | Try music, art, and sports clubs."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat empat jari dan hitung setiap bagian — \"Title -- one. When and where -- two. What to do -- three. Extra note -- four.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Gerakkan tangan horizontal dari kiri ke kanan untuk flyer kedua — beri kode warna empat bagian di papan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "School Recycling Drive | Saturday, 8 a.m. | Register at Room 5 | Bring reusable bags."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Gerakkan tangan horizontal dari kiri ke kanan untuk flyer ketiga — beri kode warna empat bagian di papan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all students and the local community."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Gerakkan tangan horizontal dari kiri ke kanan untuk flyer keempat — beri kode warna empat bagian di papan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Reading Week at the School Library | Every day this week, 3 p.m. | Exchange a book and take a new one home | All books welcome from the community."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru membacakan satu pamflet — siswa menirukan bersama. Satu putaran per pamflet. Jeda di setiap \"|\" tetap digunakan. Kode warna di papan tetap terlihat.",
+      "kalimat": [
+        {
+          "label": "Flyer 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Gerakkan tangan horizontal dari kiri ke kanan — berhenti sejenak di setiap \"|\" sambil menunjuk kode warna."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "After-School Club Festival | This Friday, 3 p.m., School Hall | Sign up at the club table | Try music, art, and sports clubs."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Flyer 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Gerakkan tangan horizontal dari kiri ke kanan — berhenti sejenak di setiap \"|\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "School Recycling Drive | Saturday, 8 a.m. | Register at Room 5 | Bring reusable bags."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Flyer 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Gerakkan tangan horizontal dari kiri ke kanan — berhenti sejenak di setiap \"|\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all students and the local community."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Flyer 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Gerakkan tangan horizontal dari kiri ke kanan — berhenti sejenak di setiap \"|\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Reading Week at the School Library | Every day this week, 3 p.m. | Exchange a book and take a new one home | All books welcome from the community."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Build your own information flyer."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk kode warna keempat bagian. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menyusun kartu informasi acara menjadi satu pamflet empat bagian tentang Community Book Swap. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan kartu informasi dan templat pamflet di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use the information cards. Build one flyer about the Community Book Swap, four sections, separated by a line."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep each section short and clear, not a paragraph, not a personal invitation, and not a promotional post."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu bagian pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu isi bagian \"Additional Note\" — tunjuk diagram transformasi dan minta siswa beri satu catatan ekstra tentang siapa yang boleh hadir."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu nama acara, dan minta siswa tulis \"Community Book Swap |\" Tunggu siswa mengisi bagian berikutnya, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Susun kartu informasi yang diberikan ke dalam templat empat bagian. Boleh lihat pamflet model.",
+        "standar": "Tulis pamflet Community Book Swap sendiri dengan semua empat bagian tanpa membaca.",
+        "tantangan": "Tulis pamflet untuk Community Book Swap dan satu acara sekolah berbeda — tunjukkan format empat bagian yang sama untuk keduanya."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Bentuk kelompok tiga atau empat orang. Guru menentukan kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dalam kelompok yang sama — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, pass your flyers around. For each flyer, check: Is the title clear? Is there when and where? Is there an action to take? Is there an extra note?"
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give one piece of feedback to the writer after checking."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bertukar pamflet dan memberikan umpan balik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah setiap pamflet sudah diperiksa oleh setidaknya dua anggota."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now each group will present to a new group."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam lebih dari sepuluh detik — tunjuk kode warna bagian pertama di papan dan tanya \"What is the title in this flyer?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika anggota kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum melanjutkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada siswa yang menggabungkan semua informasi dalam satu paragraf — tunjuk templat pamflet dan minta siswa pisahkan dengan \"|\"."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Lihat satu pamflet dalam kelompokmu dan tunjuk setiap empat bagian.",
+        "standar": "Periksa semua pamflet dalam kelompok dan katakan bagian mana yang paling jelas di setiap pamflet.",
+        "tantangan": "Periksa semua pamflet dan katakan kepada setiap penulis: \"Your clearest section is ___ because ___. You could improve ___ by ___.\""
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap kelompok bergabung dengan satu kelompok lain — membentuk kelompok baru empat orang dari kelompok yang berbeda.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kelompok mana bergabung dengan kelompok mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your flyer first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your flyer. Read each section aloud using your own words."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kode warna bagian pertama, dan minta ucapkan nama acaranya sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu kategori informasi baru pada pamflet (misalnya catatan transportasi atau biaya masuk)."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca pamfletmu bagian demi bagian ke kelompok baru.",
+        "standar": "Presentasikan pamfletmu tanpa membaca dan kelompok periksa semua empat bagian ada.",
+        "tantangan": "Presentasikan pamfletmu, lalu jawab satu pertanyaan dari kelompok tentang detail penting (misalnya \"What do we need to bring?\" atau \"Where exactly is this?\")."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your flyer title and when-and-where. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyampaikan dua bagian pertama dengan jelas dan singkat? Bukan paragraf dan bukan kalimat promosi?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your action and additional note. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyatakan tindakan yang perlu dilakukan dan catatan tambahan secara terpisah? Bukan semuanya digabung dalam satu kalimat panjang?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali templat tata letak pamflet."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kode warna keempat bagian di papan — ucapkan flyer ketiga sekali lagi, beri isyarat tangan ke arah siswa setiap jeda \"|\"."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki bagian yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat templat pamflet — tunjuk setiap pemisah \"|\" satu per satu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Community Book Swap -- separator -- Saturday, 9 a.m., School Library -- separator -- Bring at least one book to exchange -- separator -- Open to all students and the local community."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa menirukan sambil menunjuk setiap kode warna di papan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try your own. What is your title?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan Title — lalu minta \"When and where?\" — lalu \"What to bring?\" — lalu \"Extra note?\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap menyampaikan keempat bagian dengan jelas tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all | Free entry, no transport needed."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add one new information category to your own flyer."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan satu kategori informasi baru (misalnya catatan biaya atau transportasi) pada pamflet mereka."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That extra section makes your flyer more complete.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka membacakan pamflet lengkap mereka bagian demi bagian tanpa melihat buku, atau menulis pamflet untuk satu acara sekolah lain menggunakan format empat bagian yang sama di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -170,5 +759,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

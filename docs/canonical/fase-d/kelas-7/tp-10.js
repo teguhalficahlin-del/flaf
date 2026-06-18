@@ -1,3 +1,591 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "(Verb) the (object) on/in the (place).\n(Verb) the (object) before (time).",
+    "kartu": "Siapkan kartu tempat dan waktu — on the plate, in the kitchen, before serving.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon tindakan dengan tanda panah ke benda — put, spread, cut, wash."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan meja bersih sebelum siswa masuk."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas dengan nada ceria."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning! Let's get cooking, well, almost."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan meja bersih dan siswa siap memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Has anyone ever helped make a snack at home? What did you do?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu dua atau tiga siswa menjawab singkat."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunjukkan kartu bergambar resep sandwich satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these recipe cards. What do you think we are going to make today?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu roti dan kartu mentega berdampingan dan tanya \"What can you make with these two?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we practice giving cooking instructions in English."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan meletakkan sesuatu di atas piring."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Put the bread on the plate."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu roti, lalu tunjuk kartu piring."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan mengoleskan sesuatu di atas roti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Spread the butter on the bread."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu mentega, lalu tunjuk kartu roti."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tiga kartu kata urutan First, Then."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan mencuci sesuatu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First, wash the knife in the kitchen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu pisau, lalu kartu in the kitchen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan memotong."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Then, cut the bread before serving."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu pisau, lalu tunjuk kartu before serving."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu instruksi — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Instruksi 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan meletakkan sesuatu di atas piring — tunjuk kartu roti dan piring."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Put the bread on the plate."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Instruksi 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan mengoleskan sesuatu — tunjuk kartu mentega dan roti."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Spread the butter on the bread."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Instruksi 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan memotong — tunjuk kartu pisau dan kartu before serving."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Cut the bread before serving."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own cooking instructions."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan minta siswa baca bersama sekali lagi: Verb the blank on the blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis instruksi memasak sendiri menggunakan pola Verb + objek + tempat/waktu. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu resep dan ikon tindakan di papan tulis di sebelah pola. Tempel juga kartu tempat dan waktu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own cooking instructions. Use the recipe cards."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Verb, then the object, then the place or time. Put the bread on the plate. Cut the bread before serving. Like that."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang tidak menyertakan tempat atau waktu dalam instruksinya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa lupa menyertakan tempat atau waktu — tunjuk pola di papan tulis dan tanya \"Where? Or when?\" Minta siswa menambahkan."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, peragakan meletakkan sesuatu di atas piring, dan ucapkan \"Put the bread blank the plate. On? In?\" Tunggu siswa melengkapi dan menulis satu instruksi, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kartu resep dan lengkapi satu instruksi: blank the blank on/in the blank.",
+        "standar": "Tulis dua instruksi, masing-masing dengan kata kerja aksi, objek, dan tempat atau waktu: Put the bread on the plate. Cut the bread before serving.",
+        "tantangan": "Tulis tiga langkah resep singkat dengan First, Then, Finally — setiap langkah adalah instruksi Verb + objek + tempat/waktu — dan tambahkan satu deskripsi: The blank is blank and blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Susun kartu resep di papan tulis agar terlihat oleh semua pasangan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A memberikan satu instruksi. Siswa B menunjuk kartu resep yang tepat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Give instructions to your partner. Your partner points to the right card. Then swap. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bermain instruksi dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa menyertakan tempat atau waktu dalam setiap instruksi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu roti dan peragakan meletakkannya di atas piring. Minta siswa ucapkan \"Put the bread blank the plate.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa berikan instruksi dari kartu yang berbeda belum disebutkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Berikan satu instruksi. Pasangan tunjuk kartu resep yang tepat. Lalu tukar.",
+        "standar": "Berikan tiga instruksi berurutan: First, Then, Finally. Pasangan peragakan setiap instruksi berurutan. Lalu tukar.",
+        "tantangan": "Berikan resep mini lengkap — urutan instruksi ditambah satu deskripsi. Pasangan mengikuti dan menunjuk setiap kartu. Lalu tukar."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Give your cooking instructions to the new group. The group mimes or points to the cards in order."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah instruksi lengkap dengan objek dan tempat/waktu."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk kartu resep dan minta siswa berikan satu instruksi menggunakan kartu tersebut."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika instruksi tidak menyertakan tempat atau waktu — tunjuk pola di papan tulis dan minta siswa tambahkan tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Berikan dua instruksi. Kelompok tunjuk kartu yang sesuai. Boleh membaca.",
+        "standar": "Berikan tiga langkah resep: First, Then, Finally. Kelompok peragakan. Tanpa membaca.",
+        "tantangan": "Berikan resep mini lengkap dengan satu deskripsi, dan periksa bahwa kelompok mengikuti setiap langkah dengan benar."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu pisau."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me an instruction using this knife. Verb, object, place or time. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan instruksi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyertakan objek dan tempat atau waktu? Apakah dimulai dengan kata kerja?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain — tunjuk kartu roti dan piring bersamaan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me an instruction using these two cards. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah instruksi lengkap Verb + objek + tempat?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu resep."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua instruksi sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan meletakkan sesuatu di atas piring perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Put the bread on the plate."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu tempat on the plate."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now: where? On the plate."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi dengan instruksi berbeda — tekankan tempat atau waktu di akhir."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Cut the bread on the board before serving."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Give me one instruction with both a place and a time. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different verb.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang tiga instruksi resep tanpa melihat buku, atau menulis satu instruksi baru menggunakan kata kerja berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -176,5 +764,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

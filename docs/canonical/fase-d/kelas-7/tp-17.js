@@ -1,3 +1,591 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Please (action).\nPlease don't (action).",
+    "kartu": "Siapkan kartu kesopanan yang menunjukkan peraturan blak-blakan di sebelah versi sopannya: Don't lose my book di sebelah Please don't lose my book.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon barang yang dipinjam dan dikembalikan teman — buku, kotak pensil, dan pulpen."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Morning, everyone! Check your phones quickly, then put them away."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu kelas siap untuk memulai pelajaran."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever sent a message to a class group chat? What did you write?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu tangkapan layar grup chat kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these chat messages. What makes them polite?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu kesopanan dan tanya \"What word makes this message polite?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to write polite messages in English."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan mengetik pesan di ponsel."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulurkan tangan terbuka yang ramah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please bring my English book tomorrow."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur tidak lembut dengan satu tangan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please don't forget your pencil case."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon kotak pensil."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur tidak lembut — tunjuk ikon pulpen."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please don't lose my pen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulurkan tangan terbuka. Angguk."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan mengetik pesan di ponsel."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please reply to my friends in the class chat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu pesan — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Pesan 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Ulurkan tangan terbuka — tunjuk ikon buku."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Please bring my English book tomorrow."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pesan 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buat gestur tidak lembut — tunjuk ikon kotak pensil."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Please don't forget your pencil case."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pesan 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buat gestur tidak lembut — tunjuk ikon pulpen."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Please don't lose my pen."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own polite messages."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kesopanan dan minta siswa baca bersama sekali lagi: Please blank. Dan: Please don't blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pesan chat sopan mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel ikon barang di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu kesopanan di papan tulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own polite chat messages. One request and one reminder."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please blank for a request. Please don't blank for a reminder. About school items. No sequencing. No Let's. No I think."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis First atau Let's atau I think, dan ingatkan: \"Just a message. Please blank. Or: Please don't blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu aksi apa yang ingin ditulis — tunjuk ikon barang dan tanya \"What can you ask your friend to do with this?\" Bantu dengan \"Please blank my blank.\" Dan tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, ulurkan tangan terbuka, dan ucapkan \"Please bring my blank. Book? Pencil?\" Tunggu siswa memilih dan menulis satu pesan, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu ikon barang dan lengkapi satu pesan: Please blank my blank. Atau: Please don't blank my blank.",
+        "standar": "Tulis dua pesan — satu Please blank sebagai permintaan dan satu Please don't blank sebagai pengingat.",
+        "tantangan": "Ambil satu peraturan blak-blakan: Don't lose my pen. Tulis ulang secara sopan: Please don't lose my pen. Lalu tambahkan satu permintaan Please blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A mengirimkan satu pesan sopan tentang barang sekolah ke Siswa B: Please bring my English book tomorrow."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B membalas dengan pesan sopan: Please don't forget my pencil case."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Take turns. Send a polite message. Your partner replies politely. Then swap. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bertukar pesan dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah pesan tetap singkat dan mandiri tanpa sequencing atau invitation."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — ulurkan tangan terbuka ke arah pasangan dan ucapkan \"Please blank my blank. What do you need from your friend?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan menulis First atau Let's di pesan — tunjuk pola di papan tulis dan ucapkan \"Just a chat message. Please blank. Short.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa tulis satu pesan sopan lagi tentang barang berbeda."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Kirimkan satu pesan dari buku catatan ke pasangan — boleh membaca. Pasangan membalas dengan pesan sopan.",
+        "standar": "Tukarkan dua pesan masing-masing tanpa membaca — satu permintaan dan satu pengingat.",
+        "tantangan": "Kirimkan pengingat dan permintaan sopan, dan balas pesan pasangan secara sopan."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Bagikan kartu kosong kecil kepada setiap siswa — atau minta siswa gunakan selembar kertas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your polite messages on the card. One Please blank. And one Please don't blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu dua menit untuk menulis kartu pesan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana untuk membentuk kelompok empat orang baru."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Pass your cards around the group and read each other's messages."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to reads first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu empat menit untuk semua anggota berbagi dan bertukar kartu pesan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah pesan menggunakan Please dan Please don't dengan benar."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang tidak menulis apapun di kartu — dekati, tunjuk ikon buku, dan minta siswa tulis: Please bring my blank."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pesan di kartu tidak menggunakan Please — tunjuk kartu kesopanan di papan tulis dan ingatkan: \"Please makes it polite. Add it.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah empat menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tulis satu kartu pesan sopan dan baca ke kelompok — boleh menyalin dari CHANGE.",
+        "standar": "Tulis dua kartu pesan (permintaan dan pengingat) dan tukarkan dengan kelompok.",
+        "tantangan": "Tulis pesan untuk dua situasi, tukarkan, dan balas satu pesan teman secara sopan."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me one polite message about a school item. Please blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan pesan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah pesan dimulai dengan Please dan tidak menambahkan sequencing, Let's, atau I think?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Please don't message. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa mengucapkan pengingat sopan dengan lancar tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kesopanan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua pesan sopan sekali lagi — beri isyarat tangan ke arah siswa setiap pesan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulurkan tangan terbuka."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Please bring my English book tomorrow."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur tidak lembut."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please don't forget your pencil case."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan Please di awal setiap pesan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please bring my book. Thank you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "A polite closer. Now you try. Give me one Please message with Thank you at the end. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different item.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua pesan sopan tanpa membaca, atau menulis satu pesan baru tentang barang sekolah yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +762,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,603 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "The problem is ___.\nThis happens because ___.\nAs a result, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu identifikasi masalah (jadwal sekolah mingguan dengan waktu gerak yang sangat sedikit disorot), kartu kerangka pernyataan masalah tiga slot (The problem is / because / As a result), dan kartu ikon (siswa duduk dengan postur membungkuk, figur beraktivitas, jadwal sekolah, lingkaran kebiasaan dengan celah).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa menyiapkan kesimpulan berbasis bukti dari sesi sebelumnya."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. We shift focus today to identifying a real problem."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Based on what we analyzed, what is one clear problem about student physical activity during the school day?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu identifikasi masalah — jadwal sekolah mingguan dengan blok pelajaran duduk sebagai mayoritas dan waktu gerak yang sangat sedikit disorot."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this school schedule. What problem does this visual reveal about students' daily routines?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to name a problem, explain why it happens, and describe what it leads to."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu identifikasi masalah — tunjuk kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The problem is that most students do not get enough physical activity during the school day."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Susuri tanda panah dari kartu masalah ke kartu ikon."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This happens because the school routine leaves very little time for movement between lessons, and most activities are sedentary."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu ikon — angkat kartu kerangka pernyataan masalah, sapukan tangan ke luar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "As a result, many students feel tired and less focused in the afternoon, which affects both their performance and their overall student wellbeing, making it harder to build healthy habits at school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — tampilkan semua kartu. Tunjuk kartu, susuri panah, sapukan tangan ke luar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The problem is that student wellbeing is declining because the current school routine does not include regular physical activity. As a result, students are not building the healthy habits they need for long-term health and concentration."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan di depan badan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu identifikasi masalah — tunjuk kartu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "The problem is that most students do not get enough physical activity during the school day."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Susuri tanda panah dari kartu masalah ke kartu ikon."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "This happens because the school routine leaves very little time for movement between lessons, and most activities are sedentary."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka pernyataan masalah — sapukan tangan ke luar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "As a result, many students feel tired and less focused in the afternoon, which affects both their performance and their overall student wellbeing, making it harder to build healthy habits at school."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan semua kartu — tunjuk kartu, susuri panah, sapukan tangan ke luar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "The problem is that student wellbeing is declining because the current school routine does not include regular physical activity. As a result, students are not building the healthy habits they need for long-term health and concentration."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own problem statement."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kerangka dan sebutkan fungsi setiap komponen: \"The problem is = name what is wrong. Because = explain why it happens. As a result = show what it leads to.\" Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pernyataan masalah mereka sendiri tentang aktivitas fisik siswa di sekolah. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write a problem statement about student physical activity at school. Name the problem, explain why it happens, and describe what it leads to."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "All three components must be separate, naming the problem is not the same as explaining its cause."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menulis keluhan umum tanpa sebab atau akibat, atau yang melewatkan As a result."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara memulai pernyataan masalah — tunjuk kartu jadwal sekolah di papan tulis dan minta siswa mulai dengan \"The problem is that students do not...\" lalu satu kalimat spesifik."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk slot pertama di kerangka, dan minta siswa ucapkan \"The problem is that\" lalu satu kalimat tentang aktivitas fisik. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka tiga slot di papan tulis dan isi setiap slot menggunakan kartu jadwal sekolah dan catatan dari TP-12.",
+        "standar": "Tulis pernyataan masalah sendiri tanpa membaca kerangka. Gunakan kosakata: student wellbeing, physical activity, school routine, atau healthy habits.",
+        "tantangan": "Tulis pernyataan masalah dan buat As a result mendeskripsikan konsekuensi jangka panjang bagi kesejahteraan siswa, bukan hanya perasaan sesaat."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan pernyataan masalahnya ke Siswa B. Siswa B mendengarkan dan memeriksa: ada masalah yang disebutkan? ada sebab yang dijelaskan? ada akibat yang dideskripsikan?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B melakukan hal yang sama ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your turn. After your partner shares, give one piece of feedback: is the consequence specific enough to understand the impact?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — pastikan sebagian besar pasangan sudah mengidentifikasi ketiga komponen secara terpisah dalam pernyataan masalah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk pola pertama di papan tulis dan minta siswa ucapkan \"The problem is that students\" lalu satu kata masalah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan pernyataan masalahnya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas identifikasi individual. Tunjuk pola The problem is, This affects, Many students di papan tulis, minta seluruh kelas mengucapkan ketiga komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca pernyataan masalah dari buku catatan ke pasangan. Pasangan menunjuk ketiga komponen dalam teksmu.",
+        "standar": "Bagikan pernyataan masalah tanpa membaca. Pasangan memeriksa ketiga komponen dan apakah akibat cukup spesifik.",
+        "tantangan": "Bagikan pernyataan masalah dan pasangan bertanya: \"Who is most affected by this consequence?\" — kamu jelaskan dampaknya pada kesejahteraan siswa secara spesifik."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your problem statement. Others listen for all three components: problem, cause, consequence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"The problem is that\" lalu satu kata masalah. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan pernyataan masalahnya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan pernyataan masalah ke kelompok baru menggunakan catatan.",
+        "standar": "Presentasikan pernyataan masalah tanpa membaca.",
+        "tantangan": "Presentasikan pernyataan masalah tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What evidence from the sources in our previous lessons supports your problem statement?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your The problem is sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyebutkan masalah yang spesifik dan dapat diidentifikasi, bukan keluhan umum?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your As a result sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa mendeskripsikan akibat yang mengikuti dari masalah, atau sekadar mengulang masalah dengan kata lain?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka pernyataan masalah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk setiap tanda panah di kerangka — \"The problem is → because → As a result\" — sebutkan fungsi setiap langkah sebelum mengucapkan kalimat model."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat As a result dari model kalimat 3 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan setiap komponen dengan jelas menggunakan contoh lain — misalnya kurangnya air minum bersih di sekolah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The problem is that, I name what is wrong. Because, I explain why it happens. As a result, I show what it leads to. These are three different moves, not one idea in three sentences."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa mengikuti ketiga langkah dengan topik yang sama sebelum kembali ke topik mereka sendiri."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat As a result dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding a second consequence after your first one. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "As a result, students feel tired in the afternoon. Not only that, but students who do not move regularly during school hours are also less likely to exercise after school, which harms their long-term healthy habits."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add Not only that, but after your own As a result sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That deepens the consequence without replacing your original structure.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka ucapkan pernyataan masalah lengkap mereka tanpa melihat buku, atau perkuat kalimat As a result dengan satu akibat jangka panjang yang spesifik bagi kesejahteraan siswa."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +772,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,571 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "It was (adjective) because (event that happened).",
+    "kartu": "Siapkan kartu kerangka kalimat yang menghubungkan wajah perasaan dengan gambar peristiwa: It was blank because blank.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan foto pengalaman perpustakaan di meja guru — siswa mencari buku, membaca di meja, dan pojok baca yang tenang."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas dengan nada hangat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Hello, friends! Ready to share some experiences today?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Kondisikan kelas dengan tenang sebelum memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Has anyone visited the school library or a reading corner recently? How did it feel?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan foto pengalaman perpustakaan satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these library photos. What feeling do you get when you see them?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk foto pojok baca dan tanya \"Is this place quiet or noisy?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan foto di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to share how we felt and why."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan mencari buku di rak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I found a book and read it at the library."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto siswa mencari buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada — tunjuk kartu wajah senang — buka tangan ke arah foto buku dan perpustakaan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was fun because the reading was interesting."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu kerangka kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada — tunjuk kartu wajah tenang — buka tangan ke arah foto pojok baca."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was quiet because everyone read together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada — tunjuk kartu wajah antusias — buka tangan ke arah foto buku."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was exciting because I learned new things from the books."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — tunjuk kartu wajah senang — buka tangan ke arah foto."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It was fun because the reading was interesting."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — tunjuk kartu wajah tenang — buka tangan ke arah foto pojok baca."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It was quiet because everyone read together."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — tunjuk kartu wajah antusias — buka tangan ke arah foto buku."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It was exciting because I learned new things from the books."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write about your own experience."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kerangka kalimat dan minta siswa baca bersama: It was blank because blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis tanggapan perasaan mereka sendiri tentang pengalaman perpustakaan. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel foto perpustakaan dan kartu perasaan di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu kerangka kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write about how you felt at the library or reading corner. Use: It was blank because blank."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The feeling: fun, quiet, exciting. The reason: something that really happened. Not a general opinion."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis alasan umum seperti because reading is good — ingatkan: \"A real event. What happened? Not a general reason.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung membedakan perasaan dan alasan — tunjuk kartu kerangka kalimat: tangan di dada untuk perasaan, tangan terbuka ke arah foto untuk peristiwa. Minta siswa pilih kartu perasaan dulu, lalu tunjuk foto peristiwa yang sesuai."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu wajah senang, dan ucapkan \"It was fun because blank. What happened at the library?\" Tunggu siswa menjawab dan bantu tulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kartu perasaan dan lengkapi: It was blank because blank (sesuatu yang terjadi).",
+        "standar": "Tulis dua tanggapan perasaan tentang pengalamanmu di perpustakaan — masing-masing It was blank because blank dengan peristiwa konkret.",
+        "tantangan": "Awali dengan rangkuman tindakan terhubung: I found a book and read it. Lalu tulis tanggapan perasaanmu: It was blank because blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A berbagi satu tanggapan perasaan ke Siswa B: It was quiet because everyone read together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan menyebutkan perasaan dan peristiwa yang diingat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B berbagi tanggapan perasaannya ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Take turns. Share how you felt and why. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk berbagi dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa menggunakan peristiwa konkret setelah because, bukan alasan umum."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu wajah senang ke arah pasangan dan ucapkan \"It was blank because blank. How did you feel?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa memberikan alasan umum setelah because — tunjuk foto peristiwa dan ucapkan \"A real event. What happened? Because blank.\" Tunggu siswa menyebutkan peristiwa konkret."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa tambahkan satu tanggapan perasaan lagi dengan kata sifat berbeda."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bagikan satu kalimat It was blank because blank dari buku catatan — boleh membaca. Pasangan mendengarkan dan merespons.",
+        "standar": "Bagikan dua tanggapan perasaan tanpa membaca. Dengarkan dan ingat perasaan serta peristiwa milik pasangan.",
+        "tantangan": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaanmu. Pasangan melakukan hal yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Share your library experience and how you felt. It was blank because blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah because diikuti peristiwa konkret, bukan alasan umum atau argumentasi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk kartu perasaan dan minta siswa mulai dengan \"It was blank because blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menjawab dengan alasan umum — tunjuk foto peristiwa di papan tulis dan ingatkan: \"A real event. What happened? Because everyone read. Because I found a book.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bagikan satu tanggapan perasaan ke kelompok baru — boleh membaca.",
+        "standar": "Bagikan dua tanggapan perasaan tanpa membaca.",
+        "tantangan": "Awali dengan rangkuman tindakan terhubung, lalu bagikan tanggapan perasaan, dan tanggapi satu pengalaman teman."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "How did you feel at the library? Use It was blank because blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan peristiwa konkret setelah because, bukan alasan umum?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menyampaikan tanggapan perasaan dengan lancar tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua tanggapan perasaan sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada — tunjuk kartu wajah tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. It was quiet because everyone read together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka tangan ke arah foto pojok baca."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Because blank. A real event. Not: because reading is good. Now try: It was blank because blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba dan melengkapi."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was fun and exciting because we read together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Two feelings, one sentence. Now you try. Give me one response with two feelings. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Keep the because and the real event.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang tanggapan perasaan tanpa membaca, atau menulis satu tanggapan baru tentang pengalaman membaca yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +741,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

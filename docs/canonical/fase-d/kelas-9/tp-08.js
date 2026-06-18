@@ -1,3 +1,587 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "First, ___.\nNext, ___.\nAnother point is ___.\nFinally, ___.\nBased on this, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — empat kartu catatan penemuan berlabel First / Next / Another point / Finally (isi: surat lama, foto, dokumen berisi nama, kondisi benda), kartu pengatur isi presentasi lima slot berkode warna (First / Next / Another point is / Finally / Based on this), dan kartu kontras visual (diagram alur penjelasan proses gaya PAT-8-10 di sebelah pengatur isi presentasi gaya PAT-9-08).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Please have your discovery notes ready on your desk."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Berikan waktu sebentar bagi siswa menyiapkan catatan penemuan mereka."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "You have opened your presentation. Now, what are the main points you want to share about the storage room?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan empat kartu catatan penemuan berlabel First / Next / Another point / Finally — tunjuk setiap kartu satu per satu."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa membaca keempat kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these discovery notes. How can you organize them into clear presentation points?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya tentang urutan poin. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to build a clear, organized presentation body, with transitions and a conclusion from evidence."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu catatan penemuan — angkat satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First, we found a collection of old letters and historical documents from the school's earliest years, carefully stored in wooden boxes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat dua jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Next, we discovered a set of photographs showing teachers and students from more than fifty years ago."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri gestur ke samping — angkat kartu pengatur isi presentasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Another point is that several historical documents include the names of former teachers whose classrooms still exist in our school today, a direct link to our school history."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu pengatur — angkat telapak tangan terbuka, lalu satukan kedua tangan dari sisi berbeda."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Finally, all the objects were in surprisingly good condition. Based on this evidence, we believe the storage room was used as an archive for important school history that no one had opened in decades."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kedua tangan dan beri isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan. Guru menyebutkan fungsi setiap penanda sebelum menirukan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu catatan penemuan berlabel First — angkat satu jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "First, we found a collection of old letters and historical documents from the school's earliest years, carefully stored in wooden boxes."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu berlabel Next — angkat dua jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Next, we discovered a set of photographs showing teachers and students from more than fifty years ago."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu berlabel Another point — beri gestur ke samping."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Another point is that several historical documents include the names of former teachers whose classrooms still exist in our school today, a direct link to our school history."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu berlabel Finally — angkat telapak tangan terbuka, lalu satukan kedua tangan dari sisi berbeda."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Finally, all the objects were in surprisingly good condition. Based on this evidence, we believe the storage room was used as an archive for important school history that no one had opened in decades."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own organized presentation body."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tampilkan kartu kontras visual dan tunjuk perbedaan antara penjelasan proses (PAT-8-10) dan isi presentasi (PAT-9-08). Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis isi presentasi mereka sendiri tentang penemuan gudang menggunakan kelima penanda. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan keempat kartu catatan penemuan dan kartu pengatur isi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write four main points using First, Next, Another point is, Finally, and Based on this."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Remember, Another point is opens a new dimension, not just the next thing. Based on this draws a conclusion from all the evidence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menggunakan Another point is sebagai penanda urutan biasa atau yang langsung melompat ke Based on this tanpa poin terakhir."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membedakan Another point is dari Next — tunjuk kartu kontras visual dan ucapkan \"Next = the next thing. Another point is = a new angle, a different dimension.\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu catatan berlabel First, dan minta siswa ucapkan \"First, we found\" lalu satu detail. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kartu pengatur isi presentasi lima slot dan isi setiap slot menggunakan kartu catatan penemuan. Boleh membaca catatan. Pastikan ada kelima penanda dalam urutan yang benar.",
+        "standar": "Tulis isi presentasi empat poin sendiri dengan kesimpulan Based on this tanpa membaca kerangka. Gunakan kosakata: historical documents, school history, atau evidence.",
+        "tantangan": "Tulis isi presentasi dan buat Another point is benar-benar sudut yang berbeda dari urutan — misalnya signifikansi penemuan, bukan sekadar benda lain yang ditemukan."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Langkah ini menggunakan kelompok kecil tiga atau empat orang. Guru menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tiga atau empat siswa yang duduk berdekatan sebagai satu kelompok — lanjutkan hingga semua siswa tergabung."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns delivering your presentation body in your group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The group checks: First? Next? Another point is? Finally? Based on this? After each delivery, one member says which transition felt like a genuine new dimension."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — prioritaskan kelompok yang tampak bingung membedakan Another point is dari penanda urutan biasa."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now form a new group with students from other groups."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam lebih dari sepuluh detik — tunjuk buku catatannya dan minta ucapkan \"First, we found\" lalu satu detail sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa sampaikan isi presentasinya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas kelompok. Tunjuk pola lima penanda presentasi di papan tulis, minta seluruh kelas mengucapkannya bersama satu kali secara berurutan, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca isi presentasi dari buku catatan ke kelompok. Kelompok mencentang setiap penanda saat mendengarnya: First, Next, Another point is, Finally, Based on this.",
+        "standar": "Sampaikan isi presentasi tanpa membaca. Kelompok memeriksa kelima penanda.",
+        "tantangan": "Sampaikan isi presentasi, lalu kelompok bertanya: \"What does your evidence — Based on this — actually support?\" Jelaskan hubungannya."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap siswa bergabung ke kelompok baru yang berbeda dari kelompok INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk komposisi kelompok baru — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns delivering your organized presentation body. Others listen for all five markers."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"First, we found\" lalu satu detail sebagai pembuka. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa sampaikan isi presentasinya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sampaikan isi presentasi ke kelompok baru menggunakan catatan.",
+        "standar": "Sampaikan isi presentasi tanpa membaca.",
+        "tantangan": "Sampaikan isi presentasi tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What conclusion does your evidence support?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your Another point is sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa membuka dimensi baru, atau sekadar menyebut benda berikutnya dalam urutan?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Based on this sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menarik kesimpulan dari bukti, atau sekadar menggunakan Based on this sebagai transisi ke poin baru?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kontras visual."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk diagram alur penjelasan proses — ucapkan \"This is a process explanation.\" Lalu tunjuk pengatur isi presentasi — ucapkan \"This is a presentation body.\" Tunjuk perbedaan Another point is dan Based on this."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat model kalimat 3 dan 4 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sebutkan nama setiap penanda dan fungsinya satu per satu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First is the starting point. Next is the next thing. Another point is a NEW ANGLE, something different. Finally is the last item. Based on this is what all the evidence means."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan satu isi presentasi lagi tentang topik penemuan berbeda — misalnya menemukan foto lama di arsip perpustakaan — menggunakan struktur lima penanda yang sama. Minta siswa mengikuti slot per slot."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk salah satu poin di isi presentasi siswa di buku catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding an elaboration sentence after one of your points. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "To illustrate this point further, here is one specific example from the documents we found: a letter written by the first school principal in 1972."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add a To illustrate this point further sentence after one of your own points."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That deepens one point without changing your overall structure.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka sampaikan seluruh isi presentasi mereka sekali lagi tanpa melihat buku, atau memperkuat kalimat Based on this dengan satu kalimat spesifik tentang mengapa bukti tersebut penting bagi komunitas sekolah."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +757,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

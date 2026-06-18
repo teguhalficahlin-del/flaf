@@ -1,3 +1,567 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "After that, (past event).\nAt the end, (past event).\nI learned (something short and concrete).",
+    "kartu": "Siapkan kartu kata penutup — After that dengan tanda panah peristiwa berikutnya, At the end dengan bendera finish, I learned dengan lampu bohlam.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan foto kegiatan komunitas di meja guru — siswa dan warga membersihkan taman bersama, mengumpulkan sampah ke dalam karung, dan taman yang bersih di akhir."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon tema — tangan bergandengan untuk kerja sama, taman bersih untuk kebersihan, dan tangan menolong untuk tanggung jawab."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning! I have a topic close to our community today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu kelas siap dan perhatian penuh ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever helped clean up a public space, a park, a street, or your neighborhood?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan foto kegiatan komunitas satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at what these students did together. What do you think they learned from it?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk foto taman bersih dan tanya \"What does the park look like now? And how did it get this way?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan foto di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to close a story and share what we learned."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It was tiring because we worked hard as a team."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon tangan bergandengan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri gestur ke depan dengan satu tangan — tunjuk kartu After that."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After that, our community cleaned the park together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto komunitas membersihkan taman."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan sebagai penutup — tunjuk kartu At the end."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "At the end, the park was clean and tidy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto taman bersih."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk pelipis dengan satu jari — tunjuk kartu I learned."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned to take responsibility."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon tangan menolong."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Beri gestur ke depan — tunjuk kartu After that dan foto komunitas."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "After that, our community cleaned the park together."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Satukan kedua tangan sebagai penutup — tunjuk kartu At the end dan foto taman bersih."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "At the end, the park was clean and tidy."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tepuk pelipis — tunjuk kartu I learned dan ikon tangan menolong."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I learned to take responsibility."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own closing."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk tiga kartu kata penutup dan minta siswa baca bersama: After that, blank. At the end, blank. I learned blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis penutup cerita ulang komunitas mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel foto kegiatan komunitas dan kartu kata penutup di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel ikon tema di papan tulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own closing for a community clean-up story."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use: After that, blank. At the end, blank. And: I learned blank. Keep I learned short. One thing. Not a long message."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis I learned diikuti pesan moral panjang — ingatkan: \"Short. One thing. I learned to blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now sit in small groups of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu apa yang ingin ditulis setelah I learned — tunjuk ikon tema dan minta siswa pilih satu: team, clean, help, responsibility. Bantu dengan \"I learned to blank.\" Dan minta siswa melengkapi."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu At the end dan foto taman bersih, dan ucapkan \"At the end, the park was blank. Clean? Or tidy?\" Tunggu siswa melengkapi dan menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Lengkapi tiga kalimat penutup: After that, blank. At the end, blank. I learned blank. Jaga setiap kalimat tetap singkat.",
+        "standar": "Tulis dua kalimat penutup (After that dan At the end) dan satu I learned yang singkat dan konkret.",
+        "tantangan": "Awali dengan tanggapan perasaan: It was tiring because we worked hard. Lalu tulis penutup dan satu I learned singkat."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Siswa duduk dalam kelompok tiga atau empat sebagai lingkaran refleksi — guru yang menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tentukan komposisi kelompok — tunjuk secara eksplisit siapa bergabung dengan siapa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your circle, take turns giving the closing of your story."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After that, blank. At the end, blank. I learned blank. Keep each part short. Listen to each classmate."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk berbagi penutup cerita ulang di dalam kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah I learned diikuti satu hal yang singkat dan konkret."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Stay in your group for a moment."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam dan tidak mulai — tunjuk kartu After that dan minta siswa ucapkan \"After that, blank.\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika I learned diikuti penjelasan panjang — tepuk pelipismu dan ucapkan \"Short. One thing. I learned to blank.\""
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bagikan penutupmu dari buku catatan ke lingkaran — boleh membaca — akhiri dengan satu I learned singkat.",
+        "standar": "Bagikan penutupmu tanpa membaca, akhiri dengan I learned singkat. Dengarkan pembelajaran setiap teman.",
+        "tantangan": "Tambahkan tanggapan perasaan terlebih dahulu, lalu penutup dan I learned. Dengarkan dan ingat satu pembelajaran milik teman."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Siswa bergabung dengan kelompok baru — bukan kelompok dari langkah INTERACT — membentuk lingkaran refleksi baru.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dengan kelompok mana untuk membentuk lingkaran baru empat orang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns sharing your recount closing in the new circle. After that, blank. At the end, blank. I learned blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah ketiga bagian penutup muncul dan I learned tetap singkat."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk kartu I learned ke arahnya dan minta siswa ucapkan \"I learned to blank.\" sebagai penutup."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika I learned terlalu panjang — tepuk pelipismu: \"Short. One thing. I learned to blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bagikan dua kalimat penutup dan satu I learned singkat ke lingkaran baru — boleh membaca.",
+        "standar": "Bagikan penutupmu tanpa membaca.",
+        "tantangan": "Bagikan tanggapan perasaan, penutup, dan I learned, lalu tanggapi satu pembelajaran teman dengan That's true. Atau I agree."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your At the end sentence and your I learned. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah At the end diikuti peristiwa lampau konkret? Apakah I learned singkat dan konkret (satu hal)?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your I learned sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa mengucapkan I learned dengan singkat dan konkret tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali tiga kartu kata penutup."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan tiga kalimat penutup sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan sebagai penutup — tunjuk kartu At the end."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. At the end, the park was clean and tidy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk pelipis — tunjuk kartu I learned."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned to take responsibility."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan bahwa I learned harus singkat: satu hal, bukan esai."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I learned to clean up and to help others."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Two things, still short. Now you try. Give me one I learned with two things. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Keep it short. Not a long message.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang ketiga kalimat penutup tanpa membaca, atau menulis penutup baru tentang kegiatan komunitas yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +737,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

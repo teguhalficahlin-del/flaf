@@ -1,3 +1,583 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "I believe ___ because ___.\nFor example, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — perbandingan foto dua pilihan kantin (jajanan bergula versus buah segar dan makanan sehat), kartu pendapat (\"I believe ___ because ___. For example, ___.\"), dan kartu ikon (keranjang buah, pilihan makanan sehat, siswa berenergi di kelas).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Today you will take a position on something important."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Kondisikan kelas untuk diskusi yang lebih formal dari biasanya."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Remember the canteen? We discussed ideas for it earlier. Now, what do YOU believe should change?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan perbandingan foto dua pilihan kantin — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these two canteen options. Which one do you believe the school should offer more of, and why?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to state a position clearly, using I believe, because, and For example."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada dengan mantap untuk \"I agree\" — tunjuk kartu skenario kantin."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I agree that the canteen should sell more fruit because it is healthy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada dengan mantap untuk \"I believe\" — buka tangan untuk \"because\". Angkat satu jari untuk \"For example\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives them energy for afternoon classes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Susuri penalaran dari proses ke hasil — tunjuk ikon siswa berenergi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Selling fruit also reduces waste because fruit needs less plastic. As a result, the school produces less trash."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada untuk \"I believe\" — buka tangan untuk \"because\", angkat satu jari untuk \"For example\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe students should have more healthy choices because good food improves learning. For example, a salad bar offers many options."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada dengan mantap — tunjuk kartu skenario kantin."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I agree that the canteen should sell more fruit because it is healthy."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — buka tangan untuk \"because\" — angkat satu jari untuk \"For example\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives them energy for afternoon classes."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Susuri penalaran dari proses ke hasil — tunjuk ikon siswa berenergi."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Selling fruit also reduces waste because fruit needs less plastic. As a result, the school produces less trash."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — buka tangan untuk \"because\" — angkat satu jari untuk \"For example\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe students should have more healthy choices because good food improves learning. For example, a salad bar offers many options."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. State your position about the canteen."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menyatakan posisi sendiri tentang kantin dengan satu alasan dan satu contoh. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan perbandingan foto dan kartu pendapat di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. State your position about the school canteen with a reason and one example."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Not What do you think, not Most, and not First, this is your position with evidence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu posisi apa yang akan ditulis — tunjuk foto kedua pilihan kantin dan minta siswa pilih salah satu sebagai posisi awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk foto buah segar, dan minta siswa ucapkan \"I believe the canteen should sell more fruit because ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan perbandingan foto dan lengkapi: \"I believe ___ because ___. For example, ___.\"",
+        "standar": "Tulis posisimu sendiri dengan satu alasan dan satu contoh (\"I believe ... because ... For example, ...\").",
+        "tantangan": "Mulai dengan mengingat kembali kesepakatan kelompok (\"I agree that the canteen should ...\"), lalu nyatakan posisimu sendiri dengan alasan dan \"For example, ...\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A mempresentasikan kartu pendapatnya (\"I believe ... because ... For example, ...\")."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B memeriksa apakah ada posisi, alasan, dan contoh — lalu tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Your turn now. Present your opinion card to your partner. Your partner checks for position, reason, and example. Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk foto kantin dan tanya \"What do you believe the canteen should sell more of?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan posisinya sekali lagi tanpa melihat buku."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan posisi dan alasan (boleh membaca); pasangan periksa apakah ada \"For example, ...\" Lalu tukar peran.",
+        "standar": "Presentasikan posisi lengkap dengan contoh tanpa membaca; pasangan sebutkan contohnya. Lalu tukar peran.",
+        "tantangan": "Ingat kembali kesepakatan kelompok, lalu nyatakan posisi dengan alasan dan contoh; pasangan lakukan hal yang sama. Lalu tukar peran."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your opinion card first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your position about the canteen to the group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk foto pilihan kantin, dan minta ucapkan \"I believe ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambah satu contoh lagi dengan \"Another example is ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan posisi dan alasanmu ke kelompok. Boleh membaca.",
+        "standar": "Presentasikan posisi lengkap dengan contoh tanpa membaca.",
+        "tantangan": "Presentasikan posisimu, lalu jawab satu pertanyaan tentang alasan atau contohmu dari kelompok."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your I believe sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyatakan posisi dengan alasan yang jelas? Apakah ini posisi personal berbukti, bukan laporan atau proses?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your For example sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa memberikan contoh konkret yang mendukung klaimnya?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu pendapat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu pendapat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. I believe the canteen should sell more healthy food because it helps students stay healthy."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add For example. For example..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto buah segar — tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap mengucapkan posisi lengkap dengan contoh tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives energy. Another example is that yogurt helps digestion."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add a second example with Another example is."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan contoh kedua."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Two examples make your position stronger.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan posisi lengkap dengan contoh tanpa melihat buku, atau menulis satu posisi tentang topik sekolah yang berbeda di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +753,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

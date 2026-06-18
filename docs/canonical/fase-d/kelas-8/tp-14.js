@@ -1,3 +1,575 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "One reason is that ___.\nAnother reason is that ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — profil siswa yang menunjukkan berbagai alasan bergabung klub (belajar keterampilan, mencari teman, mendapatkan pengalaman), peta alasan (satu posisi di tengah dengan cabang \"One reason is that ___\" dan \"Another reason is that ___\"), dan kartu ikon (lencana keterampilan, sekelompok teman, sertifikat pengalaman, tanda klub).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Morning, class. I want you thinking critically today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Cek apakah semua siswa membawa catatan dari sesi sebelumnya."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Think about a school club you are in, or would like to join. Why is it worth your time?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan profil siswa dengan berbagai alasan bergabung klub — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these student profiles. What reasons do they give, and can you add your own?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to support one position with more than one reason, using One reason is that and Another reason is that."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan tangan di dada untuk \"I believe\" — buka tangan untuk \"because\" — angkat satu jari untuk \"For example\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe joining a club is useful because it helps students grow. For example, they learn new things."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari sambil tunjuk ke peta alasan. Angkat jari kedua — tarik kedua alasan ke posisi pusat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One reason is that clubs build new skills. Another reason is that they help students make friends."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari — angkat jari kedua — tarik kembali ke posisi pusat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One reason is that members gain experience. Another reason is that they enjoy teamwork."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari — angkat jari kedua — tarik kembali ke posisi pusat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One reason is that clubs are fun. Another reason is that they prepare students for the future."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan tangan di dada — buka tangan untuk \"because\" — angkat satu jari untuk \"For example\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe joining a club is useful because it helps students grow. For example, they learn new things."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu jari — angkat jari kedua — tarik kembali ke posisi pusat."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One reason is that clubs build new skills. Another reason is that they help students make friends."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu jari — angkat jari kedua — tarik kembali ke posisi pusat."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One reason is that members gain experience. Another reason is that they enjoy teamwork."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu jari — angkat jari kedua — tarik kembali ke posisi pusat."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One reason is that clubs are fun. Another reason is that they prepare students for the future."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Support your position with two reasons."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa mendukung posisi tentang bergabung klub dengan dua alasan versi sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan profil siswa dan peta alasan di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these patterns. Give two reasons for joining a club."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Both reasons must support the same position, not Most, not First, and not a story."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu alasan apa yang akan ditulis — tunjuk profil siswa di papan tulis dan minta siswa pilih salah satu alasan sebagai titik awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ikon lencana keterampilan, dan minta siswa ucapkan \"One reason is that clubs build ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan profil siswa dan lengkapi: \"One reason is that ___. Another reason is that ___.\"",
+        "standar": "Tulis dua alasan paralel untuk bergabung dengan klub (\"One reason is that ... Another reason is that ...\").",
+        "tantangan": "Mulai dengan posisimu (\"I believe joining a club is useful because ...\"), lalu berikan dua alasan dengan \"One reason is that ... Another reason is that ...\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Bentuk kelompok tiga atau empat orang. Guru menentukan kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dalam kelompok yang sama — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, choose one position about clubs. Take turns adding a reason."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Together, build a reason map that supports the same position."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk membangun peta alasan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah setiap anggota sudah menyumbang setidaknya satu alasan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now each group will present to a new group."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam lebih dari sepuluh detik — tunjuk profil siswa pertama dan tanya \"Why is joining a club useful?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika anggota kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum melanjutkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa mendominasi — tunjuk siswa lain dan minta mereka tambahkan alasan berikutnya."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tambahkan satu alasan ke peta kelompok (\"One reason is that ___\"). Boleh membaca.",
+        "standar": "Tambahkan dua alasan tanpa membaca, keduanya mendukung posisi yang sama.",
+        "tantangan": "Nyatakan posisi, lalu tambahkan dua alasan, dan pastikan semua alasan kelompok mendukung klaim yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap kelompok bergabung dengan satu kelompok lain — membentuk kelompok baru empat orang dari kelompok yang berbeda.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kelompok mana bergabung dengan kelompok mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your reason map first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting a position and its reasons to the group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk peta alasan, dan minta ucapkan \"One reason is that ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan alasan ketiga dengan \"A third reason is that ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan dua alasan ke kelompok baru. Boleh membaca.",
+        "standar": "Presentasikan posisi dan dua alasan tanpa membaca.",
+        "tantangan": "Presentasikan posisi dan alasan-alasanmu, lalu jawab satu pertanyaan tentang satu alasan dari kelompok."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your One reason sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa memberikan alasan yang mendukung posisi yang jelas? Apakah ini alasan paralel, bukan daftar ciri atau urutan langkah?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Another reason sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah alasan kedua mendukung posisi yang sama dengan alasan pertama?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali peta alasan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan ketiga sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat peta alasan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. One reason is that clubs build new skills. Another reason is that they help students make friends."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try with your own reasons. One reason is that..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk profil siswa — tunggu siswa melengkapi, lalu minta \"Another reason is that ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap mengucapkan dua alasan tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. One reason is that clubs build skills. Another reason is that they make friends. A third reason is that they give real experience."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add a third reason with A third reason is that."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan alasan ketiga."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Three reasons make a stronger argument.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan dua alasan paralel tanpa melihat buku, atau menulis dua alasan untuk topik yang berbeda di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +745,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

@@ -1,3 +1,579 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Most ___.\nSome ___.\nThey usually ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — tabel perbandingan pohon kota (maple, beringin, palem) dengan kolom daun/keteduhan/tempat tumbuh, kartu generalisasi (\"Most ___\" / \"Some ___\" / \"They usually ___\"), dan kartu ikon (daun hijau, pohon rindang di taman, matahari dan air).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome back, class. Shall we begin?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Periksa kesiapan kelas secara singkat."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "When you walk to school, do you pass any trees? What do they look like?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan tabel perbandingan pohon kota — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this comparison chart. What do most of these city trees have in common?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to describe shared characteristics of a group, using Most, Some, and They usually."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tabel perbandingan — tunjuk kolom pohon maple. Sapukan tangan ke sekelompok pohon untuk \"is a kind of\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "A maple is a kind of tree. It usually has wide leaves."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu generalisasi — sapukan tangan melintasi banyak pohon untuk \"Most\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Most trees have green leaves."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk bagian yang lebih kecil dari kelompok pohon untuk \"Some\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Some trees grow in parks and give shade."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan gesture umum yang stabil sambil tunjuk kartu ikon matahari dan air."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "They usually need water and sunlight."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kolom pohon maple di tabel perbandingan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "A maple is a kind of tree. It usually has wide leaves."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu generalisasi — sapukan tangan melintasi banyak pohon."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Most trees have green leaves."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk bagian yang lebih kecil dari gambar pohon di tabel."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Some trees grow in parks and give shade."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu ikon matahari dan air — peragakan gesture stabil dan umum."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "They usually need water and sunlight."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Describe the shared characteristics."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa mengganti ciri umum dengan deskripsi pohon kota versi sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan tabel perbandingan dan kartu generalisasi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these patterns. Describe shared characteristics of city trees."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep the subject plural and general, not one specific tree, and not a personal memory."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu ciri apa yang akan ditulis — tunjuk kolom di tabel perbandingan dan minta siswa pilih salah satu ciri sebagai titik awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kolom \"daun\" di tabel, dan minta siswa ucapkan \"Most trees have ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan tabel perbandingan dan lengkapi: \"Most trees ___.\" dan \"Some trees ___.\"",
+        "standar": "Tulis tiga kalimat umum: satu \"Most ...\", satu \"Some ...\", dan satu \"They usually ...\"",
+        "tantangan": "Mulai dengan klasifikasi satu pohon (\"A ___ is a kind of tree.\"), lalu generalisasikan dengan \"Most ... / Some ... / They usually ...\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Bentuk kelompok tiga atau empat orang. Guru menentukan kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dalam kelompok yang sama — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, use the comparison chart. Take turns adding one general sentence."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Together, build a short report of what city trees share."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk membangun laporan kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah setiap anggota sudah menyumbang setidaknya satu kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now each group will present to a new group."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam lebih dari sepuluh detik — tunjuk kolom pertama di tabel dan minta satu siswa ucapkan \"Most trees ...\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika anggota kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum melanjutkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa mendominasi — tunjuk siswa lain dan minta mereka tambahkan kalimat berikutnya."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tambahkan satu kalimat umum ke laporan kelompok (\"Most trees ___.\" Boleh membaca.",
+        "standar": "Tambahkan dua kalimat umum (satu \"Most/Some\", satu \"They usually\") tanpa membaca.",
+        "tantangan": "Klasifikasikan satu pohon, lalu tambahkan dua generalisasi, dan pastikan laporan kelompok menggunakan subjek plural dan umum."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap kelompok bergabung dengan satu kelompok lain — membentuk kelompok baru empat orang dari kelompok yang berbeda.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kelompok mana bergabung dengan kelompok mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your group report first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting general characteristics of city trees."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kartu generalisasi, dan minta ucapkan \"Most trees ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambah satu kalimat generalisasi yang belum disebutkan kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan dua kalimat umum ke kelompok baru. Boleh membaca.",
+        "standar": "Presentasikan tiga kalimat umum (Most / Some / They usually) tanpa membaca.",
+        "tantangan": "Presentasikan generalisasi, lalu jawab satu pertanyaan tentang ciri pohon dari kelompok."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your Most sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan subjek plural dan umum (\"trees\", bukan satu pohon spesifik)? Apakah ini generalisasi faktual, bukan cerita pribadi?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your They usually sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan \"They usually ...\" sebagai ciri umum kelompok?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu generalisasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu generalisasi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Most trees have green leaves."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try. Most trees..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom daun di tabel — tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjutkan untuk \"Some trees ...\" dan \"They usually ...\" sampai siswa siap bicara tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Most trees have green leaves, but some have red leaves."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add a contrast, Most... but some..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan kontras generalisasi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That shows you see differences within the group.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan ketiga kalimat generalisasi tanpa melihat buku, atau menulis satu generalisasi kontras di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +749,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

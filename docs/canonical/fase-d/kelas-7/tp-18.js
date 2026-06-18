@@ -1,3 +1,583 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "(Day), (time) (Event) in (place).\n(Date), (Event) on (place).",
+    "kartu": "Siapkan kartu potongan jadwal dalam format Day, Time + Event + Place sebagai label singkat.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan kalender acara atau kisi-kisi jadwal klub di meja guru — dengan hari, waktu, dan ruangan untuk setiap entri."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon untuk tiga bagian — jam untuk waktu a.m. atau p.m., halaman kalender untuk tanggal, dan tanda ruangan atau lapangan untuk lokasi."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Hello, class! Let's check the clock, are we ready to begin?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan siswa duduk dan fokus ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Do you know when your school clubs meet? Which day and what time?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kalender acara jadwal klub."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this club schedule. What information can you find here?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk satu entri jadwal dan tanya \"What day? What time? Which club?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kalender di tempat terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to read and make a simple schedule."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk hari dan waktu di kalender — tepuk bagian waktu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Monday, 8 a.m. English Club in Room 3."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk nama acara — lalu tunjuk lokasi. Tepuk setiap bagian secara bergantian: waktu, acara, tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk hari dan waktu berikutnya di kalender."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Friday, 2 p.m. Art Club in the hall."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk setiap bagian: waktu, acara, tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tanggal di kalender."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "July 10, Sports Day in the school field."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk setiap bagian: tanggal, acara, tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk entri keempat di kalender."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Wednesday, 3 p.m. Music Club in Room 5."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk setiap bagian: waktu, acara, tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru membacakan satu entri jadwal — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Entri 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk entri Monday di kalender — tepuk setiap bagian."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Monday, 8 a.m. English Club in Room 3."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Entri 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk entri Friday di kalender — tepuk setiap bagian."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Friday, 2 p.m. Art Club in the hall."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Entri 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk tanggal July 10 di kalender — tepuk setiap bagian."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "July 10, Sports Day in the school field."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now make your own schedule entries."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tepuk tiga ikon secara bergantian dan minta siswa baca bersama: Day, time, blank event in blank place."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa membuat entri jadwal klub mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kalender acara dan kartu potongan jadwal di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel ikon waktu, acara, dan tempat di papan tulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Make your own schedule entries. Use the format: Day, time, club in place."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Short labels only. Not a full sentence. Not a past story. Not There is. Just the three parts: time, event, place."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis kalimat penuh seperti The English Club meets on Monday, dan ingatkan: \"Short. Day, time, club in place. Like a schedule.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu klub mana yang ingin ditulis — tunjuk kalender acara dan minta siswa pilih satu klub dari kalender, lalu bantu: \"Monday, 8 a.m. blank Club in blank.\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ikon jam, dan ucapkan \"Monday, 8 a.m. blank Club in blank. Choose a club.\" Tunggu siswa menjawab dan menulis satu entri, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Lengkapi satu entri jadwal: blank Day, blank a.m./p.m. blank Club in blank.",
+        "standar": "Tulis dua entri jadwal dalam format potongan (hari atau tanggal, waktu, acara, tempat).",
+        "tantangan": "Buat kartu jadwal kecil dengan dua atau tiga entri, dan tambahkan satu pengingat sopan: Please arrive on time."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan satu entri jadwalnya: Monday, 8 a.m. English Club in Room 3."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B menunjuk hari, waktu, dan tempat yang sesuai di kalender."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Read one entry. Your partner points to the day, time, and place. Then swap. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bertukar entri jadwal dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah entri memiliki tiga bagian: waktu atau tanggal, acara, dan tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tepuk tiga ikon secara bergantian ke arah pasangan dan tanya \"Day? Time? Club? Where?\" Tunggu siswa mulai membacakan satu entri."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa membacakan kalimat penuh atau cerita masa lalu — tepuk tiga ikon dan ucapkan \"Short. Day, time, club in place. Like a schedule.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa periksa apakah entri pasangan memiliki ketiga bagian."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bacakan satu entri jadwal. Pasangan tunjuk hari, waktu, dan tempat di kalender. Lalu tukar.",
+        "standar": "Bacakan dua entri tanpa membaca kata per kata. Pasangan catat waktu dan tempat setiap entri. Lalu tukar.",
+        "tantangan": "Bacakan seluruh kartu jadwal. Pasangan periksa setiap entri memiliki tiga bagian. Lalu tukar."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Present your schedule card to the new group. Read each entry: Day, time, club in place."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota mempresentasikan kartu jadwal mereka."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah setiap entri memiliki tiga bagian dan tetap dalam format potongan jadwal."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tepuk tiga ikon ke arahnya dan tanya \"Day? Time? Club? Where?\" Minta siswa membacakan satu entri dari catatannya."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa membacakan entri tanpa menyebutkan tempat — tepuk ikon lokasi dan tanya \"Where? Room? Hall? Field?\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan satu atau dua entri jadwal ke kelompok baru — boleh membaca.",
+        "standar": "Presentasikan kartu jadwal (dua atau tiga entri) tanpa membaca kata per kata.",
+        "tantangan": "Presentasikan kartu jadwal dengan pengingat sopan, dan periksa satu kartu teman memiliki ketiga bagian di setiap entri."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me one schedule entry. Day, time, club, and place. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan entri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah entri memiliki ketiga bagian? Apakah dalam format potongan jadwal, bukan kalimat penuh atau cerita masa lalu?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your second entry. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa membacakan entri jadwal dengan lancar tanpa membaca kata per kata?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu potongan jadwal."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk tiga ikon secara bergantian — ucapkan dua entri sekali lagi — beri isyarat tangan ke arah siswa setiap entri."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk tiga ikon secara bergantian: waktu, acara, tempat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Monday, 8 a.m. English Club in Room 3."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalender di entri yang berbeda."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now your turn. Blank, blank a.m. blank Club in blank. Read this one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa membacakan entri dari kalender."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Monday, 8-9 a.m. English Club in Room 3."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "A time range. Now you try. Give me one entry with a time range. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different club.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua entri jadwal tanpa membaca, atau membuat satu entri baru untuk klub berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +753,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

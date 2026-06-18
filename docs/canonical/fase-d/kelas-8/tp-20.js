@@ -1,3 +1,583 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "In the end, ___ because ___.\nFrom that day on, ___.\nThe story shows ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — papan cerita penutup empat panel (Dito memutar kunci, pintu terbuka memperlihatkan surat dan foto lama, ruangan ditampilkan sebagai museum kecil, siswa tersenyum menatap kenangan), kerangka penyelesaian (\"In the end, ___ because ___.\" / \"From that day on, ___.\" / \"The story shows that ___.\"), dan ikon (surat-surat lama diikat pita, foto-foto sekolah, lampu bohlam menyala untuk \"The story shows\", tampilan museum kecil).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Today we find out what was inside the storage room."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa mengingat peristiwa terakhir dari sesi sebelumnya."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Dito turned the key. The door opened. What do you think they found inside?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan papan cerita penutup — tunjuk keempat panel satu per satu ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this ending storyboard. What does the discovery mean for the whole school?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to close a story fully, using In the end because, From that day on, and The story shows."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan sebagai tanda kesimpulan sambil mengucapkan \"In the end,\" — tunjuk panel pertama (Dito memutar kunci)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In the end, Dito and Wulan opened the door because they wanted to solve the mystery."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk panel kedua (pintu terbuka, surat dan foto lama)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Inside, they found old letters and photographs full of school memories."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sapukan tangan ke depan melintasi waktu sambil mengucapkan \"From that day on,\" — tunjuk panel ketiga (museum kecil)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "From that day on, the storage room became a small museum for the whole school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk sisi kepala sambil mengucapkan \"The story shows\" — tunjuk ikon lampu bohlam."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The story shows that a small discovery can bring back many memories."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Satukan kedua tangan sebagai tanda kesimpulan — tunjuk panel pertama."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "In the end, Dito and Wulan opened the door because they wanted to solve the mystery."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk panel kedua — tunjuk ikon surat diikat pita dan foto sekolah."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Inside, they found old letters and photographs full of school memories."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Sapukan tangan ke depan melintasi waktu sambil mengucapkan \"From that day on,\" — tunjuk panel ketiga."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "From that day on, the storage room became a small museum for the whole school."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tepuk sisi kepala sambil mengucapkan \"The story shows\" — tunjuk ikon lampu bohlam."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "The story shows that a small discovery can bring back many memories."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Write your own story ending."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk kerangka penyelesaian. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis penyelesaian cerita sendiri dengan tiga bagian penutup. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan papan cerita dan kerangka penyelesaian di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these patterns. Write a story ending about the discovery, resolution, lasting change, and theme."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep The story shows as a theme about the whole story, not I learned, and not I believe."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu bagaimana memulai \"The story shows\" — tunjuk ikon lampu bohlam dan minta siswa mulai dari \"The story shows that a discovery ...\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk panel ketiga (museum kecil), dan minta siswa ucapkan \"In the end, they found ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka dan lengkapi: \"In the end, ___ because ___. From that day on, ___. The story shows that ___.\" Boleh gunakan papan cerita.",
+        "standar": "Tulis ketiga kalimat penyelesaian tanpa membaca.",
+        "tantangan": "Tulis ketiga kalimat penyelesaian dan tambahkan satu kalimat tentang pesan yang ingin dibagikan oleh para tokoh kepada orang lain."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan penyelesaian ceritanya (\"In the end ... because ...\" / \"From that day on ...\" / \"The story shows ...\")."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B memeriksa: Ada resolusi dengan alasan? Ada perubahan yang bertahan? Ada pernyataan tema? Lalu tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Share your story ending with your partner. Your partner checks for resolution with reason, lasting change, and theme. Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk panel keempat (siswa tersenyum) dan tanya \"What did the discovery mean for the school?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menulis \"I think the discovery was important\" sebagai penutup — tunjuk pola \"The story shows that ...\" dan minta mereka ubah ke pernyataan orang ketiga tentang tema."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca penyelesaianmu ke pasangan. Pasangan tunjuk \"In the end\", \"From that day on\", dan \"The story shows\" dalam teksmu.",
+        "standar": "Bagikan penyelesaianmu tanpa membaca. Pasangan periksa ketiga bagian ada.",
+        "tantangan": "Bagikan penyelesaianmu dan pasangan tanya \"What message did the characters want to share?\" — kamu jawab dalam satu kalimat lagi."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your story ending first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your resolution and reflection to the group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk panel pertama, dan minta ucapkan \"In the end, ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu kalimat jembatan tentang pesan yang ingin dibagikan para tokoh."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca penyelesaian ceritamu ke kelompok.",
+        "standar": "Presentasikan penyelesaian ceritamu tanpa membaca.",
+        "tantangan": "Presentasikan penyelesaian ceritamu, lalu jawab satu pertanyaan dari kelompok tentang tema atau perubahan yang bertahan."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your In the end sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyelesaikan cerita dengan \"In the end ... because ...\" — ada resolusi dengan alasan? Bukan hanya \"In the end ...\" tanpa sebab?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your The story shows sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyampaikan pernyataan tema orang ketiga tentang seluruh cerita? Bukan \"I learned ...\" atau \"I believe ...\"?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kerangka penyelesaian."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat pertama dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kerangka penyelesaian."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. In the end, Dito and Wulan opened the door because they wanted to solve the mystery. From that day on, the storage room became a small museum. The story shows that a small discovery can bring back many memories."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan satu kalimat per satu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try your own. In the end,..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk panel papan cerita — tunggu siswa melengkapi \"because ...\" lalu \"From that day on ...\" lalu \"The story shows ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap mengucapkan penyelesaian tiga bagian tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Dito and Wulan decided to write a message to share their discovery with the whole school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. After The story shows, add your own seed sentence, what did the characters decide to do with their discovery?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan satu kalimat jembatan setelah \"The story shows ...\" tentang pesan yang akan ditulis para tokoh."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That sentence bridges the story to what comes next.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan penyelesaian cerita lengkap tanpa melihat buku, atau menulis penyelesaian untuk cerita berbeda menggunakan pola yang sama di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +753,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

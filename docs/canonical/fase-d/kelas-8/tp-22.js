@@ -1,3 +1,579 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Step 1: ___\nBefore ___, ___.\nAfter ___, ___.\nRemember to ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu antarmuka aplikasi yang menunjukkan empat layar berurutan (layar login, daftar tugas, halaman tugas, konfirmasi pengiriman), kerangka instruksi terbimbing dengan empat slot berlabel (\"Step 1: ___\" / \"Before ___, ___.\" / \"After ___, ___.\" / \"Remember to ___.\"), dan ikon (layar login, daftar centang tugas, tombol submit, ikon simpan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Alright, class. Today we help someone navigate a new app."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan kelas sudah siap dan perangkat tersedia jika diperlukan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever had to explain to someone how to use an app? What did you say first?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu antarmuka aplikasi — tunjuk keempat layar berurutan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these app screens. What is the correct order to use this learning app?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to write practical guided instructions, using Step 1, Before, After, and Remember to."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari sambil mengucapkan \"Step 1:\" — tunjuk kartu layar login."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Step 1: Open the school learning application and log in with your username and password."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat tangan sebelum tindakan sambil mengucapkan \"Before\" — tunjuk kartu daftar tugas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Before you start an assignment, check the due date on the screen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Gerakkan tangan ke depan ke arah hasil sambil mengucapkan \"After\" — tunjuk kartu halaman tugas lalu kartu konfirmasi pengiriman."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After you finish your work, click the submit button."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon simpan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Remember to save your work before you close the application."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat satu jari sambil mengucapkan \"Step 1:\" — tunjuk kartu layar login."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Step 1: Open the school learning application and log in with your username and password."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat tangan sebelum tindakan sambil mengucapkan \"Before\" — tunjuk kartu daftar tugas."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Before you start an assignment, check the due date on the screen."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Gerakkan tangan ke depan ke arah hasil sambil mengucapkan \"After\" — tunjuk kartu konfirmasi pengiriman."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "After you finish your work, click the submit button."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ikon simpan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Remember to save your work before you close the application."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Write your own instruction guide."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk kerangka instruksi. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis petunjuk terbimbing untuk menggunakan aplikasi sekolah. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan kartu antarmuka dan kerangka instruksi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these markers. Write one instruction for each: Step 1, Before, After, and Remember to."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Direct your instructions to the reader, not students log in, and not First, then, finally."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu kata kerja imperatif apa yang digunakan — tunjuk kartu layar login dan minta siswa mulai dari \"Open the ...\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu layar login, dan minta siswa ucapkan \"Step 1: Open the application ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka instruksi dan lengkapi setiap slot. Boleh lihat kartu antarmuka.",
+        "standar": "Tulis semua empat petunjuk terbimbing tanpa membaca.",
+        "tantangan": "Tulis semua empat petunjuk terbimbing dan tambahkan \"Step 2:\" untuk tindakan bernomor kedua dalam panduan."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A memberi panduan instruksinya kepada Siswa B — Siswa B membaca kembali dan memeriksa: Ada \"Step 1:\"? Ada \"Before\"? Ada \"After\"? Ada \"Remember to\"? Tunjuk setiap penanda. Lalu tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Exchange your instruction guides. Your partner checks for all four markers. Then swap and give feedback."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu layar login dan tanya \"What is the first step in your guide?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menulis \"students log in\" (orang ketiga) — tunjuk pola dan minta siswa ganti ke imperatif langsung ke pembaca: \"log in.\""
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca panduan pasanganmu dan tandai setiap penanda (Step 1, Before, After, Remember to).",
+        "standar": "Baca panduan pasangan, periksa semua empat penanda, dan katakan mana yang paling jelas.",
+        "tantangan": "Baca panduan pasangan dan tanya: \"What happens if I forget the step before submitting?\" — pasangan jawab dengan satu instruksi lagi."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your instruction guide first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your guide to the group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kartu layar login, dan minta ucapkan \"Step 1: Open ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan \"Step 2:\" untuk tindakan bernomor kedua."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca panduan instruksimu ke kelompok.",
+        "standar": "Presentasikan panduan instruksimu tanpa membaca.",
+        "tantangan": "Presentasikan panduan instruksimu, lalu jawab satu pertanyaan dari kelompok tentang salah satu langkah spesifik."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your Step 1 instruction. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan kata kerja imperatif yang ditujukan kepada pembaca (\"Open\", \"Log in\")? Bukan deskripsi orang ketiga (\"students open\") dan bukan langkah generik (\"First,\")?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Remember to instruction. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyatakan pengingat yang jelas dengan \"Remember to ...\" diikuti kata kerja imperatif?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kerangka instruksi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat pertama dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu antarmuka layar login."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Step 1: Open the school learning application and log in."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan: \"the student opens\" (orang ketiga, bukan instruksi) versus \"Open the application\" (imperatif, ditujukan ke pembaca)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try. Before you start..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu daftar tugas — tunggu siswa melengkapi \"Before you start an assignment, ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap mengucapkan keempat penanda dengan kata kerja imperatif yang tepat tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. If you cannot log in to the application, ask your teacher for help and try again."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add one troubleshooting instruction to the end of your guide."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan satu instruksi pemecahan masalah setelah \"Remember to ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. That instruction helps users when something goes wrong.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan keempat petunjuk terbimbing berurutan tanpa melihat buku, atau menulis panduan instruksi untuk aplikasi atau alat digital sekolah yang berbeda di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +749,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

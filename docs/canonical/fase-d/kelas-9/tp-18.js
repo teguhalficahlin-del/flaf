@@ -1,3 +1,595 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Looking back, ___.\nI have learned ___.\nIn the future, I will ___.\nbecause ___.\nI am ready to ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — garis waktu perjalanan tiga tahun (K7 Acquire: perkenalan diri, deskripsi hewan, recount → K8 Expand: alur naratif, email, presentasi, eksposisi → K9 Integrate: argumentasi, ulasan, presentasi, sintesis, masalah-solusi, refleksi → Fase E: tanda panah menunjuk ke depan), kartu kerangka lima komponen berlabel (Looking back / I have learned / In the future, I will / because / I am ready to), dan kartu ikon (kaca spion di atas jalan, buku terbuka dengan sinar cahaya, jalan menunjuk ke horizon, spiral pembelajaran berkelanjutan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Berikan waktu reflektif sebelum memulai sesi penutup Fase D."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome to our final session together in Kelas 9. Please take a moment to prepare."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Three years of English learning, from Kelas 7 to today. What has changed most about how you communicate?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan garis waktu perjalanan tiga tahun — tunjuk setiap tonggak secara perlahan dari K7 ke K8 ke K9 ke Fase E."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa menatap seluruh garis waktu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this learning journey timeline. Where do you see yourself growing the most?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada penuh apresiasi dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to bring all of that together: looking back, reflecting, and stepping forward."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil garis waktu perjalanan — beri gestur ke belakang melewati bahu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Looking back, I can see real growth in my English journey, from describing simple objects in Grade 7 to presenting arguments, synthesizing sources, and evaluating solutions in Grade 9."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan garis waktu — letakkan tangan di dada lalu sapukan ke luar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I have learned that communication is more than vocabulary and grammar. It is about organizing ideas clearly, listening carefully, and reflecting honestly on every experience."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu kerangka."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In the future, I will continue to set new future goals for my English learning because lifelong learning means every new challenge, whether in senior high school, in work, or in life, is also a new opportunity to grow."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — berdiri tegak, rentangkan kedua tangan ke depan dan terbuka."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Looking back, three years of stories, discoveries, presentations, and reflections have been a journey of genuine growth. I have learned to read with purpose, speak with structure, and think before I conclude. In the future, I will keep reading and communicating in English because lifelong learning does not stop here. It continues in every conversation and every new experience. I am ready to carry this growth into senior high school and beyond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kedua tangan memberi isyarat bahwa langkah berikutnya adalah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat garis waktu perjalanan — beri gestur ke belakang melewati bahu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Looking back, I can see real growth in my English journey, from describing simple objects in Grade 7 to presenting arguments, synthesizing sources, and evaluating solutions in Grade 9."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan garis waktu — letakkan tangan di dada lalu sapukan ke luar."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I have learned that communication is more than vocabulary and grammar. It is about organizing ideas clearly, listening carefully, and reflecting honestly on every experience."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "In the future, I will continue to set new future goals for my English learning because lifelong learning means every new challenge, whether in senior high school, in work, or in life, is also a new opportunity to grow."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Berdiri tegak — beri gestur ke belakang, letakkan tangan di dada lalu sapukan, rentangkan kedua tangan ke depan dan terbuka."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Looking back, three years of stories, discoveries, presentations, and reflections have been a journey of genuine growth. I have learned to read with purpose, speak with structure, and think before I conclude. In the future, I will keep reading and communicating in English because lifelong learning does not stop here. It continues in every conversation and every new experience. I am ready to carry this growth into senior high school and beyond."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own looking-forward reflection."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kerangka dan bedakan: \"Looking back = I see my whole journey as one thing. I have learned = what the journey taught me. In the future I will = my commitment. Because = my personal reason. I am ready to = the door I am about to open.\" Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis refleksi looking-forward terpadu mereka sendiri tentang perjalanan belajar Bahasa Inggris tiga tahun. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Think about your whole English learning journey from Grade 7 to today. Write all five components. Let I am ready to be your final word, a genuine statement of where you are now."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Looking back is not a list of events. I am ready to is not a repetition of In the future, I will."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang membuat daftar peristiwa (\"In Grade 7 we did animals, in Grade 8 we did narrative...\") bukan merefleksikan makna perjalanan, atau yang menggunakan I am ready to sebagai pengulangan In the future, I will."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara membedakan Looking back dari I have learned — tunjuk garis waktu dan minta siswa bertanya: \"Not what we studied, but what does this whole journey mean to me as a person?\" Jawaban itu adalah kalimat Looking back."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk garis waktu, dan minta siswa ucapkan \"Looking back, I can see\" lalu satu hal yang berubah. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka lima slot. Untuk Looking back, pikirkan SATU hal yang mengejutkanmu tentang perjalanan belajarmu. Untuk I am ready to, pikirkan SATU hal yang ingin kamu coba di SMA.",
+        "standar": "Tulis refleksi looking-forward sendiri tanpa membaca kerangka. Manfaatkan refleksimu dari TP-16 dan TP-17 sebagai bahan.",
+        "tantangan": "Tulis refleksi dan buat I am ready to mengatakan sesuatu yang melampaui pelajaran Bahasa Inggris — cara berpikir atau berkomunikasi yang akan berguna di mata pelajaran apapun, bahasa apapun, situasi apapun."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Langkah ini menggunakan kelompok kecil tiga atau empat orang. Guru menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tiga atau empat siswa yang duduk berdekatan sebagai satu kelompok — lanjutkan hingga semua siswa tergabung."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns sharing your looking-forward reflection in your group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After each person, the group responds with: One thing I noticed about your journey is. Then discuss: what do you have in common in your I am ready to statements?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah I am ready to terasa seperti penutup yang genuine, bukan sekadar kalimat terakhir."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now form a new group with students from other groups."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam lebih dari sepuluh detik — tunjuk buku catatannya dan minta ucapkan \"Looking back, I can see\" lalu satu kalimat singkat."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa sampaikan refleksinya sekali lagi tanpa melihat buku, berdiri tegak seperti sedang berbicara kepada dirinya sendiri tiga tahun lalu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas menulis refleksi. Tunjuk pola Looking back, I have learned, In the future I will, because, I am ready to di papan tulis, minta seluruh kelas mengucapkan kelima komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca refleksimu ke kelompok. Kelompok mendengarkan dan menyebut bagian mana yang terasa paling personal dan genuine.",
+        "standar": "Bagikan refleksimu tanpa membaca. Kelompok memeriksa apakah kelima komponen berbeda dan apakah I am ready to terasa seperti kesimpulan yang nyata.",
+        "tantangan": "Bagikan refleksimu dan kelompok bertanya: \"What is the single most important thing you are taking from Kelas 9 into Fase E?\" — kamu jawab dalam satu atau dua kalimat yang belum ada dalam refleksi tertulismu."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap siswa bergabung ke kelompok baru yang berbeda dari kelompok INTERACT — membentuk kelompok empat orang. Setelah semua anggota berbagi, dua menit terakhir digunakan untuk menulis satu kata dalam hening.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk komposisi kelompok baru — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first. Stand up when you share."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Deliver your reflection as if you were speaking to yourself three years ago. Others listen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan dengan tenang, jangan terlalu banyak bergerak."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Sit in silence for two minutes. Each person writes one word that captures how you feel right now at the end of this journey."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu dua menit dalam hening — jangan diisi dengan pembicaraan atau instruksi tambahan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah dua menit — beri isyarat perlahan untuk kembali ke posisi semula."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — dekati dengan tenang, tunjuk buku catatannya, dan bisikkan: \"Just read your first sentence.\" Jangan panggil dari depan kelas."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sampaikan refleksimu ke kelompok baru menggunakan catatan.",
+        "standar": "Sampaikan refleksimu tanpa membaca.",
+        "tantangan": "Sampaikan refleksimu tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"If you could go back to your first day of Grade 7, what would you tell yourself about this journey?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE dan momen hening selesai, lakukan konfirmasi singkat ke dua siswa.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak — dengan nada tenang dan hangat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Looking back sentence. In your own words."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa merefleksikan makna perjalanan, atau menyebutkan daftar peristiwa?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your I am ready to sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah I am ready to terasa seperti pernyataan kesiapan yang genuine, bukan sekadar kalimat penutup?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali garis waktu perjalanan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan antara \"listing milestones\" dan \"reflecting on the journey\" — \"These are the things we did\" vs. \"This is what the journey has made me.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — ucapkan kalimat Looking back dari model kalimat 1 bersama-sama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Well done, everyone. This is the end of our Kelas 9 journey."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Setiap siswa yang mengucapkan \"I am ready to\" dengan tulus hari ini membawa bersama mereka tiga tahun pertumbuhan — ke Fase E dan seterusnya.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sebutkan apa yang setiap komponen lakukan perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Looking back means I see my whole journey as one thing, not a list. I have learned means what this journey taught me, not what we studied, but what I now know about myself. In the future I will is my specific commitment. Because is my personal reason. I am ready to is the door I am about to open. This is not a list. It is a conversation with your future self."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan satu refleksi looking-forward lagi dari sudut pandang berbeda — misalnya siswa yang paling kesulitan dengan berbicara tetapi menemukan kemampuan mereka dalam menulis penjelasan secara jelas, dan apa artinya itu bagi Fase E. Minta siswa mengikuti kelima langkah."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — dengan nada hangat dan personal, bukan sebagai tugas tambahan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat I am ready to dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let me share something first. Then I would love to hear yours."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One thing I am hoping to do in senior high school is join an English debate club, because I want to challenge myself to think and respond quickly when someone disagrees with me. I am ready to start again as a beginner in that skill and build it from scratch. That is what lifelong learning means to me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik — biarkan siswa menyerap."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Is there something specific you are hoping to do or try in Fase E, in English, or through English?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa merespons. Jika siswa menyebutkan satu harapan — angguk dengan tulus dan ucapkan \"That is a real goal. Write it down after your I am ready to sentence.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa tidak tahu — ucapkan \"That is okay. You have time to find out.\" Jangan paksa."
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka sampaikan refleksi lengkap mereka sekali lagi tanpa melihat buku, berdiri tegak, dengan I am ready to sebagai kalimat terakhir yang diucapkan dengan percaya diri."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +766,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

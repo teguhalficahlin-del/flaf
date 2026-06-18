@@ -1,3 +1,635 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Some people think ___.\nHowever, I believe ___ because ___.\nOne reason is ___.\nFor example, ___.\nTherefore, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu dua pendapat berlawanan, kartu kerangka argumen dua kolom, dan kartu ikon (buku catatan PR, buku terbuka, jam, timbangan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome, class. Today requires careful reasoning, so let us begin calmly."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Kondisikan kelas untuk sesi yang lebih terstruktur dari biasanya."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Some students argue that homework wastes their time. Do you agree, or is there another way to see it?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu dua pendapat berlawanan — dua siswa dengan balon kata: I think homework wastes our time di kiri, dan I think homework helps our learning di kanan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa membaca kedua pendapat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these two viewpoints. Before defending your own, can you state the other side fairly?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya tentang salah satu sisi. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to acknowledge a different view and still defend your own."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu dua pendapat berlawanan — tunjukkan ke seluruh kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk dengan hormat ke arah kartu kiri."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Some people think homework wastes students' time. However, I believe homework helps learning because it gives students time to practise on their own."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu dua pendapat — ambil kartu kerangka argumen dua kolom."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari, lalu beri gestur ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One reason is that homework builds good study habits. For example, students who spend thirty minutes reviewing notes at home usually do better in tests."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — ambil kartu ikon."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk ke arah kiri, lalu putar sedikit dan angkat telapak tangan rata."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Some people think too much homework upsets the balance between school and family life. However, I believe the right amount of homework makes learning more effective."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu ikon — tampilkan ketiga kartu sekaligus."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jalankan semua gesture secara berurutan: angguk hormat, angkat telapak tangan rata, angkat satu jari dan gestur ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, homework should be given with care -- enough to support learning, but not so much that it takes all a student's time and breaks the balance of their day."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kedua tangan memberi isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu dua pendapat berlawanan — angguk hormat ke arah kartu kiri, lalu angkat telapak tangan rata."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Some people think homework wastes students' time. However, I believe homework helps learning because it gives students time to practise on their own."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu dua pendapat — angkat kartu kerangka, angkat satu jari lalu gestur ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One reason is that homework builds good study habits. For example, students who spend thirty minutes reviewing notes at home usually do better in tests."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu kerangka — angkat kartu ikon, angguk ke kiri lalu putar dan angkat telapak rata."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Some people think too much homework upsets the balance between school and family life. However, I believe the right amount of homework makes learning more effective."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan ketiga kartu sekaligus — jalankan semua gesture secara berurutan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, homework should be given with care -- enough to support learning, but not so much that it takes all a student's time and breaks the balance of their day."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own argument."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis argumen acknowledge-defend mereka sendiri tentang kebijakan pekerjaan rumah. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. Acknowledge the other view first, then defend your own position."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Include all five components: acknowledge, counter, reason, example, and conclusion."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu komponen pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara memulai kalimat Some people think — tunjuk kartu dua pendapat di papan tulis dan minta siswa pilih salah satu balon kata sebagai titik awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk baris pertama di papan tulis, dan minta siswa ucapkan \"Some people think\" lalu satu pendapat tentang PR. Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan pola di papan tulis dan isi kelima slot. Boleh melihat kartu dua pendapat untuk referensi. Tulis: Some people think lalu satu pendapat tentang PR. However, I believe lalu posisi sendiri karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh. Therefore lalu kesimpulan.",
+        "standar": "Tulis argumen acknowledge-defend sendiri tanpa membaca pola. Gunakan kosakata: homework, learning, time, atau balance.",
+        "tantangan": "Tulis argumen lengkap dan gunakan sudut topik yang berbeda — misalnya PR akhir pekan versus PR hari sekolah — untuk menunjukkan pola yang sama tetap berlaku."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A menyampaikan argumennya membela PR kepada Siswa B. Siswa B mendengarkan dan memeriksa: ada acknowledge? ada counter? ada alasan? ada contoh? ada kesimpulan?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B menyampaikan argumen dengan posisi berlawanan ke Siswa A, mengakui pandangan A terlebih dahulu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Your turn now. Work with the person next to you."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you are in a group of three, take turns. A, then B, then C."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk baris pertama di buku catatan siswa dan minta siswa ucapkan \"Some people think\" lalu satu pendapat tentang PR."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan argumennya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan diskusi. Tunjuk pola di papan tulis, minta seluruh kelas mengucapkan lima komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa kelima komponen: acknowledge, counter, reason, example, conclusion.",
+        "standar": "Sampaikan argumen tanpa membaca buku. Pasangan memeriksa semua lima komponen dan nada — apakah terdengar acknowledge-then-defend, bukan rebuttal agresif?",
+        "tantangan": "Sampaikan argumen, lalu pasangan bertanya: \"Can you give another reason?\" Tambahkan satu kalimat alasan kedua sebagai respons."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One person presents. The others listen and check: is the tone acknowledge-then-defend, not aggressive?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"Some people think\" lalu satu pendapat tentang PR sebagai pembuka. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan argumennya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca argumen dari buku catatan ke kelompok.",
+        "standar": "Sampaikan argumen tanpa membaca buku.",
+        "tantangan": "Sampaikan argumen tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"What would you say to someone who still disagrees?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "State your acknowledgment and your counter. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan Some people think dan However, I believe."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa mengakui pandangan lain sebelum membela posisi sendiri, atau langsung ke opini tanpa acknowledgment?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your conclusion sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah nada tetap acknowledge-then-defend, bukan rebuttal agresif?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali ketiga kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan ulang gerakan angguk hormat lalu angkat telapak rata — ucapkan kalimat 1 dan 3 dengan gesture tersebut."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat tangan ke arah siswa — tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu dua pendapat berlawanan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This is the other view. Say it first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan Some people think dan pandangan lain."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk sisi kanan kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now your view. However, I believe..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa melanjutkan. Bantu frasa per frasa jika diperlukan — jangan minta kalimat penuh sekaligus sampai siswa siap."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat Some people think dalam argumen siswa di buku catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try a more nuanced opening. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "While it is true that homework can take too much time, I still believe a balanced homework policy helps learning more than it hurts."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now replace your Some people think opener with While it is true that. Try once."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That is a more sophisticated acknowledgment.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan argumen mereka sendiri tanpa melihat buku, atau menambah satu alasan kedua ke dalam argumen mereka."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -175,5 +807,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

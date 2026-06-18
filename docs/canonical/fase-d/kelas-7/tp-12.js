@@ -1,3 +1,571 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "If you want to (goal), (verb) ...\nUse (tool) to (goal).",
+    "kartu": "Siapkan kartu panah tujuan-ke-tindakan — If you want to blank dipasangkan dengan use blank atau kata kerja.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon alat dan tindakan — kamus untuk dictionary, buku catatan untuk notes, siswa berlatih untuk practice."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning, everyone! I hope you studied last night."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tanya siswa apakah ada yang memiliki pertanyaan sebelum memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "What do you do when you want to remember something important from class?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab singkat."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan tiga kartu skenario belajar satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these study goals. Which one do you need the most help with?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa merespons. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu pertama dan tanya \"Want to learn new words? What do you use?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to connect a goal with the right tool or action."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke depan untuk tujuan — lalu arahkan ke ikon kamus."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you want to learn new words, use a dictionary."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan membuka kamus."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan menulis catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use your notes to remember the lesson."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon buku catatan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke depan untuk tujuan — peragakan menulis berulang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you want to study well, practice every day."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk tegas berulang — buat tanda centang di udara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu pasangan tujuan-tindakan — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Pasangan 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ke depan untuk tujuan — arahkan ke ikon kamus."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "If you want to learn new words, use a dictionary."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pasangan 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan menulis catatan — tunjuk ikon buku catatan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Use your notes to remember the lesson."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pasangan 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk ke depan — peragakan berlatih."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "If you want to study well, practice every day."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own goal and action pairs."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu panah tujuan-ke-tindakan dan minta siswa membaca bersama: If you want to blank, blank. Atau: Use blank to blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menghubungkan tujuan belajar mereka sendiri dengan alat atau tindakan yang tepat. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu skenario belajar dan ikon alat di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your own study goal and the right action or tool."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use: If you want to blank, blank. Or: Use blank to blank. Do not add because."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menambahkan because atau menulis tindakan tanpa tujuan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung menghubungkan tujuan dan alat — tunjuk kartu panah tujuan-ke-tindakan dan minta siswa cocokkan kartu tujuan dengan kartu alat yang tepat terlebih dahulu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ikon kamus, dan ucapkan \"If you want to learn new words, use blank.\" Tunggu siswa melengkapi dan menulis, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Cocokkan satu kartu tujuan dengan satu alat dan lengkapi: If you want to blank, use blank.",
+        "standar": "Tulis dua pasangan tujuan-tindakan: satu If you want to blank, blank dan satu Use blank to blank.",
+        "tantangan": "Tulis satu pasangan tujuan-tindakan, lalu dukung dengan prosedur singkat: First, blank. Then, blank. Tambahkan satu instruksi: Put blank. Dan satu aturan: Always blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A menyebutkan satu tujuan belajar: If you want to learn new words."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B menjawab dengan alat atau tindakan yang tepat: use a dictionary."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Take turns. One says the goal, the other answers with the tool or action. Then swap. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dialog tujuan-tindakan dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu tujuan belajar pertama dan minta Siswa A ucapkan \"If you want to blank\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa gunakan tujuan berbeda yang belum disebutkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sebutkan satu tujuan. Pasangan jawab dengan alat: use a dictionary. Lalu tukar.",
+        "standar": "Bergantian mencocokkan tujuan dan tindakan tanpa membaca — minimal dua pasang masing-masing, menggunakan kedua pola If you want to dan Use blank to.",
+        "tantangan": "Setelah mencocokkan tujuan dan tindakan, tambahkan prosedur singkat atau aturan pada jawabanmu: First, blank. Then, blank. Atau: Always blank. Lalu tukar."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns performing your goal-action matching dialogue for the new group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One says the study goal, the partner answers with the tool or action."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua pasangan tampil ke kelompok baru."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah pasangan menjaga struktur tujuan-ke-tindakan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada pasangan yang diam dan tidak mulai — tunjuk kartu tujuan belajar dan minta Siswa A mulai dengan \"If you want to blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa menjawab dengan because atau penjelasan panjang — ingatkan: \"Just the action. If you want to blank, use blank. Short.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tampilkan satu pasangan tujuan-tindakan ke kelompok baru — boleh membaca.",
+        "standar": "Tampilkan dua pasangan tujuan-tindakan tanpa membaca, menggunakan kedua pola.",
+        "tantangan": "Tampilkan pasangan tujuan-tindakan dan tambahkan prosedur singkat atau aturan pada satu jawaban, lalu dengarkan dan tanggapi pasangan teman."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you want to remember the lesson, what do you use? Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menjawab dengan alat atau tindakan yang tepat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menjaga struktur Use blank to blank tanpa menambahkan because atau penjelasan?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me a goal: If you want to blank. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menyebutkan tujuan dengan If you want to dengan lancar?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu panah tujuan-ke-tindakan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua pasangan tujuan-tindakan sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ke depan untuk tujuan — arahkan ke ikon kamus."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. If you want to learn new words, use a dictionary."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan untuk menunjukkan tujuan dan tindakan adalah satu pasangan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now try: If you want to remember the lesson, use blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa melengkapi."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you want to learn new words, use a dictionary or ask your teacher."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Give me one goal with two different options. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different goal.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang pasangan tujuan-tindakan tanpa membaca, atau menulis satu pasangan baru tentang tujuan belajar yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +742,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

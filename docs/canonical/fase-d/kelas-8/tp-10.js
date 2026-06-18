@@ -1,3 +1,575 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "First, ___.  Next, ___.\nThen, ___.  Finally, ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — diagram proses belanja online (cari → keranjang dan pembayaran → proses dan pengepakan → pengiriman), kartu urutan (\"First, ...\" / \"Next, ...\" / \"Then, ...\" / \"Finally, ...\" di sepanjang tanda panah), dan kartu ikon (halaman toko online, metode pembayaran, kotak yang sudah dikemas, pengiriman ke alamat).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Alright everyone, let us get started."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan siswa sudah siap dan fokus ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Raise your hand, who has ordered something online before?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa — tanya lanjut: \"From which app? What did you order?\" Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan diagram proses belanja online — tunjukkan ke seluruh kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "You clicked, paid, and the package arrived, but what actually happened in between?"
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to explain a process, step by step, using First, Next, Then, and Finally."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tokoh \"pelanggan\" yang umum di diagram — bukan diri sendiri. Gambar lingkaran berulang di udara untuk menunjukkan proses yang berulang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "When a customer orders online, the order goes through several steps because each step has a different purpose."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Hitung tahap pertama dan kedua di diagram — gunakan tangan untuk menghitung satu, dua."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "First, the customer searches for a product in an online store. Next, they add it to the cart and choose a payment method."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tahap ketiga di diagram — hitung tiga."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Then, the order is processed and packed."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tahap keempat di diagram — hitung empat, akhiri dengan gesture pengiriman."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Finally, the package is delivered to the customer's address."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk tokoh \"pelanggan\" di diagram — gambar lingkaran berulang di udara."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "When a customer orders online, the order goes through several steps because each step has a different purpose."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Hitung tahap pertama dan kedua di diagram."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "First, the customer searches for a product in an online store. Next, they add it to the cart and choose a payment method."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk tahap ketiga di diagram — hitung tiga."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Then, the order is processed and packed."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk tahap keempat di diagram — hitung empat."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Finally, the package is delivered to the customer's address."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Explain how online shopping works."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menjelaskan proses belanja online dengan kata-kata sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan diagram proses dan kartu urutan di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use these patterns. Explain how online shopping usually works."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use the customer or the order as the subject, not I or you, and not past tense."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu tahap apa yang akan ditulis — tunjuk tahap pertama di diagram dan minta siswa mulai dari \"First, the customer ...\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk tahap pertama di diagram, dan minta siswa ucapkan \"First, the customer searches ...\" Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Urutkan langkah-langkah di diagram: \"First, ___. Next, ___. Finally, ___.\" (gunakan the customer atau the order).",
+        "standar": "Jelaskan prosesnya dalam empat tahap (\"First, ... Next, ... Then, ... Finally, ...\"), present tense, subjek generik.",
+        "tantangan": "Mulai dengan jembatan kausal (\"When a customer orders online, the order goes through several steps because ...\"), lalu jelaskan prosesnya secara lengkap dalam tahapan."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Bentuk kelompok tiga atau empat orang. Guru menentukan kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dalam kelompok yang sama — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, use the process diagram. Take turns adding one stage to explain the full process."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep present tense and a generic subject, not I or you, and not a past story."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk membangun penjelasan proses bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah setiap anggota sudah menyumbang setidaknya satu tahap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now each group will present to a new group."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam lebih dari sepuluh detik — tunjuk tahap pertama di diagram dan tanya \"What does the customer do first?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika anggota kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum melanjutkan."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa mendominasi — tunjuk siswa lain dan minta mereka tambahkan tahap berikutnya."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tambahkan satu tahap ke penjelasan kelompok (boleh membaca), gunakan the customer atau the order.",
+        "standar": "Tambahkan dua tahap tanpa membaca, dengan present tense dan subjek generik.",
+        "tantangan": "Berikan jembatan kausal, lalu jelaskan proses lengkap; kelompok periksa apakah tidak ada tahap yang menggunakan \"I\" atau past tense."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap kelompok bergabung dengan satu kelompok lain — membentuk kelompok baru empat orang dari kelompok yang berbeda.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kelompok mana bergabung dengan kelompok mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your process explanation first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns explaining how online shopping usually works."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk diagram, dan minta ucapkan \"First, the customer ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu tahap baru dengan \"After that, ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Presentasikan tiga tahap proses ke kelompok baru. Boleh membaca.",
+        "standar": "Presentasikan keempat tahap proses secara lengkap tanpa membaca.",
+        "tantangan": "Presentasikan prosesnya dan jawab satu pertanyaan tentang satu tahap, dengan tetap menggunakan present tense dan subjek generik."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me the First step. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan present tense dan subjek generik (\"the customer\" / \"the order\"), bukan \"I\" atau \"you\" atau past tense?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Finally step. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan passive atau subjek generik, bukan perintah langsung?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu urutan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat kedua dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu urutan — tunjuk tahap pertama di diagram."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. First, the customer searches for a product."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try. Next, they..."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tahap kedua di diagram — tunggu siswa melengkapi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjutkan untuk \"Then\" dan \"Finally\" sampai siswa siap bicara empat tahap tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. After that, the customer receives a message that the package has shipped."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add one more stage with After that."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan satu tahap baru dengan \"After that, ...\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. You extended the process with one more step.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan keempat tahap proses tanpa melihat buku, atau menulis penjelasan proses tentang cara kerja pinjaman perpustakaan di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +746,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

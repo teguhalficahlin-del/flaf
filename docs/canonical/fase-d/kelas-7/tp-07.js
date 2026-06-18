@@ -1,3 +1,604 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "There is (one thing) (place expression).\nThere are (things) (place expression).",
+    "kartu": "Siapkan satu kartu satu-versus-banyak — satu bangku untuk There is dan tiga bangku untuk There are.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan peta taman sederhana di meja guru — dengan area bermain, beberapa pohon, kolam, bangku, dan toilet, masing-masing ditandai ikon kecil berlabel."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Hello, everyone! Great to see you all here."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Minta siswa menyimpan benda-benda di meja agar fokus."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever been to a park? What did you see there?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab singkat."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tempel peta taman di papan tulis — beri waktu siswa melihat sebentar."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this park map. What can you find in this park?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menyebutkan sesuatu dari peta. Jika tidak ada yang menjawab dalam lima detik — tunjuk ikon area bermain di peta dan tanya \"What is this?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan peta tetap terpasang di papan tulis."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today let us describe what is in this park."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk area bermain di peta dengan satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There is a playground in the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk lokasi in the park di peta."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sapukan tangan terbuka melintasi beberapa pohon di peta."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There are tall trees near the playground."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk lokasi near the playground di peta."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolam di peta dengan satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There is a pond in the park. It is clean and quiet."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk kolam di peta dengan satu jari, lalu angguk menunjukkan kalimat It is sebagai deskripsi tambahan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sapukan tangan terbuka melintasi bangku dan toilet di peta."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There are benches and toilets in the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Peta dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk area bermain di peta dengan satu jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "There is a playground in the park."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Sapukan tangan terbuka melintasi beberapa pohon di peta."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "There are tall trees near the playground."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kolam di peta dengan satu jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "There is a pond in the park. It is clean and quiet."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Sapukan tangan terbuka melintasi bangku dan toilet di peta."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "There are benches and toilets in the park."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write about the park map."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu satu-versus-banyak di papan tulis dan jelaskan: satu benda pakai There is, lebih dari satu pakai There are."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa memilih benda-benda dari peta dan menulis kalimat There is atau There are dengan ungkapan tempat. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Pastikan peta taman masih terpasang di papan tulis. Tempel juga kartu ungkapan tempat dan kartu satu-versus-banyak."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Look at the park map. Choose things you can see and write about them."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use There is for one thing. Use There are for more than one. Add the place: in the park, or near the playground."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menulis There is untuk benda jamak atau menghilangkan ungkapan tempat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung memilih There is atau There are — tunjuk kartu satu-versus-banyak di papan tulis dan minta siswa hitung benda yang ingin mereka deskripsikan."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk area bermain di peta, dan ucapkan \"There is a playground blank the park. In or near?\" Tunggu siswa melengkapi dan menulis, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu benda di peta dan lengkapi: There is blank in the park. Atau: There are blank in the park.",
+        "standar": "Tulis dua kalimat — satu There is untuk satu benda dan satu There are untuk lebih dari satu benda — masing-masing dengan ungkapan tempat.",
+        "tantangan": "Tulis dua kalimat keberadaan, lalu tambahkan deskripsi singkat untuk satu benda: There is a pond in the park. It is clean and quiet."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Pastikan peta taman masih terlihat oleh semua siswa."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A mendeskripsikan dua benda di peta dengan There is dan There are kepada Siswa B."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B menunjuk setiap benda di peta saat mendengar namanya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Describe the park to your partner. Your partner points to each thing on the map. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk peta dan minta siswa pilih satu benda, lalu ucapkan \"There is a playground...\" sambil tunjuk benda tersebut."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa mendeskripsikan tiga benda lagi dari peta yang belum disebutkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Deskripsikan dua benda menggunakan kalimat dari buku catatan — boleh membaca. Pasangan menunjuk setiap benda di peta.",
+        "standar": "Deskripsikan minimal tiga benda tanpa membaca, menggunakan baik There is maupun There are dengan ungkapan tempat.",
+        "tantangan": "Deskripsikan beberapa benda di peta, dan untuk satu benda tambahkan deskripsi singkat: There is a pond in the park. It is clean and quiet. Pasangan melakukan hal yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Show the park map and describe it to the new group using There is and There are."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah siswa menggunakan There is dan There are dengan konsisten."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk peta, tunjuk satu benda, dan minta siswa ucapkan \"There is a blank in the park.\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa menggunakan There is untuk benda jamak — tepuk kartu satu-versus-banyak di papan tulis perlahan dan tanya \"One or more than one?\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tunjuk peta dan ucapkan dua kalimat keberadaan ke kelompok baru — boleh membaca.",
+        "standar": "Tunjuk peta dan deskripsikan minimal tiga benda tanpa membaca, menggunakan baik There is maupun There are.",
+        "tantangan": "Tunjuk peta, deskripsikan beberapa benda, dan tambahkan deskripsi singkat untuk satu benda."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tiga pohon di peta."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe these trees. Use There is or There are. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa memilih There are dengan tepat untuk benda jamak?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolam di peta — tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe the pond. Add the place expression too."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyertakan ungkapan tempat seperti in the park atau near the playground?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu satu-versus-banyak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua kalimat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu bangku di peta dengan satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. There is a bench in the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Sapukan tangan terbuka melintasi tiga bangku di peta."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There are benches in the park."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan perbedaan satu jari untuk There is dan tangan terbuka untuk There are."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There isn't a swimming pool in the park. There aren't any shops near the playground."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Tell me one thing that is NOT in the park. Just one sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try one more.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang deskripsi peta tanpa membaca, atau menulis dua kalimat tambahan tentang benda lain yang ada di peta."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -175,5 +776,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

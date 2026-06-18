@@ -1,3 +1,579 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "It is (adjective) for (noun).\nIt is (adjective) to (verb).",
+    "kartu": "Siapkan dua kartu fungsi — semut membawa makanan untuk helpful for, dan lebah membuat madu untuk important to.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan ikon bagian tubuh (kaki, sayap, antena) dan ikon habitat (taman, bunga, daun)."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning! Eyes up front, please."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu kelas tenang dan perhatian terfokus ke depan."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Can you name any small animals that live near flowers or in gardens?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab singkat."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunjukkan keempat kartu foto serangga satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these insects. Do you know what they are good for?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu lebah dan ikon madu dan tanya \"What does this make?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to describe what an insect is good for."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu foto semut di taman — tunjuk satu jari ke semut."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan jari berjalan di udara."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is helpful for carrying food."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon semut membawa makanan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu semut. Angkat kartu foto lebah di bunga — tunjuk satu jari ke lebah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "There is a bee on the flower. It is useful for the garden."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon taman."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan tangan berputar seperti membuat madu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is important to make honey."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu semut — peragakan jari berjalan di udara."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is helpful for carrying food."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu lebah — tunjuk ikon taman."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is useful for the garden."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Peragakan tangan berputar seperti membuat madu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is important to make honey."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write about your own insect."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan minta siswa membaca bersama sekali lagi sebelum melanjutkan."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa memilih satu kartu foto serangga dan menulis kalimat fungsi menggunakan pola dari papan tulis. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel keempat kartu foto serangga di papan tulis di sebelah pola. Tempel juga ikon bagian tubuh, habitat, dan fungsi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Choose an insect card. Write about what it is good for."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use: It is blank for blank. Or: It is blank to blank. Do not add because."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang menambahkan because setelah kalimat fungsi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung memilih for atau to — tunjuk pola di papan tulis: for diikuti kata benda, to diikuti kata kerja. Minta siswa periksa kata berikutnya yang ingin mereka tulis."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu lebah, dan ucapkan \"It is useful for blank. The garden? Or: It is important to blank. Make honey?\" Tunggu siswa memilih dan menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kartu serangga dan lengkapi satu kalimat: It is blank for blank. Atau: It is blank to blank. Gunakan kata dari ikon di papan tulis.",
+        "standar": "Tulis dua kalimat tentang seranggamu — satu It is blank for blank dan satu It is blank to blank.",
+        "tantangan": "Tulis rangkaian pendek: There is a blank in the blank. It is blank and blank. It is useful/helpful for blank. Atau: It is important to blank. Pertahankan kalimat fungsi sebagai bagian utama baru."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A memegang kartu serangganya dan membacakan kalimat fungsinya ke Siswa B."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan memperhatikan fungsi yang disebutkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendeskripsikan serangganya ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Describe your insect and its function to your partner. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now make a mini description card for your insect."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu serangga siswa dan minta siswa ucapkan \"It is helpful for blank.\" atau \"It is important to blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Deskripsikan seranggamu menggunakan kalimat fungsi dari buku catatan — boleh membaca. Pasangan mendengarkan dan mendeskripsikan serangganya.",
+        "standar": "Deskripsikan seranggamu tanpa membaca, menggunakan satu kalimat for dan satu kalimat to. Pasangan melakukan hal yang sama.",
+        "tantangan": "Berikan rangkaian pendek: keberadaan, deskripsi, lalu fungsi. Pasangan melakukan hal yang sama."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Siswa membuat kartu deskripsi mini untuk serangganya, lalu berbagi ke kelompok empat orang yang baru.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Bagikan kartu kosong kecil kepada setiap siswa — atau minta siswa gunakan selembar kertas yang dilipat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Make a mini description card for your insect. Write your sentences on the card, end with the function sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu dua menit untuk membuat kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana dari langkah INTERACT untuk membentuk kelompok empat orang baru."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Show your card and read it to the group. End with: It is blank for blank. Or: It is blank to blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu empat menit untuk semua anggota berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah kalimat fungsi muncul di setiap presentasi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — dekati dan tunjuk kalimat fungsi di kartunya. Minta siswa baca satu kalimat saja ke kelompok."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa dengarkan dan tunjuk kalimat fungsi di kartu setiap temannya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah empat menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Buat kartu dengan satu kalimat fungsi dan baca ke kelompok. Boleh menyertakan gambar kecil.",
+        "standar": "Buat kartu dengan dua atau tiga kalimat tentang seranggamu, akhiri dengan kalimat fungsi, dan baca ke kelompok.",
+        "tantangan": "Buat kartu dengan rangkaian pendek (keberadaan, deskripsi, fungsi) dan presentasikan ke kelompok, lalu tunjuk kalimat fungsi di kartu temanmu."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu kupu-kupu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe this butterfly's function. Use It is blank for blank. Or It is blank to blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat fungsi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa membuat pernyataan fungsi mandiri tanpa menambahkan because?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your function sentence for the ant. Without looking at your card."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menyebutkan fungsi dengan lancar tanpa membaca?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu semut dan kartu lebah."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua kalimat fungsi sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu lebah — tunjuk ikon taman."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. It is useful for the garden."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan tangan berputar seperti membuat madu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is important to make honey."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan perbedaan for diikuti kata benda dan to diikuti kata kerja."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It has wings to fly. It has legs to climb."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Tell me one sentence about your insect's body part and what it is for. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a different body part.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang kalimat fungsi tanpa membaca kartu, atau menulis deskripsi serangga kedua di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -176,5 +752,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

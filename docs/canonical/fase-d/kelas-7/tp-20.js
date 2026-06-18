@@ -1,3 +1,551 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Notice: (message)\nNo (thing).\nKeep (short instruction).\nUse (short instruction).",
+    "kartu": "Siapkan kartu format tanda yang menunjukkan empat jenis pengumuman: Notice: blank, No blank, Keep blank, Use blank.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan pemandangan gudang tua tidak terpakai dengan pintu tertutup dan tanda peringatan sebagai hook motivasi."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas — berbicara perlahan dengan nada misterius."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Morning! I have something mysterious to show you today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Buat suasana penasaran sebelum memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever noticed old signs or warning notices around this school?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu tanda dan pengumuman dekat gudang tua satu per satu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these signs near an old storage room. What do you think is behind that door?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu Keep Out dan tanya \"What does this sign tell you to do?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan kartu tetap terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to read and write short notices like these."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tegas ke kartu Notice."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Notice: Keep this door closed."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pintu di gambar pemandangan gudang tua."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur X atau berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "No entry to the secret room."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu No Entry."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pintu lain di gambar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep out. Use the side door only."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pintu samping."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur X atau berhenti — tunjuk pintu lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "No food in this room."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu No."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru membacakan satu notice — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Notice 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk tegas ke kartu Notice — tunjuk pintu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Notice: Keep this door closed."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Notice 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buat gestur X atau berhenti — tunjuk kartu No Entry."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "No entry to the secret room."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Notice 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk pintu lain — tunjuk kartu Use."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Keep out. Use the side door only."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own notices."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu format tanda dan minta siswa baca bersama empat jenis: Notice: blank, No blank, Keep blank, Use blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa membuat tanda dan pengumuman mereka sendiri untuk gudang tua. Dikerjakan secara individual, ditulis di buku catatan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu tanda dan kartu format di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Create your own notices for the old storage room. Use: Notice: blank, No blank, Keep blank, or Use blank."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Short signs only. Not a story. Not a description. Not an opinion. Just a notice."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis cerita atau penjelasan panjang, dan ingatkan: \"Short. Like a sign. Notice: blank. Or: No blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now sit in small groups of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu pesan apa yang ingin ditulis — tunjuk kartu format tanda dan tanya \"What should people do near this door? No blank? Keep blank?\" Bantu siswa melengkapi."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, buat gestur X, dan ucapkan \"No blank. Entry? Or: No blank. Enter?\" Tunggu siswa melengkapi dan menulis satu notice, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu ikon tanda dan lengkapi satu notice: No blank. Atau: Keep blank. Atau: Use blank.",
+        "standar": "Tulis dua notices dengan jenis yang berbeda untuk gudang tua.",
+        "tantangan": "Tulis tiga notices (Notice: blank, No blank, Keep blank atau Use blank), dan tambahkan satu kolom formulir netral: Choice: Storage Room."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Siswa duduk dalam kelompok tiga atau empat — guru yang menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tentukan komposisi kelompok — tunjuk secara eksplisit siapa bergabung dengan siapa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, look at the notice cards near the old storage room. Read each one and point to what it means."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Then write your own notices for the room using Notice: blank, No blank, Keep blank, or Use blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Bagikan kartu notice misterius ke setiap kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk membaca, mencocokkan makna, dan menulis notice sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah notice yang ditulis tetap dalam format singkat, bukan cerita."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Stay in your group."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam dan tidak ada yang memulai — tunjuk satu kartu notice dan minta satu siswa membacakannya keras."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada siswa yang menulis cerita atau penjelasan — tunjuk kartu format tanda: \"Short. Like a sign. Notice: blank. Or: No blank.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok selesai lebih cepat — minta kelompok tukar kartu notice dan cocokkan dengan makna yang berbeda."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bacakan satu kartu notice dan tunjuk apa maknanya. Lalu salin atau lengkapi satu notice sendiri.",
+        "standar": "Cocokkan dua atau tiga kartu notice dengan maknanya, lalu tulis dua notices sendiri.",
+        "tantangan": "Cocokkan semua kartu notice dengan maknanya, lalu tulis tiga notices dan satu kolom formulir netral."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Siswa menempelkan notices mereka di dinding kelas dan berkeliling membaca notices kelompok lain.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Minta setiap kelompok menempelkan notices mereka di satu bagian dinding kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Post your notices on the wall. Then walk around and read other groups' notices. Match each one to what it means."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk berkeliling dan membaca notices kelompok lain."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — perhatikan apakah siswa dapat mencocokkan notice dengan makna yang tepat."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada siswa yang tidak bisa membaca notice kelompok lain — dekati, tunjuk kata kunci di notice (No, Keep, Use, Notice), dan minta siswa cocokkan dengan gambar atau tindakan yang sesuai."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada notice yang ditulis sebagai cerita — tepuk kartu format tanda dan ingatkan: \"Short sign. Notice: blank. Not a story.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tempelkan satu notice dan baca dua notices kelompok lain — tunjuk apa yang dimaksud setiap notice.",
+        "standar": "Tempelkan dua notices dan baca beberapa lainnya — cocokkan setiap notice dengan maknanya.",
+        "tantangan": "Tempelkan set notices, baca notices kelompok lain, dan temukan satu notice yang cocok dengan setiap makna di dinding."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me one notice for the old storage room. Notice: blank, No blank, Keep blank, or Use blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan notice."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah notice dalam format singkat tanpa menjadi cerita atau penjelasan panjang?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your second notice. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa membacakan notice dengan format yang tepat tanpa membaca kata per kata?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu format tanda."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua notices sekali lagi — beri isyarat tangan ke arah siswa setiap notice."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tegas ke kartu Notice."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Notice: Keep this door closed."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur X."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "No entry to the secret room."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan — tekankan bahwa notice harus singkat, dimulai dengan kata kunci."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Please keep out."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "A polite notice. Now you try. Give me one polite public notice with Please. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Short and polite. Keep the notice format.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua notices tanpa membaca, atau menulis satu notice baru untuk tempat lain di sekolah."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +720,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

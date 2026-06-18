@@ -1,3 +1,676 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "___ friends like ___.\n___ friends can play ___.",
+    "kartu": "Siapkan kartu bergambar kegiatan klub (bernyanyi, menggambar, bulu tangkis, catur) dan dua kartu jawaban (hijau jempol atas untuk Yes, merah jempol bawah untuk No) di meja guru.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan tiga poster klub di papan tulis — poster Klub Musik, poster Klub Seni, dan poster Klub Olahraga."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan lembar tally kosong (nama kegiatan + kolom Yes / No) untuk setiap siswa."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu semua siswa duduk dan perhatian ke depan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning, everyone! Please take your seats."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons siswa."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "AKSI",
+        "teks": "Arahkan tangan ke ketiga poster klub di papan tulis."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these posters on the board. What clubs do you see?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa menjawab — terima jawaban singkat dalam Bahasa Indonesia atau Bahasa Inggris."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Which club would you like to join this semester? Raise your hand!"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa mengangkat tangan. Jika tidak ada yang merespons dalam lima detik — tunjuk satu poster dan tanya \"Music Club or Sports Club?\" untuk memancing respons."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu tunjuk pola di papan tulis."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Before we join a club, let us learn how to ask a friend."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu jawaban hijau (Yes) dan merah (No) — tunjukkan ke kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk poster Klub Musik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka telapak tangan ke arah satu siswa sambil angkat alis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I like music. Do you like singing? Yes, I do."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu hijau sambil mengangguk dengan jempol ke atas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu hijau. Ambil kartu bergambar tangan menggambar."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka telapak tangan ke arah siswa lain sambil angkat alis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Do you like drawing? No, I don't."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu merah sambil gelengkan kepala dengan jempol ke bawah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu bergambar. Ambil kartu bergambar raket bulu tangkis — peragakan mengayunkan raket."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka telapak tangan ke arah siswa lain sambil angkat alis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Can you play badminton? Yes, I can."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu hijau sambil mengangguk dengan jempol ke atas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu bulu tangkis. Ambil kartu bergambar papan catur — peragakan menggerakkan bidak catur."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka telapak tangan ke arah siswa lain sambil angkat alis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Can you play chess? No, I can't."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu merah sambil gelengkan kepala dengan jempol ke bawah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu pertukaran — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Pertukaran 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu bergambar bernyanyi — buka telapak tangan ke arah siswa sambil angkat alis."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I like music. Do you like singing? Yes, I do."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pertukaran 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu bergambar menggambar — buka telapak tangan ke arah siswa sambil angkat alis."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Do you like drawing? No, I don't."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pertukaran 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu bergambar raket bulu tangkis — peragakan mengayunkan raket."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Can you play badminton? Yes, I can."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Pertukaran 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu bergambar papan catur — peragakan menggerakkan bidak catur."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Can you play chess? No, I can't."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Write your own questions."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan minta siswa membaca bersama sekali lagi sebelum melanjutkan."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa membuat pertanyaan Yes/No sendiri dan menjawabnya dengan short answer. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel kartu bergambar kegiatan klub di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. Choose an activity from the posters or picture cards."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your question and the short answer. Do you like drawing? Yes, I do. Can you play chess? No, I can't. Like that."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis apapun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now keep your notebook open and wait."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu kegiatan yang ingin ditanyakan — tunjuk kartu bergambar di papan tulis dan minta siswa pilih salah satu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu bergambar bernyanyi, dan ucapkan \"Do you like singing?\" sambil buka telapak tangan. Tunggu siswa meniru dan menulis, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Pilih satu kegiatan dari poster dan tulis satu pertanyaan beserta jawabannya: Do you like singing? Yes, I do. Atau: Can you play chess? No, I can't.",
+        "standar": "Tulis dua pertanyaan beserta jawabannya — satu pertanyaan Do you like dan satu pertanyaan Can you play. Pastikan jawaban pendeknya sesuai: do atau don't untuk Do you, can atau can't untuk Can you.",
+        "tantangan": "Tulis tiga pertanyaan beserta jawabannya, campurkan Do you like dan Can you play. Untuk satu kegiatan olahraga, tulis keduanya: Do you like badminton? Can you play badminton?"
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Siswa berjalan keliling kelas dan bertanya kepada beberapa teman menggunakan pertanyaan dari langkah CHANGE. Setiap siswa membawa lembar tally.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Bagikan lembar tally (satu per siswa) — kolom berisi nama kegiatan dan dua kolom: Yes / No."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take this tally sheet. Walk around the class. Ask your classmates your questions."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Put a mark in the Yes or No column for each answer you get."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A bertanya kepada Siswa B menggunakan pertanyaannya. Siswa B menjawab dengan short answer. Siswa A memberi tanda di lembar tally."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now go. You have eight minutes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk berjalan keliling."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasang siswa di berbagai baris."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Go back to your seat."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa diam lebih dari sepuluh detik dan tidak mulai bertanya — dekati, tunjuk pertanyaan pertama di buku catatannya, dan ucapkan \"Ask your friend this question.\" Tunggu siswa mulai bertanya sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa sudah selesai bertanya kepada empat teman sebelum waktunya — minta siswa tanya kepada satu teman lagi dengan pertanyaan berbeda."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tanya dua teman menggunakan satu pertanyaan Do you like dari buku catatan. Beri tanda di lembar tally untuk setiap jawaban. Boleh membaca pertanyaan dari buku.",
+        "standar": "Tanya tiga teman dengan kedua pertanyaanmu tanpa membaca buku. Beri tanda di lembar tally untuk setiap jawaban.",
+        "tantangan": "Tanya empat teman. Setelah teman menjawab, tambahkan informasimu sendiri: I like chess too. I can play chess. Lalu beri tanda di lembar tally."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Siswa bergabung dengan kelompok empat orang — bukan teman dari langkah INTERACT — dan melaporkan hasil tally survey.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dengan siapa — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Look at your tally sheet. Write one or two sentences about your results."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this: blank friends like blank. Or: blank friends can play blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola pelaporan di papan tulis (tulis cepat jika belum ada):"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu dua menit untuk menulis kalimat laporan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first. Read your report sentences to your group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu empat menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — amati apakah siswa menggunakan pola pelaporan yang benar."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk lembar tally siswa tersebut dan minta mereka ucapkan angka yang ada di kolom Yes. Bantu mereka menyusun kalimat: \"Two friends like ...\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung perbedaan pola like dan can play dalam laporan — tunjuk papan tulis dan jelaskan kata-katanya tetap sama seperti di pertanyaan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah empat menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Tulis dan baca satu kalimat laporan: blank friends like blank. Misalnya: Two friends like drawing.",
+        "standar": "Tulis dua kalimat laporan — satu dengan like dan satu dengan can play. Baca keduanya ke kelompok.",
+        "tantangan": "Tulis kalimat laporan untuk setiap pertanyaan yang kamu tanyakan, gunakan blank friends like atau most friends can play. Baca laporan lengkapmu ke kelompok."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Ask me one question. Do you like, or can you play. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan pertanyaan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan Do you like atau Can you play dengan benar?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jawab dengan short answer yang sesuai."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Answer this: Can you play badminton?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menjawab dengan Yes, I can atau No, I can't."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah jawaban pendeknya sesuai dengan tipe pertanyaan?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu bergambar kegiatan klub."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan dua pertukaran — Do you like drawing? No, I don't. Can you play badminton? Yes, I can. — beri isyarat tangan ke arah siswa setiap pertukaran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will practice more next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu bergambar bernyanyi — buka telapak tangan ke arah siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Do you like singing?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan pertanyaan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now answer. Yes, I do. Or No, I don't."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menjawab."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi dengan Can you play badminton jika siswa sudah bisa Do you like — tekankan bahwa jawabannya berbeda: can atau can't."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk nama satu teman siswa tersebut di lembar tally."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This is Rina. She likes drawing. She can play badminton."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Tell me about one friend from your tally sheet. Just two sentences."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try another friend.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang pertanyaan dan jawaban dari buku catatan tanpa membaca lembar tally, atau menambah satu pertanyaan baru di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -171,5 +844,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

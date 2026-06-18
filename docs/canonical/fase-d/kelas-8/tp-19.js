@@ -1,3 +1,583 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "\"___\" said ___.\n\"___,\" replied ___.\n[Name] decided to ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — strip komik dialog yang menunjukkan Dito dan Wulan berdiri di luar pintu gudang dengan balon kata dan kotak narator orang ketiga di bawah setiap panel, kerangka prosa dialog (\"\\\"___\\\" said [name]. / \\\"___,\\\" replied [name]. / [Name] decided to ___.\" — menunjukkan struktur naratif orang ketiga, bukan skrip drama), dan kartu kata kerja pelapor (said, replied, whispered, asked — dengan tanda panah menunjuk ke tanda kutip).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. We are going to bring our story to life today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Persiapkan suasana kelas seperti sesi storytelling."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Dito found a key. Wulan heard a strange sound. What do you think they said to each other?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan strip komik dialog — tunjuk balon kata Dito dan Wulan di luar pintu gudang, lalu tunjuk kotak narator orang ketiga di bawah setiap panel."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this comic strip. Can you read what they are saying to each other?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us see how to write story dialogue in third-person prose, using said, replied, and decided to."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat dua jari membentuk tanda kutip di udara — tunjuk ke arah Wulan di komik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "\"Did you hear that voice?\" said Wulan softly."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat dua jari tanda kutip — bergantian tunjuk kiri (Dito) lalu kanan (Wulan) untuk menunjukkan dua pembicara."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "\"I have a question,\" replied Dito. \"Should we open the door now?\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kotak narator orang ketiga di bawah panel komik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "As good friends, Dito and Wulan made a decision together."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buat gestur menunjuk ke depan yang tegas sambil mengucapkan \"decided to\"."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Dito decided to turn the key in the lock."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat dua jari membentuk tanda kutip di udara — tunjuk ke arah Wulan di komik."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "\"Did you hear that voice?\" said Wulan softly."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat dua jari tanda kutip — bergantian tunjuk kiri (Dito) lalu kanan (Wulan)."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "\"I have a question,\" replied Dito. \"Should we open the door now?\""
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kotak narator orang ketiga di bawah panel komik."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "As good friends, Dito and Wulan made a decision together."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Buat gestur menunjuk ke depan yang tegas untuk \"decided to\"."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Dito decided to turn the key in the lock."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now it is your turn. Write your own story dialogue."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk kerangka prosa dialog. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pertukaran dialog naratif singkat antara Dito dan Wulan. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan strip komik dan kerangka prosa dialog di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this frame. Write a dialogue between Dito and Wulan about opening the storage room door."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Third-person prose, not a drama script, and not a personal conversation. End with decided to."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu harus menulis apa — tunjuk balon kata pertama di komik dan minta siswa mulai dari \"\\\"Did you hear ...\" lalu lanjutkan dengan replied."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu kata kerja pelapor \"said\", dan minta siswa ucapkan \"\\\"___\\\" said Wulan.\" Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka dialog dan isi: \"\\\"___\\\" said ___. \\\"___,\\\" replied ___. ___ decided to ___.\" Boleh lihat strip komik.",
+        "standar": "Tulis pertukaran dialog (said / replied) dan akhiri dengan \"[Name] decided to ...\" tanpa membaca.",
+        "tantangan": "Tulis tiga baris dialog menggunakan said, replied, dan satu kata kerja pelapor lain (misalnya whispered), lalu tambahkan \"[Name] decided to ...\""
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga. Aktivitas ini menggabungkan role play dan pembacaan versi prosa orang ketiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A berperan sebagai Dito, Siswa B berperan sebagai Wulan — keduanya role play dialog menggunakan kalimat yang sudah ditulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B kemudian membacakan versi prosa orang ketiga dengan lantang sementara Siswa A memeriksa: Ada \"said\"? Ada \"replied\"? Ada \"decided to\"? Lalu tukar peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Role play your dialogue first, then read the prose version. Your partner checks for said, replied, and decided to. Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk balon kata pertama di komik dan tanya \"What did Wulan say first?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan menulis skrip drama (\"WULAN: Did you hear that?\") — tunjuk pola prosa di papan tulis dan minta mereka ubah ke format \"\\\"Did you hear that?\\\" said Wulan.\""
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Role play dialog dengan pasangan menggunakan kerangka. Pasangan periksa \"said\" dan \"replied\" ada.",
+        "standar": "Role play lalu baca versi prosa dengan lantang. Pasangan periksa said, replied, dan decided to.",
+        "tantangan": "Role play, baca versi prosa, lalu tambahkan satu baris dengan kata kerja pelapor baru. Pasangan tanya \"What did the character decide?\" dan kamu jawab."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents your role play first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns performing your role play, then reading the prose version to the group."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kartu kata kerja pelapor \"said\", dan minta ucapkan \"\\\"___\\\" said ...\" sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu baris narator orang ketiga sebelum dialog dimulai."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca prosa dialog ke kelompok menggunakan kerangka.",
+        "standar": "Lakukan role play lalu baca versi prosa tanpa kerangka.",
+        "tantangan": "Lakukan role play dan baca versi prosa, lalu jawab satu pertanyaan dari kelompok: \"What did the character decide?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your said sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menulis prosa naratif orang ketiga dengan tanda kutip dan kata kerja pelapor? Bukan skrip drama (\"WULAN: ...\")?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your decided to sentence. Without looking at your notes."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan nama tokoh nyata (Dito atau Wulan) diikuti \"decided to ...\" — bukan \"character decided to ...\"?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kerangka prosa dialog."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat pertama dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kerangka prosa dialog."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. \"Did you hear that voice?\" said Wulan softly."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk perbedaan di papan tulis: \"WULAN: Did you hear that?\" (skrip drama) versus \"\\\"Did you hear that voice?\\\" said Wulan softly.\" (prosa orang ketiga dengan kata kerja pelapor)."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now try. What did Dito reply?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu kata kerja pelapor \"replied\" — tunggu siswa melengkapi baris berikutnya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ulangi sampai siswa siap mengucapkan satu pertukaran dialog penuh tanpa bantuan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. \"We should not open it alone,\" whispered Wulan, stepping back from the door."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add a third dialogue line using a new reporting verb, whispered or asked."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba menambahkan baris dialog ketiga dengan kata kerja pelapor baru."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. A new reporting verb makes your dialogue more vivid.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan dua baris dialog lengkap plus \"decided to\" tanpa melihat buku, atau menulis satu pertukaran dialog baru untuk momen berbeda dalam cerita di buku catatan."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -172,5 +752,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

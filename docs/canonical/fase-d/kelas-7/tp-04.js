@@ -1,3 +1,616 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "I think (idea) because (reason).\nThat's true.\nI agree.\nI don't think so.",
+    "kartu": "Siapkan tiga kartu respons — wajah mengangguk untuk I agree dan That's true, dan wajah menggeleng untuk I don't think so.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan foto kelas yang dibagi dua — satu sisi kotor dan satu sisi bersih — di meja guru."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan empat ikon topik diskusi (sapu untuk clean, tempat sampah daur ulang untuk recycle, tangan bergandengan untuk teamwork, poster peraturan untuk rules)."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Morning, class! Find your seat quickly."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sebentar hingga kelas kondusif."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "AKSI",
+        "teks": "Tunjukkan foto kelas yang dibagi dua — pegang dengan kedua tangan agar semua siswa bisa melihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Take a look at this photo. Which side of the classroom looks better to you?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu beberapa siswa merespons — terima jawaban singkat dalam Bahasa Indonesia atau Bahasa Inggris."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "What do you think we should do to keep our classroom clean?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk sisi bersih di foto dan tanya \"How do we get it like this?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Letakkan foto. Tunjuk ikon topik diskusi."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us think together about our classroom today."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk foto kelas bersih — tepuk pelipis sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I think we should keep our classroom clean because I like a clean classroom."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk dengan jempol ke atas — tunjuk kartu respons wajah mengangguk."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon tempat sampah daur ulang — tepuk pelipis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I think we should recycle paper because it helps the school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk dengan jempol ke atas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I agree."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon tangan bergandengan — tepuk pelipis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Can you help with classroom jobs? Yes, I can. I think teamwork is important because everyone helps."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk dengan jempol ke atas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That's true."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk ikon poster peraturan — tepuk pelipis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I think we need clear classroom rules."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lambaikan tangan pelan dari sisi ke sisi dan gelengkan kepala."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I don't think so."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kartu respons wajah menggeleng."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu dan ikon."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat atau pertukaran — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tepuk pelipis — buka tangan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I think teamwork is important because everyone helps."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angguk dengan jempol ke atas."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I agree."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angguk dengan jempol ke atas."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "That's true."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Lambaikan tangan pelan dan gelengkan kepala."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I don't think so."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now write your own opinion."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan minta siswa membaca bersama sekali lagi sebelum melanjutkan."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis pendapat sendiri dengan alasan sederhana tentang menjaga kebersihan kelas. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempel ikon topik diskusi di papan tulis di sebelah pola."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. Choose an idea from the icons, clean, recycle, teamwork, or rules."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write your opinion with a short reason. I think blank because blank. Keep the reason short."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis apapun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now sit in groups of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu ide untuk ditulis — tunjuk ikon di papan tulis dan minta siswa pilih salah satu."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ikon sapu di papan tulis, dan ucapkan \"I think we should clean our classroom. Because blank.\" Tunggu siswa melengkapi dan menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Lengkapi satu pendapat: I think blank because blank. Gunakan alasan pendek dari ikon, misalnya because everyone helps. Lalu pilih satu kartu respons untuk menanggapi teman.",
+        "standar": "Tulis satu pendapat: I think blank because blank. Dan tulis dua respons berbeda yang bisa kamu gunakan untuk menanggapi teman: I agree, That's true, atau I don't think so.",
+        "tantangan": "Tulis dua pendapat dengan alasan. Mulai satu dengan ajakan Let's terlebih dahulu, misalnya: Let's keep our classroom clean! I think that's a good idea because I like a clean classroom. Masukkan I like di salah satu alasan. Siapkan satu respons setuju dan satu I don't think so."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Siswa duduk dalam kelompok tiga atau empat orang — guru yang menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tentukan komposisi kelompok (tiga atau empat siswa) — tunjuk secara eksplisit siapa bergabung dengan siapa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In your group, take turns. One person gives an opinion. The others respond with I agree, That's true, or I don't think so."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Everyone must give at least one opinion and one response."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjukkan gesture — tepuk pelipis untuk memberi pendapat, angguk untuk setuju, geleng untuk tidak setuju."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk diskusi kelompok."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa kelompok dan pastikan semua anggota mendapat giliran berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Stay in your group for now."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok diam dan tidak ada yang memulai — tunjuk ikon sapu dan minta satu siswa ucapkan \"I think we should keep our classroom clean.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke kelompok lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika semua anggota kelompok hanya setuju terus — minta satu siswa coba gunakan \"I don't think so.\" dan tunjuk kartu respons wajah menggeleng."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Ucapkan pendapatmu dari buku catatan ke kelompok — boleh membaca. Lalu gunakan kartu respons untuk menanggapi satu teman.",
+        "standar": "Sampaikan pendapatmu tanpa membaca, lalu tanggapi minimal dua teman dengan respons yang berbeda.",
+        "tantangan": "Mulai dengan ajakan Let's, lalu sampaikan pendapat dengan alasan yang mengandung I like. Gunakan juga Can you help? Yes, I can. dalam diskusi tentang teamwork. Tanggapi teman lain, termasuk satu I don't think so."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap siswa bergabung dengan kelompok baru — bukan kelompok dari langkah INTERACT — dan berbagi pendapat utamanya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siapa bergabung dengan kelompok mana untuk membentuk kelompok baru."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Form a new group of four with classmates from other groups."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok baru terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Say your main opinion: I think blank because blank. The others respond."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah siswa menggunakan respons yang beragam."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — dekati dan tunjuk pendapat di buku catatannya. Minta siswa membaca satu kalimat saja ke kelompok."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai berbicara jauh lebih cepat dari yang lain — minta siswa siapkan satu respons untuk setiap teman yang belum selesai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sampaikan pendapat I think blank because blank ke kelompok baru — boleh membaca. Tanggapi satu teman dengan kartu respons.",
+        "standar": "Sampaikan pendapat tanpa membaca, dan tanggapi minimal dua teman dengan respons yang berbeda.",
+        "tantangan": "Sampaikan pendapat dengan ajakan Let's di depan dan alasan yang mengandung I like, lalu tanggapi teman lain termasuk satu I don't think so."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Tell me your opinion about our classroom. I think blank because blank. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan pendapatnya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyertakan because dan alasan singkat?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan satu pendapat sederhana ke arah siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I think teamwork is important because everyone helps. What do you say?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa merespons dengan I agree, That's true, atau I don't think so."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah respons siswa sesuai dan tidak berupa penjelasan panjang?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali ikon topik diskusi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan satu pendapat dan satu respons sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tepuk pelipis sendiri perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. I think we should recycle paper because it helps the school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan kalimat perlahan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa ragu di bagian because — jeda setelah I think blank, tunjuk baris because di papan tulis, dan minta siswa melanjutkan."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I think teamwork is important because everyone helps. What about you?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Give your opinion, then ask: What about you? Just once."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Try with a classmate.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang pendapat dari buku catatan tanpa membaca, atau menulis satu pendapat tambahan dengan topik yang berbeda."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -175,5 +788,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

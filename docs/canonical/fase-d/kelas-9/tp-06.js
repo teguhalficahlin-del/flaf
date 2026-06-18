@@ -1,3 +1,595 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "It is ___.\nI believe ___ because ___.\nOne strength is ___.\nHowever, ___.\nTherefore, I recommend ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu ringkasan tiga proyek bakti sosial, kartu kerangka review lengkap enam slot (DESCRIBE, CLAIM, STRENGTH, LIMITATION, RECOMMENDATION), dan kartu ikon (kotak donasi, kelompok bakti sosial, daftar centang partisipasi, bintang evaluasi).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome back. We are ready for a complete review today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Pastikan siswa memiliki catatan dari proyek bakti sosial sebelumnya jika tersedia."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Think of the class charity project you know about. How would you describe it, and would you recommend it?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu ringkasan tiga proyek — pengumpulan buku, bersih-bersih sekolah, bank makanan — dengan deskripsi singkat dan jumlah partisipan di setiap kartu."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa membaca ketiga kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at these project summaries. Which one could you give a full, balanced review?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta mereka memilih salah satu proyek. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how all five components come together in one complete review."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu ringkasan proyek — tunjuk kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "It is a charity project where students collect books for children in the local community, and it runs every term."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu ringkasan — ambil kartu kerangka review lengkap."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe this project is valuable because it builds real community service skills and gives participants a sense of purpose."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — ambil kartu ikon."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu tangan untuk strength, lalu miringkan ke sisi lain untuk limitation."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One strength is the high level of student participation across all classes. However, the project needs clearer evaluation criteria to measure its real impact."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu ikon — tampilkan ketiga kartu sekaligus."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Satukan kedua tangan ke depan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, I recommend continuing the charity project with a simple evaluation plan so students can see the results of their community service and feel proud of their participation."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kedua tangan sebagai isyarat bahwa kelas akan memasuki langkah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu ringkasan proyek — tunjuk kartu."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "It is a charity project where students collect books for children in the local community, and it runs every term."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu ringkasan — angkat kartu kerangka review lengkap."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe this project is valuable because it builds real community service skills and gives participants a sense of purpose."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu kerangka — angkat kartu ikon, angkat satu tangan untuk strength lalu miringkan untuk limitation."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One strength is the high level of student participation across all classes. However, the project needs clearer evaluation criteria to measure its real impact."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan ketiga kartu sekaligus — satukan kedua tangan ke depan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, I recommend continuing the charity project with a simple evaluation plan so students can see the results of their community service and feel proud of their participation."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own complete review."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk slot berurutan. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis review lengkap tentang satu proyek bakti sosial pilihan mereka. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Choose one project from the summary cards. Write a full review using all five components."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The recommendation must follow from your balanced evaluation, not appear on its own."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang melewati komponen However atau langsung melompat ke rekomendasi tanpa evaluasi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now form a group of three or four."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara memulai deskripsi — tunjuk kartu ringkasan proyek di papan tulis dan minta siswa mulai dengan \"It is a project where students...\""
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu ringkasan satu proyek, dan minta siswa ucapkan \"It is a project where\" lalu satu deskripsi singkat. Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka review lima slot di papan tulis dan isi setiap slot secara berurutan. Boleh melihat kartu ringkasan proyek untuk referensi. Pastikan ada deskripsi, klaim, kelebihan, kekurangan, dan rekomendasi.",
+        "standar": "Tulis review lengkap sendiri tanpa membaca kerangka. Gunakan kosakata: charity, community service, participation, atau evaluation.",
+        "tantangan": "Tulis review lengkap lalu tambah satu kelebihan atau kekurangan kedua untuk membuat evaluasi lebih menyeluruh sebelum rekomendasi."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Langkah ini menggunakan kelompok kecil tiga atau empat orang. Guru menentukan komposisi kelompok.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk tiga atau empat siswa yang duduk berdekatan sebagai satu kelompok — lanjutkan hingga semua siswa tergabung."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns presenting your complete review in your group."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "After each review, one member names the most convincing part and explains why."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan setiap anggota sudah mendapat giliran berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now form a new group with students from other groups."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam lebih dari sepuluh detik — tunjuk buku catatannya dan minta ucapkan \"It is a project\" lalu deskripsi singkat sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika kelompok berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan reviewnya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan aktivitas kelompok. Tunjuk kerangka review lengkap di papan tulis, minta seluruh kelas mengucapkan lima komponen secara berurutan bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca review dari buku catatan ke kelompok. Kelompok mencentang setiap komponen saat mendengarnya: deskripsi, klaim, kelebihan, kekurangan, rekomendasi.",
+        "standar": "Sampaikan review tanpa membaca. Kelompok memeriksa kelima komponen.",
+        "tantangan": "Sampaikan review, lalu kelompok bertanya: \"Does your recommendation follow logically from your evaluation?\" Jelaskan hubungannya."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap siswa bergabung ke kelompok baru yang berbeda dari kelompok INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk komposisi kelompok baru — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One person presents the complete review. The others listen for all five components."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"It is a project\" lalu deskripsi singkat sebagai pembuka. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan reviewnya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca review dari buku catatan ke kelompok baru.",
+        "standar": "Sampaikan review tanpa membaca buku.",
+        "tantangan": "Sampaikan review tanpa membaca, lalu jawab satu pertanyaan dari kelompok: \"Why does your recommendation follow from the limitation you identified?\""
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe the project in one sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan kalimat deskripsi It is."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa membuka dengan deskripsi sebelum evaluasi, atau langsung ke opini?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your recommendation sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah rekomendasi muncul setelah evaluasi berimbang, bukan sebagai kalimat berdiri sendiri?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka review lengkap."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk setiap slot di kerangka secara berurutan sambil mengucapkan kalimat model yang sesuai — tunjuk dada, angkat satu tangan, miringkan, satukan tangan ke depan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat tangan ke arah siswa — tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kerangka review di papan tulis dan tunjuk setiap slot berurutan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Describe it. Evaluate it. Strength. Limitation. Then recommend. Five steps."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk slot pertama (DESCRIBE) dan minta siswa ucapkan \"It is a project where...\" Lanjutkan slot per slot. Jangan tergesa-gesa — tunggu respons di setiap slot sebelum lanjut."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat Therefore, I recommend dalam review siswa di buku catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding an evaluative framing before your recommendation. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Based on this evaluation, I am confident that a stronger charity project with regular participation would bring lasting benefits to the whole community."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now add Based on this evaluation before your own recommendation sentence."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That signals your recommendation follows from your full review.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka ucapkan review lengkap mereka tanpa melihat buku, atau memperkuat kalimat However dengan satu detail spesifik tentang dampak kekurangan tersebut."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -175,5 +767,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

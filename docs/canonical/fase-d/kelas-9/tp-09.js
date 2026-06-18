@@ -1,3 +1,599 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "In conclusion, ___.\nTherefore, ___.\nThank you for listening. Do you have any questions?\nThat's an interesting question. ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu kerangka urutan penutup lima slot (SUMMARY / RECOMMENDATION / THANK YOU / INVITE QUESTIONS / RESPOND), kartu perbandingan penutup paralel (penutup email \"See you soon, Dito and Wulan\" di sebelah penutup presentasi \"Thank you for listening. Do you have any questions?\"), dan kartu setup simulasi tanya jawab (satu siswa di depan, yang lain memegang kartu pertanyaan).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu kelas kondusif sebelum memulai."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Welcome back, everyone. Let us bring all our focus to the front."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "You have opened your presentation. You have presented your main points. Now, what is left?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Beri jeda singkat — biarkan siswa menjawab. Jika tidak ada respons dalam lima detik — tunjuk satu siswa dan minta pendapatnya."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu kerangka urutan penutup — tunjuk setiap slot: SUMMARY, RECOMMENDATION, THANK YOU, INVITE QUESTIONS, RESPOND."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "And after the closing, the audience gets to ask you questions. Are you prepared to respond?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons singkat dari dua atau tiga siswa — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to close a formal presentation and handle audience questions."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu kerangka urutan penutup — satukan kedua tangan perlahan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "In conclusion, the old storage room holds important pieces of our school's heritage that have been forgotten for decades and deserve to be shared with everyone."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, I recommend that the school create a small heritage display in the main corridor so all students can learn about this part of their school's history."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — bungkuk sedikit ke arah audiens."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Thank you for listening to our presentation. Do you have any questions?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu — angkat kartu setup simulasi tanya jawab. Miringkan kepala dan angguk penuh perhatian."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That's an interesting question. I think the school should open the storage room for more community discussion about how to best preserve and share these items."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angguk kepada seluruh kelas dan angkat kedua tangan sebagai isyarat bahwa langkah berikutnya adalah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu kerangka urutan penutup — satukan kedua tangan perlahan."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "In conclusion, the old storage room holds important pieces of our school's heritage that have been forgotten for decades and deserve to be shared with everyone."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tetap pegang kartu kerangka."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, I recommend that the school create a small heritage display in the main corridor so all students can learn about this part of their school's history."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu kerangka — bungkuk sedikit ke arah audiens."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Thank you for listening to our presentation. Do you have any questions?"
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu setup simulasi tanya jawab — miringkan kepala dan angguk penuh perhatian."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "That's an interesting question. I think the school should open the storage room for more community discussion about how to best preserve and share these items."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own presentation closing."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tampilkan kartu perbandingan penutup paralel dan tunjuk perbedaan antara \"See you soon\" (email) dan \"Thank you for listening\" (presentasi). Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menulis penutup presentasi mereka sendiri dan satu respons tanya jawab. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Write a presentation closing: In conclusion, summarize. Therefore, give your recommendation. Then: Thank you for listening. Do you have any questions? Finally, prepare your Q&A response with That's an interesting question."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Keep it formal. Not \"So basically...\" and not a recommendation without a summary first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang melewati In conclusion dan langsung menulis Therefore, atau yang menulis \"Yes, you're right\" sebagai respons tanya jawab."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu cara memulai ringkasan — tunjuk slot SUMMARY di kerangka dan minta siswa mulai dengan \"In conclusion, the storage room...\" lalu satu kalimat tentang apa yang ditemukan."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk slot In conclusion di pola, dan minta siswa ucapkan \"In conclusion, we found\" lalu satu detail. Tunggu siswa menulis satu baris, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kerangka urutan penutup lima slot dan isi setiap slot. Boleh menggunakan catatan penemuan untuk isi ringkasan.",
+        "standar": "Tulis penutup dan respons tanya jawab sendiri tanpa membaca kerangka. Gunakan kosakata: heritage atau discussion.",
+        "tantangan": "Tulis penutup dan respons tanya jawab, lalu siapkan respons kedua untuk pertanyaan berbeda yang lebih sulit dijawab."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A berdiri dan menyampaikan penutup presentasinya: In conclusion, Therefore, Thank you for listening. Do you have any questions?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mengajukan satu pertanyaan tentang penemuan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Siswa A merespons dengan \"That's an interesting question...\" lalu menjawab."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu tukar peran — Siswa B menyampaikan penutup, Siswa A mengajukan pertanyaan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your turn. Stand when you present. Partner B asks one question. Then swap."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan dan pastikan sebagian besar siswa menggunakan \"That's an interesting question\" sebagai pembuka respons, bukan langsung menjawab atau menolak pertanyaan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan merespons pertanyaan dengan \"Yes, you're right\" atau \"No, that is not right\" — tunjuk pola di papan tulis dan ucapkan \"Start with: That's an interesting question. Try again.\" Tunggu siswa mengulang sebelum berpindah."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk pola pertama di papan tulis dan minta siswa ucapkan \"In conclusion,\" saja dulu sebagai pembuka."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa sampaikan seluruh penutup sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas tidak lagi kondusif — hentikan simulasi kelompok. Tunjuk pola penutup presentasi di papan tulis, minta seluruh kelas mengucapkan empat komponen penutup secara berurutan satu kali bersama-sama, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sampaikan penutup menggunakan catatan. Pasangan mengajukan satu pertanyaan sederhana (\"What did you find in the room?\") dan kamu merespons.",
+        "standar": "Sampaikan penutup tanpa catatan. Pasangan mengajukan pertanyaan berbeda dari kartu catatan penemuan dan kamu merespons.",
+        "tantangan": "Sampaikan penutup dan pasangan mengajukan pertanyaan tak terduga. Kamu merespons dengan \"That's an interesting question\" dan memberikan jawaban yang dipikirkan, meski perlu jeda sebentar."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang. Langkah ini mencakup seluruh presentasi singkat: pembuka (dari TP-07) + satu poin isi (dari TP-08) + penutup + tanya jawab.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai presenter pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to presents first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give a short presentation: your opening from last lesson, one body point, then your closing. The group asks at least one question."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Presenter responds with That's an interesting question."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan sesi tanya jawab berlangsung di setiap kelompok."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"In conclusion,\" saja dulu. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa sampaikan seluruh presentasi singkat sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Sampaikan hanya bagian penutup ke kelompok dan jawab satu pertanyaan dari kelompok.",
+        "standar": "Sampaikan presentasi singkat penuh — pembuka, satu poin isi, penutup — dan jawab satu pertanyaan tanpa membaca.",
+        "tantangan": "Sampaikan presentasi singkat penuh, lalu jawab dua pertanyaan berbeda dari kelompok, termasuk satu pertanyaan tak terduga."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Give me your In conclusion sentence. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa membuka dengan ringkasan sebelum rekomendasi, atau langsung ke Therefore?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Someone asks you a question. How do you start your response?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa membuka dengan \"That's an interesting question\" atau langsung menjawab atau menolak?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali kartu kerangka urutan penutup."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk setiap slot di kerangka secara berurutan — SUMMARY, RECOMMENDATION, THANK YOU, INVITE, RESPOND — sambil mengucapkan kalimat model yang sesuai dengan gesture."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat ke siswa — tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan respons tanya jawab perlahan — tunjuk bahwa \"That's an interesting question\" adalah pengakuan formal yang memberi waktu berpikir sebelum menjawab."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That's an interesting question, then you think, then you answer. Try once more."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Modelkan satu sesi tanya jawab lagi dengan pertanyaan berbeda — misalnya \"Who owned these objects originally?\" — menggunakan struktur respons yang sama. Minta siswa mengikuti."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk respons tanya jawab dalam catatan siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try a humble response for a harder question. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I'm not completely sure, but I believe the school could work with the local museum to help preserve these heritage items properly."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now prepare a second Q&A response using I'm not completely sure, but I believe for a question you find harder to answer."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That adds a second Q&A register — humble and honest, not just confident.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka sampaikan seluruh urutan penutup sekali lagi tanpa melihat buku, atau memperkuat kalimat In conclusion dengan satu detail spesifik tentang mengapa penemuan ini penting bagi warisan sekolah."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -173,5 +769,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

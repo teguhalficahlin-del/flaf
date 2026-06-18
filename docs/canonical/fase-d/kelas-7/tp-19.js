@@ -1,3 +1,579 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "Name: (value)\nClass: (value)    Number: (value)\nAddress: (value)\nMembership: (value)    Favorite Club: (value)",
+    "kartu": "Siapkan kartu anggota dan tumpukan buku di meja sebagai konteks peminjaman perpustakaan.",
+    "instruksi": [
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan formulir keanggotaan perpustakaan kosong untuk setiap siswa — dengan kolom berlabel Name, Class, Number, Address, Membership, Favorite Club."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Siapkan contoh formulir terisi yang menunjukkan format Label: value untuk setiap kolom."
+      }
+    ]
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning! I have some paperwork for us today, in English."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Bagi setiap siswa formulir kosong sebelum memulai."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Have you ever filled in a form before, maybe for a library, a competition, or a school event?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan formulir keanggotaan perpustakaan kosong."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this membership form. What information do you need to fill in?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kolom Name dan tanya \"What goes here?\""
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — biarkan formulir tetap terlihat."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good. Today we learn how to fill in a simple form in English."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Name di formulir — peragakan menulis di ruang kosong."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Name: Andi Saputra."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk label Name, lalu nilai yang diisi. Angguk."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Class, lalu kolom Number."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Class: 7A. Number: 12."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan menulis nilai di setiap ruang kosong."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Address."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Address: Jalan Melati No. 5."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Peragakan menulis nilai."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Membership, lalu Favorite Club."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Membership: New Member. Favorite Club: Science Club."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk contoh formulir terisi — tunjuk setiap label dan nilainya secara bergantian."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You watched me. Now let us say it together."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Just watch first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru membacakan satu field formulir — siswa menirukan bersama. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Field 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kolom Name di formulir."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Name: Andi Saputra."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Field 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kolom Class dan Number."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Class: 7A. Number: 12."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Field 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tunjuk kolom Favorite Club."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Favorite Club: Science Club."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now fill in your own form."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk contoh formulir terisi dan minta siswa baca bersama setiap label: Name: blank. Class: blank. Number: blank."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa mengisi formulir keanggotaan perpustakaan mereka sendiri. Dikerjakan secara individual pada formulir yang sudah dibagikan.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk formulir di tangan setiap siswa."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk contoh formulir terisi di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Fill in your own form. Write Label: then your value. Name: then your name. Class: then your class."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Do not write I am or My name is. Just the label and the value. Like the example."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk mengisi formulir."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — perhatikan siswa yang menulis kalimat penuh seperti My name is blank, dan ingatkan: \"Just the label and value. Name: blank. Not: My name is blank.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa bingung kolom mana yang menggunakan format label-titik-dua-nilai — tunjuk contoh formulir terisi dan arahkan jari siswa ke setiap label dan nilai."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kolom Name, dan ucapkan \"Name: blank. Write your name here.\" Tunggu siswa menulis, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Lengkapi tiga kolom: Name: blank, Class: blank, Number: blank.",
+        "standar": "Lengkapi seluruh formulir: Name, Class, Number, Address, Membership, Favorite Club.",
+        "tantangan": "Lengkapi seluruh formulir dan tambahkan satu kalimat pendapat: My favorite club is blank because blank."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A dan B menukar formulir mereka."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan kolom-kolom formulir Siswa B: Name: blank. Class: blank. Favorite Club: blank."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa B mendengarkan dan memeriksa apakah semua kolom terisi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya tukar kembali dan berganti peran."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Swap forms. Read your partner's fields aloud. Check that each field has a value. Work with the person next to you."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk bertukar dan membacakan formulir dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati apakah siswa membacakan label dan nilai dalam format Label: value."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk kolom Name di formulir pasangan dan ucapkan \"Read this. Name: blank. What is their name?\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa membacakan kolom sebagai kalimat penuh — tunjuk label di formulir: \"Just the label and value. Name: blank. Short.\""
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai lebih cepat — minta siswa periksa semua kolom pasangan dan tunjuk kolom yang masih kosong."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bacakan tiga kolom formulir pasangan dengan keras: Name: blank, Class: blank, Number: blank.",
+        "standar": "Bacakan semua kolom formulir pasangan dengan keras, lalu sebutkan satu fakta dari formulir tersebut — misalnya klub favorit pasangan.",
+        "tantangan": "Bacakan seluruh formulir pasangan, dan periksa tidak ada kolom yang kosong."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan tenang."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Take turns. Present a completed form to the new group by reading its fields: Label: value."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to reads first."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota mempresentasikan formulir."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — dengarkan apakah label dibacakan dengan nilai yang benar dalam format Label: value."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk kolom Name di formulirnya dan minta siswa bacakan: Name: blank."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa membacakan nilai tanpa label — tunjuk label di formulir: \"Say the label too. Name: blank. Not just the name.\""
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan tenang."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Bacakan tiga kolom formulir terisi ke kelompok baru.",
+        "standar": "Bacakan semua kolom formulir terisi ke kelompok.",
+        "tantangan": "Bacakan seluruh formulir, dan jawab satu pertanyaan dari kelompok tentang salah satu kolom."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Read me three fields from your form. Label: value. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa membacakan tiga kolom."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menggunakan format Label: value tanpa menulis kalimat penuh atau perkenalan diri?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your Favorite Club field. Without looking at your form."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menyebutkan nilai kolom dalam format label dengan lancar?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali contoh formulir terisi."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan tiga kolom sekali lagi dalam format Label: value — beri isyarat tangan ke arah siswa setiap kolom."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Name di formulir siswa."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen. Name: blank. Read it like this."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa menirukan format Label: value."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kolom Class."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Class: blank. Read this one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa membacakan — tekankan bahwa label dibaca bersama nilai, bukan diubah menjadi kalimat."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Email: andi@email.com."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One more field. Same format: Label: value. Now you try. Add one more field to your form. Just one."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"Good. Label: value. That is the format.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka membacakan kembali semua kolom formulir mereka tanpa melihat buku, atau menambahkan satu kolom baru dalam format yang sama."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -171,5 +747,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }

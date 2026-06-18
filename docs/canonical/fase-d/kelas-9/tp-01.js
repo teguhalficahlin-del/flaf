@@ -1,3 +1,635 @@
+const skenario = {
+  "persiapan": {
+    "papan_tulis": "I believe ___ because ___.\nOne reason is ___.\nFor example, ___.\nTherefore, I recommend ___.",
+    "kartu": "Siapkan tiga kartu di meja guru — kartu skenario daur ulang, kartu kerangka struktur argumen, dan kartu ikon (simbol daur ulang, komunitas, daun, pita ikrar).",
+    "instruksi": []
+  },
+  "siapkan_kelas": {
+    "settling": [
+      {
+        "tipe": "AKSI",
+        "teks": "Berdiri di depan kelas."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu sampai semua siswa duduk dan kondusif."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Good morning. Please take your seats and prepare to think critically today."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu kelas kondusif sepenuhnya."
+      }
+    ],
+    "hook": [
+      {
+        "tipe": "UCAP",
+        "teks": "Consider this: our community produces a large amount of waste every week. What should be done about it?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tampilkan kartu skenario daur ulang — siswa memilah sampah ke tempat sampah berkode warna dekat gerbang sekolah, dengan spanduk bertuliskan simbol daur ulang dan Our Environment Matters."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tahan sebentar — beri waktu siswa mengamati kartu."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Look at this recycling scenario. What argument would you make for or against a school recycling program?"
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan nada formal dan minta pendapatnya. Setelah dua respons atau sekitar tiga puluh detik — lanjutkan."
+      },
+      {
+        "tipe": "AKSI",
+        "teks": "Angguk — lalu letakkan kartu skenario di meja guru."
+      },
+      {
+        "tipe": "UCAP",
+        "teks": "Let us now see how to build a complete argument for this issue."
+      }
+    ]
+  },
+  "langkah": {
+    "model": {
+      "durasi_menit": 6,
+      "intro": "Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Ambil kartu skenario daur ulang — tunjukkan ke seluruh kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dada sendiri."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe our school needs a community recycling program because it protects our environment."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu skenario — ambil kartu kerangka struktur argumen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat satu jari."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One reason is that recycling reduces plastic waste in our area. For example, students can collect bottles every week and bring them to the recycling centre."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu kerangka — ambil kartu ikon."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Buka telapak tangan ke arah seluruh kelas."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Therefore, I recommend that every student takes responsibility for sorting waste at school."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan kartu ikon — tampilkan ketiga kartu sekaligus."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jalankan semua gesture secara berurutan: tunjuk dada, angkat satu jari, buka telapak tangan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "I believe recycling helps our community because it teaches responsibility. One reason is that less waste means a cleaner environment for everyone. For example, neighbourhoods with recycling programs have less litter. Therefore, I recommend starting with one recycling station in the school canteen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kedua tangan memberi isyarat bahwa langkah berikutnya adalah REPEAT."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan \"Please observe first.\""
+        }
+      ],
+      "diferensiasi": null
+    },
+    "repeat": {
+      "durasi_menit": 5,
+      "intro": "Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.",
+      "kalimat": [
+        {
+          "label": "Kalimat 1",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Angkat kartu skenario daur ulang — tunjuk dada sendiri."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe our school needs a community recycling program because it protects our environment."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 2",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu skenario — angkat kartu kerangka struktur argumen, angkat satu jari."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "One reason is that recycling reduces plastic waste in our area. For example, students can collect bottles every week and bring them to the recycling centre."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 3",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Letakkan kartu kerangka — angkat kartu ikon, buka telapak tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Therefore, I recommend that every student takes responsibility for sorting waste at school."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        },
+        {
+          "label": "Kalimat 4",
+          "instruksi": [
+            {
+              "tipe": "AKSI",
+              "teks": "Tampilkan ketiga kartu sekaligus — jalankan semua gesture secara berurutan (tunjuk dada, angkat satu jari, buka telapak tangan)."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "I believe recycling helps our community because it teaches responsibility. One reason is that less waste means a cleaner environment for everyone. For example, neighbourhoods with recycling programs have less litter. Therefore, I recommend starting with one recycling station in the school canteen."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jeda 1 detik."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Beri isyarat tangan ke arah siswa."
+            },
+            {
+              "tipe": "UCAP",
+              "teks": "Say it with me."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Tunggu seluruh kelas mengucapkan bersama."
+            },
+            {
+              "tipe": "AKSI",
+              "teks": "Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut."
+            }
+          ]
+        }
+      ],
+      "instruksi_penutup": [
+        {
+          "tipe": "AKSI",
+          "teks": "Letakkan semua kartu."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now it is your turn. Write your own argument."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi enam menit."
+        }
+      ],
+      "diferensiasi": null
+    },
+    "change": {
+      "durasi_menit": 8,
+      "intro": "Siswa menyusun argumen empat komponen mereka sendiri tentang program daur ulang komunitas. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tempelkan ketiga kartu di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pola di papan tulis."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Use this pattern. But write your own argument, not the same words as mine."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Include all four components: claim, reason, example, and recommendation."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Open your notebook. You have five minutes. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu lima menit untuk menulis."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu komponen pun."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah lima menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop writing. Now find a partner."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika siswa tidak tahu kosakata yang dibutuhkan — tunjuk kartu ikon di papan tulis dan minta siswa pilih salah satu sebagai titik awal."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk baris pertama di papan tulis, dan minta siswa ucapkan \"I believe\" lalu pendapatnya tentang daur ulang. Tunggu siswa menulis satu kalimat, lalu tinggalkan."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Gunakan kartu kerangka di papan tulis dan isi keempat slot. Boleh melihat kartu skenario untuk referensi. Tulis: I believe lalu posisi tentang daur ulang karena satu alasan. One reason is lalu satu alasan. For example lalu satu contoh konkret. Therefore, I recommend lalu satu rekomendasi.",
+        "standar": "Tulis argumen empat komponen sendiri tanpa membaca kerangka. Gunakan kosakata: recycling, community, environment, atau responsibility.",
+        "tantangan": "Tulis argumen empat komponen dan gunakan alasan yang berbeda dari contoh model — bukan recycling reduces plastic waste. Gunakan alasan lain yang didukung satu contoh spesifik dan berbeda."
+      }
+    },
+    "interact": {
+      "durasi_menit": 12,
+      "intro": "Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Watch first. Then you do the same."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta Siswa A membacakan atau menyampaikan argumennya ke Siswa B. Siswa B mendengarkan dan memeriksa: ada klaim? ada alasan? ada contoh? ada rekomendasi?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Lalu minta Siswa B melakukan hal yang sama ke Siswa A."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta keduanya duduk kembali."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "That is it. Your turn now. Work with the person next to you."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "If you are in a group of three, take turns. A, then B, then C."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu delapan menit untuk dua arah."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good. Now stay with your partner and join another pair."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan diam lebih dari sepuluh detik — tunjuk baris pertama di buku catatan siswa dan minta siswa ucapkan \"I believe\" lalu pendapatnya tentang daur ulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan \"In English. Use this pattern.\" Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan argumennya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "darurat",
+          "teks": "Jika waktu tersisa kurang dari lima menit atau kelas menjadi sangat tidak kondusif — hentikan aktivitas kelompok. Tunjuk pola di papan tulis. Minta seluruh kelas mengucapkan empat komponen bersama satu kali, lalu tutup sesi."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca argumen dari buku catatan ke pasangan. Pasangan memeriksa apakah ada keempat komponen: klaim, alasan, contoh, rekomendasi.",
+        "standar": "Sampaikan argumen tanpa membaca buku. Pasangan memeriksa keempat komponen dan memberi tahu mana yang paling meyakinkan.",
+        "tantangan": "Sampaikan argumen tanpa membaca, lalu pasangan bertanya: \"Why do you recommend that specifically?\" Tambahkan satu kalimat untuk memperkuat rekomendasi."
+      }
+    },
+    "share": {
+      "durasi_menit": 8,
+      "intro": "Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika kursi bisa diputar — pasangan di baris depan putar kursi menghadap pasangan di baris belakang."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika meja permanen — dua pasangan cukup saling mendekat tanpa memindahkan meja."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua kelompok terbentuk dan kondusif."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "The person I point to starts first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "One person presents. The others listen and check for all four components."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri waktu enam menit untuk semua anggota kelompok berbagi."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut dan minta ucapkan \"I believe\" lalu posisinya tentang daur ulang sebagai pembuka. Jika masih diam — ucapkan nama siswa tersebut terlebih dahulu lalu minta siswa mengulang."
+        },
+        {
+          "tipe": "bantuan",
+          "teks": "Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa ucapkan argumennya sekali lagi tanpa melihat buku."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Setelah enam menit — ketuk meja sekali sebagai tanda berhenti."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Stop. Everyone back to your seat."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu semua siswa kembali ke posisi semula dan kondusif."
+        }
+      ],
+      "diferensiasi": {
+        "mudah": "Baca argumen dari buku catatan ke kelompok.",
+        "standar": "Sampaikan argumen tanpa membaca buku.",
+        "tantangan": "Sampaikan argumen tanpa membaca, lalu setelah semua anggota selesai — sebutkan satu komponen dari argumen teman yang paling meyakinkan dan jelaskan mengapa."
+      }
+    },
+    "check": {
+      "durasi_menit": 4,
+      "intro": "Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.",
+      "instruksi": [
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk satu siswa secara acak."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "State your claim and your reason. Go."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan klaim dan alasannya."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa menyampaikan keempat komponen secara terintegrasi, atau hanya klaim tanpa alasan atau contoh?"
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk siswa lain."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Your recommendation sentence. Without looking at your book."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Amati — apakah siswa bisa menyampaikan rekomendasi dengan lancar?"
+        }
+      ],
+      "jalur_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Lanjut ke BOOST."
+        }
+      ],
+      "jalur_belum_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kembali ketiga kartu."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Let us try again. Say it with me."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Ucapkan kalimat model_4 sekali lagi — tunjuk dada, angkat satu jari, buka telapak tangan, seiring setiap komponen."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Beri isyarat tangan ke arah siswa — tunggu seluruh kelas mengucapkan bersama."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Minta siswa buka buku catatan — lengkapi atau tulis ulang komponen yang belum selesai. Beri waktu dua menit."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Good work today. We will continue next time."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tutup sesi — lewati BOOST karena waktu tidak mencukupi."
+        }
+      ]
+    },
+    "boost": {
+      "durasi_menit": 5,
+      "intro": "Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.",
+      "untuk_kesulitan": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Angkat kartu kerangka struktur argumen."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Here is the frame. Tell me your claim."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan klaim."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk baris berikutnya di kerangka."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now your reason."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mengucapkan alasan — lanjutkan frasa per frasa untuk contoh dan rekomendasi. Jangan minta keempat komponen sekaligus sampai siswa siap."
+        }
+      ],
+      "untuk_lancar": [
+        {
+          "tipe": "AKSI",
+          "teks": "Dekati siswa secara individual — jangan panggil di depan kelas."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunjuk kalimat For example dalam argumen siswa di buku catatan."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Try adding this after your example. Listen first."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "This shows that community recycling protects the environment we all share."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jeda 2 detik."
+        },
+        {
+          "tipe": "UCAP",
+          "teks": "Now you try. Add your own This shows that sentence after your example."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Tunggu siswa mencoba."
+        },
+        {
+          "tipe": "AKSI",
+          "teks": "Jika siswa berhasil — angguk dan ucapkan \"That links your evidence directly to your claim.\""
+        }
+      ],
+      "cue_sisa": "Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan argumen mereka sendiri tanpa melihat buku, atau menambah satu detail spesifik ke dalam kalimat For example mereka."
+    }
+  }
+};
+
 export default {
 
   metadata: {
@@ -174,5 +806,6 @@ export default {
     boost_without_label: true,
     tts_optional_backup: true,
     self_contained: true
-  }
+  },
+  skenario,
 }
