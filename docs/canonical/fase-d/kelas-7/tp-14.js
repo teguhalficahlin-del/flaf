@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "(Subject) + (past action) + and / and then + (past action).",
     "kartu": "Siapkan kartu penghubung yang menggabungkan dua ikon tindakan — and dengan lari dan lompat, dan then dengan sorak dan tepuk tangan.",
@@ -313,7 +313,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -376,7 +376,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

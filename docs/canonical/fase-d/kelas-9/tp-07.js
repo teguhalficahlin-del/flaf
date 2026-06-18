@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Good morning, ___.\nMy name is ___.\nToday I would like to present ___.\nThe purpose of this presentation is ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu setup skenario presentasi (dua siswa berdiri di depan kelas dengan layar di belakang, menghadap audiens), kartu kerangka pembuka presentasi empat slot (GREET, INTRODUCE, TOPIC, PURPOSE), dan kartu perbandingan register (pembuka email \"Hi everyone, I'm writing to share...\" di sebelah pembuka presentasi \"Good morning. My name is... The purpose of this presentation is...\").",
@@ -313,7 +313,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -376,7 +376,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

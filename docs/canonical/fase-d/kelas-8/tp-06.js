@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Most ___.\nSome ___.\nThey usually ___.",
     "kartu": "Siapkan tiga kartu di meja guru — tabel perbandingan pohon kota (maple, beringin, palem) dengan kolom daun/keteduhan/tempat tumbuh, kartu generalisasi (\"Most ___\" / \"Some ___\" / \"They usually ___\"), dan kartu ikon (daun hijau, pohon rindang di taman, matahari dan air).",
@@ -301,7 +301,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",

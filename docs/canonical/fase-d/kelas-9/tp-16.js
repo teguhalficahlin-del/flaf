@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "I learned ___.\nbecause ___.\nFrom this experience, I realized ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu alur refleksi tiga tahap (Learning process → Key moment → What I realized), kartu kerangka refleksi tiga slot berlabel (I learned / because / From this experience, I realized), dan kartu ikon (jurnal dengan halaman terbuka, kaca pembesar di atas dokumen sumber berlapis, figur dengan tanda panah ke atas).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -368,7 +368,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

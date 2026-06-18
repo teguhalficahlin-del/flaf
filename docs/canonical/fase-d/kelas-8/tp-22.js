@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Step 1: ___\nBefore ___, ___.\nAfter ___, ___.\nRemember to ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu antarmuka aplikasi yang menunjukkan empat layar berurutan (layar login, daftar tugas, halaman tugas, konfirmasi pengiriman), kerangka instruksi terbimbing dengan empat slot berlabel (\"Step 1: ___\" / \"Before ___, ___.\" / \"After ___, ___.\" / \"Remember to ___.\"), dan ikon (layar login, daftar centang tugas, tombol submit, ikon simpan).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -352,7 +352,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "The problem is ___.\nTo solve it, ___.\nThis solution works because ___.\nAs a result, ___.\nTherefore, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — peta evaluasi masalah-solusi lengkap (lima kotak terhubung tanda panah: The problem is / To solve it / This solution works because / As a result / Therefore), kartu kerangka lima komponen berlabel, dan kartu diagram perkembangan kluster (TP-13: kartu identifikasi masalah; TP-14: kartu usulan solusi; TP-15: kartu evaluasi terpadu lengkap).",
@@ -305,7 +305,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now form a new group with students from other groups."
+          "teks": "Good. Stay with your group. Wait for my signal. I will show you which group to join."
         },
         {
           "tipe": "bantuan",

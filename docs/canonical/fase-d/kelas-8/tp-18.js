@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Suddenly, ___ so ___, but ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu urutan cerita yang menunjukkan tiga momen konflik (tokoh mendengarkan di pintu dengan mata terbelalak, pintu terbuka tak terduga dalam kegelapan, sorot senter jatuh pada kunci tua di lantai berdebu), potongan penghubung bertiga slot berkode warna (\"Suddenly, ___ so ___, but ___.\" — oranye / hijau / merah dengan tanda panah satu kalimat terpadu), dan ikon kosakata (kunci tua, pintu berderak, jejak langkah kaki, sorot senter).",
@@ -256,7 +256,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -315,7 +315,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

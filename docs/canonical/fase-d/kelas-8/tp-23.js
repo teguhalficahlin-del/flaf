@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Join us ___.\nDon't miss ___.\nYou can ___ because ___.",
     "kartu": "Siapkan tiga kartu di meja guru — contoh poster festival klub yang berwarna-warni dengan nama klub, frasa undangan, dan ikon ilustratif (musik, seni, olahraga, drama), kerangka unggahan promosi dengan tiga slot berlabel (\"Join us ___\" / \"Don't miss ___\" / \"You can ___ because ___\"), dan ikon (sekelompok anggota klub, spanduk festival, ikon kegiatan — gitar, kuas, bola, buku — balon bicara dengan tanda seru).",
@@ -256,7 +256,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",

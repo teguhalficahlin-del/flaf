@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "There was a small firefly near a quiet pond.\nOne day, (event), but (problem).\nSuddenly, (unexpected event).\nThe little light was lost in the dark night.",
     "kartu": "Siapkan tiga set kartu di meja guru — urutan gambar cerita (firefly terbang ke hutan, hutan gelap, firefly sendirian), kartu konflik One day but dan Suddenly, dan gambar hutan malam gelap dengan satu cahaya kecil.",
@@ -349,7 +349,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -420,7 +420,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

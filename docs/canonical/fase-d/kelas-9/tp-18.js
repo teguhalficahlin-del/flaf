@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Looking back, ___.\nI have learned ___.\nIn the future, I will ___.\nbecause ___.\nI am ready to ___.",
     "kartu": "Siapkan tiga kartu di meja guru — garis waktu perjalanan tiga tahun (K7 Acquire: perkenalan diri, deskripsi hewan, recount → K8 Expand: alur naratif, email, presentasi, eksposisi → K9 Integrate: argumentasi, ulasan, presentasi, sintesis, masalah-solusi, refleksi → Fase E: tanda panah menunjuk ke depan), kartu kerangka lima komponen berlabel (Looking back / I have learned / In the future, I will / because / I am ready to), dan kartu ikon (kaca spion di atas jalan, buku terbuka dengan sinar cahaya, jalan menunjuk ke horizon, spiral pembelajaran berkelanjutan).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",
@@ -360,7 +360,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now form a new group with students from other groups."
+          "teks": "Good. Stay with your group. Wait for my signal. I will show you which group to join."
         },
         {
           "tipe": "bantuan",

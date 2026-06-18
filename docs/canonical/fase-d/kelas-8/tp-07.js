@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "It has ___ which ___.\nIt can ___ to ___.",
     "kartu": "Siapkan tiga kartu di meja guru — benda atau foto olahraga nyata (bola, helm, raket) dengan ciri-ciri utamanya terlihat jelas, kartu ciri-fungsi (\"It has ___ which ___\" dan \"It can ___ to ___\"), dan kartu ikon yang menunjukkan fungsi (cangkang melindungi kepala, raket memukul bola, bola menggelinding).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

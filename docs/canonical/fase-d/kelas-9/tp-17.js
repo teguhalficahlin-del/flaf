@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "At first, ___.\nHowever, ___.\nI overcame it by ___.\nNow I can ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu \"dulu dan sekarang\" (kolom kiri: siswa dengan tangan gemetar, kata-kata terputus; kolom kanan: siswa berdiri tegak berbicara dengan percaya diri), kartu kerangka refleksi tantangan empat slot berlabel (At first / However / I overcame it by / Now I can), dan kartu garis waktu alur perjalanan (momen komunikasi penting: diskusi kelas K7, presentasi naratif K8, presentasi formal + tanya jawab K9, dengan tanda panah pertumbuhan).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -368,7 +368,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

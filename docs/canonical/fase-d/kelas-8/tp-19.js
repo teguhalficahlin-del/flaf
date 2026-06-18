@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "\"___\" said ___.\n\"___,\" replied ___.\n[Name] decided to ___.",
     "kartu": "Siapkan tiga kartu di meja guru — strip komik dialog yang menunjukkan Dito dan Wulan berdiri di luar pintu gudang dengan balon kata dan kotak narator orang ketiga di bawah setiap panel, kerangka prosa dialog (\"\\\"___\\\" said [name]. / \\\"___,\\\" replied [name]. / [Name] decided to ___.\" — menunjukkan struktur naratif orang ketiga, bukan skrip drama), dan kartu kata kerja pelapor (said, replied, whispered, asked — dengan tanda panah menunjuk ke tanda kutip).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "If ___, ___ so ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu skenario keuangan (menabung setiap minggu, mengikuti anggaran, memboroskan uang, mencapai tujuan), kartu kondisi-hasil (\"If [kondisi], [hasil] so [konsekuensi]\" dengan tanda panah), dan kartu ikon (toples koin, daftar anggaran, bendera tujuan, dompet kosong).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

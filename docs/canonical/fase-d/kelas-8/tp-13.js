@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "I believe ___ because ___.\nFor example, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — perbandingan foto dua pilihan kantin (jajanan bergula versus buah segar dan makanan sehat), kartu pendapat (\"I believe ___ because ___. For example, ___.\"), dan kartu ikon (keranjang buah, pilihan makanan sehat, siswa berenergi di kelas).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

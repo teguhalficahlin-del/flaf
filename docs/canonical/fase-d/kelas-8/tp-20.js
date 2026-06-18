@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "In the end, ___ because ___.\nFrom that day on, ___.\nThe story shows ___.",
     "kartu": "Siapkan tiga kartu di meja guru — papan cerita penutup empat panel (Dito memutar kunci, pintu terbuka memperlihatkan surat dan foto lama, ruangan ditampilkan sebagai museum kecil, siswa tersenyum menatap kenangan), kerangka penyelesaian (\"In the end, ___ because ___.\" / \"From that day on, ___.\" / \"The story shows that ___.\"), dan ikon (surat-surat lama diikat pita, foto-foto sekolah, lampu bohlam menyala untuk \"The story shows\", tampilan museum kecil).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Based on these sources, ___.\nThis suggests ___.\nTherefore, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kumpulan tiga kartu sumber tersusun segitiga (Sumber A: laporan kualitas udara; Sumber B: studi aktivitas fisik; Sumber C: data ruang hijau dan kesejahteraan — semuanya menunjuk ke tanda panah pusat \"Based on these sources...\"), kartu kerangka kesimpulan-bukti tiga langkah (Step 1: Based on these sources / Step 2: This suggests / Step 3: Therefore), dan kartu diagram perkembangan kluster (TP-10: Together, they show; TP-11: Both sources / Therefore; TP-12: Based on these sources / This suggests / Therefore).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",
@@ -360,7 +360,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now form a new group with students from other groups."
+          "teks": "Good. Stay with your group. Wait for my signal. I will show you which group to join."
         },
         {
           "tipe": "bantuan",

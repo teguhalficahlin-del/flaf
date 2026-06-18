@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "It is (adjective) and (adjective).\nIt is (adjective) but (adjective).",
     "kartu": "Siapkan dua kartu penghubung — kartu and yang menggabungkan dua kata sifat serasi, dan kartu but yang menggabungkan dua kata sifat kontras.",
@@ -277,7 +277,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -340,7 +340,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

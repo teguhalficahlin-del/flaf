@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "This process ___ because ___.\nAs a result, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — infografis lingkungan yang menunjukkan pohon menyerap karbon dioksida dan melepaskan oksigen dengan udara lebih bersih di sekitar kota, kartu sistem (\"This process ___ because ___\" dihubungkan tanda panah ke \"As a result, ___\"), dan kartu ikon (pohon, molekul karbon dioksida, molekul oksigen, siluet kota berudara bersih).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

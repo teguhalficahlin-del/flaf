@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "I think ___ because ___, but ___. What do you think?",
     "kartu": "Siapkan tiga kartu di meja guru — kartu diskusi dua sisi (\"No phones at break time\" vs \"Phones allowed at break time\"), kartu kerangka pendapat (\"I think ___ because ___, but ___. What do you think?\"), dan kartu ikon topik (ponsel, teman mengobrol, jam istirahat, balon chat).",
@@ -301,7 +301,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -364,7 +364,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

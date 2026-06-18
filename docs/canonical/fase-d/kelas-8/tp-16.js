@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Therefore, I recommend ___ because ___.",
     "kartu": "Siapkan tiga kartu di meja guru — kartu usulan proyek bakti sosial kelas (jualan buku, jualan jajanan, cuci mobil, penggalangan donasi), kerangka rekomendasi (\"Therefore, I recommend ___ because ___\"), dan kartu ikon (tumpukan buku, kelompok komunitas, relawan, kotak donasi).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "First, ___.\nNext, ___.\nAnother point is ___.\nFinally, ___.\nBased on this, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — empat kartu catatan penemuan berlabel First / Next / Another point / Finally (isi: surat lama, foto, dokumen berisi nama, kondisi benda), kartu pengatur isi presentasi lima slot berkode warna (First / Next / Another point is / Finally / Based on this), dan kartu kontras visual (diagram alur penjelasan proses gaya PAT-8-10 di sebelah pengatur isi presentasi gaya PAT-9-08).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",
@@ -360,7 +360,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now form a new group with students from other groups."
+          "teks": "Good. Stay with your group. Wait for my signal. I will show you which group to join."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "It is (adjective) for (noun).\nIt is (adjective) to (verb).",
     "kartu": "Siapkan dua kartu fungsi — semut membawa makanan untuk helpful for, dan lebah membuat madu untuk important to.",
@@ -281,7 +281,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",

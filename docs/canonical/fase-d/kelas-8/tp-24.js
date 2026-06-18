@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "[Title] | [Key Information] | [Contact/Action] | [Additional Note]",
     "kartu": "Siapkan tiga kartu di meja guru — kartu informasi acara terpisah yang menunjukkan empat informasi terpisah (nama acara, kapan dan di mana, apa yang harus dilakukan atau dibawa, catatan untuk semua orang — siap disusun menjadi satu pamflet), templat tata letak pamflet dengan empat bagian berlabel dipisahkan oleh \"|\" (Title | Key Information | Contact/Action | Additional Note), dan diagram transformasi yang menunjukkan unggahan promosi TP sebelumnya dikondensasi menjadi tata letak pamflet.",
@@ -314,7 +314,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",

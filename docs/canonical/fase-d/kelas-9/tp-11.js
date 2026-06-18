@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Both sources ___.\nHowever, Source A ___ while Source B ___.\nTherefore, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — dua dokumen sumber berdampingan (Sumber A: laporan ruang hijau perkotaan dengan data kualitas udara dan suasana hati; Sumber B: laporan kesehatan aktivitas fisik dengan data frekuensi olahraga dan konsentrasi siswa), kartu kerangka perbandingan empat slot (Both sources / However, Source A / while Source B / Therefore), dan kartu ikon (pohon di taman, siswa berlari, hati dengan detak sehat, timbangan perbandingan).",
@@ -309,7 +309,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -368,7 +368,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

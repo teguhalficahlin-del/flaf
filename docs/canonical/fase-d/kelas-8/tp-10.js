@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "First, ___.  Next, ___.\nThen, ___.  Finally, ___.",
     "kartu": "Siapkan tiga kartu di meja guru — diagram proses belanja online (cari → keranjang dan pembayaran → proses dan pengepakan → pengiriman), kartu urutan (\"First, ...\" / \"Next, ...\" / \"Then, ...\" / \"Finally, ...\" di sepanjang tanda panah), dan kartu ikon (halaman toko online, metode pembayaran, kotak yang sudah dikemas, pengiriman ke alamat).",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now form a group of three or four."
+          "teks": "Stop writing. Stay where you are. I will show you your group."
         },
         {
           "tipe": "bantuan",

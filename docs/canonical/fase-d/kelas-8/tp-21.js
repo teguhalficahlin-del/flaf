@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Subject: ___\nHi ___,\nI'm writing to ___.\nSee you soon, ___",
     "kartu": "Siapkan tiga kartu di meja guru — templat pesan digital di layar dengan empat bagian berlabel yang disorot (baris subjek, salam \"Hi ...\", isi \"I'm writing to ...\", penutup \"See you soon,\"), layar terbagi menunjukkan refleksi cerita TP sebelumnya di kiri dan pembuka email di kanan, dan email model lengkap di layar komputer sekolah (\"Subject: A Surprising School Discovery / Hi everyone, / I'm writing to ... / See you soon, Dito and Wulan\").",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",

@@ -1,4 +1,4 @@
-const skenario = {
+﻿const skenario = {
   "persiapan": {
     "papan_tulis": "Once, there was ___ who ___.\nEveryone believed ___.",
     "kartu": "Siapkan tiga kartu di meja guru — ilustrasi cerita yang menunjukkan gedung sekolah dengan gudang tua misterius di belakang (pintu sedikit terbuka di antara tanaman liar), foto close-up pintu kayu dengan tulisan tangan \"Notice: Keep this door locked.\" dan benda-benda tua berdebu, serta kerangka cerita (\"Once, there was ... who ...\" dihubungkan tanda panah ke \"Everyone believed ...\").",
@@ -297,7 +297,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Stop writing. Now find a partner."
+          "teks": "Stop writing. Stay where you are. I will show you your partner."
         },
         {
           "tipe": "bantuan",
@@ -356,7 +356,7 @@ const skenario = {
         },
         {
           "tipe": "UCAP",
-          "teks": "Good. Now stay with your partner and join another pair."
+          "teks": "Good. Stay with your partner. Wait for my signal. I will show you which pair to join."
         },
         {
           "tipe": "bantuan",
