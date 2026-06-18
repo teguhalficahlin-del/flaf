@@ -1052,14 +1052,41 @@ function _renderFallbackOverlay(kondisi) {
   overlay.addEventListener('click', e => { if (e.target === overlay) overlay.remove(); });
 }
 
-// ── OVERLAY: Observasi Formatif — KUALITATIF MURNI, TANPA SKOR ─
-// Berbeda total dari overlay penilaian SD: tidak ada angka/huruf/skala
-// apa pun di sini, menegakkan constraint Fase D check_without_score
-// juga di sisi runtime (bukan cuma validator data).
-// Disimpan ke store terpisah 'penilaian_log_smp' — TIDAK menyentuh
-// store 'penilaian_log' milik SD (lihat storage/penilaian-smp.js).
+// ── OVERLAY: Observasi Formatif — Hierarki L1/L2/L3 + Rubrik ──
+// Disimpan ke store 'penilaian_log_smp' via savePenilaianSMP().
+// L3 tags: dari observe[] step CHECK jika ada, fallback ke generik.
 
-const OBSERVE_TAGS = ['Aktif', 'Butuh dorongan', 'Belum siap', 'Perlu model ulang', 'Perlu repeat'];
+const NILAI_SMP = {
+  tanpa_buku:           { nilai: 90, predikat: 'BSB' },
+  dengan_buku:          { nilai: 75, predikat: 'BSH' },
+  mencoba_belum_tepat:  { nilai: 60, predikat: 'MB'  },
+  diam:                 { nilai: 45, predikat: 'BB'  },
+};
+
+const L2_LABEL_SMP = {
+  tanpa_buku:           'Tanpa buku / catatan',
+  dengan_buku:          'Dengan buku / catatan',
+  mencoba_belum_tepat:  'Mencoba, belum tepat',
+  diam:                 'Diam',
+};
+
+const L3_FALLBACK_SMP = {
+  sudah_bisa: ['Menjawab sendiri', 'Konsisten di semua aktivitas'],
+  perlu_bantuan: [
+    'Perlu dipancing dulu',
+    'Ikut bersama, diam sendiri',
+    'Butuh visual / kartu',
+    'Tidak merespons',
+  ],
+};
+
+function _getObserveTags(tpData, l1Value) {
+  const runtime = tpData?.runtime || [];
+  const checkStep = runtime.find(s => s.type === 'CHECK');
+  const obs = checkStep?.observe;
+  if (Array.isArray(obs) && obs.length > 0) return obs;
+  return L3_FALLBACK_SMP[l1Value] || [];
+}
 
 async function _renderObservasiOverlay(step) {
   document.querySelector('.sr-overlay')?.remove();
@@ -1070,119 +1097,255 @@ async function _renderObservasiOverlay(step) {
     return;
   }
 
-  const draftKey = `draft_observasi_smp_${_state.rombel?.id}_${_state.tp?.metadata?.pattern_id}`;
-  if (!_state.observasiDraft) _state.observasiDraft = {};
+  const PAGE_SIZE = 5;
+  let halaman = 0;
+  let openIdx = 0;
+
+  const tpId    = _state.tp?.metadata?.pattern_id || _state.tp?.id || '—';
+  const tpNomor = _state.tp?.metadata?.tp_number  || tpId;
+  const draftKey = `draft_penilaian_smp_${_state.rombel?.id}_${tpId}`;
+
+  if (!_state.penilaianDraftSMP) _state.penilaianDraftSMP = {};
   for (const s of siswaList) {
-    if (!_state.observasiDraft[s.id]) {
-      _state.observasiDraft[s.id] = { tags: [], catatan: '' };
+    if (!_state.penilaianDraftSMP[s.id]) {
+      _state.penilaianDraftSMP[s.id] = { capaian: null, perilaku: null, alasan: [] };
     }
   }
 
-  const allBlank = Object.values(_state.observasiDraft).every(h => h.tags.length === 0 && !h.catatan);
+  const allBlank = Object.values(_state.penilaianDraftSMP).every(
+    h => h.capaian === null && h.perilaku === null && (!h.alasan || h.alasan.length === 0)
+  );
   if (allBlank) {
     try {
       const saved = await db.get('kv', draftKey);
       if (saved && typeof saved === 'object' && Object.keys(saved).length > 0) {
-        _state.observasiDraft = saved;
+        _state.penilaianDraftSMP = saved;
       }
-    } catch (_) { /* db miss — lanjut normal */ }
+    } catch (_) { /* db miss */ }
   }
 
-  const hasil = _state.observasiDraft;
-  let openIdx = 0;
+  const hasil   = _state.penilaianDraftSMP;
+  const totalHal = Math.ceil(siswaList.length / PAGE_SIZE);
 
-  function _siswaRowHTML(s, i) {
-    const h = hasil[s.id];
-    const tagsHTML = OBSERVE_TAGS.map(tag => `
-      <button class="sr-opsi smp-obs-tag ${h.tags.includes(tag) ? 'smp-obs-tag--active' : ''}"
-        data-siswa="${s.id}" data-tag="${_escape(tag)}">${_escape(tag)}</button>
-    `).join('');
+  function _nilaiDariPerilaku(perilaku) {
+    return NILAI_SMP[perilaku] || null;
+  }
+
+  function _sudahDiisi(siswaId) {
+    return hasil[siswaId].perilaku !== null;
+  }
+
+  function _buildSiswaItem(siswa, localIdx) {
+    const isOpen  = localIdx === openIdx;
+    const h       = hasil[siswa.id];
+    const info    = _nilaiDariPerilaku(h.perilaku);
+    const chipTxt = info ? `${info.nilai} · ${info.predikat}` : '';
+
+    let isiHTML = '';
+    // Level 1
+    const l1Opts = [
+      { val: 'sudah_bisa',     label: 'Sudah Bisa',     sym: '★' },
+      { val: 'perlu_bantuan',  label: 'Perlu Bantuan',  sym: '○' },
+    ];
+
+    // Level 2 per Level 1
+    const l2Map = {
+      sudah_bisa:    [
+        { val: 'tanpa_buku',  label: L2_LABEL_SMP.tanpa_buku  },
+        { val: 'dengan_buku', label: L2_LABEL_SMP.dengan_buku },
+      ],
+      perlu_bantuan: [
+        { val: 'mencoba_belum_tepat', label: L2_LABEL_SMP.mencoba_belum_tepat },
+        { val: 'diam',                label: L2_LABEL_SMP.diam                },
+      ],
+    };
+
+    const l2Opts = h.capaian ? l2Map[h.capaian] : [];
+
+    // Level 3
+    const alasanOpts = h.perilaku ? _getObserveTags(_state.tp, h.capaian) : null;
+    const alasanArr  = Array.isArray(h.alasan) ? h.alasan : [];
+
+    isiHTML = `
+      <div class="sr-pn-capaian-row">
+        ${l1Opts.map(o => `
+          <button class="sr-pn-capaian-btn${h.capaian === o.val ? ' sr-pn-capaian-btn--active' : ''}"
+                  data-capaian="${o.val}" data-siswa="${siswa.id}">
+            <span class="sr-pn-sym">${o.sym}</span>
+            <span class="sr-pn-lbl">${o.label}</span>
+          </button>`).join('')}
+      </div>
+      ${l2Opts.length ? `
+      <div class="sr-pn-perilaku-row">
+        ${l2Opts.map(p => `
+          <button class="sr-pn-perilaku-btn${h.perilaku === p.val ? ' sr-pn-perilaku-btn--active' : ''}"
+                  data-perilaku="${p.val}" data-siswa="${siswa.id}">${p.label}</button>`).join('')}
+      </div>` : ''}
+      ${alasanOpts && alasanOpts.length ? `
+      <div class="sr-pn-alasan-label">Lebih spesifik:</div>
+      <div class="sr-pn-alasan-row">
+        ${alasanOpts.map(a => `
+          <button class="sr-pn-alasan-btn${alasanArr.includes(a) ? ' sr-pn-alasan-btn--active' : ''}"
+                  data-alasan="${_escape(a)}" data-siswa="${siswa.id}">${_escape(a)}</button>`).join('')}
+      </div>` : ''}`;
 
     return `
-      <div class="smp-obs-row">
-        <button class="smp-obs-head" data-toggle-idx="${i}">
-          <span>${_escape(s.nama)}</span>
-          <span>${h.tags.length > 0 || h.catatan ? '✓' : ''}</span>
-        </button>
-        ${openIdx === i ? `
-        <div class="smp-obs-body">
-          <div class="smp-obs-tags">${tagsHTML}</div>
-          <textarea class="smp-obs-catatan" data-siswa="${s.id}"
-            placeholder="Catatan tindak lanjut (opsional)">${_escape(h.catatan)}</textarea>
-        </div>` : ''}
+      <div class="sr-pn-siswa${isOpen ? ' sr-pn-siswa--open' : ''}" data-local-idx="${localIdx}">
+        <div class="sr-pn-siswa-head" data-toggle="${localIdx}">
+          <div class="sr-pn-siswa-info">
+            <span class="sr-pn-nomor">${siswa.nomor || (halaman * PAGE_SIZE + localIdx + 1)}</span>
+            <span class="sr-pn-nama">${_escape(siswa.nama)}</span>
+          </div>
+          <div class="sr-pn-siswa-right">
+            ${chipTxt ? `<span class="sr-pn-nilai-chip">${chipTxt}</span>` : ''}
+            <span class="sr-pn-chevron">${isOpen ? '▲' : '▼'}</span>
+          </div>
+        </div>
+        ${isOpen ? `<div class="sr-pn-siswa-body">${isiHTML}</div>` : ''}
       </div>`;
   }
 
-  function _draw() {
-    const overlay = document.querySelector('.sr-overlay');
-    if (!overlay) return;
-    const list = overlay.querySelector('#smp-obs-list');
-    if (list) list.innerHTML = siswaList.map((s, i) => _siswaRowHTML(s, i)).join('');
-    _bindRows(overlay);
-  }
+  function _buildOverlay() {
+    const pageSiswa = siswaList.slice(halaman * PAGE_SIZE, halaman * PAGE_SIZE + PAGE_SIZE);
+    const paginasiHTML = totalHal > 1 ? `
+      <div class="sr-pn-paginasi">
+        <button class="sr-pn-hal-btn" id="sr-pn-prev-hal" ${halaman === 0 ? 'disabled' : ''}>‹</button>
+        <span class="sr-pn-hal-info">Halaman ${halaman + 1} / ${totalHal}</span>
+        <button class="sr-pn-hal-btn" id="sr-pn-next-hal" ${halaman >= totalHal - 1 ? 'disabled' : ''}>›</button>
+      </div>` : '';
 
-  function _bindRows(overlay) {
-    overlay.querySelectorAll('[data-toggle-idx]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const i = parseInt(btn.dataset.toggleIdx, 10);
-        openIdx = openIdx === i ? -1 : i;
-        _draw();
-      });
-    });
-    overlay.querySelectorAll('[data-siswa][data-tag]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const h = hasil[btn.dataset.siswa];
-        const tag = btn.dataset.tag;
-        const i = h.tags.indexOf(tag);
-        if (i >= 0) h.tags.splice(i, 1); else h.tags.push(tag);
-        db.set('kv', draftKey, hasil).catch(() => {});
-        _draw();
-      });
-    });
-    overlay.querySelectorAll('.smp-obs-catatan').forEach(ta => {
-      ta.addEventListener('input', () => {
-        hasil[ta.dataset.siswa].catatan = ta.value;
-        db.set('kv', draftKey, hasil).catch(() => {});
-      });
-    });
+    const siswaHTML = pageSiswa.map((s, i) => _buildSiswaItem(s, i)).join('');
+
+    return `
+      <div class="sr-overlay-content sr-pn-overlay-content">
+        <div class="sr-pn-header">
+          <div class="sr-pn-judul">Observasi Formatif</div>
+          <div class="sr-pn-sub">${_escape(_state.tp?.metadata?.nama || _state.tp?.nama || '—')}</div>
+        </div>
+        ${paginasiHTML}
+        <div class="sr-pn-list" id="sr-pn-list">
+          ${siswaHTML}
+        </div>
+        <div class="sr-pn-footer">
+          <button class="sr-btn-secondary sr-pn-btn-tutup" id="sr-pn-tutup">Tutup</button>
+          <button class="sr-btn-primary sr-pn-btn-simpan" id="sr-pn-simpan">Simpan</button>
+        </div>
+      </div>`;
   }
 
   const overlay = document.createElement('div');
-  overlay.className = 'sr-overlay';
-  overlay.innerHTML = `
-    <div class="sr-overlay-content sr-overlay-content--wide">
-      <h2 class="sr-overlay-title">Observasi Formatif</h2>
-      <div class="smp-obs-hint">Catatan kualitatif — tidak ada skor/nilai.</div>
-      <div id="smp-obs-list">${siswaList.map((s, i) => _siswaRowHTML(s, i)).join('')}</div>
-      <div class="sr-btn-row" style="margin-top:14px;">
-        <button class="sr-btn-secondary" id="smp-obs-batal">Tutup</button>
-        <button class="sr-btn-primary" id="smp-obs-simpan">Simpan</button>
-      </div>
-    </div>`;
+  overlay.className = 'sr-overlay sr-pn-overlay';
+
+  function _mount() {
+    overlay.innerHTML = _buildOverlay();
+    _bindEvents();
+  }
+
+  function _bindEvents() {
+    // Toggle accordion
+    overlay.querySelectorAll('[data-toggle]').forEach(head => {
+      head.addEventListener('click', () => {
+        const li = parseInt(head.dataset.toggle);
+        openIdx  = openIdx === li ? -1 : li;
+        _mount();
+      });
+    });
+
+    // Level 1 — capaian: reset perilaku + alasan
+    overlay.querySelectorAll('[data-capaian]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const val     = btn.dataset.capaian;
+        hasil[siswaId].capaian  = hasil[siswaId].capaian === val ? null : val;
+        hasil[siswaId].perilaku = null;
+        hasil[siswaId].alasan   = [];
+        db.set('kv', draftKey, hasil).catch(() => {});
+        _mount();
+      });
+    });
+
+    // Level 2 — perilaku: reset alasan
+    overlay.querySelectorAll('[data-perilaku]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const p       = btn.dataset.perilaku;
+        hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
+        hasil[siswaId].alasan   = [];
+        db.set('kv', draftKey, hasil).catch(() => {});
+        _mount();
+      });
+    });
+
+    // Level 3 — alasan: multi-select toggle
+    overlay.querySelectorAll('[data-alasan]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const siswaId = btn.dataset.siswa;
+        const a       = btn.dataset.alasan;
+        if (!Array.isArray(hasil[siswaId].alasan)) hasil[siswaId].alasan = [];
+        const idx = hasil[siswaId].alasan.indexOf(a);
+        if (idx >= 0) hasil[siswaId].alasan.splice(idx, 1);
+        else hasil[siswaId].alasan.push(a);
+        db.set('kv', draftKey, hasil).catch(() => {});
+        _mount();
+      });
+    });
+
+    // Paginasi
+    overlay.querySelector('#sr-pn-prev-hal')?.addEventListener('click', () => {
+      if (halaman > 0) { halaman--; openIdx = 0; _mount(); }
+    });
+    overlay.querySelector('#sr-pn-next-hal')?.addEventListener('click', () => {
+      if (halaman < totalHal - 1) { halaman++; openIdx = 0; _mount(); }
+    });
+
+    // Tutup tanpa simpan — hapus draft
+    overlay.querySelector('#sr-pn-tutup')?.addEventListener('click', () => {
+      db.remove('kv', draftKey).catch(() => {});
+      overlay.remove();
+    });
+
+    // Simpan
+    overlay.querySelector('#sr-pn-simpan')?.addEventListener('click', async () => {
+      const btn = overlay.querySelector('#sr-pn-simpan');
+      if (btn) { btn.disabled = true; btn.textContent = 'Menyimpan…'; }
+      try {
+        const { savePenilaianSMP } = await import('../storage/penilaian-smp.js');
+        const entries = siswaList.map(s => {
+          const h = hasil[s.id];
+          const info = _nilaiDariPerilaku(h.perilaku);
+          return {
+            siswaId  : s.id,
+            capaian  : h.capaian   ?? null,
+            perilaku : h.perilaku  ?? null,
+            nilai    : info?.nilai    ?? null,
+            predikat : info?.predikat ?? null,
+            alasan   : h.alasan    || [],
+            catatan  : '',
+          };
+        });
+        await savePenilaianSMP(_state.rombel?.id, tpNomor, _state.sesiId, entries);
+        db.remove('kv', draftKey).catch(() => {});
+        window.__FLAF__?.showToast?.('Observasi tersimpan.');
+        overlay.remove();
+      } catch (e) {
+        console.error('[SRS] savePenilaianSMP gagal:', e);
+        if (e.name === 'QuotaExceededError') window.__FLAF__?.showStorageFullToast?.();
+        window.__FLAF__?.showToast?.('Gagal menyimpan. Coba lagi.', 6000);
+        if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
+        let errEl = overlay.querySelector('#sr-pn-err');
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.id = 'sr-pn-err';
+          errEl.style.cssText = 'color:#f87171;font-size:12px;text-align:center;padding:6px 18px 0;margin:0';
+          overlay.querySelector('.sr-pn-footer')?.insertAdjacentElement('beforebegin', errEl);
+        }
+        errEl.textContent = 'Gagal menyimpan. Coba lagi.';
+      }
+    });
+  }
 
   document.body.appendChild(overlay);
-  _bindRows(overlay);
-
-  overlay.querySelector('#smp-obs-batal').addEventListener('click', () => overlay.remove());
-  overlay.querySelector('#smp-obs-simpan').addEventListener('click', async () => {
-    try {
-      const { saveObservasiSMP } = await import('../storage/penilaian-smp.js');
-      const entries = siswaList.map(s => ({
-        siswaId : s.id,
-        tags    : hasil[s.id].tags,
-        catatan : hasil[s.id].catatan || null,
-      }));
-      await saveObservasiSMP(
-        _state.rombel?.id, _state.tp?.metadata?.pattern_id, _state.sesiId, step?.id, entries
-      );
-      await db.remove('kv', draftKey).catch(() => {});
-      window.__FLAF__?.showToast?.('Observasi tersimpan.');
-      overlay.remove();
-    } catch (e) {
-      console.error('[SRS] saveObservasiSMP gagal:', e);
-      window.__FLAF__?.showToast?.('Gagal menyimpan observasi.');
-    }
-  });
+  _mount();
 }
 
 // ── SCREEN: CLOSURE ───────────────────────────────────────────
