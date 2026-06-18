@@ -45,9 +45,9 @@
   TP-04, TP-12, TP-18 (Fase A)
 
 ## NEXT TASK
-1. Implementasi overlay penilaian untuk Fase D di `sesi-runtime-smp.js`
-2. Sprint A Blok 7 — offline test Fase D
-3. Setelah Sprint A tuntas → Fase D production-ready
+1. Implementasi observasi Fase D (diferensiasi + overlay + export rubrik) di `sesi-runtime-smp.js`
+2. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
+3. VR-S18 parser fix — backlog
 
 ---
 
@@ -155,24 +155,40 @@ VAL ✅ full flow validated — production ready  (commit 7ae6035)
 - `saveObsTags` ditambah ke `siswa-history.js`
 - **CATATAN**: Fase 11 direvisi di Fase 12 — ObservationCapture dihapus
 
-## Fase 12 — Overlay Penilaian Siswa
+## Fase 12 — Overlay Observasi Formatif (Fase A-C)
 
 ### Keputusan Arsitektural (Terkunci)
+- **Nama**: "Observasi Formatif" (bukan "Penilaian Formatif dan Observasi")
 - **Posisi tombol**: layar `running`, di bawah "⚠ Kondisi kelas bermasalah?", hanya muncul saat fase Inti
 - **Format**: overlay — tidak memutus alur mengajar
-- **Accordion**: auto-open per siswa — setelah dinilai, tutup otomatis dan siswa berikutnya terbuka
-- **Pagination**: 5 siswa per halaman, auto-next setelah siswa ke-5 dinilai
-- **Mode Cepat**: ★ Lancar / ◐ Berkembang / ○ Perlu dampingi + aktif/perlu dorongan/belum siap
-- **Mode Detail**: L/S/R angka 0–100 + aktif/perlu dorongan/belum siap
+- **Accordion**: auto-open per siswa
+- **Pagination**: 5 siswa per halaman
+- **Mode**: satu mode saja (Mode Detail DIHAPUS 19 Juni 2026)
+- **Hierarki 3 level**:
+  - Level 1: Sudah Bisa (★) / Perlu Bantuan (○)
+  - Level 2 per L1: Sudah Bisa → Aktif (90) / Perlu pengingat (75) · Perlu Bantuan → Perlu dorongan (60) / Butuh intervensi (45)
+  - Level 3: tag multi-select per L2 (dari ALASAN_MAP)
+- **Mapping rubrik**: L2 → BSB/BSH/MB/BB, L3 → kolom Deskripsi
+- **Nilai angka**: dari `_nilaiDariPerilaku(perilaku)` — bukan dari capaian numerik lama
+- **Warna judul**: gold `#D4AE3A`
 - **ObservationCapture (Fase 11)**: DIHAPUS
 
 ### Yang Dikerjakan
 - DB_VERSION 8, store `penilaian_log`
 - `savePenilaian()` + `getRekapFormatifTP()` di `siswa-history.js`
-- Overlay accordion Mode Cepat (★◐○) & Mode Detail (L/S/R)
-- Tombol penilaian di fase Inti, CSS `sr-pn-*`
+- Overlay accordion hierarki 3 level
+- Tombol "📋 Observasi Formatif" di fase Inti, CSS `sr-pn-*`
 - Fase Penilaian dihapus dari semua 18 TP di `fase-a.js`
 - ObservationCapture & card observasi Fase 7 dihapus
+
+### Commit Log Redesign (19 Juni 2026)
+| SHA | Pesan |
+|---|---|
+| 9530e3e | fix(observasi): hapus mode detail, judul jadi Observasi Formatif |
+| d81e9e7 | feat(observasi): redesign hierarki 3 level Fase A-C |
+| b2f1342 | chore: hapus dead code mode detail + bump SW v253 |
+| 31cef14 | fix(observasi): hapus label fase dari subtitle overlay |
+| 4a38716 | fix(observasi): label tombol + warna judul gold |
 
 ## Fase 13 — Printables (Kartu Cetak Guru)
 
@@ -230,16 +246,16 @@ c494685  merge: pertahankan versi lokal fase-13
 
 ## Git Log (10 commit terakhir)
 ```
-b3a031e  compress: Fase B 140 PNG 275MB→79MB (71%), revert compress-png.js, bump sw flaf-v93
-c279818  feat: add 140 printable PNG assets for Fase B
-d22e592  feat: add printables[] to all 22 Fase B TPs, update sw.js cache to flaf-v91
-378c137  docs: update CONTEXT.md — UI polish dashboard 8 item (5bf94fb)
-5bf94fb  style(dashboard): UI polish — chevron gold, opacity raise, Sebelumnya=Lanjut, vocab chip padding
-986d4ca  fix(sw): bump cache v88 — label diferensiasi + nilai fix
-420fbf9  feat: label diferensiasi di card runtime
-bf7753e  feat: tambah preOpening dan diferensiasi ke TP 15–18 runtime
-4bfa872  fix(kurikulum): CP & ATP Fase B reaktif per filter kelas
-5bf94fb  style(dashboard): UI polish 8 item
+6501bea  docs: update HANDOFF — sprint observasi formatif + UI audit 19 Juni 2026
+4a38716  fix(observasi): label tombol + warna judul gold
+31cef14  fix(observasi): hapus label fase dari subtitle overlay
+b2f1342  chore: hapus dead code mode detail + bump SW v253
+d81e9e7  feat(observasi): redesign hierarki 3 level Fase A-C
+9530e3e  fix(observasi): hapus mode detail, judul jadi Observasi Formatif — Fase A-C
+615fca8  fix(css): hardcode color-surface — eliminasi collision dengan style.css #ffffff
+7bec4fa  fix(ui): bantuan label, dif border, layar selesai — sesi-runtime-smp
+581b316  fix(css): keterbacaan WCAG — cue_sisa, color-text-dim, font-size minimum 12px
+253c2df  chore(sw): bump ke flaf-v252 — fix ucap TTS + determinisme
 ```
 
 ## Struktur Folder Penting
@@ -282,7 +298,7 @@ FLAF/
 │   ├── sesi-m12/tp-17.js   ← langkah[] + field mode ✅
 │   └── sesi-m13/tp-18.js   ← langkah[] + field mode ✅
 ├── pdf/                    ← modul ajar per TP (lihat §Modul Ajar)
-├── sw.js                   ← Service Worker v93 (flaf-v93)
+├── sw.js                   ← Service Worker v253 (flaf-v253)
 ├── manifest.json
 ├── app.js
 └── index.html
