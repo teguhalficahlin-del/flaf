@@ -483,8 +483,7 @@ function _renderRunning() {
           <button class="sr-btn-primary"   id="smp-btn-next">${isLast ? 'Selesai ✓' : 'Lanjut →'}</button>
         </div>
         <button class="sr-btn-kondisi" id="smp-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
-        ${step.type === 'CHECK' ? `
-        <button class="sr-btn-penilaian" id="smp-btn-penilaian">📋 Observasi Formatif</button>` : ''}
+        <button class="sr-btn-penilaian" id="smp-btn-penilaian">📋 Observasi Formatif</button>
       </div>
     </div>`;
 
