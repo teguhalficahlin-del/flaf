@@ -606,8 +606,11 @@
   min-height: 44px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-weight: 500;
 }
+.sk-bantuan summary::marker { display: none; }
+.sk-bantuan summary::-webkit-details-marker { display: none; }
 .sk-darurat summary {
   padding: 10px 12px;
   background: #2a1a1a;
@@ -618,8 +621,11 @@
   min-height: 44px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  font-weight: 500;
 }
+.sk-darurat summary::marker { display: none; }
+.sk-darurat summary::-webkit-details-marker { display: none; }
 .sk-bantuan-isi,
 .sk-darurat-isi {
   padding: 10px 12px;
@@ -630,7 +636,7 @@
 }
 .sk-dif-wrap {
   margin: 12px;
-  border: 1px solid var(--color-border, #2a2a3e);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: 6px;
   overflow: hidden;
 }
@@ -648,7 +654,7 @@
   border-collapse: collapse;
 }
 .sk-dif-tabel tr {
-  border-top: 1px solid var(--color-border, #2a2a3e);
+  border-top: 1px solid rgba(255,255,255,.1);
 }
 .sk-dif-level {
   width: 80px;

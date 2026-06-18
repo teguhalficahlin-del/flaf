@@ -973,12 +973,16 @@ function _renderSelesai() {
   _root.innerHTML = `
     <div class="sr-app">
       <div class="sr-body sr-body--center">
+        <div style="font-size:48px;margin-bottom:12px;">✅</div>
         <div class="sr-fase-label">SESI SELESAI</div>
         <div class="sr-fase-judul">${_escape(meta.title || '—')}</div>
         <div class="sr-fase-meta">
           ${runtime.length} langkah · ~${total} menit · Kelas ${_escape(meta.grade)}
         </div>
-        <div class="smp-selesai-note">Semua langkah telah dilalui.</div>
+        <div class="smp-selesai-note" style="margin-top:16px;">Semua langkah telah dilalui.</div>
+        <div class="smp-selesai-note" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">
+          Tekan Tutup Sesi untuk kembali ke dashboard.
+        </div>
       </div>
       <div class="sr-footer">
         <button class="sr-btn-primary" id="smp-btn-tutup">Tutup Sesi</button>
