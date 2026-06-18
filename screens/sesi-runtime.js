@@ -840,7 +840,7 @@ function _renderRunning() {
         </div>
         <button class="sr-btn-kondisi" id="sr-btn-kondisi">⚠ Kondisi kelas bermasalah?</button>
         ${faseName.toLowerCase() === 'inti' || (faseName.toLowerCase() === 'penutup' && isLast) ? `
-        <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Penilaian Formatif dan Observasi</button>` : ''}
+        <button class="sr-btn-penilaian" id="sr-btn-penilaian">📋 Observasi Formatif</button>` : ''}
       </div>
     </div>`;
 
