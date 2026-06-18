@@ -959,10 +959,7 @@ function _renderSkenarioBoost(boost) {
         <div class="sk-boost-label">Untuk siswa yang sudah lancar</div>
         ${_renderInstruksiList(boost.untuk_lancar)}
       </div>`
-    + (boost.cue_sisa ? `<div class="sk-instruksi sk-cue">
-        <span class="sk-ikon">📌</span>
-        <span class="sk-teks">${_escape(boost.cue_sisa)}</span>
-      </div>` : '');
+    + (boost.cue_sisa ? `<div class="sk-cue-sisa">📌 ${_escape(boost.cue_sisa)}</div>` : '');
 }
 
 // ── SCREEN: SELESAI ───────────────────────────────────────────
