@@ -354,3 +354,67 @@ Instruksi = { tipe: AKSI|UCAP|bantuan|darurat|cue, teks }
 3. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
 4. Hapus runtime[] lama dari sesi-runtime-smp.js setelah
    renderer baru stabil di lapangan (Sprint E)
+
+---
+
+## Sprint Observasi Formatif & UI Audit (19 Juni 2026)
+
+### Status
+SW aktif: flaf-v253
+
+### Pekerjaan Sprint Ini
+
+**Audit UI Runtime Skenario Fase D**
+- Audit keterbacaan dan warna seluruh layar runtime (17 screenshot)
+- Fix CSS: cue_sisa, color-text-dim, font-size minimum 12px — commit 581b316
+- Fix UI: bantuan label, dif border, layar selesai — commit 7bec4fa
+- Fix root cause: --color-surface collision dengan style.css (#ffffff)
+  → hardcode 6 kemunculan var(--color-surface) — commit 615fca8
+
+**Audit UCAP Fase D**
+- Audit TTS safety: 2.288 UCAP diperiksa, 50 flagged, 13 genuine fix
+  → commit 5e9656c
+- Audit determinisme transisi: 109 fix di 59 file, 4 pola global
+  → commit ec4939b
+- SW bump v252 — commit 253c2df
+
+**Redesign Observasi Formatif Fase A-C**
+Keputusan arsitektur:
+- Hapus Mode Detail — hanya Mode Cepat, diganti judul "Observasi Formatif"
+- Hierarki 3 level:
+  Level 1: Sudah Bisa / Perlu Bantuan
+  Level 2 (per Level 1):
+    Sudah Bisa → Aktif (BSB, nilai 90) / Perlu pengingat (BSH, nilai 75)
+    Perlu Bantuan → Perlu dorongan (MB, nilai 60) / Butuh intervensi (BB, nilai 45)
+  Level 3: tag spesifik per Level 2, multi-select
+- Level 2 terhubung ke rubrik BSB/BSH/MB/BB di modul ajar resmi
+- Level 3 mengisi kolom Deskripsi di rubrik
+- Label seragam: "Perlu Bantuan" (bukan "Perlu Support") di semua permukaan
+
+Commit log:
+| SHA | Pesan |
+|---|---|
+| 9530e3e | fix(observasi): hapus mode detail, judul jadi Observasi Formatif |
+| d81e9e7 | feat(observasi): redesign hierarki 3 level Fase A-C |
+| b2f1342 | chore: hapus dead code mode detail + bump SW v253 |
+| 31cef14 | fix(observasi): hapus label fase dari subtitle overlay |
+| 4a38716 | fix(observasi): label tombol + warna judul gold |
+
+Validasi: 6/6 item PASS via browser (screenshot dikonfirmasi Romo)
+
+**Desain Observasi Formatif Fase D (belum diimplementasi)**
+Keputusan yang sudah final:
+- Diferensiasi: 2 jalur — Perlu Support / Sudah Bisa
+- Observasi Level 1: Sudah Bisa / Perlu Bantuan
+- Observasi Level 2:
+    Sudah Bisa → Tanpa buku/catatan / Dengan buku/catatan
+    Perlu Bantuan → Mencoba, belum tepat / Diam
+- Observasi Level 3: tag spesifik per TP (diturunkan dari observe[] dan objective)
+- Mapping ke rubrik: L1+L2 → BSB/BSH/MB/BB, L3 → kolom Deskripsi
+- Output: data observasi runtime → rubrik modul ajar resmi
+- Hubungan dengan BOOST: diputus — observasi murni faktual
+
+### Sprint Berikutnya
+1. Implementasi observasi Fase D (diferensiasi + overlay + export rubrik)
+2. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
+3. VR-S18 parser fix — backlog
