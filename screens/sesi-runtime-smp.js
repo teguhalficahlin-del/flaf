@@ -774,25 +774,17 @@ function _renderInstruksiList(instruksi) {
 
 // ── Helper: render diferensiasi ────────────────────────────────
 
-function _renderDiferensiasi(dif) {
-  if (!dif) return '';
-  return `<div class="sk-dif-wrap">
-    <div class="sk-dif-label">Diferensiasi</div>
-    <table class="sk-dif-tabel">
-      <tr>
-        <td class="sk-dif-level sk-mudah">Mudah</td>
-        <td class="sk-dif-tugas">${_escape(dif.mudah || '')}</td>
-      </tr>
-      <tr>
-        <td class="sk-dif-level sk-standar">Standar</td>
-        <td class="sk-dif-tugas">${_escape(dif.standar || '')}</td>
-      </tr>
-      <tr>
-        <td class="sk-dif-level sk-tantangan">Tantangan</td>
-        <td class="sk-dif-tugas">${_escape(dif.tantangan || '')}</td>
-      </tr>
-    </table>
-  </div>`;
+function _renderDiferensiasi(difBaru) {
+  if (!difBaru) return '';
+  return `<div class="sk-dif-header">DIFERENSIASI</div>
+    <details class="sk-dif-sudah-bisa">
+      <summary><span class="sk-ikon">★</span> Sudah Bisa</summary>
+      <div class="sk-dif-isi">${_escape(difBaru.sudah_bisa || '')}</div>
+    </details>
+    <details class="sk-dif-perlu-bantuan">
+      <summary><span class="sk-ikon">○</span> Perlu Bantuan</summary>
+      <div class="sk-dif-isi">${_escape(difBaru.perlu_bantuan || '')}</div>
+    </details>`;
 }
 
 // ── Helper: header langkah ─────────────────────────────────────
@@ -861,7 +853,7 @@ function _renderSkenarioChange(change) {
   return _renderLangkahHeader('CHANGE', change.durasi_menit)
     + (change.intro ? `<div class="sk-intro">${_escape(change.intro)}</div>` : '')
     + _renderInstruksiList(change.instruksi)
-    + _renderDiferensiasi(change.diferensiasi);
+    + _renderDiferensiasi(change.diferensiasi_baru);
 }
 
 // ── Skenario render: INTERACT ──────────────────────────────────
@@ -870,7 +862,7 @@ function _renderSkenarioInteract(interact) {
   return _renderLangkahHeader('INTERACT', interact.durasi_menit)
     + (interact.intro ? `<div class="sk-intro">${_escape(interact.intro)}</div>` : '')
     + _renderInstruksiList(interact.instruksi)
-    + _renderDiferensiasi(interact.diferensiasi);
+    + _renderDiferensiasi(interact.diferensiasi_baru);
 }
 
 // ── Skenario render: SHARE ─────────────────────────────────────
@@ -879,7 +871,7 @@ function _renderSkenarioShare(share) {
   return _renderLangkahHeader('SHARE', share.durasi_menit)
     + (share.intro ? `<div class="sk-intro">${_escape(share.intro)}</div>` : '')
     + _renderInstruksiList(share.instruksi)
-    + _renderDiferensiasi(share.diferensiasi);
+    + _renderDiferensiasi(share.diferensiasi_baru);
 }
 
 // ── Skenario render: CHECK ─────────────────────────────────────
