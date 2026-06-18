@@ -559,13 +559,30 @@
   color: var(--color-text, #e0e0e0);
   background: #252535;
 }
-.sk-dif-header {
-  padding: 8px 12px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.sk-dif {
+  margin: 4px 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.sk-dif > summary {
+  padding: 10px 12px;
+  background: #1a1a1a;
+  cursor: pointer;
+  font-size: 13px;
   color: #D4AE3A;
-  margin: 8px 12px 2px;
+  list-style: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+.sk-dif > summary::marker { display: none; }
+.sk-dif > summary::-webkit-details-marker { display: none; }
+
+.sk-dif-inner {
+  background: #1a1a1a;
+  padding: 4px 0 4px;
 }
 
 .sk-dif-sudah-bisa,

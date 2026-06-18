@@ -776,15 +776,19 @@ function _renderInstruksiList(instruksi) {
 
 function _renderDiferensiasi(difBaru) {
   if (!difBaru) return '';
-  return `<div class="sk-dif-header">DIFERENSIASI</div>
-    <details class="sk-dif-sudah-bisa">
-      <summary><span class="sk-ikon">★</span> Sudah Bisa</summary>
-      <div class="sk-dif-isi">${_escape(difBaru.sudah_bisa || '')}</div>
-    </details>
-    <details class="sk-dif-perlu-bantuan">
-      <summary><span class="sk-ikon">○</span> Perlu Bantuan</summary>
-      <div class="sk-dif-isi">${_escape(difBaru.perlu_bantuan || '')}</div>
-    </details>`;
+  return `<details class="sk-dif">
+    <summary><span class="sk-ikon">🎯</span> Diferensiasi</summary>
+    <div class="sk-dif-inner">
+      <details class="sk-dif-sudah-bisa">
+        <summary><span class="sk-ikon">★</span> Sudah Bisa</summary>
+        <div class="sk-dif-isi">${_escape(difBaru.sudah_bisa || '')}</div>
+      </details>
+      <details class="sk-dif-perlu-bantuan">
+        <summary><span class="sk-ikon">○</span> Perlu Bantuan</summary>
+        <div class="sk-dif-isi">${_escape(difBaru.perlu_bantuan || '')}</div>
+      </details>
+    </div>
+  </details>`;
 }
 
 // ── Helper: header langkah ─────────────────────────────────────
