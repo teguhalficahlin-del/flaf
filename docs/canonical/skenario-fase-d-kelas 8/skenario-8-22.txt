@@ -1,0 +1,242 @@
+## TP 8-22 — School Learning App: Creating Guided Instructions
+
+**Kelas 8 | Genre: Functional | Topik: Using a School Learning Application**
+Konteks: Siswa membuat petunjuk terbimbing sederhana untuk membantu pengguna baru mengakses tugas dan mengumpulkan pekerjaan mereka.
+Tujuan komunikatif: menulis petunjuk terbimbing yang jelas dengan langkah-langkah berurutan dan pengingat.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Step 1: ___
+Before ___, ___.
+After ___, ___.
+Remember to ___.
+```
+AKSI: Siapkan tiga kartu di meja guru — kartu antarmuka aplikasi yang menunjukkan empat layar berurutan (layar login, daftar tugas, halaman tugas, konfirmasi pengiriman), kerangka instruksi terbimbing dengan empat slot berlabel ("Step 1: ___" / "Before ___, ___." / "After ___, ___." / "Remember to ___."), dan ikon (layar login, daftar centang tugas, tombol submit, ikon simpan).
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Alright, class. Today we help someone navigate a new app.
+AKSI: Pastikan kelas sudah siap dan perangkat tersedia jika diperlukan.
+
+**HOOK**
+UCAP: Have you ever had to explain to someone how to use an app? What did you say first?
+AKSI: Tampilkan kartu antarmuka aplikasi — tunjuk keempat layar berurutan ke seluruh kelas.
+UCAP: Look at these app screens. What is the correct order to use this learning app?
+AKSI: Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan.
+UCAP: Let us see how to write practical guided instructions, using Step 1, Before, After, and Remember to.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Angkat satu jari sambil mengucapkan "Step 1:" — tunjuk kartu layar login.
+UCAP: Step 1: Open the school learning application and log in with your username and password.
+
+AKSI: Angkat tangan sebelum tindakan sambil mengucapkan "Before" — tunjuk kartu daftar tugas.
+UCAP: Before you start an assignment, check the due date on the screen.
+
+AKSI: Gerakkan tangan ke depan ke arah hasil sambil mengucapkan "After" — tunjuk kartu halaman tugas lalu kartu konfirmasi pengiriman.
+UCAP: After you finish your work, click the submit button.
+
+AKSI: Tunjuk ikon simpan.
+UCAP: Remember to save your work before you close the application.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.*
+
+**Kalimat 1**
+AKSI: Angkat satu jari sambil mengucapkan "Step 1:" — tunjuk kartu layar login.
+UCAP: Step 1: Open the school learning application and log in with your username and password.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 2**
+AKSI: Angkat tangan sebelum tindakan sambil mengucapkan "Before" — tunjuk kartu daftar tugas.
+UCAP: Before you start an assignment, check the due date on the screen.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 3**
+AKSI: Gerakkan tangan ke depan ke arah hasil sambil mengucapkan "After" — tunjuk kartu konfirmasi pengiriman.
+UCAP: After you finish your work, click the submit button.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 4**
+AKSI: Tunjuk ikon simpan.
+UCAP: Remember to save your work before you close the application.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now it is your turn. Write your own instruction guide.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk kerangka instruksi. Minta siswa menyalin pola di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa menulis petunjuk terbimbing untuk menggunakan aplikasi sekolah. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.*
+
+AKSI: Tempelkan kartu antarmuka dan kerangka instruksi di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Use these markers. Write one instruction for each: Step 1, Before, After, and Remember to.
+UCAP: Direct your instructions to the reader, not students log in, and not First, then, finally.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Gunakan kerangka instruksi dan lengkapi setiap slot. Boleh lihat kartu antarmuka. |
+| Standar | Tulis semua empat petunjuk terbimbing tanpa membaca. |
+| Tantangan | Tulis semua empat petunjuk terbimbing dan tambahkan "Step 2:" untuk tindakan bernomor kedua dalam panduan. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu kata kerja imperatif apa yang digunakan — tunjuk kartu layar login dan minta siswa mulai dari "Open the ..."
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu layar login, dan minta siswa ucapkan "Step 1: Open the application ..." Tunggu siswa menulis satu kalimat, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A memberi panduan instruksinya kepada Siswa B — Siswa B membaca kembali dan memeriksa: Ada "Step 1:"? Ada "Before"? Ada "After"? Ada "Remember to"? Tunjuk setiap penanda. Lalu tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Exchange your instruction guides. Your partner checks for all four markers. Then swap and give feedback.
+AKSI: Beri waktu delapan menit untuk dua arah.
+AKSI: Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Baca panduan pasanganmu dan tandai setiap penanda (Step 1, Before, After, Remember to). |
+| Standar | Baca panduan pasangan, periksa semua empat penanda, dan katakan mana yang paling jelas. |
+| Tantangan | Baca panduan pasangan dan tanya: "What happens if I forget the step before submitting?" — pasangan jawab dengan satu instruksi lagi. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu layar login dan tanya "What is the first step in your guide?"
+bantuan: Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan "In English. Use this." Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain.
+bantuan: Jika siswa menulis "students log in" (orang ketiga) — tunjuk pola dan minta siswa ganti ke imperatif langsung ke pembaca: "log in."
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to presents your instruction guide first.
+UCAP: Take turns presenting your guide to the group.
+AKSI: Beri waktu enam menit untuk semua anggota kelompok berbagi.
+AKSI: Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Baca panduan instruksimu ke kelompok. |
+| Standar | Presentasikan panduan instruksimu tanpa membaca. |
+| Tantangan | Presentasikan panduan instruksimu, lalu jawab satu pertanyaan dari kelompok tentang salah satu langkah spesifik. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kartu layar login, dan minta ucapkan "Step 1: Open ..." sebagai pembuka.
+bantuan: Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan "Step 2:" untuk tindakan bernomor kedua.
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me your Step 1 instruction. Go.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menggunakan kata kerja imperatif yang ditujukan kepada pembaca ("Open", "Log in")? Bukan deskripsi orang ketiga ("students open") dan bukan langkah generik ("First,")?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your Remember to instruction. Without looking at your notes.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menyatakan pengingat yang jelas dengan "Remember to ..." diikuti kata kerja imperatif?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat menyampaikan keempat petunjuk dengan penanda yang tepat tanpa berhenti panjang:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kerangka instruksi.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan kalimat pertama dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Angkat kartu antarmuka layar login.
+UCAP: Listen. Step 1: Open the school learning application and log in.
+AKSI: Tunjuk perbedaan: "the student opens" (orang ketiga, bukan instruksi) versus "Open the application" (imperatif, ditujukan ke pembaca).
+UCAP: Now try. Before you start...
+AKSI: Tunjuk kartu daftar tugas — tunggu siswa melengkapi "Before you start an assignment, ..."
+AKSI: Ulangi sampai siswa siap mengucapkan keempat penanda dengan kata kerja imperatif yang tepat tanpa bantuan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen. If you cannot log in to the application, ask your teacher for help and try again.
+AKSI: Jeda 2 detik.
+UCAP: Now you try. Add one troubleshooting instruction to the end of your guide.
+AKSI: Tunggu siswa mencoba menambahkan satu instruksi pemecahan masalah setelah "Remember to ..."
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. That instruction helps users when something goes wrong."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan keempat petunjuk terbimbing berurutan tanpa melihat buku, atau menulis panduan instruksi untuk aplikasi atau alat digital sekolah yang berbeda di buku catatan.

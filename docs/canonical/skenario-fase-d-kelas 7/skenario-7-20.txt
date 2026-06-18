@@ -1,0 +1,235 @@
+## TP 7-20 — The Old Storage Room: Reading Mysterious Notices
+
+**Kelas 7 | Genre: Functional | Topik: Mysterious School Notices**
+Konteks: Siswa mengamati tanda peringatan dan pengumuman publik di dekat ruangan tua yang tidak terpakai dan membayangkan alasan keberadaannya.
+Tujuan komunikatif: menafsirkan pengumuman publik dan menyimpulkan makna kontekstual sederhana.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Notice: (message)
+No (thing).
+Keep (short instruction).
+Use (short instruction).
+```
+AKSI: Siapkan kartu pengumuman dan tanda dekat gudang tua di meja guru — Keep Out, No Entry, tanda Notice, dan gambar pintu tertutup yang misterius.
+AKSI: Siapkan kartu format tanda yang menunjukkan empat jenis pengumuman: Notice: blank, No blank, Keep blank, Use blank.
+AKSI: Siapkan pemandangan gudang tua tidak terpakai dengan pintu tertutup dan tanda peringatan sebagai hook motivasi.
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas — berbicara perlahan dengan nada misterius.
+UCAP: Morning! I have something mysterious to show you today.
+AKSI: Buat suasana penasaran sebelum memulai.
+
+**HOOK**
+UCAP: Have you ever noticed old signs or warning notices around this school?
+AKSI: Tampilkan kartu tanda dan pengumuman dekat gudang tua satu per satu.
+UCAP: Look at these signs near an old storage room. What do you think is behind that door?
+AKSI: Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu Keep Out dan tanya "What does this sign tell you to do?"
+AKSI: Angguk — biarkan kartu tetap terlihat.
+UCAP: Good. Today we learn how to read and write short notices like these.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Tunjuk tegas ke kartu Notice.
+UCAP: Notice: Keep this door closed.
+AKSI: Tunjuk pintu di gambar pemandangan gudang tua.
+
+AKSI: Buat gestur X atau berhenti.
+UCAP: No entry to the secret room.
+AKSI: Tunjuk kartu No Entry.
+
+AKSI: Tunjuk pintu lain di gambar.
+UCAP: Keep out. Use the side door only.
+AKSI: Tunjuk pintu samping.
+
+AKSI: Buat gestur X atau berhenti — tunjuk pintu lain.
+UCAP: No food in this room.
+AKSI: Tunjuk kartu No.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru membacakan satu notice — siswa menirukan bersama. Kartu dan gesture tetap digunakan.*
+
+**Notice 1**
+AKSI: Tunjuk tegas ke kartu Notice — tunjuk pintu.
+UCAP: Notice: Keep this door closed.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Notice 2**
+AKSI: Buat gestur X atau berhenti — tunjuk kartu No Entry.
+UCAP: No entry to the secret room.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Notice 3**
+AKSI: Tunjuk pintu lain — tunjuk kartu Use.
+UCAP: Keep out. Use the side door only.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now write your own notices.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu format tanda dan minta siswa baca bersama empat jenis: Notice: blank, No blank, Keep blank, Use blank.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa membuat tanda dan pengumuman mereka sendiri untuk gudang tua. Dikerjakan secara individual, ditulis di buku catatan.*
+
+AKSI: Tempel kartu tanda dan kartu format di papan tulis di sebelah pola.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Create your own notices for the old storage room. Use: Notice: blank, No blank, Keep blank, or Use blank.
+UCAP: Short signs only. Not a story. Not a description. Not an opinion. Just a notice.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — perhatikan siswa yang menulis cerita atau penjelasan panjang, dan ingatkan: "Short. Like a sign. Notice: blank. Or: No blank."
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Pilih satu ikon tanda dan lengkapi satu notice: No blank. Atau: Keep blank. Atau: Use blank. |
+| Standar | Tulis dua notices dengan jenis yang berbeda untuk gudang tua. |
+| Tantangan | Tulis tiga notices (Notice: blank, No blank, Keep blank atau Use blank), dan tambahkan satu kolom formulir netral: Choice: Storage Room. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now sit in small groups of three or four.
+
+bantuan: Jika siswa tidak tahu pesan apa yang ingin ditulis — tunjuk kartu format tanda dan tanya "What should people do near this door? No blank? Keep blank?" Bantu siswa melengkapi.
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, buat gestur X, dan ucapkan "No blank. Entry? Or: No blank. Enter?" Tunggu siswa melengkapi dan menulis satu notice, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Siswa duduk dalam kelompok tiga atau empat — guru yang menentukan komposisi kelompok.*
+
+AKSI: Tentukan komposisi kelompok — tunjuk secara eksplisit siapa bergabung dengan siapa.
+UCAP: In your group, look at the notice cards near the old storage room. Read each one and point to what it means.
+UCAP: Then write your own notices for the room using Notice: blank, No blank, Keep blank, or Use blank.
+AKSI: Bagikan kartu notice misterius ke setiap kelompok.
+AKSI: Beri waktu delapan menit untuk membaca, mencocokkan makna, dan menulis notice sendiri.
+AKSI: Berjalan keliling kelas — amati apakah notice yang ditulis tetap dalam format singkat, bukan cerita.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Bacakan satu kartu notice dan tunjuk apa maknanya. Lalu salin atau lengkapi satu notice sendiri. |
+| Standar | Cocokkan dua atau tiga kartu notice dengan maknanya, lalu tulis dua notices sendiri. |
+| Tantangan | Cocokkan semua kartu notice dengan maknanya, lalu tulis tiga notices dan satu kolom formulir netral. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Stay in your group.
+
+bantuan: Jika kelompok diam dan tidak ada yang memulai — tunjuk satu kartu notice dan minta satu siswa membacakannya keras.
+bantuan: Jika ada siswa yang menulis cerita atau penjelasan — tunjuk kartu format tanda: "Short. Like a sign. Notice: blank. Or: No blank."
+bantuan: Jika kelompok selesai lebih cepat — minta kelompok tukar kartu notice dan cocokkan dengan makna yang berbeda.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Siswa menempelkan notices mereka di dinding kelas dan berkeliling membaca notices kelompok lain.*
+
+AKSI: Minta setiap kelompok menempelkan notices mereka di satu bagian dinding kelas.
+UCAP: Post your notices on the wall. Then walk around and read other groups' notices. Match each one to what it means.
+AKSI: Beri waktu enam menit untuk berkeliling dan membaca notices kelompok lain.
+AKSI: Berjalan antar kelompok — perhatikan apakah siswa dapat mencocokkan notice dengan makna yang tepat.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Tempelkan satu notice dan baca dua notices kelompok lain — tunjuk apa yang dimaksud setiap notice. |
+| Standar | Tempelkan dua notices dan baca beberapa lainnya — cocokkan setiap notice dengan maknanya. |
+| Tantangan | Tempelkan set notices, baca notices kelompok lain, dan temukan satu notice yang cocok dengan setiap makna di dinding. |
+
+bantuan: Jika ada siswa yang tidak bisa membaca notice kelompok lain — dekati, tunjuk kata kunci di notice (No, Keep, Use, Notice), dan minta siswa cocokkan dengan gambar atau tindakan yang sesuai.
+bantuan: Jika ada notice yang ditulis sebagai cerita — tepuk kartu format tanda dan ingatkan: "Short sign. Notice: blank. Not a story."
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me one notice for the old storage room. Notice: blank, No blank, Keep blank, or Use blank. Go.
+AKSI: Tunggu siswa mengucapkan notice.
+AKSI: Amati — apakah notice dalam format singkat tanpa menjadi cerita atau penjelasan panjang?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your second notice. Without looking at your book.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa bisa membacakan notice dengan format yang tepat tanpa membaca kata per kata?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat membuat dan membacakan notices singkat dalam format Notice: blank, No blank, Keep blank, atau Use blank tanpa mengubahnya menjadi cerita:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kartu format tanda.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan dua notices sekali lagi — beri isyarat tangan ke arah siswa setiap notice.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Tunjuk tegas ke kartu Notice.
+UCAP: Listen. Notice: Keep this door closed.
+AKSI: Tunggu siswa menirukan.
+AKSI: Buat gestur X.
+UCAP: No entry to the secret room.
+AKSI: Tunggu siswa menirukan — tekankan bahwa notice harus singkat, dimulai dengan kata kunci.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen first.
+UCAP: Please keep out.
+AKSI: Jeda 2 detik.
+UCAP: A polite notice. Now you try. Give me one polite public notice with Please. Just one.
+AKSI: Tunggu siswa mencoba.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. Short and polite. Keep the notice format."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua notices tanpa membaca, atau menulis satu notice baru untuk tempat lain di sekolah.

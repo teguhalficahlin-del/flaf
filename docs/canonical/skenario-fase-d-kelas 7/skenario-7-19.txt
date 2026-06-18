@@ -1,0 +1,240 @@
+## TP 7-19 — Library Membership: Completing Forms
+
+**Kelas 7 | Genre: Functional | Topik: Library Membership**
+Konteks: Siswa mengisi dan menukar formulir keanggotaan sederhana sebelum meminjam buku.
+Tujuan komunikatif: mengisi dan memahami formulir informasi pribadi dasar.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Name: (value)
+Class: (value)    Number: (value)
+Address: (value)
+Membership: (value)    Favorite Club: (value)
+```
+AKSI: Siapkan formulir keanggotaan perpustakaan kosong untuk setiap siswa — dengan kolom berlabel Name, Class, Number, Address, Membership, Favorite Club.
+AKSI: Siapkan contoh formulir terisi yang menunjukkan format Label: value untuk setiap kolom.
+AKSI: Siapkan kartu anggota dan tumpukan buku di meja sebagai konteks peminjaman perpustakaan.
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Good morning! I have some paperwork for us today, in English.
+AKSI: Bagi setiap siswa formulir kosong sebelum memulai.
+
+**HOOK**
+UCAP: Have you ever filled in a form before, maybe for a library, a competition, or a school event?
+AKSI: Tampilkan formulir keanggotaan perpustakaan kosong.
+UCAP: Look at this membership form. What information do you need to fill in?
+AKSI: Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kolom Name dan tanya "What goes here?"
+AKSI: Angguk — biarkan formulir tetap terlihat.
+UCAP: Good. Today we learn how to fill in a simple form in English.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Tunjuk kolom Name di formulir — peragakan menulis di ruang kosong.
+UCAP: Name: Andi Saputra.
+AKSI: Tunjuk label Name, lalu nilai yang diisi. Angguk.
+
+AKSI: Tunjuk kolom Class, lalu kolom Number.
+UCAP: Class: 7A. Number: 12.
+AKSI: Peragakan menulis nilai di setiap ruang kosong.
+
+AKSI: Tunjuk kolom Address.
+UCAP: Address: Jalan Melati No. 5.
+AKSI: Peragakan menulis nilai.
+
+AKSI: Tunjuk kolom Membership, lalu Favorite Club.
+UCAP: Membership: New Member. Favorite Club: Science Club.
+AKSI: Tunjuk contoh formulir terisi — tunjuk setiap label dan nilainya secara bergantian.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru membacakan satu field formulir — siswa menirukan bersama. Kartu dan gesture tetap digunakan.*
+
+**Field 1**
+AKSI: Tunjuk kolom Name di formulir.
+UCAP: Name: Andi Saputra.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Field 2**
+AKSI: Tunjuk kolom Class dan Number.
+UCAP: Class: 7A. Number: 12.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Field 3**
+AKSI: Tunjuk kolom Favorite Club.
+UCAP: Favorite Club: Science Club.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now fill in your own form.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk contoh formulir terisi dan minta siswa baca bersama setiap label: Name: blank. Class: blank. Number: blank.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa mengisi formulir keanggotaan perpustakaan mereka sendiri. Dikerjakan secara individual pada formulir yang sudah dibagikan.*
+
+AKSI: Tunjuk formulir di tangan setiap siswa.
+AKSI: Tunjuk contoh formulir terisi di papan tulis.
+UCAP: Fill in your own form. Write Label: then your value. Name: then your name. Class: then your class.
+UCAP: Do not write I am or My name is. Just the label and the value. Like the example.
+AKSI: Jeda 2 detik.
+UCAP: You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk mengisi formulir.
+AKSI: Berjalan keliling kelas — perhatikan siswa yang menulis kalimat penuh seperti My name is blank, dan ingatkan: "Just the label and value. Name: blank. Not: My name is blank."
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Lengkapi tiga kolom: Name: blank, Class: blank, Number: blank. |
+| Standar | Lengkapi seluruh formulir: Name, Class, Number, Address, Membership, Favorite Club. |
+| Tantangan | Lengkapi seluruh formulir dan tambahkan satu kalimat pendapat: My favorite club is blank because blank. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa bingung kolom mana yang menggunakan format label-titik-dua-nilai — tunjuk contoh formulir terisi dan arahkan jari siswa ke setiap label dan nilai.
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kolom Name, dan ucapkan "Name: blank. Write your name here." Tunggu siswa menulis, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A dan B menukar formulir mereka.
+AKSI: Minta Siswa A membacakan kolom-kolom formulir Siswa B: Name: blank. Class: blank. Favorite Club: blank.
+AKSI: Minta Siswa B mendengarkan dan memeriksa apakah semua kolom terisi.
+AKSI: Minta keduanya tukar kembali dan berganti peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Swap forms. Read your partner's fields aloud. Check that each field has a value. Work with the person next to you.
+AKSI: Beri waktu delapan menit untuk bertukar dan membacakan formulir dua arah.
+AKSI: Berjalan keliling kelas — amati apakah siswa membacakan label dan nilai dalam format Label: value.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Bacakan tiga kolom formulir pasangan dengan keras: Name: blank, Class: blank, Number: blank. |
+| Standar | Bacakan semua kolom formulir pasangan dengan keras, lalu sebutkan satu fakta dari formulir tersebut — misalnya klub favorit pasangan. |
+| Tantangan | Bacakan seluruh formulir pasangan, dan periksa tidak ada kolom yang kosong. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tunjuk kolom Name di formulir pasangan dan ucapkan "Read this. Name: blank. What is their name?"
+bantuan: Jika siswa membacakan kolom sebagai kalimat penuh — tunjuk label di formulir: "Just the label and value. Name: blank. Short."
+bantuan: Jika satu siswa selesai lebih cepat — minta siswa periksa semua kolom pasangan dan tunjuk kolom yang masih kosong.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+UCAP: Take turns. Present a completed form to the new group by reading its fields: Label: value.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to reads first.
+AKSI: Beri waktu enam menit untuk semua anggota mempresentasikan formulir.
+AKSI: Berjalan antar kelompok — dengarkan apakah label dibacakan dengan nilai yang benar dalam format Label: value.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Bacakan tiga kolom formulir terisi ke kelompok baru. |
+| Standar | Bacakan semua kolom formulir terisi ke kelompok. |
+| Tantangan | Bacakan seluruh formulir, dan jawab satu pertanyaan dari kelompok tentang salah satu kolom. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk kolom Name di formulirnya dan minta siswa bacakan: Name: blank.
+bantuan: Jika siswa membacakan nilai tanpa label — tunjuk label di formulir: "Say the label too. Name: blank. Not just the name."
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Read me three fields from your form. Label: value. Go.
+AKSI: Tunggu siswa membacakan tiga kolom.
+AKSI: Amati — apakah siswa menggunakan format Label: value tanpa menulis kalimat penuh atau perkenalan diri?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your Favorite Club field. Without looking at your form.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa bisa menyebutkan nilai kolom dalam format label dengan lancar?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat mengisi dan membacakan kolom formulir dalam format Label: value tanpa menulis kalimat I am atau My name is:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali contoh formulir terisi.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan tiga kolom sekali lagi dalam format Label: value — beri isyarat tangan ke arah siswa setiap kolom.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Tunjuk kolom Name di formulir siswa.
+UCAP: Listen. Name: blank. Read it like this.
+AKSI: Tunggu siswa menirukan format Label: value.
+AKSI: Tunjuk kolom Class.
+UCAP: Class: blank. Read this one.
+AKSI: Tunggu siswa membacakan — tekankan bahwa label dibaca bersama nilai, bukan diubah menjadi kalimat.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen first.
+UCAP: Email: andi@email.com.
+AKSI: Jeda 2 detik.
+UCAP: One more field. Same format: Label: value. Now you try. Add one more field to your form. Just one.
+AKSI: Tunggu siswa mencoba.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. Label: value. That is the format."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka membacakan kembali semua kolom formulir mereka tanpa melihat buku, atau menambahkan satu kolom baru dalam format yang sama.

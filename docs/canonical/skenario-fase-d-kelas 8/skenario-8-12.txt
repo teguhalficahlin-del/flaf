@@ -1,0 +1,241 @@
+## TP 8-12 — Trees and Clean Air: Explaining Environmental Systems
+
+**Kelas 8 | Genre: Explanation | Topik: Trees and Air Quality**
+Konteks: Siswa menghubungkan informasi tentang pohon dan kualitas udara untuk menjelaskan cara kerja sistem lingkungan dan manfaatnya bagi manusia.
+Tujuan komunikatif: mengintegrasikan proses, sebab, dan hasil menjadi penjelasan sistem yang koheren.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+This process ___ because ___.
+As a result, ___.
+```
+AKSI: Siapkan tiga kartu di meja guru — infografis lingkungan yang menunjukkan pohon menyerap karbon dioksida dan melepaskan oksigen dengan udara lebih bersih di sekitar kota, kartu sistem ("This process ___ because ___" dihubungkan tanda panah ke "As a result, ___"), dan kartu ikon (pohon, molekul karbon dioksida, molekul oksigen, siluet kota berudara bersih).
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Welcome, class. Today we connect two things you already know.
+AKSI: Minta siswa mengingat sebentar apa yang sudah dipelajari tentang pohon kota.
+
+**HOOK**
+UCAP: You have learned about city trees. Now, what do trees actually do for the air we breathe?
+AKSI: Tampilkan infografis lingkungan: pohon menyerap karbon dioksida dan melepaskan oksigen — tunjukkan ke seluruh kelas.
+UCAP: Look at this environment infographic. What process can you see happening here?
+AKSI: Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan.
+UCAP: Let us see how to explain a whole system, combining the process, the cause, and the result.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Sapukan tangan ke arah banyak pohon untuk "Most trees" — lalu gestur umum yang stabil.
+UCAP: Most trees have green leaves. They usually need sunlight.
+
+AKSI: Susuri seluruh siklus pada infografis — lalu tunjuk kembali ke sebab dengan "because".
+UCAP: This process keeps the air clean because trees absorb carbon dioxide and release oxygen. As a result, the air quality improves.
+
+AKSI: Tandai kondisi dengan satu tangan — gerakkan ke depan ke konsekuensi.
+UCAP: If a city has many trees, the air becomes cleaner so people stay healthier.
+
+AKSI: Tunjuk ikon daun — susuri siklus kembali. Gerakkan tangan ke depan ke hasil.
+UCAP: This process works because leaves take in sunlight. As a result, trees make oxygen for everyone.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.*
+
+**Kalimat 1**
+AKSI: Sapukan tangan ke arah banyak pohon — lalu gestur umum yang stabil.
+UCAP: Most trees have green leaves. They usually need sunlight.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 2**
+AKSI: Susuri seluruh siklus pada infografis — tunjuk kembali ke sebab, gerakkan tangan ke depan ke hasil.
+UCAP: This process keeps the air clean because trees absorb carbon dioxide and release oxygen. As a result, the air quality improves.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 3**
+AKSI: Tandai kondisi dengan satu tangan — gerakkan ke depan ke konsekuensi.
+UCAP: If a city has many trees, the air becomes cleaner so people stay healthier.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 4**
+AKSI: Tunjuk ikon daun — susuri siklus. Gerakkan tangan ke depan ke hasil.
+UCAP: This process works because leaves take in sunlight. As a result, trees make oxygen for everyone.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now it is your turn. Explain how the tree-and-air system works.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa mengganti proses, sebab, dan hasil dengan versi sendiri tentang pohon dan udara. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.*
+
+AKSI: Tempelkan infografis dan kartu sistem di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Use these patterns. Explain how trees help the air.
+UCAP: Connect the process, cause, and result, not just Most trees, and not a step-by-step instruction.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Gunakan infografis dan lengkapi: "This process ___ because ___. As a result, ___." |
+| Standar | Tulis penjelasan sistem: "This process ... because ... As a result, ..." |
+| Tantangan | Mulai dengan generalisasi ("Most trees ... They usually ..."), lalu jelaskan sistemnya dengan "This process ... because ... As a result, ..." |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu proses apa yang akan dijelaskan — tunjuk siklus di infografis dan minta siswa mulai dari "This process ... because trees absorb ..."
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk tanda panah "karbon dioksida → pohon → oksigen" di infografis, dan minta siswa ucapkan "This process works because ..." Tunggu siswa menulis satu kalimat, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A menjelaskan sistem ("This process ... because ... As a result, ...") menggunakan infografis.
+AKSI: Minta Siswa B memeriksa apakah ada proses, sebab, dan hasil — lalu tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Your turn now. Explain the system using the infographic. Your partner checks for process, cause, and result. Then swap.
+AKSI: Beri waktu delapan menit untuk dua arah.
+AKSI: Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Jelaskan satu kalimat sistem (boleh membaca); pasangan temukan hasilnya. Lalu tukar peran. |
+| Standar | Jelaskan sistem tanpa membaca; pasangan periksa ada proses + sebab + hasil. Lalu tukar peran. |
+| Tantangan | Mulai dengan generalisasi, lalu jelaskan sistem lengkap; pasangan jelaskan sistem yang berbeda. Lalu tukar peran. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tunjuk siklus di infografis dan tanya "What does this process do for the air?"
+bantuan: Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan "In English. Use this." Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain.
+bantuan: Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan penjelasan sistemnya sekali lagi tanpa melihat buku.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to presents your system explanation poster first.
+UCAP: Take turns presenting how trees help clean the air.
+AKSI: Beri waktu enam menit untuk semua anggota kelompok berbagi.
+AKSI: Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Presentasikan satu kalimat sistem ke kelompok. Boleh membaca. |
+| Standar | Presentasikan penjelasan sistem lengkap tanpa membaca. |
+| Tantangan | Presentasikan penjelasan sistemmu, lalu jawab satu pertanyaan tentang hasilnya dari kelompok. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk siklus di infografis, dan minta ucapkan "This process ... because trees absorb ..." sebagai pembuka.
+bantuan: Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambah satu hasil lagi dengan "and this also ..."
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me your This process sentence. Go.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa mengintegrasikan proses dan sebab? Apakah ini penjelasan sistem yang terhubung, bukan hanya klasifikasi "Most trees ..."?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your As a result sentence. Without looking at your notes.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menggunakan "As a result," sebagai hasil yang terhubung dari proses tersebut?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat mengintegrasikan proses + sebab + hasil tanpa berhenti panjang:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kartu sistem.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan kalimat kedua dan keempat sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Angkat kartu sistem.
+UCAP: Listen. This process keeps the air clean because trees absorb carbon dioxide. As a result, the air quality improves.
+AKSI: Tunggu siswa menirukan.
+UCAP: Now try. This process works because leaves take in sunlight. As a result...
+AKSI: Tunjuk ikon oksigen di infografis — tunggu siswa melengkapi.
+AKSI: Ulangi sampai siswa siap mengucapkan penjelasan sistem penuh tanpa bantuan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen. This process keeps the air clean because trees absorb carbon dioxide. As a result, the air quality improves, and this also keeps the city cooler.
+AKSI: Jeda 2 detik.
+UCAP: Now you try. Add a second result with and this also.
+AKSI: Tunggu siswa mencoba menambahkan hasil kedua.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. You showed two benefits from the same process."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan penjelasan sistem lengkap tanpa melihat buku, atau menulis penjelasan sistem tentang cara awan terbentuk di buku catatan.

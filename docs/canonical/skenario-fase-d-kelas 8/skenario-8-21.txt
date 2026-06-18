@@ -1,0 +1,243 @@
+## TP 8-21 — The Old Storage Room: Sharing the Discovery
+
+**Kelas 8 | Genre: Functional | Topik: Writing a Digital Message about a School Discovery**
+Konteks: Setelah menemukan surat-surat lama di gudang, siswa menulis email atau pesan untuk membagikan penemuan itu kepada guru dan teman sekelas.
+Tujuan komunikatif: menulis pesan digital terstruktur dengan subjek, salam, tujuan, dan penutup.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Subject: ___
+Hi ___,
+I'm writing to ___.
+See you soon, ___
+```
+AKSI: Siapkan tiga kartu di meja guru — templat pesan digital di layar dengan empat bagian berlabel yang disorot (baris subjek, salam "Hi ...", isi "I'm writing to ...", penutup "See you soon,"), layar terbagi menunjukkan refleksi cerita TP sebelumnya di kiri dan pembuka email di kanan, dan email model lengkap di layar komputer sekolah ("Subject: A Surprising School Discovery / Hi everyone, / I'm writing to ... / See you soon, Dito and Wulan").
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Good morning. Dito and Wulan have something to share with the school.
+AKSI: Kondisikan kelas dengan nada semi-formal sebelum memulai.
+
+**HOOK**
+UCAP: If you found something incredible at school, how would you tell other people about it?
+AKSI: Tampilkan templat pesan digital — tunjuk keempat bagian berlabel satu per satu ke seluruh kelas.
+UCAP: Look at this message template. What are the four parts of a well-structured email?
+AKSI: Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan.
+UCAP: Let us see how to write a complete digital message, Subject, greeting, purpose, and closing.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun. Keempat bagian berikut membentuk SATU email utuh — bukan variasi independen.*
+
+AKSI: Tunjuk baris subjek di templat. Ketuk baris subjek di udara dengan jari seolah mengetik sambil mengucapkan "Subject:".
+UCAP: Subject: A Surprising School Discovery
+
+AKSI: Tunjuk baris salam di templat. Lambaikan salam ke seluruh kelas sambil mengucapkan "Hi everyone,".
+UCAP: Hi everyone,
+
+AKSI: Tunjuk baris isi di templat. Tunjuk ke depan dengan penuh tujuan sambil mengucapkan "I'm writing to". Tunjuk layar terbagi — tampilkan bagaimana refleksi cerita mengalir menjadi isi email.
+UCAP: I'm writing to share a message about something amazing we found in the old storage room -- old letters and photos full of school memories!
+
+AKSI: Tunjuk baris penutup di templat.
+UCAP: See you soon, Dito and Wulan
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu bagian email — siswa menirukan bersama. Satu putaran per bagian. Kartu dan gesture tetap digunakan.*
+
+**Bagian 1 — Subject**
+AKSI: Tunjuk baris subjek di templat. Ketuk baris subjek di udara sambil mengucapkan "Subject:".
+UCAP: Subject: A Surprising School Discovery
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Bagian 2 — Greeting**
+AKSI: Tunjuk baris salam di templat. Lambaikan salam ke kelas.
+UCAP: Hi everyone,
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Bagian 3 — Body**
+AKSI: Tunjuk baris isi di templat. Tunjuk ke depan dengan penuh tujuan untuk "I'm writing to".
+UCAP: I'm writing to share a message about something amazing we found in the old storage room -- old letters and photos full of school memories!
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Bagian 4 — Closing**
+AKSI: Tunjuk baris penutup di templat.
+UCAP: See you soon, Dito and Wulan
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now it is your turn. Write your own email.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis dan tunjuk email model lengkap. Minta siswa menyalin keempat bagian di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa menulis satu email lengkap tentang penemuan di sekolah. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.*
+
+AKSI: Tempelkan templat pesan digital di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Use this format. Write a complete email with all four parts, Subject, Hi, I'm writing to, and See you soon.
+UCAP: The body should share the discovery, not a story dialogue, not a recommendation, and not a casual chat.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Gunakan templat dan lengkapi semua empat bagian. Boleh lihat email model. |
+| Standar | Tulis email lengkap (semua empat bagian) tanpa melihat model. |
+| Tantangan | Tulis email lengkap dan tambahkan satu kalimat lagi di bagian isi tentang apa yang dapat dilakukan siswa lain dengan penemuan itu. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu harus menulis apa di bagian isi — tunjuk baris isi di templat dan minta siswa mulai dari "I'm writing to share ..."
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk baris subjek, dan minta siswa tulis "Subject: A School Discovery." Tunggu siswa menulis satu baris, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A membacakan emailnya satu bagian per bagian (Subject, Hi, I'm writing to, See you soon).
+AKSI: Minta Siswa B memeriksa: Ada Subject? Ada salam "Hi ..."? Ada tujuan "I'm writing to ..."? Ada penutup "See you soon,"? Lalu tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Read your email to your partner. Your partner checks for all four parts. Then swap.
+AKSI: Beri waktu delapan menit untuk dua arah.
+AKSI: Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Baca emailmu ke pasangan. Pasangan tunjuk setiap bagian dari keempat bagian. |
+| Standar | Baca email tanpa templat. Pasangan periksa semua empat bagian ada. |
+| Tantangan | Baca email dan pasangan tanya satu pertanyaan tentang penemuan dalam pesanmu — kamu jawab dalam satu kalimat. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tunjuk pola di papan tulis dan tanya "What is your Subject line?"
+bantuan: Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan "In English. Use this." Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain.
+bantuan: Jika siswa menulis hanya salam dan isi tanpa Subject atau penutup — tunjuk pola dan minta siswa tambahkan bagian yang kurang.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to presents your email first.
+UCAP: Take turns presenting your digital message to the group.
+AKSI: Beri waktu enam menit untuk semua anggota kelompok berbagi.
+AKSI: Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Baca emailmu ke kelompok. |
+| Standar | Presentasikan emailmu tanpa membaca. |
+| Tantangan | Presentasikan emailmu, lalu jawab satu pertanyaan dari kelompok tentang penemuan atau tujuan pesanmu. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk baris subjek di templat, dan minta ucapkan "Subject: ..." sebagai pembuka.
+bantuan: Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu kalimat lagi di bagian isi yang mengundang pembaca untuk datang melihat museum kecil.
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me your Subject line. Go.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menulis baris Subject yang jelas dan relevan dengan penemuan? Bukan tanpa Subject sama sekali?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your I'm writing to sentence. Without looking at your notes.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menyatakan tujuan yang jelas dengan "I'm writing to ..." — bukan obrolan kasual dan bukan dialog cerita?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat menyampaikan email lengkap empat bagian tanpa berhenti panjang:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali templat pesan digital.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan bagian pertama dan ketiga sekali lagi — beri isyarat tangan ke arah siswa setiap bagian.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Minta siswa buka buku catatan — lengkapi atau perbaiki bagian yang belum selesai. Beri waktu dua menit.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Angkat templat pesan digital — tunjuk setiap bagian satu per satu.
+UCAP: Listen. Subject: A Surprising School Discovery. Hi everyone, I'm writing to share a message about old letters we found. See you soon, Dito and Wulan.
+AKSI: Tunggu siswa menirukan satu bagian per satu.
+UCAP: Now try your own. What is your Subject?
+AKSI: Tunggu siswa mengucapkan Subject mereka, lalu minta "Hi who?", lalu "I'm writing to ...", lalu "See you soon, ..."
+AKSI: Ulangi sampai siswa siap mengucapkan keempat bagian berurutan tanpa bantuan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen. You are all welcome to visit the storage room -- it is now our school's small memory room.
+AKSI: Jeda 2 detik.
+UCAP: Now you try. Add one more sentence to the body of your email inviting readers to visit or learn more.
+AKSI: Tunggu siswa mencoba menambahkan satu kalimat isi tambahan setelah "I'm writing to ..." yang mengundang pembaca.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. That sentence makes your email more inviting."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan keempat bagian email berurutan tanpa melihat buku, atau menulis email baru untuk penemuan sekolah yang berbeda menggunakan format yang sama di buku catatan.

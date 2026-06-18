@@ -1,0 +1,243 @@
+## TP 7-17 — Class Chat: Writing Polite Messages
+
+**Kelas 7 | Genre: Functional | Topik: Class Group Messages**
+Konteks: Siswa menulis pesan singkat yang sopan untuk grup chat kelas tentang meminjam atau mengembalikan barang sekolah.
+Tujuan komunikatif: menggunakan permintaan dan pengingat yang sopan dalam pesan sehari-hari.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Please (action).
+Please don't (action).
+```
+AKSI: Siapkan kartu tangkapan layar grup chat kelas di meja guru — dengan pesan-pesan sopan singkat tentang meminjam dan mengembalikan buku serta alat tulis.
+AKSI: Siapkan kartu kesopanan yang menunjukkan peraturan blak-blakan di sebelah versi sopannya: Don't lose my book di sebelah Please don't lose my book.
+AKSI: Siapkan ikon barang yang dipinjam dan dikembalikan teman — buku, kotak pensil, dan pulpen.
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Morning, everyone! Check your phones quickly, then put them away.
+AKSI: Tunggu kelas siap untuk memulai pelajaran.
+
+**HOOK**
+UCAP: Have you ever sent a message to a class group chat? What did you write?
+AKSI: Tampilkan kartu tangkapan layar grup chat kelas.
+UCAP: Look at these chat messages. What makes them polite?
+AKSI: Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk kartu kesopanan dan tanya "What word makes this message polite?"
+AKSI: Angguk — letakkan kartu di meja guru.
+UCAP: Good. Today we learn how to write polite messages in English.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Peragakan mengetik pesan di ponsel.
+AKSI: Ulurkan tangan terbuka yang ramah.
+UCAP: Please bring my English book tomorrow.
+AKSI: Tunjuk ikon buku.
+
+AKSI: Buat gestur tidak lembut dengan satu tangan.
+UCAP: Please don't forget your pencil case.
+AKSI: Tunjuk ikon kotak pensil.
+
+AKSI: Buat gestur tidak lembut — tunjuk ikon pulpen.
+UCAP: Please don't lose my pen.
+AKSI: Ulurkan tangan terbuka. Angguk.
+
+AKSI: Peragakan mengetik pesan di ponsel.
+UCAP: Please reply to my friends in the class chat.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu pesan — siswa menirukan bersama. Kartu dan gesture tetap digunakan.*
+
+**Pesan 1**
+AKSI: Ulurkan tangan terbuka — tunjuk ikon buku.
+UCAP: Please bring my English book tomorrow.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Pesan 2**
+AKSI: Buat gestur tidak lembut — tunjuk ikon kotak pensil.
+UCAP: Please don't forget your pencil case.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Pesan 3**
+AKSI: Buat gestur tidak lembut — tunjuk ikon pulpen.
+UCAP: Please don't lose my pen.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now write your own polite messages.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk kartu kesopanan dan minta siswa baca bersama sekali lagi: Please blank. Dan: Please don't blank.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa menulis pesan chat sopan mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan.*
+
+AKSI: Tempel ikon barang di papan tulis di sebelah pola.
+AKSI: Tempel kartu kesopanan di papan tulis.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Write your own polite chat messages. One request and one reminder.
+UCAP: Please blank for a request. Please don't blank for a reminder. About school items. No sequencing. No Let's. No I think.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — perhatikan siswa yang menulis First atau Let's atau I think, dan ingatkan: "Just a message. Please blank. Or: Please don't blank."
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Pilih satu ikon barang dan lengkapi satu pesan: Please blank my blank. Atau: Please don't blank my blank. |
+| Standar | Tulis dua pesan — satu Please blank sebagai permintaan dan satu Please don't blank sebagai pengingat. |
+| Tantangan | Ambil satu peraturan blak-blakan: Don't lose my pen. Tulis ulang secara sopan: Please don't lose my pen. Lalu tambahkan satu permintaan Please blank. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu aksi apa yang ingin ditulis — tunjuk ikon barang dan tanya "What can you ask your friend to do with this?" Bantu dengan "Please blank my blank." Dan tunggu siswa melengkapi.
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, ulurkan tangan terbuka, dan ucapkan "Please bring my blank. Book? Pencil?" Tunggu siswa memilih dan menulis satu pesan, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A mengirimkan satu pesan sopan tentang barang sekolah ke Siswa B: Please bring my English book tomorrow.
+AKSI: Minta Siswa B membalas dengan pesan sopan: Please don't forget my pencil case.
+AKSI: Minta keduanya tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Take turns. Send a polite message. Your partner replies politely. Then swap. Work with the person next to you.
+AKSI: Beri waktu delapan menit untuk bertukar pesan dua arah.
+AKSI: Berjalan keliling kelas — amati apakah pesan tetap singkat dan mandiri tanpa sequencing atau invitation.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Kirimkan satu pesan dari buku catatan ke pasangan — boleh membaca. Pasangan membalas dengan pesan sopan. |
+| Standar | Tukarkan dua pesan masing-masing tanpa membaca — satu permintaan dan satu pengingat. |
+| Tantangan | Kirimkan pengingat dan permintaan sopan, dan balas pesan pasangan secara sopan. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — ulurkan tangan terbuka ke arah pasangan dan ucapkan "Please blank my blank. What do you need from your friend?"
+bantuan: Jika pasangan menulis First atau Let's di pesan — tunjuk pola di papan tulis dan ucapkan "Just a chat message. Please blank. Short."
+bantuan: Jika satu siswa selesai lebih cepat — minta siswa tulis satu pesan sopan lagi tentang barang berbeda.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Bagikan kartu kosong kecil kepada setiap siswa — atau minta siswa gunakan selembar kertas.
+UCAP: Write your polite messages on the card. One Please blank. And one Please don't blank.
+AKSI: Beri waktu dua menit untuk menulis kartu pesan.
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana untuk membentuk kelompok empat orang baru.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+UCAP: Pass your cards around the group and read each other's messages.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to reads first.
+AKSI: Beri waktu empat menit untuk semua anggota berbagi dan bertukar kartu pesan.
+AKSI: Berjalan antar kelompok — dengarkan apakah pesan menggunakan Please dan Please don't dengan benar.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Tulis satu kartu pesan sopan dan baca ke kelompok — boleh menyalin dari CHANGE. |
+| Standar | Tulis dua kartu pesan (permintaan dan pengingat) dan tukarkan dengan kelompok. |
+| Tantangan | Tulis pesan untuk dua situasi, tukarkan, dan balas satu pesan teman secara sopan. |
+
+bantuan: Jika ada anggota kelompok yang tidak menulis apapun di kartu — dekati, tunjuk ikon buku, dan minta siswa tulis: Please bring my blank.
+bantuan: Jika pesan di kartu tidak menggunakan Please — tunjuk kartu kesopanan di papan tulis dan ingatkan: "Please makes it polite. Add it."
+
+AKSI: Setelah empat menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me one polite message about a school item. Please blank. Go.
+AKSI: Tunggu siswa mengucapkan pesan.
+AKSI: Amati — apakah pesan dimulai dengan Please dan tidak menambahkan sequencing, Let's, atau I think?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your Please don't message. Without looking at your book.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa bisa mengucapkan pengingat sopan dengan lancar tanpa membaca?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat menulis dan menyampaikan pesan sopan singkat dengan Please dan Please don't tanpa menambahkan sequencing atau opini:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kartu kesopanan.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan dua pesan sopan sekali lagi — beri isyarat tangan ke arah siswa setiap pesan.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Ulurkan tangan terbuka.
+UCAP: Listen. Please bring my English book tomorrow.
+AKSI: Tunggu siswa menirukan.
+AKSI: Buat gestur tidak lembut.
+UCAP: Please don't forget your pencil case.
+AKSI: Tunggu siswa menirukan — tekankan Please di awal setiap pesan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen first.
+UCAP: Please bring my book. Thank you.
+AKSI: Jeda 2 detik.
+UCAP: A polite closer. Now you try. Give me one Please message with Thank you at the end. Just one.
+AKSI: Tunggu siswa mencoba.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. Try with a different item."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua pesan sopan tanpa membaca, atau menulis satu pesan baru tentang barang sekolah yang berbeda.

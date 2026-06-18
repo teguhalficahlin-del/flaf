@@ -1,0 +1,240 @@
+## TP 8-11 — Saving Money: Connecting Conditions and Results
+
+**Kelas 8 | Genre: Explanation | Topik: Personal Saving Habits**
+Konteks: Siswa menjelajahi bagaimana pilihan keuangan sehari-hari mengarah pada hasil yang berbeda melalui hubungan kondisional sederhana.
+Tujuan komunikatif: menghubungkan kondisi dengan hasil logis menggunakan pola if...so...
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+If ___, ___ so ___.
+```
+AKSI: Siapkan tiga kartu di meja guru — kartu skenario keuangan (menabung setiap minggu, mengikuti anggaran, memboroskan uang, mencapai tujuan), kartu kondisi-hasil ("If [kondisi], [hasil] so [konsekuensi]" dengan tanda panah), dan kartu ikon (toples koin, daftar anggaran, bendera tujuan, dompet kosong).
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Good morning, class. Let us think about money today.
+AKSI: Pastikan kelas siap untuk diskusi bertopik praktis.
+
+**HOOK**
+UCAP: Have you ever saved up money to buy something? How did it feel when you finally could?
+AKSI: Tampilkan kartu skenario keuangan — tunjukkan ke seluruh kelas.
+UCAP: Look at these money scenarios. Which one do you think leads to the best result?
+AKSI: Tunggu respons dua atau tiga siswa. Jika tidak ada yang merespons dalam lima detik — tunjuk satu siswa dengan ramah. Setelah dua atau tiga siswa berbicara atau sekitar tiga puluh detik berlalu — lanjutkan.
+UCAP: Let us see how to explain what happens when someone makes a money choice, using If and so.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Tunjuk tokoh "seseorang" yang umum di kartu skenario — bukan diri sendiri. Hitung tahap pertama dan kedua.
+UCAP: First, a person earns money. Next, they spend some and save some.
+
+AKSI: Tandai kondisi dengan satu tangan — tunjukkan hasilnya dengan tangan lain. Gerakkan tangan ke depan ke arah konsekuensi untuk "so".
+UCAP: If a person saves money every week, the savings grow so they can reach a goal.
+
+AKSI: Tunjuk kartu skenario "mengikuti anggaran" — tandai kondisi dan hasil.
+UCAP: If people follow a budget, they spend less so they have more money.
+
+AKSI: Tunjuk kartu skenario "memboroskan uang" — tunjuk dompet kosong sebagai konsekuensi.
+UCAP: If someone wastes money, the budget runs out so they cannot buy what they need.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu kalimat — siswa menirukan bersama. Satu putaran per kalimat. Kartu dan gesture tetap digunakan.*
+
+**Kalimat 1**
+AKSI: Tunjuk tokoh "seseorang" di kartu — hitung tahap pertama dan kedua.
+UCAP: First, a person earns money. Next, they spend some and save some.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 2**
+AKSI: Tandai kondisi dengan satu tangan — gerakkan ke depan ke arah konsekuensi untuk "so".
+UCAP: If a person saves money every week, the savings grow so they can reach a goal.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 3**
+AKSI: Tunjuk kartu skenario "mengikuti anggaran" — tandai kondisi dan hasil.
+UCAP: If people follow a budget, they spend less so they have more money.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Kalimat 4**
+AKSI: Tunjuk kartu skenario "memboroskan uang" — tunjuk ikon dompet kosong.
+UCAP: If someone wastes money, the budget runs out so they cannot buy what they need.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now it is your turn. Connect a money choice to its result.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk pola di papan tulis. Minta siswa menyalin di buku catatan sebelum melanjutkan. Beri waktu dua menit untuk menyalin, lalu ulangi REPEAT sekali lagi. Jika bantuan ini digunakan, kurangi waktu CHANGE menjadi tiga menit.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa menghubungkan kondisi pilihan keuangan dengan hasil dan konsekuensinya versi sendiri. Dikerjakan secara individual, ditulis di buku catatan. Pola sudah tertulis di papan tulis sejak sebelum kelas.*
+
+AKSI: Tempelkan kartu skenario dan kartu kondisi-hasil di papan tulis di sebelah pola — biarkan tetap terlihat selama langkah ini.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Use this pattern. Explain how a money choice leads to a result.
+UCAP: Use a person or people as the subject, not you should, not I think if, and not instructions.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — prioritaskan siswa yang berhenti menulis lebih dari sepuluh detik atau belum menulis satu kalimat pun.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Gunakan salah satu kartu skenario dan lengkapi: "If ___, ___ so ___." |
+| Standar | Tulis dua kalimat kondisi-hasil tentang pilihan keuangan ("If ... , ... so ..."). |
+| Tantangan | Mulai dengan satu tahap proses ("First, a person earns money. Next, they save some."), lalu bingkai ulang menjadi "If ... , ... so ..." |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu kondisi apa yang akan ditulis — tunjuk kartu skenario di papan tulis dan minta siswa pilih salah satu situasi sebagai kondisi awal.
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk kartu skenario "menabung", dan minta siswa ucapkan "If a person saves money ..." Tunggu siswa menulis satu kalimat, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A membacakan satu penjelasan kondisi-hasil ("If ... , ... so ...") dari kartu skenario.
+AKSI: Minta Siswa B mencatat konsekuensinya, lalu tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Your turn now. Read your condition-result explanation to your partner. Your partner notes the consequence. Then swap.
+AKSI: Beri waktu delapan menit untuk dua arah.
+AKSI: Berjalan keliling kelas — amati beberapa pasangan di setiap baris dan pastikan sebagian besar siswa sudah mulai berbicara.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Jelaskan satu kondisi-hasil (boleh membaca); pasangan temukan konsekuensinya. Lalu tukar peran. |
+| Standar | Jelaskan dua rantai kondisi-hasil tanpa membaca; pasangan periksa apakah setiap kalimat punya hasil dan konsekuensi. Lalu tukar peran. |
+| Tantangan | Bingkai ulang satu tahap proses menjadi "If ... , ... so ..."; pasangan jelaskan skenario yang berbeda. Lalu tukar peran. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tunjuk kartu skenario pertama dan tanya "What happens if a person saves every week?"
+bantuan: Jika pasangan berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan "In English. Use this." Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah ke pasangan lain.
+bantuan: Jika satu siswa selesai jauh lebih cepat — minta siswa ucapkan penjelasannya sekali lagi tanpa melihat buku.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana — jangan biarkan siswa memilih sendiri.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to presents your condition-result chart first.
+UCAP: Take turns presenting your money explanation to the group.
+AKSI: Beri waktu enam menit untuk semua anggota kelompok berbagi.
+AKSI: Berjalan antar kelompok — pastikan tidak ada anggota kelompok yang diam terus selama sesi.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Presentasikan satu kondisi-hasil ke kelompok. Boleh membaca. |
+| Standar | Presentasikan dua rantai kondisi-hasil tanpa membaca. |
+| Tantangan | Presentasikan rantai kondisi-hasilmu, lalu jawab satu pertanyaan tentang konsekuensinya dari kelompok. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk siswa tersebut, tunjuk kartu skenario, dan minta ucapkan "If a person ..." sebagai pembuka.
+bantuan: Jika satu siswa selesai jauh lebih cepat dari kelompoknya — minta siswa tambahkan satu kondisi-hasil yang berbeda.
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me your If sentence. Go.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menghubungkan kondisi dengan hasil dan konsekuensi menggunakan subjek generik? Apakah ini fakta umum, bukan saran atau opini?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your so part. Without looking at your notes.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menggunakan "so" sebagai konsekuensi logis?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat menyampaikan kondisi-hasil-konsekuensi tanpa berhenti panjang:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kartu kondisi-hasil.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan kalimat kedua dan ketiga sekali lagi — beri isyarat tangan ke arah siswa setiap kalimat.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Minta siswa buka buku catatan — lengkapi atau perbaiki kalimat yang belum selesai. Beri waktu dua menit.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Angkat kartu kondisi-hasil.
+UCAP: Listen. If a person saves money every week, the savings grow so they can reach a goal.
+AKSI: Tunggu siswa menirukan.
+UCAP: Now try. If people follow a budget...
+AKSI: Tunjuk kartu skenario "anggaran" — tunggu siswa melengkapi dengan "so".
+AKSI: Ulangi sampai siswa siap mengucapkan kalimat penuh tanpa bantuan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen. If a person saves regularly and avoids waste, the savings grow quickly so they reach the goal sooner.
+AKSI: Jeda 2 detik.
+UCAP: Now you try. Add a second condition with and.
+AKSI: Tunggu siswa mencoba pola dengan dua kondisi.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. You showed two habits working together."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengucapkan dua kalimat kondisi-hasil tanpa melihat buku, atau menulis satu kondisi-hasil baru tentang tujuan keuangan yang berbeda di buku catatan.

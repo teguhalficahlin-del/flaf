@@ -1,0 +1,240 @@
+## TP 7-18 — Club Events: Reading Schedules
+
+**Kelas 7 | Genre: Functional | Topik: School Club Schedule**
+Konteks: Siswa membaca dan membuat jadwal sederhana untuk berbagai kegiatan ekstrakurikuler.
+Tujuan komunikatif: membagikan informasi acara menggunakan ungkapan waktu, tanggal, dan tempat.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+(Day), (time) (Event) in (place).
+(Date), (Event) on (place).
+```
+AKSI: Siapkan kalender acara atau kisi-kisi jadwal klub di meja guru — dengan hari, waktu, dan ruangan untuk setiap entri.
+AKSI: Siapkan kartu potongan jadwal dalam format Day, Time + Event + Place sebagai label singkat.
+AKSI: Siapkan ikon untuk tiga bagian — jam untuk waktu a.m. atau p.m., halaman kalender untuk tanggal, dan tanda ruangan atau lapangan untuk lokasi.
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Hello, class! Let's check the clock, are we ready to begin?
+AKSI: Pastikan siswa duduk dan fokus ke depan.
+
+**HOOK**
+UCAP: Do you know when your school clubs meet? Which day and what time?
+AKSI: Tampilkan kalender acara jadwal klub.
+UCAP: Look at this club schedule. What information can you find here?
+AKSI: Tunggu respons beberapa siswa. Jika tidak ada yang menjawab dalam lima detik — tunjuk satu entri jadwal dan tanya "What day? What time? Which club?"
+AKSI: Angguk — letakkan kalender di tempat terlihat.
+UCAP: Good. Today we learn how to read and make a simple schedule.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Tunjuk hari dan waktu di kalender — tepuk bagian waktu.
+UCAP: Monday, 8 a.m. English Club in Room 3.
+AKSI: Tunjuk nama acara — lalu tunjuk lokasi. Tepuk setiap bagian secara bergantian: waktu, acara, tempat.
+
+AKSI: Tunjuk hari dan waktu berikutnya di kalender.
+UCAP: Friday, 2 p.m. Art Club in the hall.
+AKSI: Tepuk setiap bagian: waktu, acara, tempat.
+
+AKSI: Tunjuk tanggal di kalender.
+UCAP: July 10, Sports Day in the school field.
+AKSI: Tepuk setiap bagian: tanggal, acara, tempat.
+
+AKSI: Tunjuk entri keempat di kalender.
+UCAP: Wednesday, 3 p.m. Music Club in Room 5.
+AKSI: Tepuk setiap bagian: waktu, acara, tempat.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru membacakan satu entri jadwal — siswa menirukan bersama. Kartu dan gesture tetap digunakan.*
+
+**Entri 1**
+AKSI: Tunjuk entri Monday di kalender — tepuk setiap bagian.
+UCAP: Monday, 8 a.m. English Club in Room 3.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Entri 2**
+AKSI: Tunjuk entri Friday di kalender — tepuk setiap bagian.
+UCAP: Friday, 2 p.m. Art Club in the hall.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Entri 3**
+AKSI: Tunjuk tanggal July 10 di kalender — tepuk setiap bagian.
+UCAP: July 10, Sports Day in the school field.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now make your own schedule entries.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tepuk tiga ikon secara bergantian dan minta siswa baca bersama: Day, time, blank event in blank place.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa membuat entri jadwal klub mereka sendiri. Dikerjakan secara individual, ditulis di buku catatan.*
+
+AKSI: Tempel kalender acara dan kartu potongan jadwal di papan tulis di sebelah pola.
+AKSI: Tempel ikon waktu, acara, dan tempat di papan tulis.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Make your own schedule entries. Use the format: Day, time, club in place.
+UCAP: Short labels only. Not a full sentence. Not a past story. Not There is. Just the three parts: time, event, place.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — perhatikan siswa yang menulis kalimat penuh seperti The English Club meets on Monday, dan ingatkan: "Short. Day, time, club in place. Like a schedule."
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Lengkapi satu entri jadwal: blank Day, blank a.m./p.m. blank Club in blank. |
+| Standar | Tulis dua entri jadwal dalam format potongan (hari atau tanggal, waktu, acara, tempat). |
+| Tantangan | Buat kartu jadwal kecil dengan dua atau tiga entri, dan tambahkan satu pengingat sopan: Please arrive on time. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now find a partner.
+
+bantuan: Jika siswa tidak tahu klub mana yang ingin ditulis — tunjuk kalender acara dan minta siswa pilih satu klub dari kalender, lalu bantu: "Monday, 8 a.m. blank Club in blank."
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, tunjuk ikon jam, dan ucapkan "Monday, 8 a.m. blank Club in blank. Choose a club." Tunggu siswa menjawab dan menulis satu entri, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Guru menentukan pasangan — tunjuk dua siswa yang duduk berdekatan. Untuk jumlah ganjil, bentuk satu kelompok tiga.*
+
+AKSI: Tunjuk dua siswa yang duduk berdekatan sebagai contoh — minta mereka berdiri sebentar.
+UCAP: Watch first. Then you do the same.
+AKSI: Minta Siswa A membacakan satu entri jadwalnya: Monday, 8 a.m. English Club in Room 3.
+AKSI: Minta Siswa B menunjuk hari, waktu, dan tempat yang sesuai di kalender.
+AKSI: Minta keduanya tukar peran.
+AKSI: Minta keduanya duduk kembali.
+UCAP: That is it. Read one entry. Your partner points to the day, time, and place. Then swap. Work with the person next to you.
+AKSI: Beri waktu delapan menit untuk bertukar entri jadwal dua arah.
+AKSI: Berjalan keliling kelas — amati apakah entri memiliki tiga bagian: waktu atau tanggal, acara, dan tempat.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Bacakan satu entri jadwal. Pasangan tunjuk hari, waktu, dan tempat di kalender. Lalu tukar. |
+| Standar | Bacakan dua entri tanpa membaca kata per kata. Pasangan catat waktu dan tempat setiap entri. Lalu tukar. |
+| Tantangan | Bacakan seluruh kartu jadwal. Pasangan periksa setiap entri memiliki tiga bagian. Lalu tukar. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Good. Now stay with your partner and join another pair.
+
+bantuan: Jika pasangan diam lebih dari sepuluh detik — tepuk tiga ikon secara bergantian ke arah pasangan dan tanya "Day? Time? Club? Where?" Tunggu siswa mulai membacakan satu entri.
+bantuan: Jika siswa membacakan kalimat penuh atau cerita masa lalu — tepuk tiga ikon dan ucapkan "Short. Day, time, club in place. Like a schedule."
+bantuan: Jika satu siswa selesai lebih cepat — minta siswa periksa apakah entri pasangan memiliki ketiga bagian.
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Setiap pasangan bergabung dengan satu pasangan lain — bukan pasangan dari langkah INTERACT — membentuk kelompok empat orang.*
+
+AKSI: Tunjuk pasangan mana bergabung dengan pasangan mana.
+AKSI: Tunggu semua kelompok terbentuk dan tenang.
+UCAP: Take turns. Present your schedule card to the new group. Read each entry: Day, time, club in place.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to starts first.
+AKSI: Beri waktu enam menit untuk semua anggota mempresentasikan kartu jadwal mereka.
+AKSI: Berjalan antar kelompok — dengarkan apakah setiap entri memiliki tiga bagian dan tetap dalam format potongan jadwal.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Presentasikan satu atau dua entri jadwal ke kelompok baru — boleh membaca. |
+| Standar | Presentasikan kartu jadwal (dua atau tiga entri) tanpa membaca kata per kata. |
+| Tantangan | Presentasikan kartu jadwal dengan pengingat sopan, dan periksa satu kartu teman memiliki ketiga bagian di setiap entri. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tepuk tiga ikon ke arahnya dan tanya "Day? Time? Club? Where?" Minta siswa membacakan satu entri dari catatannya.
+bantuan: Jika siswa membacakan entri tanpa menyebutkan tempat — tepuk ikon lokasi dan tanya "Where? Room? Hall? Field?"
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me one schedule entry. Day, time, club, and place. Go.
+AKSI: Tunggu siswa mengucapkan entri.
+AKSI: Amati — apakah entri memiliki ketiga bagian? Apakah dalam format potongan jadwal, bukan kalimat penuh atau cerita masa lalu?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Your second entry. Without looking at your book.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa bisa membacakan entri jadwal dengan lancar tanpa membaca kata per kata?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat membacakan entri jadwal dengan tiga bagian dalam format potongan tanpa menggunakannya sebagai cerita masa lalu atau deskripsi:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali kartu potongan jadwal.
+UCAP: Let us try again. Say it with me.
+AKSI: Tepuk tiga ikon secara bergantian — ucapkan dua entri sekali lagi — beri isyarat tangan ke arah siswa setiap entri.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Tepuk tiga ikon secara bergantian: waktu, acara, tempat.
+UCAP: Listen. Monday, 8 a.m. English Club in Room 3.
+AKSI: Tunggu siswa menirukan.
+AKSI: Tunjuk kalender di entri yang berbeda.
+UCAP: Now your turn. Blank, blank a.m. blank Club in blank. Read this one.
+AKSI: Tunggu siswa membacakan entri dari kalender.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen first.
+UCAP: Monday, 8-9 a.m. English Club in Room 3.
+AKSI: Jeda 2 detik.
+UCAP: A time range. Now you try. Give me one entry with a time range. Just one.
+AKSI: Tunggu siswa mencoba.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. Try with a different club."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang dua entri jadwal tanpa membaca, atau membuat satu entri baru untuk klub berbeda.

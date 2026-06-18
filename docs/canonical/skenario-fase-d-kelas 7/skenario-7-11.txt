@@ -1,0 +1,235 @@
+## TP 7-11 — Online Safety: Giving Rules and Tips
+
+**Kelas 7 | Genre: Procedure | Topik: Safe Internet Use**
+Konteks: Siswa membuat pengingat keamanan digital sederhana untuk teman-teman.
+Tujuan komunikatif: memberikan aturan, peringatan, dan tips yang bermanfaat.
+
+---
+
+### PERSIAPAN SEBELUM KELAS
+
+AKSI: Tulis persis ini di papan tulis sebelum siswa masuk:
+```
+Don't (action).
+Be (adjective).
+Always (action).
+```
+AKSI: Siapkan poster keamanan digital di meja guru — dengan ikon gembok untuk password, kartu profil untuk account, perisai untuk privacy, dan globe wifi untuk internet.
+AKSI: Siapkan tiga kartu aturan — lingkaran disilang untuk Don't, tanda peringatan untuk Be careful, dan tanda centang untuk Always.
+AKSI: Siapkan ikon skenario — membagikan password disilang, keluar dari akun, memilih password yang kuat.
+
+---
+
+### SIAPKAN KELAS
+
+**SETTLING**
+AKSI: Berdiri di depan kelas.
+UCAP: Hello, class! Settle down and listen up.
+AKSI: Tunggu seluruh siswa fokus sebelum memulai.
+
+**HOOK**
+UCAP: Quick check. Do you have a password on your phone or tablet?
+AKSI: Tunggu beberapa siswa menjawab singkat dengan ya atau tidak.
+AKSI: Tampilkan poster keamanan digital — tunjuk setiap ikon.
+UCAP: Look at this digital safety poster. What things should we protect online?
+AKSI: Tunggu beberapa siswa menyebutkan sesuatu dari poster. Jika tidak ada yang menjawab dalam lima detik — tunjuk ikon gembok dan tanya "What is this for?"
+AKSI: Angguk — biarkan poster tetap terlihat.
+UCAP: Good. Today we learn how to give safety rules in English.
+
+---
+
+### LANGKAH 1 — MODEL (6 menit)
+
+*Siswa hanya menonton dan mendengarkan — belum diminta melakukan apapun.*
+
+AKSI: Silangkan kedua tangan membentuk X.
+UCAP: Don't share your password with anyone.
+AKSI: Tunjuk kartu lingkaran disilang dan ikon gembok.
+
+AKSI: Angkat telapak tangan terbuka dengan gesture hati-hati.
+UCAP: Be careful with your account on the internet.
+AKSI: Tunjuk kartu tanda peringatan dan ikon kartu profil.
+
+AKSI: Angguk tegas berulang — buat tanda centang di udara.
+UCAP: Always protect your privacy.
+AKSI: Tunjuk kartu tanda centang dan ikon perisai.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: You watched me. Now let us say it together.
+
+bantuan: Jika siswa mulai ikut berbicara sebelum waktunya — angkat telapak tangan ke arah mereka dan ucapkan "Just watch first."
+
+---
+
+### LANGKAH 2 — REPEAT (5 menit)
+
+*Guru mengucapkan satu aturan — siswa menirukan bersama. Satu putaran per aturan. Kartu dan gesture tetap digunakan.*
+
+**Aturan 1**
+AKSI: Silangkan kedua tangan membentuk X.
+UCAP: Don't share your password with anyone.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Aturan 2**
+AKSI: Angkat telapak tangan terbuka dengan gesture hati-hati.
+UCAP: Be careful with your account on the internet.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+**Aturan 3**
+AKSI: Angguk tegas dan buat tanda centang di udara.
+UCAP: Always protect your privacy.
+AKSI: Jeda 1 detik.
+AKSI: Beri isyarat tangan ke arah siswa.
+UCAP: Say it with me.
+AKSI: Tunggu seluruh kelas mengucapkan bersama.
+AKSI: Jika pengucapan masih ragu-ragu — ulangi sekali lagi sebelum lanjut.
+
+AKSI: Letakkan semua kartu.
+AKSI: Jeda 2 detik.
+UCAP: Good. Now write your own safety rules.
+
+bantuan: Jika sebagian besar siswa masih ragu setelah dua putaran — tunjuk tiga kartu aturan di papan tulis dan minta siswa cocokkan gesture dengan kartu sebelum melanjutkan.
+
+---
+
+### LANGKAH 3 — CHANGE (8 menit)
+
+*Siswa menulis aturan keamanan online sendiri menggunakan tiga pola. Dikerjakan secara individual, ditulis di buku catatan.*
+
+AKSI: Tempel poster keamanan digital dan kartu aturan di papan tulis di sebelah pola.
+AKSI: Tunjuk pola di papan tulis.
+UCAP: Write your own online safety rules. Use the three patterns.
+UCAP: Don't blank for a prohibition. Be blank for a warning. Always blank for a tip. Keep each rule short. Do not add because.
+AKSI: Jeda 2 detik.
+UCAP: Open your notebook. You have five minutes. Go.
+AKSI: Beri waktu lima menit untuk menulis.
+AKSI: Berjalan keliling kelas — perhatikan siswa yang menambahkan because setelah aturan — ingatkan: "Keep it short. No because."
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Pilih satu ikon keamanan dan lengkapi satu aturan: Don't blank. Atau: Be blank. Atau: Always blank. |
+| Standar | Tulis tiga aturan — satu Don't, satu Be, dan satu Always — tentang keamanan online. |
+| Tantangan | Tulis tiga aturan, dan pasangkan satu aturan dengan satu instruksi biasa: Put your password in a safe place. Don't share it with anyone. |
+
+AKSI: Setelah lima menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop writing. Now sit in groups of three or four.
+
+bantuan: Jika siswa tidak tahu konten aturan yang ingin ditulis — tunjuk ikon di poster keamanan digital dan minta siswa pilih salah satu.
+darurat: Jika ada siswa belum menulis apapun setelah tiga menit — dekati, silangkan kedua tangan, dan ucapkan "Don't blank your password. Share? Or lose?" Tunggu siswa memilih dan menulis satu aturan, lalu tinggalkan.
+
+---
+
+### LANGKAH 4 — INTERACT (12 menit)
+
+*Siswa duduk dalam kelompok tiga atau empat orang — guru yang menentukan komposisi kelompok.*
+
+AKSI: Tentukan komposisi kelompok — tunjuk secara eksplisit siapa bergabung dengan siapa.
+UCAP: In your group, take turns giving a safety rule. Don't blank. Be blank. Or Always blank.
+UCAP: After each rule, the others respond with That's true. Or I agree. Then write down the rules your group likes best.
+AKSI: Beri waktu delapan menit untuk diskusi kelompok.
+AKSI: Berjalan keliling kelas — amati apakah aturan berdiri mandiri tanpa penjelasan panjang.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Ucapkan satu aturan ke kelompok. Yang lain merespons dengan kartu respons: That's true. Atau I agree. |
+| Standar | Ucapkan dua aturan dengan tipe berbeda tanpa membaca, dan tanggapi aturan teman. |
+| Tantangan | Berikan satu aturan yang dipasangkan dengan instruksi biasa, tanggapi aturan teman, dan bantu pilih aturan terbaik untuk poster. |
+
+AKSI: Setelah delapan menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Stay in your group for now.
+
+bantuan: Jika kelompok diam dan tidak ada yang memulai — tunjuk ikon gembok di poster dan minta satu siswa ucapkan "Don't share your password."
+bantuan: Jika ada anggota kelompok yang berbicara Bahasa Indonesia — tunjuk pola di papan tulis, ucapkan "In English. Use this." Tunggu siswa mengulang dalam Bahasa Inggris sebelum berpindah.
+bantuan: Jika siswa menambahkan penjelasan panjang setelah aturan — ingatkan: "Keep it short. Just the rule."
+
+---
+
+### LANGKAH 5 — SHARE (8 menit)
+
+*Siswa bergabung dengan kelompok baru — bukan kelompok dari langkah INTERACT — dan mempresentasikan aturan-aturan mereka.*
+
+AKSI: Tunjuk siapa bergabung dengan kelompok mana untuk membentuk kelompok baru.
+UCAP: Form a new group of four with classmates from other groups.
+AKSI: Tunggu semua kelompok baru terbentuk dan tenang.
+UCAP: Take turns presenting your safety rules. Don't blank. Be blank. Always blank.
+AKSI: Tunjuk satu siswa di tiap kelompok sebagai pembicara pertama.
+UCAP: The person I point to starts first.
+AKSI: Beri waktu enam menit untuk semua anggota berbagi.
+AKSI: Berjalan antar kelompok — dengarkan apakah aturan singkat dan berdiri mandiri.
+
+| Level | Tugas |
+|-------|-------|
+| Mudah | Presentasikan dua aturan untuk poster — boleh membaca. |
+| Standar | Presentasikan tiga aturan dengan tipe berbeda tanpa membaca. |
+| Tantangan | Presentasikan aturan-aturan, tanggapi aturan teman dengan That's true. Atau I agree, dan usulkan aturan mana yang paling cocok untuk poster. |
+
+bantuan: Jika ada anggota kelompok yang diam terus — tunjuk ikon di poster dan minta siswa ucapkan satu aturan berdasarkan ikon tersebut.
+bantuan: Jika satu siswa selesai jauh lebih cepat dari yang lain — minta siswa dengarkan aturan teman dan pilih yang terbaik untuk poster.
+
+AKSI: Setelah enam menit — ketuk meja sekali sebagai tanda berhenti.
+UCAP: Stop. Everyone back to your seat.
+AKSI: Tunggu semua siswa kembali ke posisi semula dan tenang.
+
+---
+
+### LANGKAH 6 — CHECK (4 menit)
+
+*Guru mengamati selama langkah SHARE berlangsung — bukan setelah selesai. Setelah SHARE selesai, lakukan konfirmasi cepat ke dua siswa, lalu putuskan jalur berikutnya.*
+
+AKSI: Tunjuk ikon gembok di poster.
+AKSI: Tunjuk satu siswa secara acak.
+UCAP: Give me a safety rule about passwords. Don't, Be, or Always. Go.
+AKSI: Tunggu siswa mengucapkan aturan.
+AKSI: Amati — apakah aturan berdiri sendiri tanpa penjelasan atau because?
+AKSI: Jeda 2 detik.
+AKSI: Tunjuk siswa lain.
+UCAP: Give me your Always rule. Without looking at your book.
+AKSI: Tunggu siswa mengucapkan.
+AKSI: Amati — apakah siswa menggunakan Always dengan kata kerja yang tepat?
+
+**Tindak lanjut — pilih salah satu:**
+
+Sebagian besar siswa lancar — gunakan indikator ini: jika sebagian besar kelompok yang sempat didengar selama SHARE dapat memberikan aturan pendek dan mandiri dengan Don't, Be, atau Always:
+AKSI: Lanjut ke BOOST.
+
+Sebagian besar siswa masih ragu:
+AKSI: Angkat kembali tiga kartu aturan.
+UCAP: Let us try again. Say it with me.
+AKSI: Ucapkan tiga aturan sekali lagi — beri isyarat tangan ke arah siswa setiap aturan.
+UCAP: Good work today. We will continue next time.
+AKSI: Tutup sesi — lewati BOOST karena waktu tidak mencukupi.
+
+---
+
+### LANGKAH 7 — BOOST (5 menit)
+
+*Dijalankan hanya jika CHECK menunjukkan sebagian besar siswa sudah lancar. Pilih SATU fokus yang paling dibutuhkan kelas. Jangan jalankan kedua aktivitas jika waktu tidak mencukupi. Maksimal tiga siswa per fokus.*
+
+**Untuk siswa yang masih kesulitan:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+AKSI: Silangkan kedua tangan membentuk X perlahan.
+UCAP: Listen. Don't share your password.
+AKSI: Tunggu siswa menirukan.
+AKSI: Angkat telapak tangan terbuka.
+UCAP: Be careful with your account.
+AKSI: Tunggu siswa menirukan — tekankan kata kunci Don't dan Be di awal setiap aturan.
+
+**Untuk siswa yang sudah lancar:**
+AKSI: Dekati siswa secara individual — jangan panggil di depan kelas.
+UCAP: Listen first.
+UCAP: Never give your password to a stranger.
+AKSI: Jeda 2 detik.
+UCAP: Now you try. Give me one strong prohibition using Never. Just one.
+AKSI: Tunggu siswa mencoba.
+AKSI: Jika siswa berhasil — angguk dan ucapkan "Good. Try about your account."
+
+cue: Sisa siswa yang tidak terlibat BOOST — minta mereka mengulang tiga aturan tanpa membaca, atau menulis satu aturan tambahan untuk topik keamanan yang berbeda.
