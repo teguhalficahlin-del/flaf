@@ -205,7 +205,7 @@ AKSI: Tunggu siswa mengucapkan kalimat pertamanya.
 AKSI: Amati — apakah siswa mengisi dengan informasi diri sendiri, atau masih meniru contoh Dito?
 AKSI: Jeda 2 detik.
 AKSI: Tunjuk siswa lain.
-UCAP: Say your "I like" sentence. Without looking at your book.
+UCAP: Say your second sentence. Go.
 AKSI: Tunggu siswa mengucapkan.
 AKSI: Amati — apakah siswa bisa mengucapkan dengan lancar, atau berhenti di tengah kalimat?
 
