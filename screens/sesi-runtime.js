@@ -1145,7 +1145,7 @@ async function _renderPenilaianOverlay() {
       <div class="sr-overlay-content sr-pn-overlay-content">
         <div class="sr-pn-header">
           <div class="sr-pn-judul">Observasi Formatif</div>
-          <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_currentFase()?.fase || '—')}</div>
+          <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')}</div>
         </div>
         ${paginasiHTML}
         <div class="sr-pn-list" id="sr-pn-list">
