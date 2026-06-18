@@ -1139,21 +1139,15 @@ async function _renderPenilaianOverlay() {
         <button class="sr-pn-hal-btn" id="sr-pn-next-hal" ${halaman >= totalHal - 1 ? 'disabled' : ''}>›</button>
       </div>` : '';
 
-    const modeTabHTML = `
-      <div class="sr-pn-mode-tab">
-        <button class="sr-pn-tab-btn${modePenilaian === 'cepat'  ? ' sr-pn-tab-btn--active' : ''}" data-mode="cepat">Mode Cepat</button>
-        <button class="sr-pn-tab-btn${modePenilaian === 'detail' ? ' sr-pn-tab-btn--active' : ''}" data-mode="detail">Mode Detail</button>
-      </div>`;
 
     const siswaHTML = pageSiswa.map((s, i) => _buildSiswaItem(s, i)).join('');
 
     return `
       <div class="sr-overlay-content sr-pn-overlay-content">
         <div class="sr-pn-header">
-          <div class="sr-pn-judul">Penilaian Formatif dan Observasi</div>
+          <div class="sr-pn-judul">Observasi Formatif</div>
           <div class="sr-pn-sub">${_escape(_state.tp?.nama || '—')} · ${_escape(_currentFase()?.fase || '—')}</div>
         </div>
-        ${modeTabHTML}
         ${paginasiHTML}
         <div class="sr-pn-list" id="sr-pn-list">
           ${siswaHTML}
@@ -1185,14 +1179,7 @@ async function _renderPenilaianOverlay() {
       });
     });
 
-    // Mode tab
-    overlay.querySelectorAll('[data-mode]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        modePenilaian = btn.dataset.mode;
-        openIdx = 0;
-        _mount();
-      });
-    });
+    modePenilaian = 'cepat';
 
     // Capaian (mode cepat)
     overlay.querySelectorAll('[data-capaian]').forEach(btn => {
