@@ -997,7 +997,7 @@ async function _renderPenilaianOverlay() {
   if (!_state.nilaiDraft) _state.nilaiDraft = {};
   for (const s of siswaList) {
     if (!_state.nilaiDraft[s.id]) {
-      _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null, alasan: null };
+      _state.nilaiDraft[s.id] = { capaian: null, l: null, s: null, r: null, perilaku: null, alasan: [] };
     }
   }
 
@@ -1021,34 +1021,37 @@ async function _renderPenilaianOverlay() {
 
   // ── Builder ──────────────────────────────────────────────────
 
+  function _nilaiDariPerilaku(perilaku) {
+    const map = { aktif: 90, pengingat: 75, dorongan: 60, intervensi: 45 };
+    return map[perilaku] ?? null;
+  }
+
   function _penilaianNilaiAngka(siswaId) {
     const h = hasil[siswaId];
-    if (modePenilaian === 'cepat') return h.capaian;
-    const valid = [h.l, h.s, h.r].filter(v => v !== null && !isNaN(v));
-    return valid.length ? Math.round(valid.reduce((a, b) => a + b, 0) / valid.length) : null;
+    return _nilaiDariPerilaku(h.perilaku);
   }
 
   function _sudahDiisi(siswaId) {
-    const h = hasil[siswaId];
-    if (modePenilaian === 'cepat') return h.capaian !== null;
-    return h.l !== null || h.s !== null || h.r !== null;
+    return hasil[siswaId].perilaku !== null;
   }
 
   const ALASAN_MAP = {
-    aktif      : [
+    aktif: [
       { val: 'menjawab_sendiri',          label: 'Menjawab sendiri'                },
-      { val: 'membantu_teman',            label: 'Membantu teman'                  },
-      { val: 'berani_mencoba',            label: 'Berani mencoba'                  },
+      { val: 'konsisten_semua_aktivitas', label: 'Konsisten di semua aktivitas'    },
     ],
-    dorongan   : [
+    pengingat: [
+      { val: 'pilihan_umumnya_tepat',     label: 'Pilihan umumnya tepat'           },
+      { val: 'minta_konfirmasi',          label: 'Sesekali minta konfirmasi'       },
+    ],
+    dorongan: [
       { val: 'perlu_dipancing',           label: 'Perlu dipancing dulu'            },
       { val: 'ikut_bersama_diam_sendiri', label: 'Ikut bersama, diam saat sendiri' },
       { val: 'butuh_visual',              label: 'Butuh visual/kartu'              },
     ],
-    belum_siap : [
+    intervensi: [
       { val: 'tidak_merespons',           label: 'Tidak merespons'                 },
-      { val: 'mencoba_tapi_salah',        label: 'Mencoba tapi masih salah'        },
-      { val: 'terlihat_bingung',          label: 'Terlihat bingung'               },
+      { val: 'terlihat_bingung',          label: 'Terlihat bingung'                },
     ],
   };
 
@@ -1059,59 +1062,55 @@ async function _renderPenilaianOverlay() {
     const nilaiTamp = _penilaianNilaiAngka(siswa.id);
     const h         = hasil[siswa.id];
 
-    // ── Alasan sub-pilihan ──
-    const alasanOpts = h.perilaku ? ALASAN_MAP[h.perilaku] : null;
-    const alasanHTML = alasanOpts ? `
-        <div class="sr-pn-alasan-label">Lebih spesifik:</div>
-        <div class="sr-pn-alasan-row">
-          ${alasanOpts.map(a => `
-            <button class="sr-pn-alasan-btn${h.alasan === a.val ? ' sr-pn-alasan-btn--active' : ''}"
-                    data-alasan="${a.val}" data-siswa="${siswa.id}">${_escape(a.label)}</button>`).join('')}
-        </div>` : '';
-
     // ── Isi accordion ──
     let isiHTML = '';
     if (modePenilaian === 'cepat') {
-      const opsiCapaian = [
-        { label: 'Sudah Bisa',    val: 85, sym: '★' },
-        { label: 'Perlu Bantuan', val: 65, sym: '○' },
+      // Level 1
+      const l1Opts = [
+        { val: 'bisa',    label: 'Sudah Bisa',    sym: '★' },
+        { val: 'bantuan', label: 'Perlu Bantuan', sym: '○' },
       ];
+
+      // Level 2 per Level 1
+      const l2Map = {
+        bisa:    [
+          { val: 'aktif',     label: 'Aktif'           },
+          { val: 'pengingat', label: 'Perlu pengingat' },
+        ],
+        bantuan: [
+          { val: 'dorongan',   label: 'Perlu dorongan'   },
+          { val: 'intervensi', label: 'Butuh intervensi' },
+        ],
+      };
+
+      const l2Opts = h.capaian ? l2Map[h.capaian] : [];
+
+      // Level 3
+      const alasanOpts = h.perilaku ? ALASAN_MAP[h.perilaku] : null;
+      const alasanArr  = Array.isArray(h.alasan) ? h.alasan : [];
+
       isiHTML = `
         <div class="sr-pn-capaian-row">
-          ${opsiCapaian.map(o => `
+          ${l1Opts.map(o => `
             <button class="sr-pn-capaian-btn${h.capaian === o.val ? ' sr-pn-capaian-btn--active' : ''}"
                     data-capaian="${o.val}" data-siswa="${siswa.id}">
               <span class="sr-pn-sym">${o.sym}</span>
               <span class="sr-pn-lbl">${o.label}</span>
             </button>`).join('')}
         </div>
+        ${l2Opts.length ? `
         <div class="sr-pn-perilaku-row">
-          ${['aktif','dorongan','belum_siap'].map(p => {
-            const label = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' }[p];
-            return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
-                            data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
-          }).join('')}
-        </div>
-        ${alasanHTML}`;
-    } else {
-      isiHTML = `
-        <div class="sr-pn-lsr-grid">
-          ${['l','s','r'].map(dim => `
-            <div class="sr-pn-lsr-col">
-              <div class="sr-pn-lsr-label">${dim.toUpperCase()}</div>
-              <input class="sr-pn-lsr-input" type="number" min="0" max="100"
-                     placeholder="—" value="${h[dim] !== null ? h[dim] : ''}"
-                     data-dim="${dim}" data-siswa="${siswa.id}">
-            </div>`).join('')}
-        </div>
-        <div class="sr-pn-perilaku-row">
-          ${['aktif','dorongan','belum_siap'].map(p => {
-            const label = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' }[p];
-            return `<button class="sr-pn-perilaku-btn${h.perilaku === p ? ' sr-pn-perilaku-btn--active' : ''}"
-                            data-perilaku="${p}" data-siswa="${siswa.id}">${label}</button>`;
-          }).join('')}
-        </div>
-        ${alasanHTML}`;
+          ${l2Opts.map(p => `
+            <button class="sr-pn-perilaku-btn${h.perilaku === p.val ? ' sr-pn-perilaku-btn--active' : ''}"
+                    data-perilaku="${p.val}" data-siswa="${siswa.id}">${p.label}</button>`).join('')}
+        </div>` : ''}
+        ${alasanOpts ? `
+        <div class="sr-pn-alasan-label">Lebih spesifik:</div>
+        <div class="sr-pn-alasan-row">
+          ${alasanOpts.map(a => `
+            <button class="sr-pn-alasan-btn${alasanArr.includes(a.val) ? ' sr-pn-alasan-btn--active' : ''}"
+                    data-alasan="${a.val}" data-siswa="${siswa.id}">${_escape(a.label)}</button>`).join('')}
+        </div>` : ''}`;
     }
 
     return `
@@ -1181,61 +1180,42 @@ async function _renderPenilaianOverlay() {
 
     modePenilaian = 'cepat';
 
-    // Capaian (mode cepat)
+    // Level 1 — capaian: reset perilaku + alasan
     overlay.querySelectorAll('[data-capaian]').forEach(btn => {
       btn.addEventListener('click', () => {
         const siswaId = btn.dataset.siswa;
-        const val     = parseInt(btn.dataset.capaian);
+        const val     = btn.dataset.capaian;
         hasil[siswaId].capaian = hasil[siswaId].capaian === val ? null : val;
+        hasil[siswaId].perilaku = null;
+        hasil[siswaId].alasan   = [];
         db.set(STORE_KV, draftKey, hasil);
         _mount();
       });
     });
 
-    // LSR input (mode detail)
-    overlay.querySelectorAll('.sr-pn-lsr-input').forEach(input => {
-      input.addEventListener('change', () => {
-        const siswaId = input.dataset.siswa;
-        const dim     = input.dataset.dim;
-        const raw     = parseInt(input.value);
-        hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
-        db.set(STORE_KV, draftKey, hasil);
-      });
-      input.addEventListener('blur', () => {
-        const siswaId = input.dataset.siswa;
-        const dim     = input.dataset.dim;
-        const raw     = parseInt(input.value);
-        hasil[siswaId][dim] = isNaN(raw) ? null : Math.max(0, Math.min(100, raw));
-        db.set(STORE_KV, draftKey, hasil);
-        _mount();
-      });
-    });
-
-    // Perilaku — reset alasan saat perilaku berubah, auto-next dipindah ke alasan
+    // Level 2 — perilaku: reset alasan
     overlay.querySelectorAll('[data-perilaku]').forEach(btn => {
       btn.addEventListener('click', () => {
         const siswaId = btn.dataset.siswa;
         const p       = btn.dataset.perilaku;
-        const prev    = hasil[siswaId].perilaku;
-        hasil[siswaId].perilaku = prev === p ? null : p;
-        if (hasil[siswaId].perilaku !== prev) hasil[siswaId].alasan = null;
+        hasil[siswaId].perilaku = hasil[siswaId].perilaku === p ? null : p;
+        hasil[siswaId].alasan   = [];
         db.set(STORE_KV, draftKey, hasil);
         _mount();
       });
     });
 
-    // Alasan — auto-next setelah alasan dipilih dan capaian sudah terisi
+    // Level 3 — alasan: multi-select toggle
     overlay.querySelectorAll('[data-alasan]').forEach(btn => {
       btn.addEventListener('click', () => {
         const siswaId = btn.dataset.siswa;
         const a       = btn.dataset.alasan;
-        hasil[siswaId].alasan = hasil[siswaId].alasan === a ? null : a;
+        if (!Array.isArray(hasil[siswaId].alasan)) hasil[siswaId].alasan = [];
+        const idx = hasil[siswaId].alasan.indexOf(a);
+        if (idx >= 0) hasil[siswaId].alasan.splice(idx, 1);
+        else hasil[siswaId].alasan.push(a);
         db.set(STORE_KV, draftKey, hasil);
-        if (hasil[siswaId].alasan !== null && _sudahDiisi(siswaId)) {
-          _autoNext();
-        } else {
-          _mount();
-        }
+        _mount();
       });
     });
 
