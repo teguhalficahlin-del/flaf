@@ -407,8 +407,7 @@ Validasi: 6/6 item PASS via browser (screenshot dikonfirmasi Romo)
 - L1: Sudah Bisa (★) / Perlu Bantuan (○)
 - L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
       Mencoba belum tepat (60·MB) / Diam (45·BB)
-- L3: dinamis dari observe[] step CHECK via runtime.find(),
-  fallback ke L3_FALLBACK_SMP jika CHECK tidak ada
+- L3: generik per L2, 3 tag, Bahasa Indonesia (bukan dari observe[])
 - Mapping ke rubrik: L1+L2 → BSB/BSH/MB/BB, L3 → kolom Deskripsi
 - savePenilaianSMP() atomic batch ke penilaian_log_smp
 - Tombol selalu visible di semua step, bukan hanya CHECK
@@ -419,23 +418,27 @@ Validasi: 6/6 item PASS via browser (screenshot dikonfirmasi Romo)
 ## Sprint Observasi Formatif Fase D (19 Juni 2026)
 
 ### Status
-SW aktif: flaf-v253 (tidak ada bump — perubahan JS/CSS saja, tidak ada
-perubahan SW logic)
+SW aktif: flaf-v254
 
 ### Pekerjaan Sprint Ini
 
 **Replace overlay observasi lama → hierarki L1/L2/L3**
-- `_renderObservasiOverlay()` lama: flat tags hardcode + textarea
+- _renderObservasiOverlay() lama: flat tags hardcode + textarea
 - Diganti dengan hierarki 3 level identik Fase A-C:
   L1: Sudah Bisa (★) / Perlu Bantuan (○)
   L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
        Mencoba belum tepat (60·MB) / Diam (45·BB)
-  L3: dinamis dari observe[] step CHECK via runtime.find()
-      fallback ke L3_FALLBACK_SMP jika CHECK tidak ada
-- Chip nilai `90 · BSB` dll tampil di accordion header per siswa
+  L3: generik per L2, 3 tag, Bahasa Indonesia (bukan dari observe[])
+- Chip nilai 90·BSB dll tampil di accordion header per siswa
 - Draft auto-save ke store kv, key: draft_penilaian_smp_{rombelId}_{tpId}
 - Simpan final ke penilaian_log_smp via savePenilaianSMP() atomic batch
 - Filter: hanya siswa yang sudah minimal L2 (perilaku !== null) disimpan
+
+**L3 Tags Final (konstanta L3_TAGS_SMP)**
+- tanpa_buku:  Lancar tanpa bantuan · Inisiatif sendiri · Konsisten sejak awal
+- dengan_buku: Sesekali lihat catatan · Perlu pengingat · Hampir mandiri
+- mencoba_belum_tepat: Mau mencoba · Pola belum stabil · Perlu contoh ulang
+- diam: Tidak merespons · Terlihat bingung · Perlu didekati guru
 
 **savePenilaianSMP() — storage/penilaian-smp.js**
 - Fungsi baru, atomic batch, gating db.init() sebelum buka koneksi lokal
@@ -447,24 +450,22 @@ perubahan SW logic)
 
 **Tombol entry: selalu visible di semua step**
 - Tombol #smp-btn-penilaian di-render tanpa kondisi step
-- observe[] selalu dibaca dari step CHECK via runtime.find(),
-  bukan dari step yang sedang aktif — konteks L3 selalu benar
+- observe[] tidak lagi dipakai untuk L3 — checkStep.find() dihapus
 
 **Cleanup dead CSS**
 - 9 class dihapus dari sesi-runtime-smp.css:
-  8× smp-obs-* (overlay lama) + 1× sr-overlay-content--wide
+  8× smp-obs-* + 1× sr-overlay-content--wide
   Semua dikonfirmasi orphan via grep sebelum dihapus
 
 ### Temuan Arsitektur Penting
+- observe[] di TP canonical dirancang untuk reviewer/author —
+  kalimat panjang Bahasa Inggris, tidak cocok sebagai tag UI runtime
 - Footer _renderRunning() (tombol prev/next/kondisi/penilaian) adalah
-  milik _renderRunning(), bukan renderer skenario — footer selalu ada
-  di semua step tanpa kondisi tambahan
-- observe[] ada di step CHECK di file canonical fase-d,
-  tersedia di runtime via import chain (data/fase-d-kelas-*.js
-  re-export dari docs/canonical/fase-d/)
-- ES module cache + static server cache: jika perubahan JS tidak
-  terlihat di browser, wajib hard reload + restart server sebelum
-  debug lebih jauh
+  milik _renderRunning(), bukan renderer skenario — selalu ada di
+  semua step tanpa kondisi tambahan
+- ES module cache: jika perubahan JS tidak terlihat di browser,
+  wajib hard reload + restart server + cache bust import URL
+  sebelum debug lebih jauh — muncul 2x di sprint ini
 
 ### Commit Log
 
@@ -473,33 +474,34 @@ perubahan SW logic)
 | 123e23b | feat(observasi-smp): hierarki L1/L2/L3 + savePenilaianSMP |
 | 16dde04 | fix(observasi-smp): tombol selalu visible di semua step |
 | f602597 | chore(css): hapus dead CSS overlay observasi lama smp-obs-* |
+| b2bfd29 | fix(observasi-smp): ganti observe[] dengan L3 generik per L2 |
+| 0202141 | chore(sw): bump to flaf-v254 |
 
 ### Hasil Test Final
 
 | # | Item | Hasil |
 |---|------|-------|
 | T1 | Tombol visible di step MODEL | PASS |
-| T2 | Overlay + L3 dari observe[] saat dibuka dari step non-CHECK | PASS |
-| T3 | L3 identik saat dibuka dari step CHECK | PASS |
-| T4 | Semua tombol footer tetap ada | PASS |
-| T5 | Chip 90·BSB / reset cascade L1→L2→L3 | PASS |
-| T6 | Draft restore dalam sesi | PASS |
-| T7 | Record penilaian_log_smp — field lengkap, filter valid | PASS |
-| T8 | Viewport 320px — tidak overflow, tap target OK | PASS |
-| T9 | Regresi SD: penilaian_log SD terisolasi | PASS |
+| T2 | L3 Bahasa Indonesia, Tanpa buku/catatan | PASS |
+| T3 | L3 Dengan buku/catatan | PASS |
+| T4 | L3 Mencoba, belum tepat | PASS |
+| T5 | L3 Diam | PASS |
+| T6 | Record alasan[] berisi tag Indonesia | PASS |
+| T7 | Regresi SD tidak terpengaruh | PASS |
 
 ### Keputusan yang Jangan Dipertanyakan Ulang
-- observe[] dibaca dari step CHECK via runtime.find(), bukan step aktif
-- Tombol selalu visible — tidak pakai kondisi step apapun
+- L3 generik per L2, bukan dari observe[] TP — observe[] untuk
+  keperluan authoring/validator, bukan runtime UI
+- 3 tag per L2 — cukup untuk observasi cepat di kelas
 - nilai 90/75/60/45 ada di UI dan record meskipun TP schema punya
   check_without_score: true — constraint itu untuk penilaian sumatif,
   bukan observasi formatif runtime
 - penilaian_log_smp terisolasi total dari penilaian_log SD
 
-### Sprint Berikutnya
+### Backlog Sprint Berikutnya
 1. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
-2. Desain kurikulum Fase D proper — meta/cp untuk placeholder kurikulum.js
-3. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
-4. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
+2. Sprint A — validasi lapangan 3-5 TP sampel (prioritas tinggi)
+3. Desain kurikulum Fase D proper — meta/cp untuk placeholder kurikulum.js
+4. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
+5. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
    skenario stabil di lapangan (Sprint E)
-5. Sprint A — validasi lapangan 3-5 TP sampel (prioritas tinggi)
