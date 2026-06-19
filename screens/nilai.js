@@ -10,7 +10,7 @@
  */
 
 import { nilai, getSesiFormatifTP } from '../storage/nilai.js';
-import { getAllTP } from '../data/index.js';
+import { getAllTP, getAllTPGabungan } from '../data/index.js';
 import { db }       from '../storage/db.js';
 import { jejak }    from '../storage/jejak.js';
 import { presensi } from '../storage/presensi.js';
@@ -89,9 +89,16 @@ function _nilaiColor(n) {
 }
 
 function _tpList(tingkat) {
-  const all = getAllTP();
-  if (tingkat === 'all') return all;
-  return all.filter(tp => tp.kelas === tingkat || tp.metadata?.grade === tingkat);
+  if (tingkat === 'all') return getAllTP();
+  if (tingkat >= 7 && tingkat <= 9) {
+    return getAllTPGabungan(tingkat).map(tp => ({
+      nomor : parseInt(String(tp.metadata?.pattern_id || '').split('-').pop(), 10) || 0,
+      nama  : tp.metadata?.title || tp.metadata?.short_title || '—',
+      kelas : tp.metadata?.grade,
+      _patternId: tp.metadata?.pattern_id,
+    })).sort((a, b) => a.nomor - b.nomor);
+  }
+  return getAllTPGabungan(tingkat);
 }
 
 function _statBox(label, value, color) {
@@ -784,6 +791,8 @@ async function _renderUnduh(token) {
          data-kelas-nama="${_escape(_state.kelasNama)}"
          data-nomor="${tp.nomor}"
          data-tp-nama="${_escape(tp.nama)}"
+         data-tingkat="${_state.tingkat}"
+         data-pattern-id="${_escape(tp._patternId || '')}"
          style="cursor:pointer;">
       <div style="flex:1;min-width:0;">
         <div class="nv-tp-num">TP ${String(tp.nomor).padStart(2,'0')}</div>
@@ -1017,7 +1026,7 @@ function _downloadCSV(filename, rows) {
   setTimeout(() => { document.body.removeChild(a); URL.revokeObjectURL(url); }, 2000);
 }
 
-window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama) {
+window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNama, tingkat, patternId) {
   const _labelPerilaku = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
   const _labelAlasan   = {
     menjawab_sendiri: 'Menjawab sendiri', membantu_teman: 'Membantu teman',
@@ -1027,7 +1036,9 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
     mencoba_tapi_salah: 'Mencoba tapi masih salah', terlihat_bingung: 'Terlihat bingung',
   };
   try {
-    const sesiList = await getSesiFormatifTP(kelasId, tpNomor);
+    const isFaseD  = tingkat >= 7 && tingkat <= 9;
+    const queryKey = isFaseD ? patternId : tpNomor;
+    const sesiList = await getSesiFormatifTP(kelasId, queryKey, tingkat);
     if (!sesiList || sesiList.length === 0) {
       _nvToast('Belum ada data penilaian untuk TP ini.', 3500, 'warning');
       return;
@@ -1037,8 +1048,25 @@ window.nilaiDownloadFormatif1 = async function(kelasId, kelasNama, tpNomor, tpNa
     for (const sesi of sesiList) {
       const tgl  = sesi.tanggal;
       const mode = sesi.mode || 'cepat';
+      const _labelPerilakuSMP = {
+        tanpa_buku: 'Tanpa buku/catatan',
+        dengan_buku: 'Dengan buku/catatan',
+        mencoba_belum_tepat: 'Mencoba, belum tepat',
+        diam: 'Diam',
+      };
       let rows;
-      if (mode === 'detail') {
+      if (mode === 'observasi_smp') {
+        rows = [['No', 'Nama', 'Nilai', 'Predikat', 'Perilaku', 'Catatan']];
+        for (const s of sesi.siswa) {
+          rows.push([
+            s.nomor, s.nama,
+            s.nilai ?? '',
+            s.predikat ?? '',
+            _labelPerilakuSMP[s.perilaku] ?? (s.perilaku ?? ''),
+            (s.alasan && s.alasan.length) ? s.alasan.join(', ') : '',
+          ]);
+        }
+      } else if (mode === 'detail') {
         rows = [['No', 'Nama', 'Listening', 'Speaking', 'Reading', 'Rerata', 'Perilaku', 'Alasan']];
         for (const s of sesi.siswa) {
           const rerata = [s.l, s.s, s.r].filter(v => v !== null && !isNaN(v));
@@ -1257,7 +1285,7 @@ function _bindNilaiDelegatedEvents(container) {
         window.nilaiDownloadKehadiran(el.dataset.kelasId, el.dataset.kelasNama);
         break;
       case 'download-formatif':
-        window.nilaiDownloadFormatif1(el.dataset.kelasId, el.dataset.kelasNama, Number(el.dataset.nomor), el.dataset.tpNama);
+        window.nilaiDownloadFormatif1(el.dataset.kelasId, el.dataset.kelasNama, Number(el.dataset.nomor), el.dataset.tpNama, Number(el.dataset.tingkat), el.dataset.patternId || null);
         break;
       case 'kelola-siswa':
         _renderModalKelolaSiswa();
@@ -1331,9 +1359,11 @@ window.nilaiDownloadSTS = async function(semester) {
 async function _renderFormatifDetail(token) {
   if (_state.view !== 'formatif-detail') return;
   const tpNomor  = _state.formatifTP;
-  const sesiList = await getSesiFormatifTP(_state.kelasId, tpNomor);
-  const allTP    = getAllTP().filter(tp => tp.kelas === _state.tingkat);
-  const tp       = allTP.find(t => t.nomor === tpNomor);
+  const tpList   = _tpList(_state.tingkat);
+  const tp       = tpList.find(t => t.nomor === tpNomor);
+  const isFaseD  = _state.tingkat >= 7 && _state.tingkat <= 9;
+  const queryKey = isFaseD ? tp?._patternId : tpNomor;
+  const sesiList = await getSesiFormatifTP(_state.kelasId, queryKey, _state.tingkat);
   const tpNama   = tp ? tp.nama : `TP ${tpNomor}`;
 
   if (sesiList.length === 0) {
@@ -1361,9 +1391,6 @@ async function _renderFormatifDetail(token) {
       </div>
       <div style="padding:8px 14px;">
         ${sesi.siswa.map(s => {
-          const nilaiTeks = sesi.mode === 'cepat'
-            ? _labelCapaian(s.capaian)
-            : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
           const _lp = { aktif: 'Aktif', dorongan: 'Perlu dorongan', belum_siap: 'Belum siap' };
           const _la = {
             menjawab_sendiri: 'Menjawab sendiri', membantu_teman: 'Membantu teman',
@@ -1372,8 +1399,24 @@ async function _renderFormatifDetail(token) {
             butuh_visual: 'Butuh visual/kartu', tidak_merespons: 'Tidak merespons',
             mencoba_tapi_salah: 'Mencoba tapi masih salah', terlihat_bingung: 'Terlihat bingung',
           };
-          const perilakuTeks = s.perilaku ? ` · ${_lp[s.perilaku] ?? s.perilaku}` : '';
-          const alasanTeks   = s.alasan   ? ` · ${_la[s.alasan]   ?? s.alasan}`   : '';
+          const _lpSMP = {
+            tanpa_buku: 'Tanpa buku/catatan',
+            dengan_buku: 'Dengan buku/catatan',
+            mencoba_belum_tepat: 'Mencoba, belum tepat',
+            diam: 'Diam',
+          };
+          let nilaiTeks, perilakuTeks, alasanTeks;
+          if (sesi.mode === 'observasi_smp') {
+            nilaiTeks    = (s.nilai !== null && s.predikat) ? `${s.nilai} · ${s.predikat}` : '—';
+            perilakuTeks = s.perilaku ? ` · ${_lpSMP[s.perilaku] ?? s.perilaku}` : '';
+            alasanTeks   = (s.alasan && s.alasan.length) ? ` · ${s.alasan.join(', ')}` : '';
+          } else {
+            nilaiTeks = sesi.mode === 'cepat'
+              ? _labelCapaian(s.capaian)
+              : [s.l !== null ? `L:${s.l}` : null, s.s !== null ? `S:${s.s}` : null, s.r !== null ? `R:${s.r}` : null].filter(Boolean).join(' ') || '—';
+            perilakuTeks = s.perilaku ? ` · ${_lp[s.perilaku] ?? s.perilaku}` : '';
+            alasanTeks   = s.alasan   ? ` · ${_la[s.alasan]   ?? s.alasan}`   : '';
+          }
           return `
           <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);">
             <div style="font-size:12px;color:rgba(255,255,255,.75);">${s.nomor}. ${_escape(s.nama)}</div>
