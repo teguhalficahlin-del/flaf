@@ -61,7 +61,6 @@ let _state = {
   ttsPlaying         : false,
   skenarioMode       : false,
   repeatKalimatIndex : 0,
-  checkJalur         : null,
 };
 
 let _root   = null;
@@ -107,7 +106,6 @@ export { mount as srSMPMount, unmount as srSMPUnmount };
 function _transition(patch) {
   if ('stepIndex' in patch && patch.stepIndex !== _state.stepIndex) {
     _state.repeatKalimatIndex = 0;
-    _state.checkJalur         = null;
   }
   Object.assign(_state, patch);
   _render();
@@ -881,50 +879,19 @@ function _renderSkenarioShare(share) {
 // ── Skenario render: CHECK ─────────────────────────────────────
 
 function _renderSkenarioCheck(check) {
-  const jalur  = _state.checkJalur;
-  const header = _renderLangkahHeader('CHECK', check.durasi_menit);
-  const intro  = check.intro ? `<div class="sk-intro">${_escape(check.intro)}</div>` : '';
+  const header    = _renderLangkahHeader('CHECK', check.durasi_menit);
+  const intro     = check.intro ? `<div class="sk-intro">${_escape(check.intro)}</div>` : '';
   const instruksi = _renderInstruksiList(check.instruksi);
+  const remedial  = _renderInstruksiList(check.jalur_belum_lancar);
 
-  if (jalur === null || jalur === undefined) {
-    return header + intro + instruksi
-      + `<div class="sk-check-pilih">
-          <div class="sk-check-label">Pilih jalur:</div>
-          <div class="sk-check-tombol">
-            <button class="sk-btn sk-btn-lancar"
-                    onclick="_skenarioCheckJalur('lancar')">✓ Mayoritas Lancar</button>
-            <button class="sk-btn sk-btn-belum"
-                    onclick="_skenarioCheckJalur('belum')">✗ Masih Ragu</button>
-          </div>
-        </div>`;
-  }
-
-  if (jalur === 'lancar') {
-    const runtime  = _state.tp?.runtime || [];
-    const idx      = _state.stepIndex;
-    const isLast   = idx >= runtime.length - 1;
-    const lanjutBtn = isLast
-      ? `<button class="sk-btn sk-btn-next" onclick="_endSesi()">Selesai ✓</button>`
-      : `<button class="sk-btn sk-btn-next" onclick="_nextStep()">Lanjut ke BOOST →</button>`;
-    return header + intro + instruksi
-      + _renderInstruksiList(check.jalur_lancar)
-      + `<div class="sk-repeat-tombol">${lanjutBtn}</div>`;
-  }
-
-  if (jalur === 'belum') {
-    return header + intro + instruksi
-      + _renderInstruksiList(check.jalur_belum_lancar)
-      + `<div class="sk-repeat-tombol">
-          <button class="sk-btn sk-btn-belum" onclick="_endSesi()">Selesai</button>
-        </div>`;
-  }
-
-  return header + intro + instruksi;
-}
-
-function _skenarioCheckJalur(jalur) {
-  _state.checkJalur = jalur;
-  _render();
+  return header + intro + instruksi
+    + `<button class="sk-check-belum" id="sk-check-belum-btn" onclick="_checkBelumLancar()">
+        ✗ Jika mayoritas siswa belum lancar, ikuti langkah di sini
+      </button>
+      <details class="sk-check-remedial" id="sk-check-remedial-el" open hidden>
+        <summary>✗ Jika mayoritas siswa belum lancar, ikuti langkah di sini</summary>
+        <div>${remedial}</div>
+      </details>`;
 }
 
 function _nextStep() {
@@ -1355,7 +1322,10 @@ function _renderClosure() {
 
 // Expose skenario navigation callbacks ke window scope
 // Diperlukan karena onclick= inline tidak bisa akses ES module scope
-window._skenarioRepeatNav  = _skenarioRepeatNav;
-window._skenarioCheckJalur = _skenarioCheckJalur;
-window._nextStep           = _nextStep;
-window._endSesi            = _endSesi;
+window._skenarioRepeatNav = _skenarioRepeatNav;
+window._checkBelumLancar  = function() {
+  document.getElementById('sk-check-belum-btn').style.display = 'none';
+  document.getElementById('sk-check-remedial-el').removeAttribute('hidden');
+};
+window._nextStep          = _nextStep;
+window._endSesi           = _endSesi;
