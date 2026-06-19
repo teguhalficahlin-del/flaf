@@ -87,6 +87,13 @@ export function getAllTP_SMP() {
     );
 }
 
+export function getAllTPGabungan(tingkat) {
+  if (tingkat >= 7 && tingkat <= 9) {
+    return getAllTP_SMP().filter(tp => tp.metadata?.grade === tingkat);
+  }
+  return getAllTP_SD().filter(tp => tp.kelas === tingkat);
+}
+
 // Legacy alias — tetap mengembalikan SD saja agar tidak breaking
 export function getAllTP() {
   return getAllTP_SD();
