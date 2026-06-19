@@ -419,15 +419,17 @@ async function getRekapFormatifTP(kelasId, tpNomor) {
  * Ambil data penilaian per sesi mentah untuk satu TP satu kelas.
  * Return: Array sesi, tiap sesi berisi tanggal + array nilai per siswa.
  */
-export async function getSesiFormatifTP(kelasId, tpNomor) {
+export async function getSesiFormatifTP(kelasId, tpNomor, tingkat) {
   const siswaList = await getSiswaList(kelasId);
-  const STORE     = 'penilaian_log';
+  const isFaseD   = tingkat >= 7 && tingkat <= 9;
+  const STORE     = isFaseD ? 'penilaian_log_smp' : 'penilaian_log';
   let allRecords  = [];
   try {
     const semua = await db.getAll(STORE);
     allRecords  = semua
       .map(e => e.value)
-      .filter(v => v && v.kelasId === kelasId && String(v.tpNomor) === String(tpNomor));
+      .filter(v => v && v.kelasId === kelasId &&
+        (isFaseD ? v.tpNomor === tpNomor : String(v.tpNomor) === String(tpNomor)));
   } catch (e) {
     console.warn('[NILAI] getSesiFormatifTP gagal:', e.message);
   }
@@ -457,6 +459,8 @@ export async function getSesiFormatifTP(kelasId, tpNomor) {
       r       : sesi.entries[s.id]?.r       ?? null,
       perilaku: sesi.entries[s.id]?.perilaku ?? null,
       alasan  : sesi.entries[s.id]?.alasan   ?? null,
+      nilai   : sesi.entries[s.id]?.nilai    ?? null,
+      predikat: sesi.entries[s.id]?.predikat ?? null,
     })),
   }));
 }
