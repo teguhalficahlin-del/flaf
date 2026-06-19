@@ -1,6 +1,110 @@
 # HANDOFF — FLAF Fase D
-SW aktif: flaf-v247
-Terakhir diupdate: 17 Juni 2026
+SW aktif: flaf-v256
+Terakhir diupdate: 19 Juni 2026
+
+---
+
+## Sprint Fix Nilai Formatif Fase D (19 Juni 2026)
+
+### Status
+SW aktif: flaf-v256
+
+### Bug yang Diperbaiki
+
+**Bug 1 — Nilai Formatif Fase D layar kosong**
+Root cause: `screens/nilai.js` memanggil `getAllTP()` — alias legacy yang
+HANYA mengembalikan TP SD (`getAllTP_SD()`). TP Fase D terdaftar di registry
+terpisah (`REGISTRY_SMP`), diakses lewat `getAllTP_SMP()`, tapi tidak pernah
+disentuh oleh layar Nilai. Fix awal (type coercion grade) salah sasaran —
+diperbaiki ulang setelah investigasi struktural lebih dalam.
+
+**Bug 2 — Nilai angka observasi tidak tersimpan (gejala awal)**
+Setelah investigasi: data sebenarnya TELAH tersimpan dengan benar ke
+`penilaian_log_smp` sejak sprint sebelumnya. Masalah sebenarnya ada di sisi
+baca (lihat Bug 3) dan render (lihat Bug 4) — bukan di sisi simpan.
+
+**Bug 3 — getSesiFormatifTP() tidak baca store SMP**
+`storage/nilai.js: getSesiFormatifTP()` hanya membaca store `penilaian_log`
+(SD). Tidak ada cabang untuk `penilaian_log_smp`. Field `nilai` dan
+`predikat` juga belum pernah dipetakan ke output.
+
+**Bug 4 — Render & CSV salah label untuk data SMP**
+`_renderFormatifDetail` dan `nilaiDownloadFormatif1` di `screens/nilai.js`
+hanya mengenali schema SD (`_labelCapaian` untuk angka 85/75/65,
+`_labelPerilaku` untuk `aktif/dorongan/belum_siap`). Data SMP punya value
+berbeda (`capaian: "sudah_bisa"`, `perilaku: "tanpa_buku"`, dst) — selalu
+jatuh ke fallback `'—'` atau raw string, padahal field `nilai`/`predikat`
+sudah ada di data tapi tidak pernah dipakai di rendering.
+
+### Root Cause Summary — Identitas TP Fase D Berbeda Total dari SD
+
+TP Fase D tidak punya field top-level `nomor`/`nama` seperti TP SD. Identitas
+TP Fase D ada di `metadata.pattern_id` (string, e.g. `"PAT-7-01"`) dan
+`metadata.title`. Solusi: `_tpList()` sekarang menormalisasi TP Fase D ke
+bentuk `{nomor, nama, kelas, _patternId}` — `nomor` diparse dari angka akhir
+`pattern_id`, `_patternId` disimpan sebagai key query internal (bukan untuk
+tampilan).
+
+### Perubahan Arsitektur (berlaku ke depan)
+
+1. **`getAllTPGabungan(tingkat)`** — fungsi baru di `data/index.js`, single
+   source untuk dapat TP SD atau SMP sesuai tingkat. `getAllTP()` legacy
+   TIDAK diubah (tetap SD-only) — dipertahankan agar tidak breaking pemanggil
+   lama yang mungkin masih bergantung padanya.
+2. **Key penyimpanan vs label tampilan dipisah untuk Fase D** — `pattern_id`
+   penuh dipakai sebagai key internal (query `getSesiFormatifTP`, simpan
+   `savePenilaianSMP`), angka hasil parse dari `pattern_id` dipakai sebagai
+   label tampilan guru ("TP 01"). Guru tidak pernah melihat `pattern_id`.
+3. **`getSesiFormatifTP(kelasId, tpNomor, tingkat)`** — parameter ketiga
+   `tingkat` baru, opsional. Menentukan store mana yang dibaca
+   (`penilaian_log` vs `penilaian_log_smp`). Pemanggil lama tanpa parameter
+   ini otomatis fallback ke perilaku SD lama — tidak breaking.
+4. **Render dan CSV punya cabang eksplisit `mode === 'observasi_smp'`** —
+   tidak menyentuh logika SD (`'cepat'`/`'detail'`) sama sekali, murni
+   tambahan percabangan baru.
+
+### Commit Log
+
+| SHA | Pesan |
+|---|---|
+| 17655eb | feat(nilai): tambah getAllTPGabungan() untuk gabung TP SD+SMP |
+| f5eb1b8 | fix(nilai): perbaiki rantai Nilai Formatif Fase D — _tpList, rendering, CSV |
+| 48b816c | fix(nilai): getSesiFormatifTP baca store penilaian_log_smp untuk Fase D, tambah field nilai+predikat ke output |
+| f5b9ba1 | fix(sesi-smp): tpNomor pakai metadata.pattern_id eksplisit, bukan field tp_number yang tidak ada di skema |
+
+### Hasil Test (Playwright, rombel uji "Kelas 7 Uji" + "Kelas 1 Uji")
+
+| # | Item | Hasil |
+|---|------|-------|
+| T1 | Regresi SD — daftar TP | PASS |
+| T2 | Daftar TP Fase D (TP 01-24 terurut) | PASS |
+| T3 | Sesi mengajar → Observasi → muncul di Nilai Formatif | PASS |
+| T4 | Download CSV Fase D (header + data benar) | PASS |
+| T5 | Edge case TP tanpa data (tidak crash) | PASS |
+| V1 | Render label nilai/predikat SMP benar ("90 · BSB") | PASS |
+| T1-ulang | Regresi SD setelah FIX A/B | PASS |
+
+### Temuan Independen (Belum Diperbaiki — Di Luar Scope Sprint Ini)
+
+1. **`dashboard.js:1176` — `_rerenderStep` crash saat navigasi cepat antar
+   layar dengan sesi mengajar aktif di background.** Muncul berulang
+   (puluhan console error) saat testing melakukan rapid-click navigasi.
+   Pre-existing, tidak disebabkan oleh fix sprint ini. Perlu sprint
+   terpisah untuk investigasi.
+2. **Label header sesi "(Detail)" salah untuk data SMP** — kosmetik minor,
+   `sesi.mode === 'cepat' ? 'Cepat' : 'Detail'` di header kartu sesi pada
+   `_renderFormatifDetail` belum punya cabang untuk `'observasi_smp'`,
+   selalu tampil "(Detail)". Tidak mempengaruhi data, hanya label. Backlog
+   rendah.
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+
+- `getAllTP()` legacy tetap SD-only — TIDAK diubah jadi gabungan, untuk
+  hindari breaking pemanggil lain yang belum diaudit
+- `pattern_id` adalah satu-satunya sumber identitas key Fase D — tidak ada
+  field `tp_number` di skema, jangan diasumsikan ada lagi di kode manapun
+- Render/CSV SMP punya cabang terpisah eksplisit (`mode === 'observasi_smp'`),
+  bukan reuse logika SD yang dipaksa fallback
 
 ---
 
