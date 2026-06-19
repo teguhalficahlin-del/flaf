@@ -80,13 +80,17 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, 
   _onBack    = onBack || null;
 
   _state = {
-    tp        : tpData,
-    rombel    : rombel    || { nama: '—' },
-    siswaList : siswaList || [],
-    statusMap : statusMap || {},
-    stepIndex : 0,
-    aktState  : 'preview',
-    sesiId    : Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+    tp                  : tpData,
+    rombel              : rombel    || { nama: '—' },
+    siswaList           : siswaList || [],
+    statusMap           : statusMap || {},
+    stepIndex           : 0,
+    aktState            : 'preview',
+    sesiId              : Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+    ttsPlaying          : false,
+    skenarioMode        : false,
+    repeatKalimatIndex  : 0,
+    penilaianDraftSMP   : {},
   };
 
   _render();
@@ -1057,7 +1061,7 @@ async function _renderObservasiOverlay(step) {
   let openIdx = 0;
 
   const tpId    = _state.tp?.metadata?.pattern_id || _state.tp?.id || '—';
-  const tpNomor = _state.tp?.metadata?.tp_number  || tpId;
+  const tpNomor = _state.tp?.metadata?.pattern_id || tpId;
   const draftKey = `draft_penilaian_smp_${_state.rombel?.id}_${tpId}`;
 
   if (!_state.penilaianDraftSMP) _state.penilaianDraftSMP = {};
@@ -1278,7 +1282,14 @@ async function _renderObservasiOverlay(step) {
             catatan  : '',
           };
         });
-        await savePenilaianSMP(_state.rombel?.id, tpNomor, _state.sesiId, entries);
+        const kelasId = _state.rombel?.id;
+        if (!kelasId) {
+          console.error('[SRS] savePenilaianSMP: rombel.id tidak ada — pastikan dashboard memanggil srSMPMount dengan objek rombel yang punya field id.');
+          window.__FLAF__?.showToast?.('Gagal menyimpan: data rombel tidak lengkap.', 6000);
+          if (btn) { btn.disabled = false; btn.textContent = 'Simpan'; }
+          return;
+        }
+        await savePenilaianSMP(kelasId, tpNomor, _state.sesiId, entries);
         db.remove('kv', draftKey).catch(() => {});
         window.__FLAF__?.showToast?.('Observasi tersimpan.');
         overlay.remove();
