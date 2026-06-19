@@ -505,3 +505,83 @@ SW aktif: flaf-v254
 4. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
 5. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
    skenario stabil di lapangan (Sprint E)
+
+---
+
+## Sprint CHECK Redesign & Diferensiasi Baru (19 Juni 2026)
+
+### Status
+SW aktif: flaf-v255
+
+### Pekerjaan Sprint Ini
+
+**Redesign Diferensiasi Fase D**
+
+Keputusan arsitektur:
+- Field lama diferensiasi{} (mudah/standar/tantangan) tetap ada
+- Field baru diferensiasi_baru{} ditambahkan paralel di
+  skenario.langkah per langkah yang punya diferensiasi
+- Dua key: sudah_bisa (dari tantangan) dan perlu_bantuan
+  (dari mudah) — standar dihilangkan dari tampilan
+- Field hanya ada di CHANGE, INTERACT, SHARE
+- Konten spesifik per TP — bukan generik
+
+Tampilan renderer:
+- Satu accordion luar: 🎯 Diferensiasi (collapsed default)
+- Dua sub-accordion di dalam: ★ Sudah Bisa dan ○ Perlu Bantuan
+- Identik secara struktur dengan accordion bantuan dan darurat
+- Warna: Diferensiasi = gold, Sudah Bisa = hijau (#1a2a1a /
+  #a5d6a7), Perlu Bantuan = biru gelap (#1a1a2e)
+- Fallback: tidak ada blok jika diferensiasi_baru tidak ada
+
+**Redesign CHECK Fase D**
+
+Keputusan arsitektur:
+- Hapus: "Pilih Jalur", tombol "Mayoritas Lancar",
+  tombol "Masih Ragu", _state.checkJalur,
+  _skenarioCheckJalur()
+- jalur_lancar[] tidak lagi dirender — guru yang kelasnya
+  lancar langsung tap "Lanjut →" di footer
+- jalur_belum_lancar[] dirender sebagai accordion remedial
+  yang dipicu satu tombol:
+  "Jika mayoritas siswa belum lancar, ikuti langkah di sini"
+- Footer tidak berubah — "Lanjut →" tetap seperti langkah lain
+
+Latar belakang:
+FLAF_Fase_D_Fondasi_Pedagogis_v1.0.md mendefinisikan CHECK
+sebagai observasi cepat untuk menentukan langkah berikutnya —
+bukan penilaian eksplisit yang harus dinyatakan guru di UI.
+Observasi Formatif sudah menangkap kondisi kelas. UI tidak
+perlu meminta penilaian ulang.
+
+### Commit Log
+
+| SHA | Pesan |
+|---|---|
+| 7af4a27 | feat(fase-d): inject diferensiasi_baru sudah_bisa/perlu_bantuan ke 66 TP |
+| f3495f9 | feat(renderer): accordion diferensiasi sudah_bisa/perlu_bantuan di skenario renderer |
+| d245ac4 | chore(css): style accordion diferensiasi SMP |
+| e47cef9 | chore(sw): bump to flaf-v255 |
+| aa06be3 | fix(renderer): nest sudah-bisa/perlu-bantuan dalam accordion diferensiasi |
+| cf6911a | fix(renderer): redesign CHECK — hapus pilih jalur, ganti dengan tombol remedial accordion |
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+- diferensiasi_baru{} field baru, bukan replace field lama
+- Konten sudah_bisa dan perlu_bantuan spesifik per TP —
+  merujuk pola kalimat, scaffold, dan anchor visual TP
+- Accordion tiga level: Diferensiasi > Sudah Bisa /
+  Perlu Bantuan — konsisten dengan bantuan dan darurat
+- CHECK tidak meminta penilaian eksplisit dari guru —
+  satu tombol remedial, footer normal
+
+### Backlog Sprint Berikutnya
+1. Export data observasi → rubrik modul ajar (Fase A-C
+   dan Fase D)
+2. Sprint A — validasi lapangan 3-5 TP sampel (prioritas
+   tinggi)
+3. Desain kurikulum Fase D proper — meta/cp untuk
+   placeholder kurikulum.js
+4. Migrasi wrapper db.js penuh — follow-up hotfix
+   DB_VERSION
+5. Hapus runtime[] lama dari sesi-runtime-smp.js setelah
+   renderer skenario stabil di lapangan (Sprint E)
