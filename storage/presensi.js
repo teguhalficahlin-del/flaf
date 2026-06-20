@@ -96,7 +96,7 @@ async function getByKelas(kelasId) {
  */
 async function getByTP(kelasId, tpNomor) {
   const sesi = await getByKelas(kelasId);
-  return sesi.filter(s => s.tp_nomor === tpNomor);
+  return sesi.filter(s => String(s.tp_nomor) === String(tpNomor));
 }
 
 // ─── HAPUS ────────────────────────────────────────────────────────────────────

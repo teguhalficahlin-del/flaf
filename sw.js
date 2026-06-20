@@ -3,7 +3,7 @@
 // WAJIB update CACHE_VERSION setiap deploy
 // ============================================================
 
-const CACHE_VERSION  = 'flaf-v257';         // bump: resume bridge — sesi tidak hilang saat navigasi antar tab
+const CACHE_VERSION  = 'flaf-v258';         // bump: presensi type-safety — String() coercion tp_nomor comparisons
 const PDF_CACHE_NAME = 'flaf-pdf-v1';
 
 // Files that MUST be cached â€” install fails if any of these are missing

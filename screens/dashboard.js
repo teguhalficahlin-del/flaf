@@ -91,7 +91,7 @@ function _bindDelegatedEvents(container) {
         window.dashPilihRombel(el.dataset.id, el.dataset.nama, Number(el.dataset.tingkat));
         break;
       case 'pilih-tp':
-        window.dashPilihTP(el.dataset.id, el.dataset.nomor, el.dataset.nama, el.dataset.jenjang || 'SD');
+        window.dashPilihTP(el.dataset.id, Number(el.dataset.nomor), el.dataset.nama, el.dataset.jenjang || 'SD');
         break;
       case 'set-status':
         window.dashSetStatus(el.dataset.siswaId, el.dataset.status);
@@ -429,7 +429,7 @@ async function _buildLandingHTML(session, kelasList, rekapMap, streak, jejakSumm
       } else {
         // SD: schema lama — nomor integer
         const range = tpDiKelas.map(tp => tp.nomor);
-        const selesaiDiRange = range.filter(n => selesaiSet.has(n));
+        const selesaiDiRange = range.filter(n => selesaiSet.has(String(n)));
         if (selesaiDiRange.length === 0) {
           tpSelesaiPerRombel[k.id] = { nomor: range[0], label: `Mulai TP ${String(range[0]).padStart(2,'0')}` };
         } else {
@@ -512,8 +512,8 @@ async function _buildPilihTPHTML() {
   } catch { /* abaikan error */ }
 
   const tpHTML = tpList.map(tp => {
-    const sudah  = tpSelesaiSet.has(tp.nomor);
     const nomor  = _tpNomor(tp);
+    const sudah  = tpSelesaiSet.has(String(nomor));
     const nama   = _tpNama(tp);
     const id     = _tpId(tp);
     const jenjang = _tpJenjang(tp);

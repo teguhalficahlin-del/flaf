@@ -253,7 +253,7 @@ async function getTPSelesaiPerRombel(rombelNama) {
   return new Set(
     logs
       .filter(l => l.action === 'selesai' && l.rombel_nama === rombelNama)
-      .map(l => l.tp_nomor)
+      .map(l => String(l.tp_nomor))
   );
 }
 
