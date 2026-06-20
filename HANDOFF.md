@@ -4,6 +4,100 @@ Terakhir diupdate: 20 Juni 2026
 
 ---
 
+## META — Cara Kerja Tim & Konteks Lanjutan (baca SEBELUM sprint manapun di bawah)
+
+### Untuk Claude Code yang baru membuka sesi ini
+
+Ini BUKAN proyek baru. Anda melanjutkan pekerjaan yang sudah berjalan
+lama dengan konvensi yang sudah mapan — JANGAN mulai dari asumsi nol,
+JANGAN pertanyakan ulang keputusan arsitektur yang sudah ditetapkan
+(ditandai eksplisit di tiap sprint sebagai "Keputusan yang Jangan
+Dipertanyakan Ulang"). Baca dokumen ini dulu sebelum menyentuh kode
+apapun.
+
+### Konteks proyek
+
+FLAF (Functional Language Accumulation Framework) — PWA offline-first
+untuk guru Bahasa Inggris Indonesia, jenjang SD (Fase A-C, kelas 1-6)
+dan SMP (Fase D, kelas 7-9). Stack: Vanilla JS ES Modules, IndexedDB,
+Service Worker, GitHub Pages. Supabase HANYA untuk aktivasi lisensi.
+
+Romo adalah satu-satunya developer, penulis kurikulum, DAN pengguna
+nyata aplikasi ini — guru SD sungguhan yang memakai FLAF di kelasnya
+sendiri. Bug yang ditemukan/diperbaiki biasanya berasal dari
+pengalaman mengajar nyata Romo, bukan laporan QA buatan — kalau Romo
+bilang "ini yang saya alami sehari-hari", itu prioritas tinggi,
+bukan sekadar anekdot.
+
+### Peran tiga pihak (jangan tertukar)
+
+1. **Romo** — arsitek dan pengambil keputusan akhir, terutama untuk
+   keputusan produk/UX. Juga relay manusia antara Claude (chat) dan
+   Claude Code — paste-menempel terjadi manual.
+2. **Claude (chat)** — analis/reviewer, TIDAK punya akses repo
+   langsung. Tugas: terjemahkan kebutuhan Romo jadi prompt presisi
+   untuk Claude Code, review SETIAP hasil dengan kode literal (bukan
+   ringkasan), tahan approval sampai bukti nyata terlihat, desain
+   arsitektur sebelum BUILD dimulai.
+3. **Claude Code** — eksekutor dengan akses repo nyata. Tugas:
+   ANALYZE dulu (baca kode aktual) sebelum menulis kode, tampilkan
+   diff SEBELUM/SESUDAH LITERAL (git diff/git show — bukan
+   dijelaskan ulang dengan kata-kata) sebelum setiap commit, JANGAN
+   commit/deploy/SW bump tanpa approval eksplisit dari Claude (chat)
+   — walau instruksi sebelumnya sudah menyebut langkah berikutnya
+   secara berurutan, urutan instruksi BUKAN izin lompat ke akhir
+   tanpa checkpoint di tengah.
+
+### Alur kerja standar (ANALYZE → DESIGN → BUILD → HARDEN → VALIDATE)
+
+1. ANALYZE — baca struktur file aktual dulu, JANGAN asumsi nama
+   field/fungsi dari ingatan atau dari nama yang "terdengar benar".
+2. DESIGN — presentasikan rencana perubahan SEBELUM menulis kode,
+   tunggu konfirmasi.
+3. BUILD — kerjakan file per file, mulai dari yang paling terisolasi/
+   rendah risiko ke yang paling berisiko.
+4. HARDEN — setiap diff WAJIB ditampilkan literal (git diff -U10+
+   atau git show) sebelum direview. Ringkasan/poin-poin TIDAK CUKUP
+   — riwayat proyek membuktikan ringkasan berkali-kali menyembunyikan
+   bug nyata yang baru ketemu setelah kode literal dibaca.
+5. VALIDATE — test via Playwright BROWSER NYATA dengan BUKTI (output
+   command, dump data asli, screenshot) — bukan "saya cek kode dan
+   seharusnya benar". Kalau test diminta mencakup skenario tertentu,
+   penuhi PERSIS cakupan itu — jangan kirim versi yang dipersempit
+   diam-diam.
+
+### Cara kerja spesifik — pelajaran dari sprint resume (19-20 Juni 2026)
+
+- Field identitas Fase D = `metadata.pattern_id` untuk matching
+  sesi/penilaian. `metadata.tp_id` (path file) field TERPISAH untuk
+  lookup objek TP di dashboard.js — dua field beda tujuan, jangan
+  dicampur.
+- SD dan SMP selalu isolasi storage terpisah (`sesi_aktif` vs
+  `sesi_aktif_smp`, `penilaian_log` vs `penilaian_log_smp`) — pola
+  tetap, jangan digabung demi "efisiensi".
+- `runtime[]` dan `skenario{}` di TP Fase D hidup berdampingan
+  dengan peran berbeda (manifest step vs konten aktif). JANGAN
+  asumsi salah satu "lama/mati" tanpa cek data file produksi asli.
+- Key penyimpanan tunggal (bukan per-TP) seperti `sesi_aktif`/
+  `bp_resume` — pertimbangkan SELALU skenario guru mengajar banyak
+  kelas berbeda. Operasi hapus pada logic prioritas HARUS dicek
+  same-target (TP+rombel sama) dulu, supaya tidak menghapus data
+  sesi/checkpoint kelas LAIN yang tidak terkait.
+- Konteks low-end Android kelas nyata tetap berlaku untuk semua
+  keputusan UX — ikuti pola yang SUDAH ADA dan dikenal guru, jangan
+  ciptakan pola baru kalau yang lama sudah terbukti jalan.
+
+### Status setelah sprint ini
+
+SW aktif: flaf-v257. Bug resume sesi (hilang posisi mengajar saat
+navigasi tab) DAN crash `_rerenderStep` SUDAH DIPERBAIKI dan
+ter-commit (`30a70ab`). Detail lengkap di bagian sprint di bawah.
+Validasi lapangan oleh Romo (akun mengajar asli) BELUM dikonfirmasi
+selesai pada titik dokumen ini ditulis — cek dengan Romo apakah
+sudah dicoba di kelas nyata sebelum menganggap closed.
+
+---
+
 ## Sprint Resume Bridge (20 Juni 2026)
 
 ### Root Cause
