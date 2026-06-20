@@ -98,6 +98,127 @@ sudah dicoba di kelas nyata sebelum menganggap closed.
 
 ---
 
+## Sprint Fix Presensi — Type Safety tp_nomor (20 Juni 2026)
+
+### Status
+SW aktif: flaf-v258
+
+### Pekerjaan Sprint Ini
+
+**Investigasi awal — audit presensi semua kelas**
+Permintaan: cek presensi (1) jalan benar, (2) data tersimpan, (3) bisa
+diunduh — untuk semua kelas SD dan SMP.
+
+Investigasi kode statis awal salah menyimpulkan presensi SMP/Fase D
+tidak punya fitur sama sekali (cuma grep di sesi-runtime-smp.js, tidak
+menemukan persist). Investigasi lanjutan menemukan capture+persist
+presensi sebenarnya shared lewat dashboard.js (STEPS array,
+_buildStepPresensi, _doSelesaiSesi) — bukan di file runtime SMP.
+Kesalahan ini jadi pengingat: kesimpulan dari baca kode saja tanpa
+VALIDATE browser nyata berisiko salah, walau kelihatan meyakinkan.
+
+**Root cause ditemukan — type mismatch tp_nomor**
+el.dataset.nomor (HTML data-* attribute) selalu string. Dipakai
+langsung tanpa coercion di dashPilihTP() sejak TP dipilih, mengalir
+ke _flow.tp.nomor sebagai string. Tercemar ke presensi.simpan() dan
+jejak.log() — keduanya menyimpan tp_nomor sebagai string. Sementara
+titik baca (presensi.getByTP(), getTPSelesaiPerRombel() consumer)
+membandingkan dengan number (dari _tpList() yang sudah resolve angka
+asli). Strict === antara string dan number selalu false.
+
+**Dampak terkonfirmasi (sebelum fix)**
+- Unduh rekap kehadiran selalu gagal — toast "Belum ada sesi mengajar
+  yang tercatat" — SD dan SMP, walau presensi sudah tersimpan
+- Badge "Sudah diajarkan" di TP picker tidak pernah muncul — SD (type
+  mismatch) dan SMP (field tambahan: tp.nomor mentah undefined untuk
+  Fase D, field yang benar adalah hasil resolve _tpNomor(tp))
+- Label landing page SD selalu "Mulai TP 01", tidak pernah
+  "Lanjut -> TP X" walau sudah diajarkan — root cause sama
+
+**Resume Bridge dikonfirmasi TIDAK terdampak**
+tpData (dipakai mount runtime dan persist resume) di-resolve via
+_getTP(_flow.tp.id) — fresh lookup dari sumber kurikulum, tidak
+pernah lewat _flow.tp.nomor. SD persist _state.tp.nomor (number
+asli), SMP persist _state.tp.metadata.pattern_id (string asli) —
+konsisten dari sumber yang sama di kedua sisi, independen dari bug
+ini.
+
+**Fix — defense in depth, 5 titik**
+Urutan BUILD: baca dulu (toleran data lama+baru), sumber paling
+akhir (supaya semua titik baca sudah kebal saat tipe data baru
+berubah).
+1. storage/jejak.js — getTPSelesaiPerRombel(): normalisasi Set ke
+   String()
+2. storage/presensi.js — getByTP(): String() coercion di
+   perbandingan — juga perbaiki data lama tanpa migrasi
+3. screens/dashboard.js — badge TP picker (_buildPilihTPHTML): pakai
+   nomor ter-resolve (_tpNomor(tp)) bukan tp.nomor mentah, plus
+   String() coercion
+4. screens/dashboard.js — label landing SD (_buildLandingHTML):
+   String() coercion
+5. screens/dashboard.js — sumber (dashPilihTP click handler):
+   Number(el.dataset.nomor)
+
+**Validasi lapangan**
+Manual via DevTools console (Chrome MCP tidak terhubung) — seed
+rombel SMP uji via fungsi produksi asli (nilai.tambahKelas /
+tambahSiswaBatch, bukan raw IDB injection), navigasi UI alami (bukan
+panggil fungsi langsung). Diuji di 2 rombel SD asli (Kelas 1
+Abdullah, Kelas 2 Aminah) dan 1 rombel SMP uji (Kelas 7 Uji
+Presensi, dengan data lama bertipe string dan data baru bertipe
+number tercampur dalam satu unduhan).
+
+### Commit Log
+
+| SHA | Pesan |
+|---|---|
+| 83b7fa1 | fix: presensi rekap, badge TP, label landing — type mismatch tp_nomor |
+
+### Hasil Test (manual, browser nyata via DevTools console + UI)
+
+| # | Item | Hasil |
+|---|------|-------|
+| T1 | Unduh rekap kehadiran — SD (Kelas 1, Kelas 2) | PASS |
+| T2 | Badge "Sudah diajarkan" TP picker — SD | PASS |
+| T3 | Label "Lanjut -> TP X" landing page — SD | PASS |
+| T4 | Unduh rekap kehadiran — SMP, data lama (string) + baru (number) tercampur | PASS |
+| T5 | Badge "Sudah diajarkan" TP picker — SMP | PASS |
+| T6 | Regresi Resume Bridge (SMP, sesi tertinggal) | PASS — tidak terdampak |
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+- tp_nomor/tpNomor di seluruh codebase WAJIB dibandingkan dengan
+  String() coercion, tidak pernah strict === — el.dataset.* selalu
+  string, sumber lain (data kurikulum) selalu number, dua-duanya
+  hidup berdampingan
+- Fix di titik baca didahulukan dari fix di titik tulis/sumber —
+  supaya data lama yang sudah terlanjur tersimpan tetap terbaca
+  tanpa migrasi
+- Badge "sudah diajarkan" Fase D wajib pakai nomor hasil resolve
+  (_tpNomor(tp)), bukan field tp.nomor mentah — TP Fase D tidak
+  punya field top-level nomor
+- Resume Bridge (tpData via _getTP(id)) dan presensi/jejak/nilai
+  (_flow.tp.nomor via dataset) adalah DUA jalur identitas TP yang
+  terpisah — jangan disatukan, jangan asumsikan fix di satu jalur
+  otomatis berlaku ke jalur lain
+
+### Backlog Sprint Berikutnya
+1. Resume Bridge — tambah opsi ke-3 "Pilih TP baru" (saat ini cuma
+   "Lanjut dari sini" / "Mulai sesi baru", guru terkunci di TP/rombel
+   yang sama)
+2. Label "Lanjut TP" landing page SMP — saat ini hardcode
+   tpDiKelas[0], selesaiSet dihitung tapi tidak dipakai sama sekali
+   (sengaja simplifikasi, bukan bug, tapi gap fitur)
+3. nilai.js:208 — variable tpSelesai di-assign tapi tidak dipakai di
+   _renderMenu() — dead code, query IDB boros tiap buka menu Nilai
+4. Bug kosmetik presensi — counter pagination "Halaman X/Y ·
+   Hadir N/M" stale setelah ubah status (tidak re-render penuh), beda
+   dari counter atas yang update benar — ditemukan saat investigasi
+   presensi, belum diperbaiki, tidak memengaruhi data
+5. REPEAT step dual-button UI ambiguity (carry-over)
+6. Label "(Detail)" salah untuk sesi SMP (carry-over, kosmetik)
+
+---
+
 ## Sprint Resume Bridge (20 Juni 2026)
 
 ### Root Cause
