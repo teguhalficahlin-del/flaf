@@ -48,6 +48,11 @@ const KONDISI_NICE = {
   waktu_mepet  : 'Waktu mepet',
 };
 
+// ── Konstanta: Resume ─────────────────────────────────────────
+const RESUME_MAX_MS        = 4 * 60 * 60 * 1000;
+const RESUME_STORE_KEY_SMP = 'sesi_aktif_smp';
+const STORE_KV             = 'kv';
+
 // ── State ─────────────────────────────────────────────────────
 
 let _state = {
@@ -93,6 +98,23 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, 
     penilaianDraftSMP   : {},
   };
 
+  // Cek resume
+  try {
+    const saved = await db.get(STORE_KV, RESUME_STORE_KEY_SMP);
+    if (saved && saved.tpNomor === tpData.metadata?.pattern_id && saved.rombelId === rombel?.id) {
+      const age = Date.now() - (saved.savedAt || 0);
+      if (age < RESUME_MAX_MS) {
+        _state.stepIndex = saved.stepIndex ?? 0;
+        _state.sesiId    = saved.sesiId    ?? _state.sesiId;
+        _state.aktState  = 'resume';
+      } else {
+        await db.remove(STORE_KV, RESUME_STORE_KEY_SMP).catch(() => {});
+      }
+    }
+  } catch (e) {
+    console.warn('[SRS] cek resume gagal:', e.message);
+  }
+
   _render();
 }
 
@@ -112,7 +134,23 @@ function _transition(patch) {
     _state.repeatKalimatIndex = 0;
   }
   Object.assign(_state, patch);
+  _persistState();
   _render();
+}
+
+async function _persistState() {
+  if (_state.aktState === 'preview') return;
+  try {
+    await db.set(STORE_KV, RESUME_STORE_KEY_SMP, {
+      tpNomor   : _state.tp?.metadata?.pattern_id,
+      rombelId  : _state.rombel?.id,
+      stepIndex : _state.stepIndex,
+      sesiId    : _state.sesiId,
+      savedAt   : Date.now(),
+    });
+  } catch (e) {
+    console.warn('[SRS] persist gagal:', e.message);
+  }
 }
 
 // ── Render dispatcher ─────────────────────────────────────────
@@ -121,6 +159,7 @@ function _render() {
   if (!_root) return;
   switch (_state.aktState) {
     case 'preview'  : return _renderPreview();
+    case 'resume'   : return _renderResume();
     case 'entering' : return _renderEntering();
     case 'running'  : return _renderRunning();
     case 'selesai'  : return _renderSelesai();
@@ -1314,6 +1353,39 @@ async function _renderObservasiOverlay(step) {
   _mount();
 }
 
+// ── SCREEN: RESUME ───────────────────────────────────────────
+
+function _renderResume() {
+  const runtime = _state.tp?.runtime || [];
+  const total   = runtime.length;
+  const current = runtime[_state.stepIndex];
+
+  _root.innerHTML = `
+    <div class="sr-app">
+      <div class="sr-body sr-body--center">
+        <div class="sr-resume-icon">⏸</div>
+        <div class="sr-resume-title">Sesi belum selesai</div>
+        <div class="sr-resume-sub">${_escape(_state.tp?.metadata?.title || '—')} · ${_escape(_state.rombel?.nama || '—')}</div>
+        <div class="sr-resume-pos">
+          Terakhir di: <strong>${_escape(current?.type || '—')}</strong>,
+          langkah ${_state.stepIndex + 1} dari ${total}
+        </div>
+      </div>
+      <div class="sr-footer">
+        <button class="sr-btn-primary" id="sr-btn-lanjut">Lanjut dari sini →</button>
+        <button class="sr-btn-secondary" id="sr-btn-ulang">Mulai sesi baru</button>
+      </div>
+    </div>`;
+
+  _root.querySelector('#sr-btn-lanjut').addEventListener('click', () => {
+    _transition({ aktState: 'running' });
+  });
+  _root.querySelector('#sr-btn-ulang').addEventListener('click', async () => {
+    await db.remove(STORE_KV, RESUME_STORE_KEY_SMP).catch(() => {});
+    _transition({ aktState: 'preview', stepIndex: 0 });
+  });
+}
+
 // ── SCREEN: CLOSURE ───────────────────────────────────────────
 
 function _renderClosure() {
@@ -1326,6 +1398,7 @@ function _renderClosure() {
       </div>
     </div>`;
 
+  db.remove(STORE_KV, RESUME_STORE_KEY_SMP).catch(() => {});
   setTimeout(() => {
     if (_onDone) _onDone({ sesiId: _state.sesiId });
   }, 800);

@@ -1,13 +1,87 @@
 # HANDOFF — FLAF Fase D
-SW aktif: flaf-v256
-Terakhir diupdate: 19 Juni 2026
+SW aktif: flaf-v257
+Terakhir diupdate: 20 Juni 2026
+
+---
+
+## Sprint Resume Bridge (20 Juni 2026)
+
+### Root Cause
+
+`renderDashboard()` (dashboard.js:116) unconditionally resets `_flow` ke
+landing state setiap kali guru masuk ke tab Mengajar. Semua state sesi
+(rombel, TP, posisi langkah) hilang — guru harus Pilih Rombel → Pilih TP
+ulang setiap kali melirik tab lain. Bug produksi nyata yang dialami guru
+setiap hari saat mengajar.
+
+### 3 File Diubah
+
+**1. `screens/sesi-runtime-smp.js`** (+73 baris)
+- Tambah `_persistState()` — simpan `{tpNomor, rombelId, stepIndex, sesiId,
+  savedAt}` ke IDB key `sesi_aktif_smp` (terpisah dari `sesi_aktif` SD)
+- `_transition()` panggil `_persistState()` setiap transisi
+- `mount()` cek IDB untuk resume (expiry 4 jam, match via `pattern_id`)
+- `_renderResume()` — UI "⏸ Sesi belum selesai" + "Lanjut dari sini /
+  Mulai sesi baru" (copy pola SD)
+- Resume key dihapus di closure dan "Mulai sesi baru"
+
+**2. `screens/dashboard.js`** (+122 baris)
+- `_checkResumeAndRestore(kelasList)` — baca IDB `sesi_aktif` + `sesi_aktif_smp`
+  \+ `bp_resume`, expiry 4 jam konsisten di ketiganya
+- Prioritas: savedAt terbaru menang (bukan bp selalu menang), karena
+  "Simpan & keluar" di breakpoint tidak menghapus sesi_aktif
+- Key yang "kalah" dihapus HANYA jika mengacu ke TP+rombel YANG SAMA
+  (scoped same-target check)
+- Dipanggil di `renderDashboard()` setelah data loaded, sebelum landing render
+- `_rerenderStep()`: tambah `srSMPUnmount()` di samping `srUnmount()` saat
+  keluar step runtime (fix gap Fase 1)
+
+**3. `sw.js`** — bump flaf-v256 → flaf-v257
+
+### Fix Iteratif Selama Proses
+
+| # | Temuan | Fix |
+|---|--------|-----|
+| 1 | `metadata.tp_id` tidak ada di skema Fase D | Ganti ke `metadata.pattern_id` |
+| 2 | `_rerenderStep()` panggil `srUnmount()` tapi tidak `srSMPUnmount()` | Tambah `srSMPUnmount()` |
+| 3 | bp_resume selalu menang tapi breakpoint "Simpan & keluar" tidak hapus sesi_aktif | Ubah ke savedAt terbaru menang |
+| 4 | Penghapusan key kalah bisa menghapus key untuk TP+rombel berbeda | Scoped same-target check |
+
+### Hasil Test (Playwright, browser nyata headless)
+
+| # | Item | Hasil |
+|---|------|-------|
+| A | SD resume prompt muncul setelah nav away+back | PASS |
+| B | SMP resume prompt muncul setelah nav away+back | PASS |
+| C-SD | "Lanjut dari sini" kembali ke step yang benar (SD) | PASS |
+| C-SMP | "Lanjut dari sini" kembali ke step yang benar (SMP) | PASS |
+| D-SD | "Mulai sesi baru" hapus sesi_aktif dari IDB | PASS |
+| D-SMP | "Mulai sesi baru" hapus sesi_aktif_smp dari IDB | PASS |
+| E-SD | Full normal flow SD sampai Simpan & Selesai, 0 error | PASS |
+| E-SMP | Full normal flow SMP sampai SESI SELESAI, 0 error | PASS |
+| F | bp_resume(newer) menang atas sesi_aktif untuk TP sama | PASS |
+| F-rev | sesi_aktif(newer) menang atas bp_resume untuk TP sama | PASS |
+| F-scope | bp_resume(TP-A) survive saat sesi_aktif(TP-B) menang | PASS |
+| G-SD | Rapid-click 15x navigasi (SD aktif), 0 error | PASS |
+| G-SMP | Rapid-click 15x navigasi (SMP aktif), 0 error | PASS |
+
+### Keputusan yang Jangan Dipertanyakan Ulang
+
+- IDB key SMP terpisah: `sesi_aktif_smp` — konsisten dengan pola
+  `penilaian_log` vs `penilaian_log_smp`
+- Prioritas resume: savedAt terbaru menang, bukan bp selalu menang —
+  karena "Simpan & keluar" breakpoint TIDAK menghapus sesi_aktif
+- Key yang kalah dihapus HANYA jika same TP+rombel — key untuk
+  TP+rombel lain HARUS survive
+- Resume prompt tampil dari DALAM sesi-runtime (reuse `_renderResume`
+  yang sudah ada), bukan UI baru di dashboard
 
 ---
 
 ## Sprint Fix Nilai Formatif Fase D (19 Juni 2026)
 
 ### Status
-SW aktif: flaf-v256
+SW aktif: flaf-v257
 
 ### Bug yang Diperbaiki
 

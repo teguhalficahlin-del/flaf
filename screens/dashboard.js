@@ -125,6 +125,15 @@ export async function renderDashboard(container, opts = {}) {
       jejak.getMonthSummary(),
     ]);
     _faseData = faseData;
+
+    // Resume check — SEBELUM render landing
+    const resumed = await _checkResumeAndRestore(kelasList);
+    if (resumed) {
+      container.innerHTML = _buildSesiHTML();
+      _rerenderStep();
+      return;
+    }
+
     const rekapMap = Object.fromEntries(rekapList.map(r => [r.id, r]));
     container.innerHTML = await _buildLandingHTML(session, kelasList, rekapMap, jejakStreak, jejakSummary);
   } catch (err) {
@@ -199,6 +208,128 @@ function _getTP(id) {
   return (_faseData?.tujuan_pembelajaran || []).find(t =>
     t.id === id || t.metadata?.tp_id === id
   ) || null;
+}
+
+// ── Resume: restore sesi aktif saat kembali ke dashboard ──────
+//
+// Baca tiga IDB key — sesi_aktif (SD), sesi_aktif_smp (SMP),
+// bp_resume (checkpoint Fase C). Kalau ada yang valid + belum
+// expired: restore _flow dan _skenario, render stepper di step 2
+// supaya sesi-runtime mount dan tampilkan prompt resume sendiri.
+//
+const _RESUME_MAX_MS = 4 * 60 * 60 * 1000;
+
+async function _checkResumeAndRestore(kelasList) {
+  let sd, smp, bp;
+  try {
+    [sd, smp, bp] = await Promise.all([
+      db.get(STORE_KV, 'sesi_aktif'),
+      db.get(STORE_KV, 'sesi_aktif_smp'),
+      db.get(STORE_KV, 'bp_resume'),
+    ]);
+  } catch (e) {
+    console.warn('[DASHBOARD] resume check gagal:', e.message);
+    return false;
+  }
+
+  const now = Date.now();
+
+  // Expiry 4 jam — konsisten di ketiga key
+  if (sd  && (now - (sd.savedAt  || 0)) >= _RESUME_MAX_MS) {
+    db.remove(STORE_KV, 'sesi_aktif').catch(() => {});
+    sd = null;
+  }
+  if (smp && (now - (smp.savedAt || 0)) >= _RESUME_MAX_MS) {
+    db.remove(STORE_KV, 'sesi_aktif_smp').catch(() => {});
+    smp = null;
+  }
+  if (bp  && (now - (bp.savedAt  || 0)) >= _RESUME_MAX_MS) {
+    db.remove(STORE_KV, 'bp_resume').catch(() => {});
+    bp = null;
+  }
+
+  if (!sd && !smp && !bp) return false;
+
+  const allTps = _faseData?.tujuan_pembelajaran || [];
+
+  // ── Prioritas: jika bp_resume DAN sesi_aktif sama-sama valid
+  //    untuk TP+rombel yang sama, yang savedAt LEBIH BARU menang.
+  //    Alasan: "Simpan & keluar" di breakpoint tidak menghapus
+  //    sesi_aktif — guru bisa lanjut mengajar setelahnya, sehingga
+  //    sesi_aktif ter-update lebih baru dari bp_resume. Progres
+  //    terbaru guru tidak boleh hilang.
+  let resumeTP   = null;
+  let resumeKelas = null;
+  let source     = null;   // 'sd' | 'smp' | 'bp'
+
+  // Kumpulkan semua kandidat yang valid
+  const candidates = [];
+
+  if (bp && bp.tpId && bp.rombelId) {
+    const tp = allTps.find(t => t.id === bp.tpId);
+    const kelas = tp ? kelasList.find(k => k.id === bp.rombelId) : null;
+    if (tp && kelas) candidates.push({ source: 'bp', tp, kelas, savedAt: bp.savedAt || 0 });
+  }
+  if (sd && sd.tpNomor != null && sd.rombelId) {
+    const tp = allTps.find(t => t.nomor === sd.tpNomor);
+    const kelas = tp ? kelasList.find(k => k.id === sd.rombelId) : null;
+    if (tp && kelas) candidates.push({ source: 'sd', tp, kelas, savedAt: sd.savedAt || 0 });
+  }
+  if (smp && smp.tpNomor && smp.rombelId) {
+    const tp = allTps.find(t => t.metadata?.pattern_id === smp.tpNomor);
+    const kelas = tp ? kelasList.find(k => k.id === smp.rombelId) : null;
+    if (tp && kelas) candidates.push({ source: 'smp', tp, kelas, savedAt: smp.savedAt || 0 });
+  }
+
+  if (candidates.length === 0) return false;
+
+  // Yang savedAt paling baru menang
+  candidates.sort((a, b) => b.savedAt - a.savedAt);
+  const winner = candidates[0];
+  resumeTP    = winner.tp;
+  resumeKelas = winner.kelas;
+  source      = winner.source;
+
+  // Hapus key yang "kalah" HANYA jika mengacu ke TP+rombel yang
+  // SAMA dengan winner — key untuk TP+rombel lain harus tetap ada.
+  if (source === 'bp' && sd) {
+    const sdSameTarget = sd.tpNomor === winner.tp.nomor &&
+                          sd.rombelId === winner.kelas.id;
+    if (sdSameTarget) {
+      db.remove(STORE_KV, 'sesi_aktif').catch(() => {});
+    }
+  }
+  if (source !== 'bp' && bp) {
+    const bpSameTarget = bp.tpId === winner.tp.id &&
+                          bp.rombelId === winner.kelas.id;
+    if (bpSameTarget) {
+      db.remove(STORE_KV, 'bp_resume').catch(() => {});
+    }
+  }
+
+  // ── Restore _flow — identik dengan bentuk yang dihasilkan
+  //    dashPilihRombel() + dashPilihTP() di jalur normal
+  const tingkat = parseInt(resumeKelas.tingkat) || 1;
+  const isSMP   = tingkat >= 7;
+  let siswaList = [];
+  try { siswaList = await nilai.getSiswaList(resumeKelas.id); } catch (e) { /* lanjut tanpa siswa */ }
+
+  _flow = {
+    view      : 'sesi',
+    rombel    : { id: resumeKelas.id, nama: resumeKelas.nama, tingkat },
+    tp        : { id: _tpId(resumeTP), nomor: _tpNomor(resumeTP), nama: _tpNama(resumeTP), jenjang: isSMP ? 'SMP' : 'SD' },
+    statusMap : Object.fromEntries(siswaList.map(s => [s.id, 'H'])),
+    siswaList,
+    nilaiCache: null,
+  };
+  _skenario = {
+    stepIndex: 2, langkahIndex: 0, speaking: false,
+    kendala: null, mood: null,
+    presensiPage: 0, asesmenPage: 0, openSiswaId: null,
+    asesmenModeCepat: false, warnAsesmen: false,
+  };
+
+  return true;
 }
 
 // --- LEVEL SYSTEM ------------------------------------------------------------
@@ -1169,6 +1300,7 @@ async function _rerenderStep() {
   if (hdr3)   hdr3.style.display   = '';
   if (body3)  body3.style.flex     = '';
   srUnmount();
+  srSMPUnmount();
 
   if (step === 6) await _loadLogSetDinilai();
   body.innerHTML = _buildStepBody(tpData, step);
