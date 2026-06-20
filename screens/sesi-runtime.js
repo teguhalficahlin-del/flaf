@@ -71,6 +71,7 @@ let _state = {
 let _root   = null;
 let _onDone = null;
 let _srTtsBtn = null;   // referensi tombol TTS aktif untuk cleanup
+let _isNavigating = false;
 
 // ── Public API ────────────────────────────────────────────────
 
@@ -98,6 +99,7 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, 
     bpResumeLangkahId : null,
     onBack            : onBack ?? null,
   });
+  _isNavigating = false;
 
   // Cek resume
   try {
@@ -483,16 +485,34 @@ function _renderResume() {
       </div>
       <div class="sr-footer">
         <button class="sr-btn-primary" id="sr-btn-lanjut">Lanjut dari sini →</button>
-        <button class="sr-btn-secondary" id="sr-btn-ulang">Mulai sesi baru</button>
+        <button class="sr-btn-secondary" id="sr-btn-ulang">Mulai awal sesi</button>
+        <button class="sr-btn-secondary" id="sr-btn-tp-baru">Mulai TP Baru</button>
       </div>
     </div>`;
 
   _root.querySelector('#sr-btn-lanjut').addEventListener('click', () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     _transition({ aktState: 'running' });
   });
+
   _root.querySelector('#sr-btn-ulang').addEventListener('click', async () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     await db.remove(STORE_KV, RESUME_STORE_KEY).catch(() => {});
-    _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0 });
+    const id = _state.tp.id, nomor = _state.tp.nomor, nama = _state.tp.nama;
+    unmount();
+    window.dashPilihTP(id, nomor, nama, 'SD');
+  });
+
+  _root.querySelector('#sr-btn-tp-baru').addEventListener('click', () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
+    unmount();
+    window.dashKePilihTP();
   });
 }
 
@@ -526,17 +546,35 @@ function _renderBpResume() {
       </div>
       <div class="sr-footer">
         <button class="sr-btn-primary"   id="sr-bp-ya">Ya, lanjutkan →</button>
-        <button class="sr-btn-secondary" id="sr-bp-ulang">Mulai dari awal</button>
+        <button class="sr-btn-secondary" id="sr-bp-ulang">Mulai awal sesi</button>
+        <button class="sr-btn-secondary" id="sr-bp-tp-baru">Mulai TP Baru</button>
       </div>
     </div>`;
 
   _root.querySelector('#sr-bp-ya').addEventListener('click', async () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     await db.remove(STORE_KV, BP_RESUME_KEY).catch(() => {});
     _transition({ aktState: 'running', faseIdx: targetFaseIdx, langkahIdx: targetLangkahIdx });
   });
+
   _root.querySelector('#sr-bp-ulang').addEventListener('click', async () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     await db.remove(STORE_KV, BP_RESUME_KEY).catch(() => {});
-    _transition({ aktState: 'preview', faseIdx: 0, langkahIdx: 0 });
+    const id = _state.tp.id, nomor = _state.tp.nomor, nama = _state.tp.nama;
+    unmount();
+    window.dashPilihTP(id, nomor, nama, 'SD');
+  });
+
+  _root.querySelector('#sr-bp-tp-baru').addEventListener('click', () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
+    unmount();
+    window.dashKePilihTP();
   });
 }
 

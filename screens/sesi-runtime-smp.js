@@ -72,6 +72,7 @@ let _root   = null;
 let _onDone = null;
 let _onBack = null;
 let _smpTtsBtn = null;
+let _isNavigating = false;
 
 // ── Public API ────────────────────────────────────────────────
 
@@ -97,6 +98,7 @@ export async function mount(root, tpData, rombel, siswaList, statusMap, onDone, 
     repeatKalimatIndex  : 0,
     penilaianDraftSMP   : {},
   };
+  _isNavigating = false;
 
   // Cek resume
   try {
@@ -1373,16 +1375,42 @@ function _renderResume() {
       </div>
       <div class="sr-footer">
         <button class="sr-btn-primary" id="sr-btn-lanjut">Lanjut dari sini →</button>
-        <button class="sr-btn-secondary" id="sr-btn-ulang">Mulai sesi baru</button>
+        <button class="sr-btn-secondary" id="sr-btn-ulang">Mulai awal sesi</button>
+        <button class="sr-btn-secondary" id="sr-btn-tp-baru">Mulai TP Baru</button>
       </div>
     </div>`;
 
   _root.querySelector('#sr-btn-lanjut').addEventListener('click', () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     _transition({ aktState: 'running' });
   });
+
   _root.querySelector('#sr-btn-ulang').addEventListener('click', async () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
     await db.remove(STORE_KV, RESUME_STORE_KEY_SMP).catch(() => {});
-    _transition({ aktState: 'preview', stepIndex: 0 });
+    const id    = _state.tp?.id ?? _state.tp?.metadata?.tp_id ?? '';
+    const nomor = (_state.tp?.nomor != null)
+      ? _state.tp.nomor
+      : (() => {
+          const pid = _state.tp?.metadata?.pattern_id || '';
+          const m   = pid.match(/(\d+)$/);
+          return m ? parseInt(m[1], 10) : (pid || '—');
+        })();
+    const nama  = _state.tp?.metadata?.title;
+    unmount();
+    window.dashPilihTP(id, nomor, nama, 'SMP');
+  });
+
+  _root.querySelector('#sr-btn-tp-baru').addEventListener('click', () => {
+    if (_isNavigating) return;
+    _isNavigating = true;
+    _root.querySelectorAll('button').forEach(b => b.disabled = true);
+    unmount();
+    window.dashKePilihTP();
   });
 }
 

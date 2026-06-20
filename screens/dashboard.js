@@ -1962,6 +1962,11 @@ window.dashPilihRombel = async function(id, nama, tingkat) {
 
 window.dashKePilihTP = async function() {
   _ttsStop();
+  if (_flow.tp?.jenjang === 'SMP') {
+    srSMPUnmount();
+  } else if (_flow.tp) {
+    srUnmount();
+  }
   _flow.tp        = null;
   _flow.statusMap = {};
   _flow.view      = 'pilihTP';
@@ -1979,6 +1984,7 @@ window.dashPilihTP = async function(id, nomor, nama, jenjang = 'SD') {
     asesmenModeCepat: false, warnAsesmen: false,
   };
   srUnmount();
+  srSMPUnmount();
   try {
     _flow.siswaList = await nilai.getSiswaList(_flow.rombel.id);
   } catch (err) {
