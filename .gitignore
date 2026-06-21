@@ -34,3 +34,9 @@ media fase b/
 
 # Nested repo — bukan bagian dari project ini
 FLAF SMP/
+
+# Test harness files
+test-skenario.html
+
+# Archive zip
+tools/semua-tp-fase-d.zip
