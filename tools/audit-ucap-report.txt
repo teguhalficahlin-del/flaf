@@ -1,0 +1,388 @@
+AUDIT UCAP FASE D
+Generated: 2026-06-18
+Total TP diperiksa: 66
+Total UCAP diperiksa: 2288
+Total UCAP flagged: 50
+
+=== SUMMARY PER KRITERIA ===
+TTS_SYMBOL : 48 UCAP
+TTS_ABBREV : 2 UCAP
+
+=== DETAIL TEMUAN ===
+
+[KELAS 7]
+TP 7-01 | docs/canonical/fase-d/kelas-7/tp-01.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-02 | docs/canonical/fase-d/kelas-7/tp-02.js
+  [1] Langkah: share | Baris ~470
+      Kriteria: TTS_SYMBOL
+      Teks: "Use this: blank friends like blank. Or: blank friends can play blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-03 | docs/canonical/fase-d/kelas-7/tp-03.js
+  [1] Langkah: untuk_lancar | Baris ~621
+      Kriteria: TTS_SYMBOL
+      Teks: "Now you try. Say sorry, then add: Maybe next time. Just one time."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-04 | docs/canonical/fase-d/kelas-7/tp-04.js
+  [1] Langkah: share | Baris ~442
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns. Say your main opinion: I think blank because blank. The others respond."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: untuk_lancar | Baris ~597
+      Kriteria: TTS_SYMBOL
+      Teks: "Now you try. Give your opinion, then ask: What about you? Just once."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-05 | docs/canonical/fase-d/kelas-7/tp-05.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-06 | docs/canonical/fase-d/kelas-7/tp-06.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-07 | docs/canonical/fase-d/kelas-7/tp-07.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-08 | docs/canonical/fase-d/kelas-7/tp-08.js
+  [1] Langkah: change | Baris ~259
+      Kriteria: TTS_SYMBOL
+      Teks: "Use: It is blank for blank. Or: It is blank to blank. Do not add because."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~389
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns. Show your card and read it to the group. End with: It is blank for blank. Or: It is blank to blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-09 | docs/canonical/fase-d/kelas-7/tp-09.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-10 | docs/canonical/fase-d/kelas-7/tp-10.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-11 | docs/canonical/fase-d/kelas-7/tp-11.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-12 | docs/canonical/fase-d/kelas-7/tp-12.js
+  [1] Langkah: change | Baris ~259
+      Kriteria: TTS_SYMBOL
+      Teks: "Use: If you want to blank, blank. Or: Use blank to blank. Do not add because."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: check | Baris ~460
+      Kriteria: TTS_SYMBOL
+      Teks: "Give me a goal: If you want to blank. Without looking at your book."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-13 | docs/canonical/fase-d/kelas-7/tp-13.js
+  [1] Langkah: change | Baris ~255
+      Kriteria: TTS_SYMBOL
+      Teks: "Write about your own past outing. Use a time expression: Yesterday, or Last weekend, or Last Sunday."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: untuk_kesulitan | Baris ~522
+      Kriteria: TTS_SYMBOL
+      Teks: "Good. Now: visited. Not visit. Past. Say: Last weekend, I visited blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-14 | docs/canonical/fase-d/kelas-7/tp-14.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-15 | docs/canonical/fase-d/kelas-7/tp-15.js
+  [1] Langkah: change | Baris ~263
+      Kriteria: TTS_SYMBOL
+      Teks: "The feeling: fun, quiet, exciting. The reason: something that really happened. Not a general opinion."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: untuk_kesulitan | Baris ~526
+      Kriteria: TTS_SYMBOL
+      Teks: "Good. Because blank. A real event. Not: because reading is good. Now try: It was blank because blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-16 | docs/canonical/fase-d/kelas-7/tp-16.js
+  [1] Langkah: change | Baris ~275
+      Kriteria: TTS_SYMBOL
+      Teks: "Use: After that, blank. At the end, blank. And: I learned blank. Keep I learned short. One thing. Not a long message."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-17 | docs/canonical/fase-d/kelas-7/tp-17.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-18 | docs/canonical/fase-d/kelas-7/tp-18.js
+  [1] Langkah: change | Baris ~275
+      Kriteria: TTS_SYMBOL
+      Teks: "Short labels only. Not a full sentence. Not a past story. Not There is. Just the three parts: time, event, place."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-19 | docs/canonical/fase-d/kelas-7/tp-19.js
+  [1] Langkah: model | Baris ~80
+      Kriteria: TTS_SYMBOL
+      Teks: "Class: 7A. Number: 12."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: model | Baris ~92
+      Kriteria: TTS_ABBREV
+      Teks: "Address: Jalan Melati No. 5."
+      Flag: singkatan: no.
+  [3] Langkah: model | Baris ~104
+      Kriteria: TTS_SYMBOL
+      Teks: "Membership: New Member. Favorite Club: Science Club."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [4] Langkah: kalimat | Baris ~171
+      Kriteria: TTS_SYMBOL
+      Teks: "Class: 7A. Number: 12."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [5] Langkah: change | Baris ~263
+      Kriteria: TTS_SYMBOL
+      Teks: "Fill in your own form. Write Label: then your value. Name: then your name. Class: then your class."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [6] Langkah: share | Baris ~393
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns. Present a completed form to the new group by reading its fields: Label: value."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [7] Langkah: untuk_lancar | Baris ~560
+      Kriteria: TTS_SYMBOL
+      Teks: "One more field. Same format: Label: value. Now you try. Add one more field to your form. Just one."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-20 | docs/canonical/fase-d/kelas-7/tp-20.js
+  [1] Langkah: change | Baris ~263
+      Kriteria: TTS_SYMBOL
+      Teks: "Create your own notices for the old storage room. Use: Notice: blank, No blank, Keep blank, or Use blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: interact | Baris ~322
+      Kriteria: TTS_SYMBOL
+      Teks: "Then write your own notices for the room using Notice: blank, No blank, Keep blank, or Use blank."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-21 | docs/canonical/fase-d/kelas-7/tp-21.js
+  [1] Langkah: change | Baris ~262
+      Kriteria: TTS_SYMBOL
+      Teks: "Use: Once there was blank near blank. Then: There was blank around blank. Use past tense: there was, it was. Not: There is. Not: I am."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 7-22 | docs/canonical/fase-d/kelas-7/tp-22.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-23 | docs/canonical/fase-d/kelas-7/tp-23.js
+  [TIDAK ADA TEMUAN]
+
+TP 7-24 | docs/canonical/fase-d/kelas-7/tp-24.js
+  [1] Langkah: change | Baris ~311
+      Kriteria: TTS_SYMBOL
+      Teks: "Use past tense. Theme words on the board: kindness, friendship, help, choices."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+[KELAS 8]
+TP 8-01 | docs/canonical/fase-d/kelas-8/tp-01.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-02 | docs/canonical/fase-d/kelas-8/tp-02.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-03 | docs/canonical/fase-d/kelas-8/tp-03.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-04 | docs/canonical/fase-d/kelas-8/tp-04.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-05 | docs/canonical/fase-d/kelas-8/tp-05.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-06 | docs/canonical/fase-d/kelas-8/tp-06.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-07 | docs/canonical/fase-d/kelas-8/tp-07.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-08 | docs/canonical/fase-d/kelas-8/tp-08.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-09 | docs/canonical/fase-d/kelas-8/tp-09.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-10 | docs/canonical/fase-d/kelas-8/tp-10.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-11 | docs/canonical/fase-d/kelas-8/tp-11.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-12 | docs/canonical/fase-d/kelas-8/tp-12.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-13 | docs/canonical/fase-d/kelas-8/tp-13.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-14 | docs/canonical/fase-d/kelas-8/tp-14.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-15 | docs/canonical/fase-d/kelas-8/tp-15.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-16 | docs/canonical/fase-d/kelas-8/tp-16.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-17 | docs/canonical/fase-d/kelas-8/tp-17.js
+  [1] Langkah: model | Baris ~71
+      Kriteria: TTS_SYMBOL
+      Teks: "On the storage room door, there was a sign that said, Notice: Keep this door locked."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: kalimat | Baris ~179
+      Kriteria: TTS_SYMBOL
+      Teks: "On the storage room door, there was a sign that said, Notice: Keep this door locked."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 8-18 | docs/canonical/fase-d/kelas-8/tp-18.js
+  [1] Langkah: change | Baris ~230
+      Kriteria: TTS_SYMBOL
+      Teks: "Use this pattern. Write ONE conflict sentence: Suddenly, then so, then but."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 8-19 | docs/canonical/fase-d/kelas-8/tp-19.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-20 | docs/canonical/fase-d/kelas-8/tp-20.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-21 | docs/canonical/fase-d/kelas-8/tp-21.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-22 | docs/canonical/fase-d/kelas-8/tp-22.js
+  [1] Langkah: change | Baris ~271
+      Kriteria: TTS_SYMBOL
+      Teks: "Use these markers. Write one instruction for each: Step 1, Before, After, and Remember to."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 8-23 | docs/canonical/fase-d/kelas-8/tp-23.js
+  [TIDAK ADA TEMUAN]
+
+TP 8-24 | docs/canonical/fase-d/kelas-8/tp-24.js
+  [1] Langkah: interact | Baris ~347
+      Kriteria: TTS_SYMBOL
+      Teks: "In your group, pass your flyers around. For each flyer, check: Is the title clear? Is there when and where? Is there an action to take? Is there an extra note?"
+      Flag: titik dua berlebih atau di tengah kalimat
+
+[KELAS 9]
+TP 9-01 | docs/canonical/fase-d/kelas-9/tp-01.js
+  [1] Langkah: change | Baris ~303
+      Kriteria: TTS_SYMBOL
+      Teks: "Include all four components: claim, reason, example, and recommendation."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-02 | docs/canonical/fase-d/kelas-9/tp-02.js
+  [1] Langkah: change | Baris ~303
+      Kriteria: TTS_SYMBOL
+      Teks: "Include all five components: acknowledge, counter, reason, example, and conclusion."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~445
+      Kriteria: TTS_SYMBOL
+      Teks: "One person presents. The others listen and check: is the tone acknowledge-then-defend, not aggressive?"
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-03 | docs/canonical/fase-d/kelas-9/tp-03.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-04 | docs/canonical/fase-d/kelas-9/tp-04.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-05 | docs/canonical/fase-d/kelas-9/tp-05.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-06 | docs/canonical/fase-d/kelas-9/tp-06.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-07 | docs/canonical/fase-d/kelas-9/tp-07.js
+  [1] Langkah: interact | Baris ~362
+      Kriteria: TTS_SYMBOL
+      Teks: "After your partner presents, give one piece of feedback: does it sound like a presentation or a casual chat?"
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: untuk_lancar | Baris ~584
+      Kriteria: TTS_SYMBOL
+      Teks: "In this presentation, I will cover three main points: the discovery we made, the historical objects we found, and our recommendation for the school."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-08 | docs/canonical/fase-d/kelas-9/tp-08.js
+  [1] Langkah: untuk_lancar | Baris ~560
+      Kriteria: TTS_SYMBOL
+      Teks: "To illustrate this point further, here is one specific example from the documents we found: a letter written by the first school principal in 1972."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-09 | docs/canonical/fase-d/kelas-9/tp-09.js
+  [1] Langkah: share | Baris ~417
+      Kriteria: TTS_SYMBOL
+      Teks: "Give a short presentation: your opening from last lesson, one body point, then your closing. The group asks at least one question."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: untuk_lancar | Baris ~580
+      Kriteria: TTS_SYMBOL
+      Teks: "Now prepare a second Q&A response using I'm not completely sure, but I believe for a question you find harder to answer."
+      Flag: karakter: &
+
+TP 9-10 | docs/canonical/fase-d/kelas-9/tp-10.js
+  [1] Langkah: interact | Baris ~358
+      Kriteria: TTS_SYMBOL
+      Teks: "After your partner shares, ask: Could you have said this from just one source?"
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~429
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns presenting your synthesis. Others listen for all three components: Source A, Source B, Together they show."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-11 | docs/canonical/fase-d/kelas-9/tp-11.js
+  [1] Langkah: interact | Baris ~354
+      Kriteria: TTS_SYMBOL
+      Teks: "Your turn. After your partner shares, ask: Would you reach the same conclusion if you only read one source?"
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~425
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns presenting your comparison. Others listen for all four components: Both sources, However, while, Therefore."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-12 | docs/canonical/fase-d/kelas-9/tp-12.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-13 | docs/canonical/fase-d/kelas-9/tp-13.js
+  [1] Langkah: interact | Baris ~354
+      Kriteria: TTS_SYMBOL
+      Teks: "Your turn. After your partner shares, give one piece of feedback: is the consequence specific enough to understand the impact?"
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~425
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns presenting your problem statement. Others listen for all three components: problem, cause, consequence."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-14 | docs/canonical/fase-d/kelas-9/tp-14.js
+  [1] Langkah: interact | Baris ~354
+      Kriteria: TTS_SYMBOL
+      Teks: "Your turn. After your partner shares, give one piece of feedback: does the If-so show a realistic connection between the condition and the result?"
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: share | Baris ~425
+      Kriteria: TTS_SYMBOL
+      Teks: "Take turns presenting your solution proposal. Others listen for all four components: solution, If-so logic, and benefit."
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-15 | docs/canonical/fase-d/kelas-9/tp-15.js
+  [1] Langkah: change | Baris ~279
+      Kriteria: TTS_ABBREV
+      Teks: "Write a full evaluation using all five components. Draw on your problem statement from TP-13 and your solution from TP-14."
+      Flag: singkatan: TP
+  [2] Langkah: interact | Baris ~342
+      Kriteria: TTS_SYMBOL
+      Teks: "After each turn, the group checks: Does This solution works because explain WHY, not just what? Does Therefore add a conclusion beyond As a result?"
+      Flag: titik dua berlebih atau di tengah kalimat
+
+TP 9-16 | docs/canonical/fase-d/kelas-9/tp-16.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-17 | docs/canonical/fase-d/kelas-9/tp-17.js
+  [TIDAK ADA TEMUAN]
+
+TP 9-18 | docs/canonical/fase-d/kelas-9/tp-18.js
+  [1] Langkah: hook | Baris ~52
+      Kriteria: TTS_SYMBOL
+      Teks: "Let us now see how to bring all of that together: looking back, reflecting, and stepping forward."
+      Flag: titik dua berlebih atau di tengah kalimat
+  [2] Langkah: interact | Baris ~346
+      Kriteria: TTS_SYMBOL
+      Teks: "After each person, the group responds with: One thing I noticed about your journey is. Then discuss: what do you have in common in your I am ready to statements?"
+      Flag: titik dua berlebih atau di tengah kalimat
+
+
+=== UCAP BERSIH (tidak ada temuan) ===
+TP 7-01, TP 7-05, TP 7-06, TP 7-07, TP 7-09, TP 7-10, TP 7-11, TP 7-14, TP 7-17, TP 7-22, TP 7-23, TP 8-01, TP 8-02, TP 8-03, TP 8-04, TP 8-05, TP 8-06, TP 8-07, TP 8-08, TP 8-09, TP 8-10, TP 8-11, TP 8-12, TP 8-13, TP 8-14, TP 8-15, TP 8-16, TP 8-19, TP 8-20, TP 8-21, TP 8-23, TP 9-03, TP 9-04, TP 9-05, TP 9-06, TP 9-12, TP 9-16, TP 9-17

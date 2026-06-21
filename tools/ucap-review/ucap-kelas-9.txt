@@ -1,0 +1,644 @@
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:27:UCAP: Good morning. Please take your seats and prepare to think critically today.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:31:UCAP: Consider this: our community produces a large amount of waste every week. What should be done about it?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:34:UCAP: Look at this recycling scenario. What argument would you make for or against a school recycling program?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:37:UCAP: Let us now see how to build a complete argument for this issue.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:47:UCAP: I believe our school needs a community recycling program because it protects our environment.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:51:UCAP: One reason is that recycling reduces plastic waste in our area. For example, students can collect bottles every week and bring them to the recycling centre.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:55:UCAP: Therefore, I recommend that every student takes responsibility for sorting waste at school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:59:UCAP: I believe recycling helps our community because it teaches responsibility. One reason is that less waste means a cleaner environment for everyone. For example, neighbourhoods with recycling programs have less litter. Therefore, I recommend starting with one recycling station in the school canteen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:75:UCAP: I believe our school needs a community recycling program because it protects our environment.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:84:UCAP: One reason is that recycling reduces plastic waste in our area. For example, students can collect bottles every week and bring them to the recycling centre.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:93:UCAP: Therefore, I recommend that every student takes responsibility for sorting waste at school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:102:UCAP: I believe recycling helps our community because it teaches responsibility. One reason is that less waste means a cleaner environment for everyone. For example, neighbourhoods with recycling programs have less litter. Therefore, I recommend starting with one recycling station in the school canteen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:105:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:111:UCAP: Now it is your turn. Write your own argument.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:123:UCAP: Use this pattern. But write your own argument, not the same words as mine.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:124:UCAP: Include all four components: claim, reason, example, and recommendation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:126:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:137:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:149:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:153:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:154:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:165:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:183:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:184:UCAP: One person presents. The others listen and check for all four components.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:198:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:208:UCAP: State your claim and your reason. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:213:UCAP: Your recommendation sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:224:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:228:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:240:UCAP: Here is the frame. Tell me your claim.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:243:UCAP: Now your reason.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:249:UCAP: Try adding this after your example. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:250:UCAP: This shows that community recycling protects the environment we all share.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-01.txt:252:UCAP: Now you try. Add your own This shows that sentence after your example.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:28:UCAP: Welcome, class. Today requires careful reasoning, so let us begin calmly.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:32:UCAP: Some students argue that homework wastes their time. Do you agree, or is there another way to see it?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:35:UCAP: Look at these two viewpoints. Before defending your own, can you state the other side fairly?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:38:UCAP: Let us now see how to acknowledge a different view and still defend your own.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:48:UCAP: Some people think homework wastes students' time. However, I believe homework helps learning because it gives students time to practise on their own.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:52:UCAP: One reason is that homework builds good study habits. For example, students who spend thirty minutes reviewing notes at home usually do better in tests.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:56:UCAP: Some people think too much homework upsets the balance between school and family life. However, I believe the right amount of homework makes learning more effective.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:60:UCAP: Therefore, homework should be given with care -- enough to support learning, but not so much that it takes all a student's time and breaks the balance of their day.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:76:UCAP: Some people think homework wastes students' time. However, I believe homework helps learning because it gives students time to practise on their own.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:85:UCAP: One reason is that homework builds good study habits. For example, students who spend thirty minutes reviewing notes at home usually do better in tests.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:94:UCAP: Some people think too much homework upsets the balance between school and family life. However, I believe the right amount of homework makes learning more effective.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:103:UCAP: Therefore, homework should be given with care -- enough to support learning, but not so much that it takes all a student's time and breaks the balance of their day.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:106:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:112:UCAP: Now it is your turn. Write your own argument.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:124:UCAP: Use this pattern. Acknowledge the other view first, then defend your own position.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:125:UCAP: Include all five components: acknowledge, counter, reason, example, and conclusion.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:127:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:138:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:150:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:154:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:155:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:166:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:184:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:185:UCAP: One person presents. The others listen and check: is the tone acknowledge-then-defend, not aggressive?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:199:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:209:UCAP: State your acknowledgment and your counter. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:214:UCAP: Your conclusion sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:225:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:229:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:241:UCAP: This is the other view. Say it first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:244:UCAP: Good. Now your view. However, I believe...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:250:UCAP: Try a more nuanced opening. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:251:UCAP: While it is true that homework can take too much time, I still believe a balanced homework policy helps learning more than it hurts.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-02.txt:253:UCAP: Now replace your Some people think opener with While it is true that. Try once.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:30:UCAP: Good morning. This session, we put everything together.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:34:UCAP: Think about a team project you worked on. What made the teamwork successful, or difficult?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:37:UCAP: Look at this teamwork scene. Can you build a complete argument for why teamwork improves school projects?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:40:UCAP: Let us now see how all six components come together in one argument.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:50:UCAP: I believe teamwork makes school projects better because students can share ideas and learn from each other.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:54:UCAP: One reason is that working in clubs teaches cooperation. Another reason is that students finish projects faster when they work as a team.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:58:UCAP: Some people think group work is unfair because not everyone contributes equally. However, I believe that with clear roles, every team member can cooperate effectively.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:62:UCAP: For example, our school science club finished their project early because every member took a role. Therefore, I recommend that all students join at least one school club to practise teamwork and cooperation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:78:UCAP: I believe teamwork makes school projects better because students can share ideas and learn from each other.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:81:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:87:UCAP: One reason is that working in clubs teaches cooperation. Another reason is that students finish projects faster when they work as a team.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:90:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:96:UCAP: Some people think group work is unfair because not everyone contributes equally. However, I believe that with clear roles, every team member can cooperate effectively.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:99:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:105:UCAP: For example, our school science club finished their project early because every member took a role. Therefore, I recommend that all students join at least one school club to practise teamwork and cooperation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:108:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:114:UCAP: Now it is your turn. Write your own complete argument.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:126:UCAP: Use this pattern. Write your own six-component argument about teamwork in school clubs.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:127:UCAP: Include all six components, claim, two reasons, acknowledge, counter, example, and recommendation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:129:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:140:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:153:UCAP: Watch first. Then you do the same in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:157:UCAP: Your turn now. Take turns in your group. After each person, name the most convincing component.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:168:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:184:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:185:UCAP: One person presents the full six-component argument. The others listen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:199:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:209:UCAP: State your two reasons. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:214:UCAP: Your acknowledge-counter move. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:225:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:229:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:241:UCAP: Claim. Two reasons. Acknowledge. Counter. Example. Recommendation. Six steps.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:247:UCAP: Try adding a closing call-to-action after your recommendation. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:248:UCAP: If we want our school to produce confident, responsible students, we need to make teamwork through clubs a regular part of learning -- not just an optional activity.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-03.txt:250:UCAP: Now add your own closing sentence after your recommendation. One sentence only.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:25:UCAP: Good morning. We begin today with something from the school canteen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:29:UCAP: When you eat at the canteen, do you think about the food's nutrition and value? What matters most to you?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:32:UCAP: Look at these menu cards. If you were going to review one dish, what would you say about it?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:35:UCAP: Let us now see how to give a simple review that describes and evaluates.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:44:UCAP: The school canteen serves healthy food every day, and the portions are always generous.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:48:UCAP: It is fresh and colourful, and the price is very reasonable for students.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:52:UCAP: I think the vegetable soup is the best dish because it has great nutrition and keeps you full all morning.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:56:UCAP: It is warm and filling, and I think the canteen menu is good because it balances nutrition with taste at a fair price.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:72:UCAP: The school canteen serves healthy food every day, and the portions are always generous.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:75:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:81:UCAP: It is fresh and colourful, and the price is very reasonable for students.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:84:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:90:UCAP: I think the vegetable soup is the best dish because it has great nutrition and keeps you full all morning.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:93:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:99:UCAP: It is warm and filling, and I think the canteen menu is good because it balances nutrition with taste at a fair price.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:102:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:108:UCAP: Now it is your turn. Write your own review.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:120:UCAP: Choose one dish from the menu cards. Describe it, then evaluate it.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:121:UCAP: Write two sentences: describe with It is and, then evaluate with I think because.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:123:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:134:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:146:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:150:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:151:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:162:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:180:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:181:UCAP: One person gives the review. The others listen and check for description and evaluation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:195:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:205:UCAP: Describe your dish in one sentence using It is. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:210:UCAP: Your I think sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:221:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:225:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:237:UCAP: What does it look like? It is...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:239:UCAP: And one more detail. And...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:241:UCAP: Good. Now tell me what you think. I think...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:247:UCAP: Try adding a light recommendation after your evaluation. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:248:UCAP: For anyone looking for a healthy and affordable meal, this canteen dish is really worth trying -- good nutrition at a fair price.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-04.txt:250:UCAP: Now add one recommendation sentence of your own after your I think sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:26:UCAP: Good morning. Today we evaluate something that affects all of us.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:30:UCAP: Think honestly: is the homework policy at this school working well? What is one strength and one problem?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:33:UCAP: Look at this policy summary. What do you think are its strengths and limitations?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:36:UCAP: Let us now see how to give a balanced evaluation that acknowledges both sides.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:45:UCAP: I believe the current homework policy has real value because it helps students develop regular study habits.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:49:UCAP: One strength is that homework gives students time to review and strengthen what they learned in class.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:53:UCAP: However, poor time management becomes a serious problem when homework assignments pile up near exam periods.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:57:UCAP: I believe the homework policy follows school rules that most students understand. One strength is that it builds consistent habits. However, adjustments to the amount given could help students balance their time better.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:73:UCAP: I believe the current homework policy has real value because it helps students develop regular study habits.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:82:UCAP: One strength is that homework gives students time to review and strengthen what they learned in class.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:91:UCAP: However, poor time management becomes a serious problem when homework assignments pile up near exam periods.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:100:UCAP: I believe the homework policy follows school rules that most students understand. One strength is that it builds consistent habits. However, adjustments to the amount given could help students balance their time better.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:103:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:109:UCAP: Now it is your turn. Write your own balanced review.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:121:UCAP: Use this pattern. Give a balanced evaluation, one strength and one limitation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:122:UCAP: The tone must be evaluative, not persuasive. However shows a limitation, not a counterattack.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:124:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:135:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:147:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:152:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:153:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:164:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:182:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:183:UCAP: One person presents the balanced review. The others listen for the claim, the strength, and the limitation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:197:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:207:UCAP: State your strength and your limitation. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:212:UCAP: Your overall evaluation, the I believe sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:223:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:227:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:239:UCAP: This side is the strength. This side is the limitation. A balanced review gives weight to both.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:241:UCAP: One strength is...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:243:UCAP: However...
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:249:UCAP: Try adding a closing sentence with On balance. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:250:UCAP: On balance, the homework policy has more strengths than limitations, which suggests it is working but could be improved with small adjustments to the weekly amount.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-05.txt:252:UCAP: Now add your own On balance sentence after your However sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:28:UCAP: Welcome back. We are ready for a complete review today.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:32:UCAP: Think of the class charity project you know about. How would you describe it, and would you recommend it?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:35:UCAP: Look at these project summaries. Which one could you give a full, balanced review?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:38:UCAP: Let us now see how all five components come together in one complete review.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:47:UCAP: It is a charity project where students collect books for children in the local community, and it runs every term.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:50:UCAP: I believe this project is valuable because it builds real community service skills and gives participants a sense of purpose.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:54:UCAP: One strength is the high level of student participation across all classes. However, the project needs clearer evaluation criteria to measure its real impact.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:58:UCAP: Therefore, I recommend continuing the charity project with a simple evaluation plan so students can see the results of their community service and feel proud of their participation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:74:UCAP: It is a charity project where students collect books for children in the local community, and it runs every term.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:77:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:83:UCAP: I believe this project is valuable because it builds real community service skills and gives participants a sense of purpose.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:92:UCAP: One strength is the high level of student participation across all classes. However, the project needs clearer evaluation criteria to measure its real impact.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:101:UCAP: Therefore, I recommend continuing the charity project with a simple evaluation plan so students can see the results of their community service and feel proud of their participation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:104:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:110:UCAP: Now it is your turn. Write your own complete review.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:122:UCAP: Choose one project from the summary cards. Write a full review using all five components.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:123:UCAP: The recommendation must follow from your balanced evaluation, not appear on its own.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:125:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:136:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:149:UCAP: Take turns presenting your complete review in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:150:UCAP: After each review, one member names the most convincing part and explains why.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:161:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:178:UCAP: One person presents the complete review. The others listen for all five components.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:202:UCAP: Describe the project in one sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:207:UCAP: Your recommendation sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:234:UCAP: Describe it. Evaluate it. Strength. Limitation. Then recommend. Five steps.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:240:UCAP: Try adding an evaluative framing before your recommendation. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:241:UCAP: Based on this evaluation, I am confident that a stronger charity project with regular participation would bring lasting benefits to the whole community.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-06.txt:243:UCAP: Now add Based on this evaluation before your own recommendation sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:28:UCAP: Good morning, and welcome. Please stand by your presentations today.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:31:UCAP: You have investigated the old storage room. Today you present that discovery formally. Are you ready?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:34:UCAP: Look at this presentation setup. What should a formal presentation opening include?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:37:UCAP: Let us now see how a formal presentation opening sounds, greet, introduce, announce the topic, and state the purpose.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:46:UCAP: Good morning, everyone. My name is Dito, and I am a student at this school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:49:UCAP: Today I would like to present our discovery in the old storage room behind the school building.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:52:UCAP: The purpose of this presentation is to share the historical objects we found and explain why they matter to our school community.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:56:UCAP: Good morning. My name is Wulan. Today I would like to present something extraordinary we discovered at school. The purpose of this presentation is to show how a simple discovery can reveal a part of our school's history that many people have forgotten.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:72:UCAP: Good morning, everyone. My name is Dito, and I am a student at this school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:75:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:81:UCAP: Today I would like to present our discovery in the old storage room behind the school building.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:84:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:90:UCAP: The purpose of this presentation is to share the historical objects we found and explain why they matter to our school community.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:93:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:99:UCAP: Good morning. My name is Wulan. Today I would like to present something extraordinary we discovered at school. The purpose of this presentation is to show how a simple discovery can reveal a part of our school's history that many people have forgotten.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:102:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:108:UCAP: Now it is your turn. Write your own presentation opening.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:120:UCAP: Write a formal presentation opening with all four components. Greet, introduce, announce the topic, then state the purpose.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:121:UCAP: Keep the register formal. Not an email, not a casual chat, a presentation to an audience.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:123:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:134:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:146:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:150:UCAP: That is it. Stand up when you present. Address your partner as the audience. Your turn now.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:151:UCAP: After your partner presents, give one piece of feedback: does it sound like a presentation or a casual chat?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:162:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:180:UCAP: The person I point to starts first. Stand up when you present.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:181:UCAP: One person delivers the presentation opening. The others listen and check all four components.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:195:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:205:UCAP: Greet the audience and introduce yourself. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:210:UCAP: Your purpose statement. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:221:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:225:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:237:UCAP: This is the email version. This is the presentation version. Same purpose, different register.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:243:UCAP: Try adding a roadmap sentence after your purpose statement. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:244:UCAP: In this presentation, I will cover three main points: the discovery we made, the historical objects we found, and our recommendation for the school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-07.txt:246:UCAP: Now add one roadmap sentence of your own after your purpose statement.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:28:UCAP: Good morning. Please have your discovery notes ready on your desk.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:32:UCAP: You have opened your presentation. Now, what are the main points you want to share about the storage room?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:35:UCAP: Look at these discovery notes. How can you organize them into clear presentation points?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:38:UCAP: Let us now see how to build a clear, organized presentation body, with transitions and a conclusion from evidence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:47:UCAP: First, we found a collection of old letters and historical documents from the school's earliest years, carefully stored in wooden boxes.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:50:UCAP: Next, we discovered a set of photographs showing teachers and students from more than fifty years ago.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:53:UCAP: Another point is that several historical documents include the names of former teachers whose classrooms still exist in our school today, a direct link to our school history.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:56:UCAP: Finally, all the objects were in surprisingly good condition. Based on this evidence, we believe the storage room was used as an archive for important school history that no one had opened in decades.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:72:UCAP: First, we found a collection of old letters and historical documents from the school's earliest years, carefully stored in wooden boxes.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:75:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:81:UCAP: Next, we discovered a set of photographs showing teachers and students from more than fifty years ago.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:84:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:90:UCAP: Another point is that several historical documents include the names of former teachers whose classrooms still exist in our school today, a direct link to our school history.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:93:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:99:UCAP: Finally, all the objects were in surprisingly good condition. Based on this evidence, we believe the storage room was used as an archive for important school history that no one had opened in decades.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:102:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:108:UCAP: Now it is your turn. Write your own organized presentation body.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:120:UCAP: Write four main points using First, Next, Another point is, Finally, and Based on this.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:121:UCAP: Remember, Another point is opens a new dimension, not just the next thing. Based on this draws a conclusion from all the evidence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:123:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:134:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:147:UCAP: Take turns delivering your presentation body in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:148:UCAP: The group checks: First? Next? Another point is? Finally? Based on this? After each delivery, one member says which transition felt like a genuine new dimension.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:159:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:175:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:176:UCAP: Take turns delivering your organized presentation body. Others listen for all five markers.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:190:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:200:UCAP: Give me your Another point is sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:205:UCAP: Your Based on this sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:216:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:220:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:232:UCAP: First is the starting point. Next is the next thing. Another point is a NEW ANGLE, something different. Finally is the last item. Based on this is what all the evidence means.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:238:UCAP: Try adding an elaboration sentence after one of your points. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:239:UCAP: To illustrate this point further, here is one specific example from the documents we found: a letter written by the first school principal in 1972.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-08.txt:241:UCAP: Now add a To illustrate this point further sentence after one of your own points.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:27:UCAP: Welcome back, everyone. Let us bring all our focus to the front.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:30:UCAP: You have opened your presentation. You have presented your main points. Now, what is left?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:33:UCAP: And after the closing, the audience gets to ask you questions. Are you prepared to respond?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:36:UCAP: Let us now see how to close a formal presentation and handle audience questions.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:45:UCAP: In conclusion, the old storage room holds important pieces of our school's heritage that have been forgotten for decades and deserve to be shared with everyone.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:47:UCAP: Therefore, I recommend that the school create a small heritage display in the main corridor so all students can learn about this part of their school's history.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:50:UCAP: Thank you for listening to our presentation. Do you have any questions?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:53:UCAP: That's an interesting question. I think the school should open the storage room for more community discussion about how to best preserve and share these items.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:69:UCAP: In conclusion, the old storage room holds important pieces of our school's heritage that have been forgotten for decades and deserve to be shared with everyone.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:72:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:78:UCAP: Therefore, I recommend that the school create a small heritage display in the main corridor so all students can learn about this part of their school's history.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:81:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:87:UCAP: Thank you for listening to our presentation. Do you have any questions?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:90:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:96:UCAP: That's an interesting question. I think the school should open the storage room for more community discussion about how to best preserve and share these items.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:99:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:105:UCAP: Now it is your turn. Write your own presentation closing.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:117:UCAP: Write a presentation closing: In conclusion, summarize. Therefore, give your recommendation. Then: Thank you for listening. Do you have any questions? Finally, prepare your Q&A response with That's an interesting question.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:118:UCAP: Keep it formal. Not "So basically..." and not a recommendation without a summary first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:120:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:131:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:143:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:149:UCAP: Your turn. Stand when you present. Partner B asks one question. Then swap.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:160:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:176:UCAP: The person I point to presents first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:177:UCAP: Give a short presentation: your opening from last lesson, one body point, then your closing. The group asks at least one question.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:178:UCAP: Presenter responds with That's an interesting question.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:202:UCAP: Give me your In conclusion sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:207:UCAP: Someone asks you a question. How do you start your response?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:234:UCAP: That's an interesting question, then you think, then you answer. Try once more.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:240:UCAP: Try a humble response for a harder question. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:241:UCAP: I'm not completely sure, but I believe the school could work with the local museum to help preserve these heritage items properly.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-09.txt:243:UCAP: Now prepare a second Q&A response using I'm not completely sure, but I believe for a question you find harder to answer.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:27:UCAP: Good morning. Today we work with two historical sources from the storage room.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:30:UCAP: You have seen a handwritten letter and a black-and-white photograph from the old storage room. What do they each tell you?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:33:UCAP: Look at both source documents. What shared understanding can you draw from them together?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:36:UCAP: Let us now see how to combine two sources into one coherent understanding.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:45:UCAP: Source A says the storage room was used to keep official historical documents from the school's first decade.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:48:UCAP: Source B says the old photographs show student events from the 1970s with captions written by the school principal, giving us a picture of school history we did not know before.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:51:UCAP: Together, they show that the storage room was an important archive containing valuable evidence of the school's earliest years.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:54:UCAP: Source A says the letters describe the early teachers and founders of this school. Source B says the photographs include the first graduation ceremony. Together, they show that these historical documents preserve a picture of our school history that students today have never seen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:70:UCAP: Source A says the storage room was used to keep official historical documents from the school's first decade.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:79:UCAP: Source B says the old photographs show student events from the 1970s with captions written by the school principal, giving us a picture of school history we did not know before.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:88:UCAP: Together, they show that the storage room was an important archive containing valuable evidence of the school's earliest years.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:97:UCAP: Source A says the letters describe the early teachers and founders of this school. Source B says the photographs include the first graduation ceremony. Together, they show that these historical documents preserve a picture of our school history that students today have never seen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:106:UCAP: Now it is your turn. Write your own synthesis from both sources.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:118:UCAP: Read Source A and Source B. Then write: what Source A says, what Source B says, and what they show together.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:119:UCAP: Together, they show must be a new insight, not just a list of two facts, not a report from only one source.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:148:UCAP: That is it. Your turn now.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:149:UCAP: After your partner shares, ask: Could you have said this from just one source?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:160:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:178:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:179:UCAP: Take turns presenting your synthesis. Others listen for all three components: Source A, Source B, Together they show.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:193:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:203:UCAP: What does Source A say? One sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:208:UCAP: Your Together, they show sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:219:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:223:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:235:UCAP: What does Source A say alone? What does Source B say alone? Now, what do BOTH of these tell us together that neither one says alone?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:241:UCAP: Try adding an emphasis phrase after your synthesis. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:242:UCAP: Together, they show that these historical documents preserve an important part of our school history. What is most important is that this evidence was almost lost forever.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-10.txt:244:UCAP: Now add What is most important is after your own Together, they show sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:27:UCAP: Good morning. We are comparing two sources today, carefully.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:30:UCAP: Consider two topics: green spaces and physical activity. Are they related, or completely separate?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:33:UCAP: Look at both sources. What do they agree on, and where do their focuses differ?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:36:UCAP: Let us now see how to compare two sources and draw a conclusion from that comparison.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:45:UCAP: Both sources suggest that green spaces and physical activity are closely connected to better public health.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:48:UCAP: However, Source A focuses on how trees and parks improve air quality in urban environments, while Source B focuses on how regular exercise directly improves heart rate, energy levels, and concentration.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:51:UCAP: Therefore, a comparison of both sources shows that improving public health requires both access to green spaces and regular physical activity, they support each other.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:54:UCAP: Both sources agree that outdoor environments support better student health. However, Source A emphasizes the benefits of clean air from green spaces, while Source B emphasizes the direct physical benefits of movement and exercise. Therefore, the comparison suggests that schools should provide both green spaces and structured time for physical activity in their daily routine.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:70:UCAP: Both sources suggest that green spaces and physical activity are closely connected to better public health.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:79:UCAP: However, Source A focuses on how trees and parks improve air quality in urban environments, while Source B focuses on how regular exercise directly improves heart rate, energy levels, and concentration.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:88:UCAP: Therefore, a comparison of both sources shows that improving public health requires both access to green spaces and regular physical activity, they support each other.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:97:UCAP: Both sources agree that outdoor environments support better student health. However, Source A emphasizes the benefits of clean air from green spaces, while Source B emphasizes the direct physical benefits of movement and exercise. Therefore, the comparison suggests that schools should provide both green spaces and structured time for physical activity in their daily routine.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:106:UCAP: Now it is your turn. Write your own source comparison.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:118:UCAP: Read Source A and Source B. Write what both agree on, how their focus differs, and your conclusion from the comparison.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:119:UCAP: Therefore must come from the comparison of BOTH sources, not from one source alone, not a list of differences without any conclusion.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:148:UCAP: Your turn. After your partner shares, ask: Would you reach the same conclusion if you only read one source?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:159:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:178:UCAP: Take turns presenting your comparison. Others listen for all four components: Both sources, However, while, Therefore.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:202:UCAP: What do both sources agree on? One sentence starting with Both sources.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:207:UCAP: Your Therefore sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:234:UCAP: Both sources = what they agree on. However and while = where they differ in focus. Therefore = what this difference tells us together, not a summary of one source, a conclusion about both.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:240:UCAP: Try adding a significance sentence after your conclusion. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:241:UCAP: Therefore, schools should invest in both green spaces and physical activity programs. This is significant because public health research shows neither alone is enough, students need both.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-11.txt:243:UCAP: Now add This is significant because after your own Therefore sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:27:UCAP: Welcome. Today we draw evidence-based conclusions from multiple sources.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:30:UCAP: You have read about air quality, physical activity, and green spaces. What do all three suggest together?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:33:UCAP: Look at these three source cards. What conclusion can you draw from all of them combined?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:36:UCAP: Let us now see how to draw a three-step evidence-based conclusion from multiple sources.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:45:UCAP: Based on these sources, schools with better air quality and access to green outdoor spaces tend to support student wellbeing more effectively.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:48:UCAP: This suggests that regular physical activity and a healthy school environment work together to build healthy habits in students over time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:51:UCAP: Therefore, any plan to improve the school environment should include evidence-based measures targeting both air quality and daily physical activity.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:54:UCAP: Based on these sources about trees, exercise, and student wellbeing, this suggests that green spaces and active routines support each other in building healthy habits. Therefore, evidence-based conclusions about school health must consider the environment and daily physical activity together, not separately.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:70:UCAP: Based on these sources, schools with better air quality and access to green outdoor spaces tend to support student wellbeing more effectively.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:79:UCAP: This suggests that regular physical activity and a healthy school environment work together to build healthy habits in students over time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:88:UCAP: Therefore, any plan to improve the school environment should include evidence-based measures targeting both air quality and daily physical activity.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:97:UCAP: Based on these sources about trees, exercise, and student wellbeing, this suggests that green spaces and active routines support each other in building healthy habits. Therefore, evidence-based conclusions about school health must consider the environment and daily physical activity together, not separately.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:106:UCAP: Now it is your turn. Write your own evidence-based conclusion.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:118:UCAP: Read your source syntheses from before. Then write: what the sources collectively show, what they imply, and your evidence-based conclusion.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:119:UCAP: This suggests must say something the sources imply but do not state directly, not a repetition of what you already wrote in Based on these sources.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:132:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:145:UCAP: Take turns sharing your three-step conclusion in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:146:UCAP: After each turn, the group checks: Does Based on these sources cite more than one source? Does This suggests say something not directly in any source? Does Therefore follow logically?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:157:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:173:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:174:UCAP: Take turns presenting your evidence-based conclusion. Others listen for all three steps.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:188:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:198:UCAP: Give me your Based on these sources sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:203:UCAP: Your This suggests sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:214:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:218:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:230:UCAP: Based on these sources = I am reading multiple sources. This suggests = I am adding something they do not say directly. Therefore = this is my conclusion from combining both.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:236:UCAP: Try opening with an alternative phrase. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:237:UCAP: What all these sources share is a concern for the daily school environment. This suggests that healthy habits cannot be built through one change alone. Therefore, schools need a coordinated approach that addresses both air quality and physical activity together.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-12.txt:239:UCAP: Now rewrite your Based on these sources using What all these sources share is instead.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:27:UCAP: Good morning. We shift focus today to identifying a real problem.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:30:UCAP: Based on what we analyzed, what is one clear problem about student physical activity during the school day?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:33:UCAP: Look at this school schedule. What problem does this visual reveal about students' daily routines?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:36:UCAP: Let us now see how to name a problem, explain why it happens, and describe what it leads to.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:45:UCAP: The problem is that most students do not get enough physical activity during the school day.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:48:UCAP: This happens because the school routine leaves very little time for movement between lessons, and most activities are sedentary.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:51:UCAP: As a result, many students feel tired and less focused in the afternoon, which affects both their performance and their overall student wellbeing, making it harder to build healthy habits at school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:54:UCAP: The problem is that student wellbeing is declining because the current school routine does not include regular physical activity. As a result, students are not building the healthy habits they need for long-term health and concentration.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:70:UCAP: The problem is that most students do not get enough physical activity during the school day.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:79:UCAP: This happens because the school routine leaves very little time for movement between lessons, and most activities are sedentary.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:88:UCAP: As a result, many students feel tired and less focused in the afternoon, which affects both their performance and their overall student wellbeing, making it harder to build healthy habits at school.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:97:UCAP: The problem is that student wellbeing is declining because the current school routine does not include regular physical activity. As a result, students are not building the healthy habits they need for long-term health and concentration.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:106:UCAP: Now it is your turn. Write your own problem statement.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:118:UCAP: Write a problem statement about student physical activity at school. Name the problem, explain why it happens, and describe what it leads to.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:119:UCAP: All three components must be separate, naming the problem is not the same as explaining its cause.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:148:UCAP: Your turn. After your partner shares, give one piece of feedback: is the consequence specific enough to understand the impact?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:159:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:178:UCAP: Take turns presenting your problem statement. Others listen for all three components: problem, cause, consequence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:202:UCAP: Give me your The problem is sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:207:UCAP: Your As a result sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:234:UCAP: The problem is that, I name what is wrong. Because, I explain why it happens. As a result, I show what it leads to. These are three different moves, not one idea in three sentences.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:240:UCAP: Try adding a second consequence after your first one. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:241:UCAP: As a result, students feel tired in the afternoon. Not only that, but students who do not move regularly during school hours are also less likely to exercise after school, which harms their long-term healthy habits.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-13.txt:243:UCAP: Now add Not only that, but after your own As a result sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:27:UCAP: Good morning. The problem has been identified. Now we propose a solution.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:30:UCAP: If you were in charge, what would you do to get students moving more during the school day?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:33:UCAP: Look at this proposed timetable. Could this active break program solve the problem we identified?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:36:UCAP: Let us now see how to propose a solution with a clear condition, a result, and a benefit.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:45:UCAP: To solve this problem, the school could introduce a five-minute active break after every two lessons as part of its regular school programs.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:48:UCAP: If students follow this active break schedule every day, their energy levels will improve and they will concentrate better in the afternoon, so the whole class benefits from better daily routines.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:51:UCAP: This will help students develop healthy habits by making regular movement a normal part of their school day and daily routines.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:54:UCAP: To solve this problem, the school needs a clear action plan with active breaks built into daily routines across all year groups. If students move for at least ten minutes between lessons, their concentration improves and absences due to fatigue decrease, so the entire school community benefits from better health through these school programs. This will help students build healthy habits that last beyond the classroom.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:70:UCAP: To solve this problem, the school could introduce a five-minute active break after every two lessons as part of its regular school programs.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:79:UCAP: If students follow this active break schedule every day, their energy levels will improve and they will concentrate better in the afternoon, so the whole class benefits from better daily routines.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:88:UCAP: This will help students develop healthy habits by making regular movement a normal part of their school day and daily routines.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:97:UCAP: To solve this problem, the school needs a clear action plan with active breaks built into daily routines across all year groups. If students move for at least ten minutes between lessons, their concentration improves and absences due to fatigue decrease, so the entire school community benefits from better health through these school programs. This will help students build healthy habits that last beyond the classroom.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:106:UCAP: Now it is your turn. Write your own solution proposal.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:118:UCAP: Write a solution proposal. Name the solution, show the IF-SO logic, then explain the benefit.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:119:UCAP: All four components must be distinct, name, condition, consequence, and benefit are not the same step.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:148:UCAP: Your turn. After your partner shares, give one piece of feedback: does the If-so show a realistic connection between the condition and the result?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:159:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:178:UCAP: Take turns presenting your solution proposal. Others listen for all four components: solution, If-so logic, and benefit.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:202:UCAP: Give me your To solve this problem sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:207:UCAP: Your If-so sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:234:UCAP: IF = the condition you need. SO = the result that follows. They must be logically connected, not the same idea twice. For example: IF students get a break to move, their brain chemistry improves, SO concentration returns after the break.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:240:UCAP: Try adding a second implementation idea. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:241:UCAP: To solve this problem, schools can introduce an active break program. Another way to implement this solution is to train two student volunteers in each class to lead a two-minute stretching activity between lessons, no equipment needed, and students take ownership of their daily routines.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-14.txt:243:UCAP: Now add Another way to implement this solution is after your own proposal.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:29:UCAP: Welcome. Today we evaluate the solution we proposed last session.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:32:UCAP: We proposed an active break program. Does it actually work, and how do we know?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:35:UCAP: Look at this evaluation map. What does a complete problem-solution evaluation need to include?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:38:UCAP: Let us now see how to combine problem identification, solution, causal evaluation, consequence, and conclusion into one integrated evaluation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:47:UCAP: The problem is that students are not getting enough movement during the school day, which affects their focus and healthy lifestyle.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:49:UCAP: To solve it, the school could introduce a daily active break program that encourages student participation across all year groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:52:UCAP: This solution works because regular movement during the school day has been shown to improve concentration and energy, which contributes to wider school improvement.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:55:UCAP: As a result, students will be healthier and more engaged in their learning. Therefore, making active breaks a permanent part of school life is an investment in the long-term benefits of a healthy lifestyle and sustained school improvement for every student.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:71:UCAP: The problem is that students are not getting enough movement during the school day, which affects their focus and healthy lifestyle.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:74:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:80:UCAP: To solve it, the school could introduce a daily active break program that encourages student participation across all year groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:89:UCAP: This solution works because regular movement during the school day has been shown to improve concentration and energy, which contributes to wider school improvement.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:92:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:98:UCAP: As a result, students will be healthier and more engaged in their learning. Therefore, making active breaks a permanent part of school life is an investment in the long-term benefits of a healthy lifestyle and sustained school improvement for every student.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:101:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:107:UCAP: Now it is your turn. Write your own integrated problem-solution evaluation.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:119:UCAP: Write a full evaluation using all five components. Draw on your problem statement from TP-13 and your solution from TP-14.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:120:UCAP: This solution works because explains WHY, not what. Therefore is your conclusion, different from As a result.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:122:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:133:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:146:UCAP: Take turns sharing your evaluation in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:147:UCAP: After each turn, the group checks: Does This solution works because explain WHY, not just what? Does Therefore add a conclusion beyond As a result?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:158:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:174:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:175:UCAP: Take turns presenting your full evaluation. Others listen for all five components.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:189:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:199:UCAP: Give me your This solution works because sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:204:UCAP: Your Therefore sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:215:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:219:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:231:UCAP: The problem is = what is wrong. To solve it = what we will do. Works because = WHY it will work, this is different from what. As a result = what changes. Therefore = my overall conclusion, this is different from what changes; it is what we should do or think.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:237:UCAP: Try adding a second long-term benefit. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:238:UCAP: Not only does this solution address the immediate problem of low physical activity, but it also builds student participation habits that support school improvement well beyond their school years, contributing to a healthy lifestyle in the community.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-15.txt:240:UCAP: Now add Not only does this solution address the immediate problem, but it also after your own works because sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:27:UCAP: Good morning. Today we turn inward, to reflect on our own learning.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:30:UCAP: Think back to when we analyzed evidence, identified a problem, and proposed a solution. What did you actually learn?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:33:UCAP: Look at this reflection arc. Where did you experience the biggest shift in your thinking?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:36:UCAP: Let us now see how to reflect on a learning experience and construct personal meaning from it.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:45:UCAP: I learned that finding evidence is not always straightforward because different sources do not always say the same thing, and deciding which to trust takes careful thinking.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:48:UCAP: I learned that the learning process takes patience because each step, including analyzing, evaluating, and presenting, builds on the one before, and skipping a step makes the next one harder.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:51:UCAP: From this experience, I realized that personal growth often happens when something is difficult at first but becomes clearer through practice and honest reflection.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:54:UCAP: I learned that combining evidence from different sources helps me understand a problem more deeply because no single source tells the complete story. From this experience, I realized that my learning process has changed. I now think more carefully before drawing conclusions, and this kind of personal growth was something I did not expect.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:70:UCAP: I learned that finding evidence is not always straightforward because different sources do not always say the same thing, and deciding which to trust takes careful thinking.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:79:UCAP: I learned that the learning process takes patience because each step, including analyzing, evaluating, and presenting, builds on the one before, and skipping a step makes the next one harder.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:88:UCAP: From this experience, I realized that personal growth often happens when something is difficult at first but becomes clearer through practice and honest reflection.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:97:UCAP: I learned that combining evidence from different sources helps me understand a problem more deeply because no single source tells the complete story. From this experience, I realized that my learning process has changed. I now think more carefully before drawing conclusions, and this kind of personal growth was something I did not expect.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:106:UCAP: Now it is your turn. Write your own personal learning reflection.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:118:UCAP: Think about your experience in the last two clusters. Write what you learned, why it matters to you, and what you realized.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:119:UCAP: I realized must add something new, not a repetition of I learned.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:148:UCAP: Your turn. After your partner shares, give one piece of genuine feedback. Then swap.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:159:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:178:UCAP: Take turns sharing your reflection. After each person, one group member says which realization surprised them most.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:192:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:202:UCAP: Give me your I learned sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:207:UCAP: Your From this experience, I realized sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:222:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:234:UCAP: I learned that, this is WHAT I understood, not what happened. Because, this is WHY it matters to ME personally. I realized, this is something new I see about myself or learning that I did not see before. These are three different moves.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:240:UCAP: Try adding a forward-looking sentence. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:241:UCAP: What I will carry with me from this experience is the habit of asking for evidence before I accept an argument, because I now understand that personal growth starts with careful thinking.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-16.txt:243:UCAP: Now add What I will carry with me from this experience is after your own I realized sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:28:UCAP: Good morning. This session is personal, we reflect on challenges we faced.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:31:UCAP: Think of a moment when communicating in English felt really hard for you. What was that like?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:34:UCAP: Look at these two images. Which one feels more like you NOW compared to when you started?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:37:UCAP: Let us now see how to reflect on a challenge, name the strategy, and articulate what you can do now as a result.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:46:UCAP: At first, I found it very difficult to open a presentation in front of the class because I was nervous and could not find the right words when people were watching me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:49:UCAP: However, with perseverance, I kept practising my opening lines and asked a classmate to listen and give me honest feedback until the words felt natural.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:52:UCAP: I overcame it by focusing on the structure of what I wanted to say rather than trying to memorise every word, and this gradually built my confidence in communication.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:55:UCAP: At first, presenting the storage room discovery to the class felt overwhelming because I was afraid of making mistakes in front of everyone. However, I reminded myself that I had prepared carefully and that mistakes are part of learning. I overcame it by taking one step at a time, starting with the opening, then the body, then the closing, with perseverance at each stage. Now I can deliver a presentation with greater confidence, and my communication skills have grown in ways I did not expect.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:71:UCAP: At first, I found it very difficult to open a presentation in front of the class because I was nervous and could not find the right words when people were watching me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:74:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:80:UCAP: However, with perseverance, I kept practising my opening lines and asked a classmate to listen and give me honest feedback until the words felt natural.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:89:UCAP: I overcame it by focusing on the structure of what I wanted to say rather than trying to memorise every word, and this gradually built my confidence in communication.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:92:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:98:UCAP: At first, presenting the storage room discovery to the class felt overwhelming because I was afraid of making mistakes in front of everyone. However, I reminded myself that I had prepared carefully and that mistakes are part of learning. I overcame it by taking one step at a time, starting with the opening, then the body, then the closing, with perseverance at each stage. Now I can deliver a presentation with greater confidence, and my communication skills have grown in ways I did not expect.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:101:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:107:UCAP: Now it is your turn. Write your own challenge reflection.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:119:UCAP: Think of a real moment in your English learning journey when speaking or presenting felt challenging. Write all four steps.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:120:UCAP: I overcame it by must name a specific strategy, not just I tried harder, but HOW.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:122:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:133:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:145:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:149:UCAP: Your turn. After your partner shares, give one piece of honest feedback. Then swap.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:160:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:178:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:179:UCAP: Take turns sharing your challenge reflection. After each person, one group member names the strategy they found most useful.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:193:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:203:UCAP: Give me your I overcame it by sentence. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:208:UCAP: Your Now I can sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:219:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:223:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:235:UCAP: At first = what made it hard. However = the moment I chose to try differently. I overcame it by = the specific thing I did, not just worked harder, but how. Now I can = the new capability I have because of that strategy. These are four different moves.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:241:UCAP: Try adding an evaluation of what made it work. Listen first.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:242:UCAP: What helped me most was deciding to focus on structure rather than vocabulary, because when I knew the shape of what I wanted to say, the words came more easily. This strategy is what built my confidence in communication.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-17.txt:244:UCAP: Now add What helped me most was after your own I overcame it by sentence.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:29:UCAP: Welcome to our final session together in Kelas 9. Please take a moment to prepare.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:32:UCAP: Three years of English learning, from Kelas 7 to today. What has changed most about how you communicate?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:35:UCAP: Look at this learning journey timeline. Where do you see yourself growing the most?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:38:UCAP: Let us now see how to bring all of that together: looking back, reflecting, and stepping forward.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:47:UCAP: Looking back, I can see real growth in my English journey, from describing simple objects in Grade 7 to presenting arguments, synthesizing sources, and evaluating solutions in Grade 9.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:50:UCAP: I have learned that communication is more than vocabulary and grammar. It is about organizing ideas clearly, listening carefully, and reflecting honestly on every experience.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:53:UCAP: In the future, I will continue to set new future goals for my English learning because lifelong learning means every new challenge, whether in senior high school, in work, or in life, is also a new opportunity to grow.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:56:UCAP: Looking back, three years of stories, discoveries, presentations, and reflections have been a journey of genuine growth. I have learned to read with purpose, speak with structure, and think before I conclude. In the future, I will keep reading and communicating in English because lifelong learning does not stop here. It continues in every conversation and every new experience. I am ready to carry this growth into senior high school and beyond.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:72:UCAP: Looking back, I can see real growth in my English journey, from describing simple objects in Grade 7 to presenting arguments, synthesizing sources, and evaluating solutions in Grade 9.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:75:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:81:UCAP: I have learned that communication is more than vocabulary and grammar. It is about organizing ideas clearly, listening carefully, and reflecting honestly on every experience.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:84:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:90:UCAP: In the future, I will continue to set new future goals for my English learning because lifelong learning means every new challenge, whether in senior high school, in work, or in life, is also a new opportunity to grow.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:93:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:99:UCAP: Looking back, three years of stories, discoveries, presentations, and reflections have been a journey of genuine growth. I have learned to read with purpose, speak with structure, and think before I conclude. In the future, I will keep reading and communicating in English because lifelong learning does not stop here. It continues in every conversation and every new experience. I am ready to carry this growth into senior high school and beyond.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:102:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:108:UCAP: Now it is your turn. Write your own looking-forward reflection.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:120:UCAP: Think about your whole English learning journey from Grade 7 to today. Write all five components. Let I am ready to be your final word, a genuine statement of where you are now.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:121:UCAP: Looking back is not a list of events. I am ready to is not a repetition of In the future, I will.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:123:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:134:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:147:UCAP: Take turns sharing your looking-forward reflection in your group.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:148:UCAP: After each person, the group responds with: One thing I noticed about your journey is. Then discuss: what do you have in common in your I am ready to statements?
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:159:UCAP: Good. Now form a new group with students from other groups.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:175:UCAP: The person I point to starts first. Stand up when you share.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:176:UCAP: Deliver your reflection as if you were speaking to yourself three years ago. Others listen.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:187:UCAP: Stop. Sit in silence for two minutes. Each person writes one word that captures how you feel right now at the end of this journey.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:190:UCAP: Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:202:UCAP: Your Looking back sentence. In your own words.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:207:UCAP: Your I am ready to sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:222:UCAP: Well done, everyone. This is the end of our Kelas 9 journey.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:234:UCAP: Looking back means I see my whole journey as one thing, not a list. I have learned means what this journey taught me, not what we studied, but what I now know about myself. In the future I will is my specific commitment. Because is my personal reason. I am ready to is the door I am about to open. This is not a list. It is a conversation with your future self.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:240:UCAP: Let me share something first. Then I would love to hear yours.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:241:UCAP: One thing I am hoping to do in senior high school is join an English debate club, because I want to challenge myself to think and respond quickly when someone disagrees with me. I am ready to start again as a beginner in that skill and build it from scratch. That is what lifelong learning means to me.
+docs/canonical/skenario-fase-d-kelas 9/skenario-9-18.txt:243:UCAP: Is there something specific you are hoping to do or try in Fase E, in English, or through English?

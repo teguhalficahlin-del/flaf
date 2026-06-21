@@ -1,0 +1,862 @@
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:23:UCAP: Good morning, class. Please take your seats.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:27:UCAP: Quick show of hands, who uses their phone during school break time?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:30:UCAP: The school is thinking about a phone-free break. What do you think about that idea?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:32:UCAP: Let us see how we can share an opinion clearly, with a reason and a caveat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:41:UCAP: Yesterday, everyone felt surprised because the school announced a phone-free break time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:44:UCAP: I think a phone-free break is good because we can talk to our friends, but I miss my games. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:47:UCAP: I think break time is better with phones because we can relax, but we talk less. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:50:UCAP: I agree, but I think phones help communication because we can chat with friends. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:66:UCAP: Yesterday, everyone felt surprised because the school announced a phone-free break time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:75:UCAP: I think a phone-free break is good because we can talk to our friends, but I miss my games. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:84:UCAP: I think break time is better with phones because we can relax, but we talk less. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:93:UCAP: I agree, but I think phones help communication because we can chat with friends. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:102:UCAP: Good. Now it is your turn. Write your own opinion.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:114:UCAP: Use this pattern. Write your own opinion about phone-free break time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:115:UCAP: Change the words in the blanks. Use your own reason and your own caveat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:144:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:145:UCAP: Take turns sharing your opinion. Ask your partner What do you think? after you speak.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:173:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:174:UCAP: One person speaks. The others listen. Ask What do you think? after each person shares.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:188:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:198:UCAP: Say your opinion sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:203:UCAP: What did your partner say? Just the main idea, without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:214:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:218:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:230:UCAP: Listen. I think a phone-free break is good because we can talk to our friends, but I miss my games.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:237:UCAP: Listen to this. I think a phone-free break is good because we talk more and we rest our eyes, but I miss my games. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-01.txt:239:UCAP: Now you try. Add one more reason after because, use and to connect them.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:24:UCAP: Good afternoon, everyone. Let's settle down.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:28:UCAP: After school, what activity do you usually prefer, sports, music, or something else?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:30:UCAP: Look at these four options. Which would you rather do, and why?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:32:UCAP: Let us see how to talk about personal preferences clearly.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:41:UCAP: I think both are fun, but I prefer music because it helps me relax.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:44:UCAP: I prefer coding because I like solving problems.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:47:UCAP: I'd rather play sports than make music.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:50:UCAP: I'd rather do volunteering than play games. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:66:UCAP: I think both are fun, but I prefer music because it helps me relax.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:75:UCAP: I prefer coding because I like solving problems.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:84:UCAP: I'd rather play sports than make music.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:93:UCAP: I'd rather do volunteering than play games. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:102:UCAP: Good. Now it is your turn. Write your own preference.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:114:UCAP: Use these patterns. Write your personal preference about after-school activities.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:115:UCAP: Choose your own activities and your own reason. Keep it personal, not which activity is more popular.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:144:UCAP: That is it. Your turn now. Interview the person next to you.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:145:UCAP: Ask your partner about their after-school preferences. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:173:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:174:UCAP: Share your preferences with the group. Ask What do you think? so others can share theirs.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:188:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:198:UCAP: Tell me your preference. Use the pattern.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:203:UCAP: Your I'd rather sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:214:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:218:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:230:UCAP: Listen. I'd rather play sports than make music.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:237:UCAP: Listen. I'd rather do volunteering than play games because it helps people.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-02.txt:239:UCAP: Now you try. Add because and a reason after your I'd rather sentence.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:25:UCAP: Good morning. I need your full attention today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:29:UCAP: Imagine your class wants to do something good for the community. What idea comes to mind?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:32:UCAP: Look at this planning board. Which of these charity ideas do you think is best?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:34:UCAP: Let us see how to suggest ideas and respond to them as a team.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:43:UCAP: I'd rather do a book sale than a car wash. How about a book sale for charity?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:46:UCAP: We could sell snacks for fundraising.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:49:UCAP: That's a good idea, but we need more helpers.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:52:UCAP: How about asking the community to join? We could plan it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:68:UCAP: I'd rather do a book sale than a car wash. How about a book sale for charity?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:77:UCAP: We could sell snacks for fundraising.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:86:UCAP: That's a good idea, but we need more helpers.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:95:UCAP: How about asking the community to join? We could plan it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:104:UCAP: Good. Now it is your turn. Write your own suggestions.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:116:UCAP: Use these patterns. Write your own charity project suggestions.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:117:UCAP: Keep it open and collaborative, a suggestion, not a command.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:119:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:130:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:143:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:145:UCAP: In your group, take turns suggesting and responding. Work together to improve the plan.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:146:UCAP: Use these phrases, How about, We could, and That's a good idea, but.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:157:UCAP: Good. Now each group will join a new group to share their plan.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:172:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:173:UCAP: Take turns suggesting and responding in your new group. Negotiate a charity plan together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:187:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:197:UCAP: Give me one suggestion for the charity project. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:202:UCAP: Now respond to that idea. Use the phrase on the board.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:213:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:217:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:229:UCAP: Listen. How about a book sale for charity?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:231:UCAP: Now try with a different idea. How about...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:237:UCAP: Listen. That's a good idea, but how about a snack sale instead?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-03.txt:239:UCAP: Now you try. Respond to an idea with a counter-suggestion.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:24:UCAP: Let's get started, class. Focus, please.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:28:UCAP: Think about our school canteen, is the food healthy enough for you?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:31:UCAP: Look at these canteen improvement ideas. Which one would you agree to start with?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:33:UCAP: Let us see how to agree on a decision together, with a reason and a follow-up plan.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:42:UCAP: We could sell more fruit in the canteen. I agree that this is a good choice because it is healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:45:UCAP: I agree that we should offer healthy food because students need energy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:48:UCAP: Maybe we should start a salad day so everyone can try it.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:51:UCAP: Maybe we should change the school policy so the canteen has more choices.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:55:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:67:UCAP: We could sell more fruit in the canteen. I agree that this is a good choice because it is healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:70:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:76:UCAP: I agree that we should offer healthy food because students need energy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:85:UCAP: Maybe we should start a salad day so everyone can try it.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:94:UCAP: Maybe we should change the school policy so the canteen has more choices.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:103:UCAP: Good. Now it is your turn. Write your own shared decision.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:115:UCAP: Use these patterns. Write your own shared decision about the canteen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:116:UCAP: Keep it simple, one decision, one reason, and one follow-up.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:118:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:129:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:142:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:144:UCAP: In your group, look at the proposal cards. Take turns agreeing and suggesting a follow-up.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:145:UCAP: Work toward one shared decision.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:156:UCAP: Good. Now each group will join a new group and share your decision.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:171:UCAP: The person I point to presents your group's shared decision first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:172:UCAP: Present your decision and follow-up, then listen to what others decided.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:196:UCAP: Tell me your group's decision. Use the pattern.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:201:UCAP: And the follow-up plan, what did you suggest?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:212:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:228:UCAP: Listen. I agree that we should sell more fruit because it is healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:230:UCAP: Now try. I agree that...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:236:UCAP: Listen. I agree that we should sell more fruit because it is healthy, so maybe we should start next week.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-04.txt:238:UCAP: Now you try. Link your decision straight to the action with so.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:25:UCAP: Good morning. Let's begin today with something from nature.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:29:UCAP: Have you ever seen a butterfly up close? How would you describe it?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:32:UCAP: Look at these nature photos. What do all these creatures have in common?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:34:UCAP: Let us see how to classify a living thing clearly, by its category, its use, and its usual characteristics.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:43:UCAP: It is small and colorful. It is helpful for the garden.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:46:UCAP: A butterfly is a kind of insect. It usually has colorful wings.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:49:UCAP: Its wings are used for flying.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:52:UCAP: It usually lives in gardens and forests.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:68:UCAP: It is small and colorful. It is helpful for the garden.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:77:UCAP: A butterfly is a kind of insect. It usually has colorful wings.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:86:UCAP: Its wings are used for flying.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:95:UCAP: It usually lives in gardens and forests.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:104:UCAP: Good. Now it is your turn. Classify your own living thing.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:116:UCAP: Use this pattern. Classify a butterfly or another animal from the cards.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:117:UCAP: Keep it factual, no "I think," no personal story, and no "I have a pet."
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:119:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:130:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:142:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:146:UCAP: That is it. Your turn now. Read your classification to your partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:147:UCAP: Your partner checks, is there a category, a use, and a usual characteristic? Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:158:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:173:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:174:UCAP: Take turns presenting your classification card. The group listens and checks all three slots.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:188:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:198:UCAP: What did you classify? Tell me the category.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:203:UCAP: Say your "usually" sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:214:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:218:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:230:UCAP: Listen. A butterfly is a kind of insect.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:232:UCAP: Now try with your animal. Say the name, then is a kind of.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:238:UCAP: Listen. A butterfly is a kind of insect, like bees and ants.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-05.txt:240:UCAP: Now you try. Add an example of another member of the same category.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:25:UCAP: Welcome back, class. Shall we begin?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:29:UCAP: When you walk to school, do you pass any trees? What do they look like?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:32:UCAP: Look at this comparison chart. What do most of these city trees have in common?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:34:UCAP: Let us see how to describe shared characteristics of a group, using Most, Some, and They usually.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:43:UCAP: A maple is a kind of tree. It usually has wide leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:46:UCAP: Most trees have green leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:49:UCAP: Some trees grow in parks and give shade.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:52:UCAP: They usually need water and sunlight.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:68:UCAP: A maple is a kind of tree. It usually has wide leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:77:UCAP: Most trees have green leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:86:UCAP: Some trees grow in parks and give shade.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:95:UCAP: They usually need water and sunlight.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:104:UCAP: Good. Now it is your turn. Describe the shared characteristics.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:116:UCAP: Use these patterns. Describe shared characteristics of city trees.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:117:UCAP: Keep the subject plural and general, not one specific tree, and not a personal memory.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:119:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:130:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:143:UCAP: In your group, use the comparison chart. Take turns adding one general sentence.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:144:UCAP: Together, build a short report of what city trees share.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:155:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:170:UCAP: The person I point to presents your group report first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:171:UCAP: Take turns presenting general characteristics of city trees.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:195:UCAP: Give me your Most sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:200:UCAP: Your They usually sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:227:UCAP: Listen. Most trees have green leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:229:UCAP: Now try. Most trees...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:235:UCAP: Listen. Most trees have green leaves, but some have red leaves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-06.txt:237:UCAP: Now you try. Add a contrast, Most... but some...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:24:UCAP: Good morning. Before we start, clear your desks.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:28:UCAP: Can you name one piece of sports equipment you use regularly? What is it made for?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:30:UCAP: Look at these objects. What features help each one do its job?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:32:UCAP: Let us see how to connect a feature to what it does, using which and can ... to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:41:UCAP: Most helmets have a hard shell.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:44:UCAP: A helmet has a hard shell which protects the head.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:47:UCAP: A racket can hit the ball to score points.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:50:UCAP: A ball has a smooth surface which helps it roll.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:66:UCAP: Most helmets have a hard shell.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:75:UCAP: A helmet has a hard shell which protects the head.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:84:UCAP: A racket can hit the ball to score points.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:93:UCAP: A ball has a smooth surface which helps it roll.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:102:UCAP: Good. Now it is your turn. Connect a feature to what it does.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:114:UCAP: Use these patterns. Describe a ball, helmet, or racket. Connect the feature to what it does.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:115:UCAP: No instructions like First or Next, no because, and no I like.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:144:UCAP: That is it. Your turn now. Hold up an object and explain a feature and its function. Your partner points to the feature. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:170:UCAP: The person I point to presents your object first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:171:UCAP: Take turns presenting one object's features and functions to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:195:UCAP: Give me your which sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:200:UCAP: Your can ... to sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:227:UCAP: Listen. A helmet has a hard shell which protects the head.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:229:UCAP: Now try with a racket or a ball. It has...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:235:UCAP: Listen. A helmet has a hard shell which protects the head, and it has soft padding which keeps it comfortable.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-07.txt:237:UCAP: Now you try. Chain two features with which for the same object.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:24:UCAP: Alright, class. Let us get into science mode today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:28:UCAP: What happens to your heart when you run or do exercise? Can you feel it?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:30:UCAP: Look at this chart. What do you notice about heart rate during exercise versus at rest?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:32:UCAP: Let us see how to connect what we observe to a reason or an effect, using This happens because and This helps ... to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:41:UCAP: The heart has strong muscles which pump blood.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:44:UCAP: During exercise, the heart beats faster. This happens because the muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:47:UCAP: Exercise makes the body warm. This helps the body to use energy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:50:UCAP: The lungs breathe quickly. This happens because the body needs more air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:66:UCAP: The heart has strong muscles which pump blood.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:75:UCAP: During exercise, the heart beats faster. This happens because the muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:84:UCAP: Exercise makes the body warm. This helps the body to use energy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:93:UCAP: The lungs breathe quickly. This happens because the body needs more air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:102:UCAP: Good. Now it is your turn. Connect a fact to its reason or effect.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:114:UCAP: Use these patterns. Connect a fact from the chart to a reason or an effect.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:115:UCAP: One fact, one reason or effect, no step-by-step process, no I believe, and no I learned.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:144:UCAP: That is it. Your turn now. State a fact from the chart and connect it. Your partner checks the link makes sense. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:170:UCAP: The person I point to presents your fact card first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:171:UCAP: Take turns presenting a fact explanation to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:195:UCAP: Give me your This happens because sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:200:UCAP: Your This helps ... to sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:227:UCAP: Listen. The heart beats faster. This happens because the muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:229:UCAP: Now try. The lungs breathe quickly. This happens because...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:235:UCAP: Listen. The heart beats faster. This happens because the muscles need oxygen, and this helps the body to keep moving.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-08.txt:237:UCAP: Now you try. Link a reason and an effect in one sentence.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:23:UCAP: Good morning. Eyes on the board in a moment.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:27:UCAP: You know your heart beats faster when you exercise. But do you know WHY?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:29:UCAP: Look at this activity infographic. What causes the heart rate to go up, and then back down?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:31:UCAP: Let us see how to explain why something happens, using When and because together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:40:UCAP: During exercise, the heart beats faster. This happens because the muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:43:UCAP: When people exercise, their heart rate increases because their muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:46:UCAP: When the body works hard, it breathes faster because it needs more air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:49:UCAP: When people rest, their heart rate goes down because the body needs less oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:53:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:65:UCAP: During exercise, the heart beats faster. This happens because the muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:68:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:74:UCAP: When people exercise, their heart rate increases because their muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:77:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:83:UCAP: When the body works hard, it breathes faster because it needs more air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:92:UCAP: When people rest, their heart rate goes down because the body needs less oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:101:UCAP: Good. Now it is your turn. Explain why something happens.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:113:UCAP: Use this pattern. Explain why the body changes during exercise or rest.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:114:UCAP: Make it general, how it usually works. No instructions, no just a feature, and no I think.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:116:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:127:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:139:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:143:UCAP: That is it. Your turn now. Explain a When ... because ... pattern using the infographic. Your partner finds the reason. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:154:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:169:UCAP: The person I point to presents your explanation first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:170:UCAP: Take turns presenting a cause-effect pattern to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:184:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:194:UCAP: Give me your When ... because ... sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:199:UCAP: Your second When sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:210:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:214:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:226:UCAP: Listen. When people exercise, their heart rate increases because their muscles need more oxygen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:228:UCAP: Now try. When people rest...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:234:UCAP: Listen. When people exercise and the weather is hot, they sweat more because the body needs to cool down.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-09.txt:236:UCAP: Now you try. Add a second condition with and.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:24:UCAP: Alright everyone, let us get started.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:28:UCAP: Raise your hand, who has ordered something online before?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:31:UCAP: You clicked, paid, and the package arrived, but what actually happened in between?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:32:UCAP: Let us see how to explain a process, step by step, using First, Next, Then, and Finally.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:41:UCAP: When a customer orders online, the order goes through several steps because each step has a different purpose.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:44:UCAP: First, the customer searches for a product in an online store. Next, they add it to the cart and choose a payment method.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:47:UCAP: Then, the order is processed and packed.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:50:UCAP: Finally, the package is delivered to the customer's address.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:66:UCAP: When a customer orders online, the order goes through several steps because each step has a different purpose.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:75:UCAP: First, the customer searches for a product in an online store. Next, they add it to the cart and choose a payment method.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:84:UCAP: Then, the order is processed and packed.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:93:UCAP: Finally, the package is delivered to the customer's address.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:102:UCAP: Good. Now it is your turn. Explain how online shopping works.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:114:UCAP: Use these patterns. Explain how online shopping usually works.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:115:UCAP: Use the customer or the order as the subject, not I or you, and not past tense.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:128:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:141:UCAP: In your group, use the process diagram. Take turns adding one stage to explain the full process.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:142:UCAP: Keep present tense and a generic subject, not I or you, and not a past story.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:153:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:168:UCAP: The person I point to presents your process explanation first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:169:UCAP: Take turns explaining how online shopping usually works.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:183:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:193:UCAP: Give me the First step. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:198:UCAP: Your Finally step. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:209:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:213:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:225:UCAP: Listen. First, the customer searches for a product.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:227:UCAP: Now try. Next, they...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:233:UCAP: Listen. After that, the customer receives a message that the package has shipped.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-10.txt:235:UCAP: Now you try. Add one more stage with After that.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:23:UCAP: Good morning, class. Let us think about money today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:27:UCAP: Have you ever saved up money to buy something? How did it feel when you finally could?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:29:UCAP: Look at these money scenarios. Which one do you think leads to the best result?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:31:UCAP: Let us see how to explain what happens when someone makes a money choice, using If and so.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:40:UCAP: First, a person earns money. Next, they spend some and save some.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:43:UCAP: If a person saves money every week, the savings grow so they can reach a goal.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:46:UCAP: If people follow a budget, they spend less so they have more money.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:49:UCAP: If someone wastes money, the budget runs out so they cannot buy what they need.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:53:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:65:UCAP: First, a person earns money. Next, they spend some and save some.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:68:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:74:UCAP: If a person saves money every week, the savings grow so they can reach a goal.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:77:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:83:UCAP: If people follow a budget, they spend less so they have more money.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:92:UCAP: If someone wastes money, the budget runs out so they cannot buy what they need.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:101:UCAP: Good. Now it is your turn. Connect a money choice to its result.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:113:UCAP: Use this pattern. Explain how a money choice leads to a result.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:114:UCAP: Use a person or people as the subject, not you should, not I think if, and not instructions.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:116:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:127:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:139:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:143:UCAP: That is it. Your turn now. Read your condition-result explanation to your partner. Your partner notes the consequence. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:154:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:169:UCAP: The person I point to presents your condition-result chart first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:170:UCAP: Take turns presenting your money explanation to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:184:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:194:UCAP: Give me your If sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:199:UCAP: Your so part. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:210:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:214:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:226:UCAP: Listen. If a person saves money every week, the savings grow so they can reach a goal.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:228:UCAP: Now try. If people follow a budget...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:234:UCAP: Listen. If a person saves regularly and avoids waste, the savings grow quickly so they reach the goal sooner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-11.txt:236:UCAP: Now you try. Add a second condition with and.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:24:UCAP: Welcome, class. Today we connect two things you already know.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:28:UCAP: You have learned about city trees. Now, what do trees actually do for the air we breathe?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:30:UCAP: Look at this environment infographic. What process can you see happening here?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:32:UCAP: Let us see how to explain a whole system, combining the process, the cause, and the result.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:41:UCAP: Most trees have green leaves. They usually need sunlight.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:44:UCAP: This process keeps the air clean because trees absorb carbon dioxide and release oxygen. As a result, the air quality improves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:47:UCAP: If a city has many trees, the air becomes cleaner so people stay healthier.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:50:UCAP: This process works because leaves take in sunlight. As a result, trees make oxygen for everyone.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:66:UCAP: Most trees have green leaves. They usually need sunlight.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:75:UCAP: This process keeps the air clean because trees absorb carbon dioxide and release oxygen. As a result, the air quality improves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:84:UCAP: If a city has many trees, the air becomes cleaner so people stay healthier.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:93:UCAP: This process works because leaves take in sunlight. As a result, trees make oxygen for everyone.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:102:UCAP: Good. Now it is your turn. Explain how the tree-and-air system works.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:114:UCAP: Use these patterns. Explain how trees help the air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:115:UCAP: Connect the process, cause, and result, not just Most trees, and not a step-by-step instruction.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:144:UCAP: That is it. Your turn now. Explain the system using the infographic. Your partner checks for process, cause, and result. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:170:UCAP: The person I point to presents your system explanation poster first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:171:UCAP: Take turns presenting how trees help clean the air.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:195:UCAP: Give me your This process sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:200:UCAP: Your As a result sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:227:UCAP: Listen. This process keeps the air clean because trees absorb carbon dioxide. As a result, the air quality improves.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:229:UCAP: Now try. This process works because leaves take in sunlight. As a result...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:235:UCAP: Listen. This process keeps the air clean because trees absorb carbon dioxide. As a result, the air quality improves, and this also keeps the city cooler.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-12.txt:237:UCAP: Now you try. Add a second result with and this also.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:24:UCAP: Good morning. Today you will take a position on something important.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:28:UCAP: Remember the canteen? We discussed ideas for it earlier. Now, what do YOU believe should change?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:30:UCAP: Look at these two canteen options. Which one do you believe the school should offer more of, and why?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:32:UCAP: Let us see how to state a position clearly, using I believe, because, and For example.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:41:UCAP: I agree that the canteen should sell more fruit because it is healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:44:UCAP: I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives them energy for afternoon classes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:47:UCAP: Selling fruit also reduces waste because fruit needs less plastic. As a result, the school produces less trash.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:50:UCAP: I believe students should have more healthy choices because good food improves learning. For example, a salad bar offers many options.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:66:UCAP: I agree that the canteen should sell more fruit because it is healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:75:UCAP: I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives them energy for afternoon classes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:84:UCAP: Selling fruit also reduces waste because fruit needs less plastic. As a result, the school produces less trash.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:93:UCAP: I believe students should have more healthy choices because good food improves learning. For example, a salad bar offers many options.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:102:UCAP: Good. Now it is your turn. State your position about the canteen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:114:UCAP: Use this pattern. State your position about the school canteen with a reason and one example.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:115:UCAP: Not What do you think, not Most, and not First, this is your position with evidence.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:144:UCAP: That is it. Your turn now. Present your opinion card to your partner. Your partner checks for position, reason, and example. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:170:UCAP: The person I point to presents your opinion card first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:171:UCAP: Take turns presenting your position about the canteen to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:195:UCAP: Give me your I believe sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:200:UCAP: Your For example sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:227:UCAP: Listen. I believe the canteen should sell more healthy food because it helps students stay healthy.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:229:UCAP: Now add For example. For example...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:235:UCAP: Listen. I believe the canteen should sell more healthy food because it helps students stay healthy. For example, fresh fruit gives energy. Another example is that yogurt helps digestion.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-13.txt:237:UCAP: Now you try. Add a second example with Another example is.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:24:UCAP: Morning, class. I want you thinking critically today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:28:UCAP: Think about a school club you are in, or would like to join. Why is it worth your time?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:30:UCAP: Look at these student profiles. What reasons do they give, and can you add your own?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:32:UCAP: Let us see how to support one position with more than one reason, using One reason is that and Another reason is that.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:41:UCAP: I believe joining a club is useful because it helps students grow. For example, they learn new things.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:44:UCAP: One reason is that clubs build new skills. Another reason is that they help students make friends.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:47:UCAP: One reason is that members gain experience. Another reason is that they enjoy teamwork.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:50:UCAP: One reason is that clubs are fun. Another reason is that they prepare students for the future.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:66:UCAP: I believe joining a club is useful because it helps students grow. For example, they learn new things.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:75:UCAP: One reason is that clubs build new skills. Another reason is that they help students make friends.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:84:UCAP: One reason is that members gain experience. Another reason is that they enjoy teamwork.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:93:UCAP: One reason is that clubs are fun. Another reason is that they prepare students for the future.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:102:UCAP: Good. Now it is your turn. Support your position with two reasons.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:114:UCAP: Use these patterns. Give two reasons for joining a club.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:115:UCAP: Both reasons must support the same position, not Most, not First, and not a story.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:128:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:141:UCAP: In your group, choose one position about clubs. Take turns adding a reason.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:142:UCAP: Together, build a reason map that supports the same position.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:153:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:168:UCAP: The person I point to presents your reason map first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:169:UCAP: Take turns presenting a position and its reasons to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:183:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:193:UCAP: Give me your One reason sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:198:UCAP: Your Another reason sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:209:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:213:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:225:UCAP: Listen. One reason is that clubs build new skills. Another reason is that they help students make friends.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:227:UCAP: Now try with your own reasons. One reason is that...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:233:UCAP: Listen. One reason is that clubs build skills. Another reason is that they make friends. A third reason is that they give real experience.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-14.txt:235:UCAP: Now you try. Add a third reason with A third reason is that.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:24:UCAP: Alright, class. We are going to hear two sides of an argument today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:28:UCAP: Some students say homework is a waste of time. Others say it is essential. What do you think?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:30:UCAP: Look at these two views. Which one sounds more familiar to you?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:32:UCAP: Let us see how to acknowledge what others think, then present your own view, using Some people think and However, I think.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:41:UCAP: One reason is that homework helps students review. Another reason is that it builds good habits.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:44:UCAP: Some people think homework is unnecessary. However, I think it helps students learn because they review the lesson at home.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:47:UCAP: Some people think homework takes too much time. However, I think a little homework is useful because it improves study skills.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:50:UCAP: Some people think homework is boring. However, I think it supports learning because practice makes ideas clear.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:66:UCAP: One reason is that homework helps students review. Another reason is that it builds good habits.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:75:UCAP: Some people think homework is unnecessary. However, I think it helps students learn because they review the lesson at home.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:84:UCAP: Some people think homework takes too much time. However, I think a little homework is useful because it improves study skills.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:93:UCAP: Some people think homework is boring. However, I think it supports learning because practice makes ideas clear.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:102:UCAP: Good. Now it is your turn. Acknowledge another view, then state your own.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:114:UCAP: Use this pattern. Acknowledge what others think, then present your own view about homework.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:115:UCAP: Acknowledge the other view as valid, do not attack it, and do not only say I do not agree.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:144:UCAP: That is it. Take different sides on homework. Take turns acknowledging and presenting. Listen before you respond.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:170:UCAP: The person I point to presents first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:171:UCAP: Take turns presenting Some people think ... However, I think ... about homework.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:195:UCAP: Give me your Some people think sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:200:UCAP: Your However sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:227:UCAP: Listen. Some people think homework is unnecessary. However, I think it helps students learn because they review the lesson at home.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:229:UCAP: Now try. Some people think homework takes too much time. However, I think...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:235:UCAP: Listen. Some people think homework is unnecessary. However, I think it helps students learn because they review the lesson and practice new skills.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-15.txt:237:UCAP: Now you try. Support your position with two reasons joined by and.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:23:UCAP: Good morning. Let us close a chapter today, with a recommendation.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:27:UCAP: We discussed several charity project ideas before. Have you decided which one you recommend?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:29:UCAP: Look at these project proposals again. Which one would you recommend, and can you say why?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:31:UCAP: Let us see how to give a formal recommendation, using Therefore, I recommend and because.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:40:UCAP: Some people think a car wash is best. However, I think a book sale is better because more students can help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:43:UCAP: How about a book sale for charity? We could ask volunteers to help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:46:UCAP: Therefore, I recommend a book sale because it raises money easily and everyone can help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:49:UCAP: Therefore, I recommend asking for donations because the community can support our project.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:53:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:65:UCAP: Some people think a car wash is best. However, I think a book sale is better because more students can help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:68:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:74:UCAP: How about a book sale for charity? We could ask volunteers to help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:77:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:83:UCAP: Therefore, I recommend a book sale because it raises money easily and everyone can help.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:92:UCAP: Therefore, I recommend asking for donations because the community can support our project.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:101:UCAP: Good. Now it is your turn. Write your recommendation.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:113:UCAP: Use this pattern. Recommend one charity idea with a reason.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:114:UCAP: Not step-by-step instructions, not I learned, and not a process summary, just your recommendation.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:116:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:127:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:140:UCAP: In your group, look at the proposal cards. Take turns weighing options and giving your recommendation.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:141:UCAP: Work toward one recommendation the group supports, using Therefore, I recommend ... because.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:152:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:167:UCAP: The person I point to presents your recommendation first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:168:UCAP: Take turns presenting your charity project recommendation to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:182:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:192:UCAP: Give me your Therefore sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:197:UCAP: Your because part. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:208:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:212:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:224:UCAP: Listen. Therefore, I recommend a book sale because it raises money easily.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:226:UCAP: Now try with a different project. Therefore, I recommend...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:232:UCAP: Listen. Therefore, I recommend asking for donations because the community can support our project and students learn about helping others.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-16.txt:234:UCAP: Now you try. Add a second reason with and.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:24:UCAP: Good morning. Today we begin a new story, one that starts at school.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:28:UCAP: Is there any part of this school building that you have never entered, or that feels mysterious?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:30:UCAP: Look at this school illustration. What do you notice behind the main building?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:32:UCAP: Let us see how to open a story, introducing a character, a setting, and what everyone believed.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:41:UCAP: Once, there was a curious student named Dito who loved exploring old places.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:44:UCAP: Behind the school, there was an old storage room full of dusty boxes and broken chairs.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:47:UCAP: On the storage room door, there was a sign that said, Notice: Keep this door locked.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:50:UCAP: Everyone believed the storage room hid an old secret.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:54:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:66:UCAP: Once, there was a curious student named Dito who loved exploring old places.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:69:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:75:UCAP: Behind the school, there was an old storage room full of dusty boxes and broken chairs.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:84:UCAP: On the storage room door, there was a sign that said, Notice: Keep this door locked.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:93:UCAP: Everyone believed the storage room hid an old secret.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:102:UCAP: Good. Now it is your turn. Build your own story world.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:114:UCAP: Use these patterns. Introduce a character in a school setting, then add what everyone believed.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:115:UCAP: Keep it third-person fiction, not It is a kind of, and not I remember from your own memory.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:140:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:144:UCAP: That is it. Share your story opening with your partner. Your partner checks for character, setting, and belief. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:170:UCAP: The person I point to presents your story opening first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:171:UCAP: Take turns presenting your story opening to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:195:UCAP: Give me your Once, there was sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:200:UCAP: Your Everyone believed sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:227:UCAP: Listen. Once, there was a curious student named Dito who loved exploring old places.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:229:UCAP: Now try. Once, there was a student named...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:231:UCAP: Now add Everyone believed...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:237:UCAP: Listen. Once, there was a curious student named Dito who loved exploring old places at school, and his friend Wulan believed the storage room held many old objects no one remembered.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-17.txt:239:UCAP: Now you try. Add a second character to your story opening.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:23:UCAP: Welcome back. The story continues, and things are about to change.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:27:UCAP: Last time, Dito found out about the old storage room. What do you think he did next?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:29:UCAP: Look at these story cards. What unexpected things happened when he got closer to the door?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:31:UCAP: Let us see how to build a story conflict in one connected sentence, using Suddenly, so, and but.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:40:UCAP: Suddenly, Dito heard footsteps behind the storage room door, so he turned on his flashlight, but the footsteps immediately stopped.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:43:UCAP: Suddenly, the old door creaked open by itself, so Wulan jumped back, but nothing came out.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:46:UCAP: Suddenly, Dito's flashlight found an old key on the floor, so he picked it up, but the key felt strangely cold.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:50:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:62:UCAP: Suddenly, Dito heard footsteps behind the storage room door, so he turned on his flashlight, but the footsteps immediately stopped.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:65:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:71:UCAP: Suddenly, the old door creaked open by itself, so Wulan jumped back, but nothing came out.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:74:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:80:UCAP: Suddenly, Dito's flashlight found an old key on the floor, so he picked it up, but the key felt strangely cold.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:89:UCAP: Good. Now it is your turn. Build your own story conflict.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:101:UCAP: Use this pattern. Write ONE conflict sentence: Suddenly, then so, then but.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:102:UCAP: The event must happen in or near the storage room, not a general explanation, and not two separate sentences.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:104:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:115:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:127:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:131:UCAP: That is it. Share your conflict sentence with your partner. Your partner checks: one sentence, sudden event, consequence, complication. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:142:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:157:UCAP: The person I point to presents your conflict sentence first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:158:UCAP: Take turns presenting your story conflict to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:172:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:182:UCAP: Give me your Suddenly sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:187:UCAP: Your but part. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:198:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:202:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:214:UCAP: Listen. Suddenly, Dito heard footsteps behind the storage room door, so he turned on his flashlight, but the footsteps immediately stopped.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:216:UCAP: Now try with a different event. Suddenly, the door...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:222:UCAP: Listen. Suddenly, Dito's flashlight found an old key on the floor, so he picked it up carefully, but the key felt strangely cold and his heart started to beat faster.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-18.txt:224:UCAP: Now you try. Add one feeling or sensory detail after but in your own sentence.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:25:UCAP: Good morning. We are going to bring our story to life today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:29:UCAP: Dito found a key. Wulan heard a strange sound. What do you think they said to each other?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:31:UCAP: Look at this comic strip. Can you read what they are saying to each other?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:33:UCAP: Let us see how to write story dialogue in third-person prose, using said, replied, and decided to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:42:UCAP: "Did you hear that voice?" said Wulan softly.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:45:UCAP: "I have a question," replied Dito. "Should we open the door now?"
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:48:UCAP: As good friends, Dito and Wulan made a decision together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:51:UCAP: Dito decided to turn the key in the lock.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:55:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:67:UCAP: "Did you hear that voice?" said Wulan softly.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:70:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:76:UCAP: "I have a question," replied Dito. "Should we open the door now?"
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:85:UCAP: As good friends, Dito and Wulan made a decision together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:94:UCAP: Dito decided to turn the key in the lock.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:103:UCAP: Good. Now it is your turn. Write your own story dialogue.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:115:UCAP: Use this frame. Write a dialogue between Dito and Wulan about opening the storage room door.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:116:UCAP: Third-person prose, not a drama script, and not a personal conversation. End with decided to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:118:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:129:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:141:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:145:UCAP: That is it. Role play your dialogue first, then read the prose version. Your partner checks for said, replied, and decided to. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:171:UCAP: The person I point to presents your role play first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:172:UCAP: Take turns performing your role play, then reading the prose version to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:196:UCAP: Give me your said sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:201:UCAP: Your decided to sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:212:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:228:UCAP: Listen. "Did you hear that voice?" said Wulan softly.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:230:UCAP: Now try. What did Dito reply?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:236:UCAP: Listen. "We should not open it alone," whispered Wulan, stepping back from the door.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-19.txt:238:UCAP: Now you try. Add a third dialogue line using a new reporting verb, whispered or asked.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:25:UCAP: Good morning. Today we find out what was inside the storage room.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:29:UCAP: Dito turned the key. The door opened. What do you think they found inside?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:31:UCAP: Look at this ending storyboard. What does the discovery mean for the whole school?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:33:UCAP: Let us see how to close a story fully, using In the end because, From that day on, and The story shows.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:42:UCAP: In the end, Dito and Wulan opened the door because they wanted to solve the mystery.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:45:UCAP: Inside, they found old letters and photographs full of school memories.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:48:UCAP: From that day on, the storage room became a small museum for the whole school.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:51:UCAP: The story shows that a small discovery can bring back many memories.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:55:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:67:UCAP: In the end, Dito and Wulan opened the door because they wanted to solve the mystery.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:70:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:76:UCAP: Inside, they found old letters and photographs full of school memories.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:85:UCAP: From that day on, the storage room became a small museum for the whole school.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:94:UCAP: The story shows that a small discovery can bring back many memories.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:103:UCAP: Good. Now it is your turn. Write your own story ending.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:115:UCAP: Use these patterns. Write a story ending about the discovery, resolution, lasting change, and theme.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:116:UCAP: Keep The story shows as a theme about the whole story, not I learned, and not I believe.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:118:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:129:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:141:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:145:UCAP: That is it. Share your story ending with your partner. Your partner checks for resolution with reason, lasting change, and theme. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:171:UCAP: The person I point to presents your story ending first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:172:UCAP: Take turns presenting your resolution and reflection to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:196:UCAP: Give me your In the end sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:201:UCAP: Your The story shows sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:212:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:228:UCAP: Listen. In the end, Dito and Wulan opened the door because they wanted to solve the mystery. From that day on, the storage room became a small museum. The story shows that a small discovery can bring back many memories.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:230:UCAP: Now try your own. In the end,...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:236:UCAP: Listen. Dito and Wulan decided to write a message to share their discovery with the whole school.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-20.txt:238:UCAP: Now you try. After The story shows, add your own seed sentence, what did the characters decide to do with their discovery?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:26:UCAP: Good morning. Dito and Wulan have something to share with the school.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:30:UCAP: If you found something incredible at school, how would you tell other people about it?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:32:UCAP: Look at this message template. What are the four parts of a well-structured email?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:34:UCAP: Let us see how to write a complete digital message, Subject, greeting, purpose, and closing.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:43:UCAP: Subject: A Surprising School Discovery
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:46:UCAP: Hi everyone,
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:49:UCAP: I'm writing to share a message about something amazing we found in the old storage room -- old letters and photos full of school memories!
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:52:UCAP: See you soon, Dito and Wulan
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:68:UCAP: Subject: A Surprising School Discovery
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:77:UCAP: Hi everyone,
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:86:UCAP: I'm writing to share a message about something amazing we found in the old storage room -- old letters and photos full of school memories!
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:95:UCAP: See you soon, Dito and Wulan
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:104:UCAP: Good. Now it is your turn. Write your own email.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:116:UCAP: Use this format. Write a complete email with all four parts, Subject, Hi, I'm writing to, and See you soon.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:117:UCAP: The body should share the discovery, not a story dialogue, not a recommendation, and not a casual chat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:119:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:130:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:142:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:146:UCAP: That is it. Read your email to your partner. Your partner checks for all four parts. Then swap.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:157:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:172:UCAP: The person I point to presents your email first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:173:UCAP: Take turns presenting your digital message to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:187:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:197:UCAP: Give me your Subject line. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:202:UCAP: Your I'm writing to sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:213:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:217:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:229:UCAP: Listen. Subject: A Surprising School Discovery. Hi everyone, I'm writing to share a message about old letters we found. See you soon, Dito and Wulan.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:231:UCAP: Now try your own. What is your Subject?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:237:UCAP: Listen. You are all welcome to visit the storage room -- it is now our school's small memory room.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-21.txt:239:UCAP: Now you try. Add one more sentence to the body of your email inviting readers to visit or learn more.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:26:UCAP: Alright, class. Today we help someone navigate a new app.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:30:UCAP: Have you ever had to explain to someone how to use an app? What did you say first?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:32:UCAP: Look at these app screens. What is the correct order to use this learning app?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:34:UCAP: Let us see how to write practical guided instructions, using Step 1, Before, After, and Remember to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:43:UCAP: Step 1: Open the school learning application and log in with your username and password.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:46:UCAP: Before you start an assignment, check the due date on the screen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:49:UCAP: After you finish your work, click the submit button.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:52:UCAP: Remember to save your work before you close the application.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:68:UCAP: Step 1: Open the school learning application and log in with your username and password.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:77:UCAP: Before you start an assignment, check the due date on the screen.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:86:UCAP: After you finish your work, click the submit button.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:95:UCAP: Remember to save your work before you close the application.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:104:UCAP: Good. Now it is your turn. Write your own instruction guide.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:116:UCAP: Use these markers. Write one instruction for each: Step 1, Before, After, and Remember to.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:117:UCAP: Direct your instructions to the reader, not students log in, and not First, then, finally.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:119:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:130:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:142:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:145:UCAP: That is it. Exchange your instruction guides. Your partner checks for all four markers. Then swap and give feedback.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:171:UCAP: The person I point to presents your instruction guide first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:172:UCAP: Take turns presenting your guide to the group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:196:UCAP: Give me your Step 1 instruction. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:201:UCAP: Your Remember to instruction. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:212:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:228:UCAP: Listen. Step 1: Open the school learning application and log in.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:230:UCAP: Now try. Before you start...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:236:UCAP: Listen. If you cannot log in to the application, ask your teacher for help and try again.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-22.txt:238:UCAP: Now you try. Add one troubleshooting instruction to the end of your guide.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:25:UCAP: Good morning, everyone. We have a festival to promote today.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:29:UCAP: Have you ever seen a poster that made you really want to join an event? What made it effective?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:31:UCAP: Look at these event posters. What makes them inviting? What would YOU add?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:33:UCAP: Let us see how to write a persuasive public post, using Join us, Don't miss, and You can because.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:42:UCAP: Join us at the After-School Club Festival this Friday!
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:45:UCAP: Don't miss the chance to try fun activities from every club.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:48:UCAP: You can join the music club because members perform together every week.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:52:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:64:UCAP: Join us at the After-School Club Festival this Friday!
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:67:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:73:UCAP: Don't miss the chance to try fun activities from every club.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:82:UCAP: You can join the music club because members perform together every week.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:91:UCAP: Good. Now it is your turn. Write your own promotional post.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:103:UCAP: Use these patterns. Write three sentences, invite, build excitement, and give a reason.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:104:UCAP: Write for everyone at school, not a personal invitation, not a numbered step guide, and not a formal recommendation.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:106:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:117:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:130:UCAP: In your group, take turns reading your promotional post aloud. The group checks: Is there Join us? Don't miss? You can because?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:131:UCAP: Then the group votes on which post is most persuasive and explains why.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:142:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:157:UCAP: The person I point to presents your promotional post first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:158:UCAP: Take turns presenting your post to the new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:172:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:182:UCAP: Give me your Join us sentence. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:187:UCAP: Your You can because sentence. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:198:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:202:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:214:UCAP: Listen. "Let's go to the festival together!" -- that is personal, between friends. "Join us at the festival!" -- that is public, for everyone.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:216:UCAP: Now try. Join us at...
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:222:UCAP: Listen. We can't wait to see you there -- come and show your school spirit!
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-23.txt:224:UCAP: Now you try. Add one closing sentence to your post that makes the invitation feel more exciting.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:24:UCAP: Good morning. We are wrapping up Kelas 8 with something practical.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:28:UCAP: Think about school events you know, festivals, book swaps, fairs. How is that information usually organized?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:30:UCAP: Look at these information cards. How would you put them together into one clear announcement?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:32:UCAP: Let us see how to organize all this into one clear information flyer, four parts, separated by a line.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:43:UCAP: After-School Club Festival | This Friday, 3 p.m., School Hall | Sign up at the club table | Try music, art, and sports clubs.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:47:UCAP: School Recycling Drive | Saturday, 8 a.m. | Register at Room 5 | Bring reusable bags.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:50:UCAP: Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all students and the local community.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:53:UCAP: Reading Week at the School Library | Every day this week, 3 p.m. | Exchange a book and take a new one home | All books welcome from the community.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:57:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:69:UCAP: After-School Club Festival | This Friday, 3 p.m., School Hall | Sign up at the club table | Try music, art, and sports clubs.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:72:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:78:UCAP: School Recycling Drive | Saturday, 8 a.m. | Register at Room 5 | Bring reusable bags.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:81:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:87:UCAP: Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all students and the local community.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:90:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:96:UCAP: Reading Week at the School Library | Every day this week, 3 p.m. | Exchange a book and take a new one home | All books welcome from the community.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:99:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:105:UCAP: Good. Now it is your turn. Build your own information flyer.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:117:UCAP: Use the information cards. Build one flyer about the Community Book Swap, four sections, separated by a line.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:118:UCAP: Keep each section short and clear, not a paragraph, not a personal invitation, and not a promotional post.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:120:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:131:UCAP: Stop writing. Now form a group of three or four.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:144:UCAP: In your group, pass your flyers around. For each flyer, check: Is the title clear? Is there when and where? Is there an action to take? Is there an extra note?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:145:UCAP: Give one piece of feedback to the writer after checking.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:156:UCAP: Good. Now each group will present to a new group.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:171:UCAP: The person I point to presents your flyer first.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:172:UCAP: Take turns presenting your flyer. Read each section aloud using your own words.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:196:UCAP: Give me your flyer title and when-and-where. Go.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:201:UCAP: Your action and additional note. Without looking at your notes.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:212:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:228:UCAP: Listen. Community Book Swap -- separator -- Saturday, 9 a.m., School Library -- separator -- Bring at least one book to exchange -- separator -- Open to all students and the local community.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:230:UCAP: Now try your own. What is your title?
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:236:UCAP: Listen. Community Book Swap | Saturday, 9 a.m., School Library | Bring at least one book to exchange | Open to all | Free entry, no transport needed.
+docs/canonical/skenario-fase-d-kelas 8/skenario-8-24.txt:238:UCAP: Now you try. Add one new information category to your own flyer.

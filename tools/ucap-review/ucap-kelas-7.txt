@@ -1,0 +1,873 @@
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:31:UCAP: Good morning, everyone.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:37:UCAP: Look at this name tag card. What information can you see on it?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:39:UCAP: Today is your first day here. Who would like to share their name with the class?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:42:UCAP: Good. Now let us see how Dito introduces himself.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:52:UCAP: I am Dito. I am twelve years old.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:58:UCAP: I like reading comics and playing badminton.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:63:UCAP: I can ride a bicycle, but I cannot swim yet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:67:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:79:UCAP: I am Dito. I am twelve years old.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:88:UCAP: I like reading comics and playing badminton.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:97:UCAP: I can ride a bicycle, but I cannot swim yet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:106:UCAP: Good. Now it is your turn. Write about yourself.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:118:UCAP: Use this pattern. But write about yourself, not Dito.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:119:UCAP: Change the words in the brackets. Use your own information.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:121:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:132:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:144:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:149:UCAP: That is it. Your turn now. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:150:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:161:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:178:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:179:UCAP: One person speaks. The others listen. No interrupting.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:193:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:203:UCAP: Say your first sentence. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:208:UCAP: Say your second sentence. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:219:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:223:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:235:UCAP: Listen. I am...
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:245:UCAP: Try a new way to talk about your friend. Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:246:UCAP: This is Rina. She likes reading comics.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt:248:UCAP: Now you try. Tell me about your friend. Just two sentences.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:27:UCAP: Good morning, everyone! Please take your seats.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:32:UCAP: Look at these posters on the board. What clubs do you see?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:34:UCAP: Which club would you like to join this semester? Raise your hand!
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:37:UCAP: Good. Before we join a club, let us learn how to ask a friend.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:48:UCAP: I like music. Do you like singing? Yes, I do.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:53:UCAP: Do you like drawing? No, I don't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:58:UCAP: Can you play badminton? Yes, I can.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:63:UCAP: Can you play chess? No, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:68:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:80:UCAP: I like music. Do you like singing? Yes, I do.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:89:UCAP: Do you like drawing? No, I don't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:92:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:98:UCAP: Can you play badminton? Yes, I can.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:101:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:107:UCAP: Can you play chess? No, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:110:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:116:UCAP: Good. Now it is your turn. Write your own questions.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:128:UCAP: Use this pattern. Choose an activity from the posters or picture cards.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:129:UCAP: Write your question and the short answer. Do you like drawing? Yes, I do. Can you play chess? No, I can't. Like that.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:131:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:142:UCAP: Stop writing. Now keep your notebook open and wait.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:154:UCAP: Take this tally sheet. Walk around the class. Ask your classmates your questions.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:155:UCAP: Put a mark in the Yes or No column for each answer you get.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:157:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:160:UCAP: Good. Now go. You have eight minutes.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:171:UCAP: Stop. Go back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:187:UCAP: Look at your tally sheet. Write one or two sentences about your results.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:188:UCAP: Use this: blank friends like blank. Or: blank friends can play blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:196:UCAP: The person I point to starts first. Read your report sentences to your group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:210:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:220:UCAP: Ask me one question. Do you like, or can you play. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:226:UCAP: Answer this: Can you play badminton?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:237:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:240:UCAP: Good work today. We will practice more next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:252:UCAP: Listen. Do you like singing?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:254:UCAP: Now answer. Yes, I do. Or No, I don't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:261:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:262:UCAP: This is Rina. She likes drawing. She can play badminton.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-02.txt:264:UCAP: Now you try. Tell me about one friend from your tally sheet. Just two sentences.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:28:UCAP: Good morning! Let's get the day started.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:33:UCAP: Quick question. What do you like to do on weekends?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:35:UCAP: Imagine a friend invites you to go cycling after school. What would you say?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:38:UCAP: Good. Let us learn how to invite a friend today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:47:UCAP: Do you like cycling? Yes, I do. Let's go cycling this weekend!
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:52:UCAP: Shall we go to the park? Sure! I like the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:57:UCAP: Let's study at the library after school. Sorry, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:62:UCAP: Shall we play games? Sure!
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:67:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:79:UCAP: Let's go cycling this weekend!
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:88:UCAP: Shall we go to the park? Sure! I like the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:97:UCAP: Let's study at the library after school. Sorry, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:100:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:106:UCAP: Shall we play games? Sure!
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:109:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:115:UCAP: Good. Now write your own invitations.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:127:UCAP: Use this pattern. Choose an activity from the pictures.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:128:UCAP: Write an invitation and a response. Let's go cycling. Sure. Or: Shall we go to the park? Sorry, I can't. Like that.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:130:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:141:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:153:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:158:UCAP: That is it. Partner A invites first, Partner B responds. Then swap. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:159:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:170:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:186:UCAP: Now perform your invitation role play for the new group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:187:UCAP: One pair goes first. Invite with Let's or Shall we, then respond with Sure or Sorry, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:201:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:211:UCAP: Invite me somewhere. Let's or Shall we. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:217:UCAP: I say: Shall we go to the park? You answer.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:228:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:231:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:243:UCAP: Listen. Shall we go to the park?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:245:UCAP: Now answer. Sure! Or: Sorry, I can't.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:251:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:252:UCAP: Shall we go to the park? Sorry, I can't. Maybe next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-03.txt:254:UCAP: Now you try. Say sorry, then add: Maybe next time. Just one time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:28:UCAP: Morning, class! Find your seat quickly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:33:UCAP: Take a look at this photo. Which side of the classroom looks better to you?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:35:UCAP: What do you think we should do to keep our classroom clean?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:38:UCAP: Let us think together about our classroom today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:48:UCAP: I think we should keep our classroom clean because I like a clean classroom.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:53:UCAP: I think we should recycle paper because it helps the school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:55:UCAP: I agree.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:59:UCAP: Can you help with classroom jobs? Yes, I can. I think teamwork is important because everyone helps.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:61:UCAP: That's true.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:64:UCAP: I think we need clear classroom rules.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:66:UCAP: I don't think so.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:71:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:83:UCAP: I think teamwork is important because everyone helps.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:92:UCAP: I agree.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:100:UCAP: That's true.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:103:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:108:UCAP: I don't think so.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:111:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:117:UCAP: Good. Now write your own opinion.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:129:UCAP: Use this pattern. Choose an idea from the icons, clean, recycle, teamwork, or rules.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:130:UCAP: Write your opinion with a short reason. I think blank because blank. Keep the reason short.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:132:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:143:UCAP: Stop writing. Now sit in groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:155:UCAP: In your group, take turns. One person gives an opinion. The others respond with I agree, That's true, or I don't think so.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:156:UCAP: Everyone must give at least one opinion and one response.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:168:UCAP: Stop. Stay in your group for now.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:181:UCAP: Form a new group of four with classmates from other groups.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:183:UCAP: Take turns. Say your main opinion: I think blank because blank. The others respond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:197:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:207:UCAP: Tell me your opinion about our classroom. I think blank because blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:212:UCAP: I think teamwork is important because everyone helps. What do you say?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:223:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:226:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:238:UCAP: Listen. I think we should recycle paper because it helps the school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:244:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:245:UCAP: I think teamwork is important because everyone helps. What about you?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-04.txt:247:UCAP: Now you try. Give your opinion, then ask: What about you? Just once.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:27:UCAP: Good morning, class! Find your seat and get ready.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:31:UCAP: Quick question. Does anyone here have a pet at home?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:34:UCAP: Look at these animals. Can you tell me something about them?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:37:UCAP: Good. Today let us learn how to describe an animal in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:46:UCAP: I have a pet rabbit. I like my pet. It is small and white.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:50:UCAP: It has long ears and soft fur.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:54:UCAP: It looks friendly and cute.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:58:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:70:UCAP: It is small and white.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:79:UCAP: It has long ears and soft fur.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:88:UCAP: It looks friendly and cute.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:97:UCAP: Good. Now write about your own animal.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:109:UCAP: Choose an animal card. Write about it using the pattern.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:110:UCAP: It is blank. It has blank. It looks blank. Three sentences about your animal.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:112:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:123:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:135:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:140:UCAP: That is it. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:151:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:165:UCAP: Take turns. Hold up your animal card and describe it to the group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:166:UCAP: It is blank. It has blank. It looks blank. The group listens.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:168:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:182:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:193:UCAP: Describe this cat to me. Use It is, It has, It looks. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:198:UCAP: Your It looks sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:209:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:212:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:224:UCAP: Listen. It is small and white.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:227:UCAP: It has long ears.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:234:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:235:UCAP: They are small. They have soft fur.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-05.txt:237:UCAP: Now you try. Tell me about these two animals. Just two sentences.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:26:UCAP: Good morning, friends! Are you ready to learn today?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:31:UCAP: Look at these snacks. An apple, a banana, carrot sticks, and yogurt.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:32:UCAP: What words can you use to describe them? Sweet? Crunchy? Fresh?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:35:UCAP: Good. Today let us learn how to describe snacks with two words in one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:44:UCAP: It is sweet and crunchy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:48:UCAP: It is healthy but sour.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:52:UCAP: It is fresh and tasty.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:56:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:68:UCAP: It is sweet and crunchy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:71:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:77:UCAP: It is healthy but sour.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:86:UCAP: It is fresh and tasty.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:95:UCAP: Good. Now write about your own snack.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:107:UCAP: Choose a snack photo. Write sentences about it using and or but.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:108:UCAP: Use and for matching features, like sweet and crunchy. Use but for contrasting features, like healthy but small.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:110:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:121:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:133:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:138:UCAP: That is it. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:149:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:163:UCAP: Take turns. Hold up your snack photo and describe it to the new group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:164:UCAP: It is blank and blank. Or: It is blank but blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:166:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:180:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:191:UCAP: Describe this banana. Use and or but. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:196:UCAP: Your but sentence. About any snack.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:207:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:209:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:221:UCAP: Listen. It is sweet and crunchy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:224:UCAP: Now: It is healthy but small.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:229:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:230:UCAP: It is fresh, sweet, and crunchy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-06.txt:232:UCAP: Now you try. Three words in one sentence, using and. Just one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:26:UCAP: Hello, everyone! Great to see you all here.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:30:UCAP: Have you ever been to a park? What did you see there?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:33:UCAP: Look at this park map. What can you find in this park?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:36:UCAP: Good. Today let us describe what is in this park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:45:UCAP: There is a playground in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:49:UCAP: There are tall trees near the playground.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:53:UCAP: There is a pond in the park. It is clean and quiet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:57:UCAP: There are benches and toilets in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:61:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:73:UCAP: There is a playground in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:82:UCAP: There are tall trees near the playground.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:91:UCAP: There is a pond in the park. It is clean and quiet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:100:UCAP: There are benches and toilets in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:103:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:107:UCAP: Good. Now write about the park map.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:119:UCAP: Look at the park map. Choose things you can see and write about them.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:120:UCAP: Use There is for one thing. Use There are for more than one. Add the place: in the park, or near the playground.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:122:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:133:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:146:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:150:UCAP: That is it. Describe the park to your partner. Your partner points to each thing on the map. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:161:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:175:UCAP: Take turns. Show the park map and describe it to the new group using There is and There are.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:177:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:191:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:202:UCAP: Describe these trees. Use There is or There are. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:207:UCAP: Describe the pond. Add the place expression too.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:218:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:220:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:232:UCAP: Listen. There is a bench in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:235:UCAP: There are benches in the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:240:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:241:UCAP: There isn't a swimming pool in the park. There aren't any shops near the playground.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-07.txt:243:UCAP: Now you try. Tell me one thing that is NOT in the park. Just one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:26:UCAP: Good morning! Eyes up front, please.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:30:UCAP: Can you name any small animals that live near flowers or in gardens?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:33:UCAP: Look at these insects. Do you know what they are good for?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:36:UCAP: Good. Today we learn how to describe what an insect is good for.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:46:UCAP: It is helpful for carrying food.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:50:UCAP: There is a bee on the flower. It is useful for the garden.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:54:UCAP: It is important to make honey.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:58:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:70:UCAP: It is helpful for carrying food.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:79:UCAP: It is useful for the garden.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:88:UCAP: It is important to make honey.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:97:UCAP: Good. Now write about your own insect.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:109:UCAP: Choose an insect card. Write about what it is good for.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:110:UCAP: Use: It is blank for blank. Or: It is blank to blank. Do not add because.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:112:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:123:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:135:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:140:UCAP: That is it. Describe your insect and its function to your partner. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:151:UCAP: Good. Now make a mini description card for your insect.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:163:UCAP: Make a mini description card for your insect. Write your sentences on the card, end with the function sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:167:UCAP: Take turns. Show your card and read it to the group. End with: It is blank for blank. Or: It is blank to blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:169:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:183:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:194:UCAP: Describe this butterfly's function. Use It is blank for blank. Or It is blank to blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:199:UCAP: Your function sentence for the ant. Without looking at your card.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:210:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:212:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:224:UCAP: Listen. It is useful for the garden.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:227:UCAP: It is important to make honey.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:232:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:233:UCAP: It has wings to fly. It has legs to climb.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-08.txt:235:UCAP: Now you try. Tell me one sentence about your insect's body part and what it is for. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:27:UCAP: Rise and shine, everyone! Let's start our morning.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:31:UCAP: What do you do first when you wake up in the morning?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:34:UCAP: Look at this picture sequence. Does this morning routine look familiar to you?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:37:UCAP: Good. Today we learn how to talk about our morning routine in order.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:47:UCAP: First, wake up early.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:51:UCAP: Then, eat breakfast.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:55:UCAP: Finally, go to school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:59:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:71:UCAP: First, wake up early.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:74:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:80:UCAP: Then, eat breakfast.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:89:UCAP: Finally, go to school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:92:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:98:UCAP: Good. Now write your own morning routine.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:110:UCAP: Write your own morning routine. Three steps, in order.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:111:UCAP: Use First, Then, Finally. Use action words like wake up, brush your teeth, eat breakfast, get dressed, go to school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:112:UCAP: Use present tense, not woke up, not ate. Say wake up, eat, go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:114:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:125:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:137:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:142:UCAP: That is it. Tell your morning routine to your partner. Your partner responds, then shares theirs. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:143:UCAP: If you are in a group of three, take turns. A, then B, then C.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:154:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:168:UCAP: Take turns. Tell your morning routine to the new group using First, Then, Finally.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:170:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:184:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:194:UCAP: Tell me your three morning steps. First, Then, Finally. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:199:UCAP: Say your Finally sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:210:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:212:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:224:UCAP: Listen. First, wake up early.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:227:UCAP: Then, eat breakfast.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:230:UCAP: Finally, go to school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:235:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:236:UCAP: First, wake up. Then, eat breakfast. Next, pack your bag. Finally, go to school.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-09.txt:238:UCAP: Now you try. Add one more step using Next. Just once.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:27:UCAP: Good morning! Let's get cooking, well, almost.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:31:UCAP: Has anyone ever helped make a snack at home? What did you do?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:34:UCAP: Look at these recipe cards. What do you think we are going to make today?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:37:UCAP: Good. Today we practice giving cooking instructions in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:46:UCAP: Put the bread on the plate.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:50:UCAP: Spread the butter on the bread.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:55:UCAP: First, wash the knife in the kitchen.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:58:UCAP: Then, cut the bread before serving.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:63:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:75:UCAP: Put the bread on the plate.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:84:UCAP: Spread the butter on the bread.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:93:UCAP: Cut the bread before serving.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:102:UCAP: Good. Now write your own cooking instructions.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:114:UCAP: Write your own cooking instructions. Use the recipe cards.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:115:UCAP: Verb, then the object, then the place or time. Put the bread on the plate. Cut the bread before serving. Like that.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:128:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:141:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:145:UCAP: That is it. Give instructions to your partner. Your partner points to the right card. Then swap. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:156:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:170:UCAP: Take turns. Give your cooking instructions to the new group. The group mimes or points to the cards in order.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:172:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:186:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:197:UCAP: Give me an instruction using this knife. Verb, object, place or time. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:202:UCAP: Give me an instruction using these two cards. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:213:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:215:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:227:UCAP: Listen. Put the bread on the plate.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:230:UCAP: Good. Now: where? On the plate.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:235:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:236:UCAP: Cut the bread on the board before serving.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-10.txt:238:UCAP: Now you try. Give me one instruction with both a place and a time. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:27:UCAP: Hello, class! Settle down and listen up.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:31:UCAP: Quick check. Do you have a password on your phone or tablet?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:34:UCAP: Look at this digital safety poster. What things should we protect online?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:37:UCAP: Good. Today we learn how to give safety rules in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:46:UCAP: Don't share your password with anyone.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:50:UCAP: Be careful with your account on the internet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:54:UCAP: Always protect your privacy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:59:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:71:UCAP: Don't share your password with anyone.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:74:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:80:UCAP: Be careful with your account on the internet.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:83:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:89:UCAP: Always protect your privacy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:92:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:98:UCAP: Good. Now write your own safety rules.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:110:UCAP: Write your own online safety rules. Use the three patterns.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:111:UCAP: Don't blank for a prohibition. Be blank for a warning. Always blank for a tip. Keep each rule short. Do not add because.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:113:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:124:UCAP: Stop writing. Now sit in groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:136:UCAP: In your group, take turns giving a safety rule. Don't blank. Be blank. Or Always blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:137:UCAP: After each rule, the others respond with That's true. Or I agree. Then write down the rules your group likes best.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:148:UCAP: Stop. Stay in your group for now.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:161:UCAP: Form a new group of four with classmates from other groups.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:163:UCAP: Take turns presenting your safety rules. Don't blank. Be blank. Always blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:165:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:179:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:190:UCAP: Give me a safety rule about passwords. Don't, Be, or Always. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:195:UCAP: Give me your Always rule. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:206:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:208:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:220:UCAP: Listen. Don't share your password.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:223:UCAP: Be careful with your account.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:228:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:229:UCAP: Never give your password to a stranger.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-11.txt:231:UCAP: Now you try. Give me one strong prohibition using Never. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:26:UCAP: Good morning, everyone! I hope you studied last night.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:30:UCAP: What do you do when you want to remember something important from class?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:33:UCAP: Look at these study goals. Which one do you need the most help with?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:36:UCAP: Good. Today we learn how to connect a goal with the right tool or action.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:45:UCAP: If you want to learn new words, use a dictionary.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:49:UCAP: Use your notes to remember the lesson.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:53:UCAP: If you want to study well, practice every day.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:58:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:70:UCAP: If you want to learn new words, use a dictionary.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:79:UCAP: Use your notes to remember the lesson.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:88:UCAP: If you want to study well, practice every day.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:97:UCAP: Good. Now write your own goal and action pairs.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:109:UCAP: Write your own study goal and the right action or tool.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:110:UCAP: Use: If you want to blank, blank. Or: Use blank to blank. Do not add because.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:112:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:123:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:135:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:140:UCAP: That is it. Take turns. One says the goal, the other answers with the tool or action. Then swap. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:151:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:165:UCAP: Take turns performing your goal-action matching dialogue for the new group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:166:UCAP: One says the study goal, the partner answers with the tool or action.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:168:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:182:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:192:UCAP: If you want to remember the lesson, what do you use? Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:197:UCAP: Give me a goal: If you want to blank. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:208:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:210:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:222:UCAP: Listen. If you want to learn new words, use a dictionary.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:225:UCAP: Good. Now try: If you want to remember the lesson, use blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:230:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:231:UCAP: If you want to learn new words, use a dictionary or ask your teacher.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-12.txt:233:UCAP: Now you try. Give me one goal with two different options. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:26:UCAP: Good morning! How was your weekend, everyone?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:30:UCAP: Has your family ever gone somewhere together last weekend? Where did you go?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:32:UCAP: Look at these family photos. What happened here, do you think?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:35:UCAP: Good. Today we learn how to talk about something that already happened.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:44:UCAP: Last weekend, my family visited the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:48:UCAP: Yesterday, we played games and enjoyed a picnic.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:52:UCAP: Last Sunday, my family cooked food together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:57:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:69:UCAP: Last weekend, my family visited the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:72:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:78:UCAP: Yesterday, we played games and enjoyed a picnic.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:81:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:87:UCAP: Last Sunday, my family cooked food together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:90:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:96:UCAP: Good. Now write about your own outing.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:108:UCAP: Write about your own past outing. Use a time expression: Yesterday, or Last weekend, or Last Sunday.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:109:UCAP: Use past-tense verbs: visited, played, enjoyed, cooked, walked. Do not use present tense. Do not say will.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:111:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:122:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:134:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:139:UCAP: That is it. Take turns. Tell your past outing to your partner. Your partner listens and remembers one thing. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:150:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:164:UCAP: Take turns. Tell your group about your past outing. Yesterday, blank. Or: Last weekend, blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:166:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:180:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:190:UCAP: Tell me about your family outing. Start with Yesterday or Last weekend. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:195:UCAP: Your sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:206:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:208:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:220:UCAP: Listen. Last weekend, my family visited the park.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:223:UCAP: Good. Now: visited. Not visit. Past. Say: Last weekend, I visited blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:228:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:229:UCAP: Last weekend, we went to the beach.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-13.txt:231:UCAP: Went is past for go. Now you try. Give me one sentence with went. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:25:UCAP: Morning, class! I heard there was a sports event recently.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:29:UCAP: Can you remember the last sports day at school? What did you do?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:31:UCAP: Look at these sports day photos. What activities can you see?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:34:UCAP: Good. Today we learn how to tell two things we did together in one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:43:UCAP: Last Friday, we had Sports Day.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:46:UCAP: We ran
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:48:UCAP: and jumped in the games.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:52:UCAP: My friends played football
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:54:UCAP: and won the competition.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:58:UCAP: I cheered
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:60:UCAP: and then clapped for my team.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:65:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:77:UCAP: We ran and jumped in the games.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:80:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:86:UCAP: My friends played football and won the competition.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:89:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:95:UCAP: I cheered and then clapped for my team.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:98:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:104:UCAP: Good. Now write your own connected-action sentences.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:117:UCAP: Write your own sentences. Join two past actions with and or and then inside one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:118:UCAP: We ran and jumped. Or: I cheered and then clapped. Use past-tense verbs. Do not start with First or Then. Do not add because.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:120:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:131:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:143:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:148:UCAP: That is it. Take turns. Tell your partner what you did at a sports event. Join two actions in each sentence. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:159:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:173:UCAP: Take turns. Tell your group about what you did at sports day. Join two actions in each sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:175:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:189:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:199:UCAP: Tell me two things you did at sports day in one sentence. Use and or and then. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:204:UCAP: Your sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:215:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:217:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:229:UCAP: Listen. We ran and jumped.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:232:UCAP: Good. And joins two actions. Inside one sentence. Now try: I blank and blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:237:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:238:UCAP: We ran, jumped, and cheered.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-14.txt:240:UCAP: Three actions, one sentence. Now you try. Give me one sentence with three past actions. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:25:UCAP: Hello, friends! Ready to share some experiences today?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:29:UCAP: Has anyone visited the school library or a reading corner recently? How did it feel?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:31:UCAP: Look at these library photos. What feeling do you get when you see them?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:34:UCAP: Good. Today we learn how to share how we felt and why.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:43:UCAP: I found a book and read it at the library.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:47:UCAP: It was fun because the reading was interesting.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:51:UCAP: It was quiet because everyone read together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:54:UCAP: It was exciting because I learned new things from the books.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:58:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:70:UCAP: It was fun because the reading was interesting.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:73:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:79:UCAP: It was quiet because everyone read together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:82:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:88:UCAP: It was exciting because I learned new things from the books.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:91:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:97:UCAP: Good. Now write about your own experience.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:110:UCAP: Write about how you felt at the library or reading corner. Use: It was blank because blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:111:UCAP: The feeling: fun, quiet, exciting. The reason: something that really happened. Not a general opinion.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:113:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:124:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:136:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:141:UCAP: That is it. Take turns. Share how you felt and why. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:152:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:166:UCAP: Take turns. Share your library experience and how you felt. It was blank because blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:168:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:182:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:192:UCAP: How did you feel at the library? Use It was blank because blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:197:UCAP: Your sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:208:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:210:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:222:UCAP: Listen. It was quiet because everyone read together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:225:UCAP: Good. Because blank. A real event. Not: because reading is good. Now try: It was blank because blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:230:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:231:UCAP: It was fun and exciting because we read together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-15.txt:233:UCAP: Two feelings, one sentence. Now you try. Give me one response with two feelings. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:27:UCAP: Good morning! I have a topic close to our community today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:31:UCAP: Have you ever helped clean up a public space, a park, a street, or your neighborhood?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:33:UCAP: Look at what these students did together. What do you think they learned from it?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:36:UCAP: Good. Today we learn how to close a story and share what we learned.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:45:UCAP: It was tiring because we worked hard as a team.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:49:UCAP: After that, our community cleaned the park together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:53:UCAP: At the end, the park was clean and tidy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:57:UCAP: I learned to take responsibility.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:62:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:74:UCAP: After that, our community cleaned the park together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:77:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:83:UCAP: At the end, the park was clean and tidy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:86:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:92:UCAP: I learned to take responsibility.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:95:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:101:UCAP: Good. Now write your own closing.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:114:UCAP: Write your own closing for a community clean-up story.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:115:UCAP: Use: After that, blank. At the end, blank. And: I learned blank. Keep I learned short. One thing. Not a long message.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:128:UCAP: Stop writing. Now sit in small groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:140:UCAP: In your circle, take turns giving the closing of your story.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:141:UCAP: After that, blank. At the end, blank. I learned blank. Keep each part short. Listen to each classmate.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:152:UCAP: Stop. Stay in your group for a moment.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:166:UCAP: Take turns sharing your recount closing in the new circle. After that, blank. At the end, blank. I learned blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:168:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:182:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:192:UCAP: Give me your At the end sentence and your I learned. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:197:UCAP: Your I learned sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:208:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:210:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:222:UCAP: Listen. At the end, the park was clean and tidy.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:225:UCAP: I learned to take responsibility.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:230:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:231:UCAP: I learned to clean up and to help others.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-16.txt:233:UCAP: Two things, still short. Now you try. Give me one I learned with two things. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:26:UCAP: Morning, everyone! Check your phones quickly, then put them away.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:30:UCAP: Have you ever sent a message to a class group chat? What did you write?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:32:UCAP: Look at these chat messages. What makes them polite?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:35:UCAP: Good. Today we learn how to write polite messages in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:45:UCAP: Please bring my English book tomorrow.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:49:UCAP: Please don't forget your pencil case.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:53:UCAP: Please don't lose my pen.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:57:UCAP: Please reply to my friends in the class chat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:61:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:73:UCAP: Please bring my English book tomorrow.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:82:UCAP: Please don't forget your pencil case.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:91:UCAP: Please don't lose my pen.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:100:UCAP: Good. Now write your own polite messages.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:113:UCAP: Write your own polite chat messages. One request and one reminder.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:114:UCAP: Please blank for a request. Please don't blank for a reminder. About school items. No sequencing. No Let's. No I think.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:116:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:127:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:139:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:144:UCAP: That is it. Take turns. Send a polite message. Your partner replies politely. Then swap. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:168:UCAP: Write your polite messages on the card. One Please blank. And one Please don't blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:172:UCAP: Pass your cards around the group and read each other's messages.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:174:UCAP: The person I point to reads first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:188:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:198:UCAP: Give me one polite message about a school item. Please blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:203:UCAP: Your Please don't message. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:214:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:216:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:228:UCAP: Listen. Please bring my English book tomorrow.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:231:UCAP: Please don't forget your pencil case.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:236:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:237:UCAP: Please bring my book. Thank you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-17.txt:239:UCAP: A polite closer. Now you try. Give me one Please message with Thank you at the end. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:26:UCAP: Hello, class! Let's check the clock, are we ready to begin?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:30:UCAP: Do you know when your school clubs meet? Which day and what time?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:32:UCAP: Look at this club schedule. What information can you find here?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:35:UCAP: Good. Today we learn how to read and make a simple schedule.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:44:UCAP: Monday, 8 a.m. English Club in Room 3.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:48:UCAP: Friday, 2 p.m. Art Club in the hall.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:52:UCAP: July 10, Sports Day in the school field.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:56:UCAP: Wednesday, 3 p.m. Music Club in Room 5.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:61:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:73:UCAP: Monday, 8 a.m. English Club in Room 3.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:82:UCAP: Friday, 2 p.m. Art Club in the hall.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:91:UCAP: July 10, Sports Day in the school field.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:100:UCAP: Good. Now make your own schedule entries.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:113:UCAP: Make your own schedule entries. Use the format: Day, time, club in place.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:114:UCAP: Short labels only. Not a full sentence. Not a past story. Not There is. Just the three parts: time, event, place.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:116:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:127:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:139:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:144:UCAP: That is it. Read one entry. Your partner points to the day, time, and place. Then swap. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:169:UCAP: Take turns. Present your schedule card to the new group. Read each entry: Day, time, club in place.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:171:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:195:UCAP: Give me one schedule entry. Day, time, club, and place. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:200:UCAP: Your second entry. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:213:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:225:UCAP: Listen. Monday, 8 a.m. English Club in Room 3.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:228:UCAP: Now your turn. Blank, blank a.m. blank Club in blank. Read this one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:233:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:234:UCAP: Monday, 8-9 a.m. English Club in Room 3.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-18.txt:236:UCAP: A time range. Now you try. Give me one entry with a time range. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:28:UCAP: Good morning! I have some paperwork for us today, in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:32:UCAP: Have you ever filled in a form before, maybe for a library, a competition, or a school event?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:34:UCAP: Look at this membership form. What information do you need to fill in?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:37:UCAP: Good. Today we learn how to fill in a simple form in English.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:46:UCAP: Name: Andi Saputra.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:50:UCAP: Class: 7A. Number: 12.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:54:UCAP: Address: Jalan Melati No. 5.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:58:UCAP: Membership: New Member. Favorite Club: Science Club.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:61:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:73:UCAP: Name: Andi Saputra.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:82:UCAP: Class: 7A. Number: 12.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:91:UCAP: Favorite Club: Science Club.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:100:UCAP: Good. Now fill in your own form.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:112:UCAP: Fill in your own form. Write Label: then your value. Name: then your name. Class: then your class.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:113:UCAP: Do not write I am or My name is. Just the label and the value. Like the example.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:115:UCAP: You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:126:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:138:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:144:UCAP: That is it. Swap forms. Read your partner's fields aloud. Check that each field has a value. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:155:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:169:UCAP: Take turns. Present a completed form to the new group by reading its fields: Label: value.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:171:UCAP: The person I point to reads first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:185:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:195:UCAP: Read me three fields from your form. Label: value. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:200:UCAP: Your Favorite Club field. Without looking at your form.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:211:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:213:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:225:UCAP: Listen. Name: blank. Read it like this.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:228:UCAP: Class: blank. Read this one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:233:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:234:UCAP: Email: andi@email.com.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-19.txt:236:UCAP: One more field. Same format: Label: value. Now you try. Add one more field to your form. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:28:UCAP: Morning! I have something mysterious to show you today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:32:UCAP: Have you ever noticed old signs or warning notices around this school?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:34:UCAP: Look at these signs near an old storage room. What do you think is behind that door?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:37:UCAP: Good. Today we learn how to read and write short notices like these.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:46:UCAP: Notice: Keep this door closed.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:50:UCAP: No entry to the secret room.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:54:UCAP: Keep out. Use the side door only.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:58:UCAP: No food in this room.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:63:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:75:UCAP: Notice: Keep this door closed.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:78:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:84:UCAP: No entry to the secret room.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:87:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:93:UCAP: Keep out. Use the side door only.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:96:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:102:UCAP: Good. Now write your own notices.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:114:UCAP: Create your own notices for the old storage room. Use: Notice: blank, No blank, Keep blank, or Use blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:115:UCAP: Short signs only. Not a story. Not a description. Not an opinion. Just a notice.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:117:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:128:UCAP: Stop writing. Now sit in small groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:140:UCAP: In your group, look at the notice cards near the old storage room. Read each one and point to what it means.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:141:UCAP: Then write your own notices for the room using Notice: blank, No blank, Keep blank, or Use blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:153:UCAP: Stop. Stay in your group.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:166:UCAP: Post your notices on the wall. Then walk around and read other groups' notices. Match each one to what it means.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:180:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:190:UCAP: Give me one notice for the old storage room. Notice: blank, No blank, Keep blank, or Use blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:195:UCAP: Your second notice. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:206:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:208:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:220:UCAP: Listen. Notice: Keep this door closed.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:223:UCAP: No entry to the secret room.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:228:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:229:UCAP: Please keep out.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-20.txt:231:UCAP: A polite notice. Now you try. Give me one polite public notice with Please. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:26:UCAP: Good morning, storytellers! Get comfortable, we have a story to enter today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:30:UCAP: Have you ever seen a firefly glow in the dark? What was it like?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:32:UCAP: Look at this picture. What do you think the little firefly is thinking?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:35:UCAP: Good. Today we open a story about this little firefly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:44:UCAP: Once there was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:48:UCAP: There was a little forest around the pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:52:UCAP: It was tiny and bright.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:56:UCAP: The firefly dreamed of finding bright friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:61:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:73:UCAP: Once there was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:76:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:82:UCAP: There was a little forest around the pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:85:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:91:UCAP: The firefly dreamed of finding bright friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:94:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:100:UCAP: Good. Now write your own story opening.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:112:UCAP: Write your own story opening. Choose a character and a place.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:113:UCAP: Use: Once there was blank near blank. Then: There was blank around blank. Use past tense: there was, it was. Not: There is. Not: I am.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:115:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:126:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:138:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:143:UCAP: That is it. Take turns. Tell your story opening to your partner. Your partner listens and remembers the character and place. Work with the person next to you.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:154:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:168:UCAP: Take turns. Tell your story opening to the new group. Once there was blank. There was blank.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:170:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:184:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:194:UCAP: Open a story for me. Once there was blank. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:199:UCAP: Your second sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:210:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:212:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:224:UCAP: Listen. Once there was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:227:UCAP: There was a little forest around the pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:232:UCAP: Listen first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:233:UCAP: Long ago, there was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-21.txt:235:UCAP: Long ago adds time to the opening. Now you try. Give me one opening with Long ago. Just one.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:27:UCAP: Welcome back. Our story continues today.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:32:UCAP: Last time, we met a small firefly near a quiet pond. It was dreaming of finding friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:34:UCAP: Do you remember the little firefly? What was it dreaming of?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:37:UCAP: Look at what happened next. What went wrong for the little firefly?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:40:UCAP: Good. Let us see exactly what happened.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:49:UCAP: There was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:54:UCAP: One day, the firefly flew into the forest,
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:56:UCAP: but the forest became dark.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:60:UCAP: Suddenly, the firefly could not find its friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:64:UCAP: The little light was lost in the dark night.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:69:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:81:UCAP: There was a small firefly near a quiet pond.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:84:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:90:UCAP: One day, the firefly flew into the forest, but the forest became dark.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:93:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:99:UCAP: Suddenly, the firefly could not find its friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:102:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:108:UCAP: The little light was lost in the dark night.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:111:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:117:UCAP: Good. Now it is your turn. Write the conflict.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:129:UCAP: Use this pattern. Make a problem for the firefly. Use but to show the problem. Use Suddenly for the surprise.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:130:UCAP: Do not use First or Then here. Do not use because. This is a conflict, not a list.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:132:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:143:UCAP: Stop writing. Now find a partner.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:156:UCAP: Watch first. Then you do the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:161:UCAP: That is it. Find your partner. Take turns continuing the story from the opening to the conflict.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:162:UCAP: Listen and find what went wrong in your partner's story.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:173:UCAP: Good. Now stay with your partner and join another pair.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:190:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:191:UCAP: One person tells the story from the opening to the conflict. The others listen for the problem.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:205:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:215:UCAP: Say your conflict sentence. The one with but.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:220:UCAP: Your Suddenly sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:231:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:235:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:247:UCAP: Listen. One day, the firefly flew into the forest,
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:249:UCAP: but the forest became dark.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:252:UCAP: Now listen. Suddenly, the firefly could not find its friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:258:UCAP: You used Suddenly very well. Listen to another way.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:259:UCAP: All of a sudden, the light went out.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-22.txt:261:UCAP: Try one. Use All of a sudden instead of Suddenly. Just one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:27:UCAP: Good morning. Are you ready to find out how the story ends?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:32:UCAP: Last time, the firefly was lost in the dark forest. Who do you think could help it?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:35:UCAP: Look at this story board. Who helped the little firefly get home?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:38:UCAP: Good. Let us see exactly how they helped.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:47:UCAP: The firefly was lost in the dark forest.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:51:UCAP: So, a rabbit and a bird helped the little firefly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:55:UCAP: Then, the rabbit showed the way and the bird flew ahead.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:59:UCAP: Finally, the firefly found the way home before sunrise.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:64:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:76:UCAP: The firefly was lost in the dark forest.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:85:UCAP: So, a rabbit and a bird helped the little firefly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:94:UCAP: Then, the rabbit showed the way and the bird flew ahead.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:103:UCAP: Finally, the firefly found the way home before sunrise.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:106:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:112:UCAP: Good. Now it is your turn. Write the resolution.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:124:UCAP: Use this pattern. Write a resolution. Use past tense with characters.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:125:UCAP: So, someone helped. Then, two actions. Finally, the problem is solved.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:126:UCAP: This is a story, not instructions. Use the characters: the rabbit, the bird.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:128:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:139:UCAP: Stop writing. Now get into groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:152:UCAP: Watch first. Then your group does the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:157:UCAP: That is it. Build the resolution together. Each person adds one part.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:158:UCAP: Listen so the events connect and solve the firefly's problem.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:169:UCAP: Good. Now form a new group of four with classmates from other groups.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:184:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:185:UCAP: Take turns telling the resolution. So, ... Then, ... and ... Finally, ...
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:186:UCAP: Listen and check: does the resolution solve the firefly's problem?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:200:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:210:UCAP: Say your So sentence. Who helped and what did they do?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:215:UCAP: Your Finally sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:226:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:230:UCAP: Good work today. We will continue next time.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:242:UCAP: Listen. So, a rabbit and a bird helped the little firefly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:245:UCAP: Then, the rabbit showed the way and the bird flew ahead.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:251:UCAP: You connected two actions very well. Listen to one more.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:252:UCAP: Then, the rabbit showed the way, the bird flew ahead, and they all glowed together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-23.txt:254:UCAP: Try one. Connect three helping actions in your Then sentence. Just one sentence.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:27:UCAP: Morning, class. Today we close our firefly story together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:32:UCAP: What do you think happened in the end for the firefly and its new friends?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:35:UCAP: Look at this ending illustration. What did the firefly learn from its journey?
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:38:UCAP: Good. Let us close the story the right way.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:47:UCAP: The rabbit and the bird helped the firefly get home.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:51:UCAP: In the end, the firefly made a good choice and found its friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:55:UCAP: The firefly learned to ask for help.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:59:UCAP: Everyone felt happy because they shared kindness and friendship.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:64:UCAP: You watched me. Now let us say it together.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:76:UCAP: The rabbit and the bird helped the firefly get home.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:79:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:85:UCAP: In the end, the firefly made a good choice and found its friends.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:88:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:94:UCAP: The firefly learned to ask for help.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:97:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:103:UCAP: Everyone felt happy because they shared kindness and friendship.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:106:UCAP: Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:112:UCAP: Good. Now it is your turn. Write the ending.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:124:UCAP: Use this pattern. Close the story for the firefly.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:125:UCAP: Use third person for the lesson. The firefly learned, not I learned.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:126:UCAP: Use past tense. Theme words on the board: kindness, friendship, help, choices.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:128:UCAP: Open your notebook. You have five minutes. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:139:UCAP: Stop writing. Now get into groups of three or four.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:152:UCAP: Watch first. Then your group does the same.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:157:UCAP: That is it. Sit in a small circle. Take turns giving your story closing.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:158:UCAP: After your closing, you may add a short personal response. I think, or That is true, or I agree.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:169:UCAP: Good. Now form a new circle of four with classmates from other groups.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:184:UCAP: The person I point to starts first.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:185:UCAP: Share your story closing. In the end, ... The firefly learned, ... Everyone felt, ...
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:186:UCAP: Then add a short personal response if you wish.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:200:UCAP: Stop. Everyone back to your seat.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:210:UCAP: Say your The firefly learned sentence. Without looking at your book.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:215:UCAP: Your Everyone felt sentence. Go.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:226:UCAP: Let us try again. Say it with me.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:230:UCAP: Good work today. You have finished the firefly story.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:242:UCAP: Listen. The firefly learned to ask for help.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:245:UCAP: Everyone felt happy because they shared kindness.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:251:UCAP: You closed the story well. Listen to one last line.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:252:UCAP: The firefly never felt lonely again.
+docs/canonical/skenario-fase-d-kelas 7/skenario-7-24.txt:254:UCAP: Try one. Add a final line that ties back to the beginning. Just one sentence.
