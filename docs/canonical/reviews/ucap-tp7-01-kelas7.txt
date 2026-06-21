@@ -1,0 +1,2562 @@
+# Review UCAP TP 01 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario , hampir seluruh UCAP sudah bersifat operasional, kontekstual, dan dapat dijalankan langsung di kelas tanpa memerlukan interpretasi tambahan.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada saat UCAP diucapkan, siswa belum mengetahui pasangan mana yang harus digabung.
+* UCAP meminta siswa mengambil keputusan sendiri, padahal pada langkah berikutnya skenario secara eksplisit menetapkan bahwa guru yang menentukan pasangan.
+* Berpotensi menimbulkan pergerakan kelas yang tidak seragam (siswa memilih teman sendiri, kelompok tidak seimbang, atau beberapa pasangan saling menunggu).
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya yang menyatakan guru menentukan penggabungan pasangan.
+* Menghilangkan kebutuhan siswa untuk menafsirkan sendiri instruksi.
+* Menjaga transisi INTERACT → SHARE tetap mulus dan terkontrol.
+* Mengurangi potensi kekacauan perpindahan kelompok di kelas.
+
+---
+
+## Kesimpulan
+
+Seluruh UCAP lainnya sudah memenuhi kriteria:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi kelas saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memaksa guru atau siswa mengambil keputusan yang seharusnya sudah diatur oleh skenario,
+* serta tidak memerlukan revisi untuk meningkatkan keterlaksanaan pembelajaran nyata di kelas.
+# Review UCAP TP 02 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario , sebagian besar UCAP sudah memiliki kontinuitas yang baik, sesuai konteks kelas, dan dapat dijalankan secara langsung.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Take this tally sheet. Walk around the class. Ask your classmates your questions."** 
+
+### Temuan
+
+* Memuat tiga instruksi utama sekaligus dalam satu UCAP.
+* Siswa harus memproses mengambil lembar, mulai berjalan, dan mulai bertanya secara bersamaan.
+* Pada kelas SMP awal, sebagian siswa cenderung langsung berjalan sebelum memahami penggunaan lembar tally.
+
+### Rekomendasi
+
+> **"Take this tally sheet. Keep it with you. In a moment, you will walk around the class and ask your classmates your questions."**
+
+### Alasan
+
+* Memecah beban kognitif.
+* Memberi transisi yang lebih halus sebelum demonstrasi berikutnya.
+* Mengurangi kemungkinan siswa mulai bergerak sebelum contoh diberikan.
+
+---
+
+## UCAP
+
+> **"Good. Now go. You have eight minutes."** 
+
+### Temuan
+
+* Transisi menuju aktivitas sudah jelas.
+* Namun UCAP belum mengingatkan bahwa siswa harus membawa lembar tally yang baru saja digunakan pada demonstrasi.
+* Sebagian siswa dapat meninggalkan lembar di meja sehingga harus kembali mengambilnya.
+
+### Rekomendasi
+
+> **"Good. Take your tally sheet with you. Now go. You have eight minutes."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan aktivitas pencatatan.
+* Mengurangi interupsi ketika aktivitas berjalan.
+* Membuat instruksi lebih deterministik.
+
+---
+
+## UCAP
+
+> **"Use this: blank friends like blank. Or: blank friends can play blank."** 
+
+### Temuan
+
+* UCAP merujuk pada pola yang belum terlihat secara konkret pada saat diucapkan.
+* AKSI yang menunjuk pola di papan tulis baru dilakukan setelah UCAP tersebut.
+* Menimbulkan logical jump kecil karena siswa diminta menggunakan sesuatu yang belum ditampilkan.
+
+### Rekomendasi
+
+> **"You will use these patterns for your report."**
+
+atau
+
+> **"Look at the patterns on the board. Use them for your report."**
+
+(jika dipindahkan setelah AKSI menunjuk papan tulis).
+
+### Alasan
+
+* Menyelaraskan UCAP dengan urutan aksi.
+* Menghilangkan asumsi bahwa siswa sudah melihat pola.
+* Membuat transisi lebih alami.
+
+---
+
+## Kesimpulan
+
+Selain tiga temuan di atas, seluruh UCAP sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi kelas saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan interpretasi tambahan,
+* tidak memunculkan logical jump yang berarti,
+* serta tidak memerlukan revisi untuk meningkatkan implementasi nyata di kelas.
+# Review UCAP TP 03 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario , sebagian besar UCAP sudah memiliki alur yang baik, operasional, dan dapat dijalankan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum selaras dengan langkah berikutnya.
+* Pada deskripsi INTERACT, guru yang menentukan pasangan.
+* UCAP meminta siswa mencari pasangan sendiri sehingga membuka ruang interpretasi dan perpindahan yang tidak diperlukan.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi CHANGE → INTERACT lebih deterministik.
+
+---
+
+## UCAP
+
+> **"That is it. Partner A invites first, Partner B responds. Then swap. Work with the person next to you."** 
+
+### Temuan
+
+* Di dalam satu UCAP terdapat tiga instruksi utama:
+
+  * urutan peran,
+  * pergantian peran,
+  * penentuan pasangan.
+* Beban kognitif cukup tinggi karena seluruh aturan diberikan sekaligus tepat setelah demonstrasi.
+
+### Rekomendasi
+
+> **"That is it. Partner A invites first. Partner B responds. Then swap. Work with the person next to you."**
+
+atau dipisah menjadi dua UCAP:
+
+> **"That is it. Partner A invites first. Partner B responds."**
+
+> **"Then swap. Work with the person next to you."**
+
+### Alasan
+
+* Instruksi lebih mudah diproses.
+* Urutan aktivitas lebih jelas.
+* Mengurangi kemungkinan siswa lupa melakukan pergantian peran.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada langkah SHARE, guru yang menentukan pasangan mana yang bergabung.
+* UCAP masih memberi kesan bahwa siswa memilih sendiri pasangan gabungan.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Menghilangkan kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan mudah dikendalikan.
+
+---
+
+## UCAP
+
+> **"Now perform your invitation role play for the new group."** 
+
+### Temuan
+
+* Istilah **new group** mengasumsikan siswa sudah memahami bahwa kelompok baru telah terbentuk.
+* Pada praktik kelas nyata, sebagian siswa masih menyesuaikan posisi duduk ketika UCAP ini diucapkan.
+
+### Rekomendasi
+
+> **"Now perform your invitation role play with this group."**
+
+atau
+
+> **"Now perform your invitation role play for your group."**
+
+### Alasan
+
+* Mengacu langsung pada kelompok yang sedang dihadapi siswa.
+* Mengurangi kemungkinan siswa melihat ke sekeliling untuk memastikan kelompok yang dimaksud.
+* Membuat instruksi lebih konkret.
+
+---
+
+## Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi kelas,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 04 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario , sebagian besar UCAP sudah operasional, memiliki kontinuitas yang baik, dan dapat digunakan langsung di kelas tanpa memerlukan interpretasi tambahan.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now sit in groups of three or four."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada deskripsi INTERACT disebutkan bahwa guru menentukan komposisi kelompok.
+* UCAP memberi kesan siswa bebas membentuk kelompok sendiri sehingga berpotensi menimbulkan perpindahan yang tidak terarah.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your group."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Menghilangkan kebutuhan siswa menentukan kelompok sendiri.
+* Membuat transisi CHANGE → INTERACT lebih tertib dan konsisten.
+
+---
+
+## UCAP
+
+> **"Form a new group of four with classmates from other groups."** 
+
+### Temuan
+
+* Instruksi bertentangan dengan AKSI.
+* AKSI menyatakan guru menunjuk siapa bergabung dengan kelompok mana.
+* UCAP kembali memberi ruang bagi siswa untuk memilih sendiri anggota kelompok.
+
+### Rekomendasi
+
+> **"Stay together until I show you your new group."**
+
+atau
+
+> **"I will show you your new group. Please move when I call you."**
+
+### Alasan
+
+* Konsisten dengan AKSI.
+* Mengurangi kebingungan dan perpindahan yang tidak perlu.
+* Membuat transisi INTERACT → SHARE lebih deterministik.
+
+---
+
+## UCAP
+
+> **"Take turns. Say your main opinion: I think blank because blank. The others respond."** 
+
+### Temuan
+
+* Dua aturan aktivitas diberikan sekaligus:
+
+  * menyampaikan pendapat,
+  * memberi respons.
+* Pada awal kelompok baru terbentuk, sebagian siswa lebih mudah mengikuti instruksi jika urutan giliran dibuat lebih eksplisit.
+
+### Rekomendasi
+
+> **"Take turns. One person says: I think blank because blank. Then the others respond."**
+
+### Alasan
+
+* Urutan aktivitas lebih konkret.
+* Mengurangi kemungkinan semua siswa berbicara bersamaan.
+* Mempermudah visualisasi jalannya diskusi.
+
+---
+
+## UCAP
+
+> **"Tell me your opinion about our classroom. I think blank because blank. Go."** 
+
+### Temuan
+
+* Instruksi dan contoh pola bercampur dalam satu UCAP.
+* Sebagian siswa dapat menangkap bagian contoh sebagai sesuatu yang harus dihafal, bukan sebagai pola yang harus diisi.
+
+### Rekomendasi
+
+> **"Tell me your opinion about our classroom. Use: I think ... because .... Go."**
+
+### Alasan
+
+* Memisahkan instruksi dari pola.
+* Lebih mudah dipahami sebagai format jawaban.
+* Mengurangi potensi interpretasi yang keliru.
+
+---
+
+## Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran,
+* menjaga kontinuitas antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan keputusan tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 05 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario , mayoritas UCAP sudah operasional, mudah divisualisasikan, dan menjaga alur pembelajaran dengan baik.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now describe your own animal."** 
+
+### Temuan
+
+* Instruksi belum cukup deterministik.
+* Pada langkah CHANGE, sebagian siswa dapat menggunakan hewan dari kartu bergambar apabila tidak memiliki atau tidak memilih hewan peliharaan sendiri.
+* Frasa **your own animal** dapat diinterpretasikan hanya sebagai hewan milik siswa.
+
+### Rekomendasi
+
+> **"Good. Now describe your own pet or one animal from the picture cards."**
+
+### Alasan
+
+* Selaras dengan konteks TP.
+* Tidak memaksa siswa memiliki hewan peliharaan.
+* Menghilangkan interpretasi yang tidak diperlukan.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum selaras dengan alur.
+* INTERACT menggunakan pasangan yang ditentukan guru.
+* UCAP membuka ruang siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi CHANGE → INTERACT lebih mulus.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* SHARE menggunakan penggabungan pasangan yang ditentukan guru.
+* Siswa masih harus menebak pasangan mana yang harus digabung.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI.
+* Mengurangi kebutuhan interpretasi.
+* Menjaga transisi INTERACT → SHARE tetap tertib.
+
+---
+
+## Kesimpulan
+
+Selain tiga temuan di atas, seluruh UCAP pada TP 05 sudah:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi kelas,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* dan tidak memerlukan revisi tambahan untuk meningkatkan implementasi nyata di kelas.
+# Review UCAP TP 06 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 06 , alur sudah konsisten dan sangat dekat dengan pola yang diinginkan. Sebagian besar UCAP bersifat operasional, konkret, dan mudah divisualisasikan.
+
+Berikut bagian yang masih perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now describe your own snack."** 
+
+### Temuan
+
+* Instruksi terlalu sempit.
+* Konteks TP sejak awal menggunakan foto jajanan sehat (apel, pisang, wortel, yogurt), bukan selalu jajanan yang dimiliki siswa.
+* Sebagian siswa dapat berhenti karena berpikir mereka harus mendeskripsikan makanan miliknya sendiri.
+
+### Rekomendasi
+
+> **"Good. Now describe one snack you choose."**
+
+atau
+
+> **"Good. Now describe one snack from the pictures or your own idea."**
+
+### Alasan
+
+* Memberikan pilihan yang jelas.
+* Konsisten dengan konteks visual TP.
+* Mengurangi hambatan saat produksi bahasa.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Sama seperti TP 05, instruksi ini membuka kemungkinan siswa memilih pasangan sendiri.
+* Padahal perpindahan pasangan seharusnya dikendalikan guru agar transisi tetap cepat.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga ritme kelas.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi masih menyisakan ambiguitas.
+* Siswa harus menebak pasangan mana yang harus digabung.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Lebih deterministik.
+* Tidak memerlukan interpretasi tambahan.
+* Membuat transisi INTERACT → SHARE lebih tertib.
+
+---
+
+# Kesimpulan
+
+TP 06 sudah sangat stabil.
+
+**Status:** **LOLOS dengan revisi minor.**
+
+Temuan hanya berupa tiga UCAP transisi yang masih dapat dibuat lebih deterministik:
+
+1. **"describe your own snack" → "describe one snack you choose"**
+2. **"find a partner" → guru menentukan pasangan**
+3. **"join another pair" → guru menentukan penggabungan pasangan**
+
+Selain tiga poin tersebut, seluruh UCAP sudah konkret, dapat divisualisasikan, tidak memiliki logical jump, dan siap digunakan di kelas.
+# Review UCAP TP 07 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 07 , alur UCAP sudah konsisten dengan tujuan pembelajaran deskriptif menggunakan pola **there is / there are**. Mayoritas UCAP dapat diucapkan langsung, mudah divisualisasikan, dan menjaga kontinuitas dari MODEL hingga SHARE.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now describe your own park."** 
+
+### Temuan
+
+* Instruksi belum sepenuhnya sesuai konteks.
+* Sejak awal TP menggunakan peta atau gambar taman sebagai anchor.
+* Frasa **your own park** dapat membuat sebagian siswa berpikir mereka harus mendeskripsikan taman yang benar-benar pernah mereka kunjungi.
+
+### Rekomendasi
+
+> **"Good. Now describe one park from the map or your own idea."**
+
+### Alasan
+
+* Selaras dengan konteks visual yang sudah digunakan.
+* Tidak memaksa siswa mengambil referensi pribadi.
+* Mengurangi kebutuhan interpretasi tambahan.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada alur INTERACT, perpindahan pasangan dikendalikan oleh guru.
+* UCAP memberi ruang bagi siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga transisi CHANGE → INTERACT tetap lancar.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain tiga temuan di atas, seluruh UCAP pada TP 07 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi kelas saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* serta tidak memerlukan revisi tambahan untuk meningkatkan implementasi nyata di kelas.
+# Review UCAP TP 08 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 08, alur UCAP sudah sangat konsisten dan mengikuti progresi pembelajaran dari observasi gambar → pemodelan → produksi kalimat fungsi → berbagi hasil. Hampir seluruh UCAP bersifat operasional dan dapat digunakan langsung di kelas. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now describe your own insect."** 
+
+### Temuan
+
+* Instruksi belum sepenuhnya sesuai konteks pembelajaran.
+* Sejak awal TP menggunakan **nature photo cards** sebagai anchor utama.
+* Frasa **your own insect** dapat diartikan siswa sebagai serangga yang mereka miliki atau pernah temukan sendiri.
+
+### Rekomendasi
+
+> **"Good. Now describe one insect from the picture cards or one you know."**
+
+### Alasan
+
+* Selaras dengan media yang digunakan selama pembelajaran.
+* Memberikan pilihan yang jelas.
+* Mengurangi interpretasi yang tidak diperlukan.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada alur INTERACT, pengaturan pasangan merupakan bagian dari kontrol guru.
+* UCAP masih membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi CHANGE → INTERACT lebih mulus.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Menjaga transisi INTERACT → SHARE tetap tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain tiga temuan di atas, seluruh UCAP pada TP 08 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* dan tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 09 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 09, alur pembelajaran sudah konsisten dengan target genre **Procedure**: siswa mengamati urutan gambar, memodelkan urutan tindakan, kemudian menghasilkan retelling menggunakan **First, Then, Finally**. Mayoritas UCAP sudah operasional, konkret, dan mudah dijalankan di kelas. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now describe your own morning routine."** 
+
+### Temuan
+
+* Instruksi belum sepenuhnya deterministik.
+* Sebelumnya siswa bekerja menggunakan **picture sequence** sebagai anchor utama.
+* Frasa **your own morning routine** dapat membuat sebagian siswa meninggalkan urutan gambar dan langsung membuat urutan baru sendiri.
+
+### Rekomendasi
+
+> **"Good. Now use the picture sequence or your own morning routine to tell the steps."**
+
+### Alasan
+
+* Selaras dengan anchor yang telah digunakan sejak awal.
+* Memberikan transisi yang lebih mulus dari model ke produksi.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada alur INTERACT, pengaturan pasangan dikendalikan oleh guru.
+* UCAP membuka kemungkinan siswa memilih pasangan sendiri sehingga berpotensi mengganggu ritme kelas.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga transisi CHANGE → INTERACT tetap lancar.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+## UCAP
+
+> **"Tell your routine. First, Then, Finally. Go."** 
+
+### Temuan
+
+* Tiga instruksi inti diberikan dalam satu UCAP:
+
+  * mulai berbicara,
+  * menggunakan pola tertentu,
+  * mulai aktivitas.
+* Pada awal SHARE, sebagian siswa lebih mudah mengikuti jika pola dan instruksi mulai aktivitas dipisahkan.
+
+### Rekomendasi
+
+> **"Tell your routine. Use: First, Then, Finally. Go."**
+
+### Alasan
+
+* Memisahkan instruksi dari pola bahasa.
+* Membuat target produksi lebih eksplisit.
+* Mengurangi beban kognitif tanpa mengubah alur pembelajaran.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 09 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 10 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 10, alur pembelajaran sudah konsisten dengan target **Procedure**: siswa mengamati resep bergambar, mengikuti model instruksi, kemudian memberikan instruksi kepada pasangan menggunakan pola **Verb + object + place/time**. 
+
+Mayoritas UCAP sudah operasional, konkret, dan mudah dijalankan di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now give your own cooking instructions."** 
+
+### Temuan
+
+* Instruksi belum sepenuhnya deterministik.
+* Sejak awal TP menggunakan **recipe picture cards** sebagai anchor utama.
+* Frasa **your own cooking instructions** dapat membuat sebagian siswa membuat prosedur baru yang tidak lagi merujuk pada kartu resep.
+
+### Rekomendasi
+
+> **"Good. Now use the recipe picture cards to give your cooking instructions."**
+
+### Alasan
+
+* Selaras dengan anchor pembelajaran.
+* Menjaga kontinuitas dari MODEL ke CHANGE.
+* Mengurangi kebutuhan siswa menentukan sendiri konteks instruksi.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada alur INTERACT, pembagian pasangan dikendalikan oleh guru.
+* UCAP membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga transisi CHANGE → INTERACT tetap lancar.
+
+---
+
+## UCAP
+
+> **"Partner A gives the instructions. Partner B follows them. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan utama sekaligus:
+
+  * pembagian peran,
+  * tindakan masing-masing,
+  * pergantian peran.
+* Pada awal praktik pasangan, beban kognitif menjadi lebih tinggi.
+
+### Rekomendasi
+
+> **"Partner A gives the instructions. Partner B follows them. Then swap roles."**
+
+### Alasan
+
+* Pergantian yang dimaksud menjadi lebih eksplisit.
+* Mengurangi kemungkinan siswa menukar tempat atau aktivitas, bukan peran.
+* Memperjelas urutan praktik.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 10 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 11 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 11, alur pembelajaran sudah konsisten dengan target membangun urutan rutinitas menggunakan pola **First, I ... Then, I ...**. UCAP secara umum sudah operasional, konkret, dan mengikuti progresi dari pengenalan kosakata → pemodelan struktur → praktik → penutup. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now tell your own daily routine."** 
+
+### Temuan
+
+* Instruksi belum sepenuhnya deterministik.
+* Sebelumnya siswa menggunakan **daily routine cards** sebagai anchor utama.
+* Frasa **your own daily routine** dapat membuat sebagian siswa meninggalkan urutan kartu dan membuat urutan baru sendiri.
+
+### Rekomendasi
+
+> **"Good. Now use the daily routine cards to tell your routine."**
+
+atau
+
+> **"Good. Now tell your routine using these cards."**
+
+### Alasan
+
+* Menjaga kontinuitas dari model ke produksi.
+* Mempertahankan anchor visual yang telah digunakan.
+* Mengurangi kebutuhan siswa menentukan sendiri urutan aktivitas.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada langkah partner practice, pembagian pasangan dikendalikan oleh guru.
+* UCAP memberi ruang bagi siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi menuju latihan pasangan lebih lancar.
+
+---
+
+## UCAP
+
+> **"Partner A tells the routine. Partner B listens. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Pada awal latihan, sebagian siswa dapat kehilangan instruksi terakhir.
+
+### Rekomendasi
+
+> **"Partner A tells the routine. Partner B listens. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran, bukan tempat atau pasangan.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Membuat urutan praktik lebih mudah diikuti.
+
+---
+
+## UCAP
+
+> **"Good. Now stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 11 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 12 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 12, alur pembelajaran sudah konsisten dengan target penggunaan pola **"I use my ... to ..."**. Mayoritas UCAP bersifat operasional, mengikuti progresi dari pengenalan kosakata → TPR → pemodelan struktur → latihan pasangan → penutup, dan dapat diucapkan langsung di kelas. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now make your own sentence."** 
+
+### Temuan
+
+* Instruksi belum cukup konkret.
+* Pada tahap sebelumnya siswa masih menggunakan kartu bagian tubuh sebagai anchor.
+* Frasa **your own sentence** membuka kemungkinan siswa membuat kalimat di luar pola yang sedang dipelajari.
+
+### Rekomendasi
+
+> **"Good. Now make one sentence using: I use my ... to ...."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan model yang baru dipelajari.
+* Menghilangkan interpretasi tambahan.
+* Membuat target produksi lebih jelas.
+
+---
+
+## UCAP
+
+> **"Stop. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada latihan pasangan, pembagian pasangan dikendalikan oleh guru.
+* UCAP masih membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi menuju partner practice lebih lancar.
+
+---
+
+## UCAP
+
+> **"Partner A asks. Partner B answers. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan utama sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih menyisakan kemungkinan siswa menukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A asks. Partner B answers. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"Good. Stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 12 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 13 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 13, alur pembelajaran sudah konsisten dengan target penggunaan pola **"Today is ... The weather is ..."** dan **"When it is ..., I ..."**. Sebagian besar UCAP sudah operasional, konkret, dan mengikuti transisi alami dari pengenalan kosakata → pemodelan → latihan → penutup. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now make your own weather sentence."** 
+
+### Temuan
+
+* Instruksi belum cukup konkret.
+* Pada tahap sebelumnya siswa baru berlatih menggunakan pola yang sudah dimodelkan.
+* Frasa **your own weather sentence** membuka kemungkinan siswa membuat kalimat di luar pola target.
+
+### Rekomendasi
+
+> **"Good. Now make one sentence using: Today is ... The weather is ...."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan model yang baru dipelajari.
+* Mengurangi interpretasi tambahan.
+* Membuat target produksi lebih jelas.
+
+---
+
+## UCAP
+
+> **"Stop. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada latihan pasangan, pembagian pasangan dikendalikan oleh guru.
+* UCAP masih membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi menuju partner practice lebih lancar.
+
+---
+
+## UCAP
+
+> **"Partner A says the weather. Partner B says the action. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih menyisakan kemungkinan siswa menukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A says the weather. Partner B says the action. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"Good. Stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 13 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 14 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 14, alur pembelajaran sudah konsisten dengan target penggunaan pola **"The ... is ... the ..."** untuk mendeskripsikan posisi benda di kelas. Mayoritas UCAP bersifat operasional, konkret, dan mengikuti transisi alami dari pengenalan kosakata → pemodelan preposisi → latihan pasangan → penutup. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now make your own classroom sentence."** 
+
+### Temuan
+
+* Instruksi belum cukup konkret.
+* Pada tahap sebelumnya siswa masih menggunakan benda nyata sebagai anchor.
+* Frasa **your own classroom sentence** membuka kemungkinan siswa membuat kalimat di luar pola target.
+
+### Rekomendasi
+
+> **"Good. Now make one sentence using: The ... is ... the ...."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan model yang baru dipelajari.
+* Menghilangkan interpretasi tambahan.
+* Membuat target produksi lebih jelas.
+
+---
+
+## UCAP
+
+> **"Stop. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada latihan pasangan, pembagian pasangan dikendalikan oleh guru.
+* UCAP masih membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi menuju partner practice lebih lancar.
+
+---
+
+## UCAP
+
+> **"Partner A asks. Partner B answers. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih menyisakan kemungkinan siswa menukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A asks. Partner B answers. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"Good. Stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 14 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 15 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 15, alur pembelajaran sudah konsisten dengan target penggunaan pola **"I feel ... because ..."**. Transisi dari pengenalan emosi → produksi bersama → drill → latihan pasangan → penutup sudah terbangun dengan baik dan mayoritas UCAP dapat diucapkan langsung di kelas. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now make your own feeling sentence."** 
+
+### Temuan
+
+* Instruksi belum cukup konkret.
+* Pada tahap sebelumnya siswa baru berlatih menggunakan frame yang sudah dimodelkan.
+* Frasa **your own feeling sentence** membuka kemungkinan siswa membuat kalimat di luar pola target.
+
+### Rekomendasi
+
+> **"Good. Now make one sentence using: I feel ... because ...."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan model yang baru dipelajari.
+* Mengurangi interpretasi tambahan.
+* Membuat target produksi lebih jelas.
+
+---
+
+## UCAP
+
+> **"Stop. Now find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada latihan pasangan, pembagian pasangan dikendalikan oleh guru.
+* UCAP masih membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stop. Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi menuju partner practice lebih lancar.
+
+---
+
+## UCAP
+
+> **"Partner A asks. Partner B answers. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih menyisakan kemungkinan siswa menukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A asks. Partner B answers. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"Good. Stay with your partner and join another pair."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Siswa belum mengetahui pasangan mana yang harus digabung.
+* Membuka ruang interpretasi yang sebenarnya sudah diatur oleh skenario.
+
+### Rekomendasi
+
+> **"Good. Stay with your partner. Wait for my signal. I will show you which pair to join."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih tertib dan konsisten.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 15 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan,
+* serta tidak perlu direvisi karena sudah mendukung implementasi nyata di kelas.
+# Review UCAP TP 16 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 16, alur pembelajaran sudah sangat kuat. Transisi dari prediksi → menyimak cerita → memahami isi → mengenal kata urutan → retelling → refleksi → penutup berjalan secara kontinu tanpa lompatan logika yang berarti. 
+
+Mayoritas UCAP sudah bersifat operasional, konkret, dan dapat digunakan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Now tell the story in your own words."** 
+
+### Temuan
+
+* Instruksi belum cukup deterministik.
+* Seluruh pembelajaran sebelumnya menggunakan scaffold **first – then – after that – finally** dan kartu urutan.
+* Frasa **in your own words** membuka kemungkinan siswa mengabaikan scaffold yang baru dipelajari.
+
+### Rekomendasi
+
+> **"Now tell the story using: First, Then, After that, Finally."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan latihan sebelumnya.
+* Mengurangi interpretasi tambahan.
+* Memastikan target pembelajaran tetap pada sequencing, bukan improvisasi bebas.
+
+---
+
+## UCAP
+
+> **"Find a partner."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada Demo Partner dan Pair Retelling, pasangan sudah diatur oleh guru melalui distribusi kartu dan penataan kelas.
+* UCAP membuka kemungkinan siswa memilih pasangan sendiri.
+
+### Rekomendasi
+
+> **"Stay where you are. I will show you your partner."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga ritme transisi menuju retelling.
+
+---
+
+## UCAP
+
+> **"Partner A tells the story. Partner B listens. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan utama sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih menyisakan kemungkinan siswa menukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A tells the story. Partner B listens. Then swap roles."**
+
+### Alasan
+
+* Memperjelas bahwa yang bertukar adalah peran.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"How does Ani feel?"** *(diikuti langsung dengan refleksi terbuka)* 
+
+### Temuan
+
+* Pertanyaan muncul segera setelah reset penutup.
+* Sebagian siswa dapat memberikan jawaban yang sangat beragam karena belum diarahkan untuk menggunakan bukti dari cerita.
+* Beban inferensi sedikit lebih tinggi dibanding pola UCAP lain di TP ini.
+
+### Rekomendasi
+
+> **"Think about the story. How does Ani feel?"**
+
+### Alasan
+
+* Memberikan transisi kecil dari reset menuju refleksi.
+* Mengurangi logical jump.
+* Membantu siswa kembali mengaktifkan konteks cerita sebelum menjawab.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 16 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak memerlukan interpretasi tambahan,
+* tidak menimbulkan logical jump yang mengganggu implementasi,
+* serta tidak perlu direvisi karena sudah mendukung pelaksanaan pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 17 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 17, alur pembelajaran sudah memiliki kontinuitas yang sangat baik. Transisi dari observasi → pembentukan opini → pemberian alasan → penggunaan **because / but / so** → berbagi pendapat → penutup berlangsung secara alami dan tidak memerlukan banyak interpretasi dari guru maupun siswa. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Now tell your opinion."** 
+
+### Temuan
+
+* Instruksi masih cukup abstrak.
+* Pada tahap sebelumnya siswa baru berlatih menggunakan frame opini yang spesifik.
+* Frasa **tell your opinion** membuka kemungkinan siswa berbicara tanpa menggunakan pola yang menjadi target pembelajaran.
+
+### Rekomendasi
+
+> **"Now tell your opinion using the sentence frame."**
+
+atau
+
+> **"Now tell your opinion. Use because, but, or so."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan latihan sebelumnya.
+* Mempertahankan scaffold yang sudah dibangun.
+* Mengurangi variasi yang tidak menjadi target pembelajaran.
+
+---
+
+## UCAP
+
+> **"Partner A speaks. Partner B listens. Then swap."** 
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih dapat diinterpretasikan sebagai bertukar tempat atau pasangan.
+
+### Rekomendasi
+
+> **"Partner A speaks. Partner B listens. Then swap roles."**
+
+### Alasan
+
+* Memperjelas tindakan yang harus dilakukan.
+* Mengurangi interpretasi tambahan.
+* Menjaga konsistensi latihan berpasangan.
+
+---
+
+## UCAP
+
+> **"Keep what you wrote."** 
+
+### Temuan
+
+* Instruksi muncul cukup mendadak pada penutup.
+* Sebelumnya belum ada transisi yang menunjukkan bahwa hasil tulisan masih akan digunakan.
+
+### Rekomendasi
+
+> **"Keep what you wrote. You will use it next time."**
+
+### Alasan
+
+* Memberikan alasan langsung kepada siswa.
+* Membuat transisi menuju preview pembelajaran berikutnya lebih alami.
+* Mengurangi kemungkinan siswa membuang atau melipat hasil kerja sebelum instruksi selesai.
+
+---
+
+# Kesimpulan
+
+Selain tiga temuan di atas, seluruh UCAP pada TP 17 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 18 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 18, alur pembelajaran sudah sangat matang sebagai sesi penutup dan integrasi. Transisi dari orientasi proyek → demonstrasi → pembuatan poster → presentasi → apresiasi → refleksi berlangsung kontinu dan tidak menimbulkan lompatan logika yang berarti. 
+
+Mayoritas UCAP sudah bersifat operasional, konkret, dan dapat diucapkan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Make your poster."**
+
+### Temuan
+
+* Instruksi masih cukup abstrak.
+* Pada saat UCAP diucapkan, poster memiliki beberapa bagian (My name, My family, My house, My hobby).
+* Sebagian siswa dapat langsung menggambar tanpa mengisi bagian yang menjadi target proyek.
+
+### Rekomendasi
+
+> **"Complete your poster. Fill each section and add your drawing."**
+
+### Alasan
+
+* Menjelaskan tindakan yang diharapkan secara konkret.
+* Selaras dengan struktur template poster.
+* Mengurangi variasi implementasi yang tidak diinginkan.
+
+---
+
+## UCAP
+
+> **"Present your poster."**
+
+### Temuan
+
+* Instruksi belum cukup deterministik.
+* Belum ada penanda apakah presentasi dilakukan satu per satu atau setelah dipanggil guru.
+* Pada kelas nyata, beberapa siswa dapat maju bersamaan.
+
+### Rekomendasi
+
+> **"When I call your name, present your poster."**
+
+### Alasan
+
+* Selaras dengan alur presentasi yang dikendalikan guru.
+* Mengurangi perpindahan yang tidak perlu.
+* Menjaga ritme presentasi tetap tertib.
+
+---
+
+## UCAP
+
+> **"Look at your friend's poster."**
+
+### Temuan
+
+* Instruksi belum memiliki tujuan yang eksplisit.
+* Siswa dapat hanya melihat tanpa mengetahui tindakan berikutnya.
+
+### Rekomendasi
+
+> **"Look at your friend's poster. Listen and give one clap when the presentation finishes."**
+
+### Alasan
+
+* Memberikan tujuan yang jelas selama menunggu giliran.
+* Menjaga keterlibatan seluruh kelas.
+* Membuat transisi presentasi → apresiasi lebih alami.
+
+---
+
+## UCAP
+
+> **"Good job, everyone."**
+
+### Temuan
+
+* UCAP sudah sesuai sebagai penutup.
+* Namun pada TP penutup fase, apresiasi muncul sebelum transisi refleksi sehingga perubahan aktivitas terasa sedikit mendadak.
+
+### Rekomendasi
+
+> **"Good job, everyone. Let's look at what we learned today."**
+
+### Alasan
+
+* Memberikan jembatan alami menuju refleksi akhir.
+* Mengurangi perpindahan aktivitas yang terasa tiba-tiba.
+* Menjaga kontinuitas hingga penutupan sesi.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 18 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+
+## Ringkasan Batch TP 01–TP18
+
+Pola temuan yang paling konsisten adalah:
+
+1. **"Find a partner"** → lebih deterministik jika guru menentukan pasangan.
+2. **"Join another pair"** → lebih deterministik jika guru menunjukkan pasangan gabungan.
+3. **"Then swap"** → lebih jelas menjadi **"Then swap roles."**
+4. **"Make/tell your own ..."** → lebih kuat jika tetap merujuk pada scaffold atau anchor yang sedang digunakan.
+
+Di luar pola tersebut, sebagian besar UCAP sudah memenuhi filosofi runtime pembelajaran: berfungsi sebagai instruksi operasional yang menghubungkan satu aksi dengan aksi berikutnya tanpa membuat guru maupun siswa perlu menebak langkah selanjutnya.
+# Review UCAP TP 19 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 19, alur pembelajaran sudah sangat konsisten dengan target menghasilkan **deskripsi tempat atau benda** melalui progresi **text-anchor → analisis → micro-output → draft → interaksi → revisi → publikasi**. 
+
+Mayoritas UCAP sudah bersifat operasional, konkret, dan menjaga kontinuitas pembelajaran dengan sangat baik.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Now write your own description."**
+
+### Temuan
+
+* Instruksi masih cukup umum.
+* Pada tahap sebelumnya siswa baru menganalisis text-anchor dan menyusun draft dua–tiga kalimat.
+* Frasa **your own description** membuka kemungkinan siswa mengabaikan struktur yang baru dipelajari.
+
+### Rekomendasi
+
+> **"Now write your own description. Use the same three-part pattern."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan text-anchor.
+* Mengurangi interpretasi tambahan.
+* Mempertahankan scaffold yang telah dibangun sejak awal sesi.
+
+---
+
+## UCAP
+
+> **"Partner A describes. Partner B responds. Then swap."**
+
+### Temuan
+
+* Satu UCAP memuat tiga aturan utama sekaligus:
+
+  * pembagian peran,
+  * tugas masing-masing,
+  * pergantian peran.
+* Frasa **Then swap** masih dapat diinterpretasikan sebagai bertukar pasangan atau tempat.
+
+### Rekomendasi
+
+> **"Partner A describes. Partner B responds. Then swap roles."**
+
+### Alasan
+
+* Memperjelas tindakan yang harus dilakukan.
+* Mengurangi interpretasi yang tidak diperlukan.
+* Menjaga alur latihan tetap konsisten.
+
+---
+
+## UCAP
+
+> **"Read your partner's description."**
+
+### Temuan
+
+* Instruksi belum memiliki tujuan yang eksplisit.
+* Setelah membaca, siswa masih harus menebak tindakan berikutnya.
+
+### Rekomendasi
+
+> **"Read your partner's description. Find one sentence you like."**
+
+### Alasan
+
+* Memberikan fokus yang jelas selama peer reading.
+* Mengurangi waktu diam setelah membaca.
+* Membuat transisi menuju respons pasangan lebih alami.
+
+---
+
+## UCAP
+
+> **"Check your connectors."**
+
+### Temuan
+
+* Instruksi cukup abstrak.
+* Siswa harus menentukan sendiri apa yang harus diperiksa.
+* Padahal sesi sebelumnya menekankan penggunaan **because** dan koneksi personal.
+
+### Rekomendasi
+
+> **"Check your connectors. Make sure each one links two ideas clearly."**
+
+### Alasan
+
+* Memberikan tujuan pemeriksaan yang konkret.
+* Mengurangi interpretasi tambahan.
+* Selaras dengan tujuan revisi pada langkah tersebut.
+
+---
+
+# Kesimpulan
+
+Selain empat temuan di atas, seluruh UCAP pada TP 19 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan keputusan tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 20 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 20, alur pembelajaran sudah sangat matang sebagai sesi **panen menulis**. Transisi dari reaktivasi → brief → portfolio review → demo → commitment → pair sharing → writing → revisi → peer review → refleksi berlangsung kontinu dan hampir tidak memiliki logical jump. 
+
+Mayoritas UCAP sudah operasional, konkret, dan dapat digunakan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Write about something you know."**
+
+### Temuan
+
+* Instruksi masih cukup luas.
+* Pada tahap awal panen, siswa masih memiliki tiga pilihan register (Opinion, Story, Description).
+* UCAP belum membantu siswa menghubungkan topik dengan register yang sudah diperkenalkan.
+
+### Rekomendasi
+
+> **"Write about something you know. Choose one register and start."**
+
+### Alasan
+
+* Selaras dengan brief dan orientasi sebelumnya.
+* Mengurangi kebutuhan siswa menentukan langkah berikutnya sendiri.
+* Membuat transisi menuju commitment lebih mulus.
+
+---
+
+## UCAP
+
+> **"Tell your partner what you will write."**
+
+### Temuan
+
+* Instruksi belum memiliki fokus yang eksplisit.
+* Sebagian siswa dapat langsung menjelaskan seluruh ide, sementara tujuan tahap ini adalah berbagi commitment singkat.
+
+### Rekomendasi
+
+> **"Tell your partner your topic and register."**
+
+### Alasan
+
+* Selaras dengan tujuan Choice Gap Pair Sharing.
+* Membatasi beban kognitif pada satu tujuan utama.
+* Menjaga ritme sebelum sesi menulis individu.
+
+---
+
+## UCAP
+
+> **"Read your partner's writing."**
+
+### Temuan
+
+* Instruksi belum memiliki tujuan yang jelas.
+* Setelah membaca, siswa masih harus menebak apa yang harus diperhatikan.
+
+### Rekomendasi
+
+> **"Read your partner's writing. Find one sentence you like."**
+
+### Alasan
+
+* Memberikan fokus konkret selama peer reading.
+* Mengurangi waktu pasif setelah membaca.
+* Membuat transisi menuju respons pasangan lebih alami.
+
+---
+
+## UCAP
+
+> **"Check your connectors."**
+
+### Temuan
+
+* Instruksi masih abstrak.
+* Siswa harus menentukan sendiri aspek apa yang diperiksa.
+* Padahal tujuan revisi adalah memastikan hubungan antaride sudah jelas.
+
+### Rekomendasi
+
+> **"Check your connectors. Make sure each one links your ideas clearly."**
+
+### Alasan
+
+* Memberikan tujuan revisi yang spesifik.
+* Mengurangi interpretasi tambahan.
+* Selaras dengan fokus revisi pada tahap tersebut.
+
+---
+
+## UCAP
+
+> **"Keep your writing."**
+
+### Temuan
+
+* Instruksi muncul sebagai penutup tanpa alasan yang dinyatakan.
+* Sebagian siswa dapat menganggap tulisan sudah selesai digunakan.
+
+### Rekomendasi
+
+> **"Keep your writing. It is part of your portfolio."**
+
+### Alasan
+
+* Memberikan alasan langsung kepada siswa.
+* Menjaga kontinuitas dengan konsep portfolio yang dibangun sepanjang TP panen.
+* Mengurangi kemungkinan hasil kerja hilang atau dibuang.
+
+---
+
+# Kesimpulan
+
+Selain lima temuan di atas, seluruh UCAP pada TP 20 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+
+## Ringkasan TP 19–TP20
+
+Dibandingkan TP 01–TP18, pola temuan berubah. Fokusnya bukan lagi pada pengaturan pasangan, melainkan pada **kejelasan tujuan produksi dan revisi**:
+
+1. Instruksi **write/tell/read** perlu menyebutkan tujuan yang spesifik.
+2. Instruksi **check** perlu menjelaskan apa yang harus diperiksa.
+3. Instruksi penutup **keep your writing** lebih kuat jika disertai alasan penggunaannya (portfolio), sehingga transisi menuju penutupan sesi terasa alami dan tidak menggantung.
+# Review UCAP TP 21 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 21, alur pembelajaran sudah sangat kuat sebagai **capstone reading**. Transisi dari orientasi → membaca berbagai teks dunia nyata → pertukaran informasi → sintesis → refleksi berlangsung kontinu dan hampir tidak menimbulkan logical jump. 
+
+Mayoritas UCAP sudah operasional, kontekstual, dan dapat digunakan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Read your text."**
+
+### Temuan
+
+* Instruksi masih terlalu umum.
+* Pada tahap ini siswa menerima dua jenis teks yang berbeda (Poster atau Menu).
+* Sebagian siswa dapat langsung mulai berdiskusi tanpa membaca seluruh isi teks.
+
+### Rekomendasi
+
+> **"Read your text first. Be ready to tell your partner about it."**
+
+### Alasan
+
+* Menjelaskan tujuan membaca.
+* Menjadi transisi alami menuju INTERACT.
+* Mengurangi interpretasi tambahan.
+
+---
+
+## UCAP
+
+> **"Tell your partner about your text."**
+
+### Temuan
+
+* Instruksi belum cukup spesifik.
+* Siswa harus menentukan sendiri informasi mana yang perlu disampaikan.
+* Padahal aktivitas merupakan **information gap**, bukan presentasi bebas.
+
+### Rekomendasi
+
+> **"Tell your partner the important information from your text."**
+
+### Alasan
+
+* Memfokuskan perhatian pada informasi utama.
+* Mengurangi beban keputusan.
+* Selaras dengan tujuan choice gap.
+
+---
+
+## UCAP
+
+> **"Listen to your partner."**
+
+### Temuan
+
+* Instruksi belum memiliki tujuan yang eksplisit.
+* Sebagian siswa dapat hanya mendengar tanpa memproses informasi.
+
+### Rekomendasi
+
+> **"Listen to your partner and find one new piece of information."**
+
+### Alasan
+
+* Memberikan tujuan konkret selama mendengarkan.
+* Menjaga keterlibatan seluruh siswa.
+* Membuat transisi menuju sintesis lebih alami.
+
+---
+
+## UCAP
+
+> **"Read the next text."**
+
+### Temuan
+
+* Perpindahan aktivitas terasa cukup cepat.
+* Belum ada penanda bahwa teks sebelumnya selesai digunakan.
+
+### Rekomendasi
+
+> **"Good. Put that text down. Now read the next text."**
+
+### Alasan
+
+* Memberikan penutup kecil pada aktivitas sebelumnya.
+* Mengurangi logical jump antarbacaan.
+* Membuat perpindahan lebih mudah divisualisasikan.
+
+---
+
+## UCAP
+
+> **"Good job. Keep your notes."**
+
+### Temuan
+
+* Instruksi sudah jelas, tetapi alasan penyimpanan catatan belum dinyatakan.
+* Siswa dapat menganggap catatan tidak akan digunakan lagi.
+
+### Rekomendasi
+
+> **"Good job. Keep your notes. You will use them in the next activity."**
+
+### Alasan
+
+* Memberikan alasan langsung kepada siswa.
+* Menjaga kontinuitas antaraktivitas.
+* Mengurangi kemungkinan catatan ditutup atau disimpan sebelum waktunya.
+
+---
+
+# Kesimpulan
+
+Selain lima temuan di atas, seluruh UCAP pada TP 21 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 22 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 22, alur pembelajaran sudah sangat konsisten sebagai **integrative project**. Transisi dari brainstorming → modeling → planning → produksi → reread → peer sharing → gallery walk → refleksi berlangsung alami dan tidak menimbulkan logical jump yang berarti. 
+
+Mayoritas UCAP sudah operasional, konkret, dan dapat diucapkan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Choose your three worlds."**
+
+### Temuan
+
+* Instruksi masih cukup abstrak.
+* Pada tahap brainstorming, siswa harus menentukan tiga bagian dunia pribadi, tetapi belum diarahkan kembali ke contoh kategori yang telah dikenalkan.
+* Sebagian siswa dapat berhenti karena belum tahu apa yang dimaksud "three worlds".
+
+### Rekomendasi
+
+> **"Choose your three worlds. Think about your sport, your food, and your yesterday."**
+
+### Alasan
+
+* Menghubungkan instruksi dengan model yang sedang digunakan.
+* Mengurangi kebutuhan interpretasi tambahan.
+* Membuat transisi menuju brainstorming lebih konkret.
+
+---
+
+## UCAP
+
+> **"Plan your page."**
+
+### Temuan
+
+* Instruksi belum cukup spesifik.
+* Siswa dapat langsung mulai menulis atau menggambar tanpa melakukan tahap perencanaan tata letak yang menjadi tujuan layar tersebut.
+
+### Rekomendasi
+
+> **"Plan your page. Decide where each section and picture will go first."**
+
+### Alasan
+
+* Selaras dengan tujuan planning.
+* Mengurangi kecenderungan langsung masuk ke produksi.
+* Menjaga kontinuitas MODEL → PLANNING → PRODUKSI.
+
+---
+
+## UCAP
+
+> **"Read your best sentence."**
+
+### Temuan
+
+* Instruksi belum memiliki tujuan yang eksplisit.
+* Siswa dapat membaca seluruh karya atau beberapa kalimat sekaligus.
+
+### Rekomendasi
+
+> **"Read only your best sentence to your partner."**
+
+### Alasan
+
+* Membatasi fokus pada satu tujuan utama.
+* Mengurangi beban kognitif.
+* Selaras dengan tahap silent reread dan peer sharing.
+
+---
+
+## UCAP
+
+> **"Look at your friends' work."**
+
+### Temuan
+
+* Instruksi belum memberikan tujuan selama gallery walk.
+* Sebagian siswa dapat hanya berjalan melihat tanpa melakukan observasi yang bermakna.
+
+### Rekomendasi
+
+> **"Look at your friends' work. Find one idea you like."**
+
+### Alasan
+
+* Memberikan fokus yang jelas selama gallery walk.
+* Menjaga keterlibatan seluruh siswa.
+* Membuat transisi menuju refleksi lebih alami.
+
+---
+
+## UCAP
+
+> **"Keep your project."**
+
+### Temuan
+
+* Instruksi sudah jelas, tetapi belum memberikan alasan mengapa proyek perlu disimpan.
+* Sebagian siswa dapat menganggap proyek sudah selesai digunakan.
+
+### Rekomendasi
+
+> **"Keep your project. It is part of your learning portfolio."**
+
+### Alasan
+
+* Memberikan alasan langsung kepada siswa.
+* Menjaga kontinuitas dengan konsep portofolio yang dibangun sepanjang proyek.
+* Mengurangi kemungkinan hasil kerja hilang atau dibuang.
+
+---
+
+# Kesimpulan
+
+Selain lima temuan di atas, seluruh UCAP pada TP 22 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 23 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 23, alur pembelajaran sudah sangat konsisten sebagai **penyelesaian cerita (resolution)**. Transisi dari recall → modeling → guided writing → collaborative storytelling → sharing → checking berlangsung alami dan menjaga fokus pada pola **So – Then – Finally**. 
+
+Mayoritas UCAP sudah operasional, konkret, dan dapat diucapkan langsung di kelas.
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now it is your turn. Write the resolution."** 
+
+### Temuan
+
+* Instruksi masih cukup umum.
+* Tepat sebelumnya siswa baru melakukan REPEAT menggunakan pola **So – Then – Finally**.
+* Frasa **Write the resolution** membuka kemungkinan siswa menulis bentuk penyelesaian yang berbeda dari scaffold yang baru digunakan.
+
+### Rekomendasi
+
+> **"Good. Now it is your turn. Write the resolution using So, Then, and Finally."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan REPEAT.
+* Mempertahankan scaffold yang baru dipraktikkan.
+* Mengurangi interpretasi tambahan.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now get into groups of three or four."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada deskripsi INTERACT disebutkan guru menentukan kelompok dengan menunjuk siswa yang duduk berdekatan.
+* UCAP masih memberi kesan siswa membentuk kelompok sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your group."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi CHANGE → INTERACT lebih tertib.
+
+---
+
+## UCAP
+
+> **"Good. Now form a new group of four with classmates from other groups."** 
+
+### Temuan
+
+* Instruksi bertentangan dengan AKSI SHARE.
+* AKSI menyatakan guru menunjuk kelompok mana bergabung dengan kelompok mana.
+* UCAP masih membuka ruang siswa memilih sendiri kelompok baru.
+
+### Rekomendasi
+
+> **"Good. Stay with your group. I will show you which group to join."**
+
+### Alasan
+
+* Konsisten dengan AKSI.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Menjaga transisi INTERACT → SHARE tetap lancar.
+
+---
+
+## UCAP
+
+> **"Take turns telling the resolution. So, ... Then, ... and ... Finally, ..."** 
+
+### Temuan
+
+* Dua tujuan diberikan sekaligus:
+
+  * bergiliran berbicara,
+  * mengikuti pola tertentu.
+* Pada awal SHARE, sebagian siswa lebih mudah mengikuti jika pola diperkenalkan sebagai format yang harus digunakan.
+
+### Rekomendasi
+
+> **"Take turns telling the resolution. Use: So, ... Then, ... and ... Finally, ...."**
+
+### Alasan
+
+* Memisahkan instruksi dari scaffold bahasa.
+* Mengurangi beban kognitif.
+* Membuat target produksi lebih eksplisit.
+
+---
+
+## UCAP
+
+> **"Your Finally sentence. Without looking at your book."** 
+
+### Temuan
+
+* Dua instruksi diberikan secara bersamaan:
+
+  * memilih bagian cerita,
+  * tidak melihat buku.
+* Sebagian siswa akan lebih mudah memproses jika tujuan utama muncul lebih dahulu.
+
+### Rekomendasi
+
+> **"Say your Finally sentence. Don't look at your book."**
+
+### Alasan
+
+* Urutan instruksi lebih alami.
+* Mengurangi beban pemrosesan.
+* Tetap mempertahankan tujuan CHECK.
+
+---
+
+# Kesimpulan
+
+Selain lima temuan di atas, seluruh UCAP pada TP 23 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+# Review UCAP TP 24 kelas 7
+
+Berdasarkan review seluruh field UCAP pada skenario TP 24, alur pembelajaran sudah sangat kuat sebagai **penutup rangkaian naratif**. Transisi dari recall → modeling → reflective writing → circle sharing → cross sharing → checking → boost berlangsung kontinu dan menjaga fokus pada tiga pola penutup:
+
+* **In the end, ...**
+* **The firefly learned ...**
+* **Everyone felt ... because ...**
+
+Mayoritas UCAP sudah operasional, konkret, dan dapat digunakan langsung di kelas. 
+
+Berikut UCAP yang perlu perhatian.
+
+---
+
+## UCAP
+
+> **"Good. Now it is your turn. Write the ending."** 
+
+### Temuan
+
+* Instruksi masih cukup umum.
+* Tepat sebelumnya siswa baru berlatih tiga pola penutup secara bersama.
+* Frasa **Write the ending** membuka kemungkinan siswa menulis ulang cerita, bukan menulis penutup menggunakan pola yang telah dimodelkan.
+
+### Rekomendasi
+
+> **"Good. Now it is your turn. Write the ending using these three patterns."**
+
+### Alasan
+
+* Menjaga kesinambungan dengan REPEAT.
+* Mempertahankan scaffold yang baru dipelajari.
+* Mengurangi interpretasi tambahan.
+
+---
+
+## UCAP
+
+> **"Stop writing. Now get into groups of three or four."** 
+
+### Temuan
+
+* Instruksi belum deterministik.
+* Pada deskripsi INTERACT dijelaskan bahwa guru menentukan kelompok dengan menunjuk siswa yang duduk berdekatan.
+* UCAP memberi kesan siswa membentuk kelompok sendiri.
+
+### Rekomendasi
+
+> **"Stop writing. Stay where you are. I will show you your group."**
+
+### Alasan
+
+* Selaras dengan AKSI berikutnya.
+* Mengurangi perpindahan yang tidak perlu.
+* Membuat transisi CHANGE → INTERACT lebih tertib.
+
+---
+
+## UCAP
+
+> **"Good. Now form a new circle of four with classmates from other groups."** 
+
+### Temuan
+
+* Instruksi bertentangan dengan AKSI SHARE.
+* AKSI menyatakan guru menunjuk siswa mana bergabung ke lingkaran mana.
+* UCAP masih membuka ruang siswa memilih sendiri lingkaran baru.
+
+### Rekomendasi
+
+> **"Good. Stay where you are. I will show you your new circle."**
+
+### Alasan
+
+* Konsisten dengan AKSI.
+* Mengurangi kebutuhan siswa mengambil keputusan sendiri.
+* Membuat transisi INTERACT → SHARE lebih mulus.
+
+---
+
+## UCAP
+
+> **"Share your story closing. In the end, ... The firefly learned, ... Everyone felt, ..."** 
+
+### Temuan
+
+* Instruksi berbagi dan contoh pola diberikan bersamaan.
+* Sebagian siswa dapat lebih mudah mengikuti jika pola diposisikan sebagai format yang harus digunakan.
+
+### Rekomendasi
+
+> **"Share your story closing. Use: In the end, ... The firefly learned ... Everyone felt ... because ...."**
+
+### Alasan
+
+* Memisahkan instruksi dari scaffold bahasa.
+* Mengurangi beban kognitif.
+* Membuat target produksi lebih eksplisit.
+
+---
+
+## UCAP
+
+> **"Your Everyone felt sentence. Go."** 
+
+### Temuan
+
+* Instruksi masih kurang spesifik.
+* Kata **Go** tidak menambah informasi operasional dan dapat dihilangkan tanpa mengurangi fungsi UCAP.
+
+### Rekomendasi
+
+> **"Say your Everyone felt sentence."**
+
+### Alasan
+
+* Instruksi menjadi lebih langsung.
+* Tidak ada tambahan keputusan yang harus diproses siswa.
+* Selaras dengan pola CHECK pada langkah sebelumnya.
+
+---
+
+# Kesimpulan
+
+Selain lima temuan di atas, seluruh UCAP pada TP 24 sudah memenuhi prinsip review:
+
+* dapat diucapkan langsung,
+* sesuai dengan kondisi pembelajaran saat itu,
+* menjadi transisi alami antaraktivitas,
+* tidak menimbulkan logical jump,
+* tidak memerlukan interpretasi tambahan dari guru maupun siswa,
+* serta tidak perlu direvisi karena sudah mendukung implementasi pembelajaran yang konsisten di kelas nyata.
+
+## Ringkasan TP 21–TP24
+
+Pola temuan pada empat TP terakhir sangat konsisten:
+
+1. **Write the ...** → lebih baik jika tetap merujuk pada scaffold yang baru dipelajari.
+2. **Get into groups / form a new group / form a new circle** → lebih deterministik jika guru yang menentukan perpindahan.
+3. **Share ... + pola bahasa** → lebih jelas jika pola diperkenalkan sebagai format yang digunakan, bukan dicampur dengan instruksi berbagi.
+4. **CHECK prompts** → lebih operasional jika langsung menggunakan bentuk **"Say ..."** daripada frasa nominal seperti **"Your ... sentence."**
+
+Secara keseluruhan, TP 21–TP24 memiliki kualitas UCAP yang sangat baik dan hanya memerlukan penyempurnaan minor untuk meningkatkan determinisme serta kelancaran implementasi di kelas.
