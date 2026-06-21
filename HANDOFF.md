@@ -38,7 +38,9 @@ bukan sekadar anekdot.
    langsung. Tugas: terjemahkan kebutuhan Romo jadi prompt presisi
    untuk Claude Code, review SETIAP hasil dengan kode literal (bukan
    ringkasan), tahan approval sampai bukti nyata terlihat, desain
-   arsitektur sebelum BUILD dimulai.
+   arsitektur sebelum BUILD dimulai. Jika memberi pilihan atau
+   rekomendasi, jelaskan dari sudut pandang guru pengguna. Hasil
+   analisa juga disajikan dalam sudut pandang guru pengguna.
 3. **Claude Code** — eksekutor dengan akses repo nyata. Tugas:
    ANALYZE dulu (baca kode aktual) sebelum menulis kode, tampilkan
    diff SEBELUM/SESUDAH LITERAL (git diff/git show — bukan
@@ -87,894 +89,267 @@ bukan sekadar anekdot.
   keputusan UX — ikuti pola yang SUDAH ADA dan dikenal guru, jangan
   ciptakan pola baru kalau yang lama sudah terbukti jalan.
 
-### Status setelah sprint ini
+### Status terkini
 
-SW aktif: flaf-v257. Bug resume sesi (hilang posisi mengajar saat
-navigasi tab) DAN crash `_rerenderStep` SUDAH DIPERBAIKI dan
-ter-commit (`30a70ab`). Detail lengkap di bagian sprint di bawah.
-Validasi lapangan oleh Romo (akun mengajar asli) BELUM dikonfirmasi
-selesai pada titik dokumen ini ditulis — cek dengan Romo apakah
-sudah dicoba di kelas nyata sebelum menganggap closed.
+SW aktif: flaf-v257. Validasi lapangan oleh Romo BELUM dikonfirmasi
+selesai — cek dengan Romo sebelum menganggap closed.
 
 ---
 
-## Sprint Fix Presensi — Type Safety tp_nomor (20 Juni 2026)
+## Sprint Selesai (ringkasan)
 
-### Status
-SW aktif: flaf-v258
+### 1. Sprint B — Test Suite Otomatis
 
-### Pekerjaan Sprint Ini
+tools/validate-fase-d.js — validator VR-1/VR-2, struktur 7-step,
+constraint schema, dangling refs, enum, durasi. 66/66 LOLOS.
+Commits: e7c1a41 → 88e3883.
 
-**Investigasi awal — audit presensi semua kelas**
-Permintaan: cek presensi (1) jalan benar, (2) data tersimpan, (3) bisa
-diunduh — untuk semua kelas SD dan SMP.
+### 2. Sprint C — Integrasi PWA (SW v246→v247)
 
-Investigasi kode statis awal salah menyimpulkan presensi SMP/Fase D
-tidak punya fitur sama sekali (cuma grep di sesi-runtime-smp.js, tidak
-menemukan persist). Investigasi lanjutan menemukan capture+persist
-presensi sebenarnya shared lewat dashboard.js (STEPS array,
-_buildStepPresensi, _doSelesaiSesi) — bukan di file runtime SMP.
-Kesalahan ini jadi pengingat: kesimpulan dari baca kode saja tanpa
-VALIDATE browser nyata berisiko salah, walau kelihatan meyakinkan.
+**Pekerjaan:** classroom_setup[] 66 TP, layar Siapkan Kelas, tab
+Materi dashboard, paritas fitur TTS/kondisi darurat/observasi formatif
+di sesi-runtime-smp.js, kurikulum.js route Kelas 7-9 ke placeholder
+Fase D. IDB v11→v12 (store baru `penilaian_log_smp`).
+Commits: cbc1390 → ab95149. Test: 6/8 PASS (2 FAIL = bug pre-existing
+DB_VERSION, bukan regresi).
 
-**Root cause ditemukan — type mismatch tp_nomor**
-el.dataset.nomor (HTML data-* attribute) selalu string. Dipakai
-langsung tanpa coercion di dashPilihTP() sejak TP dipilih, mengalir
-ke _flow.tp.nomor sebagai string. Tercemar ke presensi.simpan() dan
-jejak.log() — keduanya menyimpan tp_nomor sebagai string. Sementara
-titik baca (presensi.getByTP(), getTPSelesaiPerRombel() consumer)
-membandingkan dengan number (dari _tpList() yang sudah resolve angka
-asli). Strict === antara string dan number selalu false.
+### 3. Hotfix DB_VERSION SD (16 Juni 2026)
 
-**Dampak terkonfirmasi (sebelum fix)**
-- Unduh rekap kehadiran selalu gagal — toast "Belum ada sesi mengajar
-  yang tercatat" — SD dan SMP, walau presensi sudah tersimpan
-- Badge "Sudah diajarkan" di TP picker tidak pernah muncul — SD (type
-  mismatch) dan SMP (field tambahan: tp.nomor mentah undefined untuk
-  Fase D, field yang benar adalah hasil resolve _tpNomor(tp))
-- Label landing page SD selalu "Mulai TP 01", tidak pernah
-  "Lanjut -> TP X" walau sudah diajarkan — root cause sama
+**Root cause:** `siswa-history.js` dan `nilai.js` hardcode DB_VERSION
+lokal, VersionError saat DB sudah v12. Fix: satu sumber DB_VERSION +
+gating `await db.init()`. Race condition fresh install juga ditangani.
+Commits: 19d2e0e, d93e41d. Test: semua PASS.
 
-**Resume Bridge dikonfirmasi TIDAK terdampak**
-tpData (dipakai mount runtime dan persist resume) di-resolve via
-_getTP(_flow.tp.id) — fresh lookup dari sumber kurikulum, tidak
-pernah lewat _flow.tp.nomor. SD persist _state.tp.nomor (number
-asli), SMP persist _state.tp.metadata.pattern_id (string asli) —
-konsisten dari sumber yang sama di kedua sisi, independen dari bug
-ini.
+### 4. Sprint Skenario Ajar Fase D (17 Juni 2026, SW v250)
 
-**Fix — defense in depth, 5 titik**
-Urutan BUILD: baca dulu (toleran data lama+baru), sumber paling
-akhir (supaya semua titik baca sudah kebal saat tipe data baru
-berubah).
-1. storage/jejak.js — getTPSelesaiPerRombel(): normalisasi Set ke
-   String()
-2. storage/presensi.js — getByTP(): String() coercion di
-   perbandingan — juga perbaiki data lama tanpa migrasi
-3. screens/dashboard.js — badge TP picker (_buildPilihTPHTML): pakai
-   nomor ter-resolve (_tpNomor(tp)) bukan tp.nomor mentah, plus
-   String() coercion
-4. screens/dashboard.js — label landing SD (_buildLandingHTML):
-   String() coercion
-5. screens/dashboard.js — sumber (dashPilihTP click handler):
-   Number(el.dataset.nomor)
+66 skenario .txt dalam format AKSI/UCAP per langkah. K7: 24/24
+(anchor: skenario-7-01.txt, skor 9.9/10). K8: 24/24. K9: 18/18.
+Commit: d11fbd4.
 
-**Validasi lapangan**
-Manual via DevTools console (Chrome MCP tidak terhubung) — seed
-rombel SMP uji via fungsi produksi asli (nilai.tambahKelas /
-tambahSiswaBatch, bukan raw IDB injection), navigasi UI alami (bukan
-panggil fungsi langsung). Diuji di 2 rombel SD asli (Kelas 1
-Abdullah, Kelas 2 Aminah) dan 1 rombel SMP uji (Kelas 7 Uji
-Presensi, dengan data lama bertipe string dan data baru bertipe
-number tercampur dalam satu unduhan).
+### 5. Sprint Renderer Skenario Fase D (18 Juni 2026, SW v251)
 
-### Commit Log
+Konversi 66 .txt → field skenario{} di TP .js via tools/convert-*.js.
+Renderer paralel di sesi-runtime-smp.js (+227 baris) + CSS (+223 baris).
+Gate: skenario{} ada → renderer baru, tidak → runtime[] fallback.
+REPEAT per kalimat, CHECK dua jalur, bantuan/darurat collapsed.
+Commits: d11fbd4 → f8c6765. Test: 7/7 PASS.
 
-| SHA | Pesan |
-|---|---|
-| 83b7fa1 | fix: presensi rekap, badge TP, label landing — type mismatch tp_nomor |
+### 6. Sprint Observasi Formatif & UI Audit (19 Juni 2026, SW v253)
 
-### Hasil Test (manual, browser nyata via DevTools console + UI)
+**UI audit:** fix CSS cue_sisa, color-text-dim, font-size 12px min,
+--color-surface collision. **UCAP audit:** 2.288 UCAP, 13 genuine fix,
+109 fix determinisme transisi. **Redesign Observasi Fase A-C:** hapus
+Mode Detail, hierarki 3 level (L1 Sudah Bisa/Perlu Bantuan → L2
+BSB/BSH/MB/BB → L3 tags multi-select). Commits: 581b316 → 4a38716.
+Test: 6/6 PASS.
 
-| # | Item | Hasil |
-|---|------|-------|
-| T1 | Unduh rekap kehadiran — SD (Kelas 1, Kelas 2) | PASS |
-| T2 | Badge "Sudah diajarkan" TP picker — SD | PASS |
-| T3 | Label "Lanjut -> TP X" landing page — SD | PASS |
-| T4 | Unduh rekap kehadiran — SMP, data lama (string) + baru (number) tercampur | PASS |
-| T5 | Badge "Sudah diajarkan" TP picker — SMP | PASS |
-| T6 | Regresi Resume Bridge (SMP, sesi tertinggal) | PASS — tidak terdampak |
+### 7. Sprint Observasi Formatif Fase D (19 Juni 2026, SW v254)
 
-### Keputusan yang Jangan Dipertanyakan Ulang
-- tp_nomor/tpNomor di seluruh codebase WAJIB dibandingkan dengan
-  String() coercion, tidak pernah strict === — el.dataset.* selalu
-  string, sumber lain (data kurikulum) selalu number, dua-duanya
-  hidup berdampingan
-- Fix di titik baca didahulukan dari fix di titik tulis/sumber —
-  supaya data lama yang sudah terlanjur tersimpan tetap terbaca
-  tanpa migrasi
-- Badge "sudah diajarkan" Fase D wajib pakai nomor hasil resolve
-  (_tpNomor(tp)), bukan field tp.nomor mentah — TP Fase D tidak
-  punya field top-level nomor
+Replace overlay lama (flat tags + textarea) → hierarki L1/L2/L3
+identik Fase A-C. L3 generik per L2, Bahasa Indonesia (bukan dari
+observe[]). savePenilaianSMP() atomic batch. Tombol visible di semua
+step. Commits: 123e23b → 0202141. Test: 7/7 PASS.
+
+### 8. Sprint CHECK Redesign & Diferensiasi Baru (19 Juni 2026, SW v255)
+
+**Diferensiasi:** field baru diferensiasi_baru{} (sudah_bisa /
+perlu_bantuan), konten spesifik per TP, accordion 3 level.
+**CHECK redesign:** hapus "Pilih Jalur" + tombol dua jalur, ganti
+dengan satu tombol accordion remedial. Footer normal.
+Commits: 7af4a27 → cf6911a.
+
+### 9. Sprint Fix Nilai Formatif Fase D (19 Juni 2026, SW v257)
+
+**Root cause:** nilai.js pakai getAllTP() (SD-only), TP Fase D tidak
+muncul. Fix: getAllTPGabungan(tingkat), getSesiFormatifTP() baca store
+SMP, render/CSV cabang eksplisit mode === 'observasi_smp', _tpList()
+normalisasi Fase D ke {nomor, nama, kelas, _patternId}.
+Commits: 17655eb → f5b9ba1. Test: 7/7 PASS.
+
+### 10. Sprint Resume Bridge (20 Juni 2026, SW v257)
+
+**Root cause:** renderDashboard() reset _flow setiap masuk tab Mengajar.
+Fix: _persistState() di sesi-runtime-smp.js, _checkResumeAndRestore()
+di dashboard.js, prioritas savedAt terbaru, same-target scoped delete.
+Commits: 30a70ab. Test: 13/13 PASS.
+
+### 11. Sprint Fix Presensi — Type Safety tp_nomor (20 Juni 2026, SW v258)
+
+**Root cause:** el.dataset.nomor selalu string, dibandingkan strict ===
+dengan number. Fix defense in depth 5 titik: String() coercion di
+pembaca + Number() di sumber. Commits: 83b7fa1. Test: 6/6 PASS.
+
+### 12. Sprint Resume 3 Tombol + Fix Breadcrumb Unmount (21 Juni 2026)
+
+**Resume prompt 3 tombol:** ubah dari 2 → 3 tombol di 3 fungsi
+(_renderResume SD, _renderBpResume SD, _renderResume SMP). Tombol:
+"Lanjut dari sini →" (unchanged), "Mulai awal sesi" (hapus checkpoint +
+unmount + dashPilihTP ke TP yang sama), "Mulai TP Baru" (unmount +
+dashKePilihTP tanpa hapus checkpoint). Double-tap guard (_isNavigating)
+di semua 9 tombol.
+
+**Fix dashKePilihTP():** tambah jenjang-aware unmount (srUnmount /
+srSMPUnmount) sebelum reset _flow. Fix ini diverifikasi BEKERJA via
+pemanggilan langsung `window.dashKePilihTP()` di Playwright. Namun
+reachability via klik UI sungguhan saat step 2–4 BELUM terkonfirmasi —
+breadcrumb `← TP` di-hide (`display:none`) oleh stepper saat runtime
+mounted (step 2–4), sehingga tidak ada path klik manual ke
+dashKePilihTP selama sesi aktif.
+
+**dashPilihTP() defensive:** tambah srSMPUnmount() setelah srUnmount()
+yang sudah ada — cost zero jika SMP tidak mounted.
+
+Commits: 7cddc9d. Test: 15/15 PASS (A1–A3 SD sesi_aktif, B1–B3 SD
+bp_resume, C1–C3 SMP sesi_aktif_smp, D1–D3 breadcrumb, E1–E3
+double-tap).
+
+---
+
+## Keputusan yang Jangan Dipertanyakan Ulang (gabungan semua sprint)
+
+### Identitas & Storage
+
+- `pattern_id` adalah satu-satunya sumber identitas key Fase D — tidak
+  ada field `tp_number` di skema
+- `metadata.pattern_id` untuk matching sesi/penilaian, `metadata.tp_id`
+  untuk lookup objek TP — dua field beda tujuan
+- IDB key SMP terpisah: `sesi_aktif_smp`, `penilaian_log_smp` —
+  konsisten, jangan gabung
+- `getAllTP()` legacy tetap SD-only — `getAllTPGabungan(tingkat)` untuk
+  gabungan
+
+### Resume & Navigasi
+
+- Prioritas resume: savedAt terbaru menang, bukan bp selalu menang
+- Key yang kalah dihapus HANYA jika same TP+rombel
+- Resume prompt tampil dari DALAM sesi-runtime, bukan UI baru di
+  dashboard
 - Resume Bridge (tpData via _getTP(id)) dan presensi/jejak/nilai
-  (_flow.tp.nomor via dataset) adalah DUA jalur identitas TP yang
-  terpisah — jangan disatukan, jangan asumsikan fix di satu jalur
-  otomatis berlaku ke jalur lain
+  (_flow.tp.nomor via dataset) adalah DUA jalur identitas TP terpisah
+- Resume prompt 3 tombol: "Mulai awal sesi" hapus checkpoint, "Mulai TP
+  Baru" preserve checkpoint — unmount() SELALU dipanggil sebelum navigasi
+- dashKePilihTP() wajib unmount runtime aktif — tapi breadcrumb `← TP`
+  tidak reachable saat step 2–4 (display:none), jadi fix ini hanya
+  relevan jika stepper logic berubah di masa depan
 
-### Backlog Sprint Berikutnya
-1. Resume Bridge — tambah opsi ke-3 "Pilih TP baru" (saat ini cuma
-   "Lanjut dari sini" / "Mulai sesi baru", guru terkunci di TP/rombel
-   yang sama)
-2. Label "Lanjut TP" landing page SMP — saat ini hardcode
-   tpDiKelas[0], selesaiSet dihitung tapi tidak dipakai sama sekali
-   (sengaja simplifikasi, bukan bug, tapi gap fitur)
-3. nilai.js:208 — variable tpSelesai di-assign tapi tidak dipakai di
-   _renderMenu() — dead code, query IDB boros tiap buka menu Nilai
-4. Bug kosmetik presensi — counter pagination "Halaman X/Y ·
-   Hadir N/M" stale setelah ubah status (tidak re-render penuh), beda
-   dari counter atas yang update benar — ditemukan saat investigasi
-   presensi, belum diperbaiki, tidak memengaruhi data
-5. REPEAT step dual-button UI ambiguity (carry-over)
-6. Label "(Detail)" salah untuk sesi SMP (carry-over, kosmetik)
+### Type Safety
 
----
+- tp_nomor/tpNomor WAJIB dibandingkan dengan String() coercion — tidak
+  pernah strict ===
+- Fix di titik baca didahulukan dari fix di titik tulis/sumber — data
+  lama tetap terbaca tanpa migrasi
+- Badge "sudah diajarkan" Fase D wajib pakai _tpNomor(tp), bukan
+  tp.nomor mentah
 
-## Sprint Resume Bridge (20 Juni 2026)
+### Skenario & Renderer
 
-### Root Cause
+- Format AKSI/UCAP adalah final — tidak kembali ke runtime[]
+- skenario-7-01.txt adalah anchor kualitas — tidak diubah
+- Renderer paralel, bukan replace — runtime[] lama tetap sebagai
+  fallback
+- Jalur B (inject ke .js) dipilih atas Jalur A (parse .txt di runtime)
+- REPEAT per kalimat, bantuan/darurat collapsed default
+- onclick= inline + window exposure — konsisten dengan pola existing
 
-`renderDashboard()` (dashboard.js:116) unconditionally resets `_flow` ke
-landing state setiap kali guru masuk ke tab Mengajar. Semua state sesi
-(rombel, TP, posisi langkah) hilang — guru harus Pilih Rombel → Pilih TP
-ulang setiap kali melirik tab lain. Bug produksi nyata yang dialami guru
-setiap hari saat mengajar.
+### Observasi Formatif
 
-### 3 File Diubah
+- L3 generik per L2, bukan dari observe[] TP
+- 3 tag per L2 — cukup untuk observasi cepat di kelas
+- nilai 90/75/60/45 ada di UI dan record meskipun check_without_score:
+  true — constraint itu untuk penilaian sumatif
+- penilaian_log_smp terisolasi total dari penilaian_log SD
+- Render/CSV SMP punya cabang terpisah (mode === 'observasi_smp')
 
-**1. `screens/sesi-runtime-smp.js`** (+73 baris)
-- Tambah `_persistState()` — simpan `{tpNomor, rombelId, stepIndex, sesiId,
-  savedAt}` ke IDB key `sesi_aktif_smp` (terpisah dari `sesi_aktif` SD)
-- `_transition()` panggil `_persistState()` setiap transisi
-- `mount()` cek IDB untuk resume (expiry 4 jam, match via `pattern_id`)
-- `_renderResume()` — UI "⏸ Sesi belum selesai" + "Lanjut dari sini /
-  Mulai sesi baru" (copy pola SD)
-- Resume key dihapus di closure dan "Mulai sesi baru"
+### Diferensiasi & CHECK
 
-**2. `screens/dashboard.js`** (+122 baris)
-- `_checkResumeAndRestore(kelasList)` — baca IDB `sesi_aktif` + `sesi_aktif_smp`
-  \+ `bp_resume`, expiry 4 jam konsisten di ketiganya
-- Prioritas: savedAt terbaru menang (bukan bp selalu menang), karena
-  "Simpan & keluar" di breakpoint tidak menghapus sesi_aktif
-- Key yang "kalah" dihapus HANYA jika mengacu ke TP+rombel YANG SAMA
-  (scoped same-target check)
-- Dipanggil di `renderDashboard()` setelah data loaded, sebelum landing render
-- `_rerenderStep()`: tambah `srSMPUnmount()` di samping `srUnmount()` saat
-  keluar step runtime (fix gap Fase 1)
+- diferensiasi_baru{} field baru, bukan replace field lama
+- Konten sudah_bisa dan perlu_bantuan spesifik per TP
+- CHECK tidak meminta penilaian eksplisit dari guru — satu tombol
+  remedial, footer normal
 
-**3. `sw.js`** — bump flaf-v256 → flaf-v257
+### Arsitektur Umum
 
-### Fix Iteratif Selama Proses
-
-| # | Temuan | Fix |
-|---|--------|-----|
-| 1 | `metadata.tp_id` tidak ada di skema Fase D | Ganti ke `metadata.pattern_id` |
-| 2 | `_rerenderStep()` panggil `srUnmount()` tapi tidak `srSMPUnmount()` | Tambah `srSMPUnmount()` |
-| 3 | bp_resume selalu menang tapi breakpoint "Simpan & keluar" tidak hapus sesi_aktif | Ubah ke savedAt terbaru menang |
-| 4 | Penghapusan key kalah bisa menghapus key untuk TP+rombel berbeda | Scoped same-target check |
-
-### Hasil Test (Playwright, browser nyata headless)
-
-| # | Item | Hasil |
-|---|------|-------|
-| A | SD resume prompt muncul setelah nav away+back | PASS |
-| B | SMP resume prompt muncul setelah nav away+back | PASS |
-| C-SD | "Lanjut dari sini" kembali ke step yang benar (SD) | PASS |
-| C-SMP | "Lanjut dari sini" kembali ke step yang benar (SMP) | PASS |
-| D-SD | "Mulai sesi baru" hapus sesi_aktif dari IDB | PASS |
-| D-SMP | "Mulai sesi baru" hapus sesi_aktif_smp dari IDB | PASS |
-| E-SD | Full normal flow SD sampai Simpan & Selesai, 0 error | PASS |
-| E-SMP | Full normal flow SMP sampai SESI SELESAI, 0 error | PASS |
-| F | bp_resume(newer) menang atas sesi_aktif untuk TP sama | PASS |
-| F-rev | sesi_aktif(newer) menang atas bp_resume untuk TP sama | PASS |
-| F-scope | bp_resume(TP-A) survive saat sesi_aktif(TP-B) menang | PASS |
-| G-SD | Rapid-click 15x navigasi (SD aktif), 0 error | PASS |
-| G-SMP | Rapid-click 15x navigasi (SMP aktif), 0 error | PASS |
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-
-- IDB key SMP terpisah: `sesi_aktif_smp` — konsisten dengan pola
-  `penilaian_log` vs `penilaian_log_smp`
-- Prioritas resume: savedAt terbaru menang, bukan bp selalu menang —
-  karena "Simpan & keluar" breakpoint TIDAK menghapus sesi_aktif
-- Key yang kalah dihapus HANYA jika same TP+rombel — key untuk
-  TP+rombel lain HARUS survive
-- Resume prompt tampil dari DALAM sesi-runtime (reuse `_renderResume`
-  yang sudah ada), bukan UI baru di dashboard
-
----
-
-## Sprint Fix Nilai Formatif Fase D (19 Juni 2026)
-
-### Status
-SW aktif: flaf-v257
-
-### Bug yang Diperbaiki
-
-**Bug 1 — Nilai Formatif Fase D layar kosong**
-Root cause: `screens/nilai.js` memanggil `getAllTP()` — alias legacy yang
-HANYA mengembalikan TP SD (`getAllTP_SD()`). TP Fase D terdaftar di registry
-terpisah (`REGISTRY_SMP`), diakses lewat `getAllTP_SMP()`, tapi tidak pernah
-disentuh oleh layar Nilai. Fix awal (type coercion grade) salah sasaran —
-diperbaiki ulang setelah investigasi struktural lebih dalam.
-
-**Bug 2 — Nilai angka observasi tidak tersimpan (gejala awal)**
-Setelah investigasi: data sebenarnya TELAH tersimpan dengan benar ke
-`penilaian_log_smp` sejak sprint sebelumnya. Masalah sebenarnya ada di sisi
-baca (lihat Bug 3) dan render (lihat Bug 4) — bukan di sisi simpan.
-
-**Bug 3 — getSesiFormatifTP() tidak baca store SMP**
-`storage/nilai.js: getSesiFormatifTP()` hanya membaca store `penilaian_log`
-(SD). Tidak ada cabang untuk `penilaian_log_smp`. Field `nilai` dan
-`predikat` juga belum pernah dipetakan ke output.
-
-**Bug 4 — Render & CSV salah label untuk data SMP**
-`_renderFormatifDetail` dan `nilaiDownloadFormatif1` di `screens/nilai.js`
-hanya mengenali schema SD (`_labelCapaian` untuk angka 85/75/65,
-`_labelPerilaku` untuk `aktif/dorongan/belum_siap`). Data SMP punya value
-berbeda (`capaian: "sudah_bisa"`, `perilaku: "tanpa_buku"`, dst) — selalu
-jatuh ke fallback `'—'` atau raw string, padahal field `nilai`/`predikat`
-sudah ada di data tapi tidak pernah dipakai di rendering.
-
-### Root Cause Summary — Identitas TP Fase D Berbeda Total dari SD
-
-TP Fase D tidak punya field top-level `nomor`/`nama` seperti TP SD. Identitas
-TP Fase D ada di `metadata.pattern_id` (string, e.g. `"PAT-7-01"`) dan
-`metadata.title`. Solusi: `_tpList()` sekarang menormalisasi TP Fase D ke
-bentuk `{nomor, nama, kelas, _patternId}` — `nomor` diparse dari angka akhir
-`pattern_id`, `_patternId` disimpan sebagai key query internal (bukan untuk
-tampilan).
-
-### Perubahan Arsitektur (berlaku ke depan)
-
-1. **`getAllTPGabungan(tingkat)`** — fungsi baru di `data/index.js`, single
-   source untuk dapat TP SD atau SMP sesuai tingkat. `getAllTP()` legacy
-   TIDAK diubah (tetap SD-only) — dipertahankan agar tidak breaking pemanggil
-   lama yang mungkin masih bergantung padanya.
-2. **Key penyimpanan vs label tampilan dipisah untuk Fase D** — `pattern_id`
-   penuh dipakai sebagai key internal (query `getSesiFormatifTP`, simpan
-   `savePenilaianSMP`), angka hasil parse dari `pattern_id` dipakai sebagai
-   label tampilan guru ("TP 01"). Guru tidak pernah melihat `pattern_id`.
-3. **`getSesiFormatifTP(kelasId, tpNomor, tingkat)`** — parameter ketiga
-   `tingkat` baru, opsional. Menentukan store mana yang dibaca
-   (`penilaian_log` vs `penilaian_log_smp`). Pemanggil lama tanpa parameter
-   ini otomatis fallback ke perilaku SD lama — tidak breaking.
-4. **Render dan CSV punya cabang eksplisit `mode === 'observasi_smp'`** —
-   tidak menyentuh logika SD (`'cepat'`/`'detail'`) sama sekali, murni
-   tambahan percabangan baru.
-
-### Commit Log
-
-| SHA | Pesan |
-|---|---|
-| 17655eb | feat(nilai): tambah getAllTPGabungan() untuk gabung TP SD+SMP |
-| f5eb1b8 | fix(nilai): perbaiki rantai Nilai Formatif Fase D — _tpList, rendering, CSV |
-| 48b816c | fix(nilai): getSesiFormatifTP baca store penilaian_log_smp untuk Fase D, tambah field nilai+predikat ke output |
-| f5b9ba1 | fix(sesi-smp): tpNomor pakai metadata.pattern_id eksplisit, bukan field tp_number yang tidak ada di skema |
-
-### Hasil Test (Playwright, rombel uji "Kelas 7 Uji" + "Kelas 1 Uji")
-
-| # | Item | Hasil |
-|---|------|-------|
-| T1 | Regresi SD — daftar TP | PASS |
-| T2 | Daftar TP Fase D (TP 01-24 terurut) | PASS |
-| T3 | Sesi mengajar → Observasi → muncul di Nilai Formatif | PASS |
-| T4 | Download CSV Fase D (header + data benar) | PASS |
-| T5 | Edge case TP tanpa data (tidak crash) | PASS |
-| V1 | Render label nilai/predikat SMP benar ("90 · BSB") | PASS |
-| T1-ulang | Regresi SD setelah FIX A/B | PASS |
-
-### Temuan Independen (Belum Diperbaiki — Di Luar Scope Sprint Ini)
-
-1. **`dashboard.js:1176` — `_rerenderStep` crash saat navigasi cepat antar
-   layar dengan sesi mengajar aktif di background.** Muncul berulang
-   (puluhan console error) saat testing melakukan rapid-click navigasi.
-   Pre-existing, tidak disebabkan oleh fix sprint ini. Perlu sprint
-   terpisah untuk investigasi.
-2. **Label header sesi "(Detail)" salah untuk data SMP** — kosmetik minor,
-   `sesi.mode === 'cepat' ? 'Cepat' : 'Detail'` di header kartu sesi pada
-   `_renderFormatifDetail` belum punya cabang untuk `'observasi_smp'`,
-   selalu tampil "(Detail)". Tidak mempengaruhi data, hanya label. Backlog
-   rendah.
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-
-- `getAllTP()` legacy tetap SD-only — TIDAK diubah jadi gabungan, untuk
-  hindari breaking pemanggil lain yang belum diaudit
-- `pattern_id` adalah satu-satunya sumber identitas key Fase D — tidak ada
-  field `tp_number` di skema, jangan diasumsikan ada lagi di kode manapun
-- Render/CSV SMP punya cabang terpisah eksplisit (`mode === 'observasi_smp'`),
-  bukan reuse logika SD yang dipaksa fallback
-
----
-
-## Status
-- Fase D: 66/66 TP LOLOS review independen (ChatGPT)
-- Kelas 7: 24/24 | Kelas 8: 24/24 | Kelas 9: 18/18
-
-## Sprint B — Test Suite Otomatis (SELESAI)
-- tools/validate-fase-d.js — validator VR-1, VR-2, struktur
-  7-step, constraint schema, dangling refs, enum, durasi
-- Hasil: 66/66 LOLOS, 0 error, 0 warning
-- Commits: e7c1a41 → 51c477f → 88e3883
-
-## Preseden Desain (FINAL — jangan dipertanyakan ulang)
+- classroom_setup[] hanya SETTLING + HOOK (TRANSISI KE MODEL dihapus)
+- Reference mode untuk SIAPKAN KELAS (scroll, bukan tap per item)
+- UCAP wajib Bahasa Inggris di classroom_setup[], AKSI boleh BI
+- Overlay Penilaian Fase D kualitatif murni — tidak ada skor/huruf/skala
+  untuk sumatif
+- Kurikulum Fase D pakai placeholder, bukan field meta/cp ala SD
 - Reaktivasi prerequisite = kapasitas struktural, bukan konten
-- BOOST TP-18 lebih kaya dari biasanya — disengaja, tidak melanggar schema
+- BOOST TP-18 lebih kaya dari biasanya — disengaja
 - PAT-8-24 dihilangkan dari prerequisite_patterns TP-12 (final)
 
-## Sprint C — Integrasi PWA (SELESAI)
-Commit: 47e1520, ab95149 — SW: v246 → v247
-
-**classroom_setup[] — 66 TP Fase D**
-- Field baru di resources{} setiap TP
-- Struktur: SETTLING (2–3 item) + HOOK (3–4 item)
-- UCAP: Bahasa Inggris, memancing respons siswa
-- AKSI: Bahasa Indonesia/Inggris
-- Nada: K7 hangat · K8 semi-formal · K9 formal
-- Tidak ada duplikasi UCAP antar TP
-- Validasi: 66/66 LOLOS
-
-**Layar SIAPKAN KELAS (_renderEntering())**
-- Render classroom_setup[] dari data TP yang sudah loaded
-- Deteksi section SETTLING/HOOK via UCAP pertama dengan "?"
-- UCAP: bubble italic, ikon 🗣
-- AKSI: plain text redup, ikon ⚡
-- Fallback ke teks statis jika field tidak ada
-
-**Dashboard tab Materi**
-- Section "Siapkan Sebelum Kelas" via _buildAlatBantu()
-- "Media Belajar" (🖼) dari visual_cues[]
-- "Gestur Guru" (🤝) dari gesture_cues[]
-
-**Keputusan desain sesi ini:**
-- classroom_setup[] = SETTLING + HOOK saja
-  (TRANSISI KE MODEL dihapus — mendahului langkah kelas)
-- Reference mode dipilih untuk SIAPKAN KELAS
-  (semua item sekaligus, scroll — bukan per item tap)
-
 ---
 
-## Ringkasan Kerja Sprint C — Integrasi sesi-runtime + Kurikulum
-
-**Tahap 1 — Analisis pra-integrasi (read-only):**
-Audit registry (`data/index.js`), renderer groups SD vs SMP, struktur data Fase D, gap analysis field, dan kelas mapping. Tidak ada perubahan kode.
-
-**Tahap 2 — BUILD hardcode SD-only + DESIGN paritas fitur:**
-- `nilai.js`: dikonfirmasi sudah mendukung Kelas 7-9 dari sesi sebelumnya, tidak ada perubahan kode.
-- `kurikulum.js:344`: `kelasLabel` dibuat dinamis SD/SMP.
-- Desain pemetaan field SD↔Fase D untuk 3 fitur paritas (TTS, Kondisi Darurat, Overlay Penilaian) — dokumen saja, belum ada kode.
-
-**Tahap 3 — BUILD inti:**
-- `kurikulum.js`: `_resolveKurikulumData()` diperbaiki agar Kelas 7-9 di-route ke **placeholder Fase D**, bukan fallback `'ALL'` SD yang salah. Placeholder dipilih (bukan render penuh) karena `data/fase-d.js` tidak punya `meta`/`cp` setara SD — render penuh akan crash/menampilkan data salah.
-- `sesi-runtime-smp.js`: 3 fitur paritas ditambahkan —
-  - **TTS**: baca `resources.model_sentences[]` via `sentence_refs[]`, tidak pakai parser regex `UCAP:` ala SD karena Fase D sudah terstruktur.
-  - **Kondisi Darurat**: overlay generik direuse (duplikat konstanta, bukan import dari SD) — tidak baca field skema TP apa pun.
-  - **Overlay Penilaian** → **Observasi Formatif**: kualitatif murni, tidak ada skor/huruf/skala. Disimpan ke store baru `penilaian_log_smp` (`storage/db.js` `DB_VERSION` 11→12), terisolasi total dari `penilaian_log` SD.
-
-**Tahap 4 — Penyesuaian bahasa:**
-Teks `FALLBACK_GENERIC` di overlay Kondisi Darurat SMP direvisi dari register childish/playful ala SD ("ajak tepuk pendek", "Beri jempol untuk yang berani") ke register netral-suportif sesuai usia SMP. Struktur data tidak diubah.
-
-**Tahap 5 — HARDEN/VALIDATE (uji nyata via Playwright, bukan baca kode):**
-Semua item dijalankan di browser sungguhan (server statis + Chromium headless). 1 bug nyata ditemukan dan diperbaiki di tempat (chip tag observasi tampil blok vertikal, bukan wrap — `.sr-opsi` base class tidak ter-override). 1 bug pre-existing independen ditemukan dan **tidak diperbaiki** (lihat known-issues.md), sesuai instruksi untuk tidak auto-fix tanpa lapor.
-
-## Commit Log Sprint C (Tahap 1–5)
-
-| SHA | Pesan |
-|---|---|
-| `cbc1390` | fix: kelasLabel dinamis SD/SMP di kurikulum.js |
-| `bba4b95` | docs: laporan analisis pra-integrasi + desain paritas fitur Fase D |
-| `316aee5` | fix: kurikulum.js route Kelas 7-9 ke Fase D, bukan fallback SD 'ALL' |
-| `66e8cdd` | feat: paritas fitur TTS, kondisi darurat, observasi formatif di sesi-runtime-smp.js |
-| `c1c9143` | fix: register bahasa overlay Kondisi Darurat SMP — netral, bukan childish ala SD |
-| `ae52da9` | fix: chip tag observasi formatif SMP tampil wrap, bukan blok vertikal |
-| `47e1520` | feat(fase-d): add classroom_setup[] to 66 TPs + render in _renderEntering() |
-| `ab95149` | feat(dashboard): add Siapkan Sebelum Kelas section to tab Materi |
-
-## Hasil Tes Final (Tahap 5)
-
-| # | Item | Hasil | Catatan |
-|---|---|---|---|
-| 1 | Migrasi IDB | ✅ PASS | `oldVersion 11→12`, `penilaian_log_smp` baru terbentuk, data lama utuh |
-| 2 | kurikulum.js — regresi SD | ✅ PASS | Kelas 2/5 identik seperti sebelumnya, nol error |
-| 3 | kurikulum.js — Fase D | ✅ PASS | Placeholder muncul, nol crash, nol error |
-| 4 | TTS (SMP) | ✅ PASS | `speechSynthesis.speak()` terpicu, nol error |
-| 5 | Kondisi Darurat (SMP) | ✅ PASS | Teks revisi Tahap 4 tampil benar |
-| 6 | Observasi Formatif (SMP) | ✅ PASS | 1 bug visual ditemukan+diperbaiki saat tes; tidak ada field skor tersimpan; export/import round-trip aman |
-| 7 | Regresi fitur SD terkait | ❌ FAIL | UI normal, tapi **penyimpanan gagal** — bug independen `DB_VERSION` (lihat known-issues.md), bukan disebabkan store baru |
-| 8 | Keseluruhan nol error | ❌ FAIL | Satu error console dari item 7, pre-existing |
-
-Item 7 dan 8 FAIL karena bug independen yang sudah ada sebelum Sprint C, bukan regresi dari pekerjaan sprint ini.
-
-## Preseden Desain Baru (Sprint C — berlaku ke depan)
-
-1. **Overlay Penilaian Fase D kualitatif murni** — `observe[]`/tags + catatan teks bebas, **tidak ada skor/huruf/skala apa pun**. Ini bukan versi simplified dari overlay SD, melainkan desain berbeda total, konsisten dengan constraint `check_without_score: true` (rule validator A7) — ditegakkan juga di sisi runtime, bukan cuma di `tools/validate-fase-d.js`.
-2. **`penilaian_log_smp` terisolasi total dari `penilaian_log` SD** — store IDB berbeda, tidak ada migrasi/percampuran data, untuk menghindari risiko merusak CSV export & rekap formatif SD yang sudah berjalan.
-3. **Kurikulum Fase D pakai placeholder, bukan field `meta`/`cp` ala SD** — karena `data/fase-d.js` tidak punya struktur tersebut, dan memaksakan field SD ke Fase D adalah fabrikasi data, bukan solusi.
-
-## Item Belum Terverifikasi (bukan blocking)
-
-- **Discrepancy tombol "Lihat Kurikulum lengkap" di `dashboard.js:466`**: tombol ini ada di `_buildTabMateri()` (tab Materi SD), tapi **tidak ada** di `_buildTabMateriSMP()` (tab Materi SMP, baris ~640). Artinya untuk TP Fase D, tidak ada jalur dashboard → kurikulum langsung. Risiko nyata bagi guru SMP justru datang dari tab nav "Dokumen Kurikulum" (bottom nav) yang langsung baca `session.kelas` — ini sudah ditangani di Tahap 3 (item 3 test). Tapi perlu diverifikasi ulang: apakah memang disengaja tidak ada tombol tap-through untuk SMP, atau ini gap yang perlu diisi di sprint berikutnya.
-
----
-
-## Update — Hotfix DB_VERSION SD (16 Juni 2026)
-
-### Status
-Known-issue #1 di [known-issues.md](docs/canonical/known-issues.md) — **RESOLVED**.
-
-### Root Cause
-`storage/siswa-history.js` (`savePenilaian`) dan `storage/nilai.js` (helper `_atomicUpdate`, dipakai oleh `setNilai`/`setNilaiLSR`/`setCatatan`/`setNilaiFormatif`/`setCatatanFormatif`) masing-masing hardcode `DB_VERSION` lokal sendiri dan membuka koneksi `indexedDB.open()` terpisah dari `storage/db.js`. Saat versi lokal lebih rendah dari versi DB yang sudah ada di browser, `indexedDB.open()` gagal dengan `VersionError` permanen — bukan transient.
-
-### Temuan Tambahan — `nilai.js` Juga Terdampak
-Investigasi awal hanya menemukan `siswa-history.js`. Saat digali lebih jauh, `storage/nilai.js` punya pola identik di `_atomicUpdate()`. Dibuktikan via Playwright (bukan asumsi pola kode) — kondisi DB sudah versi 12:
-```
-setNilaiError: "The requested version (10) is less than the existing version (12)."
-```
-Artinya bug ini bukan hanya menggagalkan penilaian proses per sesi SD (`penilaian_log`), tapi juga **nilai sumatif/formatif L/S/R dan catatan** (`nilai_data`) — severity sama-sama TINGGI, hanya belum terlihat di Tahap 5 Sprint C karena Tahap 5 tidak menguji jalur `setNilai`/`setNilaiLSR`.
-
-### Race Condition Baru yang Ditemukan & Diselesaikan
-Menyamakan `DB_VERSION` persis di semua modul (tanpa gating) membuka risiko baru: pada fresh install, jika modul tanpa `onupgradeneeded` handler memenangkan race membuka koneksi IndexedDB pertama, DB bisa stuck permanen di versi tinggi dengan nol object store (dibuktikan: `NotFoundError`). Diselesaikan dengan `await db.init()` di awal kedua titik (`siswa-history.js`, `nilai.js`) — memanfaatkan `_initPromise` singleton yang sudah ada di `db.js`, sehingga semua modul menunggu satu koneksi resmi yang sama sebelum membuka koneksi lokal mereka.
-
-### Commit
-| SHA | Pesan |
-|---|---|
-| `19d2e0e` | fix: VersionError penilaian SD — satu sumber DB_VERSION + gating db.init() |
-| `d93e41d` | docs: known-issues.md — tandai bug VersionError SD RESOLVED |
-
-### Validasi (Playwright, bukan baca kode)
-- DB existing versi 12: `savePenilaian` + `setNilai` + `setNilaiLSR` — PASS, nol error.
-- Fresh install, 5 variasi urutan race (`db`/`hist`/`nilai`): PASS, semua 7 store selalu terbentuk lengkap.
-- Regression observasi formatif SMP (`penilaian_log_smp`): PASS, tidak terpengaruh.
-- Jalur lain `nilai.js` (tambahKelas → tambahSiswa → getRekapTP): PASS.
-
-### Follow-up Tidak Dieksekusi
-Migrasi penuh `siswa-history.js` dan `nilai.js`'s `_atomicUpdate()` ke wrapper `db.js` (pola `penilaian-smp.js`) — menghilangkan kebutuhan modul-modul ini membuka `indexedDB.open()` sendiri sama sekali. Refactor lebih besar, di luar scope hotfix minimal. Dicatat sebagai backlog terpisah.
-
-### Open Question Operasional (BELUM diputuskan)
-Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode bug aktif (sebelum hotfix). Perlu keputusan Romo: apakah perlu komunikasi ke guru untuk pengisian ulang data. **Belum diputuskan.**
-
----
-
-## Keputusan Mengapa (jangan dipertanyakan ulang)
+## Preseden Desain (berlaku ke depan)
 
 | Keputusan | Mengapa |
 |-----------|---------|
-| classroom_setup[] hanya SETTLING + HOOK | Blok TRANSISI KE MODEL mendahului langkah kelas — siswa melihat media sebelum MODEL dimulai, efek atensi hilang |
-| Reference mode untuk SIAPKAN KELAS | Guru berdiri di depan kelas butuh scan cepat, bukan tap per item — tangan harus bebas |
-| Deteksi boundary SETTLING/HOOK via "?" | Komentar JS tidak terbaca di runtime — UCAP pertama dengan "?" selalu menjadi awal HOOK berdasarkan spec authoring |
-| UCAP wajib Bahasa Inggris di classroom_setup[] | Guru harus memodelkan bahasa target sejak sebelum sesi dimulai |
-| AKSI boleh Bahasa Indonesia | Instruksi fisik lebih efektif dalam bahasa guru untuk eksekusi cepat di kelas |
-| Tidak ada duplikasi UCAP antar 66 TP | Guru yang mengajar banyak kelas akan merasakan repetisi — variasi menjaga engagement |
+| classroom_setup[] hanya SETTLING + HOOK | TRANSISI KE MODEL mendahului langkah kelas — efek atensi hilang |
+| Reference mode untuk SIAPKAN KELAS | Guru berdiri di depan kelas butuh scan cepat — tangan harus bebas |
+| Deteksi boundary SETTLING/HOOK via "?" | UCAP pertama dengan "?" selalu awal HOOK berdasarkan spec authoring |
+| UCAP wajib Bahasa Inggris di classroom_setup[] | Guru harus model bahasa target sejak sebelum sesi |
+| AKSI boleh Bahasa Indonesia | Instruksi fisik lebih efektif dalam bahasa guru |
+| Tidak ada duplikasi UCAP antar 66 TP | Guru banyak kelas merasakan repetisi — variasi menjaga engagement |
 
 ---
 
-## Backlog Sprint Berikutnya (pilih salah satu)
+## Status Konten
 
-1. **Desain kurikulum Fase D yang proper** — bangun `meta`/`cp` setara SD untuk `data/fase-d.js` agar placeholder di `kurikulum.js` bisa digantikan render penuh (panel CP/ATP/TP-detail).
-2. **Migrasi wrapper db.js penuh** untuk `siswa-history.js` + `nilai.js` — follow-up prioritas rendah dari hotfix DB_VERSION, hilangkan `indexedDB.open()` mandiri di kedua modul.
-3. **Sprint A** — validasi lapangan 3-5 TP sampel.
-4. **Sprint D** — persiapan Fase E (Pattern Registry K10+).
+- Fase D: 66/66 TP LOLOS review independen (ChatGPT)
+- Kelas 7: 24/24 | Kelas 8: 24/24 | Kelas 9: 18/18
+- tools/validate-fase-d.js: 66/66 LOLOS, 0 error, 0 warning
 
 ---
 
-## Sprint Skenario Ajar Fase D (17 Juni 2026)
+## Backlog (belum disentuh)
 
-### Keputusan Arsitektur
-Seluruh TP Fase D akan dirombak dengan skenario ajar baru
-dalam format AKSI/UCAP per langkah — menggantikan runtime[]
-yang ada sekarang. Ini adalah perombakan total, bukan tambahan
-field. Renderer PWA akan dibangun ulang setelah semua skenario
-selesai dan divalidasi.
+### Fitur & Improvement
+1. Resume Bridge — tambah opsi ke-3 "Pilih TP baru"
+2. Label "Lanjut TP" landing page SMP — hardcode tpDiKelas[0],
+   selesaiSet tidak dipakai (gap fitur, bukan bug)
+3. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
+4. Desain kurikulum Fase D proper — meta/cp untuk placeholder
+   kurikulum.js
+5. Tombol "Lihat Kurikulum lengkap" tidak ada di tab Materi SMP
 
-### Format Skenario
-- Setiap instruksi ditulis sebagai AKSI atau UCAP per baris
-- AKSI: instruksi fisik guru — boleh campur BI dan Inggris
-- UCAP: kalimat guru — wajib Bahasa Inggris, ramah TTS,
-  tanpa simbol atau kode apapun
-- Urutan langkah wajib: PERSIAPAN → SIAPKAN KELAS → MODEL →
-  REPEAT → CHANGE → INTERACT → SHARE → CHECK → BOOST
-- CHECK adalah langkah terminal — dua jalur eksplisit
-- BOOST hanya jika CHECK mayoritas lancar, satu fokus,
-  maksimal tiga siswa
+### Refactor & Cleanup
+6. Migrasi wrapper db.js penuh — hilangkan indexedDB.open() mandiri
+   di siswa-history.js dan nilai.js
+7. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
+   skenario stabil di lapangan (Sprint E)
+8. nilai.js:208 — dead code tpSelesai di _renderMenu(), query IDB
+   boros tiap buka menu
 
-### Anchor Kualitas
-- TP 7-01 adalah skenario acuan untuk semua TP
-- File: docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt
-- Divalidasi ChatGPT — 9.9/10, semua aspek LOLOS
-- Checklist lolos: 28 item (F-01 s/d F-07, S-01 s/d S-10,
-  K-01 s/d K-05, C-01 s/d C-05, P-01 s/d P-03)
+### Bug Kosmetik
+9. Counter pagination presensi "Halaman X/Y · Hadir N/M" stale
+   setelah ubah status — tidak memengaruhi data
+10. REPEAT step dual-button UI ambiguity
+11. Label "(Detail)" salah untuk sesi SMP — mode 'observasi_smp'
+    jatuh ke fallback "Detail"
 
-### Progress Skenario
+### Open Question
+- Kemungkinan ada nilai/penilaian yang gagal tersimpan selama periode
+  bug DB_VERSION aktif. Perlu keputusan Romo: apakah komunikasi ke
+  guru untuk pengisian ulang data diperlukan. **BELUM diputuskan.**
 
-**Kelas 7 — SELESAI**
-- Generate: Claude Code — 24/24 file tersimpan
-- Review: ChatGPT — satu TP per sesi, checklist 28 item
-- Revisi: Claude Code — 15 file diperbarui, 8 file LOLOS langsung
-- File lokasi: docs/canonical/skenario-fase-d-kelas 7/
-- File format: skenario-7-XX.txt
-- Status: semua 24 file final, siap digunakan
+### Item Terbuka
 
-**Kelas 8 — BELUM DIMULAI**
-- 24 TP menunggu
-- File lokasi target: docs/canonical/skenario-fase-d-kelas 8/
-- File format: skenario-8-XX.txt
+- TP-7-01 (Kelas 7) - instruksi UCAP baris sekitar 161 "Good. Now stay
+  with your partner and join another pair." teridentifikasi belum
+  deterministik (siswa diminta mengambil keputusan sendiri, bukan
+  instruksi pasti). Perbaikan sudah diusulkan dalam review di
+  docs/canonical/reviews/ucap-tp7-01-kelas7.txt: "Good. Stay with your
+  partner. Wait for my signal..." - perbaikan ini BELUM diterapkan ke
+  skenario-7-01.txt canonical. Perlu fix manual terpisah pada baris
+  yang relevan, jangan overwrite seluruh file.
 
-**Kelas 9 — BELUM DIMULAI**
-- 18 TP menunggu
-- File lokasi target: docs/canonical/skenario-fase-d-kelas 9/
-- File format: skenario-9-XX.txt
+---
 
-### Temuan Penting dari Kelas 7
-Item paling sering bermasalah: K-01 + C-01
-— MODEL memperkenalkan pola di luar target TP
-— Muncul di 13 dari 15 file yang direvisi
-— Perlu penekanan ekstra di prompt generate Kelas 8 dan 9
+## File Referensi Penting
 
-### Alur Kerja per Kelas
-1. Generate — Claude Code baca data TP + skenario-7-01.txt
-   sebagai acuan, tulis dan simpan semua skenario
-2. Review — ChatGPT, satu TP per sesi, checklist 28 item,
-   simpan semua hasil review dalam satu file txt
-   dengan penanda ## Review TP X-XX
-3. Revisi — Claude Code baca file review, parse verdict,
-   perbaiki file yang PERLU REVISI
-4. Lanjut ke kelas berikutnya
-
-### Prompt Generate (untuk Kelas 8 dan 9)
-Sama dengan Kelas 7 dengan dua penyesuaian:
-1. Nada bahasa: K8 semi-formal, K9 formal
-2. Tambahkan catatan khusus di prompt:
-
-PERHATIAN KHUSUS — K-01 + C-01:
-Di langkah MODEL, guru hanya boleh mengucapkan kalimat
-yang ada di model_sentences[] data TP.
-Jangan tambahkan kalimat contoh lain di luar model_sentences[].
-Jangan perkenalkan pola bahasa yang bukan target TP ini.
-
-### File Referensi Penting
 - Skenario acuan: docs/canonical/skenario-fase-d-kelas 7/skenario-7-01.txt
 - Data TP Kelas 7: docs/canonical/fase-d/kelas-7/
 - Data TP Kelas 8: docs/canonical/fase-d/kelas-8/
 - Data TP Kelas 9: docs/canonical/fase-d/kelas-9/
 - Review Kelas 7: docs/canonical/## Review TP kelas 7.txt
-
-### SW Aktif
-flaf-v250 (tidak ada perubahan kode di sprint ini —
-semua pekerjaan adalah konten skenario, bukan PWA)
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-- Format AKSI/UCAP adalah final — tidak kembali ke runtime[]
-- skenario-7-01.txt adalah anchor kualitas — tidak diubah
-- Renderer PWA dibangun ulang setelah semua 66 skenario selesai
-- Review dilakukan ChatGPT satu TP per sesi — bukan batch
-
----
-
-## Sprint Renderer Skenario Fase D (18 Juni 2026)
-
-### Status
-SW aktif: flaf-v251
-
-### Pekerjaan Sprint Ini
-Konversi 66 skenario .txt ke field skenario{} di TP .js,
-dan build renderer PWA paralel di sesi-runtime-smp.js.
-
-### Tahap 1 — Generate & Review Skenario Kelas 8 dan 9
-- Kelas 8: 24/24 skenario LOLOS review ChatGPT langsung
-  (tanpa revisi) — prompt K-01+C-01 terbukti efektif
-- Kelas 9: 18/18 skenario direvisi sistematis —
-  pola gagal: F-07 (darurat), K-01+C-01 (UCAP MODEL),
-  F-03 (em-dash) di seluruh 18 TP
-- Total skenario final: 66/66 (K7+K8+K9)
-
-### Tahap 2 — Konversi .txt ke skenario{}
-- Jalur arsitektur dipilih: Jalur B (inject ke TP .js,
-  bukan parse .txt di runtime)
-- tools/convert-skenario-fase-d.js — konverter Node.js
-- tools/fix-emdash-ucap.js — fix TTS safety (122 baris)
-- tools/validate-skenario-fase-d.js — validator VR-S1–S17
-- Hasil: 66/66 TP .js punya skenario{}, VR-S1–S17 LOLOS
-- Anomali ditangani: label REPEAT variant
-  (Kalimat/Pertukaran/Instruksi/Bagian/Flyer)
-  — fix via regex generik /^\*\*\w+ \d+/
-
-### Schema skenario{} (final)
-persiapan: { papan_tulis, kartu, instruksi[] }
-siapkan_kelas: { settling[], hook[] }
-langkah: {
-  model:   { durasi_menit, intro, instruksi[] }
-  repeat:  { durasi_menit, intro, kalimat[], instruksi_penutup[] }
-  change:  { durasi_menit, intro, instruksi[], diferensiasi{} }
-  interact:{ durasi_menit, intro, instruksi[], diferensiasi{} }
-  share:   { durasi_menit, intro, instruksi[], diferensiasi{} }
-  check:   { durasi_menit, intro, instruksi[],
-             jalur_lancar[], jalur_belum_lancar[] }
-  boost:   { durasi_menit, intro, untuk_kesulitan[],
-             untuk_lancar[], cue_sisa }
-}
-Instruksi = { tipe: AKSI|UCAP|bantuan|darurat|cue, teks }
-
-### Tahap 3 — Renderer PWA
-- screens/sesi-runtime-smp.js — +227 baris
-- sesi-runtime-smp.css — +223 baris
-- Arsitektur paralel: gate di _renderStep() —
-  jika skenario{} ada → renderer baru,
-  jika tidak → runtime[] lama (fallback tetap berjalan)
-- State baru: skenarioMode, repeatKalimatIndex, checkJalur
-- REPEAT: navigasi per kalimat dengan counter
-- CHECK: dua jalur eksplisit (Lancar → BOOST, Ragu → remedial)
-- Bantuan/darurat: collapsed default via <details>
-- TTS: tombol 🔊 per UCAP via smp-tts-btn yang sudah ada
-- Window exposure: _skenarioRepeatNav, _skenarioCheckJalur,
-  _nextStep, _endSesi — diperlukan karena ES module scope
-- Test Playwright: 7/7 PASS, 0 console error
-
-### Commit Log Sprint Ini
-| SHA | Pesan |
-|---|---|
-| d11fbd4 | feat(skenario): add 66 teaching scenario txt files |
-| 422668f | feat(fase-d): inject skenario{} field into 66 TP js files |
-| 5bf62d2 | feat(renderer): add skenario renderer to sesi-runtime-smp |
-| f8c6765 | chore(sw): bump to flaf-v251 |
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-- Jalur B (inject ke .js) dipilih atas Jalur A (parse .txt
-  di runtime) — konsisten dengan arsitektur offline-first FLAF
-- Renderer paralel, bukan replace — runtime[] lama tetap ada
-  sebagai fallback sampai renderer baru stabil di lapangan
-- Bantuan/darurat collapsed default — guru di depan kelas
-  butuh layar fokus, bukan semua teks sekaligus
-- REPEAT per kalimat — guru butuh pause antar kalimat,
-  konsisten dengan TTS per kalimat yang sudah ada
-- onclick= inline + window exposure — konsisten dengan
-  pola yang sudah ada di runtime SMP (addEventListener
-  untuk interaksi kompleks, onclick untuk navigasi sederhana)
-
-### Backlog Sprint Berikutnya
-1. Sprint A — validasi lapangan 3-5 TP sampel (prioritas)
-2. Desain kurikulum Fase D proper — meta/cp untuk
-   placeholder di kurikulum.js
-3. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
-4. Hapus runtime[] lama dari sesi-runtime-smp.js setelah
-   renderer baru stabil di lapangan (Sprint E)
-
----
-
-## Sprint Observasi Formatif & UI Audit (19 Juni 2026)
-
-### Status
-SW aktif: flaf-v253
-
-### Pekerjaan Sprint Ini
-
-**Audit UI Runtime Skenario Fase D**
-- Audit keterbacaan dan warna seluruh layar runtime (17 screenshot)
-- Fix CSS: cue_sisa, color-text-dim, font-size minimum 12px — commit 581b316
-- Fix UI: bantuan label, dif border, layar selesai — commit 7bec4fa
-- Fix root cause: --color-surface collision dengan style.css (#ffffff)
-  → hardcode 6 kemunculan var(--color-surface) — commit 615fca8
-
-**Audit UCAP Fase D**
-- Audit TTS safety: 2.288 UCAP diperiksa, 50 flagged, 13 genuine fix
-  → commit 5e9656c
-- Audit determinisme transisi: 109 fix di 59 file, 4 pola global
-  → commit ec4939b
-- SW bump v252 — commit 253c2df
-
-**Redesign Observasi Formatif Fase A-C**
-Keputusan arsitektur:
-- Hapus Mode Detail — hanya Mode Cepat, diganti judul "Observasi Formatif"
-- Hierarki 3 level:
-  Level 1: Sudah Bisa / Perlu Bantuan
-  Level 2 (per Level 1):
-    Sudah Bisa → Aktif (BSB, nilai 90) / Perlu pengingat (BSH, nilai 75)
-    Perlu Bantuan → Perlu dorongan (MB, nilai 60) / Butuh intervensi (BB, nilai 45)
-  Level 3: tag spesifik per Level 2, multi-select
-- Level 2 terhubung ke rubrik BSB/BSH/MB/BB di modul ajar resmi
-- Level 3 mengisi kolom Deskripsi di rubrik
-- Label seragam: "Perlu Bantuan" (bukan "Perlu Support") di semua permukaan
-
-Commit log:
-| SHA | Pesan |
-|---|---|
-| 9530e3e | fix(observasi): hapus mode detail, judul jadi Observasi Formatif |
-| d81e9e7 | feat(observasi): redesign hierarki 3 level Fase A-C |
-| b2f1342 | chore: hapus dead code mode detail + bump SW v253 |
-| 31cef14 | fix(observasi): hapus label fase dari subtitle overlay |
-| 4a38716 | fix(observasi): label tombol + warna judul gold |
-
-Validasi: 6/6 item PASS via browser (screenshot dikonfirmasi Romo)
-
-**Desain Observasi Formatif Fase D (DIIMPLEMENTASI)**
-- Overlay lama (flat tags + textarea) di-replace dengan hierarki L1/L2/L3
-- L1: Sudah Bisa (★) / Perlu Bantuan (○)
-- L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
-      Mencoba belum tepat (60·MB) / Diam (45·BB)
-- L3: generik per L2, 3 tag, Bahasa Indonesia (bukan dari observe[])
-- Mapping ke rubrik: L1+L2 → BSB/BSH/MB/BB, L3 → kolom Deskripsi
-- savePenilaianSMP() atomic batch ke penilaian_log_smp
-- Tombol selalu visible di semua step, bukan hanya CHECK
-- Hubungan dengan BOOST: diputus — observasi murni faktual
-
----
-
-## Sprint Observasi Formatif Fase D (19 Juni 2026)
-
-### Status
-SW aktif: flaf-v254
-
-### Pekerjaan Sprint Ini
-
-**Replace overlay observasi lama → hierarki L1/L2/L3**
-- _renderObservasiOverlay() lama: flat tags hardcode + textarea
-- Diganti dengan hierarki 3 level identik Fase A-C:
-  L1: Sudah Bisa (★) / Perlu Bantuan (○)
-  L2: Tanpa buku/catatan (90·BSB) / Dengan buku/catatan (75·BSH)
-       Mencoba belum tepat (60·MB) / Diam (45·BB)
-  L3: generik per L2, 3 tag, Bahasa Indonesia (bukan dari observe[])
-- Chip nilai 90·BSB dll tampil di accordion header per siswa
-- Draft auto-save ke store kv, key: draft_penilaian_smp_{rombelId}_{tpId}
-- Simpan final ke penilaian_log_smp via savePenilaianSMP() atomic batch
-- Filter: hanya siswa yang sudah minimal L2 (perilaku !== null) disimpan
-
-**L3 Tags Final (konstanta L3_TAGS_SMP)**
-- tanpa_buku:  Lancar tanpa bantuan · Inisiatif sendiri · Konsisten sejak awal
-- dengan_buku: Sesekali lihat catatan · Perlu pengingat · Hampir mandiri
-- mencoba_belum_tepat: Mau mencoba · Pola belum stabil · Perlu contoh ulang
-- diam: Tidak merespons · Terlihat bingung · Perlu didekati guru
-
-**savePenilaianSMP() — storage/penilaian-smp.js**
-- Fungsi baru, atomic batch, gating db.init() sebelum buka koneksi lokal
-- Record schema:
-  { kelasId, siswaId, tpNomor, sesiId, mode: 'observasi_smp',
-    capaian, perilaku, nilai, predikat, alasan: string[], catatan,
-    createdAt }
-- Terisolasi total dari penilaian_log SD
-
-**Tombol entry: selalu visible di semua step**
-- Tombol #smp-btn-penilaian di-render tanpa kondisi step
-- observe[] tidak lagi dipakai untuk L3 — checkStep.find() dihapus
-
-**Cleanup dead CSS**
-- 9 class dihapus dari sesi-runtime-smp.css:
-  8× smp-obs-* + 1× sr-overlay-content--wide
-  Semua dikonfirmasi orphan via grep sebelum dihapus
-
-### Temuan Arsitektur Penting
-- observe[] di TP canonical dirancang untuk reviewer/author —
-  kalimat panjang Bahasa Inggris, tidak cocok sebagai tag UI runtime
-- Footer _renderRunning() (tombol prev/next/kondisi/penilaian) adalah
-  milik _renderRunning(), bukan renderer skenario — selalu ada di
-  semua step tanpa kondisi tambahan
-- ES module cache: jika perubahan JS tidak terlihat di browser,
-  wajib hard reload + restart server + cache bust import URL
-  sebelum debug lebih jauh — muncul 2x di sprint ini
-
-### Commit Log
-
-| SHA | Pesan |
-|---|---|
-| 123e23b | feat(observasi-smp): hierarki L1/L2/L3 + savePenilaianSMP |
-| 16dde04 | fix(observasi-smp): tombol selalu visible di semua step |
-| f602597 | chore(css): hapus dead CSS overlay observasi lama smp-obs-* |
-| b2bfd29 | fix(observasi-smp): ganti observe[] dengan L3 generik per L2 |
-| 0202141 | chore(sw): bump to flaf-v254 |
-
-### Hasil Test Final
-
-| # | Item | Hasil |
-|---|------|-------|
-| T1 | Tombol visible di step MODEL | PASS |
-| T2 | L3 Bahasa Indonesia, Tanpa buku/catatan | PASS |
-| T3 | L3 Dengan buku/catatan | PASS |
-| T4 | L3 Mencoba, belum tepat | PASS |
-| T5 | L3 Diam | PASS |
-| T6 | Record alasan[] berisi tag Indonesia | PASS |
-| T7 | Regresi SD tidak terpengaruh | PASS |
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-- L3 generik per L2, bukan dari observe[] TP — observe[] untuk
-  keperluan authoring/validator, bukan runtime UI
-- 3 tag per L2 — cukup untuk observasi cepat di kelas
-- nilai 90/75/60/45 ada di UI dan record meskipun TP schema punya
-  check_without_score: true — constraint itu untuk penilaian sumatif,
-  bukan observasi formatif runtime
-- penilaian_log_smp terisolasi total dari penilaian_log SD
-
-### Backlog Sprint Berikutnya
-1. Export data observasi → rubrik modul ajar (Fase A-C dan Fase D)
-2. Sprint A — validasi lapangan 3-5 TP sampel (prioritas tinggi)
-3. Desain kurikulum Fase D proper — meta/cp untuk placeholder kurikulum.js
-4. Migrasi wrapper db.js penuh — follow-up hotfix DB_VERSION
-5. Hapus runtime[] lama dari sesi-runtime-smp.js setelah renderer
-   skenario stabil di lapangan (Sprint E)
-
----
-
-## Sprint CHECK Redesign & Diferensiasi Baru (19 Juni 2026)
-
-### Status
-SW aktif: flaf-v255
-
-### Pekerjaan Sprint Ini
-
-**Redesign Diferensiasi Fase D**
-
-Keputusan arsitektur:
-- Field lama diferensiasi{} (mudah/standar/tantangan) tetap ada
-- Field baru diferensiasi_baru{} ditambahkan paralel di
-  skenario.langkah per langkah yang punya diferensiasi
-- Dua key: sudah_bisa (dari tantangan) dan perlu_bantuan
-  (dari mudah) — standar dihilangkan dari tampilan
-- Field hanya ada di CHANGE, INTERACT, SHARE
-- Konten spesifik per TP — bukan generik
-
-Tampilan renderer:
-- Satu accordion luar: 🎯 Diferensiasi (collapsed default)
-- Dua sub-accordion di dalam: ★ Sudah Bisa dan ○ Perlu Bantuan
-- Identik secara struktur dengan accordion bantuan dan darurat
-- Warna: Diferensiasi = gold, Sudah Bisa = hijau (#1a2a1a /
-  #a5d6a7), Perlu Bantuan = biru gelap (#1a1a2e)
-- Fallback: tidak ada blok jika diferensiasi_baru tidak ada
-
-**Redesign CHECK Fase D**
-
-Keputusan arsitektur:
-- Hapus: "Pilih Jalur", tombol "Mayoritas Lancar",
-  tombol "Masih Ragu", _state.checkJalur,
-  _skenarioCheckJalur()
-- jalur_lancar[] tidak lagi dirender — guru yang kelasnya
-  lancar langsung tap "Lanjut →" di footer
-- jalur_belum_lancar[] dirender sebagai accordion remedial
-  yang dipicu satu tombol:
-  "Jika mayoritas siswa belum lancar, ikuti langkah di sini"
-- Footer tidak berubah — "Lanjut →" tetap seperti langkah lain
-
-Latar belakang:
-FLAF_Fase_D_Fondasi_Pedagogis_v1.0.md mendefinisikan CHECK
-sebagai observasi cepat untuk menentukan langkah berikutnya —
-bukan penilaian eksplisit yang harus dinyatakan guru di UI.
-Observasi Formatif sudah menangkap kondisi kelas. UI tidak
-perlu meminta penilaian ulang.
-
-### Commit Log
-
-| SHA | Pesan |
-|---|---|
-| 7af4a27 | feat(fase-d): inject diferensiasi_baru sudah_bisa/perlu_bantuan ke 66 TP |
-| f3495f9 | feat(renderer): accordion diferensiasi sudah_bisa/perlu_bantuan di skenario renderer |
-| d245ac4 | chore(css): style accordion diferensiasi SMP |
-| e47cef9 | chore(sw): bump to flaf-v255 |
-| aa06be3 | fix(renderer): nest sudah-bisa/perlu-bantuan dalam accordion diferensiasi |
-| cf6911a | fix(renderer): redesign CHECK — hapus pilih jalur, ganti dengan tombol remedial accordion |
-
-### Keputusan yang Jangan Dipertanyakan Ulang
-- diferensiasi_baru{} field baru, bukan replace field lama
-- Konten sudah_bisa dan perlu_bantuan spesifik per TP —
-  merujuk pola kalimat, scaffold, dan anchor visual TP
-- Accordion tiga level: Diferensiasi > Sudah Bisa /
-  Perlu Bantuan — konsisten dengan bantuan dan darurat
-- CHECK tidak meminta penilaian eksplisit dari guru —
-  satu tombol remedial, footer normal
-
-### Backlog Sprint Berikutnya
-1. Export data observasi → rubrik modul ajar (Fase A-C
-   dan Fase D)
-2. Sprint A — validasi lapangan 3-5 TP sampel (prioritas
-   tinggi)
-3. Desain kurikulum Fase D proper — meta/cp untuk
-   placeholder kurikulum.js
-4. Migrasi wrapper db.js penuh — follow-up hotfix
-   DB_VERSION
-5. Hapus runtime[] lama dari sesi-runtime-smp.js setelah
-   renderer skenario stabil di lapangan (Sprint E)
